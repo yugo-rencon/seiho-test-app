@@ -290,7 +290,7 @@ defineProps({
 
                     <!-- 右：コピーライト -->
                     <div class="text-sm text-gray-500 text-center md:text-right font-medium">
-                        © 2024–2026 生保講座過去問解説
+                        © 2026 生保講座過去問解説
                     </div>
                 </div>
 

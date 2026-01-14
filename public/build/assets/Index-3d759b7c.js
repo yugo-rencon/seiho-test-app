@@ -1,1 +1,0 @@
-import{_ as t}from"./_plugin-vue_export-helper-c27b6911.js";import{o as s,f as a,t as o,g as r,d as n,F as c}from"./app-1ce3baa3.js";const p={},l={key:0,class:"bg-blue-300"};function m(e,f){return s(),a(c,null,[e.$page.props.flash.message?(s(),a("div",l,o(e.$page.props.flash.message),1)):r("",!0),n(" Inertiaインデックスです。 ")],64)}const _=t(p,[["render",m]]);export{_ as default};

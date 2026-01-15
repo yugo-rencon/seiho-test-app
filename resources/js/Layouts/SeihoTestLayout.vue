@@ -432,7 +432,8 @@ defineProps({
                         </div>
 
                         <div class="mt-2 text-xs text-gray-500">
-                            運営継続の励みになります。無理のない範囲で
+                            <!-- 運営継続の励みになります。<br /> -->
+                            無理のない範囲で
                             <a
                                 href="https://buymeacoffee.com/rencon"
                                 target="_blank"

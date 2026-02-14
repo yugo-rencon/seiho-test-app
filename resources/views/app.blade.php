@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        @php
+            $shouldLoadAds = !auth()->check() || !auth()->user()?->hasPremiumAccess();
+        @endphp
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TB0WW8SWW"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5875099458010785"
-            crossorigin="anonymous">
-        </script>
+        @if ($shouldLoadAds)
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5875099458010785"
+                crossorigin="anonymous">
+            </script>
+        @endif
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -16,6 +21,7 @@
         </script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         {{-- <title inertia>{{ config('app.name', 'Laravel') }}</title> --}}
         <title inertia>{{ config('app.name', 'Laravel') }}</title>

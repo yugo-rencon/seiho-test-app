@@ -140,6 +140,12 @@ return [
         '属性名' => [
             'ルール名' => 'カスタムメッセージ',
         ],
+        'password' => [
+            'confirmed' => '新しいパスワードと確認用パスワードが一致しません。',
+        ],
+        'privacy_agreed' => [
+            'accepted' => 'プライバシーポリシーに同意してください。',
+        ],
     ],
 
     /*
@@ -162,13 +168,24 @@ return [
         'kana' => 'カナ',
         'tel' => '電話番号',
         'email' => 'メールアドレス',
+        'password' => 'パスワード',
+        'password_confirmation' => '確認用パスワード',
         'postcode' => '郵便番号',
         'address' => '住所',
         'birthday' => '誕生日',
         'gender' => '性別',
         'question_number' => '問題番号',
         'answer' => '解答',
-        'explanation' => '解説'
+        'explanation' => '解説',
+        'pass_score' => '合格基準',
+        'score' => '点数',
+        'subject_key' => '科目',
+        'category' => '種別',
+        'message' => 'お問い合わせ内容',
+        'page_url' => '対象ページURL',
+        'device' => '利用端末',
+        'occurred_at' => '発生日時',
+        'privacy_agreed' => 'プライバシーポリシーへの同意',
     ],
 
 ];

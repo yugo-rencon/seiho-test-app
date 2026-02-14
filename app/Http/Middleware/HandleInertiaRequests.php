@@ -20,6 +20,10 @@ class HandleInertiaRequests extends Middleware
      */
     public function version(Request $request): string|null
     {
+        if (app()->environment('local')) {
+            return null;
+        }
+
         return parent::version($request);
     }
 
@@ -33,6 +37,8 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user(),
+                'hasPremium' => fn () => $request->user()?->hasPremiumAccess() ?? false,
+                'isAdmin' => fn () => $request->user()?->is_admin ?? false,
             ],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [

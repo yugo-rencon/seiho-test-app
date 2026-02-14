@@ -68,7 +68,7 @@ const subject = '2024年度 フォームA'
                 'キ','ア','エ','ク','オ',  //問16〜20
                 ]"
             />
-            <QuestionTemp1
+<QuestionTemp1
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
@@ -199,9 +199,7 @@ const subject = '2024年度 フォームA'
         </div>
 
         <!-- ボタングループ -->
-        <TestNavigationButtons
-            next-route="sisan2024b"
-        />
+        <TestNavigationButtons next-route="sisan2024b" />
 
     </section>
 

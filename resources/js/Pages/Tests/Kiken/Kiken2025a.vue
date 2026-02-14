@@ -1,0 +1,212 @@
+<script setup>
+import { Head, Link } from '@inertiajs/vue3';
+import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
+import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
+import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
+
+import Pagetitle from '../../../Components/Pagetitle.vue'
+import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
+import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
+
+const title = "危険選択"
+const subject = '2025年度 フォームA'
+</script>
+
+<template>
+
+<SeihoTestLayout :title="title">
+    <section class="bg-[#fdfbff] text-gray-800 py-10">
+
+        <!-- ページタイトル -->
+        <Pagetitle
+            :title="title"
+            :description="subject"
+        />
+
+        <!-- 問題リスト -->
+        <div class="max-w-4xl mx-auto mt-4 space-y-2">
+            <QuestionTemp3
+                :questionNumber="1"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '故意','民法','必要はない','解約返戻金','到達', // 問１〜５
+                ]"
+                :labels="[
+                'オ','キ','ウ','ク','カ',  //問１〜５
+                ]"
+            />
+            <QuestionTemp3
+                :questionNumber="2"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                'しない','因果関係','5年','責任開始期の属する日','2年', //問６〜10
+                ]"
+                :labels="[
+                'ケ','カ','ウ','キ','ア',  //問６〜10
+                ]"
+            />
+            <QuestionTemp3
+                :questionNumber="3"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '出再会社','自動','任意','諾否決定','成立', //問11〜15
+                ]"
+                :labels="[
+                'ウ','イ','カ','ケ','コ',  //問11〜15
+                ]"
+            />
+            <QuestionTemp3
+                :questionNumber="4"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '個別','定期保険','危険保険料式','共同保険式','責任準備金', //問16〜20
+                ]"
+                :labels="[
+                'カ','ア','ウ','コ','キ',  //問16〜20
+                ]"
+            />
+<QuestionTemp1
+                :questionNumber="21"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '「実体的危険」は、<u><b>「身体的危険」</b></u>と「環境的危険」の2つに分類することができる。', //p4
+                '環境的危険とは、被保険者の生活環境全般に関する危険であるが主に被保険者の職業・仕事の内容による危険を指す。', //p4
+                '正しい'
+                ]"
+                />
+            <QuestionTemp1
+                :questionNumber="22"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '毎年の純保険料のうち<u><b>貯蓄保険料</b></u>は、被保険者の生死にかかわりなく責任準備金の積み増しにあてられるが、危険保険料は死亡した被保険者の危険保険金部分の支払いにあてられる。', //p23
+                '<u><b>定期保険</b></u>の責任準備金の積み立ては、保険期間の前半で純保険料が死亡率に相当する保険料より高い分を、保険期間の後半で死亡率が純保険料を上回るのに備えて積み立てるのみであり、責任準備金は保険年度とともに<u><b>逓減する</b></u>。<br><u><b>養老保険</b></u>では死亡の際に保険金が支払われるのはもちろんであるが、満期時にも保険金が支払われるため、生命保険会社では満期時の支払いに備えて責任準備金を積み立てる必要があり、責任準備金は保険年度とともに<u><b>逓増する</b></u>。', //p24
+                '正しい'
+                ]"
+            />
+            <QuestionTemp1
+                :questionNumber="23"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '一般に短期<u><b>養老</b></u>または短期払込<u><b>養老保険</b></u>の経験死亡率は長期のものより良好である。ただし、<u><b>定期保険</b></u>ではこの関係は逆転し、保険期間が短期のものに逆選択が集中する傾向がある。', //p73
+                '正しい',
+                '役員を被保険者とする場合も被保険者の書面による加入同意の確認が必要。' //p75
+                ]"
+            />
+            <QuestionTemp1
+                :questionNumber="24"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '正しい',
+                '<u><b>削減期間は5年が最長</b></u>で、逓減性危険の程度に応じ5年削減、4年削減、3年削減、2年削減、1年削減の方法がある。', //p108
+                '「年増法」の説明。「一定期間特別保険料領収法」は、保険金削減法に代わり、契約後一定期間のみ特別保険料を領収する方法。' //p109
+                ]"
+            />
+            <QuestionTemp1
+                :questionNumber="25"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '正しい',
+                '死亡率の高い疾患と入院・手術の発生率の高い疾患とはまったく異なるため、従来とは異なった診査観点が必要である', //p150
+                '給付金日額の制限によって<u><b>超過危険を調整することはできない</b></u>。しかし、不当利得の企てに対抗する抑制策としては有効である。現在、大部分の保険会社が入院給付金日額の取扱基準により限度額を設けているのは、道徳的・環境的危険上の対策である。' //p150
+                ]"
+            />
+            <QuestionTemp1
+                :questionNumber="26"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '正しい',
+                '同じ死亡指数でも、若年層と高齢層、男性と女性等死亡率の異なる群団では<u><b>死差益に対する貢献度が異なる</b></u>。', //p12
+                '正しい'
+                ]"
+            />
+            <QuestionTemp1
+                :questionNumber="27"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '死亡率や<u><b>入院給付率</b></u>は、保険年度が進み選択効果が薄れるにつれ上昇するが、<u><b>手術給付率</b></u>はむしろ加入早期の方が高値である。', //p52
+                '正しい',
+                '正しい'
+                ]"
+            />
+            <QuestionTemp1
+                :questionNumber="28"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '正しい',
+                '体格は、普通体（または平均体）、過重体および過軽体の3種に分類されている。', //p63
+                '正しい'
+                ]"
+            />
+            <QuestionTemp1
+                :questionNumber="29"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '保険加入のみを目的として設立された<u><b>団体でない</b></u>ことが契約の要件の1つである。', //p169
+                '正しい',
+                '正しい'
+                ]"
+            />
+            <QuestionTemp1
+                :questionNumber="30"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                '正しい',
+                '正しい',
+                '期待死亡率については、選択の目的からみて経験死亡率を小さくするほどよいというものではない。なぜなら、選択が厳しければ経験死亡率は低下するが、そのために保険体の範囲が<u><b>狭くなる</b></u>からである。' //p186
+                ]"
+            />
+            <QuestionTemp2
+                :questionNumber="31"
+                :title="title"
+                :subject="subject"
+                :contents="[
+                // 問31〜35
+                '生命表には国民全体を対象とした<u><b>国民生命表</b></u>と、それよりは小さな特定集団（たとえば生命保険の被保険者集団）を対象とする<u><b>経験生命表</b></u>とがある。', //p5
+                '金額死亡率のほうが件数死亡率よりも事業経営上に与える影響を反映しやすいので、生命保険経営上は、通常、件数死亡率よりも、金額死亡率が多く用いられる。', //p9
+                '正しい',
+                '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」<u><b>さらには「アルコール中毒や不摂生生活のような職業に随伴する危険」がある</b></u>。', //p69
+                '正しい',
+                // 問36〜40
+                '一般に嘱託医については、各保険会社とも、診査を可能とする被保険者の年齢や保険金額に限度を設け（診査限度という）、社医と区別しているが、さらに嘱託医の資格別にも診査限度を定めている。', //p99
+                '正しい',
+                '失効後の期間の<u><b>長い</b></u>ものほど逆選択混入の危険が多く、また診査による場合に比べ告知のみによる場合のほうが経験死亡率が高いとされている。', //p173
+                '正しい',
+                '正しい',
+                 //問41〜50
+                'B-告知を受領する権限のある者', 'A-純保険料', 'A-倫理', 'B-本態性高血圧', 'A-信頼関係',
+                'C（A・Bともに正しい）', 'B-尿異常', 'C（A・Bともに正しい）', 'B-両眼の視力', 'A-1年間',
+                ]"
+              :labels="[
+                '解','解','解','解','解',  //問31〜35
+                '解','解','解','解','解',  //問36〜40
+                'ウ','イ','イ','エ','ア',  //問41〜45
+                'オ','ウ','オ','エ','ア',  //問46〜50
+                ]"
+            />
+        </div>
+
+        <!-- ボタングループ -->
+        <TestNavigationButtons
+            next-route="kiken2025b"
+        />
+
+    </section>
+
+    </SeihoTestLayout>
+
+
+</template>

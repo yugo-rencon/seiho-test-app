@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\UserExamResult;
 
 class User extends Authenticatable
 {
@@ -18,10 +19,25 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
+        'pass_score',
+        'stripe_customer_id',
+        'google_id',
+        'email_verified_at',
+        'is_admin',
+        'is_premium',
     ];
+
+    public function examResults()
+    {
+        return $this->hasMany(UserExamResult::class);
+    }
+
+    public function hasPremiumAccess(): bool
+    {
+        return (bool) $this->is_premium;
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -40,5 +56,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_admin' => 'boolean',
+        'is_premium' => 'boolean',
     ];
 }

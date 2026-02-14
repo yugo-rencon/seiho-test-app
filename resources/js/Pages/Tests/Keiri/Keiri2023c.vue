@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link} from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -7,6 +7,7 @@ import QuestionTemp4 from '../../../Components/QuestionTemp4.vue'
 
 import Pagetitle from '../../../Components/Pagetitle.vue'
 import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
+import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 
 const title = "生命保険計理"
 const subject = '2023年度 フォームC'
@@ -36,12 +37,11 @@ const subject = '2023年度 フォームC'
                         title: '複利運用',
                         answer: '2,710',
                         explanation:
-                        '<br>元金は300,000円で、月利0.15%（＝0.0015）の1ヶ月複利で6ヶ月間運用した場合の元利合計金額は、<br>\
+                        '<br>\
                         300,000円 × (1 + 0.0015) <sup>6</sup> ＝ 302,710.14<br><br>\
                         元金との差額が利息なので、<br>\
                         302,710.14 - 300,000 ＝ 2,710.14<br>\
-                        ⇒ 円未満を四捨五入して <strong>2,710円</strong>'
-                    },
+                        ⇒ 円未満を四捨五入して <strong>2,710円</strong>' },
                     // 問２
                     {
                         title: '複利運用',
@@ -50,28 +50,25 @@ const subject = '2023年度 フォームC'
                         '<br>年利1.2%で半年複利のため、利率は半年あたり0.6%（=0.006）となり、3年間で6回の複利が適用される。<br><br>\
                         よって元金300,000円の場合の元利合計金額は、<br>\
                         300,000 × (1 + 0.006)<sup>6</sup> ＝ 310,963.30<br>\
-                        ⇒ 円未満を四捨五入して <strong>310,963円</strong>'
-                    },
+                        ⇒ 円未満を四捨五入して <strong>310,963円</strong>' },
                     // 問３
                     {
                         title: '複利運用',
                         answer: '1.51',
                         explanation:
-                        '<br>転化回数：1年間に利息を元金に繰り入れる回数<br><br>\
+                        '<br>転化回数：1年間に利息を元金に繰り入れる回数<br><br><br>\
                         実利率 = （ 1 + 名称利率 ÷ 転化回数）<sup>転化回数</sup> - 1<br><br>\
                         （ 1 + 0.015 ÷ 6 ）<sup>6</sup> - 1 ＝ 0.015094 ＝ 1.509･･･%<br>\
-                        ⇒ 小数第3位を四捨五入して <strong>1.51%</strong>'
-                    },
+                        ⇒ 小数第3位を四捨五入して <strong>1.51%</strong>' },
                     // 問４
                     {
                         title: '複利運用',
                         answer: '1.53',
                         explanation:
                         '<br>年平均利回り：投資によって得られる利益を、投資期間全体で年単位に平均化したもの<br><br>\
-                        年平均利回り ＝ （（ 1 + 複利利率）<sup>期間</sup> - 1 ） ÷ 期間<br><br>\
+                        年平均利回り ＝ （（ 1 + 複利利率）<sup>期間</sup> - 1 ） ÷ 期間<br><br><br>\
                         （（ 1 + 0.015 ）<sup>4</sup> - 1 ） ÷ 4 ＝ 0.01534 ＝ 1.534%<br>\
-                        ⇒ 小数第3位を四捨五入して <strong>1.53%</strong>'
-                    },
+                        ⇒ 小数第3位を四捨五入して <strong>1.53%</strong>' },
                     {
                         title: '複利運用',
                         answer: '1,956,950',
@@ -89,8 +86,7 @@ const subject = '2023年度 フォームC'
                         3年後 ： 400,000 × （ 1 ÷ 1.011 ）<sup>3</sup> ＝ 387,085.2円<br>\
                         4年後 ： 400,000 × （ 1 ÷ 1.011 ）<sup>4</sup> ＝ 382,873.6円<br>\
                         現在において必要な資金の合計は、1,956,950.0円<br>\
-                        ⇒ 円未満を四捨五入して <strong>1,956,950円</strong>'
-                    }
+                        ⇒ 円未満を四捨五入して <strong>1,956,950円</strong>' }
                 ]"
                 :labels="[
                     'カ','ク','ウ','エ','コ',  //問１〜５
@@ -106,21 +102,19 @@ const subject = '2023年度 フォームC'
                         title: '生存率・生存数・平均余命・保険料計算',
                         answer: '0.98130',
                         explanation:
-                        '<br>生存率 ＝ 期末の生存数 ÷ 期初の生存数<br>\
+                        '<br>\
                         ＝ 96,441 ÷ 98,279<br>\
                         ＝ 0.981298･･･<br>\
-                        ⇒ 小数第6位を四捨五入して <strong>0.98130</strong>'
-                    },
+                        ⇒ 小数第6位を四捨五入して <strong>0.98130</strong>' },
                     // 問７
                     {
                         title: '生存率・生存数・平均余命・保険料計算',
                         answer: '97,957',
                         explanation:
-                        '<br>生存数 ＝ 期末の生存数 ÷ 期初の生存数 × 期初の生存者数<br>\
+                        '<br>生存数 ＝ 期末の生存数 ÷ 期初の生存数 × 期初の生存者数<br><br>\
                         ＝ 93,054 ÷ 94,995 × 100,000<br>\
                         ＝ 97956.7･･･<br>\
-                        ⇒ 小数第1位を四捨五入して <strong>97,957</strong>'
-                    },
+                        ⇒ 小数第1位を四捨五入して <strong>97,957</strong>' },
                     // 問８
                     {
                         title: '生存率・生存数・平均余命・保険料計算',
@@ -134,10 +128,9 @@ const subject = '2023年度 フォームC'
                         112歳 ： 1.0162人 × 3.5年 ＝ 3.5567 ＝ 3.56<br>\
                         113歳 ： 0.3155人 × 4.5年 ＝ 1.41975 ＝ 1.42<br>\
                         → 109歳～113歳の延べ生存年数の合計 ＝ 45.15<br><br>\
-                        平均余命 ＝ 延べ生存年数の合計 ÷ 生存者数<br>\
+                        平均余命 ＝ 延べ生存年数の合計 ÷ 生存者数<br><br>\
                         ＝ 41.7 ÷ 40.772 ＝ 1.022･･･<br>\
-                        ⇒ 小数第3位を四捨五入して <strong>1.02</strong>'
-                    },
+                        ⇒ 小数第3位を四捨五入して <strong>1.02</strong>' },
                     // 問９
                     {
                         title: '生存率・生存数・平均余命・保険料計算',
@@ -147,8 +140,7 @@ const subject = '2023年度 フォームC'
                         700万円 × 192人 ＝ 1,344,000千円<br><br>\
                         支払いは年央と仮定し、利率1.0%の期央払現価率0.995037で割引くと<br>\
                         1,344,000千円 × 0.995037 ＝ 1,337,329.73千円<br>\
-                        ⇒ 千円未満を四捨五入して <strong>1,337,330千円</strong>'
-                    },
+                        ⇒ 千円未満を四捨五入して <strong>1,337,330千円</strong>' },
                     // 問10
                     {
                         title: '生存率・生存数・平均余命・保険料計算',
@@ -156,8 +148,7 @@ const subject = '2023年度 フォームC'
                         explanation:
                         '<br>問4で求めた死亡保険金の支払いに必要な費用は、50歳女性の年始生存者数97,539人で平等に分担するので、<br>\
                         1,337,330千円 ÷ 97,539人 ＝ 13,710.7208円<br>\
-                        ⇒ 十円未満を四捨五入して <strong>13,710円</strong>'
-                    }
+                        ⇒ 十円未満を四捨五入して <strong>13,710円</strong>' }
                 ]"
                 :labels="[
                     'イ','ク','ウ','コ','カ',  //問６〜10
@@ -187,7 +178,7 @@ const subject = '2023年度 フォームC'
                 'ウ','キ','ケ','ク','イ',  //問16〜20
                 ]"
             />
-            <QuestionTemp4
+<QuestionTemp4
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
@@ -197,15 +188,14 @@ const subject = '2023年度 フォームC'
                         title: '死亡保険金の現価について',
                         answer: '1,082,173千円',
                         explanation:
-                        '<br>死亡保険金の支払いは平均して年の中央で発生すると仮定し、45歳〜49歳の各年齢における死亡保険金の現価求めてそれらを合計する。<br><br>\
+                        '<br>\
                         死亡保険金 × 死亡数 × 期央払現価 ＝ 死亡保険金の現価<br>\
                         45歳：1,500,000 × 120 × 0.995037 ＝ 179,107千円<br>\
                         46歳：1,500,000 × 133 × 0.985185 ＝ 196,544千円<br>\
                         47歳：1,500,000 × 147 × 0.975431 ＝ 215,083千円<br>\
                         48歳：1,500,000 × 163 × 0.965773 ＝ 236,131千円<br>\
                         49歳：1,500,000 × 178 × 0.956211 ＝ 255,308千円<br>\
-                        ⇒ 合計：<strong>1,082,173千円</strong>'
-                    },
+                        ⇒ 合計：<strong>1,082,173千円</strong>' },
                     // 問22
                     {
                         title: '満期保険金の現価について',
@@ -215,18 +205,16 @@ const subject = '2023年度 フォームC'
                         5年後の生存数 × 保険金額 × 期末払現価で求める。<br><br>\
                         50歳の生存数 × 150万円 × 5年の期末払現価<br>\
                         97,539 × 1,500,000 × 0.951466 ＝ 139,207,563,261円<br>\
-                        ⇒ 千円未満を四捨五入して <strong>139,207,563千円</strong>'
-                    },
+                        ⇒ 千円未満を四捨五入して <strong>139,207,563千円</strong>' },
                     // 問23
                     {
                         title: '予定事業費の現価について',
                         answer: '3,685,463千円',
                         explanation:
-                        '<br>予定事業費は保険金1000円につき25円より、一人当たりの予定事業費に加入時の生存数をかけて求める。<br><br>\
+                        '<br>予定事業費は保険金1000円につき25円より、一人当たりの予定事業費に加入時の生存数をかけて求める。<br><br><br>\
                         保険金額 × 予定事業費率 × 45歳の生存数<br>\
                         1,500,000 × (25 ÷ 1000) × 98,279 ＝ 3,685,462,500<br>\
-                        ⇒ 千円未満を四捨五入して <strong>3,685,463千円</strong>'
-                    },
+                        ⇒ 千円未満を四捨五入して <strong>3,685,463千円</strong>' },
                     // 問24
                     {
                         title: '養老保険の年払営業保険料について',
@@ -234,7 +222,7 @@ const subject = '2023年度 フォームC'
                         explanation:
                         '<br>収支相当の原則「収入現価 ＝ 支出現価」で求める。<br><br>\
                         ＜収入現価＞<br>\
-                        収入の現価は、45歳〜49歳の各年齢の生存数×年払保険料（P）を現価に換算して合計する。<br><br>\
+                        収入の現価は、45歳〜49歳の各年齢の生存数×年払保険料（P）を現価に換算して合計する。<br><br><br>\
                         年払保険料 × 生存数 × 期始払現価 ＝ 収入現価<br>\
                         45歳 ： P × 98,279 × 1.000000 ＝ 98,279P<br>\
                         46歳 ： P × 98,160 × 0.990099 ＝ 97,188P<br>\
@@ -243,15 +231,14 @@ const subject = '2023年度 フォームC'
                         49歳 ： P × 97,717 × 0.960980 ＝ 93,904P<br>\
                         → 50歳～54歳の収入現価の合計 ＝ 480,467P<br><br>\
                         ＜支出現価＞<br>\
-                        支出現価は問21〜23で算出した結果を用いて求める。<br><br>\
+                        支出現価は問21〜23で算出した結果を用いて求める。<br><br><br>\
                         死亡保険金の現価+満期保険金の現価+予定事業費の現価<br>\
                         ＝ 1,082,173千円 + 139,207,563千円 + 3,685,463千円<br>\
                         ＝ 143,975,199千円<br><br>\
                         収支相当の原則より<br>\
                         480,467P = 143,975,199千円<br>\
                         P ＝ 299,656･･･円 <br>\
-                        ⇒ 10円未満を四捨五入して <strong>299,660円</strong>'
-                    },
+                        ⇒ 10円未満を四捨五入して <strong>299,660円</strong>' },
                 ]"
                 :labels="[
                     'ア','イ','イ','イ',  //問21〜24
@@ -347,27 +334,7 @@ const subject = '2023年度 フォームC'
             />
         </div>
 
-        <!-- ==== ナビゲーションボタン：グラデーションで強調 ==== -->
-        <div class="flex flex-col items-center mt-10 gap-6">
-            <div class="flex justify-center gap-10">
-            <Link
-                :href="route('keiri2023b')"
-                class="w-40 h-12 flex items-center justify-center bg-gradient-to-r from-purple-400 to-blue-400 hover:from-purple-500 hover:to-blue-500 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
-                前の試験へ
-            </Link>
-            <Link
-                :href="route('keiri2022a')"
-                class="w-40 h-12  flex items-center justify-center bg-gradient-to-r from-purple-400 to-blue-400 hover:from-purple-500 hover:to-blue-500 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
-                次の試験へ
-            </Link>
-            </div>
-
-            <Link
-            :href="route('tests.index')"
-            class="w-40 h-12 flex items-center justify-center bg-gradient-to-r from-purple-400 to-blue-400 hover:from-purple-500 hover:to-blue-500 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
-            一覧画面に戻る
-            </Link>
-        </div>
+                <TestNavigationButtons previous-route="keiri2023b" next-route="keiri2022a" />
 
     </section>
 

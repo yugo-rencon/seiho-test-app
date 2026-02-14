@@ -1,11 +1,12 @@
 <script setup>
-import { Head, Link} from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 import { reactive, onMounted, ref, computed } from 'vue'
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
 import Pagetitle from '../../../Components/Pagetitle.vue'
 import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
+import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 
 const title = "生命保険商品と営業"
 const subject = '2023年度 フォームC'
@@ -68,7 +69,7 @@ const subject = '2023年度 フォームC'
                 'ケ', 'エ', 'ア', 'ク', 'オ',  //問16〜20
                 ]"
             />
-            <QuestionTemp1
+<QuestionTemp1
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
@@ -196,29 +197,7 @@ const subject = '2023年度 フォームC'
             />
         </div>
 
-        <!-- ボタングループ -->
-        <div class="flex flex-col items-center mt-4 pt-3 gap-4">
-            <!-- 上段：前へ・次へボタン -->
-            <div class="flex justify-center gap-16">
-                <Link
-                    :href="route('eigyo2023b')"
-                    class="inline-flex items-center justify-center w-40 h-12 bg-purple-400 hover:bg-purple-500 text-white font-semibold rounded-lg shadow-md">
-                    前の試験へ
-                </Link>
-                <Link
-                    :href="route('eigyo2022a')"
-                    class="inline-flex items-center justify-center w-40 h-12 bg-purple-400 hover:bg-purple-500 text-white font-semibold rounded-lg shadow-md">
-                    次の試験へ
-                </Link>
-            </div>
-
-            <!-- 下段：戻るボタン -->
-            <Link
-                :href="route('tests.index')"
-                class="inline-flex items-center justify-center w-40 h-12 bg-purple-400 hover:bg-purple-500 text-white font-semibold rounded-lg shadow-md">
-                一覧画面に戻る
-            </Link>
-        </div>
+                <TestNavigationButtons previous-route="eigyo2023b" next-route="eigyo2022a" />
 
     </section>
 </SeihoTestLayout>

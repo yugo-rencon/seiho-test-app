@@ -1,5 +1,8 @@
 <template>
-    <div class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-md">
+    <div
+        v-if="!shouldHideByPaywall"
+        class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-md"
+    >
 
         <!-- 問題番号 -->
         <div class="flex items-center gap-2 my-4">
@@ -23,20 +26,49 @@
         {{ props.subject }}
       </div>
     </div>
+    <PaywallNotice v-else-if="Number(props.questionNumber) === 2" />
 </template>
 
 <script setup lang="ts">
+    import { computed } from "vue";
+    import { usePage } from "@inertiajs/vue3";
+    import PaywallNotice from "./PaywallNotice.vue";
 
-    interface Props {
-        questionNumber: number
-        questionTitle: string
-        contents: string[]
-        labels: string[]
-        title: string[]
-        subject: string[]
-    }
+    const props = defineProps({
+        questionNumber: {
+            type: Number,
+            required: true,
+        },
+        questionTitle: {
+            type: String,
+            default: '',
+        },
+        contents: {
+            type: Array,
+            required: true,
+        },
+        labels: {
+            type: Array,
+            required: true,
+        },
+        title: {
+            type: String,
+            default: '',
+        },
+        subject: {
+            type: String,
+            default: '',
+        },
+    })
 
-    const props = defineProps<Props>()
+    const page = usePage();
+
+    const shouldHideByPaywall = computed(() => {
+        const year = Number(String(props.subject ?? "").slice(0, 4));
+        const isPaid = !(year === 2024 && props.title === "生命保険総論");
+        const isUnlocked = page.props.auth?.hasPremium === true;
+        return isPaid && !isUnlocked && Number(props.questionNumber) > 1;
+    });
 
     function getQuestionRange(questionNumber) {
         switch (questionNumber) {

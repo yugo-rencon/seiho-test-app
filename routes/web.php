@@ -1,28 +1,29 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\BillingController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\StripeWebhookController;
 use App\Http\Controllers\TestController;
-use App\Http\Controllers\StudyMethodController;
 
 Route::get('/', function () {
     return redirect('tests');
 });
 
-Route::resource('tests', TestController::class);
+Route::get('tests', [TestController::class, 'index'])->name('tests.index');
 
 Route::controller(TestController::class)->group(function () {
     // 試験科目の定義
     $subjects = [
-        'souron' => [2024, 2023, 2022, 2021],   // 生命保険総論
-        'keiri'  => [2024, 2023, 2022, 2021],   // 生命保険計理
-        'kiken'  => [2024, 2023, 2022, 2021],   // 危険選択
-        'yakkan' => [2024, 2023, 2022, 2021],   // 約款と法律
-        'kaikei' => [2024, 2023, 2022, 2021],   // 生命保険会計
-        'eigyo'  => [2024, 2023, 2022, 2021],   // 生命保険商品と営業
-        'zeihou' => [2024, 2023, 2022, 2021],   // 生命保険と税法
-        'sisan'  => [2024, 2023, 2022, 2021],   // 資産運用
+        'souron' => [2025, 2024, 2023, 2022, 2021],   // 生命保険総論
+        'keiri'  => [2025, 2024, 2023, 2022, 2021],   // 生命保険計理
+        'kiken'  => [2025, 2024, 2023, 2022, 2021],   // 危険選択
+        'yakkan' => [2025, 2024, 2023, 2022, 2021],   // 約款と法律
+        'kaikei' => [2025, 2024, 2023, 2022, 2021],   // 生命保険会計
+        'eigyo'  => [2025, 2024, 2023, 2022, 2021],   // 生命保険商品と営業
+        'zeihou' => [2025, 2024, 2023, 2022, 2021],   // 生命保険と税法
+        'sisan'  => [2025, 2024, 2023, 2022, 2021],   // 資産運用
     ];
 
     $forms = ['a', 'b', 'c'];
@@ -38,15 +39,32 @@ Route::controller(TestController::class)->group(function () {
     }
 
     // 個別ページ
+    Route::get('about', 'about')->name('about');
+    Route::get('pricing', 'pricing')->name('pricing');
     Route::get('policy', 'policy')->name('policy');
+    Route::get('terms', 'terms')->name('terms');
+    Route::get('tokusho', 'tokusho')->name('tokusho');
     Route::get('updateInfo', 'updateInfo')->name('updateInfo');
     Route::get('studyMethod', 'studyMethod')->name('studyMethod');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('mypage', [TestController::class, 'mypage'])->name('mypage');
+    Route::post('mypage/pass-score', [TestController::class, 'updatePassScore'])->name('mypage.passScore');
+    Route::post('mypage/results', [TestController::class, 'updateExamResult'])->name('mypage.results');
+    Route::get('billing/checkout', [BillingController::class, 'checkout'])->name('billing.checkout');
 });
+
+Route::controller(ContactController::class)->group(function () {
+    Route::get('contact', 'index')->name('contact.index');
+    Route::post('contact', 'store')->middleware('throttle:10,1')->name('contact.store');
+});
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::post('users/{user}/toggle-premium', [AdminController::class, 'toggleUserPremium'])->name('admin.users.togglePremium');
+});
+
+Route::post('stripe/webhook', [StripeWebhookController::class, 'handle'])->name('stripe.webhook');
 
 require __DIR__.'/auth.php';

@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link} from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 import { reactive, onMounted, ref, computed } from 'vue'
 import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
@@ -7,6 +7,7 @@ import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
 import Pagetitle from '../../../Components/Pagetitle.vue'
 import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
+import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 
 const title = "生命保険商品と営業"
 const subject = '2023年度 フォームA'
@@ -69,7 +70,7 @@ const subject = '2023年度 フォームA'
                 'ケ', 'エ', 'ア', 'ク', 'オ',  //問16〜20
                 ]"
             />
-            <QuestionTemp1
+<QuestionTemp1
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
@@ -197,27 +198,7 @@ const subject = '2023年度 フォームA'
             />
         </div>
 
-        <!-- ボタングループ -->
-        <div class="flex flex-col items-center mt-10 gap-6">
-            <div class="flex justify-center gap-10">
-            <Link
-                :href="route('eigyo2024c')"
-                class="w-40 h-12 flex items-center justify-center bg-gradient-to-r from-purple-400 to-blue-400 hover:from-purple-500 hover:to-blue-500 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
-                前の試験へ
-            </Link>
-            <Link
-                :href="route('eigyo2023b')"
-                class="w-40 h-12  flex items-center justify-center bg-gradient-to-r from-purple-400 to-blue-400 hover:from-purple-500 hover:to-blue-500 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
-                次の試験へ
-            </Link>
-            </div>
-
-            <Link
-            :href="route('tests.index')"
-            class="w-40 h-12 flex items-center justify-center bg-gradient-to-r from-purple-400 to-blue-400 hover:from-purple-500 hover:to-blue-500 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
-            一覧画面に戻る
-            </Link>
-        </div>
+                <TestNavigationButtons previous-route="eigyo2024c" next-route="eigyo2023b" />
 
     </section>
 

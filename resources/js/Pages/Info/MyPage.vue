@@ -378,7 +378,8 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
               type="number"
               min="0"
               max="100"
-              class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-purple-500 focus:ring-purple-500"
+              inputmode="numeric"
+              class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-base sm:text-sm focus:border-purple-500 focus:ring-purple-500"
             />
             <p class="mt-1 text-xs text-gray-500">
               空欄で保存すると「未入力」に戻せます。
@@ -433,7 +434,8 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
               type="number"
               min="0"
               max="100"
-              class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-purple-500 focus:ring-purple-500"
+              inputmode="numeric"
+              class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-base sm:text-sm focus:border-purple-500 focus:ring-purple-500"
             />
           </div>
 

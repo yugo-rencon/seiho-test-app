@@ -302,26 +302,26 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
           720点に到達していますが、優秀賞は全8科目の合格が必要です
         </div>
 
-        <div class="mt-6 space-y-3">
+        <div class="mt-5 space-y-2">
           <div
             v-for="subject in scoredSubjects"
             :key="subject.key"
-            class="flex items-center justify-between rounded-xl border border-gray-100 px-4 py-3 hover:bg-gray-50 transition cursor-pointer"
+            class="flex items-center justify-between rounded-xl border border-gray-100 px-4 py-2.5 hover:bg-gray-50 transition cursor-pointer"
             @click="openModal(subject.key)"
           >
             <div class="text-sm font-semibold text-gray-800">
               {{ subject.name }}
             </div>
-            <div class="flex items-center gap-3">
-              <div class="text-sm text-gray-600">
+            <div class="grid grid-cols-[72px_64px] items-center gap-2">
+              <div class="text-right text-sm text-gray-600 tabular-nums">
                 <span v-if="subject.score !== null">
                   {{ subject.score }} 点
                 </span>
                 <span v-else class="text-gray-400">未入力</span>
               </div>
               <span
-                v-if="subject.score !== null"
-                class="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold"
+                v-if="subject.score !== null && hasPassScore"
+                class="inline-flex justify-center rounded-full px-2 py-0.5 text-xs font-semibold"
                 :class="
                   subject.passed
                     ? 'bg-emerald-50 text-emerald-700'
@@ -330,6 +330,13 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
               >
                 {{ subject.passed ? '合格' : '不合格' }}
               </span>
+              <span
+                v-else-if="subject.score !== null"
+                class="inline-flex justify-center rounded-full bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-500"
+              >
+                判定なし
+              </span>
+              <span v-else class="h-6"></span>
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ Route::get('tests', [TestController::class, 'index'])->name('tests.index');
 Route::controller(TestController::class)->group(function () {
     // 試験科目の定義
     $subjects = [
-        'souron' => [2025, 2024, 2023, 2022, 2021],   // 生命保険総論
+        'souron' => [2025, 2024, 2023, 2022, 2021, 2020],   // 生命保険総論
         'keiri'  => [2025, 2024, 2023, 2022, 2021],   // 生命保険計理
         'kiken'  => [2025, 2024, 2023, 2022, 2021],   // 危険選択
         'yakkan' => [2025, 2024, 2023, 2022, 2021],   // 約款と法律

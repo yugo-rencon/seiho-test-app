@@ -14,19 +14,15 @@ const props = defineProps({
         type: Array,
         required: true,
     },
-    hasPremium: {
-        type: Boolean,
-        default: false,
-    },
     currentSubjectId: {
         type: String,
         required: true,
     },
+    hasPremium: {
+        type: Boolean,
+        default: false,
+    },
 });
-
-// 総論2024年だけ無料。それ以外は非プレミアム時にロック表示。
-const isLocked = (year, routePrefix, hasPremium) =>
-    !hasPremium && !(year === 2024 && routePrefix === "souron");
 </script>
 
 <template>
@@ -34,10 +30,10 @@ const isLocked = (year, routePrefix, hasPremium) =>
         <div class="flex items-center gap-3">
             <div class="text-lg font-bold text-gray-900">{{ year }}年度</div>
             <span
-                v-if="isLocked(year, routePrefix, hasPremium)"
-                class="ml-2 rounded border border-rose-200 bg-rose-50 px-2 py-0.5 text-[10px] font-semibold text-rose-700"
+                v-if="!hasPremium && Number(year) === 2024"
+                class="inline-flex items-center rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700"
             >
-                プレミアム
+                最新年度・無料
             </span>
         </div>
 
@@ -50,18 +46,6 @@ const isLocked = (year, routePrefix, hasPremium) =>
                 class="inline-flex items-center gap-2 rounded-full border border-purple-200 px-4 py-2 text-sm font-semibold text-purple-700 transition hover:bg-purple-50"
             >
                 フォーム{{ form.toUpperCase() }}
-                <img
-                    v-if="isLocked(year, routePrefix, hasPremium)"
-                    src="/images/lock_open.svg"
-                    alt=""
-                    class="h-4 w-4 opacity-60"
-                />
-                <span
-                    v-if="isLocked(year, routePrefix, hasPremium)"
-                    class="ml-1 rounded-full border border-purple-100 bg-purple-50 px-2 py-0.5 text-[10px] font-semibold text-purple-500"
-                >
-                    冒頭5問公開中
-                </span>
             </Link>
         </div>
     </div>

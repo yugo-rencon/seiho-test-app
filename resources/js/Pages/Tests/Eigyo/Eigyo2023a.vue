@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -12,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2023年度 フォームA'
 
-</script>
+const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
 
 <template>
     <SeihoTestLayout :title="title">
@@ -34,7 +31,11 @@ const subject = '2023年度 フォームA'
                 '規制緩和', '民法', '元本割れリスク', '投資性', '特定保険契約', // 問１〜５
                 ]"
                 :labels="[
-                'イ', 'コ', 'ア', 'キ', 'ク',  //問１〜５
+                    'イ', //1
+                    'コ', //2
+                    'ア', //3
+                    'キ', //4
+                    'ク', //5
                 ]"
             />
             <QuestionTemp3
@@ -45,7 +46,11 @@ const subject = '2023年度 フォームA'
                 '商法', '共済契約', '傷害疾病保険契約', '遺言', '顧客重視・法令等の遵守', //問６〜10
                 ]"
                 :labels="[
-                'ク', 'ウ', 'カ', 'ア', 'オ',  //問６〜10
+                    'ク', //6
+                    'ウ', //7
+                    'カ', //8
+                    'ア', //9
+                    'オ', //10
                 ]"
             />
             <QuestionTemp3
@@ -56,7 +61,11 @@ const subject = '2023年度 フォームA'
                 '継続的', 'マーケティング', '転換制度', 'エージェント', '不可分化', //問11〜15
                 ]"
                 :labels="[
-                'ウ', 'コ', 'キ', 'イ', 'ケ',  //問11〜15
+                    'ウ', //11
+                    'コ', //12
+                    'キ', //13
+                    'イ', //14
+                    'ケ', //15
                 ]"
             />
             <QuestionTemp3
@@ -67,7 +76,11 @@ const subject = '2023年度 フォームA'
                 'face to face', '情報通信機器', '囲い込み', 'CS（customer Satisfaciton）', '選択', //問16〜20
                 ]"
                 :labels="[
-                'ケ', 'エ', 'ア', 'ク', 'オ',  //問16〜20
+                    'ケ', //16
+                    'エ', //17
+                    'ア', //18
+                    'ク', //19
+                    'オ', //20
                 ]"
             />
 <QuestionTemp1
@@ -174,27 +187,31 @@ const subject = '2023年度 フォームA'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                'ライフスタイルではなくライフステージ。ライフ・プランニングではなくライフサイクル。',
-                '2000年の日米保険協議の決着により、2001年にまず子会社による参入が、続いて本体による参入が解禁となった。',
-                '被保険者の生存中に限り、周期的に一定の金額の支払をするもの。',
-                '生命保険支払専門土ではなく生命保険面接士。',
-                '払込保険料を割り引く方式と給付金として割り戻す方式がある。',
-                // 問36〜40
-                '正しい',
-                '勤労者財産形成教育貯蓄契約（財形教育）ではなく、勤労者財産形成住宅貯蓄契約（財形住宅）。',
-                'パソコンやスマートフォンで資料請求や申込ができるだけでなく、契約の成立までも完了できる生保会社もある。',
-                '正しい',
-                '正しい',
-                 //問41〜50
-                'B-通貨性預貯金', 'A-３分の１', 'B-介護認定審査会', 'A-資産運用成果', 'C（A・Bともに正しい）',
-                'A-企業等', 'A-厚生労働大臣', 'C（A・Bともに正しい）', 'B-保障額', 'C（A・Bともに正しい）',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: 'ライフスタイルではなくライフステージ。ライフ・プランニングではなくライフサイクル。' }, //31
+                    { label: '解', content: '2000年の日米保険協議の決着により、2001年にまず子会社による参入が、続いて本体による参入が解禁となった。' }, //32
+                    { label: '解', content: '被保険者の生存中に限り、周期的に一定の金額の支払をするもの。' }, //33
+                    { label: '解', content: '生命保険支払専門土ではなく生命保険面接士。' }, //34
+                    { label: '解', content: '払込保険料を割り引く方式と給付金として割り戻す方式がある。' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '勤労者財産形成教育貯蓄契約（財形教育）ではなく、勤労者財産形成住宅貯蓄契約（財形住宅）。' }, //37
+                    { label: '解', content: 'パソコンやスマートフォンで資料請求や申込ができるだけでなく、契約の成立までも完了できる生保会社もある。' }, //38
+                    { label: '解', content: '正しい' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'ウ', content: '通貨性預貯金' }, //41
+                    { label: 'ア', content: '３分の１' }, //42
+                    { label: 'ウ', content: '介護認定審査会' }, //43
+                    { label: 'ア', content: '資産運用成果' }, //44
+                    { label: 'オ', content: '' }, //45
+                    { label: 'イ', content: '企業等' }, //46
+                    { label: 'イ', content: '厚生労働大臣' }, //47
+                    { label: 'オ', content: '' }, //48
+                    { label: 'エ', content: '保障額' }, //49
+                    { label: 'オ', content: '' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解', '解', '解', '解', '解', '解',  //問31〜40
-                'ウ', 'ア', 'ウ', 'ア', 'オ', 'イ', 'イ', 'オ', 'エ', 'オ',  //問41〜50
-                ]"
+                
             />
         </div>
 

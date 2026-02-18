@@ -36,6 +36,7 @@ return [
         'secret' => env('STRIPE_SECRET'),
         'price_premium' => env('STRIPE_PRICE_PREMIUM'),
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
+        'purchase_enabled' => env('STRIPE_PURCHASE_ENABLED', false),
     ],
 
     'google' => [

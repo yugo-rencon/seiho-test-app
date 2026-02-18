@@ -72,7 +72,7 @@ const toastMessage = computed(() => {
     return String(flashStatus.value || "");
 });
 
-// 文言が入った時だけ表示。6秒で自動クローズ
+// 文言が入った時だけ表示。4.5秒で自動クローズ
 watch(
     toastMessage,
     (message) => {
@@ -87,7 +87,7 @@ watch(
         toastTimer = setTimeout(() => {
             showToast.value = false;
             toastTimer = null;
-        }, 6000);
+        }, 4500);
     },
     { immediate: true },
 );

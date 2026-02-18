@@ -139,6 +139,9 @@ class TestController extends Controller
     public function souron2021a(){return Inertia::render('Tests/Souron/Souron2021a');}
     public function souron2021b(){return Inertia::render('Tests/Souron/Souron2021b');}
     public function souron2021c(){return Inertia::render('Tests/Souron/Souron2021c');}
+    public function souron2020a(){return Inertia::render('Tests/Souron/Souron2020a');}
+    public function souron2020b(){return Inertia::render('Tests/Souron/Souron2020b');}
+    public function souron2020c(){return Inertia::render('Tests/Souron/Souron2020c');}
 
     // 生命保険計理
     public function keiri2025a(){return Inertia::render('Tests/Keiri/Keiri2025a');}

@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -12,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険会計"
 const subject = '2021年度 フォームA'
 
-</script>
+const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
 
 <template>
 
@@ -35,7 +32,11 @@ const subject = '2021年度 フォームA'
                 '客観性', '会計慣習', '注解', '報告', '処理', // 問１〜５
                 ]"
                 :labels="[
-                'ク', 'カ', 'ア', 'ウ', 'エ',  //問１〜５
+                    'ク', //1
+                    'カ', //2
+                    'ア', //3
+                    'ウ', //4
+                    'エ', //5
                 ]"
             />
             <QuestionTemp3
@@ -46,7 +47,11 @@ const subject = '2021年度 フォームA'
                 '真実性', '資本取引・損益取引区分', '資本剰余金', '保守主義', '単一性', //問６〜10
                 ]"
                 :labels="[
-                'イ', 'ケ', 'ク', 'カ', 'ウ',  //問６〜10
+                    'イ', //6
+                    'ケ', //7
+                    'ク', //8
+                    'カ', //9
+                    'ウ', //10
                 ]"
             />
             <QuestionTemp3
@@ -57,7 +62,11 @@ const subject = '2021年度 フォームA'
                 '認識', '実現主義', '発生主義', '費用収益対応の原則', '前者', //問11〜15
                 ]"
                 :labels="[
-                'カ', 'ア', 'ク', 'ウ', 'エ',  //問11〜15
+                    'カ', //11
+                    'ア', //12
+                    'ク', //13
+                    'ウ', //14
+                    'エ', //15
                 ]"
             />
             <QuestionTemp3
@@ -68,7 +77,11 @@ const subject = '2021年度 フォームA'
                 '売上高', '付加保険料', '現金主義', '未収保険料', '責任準備金', //問16〜20
                 ]"
                 :labels="[
-                'ク', 'カ', 'イ', 'オ', 'ウ',  //問16〜20
+                    'ク', //16
+                    'カ', //17
+                    'イ', //18
+                    'オ', //19
+                    'ウ', //20
                 ]"
             />
 <QuestionTemp1
@@ -175,29 +188,31 @@ const subject = '2021年度 フォームA'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '正しい',
-                '補助簿は、現金出納帳や当座預金出納帳などの補助記入帳と、商品有高帳や固定資産台帳などの補助元帳に分類される。',
-                '正しい',
-                '計算規定を中心に株式会社については会社法を準用し、相互会社については保険業法を中心に定めている',
-                '正しい',
-                // 問36〜40
-                '正しい',
-                '純資産の部から控除する形式で表示することとされた。',
-                '売買目的有価証券及び商品有価証券に係るものを除く。',
-                '据置期間に対応する利息も保険金据置支払金に計上される。',
-                '正しい',
-                 //問41〜50
-                'B-仕訳', 'C（A・Bともに正しい）', 'A-事業方法書', 'B-持分法', 'A-経理処理要領',
-                'A-資産除去', 'B-保険契約準備金', 'B-支払備金', 'C（A・Bともに正しい）', 'A-社外',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '正しい' }, //31
+                    { label: '解', content: '補助簿は、現金出納帳や当座預金出納帳などの補助記入帳と、商品有高帳や固定資産台帳などの補助元帳に分類される。' }, //32
+                    { label: '解', content: '正しい' }, //33
+                    { label: '解', content: '計算規定を中心に株式会社については会社法を準用し、相互会社については保険業法を中心に定めている' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '純資産の部から控除する形式で表示することとされた。' }, //37
+                    { label: '解', content: '売買目的有価証券及び商品有価証券に係るものを除く。' }, //38
+                    { label: '解', content: '据置期間に対応する利息も保険金据置支払金に計上される。' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'エ', content: '仕訳' }, //41
+                    { label: 'オ', content: '' }, //42
+                    { label: 'イ', content: '事業方法書' }, //43
+                    { label: 'ウ', content: '持分法' }, //44
+                    { label: 'ア', content: '経理処理要領' }, //45
+                    { label: 'ア', content: '資産除去' }, //46
+                    { label: 'ウ', content: '保険契約準備金' }, //47
+                    { label: 'エ', content: '支払備金' }, //48
+                    { label: 'オ', content: '' }, //49
+                    { label: 'イ', content: '社外' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解',  //問31〜35
-                '解', '解', '解', '解', '解',  //問36〜40
-                'エ', 'オ', 'イ', 'ウ', 'ア',  //問41〜45
-                'ア', 'ウ', 'エ', 'オ', 'イ',  //問46〜50
-                ]"
+                
             />
         </div>
 

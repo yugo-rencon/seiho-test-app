@@ -1,5 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -11,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "危険選択"
 const subject = '2021年度 フォームA'
 
-</script>
+const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
 
 <template>
 
@@ -34,7 +33,11 @@ const subject = '2021年度 フォームA'
                 '経営効率','剰余金','配当','予定死亡率','死差益', // 問１〜５
                 ]"
                 :labels="[
-                'キ','ウ','ア','ク','エ',  //問１〜５
+                    'キ', //1
+                    'ウ', //2
+                    'ア', //3
+                    'ク', //4
+                    'エ', //5
                 ]"
             />
             <QuestionTemp3
@@ -45,7 +48,11 @@ const subject = '2021年度 フォームA'
                 '低い','統計的方式','逓減','定期付養老保険','定期保険', //問６〜10
                 ]"
                 :labels="[
-                'カ','ア','オ','ウ','コ',  //問６〜10
+                    'カ', //6
+                    'ア', //7
+                    'オ', //8
+                    'ウ', //9
+                    'コ', //10
                 ]"
             />
             <QuestionTemp3
@@ -56,7 +63,11 @@ const subject = '2021年度 フォームA'
                 '被用者団体','団体性','相似する','保険加入者のみ','加入率', //問11〜15
                 ]"
                 :labels="[
-                'カ','ア','キ','ク','ウ',  //問11〜15
+                    'カ', //11
+                    'ア', //12
+                    'キ', //13
+                    'ク', //14
+                    'ウ', //15
                 ]"
             />
             <QuestionTemp3
@@ -67,7 +78,11 @@ const subject = '2021年度 フォームA'
                 '総合福祉団体的保険','権利','保険契約者','一括告知','平準化', //問16〜20
                 ]"
                 :labels="[
-                'ク','カ','ア','コ','オ',  //問16〜20
+                    'ク', //16
+                    'カ', //17
+                    'ア', //18
+                    'コ', //19
+                    'オ', //20
                 ]"
             />
 <QuestionTemp1
@@ -174,29 +189,31 @@ const subject = '2021年度 フォームA'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '経済的危険ではなく、実体的危険。',
-                '正しい',
-                '正しい',
-                '正しい',
-                '正しい',
-                // 問36〜40
-                '活習慣や嗜好といった因子についても示されている。',
-                '正しい',
-                '死亡した個人に関する情報は対象外。',
-                '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。',
-                '正しい',
-                 //問41〜50
-                'C（A・Bともに正しい）', 'B-5年', 'B-収支相当の原則', 'A-入院給付率', 'B-二次性',
-                'A-他人', 'A-問診', 'B-不実の告知', 'C（A・Bともに正しい）', 'A-被保険者',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '経済的危険ではなく、実体的危険。' }, //31
+                    { label: '解', content: '正しい' }, //32
+                    { label: '解', content: '正しい' }, //33
+                    { label: '解', content: '正しい' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '活習慣や嗜好といった因子についても示されている。' }, //36
+                    { label: '解', content: '正しい' }, //37
+                    { label: '解', content: '死亡した個人に関する情報は対象外。' }, //38
+                    { label: '解', content: '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'オ', content: '' }, //41
+                    { label: 'エ', content: '5年' }, //42
+                    { label: 'ウ', content: '収支相当の原則' }, //43
+                    { label: 'イ', content: '入院給付率' }, //44
+                    { label: 'エ', content: '二次性' }, //45
+                    { label: 'イ', content: '他人' }, //46
+                    { label: 'ア', content: '問診' }, //47
+                    { label: 'ウ', content: '不実の告知' }, //48
+                    { label: 'オ', content: '' }, //49
+                    { label: 'ア', content: '被保険者' }, //50
                 ]"
-                :labels="[
-                '解','解','解','解','解',  //問31〜35
-                '解','解','解','解','解',  //問36〜40
-                'オ','エ','ウ','イ','エ',  //問41〜45
-                'イ','ア','ウ','オ','ア',  //問46〜50
-                ]"
+                
             />
         </div>
 

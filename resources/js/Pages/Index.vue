@@ -3,15 +3,16 @@ import { usePage } from "@inertiajs/vue3";
 import { computed, onMounted, ref, watch } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import { EXAM_FORMS, INDEX_SECTIONS } from "@/constants/subjects";
-import PremiumPromoCard from "@/Pages/Index/PremiumPromoCard.vue";
 import SectionHeader from "@/Pages/Index/SectionHeader.vue";
 import SubjectTabs from "@/Pages/Index/SubjectTabs.vue";
 import YearBlock from "@/Pages/Index/YearBlock.vue";
+import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 
 // 科目タブ・年度/フォーム情報は constants 側に集約して再利用する
 const sections = INDEX_SECTIONS;
 const forms = EXAM_FORMS;
-const activeSectionId = ref(sections[0]?.id ?? "");
+const defaultSectionId = sections.find((section) => section.id === "zeihou")?.id ?? sections[0]?.id ?? "";
+const activeSectionId = ref(defaultSectionId);
 
 // 現在選択中の科目オブジェクト（タイトル/年度/routePrefix など）を取得
 const activeSection = computed(() =>
@@ -94,11 +95,6 @@ watch(activeSectionId, (nextId) => {
                             :mypage-input-href="mypageInputHref"
                         />
 
-                        <!-- 非プレミアム時のみ購入導線カードを表示 -->
-                        <div v-if="!hasPremium" class="mt-6 w-full">
-                            <PremiumPromoCard />
-                        </div>
-
                         <div
                             class="mt-6 divide-y divide-gray-100 border border-gray-100 rounded-2xl bg-white"
                         >
@@ -115,6 +111,10 @@ watch(activeSectionId, (nextId) => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div v-if="!hasPremium" class="mt-6">
+                <AdSenseUnit slot="5135479704" />
             </div>
         </div>
 

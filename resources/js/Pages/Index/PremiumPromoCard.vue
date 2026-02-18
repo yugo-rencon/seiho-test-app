@@ -10,32 +10,31 @@ import { Link } from "@inertiajs/vue3";
     >
         <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
-                <div class="flex items-center gap-2">
-                    <span
-                        class="rounded-full border border-rose-200 bg-white px-2 py-0.5 text-[11px] font-semibold text-rose-700"
-                    >
-                        プレミアム
-                    </span>
-                    <span class="font-semibold text-gray-900"
-                        >全ての解説が 1,980円</span
-                    >
+                <div class="flex items-end gap-2">
+                    <div class="font-semibold text-gray-900">プレミアムプラン（1,980円）</div>
+                    <div class="text-[10px] font-medium text-gray-500">1科目 約250円</div>
                 </div>
-                <div class="mt-2 text-[11px] text-gray-600">
-                    全科目・全年度・全フォームの解説を一括解放。一度の購入でずっと見放題
+                <div class="mt-2 space-y-1 text-[11px] text-gray-700">
+                    <div>✔ 過去4年分すべて閲覧可能</div>
+                    <div>✔ 一度の購入で全8科目見放題（追加料金なし・無期限）</div>
+                    <div>✔ 合格を確実にしたい方向け</div>
+                </div>
+                <div class="mt-2 text-[10px] text-gray-500">
+                    ※過去3〜4年以内からの再出題が見られるため、複数年度の演習を推奨しています。
                 </div>
             </div>
             <span
-                class="hidden items-center gap-1.5 rounded-full border border-rose-200 bg-white py-0.5 pl-2 pr-4 text-[10px] font-bold text-rose-700 shadow sm:inline-flex"
+                class="hidden items-center gap-1.5 rounded-full bg-purple-700 py-1.5 pl-3 pr-5 text-xs font-bold text-white shadow-md transition group-hover:bg-purple-800 sm:inline-flex"
             >
                 <img src="/images/bolt.svg" alt="" class="h-3 w-3" />
-                購入して解放
+                今すぐ解放する
             </span>
         </div>
         <span
-            class="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-rose-200 bg-white py-1 pl-3 pr-4 text-[11px] font-bold text-rose-700 shadow sm:hidden"
+            class="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-purple-700 py-2 pl-3 pr-4 text-sm font-bold text-white shadow-md transition group-hover:bg-purple-800 sm:hidden"
         >
             <img src="/images/bolt.svg" alt="" class="h-3 w-3" />
-            購入して解放
+            今すぐ解放する
         </span>
     </Link>
 </template>

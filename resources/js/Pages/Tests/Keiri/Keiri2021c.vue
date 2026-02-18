@@ -1,5 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -12,7 +11,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険計理"
 const subject = '2021年度 フォームC'
 
-</script>
+const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
 
 <template>
 
@@ -89,7 +88,11 @@ const subject = '2021年度 フォームC'
                         現在において必要な資金の合計は、<strong>1,459,148円</strong>' }
                 ]"
                 :labels="[
-                    'ア','ク','オ','イ','コ',  //問１〜５
+                    'ア', //1
+                    'ク', //2
+                    'オ', //3
+                    'イ', //4
+                    'コ', //5
                 ]"
             />
             <QuestionTemp3
@@ -101,7 +104,11 @@ const subject = '2021年度 フォームC'
                 '貯蓄','歩合（割合）','新契約','未償却','ゼロ', //問６〜10
                 ]"
                 :labels="[
-                'ア','コ','ウ','エ','カ',  //問６〜10
+                    'ア', //6
+                    'コ', //7
+                    'ウ', //8
+                    'エ', //9
+                    'カ', //10
                 ]"
             />
             <QuestionTemp3
@@ -113,7 +120,11 @@ const subject = '2021年度 フォームC'
                 '未経過保険料','危険準備金','4月1日から翌年3月31日','契約月','保険リスク', //問11〜15
                 ]"
                 :labels="[
-                'キ','イ','エ','ケ','コ',  //問11〜15
+                    'キ', //11
+                    'イ', //12
+                    'エ', //13
+                    'ケ', //14
+                    'コ', //15
                 ]"
             />
             <QuestionTemp3
@@ -125,7 +136,11 @@ const subject = '2021年度 フォームC'
                 '保証はない','変動保険金額','毎日','契約者','生命保険会社', //問16〜20
                 ]"
                 :labels="[
-                'コ','カ','キ','ケ','イ',  //問16〜20
+                    'コ', //16
+                    'カ', //17
+                    'キ', //18
+                    'ケ', //19
+                    'イ', //20
                 ]"
             />
 <QuestionTemp4
@@ -200,7 +215,11 @@ const subject = '2021年度 フォームC'
                         ⇒ 千円未満を四捨五入して <strong>549,000円</strong>' }
                 ]"
                 :labels="[
-                    'ア','イ','ウ','イ','ア',  //問21〜25
+                    'ア', //21
+                    'イ', //22
+                    'ウ', //23
+                    'イ', //24
+                    'ア', //25
                 ]"
             />
             <QuestionTemp1
@@ -262,29 +281,31 @@ const subject = '2021年度 フォームC'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '正しい',
-                '',
-                '',
-                '正しい',
-                '',
-                // 問36〜40
-                '正しい',
-                '',
-                '正しい',
-                '',
-                '正しい',
-                 //問41〜50
-                'C（A・Bともに正しい）', 'B-毎年', 'B-責任準備金', 'A-高くなる', 'C（A・Bともに正しい）',
-                'A-標準', 'A-定期保険', 'A-責任準備金関係', 'A-保険年度末保険料積立金', 'B-純保険料率',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '正しい' }, //31
+                    { label: '解', content: '' }, //32
+                    { label: '解', content: '' }, //33
+                    { label: '解', content: '正しい' }, //34
+                    { label: '解', content: '' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '' }, //37
+                    { label: '解', content: '正しい' }, //38
+                    { label: '解', content: '' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'オ', content: '' }, //41
+                    { label: 'ウ', content: '毎年' }, //42
+                    { label: 'エ', content: '責任準備金' }, //43
+                    { label: 'イ', content: '高くなる' }, //44
+                    { label: 'オ', content: '' }, //45
+                    { label: 'イ', content: '標準' }, //46
+                    { label: 'ア', content: '定期保険' }, //47
+                    { label: 'イ', content: '責任準備金関係' }, //48
+                    { label: 'ア', content: '保険年度末保険料積立金' }, //49
+                    { label: 'ウ', content: '純保険料率' }, //50
                 ]"
-                :labels="[
-                '解','解','解','解','解',  //問31〜35
-                '解','解','解','解','解',  //問36〜40
-                'オ','ウ','エ','イ','オ',  //問41〜45
-                'イ','ア','イ','ア','ウ',  //問46〜50
-                ]"
+                
             />
         </div>
 

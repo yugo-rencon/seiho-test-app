@@ -1,7 +1,4 @@
 <script setup>
-import { Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -13,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2021年度 フォームB'
 
-</script>
+const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -33,7 +30,11 @@ const subject = '2021年度 フォームB'
                 '規制緩和', '民法', '住民票', '特定個人情報', '特定保険契約', // 問１〜５
                 ]"
                 :labels="[
-                'イ', 'カ', 'コ', 'オ', 'エ',  //問１〜５
+                    'イ', //1
+                    'カ', //2
+                    'コ', //3
+                    'オ', //4
+                    'エ', //5
                 ]"
             />
             <QuestionTemp3
@@ -44,7 +45,11 @@ const subject = '2021年度 フォームB'
                 '7年間', '商法', '共済契約', '告知', '遺言', //問６〜10
                 ]"
                 :labels="[
-                'ウ', 'オ', 'キ', 'ク', 'ア',  //問６〜10
+                    'ウ', //6
+                    'オ', //7
+                    'キ', //8
+                    'ク', //9
+                    'ア', //10
                 ]"
             />
             <QuestionTemp3
@@ -55,7 +60,11 @@ const subject = '2021年度 フォームB'
                 '信用生命保険', '競争条件の公平性', '流出防止', '抱き合わせ販売', '商品情報', //問11〜15
                 ]"
                 :labels="[
-                'キ', 'エ', 'コ', 'ク', 'カ',  //問11〜15
+                    'キ', //11
+                    'エ', //12
+                    'コ', //13
+                    'ク', //14
+                    'カ', //15
                 ]"
             />
             <QuestionTemp3
@@ -66,7 +75,11 @@ const subject = '2021年度 フォームB'
                 '個人年金保険（定額・変額）', '事前説明義務', '残債務リスク', '相談窓口', '全面解禁', //問16〜20
                 ]"
                 :labels="[
-                'カ', 'ク', 'キ', 'コ', 'ケ',  //問16〜20
+                    'カ', //16
+                    'ク', //17
+                    'キ', //18
+                    'コ', //19
+                    'ケ', //20
                 ]"
             />
 <QuestionTemp1
@@ -173,29 +186,31 @@ const subject = '2021年度 フォームB'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '正しい',
-                '生命保険が第一分野、損害保険が第二分野。',
-                '被保険者の死亡後は、年金の支払は行わない。',
-                '認定生命保険士ではなく生命保険面接土。',
-                '保険料総額ではなく保険金総額。',
-                // 問36〜40
-                '正しい',
-                '応用課程ではなく専門課程。',
-                '正しい',
-                '正しい',
-                '正しい',
-                 //問41〜50
-                'A-保険業法', 'B-引き下げ', 'B-利差配当', 'C（A・Bともに正しい）', 'A-経験死亡率',
-                'C（A・Bともに正しい）', 'C（A・Bともに正しい）', 'B-自己負担の一部を補填する', 'A-地域', 'C（A・Bともに正しい）',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '正しい' }, //31
+                    { label: '解', content: '生命保険が第一分野、損害保険が第二分野。' }, //32
+                    { label: '解', content: '被保険者の死亡後は、年金の支払は行わない。' }, //33
+                    { label: '解', content: '認定生命保険士ではなく生命保険面接土。' }, //34
+                    { label: '解', content: '保険料総額ではなく保険金総額。' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '応用課程ではなく専門課程。' }, //37
+                    { label: '解', content: '正しい' }, //38
+                    { label: '解', content: '正しい' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'ア', content: '保険業法' }, //41
+                    { label: 'エ', content: '引き下げ' }, //42
+                    { label: 'ウ', content: '利差配当' }, //43
+                    { label: 'オ', content: '' }, //44
+                    { label: 'ア', content: '経験死亡率' }, //45
+                    { label: 'オ', content: '' }, //46
+                    { label: 'オ', content: '' }, //47
+                    { label: 'エ', content: '自己負担の一部を補填する' }, //48
+                    { label: 'イ', content: '地域' }, //49
+                    { label: 'オ', content: '' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解',  //問31〜35
-                '解', '解', '解', '解', '解',  //問36〜40
-                'ア', 'エ', 'ウ', 'オ', 'ア',  //問41〜45
-                'オ', 'オ', 'エ', 'イ', 'オ',  //問46〜50
-                ]"
+                
             />
         </div>
 

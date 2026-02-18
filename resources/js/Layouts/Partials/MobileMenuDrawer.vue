@@ -227,18 +227,6 @@ const setActiveYear = (subjectKey, yearLabel) => {
                                                 class="h-2 w-2 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400"
                                             ></div>
                                             <span>{{ yearLabel }}</span>
-                                            <span
-                                                v-if="
-                                                    !hasPremium &&
-                                                    !(
-                                                        yearLabel === '2024年度' &&
-                                                        subject.key === 'souron'
-                                                    )
-                                                "
-                                                class="ml-auto rounded-full border border-rose-200 bg-rose-50 px-2 py-0.5 text-[10px] font-semibold text-rose-700"
-                                            >
-                                                プレミアム
-                                            </span>
                                         </div>
 
                                         <ul class="space-y-1">
@@ -256,34 +244,6 @@ const setActiveYear = (subjectKey, yearLabel) => {
                                                         class="flex items-center gap-2 font-medium"
                                                     >
                                                         フォーム{{ form.toUpperCase() }}
-                                                        <img
-                                                            v-if="
-                                                                !hasPremium &&
-                                                                !(
-                                                                    yearLabel ===
-                                                                        '2024年度' &&
-                                                                    subject.key ===
-                                                                        'souron'
-                                                                )
-                                                            "
-                                                            src="/images/lock_open.svg"
-                                                            alt=""
-                                                            class="h-4 w-4 opacity-60"
-                                                        />
-                                                        <span
-                                                            v-if="
-                                                                !hasPremium &&
-                                                                !(
-                                                                    yearLabel ===
-                                                                        '2024年度' &&
-                                                                    subject.key ===
-                                                                        'souron'
-                                                                )
-                                                            "
-                                                            class="rounded-full border border-purple-100 bg-purple-50 px-2 py-0.5 text-[10px] font-semibold text-purple-500"
-                                                        >
-                                                            冒頭5問公開中
-                                                        </span>
                                                     </span>
                                                     <svg
                                                         class="h-4 w-4 text-indigo-400 transition-transform group-hover:translate-x-1"

@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -12,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険会計"
 const subject = '2022年度 フォームC'
 
-</script>
+const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
 
 <template>
 
@@ -35,7 +32,11 @@ const subject = '2022年度 フォームC'
                 '洗替方式', '費用', '標準', '除く', '最低額', // 問１〜５
                 ]"
                 :labels="[
-                'エ', 'コ', 'カ', 'ウ', 'ケ',  //問１〜５
+                    'エ', //1
+                    'コ', //2
+                    'カ', //3
+                    'ウ', //4
+                    'ケ', //5
                 ]"
             />
             <QuestionTemp3
@@ -46,7 +47,11 @@ const subject = '2022年度 フォームC'
                 '未経過', '危険', '内部留保', '純保険料式', '20%', //問６〜10
                 ]"
                 :labels="[
-                'オ', 'ウ', 'イ', 'コ', 'キ',  //問６〜10
+                    'オ', //6
+                    'ウ', //7
+                    'イ', //8
+                    'コ', //9
+                    'キ', //10
                 ]"
             />
             <QuestionTemp3
@@ -57,7 +62,11 @@ const subject = '2022年度 フォームC'
                 '給付金', '発生', '団体定期保険の年金払特約', '個人年金の年金一括支払額', '解約控除', //問11〜15
                 ]"
                 :labels="[
-                'ク', 'キ', 'ケ', 'ウ', 'コ',  //問11〜15
+                    'ク', //11
+                    'キ', //12
+                    'ケ', //13
+                    'ウ', //14
+                    'コ', //15
                 ]"
             />
             <QuestionTemp3
@@ -68,7 +77,11 @@ const subject = '2022年度 フォームC'
                 '支払遅延利息', '特定取引', '除く', '印紙税', '減価償却費', //問16〜20
                 ]"
                 :labels="[
-                'ケ', 'キ', 'オ', 'カ', 'イ',  //問16〜20
+                    'ケ', //16
+                    'キ', //17
+                    'オ', //18
+                    'カ', //19
+                    'イ', //20
                 ]"
             />
 <QuestionTemp1
@@ -175,29 +188,31 @@ const subject = '2022年度 フォームC'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '正しい',
-                '正しい',
-                '会計情報の開示という機能はその中に含まれていないという点で、会社法・金融商品取引法に基づく会計とは異なっている。',
-                '正しい',
-                '正しい',
-                // 問36〜40
-                '正しい',
-                '内閣府令で、資産ごとに定められた積立基準により計算された額を、積立限度額に達するまで価格変動準備金として積み立てることを義務付けている。',
-                '現金主義ではなく、実現主義。',
-                '正しい',
-                '監査役会は3人以上で構成された監査役（そのうち半数以上は社外監査役）のすべてで組織する。',
-                 //問41〜50
-                'C（A・Bともに正しい）', 'B-管理会計', 'C（A・Bともに正しい）', 'A-負債', 'B-5分の1',
-                'A-売買目的有価証券', 'A-評価換え', 'A-期末', 'B-定款', 'B-自己査定',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '正しい' }, //31
+                    { label: '解', content: '正しい' }, //32
+                    { label: '解', content: '会計情報の開示という機能はその中に含まれていないという点で、会社法・金融商品取引法に基づく会計とは異なっている。' }, //33
+                    { label: '解', content: '正しい' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '内閣府令で、資産ごとに定められた積立基準により計算された額を、積立限度額に達するまで価格変動準備金として積み立てることを義務付けている。' }, //37
+                    { label: '解', content: '現金主義ではなく、実現主義。' }, //38
+                    { label: '解', content: '正しい' }, //39
+                    { label: '解', content: '監査役会は3人以上で構成された監査役（そのうち半数以上は社外監査役）のすべてで組織する。' }, //40
+                    // 問41〜50
+                    { label: 'オ', content: '' }, //41
+                    { label: 'エ', content: '管理会計' }, //42
+                    { label: 'オ', content: '' }, //43
+                    { label: 'ア', content: '負債' }, //44
+                    { label: 'ウ', content: '5分の1' }, //45
+                    { label: 'イ', content: '売買目的有価証券' }, //46
+                    { label: 'イ', content: '評価換え' }, //47
+                    { label: 'ア', content: '期末' }, //48
+                    { label: 'エ', content: '定款' }, //49
+                    { label: 'ウ', content: '自己査定' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解',  //問31〜35
-                '解', '解', '解', '解', '解',  //問36〜40
-                'オ', 'エ', 'オ', 'ア', 'ウ',  //問41〜45
-                'イ', 'イ', 'ア', 'エ', 'ウ',  //問46〜50
-                ]"
+                
             />
         </div>
 

@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -12,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2023年度 フォームB'
 
-</script>
+const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
 
 <template>
 
@@ -35,7 +32,11 @@ const subject = '2023年度 フォームB'
                 '世代間扶養', '18.30%', '16,900円', 'マクロ経済スライド', '2割', // 問１〜５
                 ]"
                 :labels="[
-                'ウ', 'オ', 'キ', 'ケ', 'ア',  //問１〜５
+                    'ウ', //1
+                    'オ', //2
+                    'キ', //3
+                    'ケ', //4
+                    'ア', //5
                 ]"
             />
             <QuestionTemp3
@@ -46,7 +47,11 @@ const subject = '2023年度 フォームB'
                 '2分の1', '5年', '10年', '短時間労働者', '産休期間中', //問６〜10
                 ]"
                 :labels="[
-                'ケ', 'ア', 'ウ', 'ク', 'キ',  //問６〜10
+                    'ケ', //6
+                    'ア', //7
+                    'ウ', //8
+                    'ク', //9
+                    'キ', //10
                 ]"
             />
             <QuestionTemp3
@@ -57,7 +62,11 @@ const subject = '2023年度 フォームB'
                 '継続的', 'マーケティング', '転換制度', 'エージェント', '不可分化', //問11〜15
                 ]"
                 :labels="[
-                'ウ', 'コ', 'キ', 'イ', 'ケ',  //問11〜15
+                    'ウ', //11
+                    'コ', //12
+                    'キ', //13
+                    'イ', //14
+                    'ケ', //15
                 ]"
             />
             <QuestionTemp3
@@ -68,7 +77,11 @@ const subject = '2023年度 フォームB'
                 'face to face', '情報通信機器', '囲い込み', 'CS（customer Satisfaciton）', '選択', //問16〜20
                 ]"
                 :labels="[
-                'ケ', 'エ', 'ア', 'ク', 'オ',  //問16〜20
+                    'ケ', //1
+                    'エ', //2
+                    'ア', //3
+                    'ク', //4
+                    'オ', //5
                 ]"
             />
 <QuestionTemp1
@@ -175,27 +188,31 @@ const subject = '2023年度 フォームB'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '正しい',
-                '住民票を有するすべての人へ個人番号が割り当てられた。',
-                '被保険者の生存中にかぎり、周期的に一定の金額の支払をするもの。',
-                '生命保険支払専門土ではなく生命保険面接士。',
-                '正しい',
-                // 問36〜40
-                '正しい',
-                '正しい',
-                '日本証券業協会ではなく生命保険協会。',
-                'これまで生命保険会社の支社の配置は、管理スパン上の問題や地域社会における店舗サービス機能の発揮ならびにPR効果の観点から、組織がある一定規模までに達すれば支社を分割するのが一般的であったが、近年ではコスト、効率化のため事務面の集約化や規模の大型化に向かう傾向が見られる。',
-                '正しい',
-                 //問41〜50
-                'B-ライフサイクル', 'A-３分の１', 'B-適合性の原則', 'A-6ヶ月', 'C（A・Bともに正しい）',
-                'A-企業等', 'A-移行', 'A-経験死亡率', 'B-5倍', 'C（A・Bともに正しい）',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '正しい' }, //31
+                    { label: '解', content: '住民票を有するすべての人へ個人番号が割り当てられた。' }, //32
+                    { label: '解', content: '被保険者の生存中にかぎり、周期的に一定の金額の支払をするもの。' }, //33
+                    { label: '解', content: '生命保険支払専門土ではなく生命保険面接士。' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '正しい' }, //37
+                    { label: '解', content: '日本証券業協会ではなく生命保険協会。' }, //38
+                    { label: '解', content: 'これまで生命保険会社の支社の配置は、管理スパン上の問題や地域社会における店舗サービス機能の発揮ならびにPR効果の観点から、組織がある一定規模までに達すれば支社を分割するのが一般的であったが、近年ではコスト、効率化のため事務面の集約化や規模の大型化に向かう傾向が見られる。' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'エ', content: 'ライフサイクル' }, //41
+                    { label: 'ア', content: '３分の１' }, //42
+                    { label: 'エ', content: '適合性の原則' }, //43
+                    { label: 'イ', content: '6ヶ月' }, //44
+                    { label: 'オ', content: '' }, //45
+                    { label: 'イ', content: '企業等' }, //46
+                    { label: 'イ', content: '移行' }, //47
+                    { label: 'ア', content: '経験死亡率' }, //48
+                    { label: 'ウ', content: '5倍' }, //49
+                    { label: 'オ', content: '' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解', '解', '解', '解', '解', '解',  //問31〜40
-                'エ', 'ア', 'エ', 'イ', 'オ', 'イ', 'イ', 'ア', 'ウ', 'オ',  //問41〜50
-                ]"
+                
             />
         </div>
 

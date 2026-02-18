@@ -1,5 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -11,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "危険選択"
 const subject = '2021年度 フォームC'
 
-</script>
+const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
 
 <template>
 
@@ -34,7 +33,11 @@ const subject = '2021年度 フォームC'
                 '告知聴取','生命予後','少なくない','問診','契約解除権', // 問１〜５
                 ]"
                 :labels="[
-                'ケ','カ','ク','コ','オ',  //問１〜５
+                    'ケ', //1
+                    'カ', //2
+                    'ク', //3
+                    'コ', //4
+                    'オ', //5
                 ]"
             />
             <QuestionTemp3
@@ -45,7 +48,11 @@ const subject = '2021年度 フォームC'
                 '再発','疾病特約','肥満体','死亡率','会社', //問６〜10
                 ]"
                 :labels="[
-                'キ','ア','ケ','オ','ウ',  //問６〜10
+                    'キ', //6
+                    'ア', //7
+                    'ケ', //8
+                    'オ', //9
+                    'ウ', //10
                 ]"
             />
             <QuestionTemp3
@@ -56,7 +63,11 @@ const subject = '2021年度 フォームC'
                 '被用者団体','団体性','相似する','保険加入者のみ','加入率', //問11〜15
                 ]"
                 :labels="[
-                'カ','ア','キ','ク','ウ',  //問11〜15
+                    'カ', //11
+                    'ア', //12
+                    'キ', //13
+                    'ク', //14
+                    'ウ', //15
                 ]"
             />
             <QuestionTemp3
@@ -67,7 +78,11 @@ const subject = '2021年度 フォームC'
                 '総合福祉団体的保険','権利','保険契約者','一括告知','平準化', //問16〜20
                 ]"
                 :labels="[
-                'ク','カ','ア','コ','オ',  //問16〜20
+                    'ク', //16
+                    'カ', //17
+                    'ア', //18
+                    'コ', //19
+                    'オ', //20
                 ]"
             />
 <QuestionTemp1
@@ -174,29 +189,31 @@ const subject = '2021年度 フォームC'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '正しい',
-                '正しい',
-                '責任は全員が負うことになる。',
-                '正しい',
-                '最小血圧と最大血圧が逆。',
-                // 問36〜40
-                '正しい',
-                '正しい',
-                '生存する個人に関する情報であり、死亡した個人は対象外。',
-                '1保険金受取人ではなく、1被保険者。',
-                '正しい',
-                 //問41〜50
-                'C（A・Bともに正しい）', 'C（A・Bともに正しい）', 'B-収支相当の原則', 'A-インシュリン', 'A-20名〜30名',
-                'A-特別保険料領収法', 'B-契約者', 'B-不実の告知', 'A-契約金額', 'B-サープラス',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '正しい' }, //31
+                    { label: '解', content: '正しい' }, //32
+                    { label: '解', content: '責任は全員が負うことになる。' }, //33
+                    { label: '解', content: '正しい' }, //34
+                    { label: '解', content: '最小血圧と最大血圧が逆。' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '正しい' }, //37
+                    { label: '解', content: '生存する個人に関する情報であり、死亡した個人は対象外。' }, //38
+                    { label: '解', content: '1保険金受取人ではなく、1被保険者。' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'オ', content: '' }, //41
+                    { label: 'オ', content: '' }, //42
+                    { label: 'ウ', content: '収支相当の原則' }, //43
+                    { label: 'ア', content: 'インシュリン' }, //44
+                    { label: 'ア', content: '20名〜30名' }, //45
+                    { label: 'イ', content: '特別保険料領収法' }, //46
+                    { label: 'エ', content: '契約者' }, //47
+                    { label: 'ウ', content: '不実の告知' }, //48
+                    { label: 'ア', content: '契約金額' }, //49
+                    { label: 'エ', content: 'サープラス' }, //50
                 ]"
-                :labels="[
-                '解','解','解','解','解',  //問31〜35
-                '解','解','解','解','解',  //問36〜40
-                'オ','オ','ウ','ア','ア',  //問41〜45
-                'イ','エ','ウ','ア','エ',  //問46〜50
-                ]"
+                
             />
         </div>
 

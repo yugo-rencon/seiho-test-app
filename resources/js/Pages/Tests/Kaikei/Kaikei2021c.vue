@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -12,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険会計"
 const subject = '2021年度 フォームC'
 
-</script>
+const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
 
 <template>
 
@@ -35,7 +32,11 @@ const subject = '2021年度 フォームC'
                 '支払備金', '洗替え', '自己査定', '時価', 'ヘッジ', // 問１〜５
                 ]"
                 :labels="[
-                'コ', 'ア', 'キ', 'ウ', 'オ',  //問１〜５
+                    'コ', //1
+                    'ア', //2
+                    'キ', //3
+                    'ウ', //4
+                    'オ', //5
                 ]"
             />
             <QuestionTemp3
@@ -46,7 +47,11 @@ const subject = '2021年度 フォームC'
                 '回収不能', '低価法', '特定海外債権引当勘定', '割引現在価値', '全額', //問６〜10
                 ]"
                 :labels="[
-                'ク', 'コ', 'カ', 'エ', 'ア',  //問６〜10
+                    'ク', //6
+                    'コ', //7
+                    'カ', //8
+                    'エ', //9
+                    'ア', //10
                 ]"
             />
             <QuestionTemp3
@@ -57,7 +62,11 @@ const subject = '2021年度 フォームC'
                 '認識', '実現主義', '発生主義', '費用収益対応の原則', '前者', //問11〜15
                 ]"
                 :labels="[
-                'カ', 'ア', 'ク', 'ウ', 'エ',  //問11〜15
+                    'カ', //11
+                    'ア', //12
+                    'ク', //13
+                    'ウ', //14
+                    'エ', //15
                 ]"
             />
             <QuestionTemp3
@@ -68,7 +77,11 @@ const subject = '2021年度 フォームC'
                 '売上高', '付加保険料', '現金主義', '未収保険料', '責任準備金', //問16〜20
                 ]"
                 :labels="[
-                'ク', 'カ', 'イ', 'オ', 'ウ',  //問16〜20
+                    'ク', //16
+                    'カ', //17
+                    'イ', //18
+                    'オ', //19
+                    'ウ', //20
                 ]"
             />
 <QuestionTemp1
@@ -175,29 +188,31 @@ const subject = '2021年度 フォームC'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                'たとえば、電力会社と電力供給の契約を締結した場合、契約締結の時点では、それぞれに「電力を供給する義務」と「電力の供給を受ける権利」が発生するが、会計上の取引とはならない。',
-                '正しい',
-                '正しい',
-                '正しい',
-                '正しい',
-                // 問36〜40
-                '生命保険会社においては、未払事業費、未払税金、未払賞与等が含まれる。',
-                '自己株式は、純資産の部から控除する形式で表示することとされた。',
-                '正しい',
-                '据置期間に対応する利息も保険金据置支払金に計上される。',
-                '正しい',
-                 //問41〜50
-                'B-買掛金元帳', 'B-処理原則', 'C（A・Bともに正しい）', 'A-使用目的', 'A-総代会',
-                'A-資産除去', 'B-利源分析', 'B-支払備金', 'C（A・Bともに正しい）', 'A-社外',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: 'たとえば、電力会社と電力供給の契約を締結した場合、契約締結の時点では、それぞれに「電力を供給する義務」と「電力の供給を受ける権利」が発生するが、会計上の取引とはならない。' }, //31
+                    { label: '解', content: '正しい' }, //32
+                    { label: '解', content: '正しい' }, //33
+                    { label: '解', content: '正しい' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '生命保険会社においては、未払事業費、未払税金、未払賞与等が含まれる。' }, //36
+                    { label: '解', content: '自己株式は、純資産の部から控除する形式で表示することとされた。' }, //37
+                    { label: '解', content: '正しい' }, //38
+                    { label: '解', content: '据置期間に対応する利息も保険金据置支払金に計上される。' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'ウ', content: '買掛金元帳' }, //41
+                    { label: 'ウ', content: '処理原則' }, //42
+                    { label: 'オ', content: '' }, //43
+                    { label: 'ア', content: '使用目的' }, //44
+                    { label: 'イ', content: '総代会' }, //45
+                    { label: 'ア', content: '資産除去' }, //46
+                    { label: 'エ', content: '利源分析' }, //47
+                    { label: 'エ', content: '支払備金' }, //48
+                    { label: 'オ', content: '' }, //49
+                    { label: 'イ', content: '社外' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解',  //問31〜35
-                '解', '解', '解', '解', '解',  //問36〜40
-                'ウ', 'ウ', 'オ', 'ア', 'イ',  //問41〜45
-                'ア', 'エ', 'エ', 'オ', 'イ',  //問46〜50
-                ]"
+                
             />
         </div>
 

@@ -31,3 +31,20 @@ body {
 .button:hover {
     @apply text-purple-500;
 }
+
+/* 計算問題（QuestionTemp4）向け: 通常文は折り返し、式行だけ横スクロール可能にする */
+.question-temp4-explanation {
+    @apply whitespace-pre-wrap break-words;
+}
+
+.question-temp4-explanation .calc-line {
+    @apply my-1 block overflow-x-auto whitespace-nowrap rounded bg-gray-50 px-2 py-1 font-mono text-[0.95em];
+}
+
+.question-temp4-explanation .calc-steps {
+    @apply my-2 list-decimal space-y-1 pl-5;
+}
+
+.question-temp4-explanation .calc-result {
+    @apply mt-2 font-semibold text-purple-700;
+}

@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -12,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険会計"
 const subject = '2022年度 フォームB'
 
-</script>
+const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
 
 <template>
 
@@ -35,7 +32,11 @@ const subject = '2022年度 フォームB'
                 '洗替方式', '費用', '標準', '除く', '最低額', // 問１〜５
                 ]"
                 :labels="[
-                'エ', 'コ', 'カ', 'ウ', 'ケ',  //問１〜５
+                    'エ', //1
+                    'コ', //2
+                    'カ', //3
+                    'ウ', //4
+                    'ケ', //5
                 ]"
             />
             <QuestionTemp3
@@ -46,7 +47,11 @@ const subject = '2022年度 フォームB'
                 '未経過', '危険', '内部留保', '純保険料式', '20%', //問６〜10
                 ]"
                 :labels="[
-                'オ', 'ウ', 'イ', 'コ', 'キ',  //問６〜10
+                    'オ', //6
+                    'ウ', //7
+                    'イ', //8
+                    'コ', //9
+                    'キ', //10
                 ]"
             />
             <QuestionTemp3
@@ -57,7 +62,11 @@ const subject = '2022年度 フォームB'
                 '現金', '未収保険料', '前納保険料', '費用収益対応', '全額', //問11〜15
                 ]"
                 :labels="[
-                'オ', 'キ', 'エ', 'イ', 'コ',  //問11〜15
+                    'オ', //11
+                    'キ', //12
+                    'エ', //13
+                    'イ', //14
+                    'コ', //15
                 ]"
             />
             <QuestionTemp3
@@ -68,7 +77,11 @@ const subject = '2022年度 フォームB'
                 '売買目的', '発生', '保険金受取人', '評価換え', '内閣総理大臣', //問16〜20
                 ]"
                 :labels="[
-                'キ', 'エ', 'イ', 'ク', 'カ',  //問16〜20
+                    'キ', //16
+                    'エ', //17
+                    'イ', //18
+                    'ク', //19
+                    'カ', //20
                 ]"
             />
 <QuestionTemp1
@@ -175,29 +188,31 @@ const subject = '2022年度 フォームB'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '正しい',
-                '正しい',
-                '正しい',
-                '相互会社は剰余金処分に関する議案の作成が求められる。',
-                '正しい',
-                // 問36〜40
-                '購入により取得した有価証券については、購入代価に購入手数料その他購入するために要した費用を加算した金額が取得価額となる。',
-                '法人税法上の貸倒引当金として認められる額を超える額は、損金に算入されない。',
-                '債権額ではなく、債務額。',
-                '正しい',
-                '正しい',
-                 //問41〜50
-                'C（A・Bともに正しい）', 'A-補助記入帳', 'B-のれん（連結調整勘定）', 'A-負債', 'B-固定',
-                'B-相互会社だけに', 'A-団体年金', 'A-期末', 'C（A・Bともに正しい）', 'B-国税通則法',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '正しい' }, //31
+                    { label: '解', content: '正しい' }, //32
+                    { label: '解', content: '正しい' }, //33
+                    { label: '解', content: '相互会社は剰余金処分に関する議案の作成が求められる。' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '購入により取得した有価証券については、購入代価に購入手数料その他購入するために要した費用を加算した金額が取得価額となる。' }, //36
+                    { label: '解', content: '法人税法上の貸倒引当金として認められる額を超える額は、損金に算入されない。' }, //37
+                    { label: '解', content: '債権額ではなく、債務額。' }, //38
+                    { label: '解', content: '正しい' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'オ', content: '' }, //41
+                    { label: 'イ', content: '補助記入帳' }, //42
+                    { label: 'エ', content: 'のれん（連結調整勘定）' }, //43
+                    { label: 'ア', content: '負債' }, //44
+                    { label: 'ウ', content: '固定' }, //45
+                    { label: 'ウ', content: '相互会社だけに' }, //46
+                    { label: 'イ', content: '団体年金' }, //47
+                    { label: 'ア', content: '期末' }, //48
+                    { label: 'オ', content: '' }, //49
+                    { label: 'ウ', content: '国税通則法' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解',  //問31〜35
-                '解', '解', '解', '解', '解',  //問36〜40
-                'オ', 'イ', 'エ', 'ア', 'ウ',  //問41〜45
-                'ウ', 'イ', 'ア', 'オ', 'ウ',  //問46〜50
-                ]"
+                
             />
         </div>
 

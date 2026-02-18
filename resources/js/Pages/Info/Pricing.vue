@@ -12,6 +12,9 @@ const props = defineProps({
 
 const page = usePage();
 const hasPremium = computed(() => page.props.auth?.hasPremium === true);
+const isPurchaseEnabled = computed(
+    () => page.props.features?.premiumPurchaseEnabled === true,
+);
 
 const plans = [
     {
@@ -35,8 +38,8 @@ const plans = [
         name: "フリープラン（一部無料）",
         price: "¥0",
         note: "無料",
-        description: "生命保険総論の2024年度フォームA〜Cを無料公開しています。",
-        features: ["生命保険総論 2024年度 フォームA〜C"],
+        description: "全8科目の2024年度フォームA〜Cを無料公開しています。",
+        features: ["全8科目 2024年度 フォームA〜C"],
         cta: "無料で見る",
         href: "tests.index",
     },
@@ -112,13 +115,13 @@ const plans = [
                             v-if="plan.key === 'free'"
                             class="mt-3 text-xs text-gray-500"
                         >
-                            ※他科目は冒頭5問まで公開しています。
+                            ※2023年度以前は冒頭5問まで公開しています。
                         </p>
                     </div>
 
                     <div class="mt-8">
                         <Link
-                            v-if="plan.key === 'premium' && !hasPremium"
+                            v-if="plan.key === 'premium' && !hasPremium && isPurchaseEnabled"
                             :href="
                                 route(
                                     plan.href,
@@ -135,7 +138,19 @@ const plans = [
                             "
                         >
                             {{ plan.cta }}
-                        </Link>
+                                </Link>
+                        <button
+                            v-else-if="
+                                plan.key === 'premium' &&
+                                !hasPremium &&
+                                !isPurchaseEnabled
+                            "
+                            type="button"
+                            disabled
+                            class="inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-5 py-3 text-base font-semibold text-purple-700"
+                        >
+                            プレミアム機能は現在準備中です。4月より正式リリース予定です。
+                        </button>
                         <button
                             v-else-if="plan.key === 'premium' && hasPremium"
                             type="button"

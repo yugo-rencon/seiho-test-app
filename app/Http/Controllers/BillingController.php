@@ -13,8 +13,14 @@ class BillingController extends Controller
     {
         $stripeSecret = config('services.stripe.secret');
         $priceId = config('services.stripe.price_premium');
+        $purchaseEnabled = (bool) config('services.stripe.purchase_enabled');
         $user = $request->user();
         $returnTo = $this->sanitizeReturnTo($request->query('return_to'));
+
+        if (!$purchaseEnabled) {
+            return redirect()->route('pricing', $returnTo ? ['return_to' => $returnTo] : [])
+                ->with('status', 'プレミアム機能は現在準備中です。4月より正式リリース予定です。');
+        }
 
         // 既購入ユーザーはStripeへ遷移させない
         if ($user && $user->hasPremiumAccess()) {

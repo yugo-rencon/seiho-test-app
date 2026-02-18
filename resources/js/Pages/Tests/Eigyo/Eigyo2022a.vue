@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -12,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2022年度 フォームA'
 
-</script>
+const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -32,7 +29,11 @@ const subject = '2022年度 フォームA'
                 '60歳', '報酬比例', '定額保険料', '標準賞与額', '18.30%', // 問１〜５
                 ]"
                 :labels="[
-                'ケ', 'ク', 'エ', 'カ', 'イ',  //問１〜５
+                    'ケ', //1
+                    'ク', //2
+                    'エ', //3
+                    'カ', //4
+                    'イ', //5
                 ]"
             />
             <QuestionTemp3
@@ -43,7 +44,11 @@ const subject = '2022年度 フォームA'
                 '10年', '1ヶ月', '1級〜3級', '子の数', '4分の3', //問６〜10
                 ]"
                 :labels="[
-                'カ', 'ア', 'イ', 'コ', 'ク',  //問６〜10
+                    'カ', //6
+                    'ア', //7
+                    'イ', //8
+                    'コ', //9
+                    'ク', //10
                 ]"
             />
             <QuestionTemp3
@@ -54,7 +59,11 @@ const subject = '2022年度 フォームA'
                 '規約型', 'GIC（guaranteed interest contract：利率保証契約）', '拠出型企業年金', 'B（型）年金', '国民年金基金', //問11〜15
                 ]"
                 :labels="[
-                'キ', 'オ', 'ケ', 'イ', 'ク',  //問11〜15
+                    'キ', //11
+                    'オ', //12
+                    'ケ', //13
+                    'イ', //14
+                    'ク', //15
                 ]"
             />
             <QuestionTemp3
@@ -65,7 +74,11 @@ const subject = '2022年度 フォームA'
                 '団体生存保険', '公務員', '新企業年金保険', 'A（型）年金', '合同', //問16〜20
                 ]"
                 :labels="[
-                'カ', 'オ', 'キ', 'ケ', 'ク',  //問16〜20
+                    'カ', //16
+                    'オ', //17
+                    'キ', //18
+                    'ケ', //19
+                    'ク', //20
                 ]"
             />
 <QuestionTemp1
@@ -172,27 +185,31 @@ const subject = '2022年度 フォームA'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '国、都道府県、被保険者が重層的に支えあう制度となっている。',
-                '業務の代理に保険募集の代理を含まれることを明確化したことから、保険会社が他保険会社と業務の代理・事務の代行に関する契約を結んで、他保険会社商品を販売することが可能となった。',
-                '正しい',
-                'メリットとしては、海外の比較的高い金利を反映することで、予定利率を高く設定していること。',
-                '正しい',
-                // 問36〜40
-                '自己負担の一部を補填する治療給付金、定額の入院給付金、死亡時の死亡保険金の3つから構成される。',
-                '正しい',
-                '正しい',
-                '正しい',
-                '専業型と兼業型。',
-                 //問41〜50
-                'A-年齢', 'A-第3号', 'C（A・Bともに正しい）', 'B-面接', 'A-新種個人年金保険',
-                'A-第1号被保険者', 'A-5倍', 'B-媒介', 'A-専門課程', 'A-地域',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '国、都道府県、被保険者が重層的に支えあう制度となっている。' }, //31
+                    { label: '解', content: '業務の代理に保険募集の代理を含まれることを明確化したことから、保険会社が他保険会社と業務の代理・事務の代行に関する契約を結んで、他保険会社商品を販売することが可能となった。' }, //32
+                    { label: '解', content: '正しい' }, //33
+                    { label: '解', content: 'メリットとしては、海外の比較的高い金利を反映することで、予定利率を高く設定していること。' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '自己負担の一部を補填する治療給付金、定額の入院給付金、死亡時の死亡保険金の3つから構成される。' }, //36
+                    { label: '解', content: '正しい' }, //37
+                    { label: '解', content: '正しい' }, //38
+                    { label: '解', content: '正しい' }, //39
+                    { label: '解', content: '専業型と兼業型。' }, //40
+                    // 問41〜50
+                    { label: 'ア', content: '年齢' }, //41
+                    { label: 'イ', content: '第3号' }, //42
+                    { label: 'オ', content: '' }, //43
+                    { label: 'エ', content: '面接' }, //44
+                    { label: 'イ', content: '新種個人年金保険' }, //45
+                    { label: 'ア', content: '第1号被保険者' }, //46
+                    { label: 'イ', content: '5倍' }, //47
+                    { label: 'エ', content: '媒介' }, //48
+                    { label: 'ア', content: '専門課程' }, //49
+                    { label: 'イ', content: '地域' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解', '解', '解', '解', '解', '解',  //問31〜40
-                'ア', 'イ', 'オ', 'エ', 'イ', 'ア', 'イ', 'エ', 'ア', 'イ',  //問41〜50
-                ]"
+                
             />
         </div>
 

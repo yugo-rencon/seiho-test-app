@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -13,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2021年度 フォームA'
 
-</script>
+const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -33,7 +30,11 @@ const subject = '2021年度 フォームA'
                 '世代間扶養', '18.30%', '16,900円', 'マクロ経済スライド', '2割', // 問１〜５
                 ]"
                 :labels="[
-                'ウ', 'オ', 'キ', 'ケ', 'ア',  //問１〜５
+                    'ウ', //1
+                    'オ', //2
+                    'キ', //3
+                    'ケ', //4
+                    'ア', //5
                 ]"
             />
             <QuestionTemp3
@@ -44,7 +45,11 @@ const subject = '2021年度 フォームA'
                 '2分の1', '5年', '10年', '短時間労働者', '産休期間中', //問６〜10
                 ]"
                 :labels="[
-                'ケ', 'ア', 'ウ', 'ク', 'キ',  //問６〜10
+                    'ケ', //6
+                    'ア', //7
+                    'ウ', //8
+                    'ク', //9
+                    'キ', //10
                 ]"
             />
             <QuestionTemp3
@@ -55,7 +60,11 @@ const subject = '2021年度 フォームA'
                 '信用生命保険', '競争条件の公平性', '流出防止', '抱き合わせ販売', '商品情報', //問11〜15
                 ]"
                 :labels="[
-                'キ', 'エ', 'コ', 'ク', 'カ',  //問11〜15
+                    'キ', //11
+                    'エ', //12
+                    'コ', //13
+                    'ク', //14
+                    'カ', //15
                 ]"
             />
             <QuestionTemp3
@@ -66,7 +75,11 @@ const subject = '2021年度 フォームA'
                 '個人年金保険（定額・変額）', '事前説明義務', '残債務リスク', '相談窓口', '全面解禁', //問16〜20
                 ]"
                 :labels="[
-                'カ', 'ク', 'キ', 'コ', 'ケ',  //問16〜20
+                    'カ', //16
+                    'ク', //17
+                    'キ', //18
+                    'コ', //19
+                    'ケ', //20
                 ]"
             />
 <QuestionTemp1
@@ -173,29 +186,31 @@ const subject = '2021年度 フォームA'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '運営主体は各都道府県ではなく各市区町村。',
-                '生命保険が第一分野、損害保険が第二分野。',
-                '正しい',
-                '認定生命保険士ではなく生命保険面接士。',
-                '正しい',
-                // 問36〜40
-                '正しい',
-                '3倍ではなく5倍。',
-                '正しい',
-                '正しい',
-                '最低賃金法に基づく地域別最低賃金が適用される。',
-                 //問41〜50
-                'C（A・Bともに正しい）', 'C（A・Bともに正しい）', 'B-利差配当', 'B-保険料', 'A-経験死亡率',
-                'A-企業等', 'A-賦払償還債務', 'B-自己負担の一部を補填する', 'C（A・Bともに正しい）', 'B-分割',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '運営主体は各都道府県ではなく各市区町村。' }, //31
+                    { label: '解', content: '生命保険が第一分野、損害保険が第二分野。' }, //32
+                    { label: '解', content: '正しい' }, //33
+                    { label: '解', content: '認定生命保険士ではなく生命保険面接士。' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '3倍ではなく5倍。' }, //37
+                    { label: '解', content: '正しい' }, //38
+                    { label: '解', content: '正しい' }, //39
+                    { label: '解', content: '最低賃金法に基づく地域別最低賃金が適用される。' }, //40
+                    // 問41〜50
+                    { label: 'オ', content: '' }, //41
+                    { label: 'オ', content: '' }, //42
+                    { label: 'ウ', content: '利差配当' }, //43
+                    { label: 'エ', content: '保険料' }, //44
+                    { label: 'ア', content: '経験死亡率' }, //45
+                    { label: 'イ', content: '企業等' }, //46
+                    { label: 'イ', content: '賦払償還債務' }, //47
+                    { label: 'エ', content: '自己負担の一部を補填する' }, //48
+                    { label: 'オ', content: '' }, //49
+                    { label: 'ウ', content: '分割' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解',  //問31〜35
-                '解', '解', '解', '解', '解',  //問36〜40
-                'オ', 'オ', 'ウ', 'エ', 'ア',  //問41〜45
-                'イ', 'イ', 'エ', 'オ', 'ウ',  //問46〜50
-                ]"
+                
             />
         </div>
 

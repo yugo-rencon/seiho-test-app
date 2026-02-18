@@ -11,103 +11,107 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                     プライバシーポリシー（個人情報保護方針）
                 </h1>
                 <p class="mt-4 text-base text-gray-600">
-                    当サイトにおける個人情報の取り扱い方針を定めます。
+                    当サイトにおける個人情報の取り扱い方針を定めるものです。
                 </p>
             </section>
 
             <section class="mt-8 space-y-6 text-sm text-gray-700 leading-relaxed">
                 <div>
-                    <h2 class="text-base font-bold text-gray-900">1. 個人情報の取り扱いについて</h2>
+                    <h2 class="text-base font-bold text-gray-900">1. 基本方針</h2>
                     <p class="mt-2">
-                        当サイトは、ユーザーの個人情報の保護を重要な責務と考え、以下の方針に従って個人情報を取り扱います。
+                        生保講座過去問解説（以下「当サイト」）は、ユーザーの個人情報を適切に取り扱い、関連法令を遵守します。
                     </p>
                 </div>
 
                 <div>
                     <h2 class="text-base font-bold text-gray-900">2. 収集する情報</h2>
-                    <p class="mt-2">
-                        当サイトでは、以下の情報を収集する場合があります：
-                    </p>
                     <ul class="mt-2 list-disc list-inside space-y-1">
-                        <li>お問い合わせフォームからの送信情報（メールアドレス、お問い合わせ内容）</li>
-                        <li>アクセス解析による利用状況データ（アクセス日時、参照元ページ、使用ブラウザなど）</li>
+                        <li>アカウント情報（メールアドレス、暗号化されたパスワード、Googleログイン時の識別情報）</li>
+                        <li>お問い合わせ情報（メールアドレス、お問い合わせ種別、内容）</li>
+                        <li>学習記録（合格基準、科目別スコアなどの入力情報）</li>
+                        <li>決済連携情報（Stripeの顧客ID、決済セッションID、決済ステータス）</li>
+                        <li>アクセス解析情報（閲覧ページ、利用端末、Cookieなど）</li>
                     </ul>
                 </div>
 
                 <div>
                     <h2 class="text-base font-bold text-gray-900">3. 個人情報の利用目的</h2>
-                    <p class="mt-2">
-                        収集した個人情報は、以下の目的で利用します：
-                    </p>
                     <ul class="mt-2 list-disc list-inside space-y-1">
-                        <li>お問い合わせへの回答や必要な情報の提供</li>
-                        <li>サービスの改善や新機能の開発</li>
-                        <li>不正アクセスの防止やセキュリティの確保</li>
-                        <li>利用規約違反への対応</li>
+                        <li>ログイン認証、サービス提供、学習機能の表示</li>
+                        <li>お問い合わせ対応</li>
+                        <li>プレミアムプランの購入状態管理</li>
+                        <li>不正利用防止・障害対応・セキュリティ対策</li>
+                        <li>サイト改善・利用状況分析</li>
                     </ul>
                 </div>
 
                 <div>
                     <h2 class="text-base font-bold text-gray-900">4. 個人情報の第三者提供</h2>
                     <p class="mt-2">
-                        当サイトは、以下の場合を除き、収集した個人情報を第三者に提供いたしません：
+                        当サイトは、以下の場合を除き、個人情報を第三者に提供しません。
                     </p>
                     <ul class="mt-2 list-disc list-inside space-y-1">
                         <li>ユーザーの同意がある場合</li>
                         <li>法令に基づく場合</li>
-                        <li>人の生命、身体または財産の保護のために必要がある場合</li>
+                        <li>人の生命・身体・財産の保護のために必要がある場合</li>
                     </ul>
                 </div>
 
                 <div>
-                    <h2 class="text-base font-bold text-gray-900">5. アクセス解析ツールについて</h2>
+                    <h2 class="text-base font-bold text-gray-900">5. 外部サービスの利用</h2>
                     <p class="mt-2">
-                        当サイトでは、Googleアナリティクスを使用して、サイトの利用状況を分析しています。GoogleアナリティクスはCookieを使用しますが、個人を特定する情報は収集しません。
+                        当サイトでは、以下の外部サービスを利用しています。
+                    </p>
+                    <ul class="mt-2 list-disc list-inside space-y-1">
+                        <li>Google Analytics（アクセス解析）</li>
+                        <li>Google AdSense（広告配信）</li>
+                        <li>Stripe（決済処理）</li>
+                        <li>Google OAuth（Googleログイン）</li>
+                    </ul>
+                    <p class="mt-2">
+                        これらのサービスでは、各提供事業者の定めるプライバシーポリシーに基づきデータが処理される場合があります。
                     </p>
                 </div>
 
                 <div>
                     <h2 class="text-base font-bold text-gray-900">6. Cookieの使用について</h2>
                     <p class="mt-2">
-                        当サイトでは、利便性向上のためにCookieを使用することがあります。Cookieの使用を望まない場合は、ブラウザ設定で無効にできます。
+                        当サイトは、ログイン状態の維持、アクセス解析、広告配信の最適化のためCookieを利用します。Cookieはブラウザ設定で無効化できますが、一部機能が利用できなくなる場合があります。
                     </p>
                 </div>
 
                 <div>
-                    <h2 class="text-base font-bold text-gray-900">7. 情報の開示・訂正・削除</h2>
+                    <h2 class="text-base font-bold text-gray-900">7. 情報の開示・訂正・削除等</h2>
                     <p class="mt-2">
-                        当サイトが保有する個人情報について、ユーザーから開示、訂正、削除の要望があった場合、本人確認の上で速やかに対応いたします。
+                        当サイトが保有する個人情報について、開示・訂正・削除等の要請があった場合は、本人確認の上で法令に従い対応します。
                     </p>
                 </div>
 
                 <div>
                     <h2 class="text-base font-bold text-gray-900">8. セキュリティ対策</h2>
                     <p class="mt-2">
-                        個人情報の漏洩、滅失、き損を防ぐため、適切なセキュリティ対策を実施しています。
+                        個人情報の漏えい、滅失、毀損を防止するため、アクセス制御等の必要かつ適切な安全管理措置を講じます。
                     </p>
                 </div>
 
                 <div>
                     <h2 class="text-base font-bold text-gray-900">9. プライバシーポリシーの変更</h2>
                     <p class="mt-2">
-                        必要に応じて本ポリシーを変更することがあります。変更した場合は当ページで告知します。
+                        本ポリシーは必要に応じて変更することがあります。変更後の内容は、本ページに掲載した時点から適用します。
                     </p>
                 </div>
 
                 <div>
                     <h2 class="text-base font-bold text-gray-900">10. お問い合わせ先</h2>
                     <p class="mt-2">
-                        本ポリシーに関するお問い合わせは、お問い合わせフォームよりご連絡ください。
+                        本ポリシーに関するお問い合わせは、以下までご連絡ください。<br />
+                        メールアドレス：seihokoza.test@gmail.com
                     </p>
-                </div>
-
-                <div class="rounded-xl border border-gray-100 bg-white p-4 text-xs text-gray-500">
-                    ※ 内容は運営方針に合わせて編集してください。
                 </div>
             </section>
 
             <div class="mt-10 text-xs text-gray-500 border-t border-gray-100 pt-4">
-                最終更新日：2025年2月8日
+                最終更新日：2026年2月16日
             </div>
         </div>
     </SeihoTestLayout>

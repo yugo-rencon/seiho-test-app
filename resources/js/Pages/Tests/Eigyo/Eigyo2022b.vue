@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -13,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2022年度 フォームB'
 
-</script>
+const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -33,7 +30,11 @@ const subject = '2022年度 フォームB'
                 '60歳', '報酬比例', '定額保険料', '標準賞与額', '18.30%', // 問１〜５
                 ]"
                 :labels="[
-                'ケ', 'ク', 'エ', 'カ', 'イ',  //問１〜５
+                    'ケ', //1
+                    'ク', //2
+                    'エ', //3
+                    'カ', //4
+                    'イ', //5
                 ]"
             />
             <QuestionTemp3
@@ -44,7 +45,11 @@ const subject = '2022年度 フォームB'
                 '10年', '1ヶ月', '1級〜3級', '子の数', '4分の3', //問６〜10
                 ]"
                 :labels="[
-                'カ', 'ア', 'イ', 'コ', 'ク',  //問６〜10
+                    'カ', //6
+                    'ア', //7
+                    'イ', //8
+                    'コ', //9
+                    'ク', //10
                 ]"
             />
             <QuestionTemp3
@@ -55,7 +60,11 @@ const subject = '2022年度 フォームB'
                 '見込客', '携帯パソコン・端末', '販売活動の効率化', 'カウンセリング', 'セグメンテーション', //問11〜15
                 ]"
                 :labels="[
-                'コ', 'ウ', 'ケ', 'イ', 'オ',  //問11〜15
+                    'コ', //11
+                    'ウ', //12
+                    'ケ', //13
+                    'イ', //14
+                    'オ', //15
                 ]"
             />
             <QuestionTemp3
@@ -66,7 +75,11 @@ const subject = '2022年度 フォームB'
                 '上場コード', '取引', 'パスワード', 'プライバシー', '個人情報保護法', //問16〜20
                 ]"
                 :labels="[
-                'エ', 'カ', 'ク', 'ケ', 'ウ',  //問16〜20
+                    'エ', //16
+                    'カ', //17
+                    'ク', //18
+                    'ケ', //19
+                    'ウ', //20
                 ]"
             />
 <QuestionTemp1
@@ -173,29 +186,31 @@ const subject = '2022年度 フォームB'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '財源構成は保険料50%、公費50%。',
-                '正しい',
-                '正しい',
-                'メリットとしては、海外の比較的高い金利を反映することで、予定利率を高く設定していること。',
-                '正しい',
-                // 問36〜40
-                '受け取る年金についても非課税である。',
-                '正しい',
-                '正しい',
-                '保険仲立人は諸外国で一般的に認められている。',
-                '生命保険協会ではなく内閣総理大臣。',
-                 //問41〜50
-                'A-男女雇用機会均等法', 'C（A・Bともに正しい）', 'A-6ヶ月', 'B-面接', 'B-ヒューマン・ヴァリュー特約',
-                'A-第1号被保険者', 'A-55歳', 'B-加入保険金額', 'A-個別指導', 'A-地域',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '財源構成は保険料50%、公費50%。' }, //31
+                    { label: '解', content: '正しい' }, //32
+                    { label: '解', content: '正しい' }, //33
+                    { label: '解', content: 'メリットとしては、海外の比較的高い金利を反映することで、予定利率を高く設定していること。' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '受け取る年金についても非課税である。' }, //36
+                    { label: '解', content: '正しい' }, //37
+                    { label: '解', content: '正しい' }, //38
+                    { label: '解', content: '保険仲立人は諸外国で一般的に認められている。' }, //39
+                    { label: '解', content: '生命保険協会ではなく内閣総理大臣。' }, //40
+                    // 問41〜50
+                    { label: 'イ', content: '男女雇用機会均等法' }, //41
+                    { label: 'オ', content: '' }, //42
+                    { label: 'イ', content: '6ヶ月' }, //43
+                    { label: 'エ', content: '面接' }, //44
+                    { label: 'ウ', content: 'ヒューマン・ヴァリュー特約' }, //45
+                    { label: 'ア', content: '第1号被保険者' }, //46
+                    { label: 'イ', content: '55歳' }, //47
+                    { label: 'エ', content: '加入保険金額' }, //48
+                    { label: 'イ', content: '個別指導' }, //49
+                    { label: 'イ', content: '地域' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解',  //問31〜35
-                '解', '解', '解', '解', '解',  //問36〜40
-                'イ', 'オ', 'イ', 'エ', 'ウ',  //問41〜45
-                'ア', 'イ', 'エ', 'イ', 'イ',  //問46〜50
-                ]"
+                
             />
         </div>
 

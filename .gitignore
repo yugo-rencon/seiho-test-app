@@ -17,3 +17,5 @@ yarn-error.log
 /.idea
 /.vscode
 /.crossnote
+
+.env.backup.test

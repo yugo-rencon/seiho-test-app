@@ -11,6 +11,9 @@
                 問題{{ getQuestionRange(props.questionNumber) }}
             </h2>
         </div>
+        <p v-if="props.note" class="mb-3 text-xs text-gray-500">
+            {{ props.note }}
+        </p>
 
       <div class="grid gap-2">
         <div v-for="(content, index) in props.contents" :key="index"
@@ -26,13 +29,14 @@
         {{ props.subject }}
       </div>
     </div>
-    <PaywallNotice v-else-if="Number(props.questionNumber) === 2" />
+    <PaywallNotice v-else-if="shouldShowPaywallNotice" />
 </template>
 
 <script setup lang="ts">
     import { computed } from "vue";
     import { usePage } from "@inertiajs/vue3";
     import PaywallNotice from "./PaywallNotice.vue";
+    import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
 
     const props = defineProps({
         questionNumber: {
@@ -59,15 +63,40 @@
             type: String,
             default: '',
         },
+        note: {
+            type: String,
+            default: '',
+        },
     })
 
     const page = usePage();
 
+    const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
+
+    const blockStartQuestion = computed(() => {
+        return (Number(props.questionNumber) - 1) * 5 + 1;
+    });
+
+    const blockEndQuestion = computed(() => {
+        return blockStartQuestion.value + 4;
+    });
+
     const shouldHideByPaywall = computed(() => {
-        const year = Number(String(props.subject ?? "").slice(0, 4));
-        const isPaid = !(year === 2024 && props.title === "生命保険総論");
-        const isUnlocked = page.props.auth?.hasPremium === true;
-        return isPaid && !isUnlocked && Number(props.questionNumber) > 1;
+        const isPaid = isPaidYear(props.subject, props.title);
+        const isUnlocked = hasPremiumAccess(page.props);
+        return (
+            isPaid &&
+            !isUnlocked &&
+            blockStartQuestion.value >= paywallStartQuestion.value
+        );
+    });
+
+    const shouldShowPaywallNotice = computed(() => {
+        if (!shouldHideByPaywall.value) return false;
+        return (
+            paywallStartQuestion.value >= blockStartQuestion.value &&
+            paywallStartQuestion.value <= blockEndQuestion.value
+        );
     });
 
     function getQuestionRange(questionNumber) {

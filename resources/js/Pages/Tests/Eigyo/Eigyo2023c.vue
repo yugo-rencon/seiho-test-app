@@ -1,6 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -11,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2023年度 フォームC'
 
-</script>
+const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -33,7 +31,11 @@ const subject = '2023年度 フォームC'
                 '40歳以上', '65歳以上', '医療費抑制', '所得段階別', '18万円', // 問１〜５
                 ]"
                 :labels="[
-                'ウ', 'カ', 'キ', 'コ', 'ア',  //問１〜５
+                    'ウ', //1
+                    'カ', //2
+                    'キ', //3
+                    'コ', //4
+                    'ア', //5
                 ]"
             />
             <QuestionTemp3
@@ -44,7 +46,11 @@ const subject = '2023年度 フォームC'
                 '厚生労働省', '介護認定審査会', '予防給付', '地域密着サービス', '居住費', //問６〜10
                 ]"
                 :labels="[
-                'オ', 'ア', 'ケ', 'ク', 'エ',  //問６〜10
+                    'オ', //6
+                    'ア', //7
+                    'ケ', //8
+                    'ク', //9
+                    'エ', //10
                 ]"
             />
             <QuestionTemp3
@@ -55,7 +61,11 @@ const subject = '2023年度 フォームC'
                 '継続的', 'マーケティング', '転換制度', 'エージェント', '不可分化', //問11〜15
                 ]"
                 :labels="[
-                'ウ', 'コ', 'キ', 'イ', 'ケ',  //問11〜15
+                    'ウ', //11
+                    'コ', //12
+                    'キ', //13
+                    'イ', //14
+                    'ケ', //15
                 ]"
             />
             <QuestionTemp3
@@ -66,7 +76,11 @@ const subject = '2023年度 フォームC'
                 'face to face', '情報通信機器', '囲い込み', 'CS（customer Satisfaciton）', '選択', //問16〜20
                 ]"
                 :labels="[
-                'ケ', 'エ', 'ア', 'ク', 'オ',  //問16〜20
+                    'ケ', //16
+                    'エ', //17
+                    'ア', //18
+                    'ク', //19
+                    'オ', //20
                 ]"
             />
 <QuestionTemp1
@@ -173,27 +187,31 @@ const subject = '2023年度 フォームC'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '企業福祉制度のあり方も、従来のような総合的・恩恵的福祉から、自己責任原則のもと、従業員の自助努力・自立を側面から支援するものに重点が移されつつある。',
-                '生命保険が第一分野、損害保険が第二分野。',
-                '被保険者の生存中にかぎり、周期的に一定の金額の支払をするもの。',
-                '生命保険支払専門土ではなく生命保険面接士。',
-                '正しい',
-                // 問36〜40
-                '正しい',
-                '被保険者が受取人となる場合、非課税扱いとなる。',
-                '一般の生命保険料と異なり保険料は生命保険料控除の対象とはならない。',
-                '正しい',
-                '正しい',
-                 //問41〜50
-                'A-保険業法', 'A-３分の１', 'C（A・Bともに正しい）', 'A-賦払償還債務', 'C（A・Bともに正しい）',
-                'A-企業等', 'B-個人', 'B-代表者', 'B-媒介', 'C（A・Bともに正しい）',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '企業福祉制度のあり方も、従来のような総合的・恩恵的福祉から、自己責任原則のもと、従業員の自助努力・自立を側面から支援するものに重点が移されつつある。' }, //31
+                    { label: '解', content: '生命保険が第一分野、損害保険が第二分野。' }, //32
+                    { label: '解', content: '被保険者の生存中にかぎり、周期的に一定の金額の支払をするもの。' }, //33
+                    { label: '解', content: '生命保険支払専門土ではなく生命保険面接士。' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '被保険者が受取人となる場合、非課税扱いとなる。' }, //37
+                    { label: '解', content: '一般の生命保険料と異なり保険料は生命保険料控除の対象とはならない。' }, //38
+                    { label: '解', content: '正しい' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'ア', content: '保険業法' }, //41
+                    { label: 'ア', content: '３分の１' }, //42
+                    { label: 'オ', content: '' }, //43
+                    { label: 'イ', content: '賦払償還債務' }, //44
+                    { label: 'オ', content: '' }, //45
+                    { label: 'イ', content: '企業等' }, //46
+                    { label: 'ウ', content: '個人' }, //47
+                    { label: 'エ', content: '代表者' }, //48
+                    { label: 'ウ', content: '媒介' }, //49
+                    { label: 'オ', content: '' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解', '解', '解', '解', '解', '解',  //問31〜40
-                'ア', 'ア', 'オ', 'イ', 'オ', 'イ', 'ウ', 'エ', 'ウ', 'オ',  //問41〜50
-                ]"
+                
             />
         </div>
 

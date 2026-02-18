@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -12,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険会計"
 const subject = '2022年度 フォームA'
 
-</script>
+const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
 
 <template>
 
@@ -35,7 +32,11 @@ const subject = '2022年度 フォームA'
                 '洗替方式', '費用', '標準', '除く', '最低額', // 問１〜５
                 ]"
                 :labels="[
-                'エ', 'コ', 'カ', 'ウ', 'ケ',  //問１〜５
+                    'エ', //1
+                    'コ', //2
+                    'カ', //3
+                    'ウ', //4
+                    'ケ', //5
                 ]"
             />
             <QuestionTemp3
@@ -46,7 +47,11 @@ const subject = '2022年度 フォームA'
                 '未経過', '危険', '内部留保', '純保険料式', '20%', //問６〜10
                 ]"
                 :labels="[
-                'オ', 'ウ', 'イ', 'コ', 'キ',  //問６〜10
+                    'オ', //6
+                    'ウ', //7
+                    'イ', //8
+                    'コ', //9
+                    'キ', //10
                 ]"
             />
             <QuestionTemp3
@@ -57,7 +62,11 @@ const subject = '2022年度 フォームA'
                 '流動', '支払期日の到来した公社債利札', '決算時レート', '投資家', '信託銀行', //問11〜15
                 ]"
                 :labels="[
-                'キ', 'ク', 'オ', 'イ', 'コ',  //問11〜15
+                    'キ', //11
+                    'ク', //12
+                    'オ', //13
+                    'イ', //14
+                    'コ', //15
                 ]"
             />
             <QuestionTemp3
@@ -68,7 +77,11 @@ const subject = '2022年度 フォームA'
                 '法人税法施行令', '加算した', '責任準備金対応', '保険約款', '税効果会計', //問16〜20
                 ]"
                 :labels="[
-                'ケ', 'ク', 'エ', 'イ', 'コ',  //問16〜20
+                    'ケ', //16
+                    'ク', //17
+                    'エ', //18
+                    'イ', //19
+                    'コ', //20
                 ]"
             />
 <QuestionTemp1
@@ -175,29 +188,31 @@ const subject = '2022年度 フォームA'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '正しい',
-                '正しい',
-                '流通市場における開示書類には、「有価証券報告書」「半期報告書」，「四半期報告書」および「臨時報告書」等がある。',
-                '正しい',
-                '正しい',
-                // 問36〜40
-                '価償却の方法は、資産の種類ごとに定められている。',
-                '預り金ではなく、前受収益。',
-                '収支相当の原則ではなく、費用収益対応の原則。',
-                '正しい',
-                '正しい',
-                 //問41〜50
-                'C（A・Bともに正しい）', 'A-損益計算書', 'B-保守主義', 'A-負債', 'B-純保険料',
-                'B-金融庁長官', 'C（A・Bともに正しい）', 'A-期末', 'A-販売費及び一般管理費', 'B-配当率',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '正しい' }, //31
+                    { label: '解', content: '正しい' }, //32
+                    { label: '解', content: '流通市場における開示書類には、「有価証券報告書」「半期報告書」，「四半期報告書」および「臨時報告書」等がある。' }, //33
+                    { label: '解', content: '正しい' }, //34
+                    { label: '解', content: '正しい' }, //35
+                    { label: '解', content: '価償却の方法は、資産の種類ごとに定められている。' }, //36
+                    { label: '解', content: '預り金ではなく、前受収益。' }, //37
+                    { label: '解', content: '収支相当の原則ではなく、費用収益対応の原則。' }, //38
+                    { label: '解', content: '正しい' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'オ', content: '' }, //41
+                    { label: 'イ', content: '損益計算書' }, //42
+                    { label: 'ウ', content: '保守主義' }, //43
+                    { label: 'ア', content: '負債' }, //44
+                    { label: 'エ', content: '純保険料' }, //45
+                    { label: 'ウ', content: '金融庁長官' }, //46
+                    { label: 'オ', content: '' }, //47
+                    { label: 'ア', content: '期末' }, //48
+                    { label: 'イ', content: '販売費及び一般管理費' }, //49
+                    { label: 'エ', content: '配当率' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解',  //問31〜35
-                '解', '解', '解', '解', '解',  //問36〜40
-                'オ', 'イ', 'ウ', 'ア', 'エ',  //問41〜45
-                'ウ', 'オ', 'ア', 'イ', 'エ',  //問46〜50
-                ]"
+                
             />
         </div>
 

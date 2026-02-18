@@ -1,7 +1,4 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
-import { reactive, onMounted, ref, computed } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
 import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
 import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
@@ -13,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2021年度 フォームC'
 
-</script>
+const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -33,7 +30,11 @@ const subject = '2021年度 フォームC'
                 '継続的', 'マーケティング', '転換制度', '必要な情報の提供者', '不可分化', // 問１〜５
                 ]"
                 :labels="[
-                'ウ', 'コ', 'カ', 'キ', 'ク',  //問１〜５
+                    'ウ', //1
+                    'コ', //2
+                    'カ', //3
+                    'キ', //4
+                    'ク', //5
                 ]"
             />
             <QuestionTemp3
@@ -44,7 +45,11 @@ const subject = '2021年度 フォームC'
                 'face to face', '情報通信機器', '囲い込み', 'CS（Customer Satisfaction）', '金融改革', //問６〜10
                 ]"
                 :labels="[
-                'ア', 'キ', 'ウ', 'ケ', 'オ',  //問６〜10
+                    'ア', //6
+                    'キ', //7
+                    'ウ', //8
+                    'ケ', //9
+                    'オ', //10
                 ]"
             />
             <QuestionTemp3
@@ -55,7 +60,11 @@ const subject = '2021年度 フォームC'
                 '信用生命保険', '競争条件の公平性', '流出防止', '抱き合わせ販売', '商品情報', //問11〜15
                 ]"
                 :labels="[
-                'キ', 'エ', 'コ', 'ク', 'カ',  //問11〜15
+                    'キ', //11
+                    'エ', //12
+                    'コ', //13
+                    'ク', //14
+                    'カ', //15
                 ]"
             />
             <QuestionTemp3
@@ -66,7 +75,11 @@ const subject = '2021年度 フォームC'
                 '個人年金保険（定額・変額）', '事前説明義務', '残債務リスク', '相談窓口', '全面解禁', //問16〜20
                 ]"
                 :labels="[
-                'カ', 'ク', 'キ', 'コ', 'ケ',  //問16〜20
+                    'カ', //16
+                    'ク', //17
+                    'キ', //18
+                    'コ', //19
+                    'ケ', //20
                 ]"
             />
 <QuestionTemp1
@@ -173,29 +186,31 @@ const subject = '2021年度 フォームC'
                 :questionNumber="31"
                 :title="title"
                 :subject="subject"
-                :contents="[
-                // 問31〜35
-                '正しい',
-                '生命保険が第一分野、損害保険が第二分野。',
-                '消費者は契約を取り消すことができる。',
-                '認定生命保険士ではなく生命保険面接土。',
-                '被保険者が受取人の場合非課税扱いとなる。',
-                // 問36〜40
-                '正しい',
-                '現在のところ、新企業年金保険、厚生年金基金保険、確定給付企業年金保険、国民年金基金保険、団体生存保険に付加する特別勘定特約が販売されている。',
-                '正しい',
-                '正しい',
-                '正しい',
-                 //問41〜50
-                'B-通貨性預貯金', 'A-三大疾病', 'B-利差配当', 'A-55歳', 'A-経験死亡率',
-                'C（A・Bともに正しい）', 'C（A・Bともに正しい）', 'B-自己負担の一部を補填する', 'B-終身', 'A-募集代理店',
+                                :items="[
+                    // 問31〜40
+                    { label: '解', content: '正しい' }, //31
+                    { label: '解', content: '生命保険が第一分野、損害保険が第二分野。' }, //32
+                    { label: '解', content: '消費者は契約を取り消すことができる。' }, //33
+                    { label: '解', content: '認定生命保険士ではなく生命保険面接土。' }, //34
+                    { label: '解', content: '被保険者が受取人の場合非課税扱いとなる。' }, //35
+                    { label: '解', content: '正しい' }, //36
+                    { label: '解', content: '現在のところ、新企業年金保険、厚生年金基金保険、確定給付企業年金保険、国民年金基金保険、団体生存保険に付加する特別勘定特約が販売されている。' }, //37
+                    { label: '解', content: '正しい' }, //38
+                    { label: '解', content: '正しい' }, //39
+                    { label: '解', content: '正しい' }, //40
+                    // 問41〜50
+                    { label: 'ウ', content: '通貨性預貯金' }, //41
+                    { label: 'イ', content: '三大疾病' }, //42
+                    { label: 'ウ', content: '利差配当' }, //43
+                    { label: 'イ', content: '55歳' }, //44
+                    { label: 'ア', content: '経験死亡率' }, //45
+                    { label: 'オ', content: '' }, //46
+                    { label: 'オ', content: '' }, //47
+                    { label: 'エ', content: '自己負担の一部を補填する' }, //48
+                    { label: 'エ', content: '終身' }, //49
+                    { label: 'ア', content: '募集代理店' }, //50
                 ]"
-                :labels="[
-                '解', '解', '解', '解', '解',  //問31〜35
-                '解', '解', '解', '解', '解',  //問36〜40
-                'ウ', 'イ', 'ウ', 'イ', 'ア',  //問41〜45
-                'オ', 'オ', 'エ', 'エ', 'ア',  //問46〜50
-                ]"
+                
             />
         </div>
 

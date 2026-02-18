@@ -16,7 +16,10 @@ const props = defineProps({
     },
 });
 
+const isProd = import.meta.env.PROD;
+
 onMounted(() => {
+    if (!isProd) return;
     // AdSense script is loaded in app.blade.php for non-premium users.
     if (typeof window === "undefined") return;
     const w = window as unknown as { adsbygoogle?: unknown[] };
@@ -31,6 +34,7 @@ onMounted(() => {
 
 <template>
     <ins
+        v-if="isProd"
         class="adsbygoogle"
         style="display: block"
         data-ad-client="ca-pub-5875099458010785"

@@ -211,7 +211,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         '正しい',
                     ]"
                 />
-                <QuestionTemp
+                <QuestionTemp2
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"

@@ -17,17 +17,26 @@ class GenerateSitemap extends Command
 
         $sitemap = Sitemap::create()
             ->add(Url::create("{$baseUrl}/"))
-            ->add(Url::create("{$baseUrl}/tests"));
+            ->add(Url::create("{$baseUrl}/tests"))
+            ->add(Url::create("{$baseUrl}/about"))
+            ->add(Url::create("{$baseUrl}/pricing"))
+            ->add(Url::create("{$baseUrl}/policy"))
+            ->add(Url::create("{$baseUrl}/terms"))
+            ->add(Url::create("{$baseUrl}/tokusho"))
+            ->add(Url::create("{$baseUrl}/studyMethod"))
+            ->add(Url::create("{$baseUrl}/updateInfo"))
+            ->add(Url::create("{$baseUrl}/contact"));
 
         $subjects = [
+            // 公開対象年度のみを sitemap に載せる（未公開の2025は除外）
             'souron' => ['2024', '2023', '2022', '2021'],
             'keiri'  => ['2024', '2023', '2022', '2021'],
-            'kiken'  => ['2023', '2022', '2021'],
-            'yakkan' => ['2023', '2022', '2021'],
-            'kaikei' => ['2023', '2022', '2021'],
-            'eigyo'  => ['2023', '2022', '2021'],
-            'zeihou' => ['2023', '2022', '2021'],
-            'sisan'  => ['2023', '2022', '2021'],
+            'kiken'  => ['2024', '2023', '2022', '2021'],
+            'yakkan' => ['2024', '2023', '2022', '2021'],
+            'kaikei' => ['2024', '2023', '2022', '2021'],
+            'eigyo'  => ['2024', '2023', '2022', '2021'],
+            'zeihou' => ['2024', '2023', '2022', '2021'],
+            'sisan'  => ['2024', '2023', '2022', '2021'],
         ];
 
         $forms = ['a', 'b', 'c'];

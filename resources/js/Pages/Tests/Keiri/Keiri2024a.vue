@@ -70,7 +70,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                                 },
                                 {
                                     type: 'formula',
-                                    value: 'N年後の生存者数 ＝ 現在人数 × 生存率',
+                                    value: 'N年後の生存者数 ＝ 基準年齢の人数 × 生存率',
                                 },
                                 {
                                     type: 'blockTitle',
@@ -94,7 +94,15 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                                 },
                                 {
                                     type: 'formula',
-                                    value: '100,000 × 0.937140 ＝ 93,714.0',
+                                    value: '10年後の生存者数',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '＝ 基準年齢（55歳）の人数 × 生存率（0.937140）',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '＝ 100,000 × 0.937140 ＝ 93,714.0',
                                 },
                                 {
                                     type: 'result',

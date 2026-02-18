@@ -44,7 +44,15 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                                 },
                                 {
                                     type: 'formula',
-                                    value: '96,319 ÷ 97,336 ＝ 0.989246',
+                                    value: '生存率（45歳→50歳）',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '＝ 50歳の生存数 ÷ 45歳の生存数',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '＝ 96,319 ÷ 97,336 ＝ 0.989246',
                                 },
                                 {
                                     type: 'result',

@@ -135,7 +135,11 @@ const shouldShowPaywallNotice = computed(() => {
 
 const showAdBeforeQuestion31 = computed(() => {
     const firstQuestion = Number(normalizedItems.value[0]?.questionNo ?? 0);
-    return !hasPremiumAccess(page.props) && firstQuestion === 31;
+    return (
+        !hasPremiumAccess(page.props) &&
+        visibleItems.value.length > 0 &&
+        firstQuestion === 31
+    );
 });
 
 const showAdAfterQuestion50 = computed(() => {

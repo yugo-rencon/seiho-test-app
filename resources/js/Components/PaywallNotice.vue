@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Link, usePage } from "@inertiajs/vue3";
 import { computed } from "vue";
-import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 
 const page = usePage();
 const isPurchaseEnabled = computed(
@@ -46,10 +45,6 @@ export default {
                 >
                     プレミアム機能は現在準備中です。4月より正式リリース予定です。
                 </button>
-            </div>
-
-            <div v-if="!page.props.auth?.hasPremium" class="mt-5">
-                <AdSenseUnit slot="8570892917" />
             </div>
         </div>
     </div>

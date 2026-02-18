@@ -1,4 +1,7 @@
 <template>
+    <div v-if="showAdBeforeQuestion21" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
+        <AdSenseUnit slot="8570892917" />
+    </div>
     <div
         v-if="!shouldHideByPaywall"
         class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-md"
@@ -61,6 +64,7 @@
   import { computed, ref } from 'vue'
   import { usePage } from '@inertiajs/vue3'
   import PaywallNotice from './PaywallNotice.vue'
+  import AdSenseUnit from './AdSenseUnit.vue'
   import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from '@/utils/paywall'
 
   const props = defineProps({
@@ -103,6 +107,10 @@
 
   const shouldShowPaywallNotice = computed(() => {
     return shouldHideByPaywall.value && Number(props.questionNumber) === paywallStartQuestion.value
+  })
+
+  const showAdBeforeQuestion21 = computed(() => {
+    return !hasPremiumAccess(page.props) && Number(props.questionNumber) === 21
   })
 
   const getLabel = (index: number): string => {

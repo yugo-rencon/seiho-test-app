@@ -1,4 +1,7 @@
 <template>
+    <div v-if="showAdBeforeQuestion31" class="rounded-lg bg-white p-2 shadow-sm">
+        <AdSenseUnit slot="8570892917" />
+    </div>
     <template v-if="visibleItems.length > 0">
         <div
             v-for="(item, index) in visibleItems"
@@ -29,6 +32,9 @@
             </div>
         </div>
     </template>
+    <div v-if="showAdAfterQuestion50" class="rounded-lg bg-white p-2 shadow-sm">
+        <AdSenseUnit slot="8570892917" />
+    </div>
     <PaywallNotice v-if="shouldShowPaywallNotice" />
 </template>
 
@@ -36,6 +42,7 @@
 import { computed } from "vue";
 import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
+import AdSenseUnit from "./AdSenseUnit.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
 
 const props = defineProps({
@@ -124,6 +131,20 @@ const shouldShowPaywallNotice = computed(() => {
         paywallStartQuestion.value >= firstQuestion &&
         paywallStartQuestion.value <= lastQuestion
     );
+});
+
+const showAdBeforeQuestion31 = computed(() => {
+    const firstQuestion = Number(normalizedItems.value[0]?.questionNo ?? 0);
+    return !hasPremiumAccess(page.props) && firstQuestion === 31;
+});
+
+const showAdAfterQuestion50 = computed(() => {
+    if (hasPremiumAccess(page.props)) return false;
+    if (visibleItems.value.length === 0) return false;
+    const lastVisibleQuestion = Number(
+        visibleItems.value[visibleItems.value.length - 1]?.questionNo ?? 0,
+    );
+    return lastVisibleQuestion >= 50;
 });
 
 const getLabel = (index: number) => {

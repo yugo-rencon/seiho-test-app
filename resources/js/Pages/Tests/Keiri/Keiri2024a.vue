@@ -29,19 +29,70 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         // 問１
                         {
                             answer: '0.98925',
-                            explanation:
-                                '生存率 ＝ 期末の生存数 ÷ 期初の生存数<br><br>\
-                        <div class=&quot;calc-line&quot;>96,319 ÷ 97,366 ＝ 0.989246</div>\
-                        <p class=&quot;calc-result&quot;>⇒ 0.98925（小数第6位を四捨五入）</p>',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用公式',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '生存率 ＝ 期末の生存数 ÷ 期初の生存数',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '96,319 ÷ 97,336 ＝ 0.989246',
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 0.98925（小数第6位を四捨五入）',
+                                },
+                            ],
                         },
                         // 問２
                         {
                             answer: '93,714',
-                            explanation:
-                                '生存数 ＝ 期末の生存数 ÷ 期初の生存数 × 期初の生存者数<br><br><br>\
-                        生存数：<br>\
-                        88,751 ÷ 94,704 × 100,000 ＝ 93714.0<br>\
-                        ⇒93,714（小数第1位を四捨五入）',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用公式',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: 'N年後の生存者数 ＝ 現在人数 × 生存率',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 生存率（55歳→65歳）',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '＝ 65歳の生存数 ÷ 55歳の生存数',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '＝ 88,751 ÷ 94,704',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '＝ 0.937140',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: '100,000 × 0.937140 ＝ 93,714.0',
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 93,714（小数第1位を四捨五入）',
+                                },
+                            ],
                         },
                         // 問３
                         {
@@ -357,12 +408,16 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
-                                        :items="[
+                    :items="[
                         // 問31〜40
                         { label: '解', content: '正しい' }, //31
                         { label: '解', content: '通常、単に現価という場合には<u><b>期末払現価</b></u>を指す。' }, //32
                         { label: '解', content: '正しい' }, //33
-                        { label: '解', content: '1年分を何回かに分けて払い込む分割払営業保険料の年間払込額は、年払の営業保険料額を以下の理由で<u><b>上回る</b></u>。<br>①分割払のために保険料払込みが遅れるための利息の損失（年払保険料の場合に比べて年間の予定利息分は少なくなる）<br>②集金回数（払込回数）の増加に伴う事業費の増加' }, //34
+                        {
+                            label: '解',
+                            content:
+                                '1年分を何回かに分けて払い込む分割払営業保険料の年間払込額は、年払の営業保険料額を以下の理由で<u><b>上回る</b></u>。<br>①分割払のために保険料払込みが遅れるための利息の損失（年払保険料の場合に比べて年間の予定利息分は少なくなる）<br>②集金回数（払込回数）の増加に伴う事業費の増加',
+                        }, //34
                         { label: '解', content: '自然保険料方式と異なり、平準保険料方式は責任準備金を積み立てる必要がある。' }, //35
                         { label: '解', content: '正しい' }, //36
                         { label: '解', content: '正しい' }, //37
@@ -381,7 +436,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         { label: 'エ', content: 'を禁止されている' }, //49
                         { label: 'ウ', content: '総合保険料' }, //50
                     ]"
-                    
                 />
             </div>
 

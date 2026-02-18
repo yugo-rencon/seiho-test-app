@@ -2,6 +2,7 @@ import './bootstrap';
 import './micromodal';
 import '../css/app.css';
 import '../css/micromodal.css';
+import 'katex/dist/katex.min.css';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';

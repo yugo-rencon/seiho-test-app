@@ -48,3 +48,57 @@ body {
 .question-temp4-explanation .calc-result {
     @apply mt-2 font-semibold text-purple-700;
 }
+
+/* 計算問題（QuestionTemp4）向け: 構造化データ表示 */
+.question-temp4-structured {
+    @apply space-y-3;
+}
+
+.question-temp4-structured .calc-text {
+    @apply break-words text-gray-800;
+}
+
+.question-temp4-structured .calc-block-title {
+    @apply inline-flex w-fit items-center rounded-md border border-purple-200 bg-purple-50 px-2.5 py-1 text-xs font-bold tracking-wide text-purple-700;
+}
+
+.question-temp4-structured .calc-line {
+    @apply block overflow-x-auto whitespace-nowrap rounded bg-gray-50 px-2 py-1 font-mono text-[0.95em];
+}
+
+.question-temp4-structured .calc-kv {
+    @apply grid grid-cols-[9em_1em_1fr] items-start gap-1 text-gray-800;
+}
+
+.question-temp4-structured .calc-kv-label {
+    @apply text-gray-500;
+}
+
+.question-temp4-structured .calc-kv-sep {
+    @apply text-gray-400;
+}
+
+.question-temp4-structured .calc-kv-value {
+    @apply font-medium text-gray-900;
+}
+
+.question-temp4-structured .calc-result {
+    @apply font-semibold text-purple-700;
+}
+
+.question-temp4-structured .calc-note {
+    @apply text-xs text-gray-500;
+}
+
+.question-temp4-structured .calc-tex {
+    @apply overflow-x-auto rounded bg-gray-50 px-2 py-2;
+}
+
+.question-temp4-structured .calc-tex .katex-display {
+    margin: 0;
+    text-align: left;
+}
+
+.question-temp4-structured .calc-tex .katex-display > .katex {
+    text-align: left;
+}

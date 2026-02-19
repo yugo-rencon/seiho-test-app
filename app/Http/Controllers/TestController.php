@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTestRequest;
-use App\Http\Requests\UpdateTestRequest;
-use App\Models\Test;
 use App\Models\User;
 use App\Models\UserExamResult;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class TestController extends Controller
@@ -50,7 +46,7 @@ class TestController extends Controller
         $subjects = $this->subjects();
 
         $results = $user->examResults()
-            ->get()
+            ->get(['subject_key', 'score'])
             ->keyBy('subject_key')
             ->map(function ($result) {
                 return [
@@ -76,6 +72,13 @@ class TestController extends Controller
         $user->pass_score = $data['pass_score'];
         $user->save();
 
+        if ($request->expectsJson()) {
+            return response()->json([
+                'message' => '合格基準を更新しました。',
+                'pass_score' => $user->pass_score,
+            ]);
+        }
+
         return back();
     }
 
@@ -93,6 +96,14 @@ class TestController extends Controller
                 ->where('subject_key', $data['subject_key'])
                 ->delete();
 
+            if ($request->expectsJson()) {
+                return response()->json([
+                    'message' => '点数をクリアしました。',
+                    'subject_key' => $data['subject_key'],
+                    'score' => null,
+                ]);
+            }
+
             return back();
         }
 
@@ -105,6 +116,14 @@ class TestController extends Controller
                 'score' => $data['score'],
             ],
         );
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'message' => '点数を更新しました。',
+                'subject_key' => $data['subject_key'],
+                'score' => $data['score'],
+            ]);
+        }
 
         return back();
     }

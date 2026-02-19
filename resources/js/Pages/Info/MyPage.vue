@@ -1,5 +1,6 @@
 <script setup>
-import { Head, Link, useForm, usePage } from '@inertiajs/vue3';
+import axios from 'axios';
+import { Head, Link, usePage } from '@inertiajs/vue3';
 import { computed, onMounted, ref, watch } from 'vue';
 import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
 
@@ -27,14 +28,15 @@ const props = defineProps({
 });
 
 const localResults = ref({ ...props.results });
+const localPassScore = ref(props.passScore);
 const isModalOpen = ref(false);
 const formSubjectKey = ref(props.subjects[0]?.key || '');
 const formScore = ref('');
 const formError = ref('');
-const resultForm = useForm({
-  subject_key: '',
-  score: null,
-});
+const isSavingResult = ref(false);
+const isSavingPassScore = ref(false);
+const passScoreError = ref('');
+const passScoreInput = ref(props.passScore ?? '');
 
 watch(
   () => props.results,
@@ -43,10 +45,16 @@ watch(
   },
   { deep: true },
 );
+watch(
+  () => props.passScore,
+  (nextPassScore) => {
+    localPassScore.value = nextPassScore;
+    passScoreInput.value = nextPassScore ?? '';
+  },
+);
 
 const openModal = (subjectKey) => {
   formError.value = '';
-  resultForm.clearErrors();
   formSubjectKey.value = subjectKey || props.subjects[0]?.key || '';
   const existingScore =
     localResults.value?.[formSubjectKey.value]?.score ?? '';
@@ -71,16 +79,23 @@ const saveResult = () => {
       formError.value = '0〜100の点数を入力してください。';
       return;
     }
-    resultForm.score = score;
-  } else {
-    resultForm.score = null;
+    formScore.value = String(score);
   }
-
-  resultForm.subject_key = formSubjectKey.value;
-
-  resultForm.post(route('mypage.results'), {
-    preserveScroll: true,
-    onSuccess: () => {
+  isSavingResult.value = true;
+  axios
+    .post(
+      route('mypage.results'),
+      {
+        subject_key: formSubjectKey.value,
+        score: isEmpty ? null : Number(formScore.value),
+      },
+      {
+        headers: {
+          Accept: 'application/json',
+        },
+      },
+    )
+    .then(() => {
       if (isEmpty) {
         const next = { ...localResults.value };
         delete next[formSubjectKey.value];
@@ -94,14 +109,16 @@ const saveResult = () => {
         };
       }
       closeModal();
-    },
-    onError: () => {
+    })
+    .catch((error) => {
       formError.value =
-        resultForm.errors.score ||
-        resultForm.errors.subject_key ||
+        error?.response?.data?.errors?.score?.[0] ||
+        error?.response?.data?.errors?.subject_key?.[0] ||
         '保存に失敗しました。';
-    },
-  });
+    })
+    .finally(() => {
+      isSavingResult.value = false;
+    });
 };
 
 onMounted(() => {
@@ -112,14 +129,11 @@ onMounted(() => {
   openModal(openSubject);
 });
 
-const passScoreForm = useForm({
-  pass_score: props.passScore ?? '',
-});
 const isPassScoreModalOpen = ref(false);
 
 const openPassScoreModal = () => {
-  passScoreForm.pass_score = props.passScore ?? '';
-  passScoreForm.clearErrors();
+  passScoreInput.value = localPassScore.value ?? '';
+  passScoreError.value = '';
   isPassScoreModalOpen.value = true;
 };
 
@@ -128,20 +142,44 @@ const closePassScoreModal = () => {
 };
 
 const updatePassScore = () => {
-  passScoreForm.post(route('mypage.passScore'), {
-    preserveScroll: true,
-    onSuccess: () => {
+  passScoreError.value = '';
+  const nextScore = Number(passScoreInput.value);
+  if (Number.isNaN(nextScore) || nextScore < 0 || nextScore > 100) {
+    passScoreError.value = '0〜100の点数を入力してください。';
+    return;
+  }
+
+  isSavingPassScore.value = true;
+  axios
+    .post(
+      route('mypage.passScore'),
+      { pass_score: nextScore },
+      {
+        headers: {
+          Accept: 'application/json',
+        },
+      },
+    )
+    .then((response) => {
+      localPassScore.value = response?.data?.pass_score ?? nextScore;
       closePassScoreModal();
-    },
-  });
+    })
+    .catch((error) => {
+      passScoreError.value =
+        error?.response?.data?.errors?.pass_score?.[0] ||
+        '更新に失敗しました。';
+    })
+    .finally(() => {
+      isSavingPassScore.value = false;
+    });
 };
 
-const hasPassScore = computed(() => props.passScore !== null);
+const hasPassScore = computed(() => localPassScore.value !== null);
 
 const scoredSubjects = computed(() => {
   return props.subjects.map((subject) => {
     const score = localResults.value?.[subject.key]?.score ?? null;
-    const passed = hasPassScore.value && score !== null && score >= props.passScore;
+    const passed = hasPassScore.value && score !== null && score >= localPassScore.value;
     return { ...subject, score, passed };
   });
 });
@@ -249,7 +287,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
                 class="text-sm font-semibold"
                 :class="hasPassScore ? 'text-gray-700' : 'text-amber-700'"
               >
-                {{ hasPassScore ? `${passScore} 点` : '未入力' }}
+                {{ hasPassScore ? `${localPassScore} 点` : '未入力' }}
               </span>
               <button
                 type="button"
@@ -406,7 +444,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
             type="button"
             class="rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700 transition"
             @click="saveResult"
-            :disabled="resultForm.processing"
+            :disabled="isSavingResult"
           >
             保存
           </button>
@@ -430,7 +468,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
               合格基準（0〜100）
             </label>
             <input
-              v-model="passScoreForm.pass_score"
+              v-model="passScoreInput"
               type="number"
               min="0"
               max="100"
@@ -440,10 +478,10 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
           </div>
 
           <div
-            v-if="passScoreForm.errors.pass_score"
+            v-if="passScoreError"
             class="rounded-lg border border-rose-100 bg-rose-50 px-3 py-2 text-sm text-rose-700"
           >
-            {{ passScoreForm.errors.pass_score }}
+            {{ passScoreError }}
           </div>
         </div>
 
@@ -459,7 +497,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
             type="button"
             class="rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700 transition"
             @click="updatePassScore"
-            :disabled="passScoreForm.processing"
+            :disabled="isSavingPassScore"
           >
             更新
           </button>

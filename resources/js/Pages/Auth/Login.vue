@@ -74,14 +74,15 @@ const submit = () => {
                             <TextInput
                                 id="password"
                                 :type="showPassword ? 'text' : 'password'"
-                                class="block w-full pr-10"
+                                class="block w-full pr-14 text-base"
                                 v-model="form.password"
                                 required
+                                maxlength="255"
                                 autocomplete="current-password"
                             />
                             <button
                                 type="button"
-                                class="absolute inset-y-0 right-2 inline-flex items-center text-gray-500 hover:text-purple-600"
+                                class="absolute right-1 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md text-gray-500 hover:text-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400"
                                 @click="showPassword = !showPassword"
                                 :aria-pressed="showPassword"
                                 aria-label="パスワードを表示"

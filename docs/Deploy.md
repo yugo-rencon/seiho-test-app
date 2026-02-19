@@ -1,44 +1,92 @@
-# 本番反映手順（簡易）
+# ローカルで Push するまでの手順（初心者向け）
 
-このプロジェクトは、ローカルでビルドしてから本番へ反映します。  
-（本番サーバーに `npm` がない運用）
+このドキュメントは「ローカル修正を GitHub に push するまで」を対象にしています。  
+本番サーバー反映（`git pull` 以降）は別手順です。
 
-## 事前準備（初回のみ）
-- `scripts/deploy-prod.sh` があること
-- 実行権限があること（なければ）
+## まず覚えること
+- `git add`: 変更を「コミット対象」に載せる
+- `git commit`: 変更履歴を1つ作る
+- `git push`: その履歴を GitHub に送る
+- `npm run build`: 画面用ファイル（`public/build`）を作り直す
 
+## 基本フロー（普段これ）
+1. 修正する
+2. 状態確認
 ```bash
-chmod +x scripts/deploy-prod.sh
+git status
+```
+3. 必要なら build
+```bash
+npm run build
+```
+4. add
+```bash
+git add <対象ファイル>
+```
+5. commit
+```bash
+git commit -m "内容が分かるメッセージ"
+```
+6. push
+```bash
+git push origin main
 ```
 
-## 通常の反映手順
-1. コードを修正する
-2. 反映コマンドを実行する
+## パターン別
 
+### パターンA: バックエンドのみ（PHP/ルート/設定のみ）
+- 例: `app/`, `routes/`, `config/` だけ変更
+- 通常 `npm run build` は不要
+- そのまま `add -> commit -> push`
+
+### パターンB: フロント変更あり（Vue/CSS/JS）
+- 例: `resources/js`, `resources/css`, `resources/views/app.blade.php` 変更
+- 原則 `npm run build` 実行
+- `public/build` も差分に含まれるので一緒にコミット
+
+### パターンC: 1ファイルだけ軽微修正
+- 例: メタタグ1行追加
+- フロント表示に影響するなら build 実行を推奨
+- 影響がないなら build 省略でも可
+
+## 安全な add のやり方
+- 推奨（必要ファイルだけ）
 ```bash
-./scripts/deploy-prod.sh
+git add resources/views/app.blade.php
+```
+- 全部まとめて（`git add .`）は速いが、不要ファイル混入リスクあり
+
+## 実務でよく使う確認コマンド
+- 何が変わったか確認
+```bash
+git status
+```
+- 差分の中身確認
+```bash
+git diff
+```
+- コミット履歴確認
+```bash
+git log --oneline -n 5
 ```
 
-## スクリプトが内部でやっていること
-1. `main` ブランチか確認
-2. 未コミット変更がないか確認
-3. ローカルで `npm run build`
-4. build後に差分が出たら停止（`public/build` をコミットするため）
-5. `git push origin main`
-6. 本番へSSH接続して以下を実行
-   - `git pull origin main`
-   - `php artisan optimize`
-   - `php artisan config:clear`
+## よくあるミス
+- build したのに `public/build` を add し忘れる
+- `.env` や秘密鍵を add して push 保護に弾かれる
+- `git add .` で関係ないファイルまで入る
 
-## build差分で止まったとき
-以下を実行して再度スクリプトを実行します。
+## このプロジェクトでの推奨運用
+1. 変更
+2. `git status`
+3. フロント変更があれば `npm run build`
+4. `git add` はファイル指定で
+5. `git commit`
+6. `git push origin main`
 
+## 参考: 今回のような1ファイル修正例
 ```bash
-git add .
-git commit -m "build: update assets"
-./scripts/deploy-prod.sh
+git status
+git add resources/views/app.blade.php
+git commit -m "Disable iOS data detectors for email/phone/address"
+git push origin main
 ```
-
-## 補足
-- 本番DB変更がある場合は、必要に応じて本番で `php artisan migrate --force` を実行
-- 購入導線を止める/開ける場合は本番 `.env` の `STRIPE_PURCHASE_ENABLED` を変更後、`php artisan config:clear`

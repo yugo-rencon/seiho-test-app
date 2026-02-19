@@ -62,12 +62,14 @@ watch(activeSectionId, (nextId) => {
                     <!-- 非プレミアム向けの実績バナー -->
                     <div
                         v-if="!hasPremium"
-                        class="mb-5 rounded-full border border-purple-200 bg-purple-100 px-3 py-1.5 text-center text-[11px] font-semibold text-purple-800"
+                        class="mb-4 rounded-xl border border-purple-200 bg-purple-100/80 px-3 py-2 text-left text-[12px] leading-5 text-purple-800 sm:mb-5 sm:px-4 sm:py-2.5 sm:text-center"
                     >
-                        <span class="font-bold">累計</span>
-                        <span class="mx-0.5 text-rose-600 font-black">70万</span>
-                        <span class="font-bold">PV突破！</span>
-                        多くの受験生に選ばれている、合格特化型の過去問解説サイト
+                        <span class="block font-semibold tracking-wide">
+                            生命保険講座の過去問を、科目・年度・フォーム別に整理した解説サイトです。
+                        </span>
+                        <span class="mt-0.5 block text-[11px] font-medium text-purple-700/90">
+                            まずは科目を選び、最新年度フォームAからお試しください。
+                        </span>
                     </div>
 
                     <!-- プレミアム会員向けの状態表示 -->

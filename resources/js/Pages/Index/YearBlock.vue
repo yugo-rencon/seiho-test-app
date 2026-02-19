@@ -30,10 +30,14 @@ const props = defineProps({
         <div class="flex items-center gap-3">
             <div class="text-lg font-bold text-gray-900">{{ year }}年度</div>
             <span
-                v-if="!hasPremium && Number(year) === 2024"
+                v-if="
+                    !hasPremium &&
+                    Number(year) === 2024 &&
+                    !['zeihou', 'sisan'].includes(currentSubjectId)
+                "
                 class="inline-flex items-center rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700"
             >
-                最新年度・無料
+                最新年度フォームA・無料
             </span>
         </div>
 

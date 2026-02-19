@@ -3,13 +3,28 @@ const isAlwaysFreeSubject = (title: string): boolean => {
     return text.includes("税法") || text.includes("資産");
 };
 
+const LATEST_FREE_YEAR = 2024;
+
+const parseFormCode = (subject: string): string => {
+    const text = String(subject ?? "").toUpperCase();
+    const matched = text.match(/フォーム\s*([A-C])/);
+    return matched?.[1] ?? "";
+};
+
 export const isPaidYear = (subject: string, title: string = ""): boolean => {
     if (isAlwaysFreeSubject(title)) {
         return false;
     }
 
     const year = Number(String(subject ?? "").slice(0, 4));
-    return year !== 2024;
+    const formCode = parseFormCode(subject);
+
+    // 最新年度はフォームAのみ無料（B/Cは有料）
+    if (year === LATEST_FREE_YEAR && formCode === "A") {
+        return false;
+    }
+
+    return true;
 };
 
 export const getPaywallStartQuestion = (title: string): number => {

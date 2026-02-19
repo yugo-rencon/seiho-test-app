@@ -235,7 +235,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
 
       <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
         <div class="text-sm text-gray-500">ログイン中のユーザー</div>
-        <div class="mt-1 text-lg font-semibold text-gray-800">
+        <div class="no-data-detectors mt-1 text-lg font-semibold text-gray-800">
           {{ user?.email || '未ログイン' }}
         </div>
 
@@ -344,14 +344,14 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
           <div
             v-for="subject in scoredSubjects"
             :key="subject.key"
-            class="flex items-center justify-between rounded-xl border border-gray-100 px-4 py-2.5 hover:bg-gray-50 transition cursor-pointer"
+            class="flex items-center justify-between gap-2 rounded-xl border border-gray-100 px-3 py-2.5 sm:px-4 hover:bg-gray-50 transition cursor-pointer"
             @click="openModal(subject.key)"
           >
-            <div class="text-sm font-semibold text-gray-800">
+            <div class="min-w-0 whitespace-nowrap text-[13px] sm:text-sm font-semibold text-gray-800">
               {{ subject.name }}
             </div>
-            <div class="grid grid-cols-[72px_64px] items-center gap-2">
-              <div class="text-right text-sm text-gray-600 tabular-nums">
+            <div class="grid grid-cols-[56px_52px] sm:grid-cols-[72px_64px] items-center gap-1 sm:gap-2 shrink-0">
+              <div class="text-right text-xs sm:text-sm text-gray-600 tabular-nums">
                 <span v-if="subject.score !== null">
                   {{ subject.score }} 点
                 </span>
@@ -359,7 +359,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
               </div>
               <span
                 v-if="subject.score !== null && hasPassScore"
-                class="inline-flex justify-center rounded-full px-2 py-0.5 text-xs font-semibold"
+                class="inline-flex justify-center rounded-full px-1.5 sm:px-2 py-0.5 text-[11px] sm:text-xs font-semibold"
                 :class="
                   subject.passed
                     ? 'bg-emerald-50 text-emerald-700'
@@ -370,7 +370,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
               </span>
               <span
                 v-else-if="subject.score !== null"
-                class="inline-flex justify-center rounded-full bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-500"
+                class="inline-flex justify-center rounded-full bg-gray-100 px-1.5 sm:px-2 py-0.5 text-[11px] sm:text-xs font-semibold text-gray-500"
               >
                 判定なし
               </span>

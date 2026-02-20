@@ -7,8 +7,11 @@
         <!-- 問題番号 -->
         <div class="flex items-center gap-2 my-4">
             <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>
-            <h2 class="text-base font-bold text-gray-800">
+            <h2 class="flex items-center gap-2 text-base font-bold text-gray-800">
                 問題{{ getQuestionRange(props.questionNumber) }}
+                <span v-if="props.questionTitle" class="text-base font-bold text-gray-800">
+                    {{ props.questionTitle }}
+                </span>
             </h2>
         </div>
         <p v-if="props.note" class="mb-3 text-xs text-gray-500">

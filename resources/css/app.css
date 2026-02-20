@@ -66,6 +66,18 @@ body {
     @apply block overflow-x-auto whitespace-nowrap rounded bg-gray-50 px-2 py-1 font-mono text-[0.95em];
 }
 
+.question-temp4-structured .calc-formula-block {
+    @apply overflow-x-auto rounded bg-gray-50 px-2 py-1 font-mono text-[0.95em];
+}
+
+.question-temp4-structured .calc-formula-block-line + .calc-formula-block-line {
+    @apply mt-1;
+}
+
+.question-temp4-structured .calc-formula-block-line {
+    @apply whitespace-nowrap;
+}
+
 .question-temp4-structured .calc-kv {
     @apply grid grid-cols-[9em_1em_1fr] items-start gap-1 text-gray-800;
 }

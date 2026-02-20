@@ -10,8 +10,11 @@
                 <div
                     class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"
                 ></div>
-                <h2 class="text-base font-bold text-gray-800">
+                <h2 class="flex items-center gap-2 text-base font-bold text-gray-800">
                     問{{ item.questionNo }}
+                    <span v-if="item.questionTitle" class="text-base font-bold text-gray-800">
+                        {{ item.questionTitle }}
+                    </span>
                 </h2>
             </div>
             <p v-if="index === 0 && props.note" class="mb-3 text-xs text-gray-500">
@@ -20,11 +23,6 @@
 
             <!-- 回答 -->
             <div class="mt-4 mb-3 inline-flex flex-wrap items-center gap-2 text-gray-700 select-none">
-                <span
-                    class="inline-flex h-8 items-center rounded-full border border-purple-200 bg-purple-50 px-3 text-xs font-semibold text-purple-700"
-                >
-                    正解
-                </span>
                 <div class="inline-flex h-8 items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3">
                     <span class="font-bold text-base text-gray-900">
                         {{ item.label }}
@@ -47,27 +45,40 @@
                             <p v-if="part.type === 'blockTitle'" class="calc-block-title">
                                 {{ part.value }}
                             </p>
-                            <p v-else-if="part.type === 'text'" class="calc-text">
-                                {{ part.value }}
-                            </p>
+                            <p
+                                v-else-if="part.type === 'text'"
+                                class="calc-text"
+                                v-html="toText(part.value)"
+                            ></p>
                             <div v-else-if="part.type === 'kv'" class="calc-kv">
                                 <span class="calc-kv-label">{{ part.label }}</span>
                                 <span class="calc-kv-sep">:</span>
                                 <span class="calc-kv-value">{{ part.value }}</span>
                             </div>
                             <div v-else-if="part.type === 'formula'" class="calc-line">
-                                {{ part.value }}
+                                {{ toText(part.value) }}
+                            </div>
+                            <div v-else-if="part.type === 'formulaBlock'" class="calc-formula-block">
+                                <div
+                                    v-for="(line, lineIndex) in toLines(part.value)"
+                                    :key="`visible-${item.questionNo}-${partIndex}-${lineIndex}`"
+                                    class="calc-formula-block-line"
+                                >
+                                    {{ line }}
+                                </div>
                             </div>
                             <p v-else-if="part.type === 'result'" class="calc-result">
-                                {{ part.value }}
+                                {{ toText(part.value) }}
                             </p>
-                            <p v-else-if="part.type === 'note'" class="calc-note">
-                                {{ part.value }}
-                            </p>
+                            <p
+                                v-else-if="part.type === 'note'"
+                                class="calc-note"
+                                v-html="toText(part.value)"
+                            ></p>
                             <div
                                 v-else-if="part.type === 'tex'"
                                 class="calc-tex"
-                                v-html="renderKatex(part.value, part.displayMode ?? false)"
+                                v-html="renderKatex(toText(part.value), part.displayMode ?? false)"
                             ></div>
                         </template>
                     </div>
@@ -102,17 +113,18 @@
             <div
                 class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"
             ></div>
-            <h2 class="text-base font-bold text-gray-800">
+            <h2 class="flex items-center gap-2 text-base font-bold text-gray-800">
                 問{{ firstLockedItem.questionNo }}
+                <span
+                    v-if="firstLockedItem.questionTitle"
+                    class="text-base font-bold text-gray-800"
+                >
+                    {{ firstLockedItem.questionTitle }}
+                </span>
             </h2>
         </div>
 
         <div class="mt-4 mb-3 inline-flex flex-wrap items-center gap-2 text-gray-700 select-none">
-            <span
-                class="inline-flex h-8 items-center rounded-full border border-purple-200 bg-purple-50 px-3 text-xs font-semibold text-purple-700"
-            >
-                正解
-            </span>
             <div class="inline-flex h-8 items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3">
                 <span class="font-bold text-base text-gray-900">{{ firstLockedItem.label }}</span>
                 <span class="text-gray-400">:</span>
@@ -130,27 +142,40 @@
                         <p v-if="part.type === 'blockTitle'" class="calc-block-title">
                             {{ part.value }}
                         </p>
-                        <p v-else-if="part.type === 'text'" class="calc-text">
-                            {{ part.value }}
-                        </p>
+                        <p
+                            v-else-if="part.type === 'text'"
+                            class="calc-text"
+                            v-html="toText(part.value)"
+                        ></p>
                         <div v-else-if="part.type === 'kv'" class="calc-kv">
                             <span class="calc-kv-label">{{ part.label }}</span>
                             <span class="calc-kv-sep">:</span>
                             <span class="calc-kv-value">{{ part.value }}</span>
                         </div>
                         <div v-else-if="part.type === 'formula'" class="calc-line">
-                            {{ part.value }}
+                            {{ toText(part.value) }}
+                        </div>
+                        <div v-else-if="part.type === 'formulaBlock'" class="calc-formula-block">
+                            <div
+                                v-for="(line, lineIndex) in toLines(part.value)"
+                                :key="`locked-${firstLockedItem.questionNo}-${partIndex}-${lineIndex}`"
+                                class="calc-formula-block-line"
+                            >
+                                {{ line }}
+                            </div>
                         </div>
                         <p v-else-if="part.type === 'result'" class="calc-result">
-                            {{ part.value }}
+                            {{ toText(part.value) }}
                         </p>
-                        <p v-else-if="part.type === 'note'" class="calc-note">
-                            {{ part.value }}
-                        </p>
+                        <p
+                            v-else-if="part.type === 'note'"
+                            class="calc-note"
+                            v-html="toText(part.value)"
+                        ></p>
                         <div
                             v-else-if="part.type === 'tex'"
                             class="calc-tex"
-                            v-html="renderKatex(part.value, part.displayMode ?? false)"
+                            v-html="renderKatex(toText(part.value), part.displayMode ?? false)"
                         ></div>
                     </template>
                 </div>
@@ -177,15 +202,17 @@ import katex from "katex";
 import PaywallNotice from "./PaywallNotice.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
 
-type ExplanationType = "blockTitle" | "text" | "kv" | "formula" | "result" | "note" | "tex";
+type ExplanationType = "blockTitle" | "text" | "kv" | "formula" | "formulaBlock" | "result" | "note" | "tex";
 type ExplanationPart = {
     type: ExplanationType;
-    value: string;
+    value: string | string[];
     label?: string;
     displayMode?: boolean;
 };
 
 type CalcContent = {
+    title?: string;
+    questionTitle?: string;
     answer: string;
     explanation: string | ExplanationPart[];
 };
@@ -198,6 +225,10 @@ const props = defineProps({
     contents: {
         type: Array as PropType<CalcContent[]>,
         required: true,
+    },
+    questionTitle: {
+        type: [Array, String] as PropType<string[] | string>,
+        default: "",
     },
     labels: {
         type: Array as PropType<string[]>,
@@ -238,6 +269,7 @@ const normalizedItems = computed(() => {
         content,
         label: props.labels[index] ?? "",
         questionNo: Number(props.questionNumber) + index,
+        questionTitle: getQuestionTitle(index, content),
     }));
 });
 
@@ -283,11 +315,30 @@ const isStructuredExplanation = (
     return Array.isArray(explanation);
 };
 
+const toText = (value: string | string[]): string => {
+    return Array.isArray(value) ? value.join("\n") : value;
+};
+
+const toLines = (value: string | string[]): string[] => {
+    if (Array.isArray(value)) return value;
+    return String(value ?? "")
+        .split("\n")
+        .map((line) => line.trimEnd())
+        .filter((line) => line !== "");
+};
+
 const renderKatex = (value: string, displayMode = true): string => {
     return katex.renderToString(value, {
         displayMode,
         throwOnError: false,
         strict: "ignore",
     });
+};
+
+const getQuestionTitle = (index: number, content: CalcContent): string => {
+    if (content?.title) return content.title;
+    if (content?.questionTitle) return content.questionTitle;
+    if (Array.isArray(props.questionTitle)) return props.questionTitle[index] ?? "";
+    return props.questionTitle ?? "";
 };
 </script>

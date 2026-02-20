@@ -10,8 +10,14 @@
         >
             <div class="flex items-center gap-2 my-4">
                 <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>
-                <h2 class="text-base font-bold text-gray-800">
+                <h2 class="flex items-center gap-2 text-base font-bold text-gray-800">
                     問題{{ item.questionNo }}
+                    <span
+                        v-if="item.questionTitle"
+                        class="text-base font-bold text-gray-800"
+                    >
+                        {{ item.questionTitle }}
+                    </span>
                 </h2>
             </div>
             <p v-if="item.note" class="mb-3 text-xs text-gray-500">
@@ -51,8 +57,8 @@ const props = defineProps({
         required: true,
     },
     questionTitle: {
-        type: Array,
-        default: () => [],
+        type: [Array, String],
+        default: "",
     },
     contents: {
         type: Array,
@@ -100,6 +106,7 @@ const normalizedItems = computed(() => {
             label: item?.label ?? getLabel(index),
             note: item?.note ?? getNote(index),
             questionNo: Number(props.questionNumber) + index,
+            questionTitle: getQuestionTitle(index),
         }));
     }
 
@@ -108,6 +115,7 @@ const normalizedItems = computed(() => {
         label: getLabel(index),
         note: getNote(index),
         questionNo: Number(props.questionNumber) + index,
+        questionTitle: getQuestionTitle(index),
     }));
 });
 
@@ -171,6 +179,11 @@ const getNote = (index: number) => {
     if (props.notes[index]) return props.notes[index];
     if (index === 0) return props.note;
     return "";
+};
+
+const getQuestionTitle = (index: number) => {
+    if (Array.isArray(props.questionTitle)) return props.questionTitle[index] ?? "";
+    return props.questionTitle ?? "";
 };
 
 const formatContent = (item: { label: string; content: string }) => {

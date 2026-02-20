@@ -6,6 +6,46 @@ import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
 // 更新履歴の全データ
 const allUpdates = [
     {
+        date: '2026.02.20',
+        title: 'プレミアム機能の公開準備を進めています',
+        description: '料金関連の導線を調整し、プレミアム機能は4月の正式リリースに向けて準備中です。',
+        badge: 'UPDATE',
+        badgeColor: 'from-blue-500 to-indigo-500',
+        category: 'お知らせ'
+    },
+    {
+        date: '2026.02.19',
+        title: 'ログイン・決済まわりを強化しました',
+        description: 'Googleログインやプレミアム機能の土台を整備し、より安定して利用できるよう改善しました。',
+        badge: 'NEW',
+        badgeColor: 'from-pink-500 to-red-500',
+        category: 'サイト改善'
+    },
+    {
+        date: '2026.02.19',
+        title: 'サイト案内・各種ポリシーを更新しました',
+        description: 'このサイトについて、利用規約、プライバシーポリシー、特商法表記などを見直し、内容を分かりやすく整理しました。',
+        badge: 'INFO',
+        badgeColor: 'from-purple-500 to-indigo-500',
+        category: 'お知らせ'
+    },
+    {
+        date: '2026.02.18',
+        title: 'スマホ表示と使いやすさを改善しました',
+        description: 'マイページや解説ページの表示・操作性を調整し、スマートフォンでも使いやすくなるよう改善しました。',
+        badge: 'UPDATE',
+        badgeColor: 'from-blue-500 to-indigo-500',
+        category: 'サイト改善'
+    },
+    {
+        date: '2026.02.18',
+        title: '生命保険総論 2020年度（A/B/C）を追加',
+        description: '生命保険総論の2020年度フォームA・B・Cを追加しました。既存年度との表記統一（SAME注記やラベル運用）も進めています。',
+        badge: 'NEW',
+        badgeColor: 'from-pink-500 to-red-500',
+        category: 'コンテンツ追加'
+    },
+    {
         date: '2025.12.19',
         title: '2024年度 生命保険と税法 解説追加',
         description: '2024年度の『生命保険と税法』の解説を公開しました。フォームA・B・Cすべての解説をご用意しています。',
@@ -119,16 +159,21 @@ const allUpdates = [
     // }
 ];
 
-// フィルター用のカテゴリー一覧
-const categories = ['すべて', 'コンテンツ追加', 'コンテンツ更新', 'サイト改善', 'お知らせ'];
+// フィルター用のカテゴリー一覧（ユーザー向けに簡略化）
+const categories = ['すべて', 'コンテンツ', 'お知らせ'];
 const selectedCategory = ref('すべて');
+
+const normalizeCategory = (category) => {
+    if (String(category).includes('コンテンツ')) return 'コンテンツ';
+    return 'お知らせ';
+};
 
 // フィルター済みの更新履歴
 const filteredUpdates = computed(() => {
     if (selectedCategory.value === 'すべて') {
         return allUpdates;
     }
-    return allUpdates.filter(update => update.category === selectedCategory.value);
+    return allUpdates.filter(update => normalizeCategory(update.category) === selectedCategory.value);
 });
 
 // 年別にグループ化（新しい年が上）
@@ -154,15 +199,14 @@ const groupedByYear = computed(() => {
 <template>
     <SeihoTestLayout title="更新履歴 - 生命保険講座過去問解説">
         <div id="update-info" class="container mx-auto px-5 sm:px-6 m-10 max-w-7xl">
-            <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full filter blur-3xl opacity-30 -mr-32 -mt-32"></div>
+            <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-md md:p-8">
 
-                <div class="relative">
-                    <div class="flex items-center gap-3 mb-6">
+                <div>
+                    <div class="mb-6 flex items-center gap-3">
                         <div class="h-8 w-1.5 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full"></div>
                         <div>
                             <div class="flex items-center gap-2">
-                                <h2 class="text-xl font-bold text-gray-900">
+                                <h2 class="text-lg font-bold text-gray-900">
                                     更新履歴
                                 </h2>
                                 <span class="text-[11px] font-semibold text-purple-700 bg-purple-50 border border-purple-100 rounded-full px-2 py-0.5">
@@ -181,7 +225,7 @@ const groupedByYear = computed(() => {
                             :key="category"
                             type="button"
                             @click="selectedCategory = category"
-                            class="px-4 py-2 rounded-full text-sm font-semibold border transition-colors"
+                            class="rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors"
                             :class="
                                 selectedCategory === category
                                     ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-transparent shadow'
@@ -192,34 +236,25 @@ const groupedByYear = computed(() => {
                         </button>
                     </div>
 
-                    <div class="mt-8 space-y-10">
+                    <div class="mt-8 space-y-8">
                         <div v-for="group in groupedByYear" :key="group.year">
                             <div class="flex items-center gap-3 mb-4">
-                                <div class="text-lg font-bold text-gray-900">
+                                <div class="text-base font-bold text-gray-900">
                                     {{ group.year }}年
                                 </div>
                                 <div class="h-px flex-1 bg-gradient-to-r from-purple-200 to-transparent"></div>
                             </div>
 
-                            <div class="divide-y divide-gray-100 border border-gray-100 rounded-2xl bg-white">
-                                <div v-for="(update, index) in group.updates" :key="index" class="p-5 md:p-6">
+                            <div class="divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white">
+                                <div v-for="(update, index) in group.updates" :key="index" class="p-4">
                                     <div class="flex flex-wrap items-center gap-2">
-                                        <span class="text-sm font-bold text-indigo-600">{{ update.date }}</span>
-                                        <span
-                                            class="px-2 py-0.5 text-[10px] font-semibold text-white rounded-full"
-                                            :class="`bg-gradient-to-r ${update.badgeColor}`"
-                                        >
-                                            {{ update.badge }}
-                                        </span>
-                                        <span class="px-2 py-0.5 text-[10px] font-semibold text-gray-600 bg-gray-100 rounded-full">
-                                            {{ update.category }}
-                                        </span>
+                                        <span class="text-xs font-semibold text-indigo-600">{{ update.date }}</span>
                                     </div>
 
-                                    <div class="mt-3 text-base font-bold text-gray-900">
+                                    <div class="mt-2 text-sm font-semibold text-gray-900">
                                         {{ update.title }}
                                     </div>
-                                    <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                                    <p class="mt-1.5 text-xs leading-relaxed text-gray-600">
                                         {{ update.description }}
                                     </p>
                                 </div>
@@ -232,7 +267,7 @@ const groupedByYear = computed(() => {
                             href="/"
                             class="inline-flex items-center gap-2 rounded-full border border-purple-200 px-5 py-2.5 text-sm font-semibold text-purple-700 hover:bg-purple-50 transition"
                         >
-                            ホームに戻る
+                            解説一覧に戻る
                         </Link>
                     </div>
                 </div>
@@ -240,3 +275,4 @@ const groupedByYear = computed(() => {
         </div>
     </SeihoTestLayout>
 </template>
+

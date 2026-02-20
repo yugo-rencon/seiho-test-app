@@ -7,7 +7,7 @@ defineProps({
     isAdmin: { type: Boolean, default: false },
 });
 
-defineEmits(["open-menu"]);
+defineEmits(["open-menu", "open-pricing-modal"]);
 
 // 現在表示中のルート判定（アクティブ色に利用）
 const isActive = (name) => route().current(name);
@@ -116,9 +116,10 @@ const isActive = (name) => route().current(name);
                 >
                     勉強法
                 </Link>
-                <Link
-                    :href="route('pricing')"
+                <button
+                    type="button"
                     class="border-b-2 px-3 py-2 transition-colors hover:text-purple-900"
+                    @click="$emit('open-pricing-modal')"
                     :class="
                         isActive('pricing')
                             ? 'border-purple-500 text-purple-900'
@@ -126,7 +127,7 @@ const isActive = (name) => route().current(name);
                     "
                 >
                     料金
-                </Link>
+                </button>
                 <Link
                     :href="route('about')"
                     class="border-b-2 px-3 py-2 transition-colors hover:text-purple-900"

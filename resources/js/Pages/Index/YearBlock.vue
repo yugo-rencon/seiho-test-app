@@ -27,8 +27,8 @@ const props = defineProps({
 
 <template>
     <div class="p-5 md:p-6">
-        <div class="flex items-center gap-3">
-            <div class="text-lg font-bold text-gray-900">{{ year }}年度</div>
+        <div class="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
+            <div class="whitespace-nowrap text-lg font-bold text-gray-900">{{ year }}年度</div>
             <span
                 v-if="
                     !hasPremium &&

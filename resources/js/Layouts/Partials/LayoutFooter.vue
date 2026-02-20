@@ -1,5 +1,7 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
+
+defineEmits(["open-pricing-modal"]);
 </script>
 
 <template>
@@ -54,12 +56,13 @@ import { Link } from "@inertiajs/vue3";
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                :href="route('pricing')"
+                            <button
+                                type="button"
                                 class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                                @click="$emit('open-pricing-modal')"
                             >
                                 料金
-                            </Link>
+                            </button>
                         </li>
                         <li>
                             <Link
@@ -96,6 +99,16 @@ import { Link } from "@inertiajs/vue3";
                             >
                                 このサイトについて
                             </Link>
+                        </li>
+                        <li>
+                            <a
+                                href="https://buymeacoffee.com/rencon"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                            >
+                                応援する（寄付）
+                            </a>
                         </li>
                     </ul>
                 </div>

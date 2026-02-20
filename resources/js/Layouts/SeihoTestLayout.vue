@@ -20,6 +20,7 @@ const page = usePage();
 // レイアウト共通UIの状態
 const isMenuOpen = ref(false);
 const showToast = ref(false);
+const showPricingModal = ref(false);
 let toastTimer = null;
 
 // Inertia shared props から認証情報を取得
@@ -98,6 +99,14 @@ onBeforeUnmount(() => {
     clearTimeout(toastTimer);
     toastTimer = null;
 });
+
+const openPricingModal = () => {
+    showPricingModal.value = true;
+};
+
+const closePricingModal = () => {
+    showPricingModal.value = false;
+};
 </script>
 
 <template>
@@ -125,6 +134,7 @@ onBeforeUnmount(() => {
             :is-authenticated="isAuthenticated"
             :is-admin="isAdmin"
             @open-menu="isMenuOpen = true"
+            @open-pricing-modal="openPricingModal"
         />
 
         <slot />
@@ -137,9 +147,47 @@ onBeforeUnmount(() => {
             :has-premium="hasPremium"
             :subjects="subjects"
             @close="isMenuOpen = false"
+            @open-pricing-modal="openPricingModal"
         />
 
         <!-- フッター全体 -->
-        <LayoutFooter />
+        <LayoutFooter @open-pricing-modal="openPricingModal" />
+
+        <transition name="fade">
+            <div
+                v-if="showPricingModal"
+                class="fixed inset-0 z-[70] flex items-center justify-center bg-black/40 px-6"
+                @click.self="closePricingModal"
+            >
+                <div
+                    class="w-full max-w-md rounded-2xl border border-purple-100 bg-white p-6 shadow-xl"
+                >
+                    <h3 class="text-lg font-bold text-gray-900">プレミアム機能は現在準備中です。</h3>
+                    <p class="mt-2 text-sm text-gray-600">
+                        4月より正式リリース予定です。
+                    </p>
+                    <div class="mt-5 flex justify-end">
+                        <button
+                            type="button"
+                            class="rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700"
+                            @click="closePricingModal"
+                        >
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </transition>
     </div>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+</style>

@@ -21,14 +21,14 @@ export default {
     <div class="relative mt-0">
         <div class="rounded-2xl border-t border-purple-200 bg-[#f9f6ff] p-6 text-center">
             <div class="text-sm font-semibold text-purple-700">ここから先はプレミアム解説です</div>
-            <div class="mx-auto mt-3 w-fit space-y-1 text-left text-[12px] text-gray-700">
-                <div>✔ 1,980円（全8科目・6年度分 / 買い切り）</div>
+            <!-- <div class="mx-auto mt-3 w-fit space-y-1 text-left text-[12px] text-gray-700">
+                <div>✔ 1,980円（全8科目・4年度分 / 買い切り）</div>
                 <div>✔ 一度の購入で追加料金なし、無期限で利用可能</div>
                 <div>✔ 今後追加される最新年度も閲覧可能</div>
             </div>
             <div class="mt-3 text-[11px] text-gray-500">
                 ※過去数年からの再出題が見られるため、複数年度の演習を推奨しています。
-            </div>
+            </div> -->
             <div class="mt-4 flex justify-center">
                 <Link
                     v-if="isPurchaseEnabled"

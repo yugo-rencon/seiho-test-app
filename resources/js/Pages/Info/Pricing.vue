@@ -147,7 +147,7 @@ const plans = [
                             "
                             type="button"
                             disabled
-                            class="inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-5 py-3 text-base font-semibold text-purple-700"
+                            class="inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-5 py-3 text-xs font-semibold text-purple-700"
                         >
                             プレミアム機能は現在準備中です。4月より正式リリース予定です。
                         </button>

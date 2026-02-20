@@ -11,7 +11,7 @@ const props = defineProps({
     subjects: { type: Array, default: () => [] },
 });
 
-const emit = defineEmits(["close"]);
+const emit = defineEmits(["close", "open-pricing-modal"]);
 
 // 科目アコーディオン開閉状態
 const openSubjects = ref(new Set());
@@ -31,6 +31,10 @@ watch(
 const isActive = (name) => route().current(name);
 
 const closeMenu = () => emit("close");
+const openPricingModal = () => {
+    closeMenu();
+    emit("open-pricing-modal");
+};
 
 // 科目アコーディオンを開閉。閉じる時は年度選択もリセット
 const toggleSubject = (key) => {
@@ -277,13 +281,13 @@ const setActiveYear = (subjectKey, yearLabel) => {
                             >
                                 勉強法
                             </Link>
-                            <Link
-                                :href="route('pricing')"
+                            <button
+                                type="button"
                                 class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-                                @click="closeMenu"
+                                @click="openPricingModal"
                             >
                                 料金
-                            </Link>
+                            </button>
                             <Link
                                 :href="route('about')"
                                 class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"

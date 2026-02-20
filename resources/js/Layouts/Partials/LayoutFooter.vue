@@ -49,7 +49,7 @@ defineEmits(["open-pricing-modal"]);
                         </li>
                         <li>
                             <Link
-                                :href="route('studyMethod')"
+                                :href="route('study-method')"
                                 class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
                             >
                                 勉強法

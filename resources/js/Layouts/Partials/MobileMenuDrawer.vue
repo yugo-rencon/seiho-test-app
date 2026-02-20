@@ -275,7 +275,7 @@ const setActiveYear = (subjectKey, yearLabel) => {
                     <div class="border-t border-gray-100 pt-4">
                         <div class="space-y-2">
                             <Link
-                                :href="route('studyMethod')"
+                                :href="route('study-method')"
                                 class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
                                 @click="closeMenu"
                             >

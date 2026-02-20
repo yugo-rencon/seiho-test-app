@@ -23,7 +23,7 @@ class GenerateSitemap extends Command
             ->add(Url::create("{$baseUrl}/policy"))
             ->add(Url::create("{$baseUrl}/terms"))
             ->add(Url::create("{$baseUrl}/tokusho"))
-            ->add(Url::create("{$baseUrl}/studyMethod"))
+            ->add(Url::create("{$baseUrl}/study-method"))
             ->add(Url::create("{$baseUrl}/updateInfo"))
             ->add(Url::create("{$baseUrl}/contact"));
 

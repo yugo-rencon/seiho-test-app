@@ -106,10 +106,10 @@ const isActive = (name) => route().current(name);
                     解説一覧
                 </Link>
                 <Link
-                    :href="route('studyMethod')"
+                    :href="route('study-method')"
                     class="border-b-2 px-3 py-2 transition-colors hover:text-purple-900"
                     :class="
-                        isActive('studyMethod')
+                        isActive('study-method')
                             ? 'border-purple-500 text-purple-900'
                             : 'border-transparent'
                     "

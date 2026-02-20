@@ -45,7 +45,7 @@ Route::controller(TestController::class)->group(function () {
     Route::get('terms', 'terms')->name('terms');
     Route::get('tokusho', 'tokusho')->name('tokusho');
     Route::get('updateInfo', 'updateInfo')->name('updateInfo');
-    Route::get('studyMethod', 'studyMethod')->name('studyMethod');
+    Route::get('study-method', 'studyMethod')->name('study-method');
 });
 
 Route::middleware('auth')->group(function () {

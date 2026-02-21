@@ -79,20 +79,6 @@ body {
     @apply whitespace-nowrap;
 }
 
-/* スマホでは右端に薄いフェードを常時表示して、横スクロール可能であることを示す */
-@media (max-width: 640px) {
-    .question-temp4-structured .calc-formula-block::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 28px;
-        height: 100%;
-        pointer-events: none;
-        background: linear-gradient(to left, rgb(249 250 251) 45%, transparent);
-    }
-}
-
 .question-temp4-structured .calc-kv {
     @apply grid grid-cols-[9em_1em_1fr] items-start gap-1 text-gray-800;
 }

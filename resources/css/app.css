@@ -81,22 +81,6 @@ body {
 
 /* スマホでは右端に薄いフェードを常時表示して、横スクロール可能であることを示す */
 @media (max-width: 640px) {
-    .question-temp4-structured .calc-formula-block::before {
-        content: "↔";
-        position: absolute;
-        right: 6px;
-        bottom: 4px;
-        z-index: 1;
-        pointer-events: none;
-        font-size: 10px;
-        font-weight: 600;
-        line-height: 1;
-        color: rgb(107 114 128 / 0.7);
-        background: rgb(249 250 251 / 0.85);
-        border-radius: 9999px;
-        padding: 1px 4px;
-    }
-
     .question-temp4-structured .calc-formula-block::after {
         content: "";
         position: absolute;

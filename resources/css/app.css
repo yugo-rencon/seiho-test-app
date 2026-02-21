@@ -86,10 +86,10 @@ body {
         position: absolute;
         top: 0;
         right: 0;
-        width: 20px;
+        width: 28px;
         height: 100%;
         pointer-events: none;
-        background: linear-gradient(to left, rgb(249 250 251 / 0.55) 35%, transparent);
+        background: linear-gradient(to left, rgb(249 250 251) 45%, transparent);
     }
 }
 

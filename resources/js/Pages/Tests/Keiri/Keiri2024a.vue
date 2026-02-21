@@ -33,7 +33,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                             explanation: [
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 考え方ポイント',
+                                    value: '■ 考え方のポイント',
                                 },
                                 {
                                     type: 'text',
@@ -41,11 +41,11 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                                 },
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 使用公式',
+                                    value: '■ 使用する公式',
                                 },
                                 {
-                                    type: 'formula',
-                                    value: '生存率 ＝ 期末の生存数 ÷ 期初の生存数',
+                                    type: 'formulaBlock',
+                                    value: ['生存率 ＝ 期末の生存数 ÷ 期初の生存数'],
                                 },
                                 {
                                     type: 'blockTitle',
@@ -68,7 +68,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                             explanation: [
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 考え方ポイント',
+                                    value: '■ 考え方のポイント',
                                 },
                                 {
                                     type: 'text',
@@ -76,7 +76,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                                 },
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 使用公式',
+                                    value: '■ 使用する公式',
                                 },
                                 {
                                     type: 'formula',
@@ -115,7 +115,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                             explanation: [
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 考え方ポイント',
+                                    value: '■ 考え方のポイント',
                                 },
                                 {
                                     type: 'text',
@@ -123,7 +123,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                                 },
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 使用公式',
+                                    value: '■ 使用する公式',
                                 },
                                 {
                                     type: 'formulaBlock',
@@ -144,11 +144,11 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                                 {
                                     type: 'formulaBlock',
                                     value: [
-                                        '105歳：30.877 × 0.5 ＝ 15.4385 → 15.44',
-                                        '106歳：13.8961 × 1.5 ＝ 20.84415 → 20.84',
-                                        '107歳：5.6633 × 2.5 ＝ 14.15825 → 14.16',
-                                        '108歳：2.0682 × 3.5 ＝ 7.2387 → 7.24',
-                                        '109歳：0.9156 × 4.5 ＝ 4.1202 → 4.12',
+                                        '105歳：30.877 × 0.5 ＝ 15.44',
+                                        '106歳：13.8961 × 1.5 ＝ 20.84',
+                                        '107歳：5.6633 × 2.5 ＝ 14.16',
+                                        '108歳：2.0682 × 3.5 ＝ 7.24',
+                                        '109歳：0.9156 × 4.5 ＝ 4.12',
                                     ],
                                 },
                                 {
@@ -184,7 +184,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                             explanation: [
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 考え方ポイント',
+                                    value: '■ 考え方のポイント',
                                 },
                                 {
                                     type: 'text',
@@ -196,7 +196,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                                 },
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 使用公式',
+                                    value: '■ 使用する公式',
                                 },
                                 {
                                     type: 'formulaBlock',
@@ -235,7 +235,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                             explanation: [
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 考え方ポイント',
+                                    value: '■ 考え方のポイント',
                                 },
                                 {
                                     type: 'text',
@@ -243,7 +243,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                                 },
                                 {
                                     type: 'blockTitle',
-                                    value: '■ 使用公式',
+                                    value: '■ 使用する公式',
                                 },
                                 {
                                     type: 'formulaBlock',
@@ -280,38 +280,195 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         // 問６
                         {
                             answer: '4,517',
-                            explanation:
-                                '元金：500,000円<br>\
-                        月利：0.15%（＝0.0015）<br><br><br>\
-                        1ヶ月複利で6ヶ月間運用した場合の元利合計金額を求める。<br><br><br>\
-                        <div class=&quot;calc-line&quot;>500,000円 × (1 + 0.0015) <sup>6</sup> ＝ 504,516.9円</div>\
-                        利息：<br>\
-                        <div class=&quot;calc-line&quot;>504,516.9円 − 500,000円 ＝ 4,516.9円</div>\
-                        <p class=&quot;calc-result&quot;>⇒ 4,517円（円未満を四捨五入）</p>',
+                            questionTitle: '複利計算',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 考え方のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '複利では、元金に利息が組み込まれながら増えていく。まず6か月後の元利合計を求め、そこから元金を差し引いて利息を求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計 ＝ 元金 × (1 + 利率)<sup>運用期間</sup>', '利息 ＝ 元利合計 − 元金'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元金：500,000円', '月利：0.15％ ＝ 0.0015', '運用期間：6か月'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 元利合計',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['＝ 500,000円 × (1 + 0.0015)<sup>6</sup>', '＝ 500,000円 × 1.0090338', '＝ 504,516.9円'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 利息',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['＝ 504,516.9円 − 500,000円', '＝ 4,516.9円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 4,517円（円未満四捨五入）',
+                                },
+                            ],
                         },
                         // 問７
                         {
                             answer: '528,696',
-                            explanation:
-                                '元金：500,000円<br>\
-                        年利：1.4%<br>\
-                        半年利：0.7%（＝0.007）<br>\
-                        複利回数：8回（＝4年間 × 年2回）<br><br><br>\
-                        500,000円 × (1 + 0.007)<sup>8</sup> ＝ 528,695.6円<br><br><br>\
-                        元利合計：<br>\
-                        ⇒ 528,696円（円未満を四捨五入）',
+                            questionTitle: '複利計算（半年複利）',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 考え方のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '年利1.4％で半年複利の場合、半年ごとに0.7％ずつ増える。4年間では半年が8回あるため、半年利率で8回複利計算する。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計 ＝ 元金 × (1 + 期間利率)<sup>複利回数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元金：500,000円', '年利：1.4％', '半年利率：＝ 1.4％ ÷ 2 ＝ 0.7％ ＝ 0.007', '複利回数：＝ 4年 × 年2回 ＝ 8回'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計', '＝ 500,000円 × (1 + 0.007)<sup>8</sup>', '＝ 500,000円 × 1.0573912', '＝ 528,695.6円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 528,696円（円未満四捨五入）',
+                                },
+                            ],
                         },
                         // 問８
                         {
                             answer: '1.21',
-                            explanation:
-                                '転化回数：1年間に利息を元金に繰り入れる回数<br><br><br>\
-                        実利率 ＝（ 1 + 名称利率 ÷ 転化回数）<sup>転化回数</sup> - 1<br><br><br>\
-                        実利率：<br>\
-                        （ 1 + 0.012 ÷ 4 ）<sup>4</sup> - 1 ＝ 0.01205 ＝ 1.205%<br>\
-                        ⇒ 1.21%（小数第3位を四捨五入）',
+                            questionTitle: '実利率',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 考え方のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '実利率とは、1年間に実際どれだけ増えるかを示す利率。名称利率が年率でも、年に複数回利息が付く場合は、その回数分だけ複利計算する。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['実利率 ＝（ 1 + 名称利率 ÷ 転化回数）<sup>転化回数</sup> - 1'],
+                                },
+                                {
+                                    type: 'note',
+                                    value: '転化回数：1年間に利息を元金に繰り入れる回数',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 1回あたりの利率',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['＝ 0.012 ÷ 4', '＝ 0.003'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 実利率',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['＝ (1 + 0.003)<sup>4</sup> − 1', '＝ 1.01205 − 1', '＝ 0.01205 ＝ 1.205％'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 1.21％（小数第3位を四捨五入）',
+                                },
+                            ],
                         },
                         // 問９
+                        {
+                            answer: '1.21',
+                            questionTitle: '年平均利回り',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 考え方のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: 'まず、3年間の複利でどれだけ増えたか（総利回り）を求める。その後、それを3年で平均したものが年平均利回り。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['総利回り ＝ (1 + 複利利率)<sup>期間</sup> − 1','年平均利回り ＝ 総利回り ÷ 期間'],
+                                },
+                                {
+                                    type: 'note',
+                                    value: '転化回数：1年間に利息を元金に繰り入れる回数',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 1回あたりの利率',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['＝ 0.012 ÷ 4', '＝ 0.003'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 実利率',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['＝ (1 + 0.003)<sup>4</sup> − 1', '＝ 1.01205 − 1', '＝ 0.01205 ＝ 1.205％'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 1.21％（小数第3位を四捨五入）',
+                                },
+                            ],
+                        },
                         {
                             answer: '1.83',
                             explanation:

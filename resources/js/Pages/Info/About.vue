@@ -1,6 +1,9 @@
 <script setup>
+import { ref } from "vue";
 import { Link } from "@inertiajs/vue3";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
+
+const showPricingModal = ref(false);
 </script>
 
 <template>
@@ -45,17 +48,53 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                 >
                     解説一覧を見る
                 </Link>
-                <Link
-                    :href="route('pricing')"
+                <button
+                    type="button"
                     class="inline-flex items-center rounded-full border border-purple-200 px-6 py-3 text-sm font-semibold text-purple-700 hover:bg-purple-50 transition"
+                    @click="showPricingModal = true"
                 >
                     料金プランを見る
-                </Link>
+                </button>
             </div>
 
             <section class="mt-10 pt-4 text-xs text-gray-500 border-t border-gray-100">
                 最終更新日：2026年2月16日
             </section>
         </section>
+
+        <transition name="fade">
+            <div
+                v-if="showPricingModal"
+                class="fixed inset-0 z-[70] flex items-center justify-center bg-black/40 px-6"
+                @click.self="showPricingModal = false"
+            >
+                <div
+                    class="w-full max-w-md rounded-2xl border border-purple-100 bg-white p-6 shadow-xl"
+                >
+                    <h3 class="text-lg font-bold text-gray-900">プレミアム機能は現在準備中です。</h3>
+                    <p class="mt-2 text-sm text-gray-600">4月より正式リリース予定です。</p>
+                    <div class="mt-5 flex justify-end">
+                        <button
+                            type="button"
+                            class="rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700"
+                            @click="showPricingModal = false"
+                        >
+                            閉じる
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </transition>
     </SeihoTestLayout>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+</style>

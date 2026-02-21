@@ -63,9 +63,8 @@
                                     v-for="(line, lineIndex) in toLines(part.value)"
                                     :key="`visible-${item.questionNo}-${partIndex}-${lineIndex}`"
                                     class="calc-formula-block-line"
-                                >
-                                    {{ line }}
-                                </div>
+                                    v-html="line"
+                                ></div>
                             </div>
                             <p v-else-if="part.type === 'result'" class="calc-result">
                                 {{ toText(part.value) }}
@@ -160,9 +159,8 @@
                                 v-for="(line, lineIndex) in toLines(part.value)"
                                 :key="`locked-${firstLockedItem.questionNo}-${partIndex}-${lineIndex}`"
                                 class="calc-formula-block-line"
-                            >
-                                {{ line }}
-                            </div>
+                                v-html="line"
+                            ></div>
                         </div>
                         <p v-else-if="part.type === 'result'" class="calc-result">
                             {{ toText(part.value) }}

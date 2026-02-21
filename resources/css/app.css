@@ -51,11 +51,11 @@ body {
 
 /* 計算問題（QuestionTemp4）向け: 構造化データ表示 */
 .question-temp4-structured {
-    @apply space-y-3;
+    @apply space-y-2.5;
 }
 
 .question-temp4-structured .calc-text {
-    @apply break-words text-gray-800;
+    @apply break-words text-[0.95em] leading-relaxed text-gray-700;
 }
 
 .question-temp4-structured .calc-block-title {

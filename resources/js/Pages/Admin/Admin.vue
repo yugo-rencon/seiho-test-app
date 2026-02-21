@@ -71,6 +71,12 @@ const submitSearch = () => {
                 >
                     ユーザー管理
                 </button>
+                <Link
+                    :href="route('admin.contacts.index')"
+                    class="rounded-full border border-gray-200 bg-white px-4 py-1.5 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
+                >
+                    問い合わせ管理
+                </Link>
             </div>
 
             <div

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ContactAdminController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StripeWebhookController;
@@ -63,6 +64,9 @@ Route::controller(ContactController::class)->group(function () {
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::post('users/{user}/toggle-premium', [AdminController::class, 'toggleUserPremium'])->name('admin.users.togglePremium');
+    Route::get('contacts', [ContactAdminController::class, 'index'])->name('admin.contacts.index');
+    Route::post('contacts/{contact}/status', [ContactAdminController::class, 'updateStatus'])->name('admin.contacts.updateStatus');
+    Route::post('contacts/{contact}/note', [ContactAdminController::class, 'updateNote'])->name('admin.contacts.updateNote');
 });
 
 Route::post('stripe/webhook', [StripeWebhookController::class, 'handle'])->name('stripe.webhook');

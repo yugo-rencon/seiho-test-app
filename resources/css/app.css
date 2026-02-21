@@ -67,7 +67,8 @@ body {
 }
 
 .question-temp4-structured .calc-formula-block {
-    @apply overflow-x-auto rounded bg-gray-50 px-2 py-1 font-mono text-[0.95em];
+    @apply relative overflow-x-auto rounded bg-gray-50 px-2 py-1 font-mono text-[0.95em];
+    -webkit-overflow-scrolling: touch;
 }
 
 .question-temp4-structured .calc-formula-block-line + .calc-formula-block-line {
@@ -76,6 +77,20 @@ body {
 
 .question-temp4-structured .calc-formula-block-line {
     @apply whitespace-nowrap;
+}
+
+/* スマホでは右端に薄いフェードを常時表示して、横スクロール可能であることを示す */
+@media (max-width: 640px) {
+    .question-temp4-structured .calc-formula-block::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 100%;
+        pointer-events: none;
+        background: linear-gradient(to left, rgb(249 250 251 / 0.55) 35%, transparent);
+    }
 }
 
 .question-temp4-structured .calc-kv {

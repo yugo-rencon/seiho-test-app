@@ -18,7 +18,7 @@ Route::controller(TestController::class)->group(function () {
     // 試験科目の定義
     $subjects = [
         'souron' => [2025, 2024, 2023, 2022, 2021, 2020],   // 生命保険総論
-        'keiri'  => [2025, 2024, 2023, 2022, 2021],   // 生命保険計理
+        'keiri'  => [2025, 2024, 2023, 2022, 2021, 2020],   // 生命保険計理
         'kiken'  => [2025, 2024, 2023, 2022, 2021],   // 危険選択
         'yakkan' => [2025, 2024, 2023, 2022, 2021],   // 約款と法律
         'kaikei' => [2025, 2024, 2023, 2022, 2021],   // 生命保険会計
@@ -63,7 +63,6 @@ Route::controller(ContactController::class)->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-    Route::post('users/{user}/toggle-premium', [AdminController::class, 'toggleUserPremium'])->name('admin.users.togglePremium');
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('admin.contacts.index');
     Route::post('contacts/{contact}/status', [ContactAdminController::class, 'updateStatus'])->name('admin.contacts.updateStatus');
     Route::post('contacts/{contact}/note', [ContactAdminController::class, 'updateNote'])->name('admin.contacts.updateNote');

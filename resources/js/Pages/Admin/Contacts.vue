@@ -34,13 +34,30 @@ const noteForms = Object.fromEntries(
         useForm({ admin_note: contact.admin_note ?? "" }),
     ]),
 );
+const initialNotes = Object.fromEntries(
+    (props.contacts?.data ?? []).map((contact) => [contact.id, contact.admin_note ?? ""]),
+);
 
 const saveNote = (contactId) => {
     const form = noteForms[contactId];
     if (!form) return;
     form.post(route("admin.contacts.updateNote", { contact: contactId }), {
         preserveScroll: true,
+        onSuccess: () => {
+            initialNotes[contactId] = form.admin_note ?? "";
+        },
     });
+};
+
+const saveNoteOnBlur = (contactId) => {
+    const form = noteForms[contactId];
+    if (!form || form.processing) return;
+
+    // 変更がない場合は送らない（保存忘れ対策の自動保存だけ行う）
+    const original = initialNotes[contactId] ?? "";
+    if ((form.admin_note ?? "") === (original ?? "")) return;
+
+    saveNote(contactId);
 };
 
 const statusLabel = (value) => {
@@ -188,8 +205,12 @@ const categoryLabel = (value) => {
                             rows="3"
                             class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-purple-300 focus:outline-none"
                             placeholder="管理者メモ（返信内容、対応履歴など）"
+                            @blur="saveNoteOnBlur(contact.id)"
                         ></textarea>
-                        <div class="mt-2 flex justify-end">
+                        <div class="mt-2 flex items-center justify-between gap-2">
+                            <p class="text-[11px] text-gray-500">
+                                フォーカスを外すと自動保存されます
+                            </p>
                             <button
                                 type="button"
                                 class="rounded-lg bg-purple-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-purple-500 disabled:opacity-60"

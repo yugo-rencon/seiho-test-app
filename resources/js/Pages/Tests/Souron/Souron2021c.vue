@@ -233,7 +233,7 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                 />
             </div>
 
-            <TestNavigationButtons previous-route="souron2021b" />
+            <TestNavigationButtons previous-route="souron2021b" next-route="souron2020a" />
         </section>
     </SeihoTestLayout>
 </template>

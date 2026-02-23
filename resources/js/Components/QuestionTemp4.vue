@@ -17,8 +17,8 @@
                     </span>
                 </h2>
             </div>
-            <p v-if="index === 0 && props.note" class="mb-3 text-xs text-gray-500">
-                {{ props.note }}
+            <p v-if="item.note" class="mb-3 text-xs text-gray-500">
+                {{ item.note }}
             </p>
 
             <!-- 回答 -->
@@ -211,6 +211,7 @@ type ExplanationPart = {
 type CalcContent = {
     title?: string;
     questionTitle?: string;
+    note?: string;
     answer: string;
     explanation: string | ExplanationPart[];
 };
@@ -268,6 +269,7 @@ const normalizedItems = computed(() => {
         label: props.labels[index] ?? "",
         questionNo: Number(props.questionNumber) + index,
         questionTitle: getQuestionTitle(index, content),
+        note: content?.note ?? (index === 0 ? props.note : ""),
     }));
 });
 

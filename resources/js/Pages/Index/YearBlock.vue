@@ -26,9 +26,9 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="p-5 md:p-6">
+    <div class="p-4 md:p-6">
         <div class="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
-            <div class="whitespace-nowrap text-lg font-bold text-gray-900">{{ year }}年度</div>
+            <div class="whitespace-nowrap text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
             <span
                 v-if="
                     !hasPremium &&
@@ -41,13 +41,13 @@ const props = defineProps({
             </span>
         </div>
 
-        <div class="mt-4 flex flex-wrap gap-3">
+        <div class="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
             <!-- フォームA/B/Cボタン -->
             <Link
                 v-for="form in forms"
                 :key="form"
                 :href="`${route(`${routePrefix}${year}${form}`)}?subject=${currentSubjectId}`"
-                class="inline-flex items-center gap-2 rounded-full border border-purple-200 px-4 py-2 text-sm font-semibold text-purple-700 transition hover:bg-purple-50"
+                class="inline-flex w-full items-center justify-center gap-1 rounded-full border border-purple-200 px-2 py-1.5 text-[12px] font-semibold text-purple-700 transition hover:bg-purple-50 sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
             >
                 フォーム{{ form.toUpperCase() }}
             </Link>

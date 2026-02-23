@@ -178,6 +178,9 @@ class TestController extends Controller
     public function keiri2021a(){return Inertia::render('Tests/Keiri/Keiri2021a');}
     public function keiri2021b(){return Inertia::render('Tests/Keiri/Keiri2021b');}
     public function keiri2021c(){return Inertia::render('Tests/Keiri/Keiri2021c');}
+    public function keiri2020a(){return Inertia::render('Tests/Keiri/Keiri2020a');}
+    public function keiri2020b(){return Inertia::render('Tests/Keiri/Keiri2020b');}
+    public function keiri2020c(){return Inertia::render('Tests/Keiri/Keiri2020c');}
 
     // 危険選択
     public function kiken2025a(){return Inertia::render('Tests/Kiken/Kiken2025a');}

@@ -1,342 +1,912 @@
 <script setup>
-import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
-import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
-import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
-import QuestionTemp4 from '../../../Components/QuestionTemp4.vue'
+import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
+import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
+import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
+import QuestionTemp4 from "../../../Components/QuestionTemp4.vue";
 
-import Pagetitle from '../../../Components/Pagetitle.vue'
-import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
-import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
+import Pagetitle from "../../../Components/Pagetitle.vue";
+import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
+import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
-const title = "生命保険計理"
-const subject = '2022年度 フォームC'
+const title = "生命保険計理";
+const subject = "2022年度 フォームC";
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+const SAME = "※2022年度フォームA/B/Cで同一問題";
+</script>
 
 <template>
+    <SeihoTestLayout :title="title">
+        <section class="bg-gray-100 text-gray-800 py-10">
+            <!-- ページタイトル -->
+            <Pagetitle :title="title" :description="subject" />
 
-<SeihoTestLayout :title="title">
-    <section class="bg-gray-100 text-gray-800 py-10">
+            <!-- 問題リスト -->
+            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+                <QuestionTemp4
+                    :questionNumber="1"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        // 問１
+                        {
+                            answer: '0.96114',
+                            questionTitle: '生存率',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '生存率とは、「ある年齢の人が、次の年齢まで生き残る割合」のこと。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['生存率 = 期末の生存数 ÷ 期初の生存数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['生存率（60歳 → 65歳）', '= 65歳の生存数 ÷ 60歳の生存数', '= 88,751 ÷ 92,339 = 0.961143…'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 0.96114（小数第6位を四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問２
+                        {
+                            answer: '98,233',
+                            questionTitle: '生存数',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '「10年後に何人残るか」は、今の人数に10年間生き残る割合（生存率）を掛けることで求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formula',
+                                    value: 'N年後の生存者数 = 基準年齢の人数 × 生存率',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '10年後の生存者数',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['基準年齢（40歳）の人数 × 生存率（40歳 → 50歳）', '= 100,000 × 96,319 ÷ 98,052 = 98,232.5…'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 98,233（小数第1位を四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問３
+                        {
+                            answer: '1.26',
+                            questionTitle: '平均余命',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '平均余命とは、その年齢の全員がこれから生きる年数を全部足して、今の人数で割ったもの。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['延べ生存年数 = 死亡数 × 平均生存年数', '平均余命 = 延べ生存年数の合計 ÷ 生存者数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 各年齢の延べ生存年数',
+                                },
+                                {
+                                    type: 'note',
+                                    value: '各年齢の死亡者は、その年齢内で平均<strong>0.5年</strong>生存したとみなして計算する。',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: [
+                                        '104歳：62.726 × 0.5 = 31.363 → 31.36',
+                                        '105歳：30.877 × 1.5 = 46.3155 → 46.32',
+                                        '106歳：13.8961 × 2.5 = 34.74025 → 34.74',
+                                        '107歳：5.6633 × 3.5 = 19.82155 → 19.82',
+                                        '108歳：2.0682 × 4.5 = 9.3069 → 9.31',
+                                        '109歳：0.9156 × 5.5 = 5.0358 → 5.04',
+                                    ],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 104歳～109歳の延べ生存年数の合計',
+                                },
+                                {
+                                    type: 'note',
+                                    value: '104歳以上の全員が、合計で何年分生きたかを合算する。',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['31.36 + 46.32 + 34.74 + 19.82 + 9.31 + 5.04 = 146.59'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '③ 104歳の平均余命',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['104歳～109歳の延べ生存年数の合計 ÷ 104歳の生存者数', '= 146.59 ÷ 116.15', '= 1.262…'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 1.26（小数第3位を四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問４
+                        {
+                            answer: '1,194,044',
+                            questionTitle: '保険金総額の現価',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '1年定期保険では、1年間に死亡した人に保険金を支払う。したがって、まず死亡者全員に支払う保険金の合計額を出し、支払い時点を年央（期央）とみなして、期央払現価率で割り引いて現価を求める。',
+                                },
+                                {
+                                    type: 'note',
+                                    value: '※期央払現価率とは、年の真ん中で支払われると仮定したときの割引係数。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['合計保険金額 = 保険金 × 死亡数', '現価 = 合計保険金額 × 期央払現価率（利率1.0%）'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 合計保険金額',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['保険金（300万円） × 死亡数（55歳男性）', '= 3,000千円 × 400人', '= 1,200,000千円'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 現価（年央払）',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['合計保険金額 × 期央払現価率（利率1.0%）', '= 1,200,000千円 × 0.995037', '= 1,194,044.4千円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え：1,194,044千円（千円未満四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問５
+                        {
+                            answer: '12,610',
+                            questionTitle: '純保険料',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '純保険料は、必要な保険金総額の現価を、加入者全員で負担する額。したがって、必要な現価を年始生存者数で割る。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['純保険料 = 必要な現価 ÷ 年始生存者数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['純保険料', '= 必要な現価（問４の解） ÷ 55歳男性の年始生存者数', '= 1,194,044千円 ÷ 94,704人', '= 12,608.1…円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 12,610円（10円未満四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ア', //1
+                        'ク', //2
+                        'ウ', //3
+                        'コ', //4
+                        'カ', //5
+                    ]"
+                />
+                <QuestionTemp4
+                    :questionNumber="6"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        // 問６
+                        {
+                            answer: '24,120',
+                            questionTitle: '複利計算',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '複利では、元金に利息が組み込まれながら増えていく。まず6か月後の元利合計を求め、そこから元金を差し引いて利息を求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計 = 元金 × (1 + 利率)<sup>運用期間</sup>', '利息 = 元利合計 − 元金'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元金：2,000,000円', '月利：0.2％ = 0.002', '運用期間：6か月'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 元利合計',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['= 2,000,000円 × (1 + 0.002)<sup>6</sup>', '= 2,000,000円 × 1.01206016', '= 2,024,120.32円'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 利息',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['= 2,024,120.32円 − 2,000,000円', '= 24,120.32円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 24,120円（円未満四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問７
+                        {
+                            answer: '2,123,292',
+                            questionTitle: '複利計算（半年複利）',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '年利1.2％で半年複利の場合、半年ごとに0.6％ずつ増える。5年間では半年が10回あるため、半年利率で10回複利計算する。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計 = 元金 × (1 + 期間利率)<sup>複利回数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元金：2,000,000円', '年利：1.2％', '半年利率：= 1.2％ ÷ 2 = 0.6％ = 0.006', '複利回数：= 5年 × 年2回 = 10回'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計', '= 2,000,000円 × (1 + 0.006)<sup>10</sup>', '= 2,000,000円 × 1.0616461', '= 2,123,292.2円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 2,123,292円（円未満四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問８
+                        {
+                            answer: '1.51',
+                            questionTitle: '実利率',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '実利率とは、1年間に実際どれだけ増えるかを示す利率。名称利率が年率でも、年に複数回利息が付く場合は、その回数分だけ複利計算する。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['実利率 =（ 1 + 名称利率 ÷ 転化回数）<sup>転化回数</sup> - 1'],
+                                },
+                                {
+                                    type: 'note',
+                                    value: '転化回数：1年間に利息を元金に繰り入れる回数',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 1回あたりの利率',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['= 0.015 ÷ 4', '= 0.00375'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 実利率',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['= (1 + 0.00375)<sup>4</sup> − 1', '= 1.015084 − 1', '= 0.015084 = 1.5084％'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 1.51％（小数第3位を四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問９
+                        {
+                            answer: '1.33',
+                            questionTitle: '年平均利回り',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: 'まず、5年間の複利でどれだけ増えたか（総利回り）を求める。その後、それを5年で平均したものが年平均利回り。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['総利回り = (1 + 複利利率)<sup>期間</sup> − 1', '年平均利回り = 総利回り ÷ 期間'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['複利利率：1.3％ = 0.013', '投資期間：5年'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 総利回り',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['= (1 + 0.013)<sup>5</sup> − 1', '= 1.066712 − 1', '= 0.066712'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 年平均利回り',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['= 0.066712 ÷ 5', '= 0.0133424 = 1.33424％'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 1.33％（小数第3位を四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問10
+                        {
+                            answer: '1,902,931',
+                            questionTitle: '現在必要資金の計算',
+                            note: SAME,
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来200万円を得るために、今いくら必要かを求める問題。将来価値がわかっているので、複利を逆算（割り戻す）して現在価値を求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現在価値 = 将来価値 ÷ (1 + 利率)<sup>期間</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：2,000,000円', '年利率：1.0％ = 0.01', '期間：5年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現在価値', '= 2,000,000 ÷ (1 + 0.01)<sup>5</sup>', '= 2,000,000 ÷ 1.051010', '= 1,902,931.3…'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 1,902,931円（円未満四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'オ', //6
+                        'コ', //7
+                        'ウ', //8
+                        'イ', //9
+                        'ク', //10
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="3"
+                    questionTitle="純保険料式保険料積立金"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '将来法',
+                        '過去法',
+                        '一致する',
+                        '逓増',
+                        'ゼロ', //問11〜15
+                    ]"
+                    :labels="[
+                        'キ', //11
+                        'イ', //12
+                        'エ', //13
+                        'ケ', //14
+                        'コ', //15
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="4"
+                    questionTitle="チルメル式保険料積立金"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '貯蓄',
+                        '歩合',
+                        '新契約',
+                        '大きい',
+                        '未償却', //問16〜20
+                    ]"
+                    :labels="[
+                        'ア', //16
+                        'エ', //17
+                        'ウ', //18
+                        'ク', //19
+                        'オ', //20
+                    ]"
+                />
+                <QuestionTemp4
+                    :questionNumber="21"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        // 問21
+                        {
+                            answer: '3,002,390千円',
+                            questionTitle: '死亡保険金の現価',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '保険期間（40〜44歳）の各年齢で死亡した場合、死亡保険金が支払われる。支払いは年央（期央）と仮定されるため、各年齢の「死亡保険金 × 死亡数」を期央払現価率で割り引き、現価を合計する。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['各年齢の死亡保険金現価 = 死亡保険金 × 死亡数 × 期央払現価率', '死亡保険金現価の合計 = 各年齢の死亡保険金現価の合計'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['死亡保険金：450万円 = 4,500千円', '保険期間：5年（40〜44歳）', '支払い：年央（期央）と仮定'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 各年齢の死亡保険金現価',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: [
+                                        '40歳：4,500千円 × 116 × 0.995037 = 519,409千円',
+                                        '41歳：4,500千円 × 126 × 0.985185 = 558,600千円',
+                                        '42歳：4,500千円 × 137 × 0.975431 = 601,353千円',
+                                        '43歳：4,500千円 × 147 × 0.965773 = 638,859千円',
+                                        '44歳：4,500千円 × 159 × 0.956211 = 684,169千円',
+                                    ],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 合計',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['死亡保険金現価の合計', '= 519,409 + 558,600 + 601,353 + 638,859 + 684,169', '= 3,002,390千円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 3,002,390千円',
+                                },
+                            ],
+                        },
+                        // 問22
+                        {
+                            answer: '416,881,974千円',
+                            questionTitle: '満期保険金の現価',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '満期保険金は、保険期間満了時（5年後）に生存している人に支払われる。したがって、まず 5年後の生存者数 × 保険金額 で将来の支払総額を求め、それを 期末払現価率 で割り引いて現価を求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['満期保険金の現価 = 5年後の生存者数 × 保険金額 × 期末払現価率（5年）'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['保険金額：450万円 = 4,500千円', '5年後（45歳）の生存数：97,366人', '5年の期末払現価率：0.951466'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['満期保険金の現価', '= 97,366 × 4,500 × 0.951466', '= 416,881,973.502千円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 416,881,974千円（千円未満四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問23
+                        {
+                            answer: '11,030,850千円',
+                            questionTitle: '予定事業費の現価',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '予定事業費が「保険金1000円につき25円」と与えられているので、まず 1人あたりの予定事業費を求める。その後、加入時（40歳）の生存者数を掛けて、全体の予定事業費（現価）を求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['1人あたりの予定事業費 = 保険金額 ×（25 ÷ 1000）', '予定事業費の現価（合計） = 1人あたりの予定事業費 × 加入時の生存者数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['保険金額：450万円 = 4,500千円', '予定事業費：保険金1000円につき25円 = 25 ÷ 1000', '40歳の生存数：98,052人'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 1人あたりの予定事業費',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['= 4,500千円 ×（25 ÷ 1000）', '= 4,500 × 0.025', '= 112.5千円'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 予定事業費の現価（合計）',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['= 112.5千円 × 98,052人', '= 11,030,850千円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 11,030,850千円（千円未満四捨五入）',
+                                },
+                            ],
+                        },
+                        // 問24
+                        {
+                            answer: '898,820円',
+                            questionTitle: '養老保険の年払営業保険料',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '年払営業保険料 P は、収支相当の原則（収入現価=支出現価）で求める。',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '収入現価：各年齢で生存している人が払う保険料 P を、期始払として現価に直して合計する',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '支出現価：死亡保険金・満期保険金・予定事業費の現価を合計する（問21〜23の結果）',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: [
+                                        '収支相当の原則：収入現価 = 支出現価',
+                                        '各年齢の収入現価（期始払） = 生存数 × P × 期始払現価率',
+                                        '支出現価 = 死亡保険金現価 + 満期保険金現価 + 予定事業費現価',
+                                    ],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '① 収入現価（40〜44歳、期始払）',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: [
+                                        '40歳：P × 98,052 × 1.000000 = 98,052P',
+                                        '41歳：P × 97,936 × 0.990099 = 96,966P',
+                                        '42歳：P × 97,810 × 0.980296 = 95,883P',
+                                        '43歳：P × 97,673 × 0.970590 = 94,800P',
+                                        '44歳：P × 97,525 × 0.960980 = 93,720P',
+                                    ],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['収入現価の合計', '= 98,052P + 96,966P + 95,883P + 94,800P + 93,720P', '= 479,421P'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '② 支出現価（問21〜23より）',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['死亡保険金の現価（問21）= 3,002,390千円', '満期保険金の現価（問22）= 416,881,974千円', '予定事業費の現価（問23）= 11,030,850千円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['支出現価', '= 3,002,390 + 416,881,974 + 11,030,850', '= 430,915,214千円 = 430,915,214,000円'],
+                                },
+                                {
+                                    type: 'text',
+                                    value: '③ 収支相当の原則より P を求める',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['収入現価 = 支出現価 より', '479,421P = 430,915,214,000円', 'P = 430,915,214,000円 ÷ 479,421', 'P = 898,824…円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 898,820円（10円未満四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'イ', //21
+                        'イ', //22
+                        'ウ', //23
+                        'イ', //24
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="25"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        //p134 (2023-A-25,2023-B-25,2023-C-25,2022-A-25,2022-B-25,2022-C-25)
+                        '配当金を<u><b>一時</b></u>払保険料として契約応当日に保険を買増し（保険金を増額）する。',
+                        '配当金を保険料払込回数に等分して、毎回の保険料に充当、相殺する。',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        //p53
+                        '予定死亡率を低く、予定利率を高くすると、定期保険と養老保険の純保険料は<u><b>低く</b></u>なる。',
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        //p132
+                        '決算事業年度末において契約日からその日を含めて<u><b>1年</b></u>を超えている有効契約。',
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        //p113 (2022-A-28,2022-B-28,2022-C-28)
+                        '正しい',
+                        '正しい',
+                        '満期時まで続いてなお解約返戻金（保険料積立金）の残額があれば生存保険金として、その額を支払う。',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        //p129 (2023-B-30,2022-A-29,2022-B-29,2022-C-29)
+                        '正しい',
+                        '配当金の支払いを行わない無配当保険や5年ごと利差配当付保険のような保険は、保険料は通常の有配当保険より<u><b>安くなる</b></u>のが一般的である。',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="30"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        '団体定期保険では、保険料が被保険者ごとの積み上げを基礎としているのに対して、配当は、被保険者ごとの配当を算出して<u><b>それを積み上げるのではなく、団体単位で計算されている</b></u>。', //p154
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp2
+                    :questionNumber="31"
+                    :title="title"
+                    :subject="subject"
+                    :items="[
+                        // 問31〜40
+                        { label: '解', content: '正しい' }, //31
+                        { label: '解', content: '正しい' }, //32
+                        { label: '解', content: '正しい' }, //33
+                        { label: '解', content: '平準保険料と異なり、自然保険料は責任準備金は積み立てる必要はない。' }, //34
+                        { label: '解', content: '各年齢ごとに1年定期保険の純保険料を計算すると、<u><b>予定死亡率の動きを反映したもの</b></u>となる。' }, //35
+                        { label: '解', content: '正しい' }, //36
+                        { label: '解', content: '正しい' }, //37
+                        {
+                            label: '解',
+                            content:
+                                '変額保険の変動保険金額は、毎月<u><b>月末</b></u>に、その時点での積立金と表定責任準備金との差額と、当該<u><b>月末</b></u>時点で計算された一時払保険料を用いて計算される。',
+                        }, //38
+                        { label: '解', content: '変額保険の資産運用に関するリスクは、すべて<u><b>契約者</b></u>に帰属する。' }, //39
+                        {
+                            label: '解',
+                            content:
+                                '団体年金数理においても収支相等が原則であるが、個人年金が収支相等の保証をもっぱら大数の法則に求めるのに対して、団体年金の場合、<u><b>大数の法則に加え、企業等の財政負担力に依存して</b></u>費用の時間的配分の効率化を図るということが重要である。',
+                        }, //40
+                        // 問41〜50
+                        { label: 'イ', content: '国民生命表' }, //41
+                        { label: 'ウ', content: '保険金に比例させる' }, //42
+                        { label: 'エ', content: '責任準備金' }, //43
+                        { label: 'イ', content: '年始生存者数' }, //44
+                        { label: 'エ', content: '契約者貸付' }, //45
+                        { label: 'オ', content: '' }, //46
+                        { label: 'ア', content: '第三分野保険' }, //47
+                        { label: 'ア', content: '危険保険金額' }, //48
+                        { label: 'ア', content: '運用実績連動型' }, //49
+                        { label: 'ウ', content: '通常保険料' }, //50
+                    ]"
+                />
+            </div>
 
-        <!-- ページタイトル -->
-        <Pagetitle
-            :title="title"
-            :description="subject"
-        />
-
-        <!-- 問題リスト -->
-        <div class="max-w-4xl mx-auto mt-4 space-y-2">
-            <QuestionTemp4
-                :questionNumber="1"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                    // 問１
-                    {
-                        answer: '0.96114',
-                        explanation:
-                        '<br>\
-                        ＝ 88,751 ÷ 92,339<br>\
-                        ＝ 0.961143･･･<br>\
-                        ⇒ 小数第6位を四捨五入して <strong>0.96114</strong>' },
-                    // 問２
-                    {
-                        answer: '98,233',
-                        explanation:
-                        '<br>生存数 ＝ 期末の生存数 ÷ 期初の生存数 × 期初の生存者数<br><br>\
-                        ＝ 96,319 ÷ 98,052 × 100,000<br>\
-                        ＝ 98232.5･･･<br>\
-                        ⇒ 小数第1位を四捨五入して <strong>98,233</strong>' },
-                    // 問３
-                    {
-                        answer: '1.26',
-                        explanation:
-                        '<br>死亡は年間を通じて発生するが、平均して年央に集中発生したものと考えられるので、例えば、100歳から101歳になるまでに死亡する人の平均生存年数は0.5年となる。<br><br>\
-                        年齢 ： 死亡数 × 平均生存年数 ＝ 延べ生存年数<br>\
-                        104歳 ： 62.726人 × 0.5年 ＝ 31.363 ＝ 31.36<br>\
-                        105歳 ： 30.877人 × 1.5年 ＝ 46.3155 ＝ 46.32<br>\
-                        116歳 ： 13.8961人 × 2.5年 ＝ 34.74025 ＝ 34.74<br>\
-                        107歳 ： 5.6633人 × 3.5年 ＝ 19.82155 ＝ 19.82<br>\
-                        108歳 ： 2.0682人 × 4.5年 ＝ 9.3069 ＝ 9.31<br>\
-                        109歳 ： 0.9156人 × 5.5年 ＝ 5.0358 ＝ 5.04<br>\
-                        → 104歳～109歳の延べ生存年数の合計 ＝ 141.59<br><br>\
-                        平均余命 ＝ 延べ生存年数の合計 ÷ 生存者数<br><br>\
-                        ＝ 146.59 ÷ 116.15 ＝ 1.262･･･<br>\
-                        ⇒ 小数第3位を四捨五入して <strong>1.26</strong>' },
-                    // 問４ p39
-                    {
-                        answer: '1,194,044',
-                        explanation:
-                        '<br>55歳の男性は1年間に400人が死亡し、1人あたりの保険金は300万円なので、合計の保険金額は<br>\
-                        300万円 × 400人 ＝ 1,200,000千円<br><br>\
-                        支払いは年央と仮定し、利率1.0%の期央払現価率0.995037で割引くと<br>\
-                        1,200,000千円 × 0.995037 ＝ 1,194,044.4千円<br>\
-                        ⇒ 千円未満を四捨五入して <strong>1,194,044千円</strong>' },
-                    // 問５ p39
-                    {
-                        answer: '12,610',
-                        explanation:
-                        '<br>問4で求めた死亡保険金の支払いに必要な費用は、55歳男性の年始生存者数94,704人で平等に分担するので、<br>\
-                        1,194,044千円 ÷ 94,704人 ＝ 12,608.1･･･円<br>\
-                        ⇒ 十円未満を四捨五入して <strong>12,610円</strong>' }
-                ]"
-                :labels="[
-                    'ア', //1
-                    'ク', //2
-                    'ウ', //3
-                    'コ', //4
-                    'カ', //5
-                ]"
-            />
-            <QuestionTemp4
-                :questionNumber="6"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                    // 問６
-                    {
-                        answer: '24,120',
-                        explanation:
-                        '<br>\
-                        2,000,000円 × (1 + 0.002) <sup>6</sup> ＝ 2,024,120.32<br><br>\
-                        元金との差額が利息なので、<br>\
-                        2,024,120.32 - 2,000,000 ＝ 24,120.32<br>\
-                        ⇒ 円未満を四捨五入して <strong>24,120円</strong>' },
-                    // 問７
-                    {
-                        answer: '2,123,292',
-                        explanation:
-                        '<br>年利1.2%で半年複利のため、利率は半年あたり0.6%（=0.006）となり、5年間で10回の複利が適用される。<br><br>\
-                        よって元金2,000,000円の場合の元利合計金額は、<br>\
-                        2,000,000 × (1 + 0.006)<sup>10</sup> ＝ 2,123,292.3･･･<br>\
-                        ⇒ 円未満を四捨五入して <strong>2,123,292円</strong>' },
-                    // 問８
-                    {
-                        answer: '1.51',
-                        explanation:
-                        '<br>転化回数：1年間に利息を元金に繰り入れる回数<br><br><br>\
-                        実利率 = （ 1 + 名称利率 ÷ 転化回数）<sup>転化回数</sup> - 1<br><br>\
-                        （ 1 + 0.015 ÷ 4 ）<sup>4</sup> - 1 ＝ 0.015084 ＝ 1.508･･･%<br>\
-                        ⇒ 小数第3位を四捨五入して <strong>1.51%</strong>' },
-                    // 問９
-                    {
-                        answer: '1.33',
-                        explanation:
-                        '<br>年平均利回り：投資によって得られる利益を、投資期間全体で年単位に平均化したもの<br><br>\
-                        年平均利回り ＝ （（ 1 + 複利利率）<sup>期間</sup> - 1 ） ÷ 期間<br><br><br>\
-                        （（ 1 + 0.013 ）<sup>5</sup> - 1 ） ÷ 5 ＝ 0.0133424 ＝ 1.334･･･%<br>\
-                        ⇒ 小数第3位を四捨五入して <strong>1.33%</strong>' },
-                    // 問10
-                    {
-                        answer: '1,902,931',
-                        explanation:
-                        '<br>元金 × （ 1 + 利率 ）<sup>期間</sup> ＝ 元利合計<br>\
-                        元金 × （ 1 + 1.0% ）<sup>5年</sup> ＝ 200万円<br>\
-                        元金 ＝ 2,000,000 ÷ （ 1 + 0.01 ）<sup>5</sup> ＝ 1,902,931.3･･･<br>\
-                        ⇒ 円未満を四捨五入して <strong>1,902,931円</strong>' }
-                ]"
-                :labels="[
-                    'オ', //6
-                    'コ', //7
-                    'ウ', //8
-                    'イ', //9
-                    'ク', //10
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="3"
-                questionTitle="純保険料式保険料積立金"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '将来法','過去法','一致する','逓増','ゼロ', //問11〜15
-                ]"
-                :labels="[
-                    'キ', //11
-                    'イ', //12
-                    'エ', //13
-                    'ケ', //14
-                    'コ', //15
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="4"
-                questionTitle="チルメル式保険料積立金"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '貯蓄','歩合','新契約','大きい','未償却', //問16〜20
-                ]"
-                :labels="[
-                    'ア', //16
-                    'エ', //17
-                    'ウ', //18
-                    'ク', //19
-                    'オ', //20
-                ]"
-            />
-<QuestionTemp4
-                :questionNumber="21"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                    // 問21
-                    {
-                        answer: '3,002,390千円',
-                        explanation:
-                        '<br>\
-                        死亡保険金 × 死亡数 × 期央払現価 ＝ 死亡保険金の現価<br>\
-                        40歳：4,500,000 × 116 × 0.995037 ＝ 519,409千円<br>\
-                        41歳：4,500,000 × 126 × 0.985185 ＝ 558,600千円<br>\
-                        42歳：4,500,000 × 137 × 0.975431 ＝ 601,353千円<br>\
-                        43歳：4,500,000 × 147 × 0.965773 ＝ 638,859千円<br>\
-                        44歳：4,500,000 × 159 × 0.956211 ＝ 684,169千円<br>\
-                        ⇒ 合計：<strong>3,002,390千円</strong>' },
-                    // 問22
-                    {
-                        answer: '416,881,974千円',
-                        explanation:
-                        '<br>5年後に支払う満期保険金の現価は、<br>\
-                        5年後の生存数 × 保険金額 × 期末払現価で求める。<br><br>\
-                        45歳の生存数 × 450万円 × 5年の期末払現価<br>\
-                        97,366 × 4,500,000 × 0.951466 ＝ 416,881,973,502円<br>\
-                        ⇒ 千円未満を四捨五入して <strong>416,881,974千円</strong>' },
-                    // 問23
-                    {
-                        answer: '11,030,850千円',
-                        explanation:
-                        '<br>予定事業費は保険金1000円につき25円より、一人当たりの予定事業費に加入時の生存数をかけて求める。<br><br><br>\
-                        保険金額 × 予定事業費率 × 40歳の生存数<br>\
-                        4,500,000 × (25 ÷ 1000) × 98,052 ＝ 11,030,850,000<br>\
-                        ⇒ 千円未満を四捨五入して <strong>11,030,850千円</strong>' },
-                    // 問24
-                    {
-                        answer: '898,820円',
-                        explanation:
-                        '<br>収支相当の原則「収入現価 ＝ 支出現価」で求める。<br><br>\
-                        ＜収入現価＞<br>\
-                        収入の現価は、40歳〜44歳の各年齢の生存数×年払保険料（P）を現価に換算して合計する。<br><br><br>\
-                        年払保険料 × 生存数 × 期始払現価 ＝ 収入現価<br>\
-                        40歳 ： P × 98,052 × 1.000000 ＝ 98,052P<br>\
-                        41歳 ： P × 97,936 × 0.990099 ＝ 96,966P<br>\
-                        42歳 ： P × 97,810 × 0.980296 ＝ 95,883P<br>\
-                        43歳 ： P × 97,673 × 0.970590 ＝ 94,800P<br>\
-                        44歳 ： P × 97,525 × 0.960980 ＝ 93,720P<br>\
-                        → 40歳～44歳の収入現価の合計 ＝ 479,421P<br><br>\
-                        ＜支出現価＞<br>\
-                        支出現価は問21〜23で算出した結果を用いて求める。<br><br><br>\
-                        死亡保険金の現価+満期保険金の現価+予定事業費の現価<br>\
-                        ＝ 3,002,390千円 + 416,881,974千円 + 11,030,850千円<br>\
-                        ＝ 430,915,214千円<br><br>\
-                        収支相当の原則より<br>\
-                        479,421P = 430,915,214千円<br>\
-                        P ＝ 898,824･･･円 <br>\
-                        ⇒ 10円未満を四捨五入して <strong>898,820円</strong>' },
-                ]"
-                :labels="[
-                    'イ', //21
-                    'イ', //22
-                    'ウ', //23
-                    'イ', //24
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="25"
-                :title="title"
-                :subject="subject"
-                :contents="[ //p134 (2023-A-25,2023-B-25,2023-C-25,2022-A-25,2022-B-25,2022-C-25)
-                '配当金を<u><b>一時</b></u>払保険料として契約応当日に保険を買増し（保険金を増額）する。',
-                '配当金を保険料払込回数に等分して、毎回の保険料に充当、相殺する。',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="26"
-                :title="title"
-                :subject="subject"
-                :contents="[ //p53
-                '予定死亡率を低く、予定利率を高くすると、定期保険と養老保険の純保険料は<u><b>低く</b></u>なる。',
-                '正しい',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="27"
-                :title="title"
-                :subject="subject"
-                :contents="[ //p132
-                '決算事業年度末において契約日からその日を含めて<u><b>1年</b></u>を超えている有効契約。',
-                '正しい',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="28"
-                :title="title"
-                :subject="subject"
-                :contents="[ //p113 (2022-A-28,2022-B-28,2022-C-28)
-                '正しい',
-                '正しい',
-                '満期時まで続いてなお解約返戻金（保険料積立金）の残額があれば生存保険金として、その額を支払う。'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="29"
-                :title="title"
-                :subject="subject"
-                :contents="[ //p129 (2023-B-30,2022-A-29,2022-B-29,2022-C-29)
-                '正しい',
-                '配当金の支払いを行わない無配当保険や5年ごと利差配当付保険のような保険は、保険料は通常の有配当保険より<u><b>安くなる</b></u>のが一般的である。',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="30"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '団体定期保険では、保険料が被保険者ごとの積み上げを基礎としているのに対して、配当は、被保険者ごとの配当を算出して<u><b>それを積み上げるのではなく、団体単位で計算されている</b></u>。', //p154
-                '正しい'
-                ]"
-            />
-            <QuestionTemp2
-                :questionNumber="31"
-                :title="title"
-                :subject="subject"
-                                :items="[
-                    // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '平準保険料と異なり、自然保険料は責任準備金は積み立てる必要はない。' }, //34
-                    { label: '解', content: '各年齢ごとに1年定期保険の純保険料を計算すると、<u><b>予定死亡率の動きを反映したもの</b></u>となる。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '変額保険の変動保険金額は、毎月<u><b>月末</b></u>に、その時点での積立金と表定責任準備金との差額と、当該<u><b>月末</b></u>時点で計算された一時払保険料を用いて計算される。' }, //38
-                    { label: '解', content: '変額保険の資産運用に関するリスクは、すべて<u><b>契約者</b></u>に帰属する。' }, //39
-                    { label: '解', content: '団体年金数理においても収支相等が原則であるが、個人年金が収支相等の保証をもっぱら大数の法則に求めるのに対して、団体年金の場合、<u><b>大数の法則に加え、企業等の財政負担力に依存して</b></u>費用の時間的配分の効率化を図るということが重要である。' }, //40
-                    // 問41〜50
-                    { label: 'イ', content: '国民生命表' }, //41
-                    { label: 'ウ', content: '保険金に比例させる' }, //42
-                    { label: 'エ', content: '責任準備金' }, //43
-                    { label: 'イ', content: '年始生存者数' }, //44
-                    { label: 'エ', content: '契約者貸付' }, //45
-                    { label: 'オ', content: '' }, //46
-                    { label: 'ア', content: '第三分野保険' }, //47
-                    { label: 'ア', content: '危険保険金額' }, //48
-                    { label: 'ア', content: '運用実績連動型' }, //49
-                    { label: 'ウ', content: '通常保険料' }, //50
-                ]"
-                
-            />
-        </div>
-
-                <TestNavigationButtons previous-route="keiri2022b" next-route="keiri2021a" />
-
-    </section>
-
+            <TestNavigationButtons previous-route="keiri2022b" next-route="keiri2021a" />
+        </section>
     </SeihoTestLayout>
-
-
 </template>

@@ -40,7 +40,7 @@ defineProps({
                         {{ section.title }}
                     </h2>
                     <span class="text-[10px] font-medium text-gray-500">
-                        2021〜2024
+                        2020〜2024
                     </span>
 
                     <!-- PC用: マイページ入力導線 -->

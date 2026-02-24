@@ -795,7 +795,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="契約者配当金の分配・支払方法"
                     :contents="[
-                        //p134 
+                        //p134
                         '年払保険料 → 一時払保険料',
                         'その年度の保険料にまとめて充当 → 払込回数に等分し、毎回の保険料に充当',
                         '正しい',
@@ -875,7 +875,7 @@ const subject = "2023年度 フォームB";
                         { questionTitle: '1年定期保険の純保険料', content: '正しい' }, //36
                         { questionTitle: 'チルメル式保険料積立金', content: '正しい' }, //37
                         { questionTitle: '剰余金の発生源', content: '正しい' }, //38
-                        { questionTitle: '変額保険の用語', content: '月始 → 月末' }, //39
+                        { questionTitle: '変額保険の用語', content: '月始 → 月末' }, //39 p144
                         { questionTitle: '団体定期保険の保険料', content: '正しい' }, //40
                         // 問41〜50
                         { questionTitle: '死亡表の種類', label: 'オ', content: '' }, //41

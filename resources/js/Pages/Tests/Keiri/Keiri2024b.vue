@@ -895,11 +895,11 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '平均余命・平均寿命', content: 'ある年齢の人の平均寿命 → ある年齢の人の平均余命<br>0歳の平均寿命は平均余命 → 0歳の平均余命は平均寿命' }, //31
-                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32
+                        { questionTitle: '平均余命・平均寿命', content: 'ある年齢の人の平均寿命 → ある年齢の人の平均余命<br>0歳の平均寿命は平均余命 → 0歳の平均余命は平均寿命' }, //31 p9
+                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32  p27
                         { questionTitle: '予定利率', content: '正しい' }, //33
                         { questionTitle: '分割払営業保険料', content: '営業保険料額を下回る → 営業保険料額を上回る（分割払は予定利息減少・事務費増加のため）' }, //34
-                        { questionTitle: '保険料の計算原理', content: '平準保険料方式と同様 → 平準保険料方式と異なる<br>責任準備金を積み立てる必要がある → 責任準備金を積み立てる必要がない' }, //35
+                        { questionTitle: '保険料の計算原理', content: '平準保険料方式と同様 → 平準保険料方式と異なる<br>責任準備金を積み立てる必要がある → 責任準備金を積み立てる必要がない' }, //35 p68
                         { questionTitle: '高額割引', content: '正しい' }, //36
                         { questionTitle: '責任準備金', content: '保険期間の前半 → 保険気期間の後半' }, //37
                         { questionTitle: '決算による剰余金算定', content: '正しい' }, //38

@@ -887,16 +887,16 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '死亡率', content: '基本死亡率 → 粗死亡率<br>応用死亡率 → 補整後死亡率' }, //31
-                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32
+                        { questionTitle: '死亡率', content: '基本死亡率 → 粗死亡率<br>応用死亡率 → 補整後死亡率' }, //31 p7
+                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32 //p27
                         { questionTitle: '予定利率', content: '正しい' }, //33
                         { questionTitle: '分割払営業保険料', content: '営業保険料額を下回る → 営業保険料額を上回る（分割払は予定利息減少・事務費増加のため）' }, //34
                         { questionTitle: '計算基礎の変化と純保険料の変化', content: '正しい' }, //35
                         { questionTitle: '高額割引', content: '正しい' }, //36
                         { questionTitle: '解約返戻金の算式', content: '正しい' }, //37
-                        { questionTitle: '利差配当付保険', content: '経過年数にかかわらず → 一定年数経過している場合に' }, //38
+                        { questionTitle: '利差配当付保険', content: '経過年数にかかわらず → 一定年数経過している場合に' }, //38  p113
                         { questionTitle: 'リスクヘッジ', content: '正しい' }, //39
-                        { questionTitle: '最低保証機能', content: '3つのタイプ → 4つのタイプ（最低解約保証タイプを含む）' }, //40
+                        { questionTitle: '最低保証機能', content: '3つのタイプ → 4つのタイプ（最低解約保証タイプを含む）' }, //40 //p146
                         // 問41〜50
                         { questionTitle: '資産の平均利回り', label: 'オ', content: '' }, //41
                         { questionTitle: '保険料の計算原理', label: 'ア', content: '現価' }, //42

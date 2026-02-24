@@ -874,7 +874,7 @@ const subject = "2022年度 フォームA";
                         { questionTitle: '計算基礎の変化と純保険料の変化', content: '純保険料は高くなる → 低くなる' }, //34
                         { questionTitle: '付加保険料', content: '正しい' }, //35
                         { questionTitle: '分割払営業保険料', content: '正しい' }, //36
-                        { questionTitle: '責任準備金積立根拠', content: '平準保険料方式と同様 → 平準保険料方式と異なり<br>積み立てる必要がない → 積み立てる必要がある' }, //37
+                        { questionTitle: '責任準備金積立根拠', content: '平準保険料方式と同様 → 平準保険料方式と異なり' }, //37 p68
                         { questionTitle: '決算による剰余金算定', content: '正しい' }, //38
                         { questionTitle: '変額保険の運用リスク', content: '生命保険会社 → 契約者' }, //39
                         { questionTitle: '団体定期保険の配当', content: '正しい' }, //40

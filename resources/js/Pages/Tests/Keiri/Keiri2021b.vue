@@ -10,8 +10,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険計理";
 const subject = "2021年度 フォームB";
-
-
 </script>
 
 <template>
@@ -849,26 +847,76 @@ const subject = "2021年度 フォームB";
                         'ア', //25
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="26" :title="title" :subject="subject" questionTitle="営業保険料" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="27" :title="title" :subject="subject" questionTitle="チルメル式保険料積立金" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="28" :title="title" :subject="subject" questionTitle="責任準備金の積立に関する法的規制" :contents="['正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="29" :title="title" :subject="subject" questionTitle="剰余金の発生源" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="30" :title="title" :subject="subject" questionTitle="団体年金保険の数理" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="営業保険料"
+                    :contents="[
+                        '正しい',
+                        '大きい契約ほど割合が高く、小さい契約ほど割合が低い → 大きい契約ほど割合が低く、小さい契約ほど割合が高い', //p55
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="チルメル式保険料積立金"
+                    :contents="[
+                        '危険保険料払込 → 貯蓄保険料', //p81
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="責任準備金の積立に関する法的規制"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '株主総会または総代会 → 取締役会', //p102
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="剰余金の発生源"
+                    :contents="[
+                        '経過年数が短いと死差益が少なく、経過年数が増すと死差益が多い → 経過年数が短いと死差益が多く、経過年数が増すと死差益が少ない', //p126
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="30"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="団体定期保険の数理"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '通常保険料 → 事情に応じて特別保険料、臨時保険料、剰余金等', //p159
+                    ]"
+                />
                 <QuestionTemp2
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '平均余命', content: '' }, //31
+                        { questionTitle: '平均余命', content: 'ある年齢の人の平均寿命 → ある年齢の人の平均余命<br>0歳の平均寿命は平均余命 → 0歳の平均余命は平均寿命' }, //31 p9
                         { questionTitle: '終価', content: '正しい' }, //32
-                        { questionTitle: '予定利率', content: '' }, //33
-                        { questionTitle: '分割払営業保険料', content: '' }, //34
-                        { questionTitle: '責任準備金積立根拠', content: '' }, //35
+                        { questionTitle: '予定利率', content: '保険金額 → 商品の特性' }, //33 p38
+                        { questionTitle: '分割払営業保険料', content: '年間払込額を上回る → 下回る' }, //34
+                        { questionTitle: '責任準備金積立根拠', content: '平準保険料方式と同様 → 平準保険料方式と異なり' }, //35 p68
                         { questionTitle: '責任準備金', content: '正しい' }, //36
-                        { questionTitle: '延長保険', content: '' }, //37
-                        { questionTitle: '剰余金処分', content: '' }, //38
-                        { questionTitle: '配当金支払方法', content: '' }, //39
+                        { questionTitle: '延長保険', content: '死亡保険金額は少なくなる → 元契約と同額<br>保険期間は変わらない → 短縮される' }, //37 p112
+                        { questionTitle: '剰余金処分', content: '株式会社は、契約者配当財源を繰越利益剰余金から繰り入れるのではなく、契約者配当準備金繰入額として先取りし、当期純利益を算出する' }, //38 p124
+                        { questionTitle: '配当金支払方法', content: '支払いの対象とならない → 支払い対象' }, //39 p134
                         { questionTitle: '特別勘定の位置付け', content: '正しい' }, //40
                         // 問41〜50
                         { questionTitle: '死亡率', label: 'オ', content: '' }, //41

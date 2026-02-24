@@ -865,7 +865,7 @@ const subject = "2023年度 フォームA";
                     :contents="[
                         //p105 (2023-A-29,2023-B-29,2024-C-29)
                         '正しい',
-                        '既払込保険料相当額が用いられている → 解約返戻金が用いられている。',
+                        '既払込保険料相当額が用いられている → 解約返戻金が用いられている',
                         '正しい',
                     ]"
                 />
@@ -889,14 +889,14 @@ const subject = "2023年度 フォームA";
                         // 問31〜40
                         { questionTitle: '契約年齢', content: '正しい' }, //31
                         { questionTitle: '単利', content: '正しい' }, //32
-                        { questionTitle: '予定利率', content: '保険金額 → 商品の特性' }, //33
+                        { questionTitle: '予定利率', content: '保険金額 → 商品の特性' }, //33 p38
                         { questionTitle: '終価', content: '正しい' }, //34
                         { questionTitle: '保険料の計算原理', content: '自然保険料 → 平準保険料' }, //35
                         { questionTitle: '1年定期保険の純保険料', content: '正しい' }, //36
                         { questionTitle: '責任準備金', content: '正しい' }, //37
                         { questionTitle: '決算による剰余金算定', content: '正しい' }, //38
                         { questionTitle: '変額保険の仕組み', content: '3つ → 2つ（死差益と費差益）' }, //39
-                        { questionTitle: '団体定期保険の数理', content: '被保険者ごとに積み上げる → 団体単位で計算<br>死差損団体にも支払われる → 支払われない' }, //40
+                        { questionTitle: '団体定期保険の数理', content: '被保険者ごとに積み上げる → 団体単位で計算<br>死差損団体にも支払われる → 支払われない' }, //40 p154
                         // 問41〜50
                         { questionTitle: '死亡率', label: 'オ', content: '' }, //41
                         { questionTitle: '保険計理の基礎', label: 'イ', content: '大数' }, //42

@@ -10,8 +10,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険計理";
 const subject = "2020年度 フォームC";
-
-
 </script>
 
 <template>
@@ -531,42 +529,42 @@ const subject = "2020年度 フォームC";
                 />
                 <QuestionTemp3
                     :questionNumber="3"
-                    questionTitle="保険料の構成と計算基礎"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険料の構成と計算基礎"
                     :contents="[
-                        '未経過保険料',
-                        '危険準備金',
-                        '4月1日から翌年3月31日',
-                        '契約月',
-                        '保険リスク', //問11〜15
+                        '付加保険料',
+                        '営業保険料',
+                        '保険金',
+                        '高く',
+                        '低く', //問11〜15
                     ]"
                     :labels="[
-                        'キ', //11
+                        'ウ', //11
                         'イ', //12
-                        'エ', //13
-                        'ケ', //14
+                        'カ', //13
+                        'オ', //14
                         'コ', //15
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="4"
-                    questionTitle="責任準備金の積立に関する法的規制"
                     :title="title"
                     :subject="subject"
+                    questionTitle="責任準備金の積立に関する法的規制"
                     :contents="[
-                        '保証はない',
-                        '変動保険金額',
-                        '毎日',
-                        '契約者',
-                        '生命保険会社', //問16〜20
+                        '平準純保険料式',
+                        'ソルベンシー・マージン',
+                        '健全性',
+                        '標準責任準備金',
+                        '負債十分性テスト', //問16〜20
                     ]"
                     :labels="[
-                        'コ', //16
-                        'カ', //17
-                        'キ', //18
-                        'ケ', //19
-                        'イ', //20
+                        'キ', //16
+                        'イ', //17
+                        'オ', //18
+                        'カ', //19
+                        'ケ', //20
                     ]"
                 />
                 <QuestionTemp4
@@ -802,39 +800,103 @@ const subject = "2020年度 フォームC";
                         'ア', //24
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="25" questionTitle="解約返戻金" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="26" questionTitle="純保険料式保険料積立金" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="27" questionTitle="契約変更" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="28" questionTitle="契約者配当金の分配・支払方法" :title="title" :subject="subject" :contents="['正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="29" questionTitle="営業保険料の計算上配慮する点" :title="title" :subject="subject" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="30" questionTitle="団体定期保険の数理" :title="title" :subject="subject" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="25"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="解約返戻金"
+                    :contents="[
+                        '告知義務違反の場合は支払われない → 支払われる', //p105
+                        '既払込保険料相当額が用いられている → 解約返戻金が用いられている', //p105
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="純保険料式保険料積立金"
+                    :contents="[
+                        '3つの方法 → 2つの方法（現在法はない）', //p72
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="契約変更"
+                    :contents="[
+                        '正しい',
+                        '残額を支払われない → 残額があれば支払う', //p113
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="契約者配当金の分配・支払方法"
+                    :contents="[
+                        '年払保険料 → 一時払保険料', //p134
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="営業保険料の計算上配慮する点"
+                    :contents="[
+                        '正しい',
+                        '保険料が異ならないこと → 異なること', //p57
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="30"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="団体定期保険の数理"
+                    :contents="[
+                        '正しい',
+                        '被保険者ごとに算出して積み上げる → 団体単位で計算する（積み上げない）', //p154
+                        '正しい',
+                    ]"
+                />
                 <QuestionTemp2
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '死亡率', content: '正しい' }, //31
-                        { questionTitle: '生命保険契約と年齢', content: '' }, //32
-                        { questionTitle: '月平残方式', content: '' }, //33
-                        { questionTitle: '保険料の計算原理', content: '正しい' }, //34
-                        { questionTitle: '分割払保険料', content: '' }, //35
+                        { questionTitle: '死亡率', content: '地域別 → 年齢別' }, //31 p5
+                        { questionTitle: '生命保険契約と年齢', content: '保険料が安くなる → 保険料は変わらない' }, //32 p15
+                        { questionTitle: '月平残方式', content: '毎月の資産残高の累計 × 1/12 → 毎月の月平均資産残高の累計 × 1/12' }, //33 p25
+                        { questionTitle: '保険料の計算原理', content: '自然保険料 → 平準保険料' }, //34 p35-36
+                        { questionTitle: '分割払営業保険料', content: '営業保険料を下回る → 上回る' }, //35 p62
                         { questionTitle: '解約返戻金の算式', content: '正しい' }, //36
-                        { questionTitle: '剰余金の発生源', content: '' }, //37
+                        {
+                            questionTitle: '剰余金の発生源',
+                            content:
+                                '危険選択効果が薄く、実際死亡率が予定死亡率を上回るので死差益は少ない → 危険選択効果が高く、実際死亡率が予定死亡率をかなり下回るので死差益は多い<br>選択効果があらわれ、死差益は多くなる → 選択効果が薄れ、死差益は少なくなる',
+                        }, //37
                         { questionTitle: '契約者配当の意義と割当', content: '正しい' }, //38
-                        { questionTitle: '利差配当付保険', content: '' }, //39
-                        { questionTitle: '変額保険の用語', content: '正しい' }, //40
+                        { questionTitle: '利差配当付保険', content: '経過年数にかかわらず → 一定年数経過している場合に' }, //39 p113
+                        { questionTitle: '変額保険の用語', content: '月始 → 月末' }, //40 p144
                         // 問41〜50
-                        { questionTitle: '死亡表の種類', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険数理の基礎', label: 'ウ', content: '毎年' }, //42
-                        { questionTitle: '純保険料の変化', label: 'エ', content: '責任準備金' }, //43
-                        { questionTitle: '準備金の積立根拠', label: 'イ', content: '高くなる' }, //44
-                        { questionTitle: '積立に関する法的規制', label: 'オ', content: '' }, //45
-                        { questionTitle: '払済保険', label: 'イ', content: '標準' }, //46
-                        { questionTitle: '加入年齢方式による転換', label: 'ア', content: '定期保険' }, //47
-                        { questionTitle: '配当準備金繰入', label: 'イ', content: '責任準備金関係' }, //48
-                        { questionTitle: '変額保険の保険料', label: 'ア', content: '保険年度末保険料積立金' }, //49
-                        { questionTitle: '団体年金保険の保険料計算', label: 'ウ', content: '純保険料率' }, //50
+                        { questionTitle: '死亡表の種類', label: 'ウ', content: '完全生命表' }, //41
+                        { questionTitle: '保険数理の基礎', label: 'ア', content: '大数' }, //42
+                        { questionTitle: '純保険料の変化', label: 'エ', content: '高くなる' }, //43
+                        { questionTitle: '準備金の積立根拠', label: 'エ', content: '責任準備金' }, //44
+                        { questionTitle: '積立に関する法的規制', label: 'イ', content: '危険準備金' }, //45
+                        { questionTitle: '払済保険', label: 'ア', content: '差し引いた後' }, //46
+                        { questionTitle: '加入年齢方式による転換', label: 'オ', content: '' }, //47
+                        { questionTitle: '配当準備金繰入', label: 'オ', content: '' }, //48
+                        { questionTitle: '変額保険の保険料', label: 'イ', content: '付加保険料' }, //49
+                        { questionTitle: '団体年金保険の保険料計算', label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

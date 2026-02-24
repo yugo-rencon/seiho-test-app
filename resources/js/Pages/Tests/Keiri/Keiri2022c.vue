@@ -870,7 +870,7 @@ const subject = "2022年度 フォームC";
                         { questionTitle: '資産の平均利回り', content: '正しい' }, //31
                         { questionTitle: '生命保険契約と年齢', content: '正しい' }, //32
                         { questionTitle: '予定利率', content: '正しい' }, //33
-                        { questionTitle: '保険料の計算原理', content: '平準保険料と同様に、責任準備金の積み立てが必要 → 平準保険料と異なり、責任準備金は積み立てる必要はない' }, //34
+                        { questionTitle: '保険料の計算原理', content: '平準保険料と同様に、責任準備金の積み立てが必要 → 平準保険料と異なり、責任準備金は積み立てる必要はない' }, //34 p68
                         { questionTitle: '1年定期保険の純保険料', content: '各年齢ごとに1年定期保険の純保険料を計算すると、<u><b>予定死亡率の動きを反映したもの</b></u>となる。' }, //35
                         { questionTitle: '契約転換制度', content: '正しい' }, //36
                         { questionTitle: '剰余金処分', content: '正しい' }, //37

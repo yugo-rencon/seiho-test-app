@@ -10,8 +10,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険計理";
 const subject = "2021年度 フォームC";
-
-
 </script>
 
 <template>
@@ -645,11 +643,61 @@ const subject = "2021年度 フォームC";
                         'ア', //25
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="26" questionTitle="営業保険料" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="27" questionTitle="純保険料式保険料積立金" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="28" questionTitle="剰余金の処分" :title="title" :subject="subject" :contents="['正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="29" questionTitle="剰余金の発生源" :title="title" :subject="subject" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="30" questionTitle="団体年金保険の数理" :title="title" :subject="subject" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="営業保険料"
+                    :contents="[
+                        '正しい',
+                        '大きい契約ほど割合が高く、小さい契約ほど割合が低い → 大きい契約ほど割合が低く、小さい契約ほど割合が高い', //p55
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    questionTitle="純保険料式保険料積立金"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        '最終的に死亡保険金相当額になる → 最終的にゼロになる', //p79
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    questionTitle="剰余金の処分"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '繰越利益剰余金 → 当期未処分剰余金', //p124
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="剰余金の発生源"
+                    :contents="[
+                        '経過年数が短いと死差益が少なく、経過年数が増すと死差益が多い → 経過年数が短いと死差益が多く、経過年数が増すと死差益が少ない', //p126
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="30"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="団体定期保険の数理"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '通常保険料 → 事情に応じて特別保険料、臨時保険料、剰余金等', //p159
+                    ]"
+                />
                 <QuestionTemp2
                     :questionNumber="31"
                     :title="title"
@@ -657,14 +705,14 @@ const subject = "2021年度 フォームC";
                     :items="[
                         // 問31〜40
                         { questionTitle: '契約年齢', content: '正しい' }, //31
-                        { questionTitle: '現価', content: '' }, //32
-                        { questionTitle: '予定利率', content: '' }, //33
+                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32 p27
+                        { questionTitle: '予定利率', content: '保険金額 → 商品の特性' }, //33 p38
                         { questionTitle: '収支相当の原則', content: '正しい' }, //34
-                        { questionTitle: '責任準備金積立根拠', content: '' }, //35
+                        { questionTitle: '責任準備金積立根拠', content: '平準保険料方式と同様 → 平準保険料方式と異なり' }, //35 p68
                         { questionTitle: '解約返戻金の算式', content: '正しい' }, //36
-                        { questionTitle: '契約変更', content: '' }, //37
+                        { questionTitle: '契約変更', content: 'いずれの方法でも支払われない → 保険金額の減額では支払われることがある' }, //37 p111~
                         { questionTitle: '5年ごと利差配当付保険', content: '正しい' }, //38
-                        { questionTitle: '配当金支払方法', content: '' }, //39
+                        { questionTitle: '配当金支払方法', content: '支払いの対象とならない → 支払い対象' }, //39 p134
                         { questionTitle: '最低保証機能', content: '正しい' }, //40
                         // 問41〜50
                         { questionTitle: '死亡率', label: 'オ', content: '' }, //41

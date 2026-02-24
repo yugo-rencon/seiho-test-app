@@ -892,15 +892,15 @@ const subject = "2024年度 フォームA";
                     :items="[
                         // 問31〜40
                         { questionTitle: '生命保険契約と年齢', content: '正しい' }, //31
-                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32
+                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32 p27
                         { questionTitle: '平準保険料', content: '正しい' }, //33
                         { questionTitle: '分割払営業保険料', content: '営業保険料額を下回る → 営業保険料額を上回る（分割払は予定利息減少・事務費増加のため）' }, //34
-                        { questionTitle: '責任準備金積立根拠', content: '平準保険料方式と同様 → 平準保険料方式と異なり<br>積み立てる必要がない → 積み立てる必要がある' }, //35
+                        { questionTitle: '責任準備金積立根拠', content: '平準保険料方式と同様 → 平準保険料方式と異なり<br>積み立てる必要がない → 積み立てる必要がある' }, //35 p68
                         { questionTitle: '延長保険', content: '正しい' }, //36
                         { questionTitle: '剰余金処分', content: '正しい' }, //37
                         { questionTitle: 'その他の損益', content: '正しい' }, //38
                         { questionTitle: 'リスクヘッジ', content: '正しい' }, //39
-                        { questionTitle: '団体定期保険の数理', content: '被保険者ごとに算出して積み上げる → 団体単位で計算する（積み上げない）' }, //40
+                        { questionTitle: '団体定期保険の数理', content: '被保険者ごとに算出して積み上げる → 団体単位で計算する（積み上げない）' }, //40 p154
                         // 問41〜50
                         { questionTitle: '資産の平均利回り', label: 'オ', content: '' }, //41
                         { questionTitle: '保険料の計算原理', label: 'ア', content: '現価' }, //42

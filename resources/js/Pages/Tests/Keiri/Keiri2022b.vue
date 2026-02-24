@@ -870,10 +870,10 @@ const subject = "2022年度 フォームB";
                         { questionTitle: '平均余命・平均寿命', content: '正しい' }, //31
                         { questionTitle: '生命保険契約と年齢', content: '正しい' }, //32
                         { questionTitle: '予定利率', content: '正しい' }, //33
-                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //34
+                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //34 p27
                         { questionTitle: '平準保険料', content: '正しい' }, //35
                         { questionTitle: '責任準備金', content: '保険期間の前半 → 後半' }, //36
-                        { questionTitle: '解約返戻金の算式', content: 'チルメル式保険料積立金 → 解約までの経過期間に応じた純保険料式保険料積立金'},//37
+                        { questionTitle: '解約返戻金の算式', content: 'チルメル式保険料積立金 → 解約までの経過期間に応じた純保険料式保険料積立金' }, //37
                         { questionTitle: '剰余金におけるその他の損益', content: '正しい' }, //38
                         { questionTitle: '変額保険の運用リスク', content: '生命保険会社 → 契約者' }, //39
                         { questionTitle: '特別勘定の位置付け', content: '保険業法上の規定によるものでなく → 保険業法上の規定によるもの' }, //40

@@ -40,7 +40,7 @@ const allUpdates = [
     {
         date: '2026.02.18',
         title: '生命保険総論 2020年度（A/B/C）を追加',
-        description: '生命保険総論の2020年度フォームA・B・Cを追加しました。既存年度との表記統一（SAME注記やラベル運用）も進めています。',
+        description: '生命保険総論の2020年度フォームA・B・Cを追加しました。既存年度との表記統一（注記やラベル運用）も進めています。',
         badge: 'NEW',
         badgeColor: 'from-pink-500 to-red-500',
         category: 'コンテンツ追加'
@@ -275,4 +275,3 @@ const groupedByYear = computed(() => {
         </div>
     </SeihoTestLayout>
 </template>
-

@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2021年度 フォームB'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -188,16 +188,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '生命保険が第一分野、損害保険が第二分野。' }, //32
-                    { label: '解', content: '被保険者の死亡後は、年金の支払は行わない。' }, //33
-                    { label: '解', content: '認定生命保険士ではなく生命保険面接土。' }, //34
-                    { label: '解', content: '保険料総額ではなく保険金総額。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '応用課程ではなく専門課程。' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '正しい' }, //31
+                    { content: '生命保険が第一分野、損害保険が第二分野。' }, //32
+                    { content: '被保険者の死亡後は、年金の支払は行わない。' }, //33
+                    { content: '認定生命保険士ではなく生命保険面接土。' }, //34
+                    { content: '保険料総額ではなく保険金総額。' }, //35
+                    { content: '正しい' }, //36
+                    { content: '応用課程ではなく専門課程。' }, //37
+                    { content: '正しい' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ア', content: '保険業法' }, //41
                     { label: 'エ', content: '引き下げ' }, //42

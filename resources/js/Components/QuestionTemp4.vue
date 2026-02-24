@@ -12,7 +12,7 @@
                 ></div>
                 <h2 class="flex items-center gap-2 text-base font-bold text-gray-800">
                     問{{ item.questionNo }}
-                    <span v-if="item.questionTitle" class="text-base font-bold text-gray-800">
+                    <span v-if="item.questionTitle" class="text-base font-semibold text-gray-600">
                         {{ item.questionTitle }}
                     </span>
                 </h2>
@@ -116,7 +116,7 @@
                 問{{ firstLockedItem.questionNo }}
                 <span
                     v-if="firstLockedItem.questionTitle"
-                    class="text-base font-bold text-gray-800"
+                    class="text-base font-semibold text-gray-600"
                 >
                     {{ firstLockedItem.questionTitle }}
                 </span>

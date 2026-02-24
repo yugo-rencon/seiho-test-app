@@ -10,8 +10,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険計理";
 const subject = "2023年度 フォームC";
-
-const SAME = "※2023年度フォームA/B/Cで同一問題";
 </script>
 
 <template>
@@ -826,10 +824,11 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約者配当金の分配・支払方法"
                     :contents="[
-                        //p134 (2023-A-25,2023-B-25,2024-C-25)
-                        '配当金を<u><b>一時</b></u>払保険料として契約応当日に保険を買増し（保険金を増額）する。',
-                        '契約応当日に始まる保険年度について、配当金を保険料払込回数に等分して、毎回の保険料に充当、相殺する',
+                        //p134 (2023-A-25,2023-B-25,2023-C-25,2022-A-25,2022-B-25,2022-C-25)
+                        '年払保険料 → 一時払保険料',
+                        'その年度の保険料にまとめて充当 → 払込回数に等分し、毎回の保険料に充当',
                         '正しい',
                     ]"
                 />
@@ -837,9 +836,10 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="営業保険料"
                     :contents="[
-                        //p54 (2023-A-26,2023-B-26,2024-C-26)
-                        '保険金を比例させる方式、営業保険料（または純保険料）に比例させる方式、<u>1契約について予定事業費を一定額とする方式</u>、これらの方式を組み合わせる方式の4方式のいずれかである。',
+                        //p54 (2023-A-26,2023-B-26,2023-C-26)
+                        '3方式 → 4方式（1契約について予定事業費を一定額とする方式も含む）',
                         '正しい',
                         '正しい',
                     ]"
@@ -848,18 +848,19 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="純保険料式保険料積立金"
                     :contents="[
                         //p79
                         '正しい',
                         '正しい',
-                        '保険料積立金は養老保険では年を追って逓増し、満期時に満期保険金相当額に達する。一方、<u><b>定期保険</u></b>では、ゆるやかな山なりのカーブを描いて最終的にゼロになる。',
+                        '定期保険、高倍率定期付養老保険 → 定期保険（高倍率定期付養老保険は含まない）',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
+                    questionTitle="事業年度末責任準備金"
                     :contents="[
                         '3区分 → 4区分（払戻積立金が含まれる）', //p96
                         '正しい',
@@ -870,10 +871,11 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    questionTitle="解約返戻金"
                     :contents="[
-                        //p105 (2023-A-29,2023-B-29,2024-C-29)
+                        //p105
                         '正しい',
-                        '解約返戻金は、保険料の自動振替貸付と契約者貸付の限度基準として用いられている。',
+                        '既払込保険料相当額が用いられている → 解約返戻金が用いられている。',
                         '正しい',
                     ]"
                 />
@@ -881,9 +883,10 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="団体年金保険の数理"
                     :contents="[
                         //p155
-                        '年金制度の主な財政方式として、積立水準の低いものから高いものへ順に並べると完全賦課方式、平準積立方式、即時積立方式の順となる。',
+                        '即時積立方式、平準積立方式、完全賦課方式の順 → 完全賦課方式、平準積立方式、即時積立方式の順',
                         '正しい',
                         '正しい',
                     ]"
@@ -894,43 +897,28 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        {
-                            label: '解',
-                            content:
-                                '生命保険会社では、満x歳を中心に前後6カ月の被保険者に対してx歳の保険料率を適用する「保険年齢方式」を採用している会社と、通常の年齢の数え方と同じ切捨方式（端数月はすべて切り捨てる）である「満年齢方式」を採用している会社がある。',
-                        }, //31
-                        { label: '解', content: '正しい' }, //32
-                        {
-                            label: '解',
-                            content:
-                                '予定利率は、以前は、長期の契約の予定利率を短期の契約よりも低めの、保守的な水準に設定する生命保険会社もあったが、現在では多くの生命保険会社で保険期間によらず<u><b>商品の特性</b></u>に応じて予定利率を定めている。',
-                        }, //33
-                        { label: '解', content: '正しい' }, //34
-                        {
-                            label: '解',
-                            content:
-                                '延長保険は、死亡保障に重点を置いて死亡保険金額は<u><b>変わらない</b></u>が、保険期間が<u><b>短くなる</b></u>こともあり、満期時に受け取る保険金も<u><b>ゼロまたは少額</b></u>になる。',
-                        }, //35
-                        { label: '解', content: '正しい' }, //36
-                        { label: '解', content: '正しい' }, //37
-                        {
-                            label: '解',
-                            content:
-                                '経過年数が短い契約については、通常、危険選択の<u><b>効果があり</b></u>、実際死亡率が予定死亡率を<u><b>かなり下回る</b></u>ので死差益は<u><b>多い</b></u>が、経過年数が増すにつれて選択効果が<u><b>薄れ</b></u>、死差益は<u><b>少なく</b></u>なる。',
-                        }, //38
-                        { label: '解', content: '正しい' }, //39
-                        { label: '解', content: '資産運用に関するリスクは、定額保険は生命保険会社、変額保険は契約者に帰属する。' }, //40
+                        { questionTitle: '生命保険契約と年齢', content: '保険年齢方式を採用 → 保険年齢方式または満年齢方式を採用' }, //31
+                        { questionTitle: '単利', content: '正しい' }, //32
+                        { questionTitle: '予定利率', content: '保険金額 → 商品の特性' }, //33
+                        { questionTitle: '終価', content: '正しい' }, //34
+                        { questionTitle: '延長保険', content: '生存保険金の支払対象とはならない → 生存保険金として支払われる' }, //35
+                        { questionTitle: '1年定期保険の純保険料', content: '正しい' }, //36
+                        { questionTitle: '契約転換制度', content: '正しい' }, //37
+                        { questionTitle: '剰余金の発生源', content:
+                                '危険選択効果が薄く、実際死亡率が予定死亡率を上回るので死差益は少ない → 危険選択効果が高く、実際死亡率が予定死亡率をかなり下回るので死差益は多い<br>選択効果があらわれ、死差益は多くなる → 選択効果が薄れ、死差益は少なくなる', }, //38
+                        { questionTitle: '配当の割当方法', content: '正しい' }, //39
+                        { questionTitle: '運用リスクの帰属', content: '定額保険、変額保険ともに生命保険会社 → 定額保険は生命保険会社、変額保険は契約者' }, //40
                         // 問41〜50
-                        { label: 'オ', content: '' }, //41
-                        { label: 'ウ', content: '収支相当' }, //42
-                        { label: 'エ', content: '高くなる' }, //43
-                        { label: 'ウ', content: '平準保険料' }, //44
-                        { label: 'ア', content: '危険保険金' }, //45
-                        { label: 'エ', content: '負債十分性' }, //46
-                        { label: 'オ', content: '' }, //47
-                        { label: 'ア', content: '保険年度末保険料積立金' }, //48
-                        { label: 'ア', content: '運用実績連動型' }, //49
-                        { label: 'オ', content: '' }, //50
+                        { questionTitle: '死亡率', label: 'オ', content: '' }, //41
+                        { questionTitle: '保険計理の基礎', label: 'ウ', content: '収支相当' }, //42
+                        { questionTitle: '純保険料の変化', label: 'エ', content: '高くなる' }, //43
+                        { questionTitle: '責任準備金の積立', label: 'ウ', content: '平準保険料' }, //44
+                        { questionTitle: '養老保険の積立金', label: 'ア', content: '危険保険金' }, //45
+                        { questionTitle: '積立に関する法的規制', label: 'エ', content: '負債十分性' }, //46
+                        { questionTitle: '配当準備金繰入', label: 'オ', content: '' }, //47
+                        { questionTitle: '配当金の計算方法', label: 'ア', content: '保険年度末保険料積立金' }, //48
+                        { questionTitle: '特別勘定の位置付け', label: 'ア', content: '運用実績連動型' }, //49
+                        { questionTitle: '団体定期保険の保険料', label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

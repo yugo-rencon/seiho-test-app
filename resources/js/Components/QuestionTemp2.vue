@@ -14,7 +14,7 @@
                     問題{{ item.questionNo }}
                     <span
                         v-if="item.questionTitle"
-                        class="text-base font-bold text-gray-800"
+                        class="text-base font-semibold text-gray-600"
                     >
                         {{ item.questionTitle }}
                     </span>
@@ -103,10 +103,11 @@ const normalizedItems = computed(() => {
     if (props.items.length > 0) {
         return props.items.map((item: any, index: number) => ({
             content: item?.content ?? "",
-            label: item?.label ?? getLabel(index),
+            // Temp2 の前半10問（通常は問31〜40）は、label 未指定なら自動で「解」
+            label: item?.label ?? (index < 10 ? "解" : getLabel(index)),
             note: item?.note ?? getNote(index),
             questionNo: Number(props.questionNumber) + index,
-            questionTitle: getQuestionTitle(index),
+            questionTitle: item?.questionTitle ?? getQuestionTitle(index),
         }));
     }
 

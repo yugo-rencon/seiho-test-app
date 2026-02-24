@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "約款と法律"
 const subject = '2022年度 フォームC'
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '片務契約ではなく双務契約。' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '保険証券は、生命保険契約等の成立およびびその内容に関する証拠材料となる証拠証券に過ぎず、その作成交付は契約成立の要件ではない。' }, //34
-                    { label: '解', content: '保険契約の復活の法的性格については、契約当事者の合意に基づいて失効状態の保険契約を有効状態に戻すための一種特別な契約と解する「特別契約説」の考え方が妥当である。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '金融庁長官の認可が必要。' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '正しい' }, //31
+                    { content: '片務契約ではなく双務契約。' }, //32
+                    { content: '正しい' }, //33
+                    { content: '保険証券は、生命保険契約等の成立およびびその内容に関する証拠材料となる証拠証券に過ぎず、その作成交付は契約成立の要件ではない。' }, //34
+                    { content: '保険契約の復活の法的性格については、契約当事者の合意に基づいて失効状態の保険契約を有効状態に戻すための一種特別な契約と解する「特別契約説」の考え方が妥当である。' }, //35
+                    { content: '正しい' }, //36
+                    { content: '正しい' }, //37
+                    { content: '金融庁長官の認可が必要。' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ウ', content: '元本欠損' }, //41
                     { label: 'エ', content: '善意' }, //42

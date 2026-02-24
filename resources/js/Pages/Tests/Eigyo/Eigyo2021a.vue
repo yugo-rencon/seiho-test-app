@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2021年度 フォームA'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -188,16 +188,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '運営主体は各都道府県ではなく各市区町村。' }, //31
-                    { label: '解', content: '生命保険が第一分野、損害保険が第二分野。' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '認定生命保険士ではなく生命保険面接士。' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '3倍ではなく5倍。' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '最低賃金法に基づく地域別最低賃金が適用される。' }, //40
+                    { content: '運営主体は各都道府県ではなく各市区町村。' }, //31
+                    { content: '生命保険が第一分野、損害保険が第二分野。' }, //32
+                    { content: '正しい' }, //33
+                    { content: '認定生命保険士ではなく生命保険面接士。' }, //34
+                    { content: '正しい' }, //35
+                    { content: '正しい' }, //36
+                    { content: '3倍ではなく5倍。' }, //37
+                    { content: '正しい' }, //38
+                    { content: '正しい' }, //39
+                    { content: '最低賃金法に基づく地域別最低賃金が適用される。' }, //40
                     // 問41〜50
                     { label: 'オ', content: '' }, //41
                     { label: 'オ', content: '' }, //42

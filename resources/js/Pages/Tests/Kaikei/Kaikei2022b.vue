@@ -9,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険会計"
 const subject = '2022年度 フォームB'
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -190,16 +190,16 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '相互会社は剰余金処分に関する議案の作成が求められる。' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '購入により取得した有価証券については、購入代価に購入手数料その他購入するために要した費用を加算した金額が取得価額となる。' }, //36
-                    { label: '解', content: '法人税法上の貸倒引当金として認められる額を超える額は、損金に算入されない。' }, //37
-                    { label: '解', content: '債権額ではなく、債務額。' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '正しい' }, //31
+                    { content: '正しい' }, //32
+                    { content: '正しい' }, //33
+                    { content: '相互会社は剰余金処分に関する議案の作成が求められる。' }, //34
+                    { content: '正しい' }, //35
+                    { content: '購入により取得した有価証券については、購入代価に購入手数料その他購入するために要した費用を加算した金額が取得価額となる。' }, //36
+                    { content: '法人税法上の貸倒引当金として認められる額を超える額は、損金に算入されない。' }, //37
+                    { content: '債権額ではなく、債務額。' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'オ', content: '' }, //41
                     { label: 'イ', content: '補助記入帳' }, //42

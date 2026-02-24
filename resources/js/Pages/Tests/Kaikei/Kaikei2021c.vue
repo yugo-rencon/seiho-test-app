@@ -9,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険会計"
 const subject = '2021年度 フォームC'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -190,16 +190,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: 'たとえば、電力会社と電力供給の契約を締結した場合、契約締結の時点では、それぞれに「電力を供給する義務」と「電力の供給を受ける権利」が発生するが、会計上の取引とはならない。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '生命保険会社においては、未払事業費、未払税金、未払賞与等が含まれる。' }, //36
-                    { label: '解', content: '自己株式は、純資産の部から控除する形式で表示することとされた。' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '据置期間に対応する利息も保険金据置支払金に計上される。' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: 'たとえば、電力会社と電力供給の契約を締結した場合、契約締結の時点では、それぞれに「電力を供給する義務」と「電力の供給を受ける権利」が発生するが、会計上の取引とはならない。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '正しい' }, //33
+                    { content: '正しい' }, //34
+                    { content: '正しい' }, //35
+                    { content: '生命保険会社においては、未払事業費、未払税金、未払賞与等が含まれる。' }, //36
+                    { content: '自己株式は、純資産の部から控除する形式で表示することとされた。' }, //37
+                    { content: '正しい' }, //38
+                    { content: '据置期間に対応する利息も保険金据置支払金に計上される。' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ウ', content: '買掛金元帳' }, //41
                     { label: 'ウ', content: '処理原則' }, //42

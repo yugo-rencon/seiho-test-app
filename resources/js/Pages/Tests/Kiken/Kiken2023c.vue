@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "危険選択"
 const subject = '2023年度 フォームC'
 
-const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '体重÷身長の2乗。' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: 'リスク細分化保険では狭くなり、標準下体保険では広くなる。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。' }, //38
-                    { label: '解', content: '群団再保険ではなく個別再保険。' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '正しい' }, //31
+                    { content: '正しい' }, //32
+                    { content: '体重÷身長の2乗。' }, //33
+                    { content: '正しい' }, //34
+                    { content: 'リスク細分化保険では狭くなり、標準下体保険では広くなる。' }, //35
+                    { content: '正しい' }, //36
+                    { content: '正しい' }, //37
+                    { content: '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。' }, //38
+                    { content: '群団再保険ではなく個別再保険。' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ア', content: '選択表' }, //41
                     { label: 'オ', content: '' }, //42

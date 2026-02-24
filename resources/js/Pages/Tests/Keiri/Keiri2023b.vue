@@ -10,8 +10,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険計理";
 const subject = "2023年度 フォームB";
-
-const SAME = "※2023年度フォームA/B/Cで同一問題";
 </script>
 
 <template>
@@ -105,7 +103,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.02',
                             questionTitle: '平均余命',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -796,10 +793,11 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約者配当金の分配・支払方法"
                     :contents="[
-                        //p134 (2023-A-25,2023-B-25,2023-C-25)
-                        '配当金を<u><b>一時</b></u>払保険料として契約応当日に保険を買増し（保険金を増額）する。',
-                        '配当金を保険料払込回数に等分して、毎回の保険料に充当、相殺する。',
+                        //p134 
+                        '年払保険料 → 一時払保険料',
+                        'その年度の保険料にまとめて充当 → 払込回数に等分し、毎回の保険料に充当',
                         '正しい',
                     ]"
                 />
@@ -807,9 +805,10 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="営業保険料"
                     :contents="[
                         //p54 (2023-A-26,2023-B-26,2023-C-26)
-                        '保険金を比例させる方式、営業保険料（または純保険料）に比例させる方式、<u>1契約について予定事業費を一定額とする方式</u>、これらの方式を組み合わせる方式の4方式のいずれかである。',
+                        '3方式 → 4方式（1契約について予定事業費を一定額とする方式も含む）',
                         '正しい',
                         '正しい',
                     ]"
@@ -818,20 +817,22 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="責任準備金の積立に関する法的規制"
                     :contents="[
                         //p102
                         '正しい',
                         '正しい',
-                        '保険計理人は、責任準備金が健全な保険計理に基づいて積み立てられているかどうかを確認し、その結果を配当の確認結果とあわせて意見書に記載して、<u><b>取締役会</b></u>に提出することが保険業法に定められている。',
+                        '社員総代会や株主総会 → 取締役会',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約変更および契約転換制度"
                     :contents="[
                         //p112
-                        '延長保険は、払済保険とは対照的に死亡保障に重点を置いて死亡保険金額は変わらないが、保険期間が短くなることもあり、満期時に受け取る保険金も<u><b>ゼロまたは少額</b></u>になる。',
+                        '必ずゼロになる → ゼロまたは少額になる',
                         '正しい',
                         '正しい',
                     ]"
@@ -840,10 +841,11 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    questionTitle="解約返戻金"
                     :contents="[
-                        //p105 (2023-A-29,2023-B-29,2024-C-29)
+                        //p105
                         '正しい',
-                        '解約返戻金は、保険料の自動振替貸付と契約者貸付の限度基準として用いられている。',
+                        '既払込保険料相当額が用いられている → 解約返戻金が用いられている。',
                         '正しい',
                     ]"
                 />
@@ -851,10 +853,11 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約者配当の意義と割当"
                     :contents="[
-                        //p129 (2023-B-30,2022-A-29,2022-B-29,2022-C-29)
+                        //p129
                         '正しい',
-                        '配当金の支払いを行わない無配当保険や5年ごと利差配当付保険のような保険は、保険料は通常の有配当保険より<u><b>安くなる</b></u>のが一般的である。',
+                        '保険料は通常の有配当保険より高くなる → 安くなる',
                         '正しい',
                     ]"
                 />
@@ -864,35 +867,27 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '正しい' }, //31
-                        { label: '解', content: '正しい' }, //32
-                        {
-                            label: '解',
-                            content:
-                                '生命保険会社では、満x歳を中心に前後6カ月の被保険者に対してx歳の保険料率を適用する「保険年齢方式」を採用している会社と、通常の年齢の数え方と同じ切捨方式（端数月はすべて切り捨てる）である「満年齢方式」を採用している会社がある。',
-                        }, //33
-                        { label: '解', content: '正しい' }, //34
-                        { label: '解', content: '自然保険料ではなく平準保険料の説明。<br>毎年の保険料収入と保険金支出とが相等しくなるように定めた保険料を自然保険料という。' }, //35
-                        { label: '解', content: '正しい' }, //36
-                        { label: '解', content: '正しい' }, //37
-                        { label: '解', content: '正しい' }, //38
-                        {
-                            label: '解',
-                            content:
-                                '変額保険の変動保険金額は、毎月<u><b>月末</b></u>に、その時点での積立金と表定責任準備金との差額と、当該<u><b>月末</b></u>時点で計算された一時払保険料を用いて計算される。',
-                        }, //39
-                        { label: '解', content: '正しい' }, //40
+                        { questionTitle: '死亡率', content: '正しい' }, //31
+                        { questionTitle: '単利', content: '正しい' }, //32
+                        { questionTitle: '生命保険契約と年齢', content: '満年齢方式のみ → 保険年齢方式または満年齢方式' }, //33
+                        { questionTitle: '終価', content: '正しい' }, //34
+                        { questionTitle: '保険料の計算原理', content: '自然保険料 → 平準保険料' }, //35
+                        { questionTitle: '1年定期保険の純保険料', content: '正しい' }, //36
+                        { questionTitle: 'チルメル式保険料積立金', content: '正しい' }, //37
+                        { questionTitle: '剰余金の発生源', content: '正しい' }, //38
+                        { questionTitle: '変額保険の用語', content: '月始 → 月末' }, //39
+                        { questionTitle: '団体定期保険の保険料', content: '正しい' }, //40
                         // 問41〜50
-                        { label: 'オ', content: '' }, //41
-                        { label: 'イ', content: '大数' }, //42
-                        { label: 'エ', content: '高くなる' }, //43
-                        { label: 'ウ', content: '平準保険料' }, //44
-                        { label: 'ア', content: '危険保険金' }, //45
-                        { label: 'イ', content: '標準' }, //46
-                        { label: 'オ', content: '' }, //47
-                        { label: 'オ', content: '' }, //48
-                        { label: 'ア', content: '毎月' }, //49
-                        { label: 'ウ', content: '通常保険料' }, //50
+                        { questionTitle: '死亡表の種類', label: 'オ', content: '' }, //41
+                        { questionTitle: '保険計理の基礎', label: 'イ', content: '大数' }, //42
+                        { questionTitle: '純保険料の変化', label: 'エ', content: '高くなる' }, //43
+                        { questionTitle: '責任準備金の積立', label: 'ウ', content: '平準保険料' }, //44
+                        { questionTitle: '養老保険の積立金', label: 'ア', content: '危険保険金' }, //45
+                        { questionTitle: '積立に関する法的規制', label: 'イ', content: '標準' }, //46
+                        { questionTitle: '配当準備金繰入', label: 'オ', content: '' }, //47
+                        { questionTitle: 'アセット・シェア方式', label: 'オ', content: '' }, //48
+                        { questionTitle: '変額保険の仕組み', label: 'ア', content: '毎月' }, //49
+                        { questionTitle: '団体年金の保険料計算', label: 'ウ', content: '通常保険料' }, //50
                     ]"
                 />
             </div>

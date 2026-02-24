@@ -9,7 +9,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2020年度 フォームC";
-const SAME = "※2020年度フォームA/B/Cで同一問題";
+
 </script>
 
 <template>
@@ -62,7 +62,6 @@ const SAME = "※2020年度フォームA/B/Cで同一問題";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '予定利率', //11
                         '逆ざや', //12
@@ -83,7 +82,6 @@ const SAME = "※2020年度フォームA/B/Cで同一問題";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '法定他業', //16
                         '規制緩和', //17
@@ -115,7 +113,6 @@ const SAME = "※2020年度フォームA/B/Cで同一問題";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '救済してくれた → 救済はなく、自らが補塡', //22-ア p53
                         '正しい', //22-イ
@@ -138,7 +135,6 @@ const SAME = "※2020年度フォームA/B/Cで同一問題";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '財団法人 → 社団法人', //24-ア p160
                         '資本金 → 資金', //24-イ p160
@@ -183,7 +179,6 @@ const SAME = "※2020年度フォームA/B/Cで同一問題";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '正しい', //28-ア
                         '正しい', //28-イ
@@ -219,25 +214,25 @@ const SAME = "※2020年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40（解）
-                        { label: '解', content: '正しい', note: SAME }, //31
-                        { label: '解', content: '国民生命表 → 経験生命表', note: SAME }, //32 p15
-                        { label: '解', content: '正しい' }, //33
-                        { label: '解', content: '連邦政府 → 州政府' }, //34 p65
-                        { label: '解', content: '正しい' }, //35
-                        { label: '解', content: '相互会社から株式会社 → 株式会社から相互会社', note: SAME }, //36 p78
-                        { label: '解', content: '国 → 各市町村' }, //37 p141
-                        { label: '解', content: '責任準備金 → 供託金' }, //38 p159
-                        { label: '解', content: '正しい' }, //39
-                        { label: '解', content: '正しい' }, //40
+                        { content: '正しい' }, //31
+                        { content: '国民生命表 → 経験生命表' }, //32 p15
+                        { content: '正しい' }, //33
+                        { content: '連邦政府 → 州政府' }, //34 p65
+                        { content: '正しい' }, //35
+                        { content: '相互会社から株式会社 → 株式会社から相互会社' }, //36 p78
+                        { content: '国 → 各市町村' }, //37 p141
+                        { content: '責任準備金 → 供託金' }, //38 p159
+                        { content: '正しい' }, //39
+                        { content: '正しい' }, //40
                         // 問41〜50（ア〜オ）
                         { label: 'ア', content: '付合契約' }, //41
-                        { label: 'ア', content: '10', note: SAME }, //42
+                        { label: 'ア', content: '10' }, //42
                         { label: 'オ', content: '' }, //43
                         { label: 'オ', content: '' }, //44
-                        { label: 'エ', content: '賦課式', note: SAME }, //45
+                        { label: 'エ', content: '賦課式' }, //45
                         { label: 'ウ', content: '既契約' }, //46
                         { label: 'オ', content: '' }, //47
-                        { label: 'イ', content: '消費者契約法', note: SAME }, //48
+                        { label: 'イ', content: '消費者契約法' }, //48
                         { label: 'イ', content: '組合員' }, //49
                         { label: 'ウ', content: '保険金額' }, //50
                     ]"

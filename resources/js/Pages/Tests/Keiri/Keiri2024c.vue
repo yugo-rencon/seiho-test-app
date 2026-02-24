@@ -11,7 +11,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 const title = "生命保険計理";
 const subject = "2024年度 フォームC";
 
-const SAME = "※2024年度フォームA/B/Cで同一問題";
+
 </script>
 
 <template>
@@ -31,7 +31,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '0.98925',
                             questionTitle: '生存率',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -67,7 +66,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '93,714',
                             questionTitle: '生存数',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -107,7 +105,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.16',
                             questionTitle: '平均余命',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -177,7 +174,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1,368,176',
                             questionTitle: '保険金総額の現価',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -229,7 +225,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '14,200',
                             questionTitle: '純保険料',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -279,7 +274,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '4,517',
                             questionTitle: '複利計算',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -331,7 +325,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '528,696',
                             questionTitle: '複利計算（半年複利）',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -371,7 +364,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.21',
                             questionTitle: '実利率',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -423,7 +415,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.83',
                             questionTitle: '年平均利回り',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -475,7 +466,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '4,618,507',
                             questionTitle: '現在必要資金の計算',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -524,6 +514,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    questionTitle="責任準備金の定義"
                     :contents="[
                         '純保険料',
                         '全払込期間',
@@ -543,6 +534,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険料積立金"
                     :contents="[
                         '将来法',
                         '一致する',
@@ -787,7 +779,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1,097,000円',
                             questionTitle: '払済保険金額',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -836,10 +827,11 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="死亡表の種類"
                     :contents="[
                         //p11
                         '正しい',
-                        '簡易生命表ではなく完全生命表。<br>簡易生命表は、毎年の人口動態統計の死亡数と推計人口を用い、簡略化された計算によって算定された死亡率を表示したものである。',
+                        '簡易生命表 → 完全生命表',
                         '正しい',
                     ]"
                 />
@@ -847,10 +839,11 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="剰余金の発生源"
                     :contents="[
                         //p127
                         '正しい',
-                        '利差益は責任準備金に<u>比例</u>するので、貯蓄性の強い保険、養老保険などについては、契約初期は<u><b>少なく</b></u>、経過年数が長くなるほど<u>多く</u>なる。',
+                        '利差益は責任準備金に反比例 → 利差益は責任準備金に比例<br>契約初期は多く → 契約初期は少なく<br>経過年数が長くなるほど少なく → 経過年数が長くなるほど多く',
                         '正しい',
                     ]"
                 />
@@ -858,7 +851,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
+                    questionTitle="事業年度末責任準備金"
                     :contents="[
                         '3区分 → 4区分（払戻積立金が含まれる）', //p96
                         '正しい',
@@ -869,7 +862,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
+                    questionTitle="契約転換制度"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -880,9 +873,10 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="団体年金保険の数理"
                     :contents="[
                         //p155-156
-                        '年金制度の財政方式のうち代表的な事前積立方式は、<u><b>一時払積増方式</b></u>、<u><b>平準積立方式</b></u>である。',
+                        '即時積増方式 → 一時払積増方式',
                         '正しい',
                         '正しい',
                     ]"
@@ -893,39 +887,27 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        {
-                            label: '解',
-                            content:
-                                '実際の人口統計に基づく死亡率を<u><b>粗死亡率</b></u>と呼ぶのに対し、数学的な技術を使って滑らかな傾向曲線にして求められた死亡率を<u><b>補整後死亡率</b></u>と呼んで区別している。',
-                        }, //31
-                        { label: '解', content: '期始払現価 → 期末払現価', note: SAME }, //32
-                        { label: '解', content: '正しい' }, //33
-                        { label: '解', content: '営業保険料額を下回る → 営業保険料額を上回る（分割払は予定利息減少・事務費増加のため）', note: SAME }, //34
-                        { label: '解', content: '正しい' }, //35
-                        { label: '解', content: '正しい' }, //36
-                        { label: '解', content: '正しい' }, //37
-                        {
-                            label: '解',
-                            content:
-                                '5年ごと利差配当付保険の場合、次の事業年度中に死亡、解約等により消滅する契約について、直前の5年ごとの契約応当日から<u><b>一定年数経過している</b></u>場合に配当が割り当てられる。',
-                        }, //38
-                        { label: '解', content: '正しい' }, //39
-                        {
-                            label: '解',
-                            content:
-                                '一般的な変額個人年金保険に付されている最低保証機能については、「最低年金原資保証タイプ」、「最低死亡保証タイプ」、<u><b>「最低解約保証タイプ」</b></u>、「最低年金額保証タイプ」の4つのタイプに大別することができる。',
-                        }, //40
+                        { questionTitle: '死亡率', content: '基本死亡率 → 粗死亡率<br>応用死亡率 → 補整後死亡率' }, //31
+                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32
+                        { questionTitle: '予定利率', content: '正しい' }, //33
+                        { questionTitle: '分割払営業保険料', content: '営業保険料額を下回る → 営業保険料額を上回る（分割払は予定利息減少・事務費増加のため）' }, //34
+                        { questionTitle: '計算基礎の変化と純保険料の変化', content: '正しい' }, //35
+                        { questionTitle: '高額割引', content: '正しい' }, //36
+                        { questionTitle: '解約返戻金の算式', content: '正しい' }, //37
+                        { questionTitle: '利差配当付保険', content: '経過年数にかかわらず → 一定年数経過している場合に' }, //38
+                        { questionTitle: 'リスクヘッジ', content: '正しい' }, //39
+                        { questionTitle: '最低保証機能', content: '3つのタイプ → 4つのタイプ（最低解約保証タイプを含む）' }, //40
                         // 問41〜50
-                        { label: 'オ', content: '' }, //41
-                        { label: 'ア', content: '現価', note: SAME }, //42
-                        { label: 'ウ', content: '保険金に比例させる' }, //43
-                        { label: 'エ', content: '（1 + 予定利率）' }, //44
-                        { label: 'ア', content: '養老保険' }, //45
-                        { label: 'ア', content: '定款' }, //46
-                        { label: 'オ', content: '' }, //47
-                        { label: 'オ', content: '', note: SAME }, //48
-                        { label: 'エ', content: 'を禁止されている', note: SAME }, //49
-                        { label: 'オ', content: '' }, //50
+                        { questionTitle: '資産の平均利回り', label: 'オ', content: '' }, //41
+                        { questionTitle: '保険料の計算原理', label: 'ア', content: '現価' }, //42
+                        { questionTitle: '保険料の計算基礎', label: 'ウ', content: '保険金に比例させる' }, //43
+                        { questionTitle: '純保険料の計算式', label: 'エ', content: '（1 + 予定利率）' }, //44
+                        { questionTitle: '払済保険', label: 'ア', content: '養老保険' }, //45
+                        { questionTitle: '配当準備金繰入', label: 'ア', content: '定款' }, //46
+                        { questionTitle: '変額保険の仕組み', label: 'オ', content: '' }, //47
+                        { questionTitle: '配当金の計算方法', label: 'オ', content: '' }, //48
+                        { questionTitle: '特別勘定の位置付け', label: 'エ', content: 'を禁止されている' }, //49
+                        { questionTitle: '団体定期保険の保険料', label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

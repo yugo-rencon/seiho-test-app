@@ -10,7 +10,7 @@ const title = "生命保険と税法"
 const subject = '2022年度 フォームB'
 
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '著述家や作家以外が受ける原稿料や印税。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '財産の評価についても相続財産の評価と贈与財産の評価は同じ基準に従って行われる。' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '3000万円ではなく、1500万円。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '売買目的有価証券ではなく、売買目的外有価証券の説明。' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '著述家や作家以外が受ける原稿料や印税。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '財産の評価についても相続財産の評価と贈与財産の評価は同じ基準に従って行われる。' }, //33
+                    { content: '正しい' }, //34
+                    { content: '3000万円ではなく、1500万円。' }, //35
+                    { content: '正しい' }, //36
+                    { content: '売買目的有価証券ではなく、売買目的外有価証券の説明。' }, //37
+                    { content: '正しい' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'イ', content: '10万円' }, //41
                     { label: 'オ', content: '' }, //42

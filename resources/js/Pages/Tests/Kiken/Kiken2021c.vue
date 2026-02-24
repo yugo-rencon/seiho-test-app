@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "危険選択"
 const subject = '2021年度 フォームC'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '責任は全員が負うことになる。' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '最小血圧と最大血圧が逆。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '生存する個人に関する情報であり、死亡した個人は対象外。' }, //38
-                    { label: '解', content: '1保険金受取人ではなく、1被保険者。' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '正しい' }, //31
+                    { content: '正しい' }, //32
+                    { content: '責任は全員が負うことになる。' }, //33
+                    { content: '正しい' }, //34
+                    { content: '最小血圧と最大血圧が逆。' }, //35
+                    { content: '正しい' }, //36
+                    { content: '正しい' }, //37
+                    { content: '生存する個人に関する情報であり、死亡した個人は対象外。' }, //38
+                    { content: '1保険金受取人ではなく、1被保険者。' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'オ', content: '' }, //41
                     { label: 'オ', content: '' }, //42

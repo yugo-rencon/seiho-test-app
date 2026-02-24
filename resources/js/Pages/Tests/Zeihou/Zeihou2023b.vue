@@ -10,7 +10,7 @@ const title = "生命保険と税法"
 const subject = '2023年度 フォームB'
 
 
-const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '流通税は、財産移転の事実に基づいて課税されるもので、印紙税、不動産所属税等が該当する。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '遺言できる者は満15歳以上で意思能力を有する者に限られる。' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '13%ではなく、7%' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '流通税は、財産移転の事実に基づいて課税されるもので、印紙税、不動産所属税等が該当する。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '正しい' }, //33
+                    { content: '遺言できる者は満15歳以上で意思能力を有する者に限られる。' }, //34
+                    { content: '正しい' }, //35
+                    { content: '正しい' }, //36
+                    { content: '正しい' }, //37
+                    { content: '13%ではなく、7%' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ウ', content: '40万円' }, //41
                     { label: 'ア', content: 'との選択により' }, //42

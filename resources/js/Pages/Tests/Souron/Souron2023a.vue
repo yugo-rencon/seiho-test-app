@@ -10,7 +10,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 const title = "生命保険総論";
 const subject = "2023年度 フォームA";
 
-const SAME = "※2023年度フォームA/B/Cで同一問題";
+
 </script>
 
 <template>
@@ -63,7 +63,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '保障制度',
                         '自給自足',
@@ -83,7 +82,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '海上保険',
                         '冒険貸借',
@@ -123,7 +121,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         'デリバティブ商品 → ニューウェーブ商品', //p69
                         '正しい',
@@ -154,7 +151,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -175,7 +171,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -208,23 +203,23 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '保険金受取人の資格についての制限はない' }, //31
-                        { label: '解', content: '正しい' }, //32
-                        { label: '解', content: '正しい', note: SAME }, //33
-                        { label: '解', content: '正しい' }, //34
-                        { label: '解', content: '正しい' }, //35
-                        { label: '解', content: '国 → 各市町村' }, //36
-                        { label: '解', content: '100株未満 → 1株未満', note: SAME }, //37
-                        { label: '解', content: '3段階 → 2段階（JA（単位農協）、JA共済連）', note: SAME }, //38
-                        { label: '解', content: '生保ANSERシステム → LINC（Life Insurance Network Center）' }, //39
-                        { label: '解', content: '正しい' }, //40
+                        { content: '保険金受取人の資格についての制限はない' }, //31
+                        { content: '正しい' }, //32
+                        { content: '正しい' }, //33
+                        { content: '正しい' }, //34
+                        { content: '正しい' }, //35
+                        { content: '国 → 各市町村' }, //36
+                        { content: '100株未満 → 1株未満' }, //37
+                        { content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
+                        { content: '生保ANSERシステム → LINC（Life Insurance Network Center）' }, //39
+                        { content: '正しい' }, //40
                         // 問41〜50
                         { label: 'オ', content: '' }, //41
-                        { label: 'ア', content: '負債', note: SAME }, //42
+                        { label: 'ア', content: '負債' }, //42
                         { label: 'ウ', content: '養老保険' }, //43
                         { label: 'エ', content: '不没収法' }, //44
-                        { label: 'イ', content: '更生手続', note: SAME }, //45
-                        { label: 'ア', content: '家計可処分所得', note: SAME }, //46
+                        { label: 'イ', content: '更生手続' }, //45
+                        { label: 'ア', content: '家計可処分所得' }, //46
                         { label: 'エ', content: '各種共済組合' }, //47
                         { label: 'イ', content: '消費者契約法' }, //48
                         { label: 'イ', content: '組合員' }, //49

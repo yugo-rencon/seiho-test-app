@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "約款と法律"
 const subject = '2023年度 フォームB'
 
-const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '認可を受けない保険約款も、その内容が強行規定や公益に反するものでない限り、保険契約者との間では有効であるとするのが判例、通説である。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '利益分配金ではなく契約者配当金。' }, //36
-                    { label: '解', content: '満期保険金登録制度ではなく、死亡保険金登録制度。' }, //37
-                    { label: '解', content: '相互会社と株式会社が逆。' }, //38
-                    { label: '解', content: '設計書ではなく、意向確認書面' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '認可を受けない保険約款も、その内容が強行規定や公益に反するものでない限り、保険契約者との間では有効であるとするのが判例、通説である。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '正しい' }, //33
+                    { content: '正しい' }, //34
+                    { content: '正しい' }, //35
+                    { content: '利益分配金ではなく契約者配当金。' }, //36
+                    { content: '満期保険金登録制度ではなく、死亡保険金登録制度。' }, //37
+                    { content: '相互会社と株式会社が逆。' }, //38
+                    { content: '設計書ではなく、意向確認書面' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ア', content: '重要事項' }, //41
                     { label: 'イ', content: '被保険者利益' }, //42

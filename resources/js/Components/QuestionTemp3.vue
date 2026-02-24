@@ -9,7 +9,7 @@
             <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>
             <h2 class="flex items-center gap-2 text-base font-bold text-gray-800">
                 問題{{ getQuestionRange(props.questionNumber) }}
-                <span v-if="props.questionTitle" class="text-base font-bold text-gray-800">
+                <span v-if="props.questionTitle" class="text-base font-semibold text-gray-600">
                     {{ props.questionTitle }}
                 </span>
             </h2>

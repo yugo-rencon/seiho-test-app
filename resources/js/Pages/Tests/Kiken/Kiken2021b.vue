@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "危険選択"
 const subject = '2021年度 フォームB'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '母集団の年齢構成が異なる場合には、死亡率だけで死亡の状況を比較することはできない。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '「自発的応答義務」から「質問応答義務」に改正された。' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '低血圧と高血圧が逆。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '社医、嘱託医どちらも契約者・被保険者に対抗できない。' }, //37
-                    { label: '解', content: '生存する個人に関する情報であり、死亡した個人は対象外。' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '母集団の年齢構成が異なる場合には、死亡率だけで死亡の状況を比較することはできない。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '「自発的応答義務」から「質問応答義務」に改正された。' }, //33
+                    { content: '正しい' }, //34
+                    { content: '低血圧と高血圧が逆。' }, //35
+                    { content: '正しい' }, //36
+                    { content: '社医、嘱託医どちらも契約者・被保険者に対抗できない。' }, //37
+                    { content: '生存する個人に関する情報であり、死亡した個人は対象外。' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'オ', content: '' }, //41
                     { label: 'エ', content: '継続性' }, //42

@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 
 const title = "生命保険計理"
 const subject = '2025年度 フォームC'
-const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -165,6 +165,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[
                 '純保険料','全払込期間','定期保険','後半','ゼロ', //問11〜15
                 ]"
@@ -180,6 +182,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[
                 '将来法','一致する','貯蓄保険料','付加保険料','チルメル', //問16〜20
                 ]"
@@ -274,6 +278,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p11
                 '正しい',
                 '簡易生命表ではなく完全生命表。<br>簡易生命表は、毎年の人口動態統計の死亡数と推計人口を用い、簡略化された計算によって算定された死亡率を表示したものである。',
@@ -284,6 +290,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p127
                 '正しい',
                 '利差益は責任準備金に<u>比例</u>するので、貯蓄性の強い保険、養老保険などについては、契約初期は<u><b>少なく</b></u>、経過年数が長くなるほど<u>多く</u>なる。',
@@ -294,6 +302,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p96 (2024-A-28,2024-B-28,2024-C-28,2023-C-28)
                 '保険業法では、事業年度末までに経過した期間に見合う保険料部分に対応する積立金（保険料積立金）、翌事業年度以降に対応する保険料部分（未経過保険料）、<u>第三分野における積立傷害保険等の積立型商品において、将来の満期返戻金支払いに対応する保険料部分（払戻積立金）</u>および危険準備金に分けて計算することとされている。',
                 '正しい',
@@ -304,6 +314,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p119 (2024-A-29,2024-B-29,2024-C-29)
                 '正しい',
                 '正しい',
@@ -314,6 +326,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p155-156
                 '年金制度の財政方式のうち代表的な事前積立方式は、<u><b>一時払積増方式</b></u>、<u><b>平準積立方式</b></u>である。',
                 '正しい',
@@ -326,27 +340,27 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '実際の人口統計に基づく死亡率を<u><b>粗死亡率</b></u>と呼ぶのに対し、数学的な技術を使って滑らかな傾向曲線にして求められた死亡率を<u><b>補整後死亡率</b></u>と呼んで区別している。' }, //31
-                    { label: '解', content: '通常、単に現価という場合には<u><b>期末払現価</b></u>を指す。' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '1年分を何回かに分けて払い込む分割払営業保険料の年間払込額は、年払の営業保険料額を以下の理由で<u><b>上回る</b></u>。<br>①分割払のために保険料払込みが遅れるための利息の損失（年払保険料の場合に比べて年間の予定利息分は少なくなる）<br>②集金回数（払込回数）の増加に伴う事業費の増加' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '5年ごと利差配当付保険の場合、次の事業年度中に死亡、解約等により消滅する契約について、直前の5年ごとの契約応当日から<u><b>一定年数経過している</b></u>場合に配当が割り当てられる。' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '一般的な変額個人年金保険に付されている最低保証機能については、「最低年金原資保証タイプ」、「最低死亡保証タイプ」、<u><b>「最低解約保証タイプ」</b></u>、「最低年金額保証タイプ」の4つのタイプに大別することができる。' }, //40
+                    { questionTitle: '', content: '実際の人口統計に基づく死亡率を<u><b>粗死亡率</b></u>と呼ぶのに対し、数学的な技術を使って滑らかな傾向曲線にして求められた死亡率を<u><b>補整後死亡率</b></u>と呼んで区別している。' }, //31
+                    { questionTitle: '', content: '通常、単に現価という場合には<u><b>期末払現価</b></u>を指す。' }, //32
+                    { questionTitle: '', content: '正しい' }, //33
+                    { questionTitle: '', content: '1年分を何回かに分けて払い込む分割払営業保険料の年間払込額は、年払の営業保険料額を以下の理由で<u><b>上回る</b></u>。<br>①分割払のために保険料払込みが遅れるための利息の損失（年払保険料の場合に比べて年間の予定利息分は少なくなる）<br>②集金回数（払込回数）の増加に伴う事業費の増加' }, //34
+                    { questionTitle: '', content: '正しい' }, //35
+                    { questionTitle: '', content: '正しい' }, //36
+                    { questionTitle: '', content: '正しい' }, //37
+                    { questionTitle: '', content: '5年ごと利差配当付保険の場合、次の事業年度中に死亡、解約等により消滅する契約について、直前の5年ごとの契約応当日から<u><b>一定年数経過している</b></u>場合に配当が割り当てられる。' }, //38
+                    { questionTitle: '', content: '正しい' }, //39
+                    { questionTitle: '', content: '一般的な変額個人年金保険に付されている最低保証機能については、「最低年金原資保証タイプ」、「最低死亡保証タイプ」、<u><b>「最低解約保証タイプ」</b></u>、「最低年金額保証タイプ」の4つのタイプに大別することができる。' }, //40
                     // 問41〜50
-                    { label: 'オ', content: '' }, //41
-                    { label: 'ア', content: '現価' }, //42
-                    { label: 'ウ', content: '保険金に比例させる' }, //43
-                    { label: 'エ', content: '（1 + 予定利率）' }, //44
-                    { label: 'ア', content: '養老保険' }, //45
-                    { label: 'ア', content: '定款' }, //46
-                    { label: 'オ', content: '' }, //47
-                    { label: 'オ', content: '' }, //48
-                    { label: 'エ', content: 'を禁止されている' }, //49
-                    { label: 'オ', content: '' }, //50
+                    { questionTitle: '', label: 'オ', content: '' }, //41
+                    { questionTitle: '', label: 'ア', content: '現価' }, //42
+                    { questionTitle: '', label: 'ウ', content: '保険金に比例させる' }, //43
+                    { questionTitle: '', label: 'エ', content: '（1 + 予定利率）' }, //44
+                    { questionTitle: '', label: 'ア', content: '養老保険' }, //45
+                    { questionTitle: '', label: 'ア', content: '定款' }, //46
+                    { questionTitle: '', label: 'オ', content: '' }, //47
+                    { questionTitle: '', label: 'オ', content: '' }, //48
+                    { questionTitle: '', label: 'エ', content: 'を禁止されている' }, //49
+                    { questionTitle: '', label: 'オ', content: '' }, //50
                 ]"
                 
             />

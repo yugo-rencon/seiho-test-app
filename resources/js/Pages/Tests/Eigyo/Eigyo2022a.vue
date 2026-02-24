@@ -9,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2022年度 フォームA'
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -187,16 +187,16 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '国、都道府県、被保険者が重層的に支えあう制度となっている。' }, //31
-                    { label: '解', content: '業務の代理に保険募集の代理を含まれることを明確化したことから、保険会社が他保険会社と業務の代理・事務の代行に関する契約を結んで、他保険会社商品を販売することが可能となった。' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: 'メリットとしては、海外の比較的高い金利を反映することで、予定利率を高く設定していること。' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '自己負担の一部を補填する治療給付金、定額の入院給付金、死亡時の死亡保険金の3つから構成される。' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '専業型と兼業型。' }, //40
+                    { content: '国、都道府県、被保険者が重層的に支えあう制度となっている。' }, //31
+                    { content: '業務の代理に保険募集の代理を含まれることを明確化したことから、保険会社が他保険会社と業務の代理・事務の代行に関する契約を結んで、他保険会社商品を販売することが可能となった。' }, //32
+                    { content: '正しい' }, //33
+                    { content: 'メリットとしては、海外の比較的高い金利を反映することで、予定利率を高く設定していること。' }, //34
+                    { content: '正しい' }, //35
+                    { content: '自己負担の一部を補填する治療給付金、定額の入院給付金、死亡時の死亡保険金の3つから構成される。' }, //36
+                    { content: '正しい' }, //37
+                    { content: '正しい' }, //38
+                    { content: '正しい' }, //39
+                    { content: '専業型と兼業型。' }, //40
                     // 問41〜50
                     { label: 'ア', content: '年齢' }, //41
                     { label: 'イ', content: '第3号' }, //42

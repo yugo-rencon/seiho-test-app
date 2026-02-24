@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "約款と法律"
 const subject = '2021年度 フォームC'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '特約に規定のある事項については優先的に特約が運用され、特約に規定のない事項については普通保険約款が適用される。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '死亡保険契約ではなく生存保険契約。' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '災害入院給付金の支払要件と疾病入院給付金の支払要件にともに該当していても、災害入院給付金と疾病入院給付金を重複して支払うことはせず、災害入院給付金を支払う。' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '死亡保険契約ではなく生存保険契約。' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '特約に規定のある事項については優先的に特約が運用され、特約に規定のない事項については普通保険約款が適用される。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '死亡保険契約ではなく生存保険契約。' }, //33
+                    { content: '正しい' }, //34
+                    { content: '正しい' }, //35
+                    { content: '災害入院給付金の支払要件と疾病入院給付金の支払要件にともに該当していても、災害入院給付金と疾病入院給付金を重複して支払うことはせず、災害入院給付金を支払う。' }, //36
+                    { content: '正しい' }, //37
+                    { content: '正しい' }, //38
+                    { content: '死亡保険契約ではなく生存保険契約。' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ウ', content: '適合性の原則' }, //41
                     { label: 'オ', content: '' }, //42

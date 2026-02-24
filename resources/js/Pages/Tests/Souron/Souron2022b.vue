@@ -10,7 +10,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 const title = "生命保険総論";
 const subject = "2022年度 フォームB";
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";
+
 </script>
 
 <template>
@@ -63,7 +63,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '平均寿命',
                         '7',
@@ -83,7 +82,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '年金',
                         '70',
@@ -103,7 +101,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '保険契約者の資格について制限はない（行為能力者である必要もない）', //p13
                         '正しい',
@@ -124,7 +121,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '65歳以上 → 第1号<br>40歳～65歳未満 → 第2号', //p140
                         '正しい',
@@ -175,7 +171,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '正しい',
                         '分担金が年々増加 → 年々減少<br>給付金が増加 → 減少', //p56
@@ -208,27 +203,27 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '正しい', note: SAME }, //31
-                        { label: '解', content: '正しい' }, //32
-                        { label: '解', content: 'ロイヤル・エクスチェンジ → エクイタブル', note: SAME }, //33
-                        { label: '解', content: '契約成立後 → 契約申込時' }, //34
-                        { label: '解', content: '正しい' }, //35
-                        { label: '解', content: '社会扶助制度 → 公的扶助制度' }, //36
-                        { label: '解', content: '正しい', note: SAME }, //37
-                        { label: '解', content: '分母と分子が逆' }, //38
-                        { label: '解', content: '正しい' }, //39
-                        { label: '解', content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている' }, //40
+                        { content: '正しい' }, //31
+                        { content: '正しい' }, //32
+                        { content: 'ロイヤル・エクスチェンジ → エクイタブル' }, //33
+                        { content: '契約成立後 → 契約申込時' }, //34
+                        { content: '正しい' }, //35
+                        { content: '社会扶助制度 → 公的扶助制度' }, //36
+                        { content: '正しい' }, //37
+                        { content: '分母と分子が逆' }, //38
+                        { content: '正しい' }, //39
+                        { content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている' }, //40
                         // 問41〜50
                         { label: 'オ', content: '' }, //41
-                        { label: 'オ', content: '', note: SAME }, //42
+                        { label: 'オ', content: '' }, //42
                         { label: 'エ', content: 'あらかじめ定められた' }, //43
                         { label: 'オ', content: '' }, //44
                         { label: 'イ', content: '自由' }, //45
                         { label: 'イ', content: '経済的保障' }, //46
                         { label: 'ウ', content: '損害共済' }, //47
-                        { label: 'エ', content: '財務大臣', note: SAME }, //48
+                        { label: 'エ', content: '財務大臣' }, //48
                         { label: 'ウ', content: '個人年金' }, //49
-                        { label: 'ア', content: '団体定期保険', note: SAME }, //50
+                        { label: 'ア', content: '団体定期保険' }, //50
                     ]"
                 />
             </div>

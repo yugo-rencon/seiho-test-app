@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 
 const title = "生命保険計理"
 const subject = '2025年度 フォームB'
-const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -165,6 +165,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[
                 '付加保険料','保険金','長い','高く','低く', //問11〜15
                 ]"
@@ -180,6 +182,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[
                 '平準純保険料式','ソルベンシー・マージン','健全性','標準責任準備金','負債十分性テスト', //問16〜20
                 ]"
@@ -278,6 +282,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p79
                 '正しい',
                 '正しい',
@@ -288,6 +294,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p124
                 '正しい',
                 '正しい',
@@ -298,6 +306,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p96 (2024-A-28,2024-B-28,2024-C-28,2023-C-28)
                 '保険業法では、事業年度末までに経過した期間に見合う保険料部分に対応する積立金（保険料積立金）、翌事業年度以降に対応する保険料部分（未経過保険料）、<u>第三分野における積立傷害保険等の積立型商品において、将来の満期返戻金支払いに対応する保険料部分（払戻積立金）</u>および危険準備金に分けて計算することとされている。',
                 '正しい',
@@ -308,6 +318,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p119 (2024-A-29,2024-B-29,2024-C-29)
                 '正しい',
                 '正しい',
@@ -318,6 +330,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p154
                 '正しい',
                 '配当金の算式は、「死差益✕配当率k」で表される。',
@@ -330,27 +344,27 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: 'ある年齢の人の<u><b>平均余命</b></u>とは、その基礎となっている死亡表の死亡率どおり、その年齢到達者について将来死亡が生ずるものとして計算した平均生存年数のことで、0歳の<u><b>平均余命</b></u>は<u><b>平均寿命</b></u>と呼ばれる。' }, //31
-                    { label: '解', content: '通常、単に現価という場合には<u><b>期末払現価</b></u>を指す。' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '1年分を何回かに分けて払い込む分割払営業保険料の年間払込額は、年払の営業保険料額を以下の理由で<u><b>上回る</b></u>。<br>①分割払のために保険料払込みが遅れるための利息の損失（年払保険料の場合に比べて年間の予定利息分は少なくなる）<br>②集金回数（払込回数）の増加に伴う事業費の増加' }, //34
-                    { label: '解', content: '平準保険料方式と異なり、自然保険料方式は責任準備金を積み立てる必要がない。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: 'すべての契約について累積額が増加するわけではなく、定期保険などのように、保険期間の<u><b>後半</b></u>にその年度の残額がマイナスになる場合もあることに注意が必要である。' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { questionTitle: '', content: 'ある年齢の人の<u><b>平均余命</b></u>とは、その基礎となっている死亡表の死亡率どおり、その年齢到達者について将来死亡が生ずるものとして計算した平均生存年数のことで、0歳の<u><b>平均余命</b></u>は<u><b>平均寿命</b></u>と呼ばれる。' }, //31
+                    { questionTitle: '', content: '通常、単に現価という場合には<u><b>期末払現価</b></u>を指す。' }, //32
+                    { questionTitle: '', content: '正しい' }, //33
+                    { questionTitle: '', content: '1年分を何回かに分けて払い込む分割払営業保険料の年間払込額は、年払の営業保険料額を以下の理由で<u><b>上回る</b></u>。<br>①分割払のために保険料払込みが遅れるための利息の損失（年払保険料の場合に比べて年間の予定利息分は少なくなる）<br>②集金回数（払込回数）の増加に伴う事業費の増加' }, //34
+                    { questionTitle: '', content: '平準保険料方式と異なり、自然保険料方式は責任準備金を積み立てる必要がない。' }, //35
+                    { questionTitle: '', content: '正しい' }, //36
+                    { questionTitle: '', content: 'すべての契約について累積額が増加するわけではなく、定期保険などのように、保険期間の<u><b>後半</b></u>にその年度の残額がマイナスになる場合もあることに注意が必要である。' }, //37
+                    { questionTitle: '', content: '正しい' }, //38
+                    { questionTitle: '', content: '正しい' }, //39
+                    { questionTitle: '', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'ア', content: '経験生命表' }, //41
-                    { label: 'ア', content: '現価' }, //42
-                    { label: 'ウ', content: '高くなる' }, //43
-                    { label: 'オ', content: '' }, //44
-                    { label: 'イ', content: '純保険料式保険料積立金' }, //45
-                    { label: 'ア', content: '定期保険' }, //46
-                    { label: 'ア', content: '保険種類別' }, //47
-                    { label: 'オ', content: '' }, //48
-                    { label: 'エ', content: 'を禁止されている' }, //49
-                    { label: 'ウ', content: '特別保険料' }, //50
+                    { questionTitle: '', label: 'ア', content: '経験生命表' }, //41
+                    { questionTitle: '', label: 'ア', content: '現価' }, //42
+                    { questionTitle: '', label: 'ウ', content: '高くなる' }, //43
+                    { questionTitle: '', label: 'オ', content: '' }, //44
+                    { questionTitle: '', label: 'イ', content: '純保険料式保険料積立金' }, //45
+                    { questionTitle: '', label: 'ア', content: '定期保険' }, //46
+                    { questionTitle: '', label: 'ア', content: '保険種類別' }, //47
+                    { questionTitle: '', label: 'オ', content: '' }, //48
+                    { questionTitle: '', label: 'エ', content: 'を禁止されている' }, //49
+                    { questionTitle: '', label: 'ウ', content: '特別保険料' }, //50
                 ]"
                 
             />

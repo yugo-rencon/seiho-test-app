@@ -10,7 +10,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 const title = "生命保険総論";
 const subject = "2021年度 フォームB";
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";
+
 </script>
 
 <template>
@@ -25,7 +25,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '負債',
                         '定款',
@@ -45,7 +44,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '利源分析',
                         '増加',
@@ -123,7 +121,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '責任準備金の積立度合 → 保険金の支払い余力', //p99-100
                         '正しい',
@@ -134,7 +131,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '負担能力に応じて年齢別に → 負担能力に応じて（年齢は無関係）', //p125
                         '被保険者・事業主・国庫がそれぞれ1/3 → 被保険者と事業主がそれぞれ1/2', //p125
@@ -155,7 +151,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -208,27 +203,27 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '正しい' }, //31
-                        { label: '解', content: '正しい' }, //32
-                        { label: '解', content: '危険同一性の原則 → 危険均一性の原則' }, //33
-                        { label: '解', content: '合衆国統一の取締法 → ニューヨーク州の取締法', note: SAME }, //34 p63
-                        { label: '解', content: 'ペストの大流行とスペインかぜ → 関東大震災とスペインかぜ' }, //35
-                        { label: '解', content: '純資産の大部分 → 負債の大部分', note: SAME }, //36
-                        { label: '解', content: '正しい' }, //37
-                        { label: '解', content: '各都道府県民共済 → こくみん共済' }, //38
-                        { label: '解', content: '正しい', note: SAME }, //39
-                        { label: '解', content: '正しい' }, //40
+                        { content: '正しい' }, //31
+                        { content: '正しい' }, //32
+                        { content: '危険同一性の原則 → 危険均一性の原則' }, //33
+                        { content: '合衆国統一の取締法 → ニューヨーク州の取締法' }, //34 p63
+                        { content: 'ペストの大流行とスペインかぜ → 関東大震災とスペインかぜ' }, //35
+                        { content: '純資産の大部分 → 負債の大部分' }, //36
+                        { content: '正しい' }, //37
+                        { content: '各都道府県民共済 → こくみん共済' }, //38
+                        { content: '正しい' }, //39
+                        { content: '正しい' }, //40
                         // 問41〜50
                         { label: 'ア', content: '国民生命表' }, //41
                         { label: 'イ', content: '生存保険' }, //42
                         { label: 'オ', content: '' }, //43
-                        { label: 'エ', content: '同額の分担金で', note: SAME }, //44
+                        { label: 'エ', content: '同額の分担金で' }, //44
                         { label: 'オ', content: '' }, //45
-                        { label: 'オ', content: '', note: SAME }, //46
+                        { label: 'オ', content: '' }, //46
                         { label: 'ア', content: '緊急出費保障' }, //47
                         { label: 'ウ', content: '財務大臣' }, //48
                         { label: 'エ', content: 'こども共済' }, //49
-                        { label: 'イ', content: 'LINC（Life Insurance Network Center）', note: SAME }, //50
+                        { label: 'イ', content: 'LINC（Life Insurance Network Center）' }, //50
                     ]"
                 />
             </div>

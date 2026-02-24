@@ -10,8 +10,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険計理";
 const subject = "2022年度 フォームC";
-
-const SAME = "※2022年度フォームA/B/Cで同一問題";
 </script>
 
 <template>
@@ -31,7 +29,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '0.96114',
                             questionTitle: '生存率',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -67,7 +64,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '98,233',
                             questionTitle: '生存数',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -107,7 +103,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.26',
                             questionTitle: '平均余命',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -178,7 +173,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '1,194,044',
                             questionTitle: '保険金総額の現価',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -230,7 +224,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '12,610',
                             questionTitle: '純保険料',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -280,7 +273,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '24,120',
                             questionTitle: '複利計算',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -332,7 +324,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '2,123,292',
                             questionTitle: '複利計算（半年複利）',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -372,7 +363,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.51',
                             questionTitle: '実利率',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -424,7 +414,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.33',
                             questionTitle: '年平均利回り',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -476,7 +465,6 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                         {
                             answer: '1,902,931',
                             questionTitle: '現在必要資金の計算',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -806,10 +794,11 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約者配当金の分配・支払方法"
                     :contents="[
-                        //p134 (2023-A-25,2023-B-25,2023-C-25,2022-A-25,2022-B-25,2022-C-25)
-                        '配当金を<u><b>一時</b></u>払保険料として契約応当日に保険を買増し（保険金を増額）する。',
-                        '配当金を保険料払込回数に等分して、毎回の保険料に充当、相殺する。',
+                        //p134
+                        '年払保険料 → 一時払保険料',
+                        'その年度の保険料にまとめて充当 → 払込回数に等分し、毎回の保険料に充当',
                         '正しい',
                     ]"
                 />
@@ -817,9 +806,10 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="計算基礎の変化と純保険料の変化"
                     :contents="[
                         //p53
-                        '予定死亡率を低く、予定利率を高くすると、定期保険と養老保険の純保険料は<u><b>低く</b></u>なる。',
+                        '純保険料は高くなる → 低くなる',
                         '正しい',
                         '正しい',
                     ]"
@@ -828,9 +818,10 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約者配当の割当対象契約"
                     :contents="[
                         //p132
-                        '決算事業年度末において契約日からその日を含めて<u><b>1年</b></u>を超えている有効契約。',
+                        '半年 → 1年',
                         '正しい',
                         '正しい',
                     ]"
@@ -839,21 +830,23 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約変更"
                     :contents="[
-                        //p113 (2022-A-28,2022-B-28,2022-C-28)
+                        //p113
                         '正しい',
                         '正しい',
-                        '満期時まで続いてなお解約返戻金（保険料積立金）の残額があれば生存保険金として、その額を支払う。',
+                        '満期時に残額を払い戻さない → 残額があれば払い戻す',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約者配当の意義と割当"
                     :contents="[
-                        //p129 (2023-B-30,2022-A-29,2022-B-29,2022-C-29)
+                        //p129
                         '正しい',
-                        '配当金の支払いを行わない無配当保険や5年ごと利差配当付保険のような保険は、保険料は通常の有配当保険より<u><b>安くなる</b></u>のが一般的である。',
+                        '有配当保険より高くなる → 安くなる',
                         '正しい',
                     ]"
                 />
@@ -861,9 +854,10 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="団体定期保険の数理"
                     :contents="[
                         '正しい',
-                        '団体定期保険では、保険料が被保険者ごとの積み上げを基礎としているのに対して、配当は、被保険者ごとの配当を算出して<u><b>それを積み上げるのではなく、団体単位で計算されている</b></u>。', //p154
+                        '被保険者ごとに算出して積み上げる → 団体単位で計算する（積み上げない）', //p154
                         '正しい',
                     ]"
                 />
@@ -873,35 +867,27 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '正しい' }, //31
-                        { label: '解', content: '正しい' }, //32
-                        { label: '解', content: '正しい' }, //33
-                        { label: '解', content: '平準保険料と異なり、自然保険料は責任準備金は積み立てる必要はない。' }, //34
-                        { label: '解', content: '各年齢ごとに1年定期保険の純保険料を計算すると、<u><b>予定死亡率の動きを反映したもの</b></u>となる。' }, //35
-                        { label: '解', content: '正しい' }, //36
-                        { label: '解', content: '正しい' }, //37
-                        {
-                            label: '解',
-                            content:
-                                '変額保険の変動保険金額は、毎月<u><b>月末</b></u>に、その時点での積立金と表定責任準備金との差額と、当該<u><b>月末</b></u>時点で計算された一時払保険料を用いて計算される。',
-                        }, //38
-                        { label: '解', content: '変額保険の資産運用に関するリスクは、すべて<u><b>契約者</b></u>に帰属する。' }, //39
-                        {
-                            label: '解',
-                            content:
-                                '団体年金数理においても収支相等が原則であるが、個人年金が収支相等の保証をもっぱら大数の法則に求めるのに対して、団体年金の場合、<u><b>大数の法則に加え、企業等の財政負担力に依存して</b></u>費用の時間的配分の効率化を図るということが重要である。',
-                        }, //40
+                        { questionTitle: '資産の平均利回り', content: '正しい' }, //31
+                        { questionTitle: '生命保険契約と年齢', content: '正しい' }, //32
+                        { questionTitle: '予定利率', content: '正しい' }, //33
+                        { questionTitle: '保険料の計算原理', content: '平準保険料と同様に、責任準備金の積み立てが必要 → 平準保険料と異なり、責任準備金は積み立てる必要はない' }, //34
+                        { questionTitle: '1年定期保険の純保険料', content: '各年齢ごとに1年定期保険の純保険料を計算すると、<u><b>予定死亡率の動きを反映したもの</b></u>となる。' }, //35
+                        { questionTitle: '契約転換制度', content: '正しい' }, //36
+                        { questionTitle: '剰余金処分', content: '正しい' }, //37
+                        { questionTitle: '変額保険金額の計算', content: '月始 → 月末' }, //38
+                        { questionTitle: '変額保険の運用リスク', content: '生命保険会社 → 契約者' }, //39
+                        { questionTitle: '団体年金保険の数理', content: '企業等の財政負担力に依存しない → 企業等の財政負担力に依存している' }, //40
                         // 問41〜50
-                        { label: 'イ', content: '国民生命表' }, //41
-                        { label: 'ウ', content: '保険金に比例させる' }, //42
-                        { label: 'エ', content: '責任準備金' }, //43
-                        { label: 'イ', content: '年始生存者数' }, //44
-                        { label: 'エ', content: '契約者貸付' }, //45
-                        { label: 'オ', content: '' }, //46
-                        { label: 'ア', content: '第三分野保険' }, //47
-                        { label: 'ア', content: '危険保険金額' }, //48
-                        { label: 'ア', content: '運用実績連動型' }, //49
-                        { label: 'ウ', content: '通常保険料' }, //50
+                        { questionTitle: '死亡表の種類', label: 'イ', content: '国民生命表' }, //41
+                        { questionTitle: '保険料の計算基礎', label: 'ウ', content: '保険金に比例させる' }, //42
+                        { questionTitle: '準備金の積立根拠', label: 'エ', content: '責任準備金' }, //43
+                        { questionTitle: '危険保険料の計算', label: 'イ', content: '年始生存者数' }, //44
+                        { questionTitle: '解約返戻金', label: 'エ', content: '契約者貸付' }, //45
+                        { questionTitle: '加入年齢方式による転換', label: 'オ', content: '' }, //46
+                        { questionTitle: '積立に関する法的規制', label: 'ア', content: '第三分野保険' }, //47
+                        { questionTitle: '利源の分類', label: 'ア', content: '危険保険金額' }, //48
+                        { questionTitle: '特別勘定の位置付け', label: 'ア', content: '運用実績連動型' }, //49
+                        { questionTitle: '団体年金の保険料計算', label: 'ウ', content: '通常保険料' }, //50
                     ]"
                 />
             </div>

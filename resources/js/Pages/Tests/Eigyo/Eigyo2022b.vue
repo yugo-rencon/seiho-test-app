@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2022年度 フォームB'
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -188,16 +188,16 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '財源構成は保険料50%、公費50%。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: 'メリットとしては、海外の比較的高い金利を反映することで、予定利率を高く設定していること。' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '受け取る年金についても非課税である。' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '保険仲立人は諸外国で一般的に認められている。' }, //39
-                    { label: '解', content: '生命保険協会ではなく内閣総理大臣。' }, //40
+                    { content: '財源構成は保険料50%、公費50%。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '正しい' }, //33
+                    { content: 'メリットとしては、海外の比較的高い金利を反映することで、予定利率を高く設定していること。' }, //34
+                    { content: '正しい' }, //35
+                    { content: '受け取る年金についても非課税である。' }, //36
+                    { content: '正しい' }, //37
+                    { content: '正しい' }, //38
+                    { content: '保険仲立人は諸外国で一般的に認められている。' }, //39
+                    { content: '生命保険協会ではなく内閣総理大臣。' }, //40
                     // 問41〜50
                     { label: 'イ', content: '男女雇用機会均等法' }, //41
                     { label: 'オ', content: '' }, //42

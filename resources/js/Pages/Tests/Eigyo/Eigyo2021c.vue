@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2021年度 フォームC'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -188,16 +188,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '生命保険が第一分野、損害保険が第二分野。' }, //32
-                    { label: '解', content: '消費者は契約を取り消すことができる。' }, //33
-                    { label: '解', content: '認定生命保険士ではなく生命保険面接土。' }, //34
-                    { label: '解', content: '被保険者が受取人の場合非課税扱いとなる。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '現在のところ、新企業年金保険、厚生年金基金保険、確定給付企業年金保険、国民年金基金保険、団体生存保険に付加する特別勘定特約が販売されている。' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '正しい' }, //31
+                    { content: '生命保険が第一分野、損害保険が第二分野。' }, //32
+                    { content: '消費者は契約を取り消すことができる。' }, //33
+                    { content: '認定生命保険士ではなく生命保険面接土。' }, //34
+                    { content: '被保険者が受取人の場合非課税扱いとなる。' }, //35
+                    { content: '正しい' }, //36
+                    { content: '現在のところ、新企業年金保険、厚生年金基金保険、確定給付企業年金保険、国民年金基金保険、団体生存保険に付加する特別勘定特約が販売されている。' }, //37
+                    { content: '正しい' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ウ', content: '通貨性預貯金' }, //41
                     { label: 'イ', content: '三大疾病' }, //42

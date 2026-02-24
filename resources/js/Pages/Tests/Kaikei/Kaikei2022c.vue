@@ -9,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険会計"
 const subject = '2022年度 フォームC'
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -190,16 +190,16 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '会計情報の開示という機能はその中に含まれていないという点で、会社法・金融商品取引法に基づく会計とは異なっている。' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '内閣府令で、資産ごとに定められた積立基準により計算された額を、積立限度額に達するまで価格変動準備金として積み立てることを義務付けている。' }, //37
-                    { label: '解', content: '現金主義ではなく、実現主義。' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '監査役会は3人以上で構成された監査役（そのうち半数以上は社外監査役）のすべてで組織する。' }, //40
+                    { content: '正しい' }, //31
+                    { content: '正しい' }, //32
+                    { content: '会計情報の開示という機能はその中に含まれていないという点で、会社法・金融商品取引法に基づく会計とは異なっている。' }, //33
+                    { content: '正しい' }, //34
+                    { content: '正しい' }, //35
+                    { content: '正しい' }, //36
+                    { content: '内閣府令で、資産ごとに定められた積立基準により計算された額を、積立限度額に達するまで価格変動準備金として積み立てることを義務付けている。' }, //37
+                    { content: '現金主義ではなく、実現主義。' }, //38
+                    { content: '正しい' }, //39
+                    { content: '監査役会は3人以上で構成された監査役（そのうち半数以上は社外監査役）のすべてで組織する。' }, //40
                     // 問41〜50
                     { label: 'オ', content: '' }, //41
                     { label: 'エ', content: '管理会計' }, //42

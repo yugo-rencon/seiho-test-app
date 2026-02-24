@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "危険選択"
 const subject = '2021年度 フォームA'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '経済的危険ではなく、実体的危険。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '活習慣や嗜好といった因子についても示されている。' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '死亡した個人に関する情報は対象外。' }, //38
-                    { label: '解', content: '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '経済的危険ではなく、実体的危険。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '正しい' }, //33
+                    { content: '正しい' }, //34
+                    { content: '正しい' }, //35
+                    { content: '活習慣や嗜好といった因子についても示されている。' }, //36
+                    { content: '正しい' }, //37
+                    { content: '死亡した個人に関する情報は対象外。' }, //38
+                    { content: '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'オ', content: '' }, //41
                     { label: 'エ', content: '5年' }, //42

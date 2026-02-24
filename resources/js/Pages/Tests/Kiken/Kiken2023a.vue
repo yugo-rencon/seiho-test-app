@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "危険選択"
 const subject = '2023年度 フォームA'
 
-const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '生命表には、国民全体を対象とした国民生命表と、それよりは小さな特定集団を対象とする経験生命表がある。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '体重÷身長の2乗。' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '金融庁ではなく生命保険協会。' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。' }, //38
-                    { label: '解', content: '保険金受取人ではなく被保険者。' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '生命表には、国民全体を対象とした国民生命表と、それよりは小さな特定集団を対象とする経験生命表がある。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '体重÷身長の2乗。' }, //33
+                    { content: '正しい' }, //34
+                    { content: '正しい' }, //35
+                    { content: '金融庁ではなく生命保険協会。' }, //36
+                    { content: '正しい' }, //37
+                    { content: '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。' }, //38
+                    { content: '保険金受取人ではなく被保険者。' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'エ', content: '金額死亡率' }, //41
                     { label: 'オ', content: '' }, //42

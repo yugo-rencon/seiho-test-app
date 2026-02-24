@@ -9,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険商品と営業"
 const subject = '2023年度 フォームC'
 
-const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 <SeihoTestLayout :title="title">
@@ -189,16 +189,16 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '企業福祉制度のあり方も、従来のような総合的・恩恵的福祉から、自己責任原則のもと、従業員の自助努力・自立を側面から支援するものに重点が移されつつある。' }, //31
-                    { label: '解', content: '生命保険が第一分野、損害保険が第二分野。' }, //32
-                    { label: '解', content: '被保険者の生存中にかぎり、周期的に一定の金額の支払をするもの。' }, //33
-                    { label: '解', content: '生命保険支払専門土ではなく生命保険面接士。' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '被保険者が受取人となる場合、非課税扱いとなる。' }, //37
-                    { label: '解', content: '一般の生命保険料と異なり保険料は生命保険料控除の対象とはならない。' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '企業福祉制度のあり方も、従来のような総合的・恩恵的福祉から、自己責任原則のもと、従業員の自助努力・自立を側面から支援するものに重点が移されつつある。' }, //31
+                    { content: '生命保険が第一分野、損害保険が第二分野。' }, //32
+                    { content: '被保険者の生存中にかぎり、周期的に一定の金額の支払をするもの。' }, //33
+                    { content: '生命保険支払専門土ではなく生命保険面接士。' }, //34
+                    { content: '正しい' }, //35
+                    { content: '正しい' }, //36
+                    { content: '被保険者が受取人となる場合、非課税扱いとなる。' }, //37
+                    { content: '一般の生命保険料と異なり保険料は生命保険料控除の対象とはならない。' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ア', content: '保険業法' }, //41
                     { label: 'ア', content: '３分の１' }, //42

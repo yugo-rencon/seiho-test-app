@@ -10,7 +10,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 const title = "生命保険総論";
 const subject = "2023年度 フォームC";
 
-const SAME = "※2023年度フォームA/B/Cで同一問題";
+
 </script>
 
 <template>
@@ -63,7 +63,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '保障制度',
                         '自給自足',
@@ -83,7 +82,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '海上保険',
                         '冒険貸借',
@@ -123,7 +121,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         'デリバティブ商品 → ニューウェーブ商品', //p69
                         '正しい',
@@ -154,7 +151,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -175,7 +171,6 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -208,23 +203,23 @@ const SAME = "※2023年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '片務契約でない（保険金支払債務と保険料支払債務とが対価関係になる双務契約）' }, //31
-                        { label: '解', content: '正しい' }, //32
-                        { label: '解', content: '正しい', note: SAME }, //33
-                        { label: '解', content: '正しい' }, //34
-                        { label: '解', content: '正しい' }, //35
-                        { label: '解', content: '正しい' }, //36
-                        { label: '解', content: '100株未満 → 1株未満', note: SAME }, //37
-                        { label: '解', content: '3段階 → 2段階（JA（単位農協）、JA共済連）', note: SAME }, //38
-                        { label: '解', content: '正しい' }, //39
-                        { label: '解', content: '倍額 → 同額' }, //40
+                        { content: '片務契約でない（保険金支払債務と保険料支払債務とが対価関係になる双務契約）' }, //31
+                        { content: '正しい' }, //32
+                        { content: '正しい' }, //33
+                        { content: '正しい' }, //34
+                        { content: '正しい' }, //35
+                        { content: '正しい' }, //36
+                        { content: '100株未満 → 1株未満' }, //37
+                        { content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
+                        { content: '正しい' }, //39
+                        { content: '倍額 → 同額' }, //40
                         // 問41〜50
                         { label: 'エ', content: 'いずれか遅い日' }, //41
-                        { label: 'ア', content: '負債', note: SAME }, //42
+                        { label: 'ア', content: '負債' }, //42
                         { label: 'エ', content: '維持費' }, //43
                         { label: 'オ', content: '' }, //44
-                        { label: 'イ', content: '更生手続', note: SAME }, //45
-                        { label: 'ア', content: '家計可処分所得', note: SAME }, //46
+                        { label: 'イ', content: '更生手続' }, //45
+                        { label: 'ア', content: '家計可処分所得' }, //46
                         { label: 'オ', content: '' }, //47
                         { label: 'イ', content: '安全性' }, //48
                         { label: 'ウ', content: '第2号被保険者' }, //49

@@ -9,7 +9,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "生命保険会計"
 const subject = '2021年度 フォームA'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -190,16 +190,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '補助簿は、現金出納帳や当座預金出納帳などの補助記入帳と、商品有高帳や固定資産台帳などの補助元帳に分類される。' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '計算規定を中心に株式会社については会社法を準用し、相互会社については保険業法を中心に定めている' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '純資産の部から控除する形式で表示することとされた。' }, //37
-                    { label: '解', content: '売買目的有価証券及び商品有価証券に係るものを除く。' }, //38
-                    { label: '解', content: '据置期間に対応する利息も保険金据置支払金に計上される。' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '正しい' }, //31
+                    { content: '補助簿は、現金出納帳や当座預金出納帳などの補助記入帳と、商品有高帳や固定資産台帳などの補助元帳に分類される。' }, //32
+                    { content: '正しい' }, //33
+                    { content: '計算規定を中心に株式会社については会社法を準用し、相互会社については保険業法を中心に定めている' }, //34
+                    { content: '正しい' }, //35
+                    { content: '正しい' }, //36
+                    { content: '純資産の部から控除する形式で表示することとされた。' }, //37
+                    { content: '売買目的有価証券及び商品有価証券に係るものを除く。' }, //38
+                    { content: '据置期間に対応する利息も保険金据置支払金に計上される。' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'エ', content: '仕訳' }, //41
                     { label: 'オ', content: '' }, //42

@@ -10,7 +10,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険計理";
 const subject = "2024年度 フォームA";
-const SAME = "※2024年度フォームA/B/Cで同一問題";
 </script>
 
 <template>
@@ -30,7 +29,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '0.98925',
                             questionTitle: '生存率',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -66,7 +64,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '93,714',
                             questionTitle: '生存数',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -106,7 +103,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.16',
                             questionTitle: '平均余命',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -176,7 +172,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1,368,176',
                             questionTitle: '保険金総額の現価',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -228,7 +223,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '14,200',
                             questionTitle: '純保険料',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -278,7 +272,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '4,517',
                             questionTitle: '複利計算',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -330,7 +323,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '528,696',
                             questionTitle: '複利計算（半年複利）',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -370,7 +362,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.21',
                             questionTitle: '実利率',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -422,7 +413,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1.83',
                             questionTitle: '年平均利回り',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -474,7 +464,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '4,618,507',
                             questionTitle: '現在必要資金の計算',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -523,6 +512,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    questionTitle="死亡表の種類"
                     :contents="[
                         '経験生命表',
                         '完全生命表',
@@ -542,6 +532,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約者配当の意義と割当て"
                     :contents="[
                         '安全性',
                         '公平性',
@@ -794,7 +785,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                         {
                             answer: '1,097,000円',
                             questionTitle: '払済保険金額',
-                            note: SAME,
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -843,8 +833,9 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="計算基礎の変化と純保険料の変化"
                     :contents="[
-                        '純保険料は低くなる → 純保険料は高くなる', //p53
+                        '純保険料は低くなる → 純保険料は高くなる',
                         '正しい',
                         '正しい',
                     ]"
@@ -853,6 +844,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="営業保険料"
                     :contents="[
                         '保険金に比例させる方式 → 保険金に比例させる方式と保険料に比例させる方式を組み合わせる方式', //p55
                         '正しい',
@@ -863,7 +855,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
+                    questionTitle="事業年度末責任準備金"
                     :contents="[
                         '3区分 → 4区分（払戻積立金が含まれる）', //p96
                         '正しい',
@@ -874,7 +866,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
+                    questionTitle="契約転換制度"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -885,6 +877,7 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="変額保険の仕組み"
                     :contents="[
                         //p147
                         '正しい',
@@ -898,27 +891,27 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '正しい' }, //31
-                        { label: '解', content: '期始払現価 → 期末払現価', note: SAME }, //32
-                        { label: '解', content: '正しい' }, //33
-                        { label: '解', content: '営業保険料額を下回る → 営業保険料額を上回る（分割払は予定利息減少・事務費増加のため）', note: SAME }, //34
-                        { label: '解', content: '平準保険料方式と同様 → 平準保険料方式と異なり<br>積み立てる必要がない → 積み立てる必要がある' }, //35
-                        { label: '解', content: '正しい' }, //36
-                        { label: '解', content: '正しい' }, //37
-                        { label: '解', content: '正しい' }, //38
-                        { label: '解', content: '正しい' }, //39
-                        { label: '解', content: '被保険者ごとに算出して積み上げる → 団体単位で計算する（積み上げない）' }, //40
+                        { questionTitle: '生命保険契約と年齢', content: '正しい' }, //31
+                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32
+                        { questionTitle: '平準保険料', content: '正しい' }, //33
+                        { questionTitle: '分割払営業保険料', content: '営業保険料額を下回る → 営業保険料額を上回る（分割払は予定利息減少・事務費増加のため）' }, //34
+                        { questionTitle: '責任準備金積立根拠', content: '平準保険料方式と同様 → 平準保険料方式と異なり<br>積み立てる必要がない → 積み立てる必要がある' }, //35
+                        { questionTitle: '延長保険', content: '正しい' }, //36
+                        { questionTitle: '剰余金処分', content: '正しい' }, //37
+                        { questionTitle: 'その他の損益', content: '正しい' }, //38
+                        { questionTitle: 'リスクヘッジ', content: '正しい' }, //39
+                        { questionTitle: '団体定期保険の数理', content: '被保険者ごとに算出して積み上げる → 団体単位で計算する（積み上げない）' }, //40
                         // 問41〜50
-                        { label: 'オ', content: '' }, //41
-                        { label: 'ア', content: '現価', note: SAME }, //42
-                        { label: 'オ', content: '' }, //43
-                        { label: 'ウ', content: '（1 + 予定利率）1/2乗' }, //44
-                        { label: 'イ', content: '標準' }, //45
-                        { label: 'イ', content: '失効' }, //46
-                        { label: 'ア', content: '危険保険金額' }, //47
-                        { label: 'オ', content: '', note: SAME }, //48
-                        { label: 'エ', content: 'を禁止されている', note: SAME }, //49
-                        { label: 'ウ', content: '総合保険料' }, //50
+                        { questionTitle: '資産の平均利回り', label: 'オ', content: '' }, //41
+                        { questionTitle: '保険料の計算原理', label: 'ア', content: '現価' }, //42
+                        { questionTitle: '準備金の積立根拠', label: 'オ', content: '' }, //43
+                        { questionTitle: '危険保険料の計算', label: 'ウ', content: '（1 + 予定利率）1/2乗' }, //44
+                        { questionTitle: '積立に関する法的規制', label: 'イ', content: '標準' }, //45
+                        { questionTitle: '解約返戻金', label: 'イ', content: '失効' }, //46
+                        { questionTitle: '利源分析', label: 'ア', content: '危険保険金額' }, //47
+                        { questionTitle: '配当金の計算方法', label: 'オ', content: '' }, //48
+                        { questionTitle: '特別勘定の位置付け', label: 'エ', content: 'を禁止されている' }, //49
+                        { questionTitle: '団体年金の財政方式', label: 'ウ', content: '総合保険料' }, //50
                     ]"
                 />
             </div>

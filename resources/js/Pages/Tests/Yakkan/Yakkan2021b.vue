@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "約款と法律"
 const subject = '2021年度 フォームB'
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '「民法、商法」の順ではなく「保険法、民法」。' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '全てではない。例えば、傷害疾病定額保険契約の場合、被保険者が保険金受取人である場合には被保険者の同意は必要ない。' }, //34
-                    { label: '解', content: '正しい' }, //35
-                    { label: '解', content: '満期保険金登録制度ではなく、死亡保険金登録制度。' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '利益分配金ではなく契約者配当金。' }, //38
-                    { label: '解', content: '相互会社は、ほかの相互会社または保険株式会社と合併することができる。' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '「民法、商法」の順ではなく「保険法、民法」。' }, //31
+                    { content: '正しい' }, //32
+                    { content: '正しい' }, //33
+                    { content: '全てではない。例えば、傷害疾病定額保険契約の場合、被保険者が保険金受取人である場合には被保険者の同意は必要ない。' }, //34
+                    { content: '正しい' }, //35
+                    { content: '満期保険金登録制度ではなく、死亡保険金登録制度。' }, //36
+                    { content: '正しい' }, //37
+                    { content: '利益分配金ではなく契約者配当金。' }, //38
+                    { content: '相互会社は、ほかの相互会社または保険株式会社と合併することができる。' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ウ', content: '契約を取り消し得る' }, //41
                     { label: 'オ', content: '' }, //42

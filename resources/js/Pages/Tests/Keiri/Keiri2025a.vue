@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 
 const title = "生命保険計理"
 const subject = '2025年度 フォームA'
-const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -166,6 +166,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[
                 '経験生命表','完全生命表','総合表','選択効果','年齢別', //問11〜15
                 ]"
@@ -181,6 +183,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[
                 '安全性','公平性','利源別配当方式（利源式）','保険業法施行規則','1年', //問16〜20
                 ]"
@@ -279,6 +283,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p53
                 '予定死亡率と予定利率を低くすると、生存保険の純保険料は<u><b>高くなる</b></u>。',
                 '正しい',
@@ -289,6 +295,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p55
                 '保険金に比例させる方式と保険料に比例させる方式を組み合わせる方式が一般的である。',
                 '正しい',
@@ -299,6 +307,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p96 (2024-A-28,2024-B-28,2024-C-28,2023-C-28)
                 '保険業法では、事業年度末までに経過した期間に見合う保険料部分に対応する積立金（保険料積立金）、翌事業年度以降に対応する保険料部分（未経過保険料）、<u>第三分野における積立傷害保険等の積立型商品において、将来の満期返戻金支払いに対応する保険料部分（払戻積立金）</u>および危険準備金に分けて計算することとされている。',
                 '正しい',
@@ -309,6 +319,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p119 (2024-A-29,2024-B-29,2024-C-29)
                 '正しい',
                 '正しい',
@@ -319,6 +331,8 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+
+                questionTitle=""
                 :contents="[ //p147
                 '正しい',
                 '毎月ではなく毎日。',
@@ -331,27 +345,27 @@ const SAME = "※2025年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '通常、単に現価という場合には<u><b>期末払現価</b></u>を指す。' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '1年分を何回かに分けて払い込む分割払営業保険料の年間払込額は、年払の営業保険料額を以下の理由で<u><b>上回る</b></u>。<br>①分割払のために保険料払込みが遅れるための利息の損失（年払保険料の場合に比べて年間の予定利息分は少なくなる）<br>②集金回数（払込回数）の増加に伴う事業費の増加' }, //34
-                    { label: '解', content: '自然保険料方式と異なり、平準保険料方式は責任準備金を積み立てる必要がある。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '配当は、被保険者ごとの配当を算出してそれを<u><b>積み上げるのではなく</b></u>、団体単位で計算されている。' }, //40
+                    { questionTitle: '', content: '正しい' }, //31
+                    { questionTitle: '', content: '通常、単に現価という場合には<u><b>期末払現価</b></u>を指す。' }, //32
+                    { questionTitle: '', content: '正しい' }, //33
+                    { questionTitle: '', content: '1年分を何回かに分けて払い込む分割払営業保険料の年間払込額は、年払の営業保険料額を以下の理由で<u><b>上回る</b></u>。<br>①分割払のために保険料払込みが遅れるための利息の損失（年払保険料の場合に比べて年間の予定利息分は少なくなる）<br>②集金回数（払込回数）の増加に伴う事業費の増加' }, //34
+                    { questionTitle: '', content: '自然保険料方式と異なり、平準保険料方式は責任準備金を積み立てる必要がある。' }, //35
+                    { questionTitle: '', content: '正しい' }, //36
+                    { questionTitle: '', content: '正しい' }, //37
+                    { questionTitle: '', content: '正しい' }, //38
+                    { questionTitle: '', content: '正しい' }, //39
+                    { questionTitle: '', content: '配当は、被保険者ごとの配当を算出してそれを<u><b>積み上げるのではなく</b></u>、団体単位で計算されている。' }, //40
                     // 問41〜50
-                    { label: 'オ', content: '' }, //41
-                    { label: 'ア', content: '現価' }, //42
-                    { label: 'オ', content: '' }, //43
-                    { label: 'ウ', content: '（1 + 予定利率）1/2乗' }, //44
-                    { label: 'イ', content: '標準' }, //45
-                    { label: 'イ', content: '失効' }, //46
-                    { label: 'ア', content: '危険保険金額' }, //47
-                    { label: 'オ', content: '' }, //48
-                    { label: 'エ', content: 'を禁止されている' }, //49
-                    { label: 'ウ', content: '総合保険料' }, //50
+                    { questionTitle: '', label: 'オ', content: '' }, //41
+                    { questionTitle: '', label: 'ア', content: '現価' }, //42
+                    { questionTitle: '', label: 'オ', content: '' }, //43
+                    { questionTitle: '', label: 'ウ', content: '（1 + 予定利率）1/2乗' }, //44
+                    { questionTitle: '', label: 'イ', content: '標準' }, //45
+                    { questionTitle: '', label: 'イ', content: '失効' }, //46
+                    { questionTitle: '', label: 'ア', content: '危険保険金額' }, //47
+                    { questionTitle: '', label: 'オ', content: '' }, //48
+                    { questionTitle: '', label: 'エ', content: 'を禁止されている' }, //49
+                    { questionTitle: '', label: 'ウ', content: '総合保険料' }, //50
                 ]"
                 
             />

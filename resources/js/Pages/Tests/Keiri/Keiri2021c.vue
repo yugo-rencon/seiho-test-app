@@ -11,7 +11,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 const title = "生命保険計理";
 const subject = "2021年度 フォームC";
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";
+
 </script>
 
 <template>
@@ -645,38 +645,38 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                         'ア', //25
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="26" questionTitle="営業保険料について" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="27" questionTitle="純保険料式保険料積立金について" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="28" questionTitle="剰余金の処分について" :title="title" :subject="subject" :contents="['正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="29" questionTitle="剰余金の発生源について" :title="title" :subject="subject" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="30" questionTitle="団体年金保険の数理について" :title="title" :subject="subject" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1 :questionNumber="26" questionTitle="営業保険料" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
+                <QuestionTemp1 :questionNumber="27" questionTitle="純保険料式保険料積立金" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
+                <QuestionTemp1 :questionNumber="28" questionTitle="剰余金の処分" :title="title" :subject="subject" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1 :questionNumber="29" questionTitle="剰余金の発生源" :title="title" :subject="subject" :contents="['', '正しい', '正しい']" />
+                <QuestionTemp1 :questionNumber="30" questionTitle="団体年金保険の数理" :title="title" :subject="subject" :contents="['正しい', '正しい', '']" />
                 <QuestionTemp2
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '正しい' }, //31
-                        { label: '解', content: '' }, //32
-                        { label: '解', content: '' }, //33
-                        { label: '解', content: '正しい' }, //34
-                        { label: '解', content: '' }, //35
-                        { label: '解', content: '正しい' }, //36
-                        { label: '解', content: '' }, //37
-                        { label: '解', content: '正しい' }, //38
-                        { label: '解', content: '' }, //39
-                        { label: '解', content: '正しい' }, //40
+                        { questionTitle: '契約年齢', content: '正しい' }, //31
+                        { questionTitle: '現価', content: '' }, //32
+                        { questionTitle: '予定利率', content: '' }, //33
+                        { questionTitle: '収支相当の原則', content: '正しい' }, //34
+                        { questionTitle: '責任準備金積立根拠', content: '' }, //35
+                        { questionTitle: '解約返戻金の算式', content: '正しい' }, //36
+                        { questionTitle: '契約変更', content: '' }, //37
+                        { questionTitle: '5年ごと利差配当付保険', content: '正しい' }, //38
+                        { questionTitle: '配当金支払方法', content: '' }, //39
+                        { questionTitle: '最低保証機能', content: '正しい' }, //40
                         // 問41〜50
-                        { label: 'オ', content: '' }, //41
-                        { label: 'ウ', content: '毎年' }, //42
-                        { label: 'エ', content: '責任準備金' }, //43
-                        { label: 'イ', content: '高くなる' }, //44
-                        { label: 'オ', content: '' }, //45
-                        { label: 'イ', content: '標準' }, //46
-                        { label: 'ア', content: '定期保険' }, //47
-                        { label: 'イ', content: '責任準備金関係' }, //48
-                        { label: 'ア', content: '保険年度末保険料積立金' }, //49
-                        { label: 'ウ', content: '純保険料率' }, //50
+                        { questionTitle: '死亡率', label: 'オ', content: '' }, //41
+                        { questionTitle: '死亡表の種類', label: 'ウ', content: '毎年' }, //42
+                        { questionTitle: '準備金の積立根拠', label: 'エ', content: '責任準備金' }, //43
+                        { questionTitle: '純保険料の変化', label: 'イ', content: '高くなる' }, //44
+                        { questionTitle: '養老保険の積立金', label: 'オ', content: '' }, //45
+                        { questionTitle: '積立に関する法的規制', label: 'イ', content: '標準' }, //46
+                        { questionTitle: '延長保険', label: 'ア', content: '定期保険' }, //47
+                        { questionTitle: '剰余金の発生源', label: 'イ', content: '責任準備金関係' }, //48
+                        { questionTitle: '配当金の計算方法', label: 'ア', content: '保険年度末保険料積立金' }, //49
+                        { questionTitle: '団体定期保険の保険料', label: 'ウ', content: '純保険料率' }, //50
                     ]"
                 />
             </div>

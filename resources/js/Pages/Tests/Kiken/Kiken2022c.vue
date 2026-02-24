@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "危険選択"
 const subject = '2022年度 フォームC'
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '生命表には、国民全体を対象とした国民生命表と、それよりは小さな特定集団を対象とする経験生命表がある。' }, //31
-                    { label: '解', content: '純収支計算方式ではなく締計的方式で表せば、基本的に死差益は年間の危険保険料収入額と危険保険金支払額との差として表せる。' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '正しい' }, //34
-                    { label: '解', content: '診査1件あたりの保険金額の限度や被保険者年齢上の区分をもうけている生命保険会社が多い。' }, //35
-                    { label: '解', content: '「重大事由による免責権」ではなく「重大事由による解除権」' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '生命表には、国民全体を対象とした国民生命表と、それよりは小さな特定集団を対象とする経験生命表がある。' }, //31
+                    { content: '純収支計算方式ではなく締計的方式で表せば、基本的に死差益は年間の危険保険料収入額と危険保険金支払額との差として表せる。' }, //32
+                    { content: '正しい' }, //33
+                    { content: '正しい' }, //34
+                    { content: '診査1件あたりの保険金額の限度や被保険者年齢上の区分をもうけている生命保険会社が多い。' }, //35
+                    { content: '「重大事由による免責権」ではなく「重大事由による解除権」' }, //36
+                    { content: '正しい' }, //37
+                    { content: '正しい' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'ウ', content: '環境的危険' }, //41
                     { label: 'ア', content: '1ヶ月' }, //42

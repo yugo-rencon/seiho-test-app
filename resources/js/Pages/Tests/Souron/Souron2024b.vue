@@ -9,7 +9,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2024年度 フォームB";
-const SAME = "※2024年度フォームA/B/Cで同一問題";
+
 </script>
 
 <template>
@@ -62,7 +62,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '予定利率',
                         '逆ざや',
@@ -82,7 +81,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '法定他業',
                         '規制緩和',
@@ -135,7 +133,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         //p150,P155
                         '3種類 → 2種類（生命保険業免許・損害保険業免許）',
@@ -158,7 +155,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         //p13
                         '正しい',
@@ -203,7 +199,6 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         //p184
                         '正しい',
@@ -217,27 +212,27 @@ const SAME = "※2024年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '正しい' }, //31
-                        { label: '解', content: '正しい', note: SAME }, //32
-                        { label: '解', content: '連邦政府 → 州政府' }, //33 p65
-                        { label: '解', content: '日本の保険はこれらの類似制度から発展したものではない' }, //34 p72
-                        { label: '解', content: '正しい' }, //35
-                        { label: '解', content: '純資産の大部分 → 負債の大部分' }, //36 p108
-                        { label: '解', content: '形式的監督主義 → 実体的監督主義', note: SAME }, //37 p148
-                        { label: '解', content: '保証は全て撤廃 → 保証は継続' }, //38 p172
-                        { label: '解', content: '正しい' }, //39
-                        { label: '解', content: '正しい', note: SAME }, //40
+                        { content: '正しい' }, //31
+                        { content: '正しい' }, //32
+                        { content: '連邦政府 → 州政府' }, //33 p65
+                        { content: '日本の保険はこれらの類似制度から発展したものではない' }, //34 p72
+                        { content: '正しい' }, //35
+                        { content: '純資産の大部分 → 負債の大部分' }, //36 p108
+                        { content: '形式的監督主義 → 実体的監督主義' }, //37 p148
+                        { content: '保証は全て撤廃 → 保証は継続' }, //38 p172
+                        { content: '正しい' }, //39
+                        { content: '正しい' }, //40
                         // 問41〜50
                         { label: 'エ', content: 'いずれかの遅い日' }, //41
                         { label: 'ウ', content: '終局表' }, //42
-                        { label: 'エ', content: '逓減定期保険', note: SAME }, //43
+                        { label: 'エ', content: '逓減定期保険' }, //43
                         { label: 'イ', content: '友愛組合' }, //44
                         { label: 'ア', content: '法定責任準備金法' }, //45
                         { label: 'イ', content: '経済的保障' }, //46
                         { label: 'オ', content: '' }, //47
-                        { label: 'オ', content: '', note: SAME }, //48
+                        { label: 'オ', content: '' }, //48
                         { label: 'ア', content: 'こくみん共済coop<全労済>' }, //49
-                        { label: 'ウ', content: '変額年金', note: SAME }, //50
+                        { label: 'ウ', content: '変額年金' }, //50
                     ]"
                 />
             </div>

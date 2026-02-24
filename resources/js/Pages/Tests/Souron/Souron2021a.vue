@@ -10,7 +10,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 const title = "生命保険総論";
 const subject = "2021年度 フォームA";
 
-const SAME = "※2021年度フォームA/B/Cで同一問題";
+
 </script>
 
 <template>
@@ -25,7 +25,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '負債',
                         '定款',
@@ -45,7 +44,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '利源分析',
                         '増加',
@@ -123,7 +121,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '責任準備金の積立度合 → 保険金の支払い余力', //p99-100
                         '正しい',
@@ -134,7 +131,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '負担能力に応じて年齢別に → 負担能力に応じて（年齢は無関係）', //p125
                         '被保険者・事業主・国庫がそれぞれ1/3 → 被保険者と事業主がそれぞれ1/2', //p125
@@ -155,7 +151,6 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    :note="SAME"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -208,27 +203,27 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '正しい' }, //31
-                        { label: '解', content: '自然保険料方式と平準保険料方式が逆' }, //32
-                        { label: '解', content: '正しい' }, //33
-                        { label: '解', content: '合衆国統一の取締法 → ニューヨーク州の取締法', note: SAME }, //34 p63
-                        { label: '解', content: '正しい' }, //35
-                        { label: '解', content: '純資産の大部分 → 負債の大部分', note: SAME }, //36
-                        { label: '解', content: '65歳以上 → 第1号<br>40歳～65歳未満 → 第2号' }, //37
-                        { label: '解', content: '分子の1/2が誤り（1/2は分母側）' }, //38
-                        { label: '解', content: '正しい', note: SAME }, //39
-                        { label: '解', content: '正しい' }, //40
+                        { content: '正しい' }, //31
+                        { content: '自然保険料方式と平準保険料方式が逆' }, //32
+                        { content: '正しい' }, //33
+                        { content: '合衆国統一の取締法 → ニューヨーク州の取締法' }, //34 p63
+                        { content: '正しい' }, //35
+                        { content: '純資産の大部分 → 負債の大部分' }, //36
+                        { content: '65歳以上 → 第1号<br>40歳～65歳未満 → 第2号' }, //37
+                        { content: '分子の1/2が誤り（1/2は分母側）' }, //38
+                        { content: '正しい' }, //39
+                        { content: '正しい' }, //40
                         // 問41〜50
                         { label: 'ウ', content: '諾成方式' }, //41
                         { label: 'ア', content: '保険金' }, //42
                         { label: 'エ', content: '逓減定期保険' }, //43
-                        { label: 'エ', content: '同額の分担金で', note: SAME }, //44
+                        { label: 'エ', content: '同額の分担金で' }, //44
                         { label: 'オ', content: '' }, //45
-                        { label: 'オ', content: '', note: SAME }, //46
+                        { label: 'オ', content: '' }, //46
                         { label: 'イ', content: '国民皆保険' }, //47
                         { label: 'ア', content: '金融商品取引法' }, //48
                         { label: 'ウ', content: '個人年金' }, //49
-                        { label: 'イ', content: 'LINC（Life Insurance Network Center）', note: SAME }, //50
+                        { label: 'イ', content: 'LINC（Life Insurance Network Center）' }, //50
                     ]"
                 />
             </div>

@@ -10,7 +10,7 @@ import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
 const title = "危険選択"
 const subject = '2022年度 フォームA'
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '純収支計算方式ではなく統計的方式で表せば、基本的に死差益は年間の危険保険料収入額と危険保険金支払額との差として表せる。' }, //32
-                    { label: '解', content: '正しい' }, //33
-                    { label: '解', content: '「アルコール中毒や不摂生生活のような職業に随伴する危険」も含まれる。' }, //34
-                    { label: '解', content: '体重・性別ではなく年齢別。' }, //35
-                    { label: '解', content: '一般に嘱託医については各保険会社とも診査を可能とする被保険者の年齢や保険金額に限度を設け、社医と区別している。' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '「組織的安全管理措置」ではなく「人的安全管理措置」' }, //38
-                    { label: '解', content: '正しい' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '正しい' }, //31
+                    { content: '純収支計算方式ではなく統計的方式で表せば、基本的に死差益は年間の危険保険料収入額と危険保険金支払額との差として表せる。' }, //32
+                    { content: '正しい' }, //33
+                    { content: '「アルコール中毒や不摂生生活のような職業に随伴する危険」も含まれる。' }, //34
+                    { content: '体重・性別ではなく年齢別。' }, //35
+                    { content: '一般に嘱託医については各保険会社とも診査を可能とする被保険者の年齢や保険金額に限度を設け、社医と区別している。' }, //36
+                    { content: '正しい' }, //37
+                    { content: '「組織的安全管理措置」ではなく「人的安全管理措置」' }, //38
+                    { content: '正しい' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'エ', content: '金額死亡率' }, //41
                     { label: 'ア', content: '保険法' }, //42

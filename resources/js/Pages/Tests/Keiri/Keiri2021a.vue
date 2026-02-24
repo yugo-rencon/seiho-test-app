@@ -10,7 +10,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険計理";
 const subject = "2021年度 フォームA";
-const SAME = "※2021年度フォームA/B/Cで同一問題";
 </script>
 
 <template>
@@ -514,6 +513,7 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    questionTitle="事業年度末責任準備金"
                     :contents="[
                         '未経過保険料',
                         '危険準備金',
@@ -533,6 +533,7 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    questionTitle="変額保険と定額保険の比較"
                     :contents="[
                         '保証はない',
                         '変動保険金額',
@@ -829,38 +830,68 @@ const SAME = "※2021年度フォームA/B/Cで同一問題";
                         'ア', //25
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="26" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="27" :title="title" :subject="subject" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="28" :title="title" :subject="subject" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="29" :title="title" :subject="subject" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="30" :title="title" :subject="subject" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="営業保険料"
+                    :contents="[
+                        '正しい',
+                        '大きい契約ほど割合が高く、小さい契約ほど割合が低い → 大きい契約ほど割合が低く、小さい契約ほど割合が高い', //p55
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="解約返戻金"
+                    :contents="[
+                        '告知義務違反による契約解除や減額の場合支払われない → 支払われる', //p105
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="契約変更"
+                    :contents="[
+                        '正しい',
+                        '',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1 :questionNumber="29" :title="title" :subject="subject" questionTitle="剰余金の発生源" :contents="['', '正しい', '正しい']" />
+                <QuestionTemp1 :questionNumber="30" :title="title" :subject="subject" questionTitle="団体定期保険の数理" :contents="['正しい', '正しい', '']" />
                 <QuestionTemp2
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { label: '解', content: '' }, //31
-                        { label: '解', content: '正しい' }, //32
-                        { label: '解', content: '' }, //33
-                        { label: '解', content: '正しい' }, //34
-                        { label: '解', content: '' }, //35
-                        { label: '解', content: '' }, //36
-                        { label: '解', content: '' }, //37
-                        { label: '解', content: '正しい' }, //38
-                        { label: '解', content: '' }, //39
-                        { label: '解', content: '正しい' }, //40
+                        { questionTitle: '契約年齢', content: '' }, //31
+                        { questionTitle: '平準保険料', content: '正しい' }, //32
+                        { questionTitle: '予定利率', content: '' }, //33
+                        { questionTitle: '分割払営業保険料', content: '正しい' }, //34
+                        { questionTitle: '責任準備金積立根拠', content: '' }, //35
+                        { questionTitle: '契約転換制度', content: '' }, //36
+                        { questionTitle: 'その他の損益', content: '' }, //37
+                        { questionTitle: '契約者配当の意義と性格', content: '正しい' }, //38
+                        { questionTitle: '配当金支払方法', content: '' }, //39
+                        { questionTitle: 'リスクヘッジ', content: '正しい' }, //40
                         // 問41〜50
-                        { label: 'オ', content: '' }, //41
-                        { label: 'エ', content: '完全生命表' }, //42
-                        { label: 'オ', content: '' }, //43
-                        { label: 'イ', content: '高くなる' }, //44
-                        { label: 'ア', content: '大数' }, //45
-                        { label: 'ウ', content: '貯蓄保険料' }, //46
-                        { label: 'ア', content: '危険保険金' }, //47
-                        { label: 'ア', content: '定款' }, //48
-                        { label: 'ア', content: '保険種類別' }, //49
-                        { label: 'ウ', content: '純保険料率' }, //50
+                        { questionTitle: '死亡率', label: 'オ', content: '' }, //41
+                        { questionTitle: '死亡表の種類', label: 'エ', content: '完全生命表' }, //42
+                        { questionTitle: '資産の平均利回り', label: 'オ', content: '' }, //43
+                        { questionTitle: '純保険料の変化', label: 'イ', content: '高くなる' }, //44
+                        { questionTitle: '保険数理の基礎', label: 'ア', content: '大数' }, //45
+                        { questionTitle: 'チルメル式保険料積立金', label: 'ウ', content: '貯蓄保険料' }, //46
+                        { questionTitle: '危険保険料の計算', label: 'ア', content: '危険保険金' }, //47
+                        { questionTitle: '配当準備金繰入', label: 'ア', content: '定款' }, //48
+                        { questionTitle: 'アセット・シェア方式', label: 'ア', content: '保険種類別' }, //49
+                        { questionTitle: '団体定期保険の保険料', label: 'ウ', content: '純保険料率' }, //50
                     ]"
                 />
             </div>

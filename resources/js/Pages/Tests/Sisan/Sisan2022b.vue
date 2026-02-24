@@ -10,7 +10,7 @@ const title = "資産の運用"
 const subject = '2022年度 フォームB'
 
 
-const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
+</script>
 
 <template>
 
@@ -191,16 +191,16 @@ const SAME = "※2022年度フォームA/B/Cで同一問題";</script>
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { label: '解', content: '正しい' }, //31
-                    { label: '解', content: '正しい' }, //32
-                    { label: '解', content: '融資審査部門ではなくマクロ調査部門。' }, //33
-                    { label: '解', content: '第二に、一定の返済期限に拘束されるので、有価証券のような即時の流動化が困難なことなどである。' }, //34
-                    { label: '解', content: 'パッシブ運用ではなくアクティブ運用の説明。' }, //35
-                    { label: '解', content: '正しい' }, //36
-                    { label: '解', content: '正しい' }, //37
-                    { label: '解', content: '正しい' }, //38
-                    { label: '解', content: '固有業務ではなく付随業務。' }, //39
-                    { label: '解', content: '正しい' }, //40
+                    { content: '正しい' }, //31
+                    { content: '正しい' }, //32
+                    { content: '融資審査部門ではなくマクロ調査部門。' }, //33
+                    { content: '第二に、一定の返済期限に拘束されるので、有価証券のような即時の流動化が困難なことなどである。' }, //34
+                    { content: 'パッシブ運用ではなくアクティブ運用の説明。' }, //35
+                    { content: '正しい' }, //36
+                    { content: '正しい' }, //37
+                    { content: '正しい' }, //38
+                    { content: '固有業務ではなく付随業務。' }, //39
+                    { content: '正しい' }, //40
                     // 問41〜50
                     { label: 'エ', content: '自己資本比率規制' }, //41
                     { label: 'ア', content: '準拠主義' }, //42

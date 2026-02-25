@@ -29,6 +29,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="危険選択の必要性-①"
                 :contents="[
                 '安定性','標準的','延期体','収入','危険保険料', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="危険選択の必要性-②"
                 :contents="[
                 '大数の法則','実際死亡率','医学的','危険の公平性','相互扶助', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険の契約形態と方式-①"
                 :contents="[
                 '出再会社','自動','任意','諾否決定','成立', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険の契約形態と方式-②"
                 :contents="[
                 '個別','定期保険','減少','共同','同一の', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="選択効果"
                 :contents="[
                 '国民生命表との比較では、かなり長期に及ぶことが明らかになっている。',
                 '正しい',
@@ -99,6 +104,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="告知"
                 :contents="[
                 '正しい',
                 '告知義務者が告知事項の存在を知らないまま告知しなかった場合には、告知義務違反は成立しない。',
@@ -109,6 +115,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="職業危険"
                 :contents="[
                 '「アルコール中毒や不摂生生活のような職業に随伴する危険」も含まれる。',
                 '職業危険については一般に「職業制限」と呼ばれる選択基準を設け、それに基づいて環境設定を行っているのが実情である。',
@@ -119,6 +126,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="報状扱契約における選択手段"
                 :contents="[
                 '正しい',
                 '生命保険支払専門士ではなく生命保険面接士。',
@@ -129,6 +137,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="入院・手術保障における「選択」"
                 :contents="[
                 '正しい',
                 '死亡率の高い疾患と入院、手術の発生率の高い疾患とは全く異なるため、従来とは異なった診査観点が必要である。',
@@ -139,6 +148,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="死亡指数"
                 :contents="[
                 '正しい',
                 '同じ死亡指数でも、若年層と高部層、男性と女性等死亡率の異なる群団では死差益に対する貢献度が異なる',
@@ -149,6 +159,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="危険保険料と危険保険金"
                 :contents="[
                 '正しい',
                 '養老保険ではなく定期保険。',
@@ -159,6 +170,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険業における個人情報保護のための取扱指針"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="契約内容登録制度"
                 :contents="[
                 '金融庁ではなく生命保険協会。',
                 '正しい',
@@ -179,6 +192,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="復活"
                 :contents="[
                 '待ち期間ではなく猶予期間',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2022年度 フォームB'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '純収支計算方式ではなく締計的方式で表せば、基本的に死差益は年間の危険保険料収入額と危険保険金支払額との差として表せる。' }, //32
-                    { content: '正しい' }, //33
-                    { content: '第1段階ではなく第2段階の説明。第1段階では診査医による診査又はこれに代わるものである。' }, //34
-                    { content: 'ネフローゼではなくインシュリン。' }, //35
-                    { content: '一般に短期養老または短期払込養老保険の経験死亡率は長期のものより良好である。ただし、定期保険ではこの関係は逆転し、保険期間が短期のものに逆選択が集中する傾向がある。' }, //36
-                    { content: '正しい' }, //37
-                    { content: '正しい' }, //38
-                    { content: '保険加入のみを目的として設立された団体でないことが条件。' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '告知義務', content: '正しい' }, //31
+                    { questionTitle: '死差益の計算方法', content: '純収支計算方式ではなく締計的方式で表せば、基本的に死差益は年間の危険保険料収入額と危険保険金支払額との差として表せる。' }, //32
+                    { questionTitle: '保険体の範囲の拡大', content: '正しい' }, //33
+                    { questionTitle: '医学的選択', content: '第1段階ではなく第2段階の説明。第1段階では診査医による診査又はこれに代わるものである。' }, //34
+                    { questionTitle: '糖尿病', content: 'ネフローゼではなくインシュリン。' }, //35
+                    { questionTitle: '保険種類・保険期間の制限', content: '一般に短期養老または短期払込養老保険の経験死亡率は長期のものより良好である。ただし、定期保険ではこの関係は逆転し、保険期間が短期のものに逆選択が集中する傾向がある。' }, //36
+                    { questionTitle: '保険金確認', content: '正しい' }, //37
+                    { questionTitle: '機微（センシティブ）情報', content: '正しい' }, //38
+                    { questionTitle: '団体の選択', content: '保険加入のみを目的として設立された団体でないことが条件。' }, //39
+                    { questionTitle: '死因別死亡率', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'ウ', content: '標準化死亡率' }, //41
-                    { label: 'イ', content: '二次性高血圧' }, //42
-                    { label: 'ア', content: '信頼関係' }, //43
-                    { label: 'オ', content: '' }, //44
-                    { label: 'ウ', content: '22' }, //45
-                    { label: 'オ', content: '' }, //46
-                    { label: 'ア', content: '平均' }, //47
-                    { label: 'エ', content: 'より低く' }, //48
-                    { label: 'オ', content: '' }, //49
-                    { label: 'エ', content: '正常勤務' }, //50
+                    { questionTitle: '死亡率', label: 'ウ', content: '標準化死亡率' }, //41
+                    { questionTitle: '高血圧', label: 'イ', content: '二次性高血圧' }, //42
+                    { questionTitle: '重大事由による解除', label: 'ア', content: '信頼関係' }, //43
+                    { questionTitle: '第1次選択', label: 'オ', content: '' }, //44
+                    { questionTitle: '体格', label: 'ウ', content: '22' }, //45
+                    { questionTitle: '査定法', label: 'オ', content: '' }, //46
+                    { questionTitle: '入院・手術保障における料率', label: 'ア', content: '平均' }, //47
+                    { questionTitle: '再保険', label: 'エ', content: 'より低く' }, //48
+                    { questionTitle: '災害関係特約', label: 'オ', content: '' }, //49
+                    { questionTitle: '団体保険の個別選択', label: 'エ', content: '正常勤務' }, //50
                 ]"
                 
             />

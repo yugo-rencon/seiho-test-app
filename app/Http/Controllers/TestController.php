@@ -198,6 +198,9 @@ class TestController extends Controller
     public function kiken2021a(){return Inertia::render('Tests/Kiken/Kiken2021a');}
     public function kiken2021b(){return Inertia::render('Tests/Kiken/Kiken2021b');}
     public function kiken2021c(){return Inertia::render('Tests/Kiken/Kiken2021c');}
+    public function kiken2020a(){return Inertia::render('Tests/Kiken/Kiken2020a');}
+    public function kiken2020b(){return Inertia::render('Tests/Kiken/Kiken2020b');}
+    public function kiken2020c(){return Inertia::render('Tests/Kiken/Kiken2020c');}
 
     // 約款と法律
     public function yakkan2025a(){return Inertia::render('Tests/Yakkan/Yakkan2025a');}

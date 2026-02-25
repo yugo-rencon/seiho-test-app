@@ -18,7 +18,7 @@ const isActive = (name) => route().current(name);
         class="sticky top-0 z-30 border-b border-gray-100 bg-white/80 shadow-sm backdrop-blur-lg"
     >
         <div class="mx-auto w-full max-w-6xl px-6">
-            <div class="flex items-center justify-between py-4">
+            <div class="flex items-center justify-between py-2.5">
                 <Link :href="route('tests.index')" class="flex items-center gap-3">
                     <img
                         src="/images/rencon-favicon.svg"
@@ -92,11 +92,11 @@ const isActive = (name) => route().current(name);
 
             <!-- PCナビゲーション -->
             <nav
-                class="hidden items-center justify-center gap-4 pb-4 text-sm font-semibold text-gray-700 md:flex"
+                class="hidden items-center justify-center gap-4 pb-2 text-sm font-semibold text-gray-700 md:flex"
             >
                 <Link
                     :href="route('tests.index')"
-                    class="border-b-2 px-3 py-2 transition-colors hover:text-purple-900"
+                    class="border-b-2 px-3 py-1 transition-colors hover:text-purple-900"
                     :class="
                         isActive('tests.index')
                             ? 'border-purple-500 text-purple-900'
@@ -107,7 +107,7 @@ const isActive = (name) => route().current(name);
                 </Link>
                 <Link
                     :href="route('study-method')"
-                    class="border-b-2 px-3 py-2 transition-colors hover:text-purple-900"
+                    class="border-b-2 px-3 py-1 transition-colors hover:text-purple-900"
                     :class="
                         isActive('study-method')
                             ? 'border-purple-500 text-purple-900'
@@ -118,7 +118,7 @@ const isActive = (name) => route().current(name);
                 </Link>
                 <button
                     type="button"
-                    class="border-b-2 px-3 py-2 transition-colors hover:text-purple-900"
+                    class="border-b-2 px-3 py-1 transition-colors hover:text-purple-900"
                     @click="$emit('open-pricing-modal')"
                     :class="
                         isActive('pricing')
@@ -130,7 +130,7 @@ const isActive = (name) => route().current(name);
                 </button>
                 <Link
                     :href="route('about')"
-                    class="border-b-2 px-3 py-2 transition-colors hover:text-purple-900"
+                    class="border-b-2 px-3 py-1 transition-colors hover:text-purple-900"
                     :class="
                         isActive('about')
                             ? 'border-purple-500 text-purple-900'

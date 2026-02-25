@@ -29,6 +29,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="告知義務違反と契約解除-①"
                 :contents="[
                 '故意','民法','必要はない','解約返戻金','到達', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="告知義務違反と契約解除-②"
                 :contents="[
                 'しない','因果関係','5年','責任開始期の属する日','2年', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="入院・手術保障における「選択」-①"
                 :contents="[
                 '心理','抵抗力','触診','生命予後','分離', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="入院・手術保障における「選択」-②"
                 :contents="[
                 '生活習慣病','限局','高い','逓減性','超過危険', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険で対象としている危険"
                 :contents="[
                 '「実体的危険」は、<u><b>「身体的危険」</b></u>と「環境的危険」の2つに分類することができる。', //p4
                 '環境的危険とは、被保険者の生活環境全般に関する危険であるが主に被保険者の職業・仕事の内容による危険を指す', //p4
@@ -99,6 +104,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="死亡率と死亡指数"
                 :contents="[
                 '生命表には国民全体を対象とした<u><b>国民生命表</b></u>と、それよりは小さな特定集団（たとえば生命保険の被保険者集団）を対象とする<u><b>経験生命表</b></u>とがある。', //p5
                 '正しい',
@@ -109,6 +115,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="現病歴・既往歴"
                 :contents="[
                 '正しい',
                 '若年層には先天性のものが多く、中年および高年齢になると高血圧性、虚血性が多くなる。', //p65
@@ -119,6 +126,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="査定・決定"
                 :contents="[
                 '<u><b>生命保険協会</b></u>で実施している「契約内容登録制度」「契約内容照会制度」「支払査定時照会制度」の情報等を総合的に判断し「査定・決定」を行う。', //p86
                 '「査定」とは主に医学的選択判断に使用する場合が多い。また「決定」は査定結果を基に総合的に選択判断を行う場合に使用する場合が多い。', //p86-87
@@ -129,6 +137,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="復活"
                 :contents="[
                 '復活時に求める告知事項の時間的範囲を、過去全体にすべきか、後とすべきかについては、理論的には、契約時までのものは告知済みであるから、<u><b>復活時には契約後の健康歴その他の告知を求めるのが普通である</b></u>。', //p713
                 '正しい',
@@ -139,6 +148,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="告知"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -149,6 +159,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="医学的選択上の課題"
                 :contents="[
                 '死亡率や<u><b>入院給付率</b></u>は、保険年度が進み選択効果が薄れるにつれ上昇するが、<u><b>手術給付率</b></u>はむしろ加入早期の方が高値である。', //p52
                 '正しい',
@@ -159,6 +170,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="契約制限"
                 :contents="[
                 '正しい',
                 '一般に<u><b>短期</b></u>養老または<u><b>短期</b></u>払込養老保険の経験死亡率は<u><b>長期</b></u>のものより良好である。ただし、定期保険ではこの関係は逆転し、保険期間が<u><b>短期</b></u>のものに逆選択が集中する傾向がある。', //p73
@@ -169,6 +181,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="団体保険における団体の選択"
                 :contents="[
                 '保険加入のみを目的として設立された<u><b>団体でない</b></u>ことが契約の要件の1つである。', //p169
                 '正しい',
@@ -179,6 +192,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険の契約形態"
                 :contents="[
                 '再保険取引の契約書を、再保険協約または再保険協定書といい。元受会社（<u><b>出再会社</b></u>）と受再保険会社の権利義務を規定している。', //p177
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2024年度 フォームB'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '金額死亡率のほうが件数死亡率よりも事業経営上に与える影響を反映しやすいので、生命保険経営上は、通常、件数死亡率よりも、金額死亡率が多く用いられる。' }, //32
-                    { content: '死差益の計算方法として、ボールマンにより考案された純収支計算方式と統計的方式の両式がある。<u><b>統計的方式</b></u>で表せば、基本的には死差益は年間の危険保険料収入額と危険保険金支払額との差として表される。' }, //33
-                    { content: '正しい' }, //34
-                    { content: 'BMIは「体重(kg) ÷ [身長(m)]<sup>2</sup>」で表される指数で標準値を22前後としている。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '保険金確認・給付金確認を行う時期が死亡その他の保険事故発生後であるため、確認の対象は保険事故発生前の契約確認と若千異なっている。しかし、告知義務違反やモラルリスクを排除し、生命保険の公平性の原則を達成しようとする目的自体は契約確認となんら変わるところはない。' }, //37
-                    { content: '正しい' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '危険選択', content: '正しい' }, //31
+                    { questionTitle: '生命保険会社における経験死亡率', content: '金額死亡率のほうが件数死亡率よりも事業経営上に与える影響を反映しやすいので、生命保険経営上は、通常、件数死亡率よりも、金額死亡率が多く用いられる。' }, //32
+                    { questionTitle: '死差益の計算方法', content: '死差益の計算方法として、ボールマンにより考案された純収支計算方式と統計的方式の両式がある。<u><b>統計的方式</b></u>で表せば、基本的には死差益は年間の危険保険料収入額と危険保険金支払額との差として表される。' }, //33
+                    { questionTitle: '保険体の範囲の拡大', content: '正しい' }, //34
+                    { questionTitle: '体格', content: 'BMIは「体重(kg) ÷ [身長(m)]<sup>2</sup>」で表される指数で標準値を22前後としている。' }, //35
+                    { questionTitle: '重大事由による解除権', content: '正しい' }, //36
+                    { questionTitle: '保険金確認・給付金確認', content: '保険金確認・給付金確認を行う時期が死亡その他の保険事故発生後であるため、確認の対象は保険事故発生前の契約確認と若千異なっている。しかし、告知義務違反やモラルリスクを排除し、生命保険の公平性の原則を達成しようとする目的自体は契約確認となんら変わるところはない。' }, //37
+                    { questionTitle: '傷害特約', content: '正しい' }, //38
+                    { questionTitle: '最高保険金額', content: '正しい' }, //39
+                    { questionTitle: '実際死亡状況の分析', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'エ', content: '質問応答義務' }, //41
-                    { label: 'イ', content: '純保険料' }, //42
-                    { label: 'イ', content: '倫理' }, //43
-                    { label: 'ア', content: '入院率' }, //44
-                    { label: 'ウ', content: '被保険利益' }, //45
-                    { label: 'ウ', content: '医師による診査' }, //46
-                    { label: 'オ', content: '' }, //47
-                    { label: 'ア', content: 'き損' }, //48
-                    { label: 'エ', content: '両眼の視力' }, //49
-                    { label: 'オ', content: '' }, //50
+                    { questionTitle: '告知義務者', label: 'エ', content: '質問応答義務' }, //41
+                    { questionTitle: '保険料の仕組みと危険選択', label: 'イ', content: '純保険料' }, //42
+                    { questionTitle: '被保険者集団の具備すべき条件', label: 'イ', content: '倫理' }, //43
+                    { questionTitle: '職業危険', label: 'ア', content: '入院率' }, //44
+                    { questionTitle: '道徳的危険排除のためのポイント', label: 'ウ', content: '被保険利益' }, //45
+                    { questionTitle: '人間ドック扱', label: 'ウ', content: '医師による診査' }, //46
+                    { questionTitle: '査定法', label: 'オ', content: '' }, //47
+                    { questionTitle: '個人データの安全管理措置', label: 'ア', content: 'き損' }, //48
+                    { questionTitle: '高度障害状態', label: 'エ', content: '両眼の視力' }, //49
+                    { questionTitle: '期待死亡率との比較', label: 'オ', content: '' }, //50
                 ]"
                 
             />

@@ -24,6 +24,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険の対象となる危険とその特色-①"
                     :contents="[
                         '商法',
                         '経済的',
@@ -43,6 +44,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険の対象となる危険とその特色-②"
                     :contents="[
                         '傷害疾病定額保険契約',
                         '潜在的',
@@ -62,6 +64,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    questionTitle="資産運用-①"
                     :contents="[
                         '予定利率',
                         '逆ざや',
@@ -81,6 +84,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    questionTitle="資産運用-②"
                     :contents="[
                         '法定他業',
                         '規制緩和',
@@ -100,6 +104,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険契約の法的性質"
                     :contents="[
                         //p11-12
                         '正しい',
@@ -111,6 +116,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    questionTitle="アメリカにおけるアームストロング調査"
                     :contents="[
                         //p63-64
                         '無制限 → 制限',
@@ -122,6 +128,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    questionTitle="公的年金制度"
                     :contents="[
                         //p126-127
                         '自営業者等を対象とした国民年金制度 → 工場などで働く男子労働者を対象とした労働者年金保険制度',
@@ -133,6 +140,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険業法の概要"
                     :contents="[
                         //p150,P155
                         '3種類 → 2種類（生命保険業免許・損害保険業免許）',
@@ -144,6 +152,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    questionTitle="社会構造の変化〜高齢化・少子化"
                     :contents="[
                         //p180-182
                         '10% → 7%',
@@ -155,6 +164,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険契約の要素"
                     :contents="[
                         //p13
                         '正しい',
@@ -166,6 +176,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="アメリカにおける金融革命の進展と生命保険事業"
                     :contents="[
                         //p69
                         'デリバティブ商品 → ニューウェーブ商品。',
@@ -177,6 +188,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    questionTitle="資産運用の現状"
                     :contents="[
                         //p112-113
                         '貸付金と有価証券の内容が逆',
@@ -188,6 +200,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    questionTitle="少額短期保険業"
                     :contents="[
                         //p176
                         '正しい',
@@ -199,6 +212,7 @@ const subject = "2024年度 フォームC";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="消費構造の変化"
                     :contents="[
                         //p184
                         '正しい',
@@ -212,27 +226,27 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { content: '正しい' }, //31
-                        { content: '正しい' }, //32
-                        { content: '正しい' }, //33
-                        { content: 'ペストの大流行とスペインかぜの大流行 → スペインかぜの大流行と関東大震災' }, //34 p76
-                        { content: '重要性は非常に高い → 低い' }, //35 p109
-                        { content: '社会扶助制度 → 公的扶助制度' }, //36 p123
-                        { content: '形式的監督主義 → 実体的監督主義' }, //37 p148
-                        { content: '正しい' }, //38
-                        { content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている' }, //39 p193
-                        { content: '正しい' }, //40
+                        { questionTitle: '生命保険契約の要素', content: '正しい' }, //31
+                        { questionTitle: '保険料', content: '正しい' }, //32
+                        { questionTitle: '保険の歴史的発展', content: '正しい' }, //33
+                        { questionTitle: '日本における生命保険の発展（大正時代）', content: 'ペストの大流行とスペインかぜの大流行 → スペインかぜの大流行と関東大震災' }, //34 p76
+                        { questionTitle: '流動性の原則', content: '重要性は非常に高い → 低い' }, //35 p109
+                        { questionTitle: '社会保障制度', content: '社会扶助制度 → 公的扶助制度' }, //36 p123
+                        { questionTitle: '形式的監督主義', content: '形式的監督主義 → 実体的監督主義' }, //37 p148
+                        { questionTitle: 'JA共済（全国共済農業協同組合連合会）', content: '正しい' }, //38
+                        { questionTitle: '医療・介護ニーズへの対応', content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている' }, //39 p193
+                        { questionTitle: '販売体制', content: '正しい' }, //40
                         // 問41〜50
-                        { label: 'ア', content: '縮小' }, //41
-                        { label: 'ウ', content: '20%' }, //42
-                        { label: 'エ', content: '逓減定期保険' }, //43
-                        { label: 'イ', content: '生命保険' }, //44
-                        { label: 'オ', content: '' }, //45
-                        { label: 'エ', content: '責任準備金' }, //46
-                        { label: 'イ', content: '国民皆保険' }, //47
-                        { label: 'オ', content: '' }, //48
-                        { label: 'ア', content: '保険者' }, //49
-                        { label: 'ウ', content: '変額年金' }, //50
+                        { questionTitle: '危険の種類', label: 'ア', content: '縮小' }, //41
+                        { questionTitle: '剰余金の分配方法', label: 'ウ', content: '20%' }, //42
+                        { questionTitle: '養老保険', label: 'エ', content: '逓減定期保険' }, //43
+                        { questionTitle: '賦課式保険', label: 'イ', content: '生命保険' }, //44
+                        { questionTitle: '近代的生命保険の導入', label: 'オ', content: '' }, //45
+                        { questionTitle: '生命保険会社の資金の性格', label: 'エ', content: '責任準備金' }, //46
+                        { questionTitle: '公的医療保険', label: 'イ', content: '国民皆保険' }, //47
+                        { questionTitle: '保険業を行う会社の性質', label: 'オ', content: '' }, //48
+                        { questionTitle: '損害保険', label: 'ア', content: '保険者' }, //49
+                        { questionTitle: '年金型商品の開発', label: 'ウ', content: '変額年金' }, //50
                     ]"
                 />
             </div>

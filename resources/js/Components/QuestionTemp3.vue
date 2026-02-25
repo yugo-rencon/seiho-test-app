@@ -5,10 +5,10 @@
     >
 
         <!-- 問題番号 -->
-        <div class="flex items-center gap-2 my-4">
+        <div class="flex items-start gap-2 my-4">
             <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>
-            <h2 class="flex items-center gap-2 text-base font-bold text-gray-800">
-                問題{{ getQuestionRange(props.questionNumber) }}
+            <h2 class="text-base font-bold leading-tight text-gray-800">
+                <span class="mr-2 inline-block whitespace-nowrap">問題{{ getQuestionRange(props.questionNumber) }}</span>
                 <span v-if="props.questionTitle" class="text-base font-semibold text-gray-600">
                     {{ props.questionTitle }}
                 </span>

@@ -29,6 +29,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="死亡率と死亡指数-①"
                 :contents="[
                 '選択効果','実際死亡率','簡易生命表','経験','標準体', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="死亡率と死亡指数-②"
                 :contents="[
                 '経営効率','災害死亡','困難','診査基準','健康管理証明書', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険の契約形態と方式-①"
                 :contents="[
                 '出再会社','自動','任意','諾否決定','成立', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険の契約形態と方式-②"
                 :contents="[
                 '個別','定期保険','減少','共同','同一の', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険で対象としている危険"
                 :contents="[
                 '「実体的危険」は「身体的危険」と「環境的危険」の2つに分類することができる。',
                 '不当な利益を得ようとする心理状態は道徳的危険の説明。環境的危険は被保険者の職業·仕事内容の危険を指す。',
@@ -99,6 +104,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="告知"
                 :contents="[
                 '正しい',
                 '告知義務者が告知事項の存在を知らないまま告知しなかった場合には、告知義務違反は成立しない。',
@@ -109,6 +115,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="医学的選択上の課題"
                 :contents="[
                 '三大都市圏から離れるにしたがって高率となる。',
                 '正しい',
@@ -119,6 +126,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="保険金確認・給付金確認"
                 :contents="[
                 '契約確認と比較してかなり広範囲かつ綿密なものとなる。',
                 '告知義務違反やモラルリスクを排除し、生命保険の公平性の原則を達成しようとする目的自体は契約確認と何ら変わることはない。',
@@ -129,6 +137,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="入院・手術保障における「選択」"
                 :contents="[
                 '正しい',
                 '死亡率の高い疾患と入院、手術の発生率の高い疾患とは全く異なるため、従来とは異なった診査観点が必要である。',
@@ -139,6 +148,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="現病歴・既往歴"
                 :contents="[
                 '正しい',
                 'ネフローゼではなくインシュリン',
@@ -149,6 +159,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="逆選択の傾向と態様"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -159,6 +170,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険業における個人情報保護のための取扱指針"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="団体保険における団体の選択"
                 :contents="[
                 '正しい',
                 '団体定期保険と総合福祉団体定期保険が逆。',
@@ -179,6 +192,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険における元受会社の最高保険金額と保有限度額"
                 :contents="[
                 '保険金受取人ではなく被保険者。',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2022年度 フォームA'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '純収支計算方式ではなく統計的方式で表せば、基本的に死差益は年間の危険保険料収入額と危険保険金支払額との差として表せる。' }, //32
-                    { content: '正しい' }, //33
-                    { content: '「アルコール中毒や不摂生生活のような職業に随伴する危険」も含まれる。' }, //34
-                    { content: '体重・性別ではなく年齢別。' }, //35
-                    { content: '一般に嘱託医については各保険会社とも診査を可能とする被保険者の年齢や保険金額に限度を設け、社医と区別している。' }, //36
-                    { content: '正しい' }, //37
-                    { content: '「組織的安全管理措置」ではなく「人的安全管理措置」' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '危険の公平性', content: '正しい' }, //31
+                    { questionTitle: '死差益の計算方法', content: '純収支計算方式ではなく統計的方式で表せば、基本的に死差益は年間の危険保険料収入額と危険保険金支払額との差として表せる。' }, //32
+                    { questionTitle: '保険体の範囲の拡大', content: '正しい' }, //33
+                    { questionTitle: '職業危険', content: '「アルコール中毒や不摂生生活のような職業に随伴する危険」も含まれる。' }, //34
+                    { questionTitle: '条件体契約', content: '体重・性別ではなく年齢別。' }, //35
+                    { questionTitle: '社医と嘱託医', content: '一般に嘱託医については各保険会社とも診査を可能とする被保険者の年齢や保険金額に限度を設け、社医と区別している。' }, //36
+                    { questionTitle: '契約確認', content: '正しい' }, //37
+                    { questionTitle: '個人データの安全管理措置', content: '「組織的安全管理措置」ではなく「人的安全管理措置」' }, //38
+                    { questionTitle: '団体定期保険における更新時の選択', content: '正しい' }, //39
+                    { questionTitle: '死因別死亡率', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'エ', content: '金額死亡率' }, //41
-                    { label: 'ア', content: '保険法' }, //42
-                    { label: 'オ', content: '' }, //43
-                    { label: 'ウ', content: '大数の法則' }, //44
-                    { label: 'ウ', content: '22' }, //45
-                    { label: 'イ', content: '他人' }, //46
-                    { label: 'ウ', content: '医師による診査' }, //47
-                    { label: 'エ', content: '再診' }, //48
-                    { label: 'オ', content: '' }, //49
-                    { label: 'エ', content: '正常勤務' }, //50
+                    { questionTitle: '死亡率', label: 'エ', content: '金額死亡率' }, //41
+                    { questionTitle: '契約の解除', label: 'ア', content: '保険法' }, //42
+                    { questionTitle: '経験保険料と危険保険金', label: 'オ', content: '' }, //43
+                    { questionTitle: '被保険者集団の具備すべき条件', label: 'ウ', content: '大数の法則' }, //44
+                    { questionTitle: '体格', label: 'ウ', content: '22' }, //45
+                    { questionTitle: '保険契約の制限', label: 'イ', content: '他人' }, //46
+                    { questionTitle: '人間ドック扱', label: 'ウ', content: '医師による診査' }, //47
+                    { questionTitle: '査定・決定の種類', label: 'エ', content: '再診' }, //48
+                    { questionTitle: '災害関係特約', label: 'オ', content: '' }, //49
+                    { questionTitle: '団体保険の個別選択', label: 'エ', content: '正常勤務' }, //50
                 ]"
                 
             />

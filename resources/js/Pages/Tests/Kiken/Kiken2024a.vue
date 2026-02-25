@@ -29,6 +29,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="告知義務違反と契約解除-①"
                 :contents="[
                 '故意','民法','必要はない','解約返戻金','到達', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="告知義務違反と契約解除-②"
                 :contents="[
                 'しない','因果関係','5年','責任開始期の属する日','2年', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険の契約形態と方式-①"
                 :contents="[
                 '出再会社','自動','任意','諾否決定','成立', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険の契約形態と方式-②"
                 :contents="[
                 '個別','定期保険','危険保険料式','共同保険式','責任準備金', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険で対象としている危険"
                 :contents="[
                 '「実体的危険」は、<u><b>「身体的危険」</b></u>と「環境的危険」の2つに分類することができる。', //p4
                 '環境的危険とは、被保険者の生活環境全般に関する危険であるが主に被保険者の職業・仕事の内容による危険を指す。', //p4
@@ -99,6 +104,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="危険保険料と危険保険金"
                 :contents="[
                 '毎年の純保険料のうち<u><b>貯蓄保険料</b></u>は、被保険者の生死にかかわりなく責任準備金の積み増しにあてられるが、危険保険料は死亡した被保険者の危険保険金部分の支払いにあてられる。', //p23
                 '<u><b>定期保険</b></u>の責任準備金の積み立ては、保険期間の前半で純保険料が死亡率に相当する保険料より高い分を、保険期間の後半で死亡率が純保険料を上回るのに備えて積み立てるのみであり、責任準備金は保険年度とともに<u><b>逓減する</b></u>。<br><u><b>養老保険</b></u>では死亡の際に保険金が支払われるのはもちろんであるが、満期時にも保険金が支払われるため、生命保険会社では満期時の支払いに備えて責任準備金を積み立てる必要があり、責任準備金は保険年度とともに<u><b>逓増する</b></u>。', //p24
@@ -109,6 +115,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="契約制限"
                 :contents="[
                 '一般に短期<u><b>養老</b></u>または短期払込<u><b>養老保険</b></u>の経験死亡率は長期のものより良好である。ただし、<u><b>定期保険</b></u>ではこの関係は逆転し、保険期間が短期のものに逆選択が集中する傾向がある。', //p73
                 '正しい',
@@ -119,6 +126,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="条件体特別条件付決定"
                 :contents="[
                 '正しい',
                 '<u><b>削減期間は5年が最長</b></u>で、逓減性危険の程度に応じ5年削減、4年削減、3年削減、2年削減、1年削減の方法がある。', //p108
@@ -129,6 +137,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="入院・手術保障における「選択」"
                 :contents="[
                 '正しい',
                 '死亡率の高い疾患と入院・手術の発生率の高い疾患とはまったく異なるため、従来とは異なった診査観点が必要である', //p150
@@ -139,6 +148,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="死亡指数"
                 :contents="[
                 '正しい',
                 '同じ死亡指数でも、若年層と高齢層、男性と女性等死亡率の異なる群団では<u><b>死差益に対する貢献度が異なる</b></u>。', //p12
@@ -149,6 +159,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="医学的選択上の課題"
                 :contents="[
                 '死亡率や<u><b>入院給付率</b></u>は、保険年度が進み選択効果が薄れるにつれ上昇するが、<u><b>手術給付率</b></u>はむしろ加入早期の方が高値である。', //p52
                 '正しい',
@@ -159,6 +170,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="体格"
                 :contents="[
                 '正しい',
                 '体格は、普通体（または平均体）、過重体および過軽体の3種に分類されている。', //p63
@@ -169,6 +181,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="団体保険における団体の選択"
                 :contents="[
                 '保険加入のみを目的として設立された<u><b>団体でない</b></u>ことが契約の要件の1つである。', //p169
                 '正しい',
@@ -179,6 +192,7 @@ const subject = '2024年度 フォームA'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="死亡率比較"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2024年度 フォームA'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '生命表には国民全体を対象とした<u><b>国民生命表</b></u>と、それよりは小さな特定集団（たとえば生命保険の被保険者集団）を対象とする<u><b>経験生命表</b></u>とがある。' }, //31
-                    { content: '金額死亡率のほうが件数死亡率よりも事業経営上に与える影響を反映しやすいので、生命保険経営上は、通常、件数死亡率よりも、金額死亡率が多く用いられる。' }, //32
-                    { content: '正しい' }, //33
-                    { content: '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」<u><b>さらには「アルコール中毒や不摂生生活のような職業に随伴する危険」がある</b></u>。' }, //34
-                    { content: '正しい' }, //35
-                    { content: '一般に嘱託医については、各保険会社とも、診査を可能とする被保険者の年齢や保険金額に限度を設け（診査限度という）、社医と区別しているが、さらに嘱託医の資格別にも診査限度を定めている。' }, //36
-                    { content: '正しい' }, //37
-                    { content: '失効後の期間の<u><b>長い</b></u>ものほど逆選択混入の危険が多く、また診査による場合に比べ告知のみによる場合のほうが経験死亡率が高いとされている。' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '生命表', content: '生命表には国民全体を対象とした<u><b>国民生命表</b></u>と、それよりは小さな特定集団（たとえば生命保険の被保険者集団）を対象とする<u><b>経験生命表</b></u>とがある。' }, //31
+                    { questionTitle: '生命保険会社における経験死亡率', content: '金額死亡率のほうが件数死亡率よりも事業経営上に与える影響を反映しやすいので、生命保険経営上は、通常、件数死亡率よりも、金額死亡率が多く用いられる。' }, //32
+                    { questionTitle: '選択効果', content: '正しい' }, //33
+                    { questionTitle: '職業危険', content: '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」<u><b>さらには「アルコール中毒や不摂生生活のような職業に随伴する危険」がある</b></u>。' }, //34
+                    { questionTitle: '道徳的危険の発見と排除', content: '正しい' }, //35
+                    { questionTitle: '社医と嘱託医', content: '一般に嘱託医については、各保険会社とも、診査を可能とする被保険者の年齢や保険金額に限度を設け（診査限度という）、社医と区別しているが、さらに嘱託医の資格別にも診査限度を定めている。' }, //36
+                    { questionTitle: '機微（センシティブ）情報', content: '正しい' }, //37
+                    { questionTitle: '復活', content: '失効後の期間の<u><b>長い</b></u>ものほど逆選択混入の危険が多く、また診査による場合に比べ告知のみによる場合のほうが経験死亡率が高いとされている。' }, //38
+                    { questionTitle: '最高保険金額', content: '正しい' }, //39
+                    { questionTitle: '実際死亡状況の分析', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'ウ', content: '告知を受領する権限のある者' }, //41
-                    { label: 'イ', content: '純保険料' }, //42
-                    { label: 'イ', content: '倫理' }, //43
-                    { label: 'エ', content: '本態性高血圧' }, //44
-                    { label: 'ア', content: '信頼関係' }, //45
-                    { label: 'オ', content: '' }, //46
-                    { label: 'ウ', content: '尿異常' }, //47
-                    { label: 'オ', content: '' }, //48
-                    { label: 'エ', content: '両眼の視力' }, //49
-                    { label: 'ア', content: '1年間' }, //50
+                    { questionTitle: '告知義務者', label: 'ウ', content: '告知を受領する権限のある者' }, //41
+                    { questionTitle: '保険料の仕組みと危険選択', label: 'イ', content: '純保険料' }, //42
+                    { questionTitle: '被保険者集団の具備すべき条件', label: 'イ', content: '倫理' }, //43
+                    { questionTitle: '高血圧', label: 'エ', content: '本態性高血圧' }, //44
+                    { questionTitle: '重大事由による解除', label: 'ア', content: '信頼関係' }, //45
+                    { questionTitle: '第1次選択', label: 'オ', content: '' }, //46
+                    { questionTitle: '医学的査定', label: 'ウ', content: '尿異常' }, //47
+                    { questionTitle: '保険金確認・給付金確認', label: 'オ', content: '' }, //48
+                    { questionTitle: '高度障害状態', label: 'エ', content: '両眼の視力' }, //49
+                    { questionTitle: '団体保険の契約内容の変更', label: 'ア', content: '1年間' }, //50
                 ]"
               
             />

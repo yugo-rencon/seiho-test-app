@@ -6,12 +6,12 @@
             class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-md"
         >
             <!-- 問題番号 -->
-            <div class="flex items-center gap-2 my-4">
+            <div class="flex items-start gap-2 my-4">
                 <div
                     class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"
                 ></div>
-                <h2 class="flex items-center gap-2 text-base font-bold text-gray-800">
-                    問{{ item.questionNo }}
+                <h2 class="text-base font-bold leading-tight text-gray-800">
+                    <span class="mr-2 inline-block whitespace-nowrap">問{{ item.questionNo }}</span>
                     <span v-if="item.questionTitle" class="text-base font-semibold text-gray-600">
                         {{ item.questionTitle }}
                     </span>
@@ -108,12 +108,12 @@
         v-if="shouldShowPaywallNotice && firstLockedItem"
         class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white px-6 py-3 shadow-sm opacity-65"
     >
-        <div class="flex items-center gap-2 my-4">
+        <div class="flex items-start gap-2 my-4">
             <div
                 class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"
             ></div>
-            <h2 class="flex items-center gap-2 text-base font-bold text-gray-800">
-                問{{ firstLockedItem.questionNo }}
+            <h2 class="text-base font-bold leading-tight text-gray-800">
+                <span class="mr-2 inline-block whitespace-nowrap">問{{ firstLockedItem.questionNo }}</span>
                 <span
                     v-if="firstLockedItem.questionTitle"
                     class="text-base font-semibold text-gray-600"

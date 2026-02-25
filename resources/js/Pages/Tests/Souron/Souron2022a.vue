@@ -25,6 +25,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険契約の特殊性-①"
                     :contents="[
                         '契約自由',
                         '債権債務',
@@ -44,6 +45,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険契約の特殊性-②"
                     :contents="[
                         '拘束',
                         '法規範説',
@@ -63,6 +65,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    questionTitle="社会構造の変化-①"
                     :contents="[
                         '平均寿命',
                         '7',
@@ -82,6 +85,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    questionTitle="社会構造の変化-②"
                     :contents="[
                         '年金',
                         '70',
@@ -101,6 +105,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険契約の要素"
                     :contents="[
                         '保険契約者の資格について制限はない（行為能力者である必要もない）', //p13
                         '正しい',
@@ -111,6 +116,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    questionTitle="アメリカにおけるアームストロング調査"
                     :contents="[
                         '予定利率 → 新契約費', //p63
                         '会社の株主 → 会社の役員', //p64
@@ -121,6 +127,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    questionTitle="介護保険制度"
                     :contents="[
                         '65歳以上 → 第1号<br>40歳～65歳未満 → 第2号', //p140
                         '正しい',
@@ -131,6 +138,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険業法の概要"
                     :contents="[
                         '正しい',
                         '保険業 → 保険契約者', //p150
@@ -141,6 +149,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    questionTitle="少額短期保険業"
                     :contents="[
                         '死亡保険金500万円 → 300万円<br>入院給付金100万円 → 80万円', //p176
                         '1500万円 → 1000万円', //p176
@@ -151,6 +160,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険の対象となる危険の種類"
                     :contents="[
                         '制御を超えていないもの → 制御を超えているもの', //p4
                         '正しい',
@@ -161,6 +171,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="危険選択の必要性と意義"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -171,6 +182,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    questionTitle="賦課式保険"
                     :contents="[
                         '正しい',
                         '分担金が年々増加 → 年々減少<br>給付金が増加 → 減少', //p56
@@ -181,6 +193,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    questionTitle="日本における生命保険の発展"
                     :contents="[
                         'ドイツ → 英米', //p72
                         '正しい',
@@ -191,6 +204,7 @@ const subject = "2022年度 フォームA";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="資産運用の原則"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -203,27 +217,27 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { content: '正しい' }, //31
-                        { content: '正しい' }, //32
-                        { content: 'ロイヤル・エクスチェンジ → エクイタブル' }, //33
-                        { content: '決済機能を持ち → 決済機能は持たない' }, //34
-                        { content: '正しい' }, //35
-                        { content: '正しい' }, //36
-                        { content: '正しい' }, //37
-                        { content: '正しい' }, //38
-                        { content: '損害保険 → 生命保険' }, //39
-                        { content: '従来と今日の内容が逆' }, //40
+                        { questionTitle: '責任準備金', content: '正しい' }, //31
+                        { questionTitle: '生死混合保険', content: '正しい' }, //32
+                        { questionTitle: '科学的な生命保険会社', content: 'ロイヤル・エクスチェンジ → エクイタブル' }, //33
+                        { questionTitle: '1970〜80年代のアメリカのニューウェーブ商品の開発', content: '決済機能を持ち → 決済機能は持たない' }, //34
+                        { questionTitle: '世帯加入状況', content: '正しい' }, //35
+                        { questionTitle: '資産運用体制の構築', content: '正しい' }, //36
+                        { questionTitle: '組織変更', content: '正しい' }, //37
+                        { questionTitle: 'JA共済（全国共済農業協同組合連合会）', content: '正しい' }, //38
+                        { questionTitle: '損害保険', content: '損害保険 → 生命保険' }, //39
+                        { questionTitle: '消費者の購入態度の変化', content: '従来と今日の内容が逆' }, //40
                         // 問41〜50
-                        { label: 'ウ', content: '保険料' }, //41
-                        { label: 'オ', content: '' }, //42
-                        { label: 'イ', content: '経過年数' }, //43
-                        { label: 'イ', content: '友愛組合' }, //44
-                        { label: 'エ', content: '低く' }, //45
-                        { label: 'ア', content: '負債' }, //46
-                        { label: 'ア', content: '保険料の拠出' }, //47
-                        { label: 'エ', content: '財務大臣' }, //48
-                        { label: 'オ', content: '' }, //49
-                        { label: 'ア', content: '団体定期保険' }, //50
+                        { questionTitle: '保険契約の当事者', label: 'ウ', content: '保険料' }, //41
+                        { questionTitle: '死亡表', label: 'オ', content: '' }, //42
+                        { questionTitle: '利差配当', label: 'イ', content: '経過年数' }, //43
+                        { questionTitle: 'イギリスの共済的な保険組合', label: 'イ', content: '友愛組合' }, //44
+                        { questionTitle: '生命表の改定', label: 'エ', content: '低く' }, //45
+                        { questionTitle: '生命保険会社の資金の性格', label: 'ア', content: '負債' }, //46
+                        { questionTitle: '社会保障制度', label: 'ア', content: '保険料の拠出' }, //47
+                        { questionTitle: '生命保険業の監督の方法', label: 'エ', content: '財務大臣' }, //48
+                        { questionTitle: '労働者共済', label: 'オ', content: '' }, //49
+                        { questionTitle: '生保業界共通のシステム', label: 'ア', content: '団体定期保険' }, //50
                     ]"
                 />
             </div>

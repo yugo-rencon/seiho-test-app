@@ -25,6 +25,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    questionTitle="危険の選択-①"
                     :contents="[
                         '危険均一性',
                         '高額',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    questionTitle="危険の選択-②"
                     :contents="[
                         '契約確認',
                         '公平性',
@@ -63,6 +65,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険の歴史的発展-①"
                     :contents="[
                         '保障制度',
                         '自給自足',
@@ -82,6 +85,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険の歴史的発展-②"
                     :contents="[
                         '海上保険',
                         '冒険貸借',
@@ -101,6 +105,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険契約の法的性質"
                     :contents="[
                         '正しい',
                         '要式契約 → 不要式契約', //p11
@@ -111,6 +116,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    questionTitle="団体保険・団体年金保険"
                     :contents="[
                         '主契約とヒューマン・ヴァリュー特約が逆。', //p47
                         '正しい',
@@ -121,6 +127,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    questionTitle="アメリカにおける金融革命の進展と生命保険事業"
                     :contents="[
                         'デリバティブ商品 → ニューウェーブ商品', //p69
                         '正しい',
@@ -131,6 +138,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険会社の資産運用の原則"
                     :contents="[
                         '正しい',
                         '競合が沈静化 → 激化<br>生保資金の流動性が下降 →上昇<br>流動性原則の重要性が低くなっている →高まっている', //p109
@@ -141,6 +149,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険商品の充実等"
                     :contents="[
                         '5000万円 → 1000万円', //p189
                         '他の金融機関の年金型商品との相違がなくなっている → 優れた特色がある', //p190
@@ -151,6 +160,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険契約の要素"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -161,6 +171,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="日本における生命保険の発展"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -171,6 +182,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    questionTitle="社会保険の特質"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -181,6 +193,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険監督の方法"
                     :contents="[
                         '公示主義と準則主義が逆。', //p148
                         '正しい',
@@ -191,6 +204,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="損害保険"
                     :contents="[
                         '正しい',
                         '第三分野：生損保本体<br>それ以外の分野：子会社方式', //p173
@@ -203,27 +217,27 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { content: '保険金受取人の資格についての制限はない' }, //31
-                        { content: '正しい' }, //32
-                        { content: '正しい' }, //33
-                        { content: '正しい' }, //34
-                        { content: '正しい' }, //35
-                        { content: '国 → 各市町村' }, //36
-                        { content: '100株未満 → 1株未満' }, //37
-                        { content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
-                        { content: '生保ANSERシステム → LINC（Life Insurance Network Center）' }, //39
-                        { content: '正しい' }, //40
+                        { questionTitle: '保険金受取人', content: '保険金受取人の資格についての制限はない' }, //31
+                        { questionTitle: '生命保険契約の特殊性', content: '正しい' }, //32
+                        { questionTitle: 'イギリスにおける科学的な生命保険会社', content: '正しい' }, //33
+                        { questionTitle: '生命保険事業の革新', content: '正しい' }, //34
+                        { questionTitle: '生命保険会社の資金の性格', content: '正しい' }, //35
+                        { questionTitle: '公的介護保険の保険料', content: '国 → 各市町村' }, //36
+                        { questionTitle: '組織変更', content: '100株未満 → 1株未満' }, //37
+                        { questionTitle: 'JA共済事業', content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
+                        { questionTitle: '生保業界のネットワークシステム', content: '生保ANSERシステム → LINC（Life Insurance Network Center）' }, //39
+                        { questionTitle: '国際化の方向', content: '正しい' }, //40
                         // 問41〜50
-                        { label: 'オ', content: '' }, //41
-                        { label: 'ア', content: '負債' }, //42
-                        { label: 'ウ', content: '養老保険' }, //43
-                        { label: 'エ', content: '不没収法' }, //44
-                        { label: 'イ', content: '更生手続' }, //45
-                        { label: 'ア', content: '家計可処分所得' }, //46
-                        { label: 'エ', content: '各種共済組合' }, //47
-                        { label: 'イ', content: '消費者契約法' }, //48
-                        { label: 'イ', content: '組合員' }, //49
-                        { label: 'オ', content: '' }, //50
+                        { questionTitle: '危険の種類', label: 'オ', content: '' }, //41
+                        { questionTitle: '責任準備金', label: 'ア', content: '負債' }, //42
+                        { questionTitle: '生命保険商品の基本型', label: 'ウ', content: '養老保険' }, //43
+                        { questionTitle: 'エリザ・ライト', label: 'エ', content: '不没収法' }, //44
+                        { questionTitle: '保険業法の一部改正', label: 'イ', content: '更生手続' }, //45
+                        { questionTitle: '国民経済における生命保険', label: 'ア', content: '家計可処分所得' }, //46
+                        { questionTitle: '公的医療保険', label: 'エ', content: '各種共済組合' }, //47
+                        { questionTitle: '消費者保護', label: 'イ', content: '消費者契約法' }, //48
+                        { questionTitle: '生命共済事業', label: 'イ', content: '組合員' }, //49
+                        { questionTitle: '社会構造の変化', label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

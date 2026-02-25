@@ -29,6 +29,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="実体的危険の要素と体格-①"
                 :contents="[
                 '生活習慣','超過死亡指数','数量的','数字査定','栄養', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="実体的危険の要素と体格-②"
                 :contents="[
                 '普通体','肥満体','高い','BMI（Body Msss Index）','22', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="団体保険の危険選択-①"
                 :contents="[
                 '被用者団体','団体性','相似する','保険加入者のみ','加入率', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="団体保険の危険選択-②"
                 :contents="[
                 '総合福祉団体的保険','権利','保険契約者','一括告知','平準化', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="死亡率と死亡指数"
                 :contents="[
                 '正しい',
                 '死亡指数は「実際死亡率÷予定死亡率×100(%) 」で計算される。',
@@ -99,6 +104,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="告知"
                 :contents="[
                 '保険法と約款が逆。',
                 '正しい',
@@ -109,6 +115,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="逆選択の傾向と態様"
                 :contents="[
                 '潜在的傾向から、顕在化への傾向にある。',
                 '正しい',
@@ -119,6 +126,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="危険保険料と危険保険金"
                 :contents="[
                 '費差益ではなく死差益。',
                 '養老保険ではなく定期保険の説明。',
@@ -129,6 +137,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="契約確認の時期と方向"
                 :contents="[
                 '契約確認は一部の契約について契約成立前に行い、大部分は契約成立後に行うのが実情。',
                 '契約成立前ではなく、契約成立後の対象の説明。',
@@ -139,6 +148,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="医学的選択上の課題（疾病入院保険（特約））"
                 :contents="[
                 '三大都市圏から離れるにしたがって高率となる。',
                 '正しい',
@@ -149,6 +159,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="契約制限"
                 :contents="[
                 '正しい',
                 '一般に短期養老または短期払込養老保険の経験死亡率は長期のものより良好である。ただし、定期保険ではこの関係は逆転し、保険期間が短期のものに逆選択が集中する傾向がある。',
@@ -159,6 +170,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険業における個人情報"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="疾病保険の特別条件付決定"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -179,6 +192,7 @@ const subject = '2021年度 フォームB'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険における元受会社の最高保険金額と保有限度額"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2021年度 フォームB'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '母集団の年齢構成が異なる場合には、死亡率だけで死亡の状況を比較することはできない。' }, //31
-                    { content: '正しい' }, //32
-                    { content: '「自発的応答義務」から「質問応答義務」に改正された。' }, //33
-                    { content: '正しい' }, //34
-                    { content: '低血圧と高血圧が逆。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '社医、嘱託医どちらも契約者・被保険者に対抗できない。' }, //37
-                    { content: '生存する個人に関する情報であり、死亡した個人は対象外。' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '死亡率', content: '母集団の年齢構成が異なる場合には、死亡率だけで死亡の状況を比較することはできない。' }, //31
+                    { questionTitle: '環境選択', content: '正しい' }, //32
+                    { questionTitle: '告知義務', content: '「自発的応答義務」から「質問応答義務」に改正された。' }, //33
+                    { questionTitle: '販売政策と選択政策', content: '正しい' }, //34
+                    { questionTitle: '血圧', content: '低血圧と高血圧が逆。' }, //35
+                    { questionTitle: '診査実施上の制限', content: '正しい' }, //36
+                    { questionTitle: '診査医の職責', content: '社医、嘱託医どちらも契約者・被保険者に対抗できない。' }, //37
+                    { questionTitle: '個人情報の定義', content: '生存する個人に関する情報であり、死亡した個人は対象外。' }, //38
+                    { questionTitle: '団体定期保険における更新時の選択', content: '正しい' }, //39
+                    { questionTitle: '死亡状況の分析', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'オ', content: '' }, //41
-                    { label: 'エ', content: '継続性' }, //42
-                    { label: 'ウ', content: '収支相当の原則' }, //43
-                    { label: 'オ', content: '' }, //44
-                    { label: 'ア', content: '先天性' }, //45
-                    { label: 'イ', content: '入院率' }, //46
-                    { label: 'エ', content: '5年' }, //47
-                    { label: 'ウ', content: '不実の告知' }, //48
-                    { label: 'ア', content: '共同保険' }, //49
-                    { label: 'エ', content: '狭くなる' }, //50
+                    { questionTitle: '生命表', label: 'オ', content: '' }, //41
+                    { questionTitle: '被保険者集団の具備すべき条件', label: 'エ', content: '継続性' }, //42
+                    { questionTitle: '保険料の仕組みと危険選択', label: 'ウ', content: '収支相当の原則' }, //43
+                    { questionTitle: '医学的選択上の制約条件', label: 'オ', content: '' }, //44
+                    { questionTitle: '心疾患', label: 'ア', content: '先天性' }, //45
+                    { questionTitle: '職業危険', label: 'イ', content: '入院率' }, //46
+                    { questionTitle: '査定・決定の種類', label: 'エ', content: '5年' }, //47
+                    { questionTitle: '契約確認後の処理', label: 'ウ', content: '不実の告知' }, //48
+                    { questionTitle: '再保険の方式', label: 'ア', content: '共同保険' }, //49
+                    { questionTitle: '期待死亡率', label: 'エ', content: '狭くなる' }, //50
                 ]"
                 
             />

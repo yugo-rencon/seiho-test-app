@@ -25,6 +25,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険募集と監督法-①"
                     :contents="[
                         '内閣総理大臣',
                         '委託',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険募集と監督法-②"
                     :contents="[
                         '意向把握義務',
                         '勧誘方針',
@@ -63,6 +65,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険の歴史的発展-①"
                     :contents="[
                         '保障制度',
                         '自給自足',
@@ -82,6 +85,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険の歴史的発展-②"
                     :contents="[
                         '海上保険',
                         '冒険貸借',
@@ -101,6 +105,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    questionTitle="保険の対象となる危険の種類"
                     :contents="[
                         '正しい',
                         '変動幅を拡大 → 縮小<br>平均変動率 → 平均経験率', //p4
@@ -111,6 +116,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約者配当"
                     :contents="[
                         '80% → 20%', //p27
                         '正しい',
@@ -121,6 +127,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    questionTitle="アメリカにおける金融革命の進展と生命保険事業"
                     :contents="[
                         'デリバティブ商品 → ニューウェーブ商品', //p69
                         '正しい',
@@ -131,6 +138,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    questionTitle="公的年金制度"
                     :contents="[
                         '18歳以上65歳未満 → 20歳以上60歳未満', //p127
                         '付加年金 → 確定拠出年金（企業型）', //p127
@@ -141,6 +149,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    questionTitle="銀行による保険販売"
                     :contents="[
                         '一時払終身保険、一時払養老保険や保険期間10年以下の平準払養老保険等 → 住宅ローン関連の信用生命保険と長期火災保険等', //p175
                         '住宅ローン関連の信用生命保険と長期火災保険等 → 一時払終身保険、一時払養老保険や期間10年以下の平準払養老保険等', //p175
@@ -151,6 +160,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険契約の要素"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -161,6 +171,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="アメリカにおけるアームストロング調査"
                     :contents="[
                         '正しい',
                         '保険料払込猶予期間と不可争期間の規定を設けることはできない → 設けることは可能', //p64
@@ -171,6 +182,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    questionTitle="社会保険の特質"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -181,6 +193,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    questionTitle="共済と保険"
                     :contents="[
                         '正しい',
                         '適合性の原則 → 給付・反対給付均等の原則', //p164
@@ -191,6 +204,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生保業界におけるシステム動向"
                     :contents="[
                         '資産運用分野 → 個人保険分野', //p197-198
                         '正しい',
@@ -203,27 +217,27 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { content: '片務契約でない（保険金支払債務と保険料支払債務とが対価関係になる双務契約）' }, //31
-                        { content: '正しい' }, //32
-                        { content: '正しい' }, //33
-                        { content: '正しい' }, //34
-                        { content: '正しい' }, //35
-                        { content: '正しい' }, //36
-                        { content: '100株未満 → 1株未満' }, //37
-                        { content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
-                        { content: '正しい' }, //39
-                        { content: '倍額 → 同額' }, //40
+                        { questionTitle: '生命保険契約の法的性質', content: '片務契約でない（保険金支払債務と保険料支払債務とが対価関係になる双務契約）' }, //31
+                        { questionTitle: '危険選択の意義', content: '正しい' }, //32
+                        { questionTitle: 'イギリスにおける科学的な生命保険会社', content: '正しい' }, //33
+                        { questionTitle: '死亡保険', content: '正しい' }, //34
+                        { questionTitle: '資産運用の自由化', content: '正しい' }, //35
+                        { questionTitle: '実体的監督主義', content: '正しい' }, //36
+                        { questionTitle: '組織変更', content: '100株未満 → 1株未満' }, //37
+                        { questionTitle: 'JA共済事業', content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
+                        { questionTitle: '消費者ニーズの変化', content: '正しい' }, //39
+                        { questionTitle: '医療保障商品', content: '倍額 → 同額' }, //40
                         // 問41〜50
-                        { label: 'エ', content: 'いずれか遅い日' }, //41
-                        { label: 'ア', content: '負債' }, //42
-                        { label: 'エ', content: '維持費' }, //43
-                        { label: 'オ', content: '' }, //44
-                        { label: 'イ', content: '更生手続' }, //45
-                        { label: 'ア', content: '家計可処分所得' }, //46
-                        { label: 'オ', content: '' }, //47
-                        { label: 'イ', content: '安全性' }, //48
-                        { label: 'ウ', content: '第2号被保険者' }, //49
-                        { label: 'ウ', content: '保険金額' }, //50
+                        { questionTitle: '保険の始期', label: 'エ', content: 'いずれか遅い日' }, //41
+                        { questionTitle: '責任準備金', label: 'ア', content: '負債' }, //42
+                        { questionTitle: '事業費', label: 'エ', content: '維持費' }, //43
+                        { questionTitle: '団体年金保険', label: 'オ', content: '' }, //44
+                        { questionTitle: '保険業法の一部改正', label: 'イ', content: '更生手続' }, //45
+                        { questionTitle: '国民経済における生命保険', label: 'ア', content: '家計可処分所得' }, //46
+                        { questionTitle: '保険の有用性', label: 'オ', content: '' }, //47
+                        { questionTitle: '生保資産運用の基本原則', label: 'イ', content: '安全性' }, //48
+                        { questionTitle: '公的介護保険制度の概要', label: 'ウ', content: '第2号被保険者' }, //49
+                        { questionTitle: '損害保険', label: 'ウ', content: '保険金額' }, //50
                     ]"
                 />
             </div>

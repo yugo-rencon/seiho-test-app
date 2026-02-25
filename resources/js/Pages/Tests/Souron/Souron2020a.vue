@@ -22,6 +22,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険の対象となる危険とその特色-①"
                     :contents="[
                         '経済的', //1
                         '損害額', //2
@@ -42,6 +43,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険の対象となる危険とその特色-②"
                     :contents="[
                         '傷害疾病定額保険契約', //6
                         '潜在的', //7
@@ -62,6 +64,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    questionTitle="資産運用-①"
                     :contents="[
                         '予定利率', //11
                         '逆ざや', //12
@@ -82,6 +85,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    questionTitle="資産運用-②"
                     :contents="[
                         '法定他業', //16
                         '規制緩和', //17
@@ -102,6 +106,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    questionTitle="契約者配当"
                     :contents="[
                         '80%以上 → 20%以上', //21-ア p27
                         '正しい', //21-イ
@@ -112,6 +117,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    questionTitle="ギルド"
                     :contents="[
                         '救済してくれた → 救済はなく、自らが補塡', //22-ア p53
                         '正しい', //22-イ
@@ -123,6 +129,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険会社の資産運用の原則"
                     :contents="[
                         '収益確保は安全性より優先される → 安全性が優先される', //23-ア p109
                         '正しい', //23-イ
@@ -134,6 +141,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    questionTitle="相互会社と株式会社"
                     :contents="[
                         '財団法人 → 社団法人', //24-ア p160
                         '資本金 → 資金', //24-イ p160
@@ -145,6 +153,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    questionTitle="消費構造の変化"
                     :contents="[
                         '正しい', //25-ア
                         '従来と今日の内容が逆', //25-イ p184
@@ -156,6 +165,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生命保険契約の要素"
                     :contents="[
                         '保険金受取人の資格について制限はない（行為能力者である必要もない）', //26-ア p14
                         '正しい', //26-イ
@@ -167,6 +177,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    questionTitle="アメリカにおけるニューウェーブ商品の開発"
                     :contents="[
                         '正しい', //27-ア
                         '長期金利 → 短期金利<br>決済機能を持つ → 決済機能を持たない', //27-イ p69
@@ -178,6 +189,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    questionTitle="狭義の社会保障制度"
                     :contents="[
                         '正しい', //28-ア
                         '正しい', //28-イ
@@ -189,6 +201,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    questionTitle="損害保険"
                     :contents="[
                         '損害保険 → 生命保険', //29-ア p173
                         '正しい', //29-イ
@@ -200,6 +213,7 @@ const subject = "2020年度 フォームA";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    questionTitle="生保業界におけるシステム動向"
                     :contents="[
                         '団体保険分野 → 個人保険分野', //30-ア p197-198
                         '正しい', //30-イ
@@ -213,27 +227,27 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40（解）
-                        { content: '正しい' }, //31
-                        { content: '国民生命表 → 経験生命表' }, //32 p15
-                        { content: '純保険料 → 営業保険料' }, //33 p23
-                        { content: '養老 → 終身' }, //34 p31
-                        { content: '日本の保険はこれらの類似制度から発展したものではない' }, //35 p72
-                        { content: '相互会社から株式会社 → 株式会社から相互会社' }, //36 p78
-                        { content: '正しい' }, //37
-                        { content: '正しい' }, //38
-                        { content: '正しい' }, //39
-                        { content: '死亡保険金500万円 → 300万円<br>損害保険金500万円 → 1000万円' }, //40 p176
+                        { questionTitle: '生命保険契約の特殊性', content: '正しい' }, //31
+                        { questionTitle: '死亡表', content: '国民生命表 → 経験生命表' }, //32 p15
+                        { questionTitle: '保険料', content: '純保険料 → 営業保険料' }, //33 p23
+                        { questionTitle: '死亡保険', content: '養老 → 終身' }, //34 p31
+                        { questionTitle: '日本の保険', content: '日本の保険はこれらの類似制度から発展したものではない' }, //35 p72
+                        { questionTitle: '戦後混乱期から再建への足どり', content: '相互会社から株式会社 → 株式会社から相互会社' }, //36 p78
+                        { questionTitle: '保険料支出性向', content: '正しい' }, //37
+                        { questionTitle: '介護保険の保険料', content: '正しい' }, //38
+                        { questionTitle: '形式的監督主義', content: '正しい' }, //39
+                        { questionTitle: '少額短期保険業', content: '死亡保険金500万円 → 300万円<br>損害保険金500万円 → 1000万円' }, //40 p176
                         // 問41〜50（ア〜オ）
-                        { label: 'オ', content: '' }, //41
-                        { label: 'ア', content: '10' }, //42
-                        { label: 'エ', content: 'いずれかの遅い日' }, //43
-                        { label: 'イ', content: '確定拠出年金保険' }, //44
-                        { label: 'エ', content: '賦課式' }, //45
-                        { label: 'ウ', content: '会社更生法' }, //46
-                        { label: 'ア', content: '保険料の負担能力' }, //47
-                        { label: 'イ', content: '消費者契約法' }, //48
-                        { label: 'オ', content: '' }, //49
-                        { label: 'イ', content: '平均寿命' }, //50
+                        { questionTitle: '危険の種類', label: 'オ', content: '' }, //41
+                        { questionTitle: '保険者', label: 'ア', content: '10' }, //42
+                        { questionTitle: '保険の始期', label: 'エ', content: 'いずれかの遅い日' }, //43
+                        { questionTitle: '団体年金保険', label: 'イ', content: '確定拠出年金保険' }, //44
+                        { questionTitle: '保険組合の誕生', label: 'エ', content: '賦課式' }, //45
+                        { questionTitle: '保険業法の一部改正', label: 'ウ', content: '会社更生法' }, //46
+                        { questionTitle: '社会保険の保険料', label: 'ア', content: '保険料の負担能力' }, //47
+                        { questionTitle: '消費者保護', label: 'イ', content: '消費者契約法' }, //48
+                        { questionTitle: 'JA共済', label: 'オ', content: '' }, //49
+                        { questionTitle: '社会構造の変化', label: 'イ', content: '平均寿命' }, //50
                     ]"
                 />
             </div>

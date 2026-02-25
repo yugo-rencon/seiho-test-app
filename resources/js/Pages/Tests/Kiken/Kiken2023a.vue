@@ -29,6 +29,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="被保険者集団の具備すべき条件-①"
                 :contents="[
                 '保護','公平性','減殺','被保険者利益','疾病保険', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="被保険者集団の具備すべき条件-②"
                 :contents="[
                 '継続','低い','大数の法則','危険選択の効果','再保険', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="団体保険の危険選択-①"
                 :contents="[
                 '被用者団体','団体性','相似する','保険加入のみ','加入率', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="団体保険の危険選択-②"
                 :contents="[
                 '総合福祉団体定期保険','団体の弔慰金・死亡退職金規程','保険契約者','一括告知','平準化', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="告知"
                 :contents="[
                 '正しい',
                 '告知義務者が告知事項の存在を知らないまま告知しなかった場合には、告知義務違反は成立しない。',
@@ -99,6 +104,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="疾病入院保険（特約）"
                 :contents="[
                 '国民の平均入院日数よりも長期である。',
                 '生活習慣病特約での糖尿病入院発生率が著しく高い。',
@@ -109,6 +115,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="現病歴・既往歴"
                 :contents="[
                 '若年層には先天性のものが多く、中年および高年齢になると高血圧性、虚血性が多くなる。',
                 '正しい',
@@ -119,6 +126,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="逆選択の傾向と態様"
                 :contents="[
                 '逆選択は健康に自信のない者が保険に加入したがる心理的な傾向で、道徳的危険の一つである。しかし、このような人題の心理的状態を危険の要素として直接測定することはできはできない。',
                 '正しい',
@@ -129,6 +137,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="再保険"
                 :contents="[
                 '正しい',
                 '取扱いが簡単であるが、元受会社にとっては危険に関係のない責任準備金部分まで再保険料を支払わなければならない。',
@@ -139,6 +148,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険で対象としている危険"
                 :contents="[
                 '「実体的危険」は「身体的危険」と「環境的危険」の2つに分類することができる。',
                 '正しい',
@@ -149,6 +159,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="危険保険料と危険保険金"
                 :contents="[
                 '正しい',
                 '養老保険ではなく定期保険の説明。',
@@ -159,6 +170,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="環境選択"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="報状扱契約における選択手段"
                 :contents="[
                 '正しい',
                 '健康の異常や症状に対する明確な診断は必ずしも必要ではない。',
@@ -179,6 +192,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="死亡率比較"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2023年度 フォームA'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '生命表には、国民全体を対象とした国民生命表と、それよりは小さな特定集団を対象とする経験生命表がある。' }, //31
-                    { content: '正しい' }, //32
-                    { content: '体重÷身長の2乗。' }, //33
-                    { content: '正しい' }, //34
-                    { content: '正しい' }, //35
-                    { content: '金融庁ではなく生命保険協会。' }, //36
-                    { content: '正しい' }, //37
-                    { content: '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。' }, //38
-                    { content: '保険金受取人ではなく被保険者。' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '生命表', content: '生命表には、国民全体を対象とした国民生命表と、それよりは小さな特定集団を対象とする経験生命表がある。' }, //31
+                    { questionTitle: '保険体の範囲の拡大', content: '正しい' }, //32
+                    { questionTitle: '体格', content: '体重÷身長の2乗。' }, //33
+                    { questionTitle: '医学的査定', content: '正しい' }, //34
+                    { questionTitle: '機微（センシティブ）情報', content: '正しい' }, //35
+                    { questionTitle: '契約内容登録制度', content: '金融庁ではなく生命保険協会。' }, //36
+                    { questionTitle: '傷害特約', content: '正しい' }, //37
+                    { questionTitle: '復活', content: '失効後の期間の長いものほど逆選択混入の期限が多く、また診査による場合に比べ、告知のみによる場合のほうが経験死亡率が高いとされている。' }, //38
+                    { questionTitle: '最高保険金額と保有限度額', content: '保険金受取人ではなく被保険者。' }, //39
+                    { questionTitle: '死亡状況の分析', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'エ', content: '金額死亡率' }, //41
-                    { label: 'オ', content: '' }, //42
-                    { label: 'ウ', content: '収支相当の原則' }, //43
-                    { label: 'ア', content: '加入申込者群' }, //44
-                    { label: 'イ', content: '入院率' }, //45
-                    { label: 'イ', content: '告知書' }, //46
-                    { label: 'エ', content: '再診' }, //47
-                    { label: 'ウ', content: '不実の告知' }, //48
-                    { label: 'オ', content: '' }, //49
-                    { label: 'ア', content: '1年間' }, //50
+                    { questionTitle: '死亡率', label: 'エ', content: '金額死亡率' }, //41
+                    { questionTitle: '解除権の消滅', label: 'オ', content: '' }, //42
+                    { questionTitle: '保険料の仕組みと危険選択', label: 'ウ', content: '収支相当の原則' }, //43
+                    { questionTitle: '販売政策と選択政策', label: 'ア', content: '加入申込者群' }, //44
+                    { questionTitle: '職業危険', label: 'イ', content: '入院率' }, //45
+                    { questionTitle: '人間ドック扱', label: 'イ', content: '告知書' }, //46
+                    { questionTitle: '査定・決定の種類', label: 'エ', content: '再診' }, //47
+                    { questionTitle: '契約確認後の処理', label: 'ウ', content: '不実の告知' }, //48
+                    { questionTitle: '入院・手術保障における料率', label: 'オ', content: '' }, //49
+                    { questionTitle: '団体保険の契約内容の変更', label: 'ア', content: '1年間' }, //50
                 ]"
                 
             />

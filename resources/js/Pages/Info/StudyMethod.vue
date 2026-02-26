@@ -11,15 +11,26 @@ const overviewCards = [
   { label: "合格目安", value: "60〜70点（会社基準）" },
 ];
 
-const subjects = [
-  { name: "生命保険総論", note: "生命保険の基礎と制度全体の理解" },
-  { name: "生命保険計理", note: "生命保険の引受と医学査定" },
-  { name: "危険選択", note: "資産運用の基本と金融市場" },
-  { name: "約款と法律", note: "保険数理・責任準備金の考え方" },
-  { name: "生命保険会計", note: "契約条項と法的ルールの整理" },
-  { name: "生命保険商品と営業", note: "保険会社の会計処理と財務理解" },
-  { name: "生命保険と税法", note: "税法と保険商品への適用" },
-  { name: "資産の運用", note: "関連法令と実務上の留意点" },
+const examSchedule = [
+  { period: "8月〜9月", subjects: "生命保険総論、生命保険計理" },
+  { period: "10月〜11月", subjects: "危険選択、約款と法律" },
+  { period: "12月〜1月", subjects: "生命保険会計、生命保険商品と営業" },
+  { period: "2月〜3月", subjects: "生命保険と税法、資産の運用" },
+];
+
+const awardConditions = [
+  {
+    title: "平均得点の目安",
+    text: "8科目の平均が9割以上",
+  },
+  {
+    title: "科目ごとの扱い",
+    text: "1科目だけ9割を下回っても問題ありません",
+  },
+  {
+    title: "最終判定の目安",
+    text: "8科目合計で720点以上を満たせば到達ラインです",
+  },
 ];
 
 const studySteps = [
@@ -97,21 +108,61 @@ const tips = [
             </div>
           </div>
 
-          <div class="mt-8 overflow-hidden rounded-xl border border-gray-200">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-[#f5f2fb] text-gray-700">
-                <tr>
-                  <th class="px-4 py-3 font-semibold">科目名</th>
-                  <th class="px-4 py-3 font-semibold">内容</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-100 bg-white">
-                <tr v-for="subject in subjects" :key="subject.name">
-                  <td class="px-4 py-3 font-semibold text-gray-900">{{ subject.name }}</td>
-                  <td class="px-4 py-3 text-gray-600">{{ subject.note }}</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="mt-8">
+            <div class="mb-3 flex items-center gap-2">
+              <div class="h-2 w-2 rounded-full bg-purple-500"></div>
+              <p class="text-sm font-semibold text-gray-800">試験スケジュール（科目）</p>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              <div
+                v-for="item in examSchedule"
+                :key="item.period"
+                class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+              >
+                <span
+                  class="inline-flex items-center rounded-full border border-purple-200 bg-purple-50 px-3 py-1 text-xs font-bold text-purple-700"
+                >
+                  {{ item.period }}
+                </span>
+                <p class="mt-3 text-sm font-semibold leading-relaxed text-gray-800">
+                  {{ item.subjects }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-2xl border border-indigo-200 bg-white p-4 shadow-sm sm:p-5">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <p class="text-xs font-bold tracking-[0.14em] text-indigo-600">AWARD TARGET</p>
+                <h3 class="mt-1 text-lg font-bold text-gray-900">優秀賞を狙う場合の目安</h3>
+                <p class="mt-1 text-sm leading-relaxed text-gray-600">
+                  合格ラインとは別に、優秀賞は「平均点」と「合計点」の両方を意識して管理すると計画を立てやすくなります。
+                </p>
+              </div>
+              <div class="rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 sm:min-w-[200px]">
+                <p class="text-xs font-semibold text-indigo-700">目標イメージ</p>
+                <p class="mt-1 text-sm font-bold leading-snug text-indigo-900">
+                  平均9割 × 合計720点以上
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-4 grid gap-3 sm:grid-cols-3">
+              <div
+                v-for="item in awardConditions"
+                :key="item.title"
+                class="rounded-xl border border-gray-200 bg-gradient-to-b from-[#fbfbff] to-white p-4"
+              >
+                <p class="text-xs font-semibold tracking-[0.08em] text-indigo-600">
+                  {{ item.title }}
+                </p>
+                <p class="mt-2 text-sm leading-relaxed font-semibold text-gray-800">
+                  {{ item.text }}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

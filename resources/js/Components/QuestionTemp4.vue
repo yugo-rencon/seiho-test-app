@@ -10,9 +10,9 @@
                 <div
                     class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"
                 ></div>
-                <h2 class="text-base font-bold leading-tight text-gray-800">
+                <h2 class="text-base font-bold leading-tight text-gray-700">
                     <span class="mr-2 inline-block whitespace-nowrap">問{{ item.questionNo }}</span>
-                    <span v-if="item.questionTitle" class="text-base font-semibold text-gray-600">
+                    <span v-if="item.questionTitle">
                         {{ item.questionTitle }}
                     </span>
                 </h2>
@@ -112,12 +112,9 @@
             <div
                 class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"
             ></div>
-            <h2 class="text-base font-bold leading-tight text-gray-800">
+            <h2 class="text-base font-bold leading-tight text-gray-700">
                 <span class="mr-2 inline-block whitespace-nowrap">問{{ firstLockedItem.questionNo }}</span>
-                <span
-                    v-if="firstLockedItem.questionTitle"
-                    class="text-base font-semibold text-gray-600"
-                >
+                <span v-if="firstLockedItem.questionTitle">
                     {{ firstLockedItem.questionTitle }}
                 </span>
             </h2>

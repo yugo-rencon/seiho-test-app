@@ -129,7 +129,7 @@ const subject = "2024年度 フォームB";
                     :contents="[
                         '正しい',
                         '若年層：高血圧性、虚血性が多い → 先天性のものが多い<br>中年および高年齢：先天性のものが多い → 高血圧性、虚血性が多い', //p65
-                        '二次性高血圧と本態性高血圧の説明が逆', //p64-65
+                        '二次性高血圧 ↔︎ 本態性高血圧', //p64-65
                     ]"
                 />
                 <QuestionTemp1
@@ -139,7 +139,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="査定・決定"
                     :contents="[
                         '金融庁 → 生命保険協会', //p86
-                        '査定と決定の説明が逆', //p86-87
+                        '査定 ↔︎ 決定', //p86-87
                         '正しい',
                     ]"
                 />
@@ -171,7 +171,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="医学的選択上の課題"
                     :contents="[
-                        '手術給付率と入院給付率の説明が逆', //p52
+                        '手術給付率 ↔︎ 入院給付率', //p52
                         '正しい',
                         '正しい',
                     ]"
@@ -183,7 +183,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="契約制限"
                     :contents="[
                         '正しい',
-                        '短期と長期が逆', //p73
+                        '短期 ↔︎ 長期', //p73
                         '正しい',
                     ]"
                 />
@@ -216,12 +216,12 @@ const subject = "2024年度 フォームB";
                     :items="[
                         // 問31〜40
                         { questionTitle: '危険選択', content: '正しい' }, //31
-                        { questionTitle: '生命保険会社における経験死亡率', content: '件数死亡率と金額死亡率が逆' }, //32 p9
+                        { questionTitle: '生命保険会社における経験死亡率', content: '件数死亡率 ↔︎ 金額死亡率' }, //32 p9
                         { questionTitle: '死差益の計算方法', content: '純収支計算方式で表せば → 統計的方式で表せば' }, //33
                         { questionTitle: '保険体の範囲の拡大', content: '正しい' }, //34
-                        { questionTitle: '体格', content: '体重 × 身長<sup>2</sup> → 体重 ÷ 身長<sup>2</sup>' }, //35
+                        { questionTitle: '体格', content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗' }, //35 //p63
                         { questionTitle: '重大事由による解除権', content: '正しい' }, //36
-                        { questionTitle: '保険金確認・給付金確認', content: '確認の対象や目的は契約確認と変わらない → 確認の対象は契約確認と若干異なる' }, //37
+                        { questionTitle: '保険金確認・給付金確認', content: '確認の対象や目的は契約確認と変わらない → 確認の対象は契約確認と若干異なる' }, //37 p120
                         { questionTitle: '傷害特約', content: '正しい' }, //38
                         { questionTitle: '最高保険金額', content: '正しい' }, //39
                         { questionTitle: '実際死亡状況の分析', content: '正しい' }, //40

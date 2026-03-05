@@ -118,7 +118,7 @@ const subject = "2024年度 フォームC";
                     :contents="[
                         '国民生命表との比較でも3〜5年 → 国民生命表との比較ではかなり長期に及ぶ', //p32
                         '正しい',
-                        '若年齢層：審査の効果は顕著 → 診査の効果は顕著ではない<br>高年齢層：選択効果は期待できない → 選択効果を期待できる', //p32-33
+                        '若年齢層：診査の効果は顕著 → 診査の効果は顕著ではない<br>高年齢層：選択効果は期待できない → 選択効果を期待できる', //p32-33
                     ]"
                 />
                 <QuestionTemp1
@@ -171,7 +171,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="医学的選択上の課題"
                     :contents="[
-                        '手術給付率と入院給付率の説明が逆', //p52
+                        '手術給付率 ↔︎ 入院給付率', //p52
                         '正しい',
                         '正しい',
                     ]"
@@ -215,12 +215,12 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '死亡表', content: '比較することができる → 比較することはできない' }, //31
-                        { questionTitle: '生命保険会社における経験死亡率', content: '件数死亡率と金額死亡率が逆' }, //32 p9
+                        { questionTitle: '死亡率', content: '比較することができる → 比較することはできない' }, //31 p7
+                        { questionTitle: '生命保険会社における経験死亡率', content: '件数死亡率 ↔︎ 金額死亡率' }, //32 p9
                         { questionTitle: '販売政策と選択政策', content: '正しい' }, //33
                         { questionTitle: '職業危険', content: '正しい' }, //34
                         { questionTitle: '機微（センシティブ）情報', content: '正しい' }, //35
-                        { questionTitle: '契約確認', content: '大部分と一部が逆' }, //36
+                        { questionTitle: '契約確認', content: '大部分 ↔︎ 一部' }, //36 p114
                         { questionTitle: '給付金確認', content: '正しい' }, //37
                         { questionTitle: '団体定期保険における更新時の選択', content: '正しい' }, //38
                         { questionTitle: '最高保険金額', content: '正しい' }, //39

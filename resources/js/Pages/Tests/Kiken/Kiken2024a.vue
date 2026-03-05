@@ -127,7 +127,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="契約制限"
                     :contents="[
-                        '短期定期保険 → 短期養老保険<br>養老保険では逆転 → 定期保険では逆転', //p73
+                        '短期定期保険または短期払込定期保険 → 短期養老保険または短期払込養老保険<br>養老保険では逆転 → 定期保険では逆転', //p73
                         '正しい',
                         '役員を被保険者とする場合には必要ない → 役員の場合も必要。', //p75
                     ]"
@@ -171,7 +171,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="医学的選択上の課題"
                     :contents="[
-                        '手術給付率と入院給付率の説明が逆', //p52
+                        '手術給付率 ↔︎ 入院給付率', //p52
                         '正しい',
                         '正しい',
                     ]"
@@ -216,7 +216,7 @@ const subject = "2024年度 フォームA";
                     :items="[
                         // 問31〜40
                         { questionTitle: '生命表', content: '経験生命表 → 国民生命表<br>標準生命表 → 経験生命表' }, //31 p5
-                        { questionTitle: '生命保険会社における経験死亡率', content: '件数死亡率と金額死亡率が逆' }, //32 p9
+                        { questionTitle: '生命保険会社における経験死亡率', content: '件数死亡率 ↔︎ 金額死亡率' }, //32 p9
                         { questionTitle: '選択効果', content: '正しい' }, //33
                         { questionTitle: '職業危険', content: 'アルコール中毒や不摂生生活のような職業に随伴する危険は該当しない → 該当する' }, //34 p69
                         { questionTitle: '道徳的危険の発見と排除', content: '正しい' }, //35

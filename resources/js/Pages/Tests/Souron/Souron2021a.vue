@@ -184,7 +184,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="資産運用の現状"
                     :contents="[
-                        '貸付金と有価証券が逆', //p111-113
+                        '貸付金 ↔︎ 有価証券', //p111-113
                         '正しい',
                         '正しい',
                     ]"
@@ -218,7 +218,7 @@ const subject = "2021年度 フォームA";
                     :items="[
                         // 問31〜40
                         { questionTitle: '危険対策と保険', content: '正しい' }, //31
-                        { questionTitle: '責任準備金', content: '自然保険料方式と平準保険料方式が逆' }, //32
+                        { questionTitle: '責任準備金', content: '自然保険料方式 ↔︎ 平準保険料方式' }, //32
                         { questionTitle: '保険の生成・発展', content: '正しい' }, //33
                         { questionTitle: 'アームストロング調査', content: '合衆国統一の取締法 → ニューヨーク州の取締法' }, //34 p63
                         { questionTitle: '保有契約高と国民所得', content: '正しい' }, //35

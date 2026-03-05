@@ -224,7 +224,7 @@ const subject = "2021年度 フォームC";
                         { questionTitle: '日本における生命保険の発展', content: '正しい' }, //35
                         { questionTitle: '生命保険会社の資金の性格', content: '純資産の大部分 → 負債の大部分' }, //36
                         { questionTitle: '生活設計の必要性', content: '正しい' }, //37
-                        { questionTitle: '社会構造の変化', content: '医療と年金が逆' }, //38
+                        { questionTitle: '社会構造の変化', content: '医療 ↔︎ 年金' }, //38
                         { questionTitle: '簡易保険の歴史', content: '正しい' }, //39
                         { questionTitle: '生保業界におけるシステム動向', content: '団体保険分野 → 個人保険分野' }, //40 p197-198
                         // 問41〜50

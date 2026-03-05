@@ -106,8 +106,8 @@ const subject = "2021年度 フォームC";
                     questionTitle="死亡率と死亡指数"
                     :contents="[
                         '正しい',
-                        '死亡指徴は「実際死亡率÷予定死亡率x100(%)」で計算される。',
-                        '予定死亡率として保険料計算に使用する予定の死亡率を用いれば、死亡指数は死差益の目安となる。予定死亡率に対応する年度の簡易生命表を用いれば、国民死亡の改善度を考慮に入れた経験死亡の死亡の状況を見ることができる。',
+                        '「予定死亡率 ÷ 実際死亡率 × 100（%)」 → 「実際死亡率 ÷ 予定死亡率 × 100（%)」', //p11
+                        '簡易生命表 → 保険料計算に使用する予定の死亡率', //p11
                     ]"
                 />
                 <QuestionTemp1
@@ -115,21 +115,33 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="医学的選択上の制約条件"
-                    :contents="['純保険料ではなく付加保険料の範囲内でまかなうことが必要である。', '正しい', '危険分散の原則ではなく危険均一性の原則。']"
+                    :contents="[
+                        '純保険料 → 付加保険料', //p40
+                        '正しい',
+                        '危険分散の原則 → 危険均一性の原則', //p41
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
                     questionTitle="逆選択の傾向と態様"
-                    :contents="['潜在的傾向から、顕在化への傾向にある。', '正しい', '保険業法ではなく保険法。']"
+                    :contents="[
+                        '顕在的傾向から潜在化への傾向 → 潜在的傾向から顕在化への傾向', //p76
+                        '正しい',
+                        '保険業法 → 保険法', //p80
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
                     questionTitle="契約制限"
-                    :contents="['正しい', '推奨されていない。', '役員を被保険者とする場合も被保険者の書面による加入同意の確認が必要。']"
+                    :contents="[
+                        '正しい',
+                        '推奨されている → 推奨されていない', //p76
+                        '役員を被保険者とする場合には必要ない → 役員の場合も必要。', //p75
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="25"
@@ -137,8 +149,8 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="保険金確認・給付金確認"
                     :contents="[
-                        '契約解除を行うためには、既往歴など告知義務違反の事実と死因との間に因果関係がなければならない。',
-                        '給付金については支払う場合と支払わない場合に分かれる。',
+                        '因果関係に関わらず → 因果関係がなければならない', //p120
+                        'どのような場合でも給付金は支払われる → 支払う場合と支払わない場合に分かれる', //p12
                         '正しい',
                     ]"
                 />
@@ -147,29 +159,55 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険で対象としている危険"
-                    :contents="['「実体的危険」は、「身体的危険」と「環境的危険」の2つに分類することができる。', '正しい', '正しい']"
+                    :contents="[
+                        '経済的危険 → 身体的危険', //p4
+                        '正しい',
+                        '正しい',
+                    ]"
                 />
-                <QuestionTemp1 :questionNumber="27" :title="title" :subject="subject" questionTitle="体格" :contents="['正しい', '正しい', '体重÷身長の2乗。']" />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="体格"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '体重 × 身長の二乗 → 体重 ÷ 身長の二乗', //p63
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険業における個人情報"
-                    :contents="['正しい', '正しい', '個人情報登録制度ではなく契約内容登録制度']"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '個人情報登録制度 → 契約内容登録制度', //p138-139
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
                     questionTitle="数字査定法"
-                    :contents="['正しい', '評点合計が+50の場合、契約期間を通して予定死亡率が各年齢で標準体の150%、-25の場合、75%となる。', '正しい']"
+                    :contents="[
+                        '正しい',
+                        '標準体の125％ → 標準体の75％', //p111-112
+                        '正しい',
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態"
-                    :contents="['正しい', '正しい', '自動再保険ではなく任意再保険の説明。']"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '自動再保険 → 任意再保険', //p178
+                    ]"
                 />
                 <QuestionTemp2
                     :questionNumber="31"
@@ -179,13 +217,13 @@ const subject = "2021年度 フォームC";
                         // 問31〜40
                         { questionTitle: '件数死亡率、金額死亡率', content: '正しい' }, //31
                         { questionTitle: '環境選択', content: '正しい' }, //32
-                        { questionTitle: '告知義務者', content: '責任は全員が負うことになる。' }, //33
+                        { questionTitle: '告知義務者', content: '責任は1人が負うことになる → 責任は全員が負うことになる' }, //33 p13
                         { questionTitle: '選択効果', content: '正しい' }, //34
-                        { questionTitle: '血圧', content: '最小血圧と最大血圧が逆。' }, //35
+                        { questionTitle: '血圧', content: '最小血圧 ↔︎ 最大血圧' }, //35 p64
                         { questionTitle: '保険金額の制限', content: '正しい' }, //36
                         { questionTitle: '団体保険の保険金額の決定による選択', content: '正しい' }, //37
-                        { questionTitle: '個人情報の定義', content: '生存する個人に関する情報であり、死亡した個人は対象外。' }, //38
-                        { questionTitle: '最高保険金額と保有限度額', content: '1保険金受取人ではなく、1被保険者。' }, //39
+                        { questionTitle: '個人情報の定義', content: '生存するまたは死亡した個人に関する情報 → 生存する個人に関する情報（死亡は対象外）' }, //38 p125
+                        { questionTitle: '最高保険金額と保有限度額', content: '1保険金受取人 → 1被保険者' }, //39 p182
                         { questionTitle: '死亡状況の分析', content: '正しい' }, //40
                         // 問41〜50
                         { questionTitle: '生命表', label: 'オ', content: '' }, //41

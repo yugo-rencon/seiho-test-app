@@ -226,7 +226,7 @@ const subject = "2022年度 フォームA";
                         { questionTitle: '組織変更', content: '正しい' }, //37
                         { questionTitle: 'JA共済（全国共済農業協同組合連合会）', content: '正しい' }, //38
                         { questionTitle: '損害保険', content: '損害保険 → 生命保険' }, //39
-                        { questionTitle: '消費者の購入態度の変化', content: '従来と今日の内容が逆' }, //40
+                        { questionTitle: '消費者の購入態度の変化', content: '従来〜 ↔︎ 今日〜' }, //40
                         // 問41〜50
                         { questionTitle: '保険契約の当事者', label: 'ウ', content: '保険料' }, //41
                         { questionTitle: '死亡表', label: 'オ', content: '' }, //42

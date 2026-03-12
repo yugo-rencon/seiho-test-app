@@ -29,6 +29,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会計における収益に属する科目-①"
                 :contents="[
                 '現金','未収保険料','前納保険料','費用収益対応','全額', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会計における収益に属する科目-②"
                 :contents="[
                 '売買目的','発生','保険金受取人','評価替え','内閣総理大臣', // 問6〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="事業費管理-①"
                 :contents="[
                 '付加保険料','維持費','募集機関','保険料払込案内費','退職給付引当金繰入額', // 問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="事業費管理-②"
                 :contents="[
                 '死亡率','利源分析','6','拡大','支出管理', // 問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="通常発生する取引の8要素の組合せ"
                 :contents="[
                 '（借方）<b><u>資産の増加</u></b>：（貸方）負債の増加<br>工場の建設資金10,000,000円を、銀行から借入れて預金に預け入れた。<br>（借方）預金 10,000,000（貸方）借入金 10,000,000', //p12
                 '正しい',
@@ -99,6 +104,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="試算表の作成"
                 :contents="[
                 '試算表の主な目的は、<b><u>仕訳帳から総勘定元帳</u></b>への転記が正しいか検証することにある。', //p15
                 '試算表は、その機能により合計試算表、残高試算表、合計残高試算表の3つに区分される。', //p15-16
@@ -109,6 +115,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="企業会計原則"
                 :contents="[
                 '正しい',
                 '「企業会計原則」は広く企業会計実務の多様性・可変性を維持し、法令ではなく、一般に公正妥当と認められるものを要約した会計慣習として定められている。', //p24
@@ -119,6 +126,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="責任準備金"
                 :contents="[
                 '正しい',
                 '年度中では、収入のあった保険料は、翌年度以降の保険料に相当する部分についても、すべて保険料勘定に計上する。その未経過部分については、決算期末において、前年度積立額を一旦戻し入れて収益に計上するとともに、当年度決算期末の未経過期間に対応する額を、責任準備金として積立てを行い、<b><u>保険料勘定そのものの修正は行わない。</u></b>', //p40
@@ -129,6 +137,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="剰余金（利益剰余金）"
                 :contents="[
                 '損失填補準備金は、担保資金を増強し、将来の損失に備えるため、保険業法により基金（基金償却積立金を含む）の総額（定款でこれを<b><u>上回る</u></b>額を定めたときは、その額）に達するまでは、毎決算期に剰余金の処分として支出する金額の<b><u>1,000分の3以上</u></b>を積み立てることが強制されている。', //p138
                 '3分の1ではなく、5分の1。', //p138
@@ -139,6 +148,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="会計公準"
                 :contents="[
                 '資産は企業それ自体の財産であり、所有者の財産と分離することができる。', //p6
                 '正しい',
@@ -149,6 +159,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="企業会計原則（一般原則）"
                 :contents="[
                 '正しい',
                 '保守主義の原則ではなく、継続性の原則。<br>保守主義の原則・・・「企業の財政に不利な影響を及ぼす可能性がある場合には、これに備えて適当に健全な会計処理をしなければならない。」', //p26
@@ -159,6 +170,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="連結財務諸表"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会計における費用に属する科目"
                 :contents="[
                 '正しい',
                 '個人年金の年金一括支払額、団体年金の中途脱退一時金は「給付金」に含まれる。', //p150-151
@@ -179,6 +192,7 @@ const subject = '2024年度 フォームC'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会社のディスクロージャー"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2024年度 フォームC'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '財務会計が現在または過去の企業の情報提供を主目的としているのに対して、管理会計は未来の予測効果を重要視している点に特色がある。' }, //31
-                    { content: '正しい' }, //32
-                    { content: '金融商品取引法上、流通市場における開示書類には、「有価証券報告書」、「半期報告書」、「四半期報告書」および「臨時報告書」等がある。' }, //33
-                    { content: '10%以上ではなく、20%以上。' }, //34
-                    { content: '正しい' }, //35
-                    { content: '正しい' }, //36
-                    { content: '据置期間に対応する利息も「保険金据置支払金」に計上される。' }, //37
-                    { content: '生命保険会社が支払う税金のうち、法人税やそれを基礎として計算される都道府県民税・市町村民税については、原則として当期に生じた剰余金から支払われるべきものであるから、損益計算書上、他の税金と区別して税引前当期剰余から控除する形式で表示される。' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    {questionTitle: '会計の意義', content: '財務会計が現在または過去の企業の情報提供を主目的としているのに対して、管理会計は未来の予測効果を重要視している点に特色がある。' }, //31
+                    {questionTitle: '損益計算書', content: '正しい' }, //32
+                    {questionTitle: '金融商品取引法上の開示書類', content: '金融商品取引法上、流通市場における開示書類には、「有価証券報告書」、「半期報告書」、「四半期報告書」および「臨時報告書」等がある。' }, //33
+                    {questionTitle: '社員配当準備金', content: '10%以上ではなく、20%以上。' }, //34
+                    {questionTitle: '退職給付引当金', content: '正しい' }, //35
+                    {questionTitle: '外貨預金の換算', content: '正しい' }, //36
+                    {questionTitle: '保険金据置支払金', content: '据置期間に対応する利息も「保険金据置支払金」に計上される。' }, //37
+                    {questionTitle: '法人税及び住民税', content: '生命保険会社が支払う税金のうち、法人税やそれを基礎として計算される都道府県民税・市町村民税については、原則として当期に生じた剰余金から支払われるべきものであるから、損益計算書上、他の税金と区別して税引前当期剰余から控除する形式で表示される。' }, //38
+                    {questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
+                    {questionTitle: '監査', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'ウ', content: '買掛金元帳' }, //41
-                    { label: 'オ', content: '' }, //42
-                    { label: 'ア', content: '負債' }, //43
-                    { label: 'エ', content: '純保険料' }, //44
-                    { label: 'エ', content: '保険業法' }, //45
-                    { label: 'ウ', content: '定額法' }, //46
-                    { label: 'イ', content: '実現主義' }, //47
-                    { label: 'イ', content: '損益計算書' }, //48
-                    { label: 'オ', content: '' }, //49
-                    { label: 'ア', content: '税務調査' }, //50
+                    { label: 'ウ', questionTitle: '帳簿の種類', content: '買掛金元帳' }, //41
+                    { label: 'オ', questionTitle: '株主資本等変動計算書', content: '' }, //42
+                    { label: 'ア', questionTitle: '消費税', content: '負債' }, //43
+                    { label: 'エ', questionTitle: '勘定間取引', content: '純保険料' }, //44
+                    { label: 'エ', questionTitle: '会計に関する法律', content: '保険業法' }, //45
+                    { label: 'ウ', questionTitle: '無形固定資産', content: '定額法' }, //46
+                    { label: 'イ', questionTitle: '損益の認識', content: '実現主義' }, //47
+                    { label: 'イ', questionTitle: '公告', content: '損益計算書' }, //48
+                    { label: 'オ', questionTitle: '区分経理', content: '' }, //49
+                    { label: 'ア', questionTitle: '企業が受ける検査', content: '税務調査' }, //50
                 ]"
                 
             />

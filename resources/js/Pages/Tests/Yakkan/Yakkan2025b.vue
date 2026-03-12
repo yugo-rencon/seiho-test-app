@@ -1,230 +1,247 @@
 <script setup>
-import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
-import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
-import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
+import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
+import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
+import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
 
-import Pagetitle from '../../../Components/Pagetitle.vue'
-import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
-import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
+import Pagetitle from "../../../Components/Pagetitle.vue";
+import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
+import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
-const title = "約款と法律"
-const subject = '2025年度 フォームB'
+const title = "約款と法律";
+const subject = "2025年度 フォームB";
 </script>
 
 <template>
+    <SeihoTestLayout :title="title">
+        <section class="bg-[#fdfbff] text-gray-800 py-10">
+            <!-- ページタイトル -->
+            <Pagetitle :title="title" :description="subject" />
 
-<SeihoTestLayout :title="title">
-    <section class="bg-[#fdfbff] text-gray-800 py-10">
-
-        <!-- ページタイトル -->
-        <Pagetitle
-            :title="title"
-            :description="subject"
-        />
-
-        <!-- 問題リスト -->
-        <div class="max-w-4xl mx-auto mt-4 space-y-2">
-            <QuestionTemp3
-                :questionNumber="1"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '承諾','商事特別法','申込日','8日','第1回保険料相当額', // 問１〜５
-                ]"
-                :labels="[
-                    'カ', //1
-                    'オ', //2
-                    'コ', //3
-                    'ア', //4
-                    'ク', //5
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="2"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '1年','申込者等が自ら指定した','医師の診査','債務','更改、更新', // 問6〜10
-                ]"
-                :labels="[
-                    'ア', //6
-                    'コ', //7
-                    'ウ', //8
-                    'ク', //9
-                    'カ', //10
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="3"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '含む','10億円','中間法人','基金拠出者','総代会', // 問11〜15
-                ]"
-                :labels="[
-                    'コ', //11
-                    'ア', //12
-                    'ク', //13
-                    'オ', //14
-                    'キ', //15
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="4"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '責任準備金','4ヶ月','100','1000分の3','損失てん補準備金', // 問16〜20
-                ]"
-                :labels="[
-                    'ケ', //16
-                    'ア', //17
-                    'ウ', //18
-                    'カ', //19
-                    'コ', //20
-                ]"
-            />
-<QuestionTemp1
-                :questionNumber="21"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '契約の自由というのは契約の締結にいたるまでの間における自由であり、ひとたび契約を締結したからにはその契約の拘束から免れる自由はないということに注意が必要である', //p3
-                '両当事者間で「申込」と「承諾」があり、その意思表示が内容的に一致している（いわゆる合意がある）必要がある。' //p4
-                ]"
+            <!-- 問題リスト -->
+            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+                <QuestionTemp3
+                    :questionNumber="1"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '',
+                        '',
+                        '',
+                        '',
+                        '', // 問１〜５
+                    ]"
+                    :labels="[
+                        '', //1
+                        '', //2
+                        '', //3
+                        '', //4
+                        '', //5
+                    ]"
                 />
-            <QuestionTemp1
-                :questionNumber="22"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '生命保険契約等においては、だれを被保険者とするかを定めることを要するのはもちろんであるが、一契約における被保険者は必ずしも1人であることを要しないし、また必ずしも固定的であることを要しない。', //p39
-                '生命保険契約等においては、損害保険契約におけるのと異なり、被保険利益の存否やその価額としての保険価額等が問題とならないため、超過保険、一部保険、重複保険等の問題を生ずることはない。' //p40
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="23"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '保険契約者からあらかじめ貸付を受けない旨の申出があった場合には、自動振替貸付を行わない。', //p101
-                '正しい',
-                '保険契約者は貸付金の元利金をいつでも返済することができるが、保険約款では、保険契約の消滅時には生命保険会社が支払う保険金などの支払金からその元利金を差し引くことによって返済させる旨を規定するのが一般的である。' //p101
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="24"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                'かつては生命保険と損害保険の区別は商法による定義以外にはなかったが、1996年（平成8年）の保険業法改正により、「生命保険業免許」と「損害保険業免許」が定義された。', //p204
-                '生命保険業免許は、「人の生死に関し、定額給付を行う保険」と「いわゆる第三分野の保険」それぞれの保険に係る<u><b>再保険の引受が可能</b></u>である。', //p203-204
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="25"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '保険契約者、被保険者または不特定の者に対して、<u><b>将来における配当</b></u>および資産の運用実績その他の要因により金額が変動する保険金や返戻金等、金額が不確実な事項について、断定的判断を示し、または確実であると誤解させるおそれのあることを告げ、もしくは表示する行為は禁止されている。', //p267
-                '保険契約者または被保険者に対して、保険料の割引、割戻その他特別の利益の提供を約し、または提供する行為は禁止されている。ただし、<u><b>この行為を基礎書類にもとづいて行うことはかまわないと規定されている</b></u>。', //p266
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="26"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '法規範説の説明。意思推定説は、「保険契約者は通常は保険約款の内容を契約内容とする意思をもって契約を締結しているものと推定しうる」とする説である。', //p7
-                '正しい',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="27"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '生命保険募集人とは、「生命保険会社のために<u><b>保険契約の締結の代理または媒介を行う者</b></u>」と定められている。', //p47
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="28"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '正しい',
-                '同一の不慮の事故による入院についての災害入院給付金の支払限度は、支払日数<u><b>120日</b></u>である。' //p175
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="29"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '保険約款では、保険法と同様に「保険契約者はいつでも<u><b>将来に向かって</b></u>保険契約を解約することができる」旨を規定しており、解約によって保険契約は将来に向かって消滅する。', //p136
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="30"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '「外国保険業者」とは、外国の法令に準拠して外国において保険業を行う者をいう。なお、外国保険業者の場合は、<u><b>株式会社や相互会社でなくてもよく、個人でもよい</b></u>。', //p256
-                '正しい',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp2
-                :questionNumber="31"
-                :title="title"
-                :subject="subject"
-                                :items="[
-                    // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '正しい' }, //32
-                    { content: '死亡保険契約の保険者は、保険金受取人が被保険者を故意に死亡させたとき保険給付を行う責任を負わない。ただし、被保険者を故意に死亡させた保険金受取人以外の保険金受取人に対する責任については、この限りでない。' }, //33
-                    { content: '「保険契約者以外の者を被保険者とする死亡保険契約」において、その保険金受取人が保険給付を請求する権利を譲渡する場合、または保険給付を請求する権利に質権を設定する場合は、<u><b>被保険者</b></u>の同意が必要となる。' }, //34
-                    { content: '6ヶ月以内ではなく、1ヶ月以内。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '疾病入院給付金の支払要件に該当する入院中に災害入院給付金の支払要件に該当する入院が終了した場合は、以後疾病入院給付金を支払うが、この疾病入院給付金に対しては、4日不担保等の免責規定は<u><b>適用しない</b></u>。' }, //37
-                    { content: '生命保険会社の名称変更のみを行う場合も金融庁長官の認可は必要である。' }, //38
-                    { content: '金融庁長官ではなく、内閣総理大臣。' }, //39
-                    { content: '正しい' }, //40
-                    // 問41〜50
-                    { label: 'ア', content: '民法' }, //41
-                    { label: 'ウ', content: '2024年（令和6年）12月31日' }, //42
-                    { label: 'オ', content: '' }, //43
-                    { label: 'オ', content: '' }, //44
-                    { label: 'イ', content: '解除の原因を知った時' }, //45
-                    { label: 'エ', content: '感染症' }, //46
-                    { label: 'オ', content: '' }, //47
-                    { label: 'ア', content: '保険契約者保護機構' }, //48
-                    { label: 'ア', content: '毎決算期' }, //49
-                    { label: 'ウ', content: '媒介' }, //50
-                ]"
-                
-            />
-        </div>
+                <QuestionTemp3
+                    :questionNumber="2"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '',
+                        '',
+                        '',
+                        '',
+                        '', // 問6〜10
+                    ]"
+                    :labels="[
+                        '', //6
+                        '', //7
+                        '', //8
+                        '', //9
+                        '', //10
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="3"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '',
+                        '',
+                        '',
+                        '',
+                        '', // 問11〜15
+                    ]"
+                    :labels="[
+                        '', //11
+                        '', //12
+                        '', //13
+                        '', //14
+                        '', //15
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="4"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '',
+                        '',
+                        '',
+                        '',
+                        '', // 問16〜20
+                    ]"
+                    :labels="[
+                        '', //16
+                        '', //17
+                        '', //18
+                        '', //19
+                        '', //20
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="21"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="22"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="23"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="24"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="25"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="30"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle=""
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp2
+                    :questionNumber="31"
+                    :title="title"
+                    :subject="subject"
+                    :items="[
+                        // 問31〜40
+                        { questionTitle: '', content: '' }, //31
+                        { questionTitle: '', content: '' }, //32
+                        { questionTitle: '', content: '' }, //33
+                        { questionTitle: '', content: '' }, //34
+                        { questionTitle: '', content: '' }, //35
+                        { questionTitle: '', content: '' }, //36
+                        { questionTitle: '', content: '' }, //37
+                        { questionTitle: '', content: '' }, //38
+                        { questionTitle: '', content: '' }, //39
+                        { questionTitle: '', content: '' }, //40
+                        // 問41〜50
+                        { questionTitle: '', label: '', content: '' }, //41
+                        { questionTitle: '', label: '', content: '' }, //42
+                        { questionTitle: '', label: '', content: '' }, //43
+                        { questionTitle: '', label: '', content: '' }, //44
+                        { questionTitle: '', label: '', content: '' }, //45
+                        { questionTitle: '', label: '', content: '' }, //46
+                        { questionTitle: '', label: '', content: '' }, //47
+                        { questionTitle: '', label: '', content: '' }, //48
+                        { questionTitle: '', label: '', content: '' }, //49
+                        { questionTitle: '', label: '', content: '' }, //50
+                    ]"
+                />
+            </div>
 
-        <!-- ボタングループ -->
-        <TestNavigationButtons
-            previous-route="yakkan2025a"
-            next-route="yakkan2025c"
-        />
-
-    </section>
-
+            <!-- ボタングループ -->
+            <TestNavigationButtons previous-route="yakkan2025a" next-route="yakkan2025c" />
+        </section>
     </SeihoTestLayout>
-
-
 </template>

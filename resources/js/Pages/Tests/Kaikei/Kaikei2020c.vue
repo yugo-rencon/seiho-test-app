@@ -1,0 +1,245 @@
+<script setup>
+import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
+import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
+import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
+import Pagetitle from "../../../Components/Pagetitle.vue";
+import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
+import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+
+const title = "生命保険会計";
+const subject = "2020年度 フォームC";
+</script>
+
+<template>
+    <SeihoTestLayout :title="title">
+        <section class="bg-gray-100 text-gray-800 py-10">
+            <!-- ページタイトル -->
+            <Pagetitle :title="title" :description="subject" />
+
+            <!-- 問題リスト -->
+            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+                <QuestionTemp3
+                    :questionNumber="1"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="決算整理手続-①"
+                    :contents="[
+                        '総勘定元帳',
+                        '期末棚卸',
+                        '保有目的',
+                        '売掛金',
+                        '固定資産', // 問1〜5
+                    ]"
+                    :labels="[
+                        'イ', //1
+                        'ウ', //2
+                        'オ', //3
+                        'コ', //4
+                        'ク', //5
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="2"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="決算整理手続-②"
+                    :contents="[
+                        '前払費用',
+                        '未払費用',
+                        '未収収益',
+                        '元帳の締切',
+                        '純資産勘定', // 問6〜10
+                    ]"
+                    :labels="[
+                        'ア', //6
+                        'コ', //7
+                        'キ', //8
+                        'エ', //9
+                        'カ', //10
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="3"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="事業費管理-①"
+                    :contents="[
+                        '付加保険料',
+                        '維持費',
+                        '募集機関',
+                        '保険料払込案内費',
+                        '退職給付引当金', // 問11〜15
+                    ]"
+                    :labels="[
+                        'ク', //11
+                        'コ', //12
+                        'カ', //13
+                        'キ', //14
+                        'エ', //15
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="4"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="事業費管理-②"
+                    :contents="[
+                        '死亡率',
+                        '利減分析',
+                        '6',
+                        '拡大',
+                        '支出管理', // 問16〜20
+                    ]"
+                    :labels="[
+                        'オ', //16
+                        'イ', //17
+                        'エ', //18
+                        'キ', //19
+                        'ア', //20
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="21"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="会計公準"
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '正しい', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="22"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="責任準備金"
+                    :contents="[
+                        '正しい', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="23"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="企業会計原則"
+                    :contents="[
+                        '正しい', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="24"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="有価証券の評価方法"
+                    :contents="[
+                        '', //p
+                        '正しい', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="25"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="会計監査人による監査"
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '正しい', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="勘定科目"
+                    :contents="[
+                        '正しい', //p
+                        '正しい', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="税務会計"
+                    :contents="[
+                        '', //p
+                        '正しい', //p
+                        '正しい', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="連結財務諸表"
+                    :contents="[
+                        '正しい', //p
+                        '正しい', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="負債勘定の内容"
+                    :contents="[
+                        '', //p
+                        '正しい', //p
+                        '正しい', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="30"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="費用に属する科目"
+                    :contents="[
+                        '正しい', //p
+                        '', //p
+                        '正しい', //p
+                    ]"
+                />
+                <QuestionTemp2
+                    :questionNumber="31"
+                    :title="title"
+                    :subject="subject"
+                    :items="[
+                        // 問31〜40
+                        { questionTitle: '取引の認識', content: '正しい' }, //31
+                        { questionTitle: '開示書類', content: '' }, //32
+                        { questionTitle: '保険金等支払金の計上', content: '' }, //33
+                        { questionTitle: '企業会計原則（一般原則）', content: '' }, //34
+                        { questionTitle: '退職給付引当金', content: '正しい' }, //35
+                        { questionTitle: '計算書類', content: '' }, //36
+                        { questionTitle: '外貨預金の換算', content: '正しい' }, //37
+                        { questionTitle: '保険金', content: '正しい' }, //38
+                        { questionTitle: '負債勘定', content: '正しい' }, //39
+                        { questionTitle: '計算書類の公告', content: '正しい' }, //40
+                        // 問41〜50
+                        { questionTitle: '企業会計の領域', label: 'イ', content: '財務会計' }, //41
+                        { questionTitle: '財務諸表', label: 'オ', content: '' }, //42
+                        { questionTitle: '株主配当', label: 'エ', content: 'いつでも' }, //43
+                        { questionTitle: '勘定間取引', label: 'ウ', content: '平準保険料' }, //44
+                        { questionTitle: 'ソフトウェア', label: 'ウ', content: '定額法' }, //45
+                        { questionTitle: '決算スケジュール', label: 'イ', content: '2週間' }, //46
+                        { questionTitle: '利益準備金', label: 'オ', content: '' }, //47
+                        { questionTitle: '保険料', label: 'イ', content: '未収保険料' }, //48
+                        { questionTitle: '区分経理', label: 'オ', content: '' }, //49
+                        { questionTitle: '企業が受ける検査', label: 'ア', content: '税務調査' }, //50
+                    ]"
+                />
+            </div>
+
+            <TestNavigationButtons previous-route="kaikei2020b" />
+        </section>
+    </SeihoTestLayout>
+</template>

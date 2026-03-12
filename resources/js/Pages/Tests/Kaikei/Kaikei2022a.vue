@@ -28,6 +28,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="保険契約準備金-①"
                 :contents="[
                 '洗替方式', '費用', '標準', '除く', '最低額', // 問１〜５
                 ]"
@@ -43,6 +44,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="保険契約準備金-②"
                 :contents="[
                 '未経過', '危険', '内部留保', '純保険料式', '20%', //問６〜10
                 ]"
@@ -58,6 +60,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会計における資産勘定-①"
                 :contents="[
                 '流動', '支払期日の到来した公社債利札', '決算時レート', '投資家', '信託銀行', //問11〜15
                 ]"
@@ -73,6 +76,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会計における資産勘定-②"
                 :contents="[
                 '法人税法施行令', '加算した', '責任準備金対応', '保険約款', '税効果会計', //問16〜20
                 ]"
@@ -88,6 +92,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="会計の意義"
                 :contents="[
                 '正しい',
                 '財務会計とは、企業の経済情報を外部の第三者に正確に報告することを目的とする会計であるのに対して、管理会計とは、意思決定を行い，または経営活動の成果を分析・評価するのに有用な会計情報を経営者その他の管理者に提供するための会計である。',
@@ -98,6 +103,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="複式簿記の原理"
                 :contents="[
                 '企業の経済活動を記帳・計算するのが簿記であるが、経済活動のすべてを記帳・計算するわけではない。たとえば、電力会社と電力供給の契約を締結した場合、契約締結の時点では、それぞれに「電力を供給する義務」と「電力の供給を受ける権利」が発生するが、会計上の取引とはならない。',
                 '正しい',
@@ -108,6 +114,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="連結財務諸表の作成手続"
                 :contents="[
                 '従来連結子会社及び子法人等の範囲は議決権の所有割合（50%超で子会社及び子法人等）で形式的に判定していたが、現在は会社が他の会社の意思決定機関を支配しているか否かによって実質的に判定する。',
                 '連結会社相互間の取引によって取得した資産に含まれる未実現損益はその全額を消去する',
@@ -118,6 +125,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="収益に属する科目"
                 :contents="[
                 '発生主義ではなく、現金主義。',
                 '売買目的有価証券を除く。',
@@ -128,6 +136,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会社のディスクロージャー"
                 :contents="[
                 '株主総会（総代会）の会日より2週間前から、5年間本社に、その謄本を3年間支社に備置することになっている。',
                 '正しい',
@@ -138,6 +147,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="税務会計"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -148,6 +158,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="純資産勘定の内容"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -158,6 +169,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="費用に属する科目"
                 :contents="[
                 '契約の無効・取消し・解除による返戻金や前納保険料等の返金は、「その他返戻金」に含まれる。',
                 '正しい',
@@ -168,6 +180,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="利源分析"
                 :contents="[
                 '正しい',
                 '危険準備金損益・為替損益ではなく、責任準備金関係損益・価格変動損益。',
@@ -178,6 +191,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="監査および検査"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -190,27 +204,27 @@ const subject = '2022年度 フォームA'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '正しい' }, //32
-                    { content: '流通市場における開示書類には、「有価証券報告書」「半期報告書」，「四半期報告書」および「臨時報告書」等がある。' }, //33
-                    { content: '正しい' }, //34
-                    { content: '正しい' }, //35
-                    { content: '価償却の方法は、資産の種類ごとに定められている。' }, //36
-                    { content: '預り金ではなく、前受収益。' }, //37
-                    { content: '収支相当の原則ではなく、費用収益対応の原則。' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    {questionTitle: '会計の役割', content: '正しい' }, //31
+                    {questionTitle: '株主資本等変動計算書', content: '正しい' }, //32
+                    {questionTitle: '金融商品取引法上の開示書類', content: '流通市場における開示書類には、「有価証券報告書」「半期報告書」，「四半期報告書」および「臨時報告書」等がある。' }, //33
+                    {questionTitle: '事業年度', content: '正しい' }, //34
+                    {questionTitle: 'デリバティブ', content: '正しい' }, //35
+                    {questionTitle: '減価償却', content: '価償却の方法は、資産の種類ごとに定められている。' }, //36
+                    {questionTitle: '提供していない役務に対する対価', content: '預り金ではなく、前受収益。' }, //37
+                    {questionTitle: '損益の算定', content: '収支相当の原則ではなく、費用収益対応の原則。' }, //38
+                    {questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
+                    {questionTitle: '監査', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'オ', content: '' }, //41
-                    { label: 'イ', content: '損益計算書' }, //42
-                    { label: 'ウ', content: '保守主義' }, //43
-                    { label: 'ア', content: '負債' }, //44
-                    { label: 'エ', content: '純保険料' }, //45
-                    { label: 'ウ', content: '金融庁長官' }, //46
-                    { label: 'オ', content: '' }, //47
-                    { label: 'ア', content: '期末' }, //48
-                    { label: 'イ', content: '販売費及び一般管理費' }, //49
-                    { label: 'エ', content: '配当率' }, //50
+                    { label: 'オ', questionTitle: '取引の仕訳', content: '' }, //41
+                    { label: 'イ', questionTitle: '財務諸表', content: '損益計算書' }, //42
+                    { label: 'ウ', questionTitle: '企業会計の一般原則', content: '保守主義' }, //43
+                    { label: 'ア', questionTitle: '消費税', content: '負債' }, //44
+                    { label: 'エ', questionTitle: '勘定間取引', content: '純保険料' }, //45
+                    { label: 'ウ', questionTitle: '価格変動準備金', content: '金融庁長官' }, //46
+                    { label: 'オ', questionTitle: 'ソフトウェア', content: '' }, //47
+                    { label: 'ア', questionTitle: '退職給付引当金', content: '期末' }, //48
+                    { label: 'イ', questionTitle: '事業費', content: '販売費及び一般管理費' }, //49
+                    { label: 'エ', questionTitle: '区分経理', content: '配当率' }, //50
                 ]"
                 
             />

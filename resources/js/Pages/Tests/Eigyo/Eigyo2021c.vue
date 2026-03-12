@@ -214,7 +214,7 @@ const subject = '2021年度 フォームC'
             />
         </div>
 
-                <TestNavigationButtons previous-route="eigyo2021b" />
+                <TestNavigationButtons previous-route="eigyo2021b" next-route="eigyo2020a" />
 
     </section>
 </SeihoTestLayout>

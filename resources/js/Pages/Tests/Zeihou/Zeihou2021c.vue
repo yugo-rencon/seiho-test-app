@@ -218,7 +218,7 @@ const subject = '2021年度 フォームC'
         </div>
 
         <!-- ボタングループ -->
-        <TestNavigationButtons previous-route="zeihou2021b" />
+        <TestNavigationButtons previous-route="zeihou2021b" next-route="zeihou2020a" />
 
     </section>
 

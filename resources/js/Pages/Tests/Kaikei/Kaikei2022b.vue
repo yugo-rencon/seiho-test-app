@@ -28,6 +28,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="保険契約準備金-①"
                 :contents="[
                 '洗替方式', '費用', '標準', '除く', '最低額', // 問１〜５
                 ]"
@@ -43,6 +44,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="保険契約準備金-②"
                 :contents="[
                 '未経過', '危険', '内部留保', '純保険料式', '20%', //問６〜10
                 ]"
@@ -58,6 +60,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会計における収益に属する科目-①"
                 :contents="[
                 '現金', '未収保険料', '前納保険料', '費用収益対応', '全額', //問11〜15
                 ]"
@@ -73,6 +76,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会計における収益に属する科目-②"
                 :contents="[
                 '売買目的', '発生', '保険金受取人', '評価換え', '内閣総理大臣', //問16〜20
                 ]"
@@ -88,6 +92,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="企業会計原則"
                 :contents="[
                 '正しい',
                 '損益計算書原則および貸借対照表原則は、主に会計情報の報告に主点をおく、いわゆる「報告原則」としての色彩が強いが、一般原則は報告のみならず、その基礎となる記録，測定といった「処理原則」の性格を併せ持っている。',
@@ -98,6 +103,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="複式簿記の原理"
                 :contents="[
                 '企業の経済活動を記帳・計算するのが簿記であるが、経済活動のすべてを記帳・計算するわけではない。たとえば、電力会社と電力供給の契約を締結した場合、契約締結の時点では、それぞれに「電力を供給する義務」と「電力の供給を受ける権利」が発生するが、会計上の取引とはならない。',
                 '正しい',
@@ -108,6 +114,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="連結財務諸表の作成手続"
                 :contents="[
                 '従来連結子会社及び子法人等の範囲は議決権の所有割合（50%超で子会社及び子法人等）で形式的に判定していたが、現在は会社が他の会社の意思決定機関を支配しているか否かによって実質的に判定する。',
                 '連結会社相互間の取引によって取得した資産に含まれる未実現損益はその全額を消去する',
@@ -118,6 +125,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会計における負債勘定"
                 :contents="[
                 '負債は、買掛金、借入金などの債務を表し、一般の企業では、流動（短期）負債に属する負債，固定（長期）負債に属する負債に区分することになっているが、生命保険会社は、契約者に対する保険契約準備金が大部分を占めるため、一般の企業とは違った区分をしている。',
                 '正しい',
@@ -128,6 +136,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="会計監査人による監査"
                 :contents="[
                 '正しい',
                 '会計監査人は、株主総会（相互会社にあっては総代会）により選任され、その職務は会社の行う一切の会計行為が、会社法，保険業法等の法令に準拠して適正に行われているか否かについて監査を行い、その結果を取締役および監査役に報告することにある。',
@@ -138,6 +147,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="会計公準"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -148,6 +158,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="純資産勘定の内容"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -158,6 +169,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="決算"
                 :contents="[
                 '正しい',
                 '残高試算表ではなく、合計試算表。',
@@ -168,6 +180,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会社の決算整理手続"
                 :contents="[
                 '金融庁ではなく、各生命保険会社が定める基準。',
                 '正しい',
@@ -178,6 +191,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="費差損益管理と事業費管理"
                 :contents="[
                 '正しい',
                 '収入管理と支出管理を比較すれば、経営としてより主体的に取り組めるのは支出管理である。',
@@ -190,27 +204,27 @@ const subject = '2022年度 フォームB'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '正しい' }, //32
-                    { content: '正しい' }, //33
-                    { content: '相互会社は剰余金処分に関する議案の作成が求められる。' }, //34
-                    { content: '正しい' }, //35
-                    { content: '購入により取得した有価証券については、購入代価に購入手数料その他購入するために要した費用を加算した金額が取得価額となる。' }, //36
-                    { content: '法人税法上の貸倒引当金として認められる額を超える額は、損金に算入されない。' }, //37
-                    { content: '債権額ではなく、債務額。' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    {questionTitle: '会計の意義', content: '正しい' }, //31
+                    {questionTitle: '株主資本等変動計算書', content: '正しい' }, //32
+                    {questionTitle: '単一性の原則', content: '正しい' }, //33
+                    {questionTitle: '計算書類', content: '相互会社は剰余金処分に関する議案の作成が求められる。' }, //34
+                    {questionTitle: 'デリバティブ', content: '正しい' }, //35
+                    {questionTitle: '有価証券の取得価額', content: '購入により取得した有価証券については、購入代価に購入手数料その他購入するために要した費用を加算した金額が取得価額となる。' }, //36
+                    {questionTitle: '貸倒引当金', content: '法人税法上の貸倒引当金として認められる額を超える額は、損金に算入されない。' }, //37
+                    {questionTitle: '代理店借', content: '債権額ではなく、債務額。' }, //38
+                    {questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
+                    {questionTitle: '利源分析に関する課題', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'オ', content: '' }, //41
-                    { label: 'イ', content: '補助記入帳' }, //42
-                    { label: 'エ', content: 'のれん（連結調整勘定）' }, //43
-                    { label: 'ア', content: '負債' }, //44
-                    { label: 'ウ', content: '固定' }, //45
-                    { label: 'ウ', content: '相互会社だけに' }, //46
-                    { label: 'イ', content: '団体年金' }, //47
-                    { label: 'ア', content: '期末' }, //48
-                    { label: 'オ', content: '' }, //49
-                    { label: 'ウ', content: '国税通則法' }, //50
+                    { label: 'オ', questionTitle: '取引の仕訳', content: '' }, //41
+                    { label: 'イ', questionTitle: '帳簿の種類', content: '補助記入帳' }, //42
+                    { label: 'エ', questionTitle: '連結決算', content: 'のれん（連結調整勘定）' }, //43
+                    { label: 'ア', questionTitle: '消費税', content: '負債' }, //44
+                    { label: 'ウ', questionTitle: '外貨預金の為替換算', content: '固定' }, //45
+                    { label: 'ウ', questionTitle: '再評価積立金', content: '相互会社だけに' }, //46
+                    { label: 'イ', questionTitle: '年金', content: '団体年金' }, //47
+                    { label: 'ア', questionTitle: '退職給付引当金', content: '期末' }, //48
+                    { label: 'オ', questionTitle: '区分経理', content: '' }, //49
+                    { label: 'ウ', questionTitle: '企業が受ける検査', content: '国税通則法' }, //50
                 ]"
                 
             />

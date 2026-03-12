@@ -1,227 +1,246 @@
 <script setup>
-import QuestionTemp1 from '../../../Components/QuestionTemp1.vue'
-import QuestionTemp2 from '../../../Components/QuestionTemp2.vue'
-import QuestionTemp3 from '../../../Components/QuestionTemp3.vue'
+import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
+import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
+import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
 
-import Pagetitle from '../../../Components/Pagetitle.vue'
-import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
-import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
+import Pagetitle from "../../../Components/Pagetitle.vue";
+import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
+import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
-const title = "約款と法律"
-const subject = '2024年度 フォームC'
-
+const title = "約款と法律";
+const subject = "2024年度 フォームC";
 </script>
 
 <template>
+    <SeihoTestLayout :title="title">
+        <section class="bg-gray-100 text-gray-800 py-10">
+            <!-- ページタイトル -->
+            <Pagetitle :title="title" :description="subject" />
 
-<SeihoTestLayout :title="title">
-    <section class="bg-gray-100 text-gray-800 py-10">
-
-        <!-- ページタイトル -->
-        <Pagetitle
-            :title="title"
-            :description="subject"
-        />
-
-        <!-- 問題リスト -->
-        <div class="max-w-4xl mx-auto mt-4 space-y-2">
-            <QuestionTemp3
-                :questionNumber="1"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '承諾','商事特別法','申込日','8日','第1回保険料相当額', // 問１〜５
-                ]"
-                :labels="[
-                    'カ', //1
-                    'オ', //2
-                    'コ', //3
-                    'ア', //4
-                    'ク', //5
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="2"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '1年','申込者等が自ら指定した','医師の診査','債務','更改、更新', // 問6〜10
-                ]"
-                :labels="[
-                    'ア', //6
-                    'コ', //7
-                    'ウ', //8
-                    'ク', //9
-                    'カ', //10
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="3"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '免許','確実性','負担する危険','統計上','大損害', // 問11〜15
-                ]"
-                :labels="[
-                    'コ', //11
-                    'イ', //12
-                    'ケ', //13
-                    'カ', //14
-                    'オ', //15
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="4"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '議決権','50%','認可','特定関係者','弊害防止措置', // 問16〜20
-                ]"
-                :labels="[
-                    'ウ', //16
-                    'イ', //17
-                    'ク', //18
-                    'キ', //19
-                    'ケ', //20
-                ]"
-            />
-<QuestionTemp1
-                :questionNumber="21"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '保険業の開始に際しては、普通保険約款を内閣総理大臣宛の免許申請書に添付しなければならない。', //p11
-                '認可を受けない保険約款もその内容が強行規定や公益に反するものでない限り、保険契約者との間では有効であるとするのが判例、通説である。', //p11
-                '正しい'
-                ]"
+            <!-- 問題リスト -->
+            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+                <QuestionTemp3
+                    :questionNumber="1"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="クーリング・オフ制度-①"
+                    :contents="[
+                        '承諾',
+                        '商事特別法',
+                        '申込日',
+                        '8日',
+                        '第1回保険料相当額', // 問１〜５
+                    ]"
+                    :labels="[
+                        'カ', //1
+                        'オ', //2
+                        'コ', //3
+                        'ア', //4
+                        'ク', //5
+                    ]"
                 />
-            <QuestionTemp1
-                :questionNumber="22"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '「第三者のためにする生命保険契約等」においても、保険契約者は自己の名において契約し、保険者に対して自ら保険料支払義務を負うのであって、<u><b>保険金受取人の代理人として契約するのではない</b></u>。', //p55
-                '正しい',
-                '「第三者のためにする生命保険契約等」における保険金受取人は、特別な受益の意思表示を要せずして当然に契約上の権利を取得する。' //p56
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="23"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '生命保険会社が立証しなければならない。', //p134
-                '保険法に規定がないものの、一部の生命保険会社において保険約款に規定されている。', //p134-135
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="24"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '相互会社同士の合併の場合は、合併後の会社も相互会社であることを要する。', //p251
-                '保険株式会社同士の合併については、<u><b>会社法</b></u>の規定により行う。' //p251
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="25"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '保険契約者、被保険者または不特定の者に対して、<u><b>将来における配当</b></u>および資産の運用実績その他の要因により金額が変動する保険金や返戻金等、金額が不確実な事項について、断定的判断を示し、または確実であると誤解させるおそれのあることを告げ、もしくは表示する行為は禁止されている。', //p267
-                '保険契約者または被保険者に対して、保険料の割引、割戻その他特別の利益の提供を約し、または提供する行為は禁止されている。ただし、<u><b>この行為を基礎書類にもとづいて行うことはかまわないと規定されている</b></u>。', //p266
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="26"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '法規範説の説明。意思推定説は、「保険契約者は通常は保険約款の内容を契約内容とする意思をもって契約を締結しているものと推定しうる」とする説である。', //p7
-                '正しい',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="27"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '保険者は保険契約者に対して告知義務の履行を請求し強制し得る権利を有するものではなく、また保険契約者がまったく告知をしない場合でも、別に保険者に対して損害を賠償する責任を負うものではない。', //p48
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="28"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '正しい',
-                '同一の不慮の事故による入院についての災害入院給付金の支払限度は、支払日数<u><b>120日</b></u>である。' //p175
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="29"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '正しい',
-                '保険持株会社は、銀行や証券専門会社など金融関連業を営む会社<u><b>以外</b></u>の会社を子会社としようとするときは、あらかじめ、金融庁長官の承認を受けなければならない。' //p216-217
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="30"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '生命保険募集人は1人で何社もの生命保険募集人となることができるわけではなく、いわゆる乗合の禁止という制限が設けられ、<u><b>損害保険にはみられない</b></u>厳しい制限になっている。', //p260-261
-                '正しい',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp2
-                :questionNumber="31"
-                :title="title"
-                :subject="subject"
-                                :items="[
-                    // 問31〜40
-                    { content: '営利保険の保険者は株式会社であることから、営利保険の引受については、いわゆる営業的商行為として、商法の商行為一般に関する規定の適用を受ける。一方で、相互会社が行う保険は相互保険であるとしても、保険業法により商法が準用され、商行為一般の規定の準用を受ける。' }, //31
-                    { content: '正しい' }, //32
-                    { content: '正しい' }, //33
-                    { content: '「保険契約者以外の者を被保険者とする死亡保険契約」において、その保険金受取人が保険給付を請求する権利を譲渡する場合、または保険給付を請求する権利に質権を設定する場合は、<u><b>被保険者</b></u>の同意が必要となる。' }, //34
-                    { content: '保険契約成立後、保険契約者が保険金受取人を変更するにはその保険契約者以外の者である被保険者の同意が必要である。。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '疾病入院給付金の支払要件に該当する入院中に災害入院給付金の支払要件に該当する入院が終了した場合は、以後疾病入院給付金を支払うが、この疾病入院給付金に対しては、4日不担保等の免責規定は<u><b>適用しない</b></u>。' }, //37
-                    { content: '保険約款では、貸付金の元利金が解約返戻金額をこえた（いわゆるオーバーローンになった）場合に、<u><b>生命保険会社から通知した金額を所定の期日までに保険契約者が払い込まなかったとき</b></u>は、保険契約は失効する旨規定するのが一般的である。' }, //38
-                    { content: '正しい' }, //39
-                    { content: '「外国保険業者」とは、外国の法令に準拠して外国において保険業を行う者をいう。なお、<u><b>外国保険業者の場合は、株式会社や相互会社でなくてもよく、個人でもよい</b></u>。' }, //40
-                    // 問41〜50
-                    { label: 'ア', content: '射倖' }, //41
-                    { label: 'エ', content: '契約日' }, //42
-                    { label: 'オ', content: '' }, //43
-                    { label: 'オ', content: '' }, //44
-                    { label: 'イ', content: '生命保険会社' }, //45
-                    { label: 'エ', content: '当該保険金受取人の相続人全員' }, //46
-                    { label: 'オ', content: '' }, //47
-                    { label: 'エ', content: '定款' }, //48
-                    { label: 'ウ', content: '4ヶ月' }, //49
-                    { label: 'ウ', content: '媒介' }, //50
-                ]"
-                
-            />
-        </div>
+                <QuestionTemp3
+                    :questionNumber="2"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="クーリング・オフ制度-②"
+                    :contents="[
+                        '1年',
+                        '申込者等が自ら指定した',
+                        '医師の診査',
+                        '債務',
+                        '更改、更新', // 問6〜10
+                    ]"
+                    :labels="[
+                        'ア', //6
+                        'コ', //7
+                        'ウ', //8
+                        'ク', //9
+                        'カ', //10
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="3"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生損保兼営の禁止と子会社による生損保兼営-①"
+                    :contents="[
+                        '免許',
+                        '確実性',
+                        '負担する危険',
+                        '統計上',
+                        '大損害', // 問11〜15
+                    ]"
+                    :labels="[
+                        'コ', //11
+                        'イ', //12
+                        'ケ', //13
+                        'カ', //14
+                        'オ', //15
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="4"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生損保兼営の禁止と子会社による生損保兼営-②"
+                    :contents="[
+                        '議決権',
+                        '50%',
+                        '認可',
+                        '特定関係者',
+                        '弊害防止措置', // 問16〜20
+                    ]"
+                    :labels="[
+                        'ウ', //16
+                        'イ', //17
+                        'ク', //18
+                        'キ', //19
+                        'ケ', //20
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="21"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生命保険契約等に対する法の適用"
+                    :contents="[
+                        '内閣総理大臣宛の免許申請書に添付する必要はない → 添付しなければならない', //p11
+                        '無効 → 有効', //p11
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="22"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="第三者のためにする生命保険契約等"
+                    :contents="[
+                        '保険金受取人の代理人として契約する → 代理人として契約するのではない', //p55
+                        '正しい',
+                        '受益の意思表示が必要 → 受益の意思表示は必要としない', //p56
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="23"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険契約の取消しまたは無効"
+                    :contents="[
+                        '生命保険会社が立証する必要はない → 立証しなければならない', //p134
+                        '保険法に規定されている → 保険法に規定はないが、一部の会社で保険約款に規定されている', //p134-135
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="24"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険会社の合併"
+                    :contents="[
+                        '正しい',
+                        '保険株式会社にすることができる → 相互会社であることを要する。', //p251
+                        '保険法 → 会社法', //p251
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="25"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険契約の締結または保険募集に関する禁止行為"
+                    :contents="[
+                        '将来における配当に関して断定的判断を示すことは禁止の対象とならない → 禁止の対象となる', //p267
+                        '基礎書類に基づく行為でも禁止 → 基礎書類に基づいた行為は禁止されていない', //p266
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険約款の拘束力の根拠"
+                    :contents="[
+                        '意思推定説 → 法規範説', //p7
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="告知義務"
+                    :contents="[
+                        '正しい',
+                        '強制しうる権利を有する → 権利を有しない<br>損害を賠償をする義務を負う → 義務を負わない', //p48
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="災害入院給付金の支払"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '180日 → 120日', //p175
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険持株会社"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '金融庁長官の承認を受けなければならない → 承認は不要', //p216
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="30"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="乗合の禁止"
+                    :contents="[
+                        '損害保険募集人と同様の → 損害保険にはみられない', //p260-261
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp2
+                    :questionNumber="31"
+                    :title="title"
+                    :subject="subject"
+                    :items="[
+                        // 問31〜40
+                        { questionTitle: '生命保険契約等に対する法の適用', content: 'どちらも営業的商行為である → 営利保険のみ営業的商行為' }, //31 p5-6
+                        { questionTitle: '保険料の返還', content: '正しい' }, //32
+                        { questionTitle: '個人情報取扱事業者の義務', content: '正しい' }, //33
+                        { questionTitle: '保険給付請求権の譲渡等', content: '保険契約者の同意 → 被保険者の同意' }, //34 p58
+                        { questionTitle: '保険金受取人の変更', content: '被保険者の同意は不要 → 被保険者の同意が必要' }, //35 p57
+                        { questionTitle: '被保険者による解除請求', content: '正しい' }, //36
+                        { questionTitle: '災害入院特約と疾病入院特約', content: '4日不担保等の免責規定が適用される → 適用されない' }, //37 p178
+                        { questionTitle: '保険契約者への貸付', content: '翌日からオーバーローンによる失効 → 通知額を期限までに払わないとき失効' }, //38 p157
+                        { questionTitle: '監督の方法', content: '正しい' }, //39
+                        { questionTitle: '外国保険業者', content: '法人であることが条件 → 法人でなくてもよく、個人でもよい' }, //40 p256
+                        // 問41〜50
+                        { questionTitle: '生命保険契約等の性質', label: 'ア', content: '射倖' }, //41
+                        { questionTitle: '契約上の保障責任', label: 'エ', content: '契約日' }, //42
+                        { questionTitle: '生命保険契約等の解除の効力等', label: 'オ', content: '' }, //43
+                        { questionTitle: '保険料払込免除', label: 'オ', content: '' }, //44
+                        { questionTitle: '生死不明の場合の取扱', label: 'イ', content: '生命保険会社' }, //45
+                        { questionTitle: '保険金受取人の死亡', label: 'エ', content: '当該保険金受取人の相続人全員' }, //46
+                        { questionTitle: '年齢の計算、誤りの処理', label: 'オ', content: '' }, //47
+                        { questionTitle: '基礎書類', label: 'エ', content: '定款' }, //48
+                        { questionTitle: '株主の権利行使の基準日', label: 'ウ', content: '4ヶ月' }, //49
+                        { questionTitle: '保険募集の制限', label: 'ウ', content: '媒介' }, //50
+                    ]"
+                />
+            </div>
 
-                <TestNavigationButtons previous-route="yakkan2024b" next-route="yakkan2023a" />
-
-    </section>
-
+            <TestNavigationButtons previous-route="yakkan2024b" next-route="yakkan2023a" />
+        </section>
     </SeihoTestLayout>
-
-
 </template>

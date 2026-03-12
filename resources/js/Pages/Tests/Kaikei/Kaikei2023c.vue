@@ -28,6 +28,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="企業会計原則-①"
                 :contents="[
                 '客観性', '会計慣習', '注解', '報告', '処理', // 問１〜５
                 ]"
@@ -43,6 +44,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="企業会計原則-②"
                 :contents="[
                 '真実性', '資本取引・損益取引区分', '資本剰余金', '保守主義', '単一性', //問６〜10
                 ]"
@@ -58,6 +60,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="事業費管理-①"
                 :contents="[
                 '付加保険料', '維持費', '募集機関', '福利厚生', '退職給付引当金繰入額', //問11〜15
                 ]"
@@ -73,6 +76,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="事業費管理-②"
                 :contents="[
                 '死亡率', '利源分析', '６', '拡大', '支出管理', //問16〜20
                 ]"
@@ -88,6 +92,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="複式簿記の原理"
                 :contents="[
                 '内部関係者ではなく、株主・債権者などの外部利害関係者。',
                 '正しい',
@@ -98,6 +103,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="財務諸表"
                 :contents="[
                 '貸借対照表ではなく、損益計算書。',
                 '損益計算書ではなく、貸借対照表。',
@@ -108,6 +114,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="責任準備金"
                 :contents="[
                 '正しい',
                 '任意積立金ではなく、払戻積立金',
@@ -118,6 +125,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="連結財務諸表の作成手続"
                 :contents="[
                 '従来連結子会社及び子法人等の範囲は議決権の所有割合（50%超で子会社及び子法人等）で形式的に判定していたが、現在は会社が他の会社の意思決定機関を支配しているか否かによって実質的に判定する。',
                 '連結会社相互間の取引によって取得した資産に含まれる未実現損益はその全額を消去する',
@@ -128,6 +136,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="減損損失"
                 :contents="[
                 '正しい',
                 '減損会計の対象資産は、土地、建物等の有形固定資産ばかりでなく、営業権、特許権等の無形固定資産も該当する。',
@@ -138,6 +147,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="決算"
                 :contents="[
                 '正しい',
                 '残高試算表ではなく、合計試算表。',
@@ -148,6 +158,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="税務会計"
                 :contents="[
                 '会計情報の開示という機能はその中に含まれていないという点で、会社法・金融商品取引法に基づく会計とは異なっている。',
                 '正しい',
@@ -158,6 +169,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="一般勘定・特別勘定"
                 :contents="[
                 '正しい',
                 '「保険料及び責任準備金の算出方法書」ではなく、「事業方法書」に定める金銭の振替を除き認められていない。',
@@ -168,6 +180,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="費用に属する科目"
                 :contents="[
                 '契約の無効・取消し・解除による返戻金や前納保険料等の返金は、「その他返戻金」に含まれる。',
                 '正しい',
@@ -178,6 +191,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="年度途中の資金移動の区分経理への反映"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -190,27 +204,27 @@ const subject = '2023年度 フォームC'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '株主実体の公準ではなく、企業実体の公準' }, //31
-                    { content: '正しい' }, //32
-                    { content: '正しい' }, //33
-                    { content: '正しい' }, //34
-                    { content: '正しい' }, //35
-                    { content: '法人税法上の貸倒引当金として認められる額を超える額は、損金に算入されない。' }, //36
-                    { content: 'こども保険等の生存保険金および個人年金における死亡返戻金等は「給付金」として処理される。' }, //37
-                    { content: '会社法施行規則ではなく、保険業法施行規則。' }, //38
-                    { content: '正しい' }, //39
-                    { content: '会計監査人は、株主総会（相互会社にあっては総代会）により選任され、その職務は会社の行う一切の会計行為が、会社法，保険業法等の法令に準拠して適正に行われているか否かについて監査を行い、その結果を取締役および監査役に報告することにある。' }, //40
+                    {questionTitle: '会計公準', content: '株主実体の公準ではなく、企業実体の公準' }, //31
+                    {questionTitle: '帳簿の種類', content: '正しい' }, //32
+                    {questionTitle: '退職給付引当金', content: '正しい' }, //33
+                    {questionTitle: '連結決算', content: '正しい' }, //34
+                    {questionTitle: '外貨預金の換算', content: '正しい' }, //35
+                    {questionTitle: '貸倒引当金', content: '法人税法上の貸倒引当金として認められる額を超える額は、損金に算入されない。' }, //36
+                    {questionTitle: '費用に属する科目', content: 'こども保険等の生存保険金および個人年金における死亡返戻金等は「給付金」として処理される。' }, //37
+                    {questionTitle: '計算書類の公告', content: '会社法施行規則ではなく、保険業法施行規則。' }, //38
+                    {questionTitle: '区分経理', content: '正しい' }, //39
+                    {questionTitle: '会計監査人による監査', content: '会計監査人は、株主総会（相互会社にあっては総代会）により選任され、その職務は会社の行う一切の会計行為が、会社法，保険業法等の法令に準拠して適正に行われているか否かについて監査を行い、その結果を取締役および監査役に報告することにある。' }, //40
                     // 問41〜50
-                    { label: 'イ', content: '財務会計' }, //41
-                    { label: 'オ', content: '' }, //42
-                    { label: 'エ', content: '事務ガイドライン' }, //43
-                    { label: 'ア', content: '売買目的有価証券' }, //44
-                    { label: 'ウ', content: '定額法' }, //45
-                    { label: 'ア', content: '借受金' }, //46
-                    { label: 'オ', content: '' }, //47
-                    { label: 'イ', content: '実現主義' }, //48
-                    { label: 'エ', content: '不動産賃貸料' }, //49
-                    { label: 'ウ', content: '自己査定' }, //50
+                    { label: 'イ', questionTitle: '企業会計の領域', content: '財務会計' }, //41
+                    { label: 'オ', questionTitle: '開示書類', content: '' }, //42
+                    { label: 'エ', questionTitle: '保険会社向けの総合的な監督指針', content: '事務ガイドライン' }, //43
+                    { label: 'ア', questionTitle: '有価証券の評価方法', content: '売買目的有価証券' }, //44
+                    { label: 'ウ', questionTitle: '無形固定資産', content: '定額法' }, //45
+                    { label: 'ア', questionTitle: '生命保険会計における負債勘定', content: '借受金' }, //46
+                    { label: 'オ', questionTitle: '勘定体系', content: '' }, //47
+                    { label: 'イ', questionTitle: '損益の認識', content: '実現主義' }, //48
+                    { label: 'エ', questionTitle: '利息及び配当金等収入', content: '不動産賃貸料' }, //49
+                    { label: 'ウ', questionTitle: '金融検査', content: '自己査定' }, //50
                 ]"
                 
             />

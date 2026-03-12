@@ -1,8 +1,9 @@
-const COMMON_YEARS = [2024, 2023, 2022, 2021];
+const COMMON_YEARS = [2024, 2023, 2022, 2021, 2020];
 const COMMON_FORMS = ["a", "b", "c"];
 const SOURON_YEARS = [2024, 2023, 2022, 2021, 2020];
 const KEIRI_YEARS = [2024, 2023, 2022, 2021, 2020];
 const KIKEN_YEARS = [2024, 2023, 2022, 2021, 2020];
+const YAKKAN_YEARS = [2024, 2023, 2022, 2021, 2020];
 
 export const SUBJECT_CATALOG = [
     {
@@ -66,7 +67,9 @@ export const INDEX_SECTIONS = SUBJECT_CATALOG.map((subject) => ({
               ? [...KEIRI_YEARS]
               : subject.key === "kiken"
                 ? [...KIKEN_YEARS]
-              : [...COMMON_YEARS],
+                : subject.key === "yakkan"
+                  ? [...YAKKAN_YEARS]
+                  : [...COMMON_YEARS],
     routePrefix: subject.key,
     gridCols: "lg:grid-cols-2 md:grid-cols-2",
 }));
@@ -81,6 +84,8 @@ export const MOBILE_MENU_SUBJECTS = SUBJECT_CATALOG.map((subject) => ({
               ? KEIRI_YEARS
               : subject.key === "kiken"
                 ? KIKEN_YEARS
+                : subject.key === "yakkan"
+                  ? YAKKAN_YEARS
                 : COMMON_YEARS
     ).reduce((acc, year) => {
         acc[`${year}年度`] = [...COMMON_FORMS];

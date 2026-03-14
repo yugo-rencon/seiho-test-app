@@ -23,8 +23,7 @@
         <div v-for="(content, index) in props.contents" :key="index"
              class="grid gap-2 text-sm leading-6 text-gray-700 select-none md:text-[15px] grid-cols-[2em_1fr]">
           <span class="font-semibold">{{ getLabel(index) }}：</span>
-          <!-- <p>{{ content }}</p> -->
-          <p v-html="content"></p>
+          <p v-html="formatContentHtml(content)"></p>
         </div>
       </div>
       <div class="flex justify-end text-xs text-gray-400 md:text-sm">
@@ -55,7 +54,7 @@
                     class="grid gap-2 text-sm leading-6 text-gray-700 select-none md:text-[15px] grid-cols-[2em_1fr]"
                 >
                     <span class="font-semibold">{{ getLabel(index) }}：</span>
-                    <p v-html="props.contents?.[index] ?? ''"></p>
+                    <p v-html="formatContentHtml(props.contents?.[index] ?? '')"></p>
                 </div>
             </div>
             <div
@@ -121,5 +120,10 @@
 
   const getLabel = (index: number): string => {
         return labels.value[index]; // その他の場合はlabelsを使用
+  }
+
+  const formatContentHtml = (value: unknown): string => {
+    const raw = String(value ?? '')
+    return raw.replace(/↔︎|↔|←→|⇔/g, ' <strong>⇔</strong> ')
   }
   </script>

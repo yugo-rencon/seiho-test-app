@@ -184,19 +184,24 @@ const getQuestionTitle = (index: number) => {
     return props.questionTitle ?? "";
 };
 
+const normalizeBiArrowHtml = (value: unknown): string => {
+    const raw = String(value ?? "");
+    return raw.replace(/↔︎|↔|←→|⇔/g, " <strong>⇔</strong> ");
+};
+
 const formatContent = (item: { label: string; content: string }) => {
     const raw = String(item?.content ?? "");
     const label = String(item?.label ?? "");
 
     // 択一ラベルは、label に応じて接頭辞を自動付与する
     if (label === "ア" || label === "イ") {
-        if (/^\s*A[-－]/.test(raw)) return raw;
-        return `A-${raw}`;
+        if (/^\s*A[-－]/.test(raw)) return normalizeBiArrowHtml(raw);
+        return normalizeBiArrowHtml(`A-${raw}`);
     }
 
     if (label === "ウ" || label === "エ") {
-        if (/^\s*B[-－]/.test(raw)) return raw;
-        return `B-${raw}`;
+        if (/^\s*B[-－]/.test(raw)) return normalizeBiArrowHtml(raw);
+        return normalizeBiArrowHtml(`B-${raw}`);
     }
 
     if (label === "オ") {
@@ -206,12 +211,12 @@ const formatContent = (item: { label: string; content: string }) => {
             /A・Bともに正しい/.test(raw) ||
             /^\s*C[-－]/.test(raw)
         ) {
-            return "C（A・Bともに正しい）";
+            return normalizeBiArrowHtml("C（A・Bともに正しい）");
         }
 
-        return `C-${raw}`;
+        return normalizeBiArrowHtml(`C-${raw}`);
     }
 
-    return raw;
+    return normalizeBiArrowHtml(raw);
 };
 </script>

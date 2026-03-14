@@ -22,7 +22,7 @@
         <div v-for="(content, index) in props.contents" :key="index"
              class="grid gap-2 text-sm leading-6 text-gray-700 select-none md:text-[15px] grid-cols-[2em_1fr]">
           <span class="font-semibold">{{ props.labels[index] }}：</span>
-          <p>{{ content }}</p>
+          <p>{{ normalizeBiArrow(content) }}</p>
         </div>
       </div>
       <div class="flex justify-end text-xs text-gray-400 md:text-sm">
@@ -113,6 +113,11 @@
             default:
                 return "16〜20";
         }
+    }
+
+    function normalizeBiArrow(value) {
+        const raw = String(value ?? "");
+        return raw.replace(/↔︎|↔|←→|⇔/g, " ⇔ ");
     }
 
 </script>

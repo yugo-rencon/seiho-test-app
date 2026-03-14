@@ -19,7 +19,7 @@ const subject = "2024年度 フォームA";
             <Pagetitle :title="title" :description="subject" />
 
             <!-- 問題リスト -->
-            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+            <div class="max-w-4xl mx-auto mt-6 space-y-4">
                 <QuestionTemp3
                     :questionNumber="1"
                     :title="title"

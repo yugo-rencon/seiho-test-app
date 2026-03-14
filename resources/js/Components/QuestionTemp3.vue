@@ -14,21 +14,21 @@
                 </span>
             </h2>
         </div>
-        <p v-if="props.note" class="mb-3 text-xs text-gray-500">
+        <p v-if="props.note" class="mb-3 text-sm text-gray-500">
             {{ props.note }}
         </p>
 
       <div class="grid gap-2">
         <div v-for="(content, index) in props.contents" :key="index"
-             class="grid gap-2 text-gray-700 select-none grid-cols-[2em_1fr]">
+             class="grid gap-2 text-sm leading-6 text-gray-700 select-none md:text-[15px] grid-cols-[2em_1fr]">
           <span class="font-semibold">{{ props.labels[index] }}：</span>
           <p>{{ content }}</p>
         </div>
       </div>
-      <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
+      <div class="flex justify-end text-xs text-gray-400 md:text-sm">
         {{ props.title }}
       </div>
-      <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
+      <div class="flex justify-end text-xs text-gray-400 md:text-sm">
         {{ props.subject }}
       </div>
     </div>

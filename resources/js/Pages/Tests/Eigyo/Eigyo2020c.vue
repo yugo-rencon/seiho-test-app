@@ -22,7 +22,7 @@ const subject = "2020年度 フォームC";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="近年の商品対応と今後の方向性-①"
                     :contents="[
                         '',
                         '',
@@ -31,18 +31,18 @@ const subject = "2020年度 フォームC";
                         '', // 問１〜５
                     ]"
                     :labels="[
-                        '', //1
-                        '', //2
-                        '', //3
-                        '', //4
-                        '', //5
+                        'エ', //1
+                        'ク', //2
+                        'イ', //3
+                        'キ', //4
+                        'オ', //5
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="近年の商品対応と今後の方向性-②"
                     :contents="[
                         '',
                         '',
@@ -51,18 +51,18 @@ const subject = "2020年度 フォームC";
                         '', // 問6〜10
                     ]"
                     :labels="[
-                        '', //6
-                        '', //7
-                        '', //8
-                        '', //9
-                        '', //10
+                        'イ', //6
+                        'オ', //7
+                        'ケ', //8
+                        'ウ', //9
+                        'エ', //10
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="団体年金保険-①"
                     :contents="[
                         '',
                         '',
@@ -71,18 +71,18 @@ const subject = "2020年度 フォームC";
                         '', // 問11〜15
                     ]"
                     :labels="[
-                        '', //11
-                        '', //12
-                        '', //13
-                        '', //14
-                        '', //15
+                        'キ', //11
+                        'オ', //12
+                        'ケ', //13
+                        'イ', //14
+                        'ク', //15
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="団体年金保険-②"
                     :contents="[
                         '',
                         '',
@@ -91,121 +91,121 @@ const subject = "2020年度 フォームC";
                         '', // 問16〜20
                     ]"
                     :labels="[
-                        '', //16
-                        '', //17
-                        '', //18
-                        '', //19
-                        '', //20
+                        'カ', //16
+                        'オ', //17
+                        'キ', //18
+                        'ケ', //19
+                        'ク', //20
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="公的年金の給付"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '障害基礎年金 ↔︎ 障害厚生年金', //p26
+                        '老齢厚生年金相当額の3分の2 → 4分の3', //p26
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="医療保障等を主たる目的とした保険（特約）"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '余命9ヶ月 → 余命6ヶ月<br>2000万円を上限 → 3000万円を上限', //p61
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="マイナンバー法"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '未成年者を除くすべての人 → 住民票を有するすべての人', //p40
+                        '正しい',
+                        '重大個人情報 → 特定個人情報', //p40
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="外貨建保険"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く', //p65
+                        '外貨建 → 円換算後', //p65
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="総合福祉団体定期保険"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="貯蓄の動向"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '株式・株式投資信託等の有価証券 → 定期性預貯金<br>定期性預貯金 → 通貨性預貯金', //p16
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="個人保険商品の特約"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '被保険者のモラルリスクに応じて → 健康状態が一定の危険の範囲を超えているが危険の度合いに応じて', //p49
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="団体定期保険および団体信用生命保険"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '債務者：保険契約者および被保険者 → 被保険者<br>債権者：保険金受取人 → 保険契約者および保険金受取人', //p86
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="変額保険"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '変動保険金（毎日変動） → 変動保険金（毎月変動）', //p64
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="通信販売とインターネット通販"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '問題となりにくい → 問題となりやすい', //p104
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp2
@@ -214,27 +214,27 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '', content: '' }, //31
-                        { questionTitle: '', content: '' }, //32
-                        { questionTitle: '', content: '' }, //33
-                        { questionTitle: '', content: '' }, //34
-                        { questionTitle: '', content: '' }, //35
-                        { questionTitle: '', content: '' }, //36
-                        { questionTitle: '', content: '' }, //37
-                        { questionTitle: '', content: '' }, //38
-                        { questionTitle: '', content: '' }, //39
-                        { questionTitle: '', content: '' }, //40
+                        { questionTitle: 'ライフ・プランニング', content: '正しい' }, //31
+                        { questionTitle: '公的介護保険制度の運営主体', content: '運営主体は国 → 各市区町村' }, //32 p29
+                        { questionTitle: '複利厚生費', content: '' }, //33
+                        { questionTitle: '保険料払込方法', content: '' }, //34
+                        { questionTitle: '金融商品取引法', content: '' }, //35
+                        { questionTitle: '生存保険', content: '正しい' }, //36
+                        { questionTitle: '財形貯蓄制度', content: '58歳未満 → 55歳未満<br>3年以上の期間 → 5年以上の期間' }, //37 p94
+                        { questionTitle: '一時払退職後終身保険', content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内' }, //38 p97
+                        { questionTitle: '法人顧客システム', content: '正しい' }, //39
+                        { questionTitle: '機関組織構成', content: '正しい' }, //40
                         // 問41〜50
-                        { questionTitle: '', label: '', content: '' }, //41
-                        { questionTitle: '', label: '', content: '' }, //42
-                        { questionTitle: '', label: '', content: '' }, //43
-                        { questionTitle: '', label: '', content: '' }, //44
-                        { questionTitle: '', label: '', content: '' }, //45
-                        { questionTitle: '', label: '', content: '' }, //46
-                        { questionTitle: '', label: '', content: '' }, //47
-                        { questionTitle: '', label: '', content: '' }, //48
-                        { questionTitle: '', label: '', content: '' }, //49
-                        { questionTitle: '', label: '', content: '' }, //50
+                        { questionTitle: '年金改革', label: 'イ', content: '' }, //41
+                        { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
+                        { questionTitle: '保険料率の改定', label: 'イ', content: '' }, //43
+                        { questionTitle: '危険選択の方法', label: 'エ', content: '' }, //44
+                        { questionTitle: '消費者信用団体生命保険', label: 'ウ', content: '' }, //45
+                        { questionTitle: '特化型営業職員制度', label: 'ア', content: '' }, //46
+                        { questionTitle: '募集人登録', label: 'ア', content: '' }, //47
+                        { questionTitle: '営業職員の退職金', label: 'オ', content: '' }, //48
+                        { questionTitle: '企業保険の販売チャネル', label: 'ウ', content: '' }, //49
+                        { questionTitle: '代理店', label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

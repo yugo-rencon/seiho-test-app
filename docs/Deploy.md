@@ -90,3 +90,5 @@ git add resources/views/app.blade.php
 git commit -m "Disable iOS data detectors for email/phone/address"
 git push origin main
 ```
+
+ ssh -i ~/.ssh/xs599734.key xs599734@sv16219.xserver.jp -p 10022

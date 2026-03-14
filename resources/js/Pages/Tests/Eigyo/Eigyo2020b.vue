@@ -22,7 +22,7 @@ const subject = "2020年度 フォームB";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="個人保険商品の種類-①"
                     :contents="[
                         '',
                         '',
@@ -31,18 +31,18 @@ const subject = "2020年度 フォームB";
                         '', // 問１〜５
                     ]"
                     :labels="[
-                        '', //1
-                        '', //2
-                        '', //3
-                        '', //4
-                        '', //5
+                        'オ', //1
+                        'ア', //2
+                        'コ', //3
+                        'ウ', //4
+                        'エ', //5
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="個人保険商品の種類-②"
                     :contents="[
                         '',
                         '',
@@ -51,18 +51,18 @@ const subject = "2020年度 フォームB";
                         '', // 問6〜10
                     ]"
                     :labels="[
-                        '', //6
-                        '', //7
-                        '', //8
-                        '', //9
-                        '', //10
+                        'カ', //6
+                        'ク', //7
+                        'コ', //8
+                        'エ', //9
+                        'イ', //10
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="団体年金保険-①"
                     :contents="[
                         '',
                         '',
@@ -71,18 +71,18 @@ const subject = "2020年度 フォームB";
                         '', // 問11〜15
                     ]"
                     :labels="[
-                        '', //11
-                        '', //12
-                        '', //13
-                        '', //14
-                        '', //15
+                        'キ', //11
+                        'オ', //12
+                        'ケ', //13
+                        'イ', //14
+                        'ク', //15
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="団体年金保険-②"
                     :contents="[
                         '',
                         '',
@@ -91,121 +91,121 @@ const subject = "2020年度 フォームB";
                         '', // 問16〜20
                     ]"
                     :labels="[
-                        '', //16
-                        '', //17
-                        '', //18
-                        '', //19
-                        '', //20
+                        'カ', //16
+                        'オ', //17
+                        'キ', //18
+                        'ケ', //19
+                        'ク', //20
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="女性の社会進出"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '30歳代 → 20歳代', //p12
+                        '死亡保障 → 老後保障<br>老後保障 → 介護保障', //p12
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="個人保険商品の構造"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '一定の偶然の事故によって生ずることのある損害をてん補すること → 人の生存又は死亡に関し一定の保険給付を行うこと', //p46
+                        '有期払 → 短期払', //p49
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="マイナンバー法"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '未成年者を除くすべての人 → 住民票を有するすべての人', //p40
+                        '正しい',
+                        '重大個人情報 → 特定個人情報', //p40
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="外貨建保険"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く', //p65
+                        '外貨建 → 円換算後', //p65
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="業界共通教育制度"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '変額保険販売資格試験 → 応用課程試験', //p125
+                        'ライフ・コンサルタントは専門課程試験合格者<br>応用課程試験の受験要件は、専門課程試験に合格していること', //p125
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="戦後の商品政策の変遷"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '一時払終身保険 → 5年満期の一時払養老保険<br>5年満期の一時払養老保険 → 10年満期の一時払養老保険', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険料率に関する近年の商品対応"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="団体定期保険および団体信用生命保険"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '債務者：保険契約者および被保険者 → 被保険者<br>債権者：保険金受取人 → 保険契約者および保険金受取人', //p86
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="銀行窓販の弊害防止措置"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '影響を及ぼすこと → 影響を及ぼさないこと', //p102
+                        '正しい', //p
+                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="情報活用型マーケティング"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '再販売等に活用するに至っていない → 活用することが一般的', //p110
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp2
@@ -214,27 +214,27 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '', content: '' }, //31
-                        { questionTitle: '', content: '' }, //32
-                        { questionTitle: '', content: '' }, //33
-                        { questionTitle: '', content: '' }, //34
-                        { questionTitle: '', content: '' }, //35
-                        { questionTitle: '', content: '' }, //36
-                        { questionTitle: '', content: '' }, //37
-                        { questionTitle: '', content: '' }, //38
-                        { questionTitle: '', content: '' }, //39
-                        { questionTitle: '', content: '' }, //40
+                        { questionTitle: '公的年金の老齢給付', content: '正しい' }, //31
+                        { questionTitle: '加入後の自在性', content: '' }, //32
+                        { questionTitle: '複利厚生費', content: '' }, //33
+                        { questionTitle: '確定拠出年金制度', content: '' }, //34
+                        { questionTitle: '金融商品取引法', content: '' }, //35
+                        { questionTitle: '生存保険', content: '正しい' }, //36
+                        { questionTitle: '特別勘定', content: '正しい' }, //37
+                        { questionTitle: '団体就業不能保障保険', content: '正しい' }, //38
+                        { questionTitle: '心身障害者扶養者生命保険', content: '正しい' }, //39
+                        { questionTitle: '支社の配置', content: 'これまで〜の説明 ↔ 近年では〜の説明' }, //40 p140
                         // 問41〜50
-                        { questionTitle: '', label: '', content: '' }, //41
-                        { questionTitle: '', label: '', content: '' }, //42
-                        { questionTitle: '', label: '', content: '' }, //43
-                        { questionTitle: '', label: '', content: '' }, //44
-                        { questionTitle: '', label: '', content: '' }, //45
-                        { questionTitle: '', label: '', content: '' }, //46
-                        { questionTitle: '', label: '', content: '' }, //47
-                        { questionTitle: '', label: '', content: '' }, //48
-                        { questionTitle: '', label: '', content: '' }, //49
-                        { questionTitle: '', label: '', content: '' }, //50
+                        { questionTitle: '年金改革', label: 'イ', content: '' }, //41
+                        { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
+                        { questionTitle: '保険料の払込に関する特約', label: 'ウ', content: '' }, //43
+                        { questionTitle: '危険選択の方法', label: 'エ', content: '' }, //44
+                        { questionTitle: '団体保険', label: 'ウ', content: '' }, //45
+                        { questionTitle: '医療保障保険（団体型）', label: 'ア', content: '' }, //46
+                        { questionTitle: '通信販売', label: 'エ', content: '' }, //47
+                        { questionTitle: '販売成績', label: 'オ', content: '' }, //48
+                        { questionTitle: '機関長', label: 'イ', content: '' }, //49
+                        { questionTitle: '代理店', label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

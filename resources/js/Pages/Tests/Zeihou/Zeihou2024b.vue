@@ -29,6 +29,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="住民税-①"
                 :contents="[
                 '均等割額のみ','4%','3,000円','寡婦またはひとり親','43万円', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="住民税-②"
                 :contents="[
                 '普通徴収','市町村','5月','均等割額のみ','従業者数', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="贈与税-①"
                 :contents="[
                 '所得税','生活費','結婚・子育て','配偶者控除額','110', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="贈与税-②"
                 :contents="[
                 '20','居住用不動産','2,000','2月1日から3月15日','贈与を受けた人', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税法における各種所得"
                 :contents="[
                 '投資信託（公社債投資信託及び公募公社債等運用投信信託を<b><u>含む</u></b>）及び特定受益証券発行信託の収益の分配は、利子所得になる。',
                 'アパート、貸間等のように食事を供さない場合の所得は不動産所得となるが、下宿等のように食事を供する場合には事業所得または雑所得となる。',
@@ -99,6 +104,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税額の計算"
                 :contents="[
                 '正しい',
                 '山林所得については、長年をかけて得た所得が一時に実現することから、超過累進税率による過重の税負担を避ける意味で、課税山林所得の5分の1に相当する金額に応ずる税額を求め、これを5倍した金額を税額とする「5分5乗方式」が適用される。',
@@ -109,6 +115,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続税の課税財産"
                 :contents="[
                 '正しい',
                 '公益事業用財産は非課税財産に該当する。',
@@ -119,6 +126,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税法における別段の定め"
                 :contents="[
                 '資産の評価について税法は<b><u>取得原価主義</u></b>を原則としており、評価益は益金の額に<b><u>算入しない</u></b>。',
                 '正しい',
@@ -129,6 +137,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="確定拠出年金"
                 :contents="[
                 '正しい',
                 '運営管理機関（企業または国民年金基金連合会によって選任）ではなく、資産管理機関（企業による選任）または国民年金基金連合会。',
@@ -139,6 +148,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税の申告と納税"
                 :contents="[
                 '1,200万円ではなく、2,000万円。',
                 '正しい',
@@ -149,6 +159,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続"
                 :contents="[
                 '相続税と贈与税は密接な関係にあるため、これら2つの税は、いずれも相続税法という一つの法律の中で規定されている。また、財産の評価についても相続財産の評価と贈与財産の評価は同じ基準にしたがって行われる。',
                 '正しい',
@@ -159,6 +170,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="固定資産税"
                 :contents="[
                 '正しい',
                 '毎年4月1日ではなく、毎年1月1日。',
@@ -169,6 +181,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続時精算課税制度"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -179,6 +192,7 @@ const subject = '2024年度 フォームB'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="経営者保険を払済保険へ変更した場合の税務上の取扱"
                 :contents="[
                 '責任準備金相当額ではなく、解約返戻金相当額。',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2024年度 フォームB'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '消費税のような間接税では、<b><u>担税者は消費者</u></b>、<b><u>納税義務者は業者</u></b>となり、両者は一致しない。' }, //31
-                    { content: '正しい' }, //32
-                    { content: '特定扶養親族とは、扶養親族のうち<b><u>年齢19歳以上23歳未満</u></b>の者をいい、その者の控除額は一人につき<b><u>63万円</u></b>である。' }, //33
-                    { content: '正しい' }, //34
-                    { content: '正しい' }, //35
-                    { content: '事業年度が6カ月を超える普通法人は、事業年度開始の日以後6カ月を経過した日から2カ月以内に、税務署長に対し、仮決算により作成した法人税の中間報告書または前年度の実績による中間報告書いずれかを提出しなければならない。' }, //36
-                    { content: '正しい' }, //37
-                    { content: '相続による取得や法人の合併による取得など形式的な所有権の移転については課税されない。' }, //38
-                    { content: '正しい' }, //39
-                    { content: '14%ではなく、7%。' }, //40
+                    { questionTitle: '担税者', content: '消費税のような間接税では、<b><u>担税者は消費者</u></b>、<b><u>納税義務者は業者</u></b>となり、両者は一致しない。' }, //31
+                    { questionTitle: '特定支出控除', content: '正しい' }, //32
+                    { questionTitle: '特定扶養親族', content: '特定扶養親族とは、扶養親族のうち<b><u>年齢19歳以上23歳未満</u></b>の者をいい、その者の控除額は一人につき<b><u>63万円</u></b>である。' }, //33
+                    { questionTitle: '相続人', content: '正しい' }, //34
+                    { questionTitle: '家屋の評価方法', content: '正しい' }, //35
+                    { questionTitle: '法人税の中間申告', content: '事業年度が6カ月を超える普通法人は、事業年度開始の日以後6カ月を経過した日から2カ月以内に、税務署長に対し、仮決算により作成した法人税の中間報告書または前年度の実績による中間報告書いずれかを提出しなければならない。' }, //36
+                    { questionTitle: '障害給付金等', content: '正しい' }, //37
+                    { questionTitle: '不動産取得税', content: '相続による取得や法人の合併による取得など形式的な所有権の移転については課税されない。' }, //38
+                    { questionTitle: '総合福祉団体定期保険の保険料', content: '正しい' }, //39
+                    { questionTitle: '最低課税方式', content: '14%ではなく、7%。' }, //40
                     // 問41〜50
-                    { label: 'ウ', content: '租税特別措置法' }, //41
-                    { label: 'オ', content: '' }, //42
-                    { label: 'エ', content: '必要経費' }, //43
-                    { label: 'ウ', content: '3分の1' }, //44
-                    { label: 'ア', content: '申告調整' }, //45
-                    { label: 'エ', content: '10ヶ月' }, //46
-                    { label: 'イ', content: '公共法人' }, //47
-                    { label: 'オ', content: '' }, //48
-                    { label: 'ア', content: '第3種事業' }, //49
-                    { label: 'オ', content: '' }, //50
+                    { questionTitle: '所得税の税額控除額', label: 'ウ', content: '租税特別措置法' }, //41
+                    { questionTitle: '所得税の課税標準', label: 'オ', content: '' }, //42
+                    { questionTitle: '雑所得', label: 'エ', content: '必要経費' }, //43
+                    { questionTitle: '遺留分', label: 'ウ', content: '3分の1' }, //44
+                    { questionTitle: '会社利益と所得金額の調整', label: 'ア', content: '申告調整' }, //45
+                    { questionTitle: '相続税の申告', label: 'エ', content: '10ヶ月' }, //46
+                    { questionTitle: '法人の種類と課税の範囲', label: 'イ', content: '公共法人' }, //47
+                    { questionTitle: '同族会社', label: 'オ', content: '' }, //48
+                    { questionTitle: '個人の事業税', label: 'ア', content: '第3種事業' }, //49
+                    { questionTitle: '確定給付企業年金', label: 'オ', content: '' }, //50
                 ]"
                 
             />

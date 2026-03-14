@@ -24,11 +24,11 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="個人保険商品の種類-①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問１〜５
+                        '老後の生活資金',
+                        '生死混合保険',
+                        '生存給付金',
+                        '有期年金',
+                        '契約者', // 問１〜５
                     ]"
                     :labels="[
                         'オ', //1
@@ -44,11 +44,11 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="個人保険商品の種類-②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問6〜10
+                        '災害',
+                        '急性心筋梗塞',
+                        '6ヶ月',
+                        '不要（無料）',
+                        '保険料払込免除', // 問6〜10
                     ]"
                     :labels="[
                         'カ', //6
@@ -64,11 +64,11 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="団体年金保険-①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問11〜15
+                        '規約型',
+                        'GIC（guaranteed interest contract：利率保証契約）',
+                        '拠出型企業年金',
+                        'B（型）年金',
+                        '国民年金基金', // 問11〜15
                     ]"
                     :labels="[
                         'キ', //11
@@ -84,11 +84,11 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="団体年金保険-②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問16〜20
+                        '団体生存保険',
+                        '公務員',
+                        '新企業年金保険',
+                        'A（型）年金',
+                        '合同', // 問16〜20
                     ]"
                     :labels="[
                         'カ', //16
@@ -160,7 +160,7 @@ const subject = "2020年度 フォームB";
                     questionTitle="戦後の商品政策の変遷"
                     :contents="[
                         '正しい',
-                        '一時払終身保険 → 5年満期の一時払養老保険<br>5年満期の一時払養老保険 → 10年満期の一時払養老保険', //p
+                        '一時払終身保険 → 5年満期の一時払養老保険<br>5年満期の一時払養老保険 → 10年満期の一時払養老保険', //p66
                         '正しい',
                     ]"
                 />
@@ -170,7 +170,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="保険料率に関する近年の商品対応"
                     :contents="[
-                        '', //p
+                        '保険金受取人 → 契約者', //p78
                         '正しい',
                         '正しい',
                     ]"
@@ -193,8 +193,8 @@ const subject = "2020年度 フォームB";
                     questionTitle="銀行窓販の弊害防止措置"
                     :contents="[
                         '影響を及ぼすこと → 影響を及ぼさないこと', //p102
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -215,25 +215,25 @@ const subject = "2020年度 フォームB";
                     :items="[
                         // 問31〜40
                         { questionTitle: '公的年金の老齢給付', content: '正しい' }, //31
-                        { questionTitle: '加入後の自在性', content: '' }, //32
-                        { questionTitle: '複利厚生費', content: '' }, //33
-                        { questionTitle: '確定拠出年金制度', content: '' }, //34
-                        { questionTitle: '金融商品取引法', content: '' }, //35
+                        { questionTitle: '加入後の自在性', content: '移行制度 → 転換制度' }, //32 p72-74
+                        { questionTitle: '福利厚生費', content: '法定福利費 ↔︎ 法定外福利費' }, //33 p33
+                        { questionTitle: '確定拠出年金制度', content: '企業の追加拠出が必要 → 不要' }, //34 p89
+                        { questionTitle: '金融商品取引法', content: '契約締結の後に書面で交付 → 契約締結の前に書面で交付' }, //35 p41
                         { questionTitle: '生存保険', content: '正しい' }, //36
                         { questionTitle: '特別勘定', content: '正しい' }, //37
                         { questionTitle: '団体就業不能保障保険', content: '正しい' }, //38
                         { questionTitle: '心身障害者扶養者生命保険', content: '正しい' }, //39
                         { questionTitle: '支社の配置', content: 'これまで〜の説明 ↔ 近年では〜の説明' }, //40 p140
                         // 問41〜50
-                        { questionTitle: '年金改革', label: 'イ', content: '' }, //41
+                        { questionTitle: '年金改革', label: 'イ', content: 'マクロ経済スライド' }, //41
                         { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
-                        { questionTitle: '保険料の払込に関する特約', label: 'ウ', content: '' }, //43
-                        { questionTitle: '危険選択の方法', label: 'エ', content: '' }, //44
-                        { questionTitle: '団体保険', label: 'ウ', content: '' }, //45
-                        { questionTitle: '医療保障保険（団体型）', label: 'ア', content: '' }, //46
-                        { questionTitle: '通信販売', label: 'エ', content: '' }, //47
+                        { questionTitle: '保険料の払込に関する特約', label: 'ウ', content: '団体扱特約' }, //43
+                        { questionTitle: '危険選択の方法', label: 'エ', content: '面接' }, //44
+                        { questionTitle: '団体保険', label: 'ウ', content: 'ヒューマン・ヴァリュー特約' }, //45
+                        { questionTitle: '医療保障保険（団体型）', label: 'ア', content: '公的医療保険' }, //46
+                        { questionTitle: '通信販売', label: 'エ', content: '加入保険金額' }, //47
                         { questionTitle: '販売成績', label: 'オ', content: '' }, //48
-                        { questionTitle: '機関長', label: 'イ', content: '' }, //49
+                        { questionTitle: '機関長', label: 'イ', content: '個別' }, //49
                         { questionTitle: '代理店', label: 'オ', content: '' }, //50
                     ]"
                 />

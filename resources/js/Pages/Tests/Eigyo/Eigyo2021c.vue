@@ -216,11 +216,11 @@ const subject = "2021年度 フォームC";
                         // 問31〜40
                         { questionTitle: '豊かな老後生活への備え', content: '正しい' }, //31
                         { questionTitle: '第三分野市場', content: '損害保険 ↔︎ 生命保険' }, //32 p34
-                        { questionTitle: '消費者契約法', content: '契約を無効とすることができる → 契約を取り消すことができる。' }, //33 p37
+                        { questionTitle: '消費者契約法', content: '契約を無効とすることができる → 契約を取り消すことができる' }, //33 p37
                         { questionTitle: '危険選択の方法', content: '認定生命保険士 → 生命保険面接士' }, //34 p52
-                        { questionTitle: 'リビング・ニーズ特約', content: '被保険者が受取人の場合非課税扱いとなる。' }, //35
+                        { questionTitle: 'リビング・ニーズ特約', content: '贈与税が課税 → 非課税' }, //35 p61-62
                         { questionTitle: '付帯サービス', content: '正しい' }, //36
-                        { questionTitle: '特別勘定特約', content: '現在のところ、新企業年金保険、厚生年金基金保険、確定給付企業年金保険、国民年金基金保険、団体生存保険に付加する特別勘定特約が販売されている。' }, //37
+                        { questionTitle: '特別勘定特約', content: '拠出型企業年金保険、団体養老保険 → 新企業年金保険、団体生存保険' }, //37 p91-92
                         { questionTitle: '一時払退職後終身保険', content: '正しい' }, //38
                         { questionTitle: '営業職員の育成体系', content: '正しい' }, //39
                         { questionTitle: '生命保険大学課程', content: '正しい' }, //40

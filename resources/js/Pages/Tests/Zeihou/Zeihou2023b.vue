@@ -29,6 +29,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="贈与税-①"
                 :contents="[
                 '所属税','生活費','結婚・子育て','配偶者控除額','110', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="贈与税-②"
                 :contents="[
                 '20','居住用不動産','2,000','2月1日から3月15日','贈与を受けた人', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="グループ通算制度-①"
                 :contents="[
                 '経済のグローバル化','連結','分社化・持株会社化','税務情報','個別申告方式', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="グループ通算制度-②"
                 :contents="[
                 '完全支配関係','納税申告書','は除く','3ヶ月','子法人のすべて', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税法における各種所得の金額の計算"
                 :contents="[
                 '不動産業者が販売の目的で取得した土地、建物等を貸し付けた場合の所得は、不動産業から生ずる事業所得に該当する。',
                 '正しい',
@@ -99,6 +104,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続税の課税財産"
                 :contents="[
                 '公益事業用財産は、非課税財産として課税価格に算入されないため、みなし相続財産ではない。',
                 '被相続人の死亡により取得した保険金については、その保険金のうち、死亡時までに払い込まれた保険料合計額に対する被相続人が負担した保険料の金額の割合に相当する部分が、課税財産となる。',
@@ -109,6 +115,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税の申告と納税"
                 :contents="[
                 '1,500万円ではなく、2,000万円。',
                 '青色申告を選択できる人は、不動産所得，事業所得、山林所得を生ずべき業務を営んでいる人である。',
@@ -119,6 +126,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税通達による事業保険の取扱"
                 :contents="[
                 '正しい',
                 '保険料は定期部分は損金、養老部分は資産計上となる。',
@@ -129,6 +137,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税の性格"
                 :contents="[
                 '正しい',
                 '法人擬制説ではなく、法人実在説。',
@@ -139,6 +148,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="配当所得"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -149,6 +159,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税額の計算"
                 :contents="[
                 '逓増税率ではなく、超過累進税率。',
                 '正しい',
@@ -159,6 +170,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続税の申告と納税"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="個人の住民税"
                 :contents="[
                 '正しい',
                 '道府県民税・市町村民税どちらも均等割と所得割が課される。',
@@ -179,6 +192,7 @@ const subject = '2023年度 フォームB'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="個人保険における保険金等の取扱"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2023年度 フォームB'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '流通税は、財産移転の事実に基づいて課税されるもので、印紙税、不動産所属税等が該当する。' }, //31
-                    { content: '正しい' }, //32
-                    { content: '正しい' }, //33
-                    { content: '遺言できる者は満15歳以上で意思能力を有する者に限られる。' }, //34
-                    { content: '正しい' }, //35
-                    { content: '正しい' }, //36
-                    { content: '正しい' }, //37
-                    { content: '13%ではなく、7%' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '流通税', content: '流通税は、財産移転の事実に基づいて課税されるもので、印紙税、不動産所属税等が該当する。' }, //31
+                    { questionTitle: '生命保険と相続対策', content: '正しい' }, //32
+                    { questionTitle: '確定申告', content: '正しい' }, //33
+                    { questionTitle: '遺産分割の方法', content: '遺言できる者は満15歳以上で意思能力を有する者に限られる。' }, //34
+                    { questionTitle: '税額控除', content: '正しい' }, //35
+                    { questionTitle: '総合福祉団体定期保険の保険料', content: '正しい' }, //36
+                    { questionTitle: '不動産取得税', content: '正しい' }, //37
+                    { questionTitle: '最低課税方式', content: '13%ではなく、7%' }, //38
+                    { questionTitle: '営業職員報酬の必要経費', content: '正しい' }, //39
+                    { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'ウ', content: '40万円' }, //41
-                    { label: 'ア', content: 'との選択により' }, //42
-                    { label: 'エ', content: '心身障害者扶養共済制度' }, //43
-                    { label: 'オ', content: '' }, //44
-                    { label: 'オ', content: '' }, //45
-                    { label: 'オ', content: '' }, //46
-                    { label: 'イ', content: '均等割額と法人税割額' }, //47
-                    { label: 'ウ', content: '第1回保険料充当金領収証' }, //48
-                    { label: 'エ', content: '事業主' }, //49
-                    { label: 'ア', content: '登録免許税' }, //50
+                    { questionTitle: '退職所得控除額', label: 'ウ', content: '40万円' }, //41
+                    { questionTitle: '医療費控除（セルフメディケーション）', label: 'ア', content: 'との選択により' }, //42
+                    { questionTitle: '相続税の非課税財産', label: 'エ', content: '心身障害者扶養共済制度' }, //43
+                    { questionTitle: '相続時精算課税制度', label: 'オ', content: '' }, //44
+                    { questionTitle: '資産評価益の益金不算入', label: 'オ', content: '' }, //45
+                    { questionTitle: '同族会社', label: 'オ', content: '' }, //46
+                    { questionTitle: '法人の住民税', label: 'イ', content: '均等割額と法人税割額' }, //47
+                    { questionTitle: '生命保険料控除の手続き', label: 'ウ', content: '第1回保険料充当金領収証' }, //48
+                    { questionTitle: '確定給付企業年金', label: 'エ', content: '事業主' }, //49
+                    { questionTitle: '生命保険代理店の事業免許等に係る税', label: 'ア', content: '登録免許税' }, //50
                 ]"
                 
             />

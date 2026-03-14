@@ -29,6 +29,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="住民税-①"
                 :contents="[
                 '均等割額のみ','4%','6%','寡婦またはひとり親','43万円', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="住民税-②"
                 :contents="[
                 '普通徴収','市町村','5月','均等割額のみ','従業者数', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="グループ通算制度-①"
                 :contents="[
                 '経済のグローバル化','連結','分社化・持株会社化','税務情報','個別申告方式', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="グループ通算制度-②"
                 :contents="[
                 '完全支配関係','納税申告書','は除く','3ヶ月','子法人のすべて', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="退職所得の金額"
                 :contents="[
                 '正しい<br>勤続（在任）年数5年以下の法人役員等に支払われる退職手当金等の場合<br>退職所得の金額 = 収入金額 - 退職所得控除額<br>退職所得控除額（勤続年数20年以下） = 40万円 × 勤続年数',
                 'アの解説を参照',
@@ -99,6 +104,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続税の課税財産"
                 :contents="[
                 '公益事業用財産は、非課税財産として課税価格に算入されないため、みなし相続財産ではない。',
                 '被相続人の死亡により取得した保険金については、その保険金のうち、死亡時までに払い込まれた保険料合計額に対する被相続人が負担した保険料の金額の割合に相当する部分が、課税財産となる。',
@@ -109,6 +115,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="遺言"
                 :contents="[
                 '正しい',
                 '遺言できる者は満15歳以上で意思能力を有する者に限られる。',
@@ -119,6 +126,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税通達による事業保険の取扱"
                 :contents="[
                 '正しい',
                 '保険料は定期部分は損金、養老部分は資産計上となる。',
@@ -129,6 +137,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続税・贈与税の財産評価"
                 :contents="[
                 '年金の種類を問わず、原則として、次のいずれか高い金額で評価する。①解約返戻金額②年金に代えて一時金の給付を受けられる場合は、一時金相当額③予定利率等を基に算出した金額',
                 '最も低い価格で評価する。',
@@ -139,6 +148,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="配当所得"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -149,6 +159,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税"
                 :contents="[
                 '正しい',
                 '12種類ではなく、15種類。',
@@ -159,6 +170,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続"
                 :contents="[
                 '相続税と贈与税は密接な関係にあるため、これら2つの税は、いずれも相続税法という一つの法律の中で規定されている。また、財産の評価についても相続財産の評価と贈与財産の評価は同じ基準にしたがって行われる。',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="同族会社の留保金課税"
                 :contents="[
                 '正しい',
                 '資本金または出資金の額が1億円以下の会社を除く。',
@@ -179,6 +192,7 @@ const subject = '2023年度 フォームC'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="経営者保険を払済保険へ変更した場合の税務上の取扱"
                 :contents="[
                 '責任準備金相当額ではなく、解約返戻金相当額。',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2023年度 フォームC'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '代理相続ではなく、代襲相続。' }, //32
-                    { content: '正しい' }, //33
-                    { content: '法人実在説ではなく、法人擬制説。' }, //34
-                    { content: '内国法人は、各事業年度終了の日の翌日から2カ月以内に、税務署長に対し、確定申告書を提出しなければならない。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '正しい' }, //37
-                    { content: '正しい' }, //38
-                    { content: '年金払いの老齢給付金については、雑所得として公的年金等控除を適用する。' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '租税の種類', content: '正しい' }, //31
+                    { questionTitle: '相続人', content: '代理相続ではなく、代襲相続。' }, //32
+                    { questionTitle: '確定申告', content: '正しい' }, //33
+                    { questionTitle: '法人税の性格', content: '法人実在説ではなく、法人擬制説。' }, //34
+                    { questionTitle: '法人の確定申告', content: '内国法人は、各事業年度終了の日の翌日から2カ月以内に、税務署長に対し、確定申告書を提出しなければならない。' }, //35
+                    { questionTitle: '地方税', content: '正しい' }, //36
+                    { questionTitle: '不動産取得税', content: '正しい' }, //37
+                    { questionTitle: '転換時の税務上の取扱', content: '正しい' }, //38
+                    { questionTitle: '確定拠出年金の老齢給付金', content: '年金払いの老齢給付金については、雑所得として公的年金等控除を適用する。' }, //39
+                    { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'イ', content: '営利' }, //41
-                    { label: 'ウ', content: '租税特別措置法' }, //42
-                    { label: 'オ', content: '' }, //43
-                    { label: 'オ', content: '' }, //44
-                    { label: 'イ', content: '10万円' }, //45
-                    { label: 'イ', content: '公共法人' }, //46
-                    { label: 'エ', content: '償却原価' }, //47
-                    { label: 'ウ', content: '3年' }, //48
-                    { label: 'エ', content: '事業主' }, //49
-                    { label: 'ア', content: '登録免許税' }, //50
+                    { questionTitle: '一時所得', label: 'イ', content: '営利' }, //41
+                    { questionTitle: '所得税の課税標準', label: 'ウ', content: '租税特別措置法' }, //42
+                    { questionTitle: '配偶者控除', label: 'オ', content: '' }, //43
+                    { questionTitle: '相続時精算課税制度', label: 'オ', content: '' }, //44
+                    { questionTitle: '未成年者控除・障害者控除', label: 'イ', content: '10万円' }, //45
+                    { questionTitle: '法人の種類と課税の範囲', label: 'イ', content: '公共法人' }, //46
+                    { questionTitle: '有価証券の評価', label: 'エ', content: '償却原価' }, //47
+                    { questionTitle: '固定資産税の課税標準', label: 'ウ', content: '3年' }, //48
+                    { questionTitle: '確定給付企業年金', label: 'エ', content: '事業主' }, //49
+                    { questionTitle: '生命保険代理店の事業免許等に係る税', label: 'ア', content: '登録免許税' }, //50
                 ]"
                 
             />

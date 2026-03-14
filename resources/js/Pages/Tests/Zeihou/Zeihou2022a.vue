@@ -29,6 +29,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税課税における所得控除-①"
                 :contents="[
                 '横領','1/10','200万円','選択によって','労働保険', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税課税における所得控除-②"
                 :contents="[
                 '2,000円','27万円','75万円','10万円','2,500万円', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税-①"
                 :contents="[
                 '直接税','比例税率','法人擬制説','無償','税務調整', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税-②"
                 :contents="[
                 '内国法人','二重課税','取得原価','会社更生法','保険業法', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="租税の種類"
                 :contents="[
                 '正しい',
                 '流通税は、財産移転の事実に基づいて課税されるもので、印紙税、不動産所属税等が該当する。',
@@ -99,6 +104,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得控除"
                 :contents="[
                 '正しい',
                 '年間正味払込保険料が5万円を超えるとき、控除額は一律5万円。',
@@ -109,6 +115,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続税の申告と納税"
                 :contents="[
                 '正しい',
                 '延納が認められる期間は通常５年以内である。',
@@ -119,6 +126,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税法における別段の定め"
                 :contents="[
                 '受取配当額の95％相当額。',
                 '法人の支出した寄附金については税法は一定の限度額を定め、これを超える部分については損金に参入しないものとしている。',
@@ -129,6 +137,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="企業保険の税務"
                 :contents="[
                 '企業負担保険料が月額300円以下である場合には、従業員、役員に対して所得税は課税されない。',
                 '役員、従業員の遺族が受取人の場合は、所得税の課税対象。',
@@ -139,6 +148,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="各種所得の金額の計算"
                 :contents="[
                 '正しい',
                 '利子所得ではなく、配当所得。',
@@ -149,6 +159,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="扶養控除"
                 :contents="[
                 '正しい',
                 '合計所得金額が48万円以下であるもの。',
@@ -159,6 +170,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="贈与税"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="住民税"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -179,6 +192,7 @@ const subject = '2022年度 フォームA'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="個人保険における保険金の取扱い"
                 :contents="[
                 '雑所得ではなく一時所得。',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2022年度 フォームA'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '租税を納付する義務を負う者を納税義務者、実際に負担する義務を負う者を担税者という。消費税のような間接税は、担税者が消費者、納税義務者は業者である。' }, //31
-                    { content: '正しい' }, //32
-                    { content: '「所得税基本通達」の規定ではなく、「租税特別措置法」の規定。' }, //33
-                    { content: '「相続税法」ではなく「民法」。' }, //34
-                    { content: '3000万円ではなく、1500万円。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '本来の事業については非課税。収益事業に係る所得については課税。' }, //37
-                    { content: '正しい' }, //38
-                    { content: '正しい' }, //39
-                    { content: '9割ではなく、計算した額をそのままを限度として損金に算入される。' }, //40
+                    { questionTitle: '租税の機能', content: '租税を納付する義務を負う者を納税義務者、実際に負担する義務を負う者を担税者という。消費税のような間接税は、担税者が消費者、納税義務者は業者である。' }, //31
+                    { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
+                    { questionTitle: '所得税の課税標準', content: '「所得税基本通達」の規定ではなく、「租税特別措置法」の規定。' }, //33
+                    { questionTitle: '遺産分割の方法', content: '「相続税法」ではなく「民法」。' }, //34
+                    { questionTitle: '教育資金一括贈与の非課税措置', content: '3000万円ではなく、1500万円。' }, //35
+                    { questionTitle: '法人税の種類', content: '正しい' }, //36
+                    { questionTitle: '法人課税の範囲', content: '本来の事業については非課税。収益事業に係る所得については課税。' }, //37
+                    { questionTitle: '不動産取得税', content: '正しい' }, //38
+                    { questionTitle: '確定拠出年金のポータビリティ', content: '正しい' }, //39
+                    { questionTitle: '責任準備金繰入額', content: '9割ではなく、計算した額をそのままを限度として損金に算入される。' }, //40
                     // 問41〜50
-                    { label: 'ア', content: '5年' }, //41
-                    { label: 'イ', content: '20年以下' }, //42
-                    { label: 'イ', content: '超過累進税率' }, //43
-                    { label: 'ア', content: '翌月10日' }, //44
-                    { label: 'ウ', content: '18歳' }, //45
-                    { label: 'ア', content: '2ヶ月' }, //46
-                    { label: 'イ', content: '更生' }, //47
-                    { label: 'エ', content: '従業者数' }, //48
-                    { label: 'オ', content: '' }, //49
-                    { label: 'エ', content: '契約者配当準備金損金算入額' }, //50
+                    { questionTitle: '譲渡所得', label: 'ア', content: '5年' }, //41
+                    { questionTitle: '退職所得控除額', label: 'イ', content: '20年以下' }, //42
+                    { questionTitle: '所得税の税率', label: 'イ', content: '超過累進税率' }, //43
+                    { questionTitle: '源泉徴収制度', label: 'ア', content: '翌月10日' }, //44
+                    { questionTitle: '相続時精算課税制度', label: 'ウ', content: '18歳' }, //45
+                    { questionTitle: '法人の確定申告', label: 'ア', content: '2ヶ月' }, //46
+                    { questionTitle: '税務署長の調査', label: 'イ', content: '更生' }, //47
+                    { questionTitle: '法人の住民税', label: 'エ', content: '従業者数' }, //48
+                    { questionTitle: '生命保険料控除の対象とならない生命保険契約等', label: 'オ', content: '' }, //49
+                    { questionTitle: '最低課税方式', label: 'エ', content: '契約者配当準備金損金算入額' }, //50
                 ]"
                 
             />

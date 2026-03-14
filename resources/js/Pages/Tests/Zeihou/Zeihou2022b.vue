@@ -29,6 +29,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税の計算-①"
                 :contents="[
                 '10種類','長期譲渡所得','2分の1','退職所得','所得控除', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税の計算-②"
                 :contents="[
                 '算出税額','税額控除','租税特別措置法','差引所得税額','源泉徴収', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税-①"
                 :contents="[
                 '直接税','比例税率','法人擬制説','無償','税務調整', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税-②"
                 :contents="[
                 '内国法人','二重課税','取得原価','会社更生法','保険業法', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税法における所得"
                 :contents="[
                 'アパートなどの食事なしの所得は「不動産所得」、下宿などの食事を出す場合は「事業所得」または「雑所得」となる。',
                 '確定申告が必要。',
@@ -99,6 +104,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税額の計算"
                 :contents="[
                 '「４分の４乗方式」ではなく「５分の５乗方式」',
                 '正しい',
@@ -109,6 +115,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続税の申告と納税"
                 :contents="[
                 '正しい',
                 '延納が認められる期間は通常５年以内である。',
@@ -119,6 +126,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税法における別段の定め"
                 :contents="[
                 '受取配当額の95％相当額。',
                 '法人の支出した寄附金については税法は一定の限度額を定め、これを超える部分については損金に参入しないものとしている。',
@@ -129,6 +137,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="事業税"
                 :contents="[
                 '市町村ではなく道府県が課税する。',
                 '正しい',
@@ -139,6 +148,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="租税の種類"
                 :contents="[
                 '正しい',
                 '財産税ではなく流通税。財産税は、財産を所有している事実に着目して課税されるものであり、固定資産税に代表される。',
@@ -149,6 +159,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="扶養控除"
                 :contents="[
                 '正しい',
                 '合計所得金額が48万円以下であるもの。',
@@ -159,6 +170,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税額"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険料控除"
                 :contents="[
                 '10年ではなく5年。',
                 '正しい',
@@ -179,6 +192,7 @@ const subject = '2022年度 フォームB'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会社と税"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -191,27 +205,27 @@ const subject = '2022年度 フォームB'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '著述家や作家以外が受ける原稿料や印税。' }, //31
-                    { content: '正しい' }, //32
-                    { content: '財産の評価についても相続財産の評価と贈与財産の評価は同じ基準に従って行われる。' }, //33
-                    { content: '正しい' }, //34
-                    { content: '3000万円ではなく、1500万円。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '売買目的有価証券ではなく、売買目的外有価証券の説明。' }, //37
-                    { content: '正しい' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '雑所得', content: '著述家や作家以外が受ける原稿料や印税。' }, //31
+                    { questionTitle: '確定申告', content: '正しい' }, //32
+                    { questionTitle: '相続税と贈与税', content: '財産の評価についても相続財産の評価と贈与財産の評価は同じ基準に従って行われる。' }, //33
+                    { questionTitle: '生命保険と相続対策', content: '正しい' }, //34
+                    { questionTitle: '教育資金一括贈与の非課税措置', content: '3000万円ではなく、1500万円。' }, //35
+                    { questionTitle: '法人税の種類', content: '正しい' }, //36
+                    { questionTitle: '有価証券の評価', content: '売買目的有価証券ではなく、売買目的外有価証券の説明。' }, //37
+                    { questionTitle: '居住用超高層建築物の不動産取得税', content: '正しい' }, //38
+                    { questionTitle: '確定拠出年金のポータビリティ', content: '正しい' }, //39
+                    { questionTitle: '財形給付金制度', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'イ', content: '10万円' }, //41
-                    { label: 'オ', content: '' }, //42
-                    { label: 'エ', content: '1億6,000万円' }, //43
-                    { label: 'イ', content: '20年' }, //44
-                    { label: 'ウ', content: '18歳' }, //45
-                    { label: 'ア', content: '2ヶ月' }, //46
-                    { label: 'ア', content: '株主' }, //47
-                    { label: 'オ', content: '' }, //48
-                    { label: 'エ', content: '退職所得' }, //49
-                    { label: 'エ', content: '契約者配当準備金損金算入額' }, //50
+                    { questionTitle: '医療費控除', label: 'イ', content: '10万円' }, //41
+                    { questionTitle: '死亡保険金の相続税課税', label: 'オ', content: '' }, //42
+                    { questionTitle: '相続税の税額軽減', label: 'エ', content: '1億6,000万円' }, //43
+                    { questionTitle: '贈与税の配偶者控除', label: 'イ', content: '20年' }, //44
+                    { questionTitle: '相続時精算課税制度', label: 'ウ', content: '18歳' }, //45
+                    { questionTitle: '法人の確定申告', label: 'ア', content: '2ヶ月' }, //46
+                    { questionTitle: '同族会社', label: 'ア', content: '株主' }, //47
+                    { questionTitle: '固定資産税の課税標準', label: 'オ', content: '' }, //48
+                    { questionTitle: '確定給付企業年金', label: 'エ', content: '退職所得' }, //49
+                    { questionTitle: '最低課税方式', label: 'エ', content: '契約者配当準備金損金算入額' }, //50
                 ]"
                 
             />

@@ -24,11 +24,11 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="近年の商品対応と今後の方向性-①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問１〜５
+                        '5年ごと配当',
+                        '低解約返戻金',
+                        '引受基準緩和',
+                        '第三分野',
+                        '生前給付', // 問１〜５
                     ]"
                     :labels="[
                         'エ', //1
@@ -44,11 +44,11 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="近年の商品対応と今後の方向性-②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問6〜10
+                        '受領確認',
+                        'ユニバーサル保険',
+                        '銀行窓販',
+                        '為替レート',
+                        'カードサービス', // 問6〜10
                     ]"
                     :labels="[
                         'イ', //6
@@ -64,11 +64,11 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="団体年金保険-①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問11〜15
+                        '規約型',
+                        'GIC（guaranteed interest contract：利率保証契約）',
+                        '拠出型企業年金',
+                        'B（型）年金',
+                        '国民年金基金', // 問11〜15
                     ]"
                     :labels="[
                         'キ', //11
@@ -84,11 +84,11 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="団体年金保険-②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問16〜20
+                        '団体生存保険',
+                        '公務員',
+                        '新企業年金保険',
+                        'A（型）年金',
+                        '合同', // 問16〜20
                     ]"
                     :labels="[
                         'カ', //16
@@ -115,7 +115,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="医療保障等を主たる目的とした保険（特約）"
                     :contents="[
-                        '', //p
+                        '認知症による要介護状態・寝たきり状態の保障 → 公的介護保険制度の上乗せ保障', //p60
                         '正しい',
                         '余命9ヶ月 → 余命6ヶ月<br>2000万円を上限 → 3000万円を上限', //p61
                     ]"
@@ -148,8 +148,8 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '保険金は支払われる → 支払われない', //p85
+                        '契約の対象外 → 契約の対象', //p84
                         '正しい',
                     ]"
                 />
@@ -216,24 +216,24 @@ const subject = "2020年度 フォームC";
                         // 問31〜40
                         { questionTitle: 'ライフ・プランニング', content: '正しい' }, //31
                         { questionTitle: '公的介護保険制度の運営主体', content: '運営主体は国 → 各市区町村' }, //32 p29
-                        { questionTitle: '複利厚生費', content: '' }, //33
-                        { questionTitle: '保険料払込方法', content: '' }, //34
-                        { questionTitle: '金融商品取引法', content: '' }, //35
+                        { questionTitle: '福利厚生費', content: '法定福利費 ↔︎ 法定外福利費' }, //33 p33
+                        { questionTitle: '保険料払込方法', content: '一時払 → 前納' }, //34 p50
+                        { questionTitle: '金融商品取引法', content: '契約締結の後に書面で交付 → 契約締結の前に書面で交付' }, //35 p41
                         { questionTitle: '生存保険', content: '正しい' }, //36
                         { questionTitle: '財形貯蓄制度', content: '58歳未満 → 55歳未満<br>3年以上の期間 → 5年以上の期間' }, //37 p94
                         { questionTitle: '一時払退職後終身保険', content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内' }, //38 p97
                         { questionTitle: '法人顧客システム', content: '正しい' }, //39
                         { questionTitle: '機関組織構成', content: '正しい' }, //40
                         // 問41〜50
-                        { questionTitle: '年金改革', label: 'イ', content: '' }, //41
+                        { questionTitle: '年金改革', label: 'イ', content: '第3号' }, //41
                         { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
-                        { questionTitle: '保険料率の改定', label: 'イ', content: '' }, //43
-                        { questionTitle: '危険選択の方法', label: 'エ', content: '' }, //44
-                        { questionTitle: '消費者信用団体生命保険', label: 'ウ', content: '' }, //45
-                        { questionTitle: '特化型営業職員制度', label: 'ア', content: '' }, //46
-                        { questionTitle: '募集人登録', label: 'ア', content: '' }, //47
+                        { questionTitle: '保険料率の改定', label: 'イ', content: '平均寿命' }, //43
+                        { questionTitle: '危険選択の方法', label: 'エ', content: '面接' }, //44
+                        { questionTitle: '消費者信用団体生命保険', label: 'ウ', content: '1年' }, //45
+                        { questionTitle: '特化型営業職員制度', label: 'ア', content: '職域や法人' }, //46
+                        { questionTitle: '募集人登録', label: 'ア', content: '保険業法' }, //47
                         { questionTitle: '営業職員の退職金', label: 'オ', content: '' }, //48
-                        { questionTitle: '企業保険の販売チャネル', label: 'ウ', content: '' }, //49
+                        { questionTitle: '企業保険の販売チャネル', label: 'ウ', content: '本社直轄' }, //49
                         { questionTitle: '代理店', label: 'オ', content: '' }, //50
                     ]"
                 />

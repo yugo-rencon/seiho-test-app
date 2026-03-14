@@ -29,6 +29,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="1"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続税の申告と納税"
                 :contents="[
                 '遺贈','10ヶ月','被相続人','担保','10万円', // 問１〜５
                 ]"
@@ -44,6 +45,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="2"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税の申告と納付"
                 :contents="[
                 '6ヶ月','2ヶ月','仮決算','損益計算書','決定', //問６〜10
                 ]"
@@ -59,6 +61,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="3"
                 :title="title"
                 :subject="subject"
+                questionTitle="グループ通算制度-①"
                 :contents="[
                 '経済のグローバル化','連結','分社化・持株会社化','税務情報','個別申告方式', //問11〜15
                 ]"
@@ -74,6 +77,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="4"
                 :title="title"
                 :subject="subject"
+                questionTitle="グループ通算制度-②"
                 :contents="[
                 '完全支配関係','納税申告書','は除く','3ヶ月','子法人のすべて', //問16〜20
                 ]"
@@ -89,6 +93,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="21"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税額の計算"
                 :contents="[
                 '逓増税率ではなく、超過累進税率。',
                 '正しい',
@@ -99,6 +104,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="22"
                 :title="title"
                 :subject="subject"
+                questionTitle="相続税の課税財産"
                 :contents="[
                 '公益事業用財産は、非課税財産として課税価格に算入されないため、みなし相続財産ではない。',
                 '被相続人の死亡により取得した保険金については、その保険金のうち、死亡時までに払い込まれた保険料合計額に対する被相続人が負担した保険料の金額の割合に相当する部分が、課税財産となる。',
@@ -109,6 +115,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="23"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税額の計算"
                 :contents="[
                 '資本金1億円超の大法人ではなく、資本金1億円以下の中小法人。',
                 '40%超ではなく、50%超。',
@@ -119,6 +126,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="24"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人税通達による事業保険の取扱"
                 :contents="[
                 '正しい',
                 '保険料は定期部分は損金、養老部分は資産計上となる。',
@@ -129,6 +137,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="25"
                 :title="title"
                 :subject="subject"
+                questionTitle="確定拠出年金"
                 :contents="[
                 '運営管理機関ではなく、資産管理機関。',
                 '正しい',
@@ -139,6 +148,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="26"
                 :title="title"
                 :subject="subject"
+                questionTitle="配当所得"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -149,6 +159,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="27"
                 :title="title"
                 :subject="subject"
+                questionTitle="所得税の申告と納税"
                 :contents="[
                 '1,200万円ではなく、2,000万円。',
                 '正しい',
@@ -159,6 +170,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="28"
                 :title="title"
                 :subject="subject"
+                questionTitle="法人の種類と課税の範囲、事業年度"
                 :contents="[
                 '正しい',
                 '正しい',
@@ -169,6 +181,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="29"
                 :title="title"
                 :subject="subject"
+                questionTitle="固定資産税"
                 :contents="[
                 '正しい',
                 '固定資産税の課税標準は、固定資産課税台帳に登録された、その固定資産の賦課期日（毎年1月1日）における価格である。',
@@ -179,6 +192,7 @@ const subject = '2023年度 フォームA'
                 :questionNumber="30"
                 :title="title"
                 :subject="subject"
+                questionTitle="生命保険会社と税"
                 :contents="[
                 '正しい',
                 '営業職員の報酬は一般的に事業所得である。ただし、固定給とそれ以外の部分とに明らかに区分されているときは、固定給部分は給与所得，それ以外の部分は事業所得である。',
@@ -191,27 +205,27 @@ const subject = '2023年度 フォームA'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '所得税法の規定による課税標準は、総所得金額、退職所得所得金額の3つである。' }, //32
-                    { content: '正しい' }, //33
-                    { content: '正しい' }, //34
-                    { content: '正しい' }, //35
-                    { content: '定められた一定額は益金の額に算入しない。' }, //36
-                    { content: '正しい' }, //37
-                    { content: '保険料または掛金の払込みは、年金支払開始日前10年以上の期間にわたって定期に行うものであること（一時払契約は不可）' }, //38
-                    { content: '正しい' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '雑所得', content: '正しい' }, //31
+                    { questionTitle: '租税特別措置法の規定による課税標準', content: '所得税法の規定による課税標準は、総所得金額、退職所得所得金額の3つである。' }, //32
+                    { questionTitle: '確定申告', content: '正しい' }, //33
+                    { questionTitle: '年末調整', content: '正しい' }, //34
+                    { questionTitle: '年金受給権の評価', content: '正しい' }, //35
+                    { questionTitle: '益金に関する別段の定め', content: '定められた一定額は益金の額に算入しない。' }, //36
+                    { questionTitle: '不動産取得税', content: '正しい' }, //37
+                    { questionTitle: '個人年金保険料控除', content: '保険料または掛金の払込みは、年金支払開始日前10年以上の期間にわたって定期に行うものであること（一時払契約は不可）' }, //38
+                    { questionTitle: '非課税給付金', content: '正しい' }, //39
+                    { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'イ', content: '普通税' }, //41
-                    { label: 'イ', content: '10万円' }, //42
-                    { label: 'ウ', content: '3分の1' }, //43
-                    { label: 'オ', content: '' }, //44
-                    { label: 'ア', content: '税務調整' }, //45
-                    { label: 'オ', content: '' }, //46
-                    { label: 'オ', content: '' }, //47
-                    { label: 'ウ', content: '半年' }, //48
-                    { label: 'エ', content: '事業主' }, //49
-                    { label: 'ア', content: '登録免許税' }, //50
+                    { questionTitle: '租税の種類', label: 'イ', content: '普通税' }, //41
+                    { questionTitle: '医療費控除', label: 'イ', content: '10万円' }, //42
+                    { questionTitle: '遺留分', label: 'ウ', content: '3分の1' }, //43
+                    { questionTitle: '相続時精算課税制度', label: 'オ', content: '' }, //44
+                    { questionTitle: '会社利益と所得金額の調整', label: 'ア', content: '税務調整' }, //45
+                    { questionTitle: '個人の住民税', label: 'オ', content: '' }, //46
+                    { questionTitle: '個人の事業税', label: 'オ', content: '' }, //47
+                    { questionTitle: '弔慰金の非課税限度額', label: 'ウ', content: '半年' }, //48
+                    { questionTitle: '確定給付企業年金', label: 'エ', content: '事業主' }, //49
+                    { questionTitle: '生命保険代理店の事業免許等に係る税', label: 'ア', content: '登録免許税' }, //50
                 ]"
                 
             />

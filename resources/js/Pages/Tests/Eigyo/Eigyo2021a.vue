@@ -191,7 +191,11 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="今後の顧客サービス"
-                    :contents="['正しい', '企業が「どれだけのサービスを提供してきたか」ではなく、顧客がサービスの質について、「良いサービス」と「悪いサービス」を判断し、企業を選択する時代になった。', '正しい']"
+                    :contents="[
+                        '正しい',
+                        '良いサービスか悪いサービス〜 ↔︎ 企業がどれだけのサービス〜', //p107
+                        '正しい',
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="30"
@@ -216,7 +220,7 @@ const subject = "2021年度 フォームA";
                         { questionTitle: '危険選択の方法', content: '認定生命保険士 → 生命保険面接士' }, //34 p52
                         { questionTitle: '医療保障', content: '正しい' }, //35
                         { questionTitle: 'ユニバーサル保険', content: '正しい' }, //36
-                        { questionTitle: '生保財形の特徴', content: '3倍ではなく5倍。' }, //37
+                        { questionTitle: '生保財形の特徴', content: '払込保険料累計額の3倍 → 5倍' }, //37 p96
                         { questionTitle: '一時払退職後終身保険', content: '正しい' }, //38
                         { questionTitle: '法人顧客システム', content: '正しい' }, //39
                         { questionTitle: '営業職員の給与体系', content: '地域別最低賃金が適用されない → 適用される' }, //40 p136

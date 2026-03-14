@@ -22,7 +22,7 @@ const subject = "2020年度 フォームC";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="相続税・贈与税の財産評価-①"
                     :contents="[
                         '',
                         '',
@@ -31,18 +31,18 @@ const subject = "2020年度 フォームC";
                         '', // 問１〜５
                     ]"
                     :labels="[
-                        '', //1
-                        '', //2
-                        '', //3
-                        '', //4
-                        '', //5
+                        'コ', //1
+                        'ケ', //2
+                        'オ', //3
+                        'キ', //4
+                        'ウ', //5
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="相続税・贈与税の財産評価-②"
                     :contents="[
                         '',
                         '',
@@ -51,18 +51,18 @@ const subject = "2020年度 フォームC";
                         '', // 問6〜10
                     ]"
                     :labels="[
-                        '', //6
-                        '', //7
-                        '', //8
-                        '', //9
-                        '', //10
+                        'カ', //6
+                        'ケ', //7
+                        'イ', //8
+                        'ウ', //9
+                        'キ', //10
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="贈与税-①"
                     :contents="[
                         '',
                         '',
@@ -71,18 +71,18 @@ const subject = "2020年度 フォームC";
                         '', // 問11〜15
                     ]"
                     :labels="[
-                        '', //11
-                        '', //12
-                        '', //13
-                        '', //14
-                        '', //15
+                        'ア', //11
+                        'イ', //12
+                        'コ', //13
+                        'オ', //14
+                        'ケ', //15
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="贈与税-②"
                     :contents="[
                         '',
                         '',
@@ -91,20 +91,20 @@ const subject = "2020年度 フォームC";
                         '', // 問16〜20
                     ]"
                     :labels="[
-                        '', //16
-                        '', //17
-                        '', //18
-                        '', //19
-                        '', //20
+                        'イ', //16
+                        'エ', //17
+                        'ク', //18
+                        'ケ', //19
+                        'オ', //20
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="法人税の性格"
                     :contents="[
-                        '', //p
+                        '正しい', //p
                         '', //p
                         '', //p
                     ]"
@@ -113,9 +113,9 @@ const subject = "2020年度 フォームC";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="相続と相続税"
                     :contents="[
-                        '', //p
+                        '正しい', //p
                         '', //p
                         '', //p
                     ]"
@@ -124,10 +124,10 @@ const subject = "2020年度 フォームC";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="事業税"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -135,10 +135,10 @@ const subject = "2020年度 フォームC";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="営業職員報酬"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -146,32 +146,32 @@ const subject = "2020年度 フォームC";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="生命保険料控除"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="税率"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい', //p
+                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="所得税法における各種所得"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい', //p
+                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -179,10 +179,10 @@ const subject = "2020年度 フォームC";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="法人の種類と法人税の課税の範囲"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい', //p
+                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -190,10 +190,10 @@ const subject = "2020年度 フォームC";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="経営者保険、退職金保険"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい', //p
+                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -201,11 +201,11 @@ const subject = "2020年度 フォームC";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                questionTitle="生命保険会社と税"
                     :contents="[
+                        '正しい', //p
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp2
@@ -214,27 +214,27 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '', content: '' }, //31
-                        { questionTitle: '', content: '' }, //32
-                        { questionTitle: '', content: '' }, //33
-                        { questionTitle: '', content: '' }, //34
-                        { questionTitle: '', content: '' }, //35
-                        { questionTitle: '', content: '' }, //36
-                        { questionTitle: '', content: '' }, //37
-                        { questionTitle: '', content: '' }, //38
-                        { questionTitle: '', content: '' }, //39
-                        { questionTitle: '', content: '' }, //40
+                        { questionTitle: '所得税額の計算', content: '' }, //31
+                        { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
+                        { questionTitle: '所得金額調整控除', content: '正しい' }, //33
+                        { questionTitle: '確定申告', content: '' }, //34
+                        { questionTitle: '満期保険金等の源泉分離課税', content: '正しい' }, //35
+                        { questionTitle: '特定退職金共済', content: '正しい' }, //36
+                        { questionTitle: '確定拠出年金の老齢給付金', content: '' }, //37
+                        { questionTitle: '生命保険代理店の登録免許税', content: '正しい' }, //38
+                        { questionTitle: '定期付養老保険の保険料', content: '正しい' }, //39
+                        { questionTitle: '財形住宅貯蓄積立保険', content: '' }, //40
                         // 問41〜50
-                        { questionTitle: '', label: '', content: '' }, //41
-                        { questionTitle: '', label: '', content: '' }, //42
-                        { questionTitle: '', label: '', content: '' }, //43
-                        { questionTitle: '', label: '', content: '' }, //44
-                        { questionTitle: '', label: '', content: '' }, //45
-                        { questionTitle: '', label: '', content: '' }, //46
-                        { questionTitle: '', label: '', content: '' }, //47
-                        { questionTitle: '', label: '', content: '' }, //48
-                        { questionTitle: '', label: '', content: '' }, //49
-                        { questionTitle: '', label: '', content: '' }, //50
+                        { questionTitle: '租税の種類', label: 'エ', content: '' }, //41
+                        { questionTitle: '譲渡所得', label: 'イ', content: '' }, //42
+                        { questionTitle: '所得税の課税標準', label: 'オ', content: '' }, //43
+                        { questionTitle: '生命保険料控除', label: 'イ', content: '' }, //44
+                        { questionTitle: '第2次相続', label: 'ア', content: '' }, //45
+                        { questionTitle: '法人税法の特別規定', label: 'エ', content: '' }, //46
+                        { questionTitle: '法人の確定申告', label: 'ア', content: '' }, //47
+                        { questionTitle: '連結納税制度', label: 'オ', content: '' }, //48
+                        { questionTitle: '税務署長の調査', label: 'イ', content: '' }, //49
+                        { questionTitle: '弔慰金の非課税限度額', label: 'ア', content: '' }, //50
                     ]"
                 />
             </div>

@@ -1,6 +1,4 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
-
 const props = defineProps({
     year: {
         type: Number,
@@ -43,14 +41,14 @@ const props = defineProps({
 
         <div class="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
             <!-- フォームA/B/Cボタン -->
-            <Link
+            <a
                 v-for="form in forms"
                 :key="form"
                 :href="`${route(`${routePrefix}${year}${form}`)}?subject=${currentSubjectId}`"
                 class="inline-flex w-full items-center justify-center gap-1 rounded-full border border-purple-200 px-2 py-1.5 text-[12px] font-semibold text-purple-700 transition hover:bg-purple-50 sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
             >
                 フォーム{{ form.toUpperCase() }}
-            </Link>
+            </a>
         </div>
     </div>
 </template>

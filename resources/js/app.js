@@ -5,8 +5,7 @@ import '../css/micromodal.css';
 import 'katex/dist/katex.min.css';
 
 import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/vue3';
-import { Inertia } from '@inertiajs/inertia';
+import { createInertiaApp, router } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 
@@ -24,7 +23,7 @@ if ('scrollRestoration' in window.history) {
 }
 
 // 遷移完了後にトップへ
-Inertia.on('finish', () => {
+router.on('finish', () => {
   scrollToTop();
 });
 
@@ -36,7 +35,7 @@ const trackPageView = (url) => {
 };
 
 // GA は navigate で送る
-Inertia.on('navigate', (event) => {
+router.on('navigate', (event) => {
   trackPageView(event.detail.page.url);
 });
 

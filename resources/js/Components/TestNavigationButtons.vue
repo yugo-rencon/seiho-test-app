@@ -1,5 +1,5 @@
 <script setup>
-import { Link, usePage } from "@inertiajs/vue3";
+import { usePage } from "@inertiajs/vue3";
 import { computed } from "vue";
 
 const props = defineProps({
@@ -37,29 +37,29 @@ const withSubjectQuery = (href) => {
   <div class="flex flex-col items-center mt-10 gap-6">
     <!-- 前の試験・次の試験ボタン -->
     <div v-if="previousRoute || nextRoute" class="flex flex-wrap justify-center gap-3">
-      <Link
+      <a
         v-if="previousRoute"
         :href="withSubjectQuery(route(previousRoute))"
         class="inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
       >
         前の試験へ
-      </Link>
+      </a>
 
-      <Link
+      <a
         v-if="nextRoute"
         :href="withSubjectQuery(route(nextRoute))"
         class="inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
       >
         次の試験へ
-      </Link>
+      </a>
     </div>
 
     <!-- 一覧画面に戻るボタン -->
-    <Link
+    <a
       :href="withSubjectQuery(route(homeRoute))"
       class="inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
     >
       一覧画面に戻る
-    </Link>
+    </a>
   </div>
 </template>

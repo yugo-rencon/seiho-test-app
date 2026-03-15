@@ -1,6 +1,6 @@
 <script setup>
 import { usePage } from "@inertiajs/vue3";
-import { computed, onMounted, ref, watch } from "vue";
+import { computed, onMounted, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import { EXAM_FORMS, INDEX_SECTIONS } from "@/constants/subjects";
 import SectionHeader from "@/Pages/Index/SectionHeader.vue";
@@ -39,12 +39,6 @@ onMounted(() => {
     }
 });
 
-watch(activeSectionId, (nextId) => {
-    if (!nextId || !isValidSectionId(nextId)) return;
-    const url = new URL(window.location.href);
-    url.searchParams.set("subject", nextId);
-    window.history.replaceState({}, "", url.toString());
-});
 </script>
 
 <template>

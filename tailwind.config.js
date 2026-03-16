@@ -13,7 +13,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 // poppins: ['Poppins', 'sans-serif'],
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: [...defaultTheme.fontFamily.sans],
             },
             fontSize: {
                 'xxs': '0.6rem', // 例として0.6remを定義

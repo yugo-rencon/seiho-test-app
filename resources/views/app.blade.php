@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        @php
+            $shouldLoadAds = !auth()->check() || !auth()->user()?->hasPremiumAccess();
+        @endphp
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TB0WW8SWW"></script>
+        @if ($shouldLoadAds)
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5875099458010785"
+                crossorigin="anonymous">
+            </script>
+        @endif
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

@@ -46,10 +46,10 @@ onMounted(() => {
         <!-- 科目タブ -->
         <div id="index" class="container mx-auto px-5 sm:px-6 m-10 max-w-6xl">
             <div
-                class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-md border border-gray-100 relative overflow-hidden"
+                class="bg-white p-6 md:p-8 rounded-2xl sm:rounded-3xl shadow-sm md:shadow-md md:bg-white/80 md:backdrop-blur-sm border border-gray-100 relative overflow-hidden"
             >
                 <div
-                    class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full filter blur-3xl opacity-30 -mr-32 -mt-32"
+                    class="absolute top-0 right-0 hidden w-64 h-64 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full filter blur-3xl opacity-30 -mr-32 -mt-32 md:block"
                 ></div>
 
                 <div class="relative">

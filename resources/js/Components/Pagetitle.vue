@@ -7,7 +7,7 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md relative overflow-hidden">
+  <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-sm md:shadow-md relative overflow-hidden">
     <div class="relative z-10">
       <div class="flex items-center gap-3 mb-3">
         <div class="w-1.5 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>

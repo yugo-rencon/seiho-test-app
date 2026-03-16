@@ -3,7 +3,7 @@
         <div
             v-for="(item, index) in visibleItems"
             :key="index"
-            class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-md"
+            class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md"
         >
             <!-- 問題番号 -->
             <div class="flex items-start gap-2 my-4">

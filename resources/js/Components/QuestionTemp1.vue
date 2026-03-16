@@ -4,7 +4,7 @@
     </div>
     <div
         v-if="!shouldHideByPaywall"
-        class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-md"
+        class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md"
     >
         <div class="flex items-start gap-2 my-4">
             <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>

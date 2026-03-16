@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="!shouldHideByPaywall"
-        class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-md"
+        class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md"
     >
 
         <!-- 問題番号 -->

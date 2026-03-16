@@ -15,7 +15,7 @@ const isActive = (name) => route().current(name);
 
 <template>
     <header
-        class="sticky top-0 z-30 border-b border-gray-100 bg-white/80 shadow-sm backdrop-blur-lg"
+        class="sticky top-0 z-30 border-b border-gray-100 bg-white shadow-sm md:bg-white/80 md:backdrop-blur-lg"
     >
         <div class="mx-auto w-full max-w-6xl px-6">
             <div class="flex items-center justify-between py-2.5">

@@ -240,7 +240,7 @@ const subject = "2024年度 フォームA";
                         { questionTitle: '契約の法的性質', label: 'ウ', content: '諾成契約' }, //41
                         { questionTitle: '保険金額', label: 'オ', content: '' }, //42
                         { questionTitle: '養老保険', label: 'エ', content: '逓減定期保険' }, //43
-                        { questionTitle: '日本における生命保険の発展（大正時代）', label: 'ア', content: 'スペインかぜの大流行' }, //44
+                        { questionTitle: '日本における生命保険の発展', label: 'ア', content: 'スペインかぜの大流行' }, //44
                         { questionTitle: '生命保険契約者保護機構', label: 'イ', content: '90%' }, //45
                         { questionTitle: '国民経済における生命保険', label: 'ア', content: '家計可処分所得' }, //46
                         { questionTitle: '生活保障としての生命保険', label: 'イ', content: '緊急出費保証' }, //47

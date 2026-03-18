@@ -85,7 +85,7 @@ const subject = "2020年度 フォームC";
                     questionTitle="事業費管理-②"
                     :contents="[
                         '死亡率',
-                        '利減分析',
+                        '利源分析',
                         '6',
                         '拡大',
                         '支出管理', // 問16〜20
@@ -104,9 +104,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="会計公準"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい', //p
+                        '企業実体の公準 → 継続企業の公準', //p6
+                        '継続企業の公準 → 企業実体の公準', //p6
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -115,9 +115,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="責任準備金"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '保険料勘定の修正を行う → 修正は行わない', //p40
+                        '全額損金算入が認められている → 損金とはならない', //p41
                     ]"
                 />
                 <QuestionTemp1
@@ -126,9 +126,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="企業会計原則"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '法令により強制されている → 法令ではなく会計慣習', //p24
+                        '一般原則 ↔︎ 損益計算書原則および貸借対照表原則', //p24
                     ]"
                 />
                 <QuestionTemp1
@@ -137,9 +137,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="有価証券の評価方法"
                     :contents="[
-                        '', //p
-                        '正しい', //p
-                        '', //p
+                        '償却原価法 → 時価法', //p110
+                        '正しい',
+                        '時価法 → 償却原価法', //p110
                     ]"
                 />
                 <QuestionTemp1
@@ -148,9 +148,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="会計監査人による監査"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい', //p
+                        '公認会計士または弁護士 → 公認会計士または公認会計士によって設立された監査法人', //p207
+                        '取締役会により選任 → 株主総会（相互会社では総代会）により選任', //p208
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -159,9 +159,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="勘定科目"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '収益勘定 → 費用勘定', //p13
                     ]"
                 />
                 <QuestionTemp1
@@ -170,9 +170,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="税務会計"
                     :contents="[
-                        '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '会計情報の開示という機能が含まれているという点で同じ → 含まれていないという点で異なる', //p32
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -181,9 +181,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="連結財務諸表"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '従来の説明 ↔︎ 現在の説明（従来：形式基準（議決権50%超）、現在：実質基準（支配関係））', //p81
                     ]"
                 />
                 <QuestionTemp1
@@ -192,9 +192,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="負債勘定の内容"
                     :contents="[
-                        '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '買入代金の未支払金額は含まれない → 含まれる', //p127
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -203,9 +203,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="費用に属する科目"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        '正しい',
+                        '保険金据置支払金 → 支払利息', //p153
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp2
@@ -215,11 +215,11 @@ const subject = "2020年度 フォームC";
                     :items="[
                         // 問31〜40
                         { questionTitle: '取引の認識', content: '正しい' }, //31
-                        { questionTitle: '開示書類', content: '' }, //32
-                        { questionTitle: '保険金等支払金の計上', content: '' }, //33
-                        { questionTitle: '企業会計原則（一般原則）', content: '' }, //34
+                        { questionTitle: '開示書類', content: '四半期報告書は開示が求められていない → 開示が求められている' }, //32 p30
+                        { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //33 p42-43
+                        { questionTitle: '企業会計原則（一般原則）', content: '明瞭性の原則 → 資本取引・損益取引区分の原則' }, //34 p25
                         { questionTitle: '退職給付引当金', content: '正しい' }, //35
-                        { questionTitle: '計算書類', content: '' }, //36
+                        { questionTitle: '計算書類', content: '株式会社 → 相互会社（剰余金処分に関する議案を作成）' }, //36 p56-57
                         { questionTitle: '外貨預金の換算', content: '正しい' }, //37
                         { questionTitle: '保険金', content: '正しい' }, //38
                         { questionTitle: '負債勘定', content: '正しい' }, //39

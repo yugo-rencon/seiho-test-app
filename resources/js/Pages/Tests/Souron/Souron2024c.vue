@@ -229,7 +229,7 @@ const subject = "2024年度 フォームC";
                         { questionTitle: '生命保険契約の要素', content: '正しい' }, //31
                         { questionTitle: '保険料', content: '正しい' }, //32
                         { questionTitle: '保険の歴史的発展', content: '正しい' }, //33
-                        { questionTitle: '日本における生命保険の発展（大正時代）', content: 'ペストの大流行とスペインかぜの大流行 → スペインかぜの大流行と関東大震災' }, //34 p76
+                        { questionTitle: '日本における生命保険の発展', content: 'ペストの大流行とスペインかぜの大流行 → スペインかぜの大流行と関東大震災' }, //34 p76
                         { questionTitle: '流動性の原則', content: '重要性は非常に高い → 低い' }, //35 p109
                         { questionTitle: '社会保障制度', content: '社会扶助制度 → 公的扶助制度' }, //36 p123
                         { questionTitle: '形式的監督主義', content: '形式的監督主義 → 実体的監督主義' }, //37 p148

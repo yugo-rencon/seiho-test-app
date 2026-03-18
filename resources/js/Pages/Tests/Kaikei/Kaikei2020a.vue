@@ -104,9 +104,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="会計の意義"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '財務会計の説明 ↔︎ 管理会計の説明', //p4
+                        '財務会計の説明 ↔︎ 管理会計の説明（財務会計：現在または過去、管理会計：未来）', //p4
                     ]"
                 />
                 <QuestionTemp1
@@ -115,9 +115,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="責任準備金"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '保険料勘定の修正を行う → 修正は行わない', //p40
+                        '全額損金算入が認められている → 損金とはならない', //p41
                     ]"
                 />
                 <QuestionTemp1
@@ -126,9 +126,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="費用に属する科目"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい', //p
+                        '分割支払も含まれる → 分割支払いは含めない', //p150
+                        '解約返戻金がある → 解約返戻金はない', //p151
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -137,9 +137,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="区分経理における運用資産の管理"
                     :contents="[
-                        '', //p
-                        '正しい', //p
-                        '', //p
+                        '資産分別管理方式 → 資産持分管理方式（マザーファンド方式）', //p190
+                        '正しい',
+                        '資産持分管理方式（マザーファンド方式） → 資産分別管理方式', //p190
                     ]"
                 />
                 <QuestionTemp1
@@ -148,9 +148,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="会計監査人による監査"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい', //p
+                        '公認会計士または弁護士 → 公認会計士または公認会計士によって設立された監査法人', //p207
+                        '取締役会により選任 → 株主総会（相互会社では総代会）により選任', //p208
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -159,9 +159,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="試算表と精算表"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        '正しい',
+                        '経営成績と財政状態の概要 → 一定期間の会計取引の合計', //p15-16
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -170,9 +170,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="税務会計"
                     :contents="[
-                        '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '会計情報の開示という機能が含まれているという点で同じ → 含まれていないという点で異なる', //p32
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -181,9 +181,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="関係法規等"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '日本公認会計士協会 → 生命保険協会経理委員会', //p95
                     ]"
                 />
                 <QuestionTemp1
@@ -192,9 +192,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="資産勘定"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        '正しい',
+                        'その他有価証券 → 責任準備金対応債権', //p110
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -203,9 +203,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="費差損益管理と事業費管理"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        '正しい',
+                        '主体的に取り組めるのは収入管理 → 支出管理', //p175
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp2
@@ -215,14 +215,14 @@ const subject = "2020年度 フォームA";
                     :items="[
                         // 問31〜40
                         { questionTitle: '簿記', content: '正しい' }, //31
-                        { questionTitle: '開示書類', content: '' }, //32
-                        { questionTitle: '保険金等支払金の計上', content: '' }, //33
+                        { questionTitle: '開示書類', content: '四半期報告書は開示が求められていない → 開示が求められている' }, //32 p30
+                        { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //33 p42-43
                         { questionTitle: '決算書類', content: '正しい' }, //34
-                        { questionTitle: '保険業法第113条繰延資産', content: '' }, //35
-                        { questionTitle: '価格変動準備金', content: '' }, //36
+                        { questionTitle: '保険業法第113条繰延資産', content: '10事業年度の事業費を20年以内に償却 → 5事業年度の事業費を10年以内に償却' }, //35 p122
+                        { questionTitle: '価格変動準備金', content: '積立基準や積立限度額は定められていない → 定められている' }, //36 p134
                         { questionTitle: '自己株式', content: '正しい' }, //37
                         { questionTitle: '保険金', content: '正しい' }, //38
-                        { questionTitle: '利源分析', content: '' }, //39
+                        { questionTitle: '利源分析', content: '危険準備金損益、為替損益 → 責任準備金関係損益、価格変動損益' }, //39 p178
                         { questionTitle: '区分経理への反映', content: '正しい' }, //40
                         // 問41〜50
                         { questionTitle: '帳簿の種類', label: 'エ', content: '売掛金元帳' }, //41

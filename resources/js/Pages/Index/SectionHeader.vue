@@ -23,25 +23,11 @@ defineProps({
 <template>
     <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
         <div>
-            <div
-                class="mb-4 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-indigo-500/10 to-purple-500/10 px-4 py-1.5"
-            >
-                <div
-                    class="h-2 w-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"
-                ></div>
-                <span class="text-xs font-semibold text-indigo-600">{{
-                    section.period
-                }}</span>
-            </div>
-
             <div class="space-y-2">
                 <div class="flex items-center gap-2 md:gap-3">
                     <h2 class="text-xl font-bold text-gray-900">
                         {{ section.title }}
                     </h2>
-                    <span class="text-[10px] font-medium text-gray-500">
-                        2020〜2024
-                    </span>
 
                     <!-- PC用: マイページ入力導線 -->
                     <Link

@@ -25,7 +25,8 @@ defineProps({
         <div>
             <div class="space-y-2">
                 <div class="flex items-center gap-2 md:gap-3">
-                    <h2 class="text-xl font-bold text-gray-900">
+                    <div class="h-8 w-1.5 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500"></div>
+                    <h2 class="text-2xl font-bold text-gray-900">
                         {{ section.title }}
                     </h2>
 

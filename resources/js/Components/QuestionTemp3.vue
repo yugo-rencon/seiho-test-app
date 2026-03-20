@@ -25,10 +25,10 @@
           <p>{{ normalizeBiArrow(content) }}</p>
         </div>
       </div>
-      <div class="flex justify-end text-xs text-gray-400 md:text-sm">
+      <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
         {{ props.title }}
       </div>
-      <div class="flex justify-end text-xs text-gray-400 md:text-sm">
+      <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
         {{ props.subject }}
       </div>
     </div>

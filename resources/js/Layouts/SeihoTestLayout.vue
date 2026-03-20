@@ -137,7 +137,9 @@ const closePricingModal = () => {
             @open-pricing-modal="openPricingModal"
         />
 
-        <slot />
+        <main class="overflow-x-hidden">
+            <slot />
+        </main>
 
         <!-- ハンバーガーメニュー本体 -->
         <MobileMenuDrawer

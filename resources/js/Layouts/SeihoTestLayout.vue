@@ -88,7 +88,7 @@ watch(
         toastTimer = setTimeout(() => {
             showToast.value = false;
             toastTimer = null;
-        }, 4500);
+        }, 2000);
     },
     { immediate: true },
 );

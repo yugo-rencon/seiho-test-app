@@ -22,7 +22,7 @@
             </p>
 
             <div class="grid gap-2">
-                <div class="grid gap-2 text-sm leading-6 text-gray-700 select-none md:text-[15px] grid-cols-[2em_1fr]">
+                <div class="grid gap-2 text-[15px] leading-7 text-gray-700 select-none md:text-base grid-cols-[2em_1fr]">
                     <span class="font-semibold">{{ item.label }}：</span>
                     <p v-html="formatContent(item)"></p>
                 </div>

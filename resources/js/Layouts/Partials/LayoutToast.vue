@@ -21,42 +21,42 @@ const iconByType = {
     <transition name="fade">
         <div
             v-if="show && message"
-            class="fixed left-1/2 top-20 z-50 w-[min(94vw,760px)] -translate-x-1/2 rounded-2xl px-5 py-4 text-sm shadow-[0_18px_40px_-12px_rgba(0,0,0,0.45)]"
+            class="fixed left-1/2 top-20 z-50 w-[min(94vw,680px)] -translate-x-1/2 rounded-2xl border px-4 py-3 text-sm shadow-[0_18px_45px_-20px_rgba(0,0,0,0.5)] backdrop-blur-sm sm:px-5 sm:py-4"
             :class="
                 type === 'success'
-                    ? 'border-2 border-purple-400 bg-purple-50 text-purple-900'
+                    ? 'border-emerald-200 bg-emerald-50/95 text-emerald-900'
                     : type === 'already'
-                      ? 'border-2 border-purple-400 bg-purple-100 text-purple-900'
+                      ? 'border-amber-200 bg-amber-50/95 text-amber-900'
                     : type === 'auth'
-                      ? 'border-2 border-purple-400 bg-purple-50 text-purple-900'
+                      ? 'border-sky-200 bg-sky-50/95 text-sky-900'
                     : type === 'cancel'
-                      ? 'border-2 border-purple-300 bg-purple-50 text-purple-900'
-                      : 'border-2 border-purple-200 bg-white text-gray-700'
+                      ? 'border-rose-200 bg-rose-50/95 text-rose-900'
+                      : 'border-slate-200 bg-white/95 text-slate-700'
             "
         >
             <div class="flex items-center gap-3">
                 <span
-                    class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-black"
+                    class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-black ring-1"
                     :class="
                         type === 'success'
-                            ? 'bg-purple-600 text-white'
+                            ? 'bg-emerald-600 text-white ring-emerald-300'
                             : type === 'already'
-                              ? 'bg-purple-700 text-white'
+                              ? 'bg-amber-500 text-white ring-amber-300'
                             : type === 'auth'
-                              ? 'bg-purple-600 text-white'
+                              ? 'bg-sky-600 text-white ring-sky-300'
                             : type === 'cancel'
-                              ? 'bg-purple-200 text-purple-800'
-                              : 'bg-purple-100 text-purple-700'
+                              ? 'bg-rose-500 text-white ring-rose-300'
+                              : 'bg-slate-100 text-slate-700 ring-slate-200'
                     "
                     >{{ iconByType[type] ?? "i" }}</span
                 >
                 <div class="flex-1">
                     <p
-                        class="font-semibold text-base"
+                        class="font-semibold text-[15px] leading-6 sm:text-base"
                         :class="
                             type === 'success' || type === 'already' || type === 'auth'
-                                ? 'text-purple-900'
-                                : 'text-gray-700'
+                                ? 'text-current'
+                                : 'text-slate-700'
                         "
                     >
                         {{ message }}
@@ -64,7 +64,7 @@ const iconByType = {
                 </div>
                 <button
                     type="button"
-                    class="self-center inline-flex h-8 w-8 items-center justify-center rounded-md text-base font-semibold text-gray-500 transition hover:bg-black/5 hover:text-gray-700"
+                    class="self-center inline-flex h-8 w-8 items-center justify-center rounded-lg text-base font-semibold text-slate-500 transition hover:bg-black/5 hover:text-slate-700"
                     aria-label="閉じる"
                     @click="$emit('close')"
                 >
@@ -78,10 +78,11 @@ const iconByType = {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
+    transform: translate(-50%, -8px);
 }
 </style>

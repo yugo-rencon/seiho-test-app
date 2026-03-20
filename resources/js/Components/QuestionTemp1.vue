@@ -21,7 +21,7 @@
 
       <div class="grid gap-2">
         <div v-for="(content, index) in props.contents" :key="index"
-             class="grid gap-2 text-sm leading-6 text-gray-700 select-none md:text-[15px] grid-cols-[2em_1fr]">
+             class="grid gap-2 text-[15px] leading-7 text-gray-700 select-none md:text-base grid-cols-[2em_1fr]">
           <span class="font-semibold">{{ getLabel(index) }}：</span>
           <p v-html="formatContentHtml(content)"></p>
         </div>
@@ -51,7 +51,7 @@
                 <div
                     v-for="index in [0, 1]"
                     :key="index"
-                    class="grid gap-2 text-sm leading-6 text-gray-700 select-none md:text-[15px] grid-cols-[2em_1fr]"
+                    class="grid gap-2 text-[15px] leading-7 text-gray-700 select-none md:text-base grid-cols-[2em_1fr]"
                 >
                     <span class="font-semibold">{{ getLabel(index) }}：</span>
                     <p v-html="formatContentHtml(props.contents?.[index] ?? '')"></p>

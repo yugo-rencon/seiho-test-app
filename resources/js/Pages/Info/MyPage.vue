@@ -1,7 +1,7 @@
 <script setup>
 import axios from 'axios';
 import { Head, Link, usePage } from '@inertiajs/vue3';
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
 
 const page = usePage();
@@ -120,14 +120,6 @@ const saveResult = () => {
       isSavingResult.value = false;
     });
 };
-
-onMounted(() => {
-  const params = new URLSearchParams(window.location.search);
-  const openSubject = params.get('open_subject');
-  if (!openSubject) return;
-  if (!props.subjects.some((subject) => subject.key === openSubject)) return;
-  openModal(openSubject);
-});
 
 const isPassScoreModalOpen = ref(false);
 

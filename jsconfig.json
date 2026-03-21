@@ -11,6 +11,7 @@
         "resources/**/*.ts",
         "resources/**/*.d.ts",
         "resources/**/*.vue",
+        "env.d.ts",
         "shims-vue.d.ts"
     ],
     "exclude": ["node_modules", "public"]

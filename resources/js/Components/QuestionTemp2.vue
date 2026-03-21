@@ -1,13 +1,9 @@
 <template>
     <div v-if="showAdBeforeQuestion31" class="rounded-lg bg-white p-2 shadow-sm">
-        <AdSenseUnit slot="8570892917" />
+        <AdSenseUnit ad-slot="8570892917" />
     </div>
     <template v-if="visibleItems.length > 0">
-        <div
-            v-for="(item, index) in visibleItems"
-            :key="index"
-            class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md"
-        >
+        <div v-for="(item, index) in visibleItems" :key="index" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md">
             <div class="flex items-start gap-2 my-4">
                 <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>
                 <h2 class="text-base font-bold leading-tight text-gray-700">
@@ -33,10 +29,10 @@
             <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
                 {{ props.subject }}
             </div>
-        </div>
+        </div>f
     </template>
     <div v-if="showAdAfterQuestion50" class="rounded-lg bg-white p-2 shadow-sm">
-        <AdSenseUnit slot="8570892917" />
+        <AdSenseUnit ad-slot="8570892917" />
     </div>
     <PaywallNotice v-if="shouldShowPaywallNotice" />
 </template>
@@ -119,9 +115,7 @@ const normalizedItems = computed(() => {
 
 const visibleItems = computed(() => {
     if (!isLockedContext.value) return normalizedItems.value;
-    return normalizedItems.value.filter(
-        (item: any) => Number(item.questionNo) < paywallStartQuestion.value,
-    );
+    return normalizedItems.value.filter((item: any) => Number(item.questionNo) < paywallStartQuestion.value);
 });
 
 const shouldShowPaywallNotice = computed(() => {
@@ -129,31 +123,20 @@ const shouldShowPaywallNotice = computed(() => {
     if (normalizedItems.value.length === 0) return false;
 
     const firstQuestion = Number(normalizedItems.value[0].questionNo);
-    const lastQuestion = Number(
-        normalizedItems.value[normalizedItems.value.length - 1].questionNo,
-    );
+    const lastQuestion = Number(normalizedItems.value[normalizedItems.value.length - 1].questionNo);
 
-    return (
-        paywallStartQuestion.value >= firstQuestion &&
-        paywallStartQuestion.value <= lastQuestion
-    );
+    return paywallStartQuestion.value >= firstQuestion && paywallStartQuestion.value <= lastQuestion;
 });
 
 const showAdBeforeQuestion31 = computed(() => {
     const firstQuestion = Number(normalizedItems.value[0]?.questionNo ?? 0);
-    return (
-        !hasPremiumAccess(page.props) &&
-        visibleItems.value.length > 0 &&
-        firstQuestion === 31
-    );
+    return !hasPremiumAccess(page.props) && visibleItems.value.length > 0 && firstQuestion === 31;
 });
 
 const showAdAfterQuestion50 = computed(() => {
     if (hasPremiumAccess(page.props)) return false;
     if (visibleItems.value.length === 0) return false;
-    const lastVisibleQuestion = Number(
-        visibleItems.value[visibleItems.value.length - 1]?.questionNo ?? 0,
-    );
+    const lastVisibleQuestion = Number(visibleItems.value[visibleItems.value.length - 1]?.questionNo ?? 0);
     return lastVisibleQuestion >= 50;
 });
 
@@ -166,7 +149,7 @@ const getLabel = (index: number) => {
     }
 
     if (props.labels.length >= 10) {
-        return index < 10 ? "解" : props.labels[index - 10] ?? "";
+        return index < 10 ? "解" : (props.labels[index - 10] ?? "");
     }
 
     return props.labels[index] ?? "";
@@ -206,11 +189,7 @@ const formatContent = (item: { label: string; content: string }) => {
 
     if (label === "オ") {
         // オは定型を優先（入力を短くするため content は空でも可）
-        if (
-            raw.trim() === "" ||
-            /A・Bともに正しい/.test(raw) ||
-            /^\s*C[-－]/.test(raw)
-        ) {
+        if (raw.trim() === "" || /A・Bともに正しい/.test(raw) || /^\s*C[-－]/.test(raw)) {
             return normalizeBiArrowHtml("C（A・Bともに正しい）");
         }
 

@@ -11,7 +11,7 @@ import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 // 科目タブ・年度/フォーム情報は constants 側に集約して再利用する
 const sections = INDEX_SECTIONS;
 const forms = EXAM_FORMS;
-const defaultSectionId = sections.find((section) => section.id === "zeihou")?.id ?? sections[0]?.id ?? "";
+const defaultSectionId = sections.find((section) => section.id === "souron")?.id ?? sections[0]?.id ?? "";
 const activeSectionId = ref(defaultSectionId);
 
 // 現在選択中の科目オブジェクト（タイトル/年度/routePrefix など）を取得
@@ -23,10 +23,9 @@ const hasPremium = computed(() => page.props.auth?.hasPremium === true);
 const isLoggedIn = computed(() => !!page.props.auth?.user);
 
 // 「本番の点数を記録」リンク先:
-// マイページを開くと同時に、対象科目の入力モーダルを開けるよう open_subject を付与
+// 該当セクション（#score-input）へ遷移
 const mypageInputHref = computed(() => {
-    if (!activeSection.value) return route("mypage");
-    return `${route("mypage", { open_subject: activeSection.value.id })}#score-input`;
+    return `${route("mypage")}#score-input`;
 });
 
 const isValidSectionId = (id) => sections.some((section) => section.id === id);
@@ -110,7 +109,7 @@ onMounted(() => {
             </div>
 
             <div v-if="!hasPremium" class="mt-6">
-                <AdSenseUnit slot="5135479704" />
+                <AdSenseUnit ad-slot="5135479704" />
             </div>
         </div>
 

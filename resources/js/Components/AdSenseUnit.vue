@@ -2,7 +2,7 @@
 import { onMounted } from "vue";
 
 const props = defineProps({
-    slot: {
+    adSlot: {
         type: String,
         required: true,
     },
@@ -38,7 +38,7 @@ onMounted(() => {
         class="adsbygoogle"
         style="display: block"
         data-ad-client="ca-pub-5875099458010785"
-        :data-ad-slot="props.slot"
+        :data-ad-slot="props.adSlot"
         :data-ad-format="props.format"
         :data-full-width-responsive="props.fullWidthResponsive ? 'true' : 'false'"
     ></ins>

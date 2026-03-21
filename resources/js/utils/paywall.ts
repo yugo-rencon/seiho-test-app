@@ -1,8 +1,3 @@
-const isAlwaysFreeSubject = (title: string): boolean => {
-    const text = String(title ?? "");
-    return text.includes("税法") || text.includes("資産");
-};
-
 const LATEST_FREE_YEAR = 2024;
 
 const parseFormCode = (subject: string): string => {
@@ -12,10 +7,6 @@ const parseFormCode = (subject: string): string => {
 };
 
 export const isPaidYear = (subject: string, title: string = ""): boolean => {
-    if (isAlwaysFreeSubject(title)) {
-        return false;
-    }
-
     const year = Number(String(subject ?? "").slice(0, 4));
     const formCode = parseFormCode(subject);
 

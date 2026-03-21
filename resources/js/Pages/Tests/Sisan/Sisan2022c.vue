@@ -1,228 +1,182 @@
 <script setup>
-import QuestionTemp1 from '@/Components/QuestionTemp1.vue'
-import QuestionTemp2 from '@/Components/QuestionTemp2.vue'
-import QuestionTemp3 from '@/Components/QuestionTemp3.vue'
-import TestNavigationButtons from '@/Components/TestNavigationButtons.vue';
-import Pagetitle from '@/Components/Pagetitle.vue'
-import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
+import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
+import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
+import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+import Pagetitle from "@/Components/Pagetitle.vue";
+import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
-const title = "資産の運用"
-const subject = '2022年度 フォームC'
-
-
+const title = "資産の運用";
+const subject = "2022年度 フォームC";
 </script>
 
 <template>
+    <SeihoTestLayout :title="title">
+        <section class="bg-gray-100 text-gray-800 py-10">
+            <!-- ページタイトル -->
+            <Pagetitle :title="title" :description="subject" />
 
-<SeihoTestLayout :title="title">
-    <section class="bg-gray-100 text-gray-800 py-10">
+            <!-- 問題リスト -->
+            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+                <QuestionTemp3
+                    :questionNumber="1"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '1年',
+                        '発券',
+                        '受信',
+                        '商業',
+                        '政府系', // 問１〜５
+                    ]"
+                    :labels="[
+                        'ウ', //1
+                        'ケ', //2
+                        'カ', //3
+                        'イ', //4
+                        'キ', //5
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="2"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '養老',
+                        '収入保険料',
+                        '低下',
+                        '高利回り',
+                        'リーマン・ブラザーズ', //問６〜10
+                    ]"
+                    :labels="[
+                        'ケ', //6
+                        'イ', //7
+                        'コ', //8
+                        'エ', //9
+                        'ク', //10
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="3"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '緩和',
+                        '信託会社',
+                        '持株会社',
+                        'デリバティブ取引',
+                        '付随業務', //問11〜15
+                    ]"
+                    :labels="[
+                        'コ', //11
+                        'オ', //12
+                        'ク', //13
+                        'ケ', //14
+                        'イ', //15
+                    ]"
+                />
+                <QuestionTemp3
+                    :questionNumber="4"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '法定他業',
+                        '大口信用供与規制',
+                        '10%',
+                        '早期是正措置',
+                        'ソルベンシー・マージン比率', //問16〜20
+                    ]"
+                    :labels="[
+                        'ケ', //16
+                        'オ', //17
+                        'イ', //18
+                        'ア', //19
+                        'コ', //20
+                    ]"
+                />
+                <QuestionTemp1 :questionNumber="21" :title="title" :subject="subject" :contents="[
+                '長期ではなく短期の運転資金として利用されている。', //p
+                '利息を手形額面の金額に上乗せするのではなく、差し引いて貸付を行うもの。', //p
+                '正しい',
+                ]" />
+                <QuestionTemp1 :questionNumber="22" :title="title" :subject="subject" :contents="[
+                'アセット・ミックスではなくバリュー・アット・リスク。', //p
+                '正しい',
+                '商品設計やポー トフォリオの構築に際しては他の保険商品以上の流動性確保に留意している。', //p
+                ]" />
+                <QuestionTemp1 :questionNumber="23" :title="title" :subject="subject" :contents="[
+                '正しい',
+                'イギリスの説明。', //p
+                'ドイツの説明。', //p
+                ]" />
+                <QuestionTemp1 :questionNumber="24" :title="title" :subject="subject" :contents="[
+                'ヘッジ取引の説明。', //p
+                'アウトライト取引の説明。', //p
+                '正しい',
+                ]" />
+                <QuestionTemp1 :questionNumber="25" :title="title" :subject="subject" :contents="[
+                'デフレではなくインフレ。', //p
+                '5000円ではなく1万円であり、生命保険会社は解散となり第二会社が設立された。', //p
+                '正しい',
+                ]" />
+                <QuestionTemp1 :questionNumber="26" :title="title" :subject="subject" :contents="[
+                '正しい',
+                '正しい',
+                '信用創造機能ではなく貯蓄機能', //p
+                ]" />
+                <QuestionTemp1 :questionNumber="27" :title="title" :subject="subject" :contents="[
+                'テナントの入居状況に依存するため不安定であり、流動性はきわめて低い。', //p
+                '正しい',
+                '正しい',
+                ]" />
+                <QuestionTemp1 :questionNumber="28" :title="title" :subject="subject" :contents="[
+                '正しい',
+                'オープン市場ではなくインターバンク市場の説明。', //p
+                '正しい',
+                ]" />
+                <QuestionTemp1 :questionNumber="29" :title="title" :subject="subject" :contents="[
+                '正しい',
+                '保険会社は「保険検査マニュアル」が公表された。', //p
+                '正しい',
+                ]" />
+                <QuestionTemp1 :questionNumber="30" :title="title" :subject="subject" :contents="[
+                '正しい',
+                '時価評価ではなく、取得価額で評価する。', //p
+                '正しい',
+                ]" />
+                <QuestionTemp2
+                    :questionNumber="31"
+                    :title="title"
+                    :subject="subject"
+                    :items="[
+                        // 問31〜40
+                        { content: '正しい' }, //31
+                        { content: '正しい' }, //32
+                        { content: '融資審査部門ではなくマクロ調査部門。' }, //33
+                        { content: '生保の海外投融資は、生保本体で直接行う場合のほか、生保本体と独立した海外現地法人を通じて行う場合がある。' }, //34
+                        { content: '区分経理ではなく一般勘定と明確に区分された特別勘定が設けられることになった。' }, //35
+                        { content: '正しい' }, //36
+                        { content: '正しい' }, //37
+                        { content: '①キャビタル・ゲインのインカム化、②簿価分離といったメリットがある ' }, //38
+                        { content: '2008年(平成20年)のサブプライムローン問題に端を発した米国住宅バブル崩壊をきっかけに多分野の資産価格が大幅に下落したことに伴い2000 年(平成12 年)以降増加傾向であった海外投融資は、減少に転じている。' }, //39
+                        { content: '正しい' }, //40
+                        // 問41〜50
+                        { label: 'オ', content: '' }, //41
+                        { label: 'ア', content: '準拠主義' }, //42
+                        { label: 'ウ', content: '自己資本' }, //43
+                        { label: 'エ', content: 'アナリスト' }, //44
+                        { label: 'オ', content: '' }, //45
+                        { label: 'イ', content: '上昇' }, //46
+                        { label: 'ア', content: 'ユニバーサル・バンキング' }, //47
+                        { label: 'イ', content: 'インパクト・ローン' }, //48
+                        { label: 'ウ', content: 'オルタナティブ投資' }, //49
+                        { label: 'エ', content: '顧客本位の業務運営に関する原則' }, //50
+                    ]"
+                />
+            </div>
 
-        <!-- ページタイトル -->
-        <Pagetitle
-            :title="title"
-            :description="subject"
-        />
-
-        <!-- 問題リスト -->
-        <div class="max-w-4xl mx-auto mt-4 space-y-2">
-            <QuestionTemp3
-                :questionNumber="1"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '1年','発券','受信','商業','政府系', // 問１〜５
-                ]"
-                :labels="[
-                    'ウ', //1
-                    'ケ', //2
-                    'カ', //3
-                    'イ', //4
-                    'キ', //5
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="2"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '養老','収入保険料','低下','高利回り','リーマン・ブラザーズ', //問６〜10
-                ]"
-                :labels="[
-                    'ケ', //6
-                    'イ', //7
-                    'コ', //8
-                    'エ', //9
-                    'ク', //10
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="3"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '緩和','信託会社','持株会社','デリバティブ取引','付随業務', //問11〜15
-                ]"
-                :labels="[
-                    'コ', //11
-                    'オ', //12
-                    'ク', //13
-                    'ケ', //14
-                    'イ', //15
-                ]"
-            />
-            <QuestionTemp3
-                :questionNumber="4"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '法定他業','大口信用供与規制','10%','早期是正措置','ソルベンシー・マージン比率', //問16〜20
-                ]"
-                :labels="[
-                    'ケ', //16
-                    'オ', //17
-                    'イ', //18
-                    'ア', //19
-                    'コ', //20
-                ]"
-            />
-<QuestionTemp1
-                :questionNumber="21"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '長期ではなく短期の運転資金として利用されている。',
-                '利息を手形額面の金額に上乗せするのではなく、差し引いて貸付を行うもの。',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="22"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                'アセット・ミックスではなくバリュー・アット・リスク。',
-                '正しい',
-                '商品設計やポー トフォリオの構築に際しては他の保険商品以上の流動性確保に留意している。'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="23"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                'イギリスの説明。',
-                'ドイツの説明。'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="24"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                'ヘッジ取引の説明。',
-                'アウトライト取引の説明。',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="25"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                'デフレではなくインフレ。',
-                '5000円ではなく1万円であり、生命保険会社は解散となり第二会社が設立された。',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="26"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '正しい',
-                '信用創造機能ではなく貯蓄機能'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="27"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                'テナントの入居状況に依存するため不安定であり、流動性はきわめて低い。',
-                '正しい',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="28"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                'オープン市場ではなくインターバンク市場の説明。',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="29"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '保険会社は「保険検査マニュアル」が公表された。',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp1
-                :questionNumber="30"
-                :title="title"
-                :subject="subject"
-                :contents="[
-                '正しい',
-                '時価評価ではなく、取得価額で評価する。',
-                '正しい'
-                ]"
-            />
-            <QuestionTemp2
-                :questionNumber="31"
-                :title="title"
-                :subject="subject"
-                                :items="[
-                    // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '正しい' }, //32
-                    { content: '融資審査部門ではなくマクロ調査部門。' }, //33
-                    { content: '生保の海外投融資は、生保本体で直接行う場合のほか、生保本体と独立した海外現地法人を通じて行う場合がある。' }, //34
-                    { content: '区分経理ではなく一般勘定と明確に区分された特別勘定が設けられることになった。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '正しい' }, //37
-                    { content: '①キャビタル・ゲインのインカム化、②簿価分離といったメリットがある ' }, //38
-                    { content: '2008年(平成20年)のサブプライムローン問題に端を発した米国住宅バブル崩壊をきっかけに多分野の資産価格が大幅に下落したことに伴い2000 年(平成12 年)以降増加傾向であった海外投融資は、減少に転じている。' }, //39
-                    { content: '正しい' }, //40
-                    // 問41〜50
-                    { label: 'オ', content: '' }, //41
-                    { label: 'ア', content: '準拠主義' }, //42
-                    { label: 'ウ', content: '自己資本' }, //43
-                    { label: 'エ', content: 'アナリスト' }, //44
-                    { label: 'オ', content: '' }, //45
-                    { label: 'イ', content: '上昇' }, //46
-                    { label: 'ア', content: 'ユニバーサル・バンキング' }, //47
-                    { label: 'イ', content: 'インパクト・ローン' }, //48
-                    { label: 'ウ', content: 'オルタナティブ投資' }, //49
-                    { label: 'エ', content: '顧客本位の業務運営に関する原則' }, //50
-                ]"
-                
-            />
-        </div>
-
-        <!-- ボタングループ -->
-        <TestNavigationButtons previous-route="sisan2022b" next-route="sisan2021a" />
-
-    </section>
-
+            <!-- ボタングループ -->
+            <TestNavigationButtons previous-route="sisan2022b" next-route="sisan2021a" />
+        </section>
     </SeihoTestLayout>
-
-
 </template>

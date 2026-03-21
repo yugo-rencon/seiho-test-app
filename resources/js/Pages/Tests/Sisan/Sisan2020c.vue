@@ -22,101 +22,101 @@ const subject = "2020年度 フォームC";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="生保資産運用の今後-①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問１〜５
+                        '時価',
+                        'グローバル化',
+                        '日本公認会計士協会',
+                        '売買目的有価証券',
+                        '資本', // 問１〜５
                     ]"
                     :labels="[
-                        '', //1
-                        '', //2
-                        '', //3
-                        '', //4
-                        '', //5
+                        'ケ', //1
+                        'カ', //2
+                        'エ', //3
+                        'キ', //4
+                        'ア', //5
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="生保資産運用の今後-②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問6〜10
+                        'ポートフォリオ',
+                        '区分経理',
+                        'ALM（Asset Liability Management）',
+                        'リスク・ヘッジ',
+                        '資金調達', // 問6〜10
                     ]"
                     :labels="[
-                        '', //6
-                        '', //7
-                        '', //8
-                        '', //9
-                        '', //10
+                        'オ', //6
+                        'コ', //7
+                        'エ', //8
+                        'キ', //9
+                        'ウ', //10
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="特別勘定-①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問11〜15
+                        '金利選好',
+                        'インフレ・ヘッジ',
+                        '投資リスク',
+                        '受託者',
+                        '運用割合', // 問11〜15
                     ]"
                     :labels="[
-                        '', //11
-                        '', //12
-                        '', //13
-                        '', //14
-                        '', //15
+                        'ウ', //11
+                        'ク', //12
+                        'カ', //13
+                        'イ', //14
+                        'ケ', //15
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="特別勘定-②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問16〜20
+                        '大口信用供与規制',
+                        '安全性',
+                        '契約者',
+                        '合同運用',
+                        'スケールメリット', // 問16〜20
                     ]"
                     :labels="[
-                        '', //16
-                        '', //17
-                        '', //18
-                        '', //19
-                        '', //20
+                        'キ', //16
+                        'ア', //17
+                        'エ', //18
+                        'ク', //19
+                        'オ', //20
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="生命保険会社と金融仲介機能"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '間接金融的 → 直接金融的', //p10-11
+                        '信用創造機能 → 貯蓄機能', //p11
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="一般貸付"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -124,20 +124,20 @@ const subject = "2020年度 フォームC";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="各国における保険会社の周辺業務の取り扱い"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="経済安定成長期の有価証券投資"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -146,43 +146,43 @@ const subject = "2020年度 フォームC";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="改正保険業法の施行（1998年（平成10年）12月）（金融システム改革法）"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="資産運用規制の体系"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="貸付管理"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="不動産投資"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -190,21 +190,21 @@ const subject = "2020年度 フォームC";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="戦前の生保資産運用"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="各国の生保資産運用の傾向"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -214,27 +214,27 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '', content: '' }, //31
-                        { questionTitle: '', content: '' }, //32
-                        { questionTitle: '', content: '' }, //33
-                        { questionTitle: '', content: '' }, //34
-                        { questionTitle: '', content: '' }, //35
-                        { questionTitle: '', content: '' }, //36
-                        { questionTitle: '', content: '' }, //37
-                        { questionTitle: '', content: '' }, //38
-                        { questionTitle: '', content: '' }, //39
-                        { questionTitle: '', content: '' }, //40
+                        { questionTitle: '日本の金融制度', content: '正しい' }, //31
+                        { questionTitle: '投融資決定機構', content: '正しい' }, //32
+                        { questionTitle: '手形貸付', content: '' }, //33
+                        { questionTitle: 'リスク特性', content: '' }, //34
+                        { questionTitle: 'スワップ取引', content: '' }, //35
+                        { questionTitle: '海外投融資', content: '正しい' }, //36
+                        { questionTitle: 'アメリカの資産運用規制', content: '正しい' }, //37
+                        { questionTitle: '公共投資', content: '正しい' }, //38
+                        { questionTitle: '資産運用の多様化', content: '正しい' }, //39
+                        { questionTitle: '国際会計基準導入の動向', content: '' }, //40
                         // 問41〜50
-                        { questionTitle: '', label: '', content: '' }, //41
-                        { questionTitle: '', label: '', content: '' }, //42
-                        { questionTitle: '', label: '', content: '' }, //43
-                        { questionTitle: '', label: '', content: '' }, //44
-                        { questionTitle: '', label: '', content: '' }, //45
-                        { questionTitle: '', label: '', content: '' }, //46
-                        { questionTitle: '', label: '', content: '' }, //47
-                        { questionTitle: '', label: '', content: '' }, //48
-                        { questionTitle: '', label: '', content: '' }, //49
-                        { questionTitle: '', label: '', content: '' }, //50
+                        { questionTitle: '生保資金の構成', label: 'イ', content: '基金' }, //41
+                        { questionTitle: '公社債の発行主体別分類', label: 'ア', content: '歳入債' }, //42
+                        { questionTitle: '融資審査', label: 'オ', content: '' }, //43
+                        { questionTitle: 'コール・オプション', label: 'ウ', content: '買い付ける' }, //44
+                        { questionTitle: '短期資金・現預金等', label: 'イ', content: '出し手' }, //45
+                        { questionTitle: 'イギリスの銀行', label: 'ア', content: 'ユニバーサル・バンキング' }, //46
+                        { questionTitle: 'ドイツの金融制度', label: 'オ', content: '' }, //47
+                        { questionTitle: '資産運用手段の多様化', label: 'エ', content: 'オルタナティブ投資' }, //48
+                        { questionTitle: '貸付業種の多様化', label: 'ウ', content: '劣後ローン' }, //49
+                        { questionTitle: '金融審議会報告', label: 'エ', content: '顧客本意の業務運営に関する原則' }, //50
                     ]"
                 />
             </div>

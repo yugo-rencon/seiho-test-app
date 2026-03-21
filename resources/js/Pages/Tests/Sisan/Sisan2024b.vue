@@ -20,6 +20,7 @@ const subject = "2024年度 フォームB";
             <div class="max-w-4xl mx-auto mt-4 space-y-2">
                 <QuestionTemp3
                     :questionNumber="1"
+                    questionTitle="生命保険会社の資産運用におけるリスク管理-①"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -39,6 +40,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp3
                     :questionNumber="2"
+                    questionTitle="生命保険会社の資産運用におけるリスク管理-②"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -58,6 +60,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp3
                     :questionNumber="3"
+                    questionTitle="有価証券投資と海外投融資-①"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -77,6 +80,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp3
                     :questionNumber="4"
+                    questionTitle="有価証券投資と海外投融資-②"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -96,16 +100,18 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp1
                     :questionNumber="21"
+                    questionTitle="生命保険会社と金融仲介機能"
                     :title="title"
                     :subject="subject"
                     :contents="[
                         '正しい',
-                        '間接金融的ではなく、直接金融的。', //p
-                        '保障機能と信用創造機能ではなく、保障機能と貯蓄機能。', //p
+                        '間接金融的 → 直接金融的', //p10-11
+                        '信用創造機能 → 貯蓄機能', //p11
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="22"
+                    questionTitle="不動産の投資手法"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -116,6 +122,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp1
                     :questionNumber="23"
+                    questionTitle="高度経済成長期の資産運用"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -126,6 +133,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp1
                     :questionNumber="24"
+                    questionTitle="金融の自由化と生保資産運用の多様化"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -136,6 +144,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp1
                     :questionNumber="25"
+                    questionTitle="改正保険業法の施行（1998年（平成10年））"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -146,6 +155,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp1
                     :questionNumber="26"
+                    questionTitle="生保資金の特徴と構成"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -156,6 +166,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp1
                     :questionNumber="27"
+                    questionTitle="貸付の分類"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -166,6 +177,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp1
                     :questionNumber="28"
+                    questionTitle="特別勘定の運用状況"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -176,6 +188,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp1
                     :questionNumber="29"
+                    questionTitle="戦前の生保資産運用"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -186,6 +199,7 @@ const subject = "2024年度 フォームB";
                 />
                 <QuestionTemp1
                     :questionNumber="30"
+                    questionTitle="金融システム改革法の施行（1998年（平成10年））"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -200,30 +214,30 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { content: '正しい' }, //31
+                        { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         {
-                            content:
+                            questionTitle: '保険会社向けの総合的な監督指針', content:
                                 '「保険会社向けの総合的な監替指針」においては、保険会社の監督事務に関し、その基本的考え方、監督上の評価項目、事務処理上の留意点について体系的に整理されている。また<b><u>法令遵守やリスク管理、審査管理態勢等の資産運用に関する項目も含まれている。</u></b>',
                         }, //32
-                        { content: '正しい' }, //33
-                        { content: '融資審査部門ではなく、マクロ調査部門。' }, //34
-                        { content: '金利スワップではなく、通貨スワップ。' }, //35
-                        { content: '生保の海外投融資は、生保本体で直接行う場合のほか、生保本体と独立した海外現地法人を通じて行う場合がある。' }, //36
-                        { content: '正しい' }, //37
-                        { content: '正しい' }, //38
-                        { content: '表面利率ではなく、応募者利回り。' }, //39
-                        { content: '正しい' }, //40
+                        { questionTitle: '生保の運用機構', content: '正しい' }, //33
+                        { questionTitle: '運用の実務', content: '融資審査部門ではなく、マクロ調査部門。' }, //34
+                        { questionTitle: 'スワップ取引', content: '金利スワップではなく、通貨スワップ。' }, //35
+                        { questionTitle: '海外現地法人', content: '生保の海外投融資は、生保本体で直接行う場合のほか、生保本体と独立した海外現地法人を通じて行う場合がある。' }, //36
+                        { questionTitle: '中堅・中小企業貸付対応', content: '正しい' }, //37
+                        { questionTitle: '金融システム改革', content: '正しい' }, //38
+                        { questionTitle: '運用規制ルールの変更等', content: '表面利率ではなく、応募者利回り。' }, //39
+                        { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
                         // 問41〜50
-                        { label: 'ア', content: '準拠主義' }, //41
-                        { label: 'エ', content: 'アナリスト' }, //42
-                        { label: 'ウ', content: '短期' }, //43
-                        { label: 'エ', content: '公募債' }, //44
-                        { label: 'オ', content: '' }, //45
-                        { label: 'イ', content: '収益性' }, //46
-                        { label: 'オ', content: '' }, //47
-                        { label: 'ウ', content: 'オルタナティブ投資' }, //48
-                        { label: 'ア', content: '時価' }, //49
-                        { label: 'イ', content: '200' }, //50
+                        { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //41
+                        { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //42
+                        { questionTitle: '企業貸付', label: 'ウ', content: '短期' }, //43
+                        { questionTitle: '公社債の発行方法の相違による分類', label: 'エ', content: '公募債' }, //44
+                        { questionTitle: '短期金融市場の概要', label: 'オ', content: '' }, //45
+                        { questionTitle: '個人変額保険の運用', label: 'イ', content: '収益性' }, //46
+                        { questionTitle: '特定金銭信託の活用', label: 'オ', content: '' }, //47
+                        { questionTitle: '資産運用手段の多様化', label: 'ウ', content: 'オルタナティブ投資' }, //48
+                        { questionTitle: '有価証券の評価方法', label: 'ア', content: '時価' }, //49
+                        { questionTitle: 'ソルベンシー確保', label: 'イ', content: '200' }, //50
                     ]"
                 />
             </div>

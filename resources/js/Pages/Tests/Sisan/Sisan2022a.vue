@@ -27,6 +27,7 @@ const subject = '2022年度 フォームA'
         <div class="max-w-4xl mx-auto mt-4 space-y-2">
             <QuestionTemp3
                 :questionNumber="1"
+                questionTitle="日本の金融制度と生命保険会社-①"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -42,6 +43,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp3
                 :questionNumber="2"
+                questionTitle="日本の金融制度と生命保険会社-②"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -57,6 +59,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp3
                 :questionNumber="3"
+                questionTitle="生命保険会社の資産運用におけるリスク管理-①"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -72,6 +75,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp3
                 :questionNumber="4"
+                questionTitle="生命保険会社の資産運用におけるリスク管理-②"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -87,6 +91,7 @@ const subject = '2022年度 フォームA'
             />
 <QuestionTemp1
                 :questionNumber="21"
+                questionTitle="企業貸付"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -97,6 +102,7 @@ const subject = '2022年度 フォームA'
                 />
             <QuestionTemp1
                 :questionNumber="22"
+                questionTitle="スワップ取引"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -107,6 +113,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="23"
+                questionTitle="諸外国の生命保険会社の資産運用体制"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -117,6 +124,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="24"
+                questionTitle="経済安定成長期の有価証券投資"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -127,6 +135,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="25"
+                questionTitle="改正保険業法の施行（1998年（平成10年）12月）"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -137,6 +146,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="26"
+                questionTitle="資産運用規制の体系"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -147,6 +157,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="27"
+                questionTitle="資産運用の専門化の進展"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -157,6 +168,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="28"
+                questionTitle="アメリカの資産運用規制"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -167,6 +179,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="29"
+                questionTitle="金融の自由化と生保資産運用の多様化"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -177,6 +190,7 @@ const subject = '2022年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="30"
+                questionTitle="有価証券の評価方法"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -191,27 +205,27 @@ const subject = '2022年度 フォームA'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '委員会制においては、バックグラウンドの違う複数の委員の合議によって投融資決定が行われる。このため、投融資の安全性を確保し得るという長所を持つが、機動性に劣ることになる。' }, //32
-                    { content: '融資審査部門ではなくマクロ調査部門。' }, //33
-                    { content: 'オプション取引では、オプションの買い手はオプションを行使する権利を有するが、行使する義務はない。' }, //34
-                    { content: '投資手法の多様化としては、共同ビル方式，借地方式，新借地方式，定期借地方式等の手法がある。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '正しい' }, //37
-                    { content: '正しい' }, //38
-                    { content: '金融サービス市場法のプランではなく、金融システム改革のプラン。' }, //39
-                    { content: '正しい' }, //40
+                    { questionTitle: '生保資金の構成', content: '正しい' }, //31
+                    { questionTitle: '投融資決定機構', content: '委員会制においては、バックグラウンドの違う複数の委員の合議によって投融資決定が行われる。このため、投融資の安全性を確保し得るという長所を持つが、機動性に劣ることになる。' }, //32
+                    { questionTitle: '運用の実務', content: '融資審査部門ではなくマクロ調査部門。' }, //33
+                    { questionTitle: 'オプション取引', content: 'オプション取引では、オプションの買い手はオプションを行使する権利を有するが、行使する義務はない。' }, //34
+                    { questionTitle: '不動産投資の多様化', content: '投資手法の多様化としては、共同ビル方式，借地方式，新借地方式，定期借地方式等の手法がある。' }, //35
+                    { questionTitle: 'イギリスの銀行', content: '正しい' }, //36
+                    { questionTitle: '第二次大戦時の国債保有の要請', content: '正しい' }, //37
+                    { questionTitle: '中堅・中小企業貸付対応', content: '正しい' }, //38
+                    { questionTitle: '金融関係5審議会による検討', content: '金融サービス市場法のプランではなく、金融システム改革のプラン。' }, //39
+                    { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
                     // 問41〜50
-                    { label: 'エ', content: '利差' }, //41
-                    { label: 'ア', content: '準拠主義' }, //42
-                    { label: 'ウ', content: '自己資本' }, //43
-                    { label: 'ア', content: '円建' }, //44
-                    { label: 'イ', content: '出し手' }, //45
-                    { label: 'エ', content: '毎日' }, //46
-                    { label: 'イ', content: '抵当貸付' }, //47
-                    { label: 'オ', content: '' }, //48
-                    { label: 'ウ', content: 'オルタナティブ投資' }, //49
-                    { label: 'オ', content: '' }, //50
+                    { questionTitle: '運用原則', label: 'エ', content: '利差' }, //41
+                    { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //42
+                    { questionTitle: '融資審査', label: 'ウ', content: '自己資本' }, //43
+                    { questionTitle: '海外投融資の内容と特徴', label: 'ア', content: '円建' }, //44
+                    { questionTitle: '短期金融市場', label: 'イ', content: '出し手' }, //45
+                    { questionTitle: '個人変額保険における資産の評価方法', label: 'エ', content: '毎日' }, //46
+                    { questionTitle: 'カナダの生命保険会社の資産運用', label: 'イ', content: '抵当貸付' }, //47
+                    { questionTitle: '昭和初期の金融恐慌期の生保資産運用', label: 'オ', content: '' }, //48
+                    { questionTitle: '資産運用手段の多様化', label: 'ウ', content: 'オルタナティブ投資' }, //49
+                    { questionTitle: 'リスクの多様化', label: 'オ', content: '' }, //50
                 ]"
                 
             />

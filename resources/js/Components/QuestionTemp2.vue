@@ -29,7 +29,7 @@
             <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
                 {{ props.subject }}
             </div>
-        </div>f
+        </div>
     </template>
     <div v-if="showAdAfterQuestion50" class="rounded-lg bg-white p-2 shadow-sm">
         <AdSenseUnit ad-slot="8570892917" />

@@ -27,6 +27,7 @@ const subject = '2023年度 フォームA'
         <div class="max-w-4xl mx-auto mt-4 space-y-2">
             <QuestionTemp3
                 :questionNumber="1"
+                questionTitle="生命保険会社と資産運用機能、金融仲介機能-①"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -42,6 +43,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp3
                 :questionNumber="2"
+                questionTitle="生命保険会社と資産運用機能、金融仲介機能-②"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -57,6 +59,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp3
                 :questionNumber="3"
+                questionTitle="不動産投資の多様化-①"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -72,6 +75,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp3
                 :questionNumber="4"
+                questionTitle="不動産投資の多様化-②"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -87,6 +91,7 @@ const subject = '2023年度 フォームA'
             />
 <QuestionTemp1
                 :questionNumber="21"
+                questionTitle="安全性の原則"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -97,6 +102,7 @@ const subject = '2023年度 フォームA'
                 />
             <QuestionTemp1
                 :questionNumber="22"
+                questionTitle="運用機構"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -107,6 +113,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="23"
+                questionTitle="各国における保険会社の周辺業務の取り扱い"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -117,6 +124,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="24"
+                questionTitle="戦後の日本経済と生命保険業"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -127,6 +135,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="25"
+                questionTitle="改正保険業法の施行（1998年（平成10年）12月）（金融システム改革法）"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -137,6 +146,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="26"
+                questionTitle="資産運用規制の体系"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -147,6 +157,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="27"
+                questionTitle="企業貸付"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -157,6 +168,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="28"
+                questionTitle="各国の生保資産運用の傾向"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -167,6 +179,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="29"
+                questionTitle="安定成長期の貸付面の多様化"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -177,6 +190,7 @@ const subject = '2023年度 フォームA'
             />
             <QuestionTemp1
                 :questionNumber="30"
+                questionTitle="有価証券の評価方法"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -191,27 +205,27 @@ const subject = '2023年度 フォームA'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '他人資本の大部分は保険契約準備金であり、これには、責任準備金、契約者配当準備金、支払備金などが含まれる。' }, //32
-                    { content: '正しい' }, //33
-                    { content: '公社債は、有価証券の中の資本証券のうち、確定利付で発行される証券の通称である。' }, //34
-                    { content: '正しい' }, //35
-                    { content: '正しい' }, //36
-                    { content: '高度成長期を通じて間接金融方式が定着する中で、産業界からの資金需要が著しく高まり、また貸付の利回りが相対的に高かったこともあって、生命保険会社は産業界からの借入需要に積極的に応じることとなった。' }, //37
-                    { content: '正しい' }, //38
-                    { content: '取引所集中義務の撤廃、店頭登録市場の機能強化、私設取引システムの導入などの改革が進められた。' }, //39
-                    { content: '「日本版コーポレートガバナンス・コード」ではなく、「日本版スチュワードシップ・コード」' }, //40
+                    { questionTitle: '日本の金融制度', content: '正しい' }, //31
+                    { questionTitle: '生保資金の構成', content: '他人資本の大部分は保険契約準備金であり、これには、責任準備金、契約者配当準備金、支払備金などが含まれる。' }, //32
+                    { questionTitle: '融資審査', content: '正しい' }, //33
+                    { questionTitle: '公社債', content: '公社債は、有価証券の中の資本証券のうち、確定利付で発行される証券の通称である。' }, //34
+                    { questionTitle: '預金市場', content: '正しい' }, //35
+                    { questionTitle: 'イギリスの生命保険会社の資産運用の特徴', content: '正しい' }, //36
+                    { questionTitle: '高度経済成長期の資産運用', content: '高度成長期を通じて間接金融方式が定着する中で、産業界からの資金需要が著しく高まり、また貸付の利回りが相対的に高かったこともあって、生命保険会社は産業界からの借入需要に積極的に応じることとなった。' }, //37
+                    { questionTitle: '資産運用の多様化', content: '正しい' }, //38
+                    { questionTitle: '金融システム改革法の施行（1998年（平成10年）12月）', content: '取引所集中義務の撤廃、店頭登録市場の機能強化、私設取引システムの導入などの改革が進められた。' }, //39
+                    { questionTitle: '投資環境の動向', content: '「日本版コーポレートガバナンス・コード」ではなく、「日本版スチュワードシップ・コード」' }, //40
                     // 問41〜50
-                    { label: 'ア', content: 'BIS（国際決済銀行）' }, //41
-                    { label: 'エ', content: 'アナリスト' }, //42
-                    { label: 'オ', content: '' }, //43
-                    { label: 'ウ', content: '買い付ける' }, //44
-                    { label: 'イ', content: '円建' }, //45
-                    { label: 'エ', content: '毎日' }, //46
-                    { label: 'オ', content: '' }, //47
-                    { label: 'ア', content: '国債' }, //48
-                    { label: 'イ', content: 'ヘッジファンド' }, //49
-                    { label: 'ウ', content: 'リスク係数' }, //50
+                    { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
+                    { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //42
+                    { questionTitle: '融資審査における財務諸表分析', label: 'オ', content: '' }, //43
+                    { questionTitle: 'コール・オプション', label: 'ウ', content: '買い付ける' }, //44
+                    { questionTitle: '海外投融資の内容と特徴', label: 'イ', content: '円建' }, //45
+                    { questionTitle: '個人変額保険における資産の評価方法', label: 'エ', content: '毎日' }, //46
+                    { questionTitle: 'ドイツの金融制度', label: 'オ', content: '' }, //47
+                    { questionTitle: '特定金銭信託の活用', label: 'ア', content: '国債' }, //48
+                    { questionTitle: '資産運用手段の多様化', label: 'イ', content: 'ヘッジファンド' }, //49
+                    { questionTitle: 'ソルベンシー確保', label: 'ウ', content: 'リスク係数' }, //50
                 ]"
                 
             />

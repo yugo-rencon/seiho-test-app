@@ -1,5 +1,9 @@
 {
     "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "types": ["vite/client"],
         "jsx": "preserve",
         "baseUrl": ".",
         "paths": {

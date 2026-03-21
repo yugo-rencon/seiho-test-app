@@ -20,6 +20,7 @@ const subject = "2024年度 フォームC";
             <div class="max-w-4xl mx-auto mt-4 space-y-2">
                 <QuestionTemp3
                     :questionNumber="1"
+                    questionTitle="生命保険会社の資産運用におけるリスク管理-①"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -39,6 +40,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp3
                     :questionNumber="2"
+                    questionTitle="生命保険会社の資産運用におけるリスク管理-②"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -58,6 +60,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp3
                     :questionNumber="3"
+                    questionTitle="不動産投資の多様化-①"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -77,6 +80,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp3
                     :questionNumber="4"
+                    questionTitle="不動産投資の多様化-②"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -96,16 +100,18 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp1
                     :questionNumber="21"
+                    questionTitle="生命保険会社と金融仲介機能"
                     :title="title"
                     :subject="subject"
                     :contents="[
                         '正しい',
-                        '間接金融的ではなく、直接金融的。', //p
-                        '保障機能と信用創造機能ではなく、保障機能と貯蓄機能。', //p
+                        '間接金融的 → 直接金融的', //p10-11
+                        '信用創造機能 → 貯蓄機能', //p11
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="22"
+                    questionTitle="スワップ取引"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -116,6 +122,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp1
                     :questionNumber="23"
+                    questionTitle="海外投融資"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -126,6 +133,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp1
                     :questionNumber="24"
+                    questionTitle="安定成長期の有価証券投資"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -136,6 +144,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp1
                     :questionNumber="25"
+                    questionTitle="生保資産運用の今後"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -146,6 +155,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp1
                     :questionNumber="26"
+                    questionTitle="生保資金の特徴と構成"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -156,6 +166,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp1
                     :questionNumber="27"
+                    questionTitle="消費者ローン"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -166,6 +177,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp1
                     :questionNumber="28"
+                    questionTitle="先物取引"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -176,6 +188,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp1
                     :questionNumber="29"
+                    questionTitle="安定成長期の貸付面の多様化"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -186,6 +199,7 @@ const subject = "2024年度 フォームC";
                 />
                 <QuestionTemp1
                     :questionNumber="30"
+                    questionTitle="金融システム改革法の施行（1998年（平成10年））"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -200,33 +214,33 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { content: '3年ではなく、1年。' }, //31
+                        { questionTitle: '金融市場', content: '3年ではなく、1年。' }, //31
                         {
-                            content:
+                            questionTitle: '保険会社向けの総合的な監督指針', content:
                                 '「保険会社向けの総合的な監替指針」においては、保険会社の監督事務に関し、その基本的考え方、監督上の評価項目、事務処理上の留意点について体系的に整理されている。また<b><u>法令遵守やリスク管理、審査管理態勢等の資産運用に関する項目も含まれている。</u></b>',
                         }, //32
-                        { content: '正しい' }, //33
+                        { questionTitle: '生保の運用機構', content: '正しい' }, //33
                         {
-                            content:
+                            questionTitle: '貸付の特徴', content:
                                 '貸付金の投資対象としての特質は、まず第一に、有価証券投資のような価格変動リスクは、極めて限定的である反面、貸付金が期日どおりに返済されるか否かという<b><u>信用リスク</u></b>があること。第二に、有価証券のような即時の流動化が<u><b>困難</b></u>なことなどである。',
                         }, //34
-                        { content: '一般的な株価動向として、株式は非市場リスクと市場リスクのいずれの影響も高い場合が多く、債券は非市場リスクより市場リスクの影響が高い場合が多い。' }, //35
-                        { content: '正しい' }, //36
-                        { content: '正しい' }, //37
-                        { content: '正しい' }, //38
-                        { content: '固有業務ではなく、付随業務。' }, //39
-                        { content: '正しい' }, //40
+                        { questionTitle: 'リスク特性', content: '一般的な株価動向として、株式は非市場リスクと市場リスクのいずれの影響も高い場合が多く、債券は非市場リスクより市場リスクの影響が高い場合が多い。' }, //35
+                        { questionTitle: '短期金融市場', content: '正しい' }, //36
+                        { questionTitle: '公共投資', content: '正しい' }, //37
+                        { questionTitle: 'バブル崩壊後の資産運用', content: '正しい' }, //38
+                        { questionTitle: '改正保険業法の施行（1998年（平成10年））', content: '固有業務ではなく、付随業務。' }, //39
+                        { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
                         // 問41〜50
-                        { label: 'ア', content: '準拠主義' }, //41
-                        { label: 'ア', content: '金融商品取引法' }, //42
-                        { label: 'エ', content: '当期純利益' }, //43
-                        { label: 'オ', content: '' }, //44
-                        { label: 'エ', content: '毎日' }, //45
-                        { label: 'イ', content: '社債' }, //46
-                        { label: 'ウ', content: '機関投資家' }, //47
-                        { label: 'ウ', content: 'オルタナティブ投資' }, //48
-                        { label: 'オ', content: '' }, //49
-                        { label: 'イ', content: '200' }, //50
+                        { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //41
+                        { questionTitle: '有価証券の定義', label: 'ア', content: '金融商品取引法' }, //42
+                        { questionTitle: '株式投資の尺度', label: 'エ', content: '当期純利益' }, //43
+                        { questionTitle: '預金市場', label: 'オ', content: '' }, //44
+                        { questionTitle: '個人変額保険における資産の評価方法', label: 'エ', content: '毎日' }, //45
+                        { questionTitle: '大正〜昭和初期の生保資産運用', label: 'イ', content: '社債' }, //46
+                        { questionTitle: '高度経済成長期の資産運用', label: 'ウ', content: '機関投資家' }, //47
+                        { questionTitle: '資産運用手段の多様化', label: 'ウ', content: 'オルタナティブ投資' }, //48
+                        { questionTitle: '生命保険会社の資金調達', label: 'オ', content: '' }, //49
+                        { questionTitle: 'ソルベンシー確保', label: 'イ', content: '200' }, //50
                     ]"
                 />
             </div>

@@ -27,6 +27,7 @@ const subject = '2021年度 フォームB'
         <div class="max-w-4xl mx-auto mt-4 space-y-2">
             <QuestionTemp3
                 :questionNumber="1"
+                questionTitle="生保の資産運用機構-①"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -42,6 +43,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp3
                 :questionNumber="2"
+                questionTitle="生保の資産運用機構-②"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -57,6 +59,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp3
                 :questionNumber="3"
+                questionTitle="貸付の実行-①"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -72,6 +75,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp3
                 :questionNumber="4"
+                questionTitle="貸付の実行-②"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -87,6 +91,7 @@ const subject = '2021年度 フォームB'
             />
 <QuestionTemp1
                 :questionNumber="21"
+                questionTitle="株式投資における生命保険会社の対応"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -97,6 +102,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp1
                 :questionNumber="22"
+                questionTitle="不動産の投資手法"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -107,6 +113,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp1
                 :questionNumber="23"
+                questionTitle="海外投融資"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -117,6 +124,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp1
                 :questionNumber="24"
+                questionTitle="改正保険業法の施行（1998年（平成10年）12月）"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -127,6 +135,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp1
                 :questionNumber="25"
+                questionTitle="有価証券の評価方法"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -137,6 +146,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp1
                 :questionNumber="26"
+                questionTitle="運用原則"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -147,6 +157,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp1
                 :questionNumber="27"
+                questionTitle="貸付の分類"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -157,6 +168,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp1
                 :questionNumber="28"
+                questionTitle="各国の生命保険会社の資産運用規制"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -167,6 +179,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp1
                 :questionNumber="29"
+                questionTitle="先物取引"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -177,6 +190,7 @@ const subject = '2021年度 フォームB'
             />
             <QuestionTemp1
                 :questionNumber="30"
+                questionTitle="安定成長期の有価証券投資"
                 :title="title"
                 :subject="subject"
                 :contents="[
@@ -191,27 +205,27 @@ const subject = '2021年度 フォームB'
                 :subject="subject"
                                 :items="[
                     // 問31〜40
-                    { content: '正しい' }, //31
-                    { content: '保険金信託業務は、付随業務ではなく法定他業に規定されている。' }, //32
-                    { content: '正しい' }, //33
-                    { content: '金利スワップではなく通貨スワップ。' }, //34
-                    { content: '本社ではなく現地法人を通じて行われるケースがほとんどである。' }, //35
-                    { content: '正しい' }, //36
-                    { content: '正しい' }, //37
-                    { content: 'その後の景気回復により、生命保険業界も再び順調な伸びを回復。' }, //38
-                    { content: '正しい' }, //39
-                    { content: '「日本版スチュワードシップ・コード」ではなくIFRSへの対応の在り方に関する当面の方針」を公表した。' }, //40
+                    { questionTitle: '生保資金の構成', content: '正しい' }, //31
+                    { questionTitle: '金融関連業務', content: '保険金信託業務は、付随業務ではなく法定他業に規定されている。' }, //32
+                    { questionTitle: '融資審査', content: '正しい' }, //33
+                    { questionTitle: 'スワップ取引', content: '金利スワップではなく通貨スワップ。' }, //34
+                    { questionTitle: '外国不動産投資', content: '本社ではなく現地法人を通じて行われるケースがほとんどである。' }, //35
+                    { questionTitle: '不動産投資の実務', content: '正しい' }, //36
+                    { questionTitle: 'ドイツの資産運用の特徴', content: '正しい' }, //37
+                    { questionTitle: '昭和初期の生命保険業界', content: 'その後の景気回復により、生命保険業界も再び順調な伸びを回復。' }, //38
+                    { questionTitle: '住宅金融対応', content: '正しい' }, //39
+                    { questionTitle: '国際会計基準導入の動向', content: '「日本版スチュワードシップ・コード」ではなくIFRSへの対応の在り方に関する当面の方針」を公表した。' }, //40
                     // 問41〜50
-                    { label: 'イ', content: '独占禁止法' }, //41
-                    { label: 'オ', content: '' }, //42
-                    { label: 'ウ', content: '流動' }, //43
-                    { label: 'エ', content: '歳入債' }, //44
-                    { label: 'オ', content: '' }, //45
-                    { label: 'ア', content: '収益性' }, //46
-                    { label: 'エ', content: '直接金融' }, //47
-                    { label: 'ア', content: '社債' }, //48
-                    { label: 'イ', content: 'ヘッジファンド' }, //49
-                    { label: 'ウ', content: '保護機構' }, //50
+                    { questionTitle: '生保資金の運用規制', label: 'イ', content: '独占禁止法' }, //41
+                    { questionTitle: '資産運用機能の充実', label: 'オ', content: '' }, //42
+                    { questionTitle: '貸付の特徴', label: 'ウ', content: '流動' }, //43
+                    { questionTitle: '国債', label: 'エ', content: '歳入債' }, //44
+                    { questionTitle: '短期金融市場の概要', label: 'オ', content: '' }, //45
+                    { questionTitle: '個人変額保険の運用', label: 'ア', content: '収益性' }, //46
+                    { questionTitle: 'ドイツの金融制度', label: 'エ', content: '直接金融' }, //47
+                    { questionTitle: '生命保険会社の資金調達', label: 'ア', content: '社債' }, //48
+                    { questionTitle: '資産運用手段の多様化', label: 'イ', content: 'ヘッジファンド' }, //49
+                    { questionTitle: '金融システム改革法', label: 'ウ', content: '保護機構' }, //50
                 ]"
                 
             />

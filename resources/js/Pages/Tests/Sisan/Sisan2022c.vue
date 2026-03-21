@@ -20,6 +20,7 @@ const subject = "2022年度 フォームC";
             <div class="max-w-4xl mx-auto mt-4 space-y-2">
                 <QuestionTemp3
                     :questionNumber="1"
+                    questionTitle="日本の金融制度と生命保険会社-①"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -39,6 +40,7 @@ const subject = "2022年度 フォームC";
                 />
                 <QuestionTemp3
                     :questionNumber="2"
+                    questionTitle="日本の金融制度と生命保険会社-②"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -58,6 +60,7 @@ const subject = "2022年度 フォームC";
                 />
                 <QuestionTemp3
                     :questionNumber="3"
+                    questionTitle="改正保険業法の施行（1998年（平成10年）12月）-①"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -77,6 +80,7 @@ const subject = "2022年度 フォームC";
                 />
                 <QuestionTemp3
                     :questionNumber="4"
+                    questionTitle="改正保険業法の施行（1998年（平成10年）12月）-②"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -94,83 +98,146 @@ const subject = "2022年度 フォームC";
                         'コ', //20
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="21" :title="title" :subject="subject" :contents="[
-                '長期ではなく短期の運転資金として利用されている。', //p
-                '利息を手形額面の金額に上乗せするのではなく、差し引いて貸付を行うもの。', //p
-                '正しい',
-                ]" />
-                <QuestionTemp1 :questionNumber="22" :title="title" :subject="subject" :contents="[
-                'アセット・ミックスではなくバリュー・アット・リスク。', //p
-                '正しい',
-                '商品設計やポー トフォリオの構築に際しては他の保険商品以上の流動性確保に留意している。', //p
-                ]" />
-                <QuestionTemp1 :questionNumber="23" :title="title" :subject="subject" :contents="[
-                '正しい',
-                'イギリスの説明。', //p
-                'ドイツの説明。', //p
-                ]" />
-                <QuestionTemp1 :questionNumber="24" :title="title" :subject="subject" :contents="[
-                'ヘッジ取引の説明。', //p
-                'アウトライト取引の説明。', //p
-                '正しい',
-                ]" />
-                <QuestionTemp1 :questionNumber="25" :title="title" :subject="subject" :contents="[
-                'デフレではなくインフレ。', //p
-                '5000円ではなく1万円であり、生命保険会社は解散となり第二会社が設立された。', //p
-                '正しい',
-                ]" />
-                <QuestionTemp1 :questionNumber="26" :title="title" :subject="subject" :contents="[
-                '正しい',
-                '正しい',
-                '信用創造機能ではなく貯蓄機能', //p
-                ]" />
-                <QuestionTemp1 :questionNumber="27" :title="title" :subject="subject" :contents="[
-                'テナントの入居状況に依存するため不安定であり、流動性はきわめて低い。', //p
-                '正しい',
-                '正しい',
-                ]" />
-                <QuestionTemp1 :questionNumber="28" :title="title" :subject="subject" :contents="[
-                '正しい',
-                'オープン市場ではなくインターバンク市場の説明。', //p
-                '正しい',
-                ]" />
-                <QuestionTemp1 :questionNumber="29" :title="title" :subject="subject" :contents="[
-                '正しい',
-                '保険会社は「保険検査マニュアル」が公表された。', //p
-                '正しい',
-                ]" />
-                <QuestionTemp1 :questionNumber="30" :title="title" :subject="subject" :contents="[
-                '正しい',
-                '時価評価ではなく、取得価額で評価する。', //p
-                '正しい',
-                ]" />
+                <QuestionTemp1
+                    :questionNumber="21"
+                    questionTitle="企業貸付"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '長期ではなく短期の運転資金として利用されている。', //p
+                        '利息を手形額面の金額に上乗せするのではなく、差し引いて貸付を行うもの。', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="22"
+                    questionTitle="資産運用に係るリスク管理"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        'アセット・ミックスではなくバリュー・アット・リスク。', //p
+                        '正しい',
+                        '商品設計やポー トフォリオの構築に際しては他の保険商品以上の流動性確保に留意している。', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="23"
+                    questionTitle="諸外国の生命保険会社の資産運用体制"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        'イギリスの説明。', //p
+                        'ドイツの説明。', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="24"
+                    questionTitle="先物取引"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        'ヘッジ取引の説明。', //p
+                        'アウトライト取引の説明。', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="25"
+                    questionTitle="戦後の日本経済と生命保険業"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        'デフレではなくインフレ。', //p
+                        '5000円ではなく1万円であり、生命保険会社は解散となり第二会社が設立された。', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    questionTitle="生命保険会社と資産運用機能、金融仲介機能"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '信用創造機能 → 貯蓄機能', //p11
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    questionTitle="不動産投資"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        'テナントの入居状況に依存するため不安定であり、流動性はきわめて低い。', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    questionTitle="短期金融市場"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        'オープン市場ではなくインターバンク市場の説明。', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    questionTitle="生保資産運用の今後"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        '保険会社は「保険検査マニュアル」が公表された。', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="30"
+                    questionTitle="有価証券の評価方法"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        '時価評価ではなく、取得価額で評価する。', //p
+                        '正しい',
+                    ]"
+                />
                 <QuestionTemp2
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { content: '正しい' }, //31
-                        { content: '正しい' }, //32
-                        { content: '融資審査部門ではなくマクロ調査部門。' }, //33
-                        { content: '生保の海外投融資は、生保本体で直接行う場合のほか、生保本体と独立した海外現地法人を通じて行う場合がある。' }, //34
-                        { content: '区分経理ではなく一般勘定と明確に区分された特別勘定が設けられることになった。' }, //35
-                        { content: '正しい' }, //36
-                        { content: '正しい' }, //37
-                        { content: '①キャビタル・ゲインのインカム化、②簿価分離といったメリットがある ' }, //38
-                        { content: '2008年(平成20年)のサブプライムローン問題に端を発した米国住宅バブル崩壊をきっかけに多分野の資産価格が大幅に下落したことに伴い2000 年(平成12 年)以降増加傾向であった海外投融資は、減少に転じている。' }, //39
-                        { content: '正しい' }, //40
+                        { questionTitle: '運用原則', content: '正しい' }, //31
+                        { questionTitle: '貸付形態別分類', content: '正しい' }, //32
+                        { questionTitle: '運用の実務', content: '融資審査部門ではなくマクロ調査部門。' }, //33
+                        { questionTitle: '海外現地法人', content: '生保の海外投融資は、生保本体で直接行う場合のほか、生保本体と独立した海外現地法人を通じて行う場合がある。' }, //34
+                        { questionTitle: '変額保険の運用', content: '区分経理ではなく一般勘定と明確に区分された特別勘定が設けられることになった。' }, //35
+                        { questionTitle: 'カナダの金融制度', content: '正しい' }, //36
+                        { questionTitle: '第二次大戦時の国債保有の要請', content: '正しい' }, //37
+                        { questionTitle: '特金運用の活用', content: '①キャビタル・ゲインのインカム化、②簿価分離といったメリットがある ' }, //38
+                        {
+                            questionTitle: '海外投融資',
+                            content: '2008年(平成20年)のサブプライムローン問題に端を発した米国住宅バブル崩壊をきっかけに多分野の資産価格が大幅に下落したことに伴い2000 年(平成12 年)以降増加傾向であった海外投融資は、減少に転じている。',
+                        }, //39
+                        { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
                         // 問41〜50
-                        { label: 'オ', content: '' }, //41
-                        { label: 'ア', content: '準拠主義' }, //42
-                        { label: 'ウ', content: '自己資本' }, //43
-                        { label: 'エ', content: 'アナリスト' }, //44
-                        { label: 'オ', content: '' }, //45
-                        { label: 'イ', content: '上昇' }, //46
-                        { label: 'ア', content: 'ユニバーサル・バンキング' }, //47
-                        { label: 'イ', content: 'インパクト・ローン' }, //48
-                        { label: 'ウ', content: 'オルタナティブ投資' }, //49
-                        { label: 'エ', content: '顧客本位の業務運営に関する原則' }, //50
+                        { questionTitle: '生保資金の構成', label: 'オ', content: '' }, //41
+                        { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //42
+                        { questionTitle: '融資審査', label: 'ウ', content: '自己資本' }, //43
+                        { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //44
+                        { questionTitle: '株式投資の尺度', label: 'オ', content: '' }, //45
+                        { questionTitle: 'オプション取引', label: 'イ', content: '上昇' }, //46
+                        { questionTitle: 'イギリスの銀行', label: 'ア', content: 'ユニバーサル・バンキング' }, //47
+                        { questionTitle: '資金調達', label: 'イ', content: 'インパクト・ローン' }, //48
+                        { questionTitle: '資産運用手段の多様化', label: 'ウ', content: 'オルタナティブ投資' }, //49
+                        { questionTitle: '金融審議会報告書', label: 'エ', content: '顧客本位の業務運営に関する原則' }, //50
                     ]"
                 />
             </div>

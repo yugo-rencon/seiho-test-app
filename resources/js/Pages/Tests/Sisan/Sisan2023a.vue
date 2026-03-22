@@ -217,7 +217,7 @@ const subject = "2023年度 フォームA";
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: '生保資金の構成', content: '自己資本 → 他人資本' }, //32 p11
                         { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: '公社債', content: '公社債は、有価証券の中の資本証券のうち、確定利付で発行される証券の通称である。' }, //34
+                        { questionTitle: '公社債', content: '変動利付 → 確定利付' }, //34 p69
                         { questionTitle: '預金市場', content: '正しい' }, //35
                         { questionTitle: 'イギリスの生命保険会社の資産運用の特徴', content: '正しい' }, //36
                         {
@@ -226,7 +226,7 @@ const subject = "2023年度 フォームA";
                         }, //37
                         { questionTitle: '資産運用の多様化', content: '正しい' }, //38
                         { questionTitle: '金融システム改革法の施行（1998年（平成10年）12月）', content: '取引所集中の義務化、店頭登録市場の廃止、私設取引システムの撤廃 → 取引所集中義務の撤廃、店頭登録市場の機能強化、私設取引システムの導入' }, //39 p209
-                        { questionTitle: '投資環境の動向', content: '「日本版コーポレートガバナンス・コード」ではなく、「日本版スチュワードシップ・コード」' }, //40
+                        { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
                         // 問41〜50
                         { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
                         { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //42

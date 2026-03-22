@@ -205,7 +205,7 @@ const subject = "2020年度 フォームA";
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険会社にも適用 → 保険会社には、保険検査マニュアルを適用', //p216
                     ]"
                 />
                 <QuestionTemp2
@@ -218,7 +218,7 @@ const subject = "2020年度 フォームA";
                         { questionTitle: '株式保有', content: '' }, //32
                         { questionTitle: '証券調査', content: '正しい' }, //33
                         { questionTitle: '貸付の特徴', content: '' }, //34
-                        { questionTitle: 'スワップ取引', content: '' }, //35
+                        { questionTitle: 'スワップ取引', content: '通過スワップ → 金利スワップ' }, //35 p94
                         { questionTitle: '短期金融市場', content: 'オープン市場 ↔︎ インターバンク市場' }, //36 p
                         { questionTitle: 'ドイツの資産運用体制', content: '正しい' }, //37
                         { questionTitle: '公共投資', content: '正しい' }, //38

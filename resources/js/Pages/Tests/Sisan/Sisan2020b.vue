@@ -217,8 +217,8 @@ const subject = "2020年度 フォームB";
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: '投資リスク回避策', content: '' }, //32
                         { questionTitle: '貸付形態別分類', content: '' }, //33
-                        { questionTitle: '公社債', content: '' }, //34
-                        { questionTitle: 'スワップ取引', content: '' }, //35
+                        { questionTitle: '公社債', content: '変動利付 → 確定利付' }, //34 p69
+                        { questionTitle: 'スワップ取引', content: '通過スワップ → 金利スワップ' }, //35 p94
                         { questionTitle: '外国為替実務', content: '' }, //36
                         { questionTitle: 'アメリカの資産運用規制', content: '正しい' }, //37
                         { questionTitle: '公共投資', content: '正しい' }, //38

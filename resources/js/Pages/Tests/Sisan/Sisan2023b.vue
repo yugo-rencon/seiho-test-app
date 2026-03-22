@@ -148,9 +148,9 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        'ディスクロージャー・一般勘定ではなく、区分経理・特別勘定。', //p
+                        'ディスクロージャー・一般勘定 → 区分経理・特別勘定<br>資産と負債を分離して管理 → 資産と負債を一体的に管理', //p215
                         '正しい',
-                        '長期係数ではなく、リスク係数。',
+                        '長期係数 → リスク係数', //p217
                     ]"
                 />
                 <QuestionTemp1
@@ -213,13 +213,13 @@ const subject = "2023年度 フォームB";
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: 'リスク管理', content: '正しい' }, //32
                         { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: '不動産投資の多様化', content: '投資手法の多様化としては、共同ビル方式，借地方式，新借地方式、定期借地方式等の手法がある。' }, //34
+                        { questionTitle: '不動産投資の多様化', content: '借家 → 借地' }, //34 p99-100
                         { questionTitle: '個人変額保険における資産の評価方法', content: '毎日評価を行い、運用の成果を日々反映させている。' }, //35
                         { questionTitle: 'カナダの生命保険会社の資産運用', content: '正しい' }, //36
                         { questionTitle: '公共投資', content: '正しい' }, //37
                         { questionTitle: '海外投融資', content: '海外融資ではなく、外国債券等を中心に総資産に占める海外投融資の割合は再び漸増傾向にある。' }, //38
                         { questionTitle: '有価証券の評価方法', content: '責任準備金対応債券は時価で評価 → 取得価額で評価' }, //39 p213
-                        { questionTitle: '投資環境の動向', content: '「日本版コーポレートガバナンス・コード」ではなく、「日本版スチュワードシップ・コード」' }, //40
+                        { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
                         // 問41〜50
                         { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
                         { questionTitle: '投融資決定機構', label: 'ア', content: '単独制' }, //42

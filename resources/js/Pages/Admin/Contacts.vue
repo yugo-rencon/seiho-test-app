@@ -9,14 +9,14 @@ const props = defineProps({
     statusCounts: { type: Object, required: true },
 });
 
-const q = ref(props.filters?.q ?? "");
 const status = ref(props.filters?.status ?? "all");
 
-const submitSearch = () => {
+const switchStatus = (nextStatus) => {
+    status.value = nextStatus;
     router.get(
         route("admin.contacts.index"),
-        { q: q.value, status: status.value },
-        { preserveState: true, replace: true },
+        { status: status.value },
+        { preserveState: true, replace: true, preserveScroll: true },
     );
 };
 
@@ -78,6 +78,13 @@ const categoryLabel = (value) => {
     if (value === "feedback") return "感想";
     return "その他";
 };
+
+const statusTabs = [
+    { key: "all", label: "すべて", count: () => props.statusCounts?.all ?? 0 },
+    { key: "new", label: "未対応", count: () => props.statusCounts?.new ?? 0 },
+    { key: "in_progress", label: "対応中", count: () => props.statusCounts?.in_progress ?? 0 },
+    { key: "done", label: "対応済み", count: () => props.statusCounts?.done ?? 0 },
+];
 </script>
 
 <template>
@@ -117,29 +124,32 @@ const categoryLabel = (value) => {
                 </div>
             </div>
 
-            <form @submit.prevent="submitSearch" class="mb-4 flex flex-col gap-2 rounded-xl border border-gray-100 bg-white p-3 sm:flex-row">
-                <input
-                    v-model="q"
-                    type="text"
-                    placeholder="名前・メール・本文で検索"
-                    class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-purple-300 focus:outline-none"
-                />
-                <select
-                    v-model="status"
-                    class="rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-purple-300 focus:outline-none"
-                >
-                    <option value="all">すべて</option>
-                    <option value="new">未対応</option>
-                    <option value="in_progress">対応中</option>
-                    <option value="done">対応済み</option>
-                </select>
+            <div class="mb-4 flex flex-wrap gap-2 rounded-xl border border-gray-100 bg-white p-3">
                 <button
-                    type="submit"
-                    class="whitespace-nowrap rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500"
+                    v-for="tab in statusTabs"
+                    :key="tab.key"
+                    type="button"
+                    class="inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold transition sm:text-sm"
+                    :class="
+                        status === tab.key
+                            ? 'border-purple-300 bg-purple-50 text-purple-700'
+                            : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'
+                    "
+                    @click="switchStatus(tab.key)"
                 >
-                    絞り込み
+                    <span>{{ tab.label }}</span>
+                    <span
+                        class="inline-flex min-w-[1.2rem] items-center justify-center rounded-full px-1.5 py-0.5 text-[11px]"
+                        :class="
+                            status === tab.key
+                                ? 'bg-purple-100 text-purple-700'
+                                : 'bg-gray-100 text-gray-600'
+                        "
+                    >
+                        {{ tab.count() }}
+                    </span>
                 </button>
-            </form>
+            </div>
 
             <div class="space-y-3">
                 <div

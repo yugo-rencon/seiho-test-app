@@ -7,7 +7,8 @@ const parseFormCode = (subject: string): string => {
 };
 
 const isAlwaysFreeSubject = (title: string): boolean => {
-    return String(title ?? "").includes("資産");
+    const normalizedTitle = String(title ?? "");
+    return normalizedTitle.includes("資産") || normalizedTitle.includes("税法");
 };
 
 export const isPaidYear = (subject: string, title: string = ""): boolean => {

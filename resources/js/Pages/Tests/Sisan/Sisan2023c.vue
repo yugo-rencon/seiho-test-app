@@ -164,7 +164,17 @@ const subject = "2023年度 フォームC";
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="27" questionTitle="不動産投資" :title="title" :subject="subject" :contents="['正しい', '正しい', '2023年（和5年）2月末現在で銘柄数は60、時価総額は約15.4兆円の規模になっている。']" />
+                <QuestionTemp1
+                    :questionNumber="27"
+                    questionTitle="不動産投資"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '現在開設されていない → 開設されている', //p99
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="28"
                     questionTitle="各国の金融制度"
@@ -217,7 +227,7 @@ const subject = "2023年度 フォームC";
                         { questionTitle: '創業時の生命保険会社の資産運用', content: '生命保険会社が銀行預金に相当額の資金を向けていたのは当然のことである。' }, //37
                         { questionTitle: 'バブル崩壊後の資産運用', content: '正しい' }, //38
                         { questionTitle: '金融システム改革', content: '正しい' }, //39
-                        { questionTitle: '投資環境の動向', content: '「日本版コーポレートガバナンス・コード」ではなく、「日本版スチュワードシップ・コード」' }, //40
+                        { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
                         // 問41〜50
                         { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
                         { questionTitle: '有価証券の定義', label: 'ア', content: '金融商品取引法' }, //42

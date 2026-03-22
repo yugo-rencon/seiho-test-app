@@ -16,6 +16,10 @@ const props = defineProps({
         type: Array,
         required: true,
     },
+    newContactCount: {
+        type: Number,
+        default: 0,
+    },
     filters: {
         type: Object,
         required: true,
@@ -90,9 +94,15 @@ const formatDateTime = (value) => {
                 </button>
                 <Link
                     :href="route('admin.contacts.index')"
-                    class="rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
+                    class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
                 >
                     問い合わせ管理
+                    <span
+                        v-if="newContactCount > 0"
+                        class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
+                    >
+                        {{ newContactCount }}
+                    </span>
                 </Link>
             </div>
 

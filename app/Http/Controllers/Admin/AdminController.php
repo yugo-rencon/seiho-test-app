@@ -71,10 +71,15 @@ class AdminController extends Controller
                 ->count(),
         ];
 
+        $newContactCount = DB::table('contacts')
+            ->where('status', 'new')
+            ->count();
+
         return Inertia::render('Admin/Admin', [
             'users' => $users,
             'admins' => $admins,
             'stats' => $stats,
+            'newContactCount' => $newContactCount,
             'filters' => [
                 'q' => $q,
             ],

@@ -137,8 +137,8 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        'オプション取引ではなくスワップ取引の説明。', //p
-                        '「ヨーロピアン・オプション」は、権利行使が、権利行使期間の最終日(満期日)にのみ限定されるものである。', //p
+                        'オプション取引 → スワップ取引', //p94
+                        'アメリカン・オプションの説明 → ヨーロピアン・オプションの説明', //p91
                         '正しい',
                     ]"
                 />
@@ -222,7 +222,7 @@ const subject = "2022年度 フォームB";
                         { questionTitle: 'アメリカの保険会社の周辺業務', content: '正しい' }, //36
                         { questionTitle: '第二次大戦時の国債保有の要請', content: '正しい' }, //37
                         { questionTitle: '経済安定成長期の有価証券投資', content: '正しい' }, //38
-                        { questionTitle: '改正保険業法の施行', content: '固有業務ではなく付随業務。' }, //39
+                        { questionTitle: '改正保険業法の施行', content: '固有業務 → 付随業務' }, //39 p210
                         { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
                         // 問41〜50
                         { questionTitle: 'リスク意識の高まり', label: 'エ', content: '自己資本比率規制' }, //41

@@ -115,10 +115,10 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '共同ビル方式ではなく借地方式の説明', //p
+                        '共同ビル方式 → 借地方式', //p99
                         '正しい',
-                        '借地期間が終了したときには新たな契約更新を行わずに、 土地所有者は必ず土地の返還を受けることができる。',
-                    ]"
+                        '契約の更新を自動的に行う → 契約更新はしない', //p100
+                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="23"
@@ -138,8 +138,8 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     :contents="[
                         '正しい',
-                        '固有業務ではなく付随業務。', //p
-                        '廃止ではなく法定化。',
+                        '固有業務 → 付随業務', //p210
+                        '廃止された → 法定化された', //p211
                     ]"
                 />
                 <QuestionTemp1
@@ -194,7 +194,7 @@ const subject = "2021年度 フォームB";
                     :contents="[
                         '正しい',
                         '正しい',
-                        '裁定取引ではなくヘッジ取引の説明。', //p
+                        '裁定取引 → ヘッジ取引', //p89
                     ]"
                 />
                 <QuestionTemp1
@@ -217,13 +217,13 @@ const subject = "2021年度 フォームB";
                         { questionTitle: '生保資金の構成', content: '正しい' }, //31
                         { questionTitle: '金融関連業務', content: '保険金信託業務は、付随業務ではなく法定他業に規定されている。' }, //32
                         { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: 'スワップ取引', content: '金利スワップではなく通貨スワップ。' }, //34
+                        { questionTitle: 'スワップ取引', content: '金利スワップ → 通貨スワップ' }, //34 p94
                         { questionTitle: '外国不動産投資', content: '本社ではなく現地法人を通じて行われるケースがほとんどである。' }, //35
                         { questionTitle: '不動産投資の実務', content: '正しい' }, //36
                         { questionTitle: 'ドイツの資産運用の特徴', content: '正しい' }, //37
                         { questionTitle: '昭和初期の生命保険業界', content: 'その後の景気回復により、生命保険業界も再び順調な伸びを回復。' }, //38
                         { questionTitle: '住宅金融対応', content: '正しい' }, //39
-                        { questionTitle: '国際会計基準導入の動向', content: '「日本版スチュワードシップ・コード」ではなくIFRSへの対応の在り方に関する当面の方針」を公表した。' }, //40
+                        { questionTitle: '国際会計基準導入の動向', content: '日本版スチュワードシップ・コード → IFRSへの対応の在り方に関する当面の方針' }, //40 p214
                         // 問41〜50
                         { questionTitle: '生保資金の運用規制', label: 'イ', content: '独占禁止法' }, //41
                         { questionTitle: '資産運用機能の充実', label: 'オ', content: '' }, //42

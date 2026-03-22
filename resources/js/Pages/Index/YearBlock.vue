@@ -30,7 +30,8 @@ const props = defineProps({
             <span
                 v-if="
                     !hasPremium &&
-                    Number(year) === 2024
+                    Number(year) === 2024 &&
+                    currentSubjectId !== 'sisan'
                 "
                 class="inline-flex items-center rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700"
             >

@@ -137,8 +137,8 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '金利面ではなく業務面の説明', //p
-                        '業務面ではなく金利面の説明', //p
+                        '金利の面 → 業務面', //p201
+                        '業務面 → 金利の面', //p201
                         '正しい',
                     ]"
                 />
@@ -148,18 +148,28 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '売買目的有価証券は時価評価を行う。', //p
-                        '責任準備金対応債券は取得価額で評価を行う。', //p
+                        '取得価額 → 時価', //p213
+                        '時価 → 取得価額', //p213
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="26" questionTitle="消費者ローン" :title="title" :subject="subject" :contents="['正しい', '正しい', '30%ではなく20%']" />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    questionTitle="消費者ローン"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '30%ではなく20%', //p
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="27"
                     questionTitle="海外投融資の実務"
                     :title="title"
                     :subject="subject"
-                    :contents="['正しい', '正しい', '負債構造のほとんどが円建てとなっており、外貨建て資産の増加に伴う将来の不確実性を除去するためには、外貨建債務をつくって外貨建債権・債務を組み合わせて相殺することが求められる。']"
+                    :contents="['正しい', '正しい', '負債構造のほとんどが円建てとなっており、外貨建て資産の増加に伴う将来の不確実性を除去するためには、外貨建債務をつくって外貨建債券・債務を組み合わせて相殺することが求められる。']"
                 />
                 <QuestionTemp1
                     :questionNumber="28"
@@ -172,7 +182,17 @@ const subject = "2021年度 フォームA";
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="29" questionTitle="安定成長期の貸付面の多様化" :title="title" :subject="subject" :contents="['正しい', '正しい', '住宅ローンからの撤退ではなく進出。']" />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    questionTitle="安定成長期の貸付面の多様化"
+                    :title="title"
+                    :subject="subject"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '住宅ローンからの撤退ではなく進出。', //p
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="30"
                     questionTitle="日本版ビッグバン、金融システム改革法"
@@ -180,7 +200,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     :contents="[
                         '正しい',
-                        '取引所集中義務の撤廃、店頭登録市場の機能強化、私設取引システムの導入などの改革が進められた。', //p
+                        '取引所集中の義務化、店頭登録市場の廃止、私設取引システムの撤廃 → 取引所集中義務の撤廃、店頭登録市場の機能強化、私設取引システムの導入', //p209
                         '正しい',
                     ]"
                 />

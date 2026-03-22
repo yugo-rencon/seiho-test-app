@@ -6,7 +6,15 @@ const parseFormCode = (subject: string): string => {
     return matched?.[1] ?? "";
 };
 
+const isAlwaysFreeSubject = (title: string): boolean => {
+    return String(title ?? "").includes("資産");
+};
+
 export const isPaidYear = (subject: string, title: string = ""): boolean => {
+    if (isAlwaysFreeSubject(title)) {
+        return false;
+    }
+
     const year = Number(String(subject ?? "").slice(0, 4));
     const formCode = parseFormCode(subject);
 

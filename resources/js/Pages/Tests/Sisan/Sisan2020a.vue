@@ -104,9 +104,9 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="資産運用の専門化の進展"
                     :contents="[
-                        '', //p
+                        'ファンド・マネージャー → エコノミスト', //p48
                         '正しい',
-                        '', //p
+                        '証券アナリスト → 不動産鑑定士', //p49
                     ]"
                 />
                 <QuestionTemp1
@@ -148,8 +148,8 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="改正保険業法の施行（1998年（平成10年）12月）（金融システム改革法）"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '新たに認められた → 改正前から認められていた', //p210
+                        '法定他業 → 付随業務', //p210
                         '正しい',
                     ]"
                 />
@@ -171,7 +171,7 @@ const subject = "2020年度 フォームA";
                     questionTitle="企業貸付"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '金額に上乗せして貸付 → 金額から差し引いて貸付', //p54
                         '正しい',
                     ]"
                 />
@@ -219,11 +219,11 @@ const subject = "2020年度 フォームA";
                         { questionTitle: '証券調査', content: '正しい' }, //33
                         { questionTitle: '貸付の特徴', content: '' }, //34
                         { questionTitle: 'スワップ取引', content: '' }, //35
-                        { questionTitle: '短期金融市場', content: '' }, //36
+                        { questionTitle: '短期金融市場', content: 'オープン市場 ↔︎ インターバンク市場' }, //36 p
                         { questionTitle: 'ドイツの資産運用体制', content: '正しい' }, //37
                         { questionTitle: '公共投資', content: '正しい' }, //38
                         { questionTitle: '金融システム改革', content: '正しい' }, //39
-                        { questionTitle: '有価証券の評価方法', content: '' }, //40
+                        { questionTitle: '有価証券の評価方法', content: '時価 → 取得価額' }, //40 p213
                         // 問41〜50
                         { questionTitle: 'リスク管理の組織的対応', label: 'エ', content: 'リスク管理委員会' }, //41
                         { questionTitle: '投融資決定機構', label: 'ア', content: '単独制' }, //42

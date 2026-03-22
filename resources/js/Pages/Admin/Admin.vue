@@ -34,6 +34,19 @@ const submitSearch = () => {
         { preserveState: true, replace: true },
     );
 };
+
+const formatDateTime = (value) => {
+    if (!value) return "-";
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "-";
+    return date.toLocaleString("ja-JP", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+};
 </script>
 
 <template>
@@ -168,6 +181,7 @@ const submitSearch = () => {
                             <th class="px-3 py-2">ID</th>
                             <th class="px-3 py-2">メール</th>
                             <th class="px-3 py-2">プレミアム</th>
+                            <th class="px-3 py-2">登録日</th>
                             <th class="px-3 py-2">最終購入日時</th>
                         </tr>
                     </thead>
@@ -196,12 +210,15 @@ const submitSearch = () => {
                                 </span>
                             </td>
                             <td class="px-3 py-2 text-gray-600">
-                                {{ user.last_paid_at || "-" }}
+                                {{ formatDateTime(user.created_at) }}
+                            </td>
+                            <td class="px-3 py-2 text-gray-600">
+                                {{ formatDateTime(user.last_paid_at) }}
                             </td>
                         </tr>
                         <tr v-if="users.data.length === 0">
                             <td
-                                colspan="4"
+                                colspan="5"
                                 class="px-3 py-8 text-center text-sm text-gray-500"
                             >
                                 データがありません。
@@ -237,7 +254,10 @@ const submitSearch = () => {
                     </div>
 
                     <div class="mt-3 text-xs text-gray-600">
-                        最終購入日時: {{ user.last_paid_at || "-" }}
+                        登録日: {{ formatDateTime(user.created_at) }}
+                    </div>
+                    <div class="mt-1 text-xs text-gray-600">
+                        最終購入日時: {{ formatDateTime(user.last_paid_at) }}
                     </div>
                 </div>
 

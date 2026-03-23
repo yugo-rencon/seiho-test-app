@@ -115,9 +115,9 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        'アセット・ミックスではなくバリュー・アット・リスク。', //p
+                        'アセット・ミックス → バリュー・アット・リスク（VaR）', //p21
                         '正しい',
-                        '商品設計やポー トフォリオの構築に際しては他の保険商品以上の流動性確保に留意している。', //p
+                        '流動性確保に必要性が低い → 流動性確保が必要', //p22
                     ]"
                 />
                 <QuestionTemp1
@@ -127,8 +127,8 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     :contents="[
                         '正しい',
-                        'イギリスの説明。', //p
-                        'ドイツの説明。', //p
+                        'ドイツ → イギリス', //p151
+                        'イギリス → ドイツ', //p156
                     ]"
                 />
                 <QuestionTemp1
@@ -217,15 +217,12 @@ const subject = "2022年度 フォームC";
                         { questionTitle: '運用原則', content: '正しい' }, //31
                         { questionTitle: '貸付形態別分類', content: '正しい' }, //32
                         { questionTitle: '運用の実務', content: '融資審査部門 → マクロ調査部門' }, //33 p51
-                        { questionTitle: '海外現地法人', content: '生保の海外投融資は、生保本体で直接行う場合のほか、生保本体と独立した海外現地法人を通じて行う場合がある。' }, //34
-                        { questionTitle: '変額保険の運用', content: '区分経理ではなく一般勘定と明確に区分された特別勘定が設けられることになった。' }, //35
+                        { questionTitle: '海外現地法人', content: '直接行うことはない → 直接行うこともある' }, //34 p105
+                        { questionTitle: '変額保険の運用', content: '区分経理 → 特別勘定' }, //35 p115
                         { questionTitle: 'カナダの金融制度', content: '正しい' }, //36
                         { questionTitle: '第二次大戦時の国債保有の要請', content: '正しい' }, //37
-                        { questionTitle: '特金運用の活用', content: '①キャビタル・ゲインのインカム化、②簿価分離といったメリットがある ' }, //38
-                        {
-                            questionTitle: '海外投融資',
-                            content: '2008年(平成20年)のサブプライムローン問題に端を発した米国住宅バブル崩壊をきっかけに多分野の資産価格が大幅に下落したことに伴い2000 年(平成12 年)以降増加傾向であった海外投融資は、減少に転じている。',
-                        }, //39
+                        { questionTitle: '特金運用の活用', content: 'インカム・ゲインの累積化 → キャピタル・ゲインのインカム化<br>簿価通算 → 簿価分離 ' }, //38 p194
+                        { questionTitle: '海外投融資', content: '漸増傾向 → 減少傾向' }, //39 p104
                         { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
                         // 問41〜50
                         { questionTitle: '生保資金の構成', label: 'オ', content: '' }, //41

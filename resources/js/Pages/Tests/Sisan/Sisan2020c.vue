@@ -115,9 +115,9 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="一般貸付"
                     :contents="[
-                        '', //p
+                        '商法 → 民法', //p52
                         '正しい',
-                        '', //p
+                        '長期の非事業資金が中心 → 長期の事業資金が中心', //p53
                     ]"
                 />
                 <QuestionTemp1
@@ -126,8 +126,8 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="各国における保険会社の周辺業務の取り扱い"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '保険持株会社の業務は制限されている → 制限されていない', //p130
+                        '全ての商品の販売が認められている → 販売可能な商品は限られている', //p141
                         '正しい',
                     ]"
                 />
@@ -138,8 +138,8 @@ const subject = "2020年度 フォームC";
                     questionTitle="経済安定成長期の有価証券投資"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '株式投資は活発化しなかった → 活発化した', //p193
+                        'インカム・ゲインの累積化 → キャピタル・ゲインのインカム化<br>簿価通算 → 簿価分離', //p194
                     ]"
                 />
                 <QuestionTemp1
@@ -159,7 +159,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="資産運用規制の体系"
                     :contents="[
-                        '', //p
+                        '新たに作成 → 廃止', //p28
                         '正しい',
                         '正しい',
                     ]"
@@ -171,7 +171,7 @@ const subject = "2020年度 フォームC";
                     questionTitle="貸付管理"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '簡易裁判所 → 地方裁判所', //p64
                         '正しい',
                     ]"
                 />
@@ -192,7 +192,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="戦前の生保資産運用"
                     :contents="[
-                        '', //p
+                        '不動産 → 銀行預金', //p163-164
                         '正しい',
                         '正しい',
                     ]"
@@ -205,7 +205,7 @@ const subject = "2020年度 フォームC";
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        'ロシアのスラブ型 → フランス・イタリア・ベルギーのラテン型', //p125
                     ]"
                 />
                 <QuestionTemp2
@@ -216,8 +216,8 @@ const subject = "2020年度 フォームC";
                         // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: '投融資決定機構', content: '正しい' }, //32
-                        { questionTitle: '手形貸付', content: '' }, //33
-                        { questionTitle: 'リスク特性', content: '' }, //34
+                        { questionTitle: '手形貸付', content: '金額に上乗せ → 金額から差し引いて' }, //33 p54
+                        { questionTitle: 'リスク特性', content: '株式：非市場リスクと市場リスクのいずれの影響も高い場合が多い<br>債券：非市場リスクより市場リスクの影響が高い場合が多い' }, //34 見つからない
                         { questionTitle: 'スワップ取引', content: '通過スワップ → 金利スワップ' }, //35 p94
                         { questionTitle: '海外投融資', content: '正しい' }, //36
                         { questionTitle: 'アメリカの資産運用規制', content: '正しい' }, //37

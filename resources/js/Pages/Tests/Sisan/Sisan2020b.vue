@@ -115,9 +115,9 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="有価証券におけるリスク・リターン特性"
                     :contents="[
-                        '', //p
+                        '短期金融商品、債券、株式の順 → 株式、債券、短期金融商品の順', //見つからない
                         '正しい',
-                        '', //p
+                        '株式、債券、短期金融商品の順 → 債券、株式、短期金融商品の順', //見つからない
                     ]"
                 />
                 <QuestionTemp1
@@ -126,8 +126,8 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="各国における保険会社の周辺業務の取り扱い"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '保険持株会社の業務は制限されている → 制限されていない', //p130
+                        '全ての商品の販売が認められている → 販売可能な商品は限られている', //p141
                         '正しい',
                     ]"
                 />
@@ -172,7 +172,7 @@ const subject = "2020年度 フォームB";
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '負債構造が外貨建て → 負債構造が円建て<br>円建債務を作って円建債権・債務 → 外貨建債務を作って外貨建債権・債務', //p109
                     ]"
                 />
                 <QuestionTemp1
@@ -183,7 +183,7 @@ const subject = "2020年度 フォームB";
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '銀行業務を行うことができる → 銀行業務を行うことはできない', //p152
                     ]"
                 />
                 <QuestionTemp1
@@ -192,7 +192,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="戦前の生保資産運用"
                     :contents="[
-                        '', //p
+                        '不動産 → 銀行預金', //p163-164
                         '正しい',
                         '正しい',
                     ]"
@@ -215,11 +215,11 @@ const subject = "2020年度 フォームB";
                     :items="[
                         // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
-                        { questionTitle: '投資リスク回避策', content: '' }, //32
-                        { questionTitle: '貸付形態別分類', content: '' }, //33
+                        { questionTitle: '投資リスク回避策', content: '積極的回避 → 消極的回避' }, //32 見つからない
+                        { questionTitle: '貸付形態別分類', content: '手形貸付が主流 → 証書貸付が主流' }, //33 p52
                         { questionTitle: '公社債', content: '変動利付 → 確定利付' }, //34 p69
                         { questionTitle: 'スワップ取引', content: '通過スワップ → 金利スワップ' }, //35 p94
-                        { questionTitle: '外国為替実務', content: '' }, //36
+                        { questionTitle: '外国為替実務', content: 'TTBレート ↔︎ TTSレート' }, //36 p110
                         { questionTitle: 'アメリカの資産運用規制', content: '正しい' }, //37
                         { questionTitle: '公共投資', content: '正しい' }, //38
                         { questionTitle: 'バブル崩壊後の外国証券投資', content: '正しい' }, //39

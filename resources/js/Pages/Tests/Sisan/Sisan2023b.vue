@@ -104,9 +104,9 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '信用リスクではなく、市場リスク。', //p
+                        '信用リスク → 市場リスク', //p15
                         '正しい',
-                        '分散投資政策ではなく、緩和政策。',
+                        '分散投資政策 → 緩和政策', //p16
                     ]"
                 />
                 <QuestionTemp1
@@ -127,8 +127,8 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     :contents="[
                         '正しい',
-                        'ドイツ、オランダ、スイスなどがこの類型に属する。', //p
-                        'フランス、イタリア、ベルギーなどがこの類型に属する。',
+                        'フランス・イタリア・ベルギー → ドイツ・オランダ・スイス', //p124-125
+                        'ドイツ・オランダ・スイス → フランス、イタリア、ベルギー', //p124-125
                     ]"
                 />
                 <QuestionTemp1
@@ -159,7 +159,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '財産利用方法書は廃止された。', //p
+                        '新たに作成 → 廃止', //p28
                         '正しい',
                         '正しい',
                     ]"
@@ -171,7 +171,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     :contents="[
                         '正しい',
-                        '生命保険会社の貸付は、長期の事業資金が中心となっている。', //p
+                        '非事業資金 → 事業資金', //p53
                         '正しい',
                     ]"
                 />
@@ -181,7 +181,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '比較的リスクの高い不動産関連投資やジャンク債を減らし、代わりに公社債の比重を高めるようになってきている。', //p
+                        '公社債 ↔︎ 不動産関連投資', //p138
                         '正しい',
                         '正しい',
                     ]"
@@ -191,7 +191,11 @@ const subject = "2023年度 フォームB";
                     questionTitle="安定成長期の貸付面の多様化"
                     :title="title"
                     :subject="subject"
-                    :contents="['正しい', '正しい', '昭和40年代後半以降、住宅金融制度が徐々に整備されるに伴い、個人への直接的な資金供給である住宅ローンへも進出している。']"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '住宅ローンから撤退 → 住宅ローンへ進出', //p196
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="30"
@@ -214,10 +218,10 @@ const subject = "2023年度 フォームB";
                         { questionTitle: 'リスク管理', content: '正しい' }, //32
                         { questionTitle: '融資審査', content: '正しい' }, //33
                         { questionTitle: '不動産投資の多様化', content: '借家 → 借地' }, //34 p99-100
-                        { questionTitle: '個人変額保険における資産の評価方法', content: '毎日評価を行い、運用の成果を日々反映させている。' }, //35
+                        { questionTitle: '個人変額保険における資産の評価方法', content: '毎月評価 → 毎日評価' }, //35 p117
                         { questionTitle: 'カナダの生命保険会社の資産運用', content: '正しい' }, //36
                         { questionTitle: '公共投資', content: '正しい' }, //37
-                        { questionTitle: '海外投融資', content: '海外融資ではなく、外国債券等を中心に総資産に占める海外投融資の割合は再び漸増傾向にある。' }, //38
+                        { questionTitle: '海外投融資', content: '漸増傾向 → 減少傾向' }, //38 p104
                         { questionTitle: '有価証券の評価方法', content: '責任準備金対応債券は時価で評価 → 取得価額で評価' }, //39 p213
                         { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
                         // 問41〜50

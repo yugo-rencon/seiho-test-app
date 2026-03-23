@@ -116,8 +116,8 @@ const subject = "2020年度 フォームA";
                     questionTitle="海外投融資の実務"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '本社が直接所有するケースがほとんど → 現地法人を通じて行われるケースがほとんど', //p109
+                        '負債構造のほとんどが外貨建て → 負債構造のほとんどが円建て<br>円建債務をつくって円建債権・債務 → 外貨建債務をつくって外貨建債権・債務', //p109
                     ]"
                 />
                 <QuestionTemp1
@@ -126,8 +126,8 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="各国における保険会社の周辺業務の取り扱い"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '保険持株会社の業務は制限されている → 制限されていない', //p130
+                        '全ての商品の販売が認められている → 販売可能な商品は限られている', //p141
                         '正しい',
                     ]"
                 />
@@ -137,8 +137,8 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="高度経済成長期の資産運用"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '直接金融方式 → 間接金融方式', //p178
+                        '株式投資に積極的 → 消極的<br>機関投資家としての役割を果たせなかった → 大きな役割を果たした', //p181
                         '正しい',
                     ]"
                 />
@@ -160,7 +160,7 @@ const subject = "2020年度 フォームA";
                     questionTitle="具体的なリスク管理手法"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '短期運用に適していない → 適している', //p21
                         '正しい',
                     ]"
                 />
@@ -181,7 +181,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="アメリカの資産運用規制"
                     :contents="[
-                        '', //p
+                        '廃止された → 両方のモデル投資法を併用', //p138
                         '正しい',
                         '正しい',
                     ]"
@@ -192,7 +192,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="戦前の生保資産運用"
                     :contents="[
-                        '', //p
+                        '不動産 → 銀行預金', //p163-164
                         '正しい',
                         '正しい',
                     ]"
@@ -215,9 +215,9 @@ const subject = "2020年度 フォームA";
                     :items="[
                         // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
-                        { questionTitle: '株式保有', content: '' }, //32
+                        { questionTitle: '株式保有', content: '20% → 10%' }, //32 p30
                         { questionTitle: '証券調査', content: '正しい' }, //33
-                        { questionTitle: '貸付の特徴', content: '' }, //34
+                        { questionTitle: '貸付の特徴', content: '流動化が容易 → 流動化が困難' }, //34 p52
                         { questionTitle: 'スワップ取引', content: '通過スワップ → 金利スワップ' }, //35 p94
                         { questionTitle: '短期金融市場', content: 'オープン市場 ↔︎ インターバンク市場' }, //36 p
                         { questionTitle: 'ドイツの資産運用体制', content: '正しい' }, //37

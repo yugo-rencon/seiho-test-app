@@ -105,8 +105,8 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     :contents="[
                         '正しい',
-                        '短期運用に適している。', //p
-                        '流動性の確保に留意している。',
+                        '短期運用に適していない → 適している', //p21
+                        '流動性確保に必要性が低い → 流動性確保が必要', //p22
                     ]"
                 />
                 <QuestionTemp1
@@ -137,8 +137,8 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '銀行預金に相当額の資金をむけていた。', //p
-                        '社債、株式投資が増大して、貸付が減少した。', //p
+                        '銀行株式 → 銀行預金', //p164-165
+                        '貸付の増大、社債・株式投資の減少 → 社債・株式投資の増大、貸付の減少', //p165
                         '正しい',
                     ]"
                 />
@@ -181,7 +181,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        'RBC 比率を高めるため、比較的リスクの高い不動産関連投資を減らし、代わりに公社債の比重を高めるようになってきている。', //p
+                        '公社債 ↔︎ 不動産関連投資', //p138
                         '正しい',
                         '正しい',
                     ]"
@@ -192,7 +192,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '実数を加工して算出した比率を用いることを比率法といい、実数法ではなく比率法を用いることが多い。', //p
+                        '実務方が用いられる場合が多い → 比率法が多い', //p60
                         '正しい',
                         '正しい',
                     ]"
@@ -203,7 +203,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '特別勘定における大口信用供与規制の撤廃が行われている。', //p
+                        '未だ全廃されてない → 全て撤廃された', //p116
                         '正しい',
                         '正しい',
                     ]"
@@ -214,15 +214,15 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '資産運用の専門家', content: 'エコノミストではなくアナリストの説明。' }, //31
-                        { questionTitle: '金融関連業務', content: '保険金信託業務は、付随業務ではなく法定他業に規定されている。' }, //32
+                        { questionTitle: '資産運用の専門家', content: 'エコノミスト → アナリスト' }, //31 p48
+                        { questionTitle: '金融関連業務', content: '付随業務 → 法定他業' }, //32 見つからない
                         { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: '貸付の特徴', content: '事務リスクではなく信用リスク。また即時の流動化は容易ではなく困難。' }, //34
+                        { questionTitle: '貸付の特徴', content: '事務リスク → 信用リスク<br>流動化が容易 → 流動化が困難' }, //34 p52
                         { questionTitle: '預金市場', content: '正しい' }, //35
                         { questionTitle: '不動産投資の実務', content: '正しい' }, //36
-                        { questionTitle: 'カナダの金融制度', content: '子会社形態により互いに他業態の業務を行うことが可能である。' }, //37
+                        { questionTitle: 'カナダの金融制度', content: '他業態の業務を行うことは禁止 → 子会社形態で可能' }, //37 p139
                         { questionTitle: 'バブル崩壊後の資産運用', content: '正しい' }, //38
-                        { questionTitle: '金融システム改革', content: 'フリー・クリア・ワイドではなくフリー・フェアー・グローバル。' }, //39
+                        { questionTitle: '金融システム改革', content: 'フリー・クリア・ワイド → フリー・フェアー・グローバル' }, //39 p207
                         { questionTitle: '会計基準の整備', content: '正しい' }, //40
                         // 問41〜50
                         { questionTitle: '生保資金の運用規制', label: 'イ', content: '独占禁止法' }, //41

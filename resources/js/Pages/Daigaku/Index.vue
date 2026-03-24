@@ -70,6 +70,16 @@ const getDaigakuRoute = (sectionId, year, form) => {
 
     return null;
 };
+
+const isYearPreparing = (sectionId, year) => {
+    let publishedCount = 0;
+    for (const form of DAIGAKU_FORMS) {
+        if (getDaigakuRoute(sectionId, year, form)) {
+            publishedCount += 1;
+        }
+    }
+    return publishedCount === 0;
+};
 </script>
 
 <template>
@@ -99,21 +109,24 @@ const getDaigakuRoute = (sectionId, year, form) => {
                             :key="section.id"
                             type="button"
                             @click="activeSectionId = section.id"
-                            class="rounded-full border px-4 py-2 text-sm font-semibold transition-colors"
-                            :class="
+                            class="rounded-full border px-4 py-2 font-semibold transition-colors"
+                            :class="[
+                                section.title === 'ファイナンシャルプランニングとコンプライアンス' ? 'text-[13px] sm:text-sm' : 'text-sm',
                                 activeSectionId === section.id
                                     ? 'border-transparent bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow'
                                     : 'border-gray-200 bg-white text-gray-700 hover:border-blue-300'
-                            "
+                            ]"
                         >
                             {{ section.title }}
                         </button>
                     </div>
 
                     <div v-if="activeSection" class="mt-8">
-                        <div class="flex items-center gap-3">
-                            <div class="h-8 w-1.5 rounded-full bg-gradient-to-b from-indigo-500 to-cyan-500"></div>
-                            <h2 class="text-2xl font-bold text-gray-900">{{ activeSection.title }}</h2>
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 h-8 w-1.5 rounded-full bg-gradient-to-b from-indigo-500 to-cyan-500"></div>
+                            <div class="min-w-0">
+                                <h2 class="text-2xl font-bold text-gray-900">{{ activeSection.title }}</h2>
+                            </div>
                         </div>
                         <p class="mt-3 text-sm text-gray-600">{{ activeSection.description }}</p>
 
@@ -123,14 +136,22 @@ const getDaigakuRoute = (sectionId, year, form) => {
                                 :key="year"
                                 class="p-4 md:p-6"
                             >
-                                <div class="text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
+                                <div class="flex items-center gap-2">
+                                    <div class="text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
+                                    <span
+                                        v-if="isYearPreparing(activeSection.id, year)"
+                                        class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600"
+                                    >
+                                        準備中
+                                    </span>
+                                </div>
 
                                 <div class="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
                                     <a
                                         v-for="form in DAIGAKU_FORMS"
                                         :key="`${year}-${form}`"
                                         :href="getDaigakuRoute(activeSection.id, year, form) ?? undefined"
-                                        class="inline-flex w-full items-center justify-center gap-1 rounded-full border px-2 py-1.5 text-[12px] font-semibold sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
+                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border px-2 py-1.5 text-[12px] font-semibold sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                                         :class="
                                             getDaigakuRoute(activeSection.id, year, form)
                                                 ? 'border-blue-200 bg-white text-blue-700 transition hover:bg-blue-50'
@@ -138,16 +159,6 @@ const getDaigakuRoute = (sectionId, year, form) => {
                                         "
                                     >
                                         フォーム{{ form.toUpperCase() }}
-                                        <span
-                                            class="text-[10px] font-medium sm:text-xs"
-                                            :class="
-                                                getDaigakuRoute(activeSection.id, year, form)
-                                                    ? 'text-blue-500'
-                                                    : 'text-gray-400'
-                                            "
-                                        >
-                                            {{ getDaigakuRoute(activeSection.id, year, form) ? "公開中" : "準備中" }}
-                                        </span>
                                     </a>
                                 </div>
                             </div>

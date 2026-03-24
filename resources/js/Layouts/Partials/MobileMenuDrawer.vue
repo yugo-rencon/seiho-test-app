@@ -274,13 +274,6 @@ const setActiveYear = (subjectKey, yearLabel) => {
                     <!-- 下部の固定ページリンク -->
                     <div class="border-t border-gray-100 pt-4">
                         <div class="space-y-2">
-                            <Link
-                                :href="route('study-method')"
-                                class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-                                @click="closeMenu"
-                            >
-                                勉強法
-                            </Link>
                             <button
                                 type="button"
                                 class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
@@ -288,13 +281,6 @@ const setActiveYear = (subjectKey, yearLabel) => {
                             >
                                 料金
                             </button>
-                            <Link
-                                :href="route('about')"
-                                class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-                                @click="closeMenu"
-                            >
-                                このサイトについて
-                            </Link>
                             <Link
                                 v-if="isAuthenticated"
                                 :href="route('logout')"

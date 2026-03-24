@@ -117,17 +117,6 @@ const isActive = (name) => route().current(name);
                 >
                     解説一覧
                 </Link>
-                <Link
-                    :href="route('study-method')"
-                    class="border-b-2 px-3 py-1 transition-colors hover:text-purple-900"
-                    :class="
-                        isActive('study-method')
-                            ? 'border-purple-500 text-purple-900'
-                            : 'border-transparent'
-                    "
-                >
-                    勉強法
-                </Link>
                 <button
                     type="button"
                     class="border-b-2 px-3 py-1 transition-colors hover:text-purple-900"
@@ -140,17 +129,6 @@ const isActive = (name) => route().current(name);
                 >
                     料金
                 </button>
-                <Link
-                    :href="route('about')"
-                    class="border-b-2 px-3 py-1 transition-colors hover:text-purple-900"
-                    :class="
-                        isActive('about')
-                            ? 'border-purple-500 text-purple-900'
-                            : 'border-transparent'
-                    "
-                >
-                    このサイトについて
-                </Link>
             </nav>
         </div>
     </header>

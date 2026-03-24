@@ -156,10 +156,10 @@ defineEmits(["open-pricing-modal"]);
                         </li>
                         <li>
                             <Link
-                                :href="route('study-method')"
+                                :href="route('daigaku.index')"
                                 class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
                             >
-                                勉強法
+                                生命保険大学課程
                             </Link>
                         </li>
                         <li>
@@ -195,14 +195,6 @@ defineEmits(["open-pricing-modal"]);
                                 class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
                             >
                                 お問い合わせ
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                :href="route('about')"
-                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
-                            >
-                                このサイトについて
                             </Link>
                         </li>
                         <li>

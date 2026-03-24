@@ -6,9 +6,12 @@
 
         <!-- 問題番号 -->
         <div class="flex items-start gap-2 my-4">
-            <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>
+            <div
+                class="w-1.5 h-6 rounded-full"
+                :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
+            ></div>
             <h2 class="text-base font-bold leading-tight text-gray-700">
-                <span class="mr-2 inline-block whitespace-nowrap">問題{{ getQuestionRange(props.questionNumber) }}</span>
+                <span class="mr-2 inline-block whitespace-nowrap">問題{{ props.questionRange || getQuestionRange(props.questionNumber) }}</span>
                 <span v-if="props.questionTitle">
                     {{ props.questionTitle }}
                 </span>
@@ -50,6 +53,10 @@
             type: String,
             default: '',
         },
+        questionRange: {
+            type: String,
+            default: '',
+        },
         contents: {
             type: Array,
             required: true,
@@ -73,6 +80,7 @@
     })
 
     const page = usePage();
+    const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 
     const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 
@@ -103,16 +111,9 @@
     });
 
     function getQuestionRange(questionNumber) {
-        switch (questionNumber) {
-            case 1:
-                return "1〜5";
-            case 2:
-                return "6〜10";
-            case 3:
-                return "11〜15";
-            default:
-                return "16〜20";
-        }
+        const start = (Number(questionNumber) - 1) * 5 + 1;
+        const end = start + 4;
+        return `${start}〜${end}`;
     }
 
     function normalizeBiArrow(value) {

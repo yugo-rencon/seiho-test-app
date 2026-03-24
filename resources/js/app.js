@@ -41,8 +41,13 @@ router.on('navigate', (event) => {
 
 // ===== App init =====
 createInertiaApp({
-  title: (title) =>
-    window.location.pathname === '/tests' ? appName : `${title} | ${appName}`,
+  title: (title) => {
+    const path = window.location.pathname;
+    if (path === '/tests') return appName;
+    if (path === '/daigaku') return '生命保険大学課程 過去問解説';
+    if (path.startsWith('/daigaku')) return `${title} | 生命保険大学課程 過去問解説`;
+    return `${title} | ${appName}`;
+  },
 
   resolve: (name) =>
     resolvePageComponent(

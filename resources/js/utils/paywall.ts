@@ -1,4 +1,6 @@
 const LATEST_FREE_YEAR = 2024;
+const isDaigakuPath = (): boolean =>
+    typeof window !== "undefined" && window.location.pathname.startsWith("/daigaku");
 
 const parseFormCode = (subject: string): string => {
     const text = String(subject ?? "").toUpperCase();
@@ -12,6 +14,10 @@ const isAlwaysFreeSubject = (title: string): boolean => {
 };
 
 export const isPaidYear = (subject: string, title: string = ""): boolean => {
+    if (isDaigakuPath()) {
+        return false;
+    }
+
     if (isAlwaysFreeSubject(title)) {
         return false;
     }

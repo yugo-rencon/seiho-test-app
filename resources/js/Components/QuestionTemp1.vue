@@ -4,7 +4,10 @@
     </div>
     <div v-if="!shouldHideByPaywall" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md">
         <div class="flex items-start gap-2 my-4">
-            <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>
+            <div
+                class="w-1.5 h-6 rounded-full"
+                :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
+            ></div>
             <h2 class="text-base font-bold leading-tight text-gray-700">
                 <span class="mr-2 inline-block whitespace-nowrap">問題{{ props.questionNumber }}</span>
                 <span v-if="props.questionTitle">
@@ -33,7 +36,10 @@
         <!-- 最初にロックされる問題をうっすら見せる（続きを読む導線） -->
         <div class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white px-6 py-3 shadow-sm opacity-65">
             <div class="flex items-start gap-2 my-4">
-                <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>
+                <div
+                    class="w-1.5 h-6 rounded-full"
+                    :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
+                ></div>
                 <h2 class="text-base font-bold leading-tight text-gray-700">
                     <span class="mr-2 inline-block whitespace-nowrap">問題{{ props.questionNumber }}</span>
                     <span v-if="props.questionTitle">
@@ -86,9 +92,10 @@ const props = defineProps({
         default: "",
     },
 });
-const labels = ref(["ア", "イ", "ウ"]);
+const labels = ref(["ア", "イ", "ウ", "エ"]);
 
 const page = usePage();
+const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 
@@ -107,7 +114,7 @@ const showAdBeforeQuestion21 = computed(() => {
 });
 
 const getLabel = (index: number): string => {
-    return labels.value[index]; // その他の場合はlabelsを使用
+    return labels.value[index] ?? `${index + 1}`;
 };
 
 const formatContentHtml = (value: unknown): string => {

@@ -58,10 +58,10 @@ onMounted(() => {
                         class="mb-4 rounded-xl border border-purple-200 bg-purple-100/80 px-3 py-2 text-left text-[12px] leading-5 text-purple-800 sm:mb-5 sm:px-4 sm:py-2.5 sm:text-center"
                     >
                         <span class="block font-semibold tracking-wide">
-                            生命保険講座の過去問を、科目・年度・フォーム別に整理した解説サイトです。
+                            生命保険講座の過去問解説サイトです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-purple-700/90">
-                            まずは科目を選び、最新年度フォームAからお試しください。
+                            科目を選び、最新年度フォームAからお試しください。
                         </span>
                     </div>
 

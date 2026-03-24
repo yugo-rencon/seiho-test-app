@@ -5,7 +5,10 @@
     <template v-if="visibleItems.length > 0">
         <div v-for="(item, index) in visibleItems" :key="index" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md">
             <div class="flex items-start gap-2 my-4">
-                <div class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"></div>
+                <div
+                    class="w-1.5 h-6 rounded-full"
+                    :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
+                ></div>
                 <h2 class="text-base font-bold leading-tight text-gray-700">
                     <span class="mr-2 inline-block whitespace-nowrap">問題{{ item.questionNo }}</span>
                     <span v-if="item.questionTitle">
@@ -84,6 +87,7 @@ const props = defineProps({
 });
 
 const page = usePage();
+const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 

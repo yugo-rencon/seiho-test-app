@@ -15,6 +15,50 @@ class TestController extends Controller
         return Inertia::render('Index');
     }
 
+    // 大学課程トップ
+    public function daigakuIndex()
+    {
+        return Inertia::render('Daigaku/Index');
+    }
+
+    // 大学課程: 生命保険のしくみと個人保険商品 2025年度 フォームA
+    public function daigakuShikumiKojin2025a()
+    {
+        return Inertia::render('Daigaku/Tests/ShikumiKojin2025a');
+    }
+    public function daigakuShikumiKojin2025b()
+    {
+        return Inertia::render('Daigaku/Tests/ShikumiKojin2025b');
+    }
+    public function daigakuShikumiKojin2025c()
+    {
+        return Inertia::render('Daigaku/Tests/ShikumiKojin2025c');
+    }
+    public function daigakuShikumiKojin2024a()
+    {
+        return Inertia::render('Daigaku/Tests/ShikumiKojin2024a');
+    }
+    public function daigakuShikumiKojin2024b()
+    {
+        return Inertia::render('Daigaku/Tests/ShikumiKojin2024b');
+    }
+    public function daigakuShikumiKojin2024c()
+    {
+        return Inertia::render('Daigaku/Tests/ShikumiKojin2024c');
+    }
+    public function daigakuShikumiKojin2023a()
+    {
+        return Inertia::render('Daigaku/Tests/ShikumiKojin2023a');
+    }
+    public function daigakuShikumiKojin2023b()
+    {
+        return Inertia::render('Daigaku/Tests/ShikumiKojin2023b');
+    }
+    public function daigakuShikumiKojin2023c()
+    {
+        return Inertia::render('Daigaku/Tests/ShikumiKojin2023c');
+    }
+
     // このサイトについて
     public function about(){return Inertia::render('Info/About');}
 
@@ -35,8 +79,15 @@ class TestController extends Controller
 
     // 料金
     public function pricing(Request $request){
+        $scope = $request->query('scope');
+        if (!in_array($scope, ['seiho', 'daigaku'], true)) {
+            $returnTo = (string) $request->query('return_to', '');
+            $scope = str_starts_with($returnTo, '/daigaku') ? 'daigaku' : 'seiho';
+        }
+
         return Inertia::render('Info/Pricing', [
             'returnTo' => $request->query('return_to'),
+            'scope' => $scope,
         ]);
     }
     // マイページ
@@ -58,7 +109,9 @@ class TestController extends Controller
             'passScore' => $user->pass_score,
             'subjects' => $subjects,
             'results' => $results,
-            'hasPremium' => $user->hasPremiumAccess(),
+            'hasPremium' => $user->hasPremiumAccess('seiho'),
+            'hasPremiumSeiho' => $user->hasPremiumAccess('seiho'),
+            'hasPremiumDaigaku' => $user->hasPremiumAccess('daigaku'),
         ]);
     }
 

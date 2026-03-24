@@ -12,7 +12,8 @@ class BillingController extends Controller
     public function checkout(Request $request)
     {
         $stripeSecret = config('services.stripe.secret');
-        $priceId = config('services.stripe.price_premium');
+        $scope = $this->sanitizeScope($request->query('scope'));
+        $priceId = $this->resolvePriceId($scope);
         $purchaseEnabled = (bool) config('services.stripe.purchase_enabled');
         $user = $request->user();
         $returnTo = $this->sanitizeReturnTo($request->query('return_to'));
@@ -23,7 +24,7 @@ class BillingController extends Controller
         }
 
         // 既購入ユーザーはStripeへ遷移させない
-        if ($user && $user->hasPremiumAccess()) {
+        if ($user && $user->hasPremiumAccess($scope)) {
             return redirect($returnTo ?: route('mypage'))
                 ->with('status', 'プレミアムプランを購入済みです。');
         }
@@ -51,6 +52,7 @@ class BillingController extends Controller
                 'metadata' => [
                     'user_id' => (string) $user->id,
                     'plan' => 'premium',
+                    'scope' => $scope,
                 ],
                 'success_url' => $this->appendQueryToUrl(
                     $returnTo ? url($returnTo) : route('mypage'),
@@ -104,6 +106,22 @@ class BillingController extends Controller
         }
 
         return $returnTo;
+    }
+
+    private function sanitizeScope(?string $scope): string
+    {
+        return in_array($scope, ['seiho', 'daigaku'], true) ? $scope : 'seiho';
+    }
+
+    private function resolvePriceId(string $scope): ?string
+    {
+        if ($scope === 'daigaku') {
+            return config('services.stripe.price_daigaku_premium')
+                ?: config('services.stripe.price_premium');
+        }
+
+        return config('services.stripe.price_seiho_premium')
+            ?: config('services.stripe.price_premium');
     }
 
     private function appendQueryToUrl(string $url, array $query): string

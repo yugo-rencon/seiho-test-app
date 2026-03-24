@@ -18,6 +18,13 @@ const props = defineProps({
 });
 
 const page = usePage();
+const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+
+const buttonClass = computed(() =>
+  isDaigaku.value
+    ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-sky-200 text-sky-700 bg-white shadow-sm hover:bg-sky-50 transition"
+    : "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
+);
 
 // 現在URLから科目キーを推定（例: /keiri2024a -> keiri）
 const currentSubject = computed(() => {
@@ -40,7 +47,7 @@ const withSubjectQuery = (href) => {
       <a
         v-if="previousRoute"
         :href="withSubjectQuery(route(previousRoute))"
-        class="inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
+        :class="buttonClass"
       >
         前の試験へ
       </a>
@@ -48,7 +55,7 @@ const withSubjectQuery = (href) => {
       <a
         v-if="nextRoute"
         :href="withSubjectQuery(route(nextRoute))"
-        class="inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
+        :class="buttonClass"
       >
         次の試験へ
       </a>
@@ -57,7 +64,7 @@ const withSubjectQuery = (href) => {
     <!-- 一覧画面に戻るボタン -->
     <a
       :href="withSubjectQuery(route(homeRoute))"
-      class="inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
+      :class="buttonClass"
     >
       一覧画面に戻る
     </a>

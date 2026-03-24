@@ -34,10 +34,14 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        $scope = str_starts_with((string) $request->path(), 'daigaku') ? 'daigaku' : 'seiho';
+
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user(),
-                'hasPremium' => fn () => $request->user()?->hasPremiumAccess() ?? false,
+                'hasPremium' => fn () => $request->user()?->hasPremiumAccess($scope) ?? false,
+                'hasPremiumSeiho' => fn () => $request->user()?->hasPremiumAccess('seiho') ?? false,
+                'hasPremiumDaigaku' => fn () => $request->user()?->hasPremiumAccess('daigaku') ?? false,
                 'isAdmin' => fn () => $request->user()?->is_admin ?? false,
             ],
             'ziggy' => function () use ($request) {

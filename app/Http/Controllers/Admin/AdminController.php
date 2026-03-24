@@ -100,6 +100,8 @@ class AdminController extends Controller
             ->where('id', $userId)
             ->update([
                 'is_premium' => $nextPremium ? 1 : 0,
+                'is_seiho_premium' => $nextPremium ? 1 : 0,
+                'is_daigaku_premium' => $nextPremium ? 1 : 0,
                 'updated_at' => now(),
             ]);
 

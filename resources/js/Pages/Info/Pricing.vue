@@ -8,10 +8,21 @@ const props = defineProps({
         type: String,
         default: null,
     },
+    scope: {
+        type: String,
+        default: "seiho",
+    },
 });
 
 const page = usePage();
-const hasPremium = computed(() => page.props.auth?.hasPremium === true);
+const currentScope = computed(() =>
+    props.scope === "daigaku" ? "daigaku" : "seiho",
+);
+const hasPremium = computed(() =>
+    currentScope.value === "daigaku"
+        ? page.props.auth?.hasPremiumDaigaku === true
+        : page.props.auth?.hasPremiumSeiho === true,
+);
 const isPurchaseEnabled = computed(
     () => page.props.features?.premiumPurchaseEnabled === true,
 );
@@ -125,9 +136,10 @@ const plans = [
                             :href="
                                 route(
                                     plan.href,
-                                    props.returnTo
-                                        ? { return_to: props.returnTo }
-                                        : {},
+                                    {
+                                        ...(props.returnTo ? { return_to: props.returnTo } : {}),
+                                        scope: currentScope,
+                                    },
                                 )
                             "
                             class="inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-base font-semibold transition"

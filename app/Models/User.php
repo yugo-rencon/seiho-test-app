@@ -27,6 +27,8 @@ class User extends Authenticatable
         'email_verified_at',
         'is_admin',
         'is_premium',
+        'is_seiho_premium',
+        'is_daigaku_premium',
     ];
 
     public function examResults()
@@ -34,9 +36,18 @@ class User extends Authenticatable
         return $this->hasMany(UserExamResult::class);
     }
 
-    public function hasPremiumAccess(): bool
+    public function hasPremiumAccess(string $scope = 'seiho'): bool
     {
-        return (bool) $this->is_premium;
+        if ($scope === 'daigaku') {
+            return (bool) $this->is_daigaku_premium;
+        }
+
+        return (bool) $this->is_seiho_premium;
+    }
+
+    public function hasAnyPremiumAccess(): bool
+    {
+        return (bool) $this->is_seiho_premium || (bool) $this->is_daigaku_premium;
     }
 
     /**
@@ -58,5 +69,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'is_admin' => 'boolean',
         'is_premium' => 'boolean',
+        'is_seiho_premium' => 'boolean',
+        'is_daigaku_premium' => 'boolean',
     ];
 }

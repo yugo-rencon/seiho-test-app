@@ -5,6 +5,10 @@ defineProps({
     // 右上リンクの出し分けに使用
     isAuthenticated: { type: Boolean, default: false },
     isAdmin: { type: Boolean, default: false },
+    brandName: { type: String, default: "生保講座過去問解説" },
+    homeRouteName: { type: String, default: "tests.index" },
+    logoSrc: { type: String, default: "/images/rencon-favicon.svg" },
+    isDaigaku: { type: Boolean, default: false },
 });
 
 defineEmits(["open-menu", "open-pricing-modal"]);
@@ -19,23 +23,29 @@ const isActive = (name) => route().current(name);
     >
         <div class="mx-auto w-full max-w-6xl px-6">
             <div class="flex items-center justify-between py-2.5">
-                <Link :href="route('tests.index')" class="flex items-center gap-3">
+                <Link :href="route(homeRouteName)" class="flex items-center gap-3">
                     <img
-                        src="/images/rencon-favicon.svg"
-                        alt="生保講座 過去問解説 ロゴ"
+                        :src="logoSrc"
+                        :alt="`${brandName} ロゴ`"
                         width="40"
                         height="40"
                         class="h-10 w-10"
                     />
                     <span
-                        class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-xl font-black text-transparent"
+                        class="bg-clip-text text-xl font-black text-transparent"
+                        :class="
+                            isDaigaku
+                                ? 'bg-gradient-to-r from-blue-600 to-cyan-500'
+                                : 'bg-gradient-to-r from-indigo-600 to-purple-600'
+                        "
                     >
-                        生保講座過去問解説
+                        {{ brandName }}
                     </span>
                 </Link>
 
                 <!-- PCヘッダー右側（ログイン/マイページ/管理） -->
                 <div
+                    v-if="!isDaigaku"
                     class="hidden items-center gap-4 text-[13px] font-medium tracking-[0.01em] md:flex"
                 >
                     <Link
@@ -70,6 +80,7 @@ const isActive = (name) => route().current(name);
                 </div>
 
                 <button
+                    v-if="!isDaigaku"
                     class="rounded-xl p-2 transition-colors hover:bg-gray-100 md:hidden"
                     @click="$emit('open-menu')"
                 >
@@ -92,6 +103,7 @@ const isActive = (name) => route().current(name);
 
             <!-- PCナビゲーション -->
             <nav
+                v-if="!isDaigaku"
                 class="hidden items-center justify-center gap-4 pb-2 text-sm font-semibold text-gray-700 md:flex"
             >
                 <Link

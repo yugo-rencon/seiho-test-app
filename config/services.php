@@ -35,6 +35,8 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'price_premium' => env('STRIPE_PRICE_PREMIUM'),
+        'price_seiho_premium' => env('STRIPE_PRICE_SEIHO_PREMIUM'),
+        'price_daigaku_premium' => env('STRIPE_PRICE_DAIGAKU_PREMIUM'),
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
         'purchase_enabled' => env('STRIPE_PURCHASE_ENABLED', false),
     ],

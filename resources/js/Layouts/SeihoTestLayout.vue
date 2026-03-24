@@ -13,9 +13,25 @@ const props = defineProps({
         type: String,
         required: true,
     },
+    // ヘッダー/フッターのサイト名（未指定時はURLで自動判定）
+    brandName: {
+        type: String,
+        default: "",
+    },
 });
 
 const page = usePage();
+const isDaigakuPage = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const currentBrandName = computed(() => {
+    if (props.brandName) return props.brandName;
+    return isDaigakuPage.value ? "生命保険大学課程 過去問解説" : "生保講座過去問解説";
+});
+const currentHomeRouteName = computed(() => (isDaigakuPage.value ? "daigaku.index" : "tests.index"));
+const currentLogoSrc = computed(() =>
+    isDaigakuPage.value
+        ? "/images/rencon-favicon-daigaku.svg?v=daigaku"
+        : "/images/rencon-favicon.svg?v=seiho",
+);
 
 // レイアウト共通UIの状態
 const isMenuOpen = ref(false);
@@ -112,14 +128,22 @@ const closePricingModal = () => {
 <template>
     <Head :title="props.title">
         <link
+            head-key="site-favicon"
             rel="icon"
             type="image/svg+xml"
-            href="/images/rencon-favicon.svg"
+            :href="currentLogoSrc"
         />
-        <link rel="apple-touch-icon" href="/images/rencon-favicon.svg" />
+        <link
+            head-key="site-apple-touch-icon"
+            rel="apple-touch-icon"
+            :href="currentLogoSrc"
+        />
     </Head>
 
-    <div class="min-h-screen bg-[#fdfbff]">
+    <div
+        class="min-h-screen"
+        :class="isDaigakuPage ? 'bg-[#f7fbff]' : 'bg-[#fdfbff]'"
+    >
 
         <!-- トーストUI -->
         <LayoutToast
@@ -133,6 +157,10 @@ const closePricingModal = () => {
         <LayoutHeader
             :is-authenticated="isAuthenticated"
             :is-admin="isAdmin"
+            :brand-name="currentBrandName"
+            :home-route-name="currentHomeRouteName"
+            :logo-src="currentLogoSrc"
+            :is-daigaku="isDaigakuPage"
             @open-menu="isMenuOpen = true"
             @open-pricing-modal="openPricingModal"
         />
@@ -153,7 +181,13 @@ const closePricingModal = () => {
         />
 
         <!-- フッター全体 -->
-        <LayoutFooter @open-pricing-modal="openPricingModal" />
+        <LayoutFooter
+            :brand-name="currentBrandName"
+            :home-route-name="currentHomeRouteName"
+            :logo-src="currentLogoSrc"
+            :is-daigaku="isDaigakuPage"
+            @open-pricing-modal="openPricingModal"
+        />
 
         <transition name="fade">
             <div

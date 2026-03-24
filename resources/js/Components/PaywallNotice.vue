@@ -6,8 +6,11 @@ const page = usePage();
 const isPurchaseEnabled = computed(
     () => page.props.features?.premiumPurchaseEnabled === true,
 );
+const scope = computed(() =>
+    String(page.url ?? "").startsWith("/daigaku") ? "daigaku" : "seiho",
+);
 const pricingHref = computed(() =>
-    route("pricing", { return_to: page.url }),
+    route("pricing", { return_to: page.url, scope: scope.value }),
 );
 </script>
 

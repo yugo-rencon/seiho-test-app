@@ -8,7 +8,8 @@
             <!-- 問題番号 -->
             <div class="flex items-start gap-2 my-4">
                 <div
-                    class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"
+                    class="w-1.5 h-6 rounded-full"
+                    :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
                 ></div>
                 <h2 class="text-base font-bold leading-tight text-gray-700">
                     <span class="mr-2 inline-block whitespace-nowrap">問{{ item.questionNo }}</span>
@@ -37,7 +38,10 @@
                 class="my-4 p-4 border border-gray-200 rounded-md"
             >
                 <template v-if="isStructuredExplanation(item.content.explanation)">
-                    <div class="question-temp4-structured text-sm sm:text-base leading-relaxed text-gray-800">
+                    <div
+                        class="question-temp4-structured text-sm sm:text-base leading-relaxed text-gray-800"
+                        :class="{ 'is-daigaku': isDaigaku }"
+                    >
                         <template
                             v-for="(part, partIndex) in item.content.explanation"
                             :key="`visible-${item.questionNo}-${partIndex}`"
@@ -85,6 +89,7 @@
                 <div
                     v-else
                     class="question-temp4-explanation text-sm sm:text-base leading-relaxed text-gray-800"
+                    :class="{ 'is-daigaku': isDaigaku }"
                     v-html="item.content.explanation"
                 ></div>
             </div>
@@ -110,7 +115,8 @@
     >
         <div class="flex items-start gap-2 my-4">
             <div
-                class="w-1.5 h-6 bg-gradient-to-b from-purple-400 to-blue-400 rounded-full"
+                class="w-1.5 h-6 rounded-full"
+                :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
             ></div>
             <h2 class="text-base font-bold leading-tight text-gray-700">
                 <span class="mr-2 inline-block whitespace-nowrap">問{{ firstLockedItem.questionNo }}</span>
@@ -130,7 +136,10 @@
 
         <div class="my-4 p-4 border border-gray-200 rounded-md">
             <template v-if="isStructuredExplanation(firstLockedItem.content.explanation)">
-                <div class="question-temp4-structured text-sm sm:text-base leading-relaxed text-gray-800">
+                <div
+                    class="question-temp4-structured text-sm sm:text-base leading-relaxed text-gray-800"
+                    :class="{ 'is-daigaku': isDaigaku }"
+                >
                     <template
                         v-for="(part, partIndex) in firstLockedItem.content.explanation"
                         :key="`locked-${firstLockedItem.questionNo}-${partIndex}`"
@@ -178,6 +187,7 @@
             <div
                 v-else
                 class="question-temp4-explanation text-sm sm:text-base leading-relaxed text-gray-800"
+                :class="{ 'is-daigaku': isDaigaku }"
                 v-html="firstLockedItem.content.explanation"
             ></div>
         </div>
@@ -253,6 +263,7 @@ const props = defineProps({
 });
 
 const page = usePage();
+const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 

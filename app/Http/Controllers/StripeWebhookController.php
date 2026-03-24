@@ -106,31 +106,43 @@ class StripeWebhookController extends Controller
                 ]);
         }
 
-        // 同一 customer の再決済でも確実にプレミアム化する
+        $scope = $this->sanitizeScope(isset($session->metadata->scope) ? (string) $session->metadata->scope : null);
+
+        // 同一 customer の再決済でも確実に対象スコープをプレミアム化する
         if (($session->payment_status ?? null) === 'paid') {
-            DB::table('users')
-                ->where('id', $userId)
-                ->update([
-                    'is_premium' => 1,
-                    'updated_at' => now(),
-                ]);
+            $update = [
+                'updated_at' => now(),
+            ];
+
+            if ($scope === 'daigaku') {
+                $update['is_daigaku_premium'] = 1;
+            } else {
+                $update['is_seiho_premium'] = 1;
+            }
+
+            DB::table('users')->where('id', $userId)->update($update);
+            $this->syncAnyPremiumFlag($userId);
         }
 
-        $priceId = config('services.stripe.price_premium');
+        $priceId = $this->resolvePriceId($scope);
         $amount = isset($session->amount_total) ? (int) round($session->amount_total / 100) : 1980;
         $currency = isset($session->currency) ? strtolower((string) $session->currency) : 'jpy';
 
         $productId = DB::table('products')
             ->where('stripe_price_id', $priceId)
+            ->where('scope', $scope)
             ->value('id');
 
         if (!$productId) {
             $productId = DB::table('products')->insertGetId([
-                'name' => 'プレミアムプラン（買い切り）',
+                'name' => $scope === 'daigaku'
+                    ? '生命保険大学課程 プレミアムプラン（買い切り）'
+                    : '生保講座 プレミアムプラン（買い切り）',
                 'price' => $amount,
                 'currency' => $currency,
                 'stripe_product_id' => null,
                 'stripe_price_id' => $priceId,
+                'scope' => $scope,
                 'active' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -151,6 +163,7 @@ class StripeWebhookController extends Controller
             'stripe_payment_intent_id' => isset($session->payment_intent) ? (string) $session->payment_intent : null,
             'status' => $status,
             'paid_at' => $paidAt,
+            'scope' => $scope,
             'updated_at' => now(),
         ];
 
@@ -164,5 +177,31 @@ class StripeWebhookController extends Controller
         DB::table('purchases')->insert($payload + [
             'created_at' => now(),
         ]);
+    }
+
+    private function sanitizeScope(?string $scope): string
+    {
+        return in_array($scope, ['seiho', 'daigaku'], true) ? $scope : 'seiho';
+    }
+
+    private function resolvePriceId(string $scope): ?string
+    {
+        if ($scope === 'daigaku') {
+            return config('services.stripe.price_daigaku_premium')
+                ?: config('services.stripe.price_premium');
+        }
+
+        return config('services.stripe.price_seiho_premium')
+            ?: config('services.stripe.price_premium');
+    }
+
+    private function syncAnyPremiumFlag(int $userId): void
+    {
+        DB::table('users')
+            ->where('id', $userId)
+            ->update([
+                'is_premium' => DB::raw('CASE WHEN is_seiho_premium = 1 OR is_daigaku_premium = 1 THEN 1 ELSE 0 END'),
+                'updated_at' => now(),
+            ]);
     }
 }

@@ -13,6 +13,16 @@ Route::get('/', function () {
 });
 
 Route::get('tests', [TestController::class, 'index'])->name('tests.index');
+Route::get('daigaku', [TestController::class, 'daigakuIndex'])->name('daigaku.index');
+Route::get('daigaku/shikumi-kojin2025a', [TestController::class, 'daigakuShikumiKojin2025a'])->name('daigaku.shikumi-kojin2025a');
+Route::get('daigaku/shikumi-kojin2025b', [TestController::class, 'daigakuShikumiKojin2025b'])->name('daigaku.shikumi-kojin2025b');
+Route::get('daigaku/shikumi-kojin2025c', [TestController::class, 'daigakuShikumiKojin2025c'])->name('daigaku.shikumi-kojin2025c');
+Route::get('daigaku/shikumi-kojin2024a', [TestController::class, 'daigakuShikumiKojin2024a'])->name('daigaku.shikumi-kojin2024a');
+Route::get('daigaku/shikumi-kojin2024b', [TestController::class, 'daigakuShikumiKojin2024b'])->name('daigaku.shikumi-kojin2024b');
+Route::get('daigaku/shikumi-kojin2024c', [TestController::class, 'daigakuShikumiKojin2024c'])->name('daigaku.shikumi-kojin2024c');
+Route::get('daigaku/shikumi-kojin2023a', [TestController::class, 'daigakuShikumiKojin2023a'])->name('daigaku.shikumi-kojin2023a');
+Route::get('daigaku/shikumi-kojin2023b', [TestController::class, 'daigakuShikumiKojin2023b'])->name('daigaku.shikumi-kojin2023b');
+Route::get('daigaku/shikumi-kojin2023c', [TestController::class, 'daigakuShikumiKojin2023c'])->name('daigaku.shikumi-kojin2023c');
 
 Route::controller(TestController::class)->group(function () {
     // 試験科目の定義

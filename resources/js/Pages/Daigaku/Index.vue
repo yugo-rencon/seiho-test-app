@@ -109,9 +109,8 @@ const isYearPreparing = (sectionId, year) => {
                             :key="section.id"
                             type="button"
                             @click="activeSectionId = section.id"
-                            class="rounded-full border px-4 py-2 font-semibold transition-colors"
+                            class="rounded-full border px-4 py-2 text-[13px] font-semibold transition-colors sm:text-sm"
                             :class="[
-                                section.title === 'ファイナンシャルプランニングとコンプライアンス' ? 'text-[13px] sm:text-sm' : 'text-sm',
                                 activeSectionId === section.id
                                     ? 'border-transparent bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow'
                                     : 'border-gray-200 bg-white text-gray-700 hover:border-blue-300'
@@ -125,7 +124,7 @@ const isYearPreparing = (sectionId, year) => {
                         <div class="flex items-start gap-3">
                             <div class="mt-1 h-8 w-1.5 rounded-full bg-gradient-to-b from-indigo-500 to-cyan-500"></div>
                             <div class="min-w-0">
-                                <h2 class="text-2xl font-bold text-gray-900">{{ activeSection.title }}</h2>
+                                <h2 class="text-xl font-bold text-gray-900 sm:text-2xl">{{ activeSection.title }}</h2>
                             </div>
                         </div>
                         <p class="mt-3 text-sm text-gray-600">{{ activeSection.description }}</p>

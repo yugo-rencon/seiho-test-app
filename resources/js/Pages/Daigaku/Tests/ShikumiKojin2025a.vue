@@ -418,7 +418,7 @@ const subject = "2025年度 フォームA";
                         { questionTitle: '超過危険の種類', content: '正しい' }, //45
                         { questionTitle: '死亡率と生存率の関係', content: '正しい' }, //46
                         { questionTitle: '平均寿命・平均余命', content: '平均寿命 ↔︎ 平均余命' }, //47 p79
-                        { questionTitle: '利率変動型積立終身保険（アカウント型保険）', content: '' }, //48
+                        { questionTitle: '利率変動型積立終身保険（アカウント型保険）', content: '無告知で → 告知が必要' }, //48 p137
                         { questionTitle: '特定疾病や損傷の治療に備える特約', content: '正しい' }, //49
                     ]"
                 />

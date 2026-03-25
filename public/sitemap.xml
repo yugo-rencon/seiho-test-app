@@ -51,6 +51,51 @@
         <priority>0.8</priority>
             </url>
     <url>
+        <loc>https://seiho-test.com/daigaku</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/pricing</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/policy</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/terms</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/tokusho</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/contact</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/souron2025a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/souron2025b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/souron2025c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
         <loc>https://seiho-test.com/souron2024a</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
@@ -107,6 +152,36 @@
             </url>
     <url>
         <loc>https://seiho-test.com/souron2021c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/souron2020a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/souron2020b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/souron2020c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/keiri2025a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/keiri2025b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/keiri2025c</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
@@ -171,6 +246,36 @@
         <priority>0.8</priority>
             </url>
     <url>
+        <loc>https://seiho-test.com/keiri2020a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/keiri2020b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/keiri2020c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kiken2025a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kiken2025b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kiken2025c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
         <loc>https://seiho-test.com/kiken2024a</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
@@ -227,6 +332,36 @@
             </url>
     <url>
         <loc>https://seiho-test.com/kiken2021c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kiken2020a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kiken2020b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kiken2020c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/yakkan2025a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/yakkan2025b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/yakkan2025c</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
@@ -291,6 +426,36 @@
         <priority>0.8</priority>
             </url>
     <url>
+        <loc>https://seiho-test.com/yakkan2020a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/yakkan2020b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/yakkan2020c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kaikei2025a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kaikei2025b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kaikei2025c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
         <loc>https://seiho-test.com/kaikei2024a</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
@@ -347,6 +512,36 @@
             </url>
     <url>
         <loc>https://seiho-test.com/kaikei2021c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kaikei2020a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kaikei2020b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/kaikei2020c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/eigyo2025a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/eigyo2025b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/eigyo2025c</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
@@ -411,6 +606,36 @@
         <priority>0.8</priority>
             </url>
     <url>
+        <loc>https://seiho-test.com/eigyo2020a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/eigyo2020b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/eigyo2020c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/zeihou2025a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/zeihou2025b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/zeihou2025c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
         <loc>https://seiho-test.com/zeihou2024a</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
@@ -471,6 +696,36 @@
         <priority>0.8</priority>
             </url>
     <url>
+        <loc>https://seiho-test.com/zeihou2020a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/zeihou2020b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/zeihou2020c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/sisan2025a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/sisan2025b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/sisan2025c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
         <loc>https://seiho-test.com/sisan2024a</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
@@ -527,6 +782,66 @@
             </url>
     <url>
         <loc>https://seiho-test.com/sisan2021c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/sisan2020a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/sisan2020b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/sisan2020c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/shikumi-kojin2025a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/shikumi-kojin2025b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/shikumi-kojin2025c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/shikumi-kojin2024a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/shikumi-kojin2024b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/shikumi-kojin2024c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/shikumi-kojin2023a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/shikumi-kojin2023b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/daigaku/shikumi-kojin2023c</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>

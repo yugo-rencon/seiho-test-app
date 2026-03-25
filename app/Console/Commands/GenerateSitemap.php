@@ -15,28 +15,40 @@ class GenerateSitemap extends Command
     {
         $baseUrl = 'https://seiho-test.com';
 
-        $sitemap = Sitemap::create()
-            ->add(Url::create("{$baseUrl}/"))
-            ->add(Url::create("{$baseUrl}/tests"))
-            ->add(Url::create("{$baseUrl}/about"))
-            ->add(Url::create("{$baseUrl}/pricing"))
-            ->add(Url::create("{$baseUrl}/policy"))
-            ->add(Url::create("{$baseUrl}/terms"))
-            ->add(Url::create("{$baseUrl}/tokusho"))
-            ->add(Url::create("{$baseUrl}/study-method"))
-            ->add(Url::create("{$baseUrl}/updateInfo"))
-            ->add(Url::create("{$baseUrl}/contact"));
+        $sitemap = Sitemap::create();
+
+        $staticPaths = [
+            '/',
+            '/tests',
+            '/about',
+            '/pricing',
+            '/policy',
+            '/terms',
+            '/tokusho',
+            '/study-method',
+            '/updateInfo',
+            '/contact',
+            '/daigaku',
+            '/daigaku/pricing',
+            '/daigaku/policy',
+            '/daigaku/terms',
+            '/daigaku/tokusho',
+            '/daigaku/contact',
+        ];
+
+        foreach ($staticPaths as $path) {
+            $sitemap->add(Url::create("{$baseUrl}{$path}"));
+        }
 
         $subjects = [
-            // 公開対象年度のみを sitemap に載せる（未公開の2025は除外）
-            'souron' => ['2024', '2023', '2022', '2021'],
-            'keiri'  => ['2024', '2023', '2022', '2021'],
-            'kiken'  => ['2024', '2023', '2022', '2021'],
-            'yakkan' => ['2024', '2023', '2022', '2021'],
-            'kaikei' => ['2024', '2023', '2022', '2021'],
-            'eigyo'  => ['2024', '2023', '2022', '2021'],
-            'zeihou' => ['2024', '2023', '2022', '2021'],
-            'sisan'  => ['2024', '2023', '2022', '2021'],
+            'souron' => ['2025', '2024', '2023', '2022', '2021', '2020'],
+            'keiri'  => ['2025', '2024', '2023', '2022', '2021', '2020'],
+            'kiken'  => ['2025', '2024', '2023', '2022', '2021', '2020'],
+            'yakkan' => ['2025', '2024', '2023', '2022', '2021', '2020'],
+            'kaikei' => ['2025', '2024', '2023', '2022', '2021', '2020'],
+            'eigyo'  => ['2025', '2024', '2023', '2022', '2021', '2020'],
+            'zeihou' => ['2025', '2024', '2023', '2022', '2021', '2020'],
+            'sisan'  => ['2025', '2024', '2023', '2022', '2021', '2020'],
         ];
 
         $forms = ['a', 'b', 'c'];
@@ -47,6 +59,13 @@ class GenerateSitemap extends Command
                     $url = "{$baseUrl}/{$subject}{$year}{$form}";
                     $sitemap->add(Url::create($url));
                 }
+            }
+        }
+
+        $daigakuYears = ['2025', '2024', '2023'];
+        foreach ($daigakuYears as $year) {
+            foreach ($forms as $form) {
+                $sitemap->add(Url::create("{$baseUrl}/daigaku/shikumi-kojin{$year}{$form}"));
             }
         }
 

@@ -1,12 +1,17 @@
 <script setup>
 import { Head, useForm, usePage } from '@inertiajs/vue3';
+import { computed } from 'vue';
 import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
 
 const page = usePage();
 const defaultEmail = page.props?.auth?.user?.email ?? '';
+const isDaigaku = computed(() => String(page.url ?? '').startsWith('/daigaku'));
+const contactStoreRouteName = computed(() =>
+    isDaigaku.value ? 'daigaku.contact.store' : 'contact.store',
+);
 
 const form = useForm({
-    category: 'bug',
+    category: '',
     name: '',
     email: defaultEmail,
     message: '',
@@ -17,7 +22,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('contact.store'), {
+    form.post(route(contactStoreRouteName.value), {
         preserveScroll: true,
         onSuccess: () => {
             form.reset('name', 'message', 'page_url', 'device', 'occurred_at', 'privacy_agreed');
@@ -49,6 +54,7 @@ const submit = () => {
                             v-model="form.category"
                             class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-purple-400 focus:ring-purple-400"
                         >
+                            <option value="" disabled>選択してください</option>
                             <option value="bug">不具合の報告</option>
                             <option value="request">改善要望</option>
                             <option value="feedback">ご意見・感想</option>
@@ -162,4 +168,3 @@ const submit = () => {
         </div>
     </SeihoTestLayout>
 </template>
-

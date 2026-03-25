@@ -45,7 +45,30 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        $returnTo = $this->sanitizeReturnTo($request->input('return_to'));
+        if ($returnTo) {
+            return redirect($returnTo)
+                ->with('status', 'アカウントを作成してログインしました。');
+        }
+
         return redirect(RouteServiceProvider::HOME)
             ->with('status', 'アカウントを作成してログインしました。');
+    }
+
+    private function sanitizeReturnTo(?string $returnTo): ?string
+    {
+        if (!$returnTo) {
+            return null;
+        }
+
+        if (!str_starts_with($returnTo, '/')) {
+            return null;
+        }
+
+        if (str_starts_with($returnTo, '//')) {
+            return null;
+        }
+
+        return $returnTo;
     }
 }

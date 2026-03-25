@@ -11,7 +11,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                     特定商取引法に基づく表記
                 </h1>
                 <p class="mt-4 text-base text-gray-600">
-                    生保講座過去問解説（デジタルコンテンツ販売）に関する法定表示を掲載しています。
+                    生保講座過去問解説および生命保険大学課程 過去問解説（デジタルコンテンツ販売）に関する法定表示を掲載しています。
                 </p>
             </section>
 
@@ -19,7 +19,11 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                 <dl class="divide-y divide-gray-100 text-sm leading-relaxed">
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
                         <dt class="font-semibold text-gray-900">販売事業者名</dt>
-                        <dd class="text-gray-700">生保講座過去問解説</dd>
+                        <dd class="text-gray-700">栗野 勇吾</dd>
+                    </div>
+                    <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
+                        <dt class="font-semibold text-gray-900">サービス名</dt>
+                        <dd class="text-gray-700">生保講座過去問解説 / 生命保険大学課程 過去問解説</dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
                         <dt class="font-semibold text-gray-900">運営責任者</dt>
@@ -44,7 +48,10 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
                         <dt class="font-semibold text-gray-900">販売価格</dt>
-                        <dd class="text-gray-700">プレミアムプラン 1,980円（税込）</dd>
+                        <dd class="text-gray-700">
+                            生保講座 プレミアムプラン：1,980円（税込）<br />
+                            生命保険大学課程 プレミアムプラン：980円（税込）
+                        </dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
                         <dt class="font-semibold text-gray-900">商品代金以外の必要料金</dt>
@@ -60,7 +67,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
                         <dt class="font-semibold text-gray-900">引き渡し時期</dt>
-                        <dd class="text-gray-700">決済完了後、直ちにプレミアムコンテンツを閲覧できます。</dd>
+                        <dd class="text-gray-700">決済完了後、対象サービスのプレミアムコンテンツを直ちに閲覧できます。</dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
                         <dt class="font-semibold text-gray-900">返品・キャンセル</dt>
@@ -76,7 +83,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
             </section>
 
             <div class="mt-6 text-xs text-gray-500 border-t border-gray-100 pt-4">
-                最終更新日：2026年2月16日
+                最終更新日：2026年3月26日
             </div>
         </div>
     </SeihoTestLayout>

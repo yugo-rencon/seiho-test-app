@@ -1,6 +1,8 @@
 <script setup>
-import { computed, ref } from "vue";
+import { Link, usePage } from "@inertiajs/vue3";
+import { computed, onMounted, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
+import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 
 const DAIGAKU_FORMS = ["a", "b", "c"];
 const DAIGAKU_VISIBLE_YEARS = [2025, 2024, 2023];
@@ -48,6 +50,11 @@ const activeSectionId = ref(DAIGAKU_SECTIONS[0]?.id ?? "");
 const activeSection = computed(() =>
     DAIGAKU_SECTIONS.find((section) => section.id === activeSectionId.value),
 );
+const page = usePage();
+const hasPremium = computed(() => page.props.auth?.hasPremiumDaigaku === true);
+const pricingHref = computed(() =>
+    route("daigaku.pricing", { return_to: String(page.url ?? "/daigaku") }),
+);
 
 const getDaigakuRoute = (sectionId, year, form) => {
     if (sectionId !== "shikumi-kojin") return null;
@@ -81,6 +88,16 @@ const isYearPreparing = (sectionId, year) => {
     }
     return publishedCount === 0;
 };
+
+const isValidSectionId = (id) => DAIGAKU_SECTIONS.some((section) => section.id === id);
+
+onMounted(() => {
+    const params = new URLSearchParams(window.location.search);
+    const subject = params.get("subject");
+    if (subject && isValidSectionId(subject)) {
+        activeSectionId.value = subject;
+    }
+});
 </script>
 
 <template>
@@ -96,11 +113,25 @@ const isYearPreparing = (sectionId, year) => {
                         class="mb-4 rounded-xl border border-indigo-200 bg-indigo-50/80 px-3 py-2 text-left text-[12px] leading-5 text-indigo-800 sm:mb-5 sm:px-4 sm:py-2.5 sm:text-center"
                     >
                         <span class="block font-semibold tracking-wide">
-                            生命保険大学課程試験の過去問解説ページです。
+                            生命保険大学課程の過去問解説ページです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-indigo-700/90">
-                            科目・年度・フォームごとに順次公開していきます。
+                             最新年度フォームAからお試しください。
+                            <Link
+                                v-if="!hasPremium"
+                                :href="pricingHref"
+                                class="ml-1 hidden font-semibold text-blue-700 underline decoration-blue-300 underline-offset-2 transition hover:text-blue-800 md:inline"
+                            >
+                                ▶ すべての解説をまとめて閲覧
+                            </Link>
                         </span>
+                        <Link
+                            v-if="!hasPremium"
+                            :href="pricingHref"
+                            class="mt-1 inline-block text-[11px] font-semibold text-blue-700 underline decoration-blue-300 underline-offset-2 transition hover:text-blue-800 md:hidden"
+                        >
+                            ▶ すべての解説をまとめて閲覧
+                        </Link>
                     </div>
 
                     <p class="mb-3 text-xs font-semibold text-gray-500">科目を選択してください</p>
@@ -139,6 +170,12 @@ const isYearPreparing = (sectionId, year) => {
                                 <div class="flex items-center gap-2">
                                     <div class="text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
                                     <span
+                                        v-if="!hasPremium && Number(year) === 2025"
+                                        class="inline-flex items-center rounded-full border border-blue-300 bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700"
+                                    >
+                                        最新年度フォームA・無料
+                                    </span>
+                                    <span
                                         v-if="isYearPreparing(activeSection.id, year)"
                                         class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600"
                                     >
@@ -166,6 +203,10 @@ const isYearPreparing = (sectionId, year) => {
 
                     </div>
                 </div>
+            </div>
+
+            <div v-if="!hasPremium" class="mt-6">
+                <AdSenseUnit ad-slot="5135479704" />
             </div>
         </div>
     </SeihoTestLayout>

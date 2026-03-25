@@ -1,6 +1,6 @@
 <script setup>
-import { Head, Link, router } from "@inertiajs/vue3";
-import { ref } from "vue";
+import { Head, Link, router, usePage } from "@inertiajs/vue3";
+import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const props = defineProps({
@@ -28,12 +28,18 @@ const props = defineProps({
 
 const q = ref(props.filters?.q ?? "");
 const activeTab = ref("dashboard");
+const page = usePage();
+const isDaigakuAdmin = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const adminIndexRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.index" : "admin.index"));
+const adminContactsRoute = computed(() =>
+    isDaigakuAdmin.value ? "daigaku.admin.contacts.index" : "admin.contacts.index",
+);
 
 const isActiveMenu = (key) => activeTab.value === key;
 
 const submitSearch = () => {
     router.get(
-        route("admin.index"),
+        route(adminIndexRoute.value),
         { q: q.value },
         { preserveState: true, replace: true },
     );
@@ -93,7 +99,7 @@ const formatDateTime = (value) => {
                     ユーザー管理
                 </button>
                 <Link
-                    :href="route('admin.contacts.index')"
+                    :href="route(adminContactsRoute)"
                     class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
                 >
                     問い合わせ管理

@@ -4,19 +4,43 @@ import InputError from "@/Components/InputError.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
-import { Head, Link, useForm } from "@inertiajs/vue3";
-import { ref } from "vue";
+import { Head, Link, useForm, usePage } from "@inertiajs/vue3";
+import { computed, ref } from "vue";
 
 const form = useForm({
     email: "",
     password: "",
     password_confirmation: "",
     terms: false,
+    scope: "",
+    return_to: "",
 });
 const showPassword = ref(false);
 const showPasswordConfirmation = ref(false);
+const page = usePage();
+const query = computed(() => {
+    const url = String(page.url ?? "");
+    const raw = url.includes("?") ? url.split("?")[1] : "";
+    const params = new URLSearchParams(raw);
+    return {
+        scope: params.get("scope") ?? "",
+        returnTo: params.get("return_to") ?? "",
+    };
+});
+const isDaigaku = computed(
+    () => query.value.scope === "daigaku" || query.value.returnTo.startsWith("/daigaku"),
+);
+const authQuery = computed(() => ({
+    ...(query.value.scope ? { scope: query.value.scope } : {}),
+    ...(query.value.returnTo ? { return_to: query.value.returnTo } : {}),
+}));
+const inputClass = computed(() =>
+    isDaigaku.value ? "focus:border-blue-500 focus:ring-blue-500" : "focus:border-purple-500 focus:ring-purple-500",
+);
 
 const submit = () => {
+    form.scope = query.value.scope;
+    form.return_to = query.value.returnTo;
     form.post(route("register"), {
         onFinish: () => form.reset("password", "password_confirmation"),
     });
@@ -39,6 +63,7 @@ const submit = () => {
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
+                    :class="inputClass"
                     v-model="form.email"
                     required
                     autocomplete="username"
@@ -55,6 +80,7 @@ const submit = () => {
                         id="password"
                         :type="showPassword ? 'text' : 'password'"
                         class="block w-full pr-14 text-base"
+                        :class="inputClass"
                         v-model="form.password"
                         required
                         maxlength="255"
@@ -62,7 +88,8 @@ const submit = () => {
                     />
                     <button
                         type="button"
-                        class="absolute right-1 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md text-gray-500 hover:text-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                        class="absolute right-1 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md text-gray-500 focus:outline-none focus:ring-2"
+                        :class="isDaigaku ? 'hover:text-blue-600 focus:ring-blue-400' : 'hover:text-purple-600 focus:ring-purple-400'"
                         @click="showPassword = !showPassword"
                         :aria-pressed="showPassword"
                         aria-label="パスワードを表示"
@@ -110,6 +137,7 @@ const submit = () => {
                         id="password_confirmation"
                         :type="showPasswordConfirmation ? 'text' : 'password'"
                         class="block w-full pr-14 text-base"
+                        :class="inputClass"
                         v-model="form.password_confirmation"
                         required
                         maxlength="255"
@@ -117,7 +145,8 @@ const submit = () => {
                     />
                     <button
                         type="button"
-                        class="absolute right-1 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md text-gray-500 hover:text-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                        class="absolute right-1 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md text-gray-500 focus:outline-none focus:ring-2"
+                        :class="isDaigaku ? 'hover:text-blue-600 focus:ring-blue-400' : 'hover:text-purple-600 focus:ring-purple-400'"
                         @click="showPasswordConfirmation = !showPasswordConfirmation"
                         :aria-pressed="showPasswordConfirmation"
                         aria-label="パスワードを表示"
@@ -159,8 +188,11 @@ const submit = () => {
 
             <div class="pt-1">
                 <PrimaryButton
-                    class="w-full justify-center bg-purple-600 hover:bg-purple-700 focus:ring-purple-500"
-                    :class="{ 'opacity-60': form.processing }"
+                    class="w-full justify-center"
+                    :class="[
+                        isDaigaku ? 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500' : 'bg-purple-600 hover:bg-purple-700 focus:ring-purple-500',
+                        { 'opacity-60': form.processing },
+                    ]"
                     :disabled="form.processing"
                 >
                     無料でアカウント作成
@@ -174,7 +206,7 @@ const submit = () => {
             </div>
 
             <a
-                :href="route('google.redirect')"
+                :href="route('google.redirect', authQuery)"
                 class="w-full inline-flex items-center justify-center gap-2 rounded-md border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition"
             >
                 <svg class="h-4 w-4" viewBox="0 0 48 48" aria-hidden="true">
@@ -199,8 +231,9 @@ const submit = () => {
             </a>
 
             <Link
-                :href="route('login')"
-                class="w-full inline-flex items-center justify-center rounded-md border border-purple-100 px-4 py-2.5 text-sm font-semibold text-purple-500 hover:bg-purple-50 transition"
+                :href="route('login', authQuery)"
+                class="w-full inline-flex items-center justify-center rounded-md border px-4 py-2.5 text-sm font-semibold transition"
+                :class="isDaigaku ? 'border-blue-100 text-blue-500 hover:bg-blue-50' : 'border-purple-100 text-purple-500 hover:bg-purple-50'"
             >
                 すでに登録済みの方はこちら
             </Link>

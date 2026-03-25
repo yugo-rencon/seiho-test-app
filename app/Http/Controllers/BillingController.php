@@ -14,18 +14,13 @@ class BillingController extends Controller
         $stripeSecret = config('services.stripe.secret');
         $scope = $this->sanitizeScope($request->query('scope'));
         $priceId = $this->resolvePriceId($scope);
-        $purchaseEnabled = (bool) config('services.stripe.purchase_enabled');
         $user = $request->user();
         $returnTo = $this->sanitizeReturnTo($request->query('return_to'));
 
-        if (!$purchaseEnabled) {
-            return redirect()->route('pricing', $returnTo ? ['return_to' => $returnTo] : [])
-                ->with('status', 'プレミアム機能は現在準備中です。4月より正式リリース予定です。');
-        }
-
         // 既購入ユーザーはStripeへ遷移させない
         if ($user && $user->hasPremiumAccess($scope)) {
-            return redirect($returnTo ?: route('mypage'))
+            $mypageRoute = $scope === 'daigaku' ? 'daigaku.mypage' : 'mypage';
+            return redirect($returnTo ?: route($mypageRoute))
                 ->with('status', 'プレミアムプランを購入済みです。');
         }
 
@@ -55,11 +50,11 @@ class BillingController extends Controller
                     'scope' => $scope,
                 ],
                 'success_url' => $this->appendQueryToUrl(
-                    $returnTo ? url($returnTo) : route('mypage'),
+                    $returnTo ? url($returnTo) : route($scope === 'daigaku' ? 'daigaku.mypage' : 'mypage'),
                     ['checkout' => 'success', 'session_id' => '{CHECKOUT_SESSION_ID}'],
                 ),
                 'cancel_url' => $this->appendQueryToUrl(
-                    $returnTo ? url($returnTo) : route('pricing'),
+                    $returnTo ? url($returnTo) : route($scope === 'daigaku' ? 'daigaku.pricing' : 'pricing'),
                     ['checkout' => 'cancel'],
                 ),
             ]);

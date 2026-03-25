@@ -1,17 +1,19 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
-import { ref, watch } from "vue";
+import { Link, usePage } from "@inertiajs/vue3";
+import { computed, ref, watch } from "vue";
 
 const props = defineProps({
     // 開閉状態（親のレイアウトで管理）
     open: { type: Boolean, default: false },
+    isDaigaku: { type: Boolean, default: false },
     isAuthenticated: { type: Boolean, default: false },
     hasPremium: { type: Boolean, default: false },
     isAdmin: { type: Boolean, default: false },
     subjects: { type: Array, default: () => [] },
 });
 
-const emit = defineEmits(["close", "open-pricing-modal"]);
+const emit = defineEmits(["close"]);
+const page = usePage();
 
 // 科目アコーディオン開閉状態
 const openSubjects = ref(new Set());
@@ -31,10 +33,16 @@ watch(
 const isActive = (name) => route().current(name);
 
 const closeMenu = () => emit("close");
-const openPricingModal = () => {
-    closeMenu();
-    emit("open-pricing-modal");
-};
+const pricingHref = computed(() =>
+    props.isDaigaku
+        ? route("daigaku.pricing", { return_to: String(page.url ?? "/daigaku") })
+        : route("pricing", { return_to: String(page.url ?? "/tests") }),
+);
+const loginHref = computed(() =>
+    props.isDaigaku
+        ? route("login", { scope: "daigaku", return_to: String(page.url ?? "/daigaku") })
+        : route("login", { return_to: String(page.url ?? "/tests") }),
+);
 
 // 科目アコーディオンを開閉。閉じる時は年度選択もリセット
 const toggleSubject = (key) => {
@@ -49,6 +57,22 @@ const toggleSubject = (key) => {
 // 科目ごとの表示年度を切り替え
 const setActiveYear = (subjectKey, yearLabel) => {
     activeYears.value.set(subjectKey, yearLabel);
+};
+
+const homeRouteName = () => (props.isDaigaku ? "daigaku.index" : "tests.index");
+const mypageRouteName = () => (props.isDaigaku ? "daigaku.mypage" : "mypage");
+const adminRouteName = () => (props.isDaigaku ? "daigaku.admin.index" : "admin.index");
+const resolveFormHref = (subjectKey, yearLabel, form) => {
+    const year = String(yearLabel).replace("年度", "");
+    const routeName = props.isDaigaku
+        ? `daigaku.${subjectKey}${year}${String(form).toLowerCase()}`
+        : `${subjectKey}${year}${String(form).toLowerCase()}`;
+
+    if (!route().has(routeName)) {
+        return null;
+    }
+
+    return route(routeName);
 };
 </script>
 
@@ -92,7 +116,7 @@ const setActiveYear = (subjectKey, yearLabel) => {
                     <div class="space-y-2">
                         <Link
                             v-if="isAdmin"
-                            :href="route('admin.index')"
+                            :href="route(adminRouteName())"
                             class="block rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-700 transition hover:bg-amber-100"
                             @click="closeMenu"
                         >
@@ -100,14 +124,18 @@ const setActiveYear = (subjectKey, yearLabel) => {
                         </Link>
                         <template v-if="isAuthenticated">
                             <Link
-                                :href="route('mypage')"
+                                :href="route(mypageRouteName())"
                                 class="block rounded-lg px-3 py-2 text-sm font-semibold transition"
                                 :class="
-                                    isActive('mypage')
-                                        ? 'pointer-events-none bg-purple-50 text-purple-700'
-                                        : 'text-purple-700 hover:bg-purple-50'
+                                    isActive(mypageRouteName())
+                                        ? isDaigaku
+                                            ? 'pointer-events-none bg-blue-50 text-blue-700'
+                                            : 'pointer-events-none bg-purple-50 text-purple-700'
+                                        : isDaigaku
+                                          ? 'text-blue-700 hover:bg-blue-50'
+                                          : 'text-purple-700 hover:bg-purple-50'
                                 "
-                                :aria-current="isActive('mypage') ? 'page' : null"
+                                :aria-current="isActive(mypageRouteName()) ? 'page' : null"
                                 @click="closeMenu"
                             >
                                 マイページ
@@ -115,8 +143,9 @@ const setActiveYear = (subjectKey, yearLabel) => {
                         </template>
                         <template v-else>
                             <Link
-                                :href="route('login')"
-                                class="block rounded-lg px-3 py-2 text-sm font-semibold text-purple-700 transition hover:bg-purple-50"
+                                :href="loginHref"
+                                class="block rounded-lg px-3 py-2 text-sm font-semibold transition"
+                                :class="isDaigaku ? 'text-blue-700 hover:bg-blue-50' : 'text-purple-700 hover:bg-purple-50'"
                                 @click="closeMenu"
                             >
                                 ログイン
@@ -131,13 +160,14 @@ const setActiveYear = (subjectKey, yearLabel) => {
                         </div>
                         <div class="mb-3 overflow-hidden rounded-xl border border-gray-100">
                             <Link
-                                :href="route('tests.index')"
+                                :href="route(homeRouteName())"
                                 class="flex w-full items-center justify-between px-4 py-3 text-sm font-semibold text-gray-800 transition-all duration-200 hover:bg-gray-50"
                                 @click="closeMenu"
                             >
                                 <span>解説一覧</span>
                                 <svg
-                                    class="h-4 w-4 text-purple-500"
+                                    class="h-4 w-4"
+                                    :class="isDaigaku ? 'text-blue-500' : 'text-purple-500'"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -170,12 +200,11 @@ const setActiveYear = (subjectKey, yearLabel) => {
                                         {{ Object.keys(subject.tests).length }}年度分
                                     </span>
                                     <svg
-                                        class="h-4 w-4 text-purple-500 transition-transform duration-200"
-                                        :class="
-                                            openSubjects.has(subject.key)
-                                                ? 'rotate-180'
-                                                : ''
-                                        "
+                                        class="h-4 w-4 transition-transform duration-200"
+                                        :class="[
+                                            isDaigaku ? 'text-blue-500' : 'text-purple-500',
+                                            openSubjects.has(subject.key) ? 'rotate-180' : '',
+                                        ]"
                                         fill="none"
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"
@@ -205,8 +234,12 @@ const setActiveYear = (subjectKey, yearLabel) => {
                                                 (activeYears.get(subject.key) ||
                                                     Object.keys(subject.tests)[0]) ===
                                                 yearLabel
-                                                    ? 'border-purple-200 bg-purple-100 text-purple-700'
-                                                    : 'border-gray-200 bg-white text-gray-600 hover:border-purple-200'
+                                                    ? isDaigaku
+                                                        ? 'border-blue-200 bg-blue-100 text-blue-700'
+                                                        : 'border-purple-200 bg-purple-100 text-purple-700'
+                                                    : isDaigaku
+                                                      ? 'border-gray-200 bg-white text-gray-600 hover:border-blue-200'
+                                                      : 'border-gray-200 bg-white text-gray-600 hover:border-purple-200'
                                             "
                                             @click="setActiveYear(subject.key, yearLabel)"
                                         >
@@ -228,7 +261,8 @@ const setActiveYear = (subjectKey, yearLabel) => {
                                             class="mb-2 flex items-center gap-2 px-2 text-xs font-semibold text-gray-700"
                                         >
                                             <div
-                                                class="h-2 w-2 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400"
+                                                class="h-2 w-2 rounded-full bg-gradient-to-r"
+                                                :class="isDaigaku ? 'from-blue-400 to-cyan-400' : 'from-indigo-400 to-purple-400'"
                                             ></div>
                                             <span>{{ yearLabel }}</span>
                                         </div>
@@ -236,12 +270,10 @@ const setActiveYear = (subjectKey, yearLabel) => {
                                         <ul class="space-y-1">
                                             <li v-for="form in forms" :key="form">
                                                 <Link
-                                                    :href="
-                                                        route(
-                                                            `${subject.key}${yearLabel.replace('年度', '')}${form}`,
-                                                        )
-                                                    "
-                                                    class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm text-gray-600 transition-all duration-150 hover:bg-white hover:text-purple-700"
+                                                    v-if="resolveFormHref(subject.key, yearLabel, form)"
+                                                    :href="resolveFormHref(subject.key, yearLabel, form)"
+                                                    class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm text-gray-600 transition-all duration-150 hover:bg-white"
+                                                    :class="isDaigaku ? 'hover:text-blue-700' : 'hover:text-purple-700'"
                                                     @click="closeMenu"
                                                 >
                                                     <span
@@ -250,7 +282,8 @@ const setActiveYear = (subjectKey, yearLabel) => {
                                                         フォーム{{ form.toUpperCase() }}
                                                     </span>
                                                     <svg
-                                                        class="h-4 w-4 text-indigo-400 transition-transform group-hover:translate-x-1"
+                                                        class="h-4 w-4 transition-transform group-hover:translate-x-1"
+                                                        :class="isDaigaku ? 'text-blue-400' : 'text-indigo-400'"
                                                         fill="none"
                                                         stroke="currentColor"
                                                         viewBox="0 0 24 24"
@@ -263,6 +296,13 @@ const setActiveYear = (subjectKey, yearLabel) => {
                                                         />
                                                     </svg>
                                                 </Link>
+                                                <span
+                                                    v-else
+                                                    class="flex items-center justify-between rounded-lg px-3 py-2 text-sm text-gray-400"
+                                                >
+                                                    <span class="font-medium">フォーム{{ form.toUpperCase() }}</span>
+                                                    <span class="text-[11px]">準備中</span>
+                                                </span>
                                             </li>
                                         </ul>
                                     </div>
@@ -274,19 +314,21 @@ const setActiveYear = (subjectKey, yearLabel) => {
                     <!-- 下部の固定ページリンク -->
                     <div class="border-t border-gray-100 pt-4">
                         <div class="space-y-2">
-                            <button
-                                type="button"
-                                class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
-                                @click="openPricingModal"
+                            <Link
+                                :href="pricingHref"
+                                class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition"
+                                :class="isDaigaku ? 'hover:bg-blue-50 hover:text-blue-700' : 'hover:bg-purple-50 hover:text-purple-700'"
+                                @click="closeMenu"
                             >
                                 料金
-                            </button>
+                            </Link>
                             <Link
                                 v-if="isAuthenticated"
                                 :href="route('logout')"
                                 method="post"
                                 as="button"
-                                class="block w-full rounded-lg px-3 py-2 text-left text-sm font-semibold text-gray-700 transition hover:bg-purple-50 hover:text-purple-700"
+                                class="block w-full rounded-lg px-3 py-2 text-left text-sm font-semibold text-gray-700 transition"
+                                :class="isDaigaku ? 'hover:bg-blue-50 hover:text-blue-700' : 'hover:bg-purple-50 hover:text-purple-700'"
                                 @click="closeMenu"
                             >
                                 ログアウト

@@ -12,9 +12,13 @@ use Inertia\Response;
 
 class ContactController extends Controller
 {
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        return Inertia::render('Info/Contact');
+        $scope = $this->resolveScope($request);
+
+        return Inertia::render('Info/Contact', [
+            'scope' => $scope,
+        ]);
     }
 
     public function store(Request $request): RedirectResponse
@@ -66,9 +70,21 @@ class ContactController extends Controller
             $statusMessage = 'お問い合わせを受け付けました。（通知メール送信に失敗したため、管理画面で確認します）';
         }
 
+        $scope = $this->resolveScope($request);
+        $indexRoute = $scope === 'daigaku' ? 'daigaku.contact.index' : 'contact.index';
+
         return redirect()
-            ->route('contact.index')
+            ->route($indexRoute)
             ->with('status', $statusMessage);
+    }
+
+    private function resolveScope(Request $request): string
+    {
+        if ($request->routeIs('daigaku.*')) {
+            return 'daigaku';
+        }
+
+        return 'seiho';
     }
 
     private function categoryLabel(string $category): string
@@ -112,4 +128,3 @@ class ContactController extends Controller
         ]);
     }
 }
-

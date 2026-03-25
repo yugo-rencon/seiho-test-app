@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -34,6 +35,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        $returnTo = $this->sanitizeReturnTo($request->input('return_to'));
+        if ($returnTo) {
+            return redirect($returnTo)->with('status', 'ログインしました。');
+        }
+
         return redirect()
             ->intended(RouteServiceProvider::HOME)
             ->with('status', 'ログインしました。');
@@ -44,12 +50,46 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        $redirectRoute = $this->resolveLogoutRedirectRoute($request);
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('tests.index')->with('status', 'ログアウトしました。');
+        return redirect()->route($redirectRoute)->with('status', 'ログアウトしました。');
+    }
+
+    private function sanitizeReturnTo(?string $returnTo): ?string
+    {
+        if (!$returnTo) {
+            return null;
+        }
+
+        if (!str_starts_with($returnTo, '/')) {
+            return null;
+        }
+
+        if (str_starts_with($returnTo, '//')) {
+            return null;
+        }
+
+        return $returnTo;
+    }
+
+    private function resolveLogoutRedirectRoute(Request $request): string
+    {
+        $returnTo = $this->sanitizeReturnTo($request->input('return_to'));
+        if ($returnTo && Str::startsWith($returnTo, '/daigaku')) {
+            return 'daigaku.index';
+        }
+
+        $refererPath = (string) parse_url((string) $request->headers->get('referer'), PHP_URL_PATH);
+        if (Str::startsWith($refererPath, '/daigaku')) {
+            return 'daigaku.index';
+        }
+
+        return 'tests.index';
     }
 }

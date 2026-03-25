@@ -19,7 +19,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                 <div>
                     <h2 class="text-base font-bold text-gray-900">1. 基本方針</h2>
                     <p class="mt-2">
-                        生保講座過去問解説（以下「当サイト」）は、ユーザーの個人情報を適切に取り扱い、関連法令を遵守します。
+                        生保講座過去問解説および生命保険大学課程 過去問解説（以下総称して「当サイト」）は、ユーザーの個人情報を適切に取り扱い、関連法令を遵守します。
                     </p>
                 </div>
 
@@ -111,7 +111,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
             </section>
 
             <div class="mt-10 text-xs text-gray-500 border-t border-gray-100 pt-4">
-                最終更新日：2026年2月16日
+                最終更新日：2026年3月26日
             </div>
         </div>
     </SeihoTestLayout>

@@ -43,8 +43,14 @@ router.on('navigate', (event) => {
 createInertiaApp({
   title: (title) => {
     const path = window.location.pathname;
+    const params = new URLSearchParams(window.location.search);
+    const scope = params.get('scope');
+    const returnTo = params.get('return_to') || '';
+    const isDaigakuAuth = (path === '/login' || path === '/register' || path === '/forgot-password')
+      && (scope === 'daigaku' || returnTo.startsWith('/daigaku'));
     if (path === '/tests') return appName;
     if (path === '/daigaku') return '生命保険大学課程 過去問解説';
+    if (isDaigakuAuth) return `${title} | 生命保険大学課程 過去問解説`;
     if (path.startsWith('/daigaku')) return `${title} | 生命保険大学課程 過去問解説`;
     return `${title} | ${appName}`;
   },

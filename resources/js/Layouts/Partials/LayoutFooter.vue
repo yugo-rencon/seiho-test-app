@@ -7,8 +7,6 @@ defineProps({
     logoSrc: { type: String, default: "/images/rencon-favicon.svg" },
     isDaigaku: { type: Boolean, default: false },
 });
-
-defineEmits(["open-pricing-modal"]);
 </script>
 
 <template>
@@ -44,7 +42,7 @@ defineEmits(["open-pricing-modal"]);
 
                 <div class="mt-8 grid gap-8 sm:grid-cols-3 md:mt-0 md:shrink-0 md:gap-x-14">
                     <div class="text-center sm:text-left">
-                        <div class="text-xs font-semibold text-gray-500">関連サイト</div>
+                        <div class="text-xs font-semibold text-gray-500">サイト</div>
                         <ul class="mt-3 inline-flex flex-col items-center space-y-2 text-sm sm:items-start">
                             <li>
                                 <Link
@@ -62,6 +60,14 @@ defineEmits(["open-pricing-modal"]);
                                     生命保険講座
                                 </Link>
                             </li>
+                            <li>
+                                <Link
+                                    :href="route('daigaku.pricing')"
+                                    class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
+                                >
+                                    料金
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -70,11 +76,21 @@ defineEmits(["open-pricing-modal"]);
                         <ul class="mt-3 inline-flex flex-col items-center space-y-2 text-sm sm:items-start">
                             <li>
                                 <Link
-                                    :href="route('contact.index')"
+                                    :href="route(isDaigaku ? 'daigaku.contact.index' : 'contact.index')"
                                     class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
                                 >
                                     お問い合わせ
                                 </Link>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://buymeacoffee.com/rencon"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
+                                >
+                                    応援する（寄付）
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -84,7 +100,7 @@ defineEmits(["open-pricing-modal"]);
                         <ul class="mt-3 inline-flex flex-col items-center space-y-2 text-sm sm:items-start">
                             <li>
                                 <Link
-                                    :href="route('policy')"
+                                    :href="route(isDaigaku ? 'daigaku.policy' : 'policy')"
                                     class="whitespace-nowrap text-gray-600 transition-colors duration-200 hover:text-blue-600"
                                 >
                                     プライバシーポリシー
@@ -92,7 +108,7 @@ defineEmits(["open-pricing-modal"]);
                             </li>
                             <li>
                                 <Link
-                                    :href="route('terms')"
+                                    :href="route(isDaigaku ? 'daigaku.terms' : 'terms')"
                                     class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
                                 >
                                     利用規約
@@ -100,7 +116,7 @@ defineEmits(["open-pricing-modal"]);
                             </li>
                             <li>
                                 <Link
-                                    :href="route('tokusho')"
+                                    :href="route(isDaigaku ? 'daigaku.tokusho' : 'tokusho')"
                                     class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
                                 >
                                     特商法に基づく表記
@@ -151,7 +167,7 @@ defineEmits(["open-pricing-modal"]);
                                 class="text-gray-600 transition-colors duration-200"
                                 :class="isDaigaku ? 'hover:text-blue-600' : 'hover:text-indigo-600'"
                             >
-                                解説一覧
+                                生命保険講座
                             </Link>
                         </li>
                         <li>
@@ -163,13 +179,12 @@ defineEmits(["open-pricing-modal"]);
                             </Link>
                         </li>
                         <li>
-                            <button
-                                type="button"
+                            <Link
+                                :href="isDaigaku ? route('daigaku.pricing') : route('pricing')"
                                 class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
-                                @click="$emit('open-pricing-modal')"
                             >
                                 料金
-                            </button>
+                            </Link>
                         </li>
                         <li>
                             <Link
@@ -191,7 +206,7 @@ defineEmits(["open-pricing-modal"]);
                     >
                         <li>
                             <Link
-                                :href="route('contact.index')"
+                                :href="route(isDaigaku ? 'daigaku.contact.index' : 'contact.index')"
                                 class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
                             >
                                 お問い合わせ
@@ -219,7 +234,7 @@ defineEmits(["open-pricing-modal"]);
                     >
                         <li>
                             <Link
-                                :href="route('policy')"
+                                :href="route(isDaigaku ? 'daigaku.policy' : 'policy')"
                                 class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
                             >
                                 プライバシーポリシー
@@ -227,7 +242,7 @@ defineEmits(["open-pricing-modal"]);
                         </li>
                         <li>
                             <Link
-                                :href="route('terms')"
+                                :href="route(isDaigaku ? 'daigaku.terms' : 'terms')"
                                 class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
                             >
                                 利用規約
@@ -235,7 +250,7 @@ defineEmits(["open-pricing-modal"]);
                         </li>
                         <li>
                             <Link
-                                :href="route('tokusho')"
+                                :href="route(isDaigaku ? 'daigaku.tokusho' : 'tokusho')"
                                 class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
                             >
                                 特商法に基づく表記

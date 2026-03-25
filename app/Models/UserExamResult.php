@@ -11,6 +11,7 @@ class UserExamResult extends Model
 
     protected $fillable = [
         'user_id',
+        'scope',
         'subject_key',
         'score',
     ];

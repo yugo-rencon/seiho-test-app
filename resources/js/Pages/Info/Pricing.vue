@@ -23,9 +23,6 @@ const hasPremium = computed(() =>
         ? page.props.auth?.hasPremiumDaigaku === true
         : page.props.auth?.hasPremiumSeiho === true,
 );
-const isPurchaseEnabled = computed(
-    () => page.props.features?.premiumPurchaseEnabled === true,
-);
 
 const plans = [
     {
@@ -49,8 +46,8 @@ const plans = [
         name: "フリープラン（一部無料）",
         price: "¥0",
         note: "無料",
-        description: "全8科目の2024年度フォームA〜Cを無料公開しています。",
-        features: ["全8科目 2024年度 フォームA〜C"],
+        description: "全8科目の最新年度フォームAを無料公開しています。",
+        features: ["全8科目 最新年度 フォームA"],
         cta: "無料で見る",
         href: "tests.index",
     },
@@ -126,13 +123,13 @@ const plans = [
                             v-if="plan.key === 'free'"
                             class="mt-3 text-xs text-gray-500"
                         >
-                            ※2023年度以前は冒頭5問まで公開しています。
+                            ※最新年度以前は一部公開しています。
                         </p>
                     </div>
 
                     <div class="mt-8">
                         <Link
-                            v-if="plan.key === 'premium' && !hasPremium && isPurchaseEnabled"
+                            v-if="plan.key === 'premium' && !hasPremium"
                             :href="
                                 route(
                                     plan.href,
@@ -150,19 +147,7 @@ const plans = [
                             "
                         >
                             {{ plan.cta }}
-                                </Link>
-                        <button
-                            v-else-if="
-                                plan.key === 'premium' &&
-                                !hasPremium &&
-                                !isPurchaseEnabled
-                            "
-                            type="button"
-                            disabled
-                            class="inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-5 py-3 text-xs font-semibold text-purple-700"
-                        >
-                            プレミアム機能は現在準備中です。4月より正式リリース予定です。
-                        </button>
+                        </Link>
                         <button
                             v-else-if="plan.key === 'premium' && hasPremium"
                             type="button"
@@ -171,6 +156,13 @@ const plans = [
                         >
                             購入済み
                         </button>
+                        <Link
+                            v-else
+                            :href="route(plan.href)"
+                            class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-purple-200 bg-white px-5 py-3 text-base font-semibold text-purple-700 transition hover:bg-purple-50"
+                        >
+                            {{ plan.cta }}
+                        </Link>
                     </div>
                 </div>
             </section>

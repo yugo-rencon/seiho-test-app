@@ -8,6 +8,11 @@ const page = usePage();
 const user = page.props?.auth?.user || null;
 const flashStatus = computed(() => page.props?.flash?.status ?? null);
 const props = defineProps({
+  scope: {
+    type: String,
+    required: false,
+    default: 'seiho',
+  },
   passScore: {
     type: Number,
     required: false,
@@ -26,6 +31,17 @@ const props = defineProps({
     required: true,
   },
 });
+
+const isDaigaku = computed(() => props.scope === 'daigaku');
+const mypageResultsRouteName = computed(() =>
+  isDaigaku.value ? 'daigaku.mypage.results' : 'mypage.results',
+);
+const mypagePassScoreRouteName = computed(() =>
+  isDaigaku.value ? 'daigaku.mypage.passScore' : 'mypage.passScore',
+);
+const pricingHref = computed(() =>
+  isDaigaku.value ? route('daigaku.pricing') : route('pricing'),
+);
 
 const localResults = ref({ ...props.results });
 const localPassScore = ref(props.passScore);
@@ -84,7 +100,7 @@ const saveResult = () => {
   isSavingResult.value = true;
   axios
     .post(
-      route('mypage.results'),
+      route(mypageResultsRouteName.value),
       {
         subject_key: formSubjectKey.value,
         score: isEmpty ? null : Number(formScore.value),
@@ -144,7 +160,7 @@ const updatePassScore = () => {
   isSavingPassScore.value = true;
   axios
     .post(
-      route('mypage.passScore'),
+      route(mypagePassScoreRouteName.value),
       { pass_score: nextScore },
       {
         headers: {
@@ -179,7 +195,8 @@ const scoredSubjects = computed(() => {
 const passedCount = computed(
   () => scoredSubjects.value.filter((s) => s.passed).length,
 );
-const allSubjectsPassed = computed(() => passedCount.value === 8);
+const totalSubjects = computed(() => props.subjects.length);
+const allSubjectsPassed = computed(() => passedCount.value === totalSubjects.value);
 
 const totalScore = computed(
   () =>
@@ -189,13 +206,14 @@ const totalScore = computed(
 );
 
 const allScored = computed(
-  () => scoredSubjects.value.filter((s) => s.score !== null).length === 8,
+  () => scoredSubjects.value.filter((s) => s.score !== null).length === totalSubjects.value,
 );
 
 const excellent = computed(
   () =>
+    !isDaigaku.value &&
     allScored.value &&
-    passedCount.value === 8 &&
+    passedCount.value === totalSubjects.value &&
     totalScore.value >= 720,
 );
 
@@ -247,8 +265,9 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
             class="mt-3"
           >
             <Link
-              :href="route('pricing')"
-              class="inline-flex items-center justify-center rounded-full bg-purple-600 px-4 py-2 text-xs font-semibold text-white hover:bg-purple-700 transition"
+              :href="pricingHref"
+              class="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold text-white transition"
+              :class="isDaigaku ? 'bg-blue-600 hover:bg-blue-700' : 'bg-purple-600 hover:bg-purple-700'"
             >
               料金プランを見る
             </Link>
@@ -269,7 +288,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
               </span>
             </div>
             <div class="mt-1 text-lg font-semibold text-gray-800">
-              {{ passedCount }}/8
+              {{ passedCount }}/{{ totalSubjects }}
             </div>
           </div>
           <div class="text-right">
@@ -279,18 +298,20 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
                 class="text-sm font-semibold"
                 :class="hasPassScore ? 'text-gray-700' : 'text-amber-700'"
               >
-                {{ hasPassScore ? `${localPassScore} 点` : '未入力' }}
+                {{ isDaigaku ? '60 点' : hasPassScore ? `${localPassScore} 点` : '未入力' }}
               </span>
               <button
+                v-if="!isDaigaku"
                 type="button"
-                class="rounded-full border border-purple-200 bg-white px-3 py-1 text-xs font-semibold text-purple-700 hover:bg-purple-50 transition"
+                class="rounded-full border bg-white px-3 py-1 text-xs font-semibold transition"
+                :class="isDaigaku ? 'border-blue-200 text-blue-700 hover:bg-blue-50' : 'border-purple-200 text-purple-700 hover:bg-purple-50'"
                 @click="openPassScoreModal"
               >
                 {{ hasPassScore ? '変更' : '入力' }}
               </button>
             </div>
             <div
-              v-if="!hasPassScore"
+              v-if="!isDaigaku && !hasPassScore"
               class="mt-1 text-xs text-amber-700"
             >
               合格基準を入力してください
@@ -300,13 +321,14 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
 
         <div class="mt-4 h-2 w-full rounded-full bg-gray-100">
           <div
-            class="h-2 rounded-full bg-purple-500"
-            :style="{ width: `${(passedCount / 8) * 100}%` }"
+            class="h-2 rounded-full"
+            :class="isDaigaku ? 'bg-blue-500' : 'bg-purple-500'"
+            :style="{ width: `${(passedCount / Math.max(totalSubjects, 1)) * 100}%` }"
           ></div>
         </div>
 
         <div class="mt-4 text-sm text-gray-700">
-          合計 {{ totalScore }} / 800 点
+          合計 {{ totalScore }} / {{ totalSubjects * 100 }} 点
           <span
             v-if="excellent"
             class="ml-2 inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700"
@@ -315,6 +337,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
           </span>
         </div>
         <div
+          v-if="!isDaigaku"
           class="mt-2 inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-semibold"
           :class="scoreTargetReached ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'"
         >
@@ -326,10 +349,10 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
           </template>
         </div>
         <div
-          v-if="remainingToTarget === 0 && passedCount < 8"
+          v-if="!isDaigaku && remainingToTarget === 0 && passedCount < totalSubjects"
           class="mt-1 text-xs text-amber-700"
         >
-          720点に到達していますが、優秀賞は全8科目の合格が必要です
+          720点に到達していますが、優秀賞は全科目の合格が必要です
         </div>
 
         <div class="mt-5 space-y-2">
@@ -409,7 +432,8 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
               min="0"
               max="100"
               inputmode="numeric"
-              class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-base sm:text-sm focus:border-purple-500 focus:ring-purple-500"
+              class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-base sm:text-sm"
+              :class="isDaigaku ? 'focus:border-blue-500 focus:ring-blue-500' : 'focus:border-purple-500 focus:ring-purple-500'"
             />
             <p class="mt-1 text-xs text-gray-500">
               空欄で保存すると「未入力」に戻せます。
@@ -434,7 +458,8 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
           </button>
           <button
             type="button"
-            class="rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700 transition"
+            class="rounded-full px-4 py-2 text-sm font-semibold text-white transition"
+            :class="isDaigaku ? 'bg-blue-600 hover:bg-blue-700' : 'bg-purple-600 hover:bg-purple-700'"
             @click="saveResult"
             :disabled="isSavingResult"
           >
@@ -465,7 +490,8 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
               min="0"
               max="100"
               inputmode="numeric"
-              class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-base sm:text-sm focus:border-purple-500 focus:ring-purple-500"
+              class="mt-1 w-full rounded-lg border border-gray-200 px-3 py-2 text-base sm:text-sm"
+              :class="isDaigaku ? 'focus:border-blue-500 focus:ring-blue-500' : 'focus:border-purple-500 focus:ring-purple-500'"
             />
           </div>
 
@@ -487,7 +513,8 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
           </button>
           <button
             type="button"
-            class="rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700 transition"
+            class="rounded-full px-4 py-2 text-sm font-semibold text-white transition"
+            :class="isDaigaku ? 'bg-blue-600 hover:bg-blue-700' : 'bg-purple-600 hover:bg-purple-700'"
             @click="updatePassScore"
             :disabled="isSavingPassScore"
           >

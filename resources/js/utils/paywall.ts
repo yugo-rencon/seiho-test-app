@@ -14,16 +14,17 @@ const isAlwaysFreeSubject = (title: string): boolean => {
 };
 
 export const isPaidYear = (subject: string, title: string = ""): boolean => {
+    const year = Number(String(subject ?? "").slice(0, 4));
+    const formCode = parseFormCode(subject);
+
     if (isDaigakuPath()) {
-        return false;
+        // 大学課程: 2025年度フォームAのみ無料
+        return !(year === 2025 && formCode === "A");
     }
 
     if (isAlwaysFreeSubject(title)) {
         return false;
     }
-
-    const year = Number(String(subject ?? "").slice(0, 4));
-    const formCode = parseFormCode(subject);
 
     // 最新年度はフォームAのみ無料（B/Cは有料）
     if (year === LATEST_FREE_YEAR && formCode === "A") {
@@ -34,6 +35,11 @@ export const isPaidYear = (subject: string, title: string = ""): boolean => {
 };
 
 export const getPaywallStartQuestion = (title: string): number => {
+    if (isDaigakuPath()) {
+        // 大学課程: 有料部分は4問目から
+        return 4;
+    }
+
     // 計理のみ4問目から、それ以外は23問目から
     return String(title ?? "").includes("計理") ? 4 : 23;
 };

@@ -19,7 +19,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                 <div>
                     <h2 class="text-base font-bold text-gray-900">第1条（適用）</h2>
                     <p class="mt-2">
-                        本規約は、生保講座過去問解説（以下「当サイト」）の利用条件を定めるものです。ユーザーは、本規約に同意したうえで当サイトを利用するものとします。
+                        本規約は、生保講座過去問解説および生命保険大学課程 過去問解説（以下総称して「当サイト」）の利用条件を定めるものです。ユーザーは、本規約に同意したうえで当サイトを利用するものとします。
                     </p>
                 </div>
                 <div>
@@ -31,7 +31,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                 <div>
                     <h2 class="text-base font-bold text-gray-900">第3条（料金・決済・提供時期）</h2>
                     <p class="mt-2">
-                        プレミアムプランは買い切り型デジタルコンテンツです。決済はStripeを利用し、決済完了後にプレミアム対象コンテンツを閲覧できます。料金・対象範囲は料金ページおよび特定商取引法に基づく表記に従います。
+                        プレミアムプランは買い切り型デジタルコンテンツです。決済はStripeを利用し、決済完了後にプレミアム対象コンテンツを閲覧できます。料金・対象範囲は各サービス（生保講座 / 生命保険大学課程）の料金ページおよび特定商取引法に基づく表記に従います。
                     </p>
                 </div>
                 <div>
@@ -86,7 +86,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
             </section>
 
             <div class="mt-10 text-xs text-gray-500 border-t border-gray-100 pt-4">
-                最終更新日：2026年2月16日
+                最終更新日：2026年3月26日
             </div>
         </div>
     </SeihoTestLayout>

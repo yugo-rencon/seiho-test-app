@@ -19,7 +19,7 @@ class EnsurePremiumAccess
         $scope = str_starts_with((string) $request->path(), 'daigaku') ? 'daigaku' : 'seiho';
 
         if (!$user->hasPremiumAccess($scope)) {
-            return redirect()->route('pricing');
+            return redirect()->route($scope === 'daigaku' ? 'daigaku.pricing' : 'pricing');
         }
 
         return $next($request);

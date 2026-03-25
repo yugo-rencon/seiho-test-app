@@ -1,5 +1,6 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
+import { computed } from "vue";
 
 defineProps({
     // 右上リンクの出し分けに使用
@@ -11,7 +12,17 @@ defineProps({
     isDaigaku: { type: Boolean, default: false },
 });
 
-defineEmits(["open-menu", "open-pricing-modal"]);
+defineEmits(["open-menu"]);
+const page = usePage();
+const loginHref = computed(() => {
+    if (!route().has("login")) return "#";
+    const returnTo = String(page.url ?? "");
+    if (returnTo.startsWith("/daigaku")) {
+        return route("login", { scope: "daigaku", return_to: returnTo });
+    }
+
+    return route("login", { return_to: returnTo || "/tests" });
+});
 
 // 現在表示中のルート判定（アクティブ色に利用）
 const isActive = (name) => route().current(name);
@@ -23,7 +34,7 @@ const isActive = (name) => route().current(name);
     >
         <div class="mx-auto w-full max-w-6xl px-6">
             <div class="flex items-center justify-between py-2.5">
-                <Link :href="route(homeRouteName)" class="flex items-center gap-3">
+                <Link :href="route(homeRouteName)" class="flex min-w-0 items-center gap-3">
                     <img
                         :src="logoSrc"
                         :alt="`${brandName} ロゴ`"
@@ -32,7 +43,7 @@ const isActive = (name) => route().current(name);
                         class="h-10 w-10"
                     />
                     <span
-                        class="bg-clip-text text-xl font-black text-transparent"
+                        class="max-w-[calc(100vw-9rem)] truncate bg-clip-text text-base font-black leading-tight text-transparent sm:max-w-none sm:text-xl"
                         :class="
                             isDaigaku
                                 ? 'bg-gradient-to-r from-blue-600 to-cyan-500'
@@ -45,24 +56,27 @@ const isActive = (name) => route().current(name);
 
                 <!-- PCヘッダー右側（ログイン/マイページ/管理） -->
                 <div
-                    v-if="!isDaigaku"
                     class="hidden items-center gap-4 text-[13px] font-medium tracking-[0.01em] md:flex"
                 >
                     <Link
                         v-if="isAdmin"
-                        :href="route('admin.index')"
+                        :href="route(isDaigaku ? 'daigaku.admin.index' : 'admin.index')"
                         class="py-1 text-amber-700 transition-colors hover:text-amber-800"
                     >
                         管理
                     </Link>
                     <template v-if="isAuthenticated">
                         <Link
-                            :href="route('mypage')"
+                            :href="route(isDaigaku ? 'daigaku.mypage' : 'mypage')"
                             class="py-1 transition-colors"
                             :class="
                                 isActive('mypage')
-                                    ? 'pointer-events-none text-purple-700'
-                                    : 'text-gray-700 hover:text-purple-700'
+                                    ? isDaigaku
+                                        ? 'pointer-events-none text-blue-700'
+                                        : 'pointer-events-none text-purple-700'
+                                    : isDaigaku
+                                      ? 'text-gray-700 hover:text-blue-700'
+                                      : 'text-gray-700 hover:text-purple-700'
                             "
                             :aria-current="isActive('mypage') ? 'page' : null"
                         >
@@ -71,8 +85,9 @@ const isActive = (name) => route().current(name);
                     </template>
                     <template v-else>
                         <Link
-                            :href="route('login')"
-                            class="py-1 text-gray-700 transition-colors hover:text-purple-700"
+                            :href="loginHref"
+                            class="py-1 text-gray-700 transition-colors"
+                            :class="isDaigaku ? 'hover:text-blue-700' : 'hover:text-purple-700'"
                         >
                             ログイン
                         </Link>
@@ -80,7 +95,6 @@ const isActive = (name) => route().current(name);
                 </div>
 
                 <button
-                    v-if="!isDaigaku"
                     class="rounded-xl p-2 transition-colors hover:bg-gray-100 md:hidden"
                     @click="$emit('open-menu')"
                 >
@@ -101,35 +115,6 @@ const isActive = (name) => route().current(name);
                 </button>
             </div>
 
-            <!-- PCナビゲーション -->
-            <nav
-                v-if="!isDaigaku"
-                class="hidden items-center justify-center gap-4 pb-2 text-sm font-semibold text-gray-700 md:flex"
-            >
-                <Link
-                    :href="route('tests.index')"
-                    class="border-b-2 px-3 py-1 transition-colors hover:text-purple-900"
-                    :class="
-                        isActive('tests.index')
-                            ? 'border-purple-500 text-purple-900'
-                            : 'border-transparent'
-                    "
-                >
-                    解説一覧
-                </Link>
-                <button
-                    type="button"
-                    class="border-b-2 px-3 py-1 transition-colors hover:text-purple-900"
-                    @click="$emit('open-pricing-modal')"
-                    :class="
-                        isActive('pricing')
-                            ? 'border-purple-500 text-purple-900'
-                            : 'border-transparent'
-                    "
-                >
-                    料金
-                </button>
-            </nav>
         </div>
     </header>
 </template>

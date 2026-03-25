@@ -1,6 +1,6 @@
 <script setup>
-import { Link, Head, router, useForm } from "@inertiajs/vue3";
-import { ref } from "vue";
+import { Link, Head, router, useForm, usePage } from "@inertiajs/vue3";
+import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const props = defineProps({
@@ -10,11 +10,23 @@ const props = defineProps({
 });
 
 const status = ref(props.filters?.status ?? "all");
+const page = usePage();
+const isDaigakuAdmin = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const adminIndexRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.index" : "admin.index"));
+const contactsIndexRoute = computed(() =>
+    isDaigakuAdmin.value ? "daigaku.admin.contacts.index" : "admin.contacts.index",
+);
+const contactsUpdateStatusRoute = computed(() =>
+    isDaigakuAdmin.value ? "daigaku.admin.contacts.updateStatus" : "admin.contacts.updateStatus",
+);
+const contactsUpdateNoteRoute = computed(() =>
+    isDaigakuAdmin.value ? "daigaku.admin.contacts.updateNote" : "admin.contacts.updateNote",
+);
 
 const switchStatus = (nextStatus) => {
     status.value = nextStatus;
     router.get(
-        route("admin.contacts.index"),
+        route(contactsIndexRoute.value),
         { status: status.value },
         { preserveState: true, replace: true, preserveScroll: true },
     );
@@ -22,7 +34,7 @@ const switchStatus = (nextStatus) => {
 
 const setStatus = (contactId, nextStatus) => {
     router.post(
-        route("admin.contacts.updateStatus", { contact: contactId }),
+        route(contactsUpdateStatusRoute.value, { contact: contactId }),
         { status: nextStatus },
         { preserveScroll: true },
     );
@@ -41,7 +53,7 @@ const initialNotes = Object.fromEntries(
 const saveNote = (contactId) => {
     const form = noteForms[contactId];
     if (!form) return;
-    form.post(route("admin.contacts.updateNote", { contact: contactId }), {
+    form.post(route(contactsUpdateNoteRoute.value, { contact: contactId }), {
         preserveScroll: true,
         onSuccess: () => {
             initialNotes[contactId] = form.admin_note ?? "";
@@ -98,7 +110,7 @@ const statusTabs = [
                     <p class="mt-1 text-sm text-gray-500">問い合わせの確認・対応状況・管理メモを更新できます。</p>
                 </div>
                 <Link
-                    :href="route('admin.index')"
+                    :href="route(adminIndexRoute)"
                     class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50"
                 >
                     ユーザー管理へ戻る

@@ -24,39 +24,39 @@ class TestController extends Controller
     // 大学課程: 生命保険のしくみと個人保険商品 2025年度 フォームA
     public function daigakuShikumiKojin2025a()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin2025a');
+        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2025a');
     }
     public function daigakuShikumiKojin2025b()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin2025b');
+        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2025b');
     }
     public function daigakuShikumiKojin2025c()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin2025c');
+        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2025c');
     }
     public function daigakuShikumiKojin2024a()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin2024a');
+        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2024a');
     }
     public function daigakuShikumiKojin2024b()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin2024b');
+        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2024b');
     }
     public function daigakuShikumiKojin2024c()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin2024c');
+        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2024c');
     }
     public function daigakuShikumiKojin2023a()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin2023a');
+        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2023a');
     }
     public function daigakuShikumiKojin2023b()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin2023b');
+        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2023b');
     }
     public function daigakuShikumiKojin2023c()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin2023c');
+        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2023c');
     }
 
     // このサイトについて
@@ -90,13 +90,23 @@ class TestController extends Controller
             'scope' => $scope,
         ]);
     }
+
+    // 大学課程 料金
+    public function daigakuPricing(Request $request)
+    {
+        return Inertia::render('Daigaku/Pricing', [
+            'returnTo' => $request->query('return_to'),
+        ]);
+    }
     // マイページ
-    public function mypage(){
+    public function mypage(Request $request){
         /** @var User $user */
         $user = auth()->user();
-        $subjects = $this->subjects();
+        $scope = $request->routeIs('daigaku.*') ? 'daigaku' : 'seiho';
+        $subjects = $this->subjectsByScope($scope);
 
         $results = $user->examResults()
+            ->where('scope', $scope)
             ->get(['subject_key', 'score'])
             ->keyBy('subject_key')
             ->map(function ($result) {
@@ -106,10 +116,11 @@ class TestController extends Controller
             });
 
         return Inertia::render('Info/MyPage', [
-            'passScore' => $user->pass_score,
+            'scope' => $scope,
+            'passScore' => $scope === 'daigaku' ? 60 : $user->pass_score,
             'subjects' => $subjects,
             'results' => $results,
-            'hasPremium' => $user->hasPremiumAccess('seiho'),
+            'hasPremium' => $user->hasPremiumAccess($scope),
             'hasPremiumSeiho' => $user->hasPremiumAccess('seiho'),
             'hasPremiumDaigaku' => $user->hasPremiumAccess('daigaku'),
         ]);
@@ -117,6 +128,10 @@ class TestController extends Controller
 
     public function updatePassScore(Request $request)
     {
+        if ($request->routeIs('daigaku.*')) {
+            return back()->with('status', '大学課程試験の合格基準は60点で固定です。');
+        }
+
         $data = $request->validate([
             'pass_score' => ['required', 'integer', 'min:0', 'max:100'],
         ]);
@@ -137,7 +152,8 @@ class TestController extends Controller
 
     public function updateExamResult(Request $request)
     {
-        $subjectKeys = array_column($this->subjects(), 'key');
+        $scope = $request->routeIs('daigaku.*') ? 'daigaku' : 'seiho';
+        $subjectKeys = array_column($this->subjectsByScope($scope), 'key');
 
         $data = $request->validate([
             'subject_key' => ['required', 'string', 'in:' . implode(',', $subjectKeys)],
@@ -146,6 +162,7 @@ class TestController extends Controller
 
         if (!isset($data['score'])) {
             UserExamResult::where('user_id', $request->user()->id)
+                ->where('scope', $scope)
                 ->where('subject_key', $data['subject_key'])
                 ->delete();
 
@@ -163,6 +180,7 @@ class TestController extends Controller
         UserExamResult::updateOrCreate(
             [
                 'user_id' => $request->user()->id,
+                'scope' => $scope,
                 'subject_key' => $data['subject_key'],
             ],
             [
@@ -181,7 +199,16 @@ class TestController extends Controller
         return back();
     }
 
-    private function subjects(): array
+    private function subjectsByScope(string $scope): array
+    {
+        if ($scope === 'daigaku') {
+            return $this->daigakuSubjects();
+        }
+
+        return $this->seihoSubjects();
+    }
+
+    private function seihoSubjects(): array
     {
         return [
             ['key' => 'souron', 'name' => '生命保険総論'],
@@ -192,6 +219,18 @@ class TestController extends Controller
             ['key' => 'eigyo', 'name' => '生命保険商品と営業'],
             ['key' => 'zeihou', 'name' => '生命保険と税法'],
             ['key' => 'sisan', 'name' => '資産運用'],
+        ];
+    }
+
+    private function daigakuSubjects(): array
+    {
+        return [
+            ['key' => 'shikumi_kojin', 'name' => '生命保険のしくみと個人保険商品'],
+            ['key' => 'fp_compliance', 'name' => 'ファイナンシャルプランニングとコンプライアンス'],
+            ['key' => 'tax_sozoku', 'name' => '生命保険と税・相続'],
+            ['key' => 'sisan_unyou', 'name' => '資産運用知識'],
+            ['key' => 'houjin_consulting', 'name' => '企業向け保険商品とコンサルティング'],
+            ['key' => 'social_security', 'name' => '社会保障制度'],
         ];
     }
 

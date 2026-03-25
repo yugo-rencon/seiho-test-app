@@ -14,6 +14,10 @@ Route::get('/', function () {
 
 Route::get('tests', [TestController::class, 'index'])->name('tests.index');
 Route::get('daigaku', [TestController::class, 'daigakuIndex'])->name('daigaku.index');
+Route::get('daigaku/pricing', [TestController::class, 'daigakuPricing'])->name('daigaku.pricing');
+Route::get('daigaku/policy', [TestController::class, 'policy'])->name('daigaku.policy');
+Route::get('daigaku/terms', [TestController::class, 'terms'])->name('daigaku.terms');
+Route::get('daigaku/tokusho', [TestController::class, 'tokusho'])->name('daigaku.tokusho');
 Route::get('daigaku/shikumi-kojin2025a', [TestController::class, 'daigakuShikumiKojin2025a'])->name('daigaku.shikumi-kojin2025a');
 Route::get('daigaku/shikumi-kojin2025b', [TestController::class, 'daigakuShikumiKojin2025b'])->name('daigaku.shikumi-kojin2025b');
 Route::get('daigaku/shikumi-kojin2025c', [TestController::class, 'daigakuShikumiKojin2025c'])->name('daigaku.shikumi-kojin2025c');
@@ -61,14 +65,19 @@ Route::controller(TestController::class)->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('mypage', [TestController::class, 'mypage'])->name('mypage');
+    Route::get('daigaku/mypage', [TestController::class, 'mypage'])->name('daigaku.mypage');
     Route::post('mypage/pass-score', [TestController::class, 'updatePassScore'])->name('mypage.passScore');
+    Route::post('daigaku/mypage/pass-score', [TestController::class, 'updatePassScore'])->name('daigaku.mypage.passScore');
     Route::post('mypage/results', [TestController::class, 'updateExamResult'])->name('mypage.results');
+    Route::post('daigaku/mypage/results', [TestController::class, 'updateExamResult'])->name('daigaku.mypage.results');
     Route::get('billing/checkout', [BillingController::class, 'checkout'])->name('billing.checkout');
 });
 
 Route::controller(ContactController::class)->group(function () {
     Route::get('contact', 'index')->name('contact.index');
     Route::post('contact', 'store')->middleware('throttle:10,1')->name('contact.store');
+    Route::get('daigaku/contact', 'index')->name('daigaku.contact.index');
+    Route::post('daigaku/contact', 'store')->middleware('throttle:10,1')->name('daigaku.contact.store');
 });
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
@@ -76,6 +85,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('admin.contacts.index');
     Route::post('contacts/{contact}/status', [ContactAdminController::class, 'updateStatus'])->name('admin.contacts.updateStatus');
     Route::post('contacts/{contact}/note', [ContactAdminController::class, 'updateNote'])->name('admin.contacts.updateNote');
+});
+
+Route::middleware(['auth', 'admin'])->prefix('daigaku/admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('daigaku.admin.index');
+    Route::get('contacts', [ContactAdminController::class, 'index'])->name('daigaku.admin.contacts.index');
+    Route::post('contacts/{contact}/status', [ContactAdminController::class, 'updateStatus'])->name('daigaku.admin.contacts.updateStatus');
+    Route::post('contacts/{contact}/note', [ContactAdminController::class, 'updateNote'])->name('daigaku.admin.contacts.updateNote');
 });
 
 Route::post('stripe/webhook', [StripeWebhookController::class, 'handle'])->name('stripe.webhook');

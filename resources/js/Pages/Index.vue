@@ -1,5 +1,5 @@
 <script setup>
-import { usePage } from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
 import { computed, onMounted, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import { EXAM_FORMS, INDEX_SECTIONS } from "@/constants/subjects";
@@ -27,6 +27,9 @@ const isLoggedIn = computed(() => !!page.props.auth?.user);
 const mypageInputHref = computed(() => {
     return `${route("mypage")}#score-input`;
 });
+const pricingHref = computed(() =>
+    route("pricing", { scope: "seiho", return_to: String(page.url ?? "/tests") }),
+);
 
 const isValidSectionId = (id) => sections.some((section) => section.id === id);
 
@@ -52,17 +55,28 @@ onMounted(() => {
                 ></div>
 
                 <div class="relative">
-                    <!-- 非プレミアム向けの実績バナー -->
                     <div
                         v-if="!hasPremium"
-                        class="mb-4 rounded-xl border border-purple-200 bg-purple-100/80 px-3 py-2 text-left text-[12px] leading-5 text-purple-800 sm:mb-5 sm:px-4 sm:py-2.5 sm:text-center"
+                        class="mb-5 rounded-2xl border border-purple-100 bg-purple-50/70 px-3 py-2 text-left text-[12px] leading-5 text-purple-800 sm:px-4 sm:py-2.5 sm:text-center"
                     >
                         <span class="block font-semibold tracking-wide">
                             生命保険講座の過去問解説サイトです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-purple-700/90">
-                            科目を選び、最新年度フォームAからお試しください。
+                            最新年度フォームAからお試しください。
+                            <Link
+                                :href="pricingHref"
+                                class="ml-1 hidden font-semibold text-purple-600 underline decoration-purple-300 underline-offset-2 transition hover:text-purple-700 md:inline"
+                            >
+                                ▶ すべての解説をまとめて閲覧
+                            </Link>
                         </span>
+                        <Link
+                            :href="pricingHref"
+                            class="mt-1 inline-block text-xs font-semibold text-purple-600 underline decoration-purple-300 underline-offset-2 transition hover:text-purple-700 md:hidden"
+                        >
+                            ▶ すべての解説をまとめて閲覧
+                        </Link>
                     </div>
 
                     <!-- プレミアム会員向けの状態表示 -->

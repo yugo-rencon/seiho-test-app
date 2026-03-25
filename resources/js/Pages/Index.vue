@@ -82,11 +82,11 @@ onMounted(() => {
                     <!-- プレミアム会員向けの状態表示 -->
                     <div
                         v-if="hasPremium"
-                        class="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-amber-300 bg-gradient-to-r from-amber-50 to-yellow-50 px-4 py-2 text-xs font-semibold text-amber-800 shadow-sm max-sm:gap-1.5 max-sm:px-3 max-sm:py-1.5"
+                        class="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-purple-300 bg-gradient-to-r from-purple-50 to-indigo-50 px-4 py-2 text-xs font-semibold text-purple-800 shadow-sm max-sm:gap-1.5 max-sm:px-3 max-sm:py-1.5"
                     >
                         <img src="/images/bolt.svg" alt="" class="h-3.5 w-3.5" />
                         <span>プレミアムユーザー</span>
-                        <span class="rounded-full bg-amber-200/70 px-2 py-0.5 text-[10px] font-bold text-amber-900 max-sm:px-1.5 max-sm:text-[9px]">
+                        <span class="rounded-full bg-purple-200/70 px-2 py-0.5 text-[10px] font-bold text-purple-900 max-sm:px-1.5 max-sm:text-[9px]">
                             ALL ACCESS
                         </span>
                     </div>

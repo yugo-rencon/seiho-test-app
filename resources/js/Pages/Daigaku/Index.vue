@@ -14,6 +14,7 @@ const DAIGAKU_SECTIONS = [
     {
         id: "fp-compliance",
         title: "ファイナンシャルプランニングとコンプライアンス",
+        buttonTitle: "ファイナンシャルプランニング",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。",
         years: DAIGAKU_VISIBLE_YEARS,
     },
@@ -116,7 +117,7 @@ const isYearPreparing = (sectionId, year) => {
                                     : 'border-gray-200 bg-white text-gray-700 hover:border-blue-300'
                             ]"
                         >
-                            {{ section.title }}
+                            {{ section.buttonTitle ?? section.title }}
                         </button>
                     </div>
 

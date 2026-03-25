@@ -362,10 +362,10 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
             class="flex items-center justify-between gap-2 rounded-xl border border-gray-100 px-3 py-2.5 sm:px-4 hover:bg-gray-50 transition cursor-pointer"
             @click="openModal(subject.key)"
           >
-            <div class="min-w-0 whitespace-nowrap text-[13px] sm:text-sm font-semibold text-gray-800">
+            <div class="min-w-0 pr-2 text-[13px] font-semibold leading-snug text-gray-800 whitespace-normal break-words sm:text-sm sm:whitespace-nowrap">
               {{ subject.name }}
             </div>
-            <div class="grid grid-cols-[56px_52px] sm:grid-cols-[72px_64px] items-center gap-1 sm:gap-2 shrink-0">
+            <div class="grid min-w-[112px] grid-cols-[56px_52px] items-center gap-1 shrink-0 sm:min-w-[136px] sm:grid-cols-[72px_64px] sm:gap-2">
               <div class="text-right text-xs sm:text-sm text-gray-600 tabular-nums">
                 <span v-if="subject.score !== null">
                   {{ subject.score }} 点

@@ -1,6 +1,6 @@
 <script setup>
 import { Link, usePage } from "@inertiajs/vue3";
-import { computed, onMounted, ref } from "vue";
+import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import { EXAM_FORMS, INDEX_SECTIONS } from "@/constants/subjects";
 import SectionHeader from "@/Pages/Index/SectionHeader.vue";
@@ -30,16 +30,6 @@ const mypageInputHref = computed(() => {
 const pricingHref = computed(() =>
     route("pricing", { scope: "seiho", return_to: String(page.url ?? "/tests") }),
 );
-
-const isValidSectionId = (id) => sections.some((section) => section.id === id);
-
-onMounted(() => {
-    const params = new URLSearchParams(window.location.search);
-    const subject = params.get("subject");
-    if (subject && isValidSectionId(subject)) {
-        activeSectionId.value = subject;
-    }
-});
 
 </script>
 
@@ -89,6 +79,15 @@ onMounted(() => {
                         <span class="rounded-full bg-purple-200/70 px-2 py-0.5 text-[10px] font-bold text-purple-900 max-sm:px-1.5 max-sm:text-[9px]">
                             ALL ACCESS
                         </span>
+                    </div>
+
+                    <div class="mb-4 text-left sm:text-right">
+                        <Link
+                            :href="route('daigaku.index')"
+                            class="text-xs font-semibold text-indigo-600 underline decoration-indigo-300 underline-offset-2 transition hover:text-indigo-700"
+                        >
+                            ▶ 姉妹サイト：生命保険大学課程 過去問解説
+                        </Link>
                     </div>
                     <p class="mb-3 text-xs font-semibold text-gray-500">
                         科目を選択してください

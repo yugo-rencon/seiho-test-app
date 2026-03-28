@@ -24,39 +24,75 @@ class TestController extends Controller
     // 大学課程: 生命保険のしくみと個人保険商品 2025年度 フォームA
     public function daigakuShikumiKojin2025a()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2025a');
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2025a');
     }
     public function daigakuShikumiKojin2025b()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2025b');
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2025b');
     }
     public function daigakuShikumiKojin2025c()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2025c');
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2025c');
     }
     public function daigakuShikumiKojin2024a()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2024a');
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2024a');
     }
     public function daigakuShikumiKojin2024b()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2024b');
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2024b');
     }
     public function daigakuShikumiKojin2024c()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2024c');
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2024c');
     }
     public function daigakuShikumiKojin2023a()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2023a');
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2023a');
     }
     public function daigakuShikumiKojin2023b()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2023b');
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2023b');
     }
     public function daigakuShikumiKojin2023c()
     {
-        return Inertia::render('Daigaku/Tests/ShikumiKojin/ShikumiKojin2023c');
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2023c');
+    }
+    public function daigakuFpCompliance2025a()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2025a');
+    }
+    public function daigakuFpCompliance2025b()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2025b');
+    }
+    public function daigakuFpCompliance2025c()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2025c');
+    }
+    public function daigakuFpCompliance2024a()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2024a');
+    }
+    public function daigakuFpCompliance2024b()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2024b');
+    }
+    public function daigakuFpCompliance2024c()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2024c');
+    }
+    public function daigakuFpCompliance2023a()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2023a');
+    }
+    public function daigakuFpCompliance2023b()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2023b');
+    }
+    public function daigakuFpCompliance2023c()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2023c');
     }
 
     // このサイトについて

@@ -27,6 +27,15 @@ Route::get('daigaku/shikumi-kojin2024c', [TestController::class, 'daigakuShikumi
 Route::get('daigaku/shikumi-kojin2023a', [TestController::class, 'daigakuShikumiKojin2023a'])->name('daigaku.shikumi-kojin2023a');
 Route::get('daigaku/shikumi-kojin2023b', [TestController::class, 'daigakuShikumiKojin2023b'])->name('daigaku.shikumi-kojin2023b');
 Route::get('daigaku/shikumi-kojin2023c', [TestController::class, 'daigakuShikumiKojin2023c'])->name('daigaku.shikumi-kojin2023c');
+Route::get('daigaku/fp2025a', [TestController::class, 'daigakuFpCompliance2025a'])->name('daigaku.fp2025a');
+Route::get('daigaku/fp2025b', [TestController::class, 'daigakuFpCompliance2025b'])->name('daigaku.fp2025b');
+Route::get('daigaku/fp2025c', [TestController::class, 'daigakuFpCompliance2025c'])->name('daigaku.fp2025c');
+Route::get('daigaku/fp2024a', [TestController::class, 'daigakuFpCompliance2024a'])->name('daigaku.fp2024a');
+Route::get('daigaku/fp2024b', [TestController::class, 'daigakuFpCompliance2024b'])->name('daigaku.fp2024b');
+Route::get('daigaku/fp2024c', [TestController::class, 'daigakuFpCompliance2024c'])->name('daigaku.fp2024c');
+Route::get('daigaku/fp2023a', [TestController::class, 'daigakuFpCompliance2023a'])->name('daigaku.fp2023a');
+Route::get('daigaku/fp2023b', [TestController::class, 'daigakuFpCompliance2023b'])->name('daigaku.fp2023b');
+Route::get('daigaku/fp2023c', [TestController::class, 'daigakuFpCompliance2023c'])->name('daigaku.fp2023c');
 
 Route::controller(TestController::class)->group(function () {
     // 試験科目の定義

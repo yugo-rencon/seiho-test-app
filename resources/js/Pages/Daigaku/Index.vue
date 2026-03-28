@@ -1,6 +1,6 @@
 <script setup>
 import { Link, usePage } from "@inertiajs/vue3";
-import { computed, onMounted, ref } from "vue";
+import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 
@@ -14,7 +14,7 @@ const DAIGAKU_SECTIONS = [
         years: DAIGAKU_VISIBLE_YEARS,
     },
     {
-        id: "fp-compliance",
+        id: "fp",
         title: "ファイナンシャルプランニングとコンプライアンス",
         buttonTitle: "ファイナンシャルプランニング",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。",
@@ -57,7 +57,13 @@ const pricingHref = computed(() =>
 );
 
 const getDaigakuRoute = (sectionId, year, form) => {
-    if (sectionId !== "shikumi-kojin") return null;
+    const sectionRoutePrefix = {
+        "shikumi-kojin": "shikumi-kojin",
+        fp: "fp",
+    };
+
+    const routePrefix = sectionRoutePrefix[sectionId];
+    if (!routePrefix) return null;
 
     const publishedRouteNames = new Set([
         "daigaku.shikumi-kojin2025a",
@@ -69,9 +75,18 @@ const getDaigakuRoute = (sectionId, year, form) => {
         "daigaku.shikumi-kojin2023a",
         "daigaku.shikumi-kojin2023b",
         "daigaku.shikumi-kojin2023c",
+        "daigaku.fp2025a",
+        "daigaku.fp2025b",
+        "daigaku.fp2025c",
+        "daigaku.fp2024a",
+        "daigaku.fp2024b",
+        "daigaku.fp2024c",
+        "daigaku.fp2023a",
+        "daigaku.fp2023b",
+        "daigaku.fp2023c",
     ]);
 
-    const routeName = `daigaku.shikumi-kojin${Number(year)}${String(form).toLowerCase()}`;
+    const routeName = `daigaku.${routePrefix}${Number(year)}${String(form).toLowerCase()}`;
     if (publishedRouteNames.has(routeName)) {
         return route(routeName);
     }
@@ -89,15 +104,6 @@ const isYearPreparing = (sectionId, year) => {
     return publishedCount === 0;
 };
 
-const isValidSectionId = (id) => DAIGAKU_SECTIONS.some((section) => section.id === id);
-
-onMounted(() => {
-    const params = new URLSearchParams(window.location.search);
-    const subject = params.get("subject");
-    if (subject && isValidSectionId(subject)) {
-        activeSectionId.value = subject;
-    }
-});
 </script>
 
 <template>
@@ -144,6 +150,15 @@ onMounted(() => {
                         <span class="rounded-full bg-sky-200/70 px-2 py-0.5 text-[10px] font-bold text-sky-900 max-sm:px-1.5 max-sm:text-[9px]">
                             ALL ACCESS
                         </span>
+                    </div>
+
+                    <div class="mb-4 text-left sm:text-right">
+                        <Link
+                            :href="route('tests.index')"
+                            class="text-xs font-semibold text-indigo-600 underline decoration-indigo-300 underline-offset-2 transition hover:text-indigo-700"
+                        >
+                            ▶ 姉妹サイト：生保講座過去問解説
+                        </Link>
                     </div>
 
                     <p class="mb-3 text-xs font-semibold text-gray-500">科目を選択してください</p>

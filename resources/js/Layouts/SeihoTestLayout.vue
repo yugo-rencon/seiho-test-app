@@ -58,7 +58,7 @@ const daigakuSubjects = [
         },
     },
     {
-        key: "fp-compliance",
+        key: "fp",
         name: "FP",
         tests: {
             "2025年度": ["a", "b", "c"],

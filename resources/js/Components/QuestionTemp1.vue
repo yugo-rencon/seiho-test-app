@@ -1,4 +1,5 @@
 <template>
+    <div :id="`q${props.questionNumber}`" class="h-0 scroll-mt-24"></div>
     <div v-if="showAdBeforeQuestion21" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
         <AdSenseUnit ad-slot="8570892917" />
     </div>
@@ -25,6 +26,12 @@
                 <p v-html="formatContentHtml(content)"></p>
             </div>
         </div>
+        <RelatedProblems
+            :items="props.relatedProblems"
+            :is-daigaku="isDaigaku"
+            :context-title="props.title"
+            :current-question-number="props.questionNumber"
+        />
         <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
             {{ props.title }}
         </div>
@@ -32,31 +39,7 @@
             {{ props.subject }}
         </div>
     </div>
-    <template v-else-if="shouldShowPaywallNotice">
-        <!-- 最初にロックされる問題をうっすら見せる（続きを読む導線） -->
-        <div class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white px-6 py-3 shadow-sm opacity-65">
-            <div class="flex items-start gap-2 my-4">
-                <div
-                    class="w-1.5 h-6 rounded-full"
-                    :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
-                ></div>
-                <h2 class="text-base font-bold leading-tight text-gray-700">
-                    <span class="mr-2 inline-block whitespace-nowrap">問題{{ props.questionNumber }}</span>
-                    <span v-if="props.questionTitle">
-                        {{ props.questionTitle }}
-                    </span>
-                </h2>
-            </div>
-            <div class="grid gap-2">
-                <div v-for="index in [0, 1]" :key="index" class="grid gap-2 text-sm leading-6 text-gray-800 select-none md:text-[15px] grid-cols-[2em_1fr]">
-                    <span class="font-semibold">{{ getLabel(index) }}：</span>
-                    <p v-html="formatContentHtml(props.contents?.[index] ?? '')"></p>
-                </div>
-            </div>
-            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-b from-transparent via-white/95 to-white"></div>
-        </div>
-        <PaywallNotice class="-mt-8" />
-    </template>
+    <PaywallNotice v-else-if="shouldShowPaywallNotice" />
 </template>
 
 <script setup lang="ts">
@@ -64,6 +47,7 @@ import { computed, ref } from "vue";
 import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
 import AdSenseUnit from "./AdSenseUnit.vue";
+import RelatedProblems from "./RelatedProblems.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
 
 const props = defineProps({
@@ -90,6 +74,10 @@ const props = defineProps({
     note: {
         type: String,
         default: "",
+    },
+    relatedProblems: {
+        type: Array,
+        default: () => [],
     },
 });
 const labels = ref(["ア", "イ", "ウ", "エ"]);

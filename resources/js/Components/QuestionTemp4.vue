@@ -1,9 +1,16 @@
 <template>
+    <div
+        v-for="item in hiddenItems"
+        :key="`hidden-${item.questionNo}`"
+        :id="`q${item.questionNo}`"
+        class="h-0 scroll-mt-24"
+    ></div>
     <template v-if="visibleItems.length > 0">
         <div
             v-for="(item, index) in visibleItems"
             :key="index"
-            class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md"
+            :id="`q${item.questionNo}`"
+            class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24"
         >
             <!-- 問題番号 -->
             <div class="flex items-start gap-2 my-4">
@@ -99,6 +106,12 @@
             >
                 解説はプレミアムプランで閲覧できます。
             </div>
+            <RelatedProblems
+                :items="item.relatedProblems"
+                :is-daigaku="isDaigaku"
+                :context-title="props.title"
+                :current-question-number="item.questionNo"
+            />
 
             <!-- タイトルと科目 -->
             <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
@@ -109,95 +122,7 @@
             </div>
         </div>
     </template>
-    <div
-        v-if="shouldShowPaywallNotice && firstLockedItem"
-        class="relative overflow-hidden rounded-2xl border border-gray-200 bg-white px-6 py-3 shadow-sm opacity-65"
-    >
-        <div class="flex items-start gap-2 my-4">
-            <div
-                class="w-1.5 h-6 rounded-full"
-                :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
-            ></div>
-            <h2 class="text-base font-bold leading-tight text-gray-700">
-                <span class="mr-2 inline-block whitespace-nowrap">問{{ firstLockedItem.questionNo }}</span>
-                <span v-if="firstLockedItem.questionTitle">
-                    {{ firstLockedItem.questionTitle }}
-                </span>
-            </h2>
-        </div>
-
-        <div class="mt-4 mb-3 inline-flex flex-wrap items-center gap-2 text-gray-700 select-none">
-            <div class="inline-flex h-8 items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3">
-                <span class="font-bold text-base text-gray-900">{{ firstLockedItem.label }}</span>
-                <span class="text-gray-400">:</span>
-                <p class="text-base font-semibold text-gray-700" v-html="firstLockedItem.content.answer"></p>
-            </div>
-        </div>
-
-        <div class="my-4 p-4 border border-gray-200 rounded-md">
-            <template v-if="isStructuredExplanation(firstLockedItem.content.explanation)">
-                <div
-                    class="question-temp4-structured text-sm sm:text-base leading-relaxed text-gray-800"
-                    :class="{ 'is-daigaku': isDaigaku }"
-                >
-                    <template
-                        v-for="(part, partIndex) in firstLockedItem.content.explanation"
-                        :key="`locked-${firstLockedItem.questionNo}-${partIndex}`"
-                    >
-                        <p v-if="part.type === 'blockTitle'" class="calc-block-title">
-                            {{ part.value }}
-                        </p>
-                        <p
-                            v-else-if="part.type === 'text'"
-                            class="calc-text"
-                            v-html="toText(part.value)"
-                        ></p>
-                        <div v-else-if="part.type === 'kv'" class="calc-kv">
-                            <span class="calc-kv-label">{{ part.label }}</span>
-                            <span class="calc-kv-sep">:</span>
-                            <span class="calc-kv-value">{{ part.value }}</span>
-                        </div>
-                        <div v-else-if="part.type === 'formula'" class="calc-line">
-                            {{ toText(part.value) }}
-                        </div>
-                        <div v-else-if="part.type === 'formulaBlock'" class="calc-formula-block">
-                            <div
-                                v-for="(line, lineIndex) in toLines(part.value)"
-                                :key="`locked-${firstLockedItem.questionNo}-${partIndex}-${lineIndex}`"
-                                class="calc-formula-block-line"
-                                v-html="line"
-                            ></div>
-                        </div>
-                        <p v-else-if="part.type === 'result'" class="calc-result">
-                            {{ toText(part.value) }}
-                        </p>
-                        <p
-                            v-else-if="part.type === 'note'"
-                            class="calc-note"
-                            v-html="toText(part.value)"
-                        ></p>
-                        <div
-                            v-else-if="part.type === 'tex'"
-                            class="calc-tex"
-                            v-html="renderKatex(toText(part.value), part.displayMode ?? false)"
-                        ></div>
-                    </template>
-                </div>
-            </template>
-            <div
-                v-else
-                class="question-temp4-explanation text-sm sm:text-base leading-relaxed text-gray-800"
-                :class="{ 'is-daigaku': isDaigaku }"
-                v-html="firstLockedItem.content.explanation"
-            ></div>
-        </div>
-
-        <div
-            class="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-b from-transparent via-white/95 to-white"
-        ></div>
-    </div>
-
-    <PaywallNotice :class="shouldShowPaywallNotice && firstLockedItem ? '-mt-8' : ''" v-if="shouldShowPaywallNotice" />
+    <PaywallNotice v-if="shouldShowPaywallNotice" />
 </template>
 
 <script setup lang="ts">
@@ -205,6 +130,7 @@ import { computed, type PropType } from "vue";
 import { usePage } from "@inertiajs/vue3";
 import katex from "katex";
 import PaywallNotice from "./PaywallNotice.vue";
+import RelatedProblems from "./RelatedProblems.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
 
 type ExplanationType = "blockTitle" | "text" | "kv" | "formula" | "formulaBlock" | "result" | "note" | "tex";
@@ -221,6 +147,7 @@ type CalcContent = {
     note?: string;
     answer: string;
     explanation: string | ExplanationPart[];
+    relatedProblems?: { label?: string; href?: string }[];
 };
 
 const props = defineProps({
@@ -260,6 +187,10 @@ const props = defineProps({
         type: Number as PropType<number | null>,
         default: null,
     },
+    relatedProblems: {
+        type: Array as PropType<Array<Array<{ label?: string; href?: string }>>>,
+        default: () => [],
+    },
 });
 
 const page = usePage();
@@ -278,6 +209,7 @@ const normalizedItems = computed(() => {
         questionNo: Number(props.questionNumber) + index,
         questionTitle: getQuestionTitle(index, content),
         note: content?.note ?? (index === 0 ? props.note : ""),
+        relatedProblems: content?.relatedProblems ?? getRelatedProblems(index),
     }));
 });
 
@@ -285,6 +217,13 @@ const visibleItems = computed(() => {
     if (!isLockedContext.value) return normalizedItems.value;
     return normalizedItems.value.filter(
         (item) => Number(item.questionNo) < paywallStartQuestion.value,
+    );
+});
+
+const hiddenItems = computed(() => {
+    if (!isLockedContext.value) return [];
+    return normalizedItems.value.filter(
+        (item) => Number(item.questionNo) >= paywallStartQuestion.value,
     );
 });
 
@@ -303,18 +242,15 @@ const shouldShowPaywallNotice = computed(() => {
     );
 });
 
-const firstLockedItem = computed(() => {
-    return (
-        normalizedItems.value.find(
-            (item) => Number(item.questionNo) >= paywallStartQuestion.value,
-        ) ?? null
-    );
-});
-
 const shouldHideExplanation = (questionNo: number): boolean => {
     if (props.hideFromQuestion == null) return false;
     const hideTo = props.hideToQuestion ?? props.hideFromQuestion;
     return questionNo >= props.hideFromQuestion && questionNo <= hideTo;
+};
+
+const getRelatedProblems = (index: number) => {
+    const value = props.relatedProblems?.[index];
+    return Array.isArray(value) ? value : [];
 };
 
 const isStructuredExplanation = (

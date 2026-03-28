@@ -1,6 +1,12 @@
 <template>
+    <div
+        v-for="item in hiddenItems"
+        :key="`hidden-${item.questionNo}`"
+        :id="`q${item.questionNo}`"
+        class="h-0 scroll-mt-24"
+    ></div>
     <template v-if="visibleItems.length > 0">
-        <div v-for="(item, index) in visibleItems" :key="index" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md">
+        <div v-for="(item, index) in visibleItems" :key="index" :id="`q${item.questionNo}`" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24">
             <div class="flex items-start gap-2 my-4">
                 <div
                     class="w-1.5 h-6 rounded-full"
@@ -23,6 +29,12 @@
                     <p v-html="formatContent(item)"></p>
                 </div>
             </div>
+            <RelatedProblems
+                :items="item.relatedProblems"
+                :is-daigaku="isDaigaku"
+                :context-title="props.title"
+                :current-question-number="item.questionNo"
+            />
             <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
                 {{ props.title }}
             </div>
@@ -38,6 +50,7 @@
 import { computed } from "vue";
 import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
+import RelatedProblems from "./RelatedProblems.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
 
 const props = defineProps({
@@ -77,6 +90,10 @@ const props = defineProps({
         type: Array,
         default: () => [],
     },
+    relatedProblems: {
+        type: Array,
+        default: () => [],
+    },
 });
 
 const page = usePage();
@@ -98,6 +115,7 @@ const normalizedItems = computed(() => {
             note: item?.note ?? getNote(index),
             questionNo: Number(props.questionNumber) + index,
             questionTitle: item?.questionTitle ?? getQuestionTitle(index),
+            relatedProblems: item?.relatedProblems ?? getRelatedProblems(index),
         }));
     }
 
@@ -107,12 +125,18 @@ const normalizedItems = computed(() => {
         note: getNote(index),
         questionNo: Number(props.questionNumber) + index,
         questionTitle: getQuestionTitle(index),
+        relatedProblems: getRelatedProblems(index),
     }));
 });
 
 const visibleItems = computed(() => {
     if (!isLockedContext.value) return normalizedItems.value;
     return normalizedItems.value.filter((item: any) => Number(item.questionNo) < paywallStartQuestion.value);
+});
+
+const hiddenItems = computed(() => {
+    if (!isLockedContext.value) return [];
+    return normalizedItems.value.filter((item: any) => Number(item.questionNo) >= paywallStartQuestion.value);
 });
 
 const shouldShowPaywallNotice = computed(() => {
@@ -150,6 +174,11 @@ const getNote = (index: number) => {
 const getQuestionTitle = (index: number) => {
     if (Array.isArray(props.questionTitle)) return props.questionTitle[index] ?? "";
     return props.questionTitle ?? "";
+};
+
+const getRelatedProblems = (index: number) => {
+    const value = props.relatedProblems?.[index];
+    return Array.isArray(value) ? value : [];
 };
 
 const normalizeBiArrowHtml = (value: unknown): string => {

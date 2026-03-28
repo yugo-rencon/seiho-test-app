@@ -1,7 +1,13 @@
 <template>
     <div
+        v-for="questionNo in questionNumbersInBlock"
+        :key="`anchor-${questionNo}`"
+        :id="`q${questionNo}`"
+        class="h-0 scroll-mt-24"
+    ></div>
+    <div
         v-if="!shouldHideByPaywall"
-        class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md"
+        class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24"
     >
 
         <!-- 問題番号 -->
@@ -28,6 +34,7 @@
           <p>{{ normalizeBiArrow(content) }}</p>
         </div>
       </div>
+      <RelatedProblems :items="props.relatedProblems" :is-daigaku="isDaigaku" :context-title="props.title" />
       <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
         {{ props.title }}
       </div>
@@ -42,6 +49,7 @@
     import { computed } from "vue";
     import { usePage } from "@inertiajs/vue3";
     import PaywallNotice from "./PaywallNotice.vue";
+    import RelatedProblems from "./RelatedProblems.vue";
     import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
 
     const props = defineProps({
@@ -77,6 +85,10 @@
             type: String,
             default: '',
         },
+        relatedProblems: {
+            type: Array,
+            default: () => [],
+        },
     })
 
     const page = usePage();
@@ -90,6 +102,10 @@
 
     const blockEndQuestion = computed(() => {
         return blockStartQuestion.value + 4;
+    });
+
+    const questionNumbersInBlock = computed(() => {
+        return Array.from({ length: 5 }, (_, i) => blockStartQuestion.value + i);
     });
 
     const shouldHideByPaywall = computed(() => {

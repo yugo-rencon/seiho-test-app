@@ -6,6 +6,10 @@ defineProps({
     homeRouteName: { type: String, default: "tests.index" },
     logoSrc: { type: String, default: "/images/rencon-favicon.svg" },
     isDaigaku: { type: Boolean, default: false },
+    isSenmon: { type: Boolean, default: false },
+    isOuyou: { type: Boolean, default: false },
+    isIppan: { type: Boolean, default: false },
+    hidePricingUi: { type: Boolean, default: false },
 });
 </script>
 
@@ -62,10 +66,20 @@ defineProps({
                             </li>
                             <li>
                                 <Link
+                                    v-if="!hidePricingUi"
                                     :href="route('daigaku.pricing')"
                                     class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
                                 >
                                     料金
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    v-if="hidePricingUi"
+                                    :href="route('updateInfo')"
+                                    class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
+                                >
+                                    更新履歴
                                 </Link>
                             </li>
                         </ul>
@@ -142,7 +156,13 @@ defineProps({
                             :class="
                                 isDaigaku
                                     ? 'bg-gradient-to-r from-blue-600 to-cyan-500'
-                                    : 'bg-gradient-to-r from-indigo-600 to-purple-600'
+                                    : isSenmon
+                                      ? 'bg-gradient-to-r from-emerald-600 to-lime-500'
+                                      : isOuyou
+                                        ? 'bg-gradient-to-r from-amber-600 to-orange-500'
+                                      : isIppan
+                                        ? 'bg-gradient-to-r from-rose-600 to-pink-500'
+                                      : 'bg-gradient-to-r from-indigo-600 to-purple-600'
                             "
                         >
                             {{ brandName }}
@@ -165,7 +185,17 @@ defineProps({
                             <Link
                                 :href="route(homeRouteName)"
                                 class="text-gray-600 transition-colors duration-200"
-                                :class="isDaigaku ? 'hover:text-blue-600' : 'hover:text-indigo-600'"
+                                :class="
+                                    isDaigaku
+                                        ? 'hover:text-blue-600'
+                                        : isSenmon
+                                          ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
                             >
                                 生命保険講座
                             </Link>
@@ -173,23 +203,84 @@ defineProps({
                         <li>
                             <Link
                                 :href="route('daigaku.index')"
-                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
                             >
                                 生命保険大学課程
                             </Link>
                         </li>
                         <li>
                             <Link
+                                :href="route('ippan.index')"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
+                            >
+                                生命保険一般課程
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                v-if="!hidePricingUi"
                                 :href="isDaigaku ? route('daigaku.pricing') : route('pricing')"
-                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
                             >
                                 料金
+                            </Link>
+                            <Link
+                                v-else
+                                :href="route('updateInfo')"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
+                            >
+                                更新履歴
                             </Link>
                         </li>
                         <li>
                             <Link
                                 :href="route('updateInfo')"
-                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
                             >
                                 更新履歴
                             </Link>
@@ -207,7 +298,16 @@ defineProps({
                         <li>
                             <Link
                                 :href="route(isDaigaku ? 'daigaku.contact.index' : 'contact.index')"
-                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
                             >
                                 お問い合わせ
                             </Link>
@@ -217,7 +317,16 @@ defineProps({
                                 href="https://buymeacoffee.com/rencon"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
                             >
                                 応援する（寄付）
                             </a>
@@ -235,7 +344,16 @@ defineProps({
                         <li>
                             <Link
                                 :href="route(isDaigaku ? 'daigaku.policy' : 'policy')"
-                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
                             >
                                 プライバシーポリシー
                             </Link>
@@ -243,7 +361,16 @@ defineProps({
                         <li>
                             <Link
                                 :href="route(isDaigaku ? 'daigaku.terms' : 'terms')"
-                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
                             >
                                 利用規約
                             </Link>
@@ -251,7 +378,16 @@ defineProps({
                         <li>
                             <Link
                                 :href="route(isDaigaku ? 'daigaku.tokusho' : 'tokusho')"
-                                class="text-gray-600 transition-colors duration-200 hover:text-indigo-600"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-rose-600'
+                                          : 'hover:text-indigo-600'
+                                "
                             >
                                 特商法に基づく表記
                             </Link>
@@ -265,12 +401,32 @@ defineProps({
                 <div class="mx-auto max-w-4xl">
                     <div
                         class="rounded-2xl border border-gray-100 bg-gradient-to-r p-6"
-                        :class="isDaigaku ? 'from-gray-50 to-blue-50' : 'from-gray-50 to-purple-50'"
+                        :class="
+                            isDaigaku
+                                ? 'from-gray-50 to-blue-50'
+                                : isSenmon
+                                  ? 'from-gray-50 to-emerald-50'
+                                  : isOuyou
+                                    ? 'from-gray-50 to-amber-50'
+                                  : isIppan
+                                    ? 'from-gray-50 to-rose-50'
+                                  : 'from-gray-50 to-purple-50'
+                        "
                     >
                         <div class="flex items-start gap-3">
                             <svg
                                 class="mt-0.5 h-5 w-5 shrink-0"
-                                :class="isDaigaku ? 'text-blue-500' : 'text-indigo-500'"
+                                :class="
+                                    isDaigaku
+                                        ? 'text-blue-500'
+                                        : isSenmon
+                                          ? 'text-emerald-500'
+                                          : isOuyou
+                                            ? 'text-amber-500'
+                                          : isIppan
+                                            ? 'text-rose-500'
+                                          : 'text-indigo-500'
+                                "
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"

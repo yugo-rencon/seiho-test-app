@@ -10,6 +10,10 @@ defineProps({
     homeRouteName: { type: String, default: "tests.index" },
     logoSrc: { type: String, default: "/images/rencon-favicon.svg" },
     isDaigaku: { type: Boolean, default: false },
+    isSenmon: { type: Boolean, default: false },
+    isOuyou: { type: Boolean, default: false },
+    isIppan: { type: Boolean, default: false },
+    hideAuthUi: { type: Boolean, default: false },
 });
 
 defineEmits(["open-menu"]);
@@ -47,7 +51,13 @@ const isActive = (name) => route().current(name);
                         :class="
                             isDaigaku
                                 ? 'bg-gradient-to-r from-blue-600 to-cyan-500'
-                                : 'bg-gradient-to-r from-indigo-600 to-purple-600'
+                                : isSenmon
+                                  ? 'bg-gradient-to-r from-emerald-600 to-lime-500'
+                                  : isOuyou
+                                    ? 'bg-gradient-to-r from-amber-600 to-orange-500'
+                                  : isIppan
+                                    ? 'bg-gradient-to-r from-rose-600 to-pink-500'
+                                  : 'bg-gradient-to-r from-indigo-600 to-purple-600'
                         "
                     >
                         {{ brandName }}
@@ -56,6 +66,7 @@ const isActive = (name) => route().current(name);
 
                 <!-- PCヘッダー右側（ログイン/マイページ/管理） -->
                 <div
+                    v-if="!hideAuthUi"
                     class="hidden items-center gap-4 text-[13px] font-medium tracking-[0.01em] md:flex"
                 >
                     <Link
@@ -70,13 +81,25 @@ const isActive = (name) => route().current(name);
                             :href="route(isDaigaku ? 'daigaku.mypage' : 'mypage')"
                             class="py-1 transition-colors"
                             :class="
-                                isActive('mypage')
-                                    ? isDaigaku
-                                        ? 'pointer-events-none text-blue-700'
-                                        : 'pointer-events-none text-purple-700'
-                                    : isDaigaku
-                                      ? 'text-gray-700 hover:text-blue-700'
-                                      : 'text-gray-700 hover:text-purple-700'
+                                    isActive('mypage')
+                                        ? isDaigaku
+                                            ? 'pointer-events-none text-blue-700'
+                                            : isSenmon
+                                              ? 'pointer-events-none text-emerald-700'
+                                            : isOuyou
+                                                ? 'pointer-events-none text-amber-700'
+                                              : isIppan
+                                                ? 'pointer-events-none text-rose-700'
+                                              : 'pointer-events-none text-purple-700'
+                                        : isDaigaku
+                                          ? 'text-gray-700 hover:text-blue-700'
+                                          : isSenmon
+                                            ? 'text-gray-700 hover:text-emerald-700'
+                                            : isOuyou
+                                              ? 'text-gray-700 hover:text-amber-700'
+                                            : isIppan
+                                              ? 'text-gray-700 hover:text-rose-700'
+                                            : 'text-gray-700 hover:text-purple-700'
                             "
                             :aria-current="isActive('mypage') ? 'page' : null"
                         >
@@ -87,7 +110,17 @@ const isActive = (name) => route().current(name);
                         <Link
                             :href="loginHref"
                             class="py-1 text-gray-700 transition-colors"
-                            :class="isDaigaku ? 'hover:text-blue-700' : 'hover:text-purple-700'"
+                            :class="
+                                isDaigaku
+                                    ? 'hover:text-blue-700'
+                                    : isSenmon
+                                      ? 'hover:text-emerald-700'
+                                      : isOuyou
+                                        ? 'hover:text-amber-700'
+                                      : isIppan
+                                        ? 'hover:text-rose-700'
+                                      : 'hover:text-purple-700'
+                            "
                         >
                             ログイン
                         </Link>

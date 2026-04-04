@@ -73,11 +73,12 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="住宅ローンの知識"
+                    :relatedProblems="['2023c5']"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '全期間変動金利 → 全期間固定金利', //p40
+                        '5年以上継続して加入 → 1年以上継続して加入<br>残高が10万円以上 → 50万円以上', //p41
                         '正しい',
-                        '', //p
+                        '団体信用生命保険（団信） → 新機構団信<br>3大疾病や介護を保証する団信はない → 新3大疾病付機構団信がある', //p41
                     ]"
                 />
                 <QuestionTemp1
@@ -85,11 +86,12 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="ポートフォリオ"
+                    :relatedProblems="['2024b30','2023c6']"
                     :contents="[
-                        '', //p
+                        '債券 → 不動産', //p65
                         '正しい',
-                        '', //p
-                        '', //p
+                        'リスクを極大化 → リスクをできるだけ軽減', //p66
+                        '集中投資 → 分散投資', //p68
                     ]"
                 />
                 <QuestionTemp1
@@ -97,7 +99,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の基礎知識"
-                    :relatedProblems="['2025a7', '2025b19', '2025c7', '2024a7', '2024b8', '2024c7', '2023b43', '2023c7']"
+                    :relatedProblems="['2025a7', '2025b19', '2025c7', '2024a7', '2024b8', '2024c7', '2023a7', '2023b43', '2023c7']"
                     :contents="[
                         '生活費が極端に少なくなる → 極端に少なくなることはない（近所付き合い等の費用が増える）', //p73
                         '平均余命を超えないようにする → 平均余命に10年加算する', //p73
@@ -123,12 +125,12 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保険金の活用方法等"
-                    :relatedProblems="['2025b9', '2025c19', '2023a9', '2023b9']"
+                    :relatedProblems="['2025b9', '2025c19', '2024b45', '2024c45', '2023a9', '2023b9', '2023c9']"
                     :contents="[
-                        '', //p
-                        '', //p
+                        'アドバイスまでは求められていない → アドバイスをするのが重要な役割', //p84
+                        '子ども優先 → 妻が家計の大黒柱となるため妻の保障も必要', //p84
                         '正しい',
-                        '', //p
+                        '障害者等の特別マル優は利用できない → 資産運用に利用可能', //p86
                     ]"
                 />
                 <QuestionTemp1
@@ -162,12 +164,12 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険相談所・裁定審査会"
-                    :relatedProblems="['2024a24', '2024b24', '2023b24']"
+                    :relatedProblems="['2025c35', '2024a24', '2024b24', '2024c35', '2023a49', '2023b24', '2023c12']"
                     :contents="[
-                        '', //p
+                        '各都道府県の消費生活センター内 → 生命保険協会', //p170
                         '正しい',
-                        '', //p
-                        '', //p
+                        '20日間 → 1ヶ月', //p170
+                        '指定裁判機関 → 指定紛争解決機関', //p170
                     ]"
                 />
                 <QuestionTemp1
@@ -188,11 +190,11 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融ビッグバンによる金融システムの規制緩和後の資産運用"
-                    :relatedProblems="['2025c4', '2024a13', '2024b13', '2024c13', '2023b1']"
+                    :relatedProblems="['2025c4', '2024a13', '2024b13', '2024c13', '2023a25', '2023b1', '2023c14']"
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        'ハイリターンを活用した集中投資 → リスクとリターンのバランスを考慮した分散投資', //p5
                         '正しい',
                     ]"
                 />
@@ -201,12 +203,12 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの返済方法"
-                    :relatedProblems="['2024a15', '2024c3', '2023a15', '2023b3']"
+                    :relatedProblems="['2024a15', '2024c3', '2023a15', '2023b3', '2023c15']"
                     :contents="[
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '元利均等返済方式よりも多くなる → 少なくなる', //p35
                     ]"
                 />
                 <QuestionTemp1
@@ -227,10 +229,11 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="住宅ローンの見直し"
+                    :relatedProblems="['2023c17']"
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '返済額軽減型の方が大きい → 期間短縮型のほうが大きい', //p46
                         '正しい',
                     ]"
                 />
@@ -291,10 +294,10 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="2016年（平成28年）5月施行の保険業法の主な改正内容"
-                    :relatedProblems="['2025b22', '2023a22', '2023b10']"
+                    :relatedProblems="['2025b22', '2024a47', '2024b46', '2024c47', '2023a22', '2023b10', '2023c22']"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '注意喚起情報 → 契約概要', //p116
                         '正しい',
                         '正しい',
                     ]"
@@ -331,12 +334,13 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="教育資金設計"
+                    :relatedProblems="['2025b16', '2025c30', '2025c44', '2024a4', '2024b16', '2024c17', '2023a5', '2023b6', '2023c25']"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '元利均等',
+                        '育英年金',
+                        '5000円〜10000円',
+                        '給付型',
+                        '純明勢非課税世帯・準ずる世帯', // 問25〜29
                     ]"
                     :labels="[
                         'オ', //25
@@ -403,17 +407,19 @@ const subject = "2023年度 フォームC";
                         }, //40
                         {
                             questionTitle: '住宅取得の自己資金',
-                            content: '',
-                        }, //41
+                            content: '購入金額の4割以上 → 2割以上',
+                            relatedProblems: ['2023c41'],
+                        }, //41 p49
                         {
                             questionTitle: '金融商品のリスク',
                             content: '中途解約リスク → 金利変動リスク',
                             relatedProblems: ['2025a6', '2025a18', '2025b7', '2025b18', '2025c6', '2025c18', '2024a6', '2024a17', '2024b6', '2024c6', '2023a6', '2023a42', '2023b42', '2023c42'],
                         }, //42 p66
                         {
-                            questionTitle: '老後生活設計の医療費',
-                            content: '',
-                        }, //43
+                            questionTitle: '老後生活設計の医療費等',
+                            content: '1ヶ月以内 → 14日以内',
+                            relatedProblems: ['2025b30', '2024a18', '2024b35', '2024c8', '2023a30', '2023b7', '2023c43'],
+                        }, //43 p76
                         {
                             questionTitle: '相続税の計算手順',
                             content: '相続開始前5年以内 → 7年以内',
@@ -431,7 +437,8 @@ const subject = "2023年度 フォームC";
                         }, //46
                         {
                             questionTitle: '消費者契約法に定める不適切な行為',
-                            content: '',
+                            content: '間接的な表現や身振り手振りも退去意思表示に含まれる',
+                            relatedProblems: ['2025b23', '2025c48', '2024a20', '2024b20', '2024c20', '2023a11', '2023b23', '2023c47'],
                         }, //47
                         {
                             questionTitle: '保険法',
@@ -441,6 +448,7 @@ const subject = "2023年度 フォームC";
                         {
                             questionTitle: '個人情報の保護に関する法律（個人情報保護法）',
                             content: '正しい',
+                            relatedProblems: ['2024b23', '2024c24', '2023a24', '2023b49', '2023c49'],
                         }, //49
                     ]"
                 />

@@ -14,6 +14,9 @@ Route::get('/', function () {
 
 Route::get('tests', [TestController::class, 'index'])->name('tests.index');
 Route::get('daigaku', [TestController::class, 'daigakuIndex'])->name('daigaku.index');
+Route::get('senmon', [TestController::class, 'senmonIndex'])->name('senmon.index');
+Route::get('ouyou', [TestController::class, 'ouyouIndex'])->name('ouyou.index');
+Route::get('ippan', [TestController::class, 'ippanIndex'])->name('ippan.index');
 Route::get('daigaku/pricing', [TestController::class, 'daigakuPricing'])->name('daigaku.pricing');
 Route::get('daigaku/policy', [TestController::class, 'policy'])->name('daigaku.policy');
 Route::get('daigaku/terms', [TestController::class, 'terms'])->name('daigaku.terms');

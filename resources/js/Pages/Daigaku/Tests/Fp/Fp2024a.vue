@@ -60,12 +60,12 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="教育資金設計"
-                    :relatedProblems="['2025b16', '2024b16', '2024c17', '2023a5', '2023b6']"
+                    :relatedProblems="['2025b16', '2025c30', '2025c44', '2024a4', '2024b16', '2024c17', '2023a5', '2023b6', '2023c25']"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '必要保障額に子どもの教育資金は含めない → 含める', //p56
+                        '学校外教育費に芸術・文化活動・スポーツは含まれない → 含まれる', //p56
                         '正しい',
-                        '', //p
+                        '進学先の学校の授業料や入学金は免除または減額されない → 免除または減額される', //p60
                     ]"
                 />
                 <QuestionTemp1
@@ -73,12 +73,12 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="資金運用の3要素による金融商品の分類"
-                    :relatedProblems="['2025b6', '2025c17', '2024b5', '2024c5']"
+                    :relatedProblems="['2025b6', '2025c17', '2024a5', '2024b5', '2024c5']"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        'MRFは、「流動性」の高い商品', //p63
+                        '財形貯蓄は、「安全性」の高い商品のうち積立型', //p63
+                        '定額貯金は、「安全性」の高い商品のうち据置型', //p63
                     ]"
                 />
                 <QuestionTemp1
@@ -99,7 +99,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の基礎知識"
-                    :relatedProblems="['2025a7', '2025b19', '2025c7', '2024a7', '2024b8', '2024c7', '2023b43', '2023c7']"
+                    :relatedProblems="['2025a7', '2025b19', '2025c7', '2024a7', '2024b8', '2024c7', '2023a7', '2023b43', '2023c7']"
                     :contents="[
                         '生活費が極端に少なくなる → 極端に少なくなることはない（近所付き合い等の費用が増える）', //p73
                         '平均余命を超えないようにする → 平均余命に10年加算する', //p73
@@ -177,9 +177,9 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融ビッグバンによる金融システムの規制緩和後の資産運用"
-                    :relatedProblems="['2025c4', '2024b13', '2024c13', '2023b1', '2023c14']"
+                    :relatedProblems="['2025c4', '2024a13', '2024b13', '2024c13', '2023a25', '2023b1', '2023c14']"
                     :contents="[
-                        '', //p
+                        '外為の規制強化 → 規制緩和<br>金融機関の垣根の拡大 → 垣根の撤廃<br>外国資本の参入制限 → 参入', //p4
                         '正しい',
                         '正しい',
                         '正しい',
@@ -203,12 +203,12 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの返済方法"
-                    :relatedProblems="['2024c3', '2023a15', '2023b3', '2023c15']"
+                    :relatedProblems="['2024a15', '2024c3', '2023a15', '2023b3', '2023c15']"
                     :contents="[
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '元金均等返済方式 → 元利金等返済方式', //p35
                     ]"
                 />
                 <QuestionTemp1
@@ -242,11 +242,11 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の医療費等"
-                    :relatedProblems="['2024c8', '2023b7']"
+                    :relatedProblems="['2025b30', '2024a18', '2024b35', '2024c8', '2023a30', '2023b7', '2023c43']"
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '平均のいずれか高い方の額 → 低い方の額', //p76
                         '正しい',
                     ]"
                 />
@@ -268,12 +268,12 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法に定める不適切な説明と不適切な行為"
-                    :relatedProblems="['2025b23', '2024b20', '2024c20', '2023a11', '2023b23']"
+                    :relatedProblems="['2025b23', '2025c48', '2024a20', '2024b20', '2024c20', '2023a11', '2023b23', '2023c47']"
                     :contents="[
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '間接的な表現や身振り手振りも退去意思表示に含まれる', //p142
                     ]"
                 />
                 <QuestionTemp1
@@ -281,10 +281,10 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融サービス提供法"
-                    :relatedProblems="['2024b21', '2024c21']"
+                    :relatedProblems="['2025c23', '2024a21', '2024b21', '2024b48', '2024c21', '2023a47', '2023b47']"
                     :contents="[
                         '正しい',
-                        '', //p
+                        'その他の保険種類は対象外 → 全ての保険種類が対象', //p143
                         '正しい',
                         '正しい',
                     ]"
@@ -294,9 +294,9 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="特定保険契約"
-                    :relatedProblems="['2024c22']"
+                    :relatedProblems="['2024a22', '2024c22']"
                     :contents="[
-                        '', //p
+                        '保険法 → 保険業法', //p146
                         '正しい',
                         '正しい',
                         '正しい',
@@ -320,12 +320,12 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険相談所・裁定審査会"
-                    :relatedProblems="['2024b24', '2023b24', '2023c12']"
+                    :relatedProblems="['2025c35', '2024a24', '2024b24', '2024c35', '2023a49', '2023b24', '2023c12']"
                     :contents="[
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '訴訟等を提起することはできない → 提起することができる', //p171
                     ]"
                 />
                 <QuestionTemp3
@@ -378,12 +378,13 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="保険業法の主要内容"
+                    :relatedProblems="['2025b35', '2024a35']"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '損害保険業',
+                        '公正',
+                        '公衆の縦覧',
+                        'ソルベンシー・マージン比率',
+                        '支払余力', // 問35〜39
                     ]"
                     :labels="[
                         'ク', //35
@@ -402,6 +403,7 @@ const subject = "2024年度 フォームA";
                         {
                             questionTitle: 'リボルビング（回転信用）方式',
                             content: '正しい',
+                            relatedProblems: ['2024a40', '2024b40', '2024c40'],
                         }, //40
                         {
                             questionTitle: '住宅に対する考え方',
@@ -425,9 +427,9 @@ const subject = "2024年度 フォームA";
                         }, //44
                         {
                             questionTitle: '高齢者医療制度',
-                            content: '',
+                            content: '費用の1割（現役並み所得者も同様） → 費用の1割、所定水準以上の所得者の場合2割（現役並みの所得者は3割）',
                             relatedProblems: ['2025a46', '2025b46', '2025c46', '2024a45', '2023a43'],
-                        }, //45
+                        }, //45 p77
                         {
                             questionTitle: '相続対策のポイント',
                             content: '正しい',
@@ -435,8 +437,9 @@ const subject = "2024年度 フォームA";
                         }, //46
                         {
                             questionTitle: '2016年（平成28年）5月施行の保険業法の主な改正内容',
-                            content: '',
-                        }, //47
+                            content: '了知した旨を確認いただく必要はない → 確認いただく必要がある',
+                            relatedProblems: ['2025b22', '2024a47', '2024b46', '2024c47', '2023a22', '2023b10', '2023c22'],
+                        }, //47 p116
                         {
                             questionTitle: '保険募集における違法行為',
                             content: '正しい',

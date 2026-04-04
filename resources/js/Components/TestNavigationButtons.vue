@@ -42,12 +42,8 @@ const isPaidCurrentPage = computed(() => {
   // seiho: /souron2024a
   const seihoMatched = path.match(/^\/([a-z]+)(\d{4})([abc])$/i);
   if (seihoMatched) {
-    const subject = String(seihoMatched[1] || "").toLowerCase();
     const year = Number(seihoMatched[2]);
     const form = String(seihoMatched[3] || "").toUpperCase();
-
-    // 税法・資産は常時無料
-    if (subject === "zeihou" || subject === "sisan") return false;
 
     // 生命保険講座は2024フォームAのみ無料
     return !(year === 2024 && form === "A");

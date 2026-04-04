@@ -22,15 +22,39 @@ const props = defineProps({
 
 const page = usePage();
 const isDaigakuPage = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isSenmonPage = computed(() => String(page.url ?? "").startsWith("/senmon"));
+const isOuyouPage = computed(() => String(page.url ?? "").startsWith("/ouyou"));
+const isIppanPage = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const isFreeExamPage = computed(() =>
+    String(page.url ?? "").startsWith("/senmon") ||
+    String(page.url ?? "").startsWith("/ouyou") ||
+    String(page.url ?? "").startsWith("/ippan"),
+);
 const currentBrandName = computed(() => {
     if (props.brandName) return props.brandName;
-    return isDaigakuPage.value ? "生命保険大学課程 過去問解説" : "生保講座過去問解説";
+    if (isDaigakuPage.value) return "生命保険大学課程 過去問解説";
+    if (isSenmonPage.value) return "生命保険専門課程 過去問解説";
+    if (isOuyouPage.value) return "生命保険応用課程 過去問解説";
+    if (isIppanPage.value) return "生命保険一般課程 過去問解説";
+    return "生保講座過去問解説";
 });
-const currentHomeRouteName = computed(() => (isDaigakuPage.value ? "daigaku.index" : "tests.index"));
+const currentHomeRouteName = computed(() => {
+    if (isDaigakuPage.value) return "daigaku.index";
+    if (isSenmonPage.value) return "senmon.index";
+    if (isOuyouPage.value) return "ouyou.index";
+    if (isIppanPage.value) return "ippan.index";
+    return "tests.index";
+});
 const currentLogoSrc = computed(() =>
     isDaigakuPage.value
         ? "/images/rencon-favicon-daigaku.svg?v=daigaku"
-        : "/images/rencon-favicon.svg?v=seiho",
+        : isSenmonPage.value
+          ? "/images/rencon-favicon-senmon.svg?v=senmon"
+        : isOuyouPage.value
+            ? "/images/rencon-favicon-ouyou.svg?v=ouyou2"
+        : isIppanPage.value
+            ? "/images/rencon-favicon-ippan.svg?v=ippan2"
+          : "/images/rencon-favicon.svg?v=seiho",
 );
 
 // レイアウト共通UIの状態
@@ -104,7 +128,7 @@ const daigakuSubjects = [
     },
 ];
 const menuSubjects = computed(() =>
-    isDaigakuPage.value ? daigakuSubjects : subjects,
+    isDaigakuPage.value ? daigakuSubjects : isFreeExamPage.value ? [] : subjects,
 );
 
 // URLクエリ（checkout=success/cancel）を優先してトースト文言を決定
@@ -189,11 +213,23 @@ onBeforeUnmount(() => {
             rel="apple-touch-icon"
             :href="currentLogoSrc"
         />
+        <link
+            head-key="site-favicon-png-fallback"
+            rel="icon"
+            type="image/png"
+            href="/images/rencon-favicon.png?v=png1"
+        />
     </Head>
 
     <div
         class="min-h-screen"
-        :class="isDaigakuPage ? 'bg-[#f7fbff]' : 'bg-[#fdfbff]'"
+        :class="
+            isDaigakuPage
+                ? 'bg-[#f7fbff]'
+                : isIppanPage
+                  ? 'bg-[#f8fcf8]'
+                  : 'bg-[#fdfbff]'
+        "
     >
 
         <!-- トーストUI -->
@@ -212,6 +248,10 @@ onBeforeUnmount(() => {
             :home-route-name="currentHomeRouteName"
             :logo-src="currentLogoSrc"
             :is-daigaku="isDaigakuPage"
+            :is-senmon="isSenmonPage"
+            :is-ouyou="isOuyouPage"
+            :is-ippan="isIppanPage"
+            :hide-auth-ui="isFreeExamPage"
             @open-menu="isMenuOpen = true"
         />
 
@@ -226,6 +266,11 @@ onBeforeUnmount(() => {
             :is-admin="isAdmin"
             :has-premium="hasPremium"
             :is-daigaku="isDaigakuPage"
+            :is-senmon="isSenmonPage"
+            :is-ouyou="isOuyouPage"
+            :is-ippan="isIppanPage"
+            :hide-auth-ui="isFreeExamPage"
+            :hide-pricing-ui="isFreeExamPage"
             :subjects="menuSubjects"
             @close="isMenuOpen = false"
         />
@@ -236,6 +281,10 @@ onBeforeUnmount(() => {
             :home-route-name="currentHomeRouteName"
             :logo-src="currentLogoSrc"
             :is-daigaku="isDaigakuPage"
+            :is-senmon="isSenmonPage"
+            :is-ouyou="isOuyouPage"
+            :is-ippan="isIppanPage"
+            :hide-pricing-ui="isFreeExamPage"
         />
     </div>
 </template>

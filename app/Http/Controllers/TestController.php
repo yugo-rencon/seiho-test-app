@@ -21,6 +21,24 @@ class TestController extends Controller
         return Inertia::render('Daigaku/Index');
     }
 
+    // 専門課程トップ
+    public function senmonIndex()
+    {
+        return Inertia::render('Senmon/Index');
+    }
+
+    // 応用課程トップ
+    public function ouyouIndex()
+    {
+        return Inertia::render('Ouyou/Index');
+    }
+
+    // 一般課程トップ
+    public function ippanIndex()
+    {
+        return Inertia::render('Ippan/Index');
+    }
+
     // 大学課程: 生命保険のしくみと個人保険商品 2025年度 フォームA
     public function daigakuShikumiKojin2025a()
     {

@@ -6,9 +6,14 @@ const props = defineProps({
     // 開閉状態（親のレイアウトで管理）
     open: { type: Boolean, default: false },
     isDaigaku: { type: Boolean, default: false },
+    isSenmon: { type: Boolean, default: false },
+    isOuyou: { type: Boolean, default: false },
+    isIppan: { type: Boolean, default: false },
     isAuthenticated: { type: Boolean, default: false },
     hasPremium: { type: Boolean, default: false },
     isAdmin: { type: Boolean, default: false },
+    hideAuthUi: { type: Boolean, default: false },
+    hidePricingUi: { type: Boolean, default: false },
     subjects: { type: Array, default: () => [] },
 });
 
@@ -59,9 +64,29 @@ const setActiveYear = (subjectKey, yearLabel) => {
     activeYears.value.set(subjectKey, yearLabel);
 };
 
-const homeRouteName = () => (props.isDaigaku ? "daigaku.index" : "tests.index");
+const homeRouteName = () =>
+    props.isDaigaku
+        ? "daigaku.index"
+        : props.isSenmon
+          ? "senmon.index"
+          : props.isOuyou
+            ? "ouyou.index"
+            : props.isIppan
+              ? "ippan.index"
+              : "tests.index";
 const mypageRouteName = () => (props.isDaigaku ? "daigaku.mypage" : "mypage");
 const adminRouteName = () => (props.isDaigaku ? "daigaku.admin.index" : "admin.index");
+const accentTextClass = computed(() =>
+    props.isDaigaku
+        ? "text-blue-500"
+        : props.isSenmon
+          ? "text-emerald-500"
+          : props.isOuyou
+            ? "text-amber-500"
+            : props.isIppan
+              ? "text-rose-500"
+            : "text-purple-500",
+);
 const resolveFormHref = (subjectKey, yearLabel, form) => {
     const year = String(yearLabel).replace("年度", "");
     const routeName = props.isDaigaku
@@ -113,7 +138,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
 
                 <div class="space-y-6 px-6 py-6">
                     <!-- ログイン状態で出し分ける上部リンク -->
-                    <div class="space-y-2">
+                    <div v-if="!hideAuthUi" class="space-y-2">
                         <Link
                             v-if="isAdmin"
                             :href="route(adminRouteName())"
@@ -130,9 +155,21 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                     isActive(mypageRouteName())
                                         ? isDaigaku
                                             ? 'pointer-events-none bg-blue-50 text-blue-700'
+                                            : isSenmon
+                                              ? 'pointer-events-none bg-emerald-50 text-emerald-700'
+                                            : isOuyou
+                                                ? 'pointer-events-none bg-amber-50 text-amber-700'
+                                              : isIppan
+                                                ? 'pointer-events-none bg-rose-50 text-rose-700'
                                             : 'pointer-events-none bg-purple-50 text-purple-700'
                                         : isDaigaku
                                           ? 'text-blue-700 hover:bg-blue-50'
+                                          : isSenmon
+                                            ? 'text-emerald-700 hover:bg-emerald-50'
+                                            : isOuyou
+                                              ? 'text-amber-700 hover:bg-amber-50'
+                                            : isIppan
+                                              ? 'text-rose-700 hover:bg-rose-50'
                                           : 'text-purple-700 hover:bg-purple-50'
                                 "
                                 :aria-current="isActive(mypageRouteName()) ? 'page' : null"
@@ -145,7 +182,17 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                             <Link
                                 :href="loginHref"
                                 class="block rounded-lg px-3 py-2 text-sm font-semibold transition"
-                                :class="isDaigaku ? 'text-blue-700 hover:bg-blue-50' : 'text-purple-700 hover:bg-purple-50'"
+                                :class="
+                                    isDaigaku
+                                        ? 'text-blue-700 hover:bg-blue-50'
+                                        : isSenmon
+                                          ? 'text-emerald-700 hover:bg-emerald-50'
+                                          : isOuyou
+                                            ? 'text-amber-700 hover:bg-amber-50'
+                                          : isIppan
+                                            ? 'text-rose-700 hover:bg-rose-50'
+                                            : 'text-purple-700 hover:bg-purple-50'
+                                "
                                 @click="closeMenu"
                             >
                                 ログイン
@@ -167,7 +214,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                 <span>解説一覧</span>
                                 <svg
                                     class="h-4 w-4"
-                                    :class="isDaigaku ? 'text-blue-500' : 'text-purple-500'"
+                                    :class="accentTextClass"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -201,10 +248,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                     </span>
                                     <svg
                                         class="h-4 w-4 transition-transform duration-200"
-                                        :class="[
-                                            isDaigaku ? 'text-blue-500' : 'text-purple-500',
-                                            openSubjects.has(subject.key) ? 'rotate-180' : '',
-                                        ]"
+                                        :class="[accentTextClass, openSubjects.has(subject.key) ? 'rotate-180' : '']"
                                         fill="none"
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"
@@ -236,9 +280,21 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                                 yearLabel
                                                     ? isDaigaku
                                                         ? 'border-blue-200 bg-blue-100 text-blue-700'
+                                                        : isSenmon
+                                                          ? 'border-emerald-200 bg-emerald-100 text-emerald-700'
+                                                          : isOuyou
+                                                            ? 'border-amber-200 bg-amber-100 text-amber-700'
+                                                          : isIppan
+                                                            ? 'border-rose-200 bg-rose-100 text-rose-700'
                                                         : 'border-purple-200 bg-purple-100 text-purple-700'
                                                     : isDaigaku
                                                       ? 'border-gray-200 bg-white text-gray-600 hover:border-blue-200'
+                                                      : isSenmon
+                                                        ? 'border-gray-200 bg-white text-gray-600 hover:border-emerald-200'
+                                                        : isOuyou
+                                                          ? 'border-gray-200 bg-white text-gray-600 hover:border-amber-200'
+                                                        : isIppan
+                                                          ? 'border-gray-200 bg-white text-gray-600 hover:border-rose-200'
                                                       : 'border-gray-200 bg-white text-gray-600 hover:border-purple-200'
                                             "
                                             @click="setActiveYear(subject.key, yearLabel)"
@@ -262,7 +318,17 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                         >
                                             <div
                                                 class="h-2 w-2 rounded-full bg-gradient-to-r"
-                                                :class="isDaigaku ? 'from-blue-400 to-cyan-400' : 'from-indigo-400 to-purple-400'"
+                                                :class="
+                                                    isDaigaku
+                                                        ? 'from-blue-400 to-cyan-400'
+                                                        : isSenmon
+                                                          ? 'from-emerald-400 to-lime-400'
+                                                          : isOuyou
+                                                            ? 'from-amber-400 to-orange-400'
+                                                          : isIppan
+                                                            ? 'from-rose-400 to-pink-400'
+                                                            : 'from-indigo-400 to-purple-400'
+                                                "
                                             ></div>
                                             <span>{{ yearLabel }}</span>
                                         </div>
@@ -273,7 +339,17 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                                     v-if="resolveFormHref(subject.key, yearLabel, form)"
                                                     :href="resolveFormHref(subject.key, yearLabel, form)"
                                                     class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm text-gray-600 transition-all duration-150 hover:bg-white"
-                                                    :class="isDaigaku ? 'hover:text-blue-700' : 'hover:text-purple-700'"
+                                                    :class="
+                                                        isDaigaku
+                                                            ? 'hover:text-blue-700'
+                                                            : isSenmon
+                                                              ? 'hover:text-emerald-700'
+                                                              : isOuyou
+                                                                ? 'hover:text-amber-700'
+                                                              : isIppan
+                                                                ? 'hover:text-rose-700'
+                                                                : 'hover:text-purple-700'
+                                                    "
                                                     @click="closeMenu"
                                                 >
                                                     <span
@@ -283,7 +359,17 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                                     </span>
                                                     <svg
                                                         class="h-4 w-4 transition-transform group-hover:translate-x-1"
-                                                        :class="isDaigaku ? 'text-blue-400' : 'text-indigo-400'"
+                                                        :class="
+                                                            isDaigaku
+                                                                ? 'text-blue-400'
+                                                                : isSenmon
+                                                                  ? 'text-emerald-400'
+                                                                  : isOuyou
+                                                                    ? 'text-amber-400'
+                                                                  : isIppan
+                                                                    ? 'text-rose-400'
+                                                                    : 'text-indigo-400'
+                                                        "
                                                         fill="none"
                                                         stroke="currentColor"
                                                         viewBox="0 0 24 24"
@@ -315,20 +401,41 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                     <div class="border-t border-gray-100 pt-4">
                         <div class="space-y-2">
                             <Link
+                                v-if="!hidePricingUi"
                                 :href="pricingHref"
                                 class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition"
-                                :class="isDaigaku ? 'hover:bg-blue-50 hover:text-blue-700' : 'hover:bg-purple-50 hover:text-purple-700'"
+                                :class="
+                                    isDaigaku
+                                        ? 'hover:bg-blue-50 hover:text-blue-700'
+                                        : isSenmon
+                                          ? 'hover:bg-emerald-50 hover:text-emerald-700'
+                                          : isOuyou
+                                            ? 'hover:bg-amber-50 hover:text-amber-700'
+                                          : isIppan
+                                            ? 'hover:bg-rose-50 hover:text-rose-700'
+                                            : 'hover:bg-purple-50 hover:text-purple-700'
+                                "
                                 @click="closeMenu"
                             >
                                 料金
                             </Link>
                             <Link
-                                v-if="isAuthenticated"
+                                v-if="isAuthenticated && !hideAuthUi"
                                 :href="route('logout')"
                                 method="post"
                                 as="button"
                                 class="block w-full rounded-lg px-3 py-2 text-left text-sm font-semibold text-gray-700 transition"
-                                :class="isDaigaku ? 'hover:bg-blue-50 hover:text-blue-700' : 'hover:bg-purple-50 hover:text-purple-700'"
+                                :class="
+                                    isDaigaku
+                                        ? 'hover:bg-blue-50 hover:text-blue-700'
+                                        : isSenmon
+                                          ? 'hover:bg-emerald-50 hover:text-emerald-700'
+                                          : isOuyou
+                                            ? 'hover:bg-amber-50 hover:text-amber-700'
+                                          : isIppan
+                                            ? 'hover:bg-rose-50 hover:text-rose-700'
+                                            : 'hover:bg-purple-50 hover:text-purple-700'
+                                "
                                 @click="closeMenu"
                             >
                                 ログアウト

@@ -1,7 +1,7 @@
 <template>
-  <div v-if="normalizedItems.length" class="mt-4 mb-3 rounded-md border border-gray-50 bg-transparent px-2 py-2">
+  <div v-if="hasRelatedItemsInput" class="mt-4 mb-3 rounded-md border border-gray-50 bg-transparent px-2 py-2">
     <p class="text-[10px] font-semibold text-blue-700">【{{ title }}】</p>
-    <div class="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
+    <div v-if="displayItems.length" class="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
       <template v-for="(item, index) in visibleDisplayItems" :key="index">
         <a
           v-if="item.href"
@@ -18,8 +18,9 @@
         </span>
       </template>
     </div>
+    <p v-else class="mt-2 text-[10px] text-gray-500">関連問題はありません</p>
     <button
-      v-if="hiddenCount > 0 && !isExpanded"
+      v-if="displayItems.length && hiddenCount > 0 && !isExpanded"
       type="button"
       class="mt-2 text-[10px] font-medium text-gray-500 underline hover:text-gray-700"
       @click="isExpanded = true"
@@ -27,7 +28,7 @@
       + 他{{ hiddenCount }}件（もっと見る）
     </button>
     <button
-      v-if="hiddenCount > 0 && isExpanded"
+      v-if="displayItems.length && hiddenCount > 0 && isExpanded"
       type="button"
       class="mt-2 text-[10px] font-medium text-gray-500 underline hover:text-gray-700"
       @click="isExpanded = false"
@@ -75,6 +76,8 @@ const page = usePage();
 const isExpanded = ref(false);
 const isMobile = ref(false);
 let mediaQuery: MediaQueryList | null = null;
+
+const hasRelatedItemsInput = computed(() => (props.items ?? []).length > 0);
 
 const updateIsMobile = () => {
   if (typeof window === "undefined") return;

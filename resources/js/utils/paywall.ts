@@ -8,22 +8,13 @@ const parseFormCode = (subject: string): string => {
     return matched?.[1] ?? "";
 };
 
-const isAlwaysFreeSubject = (title: string): boolean => {
-    const normalizedTitle = String(title ?? "");
-    return normalizedTitle.includes("資産") || normalizedTitle.includes("税法");
-};
-
-export const isPaidYear = (subject: string, title: string = ""): boolean => {
+export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     const year = Number(String(subject ?? "").slice(0, 4));
     const formCode = parseFormCode(subject);
 
     if (isDaigakuPath()) {
         // 大学課程: 2025年度フォームAのみ無料
         return !(year === 2025 && formCode === "A");
-    }
-
-    if (isAlwaysFreeSubject(title)) {
-        return false;
     }
 
     // 最新年度はフォームAのみ無料（B/Cは有料）

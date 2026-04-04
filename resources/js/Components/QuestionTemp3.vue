@@ -34,7 +34,12 @@
           <p>{{ normalizeBiArrow(content) }}</p>
         </div>
       </div>
-      <RelatedProblems :items="props.relatedProblems" :is-daigaku="isDaigaku" :context-title="props.title" />
+      <RelatedProblems
+        :items="props.relatedProblems"
+        :is-daigaku="isDaigaku"
+        :context-title="props.title"
+        :current-question-number="relatedCurrentQuestionNumber"
+      />
       <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
         {{ props.title }}
       </div>
@@ -106,6 +111,24 @@
 
     const questionNumbersInBlock = computed(() => {
         return Array.from({ length: 5 }, (_, i) => blockStartQuestion.value + i);
+    });
+
+    const relatedCurrentQuestionNumber = computed(() => {
+        const range = String(props.questionRange ?? "").trim();
+        if (range !== "") {
+            const normalized = range
+                .replace(/[０-９]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0xfee0))
+                .replace(/〜|~|－|–|—/g, "-");
+            const matched = normalized.match(/^(\d+)\s*-\s*(\d+)$/);
+            if (matched) {
+                return Number(matched[1]);
+            }
+            const single = normalized.match(/^(\d+)$/);
+            if (single) {
+                return Number(single[1]);
+            }
+        }
+        return blockStartQuestion.value;
     });
 
     const shouldHideByPaywall = computed(() => {

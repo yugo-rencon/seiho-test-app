@@ -70,19 +70,20 @@ class AdminController extends Controller
 
         $stats = [
             'totalUsers' => DB::table('users')->where('is_admin', 0)->count(),
-            'premiumUsers' => DB::table('users')->where('is_admin', 0)->where('is_premium', 1)->count(),
             'newUsersThisMonth' => DB::table('users')
                 ->where('is_admin', 0)
                 ->whereBetween('created_at', [$startOfMonth, $endOfMonth])
                 ->count(),
             'seihoSalesCount' => DB::table('purchases')
                 ->where('status', 'paid')
+                ->where('user_id', '!=', 4)
                 ->where(function ($query) {
                     $query->where('scope', 'seiho')->orWhereNull('scope');
                 })
                 ->count(),
             'daigakuSalesCount' => DB::table('purchases')
                 ->where('status', 'paid')
+                ->where('user_id', '!=', 4)
                 ->where('scope', 'daigaku')
                 ->count(),
         ];

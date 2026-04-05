@@ -114,18 +114,12 @@ const formatDateTime = (value) => {
 
             <div
                 v-if="activeTab === 'dashboard'"
-                class="mb-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-5"
+                class="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
             >
                 <div class="rounded-xl border border-gray-100 bg-white p-4">
                     <p class="text-xs text-gray-500">総ユーザー数</p>
                     <p class="mt-1 text-2xl font-bold text-gray-900">
                         {{ stats.totalUsers }}
-                    </p>
-                </div>
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <p class="text-xs text-gray-500">プレミアムユーザー数</p>
-                    <p class="mt-1 text-2xl font-bold text-purple-700">
-                        {{ stats.premiumUsers }}
                     </p>
                 </div>
                 <div class="rounded-xl border border-gray-100 bg-white p-4">

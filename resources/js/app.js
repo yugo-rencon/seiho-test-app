@@ -46,12 +46,36 @@ createInertiaApp({
     const params = new URLSearchParams(window.location.search);
     const scope = params.get('scope');
     const returnTo = params.get('return_to') || '';
-    const isDaigakuAuth = (path === '/login' || path === '/register' || path === '/forgot-password')
-      && (scope === 'daigaku' || returnTo.startsWith('/daigaku'));
+    const isAuthPage = path === '/login' || path === '/register' || path === '/forgot-password';
+    const authSite = scope
+      || (returnTo.startsWith('/daigaku') ? 'daigaku' : '')
+      || (returnTo.startsWith('/senmon') ? 'senmon' : '')
+      || (returnTo.startsWith('/ouyou') ? 'ouyou' : '')
+      || (returnTo.startsWith('/ippan') ? 'ippan' : '');
+    const siteName = (siteKey) => {
+      if (siteKey === 'daigaku') return '生命保険大学課程 過去問解説';
+      if (siteKey === 'senmon') return '生命保険専門課程 過去問解説';
+      if (siteKey === 'ouyou') return '生命保険応用課程 過去問解説';
+      if (siteKey === 'ippan') return '生命保険一般課程 過去問解説';
+      return appName;
+    };
+    const siteFromPath = path.startsWith('/daigaku')
+      ? 'daigaku'
+      : path.startsWith('/senmon')
+        ? 'senmon'
+        : path.startsWith('/ouyou')
+          ? 'ouyou'
+          : path.startsWith('/ippan')
+            ? 'ippan'
+            : '';
+
     if (path === '/tests') return appName;
-    if (path === '/daigaku') return '生命保険大学課程 過去問解説';
-    if (isDaigakuAuth) return `${title} | 生命保険大学課程 過去問解説`;
-    if (path.startsWith('/daigaku')) return `${title} | 生命保険大学課程 過去問解説`;
+    if (path === '/daigaku') return siteName('daigaku');
+    if (path === '/senmon') return siteName('senmon');
+    if (path === '/ouyou') return siteName('ouyou');
+    if (path === '/ippan') return siteName('ippan');
+    if (isAuthPage && authSite) return `${title} | ${siteName(authSite)}`;
+    if (siteFromPath) return `${title} | ${siteName(siteFromPath)}`;
     return `${title} | ${appName}`;
   },
 

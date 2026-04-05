@@ -56,7 +56,7 @@ const isActive = (name) => route().current(name);
                                   : isOuyou
                                     ? 'bg-gradient-to-r from-amber-600 to-orange-500'
                                   : isIppan
-                                    ? 'bg-gradient-to-r from-rose-500 to-red-400'
+                                    ? 'bg-gradient-to-r from-rose-500 to-red-500'
                                   : 'bg-gradient-to-r from-indigo-600 to-purple-600'
                         "
                     >
@@ -89,7 +89,7 @@ const isActive = (name) => route().current(name);
                                               : isOuyou
                                                 ? 'pointer-events-none text-amber-700'
                                               : isIppan
-                                                ? 'pointer-events-none text-rose-700'
+                                                ? 'pointer-events-none text-red-700'
                                               : 'pointer-events-none text-purple-700'
                                         : isDaigaku
                                           ? 'text-gray-700 hover:text-blue-700'
@@ -98,7 +98,7 @@ const isActive = (name) => route().current(name);
                                             : isOuyou
                                               ? 'text-gray-700 hover:text-amber-700'
                                             : isIppan
-                                              ? 'text-gray-700 hover:text-rose-700'
+                                              ? 'text-gray-700 hover:text-red-700'
                                             : 'text-gray-700 hover:text-purple-700'
                             "
                             :aria-current="isActive('mypage') ? 'page' : null"
@@ -118,7 +118,7 @@ const isActive = (name) => route().current(name);
                                       : isOuyou
                                         ? 'hover:text-amber-700'
                                       : isIppan
-                                        ? 'hover:text-rose-700'
+                                        ? 'hover:text-red-700'
                                       : 'hover:text-purple-700'
                             "
                         >

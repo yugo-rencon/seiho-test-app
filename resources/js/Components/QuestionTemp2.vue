@@ -13,6 +13,10 @@
                     :class="
                         isDaigaku
                             ? 'bg-gradient-to-b from-blue-400 to-cyan-400'
+                            : isSenmon
+                                ? 'bg-gradient-to-b from-emerald-400 to-lime-400'
+                                : isOuyou
+                                    ? 'bg-gradient-to-b from-amber-400 to-orange-400'
                             : isIppan
                                 ? 'bg-gradient-to-b from-rose-400 to-red-400'
                                 : 'bg-gradient-to-b from-purple-400 to-blue-400'
@@ -30,7 +34,9 @@
             </p>
 
             <div class="grid gap-2">
-                <div class="grid gap-2 text-sm leading-6 text-gray-800 select-none md:text-[15px] grid-cols-[2em_1fr]">
+                <div
+                    class="grid gap-2 text-sm leading-6 text-gray-800 select-none md:text-[15px] grid-cols-[2em_1fr]"
+                >
                     <span class="font-semibold">{{ item.label }}：</span>
                     <p v-html="formatContent(item)"></p>
                 </div>
@@ -108,10 +114,16 @@ const props = defineProps({
         type: Boolean,
         default: true,
     },
+    isDraft: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const page = usePage();
 const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
+const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
@@ -232,4 +244,5 @@ const formatContent = (item: { label: string; content: string }) => {
 
     return normalizeBiArrowHtml(raw);
 };
+
 </script>

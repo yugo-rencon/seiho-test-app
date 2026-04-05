@@ -11,7 +11,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                     特定商取引法に基づく表記
                 </h1>
                 <p class="mt-4 text-base text-gray-600">
-                    生保講座過去問解説および生命保険大学課程 過去問解説（デジタルコンテンツ販売）に関する法定表示を掲載しています。
+                    当サイトの有料サービス（生保講座過去問解説、生命保険大学課程 過去問解説）に関する法定表示を掲載しています。
                 </p>
             </section>
 
@@ -24,6 +24,13 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
                         <dt class="font-semibold text-gray-900">サービス名</dt>
                         <dd class="text-gray-700">生保講座過去問解説 / 生命保険大学課程 過去問解説</dd>
+                    </div>
+                    <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
+                        <dt class="font-semibold text-gray-900">販売対象サービス</dt>
+                        <dd class="text-gray-700">
+                            有料販売対象：生保講座過去問解説、生命保険大学課程 過去問解説<br />
+                            無料公開：生命保険一般課程 過去問解説、生命保険専門課程 過去問解説、生命保険応用課程 過去問解説
+                        </dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-5">
                         <dt class="font-semibold text-gray-900">運営責任者</dt>

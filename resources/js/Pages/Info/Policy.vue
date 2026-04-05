@@ -19,7 +19,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                 <div>
                     <h2 class="text-base font-bold text-gray-900">1. 基本方針</h2>
                     <p class="mt-2">
-                        生保講座過去問解説および生命保険大学課程 過去問解説（以下総称して「当サイト」）は、ユーザーの個人情報を適切に取り扱い、関連法令を遵守します。
+                        当サイトが提供する各サービス（生保講座過去問解説、生命保険大学課程 過去問解説、生命保険一般課程 過去問解説、生命保険専門課程 過去問解説、生命保険応用課程 過去問解説）において、ユーザーの個人情報を適切に取り扱い、関連法令を遵守します。
                     </p>
                 </div>
 
@@ -71,6 +71,9 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                     <p class="mt-2">
                         これらのサービスでは、各提供事業者の定めるプライバシーポリシーに基づきデータが処理される場合があります。
                     </p>
+                    <p class="mt-2">
+                        なお、外部サービス提供事業者（Google LLC、Stripe, Inc. など）が海外に所在する場合、当該事業者の管理するサーバーで情報が取り扱われることがあります。
+                    </p>
                 </div>
 
                 <div>
@@ -85,6 +88,9 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                     <p class="mt-2">
                         当サイトが保有する個人情報について、開示・訂正・削除等の要請があった場合は、本人確認の上で法令に従い対応します。
                     </p>
+                    <p class="mt-2">
+                        要請はお問い合わせフォームまたはメール（seihokoza.test@gmail.com）から受け付けます。
+                    </p>
                 </div>
 
                 <div>
@@ -95,14 +101,21 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                 </div>
 
                 <div>
-                    <h2 class="text-base font-bold text-gray-900">9. プライバシーポリシーの変更</h2>
+                    <h2 class="text-base font-bold text-gray-900">9. 保有期間</h2>
+                    <p class="mt-2">
+                        個人情報は、利用目的の達成に必要な期間、または法令で定められた期間保有し、その後適切に削除または匿名化します。
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-base font-bold text-gray-900">10. プライバシーポリシーの変更</h2>
                     <p class="mt-2">
                         本ポリシーは必要に応じて変更することがあります。変更後の内容は、本ページに掲載した時点から適用します。
                     </p>
                 </div>
 
                 <div>
-                    <h2 class="text-base font-bold text-gray-900">10. お問い合わせ先</h2>
+                    <h2 class="text-base font-bold text-gray-900">11. お問い合わせ先</h2>
                     <p class="mt-2">
                         本ポリシーに関するお問い合わせは、以下までご連絡ください。<br />
                         メールアドレス：seihokoza.test@gmail.com

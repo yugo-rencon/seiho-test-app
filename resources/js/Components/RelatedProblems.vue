@@ -1,12 +1,13 @@
 <template>
   <div v-if="shouldRender" class="mt-4 mb-3 rounded-md border border-gray-50 bg-transparent px-2 py-2">
-    <p class="text-[10px] font-semibold text-blue-700">【{{ title }}】</p>
+    <p class="text-[10px] font-semibold" :class="titleClass">【{{ title }}】</p>
     <div v-if="displayItems.length" class="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
       <template v-for="(item, index) in visibleDisplayItems" :key="index">
         <a
           v-if="item.href"
           :href="item.href"
-          class="inline-flex items-center rounded-full border border-blue-200 bg-white px-1.5 py-0.5 text-[10px] font-medium text-gray-600 transition hover:border-blue-300 hover:text-gray-800"
+          class="inline-flex items-center rounded-full border bg-white px-1.5 py-0.5 text-[10px] font-medium text-gray-600 transition hover:text-gray-800"
+          :class="linkTagClass"
         >
           {{ item.label }}
         </a>
@@ -77,6 +78,10 @@ const props = defineProps({
 const page = usePage();
 const isExpanded = ref(false);
 const isMobile = ref(false);
+const isDaigakuPage = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isSenmonPage = computed(() => String(page.url ?? "").startsWith("/senmon"));
+const isOuyouPage = computed(() => String(page.url ?? "").startsWith("/ouyou"));
+const isIppanPage = computed(() => String(page.url ?? "").startsWith("/ippan"));
 let mediaQuery: MediaQueryList | null = null;
 
 const updateIsMobile = () => {
@@ -285,5 +290,21 @@ const maxVisibleCount = computed(() => (isMobile.value ? 3 : 5));
 const visibleDisplayItems = computed(() =>
   isExpanded.value ? displayItems.value : displayItems.value.slice(0, maxVisibleCount.value),
 );
+
+const titleClass = computed(() => {
+  if (isDaigakuPage.value) return "text-blue-700";
+  if (isSenmonPage.value) return "text-emerald-700";
+  if (isOuyouPage.value) return "text-amber-700";
+  if (isIppanPage.value) return "text-red-700";
+  return "text-blue-700";
+});
+
+const linkTagClass = computed(() => {
+  if (isDaigakuPage.value) return "border-blue-200 hover:border-blue-300";
+  if (isSenmonPage.value) return "border-emerald-200 hover:border-emerald-300";
+  if (isOuyouPage.value) return "border-amber-200 hover:border-amber-300";
+  if (isIppanPage.value) return "border-red-200 hover:border-red-300";
+  return "border-blue-200 hover:border-blue-300";
+});
 
 </script>

@@ -5,10 +5,42 @@ import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
 
 const page = usePage();
 const defaultEmail = page.props?.auth?.user?.email ?? '';
-const isDaigaku = computed(() => String(page.url ?? '').startsWith('/daigaku'));
-const contactStoreRouteName = computed(() =>
-    isDaigaku.value ? 'daigaku.contact.store' : 'contact.store',
-);
+const currentPath = computed(() => String(page.url ?? ''));
+const scope = computed(() => {
+    if (currentPath.value.startsWith('/daigaku')) return 'daigaku';
+    if (currentPath.value.startsWith('/senmon')) return 'senmon';
+    if (currentPath.value.startsWith('/ouyou')) return 'ouyou';
+    if (currentPath.value.startsWith('/ippan')) return 'ippan';
+    return 'seiho';
+});
+const contactStoreRouteName = computed(() => {
+    if (scope.value === 'daigaku') return 'daigaku.contact.store';
+    if (scope.value === 'senmon') return 'senmon.contact.store';
+    if (scope.value === 'ouyou') return 'ouyou.contact.store';
+    if (scope.value === 'ippan') return 'ippan.contact.store';
+    return 'contact.store';
+});
+const focusClass = computed(() => {
+    if (scope.value === 'daigaku') return 'focus:border-blue-400 focus:ring-blue-400';
+    if (scope.value === 'senmon') return 'focus:border-emerald-400 focus:ring-emerald-400';
+    if (scope.value === 'ouyou') return 'focus:border-amber-400 focus:ring-amber-400';
+    if (scope.value === 'ippan') return 'focus:border-red-400 focus:ring-red-400';
+    return 'focus:border-purple-400 focus:ring-purple-400';
+});
+const checkboxClass = computed(() => {
+    if (scope.value === 'daigaku') return 'text-blue-600 focus:ring-blue-400';
+    if (scope.value === 'senmon') return 'text-emerald-600 focus:ring-emerald-400';
+    if (scope.value === 'ouyou') return 'text-amber-600 focus:ring-amber-400';
+    if (scope.value === 'ippan') return 'text-red-600 focus:ring-red-400';
+    return 'text-purple-600 focus:ring-purple-400';
+});
+const submitClass = computed(() => {
+    if (scope.value === 'daigaku') return 'from-blue-500 to-cyan-500';
+    if (scope.value === 'senmon') return 'from-emerald-500 to-lime-500';
+    if (scope.value === 'ouyou') return 'from-amber-500 to-orange-500';
+    if (scope.value === 'ippan') return 'from-rose-500 to-red-500';
+    return 'from-indigo-500 to-purple-500';
+});
 
 const form = useForm({
     category: '',
@@ -52,7 +84,8 @@ const submit = () => {
                         </label>
                         <select
                             v-model="form.category"
-                            class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-purple-400 focus:ring-purple-400"
+                            class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm"
+                            :class="focusClass"
                         >
                             <option value="" disabled>選択してください</option>
                             <option value="bug">不具合の報告</option>
@@ -69,7 +102,8 @@ const submit = () => {
                             <input
                                 v-model="form.name"
                                 type="text"
-                                class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-purple-400 focus:ring-purple-400"
+                                class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm"
+                                :class="focusClass"
                             />
                             <p v-if="form.errors.name" class="mt-1 text-sm text-red-600">{{ form.errors.name }}</p>
                         </div>
@@ -81,7 +115,8 @@ const submit = () => {
                             <input
                                 v-model="form.email"
                                 type="email"
-                                class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-purple-400 focus:ring-purple-400"
+                                class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm"
+                                :class="focusClass"
                             />
                             <p v-if="form.errors.email" class="mt-1 text-sm text-red-600">{{ form.errors.email }}</p>
                         </div>
@@ -92,7 +127,8 @@ const submit = () => {
                             <label class="block text-sm font-semibold text-gray-800 mb-2">利用端末（任意）</label>
                             <select
                                 v-model="form.device"
-                                class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-purple-400 focus:ring-purple-400"
+                                class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm"
+                                :class="focusClass"
                             >
                                 <option value="">選択しない</option>
                                 <option value="pc">PC</option>
@@ -108,7 +144,8 @@ const submit = () => {
                             <input
                                 v-model="form.occurred_at"
                                 type="date"
-                                class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-purple-400 focus:ring-purple-400"
+                                class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm"
+                                :class="focusClass"
                             />
                             <p v-if="form.errors.occurred_at" class="mt-1 text-sm text-red-600">{{ form.errors.occurred_at }}</p>
                         </div>
@@ -120,7 +157,8 @@ const submit = () => {
                             v-model="form.page_url"
                             type="url"
                             placeholder="https://..."
-                            class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-purple-400 focus:ring-purple-400"
+                            class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm"
+                            :class="focusClass"
                         />
                         <p v-if="form.errors.page_url" class="mt-1 text-sm text-red-600">{{ form.errors.page_url }}</p>
                     </div>
@@ -132,7 +170,8 @@ const submit = () => {
                         <textarea
                             v-model="form.message"
                             rows="7"
-                            class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm focus:border-purple-400 focus:ring-purple-400"
+                            class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm"
+                            :class="focusClass"
                             placeholder="状況やご要望を具体的にご記入ください。"
                         />
                         <p class="mt-1 text-xs text-gray-500">10文字以上で入力してください。</p>
@@ -143,7 +182,8 @@ const submit = () => {
                         <input
                             v-model="form.privacy_agreed"
                             type="checkbox"
-                            class="mt-0.5 rounded border-gray-300 text-purple-600 focus:ring-purple-400"
+                            class="mt-0.5 rounded border-gray-300"
+                            :class="checkboxClass"
                         />
                         <span>
                             プライバシーポリシーに同意のうえ送信します
@@ -158,7 +198,8 @@ const submit = () => {
                         <button
                             type="submit"
                             :disabled="form.processing"
-                            class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 px-7 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
+                            class="inline-flex items-center justify-center rounded-full bg-gradient-to-r px-7 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                            :class="submitClass"
                         >
                             お問い合わせを送信
                         </button>

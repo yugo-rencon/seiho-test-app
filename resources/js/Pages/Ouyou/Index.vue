@@ -1,7 +1,7 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
 import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
+import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
 const OUYOU_VISIBLE_YEARS = [2025, 2024, 2023];
 const OUYOU_PERIODS = [
@@ -23,6 +23,18 @@ const activePeriodId = ref(OUYOU_PERIODS[0].id);
 const activePeriod = computed(
     () => OUYOU_PERIODS.find((period) => period.id === activePeriodId.value) ?? OUYOU_PERIODS[0],
 );
+const periodRouteKeyMap = {
+    "apr-aug": "h1",
+    "sep-mar": "h2",
+};
+const getOuyouRoute = (year, periodId, form) => {
+    const period = periodRouteKeyMap[periodId] ?? "h1";
+    return route("ouyou.test", {
+        year: Number(year),
+        period,
+        form: String(form).toLowerCase(),
+    });
+};
 </script>
 
 <template>
@@ -45,22 +57,7 @@ const activePeriod = computed(
                         </span>
                     </div>
 
-                    <div class="mb-4 text-left sm:text-right">
-                        <div class="flex flex-col gap-1 sm:items-end">
-                            <Link
-                                :href="route('tests.index')"
-                                class="text-xs font-semibold text-indigo-600 underline decoration-indigo-300 underline-offset-2 transition hover:text-indigo-700"
-                            >
-                                ▶ 姉妹サイト：生保講座過去問解説
-                            </Link>
-                            <Link
-                                :href="route('daigaku.index')"
-                                class="text-xs font-semibold text-blue-600 underline decoration-blue-300 underline-offset-2 transition hover:text-blue-700"
-                            >
-                                ▶ 姉妹サイト：生命保険大学課程 過去問解説
-                            </Link>
-                        </div>
-                    </div>
+                    <SisterSiteLinks current-site="ouyou" class="mb-4" />
 
                     <p class="mb-3 text-xs font-semibold text-gray-500">試験期間を選択してください</p>
                     <div class="flex flex-wrap gap-2">
@@ -90,21 +87,17 @@ const activePeriod = computed(
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
                                     {{ year }}年度
                                 </div>
-                                <span
-                                    class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600"
-                                >
-                                    準備中
-                                </span>
                             </div>
 
                             <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
-                                <span
+                                <a
                                     v-for="form in activePeriod.forms"
                                     :key="`${year}-${form}`"
-                                    class="inline-flex w-full cursor-not-allowed items-center justify-center whitespace-nowrap rounded-full border border-gray-200 bg-gray-50 px-2 py-1.5 text-[12px] font-semibold text-gray-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
+                                    :href="getOuyouRoute(year, activePeriod.id, form)"
+                                    class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-amber-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-amber-700 transition hover:bg-amber-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                                 >
                                     フォーム{{ form.toUpperCase() }}
-                                </span>
+                                </a>
                             </div>
                         </div>
                     </div>

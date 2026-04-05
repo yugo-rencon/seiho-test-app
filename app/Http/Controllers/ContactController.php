@@ -71,7 +71,13 @@ class ContactController extends Controller
         }
 
         $scope = $this->resolveScope($request);
-        $indexRoute = $scope === 'daigaku' ? 'daigaku.contact.index' : 'contact.index';
+        $indexRoute = match ($scope) {
+            'daigaku' => 'daigaku.contact.index',
+            'senmon' => 'senmon.contact.index',
+            'ouyou' => 'ouyou.contact.index',
+            'ippan' => 'ippan.contact.index',
+            default => 'contact.index',
+        };
 
         return redirect()
             ->route($indexRoute)
@@ -82,6 +88,15 @@ class ContactController extends Controller
     {
         if ($request->routeIs('daigaku.*')) {
             return 'daigaku';
+        }
+        if ($request->routeIs('senmon.*')) {
+            return 'senmon';
+        }
+        if ($request->routeIs('ouyou.*')) {
+            return 'ouyou';
+        }
+        if ($request->routeIs('ippan.*')) {
+            return 'ippan';
         }
 
         return 'seiho';

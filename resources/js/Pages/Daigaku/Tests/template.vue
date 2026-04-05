@@ -21,6 +21,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -33,6 +34,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -45,6 +47,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -57,6 +60,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -69,6 +73,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -81,6 +86,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -93,6 +99,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -105,6 +112,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -117,6 +125,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -129,6 +138,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -141,6 +151,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -153,6 +164,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -165,6 +177,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -177,6 +190,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -189,6 +203,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -201,6 +216,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -213,6 +229,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -225,6 +242,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -237,6 +255,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -249,6 +268,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -261,6 +281,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -273,6 +294,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -285,6 +307,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -297,6 +320,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -310,6 +334,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '',
@@ -331,6 +356,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '',
@@ -352,6 +378,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle=""
+                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '',
@@ -373,21 +400,61 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問40〜49
-                        { questionTitle: '', content: '' }, //40
-                        { questionTitle: '', content: '' }, //41
-                        { questionTitle: '', content: '' }, //42
-                        { questionTitle: '', content: '' }, //43
-                        { questionTitle: '', content: '' }, //44
-                        { questionTitle: '', content: '' }, //45
-                        { questionTitle: '', content: '' }, //46
-                        { questionTitle: '', content: '' }, //47
-                        { questionTitle: '', content: '' }, //48
-                        { questionTitle: '', content: '' }, //49
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //40
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '',
+                            relatedProblems: [],
+                            content: '',
+                        }, //49
                     ]"
                 />
             </div>
 
-            <TestNavigationButtons home-route="daigaku.index" />
+            <TestNavigationButtons previous-route="daigaku.shikumi-kojin2024c" next-route="daigaku.shikumi-kojin2023b" home-route="daigaku.index" />
         </section>
     </SeihoTestLayout>
 </template>

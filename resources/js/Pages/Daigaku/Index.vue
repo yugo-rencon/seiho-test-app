@@ -3,15 +3,17 @@ import { Link, usePage } from "@inertiajs/vue3";
 import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import AdSenseUnit from "@/Components/AdSenseUnit.vue";
+import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
 const DAIGAKU_FORMS = ["a", "b", "c"];
-const DAIGAKU_VISIBLE_YEARS = [2025, 2024, 2023];
+const DAIGAKU_VISIBLE_YEARS = [2025, 2024, 2023, 2022, 2021];
+const SHIKUMI_VISIBLE_YEARS = [2025, 2024, 2023, 2022, 2021];
 const DAIGAKU_SECTIONS = [
     {
         id: "shikumi-kojin",
         title: "生命保険のしくみと個人保険商品",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。",
-        years: DAIGAKU_VISIBLE_YEARS,
+        years: SHIKUMI_VISIBLE_YEARS,
     },
     {
         id: "fp",
@@ -60,6 +62,10 @@ const getDaigakuRoute = (sectionId, year, form) => {
     const sectionRoutePrefix = {
         "shikumi-kojin": "shikumi-kojin",
         fp: "fp",
+        "tax-sozoku": "zei",
+        "sisan-unyou": "sisan",
+        "houjin-consulting": "kigyo",
+        "social-security": "syakai",
     };
 
     const routePrefix = sectionRoutePrefix[sectionId];
@@ -75,6 +81,12 @@ const getDaigakuRoute = (sectionId, year, form) => {
         "daigaku.shikumi-kojin2023a",
         "daigaku.shikumi-kojin2023b",
         "daigaku.shikumi-kojin2023c",
+        "daigaku.shikumi-kojin2022a",
+        "daigaku.shikumi-kojin2022b",
+        "daigaku.shikumi-kojin2022c",
+        "daigaku.shikumi-kojin2021a",
+        "daigaku.shikumi-kojin2021b",
+        "daigaku.shikumi-kojin2021c",
         "daigaku.fp2025a",
         "daigaku.fp2025b",
         "daigaku.fp2025c",
@@ -84,6 +96,72 @@ const getDaigakuRoute = (sectionId, year, form) => {
         "daigaku.fp2023a",
         "daigaku.fp2023b",
         "daigaku.fp2023c",
+        "daigaku.fp2022a",
+        "daigaku.fp2022b",
+        "daigaku.fp2022c",
+        "daigaku.fp2021a",
+        "daigaku.fp2021b",
+        "daigaku.fp2021c",
+        "daigaku.zei2025a",
+        "daigaku.zei2025b",
+        "daigaku.zei2025c",
+        "daigaku.zei2024a",
+        "daigaku.zei2024b",
+        "daigaku.zei2024c",
+        "daigaku.zei2023a",
+        "daigaku.zei2023b",
+        "daigaku.zei2023c",
+        "daigaku.zei2022a",
+        "daigaku.zei2022b",
+        "daigaku.zei2022c",
+        "daigaku.zei2021a",
+        "daigaku.zei2021b",
+        "daigaku.zei2021c",
+        "daigaku.sisan2025a",
+        "daigaku.sisan2025b",
+        "daigaku.sisan2025c",
+        "daigaku.sisan2024a",
+        "daigaku.sisan2024b",
+        "daigaku.sisan2024c",
+        "daigaku.sisan2023a",
+        "daigaku.sisan2023b",
+        "daigaku.sisan2023c",
+        "daigaku.sisan2022a",
+        "daigaku.sisan2022b",
+        "daigaku.sisan2022c",
+        "daigaku.sisan2021a",
+        "daigaku.sisan2021b",
+        "daigaku.sisan2021c",
+        "daigaku.kigyo2025a",
+        "daigaku.kigyo2025b",
+        "daigaku.kigyo2025c",
+        "daigaku.kigyo2024a",
+        "daigaku.kigyo2024b",
+        "daigaku.kigyo2024c",
+        "daigaku.kigyo2023a",
+        "daigaku.kigyo2023b",
+        "daigaku.kigyo2023c",
+        "daigaku.kigyo2022a",
+        "daigaku.kigyo2022b",
+        "daigaku.kigyo2022c",
+        "daigaku.kigyo2021a",
+        "daigaku.kigyo2021b",
+        "daigaku.kigyo2021c",
+        "daigaku.syakai2025a",
+        "daigaku.syakai2025b",
+        "daigaku.syakai2025c",
+        "daigaku.syakai2024a",
+        "daigaku.syakai2024b",
+        "daigaku.syakai2024c",
+        "daigaku.syakai2023a",
+        "daigaku.syakai2023b",
+        "daigaku.syakai2023c",
+        "daigaku.syakai2022a",
+        "daigaku.syakai2022b",
+        "daigaku.syakai2022c",
+        "daigaku.syakai2021a",
+        "daigaku.syakai2021b",
+        "daigaku.syakai2021c",
     ]);
 
     const routeName = `daigaku.${routePrefix}${Number(year)}${String(form).toLowerCase()}`;
@@ -152,14 +230,7 @@ const isYearPreparing = (sectionId, year) => {
                         </span>
                     </div>
 
-                    <div class="mb-4 text-left sm:text-right">
-                        <Link
-                            :href="route('tests.index')"
-                            class="text-xs font-semibold text-indigo-600 underline decoration-indigo-300 underline-offset-2 transition hover:text-indigo-700"
-                        >
-                            ▶ 姉妹サイト：生保講座過去問解説
-                        </Link>
-                    </div>
+                    <SisterSiteLinks current-site="daigaku" class="mb-4" />
 
                     <p class="mb-3 text-xs font-semibold text-gray-500">科目を選択してください</p>
                     <div class="flex flex-wrap gap-2">

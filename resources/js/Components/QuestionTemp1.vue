@@ -10,9 +10,13 @@
                 :class="
                     isDaigaku
                         ? 'bg-gradient-to-b from-blue-400 to-cyan-400'
-                        : isIppan
-                            ? 'bg-gradient-to-b from-rose-400 to-red-400'
-                            : 'bg-gradient-to-b from-purple-400 to-blue-400'
+                        : isSenmon
+                          ? 'bg-gradient-to-b from-emerald-400 to-lime-400'
+                          : isOuyou
+                            ? 'bg-gradient-to-b from-amber-400 to-orange-400'
+                            : isIppan
+                              ? 'bg-gradient-to-b from-rose-400 to-red-400'
+                              : 'bg-gradient-to-b from-purple-400 to-blue-400'
                 "
             ></div>
             <h2 class="text-base font-bold leading-tight text-gray-700">
@@ -32,12 +36,7 @@
                 <p v-html="formatContentHtml(content)"></p>
             </div>
         </div>
-        <RelatedProblems
-            :items="props.relatedProblems"
-            :is-daigaku="isDaigaku"
-            :context-title="props.title"
-            :current-question-number="props.questionNumber"
-        />
+        <RelatedProblems :items="props.relatedProblems" :is-daigaku="isDaigaku" :context-title="props.title" :current-question-number="props.questionNumber" />
         <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
             {{ props.title }}
         </div>
@@ -85,11 +84,17 @@ const props = defineProps({
         type: Array,
         default: () => [],
     },
+    isDraft: {
+        type: Boolean,
+        default: false,
+    },
 });
 const labels = ref(["ア", "イ", "ウ", "エ"]);
 
 const page = usePage();
 const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
+const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));

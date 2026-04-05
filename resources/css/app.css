@@ -67,7 +67,7 @@ body {
 }
 
 .question-temp4-structured.is-ippan .calc-block-title {
-    @apply border-rose-200 bg-rose-50 text-rose-700;
+    @apply border-red-200 bg-red-50 text-red-700;
 }
 
 .question-temp4-structured .calc-line {
@@ -116,11 +116,11 @@ body {
 }
 
 .question-temp4-structured.is-ippan .calc-result {
-    @apply text-rose-700;
+    @apply text-red-700;
 }
 
 .question-temp4-explanation.is-ippan .calc-result {
-    @apply text-rose-700;
+    @apply text-red-700;
 }
 
 .question-temp4-structured .calc-note {

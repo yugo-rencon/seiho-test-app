@@ -27,10 +27,60 @@ class TestController extends Controller
         return Inertia::render('Senmon/Index');
     }
 
+    // 専門課程 各試験ページ
+    public function senmonTest(int $year, string $period, string $form)
+    {
+        $allowedYears = [2025, 2024, 2023];
+        $allowedFormsByPeriod = [
+            'h1' => ['a', 'b'],               // 4月〜8月実施
+            'h2' => ['a', 'b', 'c', 'd'],     // 9月〜3月実施
+        ];
+
+        $period = strtolower($period);
+        $form = strtolower($form);
+
+        if (!in_array($year, $allowedYears, true)) {
+            abort(404);
+        }
+        if (!array_key_exists($period, $allowedFormsByPeriod)) {
+            abort(404);
+        }
+        if (!in_array($form, $allowedFormsByPeriod[$period], true)) {
+            abort(404);
+        }
+
+        return Inertia::render("Senmon/Tests/Senmon{$year}{$period}{$form}");
+    }
+
     // 応用課程トップ
     public function ouyouIndex()
     {
         return Inertia::render('Ouyou/Index');
+    }
+
+    // 応用課程 各試験ページ
+    public function ouyouTest(int $year, string $period, string $form)
+    {
+        $allowedYears = [2025, 2024, 2023];
+        $allowedFormsByPeriod = [
+            'h1' => ['a', 'b'],               // 4月〜8月実施
+            'h2' => ['a', 'b', 'c', 'd'],     // 9月〜3月実施
+        ];
+
+        $period = strtolower($period);
+        $form = strtolower($form);
+
+        if (!in_array($year, $allowedYears, true)) {
+            abort(404);
+        }
+        if (!array_key_exists($period, $allowedFormsByPeriod)) {
+            abort(404);
+        }
+        if (!in_array($form, $allowedFormsByPeriod[$period], true)) {
+            abort(404);
+        }
+
+        return Inertia::render("Ouyou/Tests/Ouyou{$year}{$period}{$form}");
     }
 
     // 一般課程トップ
@@ -38,6 +88,34 @@ class TestController extends Controller
     {
         return Inertia::render('Ippan/Index');
     }
+
+    // 一般課程 各試験ページ
+    public function ippanTest(int $year, string $months, string $form)
+    {
+        $allowedYears = [2025, 2024, 2023];
+        $allowedForms = ['a', 'b', 'c', 'd', 'e'];
+        $periodByMonths = [
+            '1-6' => 'h1',
+            '7-12' => 'h2',
+        ];
+
+        $form = strtolower($form);
+
+        if (!in_array($year, $allowedYears, true)) {
+            abort(404);
+        }
+        if (!array_key_exists($months, $periodByMonths)) {
+            abort(404);
+        }
+        if (!in_array($form, $allowedForms, true)) {
+            abort(404);
+        }
+
+        $period = $periodByMonths[$months];
+
+        return Inertia::render("Ippan/Tests/Ippan{$year}{$period}{$form}");
+    }
+
     public function ippan2025h2a()
     {
         return Inertia::render('Ippan/Tests/Ippan2025h2a');
@@ -96,6 +174,30 @@ class TestController extends Controller
     {
         return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2023c');
     }
+    public function daigakuShikumiKojin2022a()
+    {
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2022a');
+    }
+    public function daigakuShikumiKojin2022b()
+    {
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2022b');
+    }
+    public function daigakuShikumiKojin2022c()
+    {
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2022c');
+    }
+    public function daigakuShikumiKojin2021a()
+    {
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2021a');
+    }
+    public function daigakuShikumiKojin2021b()
+    {
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2021b');
+    }
+    public function daigakuShikumiKojin2021c()
+    {
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2021c');
+    }
     public function daigakuFpCompliance2025a()
     {
         return Inertia::render('Daigaku/Tests/Fp/Fp2025a');
@@ -131,6 +233,270 @@ class TestController extends Controller
     public function daigakuFpCompliance2023c()
     {
         return Inertia::render('Daigaku/Tests/Fp/Fp2023c');
+    }
+    public function daigakuFpCompliance2022a()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2022a');
+    }
+    public function daigakuFpCompliance2022b()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2022b');
+    }
+    public function daigakuFpCompliance2022c()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2022c');
+    }
+    public function daigakuFpCompliance2021a()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2021a');
+    }
+    public function daigakuFpCompliance2021b()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2021b');
+    }
+    public function daigakuFpCompliance2021c()
+    {
+        return Inertia::render('Daigaku/Tests/Fp/Fp2021c');
+    }
+    public function daigakuZei2025a()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2025a');
+    }
+    public function daigakuZei2025b()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2025b');
+    }
+    public function daigakuZei2025c()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2025c');
+    }
+    public function daigakuZei2024a()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2024a');
+    }
+    public function daigakuZei2024b()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2024b');
+    }
+    public function daigakuZei2024c()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2024c');
+    }
+    public function daigakuZei2023a()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2023a');
+    }
+    public function daigakuZei2023b()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2023b');
+    }
+    public function daigakuZei2023c()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2023c');
+    }
+    public function daigakuZei2022a()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2022a');
+    }
+    public function daigakuZei2022b()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2022b');
+    }
+    public function daigakuZei2022c()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2022c');
+    }
+    public function daigakuZei2021a()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2021a');
+    }
+    public function daigakuZei2021b()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2021b');
+    }
+    public function daigakuZei2021c()
+    {
+        return Inertia::render('Daigaku/Tests/Zei/Zei2021c');
+    }
+    public function daigakuSisan2025a()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2025a');
+    }
+    public function daigakuSisan2025b()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2025b');
+    }
+    public function daigakuSisan2025c()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2025c');
+    }
+    public function daigakuSisan2024a()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2024a');
+    }
+    public function daigakuSisan2024b()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2024b');
+    }
+    public function daigakuSisan2024c()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2024c');
+    }
+    public function daigakuSisan2023a()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2023a');
+    }
+    public function daigakuSisan2023b()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2023b');
+    }
+    public function daigakuSisan2023c()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2023c');
+    }
+    public function daigakuSisan2022a()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2022a');
+    }
+    public function daigakuSisan2022b()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2022b');
+    }
+    public function daigakuSisan2022c()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2022c');
+    }
+    public function daigakuSisan2021a()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2021a');
+    }
+    public function daigakuSisan2021b()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2021b');
+    }
+    public function daigakuSisan2021c()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2021c');
+    }
+    public function daigakuKigyo2025a()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2025a');
+    }
+    public function daigakuKigyo2025b()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2025b');
+    }
+    public function daigakuKigyo2025c()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2025c');
+    }
+    public function daigakuKigyo2024a()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2024a');
+    }
+    public function daigakuKigyo2024b()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2024b');
+    }
+    public function daigakuKigyo2024c()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2024c');
+    }
+    public function daigakuKigyo2023a()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2023a');
+    }
+    public function daigakuKigyo2023b()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2023b');
+    }
+    public function daigakuKigyo2023c()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2023c');
+    }
+    public function daigakuKigyo2022a()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2022a');
+    }
+    public function daigakuKigyo2022b()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2022b');
+    }
+    public function daigakuKigyo2022c()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2022c');
+    }
+    public function daigakuKigyo2021a()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2021a');
+    }
+    public function daigakuKigyo2021b()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2021b');
+    }
+    public function daigakuKigyo2021c()
+    {
+        return Inertia::render('Daigaku/Tests/Kigyo/Kigyo2021c');
+    }
+    public function daigakuSyakai2025a()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2025a');
+    }
+    public function daigakuSyakai2025b()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2025b');
+    }
+    public function daigakuSyakai2025c()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2025c');
+    }
+    public function daigakuSyakai2024a()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2024a');
+    }
+    public function daigakuSyakai2024b()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2024b');
+    }
+    public function daigakuSyakai2024c()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2024c');
+    }
+    public function daigakuSyakai2023a()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2023a');
+    }
+    public function daigakuSyakai2023b()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2023b');
+    }
+    public function daigakuSyakai2023c()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2023c');
+    }
+    public function daigakuSyakai2022a()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2022a');
+    }
+    public function daigakuSyakai2022b()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2022b');
+    }
+    public function daigakuSyakai2022c()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2022c');
+    }
+    public function daigakuSyakai2021a()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2021a');
+    }
+    public function daigakuSyakai2021b()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2021b');
+    }
+    public function daigakuSyakai2021c()
+    {
+        return Inertia::render('Daigaku/Tests/Syakai/Syakai2021c');
     }
 
     // このサイトについて

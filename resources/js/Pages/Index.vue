@@ -7,6 +7,7 @@ import SectionHeader from "@/Pages/Index/SectionHeader.vue";
 import SubjectTabs from "@/Pages/Index/SubjectTabs.vue";
 import YearBlock from "@/Pages/Index/YearBlock.vue";
 import AdSenseUnit from "@/Components/AdSenseUnit.vue";
+import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
 // 科目タブ・年度/フォーム情報は constants 側に集約して再利用する
 const sections = INDEX_SECTIONS;
@@ -81,14 +82,7 @@ const pricingHref = computed(() =>
                         </span>
                     </div>
 
-                    <div class="mb-4 text-left sm:text-right">
-                        <Link
-                            :href="route('daigaku.index')"
-                            class="text-xs font-semibold text-indigo-600 underline decoration-indigo-300 underline-offset-2 transition hover:text-indigo-700"
-                        >
-                            ▶ 姉妹サイト：生命保険大学課程 過去問解説
-                        </Link>
-                    </div>
+                    <SisterSiteLinks current-site="seiho" class="mb-4" />
                     <p class="mb-3 text-xs font-semibold text-gray-500">
                         科目を選択してください
                     </p>

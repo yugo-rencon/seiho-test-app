@@ -9,6 +9,8 @@ interface Props {
 const props = defineProps<Props>()
 const page = usePage();
 const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
+const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
 </script>
 
@@ -21,8 +23,12 @@ const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
           :class="
             isDaigaku
               ? 'bg-gradient-to-b from-blue-500 to-cyan-500'
+              : isSenmon
+                ? 'bg-gradient-to-b from-emerald-500 to-lime-500'
+                : isOuyou
+                  ? 'bg-gradient-to-b from-amber-500 to-orange-500'
               : isIppan
-                ? 'bg-gradient-to-b from-rose-400 to-red-400'
+                ? 'bg-gradient-to-b from-rose-500 to-red-500'
                 : 'bg-gradient-to-b from-blue-500 to-purple-500'
           "
         ></div>

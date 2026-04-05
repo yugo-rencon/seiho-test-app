@@ -84,7 +84,7 @@ const accentTextClass = computed(() =>
           : props.isOuyou
             ? "text-amber-500"
             : props.isIppan
-              ? "text-rose-500"
+              ? "text-red-500"
             : "text-purple-500",
 );
 const resolveFormHref = (subjectKey, yearLabel, form) => {
@@ -160,7 +160,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                             : isOuyou
                                                 ? 'pointer-events-none bg-amber-50 text-amber-700'
                                               : isIppan
-                                                ? 'pointer-events-none bg-rose-50 text-rose-700'
+                                                ? 'pointer-events-none bg-red-50 text-red-700'
                                             : 'pointer-events-none bg-purple-50 text-purple-700'
                                         : isDaigaku
                                           ? 'text-blue-700 hover:bg-blue-50'
@@ -169,7 +169,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                             : isOuyou
                                               ? 'text-amber-700 hover:bg-amber-50'
                                             : isIppan
-                                              ? 'text-rose-700 hover:bg-rose-50'
+                                              ? 'text-red-700 hover:bg-red-50'
                                           : 'text-purple-700 hover:bg-purple-50'
                                 "
                                 :aria-current="isActive(mypageRouteName()) ? 'page' : null"
@@ -190,7 +190,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                           : isOuyou
                                             ? 'text-amber-700 hover:bg-amber-50'
                                           : isIppan
-                                            ? 'text-rose-700 hover:bg-rose-50'
+                                            ? 'text-red-700 hover:bg-red-50'
                                             : 'text-purple-700 hover:bg-purple-50'
                                 "
                                 @click="closeMenu"
@@ -285,7 +285,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                                           : isOuyou
                                                             ? 'border-amber-200 bg-amber-100 text-amber-700'
                                                           : isIppan
-                                                            ? 'border-rose-200 bg-rose-100 text-rose-700'
+                                                            ? 'border-red-200 bg-red-100 text-red-700'
                                                         : 'border-purple-200 bg-purple-100 text-purple-700'
                                                     : isDaigaku
                                                       ? 'border-gray-200 bg-white text-gray-600 hover:border-blue-200'
@@ -294,7 +294,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                                         : isOuyou
                                                           ? 'border-gray-200 bg-white text-gray-600 hover:border-amber-200'
                                                         : isIppan
-                                                          ? 'border-gray-200 bg-white text-gray-600 hover:border-rose-200'
+                                                          ? 'border-gray-200 bg-white text-gray-600 hover:border-red-200'
                                                       : 'border-gray-200 bg-white text-gray-600 hover:border-purple-200'
                                             "
                                             @click="setActiveYear(subject.key, yearLabel)"
@@ -347,7 +347,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                                               : isOuyou
                                                                 ? 'hover:text-amber-700'
                                                               : isIppan
-                                                                ? 'hover:text-rose-700'
+                                                                ? 'hover:text-red-700'
                                                                 : 'hover:text-purple-700'
                                                     "
                                                     @click="closeMenu"
@@ -367,7 +367,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                                                   : isOuyou
                                                                     ? 'text-amber-400'
                                                                   : isIppan
-                                                                    ? 'text-rose-400'
+                                                                    ? 'text-red-400'
                                                                     : 'text-indigo-400'
                                                         "
                                                         fill="none"
@@ -412,7 +412,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                           : isOuyou
                                             ? 'hover:bg-amber-50 hover:text-amber-700'
                                           : isIppan
-                                            ? 'hover:bg-rose-50 hover:text-rose-700'
+                                            ? 'hover:bg-red-50 hover:text-red-700'
                                             : 'hover:bg-purple-50 hover:text-purple-700'
                                 "
                                 @click="closeMenu"
@@ -433,7 +433,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                           : isOuyou
                                             ? 'hover:bg-amber-50 hover:text-amber-700'
                                           : isIppan
-                                            ? 'hover:bg-rose-50 hover:text-rose-700'
+                                            ? 'hover:bg-red-50 hover:text-red-700'
                                             : 'hover:bg-purple-50 hover:text-purple-700'
                                 "
                                 @click="closeMenu"

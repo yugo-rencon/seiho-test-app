@@ -17,6 +17,11 @@ Route::get('daigaku', [TestController::class, 'daigakuIndex'])->name('daigaku.in
 Route::get('senmon', [TestController::class, 'senmonIndex'])->name('senmon.index');
 Route::get('ouyou', [TestController::class, 'ouyouIndex'])->name('ouyou.index');
 Route::get('ippan', [TestController::class, 'ippanIndex'])->name('ippan.index');
+Route::get('ippan/2025-7-12-a', [TestController::class, 'ippan2025h2a'])->name('ippan.2025h2a');
+Route::get('ippan/2025-7-12-b', [TestController::class, 'ippan2025h2b'])->name('ippan.2025h2b');
+Route::get('ippan/2025-7-12-c', [TestController::class, 'ippan2025h2c'])->name('ippan.2025h2c');
+Route::get('ippan/2025-7-12-d', [TestController::class, 'ippan2025h2d'])->name('ippan.2025h2d');
+Route::get('ippan/2025-7-12-e', [TestController::class, 'ippan2025h2e'])->name('ippan.2025h2e');
 Route::get('daigaku/pricing', [TestController::class, 'daigakuPricing'])->name('daigaku.pricing');
 Route::get('daigaku/policy', [TestController::class, 'policy'])->name('daigaku.policy');
 Route::get('daigaku/terms', [TestController::class, 'terms'])->name('daigaku.terms');

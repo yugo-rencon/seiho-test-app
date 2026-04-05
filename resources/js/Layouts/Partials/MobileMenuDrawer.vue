@@ -326,7 +326,7 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                                           : isOuyou
                                                             ? 'from-amber-400 to-orange-400'
                                                           : isIppan
-                                                            ? 'from-rose-400 to-pink-400'
+                                                            ? 'from-rose-300 to-red-300'
                                                             : 'from-indigo-400 to-purple-400'
                                                 "
                                             ></div>

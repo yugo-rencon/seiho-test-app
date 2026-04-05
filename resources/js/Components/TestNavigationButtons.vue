@@ -20,11 +20,14 @@ const props = defineProps({
 
 const page = usePage();
 const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
 
 const buttonClass = computed(() =>
   isDaigaku.value
     ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-sky-200 text-sky-700 bg-white shadow-sm hover:bg-sky-50 transition"
-    : "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
+    : isIppan.value
+      ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-rose-200 text-rose-700 bg-white shadow-sm hover:bg-rose-50 transition"
+      : "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
 );
 
 const isPaidCurrentPage = computed(() => {

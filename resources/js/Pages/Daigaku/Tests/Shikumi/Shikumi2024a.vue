@@ -21,6 +21,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険者"
+                    :relatedProblems="['2025a1', '2024a1']"
                     :contents="[
                         '正しい',
                         '登録 → 免許', //p3
@@ -33,6 +34,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任開始の時期"
+                    :relatedProblems="['2025c25', '2024a2', '2024b2', '2024c2', '2023b1', '2023c12']"
                     :contents="[
                         '正しい',
                         '必ず一致する → 必ずしも一致しないことがある', //p10
@@ -45,6 +47,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払込み"
+                    :relatedProblems="['2024a3', '2024b14', '2024c14', '2023a14', '2023b14']"
                     :contents="[
                         '立替入金も禁止されていない → 保険業法で禁じられている', //p13
                         '同一とは評価されない → 同一と評価される', //p14
@@ -57,6 +60,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="前納・一括払と一時払"
+                    :relatedProblems="['2025a2', '2025b2', '2025c2', '2024a4', '2023a2', '2023a41', '2023b2', '2023c2']"
                     :contents="[
                         'いずれも月払契約の場合 → 一括払の月払契約の場合', //p21
                         '保険金受取人 → 保険契約者', //p21
@@ -69,6 +73,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金の支払い"
+                    :relatedProblems="['2025a3', '2025b14', '2024a5', '2024b4', '2023a3', '2023b25']"
                     :contents="[
                         '正しい',
                         '消息を絶った時点に遡って → 7年の期間が満了したとき', //p23
@@ -81,6 +86,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="被保険者集団"
+                    :relatedProblems="['2025c7', '2024a6', '2024b6', '2024c6', '2023a6', '2023b6', '2023c6']"
                     :contents="[
                         '収支相当の原則が有効に機能していること → 大数の法則が作用し得る程度に十分大量の被保険者が存在すること', //p67
                         '厚生労働省 → 金融庁長官', //p67
@@ -93,6 +99,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の手段"
+                    :relatedProblems="['2025a5', '2025b30', '2024a7', '2024b16', '2024c25', '2023a15', '2023b5', '2023b30']"
                     :contents="[
                         '告知義務者本人の署名は必要ない → 本人の署名が必要', //p 61
                         '個別方式は行われていない → 一括方式と個別方式が行われている', //p62
@@ -105,6 +112,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="（自動）振替貸付および契約者貸付"
+                    :relatedProblems="['2025a9', '2025b9', '2025c9', '2024a8', '2023b8']"
                     :contents="[
                         '保険約款に規定がない契約 → 保険約款に規定がある契約のみ', //p112
                         '経過期間に関わらず → 猶予期間満了後一定期間内の場合', //p112
@@ -117,6 +125,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約内容の変更"
+                    :relatedProblems="['2025b21', '2024a9', '2024b9', '2024c9', '2023b18', '2023c7']"
                     :contents="[
                         '元利金を差し引く前の金額 → 元利金を差し引いた残額', //p114
                         '変更時点の計算基礎率 → 元契約と同じ計算基礎率', //p114
@@ -129,6 +138,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障を目的とした主契約"
+                    :relatedProblems="['2024a10', '2024b10', '2024c10', '2023a10', '2023b10', '2023c10']"
                     :contents="[
                         '終身タイプの商品はない → 定期タイプと終身タイプがある', //p140
                         '満期保険を支払う商品が一般的 → 一般に満期保険金はない', //p140
@@ -141,6 +151,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="特約の種類"
+                    :relatedProblems="['2025b11', '2024a11']"
                     :contents="[
                         '正しい',
                         '特約は継続する → 特約は消滅する', //p156
@@ -153,6 +164,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="共済制度の特徴"
+                    :relatedProblems="['2025a11', '2025b23', '2024a12', '2024b24', '2023a22', '2023b22', '2023c22']"
                     :contents="[
                         '正しい',
                         '営利を目的とする → 営利を目的としてはならない', //p165
@@ -165,6 +177,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反による保険契約の解除"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16', '2024a13', '2024c5', '2023a5', '2023c21']"
                     :contents="[
                         '正しい',
                         '相手方に発信した時点 → 相手方に到達した時点', //p40
@@ -177,6 +190,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解約・取消し・無効等"
+                    :relatedProblems="['2025a4', '2025a42', '2025b4', '2025b42', '2025c4', '2025c42', '2024a14', '2024b5', '2023b4']"
                     :contents="[
                         '正しい',
                         'いずれの場合も → 後者（詐欺による契約）の場合は返還されない', //p42
@@ -189,6 +203,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金等の請求手続き"
+                    :relatedProblems="['2025b40', '2025c5', '2024a15', '2024b15', '2024c15', '2023a4', '2023b15']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -201,6 +216,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効・復活"
+                    :relatedProblems="['2025a15', '2025b3', '2025b15', '2025c3', '2025c15', '2024a16', '2024b3', '2023c4']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -213,6 +229,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の原理"
+                    :relatedProblems="['2024a17', '2024b17', '2024c17', '2023c24']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -225,6 +242,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果の検証"
+                    :relatedProblems="['2025a18', '2025b20', '2025b44', '2025c44', '2024a18', '2024b18', '2024b43', '2024c30', '2023a18']"
                     :contents="[
                         '活かす目的に適している → 適さない', //p69
                         '正しい',
@@ -237,6 +255,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金（毎年配当型）の支払いと計算方法"
+                    :relatedProblems="['2024a19', '2024b19', '2024c19', '2023b20']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -249,6 +268,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法（毎年配当型）"
+                    :relatedProblems="['2025a21', '2025c47', '2024a20']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -261,6 +281,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金発生の仕組みと配当金との関係"
+                    :relatedProblems="['2025a19', '2025b19', '2025c19', '2024a21', '2024c20', '2023b24']"
                     :contents="[
                         '正しい',
                         '営業保険料の総額 → 危険保険金', //p103
@@ -273,6 +294,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保障を厚くする特約"
+                    :relatedProblems="['2024a22', '2024b22', '2024c22', '2023a23', '2023b11']"
                     :contents="[
                         '逓増定期保険特約はない → 逓増定期保険特約もある', //p156
                         '正しい',
@@ -285,6 +307,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="主契約の種類"
+                    :relatedProblems="['2025c21', '2024a23', '2024c23', '2023c14']"
                     :contents="[
                         '給付金の支払いに制限がない → 契約後1年間は給付金額が半額などの制限あり', //p151
                         '正しい',
@@ -297,6 +320,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
+                    :relatedProblems="['2025a24', '2025b24', '2025c11', '2025c24', '2024a24', '2024b12', '2024c24', '2023a12', '2023c20']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -310,6 +334,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="危険の要素"
+                    :relatedProblems="['2024a25']"
                     :contents="[
                         '体格',
                         '過重体',
@@ -331,6 +356,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="配当の種類と仕組み"
+                    :relatedProblems="['2025a20', '2025c30', '2024a30', '2023c30']"
                     :contents="[
                         '通常配当',
                         '内部留保',
@@ -352,6 +378,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="チルメル式保険料積立金"
+                    :relatedProblems="['2024a35', '2024b35', '2024c35']"
                     :contents="[
                         '付加保険料',
                         '純保険料',
@@ -373,16 +400,56 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問40〜49
-                        { questionTitle: '生命保険契約の定義', content: '正しい' }, //40
-                        { questionTitle: '年払・半年払保険料の取扱い', content: '正しい' }, //41
-                        { questionTitle: 'BMI', content: '正しい' }, //42
-                        { questionTitle: '契約確認', content: '正しい' }, //43
-                        { questionTitle: '死亡率と生存率の関係', content: '生存率：1 - （1 / 死亡率） → 1 - 死亡率<br>死亡率：1 - （1 / 生存率） → 1 - 生存率' }, //44 p79
-                        { questionTitle: '生命保険会社で使用している経験表', content: '2021 → 2018' }, //45 p78
-                        { questionTitle: '平均寿命・平均余命', content: '平均寿命 ↔︎ 平均余命' }, //46 p79
-                        { questionTitle: '個人年金保険の年金種類の変更', content: '正しい' }, //47
-                        { questionTitle: '特定疾病保障保険（三大疾病保障保険）', content: '契約は継続する → 契約は消滅する' }, //48 p137
-                        { questionTitle: '少額短期保険業', content: 'いずれも保険期間1年以内 → 損害保険は2年以内' }, //49 p198
+                        {
+                            questionTitle: '生命保険契約の定義',
+                            relatedProblems: ['2024a40', '2024b40', '2024c40'],
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '年払・半年払保険料の取扱い',
+                            relatedProblems: ['2024a41', '2023b43', '2023c44'],
+                            content: '正しい',
+                        }, //41
+                        {
+                            questionTitle: 'BMI',
+                            relatedProblems: ['2024a42', '2024b42', '2024c42', '2023a42', '2023b42', '2023c42'],
+                            content: '正しい',
+                        }, //42
+                        {
+                            questionTitle: '契約確認',
+                            relatedProblems: ['2025c43', '2024a43', '2024b44', '2023a44'],
+                            content: '正しい',
+                        }, //43
+                        {
+                            questionTitle: '死亡率と生存率の関係',
+                            relatedProblems: ['2025a46', '2024a44', '2023b45'],
+                            content: '生存率：1 - （1 / 死亡率） → 1 - 死亡率<br>死亡率：1 - （1 / 生存率） → 1 - 生存率',
+                        }, //44 p79
+                        {
+                            questionTitle: '生命保険会社で使用している経験表',
+                            relatedProblems: ['2025c46', '2024a45'],
+                            content: '2021 → 2018',
+                        }, //45 p78
+                        {
+                            questionTitle: '平均寿命・平均余命',
+                            relatedProblems: ['2025a47', '2024a46', '2024b46', '2024c46', '2023a46', '2023b46', '2023c46'],
+                            content: '平均寿命 ↔︎ 平均余命',
+                        }, //46 p79
+                        {
+                            questionTitle: '個人年金保険の年金種類の変更',
+                            relatedProblems: ['2024a47', '2024b47', '2024c47', '2023c49'],
+                            content: '正しい',
+                        }, //47
+                        {
+                            questionTitle: '特定疾病保障保険（三大疾病保障保険）',
+                            relatedProblems: ['2025a22', '2025b22', '2025c22', '2024a48', '2024b48', '2023a47'],
+                            content: '契約は継続する → 契約は消滅する',
+                        }, //48 p137
+                        {
+                            questionTitle: '少額短期保険業',
+                            relatedProblems: ['2024a49', '2024c49'],
+                            content: 'いずれも保険期間1年以内 → 損害保険は2年以内',
+                        }, //49 p198
                     ]"
                 />
             </div>

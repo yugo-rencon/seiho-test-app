@@ -38,6 +38,26 @@ class TestController extends Controller
     {
         return Inertia::render('Ippan/Index');
     }
+    public function ippan2025h2a()
+    {
+        return Inertia::render('Ippan/Tests/Ippan2025h2a');
+    }
+    public function ippan2025h2b()
+    {
+        return Inertia::render('Ippan/Tests/Ippan2025h2b');
+    }
+    public function ippan2025h2c()
+    {
+        return Inertia::render('Ippan/Tests/Ippan2025h2c');
+    }
+    public function ippan2025h2d()
+    {
+        return Inertia::render('Ippan/Tests/Ippan2025h2d');
+    }
+    public function ippan2025h2e()
+    {
+        return Inertia::render('Ippan/Tests/Ippan2025h2e');
+    }
 
     // 大学課程: 生命保険のしくみと個人保険商品 2025年度 フォームA
     public function daigakuShikumiKojin2025a()

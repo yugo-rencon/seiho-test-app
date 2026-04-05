@@ -227,7 +227,7 @@ onBeforeUnmount(() => {
             isDaigakuPage
                 ? 'bg-[#f7fbff]'
                 : isIppanPage
-                  ? 'bg-[#f8fcf8]'
+                  ? 'bg-[#fff9f9]'
                   : 'bg-[#fdfbff]'
         "
     >

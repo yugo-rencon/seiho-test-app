@@ -56,7 +56,7 @@ const isActive = (name) => route().current(name);
                                   : isOuyou
                                     ? 'bg-gradient-to-r from-amber-600 to-orange-500'
                                   : isIppan
-                                    ? 'bg-gradient-to-r from-rose-600 to-pink-500'
+                                    ? 'bg-gradient-to-r from-rose-500 to-red-400'
                                   : 'bg-gradient-to-r from-indigo-600 to-purple-600'
                         "
                     >
@@ -86,7 +86,7 @@ const isActive = (name) => route().current(name);
                                             ? 'pointer-events-none text-blue-700'
                                             : isSenmon
                                               ? 'pointer-events-none text-emerald-700'
-                                            : isOuyou
+                                              : isOuyou
                                                 ? 'pointer-events-none text-amber-700'
                                               : isIppan
                                                 ? 'pointer-events-none text-rose-700'

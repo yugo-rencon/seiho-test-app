@@ -9,6 +9,7 @@ interface Props {
 const props = defineProps<Props>()
 const page = usePage();
 const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
 </script>
 
 <template>
@@ -17,7 +18,13 @@ const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
       <div class="flex items-center gap-3 mb-3">
         <div
           class="w-1.5 h-8 rounded-full"
-          :class="isDaigaku ? 'bg-gradient-to-b from-blue-500 to-cyan-500' : 'bg-gradient-to-b from-blue-500 to-purple-500'"
+          :class="
+            isDaigaku
+              ? 'bg-gradient-to-b from-blue-500 to-cyan-500'
+              : isIppan
+                ? 'bg-gradient-to-b from-rose-400 to-red-400'
+                : 'bg-gradient-to-b from-blue-500 to-purple-500'
+          "
         ></div>
         <h1 class="text-xl font-extrabold text-gray-800 leading-tight">{{ props.title }}</h1>
       </div>

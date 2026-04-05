@@ -161,7 +161,7 @@ defineProps({
                                       : isOuyou
                                         ? 'bg-gradient-to-r from-amber-600 to-orange-500'
                                       : isIppan
-                                        ? 'bg-gradient-to-r from-rose-600 to-pink-500'
+                                        ? 'bg-gradient-to-r from-rose-500 to-red-400'
                                       : 'bg-gradient-to-r from-indigo-600 to-purple-600'
                             "
                         >

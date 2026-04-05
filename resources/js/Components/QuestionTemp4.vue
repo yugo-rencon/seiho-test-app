@@ -16,7 +16,13 @@
             <div class="flex items-start gap-2 my-4">
                 <div
                     class="w-1.5 h-6 rounded-full"
-                    :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
+                    :class="
+                        isDaigaku
+                            ? 'bg-gradient-to-b from-blue-400 to-cyan-400'
+                            : isIppan
+                                ? 'bg-gradient-to-b from-rose-400 to-red-400'
+                                : 'bg-gradient-to-b from-purple-400 to-blue-400'
+                    "
                 ></div>
                 <h2 class="text-base font-bold leading-tight text-gray-700">
                     <span class="mr-2 inline-block whitespace-nowrap">問{{ item.questionNo }}</span>
@@ -47,7 +53,7 @@
                 <template v-if="isStructuredExplanation(item.content.explanation)">
                     <div
                         class="question-temp4-structured text-sm sm:text-base leading-relaxed text-gray-800"
-                        :class="{ 'is-daigaku': isDaigaku }"
+                        :class="{ 'is-daigaku': isDaigaku, 'is-ippan': isIppan }"
                     >
                         <template
                             v-for="(part, partIndex) in item.content.explanation"
@@ -96,7 +102,7 @@
                 <div
                     v-else
                     class="question-temp4-explanation text-sm sm:text-base leading-relaxed text-gray-800"
-                    :class="{ 'is-daigaku': isDaigaku }"
+                    :class="{ 'is-daigaku': isDaigaku, 'is-ippan': isIppan }"
                     v-html="item.content.explanation"
                 ></div>
             </div>
@@ -195,6 +201,7 @@ const props = defineProps({
 
 const page = usePage();
 const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 

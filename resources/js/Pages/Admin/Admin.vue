@@ -114,7 +114,7 @@ const formatDateTime = (value) => {
 
             <div
                 v-if="activeTab === 'dashboard'"
-                class="grid gap-3 sm:grid-cols-3 mb-6"
+                class="mb-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-5"
             >
                 <div class="rounded-xl border border-gray-100 bg-white p-4">
                     <p class="text-xs text-gray-500">総ユーザー数</p>
@@ -132,6 +132,18 @@ const formatDateTime = (value) => {
                     <p class="text-xs text-gray-500">今月の新規登録数</p>
                     <p class="mt-1 text-2xl font-bold text-gray-900">
                         {{ stats.newUsersThisMonth }}
+                    </p>
+                </div>
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-xs text-gray-500">生保講座 売上件数</p>
+                    <p class="mt-1 text-2xl font-bold text-indigo-700">
+                        {{ stats.seihoSalesCount }}
+                    </p>
+                </div>
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-xs text-gray-500">生保大学 売上件数</p>
+                    <p class="mt-1 text-2xl font-bold text-blue-700">
+                        {{ stats.daigakuSalesCount }}
                     </p>
                 </div>
             </div>
@@ -197,6 +209,8 @@ const formatDateTime = (value) => {
                             <th class="px-3 py-2">ID</th>
                             <th class="px-3 py-2">メール</th>
                             <th class="px-3 py-2">プレミアム</th>
+                            <th class="px-3 py-2">生保講座</th>
+                            <th class="px-3 py-2">生保大学</th>
                             <th class="px-3 py-2">登録日</th>
                             <th class="px-3 py-2">最終購入日時</th>
                         </tr>
@@ -225,6 +239,30 @@ const formatDateTime = (value) => {
                                     {{ user.is_premium ? "有効" : "無効" }}
                                 </span>
                             </td>
+                            <td class="px-3 py-2 text-gray-700">
+                                <span
+                                    class="rounded-full px-2 py-1 text-xs font-semibold"
+                                    :class="
+                                        user.seiho_paid_count > 0
+                                            ? 'bg-indigo-50 text-indigo-700'
+                                            : 'bg-gray-100 text-gray-600'
+                                    "
+                                >
+                                    {{ user.seiho_paid_count > 0 ? "購入済み" : "未購入" }}
+                                </span>
+                            </td>
+                            <td class="px-3 py-2 text-gray-700">
+                                <span
+                                    class="rounded-full px-2 py-1 text-xs font-semibold"
+                                    :class="
+                                        user.daigaku_paid_count > 0
+                                            ? 'bg-blue-50 text-blue-700'
+                                            : 'bg-gray-100 text-gray-600'
+                                    "
+                                >
+                                    {{ user.daigaku_paid_count > 0 ? "購入済み" : "未購入" }}
+                                </span>
+                            </td>
                             <td class="px-3 py-2 text-gray-600">
                                 {{ formatDateTime(user.created_at) }}
                             </td>
@@ -234,7 +272,7 @@ const formatDateTime = (value) => {
                         </tr>
                         <tr v-if="users.data.length === 0">
                             <td
-                                colspan="5"
+                                colspan="7"
                                 class="px-3 py-8 text-center text-sm text-gray-500"
                             >
                                 データがありません。
@@ -274,6 +312,28 @@ const formatDateTime = (value) => {
                     </div>
                     <div class="mt-1 text-xs text-gray-600">
                         最終購入日時: {{ formatDateTime(user.last_paid_at) }}
+                    </div>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                        <span
+                            class="rounded-full px-2 py-1 text-xs font-semibold"
+                            :class="
+                                user.seiho_paid_count > 0
+                                    ? 'bg-indigo-50 text-indigo-700'
+                                    : 'bg-gray-100 text-gray-600'
+                            "
+                        >
+                            生保講座: {{ user.seiho_paid_count > 0 ? "購入済み" : "未購入" }}
+                        </span>
+                        <span
+                            class="rounded-full px-2 py-1 text-xs font-semibold"
+                            :class="
+                                user.daigaku_paid_count > 0
+                                    ? 'bg-blue-50 text-blue-700'
+                                    : 'bg-gray-100 text-gray-600'
+                            "
+                        >
+                            生保大学: {{ user.daigaku_paid_count > 0 ? "購入済み" : "未購入" }}
+                        </span>
                     </div>
                 </div>
 

@@ -10,7 +10,13 @@
             <div class="flex items-start gap-2 my-4">
                 <div
                     class="w-1.5 h-6 rounded-full"
-                    :class="isDaigaku ? 'bg-gradient-to-b from-blue-400 to-cyan-400' : 'bg-gradient-to-b from-purple-400 to-blue-400'"
+                    :class="
+                        isDaigaku
+                            ? 'bg-gradient-to-b from-blue-400 to-cyan-400'
+                            : isIppan
+                                ? 'bg-gradient-to-b from-rose-400 to-red-400'
+                                : 'bg-gradient-to-b from-purple-400 to-blue-400'
+                    "
                 ></div>
                 <h2 class="text-base font-bold leading-tight text-gray-700">
                     <span class="mr-2 inline-block whitespace-nowrap">問題{{ item.questionNo }}</span>
@@ -94,10 +100,19 @@ const props = defineProps({
         type: Array,
         default: () => [],
     },
+    useAnswerLabelForAll: {
+        type: Boolean,
+        default: false,
+    },
+    applyChoicePrefix: {
+        type: Boolean,
+        default: true,
+    },
 });
 
 const page = usePage();
 const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 
@@ -110,8 +125,9 @@ const normalizedItems = computed(() => {
     if (props.items.length > 0) {
         return props.items.map((item: any, index: number) => ({
             content: item?.content ?? "",
-            // Temp2 の前半10問（通常は問31〜40）は、label 未指定なら自動で「解」
-            label: item?.label ?? (index < 10 ? "解" : getLabel(index)),
+            // 既定は従来互換（前半10問のみ「解」）。
+            // useAnswerLabelForAll を有効にすると、label 未指定時は全問「解」。
+            label: item?.label ?? (props.useAnswerLabelForAll ? "解" : (index < 10 ? "解" : getLabel(index))),
             note: item?.note ?? getNote(index),
             questionNo: Number(props.questionNumber) + index,
             questionTitle: item?.questionTitle ?? getQuestionTitle(index),
@@ -189,6 +205,10 @@ const normalizeBiArrowHtml = (value: unknown): string => {
 const formatContent = (item: { label: string; content: string }) => {
     const raw = String(item?.content ?? "");
     const label = String(item?.label ?? "");
+
+    if (!props.applyChoicePrefix) {
+        return normalizeBiArrowHtml(raw);
+    }
 
     // 択一ラベルは、label に応じて接頭辞を自動付与する
     if (label === "ア" || label === "イ") {

@@ -23,6 +23,17 @@ const activePeriodId = ref(IPPAN_PERIODS[0].id);
 const activePeriod = computed(
     () => IPPAN_PERIODS.find((period) => period.id === activePeriodId.value) ?? IPPAN_PERIODS[0],
 );
+
+const formRouteMap = {
+    "2025-jul-dec-a": "ippan.2025h2a",
+    "2025-jul-dec-b": "ippan.2025h2b",
+    "2025-jul-dec-c": "ippan.2025h2c",
+    "2025-jul-dec-d": "ippan.2025h2d",
+    "2025-jul-dec-e": "ippan.2025h2e",
+};
+
+const getFormRoute = (year, periodId, form) =>
+    formRouteMap[`${year}-${periodId}-${form}`] ?? null;
 </script>
 
 <template>
@@ -30,12 +41,12 @@ const activePeriod = computed(
         <div class="container mx-auto m-10 max-w-6xl px-5 sm:px-6">
             <div class="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:rounded-3xl sm:p-8">
                 <div
-                    class="absolute -right-24 -top-24 hidden h-56 w-56 rounded-full bg-gradient-to-br from-rose-100 to-pink-100 opacity-40 blur-3xl md:block"
+                    class="absolute -right-24 -top-24 hidden h-56 w-56 rounded-full bg-gradient-to-br from-rose-50 to-red-100 opacity-40 blur-3xl md:block"
                 />
 
                 <div class="relative">
                     <div
-                        class="mb-5 rounded-xl border border-rose-200 bg-rose-50/80 px-3 py-2 text-left text-[12px] leading-5 text-rose-800 sm:px-4 sm:py-2.5 sm:text-center"
+                        class="mb-5 rounded-xl border border-rose-200 bg-rose-50/80 px-3 py-2 text-left text-[12px] leading-5 text-rose-700 sm:px-4 sm:py-2.5 sm:text-center"
                     >
                         <span class="block font-semibold tracking-wide">
                             生命保険一般課程の過去問解説ページです。
@@ -72,7 +83,7 @@ const activePeriod = computed(
                             class="rounded-full border px-4 py-2 text-[13px] font-semibold transition-colors sm:text-sm"
                             :class="
                                 activePeriodId === period.id
-                                    ? 'border-transparent bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow'
+                                    ? 'border-transparent bg-gradient-to-r from-rose-400 to-red-400 text-white shadow'
                                     : 'border-gray-200 bg-white text-gray-700 hover:border-rose-300'
                             "
                         >
@@ -91,20 +102,33 @@ const activePeriod = computed(
                                     {{ year }}年 {{ activePeriod.label }}
                                 </div>
                                 <span
-                                    class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600"
+                                    class="inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-semibold"
+                                    :class="
+                                        activePeriod.id === 'jul-dec' && year === 2025
+                                            ? 'border-rose-300 bg-rose-50 text-rose-700'
+                                            : 'border-gray-300 bg-gray-50 text-gray-600'
+                                    "
                                 >
-                                    準備中
+                                    {{ activePeriod.id === "jul-dec" && year === 2025 ? "公開中" : "準備中" }}
                                 </span>
                             </div>
 
                             <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
-                                <span
-                                    v-for="form in activePeriod.forms"
-                                    :key="`${activePeriod.id}-${year}-${form}`"
-                                    class="inline-flex w-full cursor-not-allowed items-center justify-center whitespace-nowrap rounded-full border border-gray-200 bg-gray-50 px-2 py-1.5 text-[12px] font-semibold text-gray-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
-                                >
-                                    フォーム{{ form.toUpperCase() }}
-                                </span>
+                                <template v-for="form in activePeriod.forms" :key="`${activePeriod.id}-${year}-${form}`">
+                                    <Link
+                                        v-if="getFormRoute(year, activePeriod.id, form)"
+                                        :href="route(getFormRoute(year, activePeriod.id, form))"
+                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-rose-300 bg-rose-50 px-2 py-1.5 text-[12px] font-semibold text-rose-700 transition hover:border-rose-400 hover:bg-rose-100 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
+                                    >
+                                        フォーム{{ form.toUpperCase() }}
+                                    </Link>
+                                    <span
+                                        v-else
+                                        class="inline-flex w-full cursor-not-allowed items-center justify-center whitespace-nowrap rounded-full border border-gray-200 bg-gray-50 px-2 py-1.5 text-[12px] font-semibold text-gray-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
+                                    >
+                                        フォーム{{ form.toUpperCase() }}
+                                    </span>
+                                </template>
                             </div>
                         </div>
                     </div>

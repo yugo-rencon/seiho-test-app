@@ -21,6 +21,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法に基づく被保険者の同意"
+                    :relatedProblems="['2025a13', '2025c1', '2024c1', '2023c13']"
                     :contents="[
                         '被保険者の同意が必要 → 同意は不要', //p5
                         '正しい',
@@ -33,6 +34,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="前納・一括払と一時払"
+                    :relatedProblems="['2025a2', '2025b2', '2025c2', '2024a4', '2023a2', '2023a41', '2023b2', '2023c2']"
                     :contents="[
                         'いずれも月払契約の場合 → 一括払の月払契約の場合', //p21
                         '正しい',
@@ -45,6 +47,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効・復活"
+                    :relatedProblems="['2025a15', '2025b3', '2025b15', '2025c3', '2025c15', '2024a16', '2024b3', '2023c4']"
                     :contents="[
                         '保険契約は失効しない → 失効する', //p34
                         '翌月初日 → 翌日', //p34
@@ -57,6 +60,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解除・解約・取消し・無効"
+                    :relatedProblems="['2025a4', '2025a42', '2025b4', '2025b42', '2025c4', '2025c42', '2024a14', '2024b5', '2023b4']"
                     :contents="[
                         '解約させる → 消滅させる', //p39
                         '保険業法および定款 → 保険法および保険約款', //p40
@@ -69,6 +73,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金等の請求手続き"
+                    :relatedProblems="['2025b40', '2025c5', '2024a15', '2024b15', '2024c15', '2023a4', '2023b15']"
                     :contents="[
                         '保険法 → 保険約款', //p30
                         '支払免責となる → 支払免責となるような規定はない', //p30
@@ -81,6 +86,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="超過危険の種類"
+                    :relatedProblems="['2025a6', '2025a45', '2025b6', '2025b45', '2025c6', '2025c45', '2024c44']"
                     :contents="[
                         '平坦な曲線をを描く → さまざまな形の曲線を描く', //p73
                         '胃切除 → 高血圧', //p73
@@ -93,6 +99,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="被保険者集団"
+                    :relatedProblems="['2025c7', '2024a6', '2024b6', '2024c6', '2023a6', '2023b6', '2023c6']"
                     :contents="[
                         '集団の平均年齢が変動しないこと → 保険の倫理性が維持されていること', //p66
                         '正しい',
@@ -105,6 +112,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保障見直しに関する諸制度"
+                    :relatedProblems="['2025a8', '2025b8', '2025c8', '2024b21', '2023a9', '2023b9', '2023c9']"
                     :contents="[
                         '転換前契約加入時 → 転換時<br>保険料率は引上げになることはない → 引き上げとなる場合がある', //p121
                         '転換前契約の責任開始日 → 転換契約の責任開始日', //p121
@@ -117,6 +125,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="（自動）振替貸付および契約者貸付"
+                    :relatedProblems="['2025a9', '2025b9', '2025c9', '2024a8', '2023b8']"
                     :contents="[
                         '保険約款に規定がない契約 → 保険約款に規定がある契約のみ', //p112
                         '経過期間に関わらず → 猶予期間満了後一定期間内の場合', //p112
@@ -129,6 +138,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産形成を目的とした主契約"
+                    :relatedProblems="['2025a10', '2025b10', '2025c10', '2024c11', '2023a11', '2023b7']"
                     :contents="[
                         '被保険者が生存している限り → 生死に関係なく<br>残りの保証期間に対する年金や一時金は支払わない → 遺族に支払う', //p145
                         '保険料免除機能が適用される → 保険料免除機能はない', //p146
@@ -141,6 +151,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
+                    :relatedProblems="['2025a24', '2025b24', '2025c11', '2025c24', '2024a24', '2024b12', '2024c24', '2023a12', '2023c20']"
                     :contents="[
                         '火災保険単体 → 火災保険と地震保険セット', //p203
                         '自動車保険 ↔︎ 自動車損害賠償責任保険', //p203
@@ -153,6 +164,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="共済事業とその商品"
+                    :relatedProblems="['2025a12', '2025b12', '2025c12', '2024c12', '2023a24']"
                     :contents="[
                         '正しい',
                         '農業協同組合が単独 → 農業協同組合と全国共済農業協同組合連合会の2組織', //p166
@@ -165,6 +177,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の内容"
+                    :relatedProblems="['2025c13']"
                     :contents="[
                         '正しい',
                         '生命保険会社に入金された時点 → 窓口やATM等で払い込んだ時点', //p16
@@ -177,6 +190,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険会社の主な保険給付の免責事由"
+                    :relatedProblems="['2025a30', '2025b13', '2025c14', '2024b25', '2023b3', '2023c3']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -189,6 +203,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効・復活"
+                    :relatedProblems="['2025a15', '2025b3', '2025b15', '2025c3', '2025c15', '2024a16', '2024b3', '2023c4']"
                     :contents="[
                         '正しい',
                         '解約返戻金の請求権は消滅する → 存続する', //p35
@@ -201,6 +216,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反による保険契約の解除"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16', '2024a13', '2024c5', '2023a5', '2023c21']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -213,6 +229,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の実際"
+                    :relatedProblems="['2025a17', '2025b17', '2025c17']"
                     :contents="[
                         '募集人確認 → 第一次選択', //p59
                         '正しい',
@@ -225,6 +242,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務制度のポイント"
+                    :relatedProblems="['2025c18', '2024c7', '2023a7', '2023c8']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -237,6 +255,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金発生の仕組みと配当金との関係"
+                    :relatedProblems="['2025a19', '2025b19', '2025c19', '2024a21', '2024c20', '2023b24']"
                     :contents="[
                         '正しい',
                         '実際死亡率 ÷ 予定死亡率 × 危険保険金 → （予定死亡率 - 実際死亡率）× 危険保険金', //p103
@@ -249,6 +268,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="収入保障保険（生活保障保険）"
+                    :relatedProblems="['2025c20']"
                     :contents="[
                         '正しい',
                         '年金での支払総額より多い額となる → 少ない額となる', //p138
@@ -261,6 +281,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="主契約の種類"
+                    :relatedProblems="['2025c21', '2024a23', '2024c23', '2023c14']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -273,6 +294,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="特定疾病保障保険（三大疾病保障保険）"
+                    :relatedProblems="['2025a22', '2025b22', '2025c22', '2024a48', '2024b48', '2023a47']"
                     :contents="[
                         '正しい',
                         '高度障害保険金は一切支払われない → 支払うタイプと支払わないタイプがある', //p137
@@ -285,6 +307,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院、手術、通院など病気・ケガの治療全般に備える特約"
+                    :relatedProblems="['2025a23', '2025c23', '2024b11', '2023a13', '2023b21', '2023c18']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -297,6 +320,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
+                    :relatedProblems="['2025a24', '2025b24', '2025c11', '2025c24', '2024a24', '2024b12', '2024c24', '2023a12', '2023c20']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -310,6 +334,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="生命保険会社の責任開始の時期"
+                    :relatedProblems="['2025c25', '2024a2', '2024b2', '2024c2', '2023b1', '2023c12']"
                     :contents="[
                         '承諾',
                         '第1回保険料',
@@ -331,6 +356,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="配当の種類と仕組み"
+                    :relatedProblems="['2025a20', '2025c30', '2024a30', '2023c30']"
                     :contents="[
                         '通常配当',
                         '内部留保',
@@ -352,6 +378,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="解約返戻金の仕組み"
+                    :relatedProblems="['2025a35', '2025b35', '2025c35']"
                     :contents="[
                         '毎決算期',
                         '保険料積立金',
@@ -373,16 +400,56 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問40〜49
-                        { questionTitle: '生命保険契約の形態', content: '正しい' }, //40
-                        { questionTitle: '保険契約の解除請求', content: '保険者 → 保険契約者' }, //41 p43
-                        { questionTitle: '保険契約の解除・解約・取消し・無効', content: '保険料不可分の原則が採用されている → 採用されていない<br>保険契約者に支払わないと規定 → 支払うと規定' }, //42 p44
-                        { questionTitle: '契約確認', content: '正しい' }, //43
-                        { questionTitle: '選択効果の検証等', content: '正しい' }, //44
-                        { questionTitle: '超過危険の種類', content: '正しい' }, //45
-                        { questionTitle: '生命保険会社で使用している経験表', content: '正しい' }, //46
-                        { questionTitle: '配当金の支払方法', content: '保険期間の途中で支払うことができない → 保険契約者から請求があった場合に支払いが可能' }, //47 p109
-                        { questionTitle: '利率変動型積立終身保険（アカウント型保険）', content: '無告知で → 告知が必要' }, //48 p137
-                        { questionTitle: '特定の疾病や損傷の治療に備える特約', content: '正しい' }, //49
+                        {
+                            questionTitle: '生命保険契約の形態',
+                            relatedProblems: ['2025a25', '2025a40', '2025c40', '2024b1', '2023a1', '2023c25'],
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '保険契約の解除請求',
+                            relatedProblems: ['2025a41', '2025c41', '2023c48'],
+                            content: '保険者 → 保険契約者',
+                        }, //41 p43
+                        {
+                            questionTitle: '保険契約の解除・解約・取消し・無効',
+                            relatedProblems: ['2025a4', '2025a42', '2025b4', '2025b42', '2025c4', '2025c42', '2024a14', '2024b5', '2023b4'],
+                            content: '保険料不可分の原則が採用されている → 採用されていない<br>保険契約者に支払わないと規定 → 支払うと規定',
+                        }, //42 p44
+                        {
+                            questionTitle: '契約確認',
+                            relatedProblems: ['2025c43', '2024a43', '2024b44', '2023a44'],
+                            content: '正しい',
+                        }, //43
+                        {
+                            questionTitle: '選択効果の検証等',
+                            relatedProblems: ['2025a18', '2025b20', '2025b44', '2025c44', '2024a18', '2024b18', '2024b43', '2024c30', '2023a18'],
+                            content: '正しい',
+                        }, //44
+                        {
+                            questionTitle: '超過危険の種類',
+                            relatedProblems: ['2025a6', '2025a45', '2025b6', '2025b45', '2025c6', '2025c45', '2024c44'],
+                            content: '正しい',
+                        }, //45
+                        {
+                            questionTitle: '生命保険会社で使用している経験表',
+                            relatedProblems: ['2025c46', '2024a45'],
+                            content: '正しい',
+                        }, //46
+                        {
+                            questionTitle: '配当金の支払方法',
+                            relatedProblems: ['2025a21', '2025c47', '2024a20'],
+                            content: '保険期間の途中で支払うことができない → 保険契約者から請求があった場合に支払いが可能',
+                        }, //47 p109
+                        {
+                            questionTitle: '利率変動型積立終身保険（アカウント型保険）',
+                            relatedProblems: ['2025a48', '2025b48', '2025c48', '2023b12', '2023c15'],
+                            content: '無告知で → 告知が必要',
+                        }, //48 p137
+                        {
+                            questionTitle: '特定の疾病や損傷の治療に備える特約',
+                            relatedProblems: ['2025a49', '2025c49', '2024b23', '2023b23'],
+                            content: '正しい',
+                        }, //49
                     ]"
                 />
             </div>

@@ -20,7 +20,9 @@ class AdminController extends Controller
             ->select(
                 'user_id',
                 DB::raw('MAX(CASE WHEN status = "paid" THEN paid_at ELSE NULL END) AS last_paid_at'),
-                DB::raw('SUM(CASE WHEN status = "paid" THEN 1 ELSE 0 END) AS paid_count')
+                DB::raw('SUM(CASE WHEN status = "paid" THEN 1 ELSE 0 END) AS paid_count'),
+                DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "seiho" THEN 1 ELSE 0 END) AS seiho_paid_count'),
+                DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "daigaku" THEN 1 ELSE 0 END) AS daigaku_paid_count')
             )
             ->groupBy('user_id');
 
@@ -33,9 +35,13 @@ class AdminController extends Controller
                 'users.email',
                 'users.is_admin',
                 'users.is_premium',
+                'users.is_seiho_premium',
+                'users.is_daigaku_premium',
                 'users.created_at',
                 DB::raw('COALESCE(purchase_summary.last_paid_at, NULL) as last_paid_at'),
-                DB::raw('COALESCE(purchase_summary.paid_count, 0) as paid_count')
+                DB::raw('COALESCE(purchase_summary.paid_count, 0) as paid_count'),
+                DB::raw('COALESCE(purchase_summary.seiho_paid_count, 0) as seiho_paid_count'),
+                DB::raw('COALESCE(purchase_summary.daigaku_paid_count, 0) as daigaku_paid_count')
             )
             ->where('users.is_admin', 0)
             ->when($q !== '', function ($query) use ($q) {
@@ -68,6 +74,16 @@ class AdminController extends Controller
             'newUsersThisMonth' => DB::table('users')
                 ->where('is_admin', 0)
                 ->whereBetween('created_at', [$startOfMonth, $endOfMonth])
+                ->count(),
+            'seihoSalesCount' => DB::table('purchases')
+                ->where('status', 'paid')
+                ->where(function ($query) {
+                    $query->where('scope', 'seiho')->orWhereNull('scope');
+                })
+                ->count(),
+            'daigakuSalesCount' => DB::table('purchases')
+                ->where('status', 'paid')
+                ->where('scope', 'daigaku')
                 ->count(),
         ];
 

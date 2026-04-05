@@ -66,6 +66,10 @@ body {
     @apply border-blue-200 bg-blue-50 text-blue-700;
 }
 
+.question-temp4-structured.is-ippan .calc-block-title {
+    @apply border-rose-200 bg-rose-50 text-rose-700;
+}
+
 .question-temp4-structured .calc-line {
     @apply block overflow-x-auto whitespace-nowrap rounded bg-gray-50 px-2 py-1 font-mono text-[0.95em];
 }
@@ -109,6 +113,14 @@ body {
 
 .question-temp4-explanation.is-daigaku .calc-result {
     @apply text-blue-700;
+}
+
+.question-temp4-structured.is-ippan .calc-result {
+    @apply text-rose-700;
+}
+
+.question-temp4-explanation.is-ippan .calc-result {
+    @apply text-rose-700;
 }
 
 .question-temp4-structured .calc-note {

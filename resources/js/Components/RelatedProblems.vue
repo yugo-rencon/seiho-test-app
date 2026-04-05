@@ -1,5 +1,5 @@
 <template>
-  <div v-if="hasRelatedItemsInput" class="mt-4 mb-3 rounded-md border border-gray-50 bg-transparent px-2 py-2">
+  <div v-if="shouldRender" class="mt-4 mb-3 rounded-md border border-gray-50 bg-transparent px-2 py-2">
     <p class="text-[10px] font-semibold text-blue-700">【{{ title }}】</p>
     <div v-if="displayItems.length" class="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
       <template v-for="(item, index) in visibleDisplayItems" :key="index">
@@ -18,7 +18,9 @@
         </span>
       </template>
     </div>
-    <p v-else class="mt-2 text-[10px] text-gray-500">関連問題はありません</p>
+    <p v-else-if="hasOnlySelfItems" class="mt-2 text-[10px] text-gray-500">
+      関連問題はありません
+    </p>
     <button
       v-if="displayItems.length && hiddenCount > 0 && !isExpanded"
       type="button"
@@ -76,8 +78,6 @@ const page = usePage();
 const isExpanded = ref(false);
 const isMobile = ref(false);
 let mediaQuery: MediaQueryList | null = null;
-
-const hasRelatedItemsInput = computed(() => (props.items ?? []).length > 0);
 
 const updateIsMobile = () => {
   if (typeof window === "undefined") return;
@@ -175,42 +175,48 @@ const buildHrefFromCode = (code: string) => {
   return "";
 };
 
-const normalizedItems = computed(() =>
-  (props.items ?? [])
-    .map((rawItem) => {
-      if (typeof rawItem === "string") {
-        const parsed = parseCode(rawItem);
-        if (parsed) {
-          return {
-            label: `${parsed.year}年${parsed.form}問${parsed.question}`,
-            href: buildHrefFromCode(rawItem),
-          };
-        }
-        return {
-          label: String(rawItem).trim(),
-          href: "",
-        };
-      }
-
-      const code = String(rawItem?.code ?? "").trim();
-      if (code) {
-        const parsed = parseCode(code);
-        if (parsed) {
-          return {
-            label: rawItem?.label
-              ? String(rawItem.label).trim()
-              : `${parsed.year}年${parsed.form}問${parsed.question}`,
-            href: rawItem?.href ? String(rawItem.href) : buildHrefFromCode(code),
-          };
-        }
-      }
-
+const normalizeRawItem = (rawItem: RelatedProblem | string) => {
+  if (typeof rawItem === "string") {
+    const parsed = parseCode(rawItem);
+    if (parsed) {
       return {
-        label: String(rawItem?.label ?? "").trim(),
-        href: rawItem?.href ? String(rawItem.href) : "",
+        label: `${parsed.year}年${parsed.form}問${parsed.question}`,
+        href: buildHrefFromCode(rawItem),
       };
-    })
-    .filter((item) => item.label !== "")
+    }
+    return {
+      label: String(rawItem).trim(),
+      href: "",
+    };
+  }
+
+  const code = String(rawItem?.code ?? "").trim();
+  if (code) {
+    const parsed = parseCode(code);
+    if (parsed) {
+      return {
+        label: rawItem?.label
+          ? String(rawItem.label).trim()
+          : `${parsed.year}年${parsed.form}問${parsed.question}`,
+        href: rawItem?.href ? String(rawItem.href) : buildHrefFromCode(code),
+      };
+    }
+  }
+
+  return {
+    label: String(rawItem?.label ?? "").trim(),
+    href: rawItem?.href ? String(rawItem.href) : "",
+  };
+};
+
+const normalizedItemsWithSelf = computed(() =>
+  (props.items ?? [])
+    .map((rawItem) => normalizeRawItem(rawItem))
+    .filter((item) => item.label !== ""),
+);
+
+const normalizedItems = computed(() =>
+  normalizedItemsWithSelf.value
     .filter((item) => {
       const normalized = toHalfWidth(String(item.label ?? "")).replace(/\s+/g, "");
       const matched = normalized.match(/^(\d{4})年?([ABC])問?(\d+)$/i);
@@ -220,6 +226,8 @@ const normalizedItems = computed(() =>
       return itemCode !== currentPageCode.value;
     }),
 );
+
+const hasUsableItemsInput = computed(() => normalizedItemsWithSelf.value.length > 0);
 
 const parsedItems = computed(() =>
   normalizedItems.value.map((item) => {
@@ -264,6 +272,9 @@ const displayItems = computed(() => {
 
   return normalizedItems.value;
 });
+
+const hasOnlySelfItems = computed(() => hasUsableItemsInput.value && displayItems.value.length === 0);
+const shouldRender = computed(() => hasUsableItemsInput.value);
 
 const hiddenCount = computed(() =>
   Math.max(0, displayItems.value.length - maxVisibleCount.value),

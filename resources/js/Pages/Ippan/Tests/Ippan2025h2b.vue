@@ -31,9 +31,9 @@ const isDraft = true;
                         '', // 問1〜3
                     ]"
                     :labels="[
-                        '', //1
-                        '', //2
-                        '', //3
+                        'ア', //1
+                        'ウ', //2
+                        'オ', //3
                     ]"
                 />
                 <QuestionTemp3
@@ -47,8 +47,8 @@ const isDraft = true;
                         '', // 問4〜5
                     ]"
                     :labels="[
-                        '', //4
-                        '', //5
+                        'イ', //4
+                        'ウ', //5
                     ]"
                 />
                 <QuestionTemp3
@@ -63,9 +63,9 @@ const isDraft = true;
                         '', // 問6〜8
                     ]"
                     :labels="[
-                        '', //6
-                        '', //7
-                        '', //8
+                        'ア', //6
+                        'ウ', //7
+                        'イ', //8
                     ]"
                 />
                 <QuestionTemp3
@@ -79,8 +79,8 @@ const isDraft = true;
                         '', // 問9〜10
                     ]"
                     :labels="[
-                        '', //9
-                        '', //10
+                        'ウ', //9
+                        'カ', //10
                     ]"
                 />
                 <QuestionTemp3
@@ -95,9 +95,9 @@ const isDraft = true;
                         '', // 問11〜13
                     ]"
                     :labels="[
-                        '', //11
-                        '', //12
-                        '', //13
+                        'イ', //11
+                        'ウ', //12
+                        'オ', //13
                     ]"
                 />
                 <QuestionTemp3
@@ -111,8 +111,8 @@ const isDraft = true;
                         '', // 問14〜15
                     ]"
                     :labels="[
-                        '', //14
-                        '', //15
+                        'ア', //14
+                        'エ', //15
                     ]"
                 />
                 <QuestionTemp3
@@ -127,9 +127,9 @@ const isDraft = true;
                         '', // 問16〜18
                     ]"
                     :labels="[
-                        '', //16
-                        '', //17
-                        '', //18
+                        'イ', //16
+                        'ウ', //17
+                        'ア', //18
                     ]"
                 />
                 <QuestionTemp3
@@ -143,8 +143,8 @@ const isDraft = true;
                         '', // 問19〜20
                     ]"
                     :labels="[
-                        '', //19
-                        '', //20
+                        'エ', //19
+                        'オ', //20
                     ]"
                 />
                 <QuestionTemp3
@@ -159,9 +159,9 @@ const isDraft = true;
                         '', // 問21〜23
                     ]"
                     :labels="[
-                        '', //21
-                        '', //22
-                        '', //23
+                        'イ', //21
+                        'エ', //22
+                        'オ', //23
                     ]"
                 />
                 <QuestionTemp3
@@ -175,8 +175,8 @@ const isDraft = true;
                         '', // 問24〜25
                     ]"
                     :labels="[
-                        '', //24
-                        '', //25
+                        'ア', //24
+                        'ウ', //25
                     ]"
                 />
                 <QuestionTemp3
@@ -193,11 +193,11 @@ const isDraft = true;
                         '', // 問26〜30
                     ]"
                     :labels="[
-                        '', //26
-                        '', //27
-                        '', //28
-                        '', //29
-                        '', //30
+                        'ア', //26
+                        'ウ', //27
+                        'キ', //28
+                        'エ', //29
+                        'ケ', //30
                     ]"
                 />
                 <QuestionTemp1
@@ -208,9 +208,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
+                        '正しい', //p
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -221,8 +221,8 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい', //p
+                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -234,8 +234,8 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい', //p
+                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -246,8 +246,8 @@ const isDraft = true;
                     questionTitle="生命保険の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい', //p
+                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -259,8 +259,8 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい', //p
+                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -270,9 +270,9 @@ const isDraft = true;
                     questionTitle="保険金・給付金の請求と支払い"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい', //p
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -282,8 +282,8 @@ const isDraft = true;
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい', //p
+                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -306,12 +306,12 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //40
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //41
                         {
@@ -331,17 +331,17 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //45
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //46
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //47
                         {
@@ -351,7 +351,7 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //49
                         {
@@ -361,17 +361,17 @@ const isDraft = true;
                         }, //50
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //51
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //52
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //53
                         {
@@ -381,12 +381,12 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //55
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //56
                         {
@@ -401,17 +401,17 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '契約の選択',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //59
                         {
                             questionTitle: '契約の選択',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //60
                         {
                             questionTitle: '契約の選択',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //61
                         {
@@ -426,12 +426,12 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //64
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //65
                         {
@@ -441,7 +441,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '正しい',
                             relatedProblems: [''],
                         }, //67
                     ]"
@@ -453,21 +453,21 @@ const isDraft = true;
                     :applyChoicePrefix="false"
                     :items="[
                         // 問68〜82
-                        { questionTitle: '契約申込み時の実務', label: '', content: '' }, //68
-                        { questionTitle: '契約申込み時の実務', label: '', content: '' }, //69
-                        { questionTitle: '契約申込み時の実務', label: '', content: '' }, //70
-                        { questionTitle: '契約申込み時の実務', label: '', content: '' }, //71
-                        { questionTitle: '契約申込み時の実務', label: '', content: '' }, //72
-                        { questionTitle: '正しい告知の取り扱い', label: '', content: '' }, //73
-                        { questionTitle: '正しい告知の取り扱い', label: '', content: '' }, //74
-                        { questionTitle: '正しい告知の取り扱い', label: '', content: '' }, //75
-                        { questionTitle: '正しい告知の取り扱い', label: '', content: '' }, //76
-                        { questionTitle: '正しい告知の取り扱い', label: '', content: '' }, //77
-                        { questionTitle: '相続の法律', label: '', content: '' }, //78
-                        { questionTitle: '相続の法律', label: '', content: '' }, //79
-                        { questionTitle: '相続の法律', label: '', content: '' }, //80
-                        { questionTitle: '相続の法律', label: '', content: '' }, //81
-                        { questionTitle: '相続の法律', label: '', content: '' }, //82
+                        { questionTitle: '契約申込み時の実務', label: 'ア', content: '' }, //68
+                        { questionTitle: '契約申込み時の実務', label: 'イ', content: '' }, //69
+                        { questionTitle: '契約申込み時の実務', label: 'ア', content: '' }, //70
+                        { questionTitle: '契約申込み時の実務', label: 'ア', content: '' }, //71
+                        { questionTitle: '契約申込み時の実務', label: 'ア', content: '' }, //72
+                        { questionTitle: '正しい告知の取り扱い', label: 'ア', content: '' }, //73
+                        { questionTitle: '正しい告知の取り扱い', label: 'イ', content: '' }, //74
+                        { questionTitle: '正しい告知の取り扱い', label: 'ア', content: '' }, //75
+                        { questionTitle: '正しい告知の取り扱い', label: 'イ', content: '' }, //76
+                        { questionTitle: '正しい告知の取り扱い', label: 'ア', content: '' }, //77
+                        { questionTitle: '相続の法律', label: 'イ', content: '' }, //78
+                        { questionTitle: '相続の法律', label: 'ア', content: '' }, //79
+                        { questionTitle: '相続の法律', label: 'イ', content: '' }, //80
+                        { questionTitle: '相続の法律', label: 'イ', content: '' }, //81
+                        { questionTitle: '相続の法律', label: 'ア', content: '' }, //82
                     ]"
                 />
             </div>

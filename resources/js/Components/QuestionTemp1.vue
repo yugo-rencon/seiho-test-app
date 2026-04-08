@@ -114,7 +114,7 @@ const showAdBeforeQuestion = computed(() => {
     if (hasPremiumAccess(page.props)) return false;
     if ((isDaigaku.value || isOuyou.value || isSenmon.value) && Number(props.questionNumber) === 13) return true; // daigaku/ouyou/senmon: Q12/Q13の間
     if (isIppan.value && Number(props.questionNumber) === 31) return true; // ippan: Q30/Q31の間
-    if (isSeiho.value && Number(props.questionNumber) === 31) return true; // seiho: Q30/Q31の間
+    if (isSeiho.value && (Number(props.questionNumber) === 21 || Number(props.questionNumber) === 31)) return true; // seiho: Q20/Q21の間、Q30/Q31の間
     return false;
 });
 

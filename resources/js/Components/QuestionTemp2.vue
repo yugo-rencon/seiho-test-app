@@ -9,11 +9,12 @@
         <div v-if="showAd" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
             <AdSenseUnit ad-slot="8570892917" />
         </div>
-        <div v-for="(item, index) in visibleItems" :key="index" :id="`q${item.questionNo}`" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24">
-            <div v-if="shouldShowSeihoAdBeforeItem(item.questionNo)" class="mb-2 rounded-lg bg-white p-2 shadow-sm">
+        <template v-for="(item, index) in visibleItems" :key="index">
+            <div v-if="shouldShowSeihoAdBeforeItem(item.questionNo)" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
                 <AdSenseUnit ad-slot="8570892917" />
             </div>
-            <div class="flex items-start gap-2 my-4">
+            <div :id="`q${item.questionNo}`" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24">
+                <div class="flex items-start gap-2 my-4">
                 <div
                     class="w-1.5 h-6 rounded-full"
                     :class="
@@ -35,31 +36,32 @@
                     </span>
                 </h2>
             </div>
-            <p v-if="item.note" class="mb-3 text-sm text-gray-500">
-                {{ item.note }}
-            </p>
+                <p v-if="item.note" class="mb-3 text-sm text-gray-500">
+                    {{ item.note }}
+                </p>
 
-            <div class="grid gap-2">
-                <div
-                    class="grid gap-2 text-sm leading-6 text-gray-800 select-none md:text-[15px] grid-cols-[2em_1fr]"
-                >
-                    <span class="font-semibold">{{ item.label }}：</span>
-                    <p v-html="formatContent(item)"></p>
+                <div class="grid gap-2">
+                    <div
+                        class="grid gap-2 text-sm leading-6 text-gray-800 select-none md:text-[15px] grid-cols-[2em_1fr]"
+                    >
+                        <span class="font-semibold">{{ item.label }}：</span>
+                        <p v-html="formatContent(item)"></p>
+                    </div>
+                </div>
+                <RelatedProblems
+                    :items="item.relatedProblems"
+                    :is-daigaku="isDaigaku"
+                    :context-title="props.title"
+                    :current-question-number="item.questionNo"
+                />
+                <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
+                    {{ props.title }}
+                </div>
+                <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
+                    {{ props.subject }}
                 </div>
             </div>
-            <RelatedProblems
-                :items="item.relatedProblems"
-                :is-daigaku="isDaigaku"
-                :context-title="props.title"
-                :current-question-number="item.questionNo"
-            />
-            <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
-                {{ props.title }}
-            </div>
-            <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
-                {{ props.subject }}
-            </div>
-        </div>
+        </template>
     </template>
     <PaywallNotice v-if="shouldShowPaywallNotice" />
 </template>

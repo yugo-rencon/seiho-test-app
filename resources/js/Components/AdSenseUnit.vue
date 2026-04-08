@@ -17,7 +17,8 @@ const props = defineProps({
 });
 
 const isProd = import.meta.env.PROD;
-const showPlaceholder = true; // デバッグ用：常に表示
+const showPlaceholder =
+    !isProd && String(import.meta.env.VITE_SHOW_AD_PLACEHOLDER).toLowerCase() === "true";
 
 onMounted(() => {
     if (!isProd) return;

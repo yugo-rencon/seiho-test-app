@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -c \"showPlaceholder\" /Applications/MAMP/htdocs/laravel/seiho-test/public/build/assets/app-*.js)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

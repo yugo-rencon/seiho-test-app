@@ -17,6 +17,7 @@ const props = defineProps({
 });
 
 const isProd = import.meta.env.PROD;
+const showPlaceholder = true; // デバッグ用：常に表示
 
 onMounted(() => {
     if (!isProd) return;
@@ -34,7 +35,7 @@ onMounted(() => {
 
 <template>
     <ins
-        v-if="isProd"
+        v-if="isProd && !showPlaceholder"
         class="adsbygoogle"
         style="display: block"
         data-ad-client="ca-pub-5875099458010785"
@@ -42,4 +43,10 @@ onMounted(() => {
         :data-ad-format="props.format"
         :data-full-width-responsive="props.fullWidthResponsive ? 'true' : 'false'"
     ></ins>
+    <div
+        v-if="showPlaceholder"
+        class="flex items-center justify-center rounded border border-dashed border-yellow-400 bg-yellow-50 py-3 text-xs text-yellow-600"
+    >
+        [広告] slot: {{ props.adSlot }}
+    </div>
 </template>

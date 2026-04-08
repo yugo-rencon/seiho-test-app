@@ -24,7 +24,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="1〜3"
                     questionTitle="保障の見直し-①"
-                    :relatedProblems="[]"
                     :contents="[
                         '責任準備金',
                         '死亡保障',
@@ -41,7 +40,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="4〜5"
                     questionTitle="保障の見直し-②"
-                    :relatedProblems="[]"
                     :contents="[
                         '契約者',
                         '意向確認書面', // 問4〜5
@@ -56,7 +54,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="6〜8"
                     questionTitle="生命保険の役割-①"
-                    :relatedProblems="[]"
                     :contents="[
                         '福沢諭吉',
                         '明治',
@@ -73,7 +70,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="9〜10"
                     questionTitle="生命保険の役割-②"
-                    :relatedProblems="[]"
                     :contents="[
                         '平均余命',
                         '最低限度', // 問9〜10
@@ -88,7 +84,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="11〜13"
                     questionTitle="生命保険の募集等に関する法律-①"
-                    :relatedProblems="[]"
                     :contents="[
                         '契約者',
                         '内閣総理大臣',
@@ -105,7 +100,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="14〜15"
                     questionTitle="生命保険の募集等に関する法律-②"
-                    :relatedProblems="[]"
                     :contents="[
                         '1年',
                         '5年', // 問14〜15
@@ -120,7 +114,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="16〜18"
                     questionTitle="社会保障制度-①"
-                    :relatedProblems="[]"
                     :contents="[
                         '生活保護法',
                         '国民',
@@ -137,7 +130,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="19〜20"
                     questionTitle="社会保障制度-②"
-                    :relatedProblems="[]"
                     :contents="[
                         '3割',
                         '75歳', // 問19〜20
@@ -152,7 +144,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="21〜23"
                     questionTitle="相続の法律-①"
-                    :relatedProblems="[]"
                     :contents="[
                         '3/4',
                         '2/3',
@@ -169,7 +160,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="24〜25"
                     questionTitle="相続の法律-②"
-                    :relatedProblems="[]"
                     :contents="[
                         '単純',
                         'みなし', // 問24〜25
@@ -184,7 +174,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="26〜30"
                     questionTitle="設計販売の基礎"
-                    :relatedProblems="[]"
                     :contents="[
                         '5',
                         '35',
@@ -205,7 +194,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="資産の運用"
-                    :relatedProblems="[]"
                     :contents="[
                         '積極的で投機的な資産運用 → 効率的で安定した資産運用', //p34
                         '正しい',
@@ -218,7 +206,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '', //p
@@ -231,7 +218,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
-                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -244,7 +230,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -256,7 +241,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金と配当金"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -268,7 +252,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="保全・アフターサービスの重要性"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -280,7 +263,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="照会・苦情時の対応"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '', //p
@@ -297,152 +279,122 @@ const isDraft = true;
                         {
                             questionTitle: '契約取り扱いの手続き',
                             content: '',
-                            relatedProblems: [''],
                         }, //38
                         {
                             questionTitle: '契約取り扱いの手続き',
                             content: '',
-                            relatedProblems: [''],
                         }, //39
                         {
                             questionTitle: '契約取り扱いの手続き',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //40
                         {
                             questionTitle: '契約取り扱いの手続き',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //41
                         {
                             questionTitle: '契約取り扱いの手続き',
                             content: '',
-                            relatedProblems: [''],
                         }, //42
                         {
                             questionTitle: '保険料の払い込み',
                             content: '',
-                            relatedProblems: [''],
                         }, //43
                         {
                             questionTitle: '保険料の払い込み',
                             content: '',
-                            relatedProblems: [''],
                         }, //44
                         {
                             questionTitle: '保険料の払い込み',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //45
                         {
                             questionTitle: '保険料の払い込み',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //46
                         {
                             questionTitle: '保険料の払い込み',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //47
                         {
                             questionTitle: '正しい告知の取扱い',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //48
                         {
                             questionTitle: '正しい告知の取扱い',
                             content: '',
-                            relatedProblems: [''],
                         }, //49
                         {
                             questionTitle: '正しい告知の取扱い',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //50
                         {
                             questionTitle: '正しい告知の取扱い',
                             content: '',
-                            relatedProblems: [''],
                         }, //51
                         {
                             questionTitle: '正しい告知の取扱い',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //52
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //53
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
                             content: '',
-                            relatedProblems: [''],
                         }, //54
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //55
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //56
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //57
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
-                            relatedProblems: [''],
-                        }, //58
+                            content: '5年更新 → 1年更新',
+                        }, //58 p116
                         {
                             questionTitle: '企業向け商品',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //59
                         {
                             questionTitle: '企業向け商品',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //60
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
-                            relatedProblems: [''],
-                        }, //61
+                            content: '財形貯蓄積立保険・財形教育積立保険・財形医療積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険',
+                        }, //61 p119
                         {
                             questionTitle: '企業向け商品',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //62
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
                             content: '',
-                            relatedProblems: [''],
                         }, //63
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //64
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
                             content: '',
-                            relatedProblems: [''],
                         }, //65
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
                             content: '正しい',
-                            relatedProblems: [''],
                         }, //66
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
                             content: '',
-                            relatedProblems: [''],
                         }, //67
                     ]"
                 />

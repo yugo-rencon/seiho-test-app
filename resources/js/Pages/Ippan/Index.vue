@@ -81,10 +81,13 @@ const getFormHref = (year, period, form) =>
 
                     <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
                         <div v-for="year in IPPAN_YEARS" :key="`${activePeriod.id}-${year}`" class="p-4 md:p-6">
-                            <div class="flex items-center">
+                            <div class="flex items-center gap-2">
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
                                     {{ year }}年 {{ activePeriod.label }}
                                 </div>
+                                <span class="rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 text-[10px] font-bold leading-none text-amber-700">
+                                    準備中
+                                </span>
                             </div>
 
                             <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">

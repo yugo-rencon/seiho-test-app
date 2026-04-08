@@ -5,6 +5,9 @@
         :id="`q${questionNo}`"
         class="h-0 scroll-mt-24"
     ></div>
+    <div v-if="showAdBefore" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
+        <AdSenseUnit ad-slot="8570892917" />
+    </div>
     <div
         v-if="!shouldHideByPaywall"
         class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24"
@@ -63,6 +66,7 @@
 <script setup lang="ts">
     import { computed } from "vue";
     import { usePage } from "@inertiajs/vue3";
+    import AdSenseUnit from "./AdSenseUnit.vue";
     import PaywallNotice from "./PaywallNotice.vue";
     import RelatedProblems from "./RelatedProblems.vue";
     import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
@@ -115,6 +119,21 @@
     const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
     const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
     const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
+
+    const rangeStartQuestion = computed(() => {
+        const range = String(props.questionRange ?? "").trim();
+        const normalized = range
+            .replace(/[０-９]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0xfee0))
+            .replace(/〜|~|－|–|—/g, "-");
+        const matched = normalized.match(/^(\d+)/);
+        return matched ? Number(matched[1]) : 0;
+    });
+
+    const showAdBefore = computed(() => {
+        if (hasPremiumAccess(page.props)) return false;
+        if (isIppan.value && (rangeStartQuestion.value === 11 || rangeStartQuestion.value === 21)) return true; // ippan: Q10/Q11の間、Q20/Q21の間
+        return (isOuyou.value || isSenmon.value) && rangeStartQuestion.value === 25; // ouyou/senmon: Q24/Q25の間
+    });
 
     const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 

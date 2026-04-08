@@ -1,6 +1,6 @@
 <template>
     <div :id="`q${props.questionNumber}`" class="h-0 scroll-mt-24"></div>
-    <div v-if="showAdBeforeQuestion21" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
+    <div v-if="showAdBeforeQuestion" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
         <AdSenseUnit ad-slot="8570892917" />
     </div>
     <div v-if="!shouldHideByPaywall" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md">
@@ -109,8 +109,11 @@ const shouldShowPaywallNotice = computed(() => {
     return shouldHideByPaywall.value && Number(props.questionNumber) === paywallStartQuestion.value;
 });
 
-const showAdBeforeQuestion21 = computed(() => {
-    return !hasPremiumAccess(page.props) && Number(props.questionNumber) === 21;
+const showAdBeforeQuestion = computed(() => {
+    if (hasPremiumAccess(page.props)) return false;
+    if ((isOuyou.value || isSenmon.value) && Number(props.questionNumber) === 13) return true; // ouyou/senmon: Q12/Q13の間
+    if (isIppan.value && Number(props.questionNumber) === 31) return true; // ippan: Q30/Q31の間
+    return false;
 });
 
 const getLabel = (index: number): string => {

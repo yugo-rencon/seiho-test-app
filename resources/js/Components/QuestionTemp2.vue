@@ -6,6 +6,9 @@
         class="h-0 scroll-mt-24"
     ></div>
     <template v-if="visibleItems.length > 0">
+        <div v-if="showAd" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
+            <AdSenseUnit ad-slot="8570892917" />
+        </div>
         <div v-for="(item, index) in visibleItems" :key="index" :id="`q${item.questionNo}`" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24">
             <div class="flex items-start gap-2 my-4">
                 <div
@@ -61,6 +64,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { usePage } from "@inertiajs/vue3";
+import AdSenseUnit from "./AdSenseUnit.vue";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
@@ -125,6 +129,10 @@ const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
 const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
+
+const showAd = computed(() => {
+    return (isIppan.value || isOuyou.value || isSenmon.value) && !hasPremiumAccess(page.props);
+});
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 

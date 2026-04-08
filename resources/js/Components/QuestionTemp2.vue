@@ -10,6 +10,9 @@
             <AdSenseUnit ad-slot="8570892917" />
         </div>
         <div v-for="(item, index) in visibleItems" :key="index" :id="`q${item.questionNo}`" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24">
+            <div v-if="shouldShowSeihoAdBeforeItem(item.questionNo)" class="mb-2 rounded-lg bg-white p-2 shadow-sm">
+                <AdSenseUnit ad-slot="8570892917" />
+            </div>
             <div class="flex items-start gap-2 my-4">
                 <div
                     class="w-1.5 h-6 rounded-full"
@@ -129,9 +132,10 @@ const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
 const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value);
 
 const showAd = computed(() => {
-    return (isIppan.value || isOuyou.value || isSenmon.value) && !hasPremiumAccess(page.props);
+    return (isDaigaku.value || isIppan.value || isOuyou.value || isSenmon.value) && !hasPremiumAccess(page.props);
 });
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
@@ -184,6 +188,10 @@ const shouldShowPaywallNotice = computed(() => {
 
     return paywallStartQuestion.value >= firstQuestion && paywallStartQuestion.value <= lastQuestion;
 });
+
+const shouldShowSeihoAdBeforeItem = (questionNo: number) => {
+    return isSeiho.value && !hasPremiumAccess(page.props) && Number(questionNo) === 41;
+};
 
 const getLabel = (index: number) => {
     // 互換対応:

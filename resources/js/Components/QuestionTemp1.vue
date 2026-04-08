@@ -96,6 +96,7 @@ const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
 const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value);
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 
@@ -111,8 +112,9 @@ const shouldShowPaywallNotice = computed(() => {
 
 const showAdBeforeQuestion = computed(() => {
     if (hasPremiumAccess(page.props)) return false;
-    if ((isOuyou.value || isSenmon.value) && Number(props.questionNumber) === 13) return true; // ouyou/senmon: Q12/Q13の間
+    if ((isDaigaku.value || isOuyou.value || isSenmon.value) && Number(props.questionNumber) === 13) return true; // daigaku/ouyou/senmon: Q12/Q13の間
     if (isIppan.value && Number(props.questionNumber) === 31) return true; // ippan: Q30/Q31の間
+    if (isSeiho.value && Number(props.questionNumber) === 31) return true; // seiho: Q30/Q31の間
     return false;
 });
 

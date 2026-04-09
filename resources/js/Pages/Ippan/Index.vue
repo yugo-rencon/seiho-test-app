@@ -83,7 +83,7 @@ const getFormHref = (year, period, form) =>
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
                                     {{ year }}年
                                 </div>
-                                <span class="rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 text-[10px] font-bold leading-none text-amber-700">
+                                <span class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600">
                                     準備中
                                 </span>
                             </div>

@@ -85,6 +85,9 @@ const getOuyouRoute = (year, periodId, form) => {
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
                                     {{ year }}年度
                                 </div>
+                                <span class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600">
+                                    準備中
+                                </span>
                             </div>
 
                             <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">

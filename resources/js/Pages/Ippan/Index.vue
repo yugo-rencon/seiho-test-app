@@ -41,17 +41,17 @@ const getFormHref = (year, period, form) =>
         <div class="container mx-auto m-10 max-w-6xl px-5 sm:px-6">
             <div class="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:rounded-3xl sm:p-8">
                 <div
-                    class="absolute -right-24 -top-24 hidden h-56 w-56 rounded-full bg-gradient-to-br from-rose-50 to-red-50 opacity-35 blur-3xl md:block"
+                    class="absolute -right-24 -top-24 hidden h-56 w-56 rounded-full bg-gradient-to-br from-pink-50 to-fuchsia-50 opacity-35 blur-3xl md:block"
                 />
 
                 <div class="relative">
                     <div
-                        class="mb-5 rounded-xl border border-red-100 bg-red-50/50 px-3 py-2 text-left text-[12px] leading-5 text-red-700 sm:px-4 sm:py-2.5 sm:text-center"
+                        class="mb-5 rounded-xl border border-pink-100 bg-pink-50/50 px-3 py-2 text-left text-[12px] leading-5 text-fuchsia-700 sm:px-4 sm:py-2.5 sm:text-center"
                     >
                         <span class="block font-semibold tracking-wide">
                             生命保険一般課程の過去問解説ページです。
                         </span>
-                        <span class="mt-0.5 block text-[11px] font-medium text-red-700/90">
+                        <span class="mt-0.5 block text-[11px] font-medium text-fuchsia-700/90">
                             試験期間・年度・フォーム別に順次公開していきます。
                         </span>
                     </div>
@@ -68,23 +68,20 @@ const getFormHref = (year, period, form) =>
                             class="rounded-full border px-4 py-2 text-[13px] font-semibold transition-colors sm:text-sm"
                             :class="
                                 activePeriodId === period.id
-                                    ? 'border-transparent bg-gradient-to-r from-rose-400 to-red-400 text-white shadow'
-                                    : 'border-gray-200 bg-white text-gray-700 hover:border-red-200'
+                                    ? 'border-transparent bg-gradient-to-r from-pink-400 to-fuchsia-400 text-white shadow'
+                                    : 'border-gray-200 bg-white text-gray-700 hover:border-pink-200'
                             "
                         >
                             {{ period.label }}
                         </button>
                     </div>
 
-                    <div class="mt-4 rounded-xl border border-red-100 bg-red-50/40 px-3 py-2 text-[11px] font-medium text-red-700 sm:text-xs">
-                        {{ activePeriod.label }}：{{ activePeriod.note }}
-                    </div>
 
                     <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
                         <div v-for="year in IPPAN_YEARS" :key="`${activePeriod.id}-${year}`" class="p-4 md:p-6">
                             <div class="flex items-center gap-2">
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
-                                    {{ year }}年 {{ activePeriod.label }}
+                                    {{ year }}年
                                 </div>
                                 <span class="rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 text-[10px] font-bold leading-none text-amber-700">
                                     準備中
@@ -96,7 +93,7 @@ const getFormHref = (year, period, form) =>
                                     <Link
                                         v-if="getFormHref(year, activePeriod, form)"
                                         :href="getFormHref(year, activePeriod, form)"
-                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-red-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-red-700 transition hover:bg-red-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
+                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-pink-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-fuchsia-700 transition hover:bg-pink-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                                     >
                                         フォーム{{ form.toUpperCase() }}
                                     </Link>

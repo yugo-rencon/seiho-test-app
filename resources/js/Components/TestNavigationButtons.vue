@@ -44,7 +44,7 @@ const buttonClass = computed(() =>
       : isOuyou.value
         ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-amber-200 text-amber-700 bg-white shadow-sm hover:bg-amber-50 transition"
     : isIppan.value
-      ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-red-200 text-red-700 bg-white shadow-sm hover:bg-red-50 transition"
+      ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-pink-200 text-pink-700 bg-white shadow-sm hover:bg-pink-50 transition"
       : "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition"
 );
 

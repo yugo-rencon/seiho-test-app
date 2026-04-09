@@ -83,7 +83,7 @@ defineProps({
                             <li>
                                 <Link
                                     :href="route('ippan.index')"
-                                    class="text-gray-500 transition-colors duration-200 hover:text-red-600"
+                                    class="text-gray-500 transition-colors duration-200 hover:text-fuchsia-600"
                                 >
                                     生命保険一般課程 過去問解説
                                 </Link>
@@ -221,7 +221,7 @@ defineProps({
                                     : isOuyou
                                         ? 'bg-gradient-to-r from-amber-600 to-orange-500'
                                       : isIppan
-                                        ? 'bg-gradient-to-r from-rose-500 to-red-500'
+                                        ? 'bg-gradient-to-r from-pink-500 to-fuchsia-500'
                                       : 'bg-gradient-to-r from-indigo-600 to-purple-600'
                             "
                         >
@@ -276,7 +276,7 @@ defineProps({
                         <li>
                             <Link
                                 :href="route('ippan.index')"
-                                class="text-gray-500 transition-colors duration-200 hover:text-red-600"
+                                class="text-gray-500 transition-colors duration-200 hover:text-fuchsia-600"
                             >
                                 生命保険一般課程 過去問解説
                             </Link>
@@ -313,7 +313,7 @@ defineProps({
                                         : isOuyou
                                           ? 'hover:text-amber-600'
                                           : isIppan
-                                            ? 'hover:text-red-600'
+                                            ? 'hover:text-fuchsia-600'
                                           : 'hover:text-indigo-600'
                                 "
                             >
@@ -332,7 +332,7 @@ defineProps({
                                         : isOuyou
                                           ? 'hover:text-amber-600'
                                           : isIppan
-                                            ? 'hover:text-red-600'
+                                            ? 'hover:text-fuchsia-600'
                                           : 'hover:text-indigo-600'
                                 "
                             >
@@ -350,7 +350,7 @@ defineProps({
                                         : isOuyou
                                           ? 'hover:text-amber-600'
                                           : isIppan
-                                            ? 'hover:text-red-600'
+                                            ? 'hover:text-fuchsia-600'
                                           : 'hover:text-indigo-600'
                                 "
                             >
@@ -368,7 +368,7 @@ defineProps({
                                         : isOuyou
                                           ? 'hover:text-amber-600'
                                           : isIppan
-                                            ? 'hover:text-red-600'
+                                            ? 'hover:text-fuchsia-600'
                                           : 'hover:text-indigo-600'
                                 "
                             >
@@ -407,7 +407,7 @@ defineProps({
                                         : isOuyou
                                           ? 'hover:text-amber-600'
                                           : isIppan
-                                            ? 'hover:text-red-600'
+                                            ? 'hover:text-fuchsia-600'
                                           : 'hover:text-indigo-600'
                                 "
                             >
@@ -436,7 +436,7 @@ defineProps({
                                         : isOuyou
                                           ? 'hover:text-amber-600'
                                           : isIppan
-                                            ? 'hover:text-red-600'
+                                            ? 'hover:text-fuchsia-600'
                                           : 'hover:text-indigo-600'
                                 "
                             >
@@ -453,7 +453,7 @@ defineProps({
                                         : isOuyou
                                           ? 'hover:text-amber-600'
                                           : isIppan
-                                            ? 'hover:text-red-600'
+                                            ? 'hover:text-fuchsia-600'
                                           : 'hover:text-indigo-600'
                                 "
                             >
@@ -477,7 +477,7 @@ defineProps({
                                   : isOuyou
                                     ? 'from-gray-50 to-amber-50'
                                   : isIppan
-                                    ? 'from-gray-50 to-red-50'
+                                    ? 'from-gray-50 to-pink-50'
                                   : 'from-gray-50 to-purple-50'
                         "
                     >
@@ -492,7 +492,7 @@ defineProps({
                                           : isOuyou
                                             ? 'text-amber-500'
                                           : isIppan
-                                            ? 'text-red-500'
+                                            ? 'text-fuchsia-500'
                                           : 'text-indigo-500'
                                 "
                                 fill="none"

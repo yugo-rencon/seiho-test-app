@@ -24,21 +24,21 @@ const focusClass = computed(() => {
     if (scope.value === 'daigaku') return 'focus:border-blue-400 focus:ring-blue-400';
     if (scope.value === 'senmon') return 'focus:border-emerald-400 focus:ring-emerald-400';
     if (scope.value === 'ouyou') return 'focus:border-amber-400 focus:ring-amber-400';
-    if (scope.value === 'ippan') return 'focus:border-red-400 focus:ring-red-400';
+    if (scope.value === 'ippan') return 'focus:border-pink-400 focus:ring-pink-400';
     return 'focus:border-purple-400 focus:ring-purple-400';
 });
 const checkboxClass = computed(() => {
     if (scope.value === 'daigaku') return 'text-blue-600 focus:ring-blue-400';
     if (scope.value === 'senmon') return 'text-emerald-600 focus:ring-emerald-400';
     if (scope.value === 'ouyou') return 'text-amber-600 focus:ring-amber-400';
-    if (scope.value === 'ippan') return 'text-red-600 focus:ring-red-400';
+    if (scope.value === 'ippan') return 'text-fuchsia-600 focus:ring-pink-400';
     return 'text-purple-600 focus:ring-purple-400';
 });
 const submitClass = computed(() => {
     if (scope.value === 'daigaku') return 'from-blue-500 to-cyan-500';
     if (scope.value === 'senmon') return 'from-emerald-500 to-lime-500';
     if (scope.value === 'ouyou') return 'from-amber-500 to-orange-500';
-    if (scope.value === 'ippan') return 'from-rose-500 to-red-500';
+    if (scope.value === 'ippan') return 'from-pink-500 to-fuchsia-500';
     return 'from-indigo-500 to-purple-500';
 });
 

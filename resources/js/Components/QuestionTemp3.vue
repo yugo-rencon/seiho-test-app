@@ -25,7 +25,7 @@
                             : isOuyou
                                 ? 'bg-gradient-to-b from-amber-400 to-orange-400'
                         : isIppan
-                            ? 'bg-gradient-to-b from-rose-400 to-red-400'
+                            ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
                             : 'bg-gradient-to-b from-purple-400 to-blue-400'
                 "
             ></div>

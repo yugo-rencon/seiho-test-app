@@ -78,9 +78,6 @@ const getSenmonRoute = (year, periodId, form) => {
                         </button>
                     </div>
 
-                    <div class="mt-4 rounded-xl border border-emerald-100 bg-emerald-50/60 px-3 py-2 text-[11px] font-medium text-emerald-700 sm:text-xs">
-                        {{ activePeriod.label }}試験：{{ activePeriod.note }}
-                    </div>
 
                     <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
                         <div v-for="year in SENMON_VISIBLE_YEARS" :key="year" class="p-4 md:p-6">

@@ -78,9 +78,6 @@ const getOuyouRoute = (year, periodId, form) => {
                         </button>
                     </div>
 
-                    <div class="mt-4 rounded-xl border border-amber-100 bg-amber-50/60 px-3 py-2 text-[11px] font-medium text-amber-700 sm:text-xs">
-                        {{ activePeriod.label }}試験：{{ activePeriod.note }}
-                    </div>
 
                     <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
                         <div v-for="year in OUYOU_VISIBLE_YEARS" :key="year" class="p-4 md:p-6">

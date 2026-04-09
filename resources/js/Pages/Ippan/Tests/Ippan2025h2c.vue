@@ -244,43 +244,43 @@ const isDraft = true;
                         {
                             questionTitle: '契約取り扱いの手続き',
                             content: '正しい',
-                        }, //40 正
+                        }, //40
                         {
                             questionTitle: '契約取り扱いの手続き',
                             content: '正しい',
-                        }, //41 正
+                        }, //41
                         {
                             questionTitle: '契約取り扱いの手続き',
                             content: '',
                         }, //42
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '',
+                            content: '割り引きはない → 生命保険会社の定めた利率で割り引かれる', //p50
                         }, //43
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '',
+                            content: '保険金受取人 → 契約者', //p50
                         }, //44
                         {
                             questionTitle: '保険料の払い込み',
                             content: '正しい',
-                        }, //45 正
+                        }, //45
                         {
                             questionTitle: '保険料の払い込み',
                             content: '正しい',
-                        }, //46 正
+                        }, //46
                         {
                             questionTitle: '保険料の払い込み',
                             content: '正しい',
-                        }, //47 正
+                        }, //47
                         {
                             questionTitle: '生命保険の仕組み',
                             content: '正しい',
-                        }, //48 正
+                        }, //48
                         {
                             questionTitle: '生命保険の仕組み',
                             content: '正しい',
-                        }, //49 正
+                        }, //49
                         {
                             questionTitle: '生命保険の仕組み',
                             content: '',
@@ -292,15 +292,15 @@ const isDraft = true;
                         {
                             questionTitle: '生命保険の仕組み',
                             content: '正しい',
-                        }, //52 正
+                        }, //52
                         {
                             questionTitle: '生命保険の募集等に関する法律',
                             content: '正しい',
-                        }, //53 正
+                        }, //53
                         {
                             questionTitle: '生命保険の募集等に関する法律',
                             content: '正しい',
-                        }, //54 正
+                        }, //54
                         {
                             questionTitle: '生命保険の募集等に関する法律',
                             content: '',
@@ -308,11 +308,11 @@ const isDraft = true;
                         {
                             questionTitle: '生命保険の募集等に関する法律',
                             content: '正しい',
-                        }, //56 正
+                        }, //56
                         {
                             questionTitle: '生命保険の募集等に関する法律',
                             content: '正しい',
-                        }, //57 正
+                        }, //57
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
                             content: '既払込保険料総額の範囲内 → 解約返戻金の一定範囲内',
@@ -324,23 +324,23 @@ const isDraft = true;
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
                             content: '正しい',
-                        }, //60 正
+                        }, //60
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
                             content: '正しい',
-                        }, //61 正
+                        }, //61
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
                             content: '正しい',
-                        }, //62 正
+                        }, //62
                         {
                             questionTitle: '社会保障制度',
                             content: '正しい',
-                        }, //63 正
+                        }, //63
                         {
                             questionTitle: '社会保障制度',
                             content: '正しい',
-                        }, //64 正
+                        }, //64
                         {
                             questionTitle: '社会保障制度',
                             content: '',

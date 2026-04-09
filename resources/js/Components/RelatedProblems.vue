@@ -295,7 +295,7 @@ const titleClass = computed(() => {
   if (isDaigakuPage.value) return "text-blue-700";
   if (isSenmonPage.value) return "text-emerald-700";
   if (isOuyouPage.value) return "text-amber-700";
-  if (isIppanPage.value) return "text-red-700";
+  if (isIppanPage.value) return "text-fuchsia-700";
   return "text-blue-700";
 });
 
@@ -303,7 +303,7 @@ const linkTagClass = computed(() => {
   if (isDaigakuPage.value) return "border-blue-200 hover:border-blue-300";
   if (isSenmonPage.value) return "border-emerald-200 hover:border-emerald-300";
   if (isOuyouPage.value) return "border-amber-200 hover:border-amber-300";
-  if (isIppanPage.value) return "border-red-200 hover:border-red-300";
+  if (isIppanPage.value) return "border-pink-200 hover:border-pink-300";
   return "border-blue-200 hover:border-blue-300";
 });
 

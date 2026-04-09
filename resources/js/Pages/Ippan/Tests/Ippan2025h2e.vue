@@ -298,11 +298,11 @@ const isDraft = true;
                         }, //42
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '',
+                            content: '割り引きはない → 生命保険会社の定めた利率で割り引かれる', //p50
                         }, //43
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '',
+                            content: '保険金受取人 → 契約者', //p50
                         }, //44
                         {
                             questionTitle: '保険料の払い込み',

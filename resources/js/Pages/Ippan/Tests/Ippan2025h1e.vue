@@ -310,30 +310,30 @@ const isDraft = true;
                         }, //45
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '',
+                            content: '保険業法 → 生命保険会社', //p50
                         }, //46
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '',
+                            content: '途中で変更できない → 変更できる', //p51
                         }, //47
                         {
-                            questionTitle: '保険料の払い込み',
+                            questionTitle: '保険料の仕組み',
                             content: '',
                         }, //48
                         {
-                            questionTitle: '保険料の払い込み',
+                            questionTitle: '保険料の仕組み',
                             content: '正しい',
                         }, //49
                         {
-                            questionTitle: '保険料の払い込み',
+                            questionTitle: '保険料の仕組み',
                             content: '正しい',
                         }, //50
                         {
-                            questionTitle: '保険料の払い込み',
+                            questionTitle: '保険料の仕組み',
                             content: '正しい',
                         }, //51
                         {
-                            questionTitle: '保険料の払い込み',
+                            questionTitle: '保険料の仕組み',
                             content: '正しい',
                         }, //52
                         {

@@ -28,7 +28,7 @@ const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
                 : isOuyou
                   ? 'bg-gradient-to-b from-amber-500 to-orange-500'
               : isIppan
-                ? 'bg-gradient-to-b from-rose-500 to-red-500'
+                ? 'bg-gradient-to-b from-pink-500 to-fuchsia-500'
                 : 'bg-gradient-to-b from-blue-500 to-purple-500'
           "
         ></div>

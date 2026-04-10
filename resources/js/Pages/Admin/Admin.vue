@@ -468,28 +468,6 @@ const formatDateTime = (value) => {
 
             <!-- リリース管理タブ -->
             <template v-if="activeTab === 'releases'">
-                <!-- 未保存バー -->
-                <div
-                    v-if="hasPending"
-                    class="mb-4 flex items-center justify-between rounded-lg border border-amber-200 bg-amber-50 px-4 py-2.5"
-                >
-                    <span class="text-sm font-medium text-amber-700">
-                        {{ Object.keys(pendingChanges).length }}件の未保存の変更があります
-                    </span>
-                    <div class="flex gap-2">
-                        <button
-                            type="button"
-                            class="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-50"
-                            @click="resetReleases"
-                        >リセット</button>
-                        <button
-                            type="button"
-                            class="rounded-lg bg-gray-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gray-700"
-                            @click="saveReleases"
-                        >保存する</button>
-                    </div>
-                </div>
-
                 <!-- コース選択 -->
                 <div class="mb-5 flex flex-wrap gap-2">
                     <button
@@ -712,6 +690,28 @@ const formatDateTime = (value) => {
 
                 <div class="mt-3 text-sm text-gray-400 px-1">
                     ✓ = 公開中　– = 非公開　クリックで切り替え
+                </div>
+
+                <!-- 保存バー -->
+                <div
+                    v-if="hasPending"
+                    class="mt-4 flex flex-col gap-2 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+                >
+                    <span class="text-sm font-medium text-amber-700">
+                        {{ Object.keys(pendingChanges).length }}件の未保存の変更があります
+                    </span>
+                    <div class="flex gap-2">
+                        <button
+                            type="button"
+                            class="flex-1 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-50 sm:flex-none"
+                            @click="resetReleases"
+                        >リセット</button>
+                        <button
+                            type="button"
+                            class="flex-1 rounded-lg bg-gray-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gray-700 sm:flex-none"
+                            @click="saveReleases"
+                        >保存する</button>
+                    </div>
                 </div>
             </template>
         </div>

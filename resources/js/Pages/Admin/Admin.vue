@@ -91,14 +91,60 @@ const releaseDaigakuTab = ref("shikumi");
 const activeSeihoSubject   = computed(() => SEIHO_SUBJECTS.find((s) => s.key === releaseSeihoTab.value));
 const activeDaigakuSubject = computed(() => DAIGAKU_SUBJECTS.find((s) => s.key === releaseDaigakuTab.value));
 
-const isReleased = (testKey) => !!props.releasedKeys?.[testKey];
+// 未保存の変更を溜めるオブジェクト { testKey: newBooleanState }
+const pendingChanges = ref({});
+const hasPending = computed(() => Object.keys(pendingChanges.value).length > 0);
 
+// 実効値：pending があればそちら優先
+const isReleased = (testKey) => {
+    if (testKey in pendingChanges.value) return pendingChanges.value[testKey];
+    return !!props.releasedKeys?.[testKey];
+};
+
+// pending 中かどうか
+const isPending = (testKey) => testKey in pendingChanges.value;
+
+// クリック時はローカル状態だけ変更
 const toggleRelease = (testKey) => {
+    const original = !!props.releasedKeys?.[testKey];
+    if (testKey in pendingChanges.value) {
+        const next = !pendingChanges.value[testKey];
+        if (next === original) {
+            // 元に戻ったので pending から除去
+            const copy = { ...pendingChanges.value };
+            delete copy[testKey];
+            pendingChanges.value = copy;
+        } else {
+            pendingChanges.value = { ...pendingChanges.value, [testKey]: next };
+        }
+    } else {
+        pendingChanges.value = { ...pendingChanges.value, [testKey]: !original };
+    }
+};
+
+// まとめて保存
+const saveReleases = () => {
     router.post(
-        route("admin.releases.toggle", { testKey }),
-        {},
-        { preserveState: true, preserveScroll: true },
+        route("admin.releases.bulkUpdate"),
+        { changes: pendingChanges.value },
+        {
+            preserveScroll: true,
+            onSuccess: () => { pendingChanges.value = {}; },
+        },
     );
+};
+
+// 変更を破棄
+const resetReleases = () => { pendingChanges.value = {}; };
+
+// トグルボタンのクラス（4状態）
+const btnClass = (testKey) => {
+    const released = isReleased(testKey);
+    const pending  = isPending(testKey);
+    if (pending && released)  return "bg-emerald-100 text-emerald-700 ring-2 ring-emerald-400";
+    if (pending && !released) return "bg-rose-100 text-rose-500 ring-2 ring-rose-300";
+    if (released)             return "bg-emerald-500 text-white hover:bg-emerald-600";
+    return "bg-gray-200 text-gray-400 hover:bg-gray-300";
 };
 const isDaigakuAdmin = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 const adminIndexRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.index" : "admin.index"));
@@ -422,6 +468,28 @@ const formatDateTime = (value) => {
 
             <!-- リリース管理タブ -->
             <template v-if="activeTab === 'releases'">
+                <!-- 未保存バー -->
+                <div
+                    v-if="hasPending"
+                    class="mb-4 flex items-center justify-between rounded-lg border border-amber-200 bg-amber-50 px-4 py-2.5"
+                >
+                    <span class="text-sm font-medium text-amber-700">
+                        {{ Object.keys(pendingChanges).length }}件の未保存の変更があります
+                    </span>
+                    <div class="flex gap-2">
+                        <button
+                            type="button"
+                            class="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-50"
+                            @click="resetReleases"
+                        >リセット</button>
+                        <button
+                            type="button"
+                            class="rounded-lg bg-gray-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gray-700"
+                            @click="saveReleases"
+                        >保存する</button>
+                    </div>
+                </div>
+
                 <!-- コース選択 -->
                 <div class="mb-5 flex flex-wrap gap-2">
                     <button
@@ -494,7 +562,7 @@ const formatDateTime = (value) => {
                                         <td v-for="f in SEIHO_FORMS" :key="f" class="px-4 py-2.5 text-center">
                                             <button type="button"
                                                 class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
-                                                :class="isReleased(`seiho-${activeSeihoSubject.key}-${year}-${f}`) ? 'bg-emerald-500 text-white hover:bg-emerald-600' : 'bg-gray-200 text-gray-400 hover:bg-gray-300'"
+                                                :class="btnClass(`seiho-${activeSeihoSubject.key}-${year}-${f}`)"
                                                 @click="toggleRelease(`seiho-${activeSeihoSubject.key}-${year}-${f}`)"
                                             >{{ isReleased(`seiho-${activeSeihoSubject.key}-${year}-${f}`) ? '✓' : '–' }}</button>
                                         </td>
@@ -525,7 +593,7 @@ const formatDateTime = (value) => {
                                             <td v-for="f in IPPAN_FORMS" :key="f" class="px-4 py-2.5 text-center">
                                                 <button type="button"
                                                     class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
-                                                    :class="isReleased(`ippan-${year}-${period.key}-${f}`) ? 'bg-emerald-500 text-white hover:bg-emerald-600' : 'bg-gray-200 text-gray-400 hover:bg-gray-300'"
+                                                    :class="btnClass(`ippan-${year}-${period.key}-${f}`)"
                                                     @click="toggleRelease(`ippan-${year}-${period.key}-${f}`)"
                                                 >{{ isReleased(`ippan-${year}-${period.key}-${f}`) ? '✓' : '–' }}</button>
                                             </td>
@@ -557,7 +625,7 @@ const formatDateTime = (value) => {
                                             <td v-for="f in period.forms" :key="f" class="px-4 py-2.5 text-center">
                                                 <button type="button"
                                                     class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
-                                                    :class="isReleased(`senmon-${year}-${period.key}-${f}`) ? 'bg-emerald-500 text-white hover:bg-emerald-600' : 'bg-gray-200 text-gray-400 hover:bg-gray-300'"
+                                                    :class="btnClass(`senmon-${year}-${period.key}-${f}`)"
                                                     @click="toggleRelease(`senmon-${year}-${period.key}-${f}`)"
                                                 >{{ isReleased(`senmon-${year}-${period.key}-${f}`) ? '✓' : '–' }}</button>
                                             </td>
@@ -590,7 +658,7 @@ const formatDateTime = (value) => {
                                             <td v-for="f in period.forms" :key="f" class="px-4 py-2.5 text-center">
                                                 <button type="button"
                                                     class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
-                                                    :class="isReleased(`ouyou-${year}-${period.key}-${f}`) ? 'bg-emerald-500 text-white hover:bg-emerald-600' : 'bg-gray-200 text-gray-400 hover:bg-gray-300'"
+                                                    :class="btnClass(`ouyou-${year}-${period.key}-${f}`)"
                                                     @click="toggleRelease(`ouyou-${year}-${period.key}-${f}`)"
                                                 >{{ isReleased(`ouyou-${year}-${period.key}-${f}`) ? '✓' : '–' }}</button>
                                             </td>
@@ -631,7 +699,7 @@ const formatDateTime = (value) => {
                                         <td v-for="f in DAIGAKU_FORMS" :key="f" class="px-4 py-2.5 text-center">
                                             <button type="button"
                                                 class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
-                                                :class="isReleased(`daigaku-${activeDaigakuSubject.key}-${year}-${f}`) ? 'bg-emerald-500 text-white hover:bg-emerald-600' : 'bg-gray-200 text-gray-400 hover:bg-gray-300'"
+                                                :class="btnClass(`daigaku-${activeDaigakuSubject.key}-${year}-${f}`)"
                                                 @click="toggleRelease(`daigaku-${activeDaigakuSubject.key}-${year}-${f}`)"
                                             >{{ isReleased(`daigaku-${activeDaigakuSubject.key}-${year}-${f}`) ? '✓' : '–' }}</button>
                                         </td>

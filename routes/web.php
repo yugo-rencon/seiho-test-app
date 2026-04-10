@@ -202,7 +202,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('admin.contacts.index');
     Route::post('contacts/{contact}/status', [ContactAdminController::class, 'updateStatus'])->name('admin.contacts.updateStatus');
     Route::post('contacts/{contact}/note', [ContactAdminController::class, 'updateNote'])->name('admin.contacts.updateNote');
-    Route::post('releases/{testKey}/toggle', [AdminController::class, 'toggleRelease'])->name('admin.releases.toggle');
+    Route::post('releases/bulk', [AdminController::class, 'bulkUpdateReleases'])->name('admin.releases.bulkUpdate');
 });
 
 Route::middleware(['auth', 'admin'])->prefix('daigaku/admin')->group(function () {

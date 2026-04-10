@@ -141,29 +141,25 @@ class AdminController extends Controller
         return back()->with('status', $nextPremium ? 'プレミアム有効化に更新しました。' : '未購入に更新しました。');
     }
 
-    public function toggleRelease(Request $request, string $testKey): RedirectResponse
+    public function bulkUpdateReleases(Request $request): RedirectResponse
     {
-        $allowedPattern = '/^[a-z0-9\-]+$/';
-        if (!preg_match($allowedPattern, $testKey)) {
-            abort(422);
-        }
+        $changes = $request->input('changes', []);
 
-        $existing = DB::table('test_releases')->where('test_key', $testKey)->first();
+        foreach ($changes as $testKey => $isReleased) {
+            if (!preg_match('/^[a-z0-9\-]+$/', (string) $testKey)) {
+                continue;
+            }
 
-        if ($existing) {
-            DB::table('test_releases')
-                ->where('test_key', $testKey)
-                ->update([
-                    'is_released' => !$existing->is_released,
-                    'updated_at' => now(),
-                ]);
-        } else {
-            DB::table('test_releases')->insert([
-                'test_key' => $testKey,
-                'is_released' => true,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+            DB::table('test_releases')->upsert(
+                [
+                    'test_key'    => $testKey,
+                    'is_released' => $isReleased ? 1 : 0,
+                    'created_at'  => now(),
+                    'updated_at'  => now(),
+                ],
+                ['test_key'],
+                ['is_released', 'updated_at'],
+            );
         }
 
         return back();

@@ -43,7 +43,7 @@ const logout = () => {
             </div>
         </header>
 
-        <main>
+        <main class="overflow-x-hidden">
             <slot />
         </main>
     </div>

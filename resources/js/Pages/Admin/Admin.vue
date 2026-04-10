@@ -179,7 +179,7 @@ const formatDateTime = (value) => {
 <template>
     <AdminLayout title="管理画面">
 
-        <div class="container mx-auto max-w-6xl px-5 py-8">
+        <div class="container mx-auto max-w-6xl px-5 py-8 pb-24">
             <div class="mb-6">
                 <h1 class="text-2xl font-bold text-gray-900">管理者画面</h1>
                 <p class="mt-1 text-sm text-gray-500">

@@ -207,7 +207,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '',
+                        '職業上の危険・行動上の危険・道徳上の危険 → 身体上の危険・環境上の危険・道徳上の危険', //p53
                         '正しい',
                         '正しい',
                         '',

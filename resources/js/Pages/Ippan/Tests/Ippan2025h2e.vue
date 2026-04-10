@@ -278,11 +278,11 @@ const isDraft = true;
                         // 問38〜67
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '',
+                            content: '通称名でもよい → 戸籍等の公的書類記載のものを記入', //p40
                         }, //38
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '',
+                            content: '契約者 → 被保険者', //p40
                         }, //39
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -294,7 +294,7 @@ const isDraft = true;
                         }, //41
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '',
+                            content: '保険料が30000円以上 → 50000円以上', //p43
                         }, //42
                         {
                             questionTitle: '保険料の払い込み',

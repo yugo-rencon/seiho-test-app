@@ -318,11 +318,11 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '',
+                            content: '通称名でもよい → 戸籍等の公的書類記載のものを記入', //p40
                         }, //48
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '',
+                            content: 'すべての保険会社が保険年齢を使用 → 満年齢・保険年齢それぞれ使用する会社がある', //p41
                         }, //49
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -330,7 +330,7 @@ const isDraft = true;
                         }, //50
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '',
+                            content: '保険料が30000円以上の時は100円の収入印紙 → 50000円以上の時は200円の収入印紙', //p43
                         }, //51
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -338,7 +338,7 @@ const isDraft = true;
                         }, //52
                         {
                             questionTitle: '契約の選択',
-                            content: '',
+                            content: '経済上の危険 → 環境上の危険', //p52
                         }, //53
                         {
                             questionTitle: '契約の選択',
@@ -354,7 +354,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '契約の選択',
-                            content: '',
+                            content: '自由条件付契約 → 特別条件付契約', //p59
                         }, //57
                         {
                             questionTitle: '募集時の正しい説明',

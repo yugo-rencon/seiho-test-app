@@ -92,6 +92,10 @@ class AdminController extends Controller
             ->where('status', 'new')
             ->count();
 
+        $releasedKeys = DB::table('test_releases')
+            ->where('is_released', 1)
+            ->pluck('is_released', 'test_key');
+
         return Inertia::render('Admin/Admin', [
             'users' => $users,
             'admins' => $admins,
@@ -100,6 +104,7 @@ class AdminController extends Controller
             'filters' => [
                 'q' => $q,
             ],
+            'releasedKeys' => $releasedKeys,
         ]);
     }
 
@@ -134,5 +139,33 @@ class AdminController extends Controller
         }
 
         return back()->with('status', $nextPremium ? 'プレミアム有効化に更新しました。' : '未購入に更新しました。');
+    }
+
+    public function toggleRelease(Request $request, string $testKey): RedirectResponse
+    {
+        $allowedPattern = '/^[a-z0-9\-]+$/';
+        if (!preg_match($allowedPattern, $testKey)) {
+            abort(422);
+        }
+
+        $existing = DB::table('test_releases')->where('test_key', $testKey)->first();
+
+        if ($existing) {
+            DB::table('test_releases')
+                ->where('test_key', $testKey)
+                ->update([
+                    'is_released' => !$existing->is_released,
+                    'updated_at' => now(),
+                ]);
+        } else {
+            DB::table('test_releases')->insert([
+                'test_key' => $testKey,
+                'is_released' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
+
+        return back();
     }
 }

@@ -1,7 +1,7 @@
 <script setup>
 import { Link, Head, router, useForm, usePage } from "@inertiajs/vue3";
 import { computed, ref } from "vue";
-import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
+import AdminLayout from "@/Layouts/AdminLayout.vue";
 
 const props = defineProps({
     contacts: { type: Object, required: true },
@@ -100,8 +100,7 @@ const statusTabs = [
 </script>
 
 <template>
-    <SeihoTestLayout title="問い合わせ管理">
-        <Head title="問い合わせ管理" />
+    <AdminLayout title="問い合わせ管理">
 
         <div class="container mx-auto max-w-6xl px-5 py-8">
             <div class="mb-6 flex items-center justify-between gap-3">
@@ -270,5 +269,5 @@ const statusTabs = [
                 </Link>
             </div>
         </div>
-    </SeihoTestLayout>
+    </AdminLayout>
 </template>

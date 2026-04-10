@@ -51,23 +51,23 @@ const SEIHO_FORMS = ["a", "b", "c"];
 
 // 一般課程
 const IPPAN_PERIODS = [
-    { key: "h1", label: "上半期(1-6月)" },
-    { key: "h2", label: "下半期(7-12月)" },
+    { key: "h1", label: "1-6月" },
+    { key: "h2", label: "7-12月" },
 ];
 const IPPAN_YEARS  = [2025, 2024, 2023];
 const IPPAN_FORMS  = ["a", "b", "c", "d", "e"];
 
 // 専門課程
 const SENMON_PERIODS = [
-    { key: "h1", label: "上半期(4-8月)",  forms: ["a", "b"] },
-    { key: "h2", label: "下半期(9-3月)", forms: ["a", "b", "c", "d"] },
+    { key: "h1", label: "4-8月",  forms: ["a", "b"] },
+    { key: "h2", label: "9-3月", forms: ["a", "b", "c", "d"] },
 ];
 const SENMON_YEARS = [2025, 2024, 2023];
 
 // 応用課程
 const OUYOU_PERIODS = [
-    { key: "h1", label: "上半期(4-8月)",  forms: ["a", "b"] },
-    { key: "h2", label: "下半期(9-3月)", forms: ["a", "b", "c", "d"] },
+    { key: "h1", label: "4-8月",  forms: ["a", "b"] },
+    { key: "h2", label: "9-3月", forms: ["a", "b", "c", "d"] },
 ];
 const OUYOU_YEARS = [2025, 2024, 2023];
 
@@ -513,7 +513,7 @@ const formatDateTime = (value) => {
                                 <thead class="bg-gray-100 text-left text-gray-600">
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
-                                        <th class="px-4 py-2.5 font-semibold">期</th>
+                                        <th class="px-4 py-2.5 font-semibold">月</th>
                                         <th v-for="f in IPPAN_FORMS" :key="f" class="px-4 py-2.5 font-semibold text-center uppercase">{{ f }}</th>
                                     </tr>
                                 </thead>
@@ -545,7 +545,7 @@ const formatDateTime = (value) => {
                                 <thead class="bg-gray-100 text-left text-gray-600">
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
-                                        <th class="px-4 py-2.5 font-semibold">期</th>
+                                        <th class="px-4 py-2.5 font-semibold">月</th>
                                         <th v-for="f in ['a','b','c','d']" :key="f" class="px-4 py-2.5 font-semibold text-center uppercase">{{ f }}</th>
                                     </tr>
                                 </thead>
@@ -578,7 +578,7 @@ const formatDateTime = (value) => {
                                 <thead class="bg-gray-100 text-left text-gray-600">
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
-                                        <th class="px-4 py-2.5 font-semibold">期</th>
+                                        <th class="px-4 py-2.5 font-semibold">月</th>
                                         <th v-for="f in ['a','b','c','d']" :key="f" class="px-4 py-2.5 font-semibold text-center uppercase">{{ f }}</th>
                                     </tr>
                                 </thead>

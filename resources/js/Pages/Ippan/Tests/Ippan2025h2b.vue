@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年7月〜12月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -55,8 +55,8 @@ const isDraft = true;
                     questionRange="6〜7"
                     questionTitle="生命保険の仕組み-①"
                     :contents="[
-                        '',
-                        '', // 問6〜7
+                        '相互扶助',
+                        '準備財産', // 問6〜7
                     ]"
                     :labels="[
                         'ア', //6
@@ -69,9 +69,9 @@ const isDraft = true;
                     questionRange="8〜10"
                     questionTitle="生命保険の仕組み-②"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問9〜10
+                        '大数の法則',
+                        '生命表',
+                        '死亡率', // 問9〜10
                     ]"
                     :labels="[
                         'イ', //8
@@ -175,11 +175,11 @@ const isDraft = true;
                     questionRange="26〜30"
                     questionTitle="設計販売の基礎"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問26〜30
+                        '5',
+                        '35',
+                        '52',
+                        '36',
+                        '家族の生活資金+妻の生活資金', // 問26〜30
                     ]"
                     :labels="[
                         'ア', //26
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="保険金・給付金の請求と支払い"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '他の受取人に対しても支払わない → 残額を支払う', //p104
                         '正しい',
                     ]"
                 />
@@ -318,7 +318,7 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '', //p
+                            content: '公平性の原則 → 収支相当の原則', //p23
                         }, //48
                         {
                             questionTitle: '保険料の仕組み',
@@ -326,7 +326,7 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '', //p
+                            content: '付加保険料 → 純保険料', //p24
                         }, //50
                         {
                             questionTitle: '保険料の仕組み',
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険料は割高 → 保険料は割安', //p27
                         }, //54
                         {
                             questionTitle: '剰余金と配当金',
@@ -354,7 +354,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険金買増方法 → 積立（据置）方法', //p29
                         }, //57
                         {
                             questionTitle: '契約の選択',

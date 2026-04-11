@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年7月〜12月実施 フォームE";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -115,8 +115,8 @@ const isDraft = true;
                     questionRange="16〜17"
                     questionTitle="保険金・給付金の請求と支払い-①"
                     :contents="[
-                        '',
-                        '', // 問16〜17
+                        '保険料',
+                        '約款', // 問16〜17
                     ]"
                     :labels="[
                         'イ', //16
@@ -129,9 +129,9 @@ const isDraft = true;
                     questionRange="18〜20"
                     questionTitle="保険金・給付金の請求と支払い-②"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問18〜20
+                        '契約日',
+                        '故意',
+                        '戦争その他の変乱', // 問18〜20
                     ]"
                     :labels="[
                         'イ', //18
@@ -145,9 +145,9 @@ const isDraft = true;
                     questionRange="21〜23"
                     questionTitle="相続の法律-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問21〜23
+                        '相続の放棄',
+                        '単純',
+                        '限定', // 問21〜23
                     ]"
                     :labels="[
                         'ア', //21
@@ -161,8 +161,8 @@ const isDraft = true;
                     questionRange="24〜25"
                     questionTitle="相続の法律-②"
                     :contents="[
-                        '',
-                        '', // 問24〜25
+                        '家庭裁判所',
+                        'みなし', // 問24〜25
                     ]"
                     :labels="[
                         'エ', //24
@@ -175,11 +175,11 @@ const isDraft = true;
                     questionRange="26〜30"
                     questionTitle="保険料の仕組み（収支相等の原則）"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問26〜30
+                        '2',
+                        '4000',
+                        '1000',
+                        '4',
+                        '4000', // 問26〜30
                     ]"
                     :labels="[
                         'イ', //26
@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="生命保険の仕組み"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '公平性の法則 → 大数の法則', //p14
                         '正しい',
                     ]"
                 />
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                         }, //52
                         {
                             questionTitle: '生命保険会社の仕組み',

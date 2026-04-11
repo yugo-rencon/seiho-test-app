@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年7月〜12月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                     ]"
                 />
                 <QuestionTemp1
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '情報収集を避けなければいけない → 情報収集を行うことが大切', //p89
                     ]"
                 />
                 <QuestionTemp1
@@ -317,23 +317,23 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
-                            questionTitle: '正しい告知の取扱い',
+                            questionTitle: '正しい告知の取り扱い',
                             content: '正しい',
                         }, //48
                         {
-                            questionTitle: '正しい告知の取扱い',
-                            content: '', //p
+                            questionTitle: '正しい告知の取り扱い',
+                            content: '契約成立後に行うことはない → 契約成立前に行う場合と契約成立後に行う場合がある', //p85
                         }, //49
                         {
-                            questionTitle: '正しい告知の取扱い',
+                            questionTitle: '正しい告知の取り扱い',
                             content: '正しい',
                         }, //50
                         {
-                            questionTitle: '正しい告知の取扱い',
-                            content: '', //p
+                            questionTitle: '正しい告知の取り扱い',
+                            content: '払い込んだ保険料は払い戻す → 解約返戻金があれば払い戻す', //p86
                         }, //51
                         {
-                            questionTitle: '正しい告知の取扱い',
+                            questionTitle: '正しい告知の取り扱い',
                             content: '正しい',
                         }, //52
                         {
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
-                            content: '', //p
+                            content: '他の受取人に対しても支払わない → 残額を支払う', //p104
                         }, //54
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',

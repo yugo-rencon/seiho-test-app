@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年7月〜12月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -175,11 +175,11 @@ const isDraft = true;
                     questionRange="26〜30"
                     questionTitle="保険料の仕組み（収支相等の原則）"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問26〜30
+                        '2',
+                        '4000',
+                        '1000',
+                        '4',
+                        '4000', // 問26〜30
                     ]"
                     :labels="[
                         'イ', //26
@@ -207,9 +207,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="相続の法律"
                     :contents="[
-                        '',
+                        '法定相続の規定は遺言に優先して → 遺言は法定相続の規定に優先して', //p129
                         '正しい',
-                        '', //p
+                        '配偶者が2/3、子どもが1/3 → 配偶者が1/2、子どもが1/2', //p130
                         '正しい',
                     ]"
                 />
@@ -326,11 +326,11 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
+                            content: '公平の法則 → 大数の法則',
                         }, //50
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //51
                         {
                             questionTitle: '生命保険の仕組み',

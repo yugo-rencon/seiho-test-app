@@ -5,7 +5,8 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
-const IPPAN_YEARS = [2025, 2024, 2023];
+const IPPAN_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
+const IPPAN_PUBLISHED_YEARS = [2025];
 const IPPAN_PERIODS = [
     {
         id: "h1",
@@ -28,12 +29,13 @@ const activePeriod = computed(
     () => IPPAN_PERIODS.find((period) => period.id === activePeriodId.value) ?? IPPAN_PERIODS[0],
 );
 
-const getFormHref = (year, period, form) =>
-    route("ippan.test", {
+const getFormHref = (year, period, form) => {
+    return route("ippan.test", {
         year,
         months: period.months,
         form,
     });
+};
 </script>
 
 <template>
@@ -83,7 +85,16 @@ const getFormHref = (year, period, form) =>
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
                                     {{ year }}年
                                 </div>
-                                <span class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600">
+                                <span
+                                    v-if="IPPAN_PUBLISHED_YEARS.includes(year)"
+                                    class="inline-flex items-center rounded-full border border-emerald-300 bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-700"
+                                >
+                                    公開中
+                                </span>
+                                <span
+                                    v-else
+                                    class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600"
+                                >
                                     準備中
                                 </span>
                             </div>

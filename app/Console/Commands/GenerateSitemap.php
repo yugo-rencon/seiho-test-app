@@ -99,7 +99,7 @@ class GenerateSitemap extends Command
             }
         }
 
-        $ippanYears = ['2025', '2024', '2023'];
+        $ippanYears = ['2025'];
         $ippanMonths = ['1-6', '7-12'];
         $ippanForms = ['a', 'b', 'c', 'd', 'e'];
         foreach ($ippanYears as $year) {

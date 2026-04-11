@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年1月〜6月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                         }, //52
                         {
                             questionTitle: '生命保険会社の仕組み',

@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年1月〜6月実施 フォームE";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,8 +196,8 @@ const isDraft = true;
                     questionTitle="私たちの役割と心がまえ"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '預金保険法等 → 保険業法等', //p11
+                        '潜在ニーズを引き出す必要はない → 潜在ニーズを引き出してアプローチする必要がある', //p12
                         '正しい',
                     ]"
                 />
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '情報収集を避けなければいけない → 情報収集を行うことが大切', //p89
                     ]"
                 />
                 <QuestionTemp1
@@ -318,7 +318,7 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '', //p
+                            content: '公平性の原則 → 収支相当の原則', //p23
                         }, //48
                         {
                             questionTitle: '保険料の仕組み',
@@ -346,7 +346,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '12日以内 → 8日以内', //p47
                         }, //55
                         {
                             questionTitle: '契約申込み時の実務',

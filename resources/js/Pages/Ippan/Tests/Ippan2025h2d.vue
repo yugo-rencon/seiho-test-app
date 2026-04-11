@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年7月〜12月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -71,7 +71,7 @@ const isDraft = true;
                     :contents="[
                         '契約者',
                         '保険業法',
-                        '複利', // 問9〜10
+                        '複利', // 問8〜10
                     ]"
                     :labels="[
                         'ウ', //8
@@ -175,11 +175,11 @@ const isDraft = true;
                     questionRange="26〜30"
                     questionTitle="保険料の仕組み（収支相等の原則）"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問26〜30
+                        '2',
+                        '4000',
+                        '1000',
+                        '4',
+                        '4000', // 問26〜30
                     ]"
                     :labels="[
                         'イ', //26

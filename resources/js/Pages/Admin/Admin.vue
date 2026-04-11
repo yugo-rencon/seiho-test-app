@@ -169,6 +169,15 @@ const groupStats = computed(() => {
     };
 });
 
+// 全コース合計
+const totalStats = computed(() => {
+    const all = Object.values(groupStats.value);
+    return {
+        total:    all.reduce((s, g) => s + g.total, 0),
+        released: all.reduce((s, g) => s + g.released, 0),
+    };
+});
+
 // トグルボタンのクラス（4状態）
 const btnClass = (testKey) => {
     const released = isReleased(testKey);
@@ -500,21 +509,34 @@ const formatDateTime = (value) => {
 
             <!-- リリース管理タブ -->
             <template v-if="activeTab === 'releases'">
+                <!-- 全体進捗 -->
+                <div class="mb-4 rounded-xl border border-gray-200 bg-white px-5 py-3">
+                    <div class="mb-1 flex justify-between text-xs text-gray-500">
+                        <span class="font-semibold text-gray-700">全コース合計</span>
+                        <span>完成 {{ totalStats.released }} / 全 {{ totalStats.total }} ページ　残り {{ totalStats.total - totalStats.released }} ページ</span>
+                    </div>
+                    <div class="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+                        <div
+                            class="h-full rounded-full bg-indigo-500 transition-all duration-300"
+                            :style="{ width: `${totalStats.total === 0 ? 0 : Math.round(totalStats.released / totalStats.total * 100)}%` }"
+                        />
+                    </div>
+                </div>
                 <!-- コース選択 -->
                 <div class="mb-3 flex flex-wrap gap-2">
                     <button
-                        v-for="({ key, label, color }) in [
-                            { key: 'seiho',   label: '生保講座', color: 'purple'  },
-                            { key: 'daigaku', label: '生保大学', color: 'blue'    },
-                            { key: 'ouyou',   label: '応用課程', color: 'amber'   },
-                            { key: 'senmon',  label: '専門課程', color: 'emerald' },
-                            { key: 'ippan',   label: '一般課程', color: 'fuchsia' },
+                        v-for="({ key, label, activeClass }) in [
+                            { key: 'seiho',   label: '生保講座', activeClass: 'border-purple-500 bg-purple-500 text-white'  },
+                            { key: 'daigaku', label: '生保大学', activeClass: 'border-blue-500 bg-blue-500 text-white'      },
+                            { key: 'ouyou',   label: '応用課程', activeClass: 'border-amber-500 bg-amber-500 text-white'    },
+                            { key: 'senmon',  label: '専門課程', activeClass: 'border-emerald-500 bg-emerald-500 text-white' },
+                            { key: 'ippan',   label: '一般課程', activeClass: 'border-fuchsia-500 bg-fuchsia-500 text-white' },
                         ]"
                         :key="key"
                         type="button"
                         class="flex items-center gap-2 rounded-lg border-2 px-4 py-2 text-sm font-bold transition"
                         :class="releaseGroup === key
-                            ? `border-${color}-500 bg-${color}-500 text-white`
+                            ? activeClass
                             : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-gray-700'"
                         @click="releaseGroup = key"
                     >

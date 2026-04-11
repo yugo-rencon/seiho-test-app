@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年1月〜6月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -358,7 +358,7 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '保険金受取人 → 契約者', //p78
                         }, //58
                         {
                             questionTitle: '募集時の正しい説明',
@@ -370,7 +370,7 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '保険設計書 → 意向確認書面', //p81
                         }, //61
                         {
                             questionTitle: '募集時の正しい説明',
@@ -378,7 +378,7 @@ const isDraft = true;
                         }, //62
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '',
+                            content: 'ライフスタイル → ライフサイクル', //p133
                         }, //63
                         {
                             questionTitle: 'お客さまニーズへの対応',

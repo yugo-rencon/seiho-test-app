@@ -25,9 +25,9 @@ const isDraft = true;
                     questionRange="1〜3"
                     questionTitle="保障の見直し-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問1〜3
+                        '責任準備金',
+                        '死亡保障',
+                        '追加', // 問1〜3
                     ]"
                     :labels="[
                         'ア', //1
@@ -41,8 +41,8 @@ const isDraft = true;
                     questionRange="4〜5"
                     questionTitle="保障の見直し-②"
                     :contents="[
-                        '',
-                        '', // 問4〜5
+                        '契約者',
+                        '意向確認書面', // 問4〜5
                     ]"
                     :labels="[
                         'イ', //4
@@ -55,12 +55,12 @@ const isDraft = true;
                     questionRange="6〜7"
                     questionTitle="契約の選択-①"
                     :contents="[
-                        '',
-                        '', // 問6〜7
+                        '環境',
+                        '契約内容登録制度', // 問6〜7
                     ]"
                     :labels="[
                         'イ', //6
-                        'エ', //7
+                        'ウ', //7
                     ]"
                 />
                 <QuestionTemp3
@@ -69,14 +69,14 @@ const isDraft = true;
                     questionRange="8〜10"
                     questionTitle="契約の選択-②"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問9〜10
+                        '面接',
+                        '保険金削減',
+                        '特別条件', // 問9〜10
                     ]"
                     :labels="[
-                        'ア', //8
+                        'イ', //8
                         'ウ', //9
-                        'カ', //10
+                        'オ', //10
                     ]"
                 />
                 <QuestionTemp3
@@ -85,8 +85,8 @@ const isDraft = true;
                     questionRange="11〜12"
                     questionTitle="生命保険の募集等に関する法律-①"
                     :contents="[
-                        '',
-                        '', // 問11〜12
+                        '内閣総理大臣',
+                        '媒介', // 問11〜12
                     ]"
                     :labels="[
                         'イ', //11
@@ -99,9 +99,9 @@ const isDraft = true;
                     questionRange="14〜15"
                     questionTitle="生命保険の募集等に関する法律-②"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問13〜15
+                        '告知義務違反',
+                        '特別の利益の提供',
+                        '保険法', // 問13〜15
                     ]"
                     :labels="[
                         'イ', //13
@@ -195,9 +195,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="資産の運用"
                     :contents="[
-                        '', //p
+                        '積極的で投機的な資産運用 → 効率的で安定した資産運用', //p34
                         '正しい',
-                        '', //p
+                        '貸付金は含まれない → 含まれる（有価証券・貸付金・不動産が主な対象）', //p35
                         '正しい',
                     ]"
                 />
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一般勘定 → 特別勘定', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="正しい告知の取り扱い"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '被保険者（または保険金受取人） → 被保険者（または契約者）', //p86
                         '正しい',
                     ]"
                 />
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
-                        '', //p
+                        'ライフプラン → ライフサイクル', //p133
                         '正しい',
                         '正しい',
                     ]"
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '',
+                            content: '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         }, //59
                         {
                             questionTitle: '照会・苦情時の対応',
@@ -378,7 +378,7 @@ const isDraft = true;
                         }, //62
                         {
                             questionTitle: '社会保障制度',
-                            content: '',
+                            content: '雇用保険法 → 生活保護法', //p112
                         }, //63
                         {
                             questionTitle: '社会保障制度',
@@ -386,7 +386,7 @@ const isDraft = true;
                         }, //64
                         {
                             questionTitle: '社会保障制度',
-                            content: '',
+                            content: '老齢・疾病・遺族 → 老齢・障害・遺族', //p113
                         }, //65
                         {
                             questionTitle: '社会保障制度',
@@ -394,7 +394,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '社会保障制度',
-                            content: '',
+                            content: '60歳以上の第1号被保険者と40歳以上60歳未満の第2号被保険者 → 65歳以上の第1号被保険者と40歳以上65歳未満の第2号被保険者', //p115
                         }, //67
                     ]"
                 />

@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年1月〜6月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -175,7 +175,7 @@ const isDraft = true;
                     questionRange="26〜30"
                     questionTitle="設計販売の基礎"
                     :contents="[
-                        '７',
+                        '7',
                         '36',
                         '51',
                         '37',
@@ -201,7 +201,18 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="32" :title="title" :subject="subject" questionTitle="生命保険の募集等に関する法律" :contents="['', '', '正しい', '正しい']" />
+                <QuestionTemp1
+                    :questionNumber="32"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生命保険の募集等に関する法律"
+                    :contents="[
+                        '財務大臣 → 内閣総理大臣', //p63
+                        '承諾 → 媒介', //p64
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="33"
                     :title="title"
@@ -225,8 +236,28 @@ const isDraft = true;
                         '払い戻されない → 払い戻す', //p96
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="35" :title="title" :subject="subject" questionTitle="資産の運用" :contents="['正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="36" :title="title" :subject="subject" questionTitle="保障の見直し" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="35"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="資産の運用"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '貸付金は含まれない → 含まれる（有価証券・貸付金・不動産が主な対象）', //p35
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="36"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保障の見直し"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '転換前契約の加入時 → 転換時', //p92
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="37"
                     :title="title"
@@ -275,6 +306,10 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '保険料の払い込み',
+                            content: '正しい',
+                        }, //45
+                        {
+                            questionTitle: '保険料の払い込み',
                             content: '保険業法 → 生命保険会社', //p50
                         }, //46
                         {
@@ -282,12 +317,8 @@ const isDraft = true;
                             content: '途中で変更できない → 変更できる', //p51
                         }, //47
                         {
-                            questionTitle: '保険料の払い込み',
-                            content: '',
-                        }, //47
-                        {
                             questionTitle: '生命保険の種類',
-                            content: '',
+                            content: '定額保険 → 定期保険', //p17
                         }, //48
                         {
                             questionTitle: '生命保険の種類',
@@ -303,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '生命保険の種類',
-                            content: '',
+                            content: '保険金額（基本保険金額）は保証されない → 保証される', //p20
                         }, //52
                         {
                             questionTitle: '隣接業界',
@@ -311,23 +342,23 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '総務省 → 厚生労働省', //p108
                         }, //54
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '損害保険は取り扱えない → 生命保険も損害保険も取り扱える', //p109
                         }, //55
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '火災保険・地震保険：人に関する保険 → 物に関する保険<br>個人賠償責任保険：物に関する保険 → 人に関する保険', //p110
                         }, //56
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '3年以内 → 1年以内', //p109
                         }, //57
                         {
                             questionTitle: '社会保障制度',
-                            content: '',
+                            content: '雇用保険法 → 生活保護法', //p112
                         }, //58
                         {
                             questionTitle: '社会保障制度',
@@ -335,7 +366,7 @@ const isDraft = true;
                         }, //59
                         {
                             questionTitle: '社会保障制度',
-                            content: '',
+                            content: '老齢・疾病・遺族 → 老齢・障害・遺族', //p113
                         }, //60
                         {
                             questionTitle: '社会保障制度',
@@ -343,11 +374,11 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '社会保障制度',
-                            content: '',
+                            content: '60歳以上の第1号被保険者と40歳以上60歳未満の第2号被保険者 → 65歳以上の第1号被保険者と40歳以上65歳未満の第2号被保険者', //p115
                         }, //62
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '',
+                            content: '相続税 → 贈与税', //p126
                         }, //63
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
@@ -359,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '',
+                            content: '50万円 → 110万円', //p127
                         }, //66
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',

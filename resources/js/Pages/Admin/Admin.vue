@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link, router, usePage } from "@inertiajs/vue3";
+import { Link, router, usePage } from "@inertiajs/vue3";
 import { computed, ref } from "vue";
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 
@@ -54,7 +54,7 @@ const IPPAN_PERIODS = [
     { key: "h1", label: "1-6月" },
     { key: "h2", label: "7-12月" },
 ];
-const IPPAN_YEARS  = [2025, 2024, 2023];
+const IPPAN_YEARS  = [2025, 2024, 2023, 2022, 2021, 2020];
 const IPPAN_FORMS  = ["a", "b", "c", "d", "e"];
 
 // 専門課程
@@ -62,14 +62,14 @@ const SENMON_PERIODS = [
     { key: "h1", label: "4-8月",  forms: ["a", "b"] },
     { key: "h2", label: "9-3月", forms: ["a", "b", "c", "d"] },
 ];
-const SENMON_YEARS = [2025, 2024, 2023];
+const SENMON_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 
 // 応用課程
 const OUYOU_PERIODS = [
     { key: "h1", label: "4-8月",  forms: ["a", "b"] },
     { key: "h2", label: "9-3月", forms: ["a", "b", "c", "d"] },
 ];
-const OUYOU_YEARS = [2025, 2024, 2023];
+const OUYOU_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 
 // 生保大学
 const DAIGAKU_SUBJECTS = [
@@ -80,7 +80,7 @@ const DAIGAKU_SUBJECTS = [
     { key: "kigyo",   label: "企業保険・団体保険" },
     { key: "syakai",  label: "社会保障と生命保険" },
 ];
-const DAIGAKU_YEARS = [2025, 2024, 2023, 2022, 2021];
+const DAIGAKU_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 const DAIGAKU_FORMS = ["a", "b", "c"];
 
 // タブ状態
@@ -136,6 +136,38 @@ const saveReleases = () => {
 
 // 変更を破棄
 const resetReleases = () => { pendingChanges.value = {}; };
+
+// コースごとの完成数/合計数
+const groupStats = computed(() => {
+    const count = (keys) => ({
+        total: keys.length,
+        released: keys.filter((k) => isReleased(k)).length,
+    });
+
+    const seihoKeys = SEIHO_SUBJECTS.flatMap((s) =>
+        SEIHO_YEARS.flatMap((y) => SEIHO_FORMS.map((f) => `seiho-${s.key}-${y}-${f}`)),
+    );
+    const ippanKeys = IPPAN_YEARS.flatMap((y) =>
+        IPPAN_PERIODS.flatMap((p) => IPPAN_FORMS.map((f) => `ippan-${y}-${p.key}-${f}`)),
+    );
+    const senmonKeys = SENMON_YEARS.flatMap((y) =>
+        SENMON_PERIODS.flatMap((p) => p.forms.map((f) => `senmon-${y}-${p.key}-${f}`)),
+    );
+    const ouyouKeys = OUYOU_YEARS.flatMap((y) =>
+        OUYOU_PERIODS.flatMap((p) => p.forms.map((f) => `ouyou-${y}-${p.key}-${f}`)),
+    );
+    const daigakuKeys = DAIGAKU_SUBJECTS.flatMap((s) =>
+        DAIGAKU_YEARS.flatMap((y) => DAIGAKU_FORMS.map((f) => `daigaku-${s.key}-${y}-${f}`)),
+    );
+
+    return {
+        seiho:   count(seihoKeys),
+        ippan:   count(ippanKeys),
+        senmon:  count(senmonKeys),
+        ouyou:   count(ouyouKeys),
+        daigaku: count(daigakuKeys),
+    };
+});
 
 // トグルボタンのクラス（4状態）
 const btnClass = (testKey) => {
@@ -469,47 +501,39 @@ const formatDateTime = (value) => {
             <!-- リリース管理タブ -->
             <template v-if="activeTab === 'releases'">
                 <!-- コース選択 -->
-                <div class="mb-5 flex flex-wrap gap-2">
+                <div class="mb-3 flex flex-wrap gap-2">
                     <button
+                        v-for="({ key, label, color }) in [
+                            { key: 'seiho',   label: '生保講座', color: 'purple'  },
+                            { key: 'daigaku', label: '生保大学', color: 'blue'    },
+                            { key: 'ouyou',   label: '応用課程', color: 'amber'   },
+                            { key: 'senmon',  label: '専門課程', color: 'emerald' },
+                            { key: 'ippan',   label: '一般課程', color: 'fuchsia' },
+                        ]"
+                        :key="key"
                         type="button"
-                        class="rounded-lg border-2 px-4 py-2 text-sm font-bold transition"
-                        :class="releaseGroup === 'seiho'
-                            ? 'border-purple-500 bg-purple-500 text-white'
+                        class="flex items-center gap-2 rounded-lg border-2 px-4 py-2 text-sm font-bold transition"
+                        :class="releaseGroup === key
+                            ? `border-${color}-500 bg-${color}-500 text-white`
                             : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-gray-700'"
-                        @click="releaseGroup = 'seiho'"
-                    >生保講座</button>
-                    <button
-                        type="button"
-                        class="rounded-lg border-2 px-4 py-2 text-sm font-bold transition"
-                        :class="releaseGroup === 'daigaku'
-                            ? 'border-blue-500 bg-blue-500 text-white'
-                            : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-gray-700'"
-                        @click="releaseGroup = 'daigaku'"
-                    >生保大学</button>
-                    <button
-                        type="button"
-                        class="rounded-lg border-2 px-4 py-2 text-sm font-bold transition"
-                        :class="releaseGroup === 'ouyou'
-                            ? 'border-amber-500 bg-amber-500 text-white'
-                            : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-gray-700'"
-                        @click="releaseGroup = 'ouyou'"
-                    >応用課程</button>
-                    <button
-                        type="button"
-                        class="rounded-lg border-2 px-4 py-2 text-sm font-bold transition"
-                        :class="releaseGroup === 'senmon'
-                            ? 'border-emerald-500 bg-emerald-500 text-white'
-                            : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-gray-700'"
-                        @click="releaseGroup = 'senmon'"
-                    >専門課程</button>
-                    <button
-                        type="button"
-                        class="rounded-lg border-2 px-4 py-2 text-sm font-bold transition"
-                        :class="releaseGroup === 'ippan'
-                            ? 'border-fuchsia-500 bg-fuchsia-500 text-white'
-                            : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-gray-700'"
-                        @click="releaseGroup = 'ippan'"
-                    >一般課程</button>
+                        @click="releaseGroup = key"
+                    >
+                        {{ label }}
+                    </button>
+                </div>
+
+                <!-- 選択中コースの進捗バー -->
+                <div class="mb-4">
+                    <div class="mb-1 flex justify-between text-xs text-gray-500">
+                        <span>完成 {{ groupStats[releaseGroup].released }} ページ</span>
+                        <span>残り {{ groupStats[releaseGroup].total - groupStats[releaseGroup].released }} ページ</span>
+                    </div>
+                    <div class="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+                        <div
+                            class="h-full rounded-full bg-emerald-500 transition-all duration-300"
+                            :style="{ width: `${groupStats[releaseGroup].total === 0 ? 0 : Math.round(groupStats[releaseGroup].released / groupStats[releaseGroup].total * 100)}%` }"
+                        />
+                    </div>
                 </div>
 
                 <!-- 生保講座：科目タブ × 年度×フォーム -->

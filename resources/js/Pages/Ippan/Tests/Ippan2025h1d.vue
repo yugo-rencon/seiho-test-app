@@ -175,7 +175,7 @@ const isDraft = true;
                     questionRange="26〜30"
                     questionTitle="設計販売の基礎"
                     :contents="[
-                        '７',
+                        '7',
                         '36',
                         '51',
                         '37',
@@ -207,10 +207,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="資産の運用"
                     :contents="[
-                        '',
+                        '積極的な資産運用 → 効率的で安定した資産運用', //p34
                         '正しい',
                         '正しい',
-                        '',
+                        '貸付金は含まれない → 含まれる（有価証券・貸付金・不動産が主な対象）', //p35
                     ]"
                 />
                 <QuestionTemp1
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '',
+                        '保険契約は対象に含まれない → 含まれる', //p69
                     ]"
                 />
                 <QuestionTemp1
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '',
+                        '60万円 → 110万円', //p127
                     ]"
                 />
                 <QuestionTemp1
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
                         '正しい',
-                        '',
+                        '保険設計書 ↔︎ 生活設計書', //p136
                         '正しい',
                     ]"
                 />
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '', //p
                         }, //52
                         {
                             questionTitle: '生命保険会社の仕組み',
@@ -358,7 +358,7 @@ const isDraft = true;
                         }, //57 p33
                         {
                             questionTitle: '保障の見直し',
-                            content: '',
+                            content: '死亡保障額などを増やすことはできない → 増やすことができる', //p91
                         }, //58
                         {
                             questionTitle: '保障の見直し',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '保障の見直し',
-                            content: '',
+                            content: '転換前契約の加入時 → 転換時', //p92
                         }, //62
                         {
                             questionTitle: '隣接業界',
@@ -382,11 +382,11 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '農林水産省 → 厚生労働省', //p108
                         }, //64
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '3年以内 → 1年以内', //p109
                         }, //65
                         {
                             questionTitle: '隣接業界',
@@ -394,7 +394,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '養老年金タイプ → 定期年金タイプ', //p110
                         }, //67
                     ]"
                 />

@@ -196,8 +196,8 @@ const isDraft = true;
                     questionTitle="私たちの役割と心がまえ"
                     :contents="[
                         '正しい',
-                        '',
-                        '',
+                        '', //p
+                        '', //p
                         '正しい',
                     ]"
                 />
@@ -221,8 +221,8 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '復活契約 → 追加契約', //p91
+                        '転換前契約の加入時 → 転換時', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="正しい告知の取り扱い"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '被保険者（または保険金受取人） → 被保険者（または契約者）', //p86
                         '正しい',
                     ]"
                 />
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
                     ]"
                 />
@@ -318,7 +318,7 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '',
+                            content: '', //p
                         }, //48
                         {
                             questionTitle: '保険料の仕組み',
@@ -346,7 +346,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '',
+                            content: '', //p
                         }, //55
                         {
                             questionTitle: '契約申込み時の実務',
@@ -358,11 +358,11 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '契約の選択',
-                            content: '',
+                            content: '経済上の危険 → 環境上の危険', //p53
                         }, //58
                         {
                             questionTitle: '契約の選択',
-                            content: '',
+                            content: '申込みの動機・経路について注意は必要ない → 注意が必要', //p53
                         }, //59
                         {
                             questionTitle: '契約の選択',
@@ -390,11 +390,11 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '',
+                            content: '100万円超 → 200万円超', //p74
                         }, //66
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '',
+                            content: '各種共済等は対象とならない → 対象となる', //p76
                         }, //67
                     ]"
                 />

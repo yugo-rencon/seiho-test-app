@@ -10,7 +10,7 @@
             <AdSenseUnit ad-slot="8570892917" />
         </div>
         <template v-for="(item, index) in visibleItems" :key="index">
-            <div v-if="shouldShowSeihoAdBeforeItem(item.questionNo)" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
+            <div v-if="shouldShowSeihoAdBeforeItem(item.questionNo) || shouldShowIppanAdBeforeItem(item.questionNo)" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
                 <AdSenseUnit ad-slot="8570892917" />
             </div>
             <div :id="`q${item.questionNo}`" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24">
@@ -193,6 +193,10 @@ const shouldShowPaywallNotice = computed(() => {
 
 const shouldShowSeihoAdBeforeItem = (questionNo: number) => {
     return isSeiho.value && !hasPremiumAccess(page.props) && Number(questionNo) === 41;
+};
+
+const shouldShowIppanAdBeforeItem = (questionNo: number) => {
+    return isIppan.value && !hasPremiumAccess(page.props) && Number(questionNo) === 53;
 };
 
 const getLabel = (index: number) => {

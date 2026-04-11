@@ -17,7 +17,7 @@ const logout = () => {
 <template>
     <Head :title="title" />
 
-    <div class="min-h-screen w-full overflow-x-hidden overscroll-none bg-gray-50">
+    <div class="min-h-screen w-full overflow-x-hidden bg-gray-50">
         <!-- 管理者トップバー -->
         <header class="border-b border-gray-200 bg-white">
             <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">

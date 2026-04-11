@@ -197,7 +197,7 @@ const isDraft = true;
                     :contents="[
                         '積極的で投機的な資産運用 → 効率的で安定した資産運用', //p34
                         '正しい',
-                        '貸付金は含まれない → 含まれる', //p35
+                        '貸付金は含まれない → 含まれる（有価証券・貸付金・不動産が主な対象）', //p35
                         '正しい',
                     ]"
                 />
@@ -208,9 +208,9 @@ const isDraft = true;
                     questionTitle="契約の選択"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '申込みの動機・経路について注意は必要ない → 注意が必要', //p53
                         '正しい',
-                        '', //p
+                        '金融庁 → 生命保険協会', //p53
                     ]"
                 />
                 <QuestionTemp1
@@ -219,8 +219,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '保険金受取人 → 契約者', //p78
+                        '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         '正しい',
                         '正しい',
                     ]"
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一般勘定 → 特別勘定', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
                     ]"
                 />
@@ -322,7 +322,7 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '正しい告知の取扱い',
-                            content: '',
+                            content: '', //p
                         }, //49
                         {
                             questionTitle: '正しい告知の取扱い',
@@ -330,7 +330,7 @@ const isDraft = true;
                         }, //50
                         {
                             questionTitle: '正しい告知の取扱い',
-                            content: '',
+                            content: '', //p
                         }, //51
                         {
                             questionTitle: '正しい告知の取扱い',
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
-                            content: '',
+                            content: '', //p
                         }, //54
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
@@ -378,7 +378,7 @@ const isDraft = true;
                         }, //62
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '',
+                            content: '相続税 → 贈与税', //p126
                         }, //63
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
@@ -386,7 +386,7 @@ const isDraft = true;
                         }, //64
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '',
+                            content: '50万円 → 500万円', //p127
                         }, //65
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
@@ -394,7 +394,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '',
+                            content: '課税対象 → 非課税', //p128
                         }, //67
                     ]"
                 />

@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2025年1月〜6月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -210,7 +210,7 @@ const isDraft = true;
                         '職業上の危険・行動上の危険・道徳上の危険 → 身体上の危険・環境上の危険・道徳上の危険', //p53
                         '正しい',
                         '正しい',
-                        '',
+                        '医師の診査による契約の場合は告知は不要 → 告知は必要', //p56
                     ]"
                 />
                 <QuestionTemp1
@@ -220,8 +220,8 @@ const isDraft = true;
                     questionTitle="隣接業界"
                     :contents="[
                         '正しい',
-                        '',
-                        '',
+                        '有診査 → 無診査（告知扱い）', //p108
+                        '生命保険契約者保護機構の対象 → 対象でない', //p109
                         '正しい',
                     ]"
                 />
@@ -242,7 +242,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="コンプライアンスの重要性"
                     :contents="[
-                        '',
+                        '社会的規範や企業倫理を除いた、法令や社内ルールだけを守る → 法令や社内ルールだけでなく、社会的規範や企業倫理を守る', //p60
                         '正しい',
                         '正しい',
                     ]"
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '',
+                        '契約締結後 → 契約の申込みを受けるときまで', //p78
                     ]"
                 />
                 <QuestionTemp1
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="社会保障制度"
                     :contents="[
-                        '',
+                        '雇用保険法 → 生活保護法', //p112
                         '正しい',
                         '正しい',
                     ]"
@@ -318,7 +318,7 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '資産の運用',
-                            content: '',
+                            content: '積極的な資産運用 → 効率的で安定した資産運用', //p34
                         }, //48
                         {
                             questionTitle: '資産の運用',
@@ -330,15 +330,15 @@ const isDraft = true;
                         }, //50
                         {
                             questionTitle: '資産の運用',
-                            content: '',
+                            content: '貸付金は含まれない → 含まれる（有価証券・貸付金・不動産が主な対象）', //p35
                         }, //51
                         {
                             questionTitle: '資産の運用',
-                            content: '',
+                            content: '自社の営業用のものに限られる → 自社の営業用のものと投資用のものがある', //p35
                         }, //52
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
+                            content: '契約成立前に行う → 契約成立前に行う場合と契約成立後に行う場合がある', //p85
                         }, //53
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -350,7 +350,7 @@ const isDraft = true;
                         }, //55
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
+                            content: '保険料は返還される → 返還されない', //p87
                         }, //56
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '',
+                            content: '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         }, //59
                         {
                             questionTitle: '照会・苦情時の対応',

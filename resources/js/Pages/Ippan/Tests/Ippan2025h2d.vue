@@ -25,9 +25,9 @@ const isDraft = true;
                     questionRange="1〜3"
                     questionTitle="保障の見直し-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問1〜3
+                        '責任準備金',
+                        '死亡保障',
+                        '追加', // 問1〜3
                     ]"
                     :labels="[
                         'ア', //1
@@ -41,8 +41,8 @@ const isDraft = true;
                     questionRange="4〜5"
                     questionTitle="保障の見直し-②"
                     :contents="[
-                        '',
-                        '', // 問4〜5
+                        '契約者',
+                        '意向確認書面', // 問4〜5
                     ]"
                     :labels="[
                         'イ', //4
@@ -55,11 +55,11 @@ const isDraft = true;
                     questionRange="6〜7"
                     questionTitle="契約の選択-①"
                     :contents="[
-                        '',
-                        '', // 問6〜7
+                        '死差益',
+                        '予定事業費率', // 問6〜7
                     ]"
                     :labels="[
-                        'イ', //6
+                        'ア', //6
                         'エ', //7
                     ]"
                 />
@@ -69,14 +69,14 @@ const isDraft = true;
                     questionRange="8〜10"
                     questionTitle="契約の選択-②"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問9〜10
+                        '契約者',
+                        '保険業法',
+                        '複利', // 問9〜10
                     ]"
                     :labels="[
-                        'ア', //8
-                        'ウ', //9
-                        'カ', //10
+                        'ウ', //8
+                        'オ', //9
+                        'イ', //10
                     ]"
                 />
                 <QuestionTemp3
@@ -85,9 +85,9 @@ const isDraft = true;
                     questionRange="11〜13"
                     questionTitle="生命保険の募集等に関する法律-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問11〜13
+                        '生活',
+                        '金融サービスの提供及び利用環境の整備等に関する法律',
+                        '重要事項', // 問11〜13
                     ]"
                     :labels="[
                         'イ', //11
@@ -101,8 +101,8 @@ const isDraft = true;
                     questionRange="14〜15"
                     questionTitle="生命保険の募集等に関する法律-②"
                     :contents="[
-                        '',
-                        '', // 問14〜15
+                        '個人情報',
+                        '保険法', // 問14〜15
                     ]"
                     :labels="[
                         'イ', //14
@@ -145,9 +145,9 @@ const isDraft = true;
                     questionRange="21〜23"
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問21〜23
+                        '保険金受取人',
+                        '一時所得',
+                        '500万円', // 問21〜23
                     ]"
                     :labels="[
                         'ア', //21
@@ -161,8 +161,8 @@ const isDraft = true;
                     questionRange="24〜25"
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）-②"
                     :contents="[
-                        '',
-                        '', // 問24〜25
+                        '被保険者',
+                        '非課税', // 問24〜25
                     ]"
                     :labels="[
                         'イ', //24
@@ -195,9 +195,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="資産の運用"
                     :contents="[
-                        '', //p
+                        '積極的で投機的な資産運用 → 効率的で安定した資産運用', //p34
                         '正しい',
-                        '', //p
+                        '貸付金は含まれない → 含まれる（有価証券・貸付金・不動産が主な対象）', //p35
                         '正しい',
                     ]"
                 />
@@ -220,9 +220,9 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
-                        '', //p
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                     ]"
                 />
                 <QuestionTemp1
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一般勘定 → 特別勘定', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -242,7 +242,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
+                        '解約 → 加入', //p53
                         '正しい',
                         '正しい',
                     ]"
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '預金保険法 → 保険業法', //p60
                     ]"
                 />
                 <QuestionTemp1
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
                     :contents="[
-                        '', //p
+                        '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         '正しい',
                         '正しい',
                     ]"
@@ -342,11 +342,11 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
+                            content: '契約成立前に行う → 契約成立前に行う場合と契約成立後に行う場合がある', //p85
                         }, //54
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
+                            content: '1年 → 2年', //p86-87
                         }, //55
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -354,7 +354,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
+                            content: '保険料は返還される → 返還されない', //p87
                         }, //57
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
@@ -382,19 +382,19 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '総務省 → 厚生労働省', //p108
                         }, //64
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '損害保険は取り扱えない → 生命保険も損害保険も取り扱える', //p109
                         }, //65
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '火災保険・地震保険：人に関する保険 → 物に関する保険<br>個人賠償責任保険：物に関する保険 → 人に関する保険', //p110
                         }, //66
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '3年以内 → 1年以内', //p109
                         }, //67
                     ]"
                 />

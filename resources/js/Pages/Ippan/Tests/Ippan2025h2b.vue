@@ -145,9 +145,9 @@ const isDraft = true;
                     questionRange="21〜23"
                     questionTitle="隣接業界-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問21〜23
+                        '終身共済',
+                        '厚生労働省',
+                        '小口', // 問21〜23
                     ]"
                     :labels="[
                         'イ', //21
@@ -161,8 +161,8 @@ const isDraft = true;
                     questionRange="24〜25"
                     questionTitle="隣接業界-②"
                     :contents="[
-                        '',
-                        '', // 問24〜25
+                        '1年',
+                        '1000万円', // 問24〜25
                     ]"
                     :labels="[
                         'ア', //24
@@ -195,9 +195,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="資産の運用"
                     :contents="[
-                        '', //p
+                        '積極的で投機的な資産運用 → 効率的で安定した資産運用', //p34
                         '正しい',
-                        '', //p
+                        '貸付金は含まれない → 含まれる（有価証券・貸付金・不動産が主な対象）', //p35
                         '正しい',
                     ]"
                 />
@@ -207,10 +207,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の募集等に関する法律"
                     :contents="[
-                        '', //p
+                        '厚生労働大臣 → 内閣総理大臣', //p63
                         '正しい',
                         '正しい',
-                        '', //p
+                        '司法処分を受けることはない → 受けることがある', //p68
                     ]"
                 />
                 <QuestionTemp1
@@ -219,10 +219,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="社会保障制度"
                     :contents="[
-                        '', //p
+                        '雇用保険法 → 生活保護法', //p112
                         '正しい',
                         '正しい',
-                        '', //p
+                        '4割 → 1割で所定水準以上の所得者は2割（そのうち特に所得の高い者は3割）', //p115
                     ]"
                 />
                 <QuestionTemp1
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一般勘定 → 特別勘定', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '60万円 → 110万円', //p127
                     ]"
                 />
                 <QuestionTemp2
@@ -318,7 +318,7 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '',
+                            content: '', //p
                         }, //48
                         {
                             questionTitle: '保険料の仕組み',
@@ -326,7 +326,7 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '',
+                            content: '', //p
                         }, //50
                         {
                             questionTitle: '保険料の仕組み',
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '', //p
                         }, //54
                         {
                             questionTitle: '剰余金と配当金',
@@ -354,11 +354,11 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '', //p
                         }, //57
                         {
                             questionTitle: '契約の選択',
-                            content: '',
+                            content: '経済上の危険 → 環境上の危険', //p53
                         }, //58
                         {
                             questionTitle: '契約の選択',
@@ -374,11 +374,11 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '契約の選択',
-                            content: '',
+                            content: '自由条件付契約 → 特別条件付契約', //p59
                         }, //62
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '保険金受取人 → 契約者', //p78
                         }, //63
                         {
                             questionTitle: '募集時の正しい説明',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '保険設計書 → 意向確認書面', //p81
                         }, //66
                         {
                             questionTitle: '募集時の正しい説明',

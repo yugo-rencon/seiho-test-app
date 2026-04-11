@@ -25,9 +25,9 @@ const isDraft = true;
                     questionRange="1〜3"
                     questionTitle="保障の見直し-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問1〜3
+                        '責任準備金',
+                        '死亡保障',
+                        '追加', // 問1〜3
                     ]"
                     :labels="[
                         'ア', //1
@@ -41,8 +41,8 @@ const isDraft = true;
                     questionRange="4〜5"
                     questionTitle="保障の見直し-②"
                     :contents="[
-                        '',
-                        '', // 問4〜5
+                        '契約者',
+                        '意向確認書面', // 問4〜5
                     ]"
                     :labels="[
                         'イ', //4
@@ -55,8 +55,8 @@ const isDraft = true;
                     questionRange="6〜7"
                     questionTitle="契約の選択-①"
                     :contents="[
-                        '',
-                        '', // 問6〜7
+                        '環境',
+                        '契約内容登録制度', // 問6〜7
                     ]"
                     :labels="[
                         'イ', //6
@@ -69,9 +69,9 @@ const isDraft = true;
                     questionRange="8〜10"
                     questionTitle="契約の選択-②"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問9〜10
+                        '面接',
+                        '割増保険料',
+                        '特別条件', // 問9〜10
                     ]"
                     :labels="[
                         'ア', //8
@@ -85,8 +85,8 @@ const isDraft = true;
                     questionRange="11〜12"
                     questionTitle="募集時の正しい説明-①"
                     :contents="[
-                        '',
-                        '', // 問11〜12
+                        '約款',
+                        '内閣総理大臣', // 問11〜12
                     ]"
                     :labels="[
                         'ア', //11
@@ -99,9 +99,9 @@ const isDraft = true;
                     questionRange="13〜15"
                     questionTitle="募集時の正しい説明-②"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問14〜15
+                        '契約概要',
+                        'いただく前に',
+                        '自己責任', // 問14〜15
                     ]"
                     :labels="[
                         'ア', //13
@@ -115,8 +115,8 @@ const isDraft = true;
                     questionRange="16〜17"
                     questionTitle="正しい告知の取り扱い-①"
                     :contents="[
-                        '',
-                        '', // 問16〜17
+                        '契約確認',
+                        '保険証券', // 問16〜17
                     ]"
                     :labels="[
                         'ア', //16
@@ -129,9 +129,9 @@ const isDraft = true;
                     questionRange="19〜20"
                     questionTitle="正しい告知の取り扱い-②"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問18〜20
+                        '2年',
+                        '1ヶ月',
+                        '取消し', // 問18〜20
                     ]"
                     :labels="[
                         'イ', //18
@@ -145,9 +145,9 @@ const isDraft = true;
                     questionRange="21〜23"
                     questionTitle="隣接業界-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問21〜23
+                        '農林水産省',
+                        '終身共済',
+                        '1年', // 問21〜23
                     ]"
                     :labels="[
                         'ア', //21
@@ -161,8 +161,8 @@ const isDraft = true;
                     questionRange="24〜25"
                     questionTitle="隣接業界-②"
                     :contents="[
-                        '',
-                        '', // 問24〜25
+                        '1年',
+                        '定期年金', // 問24〜25
                     ]"
                     :labels="[
                         'ア', //24
@@ -189,10 +189,53 @@ const isDraft = true;
                         'ケ', //30
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="31" :title="title" :subject="subject" questionTitle="資産の運用" :contents="['', '正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="32" :title="title" :subject="subject" questionTitle="相続の法律" :contents="['', '正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="33" :title="title" :subject="subject" questionTitle="お客さまニーズへの対応" :contents="['', '', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="34" :title="title" :subject="subject" questionTitle="生命保険の種類" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="31"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="資産の運用"
+                    :contents="[
+                        '積極的で投機的な資産運用 → 効率的で安定した資産運用', //p34
+                        '正しい',
+                        '貸付金は含まれない → 含まれる（有価証券・貸付金・不動産が主な対象）', //p35
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="32"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="相続の法律"
+                    :contents="[
+                        '',
+                        '正しい',
+                        '', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="33"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="お客さまニーズへの対応"
+                    :contents="[
+                        'ライフバリュー → ライフサイクル', //p133
+                        '末子の成人（18歳）までの生活資金を確保 → 末子の大学卒業時（22歳）までの生活資金とそれ以降の妻の平均余命期間の生活資金を確保', //p135
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="34"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生命保険の種類"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '一般勘定 → 特別勘定', //p20
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="35"
                     :title="title"
@@ -303,7 +346,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '',
+                            content: '保険契約は対象外 → 保険契約も対象', //p69
                         }, //55
                         {
                             questionTitle: '生命保険の募集等に関する法律',
@@ -343,15 +386,15 @@ const isDraft = true;
                         }, //64
                         {
                             questionTitle: '社会保障制度',
-                            content: '',
+                            content: '18歳以上65歳未満 → 20歳以上60歳未満<br>老齢・疾病・遺族 → 老齢・障害・遺族', //p113
                         }, //65
                         {
                             questionTitle: '社会保障制度',
-                            content: '',
+                            content: '70歳以上の高齢者(および60歳以上） → 75歳以上の高齢者(および65歳以上）',
                         }, //66
                         {
                             questionTitle: '社会保障制度',
-                            content: '',
+                            content: '70歳以上の第1号被保険者と40歳以上70歳未満の第2号被保険者 → 65歳以上の第1号被保険者と40歳以上65歳未満の第2号被保険者', //p115
                         }, //67
                     ]"
                 />

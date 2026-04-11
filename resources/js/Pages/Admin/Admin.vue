@@ -525,7 +525,7 @@ const formatDateTime = (value) => {
                 <!-- 選択中コースの進捗バー -->
                 <div class="mb-4">
                     <div class="mb-1 flex justify-between text-xs text-gray-500">
-                        <span>完成 {{ groupStats[releaseGroup].released }} ページ</span>
+                        <span>完成 {{ groupStats[releaseGroup].released }} / 全 {{ groupStats[releaseGroup].total }} ページ</span>
                         <span>残り {{ groupStats[releaseGroup].total - groupStats[releaseGroup].released }} ページ</span>
                     </div>
                     <div class="h-2 w-full overflow-hidden rounded-full bg-gray-200">

@@ -84,7 +84,7 @@ class GenerateSitemap extends Command
             }
         }
 
-        $senmonOuyouYears = ['2025', '2024', '2023'];
+        $senmonOuyouYears = ['2025', '2024', '2023', '2022', '2021', '2020'];
         $senmonOuyouPeriods = [
             'h1' => ['a', 'b'],
             'h2' => ['a', 'b', 'c', 'd'],

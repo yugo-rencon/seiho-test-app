@@ -24,7 +24,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="1〜3"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '',
@@ -41,7 +40,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="4〜5"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '', // 問4〜5
@@ -56,7 +54,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="6〜8"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '',
@@ -73,7 +70,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="9〜10"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '', // 問9〜10
@@ -88,7 +84,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="11〜13"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '',
@@ -105,7 +100,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="14〜15"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '', // 問14〜15
@@ -120,7 +114,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="16〜18"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '',
@@ -137,7 +130,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="19〜20"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '', // 問19〜20
@@ -152,7 +144,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="21〜23"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '',
@@ -169,7 +160,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="24〜25"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '', // 問24〜25
@@ -184,7 +174,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="26〜30"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '',
                         '',
@@ -205,7 +194,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -218,7 +206,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -231,7 +218,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -244,7 +230,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -256,7 +241,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -268,7 +252,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -280,7 +263,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle=""
-                    :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
@@ -296,153 +278,123 @@ const isDraft = true;
                         // 問38〜67
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //38
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //39
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //40
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //41
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //42
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //43
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //44
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //45
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //46
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //47
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //48
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //49
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //50
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //51
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //52
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //53
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //54
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //55
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //56
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //57
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //58
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //59
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //60
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //61
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //62
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //63
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //64
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //65
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //66
                         {
                             questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            content: '', //p
                         }, //67
                     ]"
                 />

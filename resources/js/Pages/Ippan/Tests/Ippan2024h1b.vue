@@ -23,268 +23,218 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="1〜3"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="保全・アフターサービス手続きと留意点-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問1〜3
+                        '解約返戻金',
+                        '有効に',
+                        '（自動）振替貸付', // 問1〜3
                     ]"
                     :labels="[
-                        '', //1
-                        '', //2
-                        '', //3
+                        'イ', //1
+                        'ウ', //2
+                        'オ', //3
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
                     questionRange="4〜5"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="保全・アフターサービス手続きと留意点-②"
                     :contents="[
-                        '',
-                        '', // 問4〜5
+                        '3年',
+                        '復活', // 問4〜5
                     ]"
                     :labels="[
-                        '', //4
-                        '', //5
+                        'イ', //4
+                        'ウ', //5
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
                     questionRange="6〜8"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="私たちの役割と心がまえ-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問6〜8
+                        '継続',
+                        '保険業法',
+                        '所属生命保険会社', // 問6〜8
                     ]"
                     :labels="[
-                        '', //6
-                        '', //7
-                        '', //8
+                        'オ', //6
+                        'ア', //7
+                        'エ', //8
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
                     questionRange="9〜10"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="私たちの役割と心がまえ-②"
                     :contents="[
-                        '',
-                        '', // 問9〜10
+                        '適切な情報提供',
+                        '社会的', // 問9〜10
                     ]"
                     :labels="[
-                        '', //9
-                        '', //10
+                        'エ', //9
+                        'イ', //10
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
                     questionRange="11〜13"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="資産の運用-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問11〜13
+                        '配当金',
+                        '安全',
+                        '公共性', // 問11〜13
                     ]"
                     :labels="[
-                        '', //11
-                        '', //12
-                        '', //13
+                        'イ', //11
+                        'ウ', //12
+                        'オ', //13
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
                     questionRange="14〜15"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="資産の運用-②"
                     :contents="[
-                        '',
-                        '', // 問14〜15
+                        '長期',
+                        '投資', // 問14〜15
                     ]"
                     :labels="[
-                        '', //14
-                        '', //15
+                        'イ', //14
+                        'エ', //15
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="16〜18"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionRange="16〜17"
+                    questionTitle="募集時の正しい説明-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問16〜18
+                        '約款',
+                        '内閣総理大臣', // 問16〜17
                     ]"
                     :labels="[
-                        '', //16
-                        '', //17
-                        '', //18
+                        'ア', //16
+                        'エ', //17
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="19〜20"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionRange="18〜20"
+                    questionTitle="募集時の正しい説明-②"
                     :contents="[
-                        '',
-                        '', // 問19〜20
+                        '「契約概要」',
+                        'いただく前に',
+                        '自己責任', // 問18〜20
                     ]"
                     :labels="[
-                        '', //19
-                        '', //20
+                        'ア', //18
+                        'エ', //19
+                        'カ', //20
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
                     questionRange="21〜23"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="相続の法律-①"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問21〜23
+                        '2/3',
+                        '3/4',
+                        '相続の放棄', // 問21〜23
                     ]"
                     :labels="[
-                        '', //21
-                        '', //22
-                        '', //23
+                        'イ', //21
+                        'エ', //22
+                        'オ', //23
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
                     questionRange="24〜25"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="相続の法律-②"
                     :contents="[
-                        '',
-                        '', // 問24〜25
+                        '限定',
+                        'みなし', // 問24〜25
                     ]"
                     :labels="[
-                        '', //24
-                        '', //25
+                        'イ', //24
+                        'ウ', //25
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
                     questionRange="26〜30"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="設計販売の基礎"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問26〜30
+                        '5',
+                        '37',
+                        '54',
+                        '35',
+                        '家族の生活資金＋妻の生活資金', // 問26〜30
                     ]"
                     :labels="[
-                        '', //26
-                        '', //27
-                        '', //28
-                        '', //29
-                        '', //30
+                        'イ', //26
+                        'オ', //27
+                        'キ', //28
+                        'ウ', //29
+                        'ケ', //30
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="社会保障制度"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '雇用保険法 → 生活保護法', //p112
+                        '正しい',
+                        '正しい',
+                        '4割 → 1割で所定水準以上の所得者は2割（そのうち特に所得の高い者は3割）', //p115
                     ]"
                 />
-                <QuestionTemp1
-                    :questionNumber="32"
-                    :title="title"
-                    :subject="subject"
-                    questionTitle=""
-                    :relatedProblems="[]"
-                    :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '', //p
-                    ]"
-                />
-                <QuestionTemp1
-                    :questionNumber="33"
-                    :title="title"
-                    :subject="subject"
-                    questionTitle=""
-                    :relatedProblems="[]"
-                    :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '', //p
-                    ]"
-                />
+                <QuestionTemp1 :questionNumber="32" :title="title" :subject="subject" questionTitle="生命保険の役割" :contents="['', '', '正しい', '正しい']" />
+                <QuestionTemp1 :questionNumber="33" :title="title" :subject="subject" questionTitle="保険料の税法上の取り扱い" :contents="['', '正しい', '正しい', '']" />
                 <QuestionTemp1
                     :questionNumber="34"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '途中で変更できない → 変更できる', //p51
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="35"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="契約取り扱いの手続き"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '平均年齢 → 保険年齢', //p41
+                        '正しい',
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
-                    :questionNumber="36"
-                    :title="title"
-                    :subject="subject"
-                    questionTitle=""
-                    :relatedProblems="[]"
-                    :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                    ]"
-                />
+                <QuestionTemp1 :questionNumber="36" :title="title" :subject="subject" questionTitle="照会・苦情時の対応" :contents="['正しい', '正しい', '']" />
                 <QuestionTemp1
                     :questionNumber="37"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
-                    :relatedProblems="[]"
+                    questionTitle="お客さまニーズへの対応"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '保険設計書 ↔︎ 生活設計書', //p136
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp2
@@ -295,154 +245,124 @@ const isDraft = true;
                     :items="[
                         // 問38〜67
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '生命保険の仕組み',
+                            content: '正しい',
                         }, //38
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '生命保険の仕組み',
+                            content: '正しい',
                         }, //39
                         {
-                            questionTitle: '',
+                            questionTitle: '生命保険の仕組み',
                             content: '',
-                            relatedProblems: [''],
                         }, //40
                         {
-                            questionTitle: '',
+                            questionTitle: '生命保険の仕組み',
                             content: '',
-                            relatedProblems: [''],
                         }, //41
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '生命保険の仕組み',
+                            content: '正しい',
                         }, //42
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '企業向け商品',
+                            content: '正しい',
                         }, //43
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '企業向け商品',
+                            content: '正しい',
                         }, //44
                         {
-                            questionTitle: '',
+                            questionTitle: '企業向け商品',
                             content: '',
-                            relatedProblems: [''],
                         }, //45
                         {
-                            questionTitle: '',
+                            questionTitle: '企業向け商品',
                             content: '',
-                            relatedProblems: [''],
                         }, //46
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '企業向け商品',
+                            content: '正しい',
                         }, //47
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '生命保険の種類',
+                            content: '正しい',
                         }, //48
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '生命保険の種類',
+                            content: '正しい',
                         }, //49
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '生命保険の種類',
+                            content: '正しい',
                         }, //50
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '生命保険の種類',
+                            content: '正しい',
                         }, //51
                         {
-                            questionTitle: '',
+                            questionTitle: '生命保険の種類',
                             content: '',
-                            relatedProblems: [''],
                         }, //52
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '契約申込み時の実務',
+                            content: '正しい',
                         }, //53
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '契約申込み時の実務',
+                            content: '正しい',
                         }, //54
                         {
-                            questionTitle: '',
+                            questionTitle: '契約申込み時の実務',
                             content: '',
-                            relatedProblems: [''],
                         }, //55
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '契約申込み時の実務',
+                            content: '正しい',
                         }, //56
                         {
-                            questionTitle: '',
+                            questionTitle: '契約申込み時の実務',
                             content: '',
-                            relatedProblems: [''],
                         }, //57
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '保障の見直し',
+                            content: '正しい',
                         }, //58
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '保障の見直し',
+                            content: '正しい',
                         }, //59
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '保障の見直し',
+                            content: '正しい',
                         }, //60
                         {
-                            questionTitle: '',
+                            questionTitle: '保障の見直し',
                             content: '',
-                            relatedProblems: [''],
                         }, //61
                         {
-                            questionTitle: '',
+                            questionTitle: '保障の見直し',
                             content: '',
-                            relatedProblems: [''],
                         }, //62
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
+                            content: '正しい',
                         }, //63
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
+                            content: '他の受取人に対しても支払わない → 残額を支払う', //p104
                         }, //64
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
+                            content: '正しい',
                         }, //65
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
+                            content: '正しい',
                         }, //66
                         {
-                            questionTitle: '',
-                            content: '',
-                            relatedProblems: [''],
+                            questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
+                            content: '正しい',
                         }, //67
                     ]"
                 />
@@ -453,21 +373,21 @@ const isDraft = true;
                     :applyChoicePrefix="false"
                     :items="[
                         // 問68〜82
-                        { questionTitle: '', label: '', content: '' }, //68
-                        { questionTitle: '', label: '', content: '' }, //69
-                        { questionTitle: '', label: '', content: '' }, //70
-                        { questionTitle: '', label: '', content: '' }, //71
-                        { questionTitle: '', label: '', content: '' }, //72
-                        { questionTitle: '', label: '', content: '' }, //73
-                        { questionTitle: '', label: '', content: '' }, //74
-                        { questionTitle: '', label: '', content: '' }, //75
-                        { questionTitle: '', label: '', content: '' }, //76
-                        { questionTitle: '', label: '', content: '' }, //77
-                        { questionTitle: '', label: '', content: '' }, //78
-                        { questionTitle: '', label: '', content: '' }, //79
-                        { questionTitle: '', label: '', content: '' }, //80
-                        { questionTitle: '', label: '', content: '' }, //81
-                        { questionTitle: '', label: '', content: '' }, //82
+                        { questionTitle: '契約の選択', label: 'イ', content: '環境上' }, //68
+                        { questionTitle: '契約の選択', label: 'ア', content: '保険金や特約' }, //69
+                        { questionTitle: '契約の選択', label: 'イ', content: '入院給付金日額' }, //70
+                        { questionTitle: '契約の選択', label: 'ア', content: '契約内容登録制度' }, //71
+                        { questionTitle: '契約の選択', label: 'イ', content: '面接' }, //72
+                        { questionTitle: '隣接業界', label: 'ア', content: '終身共済' }, //73
+                        { questionTitle: '隣接業界', label: 'イ', content: '厚生労働省' }, //74
+                        { questionTitle: '隣接業界', label: 'ア', content: '1000万円以下' }, //75
+                        { questionTitle: '隣接業界', label: 'ア', content: '所得補償保険' }, //76
+                        { questionTitle: '隣接業界', label: 'ア', content: '定期年金' }, //77
+                        { questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）', label: 'ア', content: '贈与税' }, //78
+                        { questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）', label: 'イ', content: '所得税' }, //79
+                        { questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）', label: 'ア', content: '110万円' }, //80
+                        { questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）', label: 'イ', content: '500万円' }, //81
+                        { questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）', label: 'ア', content: '非課税' }, //82
                     ]"
                 />
             </div>

@@ -30,7 +30,7 @@ class TestController extends Controller
     // 専門課程 各試験ページ
     public function senmonTest(int $year, string $period, string $form)
     {
-        $allowedYears = [2025, 2024, 2023];
+        $allowedYears = [2025, 2024, 2023, 2022, 2021, 2020];
         $allowedFormsByPeriod = [
             'h1' => ['a', 'b'],               // 4月〜8月実施
             'h2' => ['a', 'b', 'c', 'd'],     // 9月〜3月実施
@@ -61,7 +61,7 @@ class TestController extends Controller
     // 応用課程 各試験ページ
     public function ouyouTest(int $year, string $period, string $form)
     {
-        $allowedYears = [2025, 2024, 2023];
+        $allowedYears = [2025, 2024, 2023, 2022, 2021, 2020];
         $allowedFormsByPeriod = [
             'h1' => ['a', 'b'],               // 4月〜8月実施
             'h2' => ['a', 'b', 'c', 'd'],     // 9月〜3月実施

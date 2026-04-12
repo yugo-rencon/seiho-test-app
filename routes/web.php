@@ -17,7 +17,7 @@ Route::get('daigaku', [TestController::class, 'daigakuIndex'])->name('daigaku.in
 Route::get('senmon', [TestController::class, 'senmonIndex'])->name('senmon.index');
 Route::get('senmon/{year}-{period}-{form}', [TestController::class, 'senmonTest'])
     ->where([
-        'year' => '202[3-5]',
+        'year' => '202[0-5]',
         'period' => 'h[12]',
         'form' => '[a-dA-D]',
     ])
@@ -25,7 +25,7 @@ Route::get('senmon/{year}-{period}-{form}', [TestController::class, 'senmonTest'
 Route::get('ouyou', [TestController::class, 'ouyouIndex'])->name('ouyou.index');
 Route::get('ouyou/{year}-{period}-{form}', [TestController::class, 'ouyouTest'])
     ->where([
-        'year' => '202[3-5]',
+        'year' => '202[0-5]',
         'period' => 'h[12]',
         'form' => '[a-dA-D]',
     ])

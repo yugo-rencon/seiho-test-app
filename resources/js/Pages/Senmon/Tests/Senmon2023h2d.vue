@@ -458,7 +458,7 @@ const isDraft = true;
                 />
             </div>
 
-            <TestNavigationButtons previous-href="/senmon/2023-h2-c" home-route="senmon.index" />
+            <TestNavigationButtons previous-href="/senmon/2023-h2-c" next-href="/senmon/2022-h1-a" home-route="senmon.index" />
         </section>
     </SeihoTestLayout>
 </template>

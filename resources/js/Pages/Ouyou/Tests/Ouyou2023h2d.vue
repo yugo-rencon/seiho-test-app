@@ -458,7 +458,7 @@ const isDraft = true;
                 />
             </div>
 
-            <TestNavigationButtons previous-href="/ouyou/2023-h2-c" home-route="ouyou.index" />
+            <TestNavigationButtons previous-href="/ouyou/2023-h2-c" next-href="/ouyou/2022-h1-a" home-route="ouyou.index" />
         </section>
     </SeihoTestLayout>
 </template>

@@ -201,8 +201,30 @@ const isDraft = true;
                         '4割 → 1割で所定水準以上の所得者は2割（そのうち特に所得の高い者は3割）', //p115
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="32" :title="title" :subject="subject" questionTitle="生命保険の種類" :contents="['', '正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="33" :title="title" :subject="subject" questionTitle="剰余金と配当金" :contents="['正しい', '', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="32"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生命保険の種類"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '正しい',
+                        '',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="33"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="剰余金と配当金"
+                    :contents="[
+                        '正しい',
+                        '2つ → 3つ（予定死亡率・予定利率・予定事業比率）', //p26
+                        '正しい',
+                        '保険業法の定める利率 → 生命保険会社の定める利率', //p29
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="34"
                     :title="title"
@@ -214,9 +236,39 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="35" :title="title" :subject="subject" questionTitle="正しい告知の取り扱い" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="36" :title="title" :subject="subject" questionTitle="保全・アフターサービスの重要性" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="37" :title="title" :subject="subject" questionTitle="隣接業界" :contents="['', '正しい', '正しい']" />
+                <QuestionTemp1
+                    :questionNumber="35"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="正しい告知の取り扱い"
+                    :contents="[
+                        '正しい',
+                        '被保険者（または保険金受取人） → 被保険者（または契約者）', //p86
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="36"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保全・アフターサービスの重要性"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="37"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="隣接業界"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
                 <QuestionTemp2
                     :questionNumber="38"
                     :title="title"
@@ -234,11 +286,11 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //40
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
+                            content: 'それまでに積み立てられた元利合計額 → 契約した保障額の死亡保険金', //p15
                         }, //41
                         {
                             questionTitle: '生命保険の仕組み',
@@ -254,11 +306,11 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
+                            content: '従業員の生活保障および従業員の退職金 → 遺族の生活保障および経営者の退職金', //p118
                         }, //45
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
+                            content: '財形医療積立保険・財形教育積立保険・財形福祉積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険', //p119
                         }, //46
                         {
                             questionTitle: '企業向け商品',
@@ -286,11 +338,11 @@ const isDraft = true;
                         }, //52
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '',
+                            content: '財務大臣 → 内閣総理大臣', //p63
                         }, //53
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '',
+                            content: '承諾 → 媒介', //p64
                         }, //54
                         {
                             questionTitle: '生命保険の募集等に関する法律',

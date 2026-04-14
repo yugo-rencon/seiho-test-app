@@ -54,7 +54,7 @@ const IPPAN_PERIODS = [
     { key: "h1", label: "1-6月" },
     { key: "h2", label: "7-12月" },
 ];
-const IPPAN_YEARS  = [2025, 2024, 2023, 2022, 2021, 2020];
+const IPPAN_YEARS  = [2025, 2024, 2023, 2022, 2021];
 const IPPAN_FORMS  = ["a", "b", "c", "d", "e"];
 
 // 専門課程
@@ -62,14 +62,14 @@ const SENMON_PERIODS = [
     { key: "h1", label: "4-8月",  forms: ["a", "b"] },
     { key: "h2", label: "9-3月", forms: ["a", "b", "c", "d"] },
 ];
-const SENMON_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
+const SENMON_YEARS = [2025, 2024, 2023, 2022, 2021];
 
 // 応用課程
 const OUYOU_PERIODS = [
     { key: "h1", label: "4-8月",  forms: ["a", "b"] },
     { key: "h2", label: "9-3月", forms: ["a", "b", "c", "d"] },
 ];
-const OUYOU_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
+const OUYOU_YEARS = [2025, 2024, 2023, 2022, 2021];
 
 // 生保大学
 const DAIGAKU_SUBJECTS = [
@@ -80,7 +80,7 @@ const DAIGAKU_SUBJECTS = [
     { key: "kigyo",   label: "企業保険・団体保険" },
     { key: "syakai",  label: "社会保障と生命保険" },
 ];
-const DAIGAKU_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
+const DAIGAKU_YEARS = [2025, 2024, 2023, 2022, 2021];
 const DAIGAKU_FORMS = ["a", "b", "c"];
 
 // タブ状態

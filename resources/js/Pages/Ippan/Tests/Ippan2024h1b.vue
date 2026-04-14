@@ -254,11 +254,11 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //40
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
+                            content: 'それまでに積み立てられた元利合計額 → 契約した保障額の死亡保険金', //p15
                         }, //41
                         {
                             questionTitle: '生命保険の仕組み',
@@ -274,11 +274,11 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
+                            content: '従業員の生活保障および従業員の退職金 → 遺族の生活保障および経営者の退職金', //p118
                         }, //45
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
+                            content: '財形医療積立保険・財形教育積立保険・財形福祉積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険', //p119
                         }, //46
                         {
                             questionTitle: '企業向け商品',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '',
+                            content: '12日以内 → 8日以内', //p47
                         }, //55
                         {
                             questionTitle: '契約申込み時の実務',
@@ -322,7 +322,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '',
+                            content: '契約者および被保険者、保険金受取人に説明 → 契約者に説明', //p48
                         }, //57
                         {
                             questionTitle: '保障の見直し',

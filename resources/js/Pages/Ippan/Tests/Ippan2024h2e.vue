@@ -189,13 +189,86 @@ const isDraft = true;
                         'ク', //30
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="31" :title="title" :subject="subject" questionTitle="照会・苦情時の対応" :contents="['正しい', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="32" :title="title" :subject="subject" questionTitle="生命保険の仕組み" :contents="['', '正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="33" :title="title" :subject="subject" questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）" :contents="['正しい', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="34" :title="title" :subject="subject" questionTitle="契約申込み時の実務" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="35" :title="title" :subject="subject" questionTitle="私たちの役割と心がまえ" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="36" :title="title" :subject="subject" questionTitle="契約の選択" :contents="['正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="37" :title="title" :subject="subject" questionTitle="保全・アフターサービスの重要性" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="31"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="照会・苦情時の対応"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '正しい',
+                        '',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="32"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生命保険の仕組み"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '年末の生存者数 → 年始の生存者数', //p15
+                        '被保険者 → 保険金受取人', //p16
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="33"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
+                    :contents="[
+                        '',
+                        '正しい',
+                        '', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="34"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="契約申込み時の実務"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '契約申込みの撤回ができる → 撤回はできない', //p47
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="35"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="私たちの役割と心がまえ"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="36"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="契約の選択"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="37"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保全・アフターサービスの重要性"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
                 <QuestionTemp2
                     :questionNumber="38"
                     :title="title"
@@ -265,7 +338,7 @@ const isDraft = true;
                         }, //52
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
+                            content: '契約成立前に行う → 契約成立前に行う場合と契約成立後に行う場合がある', //p85
                         }, //53
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -277,7 +350,7 @@ const isDraft = true;
                         }, //55
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
+                            content: '保険料は返還される → 返還されない', //p87
                         }, //56
                         {
                             questionTitle: '正しい告知の取り扱い',

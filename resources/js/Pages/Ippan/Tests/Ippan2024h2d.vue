@@ -189,10 +189,53 @@ const isDraft = true;
                         'ク', //30
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="31" :title="title" :subject="subject" questionTitle="照会・苦情時の対応" :contents="['正しい', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="32" :title="title" :subject="subject" questionTitle="生命保険の役割" :contents="['', '正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="33" :title="title" :subject="subject" questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）" :contents="['', '正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="34" :title="title" :subject="subject" questionTitle="契約申込み時の実務" :contents="['', '正しい', '正しい']" />
+                <QuestionTemp1
+                    :questionNumber="31"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="照会・苦情時の対応"
+                    :contents="[
+                        '正しい',
+                        '',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="32"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生命保険の役割"
+                    :contents="[
+                        '',
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="33"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '', //p
+                        '',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="34"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="契約申込み時の実務"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '契約申込みの撤回ができる → 撤回はできない', //p47
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="35"
                     :title="title"
@@ -204,8 +247,28 @@ const isDraft = true;
                         '全て切り上げ → 6ヶ月以下は切り捨て、6ヶ月超は切り上げ', //p41
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="36" :title="title" :subject="subject" questionTitle="契約の選択" :contents="['正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="37" :title="title" :subject="subject" questionTitle="保全・アフターサービス手続きと留意点" :contents="['', '正しい', '正しい']" />
+                <QuestionTemp1
+                    :questionNumber="36"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="契約の選択"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="37"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保全・アフターサービス手続きと留意点"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
                 <QuestionTemp2
                     :questionNumber="38"
                     :title="title"
@@ -291,7 +354,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                         }, //57
                         {
                             questionTitle: '保険料の払い込み',

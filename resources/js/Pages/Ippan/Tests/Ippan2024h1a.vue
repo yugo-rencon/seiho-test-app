@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2024年1月〜6月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -286,11 +286,11 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //40
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: 'それまでに積み立てられた元利合計額 → 契約した保障額の死亡保険金', //p15
                         }, //41
                         {
                             questionTitle: '生命保険の仕組み',
@@ -306,11 +306,11 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '従業員の生活保障および従業員の退職金 → 遺族の生活保障および経営者の退職金', //p118
                         }, //45
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '財形医療積立保険・財形教育積立保険・財形福祉積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険', //p119
                         }, //46
                         {
                             questionTitle: '企業向け商品',
@@ -322,11 +322,11 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険料は割高 → 保険料は割安', //p27
                         }, //49
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '本質的に同じ → 本質的に異なる', //p28
                         }, //50
                         {
                             questionTitle: '剰余金と配当金',
@@ -342,11 +342,11 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '第1回保険料充当金払い込みのあった日 → 診査（告知）のあった日', //p46
                         }, //54
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '12日以内 → 8日以内', //p47
                         }, //55
                         {
                             questionTitle: '契約申込み時の実務',
@@ -370,11 +370,11 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '50万 → 200万', //p74
                         }, //61
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '各種共済等は対象とならない → 対象となる', //p76
                         }, //62
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -382,7 +382,7 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約成立前に行う → 契約成立前に行う場合と契約成立後に行う場合がある', //p85
                         }, //64
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '払い込んだ保険料は払い戻す → 解約返戻金があれば払い戻す', //p86
                         }, //66
                         {
                             questionTitle: '正しい告知の取り扱い',

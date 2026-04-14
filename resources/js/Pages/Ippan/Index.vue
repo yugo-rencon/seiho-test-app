@@ -5,7 +5,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
-const IPPAN_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
+const IPPAN_YEARS = [2025, 2024, 2023, 2022, 2021];
 const IPPAN_PUBLISHED_YEARS = [2025];
 const IPPAN_PERIODS = [
     {

@@ -231,9 +231,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約申込み時の実務"
                     :contents="[
-                        '', //p
                         '正しい',
                         '正しい',
+                        '契約申込みの撤回ができる → 撤回はできない', //p47
                     ]"
                 />
                 <QuestionTemp1
@@ -242,9 +242,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険会社の仕組み"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい',
-                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -253,9 +253,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保全・アフターサービスの重要性"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい',
-                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -264,9 +264,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の税法上の取り扱い"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい',
-                        '正しい',
                     ]"
                 />
                 <QuestionTemp2
@@ -346,7 +346,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '収支相当の法則 → 大数の法則', //p14
                         }, //55
                         {
                             questionTitle: '生命保険の仕組み',
@@ -354,7 +354,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '保険料 → 給付金', //p16
                         }, //57
                         {
                             questionTitle: '契約の選択',

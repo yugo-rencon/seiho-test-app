@@ -207,9 +207,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の役割"
                     :contents="[
-                        '',
+                        '', //p
                         '正しい',
-                        '',
+                        '', //p
                         '正しい',
                     ]"
                 />
@@ -220,9 +220,9 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '',
+                        '', //p
                         '正しい',
-                        '',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="保険料の税法上の取り扱い"
                     :contents="[
                         '正しい',
-                        '',
+                        '', //p
                         '正しい',
                     ]"
                 />
@@ -286,11 +286,11 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //40
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
+                            content: 'それまでに積み立てられた元利合計額 → 契約した保障額の死亡保険金', //p15
                         }, //41
                         {
                             questionTitle: '生命保険の仕組み',
@@ -306,11 +306,11 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
+                            content: '従業員の生活保障および従業員の退職金 → 遺族の生活保障および経営者の退職金', //p118
                         }, //45
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
+                            content: '財形医療積立保険・財形教育積立保険・財形福祉積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険', //p119
                         }, //46
                         {
                             questionTitle: '企業向け商品',
@@ -322,7 +322,7 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '', //p
                         }, //49
                         {
                             questionTitle: '募集時の正しい説明',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '', //p
                         }, //52
                         {
                             questionTitle: '保険金・給付金の請求と支払い',
@@ -358,7 +358,7 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '',
+                            content: '', //p
                         }, //58
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
@@ -366,7 +366,7 @@ const isDraft = true;
                         }, //59
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '',
+                            content: '', //p
                         }, //60
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
@@ -374,11 +374,11 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '',
+                            content: '', //p
                         }, //62
                         {
                             questionTitle: '相続の法律',
-                            content: '',
+                            content: '', //p
                         }, //63
                         {
                             questionTitle: '相続の法律',

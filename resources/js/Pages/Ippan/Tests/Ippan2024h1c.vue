@@ -208,8 +208,8 @@ const isDraft = true;
                     questionTitle="生命保険の役割"
                     :contents="[
                         '正しい',
-                        '',
-                        '',
+                        '', //p
+                        '', //p
                         '正しい',
                     ]"
                 />
@@ -219,10 +219,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="剰余金と配当金"
                     :contents="[
-                        '',
+                        '実際の死亡者数が多い → 少ない', //p26
                         '正しい',
                         '正しい',
-                        '',
+                        '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                     ]"
                 />
                 <QuestionTemp1
@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="契約申込み時の実務"
                     :contents="[
                         '正しい',
-                        '',
+                        '第1回保険料充当金払い込みのあった日 → 診査（告知）のあった日', //p46
                         '正しい',
                     ]"
                 />
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp2
@@ -279,152 +279,122 @@ const isDraft = true;
                         {
                             questionTitle: '生命保険の仕組み',
                             content: '正しい',
-
                         }, //38
                         {
                             questionTitle: '生命保険の仕組み',
                             content: '正しい',
-
                         }, //39
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
-
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //40
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '',
-
+                            content: 'それまでに積み立てられた元利合計額 → 契約した保障額の死亡保険金', //p15
                         }, //41
                         {
                             questionTitle: '生命保険の仕組み',
                             content: '正しい',
-
                         }, //42
                         {
                             questionTitle: '企業向け商品',
                             content: '正しい',
-
                         }, //43
                         {
                             questionTitle: '企業向け商品',
                             content: '正しい',
-
                         }, //44
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
-
+                            content: '従業員の生活保障および従業員の退職金 → 遺族の生活保障および経営者の退職金', //p118
                         }, //45
                         {
                             questionTitle: '企業向け商品',
-                            content: '',
-
+                            content: '財形医療積立保険・財形教育積立保険・財形福祉積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険', //p119
                         }, //46
                         {
                             questionTitle: '企業向け商品',
                             content: '正しい',
-
                         }, //47
                         {
                             questionTitle: '生命保険の募集等に関する法律',
                             content: '正しい',
-
                         }, //48
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '',
-
+                            content: '行政処分や司法処分を受けない → 受ける', //p68
                         }, //49
                         {
                             questionTitle: '生命保険の募集等に関する法律',
                             content: '正しい',
-
                         }, //50
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '',
-
+                            content: '各種共済等は対象外 → 対象', //p76
                         }, //51
                         {
                             questionTitle: '生命保険の募集等に関する法律',
                             content: '正しい',
-
                         }, //52
                         {
                             questionTitle: '正しい告知の取り扱い',
                             content: '正しい',
-
                         }, //53
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
-
+                            content: '契約成立前に行う → 契約成立前に行う場合と契約成立後に行う場合がある', //p85
                         }, //54
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
-
+                            content: '1年 → 2年', //p87
                         }, //55
                         {
                             questionTitle: '正しい告知の取り扱い',
                             content: '正しい',
-
                         }, //56
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '',
-
+                            content: '保険料は返還される → 返還されない', //p87
                         }, //57
                         {
                             questionTitle: '隣接業界',
                             content: '正しい',
-
                         }, //58
                         {
                             questionTitle: '隣接業界',
-                            content: '',
-
+                            content: '', //p
                         }, //59
                         {
                             questionTitle: '隣接業界',
                             content: '正しい',
-
                         }, //60
                         {
                             questionTitle: '隣接業界',
                             content: '正しい',
-
                         }, //61
                         {
                             questionTitle: '隣接業界',
                             content: '正しい',
-
                         }, //62
                         {
                             questionTitle: '相続の法律',
-                            content: '',
-
+                            content: '', //p
                         }, //63
                         {
                             questionTitle: '相続の法律',
                             content: '正しい',
-
                         }, //64
                         {
                             questionTitle: '相続の法律',
-                            content: '',
-
+                            content: '', //p
                         }, //65
                         {
                             questionTitle: '相続の法律',
                             content: '正しい',
-
                         }, //66
                         {
                             questionTitle: '相続の法律',
                             content: '正しい',
-
                         }, //67
                     ]"
                 />

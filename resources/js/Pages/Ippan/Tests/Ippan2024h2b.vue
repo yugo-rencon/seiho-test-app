@@ -189,13 +189,86 @@ const isDraft = true;
                         'ケ', //30
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="31" :title="title" :subject="subject" questionTitle="照会・苦情時の対応" :contents="['正しい', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="32" :title="title" :subject="subject" questionTitle="契約の選択" :contents="['', '正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="33" :title="title" :subject="subject" questionTitle="相続の法律" :contents="['正しい', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="34" :title="title" :subject="subject" questionTitle="契約申込み時の実務" :contents="['正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="35" :title="title" :subject="subject" questionTitle="生命保険の仕組み" :contents="['', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="36" :title="title" :subject="subject" questionTitle="保全・アフターサービスの重要性" :contents="['正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="37" :title="title" :subject="subject" questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）" :contents="['', '正しい', '正しい']" />
+                <QuestionTemp1
+                    :questionNumber="31"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="照会・苦情時の対応"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '正しい',
+                        '',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="32"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="契約の選択"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '正しい',
+                        '',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="33"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="相続の法律"
+                    :contents="[
+                        '正しい',
+                        '',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="34"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="契約申込み時の実務"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '契約申込みの撤回ができる → 撤回はできない', //p47
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="35"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生命保険の仕組み"
+                    :contents="[
+                        '正しい',
+                        '5年間の死亡者数を5年間の生存者数で割る → 1年間の死亡者数を年始の生存者数で割る', //p15
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="36"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保全・アフターサービスの重要性"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="37"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '正しい',
+                    ]"
+                />
                 <QuestionTemp2
                     :questionNumber="38"
                     :title="title"
@@ -249,7 +322,7 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '保険料は割高 → 保険料は割安', //p27
                         }, //49
                         {
                             questionTitle: '剰余金と配当金',
@@ -261,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '',
+                            content: '保険金買増方法 → 積立（据置）方法', //p29
                         }, //52
                         {
                             questionTitle: '契約取り扱いの手続き',

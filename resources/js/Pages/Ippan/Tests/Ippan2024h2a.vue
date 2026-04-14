@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2024年7月〜12月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,9 +196,9 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
-                        '', //p
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                     ]"
                 />
                 <QuestionTemp1
@@ -207,10 +207,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保障の見直し"
                     :contents="[
-                        '', //p
+                        '既払込保険料相当額 → 責任準備金', //p91
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約者は切り替わらない', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '預金保険法等 → 保険業法等', //p11
                     ]"
                 />
                 <QuestionTemp1
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '情報収集を避けなければいけない → 情報収集を行うことが大切', //p89
                     ]"
                 />
                 <QuestionTemp2
@@ -290,11 +290,11 @@ const isDraft = true;
                         }, //40
                         {
                             questionTitle: '生命保険の種類',
-                            content: '', //p
+                            content: '一般勘定 → 特別勘定', //p20
                         }, //41
                         {
                             questionTitle: '生命保険の種類',
-                            content: '', //p
+                            content: '保険金額（基本保険金額）は保証されない → 保証される', //p20
                         }, //42
                         {
                             questionTitle: '隣接業界',
@@ -302,11 +302,11 @@ const isDraft = true;
                         }, //43
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '農林水産省 → 厚生労働省', //p108
                         }, //44
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '3年以内 → 1年以内', //p109
                         }, //45
                         {
                             questionTitle: '隣接業界',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '損害保険は取り扱えない → 生命保険も損害保険も取り扱える', //p109
                         }, //47
                         {
                             questionTitle: '生命保険の仕組み',
@@ -346,7 +346,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '', //p
+                            content: '保険事業と銀行業 → 保険事業だけ',
                         }, //55
                         {
                             questionTitle: '生命保険会社の仕組み',
@@ -354,11 +354,11 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '', //p
+                            content: '兼営は認められている → 禁止されている', //p33
                         }, //57
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '経済上の危険 → 環境上の危険', //p52
                         }, //58
                         {
                             questionTitle: '契約の選択',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '自由条件付契約 → 特別条件付契約', //p59
                         }, //62
                         {
                             questionTitle: 'お客さまニーズへの対応',

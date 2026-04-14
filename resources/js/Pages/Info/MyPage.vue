@@ -30,6 +30,14 @@ const props = defineProps({
     type: Boolean,
     required: true,
   },
+  hasPremiumSeiho: {
+    type: Boolean,
+    default: false,
+  },
+  hasPremiumDaigaku: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const isDaigaku = computed(() => props.scope === 'daigaku');
@@ -244,26 +252,49 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
       </div>
 
       <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-        <div class="text-sm text-gray-500">ログイン中のユーザー</div>
+        <div class="flex items-center gap-2">
+          <div class="text-sm text-gray-500">ログイン中のユーザー</div>
+          <span class="inline-flex items-center rounded-full border border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50 px-2 py-0.5 text-[11px] font-semibold text-purple-600">生保講座・生保大学 共通</span>
+        </div>
         <div class="no-data-detectors mt-1 text-lg font-semibold text-gray-800">
           {{ user?.email || '未ログイン' }}
         </div>
 
         <div class="mt-6 border-t border-gray-100 pt-4">
-          <div class="text-sm text-gray-500">購入状況</div>
-          <div
-            class="mt-1 text-sm font-semibold"
-            :class="props.hasPremium ? 'text-emerald-700' : 'text-gray-700'"
-          >
-            {{ props.hasPremium ? 'プレミアムプラン購入済み' : 'プレミアムプラン未購入' }}
+          <div class="mb-3 text-sm text-gray-500">購入状況</div>
+          <div class="flex flex-col gap-2">
+            <!-- 生保講座 -->
+            <div class="flex items-center justify-between rounded-lg border border-gray-100 bg-gray-50 px-4 py-3">
+              <div>
+                <div class="text-xs font-semibold text-gray-500">生保講座</div>
+                <div class="mt-0.5 text-sm font-semibold" :class="props.hasPremiumSeiho ? 'text-emerald-700' : 'text-gray-500'">
+                  {{ props.hasPremiumSeiho ? 'プレミアム購入済み' : '未購入' }}
+                </div>
+              </div>
+              <span
+                class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold"
+                :class="props.hasPremiumSeiho ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-200 text-gray-500'"
+              >
+                {{ props.hasPremiumSeiho ? '有効' : '無効' }}
+              </span>
+            </div>
+            <!-- 生保大学 -->
+            <div class="flex items-center justify-between rounded-lg border border-gray-100 bg-gray-50 px-4 py-3">
+              <div>
+                <div class="text-xs font-semibold text-gray-500">生保大学</div>
+                <div class="mt-0.5 text-sm font-semibold" :class="props.hasPremiumDaigaku ? 'text-blue-700' : 'text-gray-500'">
+                  {{ props.hasPremiumDaigaku ? 'プレミアム購入済み' : '未購入' }}
+                </div>
+              </div>
+              <span
+                class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold"
+                :class="props.hasPremiumDaigaku ? 'bg-blue-100 text-blue-700' : 'bg-gray-200 text-gray-500'"
+              >
+                {{ props.hasPremiumDaigaku ? '有効' : '無効' }}
+              </span>
+            </div>
           </div>
-          <p class="mt-2 text-xs text-gray-500">
-            {{ props.hasPremium ? '全ての解説を閲覧できます。' : 'プレミアムプランで全ての解説を閲覧できます。' }}
-          </p>
-          <div
-            v-if="!props.hasPremium"
-            class="mt-3"
-          >
+          <div v-if="!props.hasPremium" class="mt-3">
             <Link
               :href="pricingHref"
               class="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold text-white transition"

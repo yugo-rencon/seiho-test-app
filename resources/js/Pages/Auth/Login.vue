@@ -58,6 +58,11 @@ const submit = () => {
         <div class="w-full">
             <div class="mb-6">
                 <h1 class="text-2xl font-semibold text-gray-900">ログイン</h1>
+                <p class="mt-2 text-xs text-gray-500">
+                    生保講座・生保大学は
+                    <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">共通のアカウント</span>
+                    でご利用いただけます。
+                </p>
             </div>
 
             <!-- Status -->

@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2024年7月〜12月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,9 +196,9 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '',
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
-                        '', //p
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                     ]"
                 />
                 <QuestionTemp1
@@ -207,10 +207,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の役割"
                     :contents="[
-                        '',
+                        '昭和時代 → 明治時代', //p1
                         '正しい',
                         '正しい',
-                        '', //p
+                        '社会保障制度 → 企業保障制度', //p4
                     ]"
                 />
                 <QuestionTemp1
@@ -221,8 +221,8 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '',
+                        '1000万円 → 500万円', //p127
+                        '60万円 → 110万円', //p127
                     ]"
                 />
                 <QuestionTemp1
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
+                        '経済上の危険 → 環境上の危険', //p52
                         '正しい',
                         '正しい',
                     ]"
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '月払契約 → 半年払、年払', //p96
                     ]"
                 />
                 <QuestionTemp2
@@ -290,11 +290,11 @@ const isDraft = true;
                         }, //40
                         {
                             questionTitle: '生命保険の種類',
-                            content: '',
+                            content: '一般勘定 → 特別勘定', //p20
                         }, //41
                         {
                             questionTitle: '生命保険の種類',
-                            content: '',
+                            content: '保険金額（基本保険金額）は保証されない → 保証される', //p20
                         }, //42
                         {
                             questionTitle: '隣接業界',
@@ -302,11 +302,11 @@ const isDraft = true;
                         }, //43
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '農林水産省 → 厚生労働省', //p108
                         }, //44
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '3年以内 → 1年以内', //p109
                         }, //45
                         {
                             questionTitle: '隣接業界',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '損害保険は取り扱えない → 生命保険も損害保険も取り扱える', //p109
                         }, //47
                         {
                             questionTitle: '私たちの役割と心がまえ',
@@ -326,7 +326,7 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '私たちの役割と心がまえ',
-                            content: '',
+                            content: 'アフターサービスは必要ない → アフターサービスを提供することが大切', //p11
                         }, //50
                         {
                             questionTitle: '私たちの役割と心がまえ',
@@ -382,11 +382,11 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         }, //64
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '契約の申込みが成立した後 → 契約の申込みを受けるときまで', //p78
                         }, //65
                         {
                             questionTitle: '募集時の正しい説明',

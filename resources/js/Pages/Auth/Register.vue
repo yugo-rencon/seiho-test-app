@@ -53,6 +53,11 @@ const submit = () => {
 
         <div class="mb-6">
             <h1 class="text-2xl font-semibold text-gray-900">新規登録</h1>
+            <p class="mt-2 text-xs text-gray-500">
+                1つのアカウントで
+                <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">生保講座・生保大学の両方</span>
+                をご利用いただけます。
+            </p>
         </div>
 
         <form @submit.prevent="submit" class="space-y-3">

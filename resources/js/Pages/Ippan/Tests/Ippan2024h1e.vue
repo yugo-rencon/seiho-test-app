@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2024年1月〜6月実施 フォームE";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -207,10 +207,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の種類"
                     :contents="[
-                        '', //p
+                        '定額保険 → 定期保険', //p17
                         '正しい',
                         '正しい',
-                        '',
+                        '保険金額（基本保険金額）は保証されない → 保証される', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保全・アフターサービスの重要性"
                     :contents="[
-                        '', //p
+                        '当初の契約内容のまま継続することが重要 → 変更になることケースが少なからずある', //p88
                         '正しい',
                         '正しい',
                     ]"
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="隣接業界"
                     :contents="[
-                        '', //p
+                        '広く一般の国民を対象 → 組合員を対象', //p108
                         '正しい',
                         '正しい',
                     ]"
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '',
+                            content: '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         }, //59
                         {
                             questionTitle: '照会・苦情時の対応',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '',
+                            content: '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                         }, //62
                         {
                             questionTitle: 'お客さまニーズへの対応',

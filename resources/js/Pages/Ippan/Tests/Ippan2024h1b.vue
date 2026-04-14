@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2024年1月〜6月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -201,8 +201,30 @@ const isDraft = true;
                         '4割 → 1割で所定水準以上の所得者は2割（そのうち特に所得の高い者は3割）', //p115
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="32" :title="title" :subject="subject" questionTitle="生命保険の役割" :contents="['', '', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="33" :title="title" :subject="subject" questionTitle="保険料の税法上の取り扱い" :contents="['', '正しい', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="32"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生命保険の役割"
+                    :contents="[
+                        '90歳を超えている → 超えていない（男性約81歳、女性約87歳）', //p3
+                        '平均寿命 → 平均余命', //p4
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="33"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険料の税法上の取り扱い"
+                    :contents="[
+                        '事業税 → 所得税', //p120
+                        '正しい',
+                        '正しい',
+                        '35000円 → 28000円', //p124
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="34"
                     :title="title"
@@ -225,7 +247,17 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="36" :title="title" :subject="subject" questionTitle="照会・苦情時の対応" :contents="['正しい', '正しい', '']" />
+                <QuestionTemp1
+                    :questionNumber="36"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="照会・苦情時の対応"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="37"
                     :title="title"
@@ -302,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '生命保険の種類',
-                            content: '',
+                            content: '保険金額（基本保険金額）は保証されない → 保証される', //p20
                         }, //52
                         {
                             questionTitle: '契約申込み時の実務',
@@ -338,11 +370,11 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '保障の見直し',
-                            content: '',
+                            content: '書面の交付および受領印の取付は必要ない → 必要がある', //p92
                         }, //61
                         {
                             questionTitle: '保障の見直し',
-                            content: '',
+                            content: '転換前契約の加入時 → 転換時', //p92
                         }, //62
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',

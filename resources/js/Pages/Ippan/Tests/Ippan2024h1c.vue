@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2024年1月〜6月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -208,8 +208,8 @@ const isDraft = true;
                     questionTitle="生命保険の役割"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '90歳を超えている → 超えていない（男性約81歳、女性約87歳）', //p3
+                        '平均寿命 → 平均余命', //p4
                         '正しい',
                     ]"
                 />
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '転換前契約の加入時 → 転換時', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '60万円 → 110万円', //p127
                     ]"
                 />
                 <QuestionTemp2
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '経済産業省 → 厚生労働省', //p108
                         }, //59
                         {
                             questionTitle: '隣接業界',
@@ -378,7 +378,7 @@ const isDraft = true;
                         }, //62
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '配偶者が2/3、兄弟姉妹が1/3 → 配偶者が3/4、兄弟姉妹が1/4', //p130
                         }, //63
                         {
                             questionTitle: '相続の法律',
@@ -386,7 +386,7 @@ const isDraft = true;
                         }, //64
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '自動承認 → 単純承認', //p130
                         }, //65
                         {
                             questionTitle: '相続の法律',

@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2024年1月〜6月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -207,9 +207,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の役割"
                     :contents="[
-                        '', //p
+                        '大正時代 → 明治時代', //p1
                         '正しい',
-                        '', //p
+                        '平均寿命 → 平均余命', //p4
                         '正しい',
                     ]"
                 />
@@ -220,9 +220,9 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
-                        '', //p
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                     ]"
                 />
                 <QuestionTemp1
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="保険料の税法上の取り扱い"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '5年以上 → 5年未満', //p122
                         '正しい',
                     ]"
                 />
@@ -322,7 +322,7 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         }, //49
                         {
                             questionTitle: '募集時の正しい説明',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '合理性の原則 → 適合性の原則', //p83
                         }, //52
                         {
                             questionTitle: '保険金・給付金の請求と支払い',
@@ -358,7 +358,7 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '', //p
+                            content: '相続税 → 贈与税', //p126
                         }, //58
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
@@ -366,7 +366,7 @@ const isDraft = true;
                         }, //59
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '', //p
+                            content: '50万円 → 500万円', //p127
                         }, //60
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
@@ -374,11 +374,11 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '', //p
+                            content: '課税対象 → 非課税', //p128
                         }, //62
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '配偶者が2/3、兄弟姉妹が1/3 → 配偶者が3/4、兄弟姉妹が1/4', //p130
                         }, //63
                         {
                             questionTitle: '相続の法律',

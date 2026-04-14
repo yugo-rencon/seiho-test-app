@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2024年7月〜12月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,9 +196,9 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
-                        '',
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                     ]"
                 />
                 <QuestionTemp1
@@ -207,10 +207,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
+                        '職業上の危険・行動上の危険・道徳上の危険 → 身体上の危険・環境上の危険・道徳上の危険', //p52
                         '正しい',
                         '正しい',
-                        '',
+                        '医師の診査による契約の場合は告知は不要 → 告知は必要', //p56
                     ]"
                 />
                 <QuestionTemp1
@@ -220,9 +220,9 @@ const isDraft = true;
                     questionTitle="相続の法律"
                     :contents="[
                         '正しい',
-                        '',
+                        '配偶者が2/3、子どもが1/3 → 配偶者が1/2、子どもが1/2', //p130
                         '正しい',
-                        '', //p
+                        '配偶者が2/3、兄弟姉妹が1/3 → 配偶者が3/4、兄弟姉妹が1/4', //p130
                     ]"
                 />
                 <QuestionTemp1
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保全・アフターサービスの重要性"
                     :contents="[
-                        '', //p
+                        '情報収集を避けなければいけない → 情報収集を行うことが大切', //p89
                         '正しい',
                         '正しい',
                     ]"
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '配当所得 → 一時所得', //p126
                         '正しい',
                     ]"
                 />
@@ -290,11 +290,11 @@ const isDraft = true;
                         }, //40
                         {
                             questionTitle: '生命保険の種類',
-                            content: '',
+                            content: '一般勘定 → 特別勘定', //p20
                         }, //41
                         {
                             questionTitle: '生命保険の種類',
-                            content: '',
+                            content: '保険金額（基本保険金額）は保証されない → 保証される', //p20
                         }, //42
                         {
                             questionTitle: '隣接業界',
@@ -302,11 +302,11 @@ const isDraft = true;
                         }, //43
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '農林水産省 → 厚生労働省', //p108
                         }, //44
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '3年以内 → 1年以内', //p109
                         }, //45
                         {
                             questionTitle: '隣接業界',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '損害保険は取り扱えない → 生命保険も損害保険も取り扱える', //p109
                         }, //47
                         {
                             questionTitle: '剰余金と配当金',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '',
+                            content: '説明する必要はない → わかりやすく説明する必要がある', //p78
                         }, //62
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '',
+                            content: '変更後も継続 → 変更後に消滅',
                         }, //66
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',

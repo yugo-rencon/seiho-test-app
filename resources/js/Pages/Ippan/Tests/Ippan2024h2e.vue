@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2024年7月〜12月実施 フォームE";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,9 +196,9 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
-                        '',
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                     ]"
                 />
                 <QuestionTemp1
@@ -219,9 +219,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :contents="[
-                        '',
+                        '相続税 → 贈与税', //p126
                         '正しい',
-                        '', //p
+                        '1000万円 → 500万円', //p127
                         '正しい',
                     ]"
                 />
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        'お客さまからすすんで購入 → すすんで購入するものでない', //p12
                     ]"
                 />
                 <QuestionTemp1
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="契約の選択"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '生命保険を正しく活用して、安心な老後を迎えようとする心理状態 → 生命保険を利用して、不正に利得しようとする心理状態', //p53
                         '正しい',
                     ]"
                 />
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保全・アフターサービスの重要性"
                     :contents="[
-                        '', //p
+                        '資産運用や投資による利益の確保 → 医療費・入院費や万一の場合の保障確保', //p88
                         '正しい',
                         '正しい',
                     ]"
@@ -290,11 +290,11 @@ const isDraft = true;
                         }, //40
                         {
                             questionTitle: '生命保険の種類',
-                            content: '',
+                            content: '一般勘定 → 特別勘定', //p20
                         }, //41
                         {
                             questionTitle: '生命保険の種類',
-                            content: '',
+                            content: '保険金額（基本保険金額）は保証されない → 保証される', //p20
                         }, //42
                         {
                             questionTitle: '隣接業界',
@@ -302,11 +302,11 @@ const isDraft = true;
                         }, //43
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '農林水産省 → 厚生労働省', //p108
                         }, //44
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '3年以内 → 1年以内', //p109
                         }, //45
                         {
                             questionTitle: '隣接業界',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '隣接業界',
-                            content: '',
+                            content: '損害保険は取り扱えない → 生命保険も損害保険も取り扱える', //p109
                         }, //47
                         {
                             questionTitle: '生命保険の役割',
@@ -326,7 +326,7 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '生命保険の役割',
-                            content: '',
+                            content: '平均寿命 → 平均余命', //p4
                         }, //50
                         {
                             questionTitle: '生命保険の役割',
@@ -358,11 +358,11 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '',
+                            content: '既払込保険料総額の範囲内 → 解約返戻金の一定範囲内', //p93
                         }, //58
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '',
+                            content: '配当金は支払われない → 同様の配当金が支払われる', //p93
                         }, //59
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',

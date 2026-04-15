@@ -102,7 +102,7 @@ const isDraft = false;
                     questionTitle="隣接業界-②"
                     :contents="[
                         '１年',
-                        '1,000万円', // 問14〜15
+                        '1000万円', // 問14〜15
                     ]"
                     :labels="[
                         'ア', //14

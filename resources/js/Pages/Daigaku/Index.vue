@@ -14,6 +14,7 @@ const DAIGAKU_SECTIONS = [
         title: "生命保険のしくみと個人保険商品",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。",
         years: SHIKUMI_VISIBLE_YEARS,
+        published: true,
     },
     {
         id: "fp",
@@ -21,30 +22,35 @@ const DAIGAKU_SECTIONS = [
         buttonTitle: "ファイナンシャルプランニング",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。",
         years: DAIGAKU_VISIBLE_YEARS,
+        published: true,
     },
     {
         id: "tax-sozoku",
         title: "生命保険と税・相続",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。",
         years: DAIGAKU_VISIBLE_YEARS,
+        published: false,
     },
     {
         id: "sisan-unyou",
         title: "資産運用知識",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。",
         years: DAIGAKU_VISIBLE_YEARS,
+        published: false,
     },
     {
         id: "houjin-consulting",
         title: "企業向け保険商品とコンサルティング",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。",
         years: DAIGAKU_VISIBLE_YEARS,
+        published: false,
     },
     {
         id: "social-security",
         title: "社会保障制度",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。",
         years: DAIGAKU_VISIBLE_YEARS,
+        published: false,
     },
 ];
 
@@ -102,66 +108,26 @@ const getDaigakuRoute = (sectionId, year, form) => {
         "daigaku.fp2021a",
         "daigaku.fp2021b",
         "daigaku.fp2021c",
-        "daigaku.zei2025a",
-        "daigaku.zei2025b",
-        "daigaku.zei2025c",
-        "daigaku.zei2024a",
-        "daigaku.zei2024b",
-        "daigaku.zei2024c",
-        "daigaku.zei2023a",
-        "daigaku.zei2023b",
-        "daigaku.zei2023c",
-        "daigaku.zei2022a",
-        "daigaku.zei2022b",
-        "daigaku.zei2022c",
-        "daigaku.zei2021a",
-        "daigaku.zei2021b",
-        "daigaku.zei2021c",
-        "daigaku.sisan2025a",
-        "daigaku.sisan2025b",
-        "daigaku.sisan2025c",
-        "daigaku.sisan2024a",
-        "daigaku.sisan2024b",
-        "daigaku.sisan2024c",
-        "daigaku.sisan2023a",
-        "daigaku.sisan2023b",
-        "daigaku.sisan2023c",
-        "daigaku.sisan2022a",
-        "daigaku.sisan2022b",
-        "daigaku.sisan2022c",
-        "daigaku.sisan2021a",
-        "daigaku.sisan2021b",
-        "daigaku.sisan2021c",
-        "daigaku.kigyo2025a",
-        "daigaku.kigyo2025b",
-        "daigaku.kigyo2025c",
-        "daigaku.kigyo2024a",
-        "daigaku.kigyo2024b",
-        "daigaku.kigyo2024c",
-        "daigaku.kigyo2023a",
-        "daigaku.kigyo2023b",
-        "daigaku.kigyo2023c",
-        "daigaku.kigyo2022a",
-        "daigaku.kigyo2022b",
-        "daigaku.kigyo2022c",
-        "daigaku.kigyo2021a",
-        "daigaku.kigyo2021b",
-        "daigaku.kigyo2021c",
-        "daigaku.syakai2025a",
-        "daigaku.syakai2025b",
-        "daigaku.syakai2025c",
-        "daigaku.syakai2024a",
-        "daigaku.syakai2024b",
-        "daigaku.syakai2024c",
-        "daigaku.syakai2023a",
-        "daigaku.syakai2023b",
-        "daigaku.syakai2023c",
-        "daigaku.syakai2022a",
-        "daigaku.syakai2022b",
-        "daigaku.syakai2022c",
-        "daigaku.syakai2021a",
-        "daigaku.syakai2021b",
-        "daigaku.syakai2021c",
+        "daigaku.zei2025a", "daigaku.zei2025b", "daigaku.zei2025c",
+        "daigaku.zei2024a", "daigaku.zei2024b", "daigaku.zei2024c",
+        "daigaku.zei2023a", "daigaku.zei2023b", "daigaku.zei2023c",
+        "daigaku.zei2022a", "daigaku.zei2022b", "daigaku.zei2022c",
+        "daigaku.zei2021a", "daigaku.zei2021b", "daigaku.zei2021c",
+        "daigaku.sisan2025a", "daigaku.sisan2025b", "daigaku.sisan2025c",
+        "daigaku.sisan2024a", "daigaku.sisan2024b", "daigaku.sisan2024c",
+        "daigaku.sisan2023a", "daigaku.sisan2023b", "daigaku.sisan2023c",
+        "daigaku.sisan2022a", "daigaku.sisan2022b", "daigaku.sisan2022c",
+        "daigaku.sisan2021a", "daigaku.sisan2021b", "daigaku.sisan2021c",
+        "daigaku.kigyo2025a", "daigaku.kigyo2025b", "daigaku.kigyo2025c",
+        "daigaku.kigyo2024a", "daigaku.kigyo2024b", "daigaku.kigyo2024c",
+        "daigaku.kigyo2023a", "daigaku.kigyo2023b", "daigaku.kigyo2023c",
+        "daigaku.kigyo2022a", "daigaku.kigyo2022b", "daigaku.kigyo2022c",
+        "daigaku.kigyo2021a", "daigaku.kigyo2021b", "daigaku.kigyo2021c",
+        "daigaku.syakai2025a", "daigaku.syakai2025b", "daigaku.syakai2025c",
+        "daigaku.syakai2024a", "daigaku.syakai2024b", "daigaku.syakai2024c",
+        "daigaku.syakai2023a", "daigaku.syakai2023b", "daigaku.syakai2023c",
+        "daigaku.syakai2022a", "daigaku.syakai2022b", "daigaku.syakai2022c",
+        "daigaku.syakai2021a", "daigaku.syakai2021b", "daigaku.syakai2021c",
     ]);
 
     const routeName = `daigaku.${routePrefix}${Number(year)}${String(form).toLowerCase()}`;
@@ -172,15 +138,6 @@ const getDaigakuRoute = (sectionId, year, form) => {
     return null;
 };
 
-const isYearPreparing = (sectionId, year) => {
-    let publishedCount = 0;
-    for (const form of DAIGAKU_FORMS) {
-        if (getDaigakuRoute(sectionId, year, form)) {
-            publishedCount += 1;
-        }
-    }
-    return publishedCount === 0;
-};
 
 </script>
 
@@ -268,13 +225,13 @@ const isYearPreparing = (sectionId, year) => {
                                 <div class="flex items-center gap-2">
                                     <div class="text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
                                     <span
-                                        v-if="!hasPremium && Number(year) === 2025"
+                                        v-if="!hasPremium && Number(year) === 2025 && activeSection.published"
                                         class="inline-flex items-center rounded-full border border-blue-300 bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700"
                                     >
                                         最新年度フォームA・無料
                                     </span>
                                     <span
-                                        v-if="isYearPreparing(activeSection.id, year)"
+                                        v-if="!activeSection.published"
                                         class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600"
                                     >
                                         準備中

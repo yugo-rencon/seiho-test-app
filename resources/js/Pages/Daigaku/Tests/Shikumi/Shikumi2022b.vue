@@ -27,7 +27,7 @@ const isDraft = true;
                     questionTitle="生命保険契約の形態"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -40,10 +40,10 @@ const isDraft = true;
                     questionTitle="責任開始の時期"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '必ず一致する → 必ずしも一致しないことがある', //p10
+                        '保険契約の成立日を意味する → 保険約款における期間の起算日を意味する', //p12
+                        '支払対象とはならない → 支払対象となる', //p13
                     ]"
                 />
                 <QuestionTemp1
@@ -56,7 +56,7 @@ const isDraft = true;
                         '', //p
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -69,7 +69,7 @@ const isDraft = true;
                         '', //p
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -80,7 +80,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -92,10 +92,10 @@ const isDraft = true;
                     questionTitle="被保険者集団"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい', //p
-                        '', //p
+                        '収支相当の原則が有効に機能していること → 大数の法則が作用し得る程度に十分大量の被保険者が存在すること', //p67
+                        '厚生労働省 → 金融庁長官', //p67
+                        '正しい',
+                        '単なる契約の変更のため、申込みの諾否決定や危険選択の追加をすることはない → 新たな危険の増加を伴う場合もあるので申込みの諾否決定や危険選択の追加を行う', //p68
                     ]"
                 />
                 <QuestionTemp1
@@ -108,7 +108,7 @@ const isDraft = true;
                         '', //p
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -118,7 +118,7 @@ const isDraft = true;
                     questionTitle="契約転換制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -131,10 +131,10 @@ const isDraft = true;
                     questionTitle="契約内容の変更"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '正しい', //p
+                        '元利金を差し引く前の金額 → 元利金を差し引いた残額<br>一時払終身保険 → 一時払養老保険', //p114
+                        '変更時点の計算基礎率 → 元契約と同じ計算基礎率', //p114
+                        '元利金を差し引く前の金額 → 元利金を差し引いた残額', //p115
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -144,10 +144,10 @@ const isDraft = true;
                     questionTitle="医療保障を目的とした主契約"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '正しい', //p
+                        '終身タイプの商品はない → 定期タイプと終身タイプがある', //p140
+                        '満期保険金を支払う商品が一般的 → 一般に満期保険金はない', //p140
+                        '保険金はがんと同額で、保険金がないものはない → 保険金が少額で、保険金がないものもある', //p141
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -160,7 +160,7 @@ const isDraft = true;
                         '', //p
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -170,7 +170,7 @@ const isDraft = true;
                     questionTitle="共済制度の特徴"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -183,10 +183,10 @@ const isDraft = true;
                     questionTitle="保険法に基づく被保険者の同意"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -196,10 +196,10 @@ const isDraft = true;
                     questionTitle="保険料の払込み"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '給与等から天引きされた時点 → 団体（集団）から生命保険会社に払い込まれた時', //p17
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -209,10 +209,10 @@ const isDraft = true;
                     questionTitle="保険金等の請求手続き"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -222,10 +222,10 @@ const isDraft = true;
                     questionTitle="保険契約の失効・復活"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
+                        '失効中の期間を含めないで計算 → 失効中の期間を含めて計算', //p36
                     ]"
                 />
                 <QuestionTemp1
@@ -235,9 +235,9 @@ const isDraft = true;
                     questionTitle="危険選択の原理"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -248,10 +248,10 @@ const isDraft = true;
                     questionTitle="告知義務制度のポイント"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '代理権を有さない → 代理権を有する', //p72
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -261,10 +261,10 @@ const isDraft = true;
                     questionTitle="配当金（毎年配当型）の支払いと計算方法"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -274,10 +274,10 @@ const isDraft = true;
                     questionTitle="配当の割当て"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -287,10 +287,10 @@ const isDraft = true;
                     questionTitle="（自動）振替貸付と契約者貸付"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -301,9 +301,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -313,9 +313,9 @@ const isDraft = true;
                     questionTitle="主契約の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -326,10 +326,10 @@ const isDraft = true;
                     questionTitle="損害保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3

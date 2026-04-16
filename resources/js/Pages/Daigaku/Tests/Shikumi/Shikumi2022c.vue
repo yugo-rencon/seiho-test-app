@@ -27,10 +27,10 @@ const isDraft = true;
                     questionTitle="保険法に基づく被保険者の同意"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '傷害疾病定額保険契約で保険金受取人が被保険者の場合、被保険者の同意が必要 → 同意は不要', //p5
+                        '死亡保険の場合に同意を要する → 死亡保険と生死混合保険の場合に同意を要する', //p5
                         '正しい',
-                        '', //p
+                        '被保険者の同意は必要ない → 同意が必要', //p5-6
                     ]"
                 />
                 <QuestionTemp1
@@ -79,10 +79,10 @@ const isDraft = true;
                     questionTitle="告知義務違反による保険契約の解除"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '告知義務違反にあたらない → 告知義務違反となる', //p39
+                        '相手方に発信した時点 → 相手方に到達した時点', //p40
                         '正しい',
-                        '', //p
+                        '3年 → 5年', //p40
                     ]"
                 />
                 <QuestionTemp1
@@ -105,10 +105,10 @@ const isDraft = true;
                     questionTitle="身体的危険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '重量体・標準体・軽量体 → 過重体・平均体・過軽体', //p49
                         '正しい',
-                        '', //p
-                        '', //p
+                        '既往歴 → 現病歴', //p50
+                        '現病歴 → 既往歴', //p50
                     ]"
                 />
                 <QuestionTemp1
@@ -118,9 +118,9 @@ const isDraft = true;
                     questionTitle="（自動）振替貸付および契約者貸付"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '保険約款に規定がない契約であっても → 保険約款に規定がある契約のみ', //p112
+                        '経過期間に関わらず取り消しできない → 猶予期間満了後一定期間内の場合に可能', //p112
+                        '責任準備金 → 解約返戻金', //p112
                         '正しい',
                     ]"
                 />
@@ -185,7 +185,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '4点 → 3点（性別は不要）', //p4
                         '正しい',
                     ]"
                 />
@@ -211,7 +211,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '5年 → 3年', //p32
                         '正しい',
                     ]"
                 />
@@ -238,7 +238,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '150であれば50%低い死亡率 → 50%高い死亡率', //p49
                     ]"
                 />
                 <QuestionTemp1
@@ -249,7 +249,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '医師本人 → 告知義務者本人', //p61
                         '正しい',
                         '正しい',
                     ]"
@@ -263,7 +263,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険金 → 保険年度末保険料積立金', //p109
                         '正しい',
                     ]"
                 />
@@ -300,7 +300,7 @@ const isDraft = true;
                     questionTitle="死亡保障を厚くする特約"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '逓増定期保険特約はない → 逓増定期保険特約もある', //p156
                         '正しい',
                         '正しい',
                         '正しい',
@@ -384,11 +384,11 @@ const isDraft = true;
                     questionTitle="チルメル式保険料積立金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '付加保険料',
+                        '純保険料',
+                        '貯蓄保険料',
+                        '危険保険料',
+                        '平準保険料式', // 問35〜39
                     ]"
                     :labels="[
                         'ク', //35
@@ -437,7 +437,7 @@ const isDraft = true;
                         {
                             questionTitle: '平均寿命・平均余命',
                             relatedProblems: [],
-                            content: '',
+                            content: '平均寿命 ↔︎ 平均余命', //p79
                         }, //46
                         {
                             questionTitle: '個人年金保険の年金種類の変更',

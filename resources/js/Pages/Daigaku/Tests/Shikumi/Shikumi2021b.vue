@@ -40,10 +40,10 @@ const isDraft = true;
                     questionTitle="前納・一括払と一時払"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        'いずれも月払契約の場合 → 一括払の月払契約の場合', //p21
+                        '保険金受取人 → 保険契約者', //p21
                         '正しい',
-                        '', //p
+                        '一時払保険料 ↔︎ 全期前納保険料', //p22
                     ]"
                 />
                 <QuestionTemp1
@@ -67,9 +67,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '支払免責となる → 支払免責となるような規定はない', //p30
+                        '5年 → 3年', //p32
+                        '7日以内 → 5日以内', //p33
                     ]"
                 />
                 <QuestionTemp1
@@ -131,9 +131,9 @@ const isDraft = true;
                     questionTitle="契約転換制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '他社の既契約 → 自社の既契約', //p119
+                        '保険料率は引上げになることはない → 引上げになることもある', //p120
+                        '転換前契約の責任開始日 → 転換契約の責任開始日', //p121
                         '正しい',
                     ]"
                 />
@@ -183,7 +183,7 @@ const isDraft = true;
                     questionTitle="保険法に基づく被保険者の同意"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '傷害疾病定額保険契約で保険金受取人が被保険者の場合、被保険者の同意が必要 → 同意は不要', //p5
                         '正しい',
                         '正しい',
                         '正しい',
@@ -210,7 +210,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '相手方に発信した時点 → 相手方に到達した時点', //p40
                         '正しい',
                         '正しい',
                     ]"
@@ -222,7 +222,7 @@ const isDraft = true;
                     questionTitle="危険選択の手段"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '保険法 → 事業方法書', //p61
                         '正しい',
                         '正しい',
                         '正しい',
@@ -238,7 +238,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '削減しない → 削減するケースが多い', //p76
                     ]"
                 />
                 <QuestionTemp1
@@ -248,7 +248,7 @@ const isDraft = true;
                     questionTitle="選択効果の検証"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '活かす目的に適している → 適さない', //p69
                         '正しい',
                         '正しい',
                         '正しい',
@@ -275,7 +275,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '経過期間に関わらず取り消しできない → 猶予期間満了後一定期間内の場合に可能', //p112
                         '正しい',
                         '正しい',
                     ]"
@@ -289,7 +289,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '毎年の契約応当日に支払わない → 契約応当日に現金で支払う', //p109
                         '正しい',
                     ]"
                 />
@@ -340,11 +340,11 @@ const isDraft = true;
                     questionTitle="保険契約の当事者"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '10億円',
+                        '1000万円',
+                        '制限行為能力者',
+                        '同意',
+                        '商号', // 問25〜29
                     ]"
                     :labels="[
                         'エ', //25
@@ -384,11 +384,11 @@ const isDraft = true;
                     questionTitle="共済制度の特徴"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '職域',
+                        '地方自治法',
+                        '営利',
+                        '子会社方式',
+                        'ない', // 問35〜39
                     ]"
                     :labels="[
                         'オ', //35

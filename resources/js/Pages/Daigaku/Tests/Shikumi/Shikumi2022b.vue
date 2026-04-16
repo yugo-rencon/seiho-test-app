@@ -28,9 +28,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '自己のため → 他人のため', //p2
+                        '他人のため → 自己のため', //p2
+                        '自己の生命 → 他人の生命', //p3
                     ]"
                 />
                 <QuestionTemp1
@@ -53,9 +53,9 @@ const isDraft = true;
                     questionTitle="保険契約の当事者"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '財務大臣 → 内閣総理大臣', //p3
+                        '免許制 → 登録制', //p3
+                        '法律上の制限がある → 制限はない', //p4
                         '正しい',
                     ]"
                 />
@@ -66,9 +66,9 @@ const isDraft = true;
                     questionTitle="前納・一括払と一時払"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        'いずれも月払契約の場合 → 一括払の月払契約の場合', //p21
+                        '保険金受取人 → 保険契約者', //p21
+                        '多くなる → 少なくなる', //p22
                         '正しい',
                     ]"
                 />
@@ -79,10 +79,10 @@ const isDraft = true;
                     questionTitle="保険契約の解除・解約・取消し・無効"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '解約させる → 消滅させる', //p39
                         '正しい',
-                        '', //p
-                        '', //p
+                        '2年以内に限り → 年月にかかわらず', //p42
+                        '解除 → 無効', //p42
                     ]"
                 />
                 <QuestionTemp1
@@ -105,9 +105,9 @@ const isDraft = true;
                     questionTitle="危険選択の手段"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '告知義務者本人の署名は必要ない → 本人の署名が必要', //p 61
+                        '個別方式は行われていない → 一括方式と個別方式が行われている', //p62
+                        '外観の観察は行わない → 行う', //p64
                         '正しい',
                     ]"
                 />
@@ -119,9 +119,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '保険料率は引上げになることはない → 引上げになることもある', //p120
+                        '転換前契約の責任開始日 → 転換契約の責任開始日', //p121
+                        '適用の対象とはならない → 適用の対象となる', //p121
                     ]"
                 />
                 <QuestionTemp1
@@ -157,9 +157,9 @@ const isDraft = true;
                     questionTitle="入院、手術、通院など病気・ケガの治療全般に備える特約"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '不慮の事故では支払わない → 支払う', //p157
+                        '入院・手術給付金を支払う → 入院給付金を支払う', //p157
+                        'いずれの生命保険会社も取り扱っていない → 取り扱う生命保険会社もある', //p158
                         '正しい',
                     ]"
                 />
@@ -171,9 +171,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '営利を目的とする → 営利を目的としてはならない', //p165
+                        '双方を取り扱うことはできない → 双方を取り扱っている', //p165
+                        '多くの共済種類を取り扱う → 共済種類が限られている', //p165
                     ]"
                 />
                 <QuestionTemp1
@@ -185,7 +185,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '被保険者の同意を必要としない → 同意が必要', //p5
                         '正しい',
                     ]"
                 />
@@ -211,7 +211,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '5年 → 3年', //p32
                         '正しい',
                     ]"
                 />
@@ -238,7 +238,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '150であれば50%低い死亡率 → 50%高い死亡率', //p49
                     ]"
                 />
                 <QuestionTemp1
@@ -263,7 +263,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険金 → 保険年度末保険料積立金', //p109
                         '正しい',
                     ]"
                 />
@@ -275,7 +275,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '割当てを行われない → 行われる', //p105
                         '正しい',
                         '正しい',
                     ]"
@@ -289,7 +289,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険契約が失効し、復活可能期間内であること → 保険契約が有効であること', //p113
                         '正しい',
                     ]"
                 />
@@ -300,7 +300,7 @@ const isDraft = true;
                     questionTitle="死亡保障を厚くする特約"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '逓増定期保険特約はない → 逓増定期保険特約もある', //p156
                         '正しい',
                         '正しい',
                         '正しい',
@@ -384,11 +384,11 @@ const isDraft = true;
                     questionTitle="チルメル式保険料積立金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '付加保険料',
+                        '純保険料',
+                        '貯蓄保険料',
+                        '危険保険料',
+                        '平準保険料式', // 問35〜39
                     ]"
                     :labels="[
                         'ク', //35
@@ -437,7 +437,7 @@ const isDraft = true;
                         {
                             questionTitle: '平均寿命・平均余命',
                             relatedProblems: [],
-                            content: '',
+                            content: '平均寿命 ↔︎ 平均余命', //p79
                         }, //46
                         {
                             questionTitle: '個人年金保険の年金種類の変更',

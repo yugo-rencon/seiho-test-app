@@ -27,10 +27,10 @@ const isDraft = true;
                     questionTitle="保険契約の当事者"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '財務大臣 → 内閣総理大臣', //p3
+                        '免許制 → 登録制', //p3
                         '正しい',
-                        '', //p
+                        '婚姻していても同意が必要 → 婚姻していれば同意不要', //不明
                     ]"
                 />
                 <QuestionTemp1
@@ -40,10 +40,10 @@ const isDraft = true;
                     questionTitle="前納・一括払と一時払"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        'いずれも月払契約の場合 → 一括払の月払契約の場合', //p21
+                        '保険金受取人 → 保険契約者', //p21
                         '正しい',
-                        '', //p
+                        '一時払保険料 ↔︎ 全期前納保険料', //p22
                     ]"
                 />
                 <QuestionTemp1
@@ -79,9 +79,9 @@ const isDraft = true;
                     questionTitle="告知義務違反による保険契約の解除"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '告知義務違反にあたらない → 告知義務違反となる', //p39
+                        '相手方に発信した時点 → 相手方に到達した時点', //p40
+                        '契約締結時に遡って効力を生じる → 将来に向かってのみ効力を生じる', //p40
                         '正しい',
                     ]"
                 />
@@ -131,9 +131,9 @@ const isDraft = true;
                     questionTitle="契約転換制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '他社の既契約 → 自社の既契約', //p119
+                        '保険料率は引上げになることはない → 引上げになることもある', //p120
+                        '転換前契約の責任開始日 → 転換契約の責任開始日', //p121
                         '正しい',
                     ]"
                 />
@@ -171,9 +171,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '農業協同組合が単独 → 農業協同組合と全国共済農業協同組合連合会の2組織', //p166
+                        '2年タイプ → 1年タイプ', //p179
+                        '年齢による区分のない → 年齢により保障が分かれている', //p185
                     ]"
                 />
                 <QuestionTemp1
@@ -223,7 +223,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        'いずれの場合も既払込保険料は返還 → 後者の場合は返還されない', //p42
                         '正しい',
                         '正しい',
                     ]"
@@ -235,7 +235,7 @@ const isDraft = true;
                     questionTitle="危険選択の原理"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '保険金額 ÷ 死亡率 → 保険金額 × 死亡率', //p46
                         '正しい',
                         '正しい',
                         '正しい',
@@ -248,7 +248,7 @@ const isDraft = true;
                     questionTitle="選択効果の検証"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '活かす目的に適している → 適さない', //p69
                         '正しい',
                         '正しい',
                         '正しい',
@@ -275,7 +275,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '転換後契約の加入年齢 → 転換前契約の加入年齢', //p120
                         '正しい',
                         '正しい',
                     ]"
@@ -289,7 +289,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '毎年の契約応当日に支払わない → 契約応当日に現金で支払う', //p109
                         '正しい',
                     ]"
                 />
@@ -340,11 +340,11 @@ const isDraft = true;
                     questionTitle="保険法と生命保険契約の形態"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '傷害疾病定期保険契約',
+                        '無効',
+                        '片面的強行規定',
+                        '自己のためにする',
+                        '自己の生命', // 問25〜29
                     ]"
                     :labels="[
                         'イ', //25
@@ -437,7 +437,7 @@ const isDraft = true;
                         {
                             questionTitle: '平均寿命・平均余命',
                             relatedProblems: [],
-                            content: '',
+                            content: '平均寿命 ↔︎ 平均余命', //p79
                         }, //46
                         {
                             questionTitle: '指定代理請求特約',

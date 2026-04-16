@@ -13,7 +13,7 @@ const pricingHref = computed(() =>
 );
 const priceNumberText = computed(() => (scope.value === "daigaku" ? "980" : "1,980"));
 const unlockedCountText = computed(() =>
-    scope.value === "daigaku" ? "全54解説" : "全120解説",
+    scope.value === "daigaku" ? "全90解説" : "全120解説",
 );
 const tone = computed(() =>
     scope.value === "daigaku"

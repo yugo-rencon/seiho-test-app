@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険のしくみと個人保険商品";
 const subject = "2022年度 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -158,9 +158,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '特約は継続する → 特約は消滅する', //p156
+                        '主契約の死亡・高度障害保険金の支払いはない → 支払われる', //p157
+                        '余命1年6ヶ月以内 → 余命6ヶ月以内', //p160
                     ]"
                 />
                 <QuestionTemp1
@@ -171,9 +171,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '農業協同組合が単独 → 農業協同組合と全国共済農業協同組合連合会の2組織', //p166
+                        '2年タイプ → 1年タイプ', //p179
+                        '年齢による区分のない → 年齢により保障が分かれている', //p185
                     ]"
                 />
                 <QuestionTemp1
@@ -184,7 +184,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '相手方に発信した時点 → 相手方に到達した時点', //p40
                         '正しい',
                         '正しい',
                     ]"
@@ -197,7 +197,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        'いずれの場合も既払込保険料は返還 → 後者の場合は返還されない', //p42
                         '正しい',
                         '正しい',
                     ]"
@@ -211,7 +211,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '5年 → 3年', //p32
                         '正しい',
                     ]"
                 />
@@ -225,7 +225,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '既往歴 → 現病歴', //p50
                     ]"
                 />
                 <QuestionTemp1
@@ -238,7 +238,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '150であれば50%低い死亡率 → 50%高い死亡率', //p49
                     ]"
                 />
                 <QuestionTemp1
@@ -248,7 +248,7 @@ const isDraft = true;
                     questionTitle="選択効果の検証"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '活かす目的に適している → 適さない', //p69
                         '正しい',
                         '正しい',
                         '正しい',
@@ -263,7 +263,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険金 → 保険年度末保険料積立金', //p109
                         '正しい',
                     ]"
                 />
@@ -277,7 +277,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '毎年の契約応当日に支払わない → 契約応当日に現金で支払う', //p109
                     ]"
                 />
                 <QuestionTemp1
@@ -288,7 +288,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '転換後契約の加入年齢 → 転換前契約の加入年齢', //p120
                         '正しい',
                         '正しい',
                     ]"
@@ -300,7 +300,7 @@ const isDraft = true;
                     questionTitle="死亡保障を厚くする特約"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '逓増定期保険特約はない → 逓増定期保険特約もある', //p156
                         '正しい',
                         '正しい',
                         '正しい',
@@ -315,7 +315,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '特約は消滅しない → 消滅する', //p159
                         '正しい',
                     ]"
                 />
@@ -329,7 +329,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険仲立人に該当する販売チャネルもある → 該当する販売チャネルはない', //p165
                     ]"
                 />
                 <QuestionTemp3
@@ -340,11 +340,11 @@ const isDraft = true;
                     questionTitle="危険選択の手段"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '事業方法書',
+                        '社医',
+                        '嘱託医',
+                        '検診',
+                        '保険事故発生率', // 問25〜29
                     ]"
                     :labels="[
                         'カ', //25
@@ -362,11 +362,11 @@ const isDraft = true;
                     questionTitle="条件体保険の特別条件"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '逓増性',
+                        '逓減性',
+                        '5',
+                        '少なく',
+                        '一時払', // 問30〜34
                     ]"
                     :labels="[
                         'ケ', //30
@@ -384,11 +384,11 @@ const isDraft = true;
                     questionTitle="チルメル式保険料積立金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '付加保険料',
+                        '純保険料',
+                        '貯蓄保険料',
+                        '危険保険料',
+                        '平準保険料式', // 問35〜39
                     ]"
                     :labels="[
                         'ク', //35
@@ -427,17 +427,17 @@ const isDraft = true;
                         {
                             questionTitle: '契約確認',
                             relatedProblems: [],
-                            content: '',
+                            content: '契約成立後に行われることはない → 契約成立前や契約成立後に行われる', //p60
                         }, //44
                         {
                             questionTitle: '生命保険会社で使用している経験表',
                             relatedProblems: [],
-                            content: '',
+                            content: '生保標準生命表2021 → 2018', //p78
                         }, //45
                         {
                             questionTitle: '平均寿命・平均余命',
                             relatedProblems: [],
-                            content: '',
+                            content: '平均寿命 ↔︎ 平均余命', //p79
                         }, //46
                         {
                             questionTitle: '個人年金保険の年金種類の変更',
@@ -447,7 +447,7 @@ const isDraft = true;
                         {
                             questionTitle: '変額保険・変額個人年金保険',
                             relatedProblems: [],
-                            content: '',
+                            content: 'いずれの保険も解約返戻金に最低保証がある → 変額保険の場合、最低保証はない', //p146
                         }, //48
                         {
                             questionTitle: 'CO・OP共済',

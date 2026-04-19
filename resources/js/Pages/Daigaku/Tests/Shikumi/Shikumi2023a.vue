@@ -418,8 +418,8 @@ const subject = "2023年度 フォームA";
                         {
                             questionTitle: '生命保険の診査',
                             relatedProblems: ['2023a43'],
-                            content: '一般臨床と同様 → 一般臨床と異なる',
-                        }, //43 p63
+                            content: '一般臨床と同様 → 一般臨床と異なる', //p63
+                        }, //43
                         {
                             questionTitle: '契約確認',
                             relatedProblems: ['2025c43', '2024a43', '2024b44', '2023a44'],

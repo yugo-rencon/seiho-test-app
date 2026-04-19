@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -9,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険のしくみと個人保険商品";
 const subject = "2021年度 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -98,17 +99,53 @@ const isDraft = true;
                         '程度を問わず過失によるものは該当しない → 重大な過失によるものは該当する', //p72
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="7"
                     :title="title"
                     :subject="subject"
-                    questionTitle="保険料の現価"
-                    :relatedProblems="[]"
                     :contents="[
-                        '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        {
+                            answer: '862,589円',
+                            questionTitle: '保険料の現価',
+                            relatedProblems: [],
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来受け取る金額の現価は、利率を用いて現在価値に割り引いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価 ＝ 将来価値 ÷（1 ＋ 利率）<sup>年数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：100万円', '利率：3.0%（＝ 0.03）', '期間：5年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価', '= 1,000,000 ÷ （1 ＋ 0.03）<sup>5</sup> ・・・（1.03）<sup>5</sup> = 1.15927 = 1.593（小数点第5位を四捨五入）', '≒ 862,589'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 862,589円（円未満を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ア', //7
                     ]"
                 />
                 <QuestionTemp1
@@ -314,7 +351,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '災害入院特約 → 家族型入院特約', //p157
                         '正しい',
                         '正しい',
                     ]"
@@ -384,11 +421,11 @@ const isDraft = true;
                     questionTitle="責任準備金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '純保険料',
+                        '平準化',
+                        '自然保険料',
+                        '将来法',
+                        '定期保険', // 問35〜39
                     ]"
                     :labels="[
                         'オ', //35
@@ -417,7 +454,7 @@ const isDraft = true;
                         {
                             questionTitle: 'BMI',
                             relatedProblems: [],
-                            content: '',
+                            content: '身長の2乗 ÷ 体重 → 体重 ÷ 身長の2乗', //p49
                         }, //42
                         {
                             questionTitle: '契約確認',
@@ -427,7 +464,7 @@ const isDraft = true;
                         {
                             questionTitle: '生命保険の診査',
                             relatedProblems: [],
-                            content: '',
+                            content: '一般臨床と同様 → 一般臨床と異なる', //p63
                         }, //44
                         {
                             questionTitle: '解約返戻金',

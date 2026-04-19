@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -9,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険のしくみと個人保険商品";
 const subject = "2021年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -111,17 +112,53 @@ const isDraft = true;
                         '単なる契約の変更のため、申込みの諾否決定や危険選択の追加をすることはない → 新たな危険の増加を伴う場合もあるので申込みの諾否決定や危険選択の追加を行う', //p68
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle="保険料の現価"
-                    :relatedProblems="[]"
                     :contents="[
-                        '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        {
+                            answer: '892,538円',
+                            questionTitle: '保険料の現価',
+                            relatedProblems: ['2025a7', '2024c45', '2023b47'],
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来受け取る金額の現価は、利率を用いて現在価値に割り引いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価 ＝ 将来価値 ÷（1 ＋ 利率）<sup>年数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：100万円', '利率：2.3%（＝ 0.023）', '期間：5年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価', '= 1,000,000 ÷ （1 ＋ 0.023）<sup>5</sup> ・・・（1.023）<sup>5</sup> = 1.12041 = 1.1204（小数点第5位を四捨五入）', '≒ 892,538.3'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 892,538円（円未満を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ア', //8
                     ]"
                 />
                 <QuestionTemp1
@@ -171,9 +208,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '最低保証利率は設定されていない → 最低保証利率が設定されている', //p136
+                        '契約は消滅する → 積立部分をそのままに契約継続可能', //p137
+                        '保障を減らして積立部分に振り分けできない → 振り分けできる', //p137
                     ]"
                 />
                 <QuestionTemp1
@@ -314,7 +351,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '災害入院特約 → 家族型入院特約', //p157
                         '正しい',
                         '正しい',
                     ]"
@@ -412,12 +449,12 @@ const isDraft = true;
                         {
                             questionTitle: '被保険者による保険法に基づく保険契約の解除請求',
                             relatedProblems: [],
-                            content: '',
+                            content: '保険者 → 保険契約者', //p43
                         }, //41
                         {
                             questionTitle: '危険の程度（危険度）の数量化（危険評価額）',
                             relatedProblems: [],
-                            content: '',
+                            content: '保険金額 ÷ 死亡率 → 保険金額 × 死亡率', //p46
                         }, //42
                         {
                             questionTitle: '契約内容登録制度等',
@@ -427,7 +464,7 @@ const isDraft = true;
                         {
                             questionTitle: '生命保険の診査',
                             relatedProblems: [],
-                            content: '',
+                            content: '一般臨床と同様 → 一般臨床と異なる', //p63
                         }, //44
                         {
                             questionTitle: '死亡率と生存率の関係',

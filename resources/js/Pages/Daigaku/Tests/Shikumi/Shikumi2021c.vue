@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -9,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険のしくみと個人保険商品";
 const subject = "2021年度 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -98,17 +99,53 @@ const isDraft = true;
                         '程度を問わず過失によるものは該当しない → 重大な過失によるものは該当する', //p72
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="7"
                     :title="title"
                     :subject="subject"
-                    questionTitle="保険料の現価"
-                    :relatedProblems="[]"
                     :contents="[
-                        '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        {
+                            answer: '901,307円',
+                            questionTitle: '保険料の現価',
+                            relatedProblems: [],
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来受け取る金額の現価は、利率を用いて現在価値に割り引いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価 ＝ 将来価値 ÷（1 ＋ 利率）<sup>年数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：100万円', '利率：2.1%（＝ 0.021）', '期間：5年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価', '= 1,000,000 ÷ （1 ＋ 0.021）<sup>5</sup> ・・・（1.021）<sup>5</sup> = 1.10950 = 1.1095（小数点第5位を四捨五入）', '≒ 901,306.8'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 901,307円（円未満を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ア', //7
                     ]"
                 />
                 <QuestionTemp1
@@ -184,7 +221,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '口頭による契約申込み → 書面による契約申込み', //p7
                         '正しい',
                         '正しい',
                     ]"
@@ -212,7 +249,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '因果関係を必要としない → 因果関係がなければならない', //p30
                     ]"
                 />
                 <QuestionTemp1
@@ -302,7 +339,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険料払込期間中かどうかに関わらず解約返戻金が低い → 保険料払込期間中は解約返戻金が低い', //p152
                         '正しい',
                     ]"
                 />
@@ -314,7 +351,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '災害入院特約 → 家族型入院特約', //p157
                         '正しい',
                         '正しい',
                     ]"
@@ -327,7 +364,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '支払回数に最低保証はない → 支払回数に最低保証がある', //p156
                         '正しい',
                         '正しい',
                     ]"
@@ -412,7 +449,7 @@ const isDraft = true;
                         {
                             questionTitle: '保険金受取人の詐欺による契約解除請求',
                             relatedProblems: [],
-                            content: '',
+                            content: '生命保険会社に対して行う → 保険契約者に対して行う', //p43
                         }, //41
                         {
                             questionTitle: 'BMI',
@@ -427,12 +464,12 @@ const isDraft = true;
                         {
                             questionTitle: '生命保険の診査',
                             relatedProblems: [],
-                            content: '',
+                            content: '一般臨床と同様 → 一般臨床と異なる', //p63
                         }, //44
                         {
                             questionTitle: '生命表',
                             relatedProblems: [],
-                            content: '',
+                            content: '国民表を使用して保険料計算 → 経験表を使用して保険料計算',
                         }, //45
                         {
                             questionTitle: '平均寿命・平均余命',
@@ -442,7 +479,7 @@ const isDraft = true;
                         {
                             questionTitle: '指定代理請求特約',
                             relatedProblems: [],
-                            content: '',
+                            content: '被保険者の同意は必要ない → 被保険者の同意が必要', //p160
                         }, //47
                         {
                             questionTitle: '特定疾病（三大疾病）保障特約',

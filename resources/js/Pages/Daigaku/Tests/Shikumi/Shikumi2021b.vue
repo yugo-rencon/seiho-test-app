@@ -79,9 +79,9 @@ const isDraft = true;
                     questionTitle="保険契約者・保険金受取人の変更"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '複数人の連名 → 相続人のうち誰か1人', //p37
+                        '生命保険会社の承諾は必要ない → 必要である', //p37
+                        '変更することができる → できない', //p38
                         '正しい',
                     ]"
                 />
@@ -157,10 +157,10 @@ const isDraft = true;
                     questionTitle="資産形成を目的とした主契約"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '被保険者が生存している限り → 生死に関係なく<br>残りの保証期間に対する年金や一時金は支払わない → 遺族に支払う', //p145
                         '正しい',
-                        '', //p
-                        '', //p
+                        '満期保険金額の最低保証がある → 最低保証はない', //p146
+                        '最低保証がないタイプのみ → 最低保証がないタイプと一定額保証するタイプがある', //p147
                     ]"
                 />
                 <QuestionTemp1
@@ -262,7 +262,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '実際死亡率 ÷ 予定死亡率 × 危険保険金 → （予定死亡率 - 実際死亡率）× 危険保険金', //p103
                         '正しい',
                         '正しい',
                     ]"
@@ -327,7 +327,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '5つの保険種類 → 4つの保険種類（地震保険は含まれない）', //p203
                         '正しい',
                         '正しい',
                     ]"
@@ -362,11 +362,11 @@ const isDraft = true;
                     questionTitle="危険の要素"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '体格',
+                        '過重体',
+                        '過軽体',
+                        '職業',
+                        '申込動機', // 問30〜34
                     ]"
                     :labels="[
                         'ア', //30
@@ -432,7 +432,7 @@ const isDraft = true;
                         {
                             questionTitle: '死亡率と生存率の関係',
                             relatedProblems: [],
-                            content: '',
+                            content: '生存率：1 - （1 / 死亡率） → 1 - 死亡率<br>死亡率：1 - （1 / 生存率） → 1 - 生存率',//p79
                         }, //45
                         {
                             questionTitle: '解約返戻金',

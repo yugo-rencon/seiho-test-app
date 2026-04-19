@@ -438,8 +438,8 @@ const subject = "2023年度 フォームA";
                         {
                             questionTitle: '特定疾病保障保険（三大疾病保障保険）',
                             relatedProblems: ['2025a22', '2025b22', '2025c22', '2024a48', '2024b48', '2023a47'],
-                            content: '契約は継続する → 契約は消滅する',
-                        }, //47 p137
+                            content: '契約は継続する → 契約は消滅する', //p137
+                        }, //47
                         {
                             questionTitle: '保険金額の減額',
                             relatedProblems: ['2023a48'],

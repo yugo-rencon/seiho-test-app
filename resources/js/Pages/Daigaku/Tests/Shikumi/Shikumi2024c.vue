@@ -423,12 +423,12 @@ const subject = "2024年度 フォームC";
                         {
                             questionTitle: '超過危険の種類',
                             relatedProblems: ['2025a6', '2025a45', '2025b6', '2025b45', '2025c6', '2025c45', '2024c44'],
-                            content: '恒常性危険 → 逓増性危険',
-                        }, //44 p73
+                            content: '恒常性危険 → 逓増性危険', //p73
+                        }, //44
                         {
                             questionTitle: '保険料の現価',
                             relatedProblems: ['2025a7', '2024c45', '2023b47'],
-                            content: '受取金額 × 1 / （1 + 利率） → 受取金額 × 1 / （1 + 利率）<sup>期間 - 1</sup>',
+                            content: '受取金額 × 1 / （1 + 利率） → 受取金額 × 1 / （1 + 利率）<sup>期間 - 1</sup>', //p81
                         }, //45
                         {
                             questionTitle: '平均寿命・平均余命',

@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険のしくみと個人保険商品";
 const subject = "2022年度 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -66,10 +66,10 @@ const isDraft = true;
                     questionTitle="保険契約者・保険金受取人の変更"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '複数人の連名 → 相続人のうち誰か1人', //p37
                         '正しい',
-                        '', //p
-                        '', //p
+                        '変更することができる → できない', //p38
+                        '支払事由の発生有無によらず変更できない → 支払事由が発生するまでは変更できる', //p38
                     ]"
                 />
                 <QuestionTemp1
@@ -158,9 +158,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '保険料免除機能がある → 保険料免除機能はない', //p146
+                        '最低保証がある → 最低保証はない', //p146
+                        '最低保証がないタイプのみ → 最低保証がないタイプと一定額保証するタイプがある', //p147
                     ]"
                 />
                 <QuestionTemp1
@@ -171,9 +171,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '年金として支払うものはない →年金として支払うものもある', //p204
+                        '引受限度額を設けていない → 設けている', //p205
+                        '告知は不要 → 告知が必要', //p206
                     ]"
                 />
                 <QuestionTemp1
@@ -275,7 +275,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '営業保険料の総額 → 危険保険金', //p103
                         '正しい',
                         '正しい',
                     ]"
@@ -284,11 +284,11 @@ const isDraft = true;
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle="保険見直しに関する諸制度"
+                    questionTitle="保障見直しに関する諸制度"
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '転換前契約の責任開始日 → 転換契約の責任開始日', //p121
                         '正しい',
                         '正しい',
                     ]"
@@ -313,7 +313,7 @@ const isDraft = true;
                     questionTitle="主契約の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '給付金の支払いに制限がない → 契約後1年間は給付金額が半額などの制限あり', //p151
                         '正しい',
                         '正しい',
                         '正しい',
@@ -329,7 +329,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        'LPA → CO・OP共済', //p191
                     ]"
                 />
                 <QuestionTemp3
@@ -340,11 +340,11 @@ const isDraft = true;
                     questionTitle="生命保険会社の免責事由"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '保険法',
+                        '信義誠実の原則',
+                        '全保険期間',
+                        '死亡させる意思',
+                        '含まれない', // 問25〜29
                     ]"
                     :labels="[
                         'ア', //25
@@ -362,11 +362,11 @@ const isDraft = true;
                     questionTitle="配当の種類と仕組み"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '通常配当',
+                        '内部留保',
+                        '価格変動準備金',
+                        '消滅時特別配当',
+                        '消滅事由', // 問30〜34
                     ]"
                     :labels="[
                         'コ', //30
@@ -427,12 +427,12 @@ const isDraft = true;
                         {
                             questionTitle: '死亡率と生存率の関係',
                             relatedProblems: [],
-                            content: '',
+                            content: '生存率：1 - （1 / 死亡率） → 1 - 死亡率<br>死亡率：1 - （1 / 生存率） → 1 - 生存率', //p79
                         }, //44
                         {
                             questionTitle: '保険料の現価',
                             relatedProblems: [],
-                            content: '',
+                            content: '受取金額 × 1 / （1 + 利率） → 受取金額 × 1 / （1 + 利率）<sup>期間 - 1</sup>', //p81
                         }, //45
                         {
                             questionTitle: '平均寿命・平均余命',
@@ -452,7 +452,7 @@ const isDraft = true;
                         {
                             questionTitle: '少額短期保険業',
                             relatedProblems: [],
-                            content: '',
+                            content: 'いずれも保険期間1年以内 → 損害保険は2年以内',//p198
                         }, //49
                     ]"
                 />

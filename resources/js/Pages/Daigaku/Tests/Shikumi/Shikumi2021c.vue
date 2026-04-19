@@ -157,10 +157,10 @@ const isDraft = true;
                     questionTitle="資産形成を目的とした主契約"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '被保険者が生存している限り → 生死に関係なく<br>残りの保証期間に対する年金や一時金は支払わない → 遺族に支払う', //p145
                         '正しい',
-                        '', //p
-                        '', //p
+                        '満期保険金額の最低保証がある → 最低保証はない', //p146
+                        '最低保証がないタイプのみ → 最低保証がないタイプと一定額保証するタイプがある', //p147
                     ]"
                 />
                 <QuestionTemp1
@@ -362,11 +362,11 @@ const isDraft = true;
                     questionTitle="危険の要素"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '体格',
+                        '過重体',
+                        '過軽体',
+                        '職業',
+                        '申込動機', // 問30〜34
                     ]"
                     :labels="[
                         'ア', //30
@@ -422,7 +422,7 @@ const isDraft = true;
                         {
                             questionTitle: '超過危険の種類',
                             relatedProblems: [],
-                            content: '',
+                            content: '恒常性危険 → 逓増性危険', //p73
                         }, //43
                         {
                             questionTitle: '生命保険の診査',

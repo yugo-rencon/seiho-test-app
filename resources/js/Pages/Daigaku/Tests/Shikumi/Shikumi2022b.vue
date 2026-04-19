@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険のしくみと個人保険商品";
 const subject = "2022年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -316,7 +316,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '市場金利が上昇した場合に解約返戻金は増加し、逆に下落した場合に減少することがある → 市場金利が上昇した場合に解約返戻金は減少し、逆に下落した場合に増加することがある', //p153
                     ]"
                 />
                 <QuestionTemp1
@@ -328,7 +328,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '実損払方式 → 定額給付方式', //p204
                         '正しい',
                     ]"
                 />
@@ -340,11 +340,11 @@ const isDraft = true;
                     questionTitle="危険の要素"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '体格',
+                        '過重体',
+                        '過軽体',
+                        '職業',
+                        '申込動機', // 問25〜29
                     ]"
                     :labels="[
                         'ア', //25
@@ -362,11 +362,11 @@ const isDraft = true;
                     questionTitle="選択効果"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '終局死亡率',
+                        '実際死亡率',
+                        '経営効率',
+                        '期体死亡率',
+                        'あったといえる', // 問30〜34
                     ]"
                     :labels="[
                         'コ', //30
@@ -427,7 +427,7 @@ const isDraft = true;
                         {
                             questionTitle: '超過危険の種類',
                             relatedProblems: [],
-                            content: '',
+                            content: '恒常性危険 → 逓増性危険', //p73
                         }, //44
                         {
                             questionTitle: '転換契約の募集に際しての法令上の規制',
@@ -447,7 +447,7 @@ const isDraft = true;
                         {
                             questionTitle: '特定疾病保障保険（三大疾病保障保険）',
                             relatedProblems: [],
-                            content: '',
+                            content: '契約は継続する → 契約は消滅する', //p137
                         }, //48
                         {
                             questionTitle: 'JA共済',

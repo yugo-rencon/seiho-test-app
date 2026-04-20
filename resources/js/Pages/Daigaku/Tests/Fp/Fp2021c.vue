@@ -27,10 +27,10 @@ const isDraft = true;
                     questionTitle="生命保険FPの役割"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい', //p
-                        '', //p
+                        '弁護士、税理士、不動産の専門家などとは全く異なる視点で → 弁護士、税理士、不動産の専門家などの協力を得ながら', //p1
+                        '②規制金利市場の拡大 → ②金融の自由化', //p2
+                        '正しい',
+                        '標準的・一般的な設計 → オーダーメイド設計', //p2
                     ]"
                 />
                 <QuestionTemp1
@@ -41,9 +41,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
+                        '正しい',
                         '', //p
                         '', //p
-                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -53,10 +53,10 @@ const isDraft = true;
                     questionTitle="ローン金利の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい', //p
-                        '', //p
+                        'カードローンやキャッシングは変動金利型ローン → 固定金利型ローン', //p36
+                        '固定金利期間の長いもの → 短いもの', //p
+                        '低金利時：変動金利型ローンが有利 → 固定金利型ローンが有利<br>高金利時：固定金利型ローンが有利 → 変動金利型ローンが有利', //p38
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -66,10 +66,10 @@ const isDraft = true;
                     questionTitle="資金運用の3要素による金融商品の分類"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '正しい', //p
-                        '', //p
-                        '', //p
+                        'スーパー定期預金は、安全性の高い商品の据置型', //p63
+                        '国債は、安全性の高い商品の据置型', //p63
+                        '正しい',
+                        'MRFは、流動性の高い商品', //p63
                     ]"
                 />
                 <QuestionTemp1
@@ -79,7 +79,7 @@ const isDraft = true;
                     questionTitle="住宅ローンの知識"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -92,7 +92,7 @@ const isDraft = true;
                     questionTitle="金融商品のリスク"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -106,9 +106,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
                         '', //p
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -120,7 +120,7 @@ const isDraft = true;
                     :contents="[
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -132,9 +132,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
+                        '正しい',
                         '', //p
                         '', //p
-                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -145,8 +145,8 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
+                        '正しい',
                         '', //p
-                        '正しい', //p
                         '', //p
                     ]"
                 />
@@ -158,8 +158,8 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
                         '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -172,7 +172,7 @@ const isDraft = true;
                     :contents="[
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -183,10 +183,10 @@ const isDraft = true;
                     questionTitle="ライフプランニングの基礎"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
+                        '額面給与から税金や社会保険料を差し引く前の額 → 差し引いた後の額<br>給与天引きの社内積立や生命保険料を等を差し引いた後の額 → 差し引く前の手取額', //p8
                     ]"
                 />
                 <QuestionTemp1
@@ -196,10 +196,10 @@ const isDraft = true;
                     questionTitle="ライフステージ別の必要資金"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -209,10 +209,10 @@ const isDraft = true;
                     questionTitle="ローンの種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
+                        '信販会社などが一番厳しく、銀行は緩やか → 銀行が一番厳しく、信販会社などは緩やか', //p34
                     ]"
                 />
                 <QuestionTemp1
@@ -222,10 +222,10 @@ const isDraft = true;
                     questionTitle="必要資金の性格と運用の整合性"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -235,10 +235,10 @@ const isDraft = true;
                     questionTitle="ポートフォリオ運用（分散投資）"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -248,9 +248,9 @@ const isDraft = true;
                     questionTitle="ポートフォリオ"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -261,10 +261,10 @@ const isDraft = true;
                     questionTitle="死亡保険金の活用方法等"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -274,9 +274,9 @@ const isDraft = true;
                     questionTitle="老後の資金運用"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -287,10 +287,10 @@ const isDraft = true;
                     questionTitle="生命保険を活用した相続対策"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -300,10 +300,10 @@ const isDraft = true;
                     questionTitle="健全性の基準（ソルベンシー・マージン比率）"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -314,9 +314,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -326,10 +326,10 @@ const isDraft = true;
                     questionTitle="保険法における保険募集に関連する規定"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3
@@ -347,11 +347,11 @@ const isDraft = true;
                         '', // 問25〜29
                     ]"
                     :labels="[
-                        'オ', //25
-                        'イ', //26
-                        'カ', //27
-                        'ケ', //28
-                        'ウ', //29
+                        'ア', //25
+                        'カ', //26
+                        'ケ', //27
+                        'キ', //28
+                        'オ', //29
                     ]"
                 />
                 <QuestionTemp3
@@ -391,11 +391,11 @@ const isDraft = true;
                         '', // 問35〜39
                     ]"
                     :labels="[
-                        'ウ', //35
+                        'カ', //35
                         'ア', //36
-                        'ク', //37
-                        'コ', //38
-                        'オ', //39
+                        'エ', //37
+                        'キ', //38
+                        'コ', //39
                     ]"
                 />
                 <QuestionTemp2
@@ -412,32 +412,32 @@ const isDraft = true;
                         {
                             questionTitle: 'リスクマネジメント',
                             relatedProblems: [],
-                            content: '正しい',
+                            content: '',
                         }, //41
                         {
                             questionTitle: '団体信用生命保険',
                             relatedProblems: [],
-                            content: '正しい',
+                            content: '',
                         }, //42
                         {
                             questionTitle: '金融商品のリスク',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい', //p
                         }, //43
                         {
                             questionTitle: '有担保ローンと無担保ローン',
                             relatedProblems: [],
-                            content: '',
+                            content: '', //p
                         }, //44
                         {
                             questionTitle: '住宅ローンの借換え',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい', //p
                         }, //45
                         {
                             questionTitle: '後期高齢者医療制度',
                             relatedProblems: [],
-                            content: '',
+                            content: '', //p
                         }, //46
                         {
                             questionTitle: '経営破綻時の取引制限',
@@ -447,12 +447,12 @@ const isDraft = true;
                         {
                             questionTitle: '犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい', //p
                         }, //48
                         {
                             questionTitle: '生命保険相談所',
                             relatedProblems: [],
-                            content: '',
+                            content: '', //p
                         }, //49
                     ]"
                 />

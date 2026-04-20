@@ -417,7 +417,7 @@ const isDraft = false;
                         { questionTitle: '生命保険の種類', label: 'ア', content: '保証されています' }, //77
                         { questionTitle: '社会保障制度', label: 'イ', content: '生活保護法' }, //78
                         { questionTitle: '社会保障制度', label: 'ア', content: '全国民' }, //79
-                        { questionTitle: '社会保障制度', label: 'イ', content: '強勢加入' }, //80
+                        { questionTitle: '社会保障制度', label: 'イ', content: '強制加入' }, //80
                         { questionTitle: '社会保障制度', label: 'イ', content: '20歳' }, //81
                         { questionTitle: '社会保障制度', label: 'イ', content: '障害' }, //82
                     ]"

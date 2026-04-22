@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "ファイナンシャルプランニングとコンプライアンス";
 const subject = "2022年度 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -199,7 +199,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '既加入契約を解約し、その後新たな保険契約に加入することを勧める → 転換・特約の中途付加・追加契約などの保障の見直しを勧める', //p18
                     ]"
                 />
                 <QuestionTemp1
@@ -211,7 +211,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '40歳以上55歳未満の第3号被保険者 → 40歳以上65歳未満の第2号被保険者<br>40歳代は第3号被保険者 → 40歳代は第2号被保険者', //p28
                         '正しい',
                     ]"
                 />
@@ -223,7 +223,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '元利均等返済方式よりも多くなる → 少なくなる', //p35
                         '正しい',
                         '正しい',
                     ]"
@@ -237,7 +237,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '必要保障額に子どもの教育資金は含めない → 教育資金を含めることになる', //p56
                         '正しい',
                     ]"
                 />
@@ -250,7 +250,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '全被保険者の平均のいずれか高い方の額 → 全被保険者の平均のいずれか低い方の額', //p76
                         '正しい',
                     ]"
                 />
@@ -264,7 +264,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '障害者等の特別マル優は利用できない → 特別マル優は資産運用に利用可能', //p86
                     ]"
                 />
                 <QuestionTemp1
@@ -276,7 +276,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '法定相続分相当額以上 → 遺留分相当額以上', //p99
                         '正しい',
                     ]"
                 />
@@ -289,7 +289,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '100% → 200%', //記載なし
                         '正しい',
                     ]"
                 />
@@ -300,7 +300,7 @@ const isDraft = true;
                     questionTitle="保険募集と禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '禁止行為に該当しない → 該当する', //p132
                         '正しい',
                         '正しい',
                         '正しい',
@@ -316,7 +316,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '間接的な表現や身振り手振りも退去すべき旨の意思表示に含まれる', //p142
                     ]"
                 />
                 <QuestionTemp1
@@ -327,7 +327,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        'アフターサビスのために利用することが認められている → 法令で限定的に定められている利用範囲を超えたマイナンバーの収集・利用はしてはいけない', //p169
                         '正しい',
                         '正しい',
                     ]"
@@ -340,11 +340,11 @@ const isDraft = true;
                     questionTitle="総資産ポートフォリオ"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '預貯金',
+                        '株式',
+                        '財産三分法',
+                        'マネー',
+                        '分散', // 問25〜29
                     ]"
                     :labels="[
                         'オ', //25
@@ -362,11 +362,11 @@ const isDraft = true;
                     questionTitle="相続時精算課税制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '60',
+                        '2500',
+                        '20',
+                        'はできない',
+                        '2月1日から3月15日', // 問30〜34
                     ]"
                     :labels="[
                         'エ', //30
@@ -384,11 +384,11 @@ const isDraft = true;
                     questionTitle="生命保険相談所・裁定審査会"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '生命保険協会',
+                        '連絡所',
+                        '1ヶ月',
+                        '金融ADR',
+                        '業務規程', // 問35〜39
                     ]"
                     :labels="[
                         'ア', //35
@@ -417,7 +417,7 @@ const isDraft = true;
                         {
                             questionTitle: '住宅ローンの繰上げ返済',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '期間短縮型（中抜き方式）に比べ、利息軽減額は返済額軽減型のほうが大きい → 返済額軽減型に比べ、利息軽減額は期間短縮型（中抜き方式）のほうが大きい', //p46
                         }, //42
                         {
                             questionTitle: '住宅ローンの借換え',
@@ -427,17 +427,17 @@ const isDraft = true;
                         {
                             questionTitle: '高齢者医療制度',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '費用の1割（現役並み所得者も同様） → 費用の1割、所定水準以上の所得者の場合2割（現役並の所得者は3割）',
                         }, //44
                         {
                             questionTitle: '相続税の計算手順',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '相続開始前5年以内 → 7年以内', //p94
                         }, //45
                         {
                             questionTitle: '生命保険会社の経営破綻時の取引制限',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '保険料の払込みはできない → 継続のために払込みが必要',
                         }, //46
                         {
                             questionTitle: 'コンプライアンスの重要性',
@@ -447,12 +447,12 @@ const isDraft = true;
                         {
                             questionTitle: '保険募集における違法行為',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '行政処分の対象とならない → 行政処分の対象となることがある', //p138
                         }, //48
                         {
                             questionTitle: '犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '罰則までは規定されていない → 1年以下の拘禁系もしくは100万円以下の罰金が課される', //p162
                         }, //49
                     ]"
                 />

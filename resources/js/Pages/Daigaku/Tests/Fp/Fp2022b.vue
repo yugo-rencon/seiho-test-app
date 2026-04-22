@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "ファイナンシャルプランニングとコンプライアンス";
 const subject = "2022年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -80,9 +80,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '各金融機関でほとんど差がない → ライフプランの多様化に伴い、そのニーズに対応した特徴ある独自のローンが開発されている', //p42
+                        '購入金額の5割以上 → 購入金額の2割以上', //p49
+                        '明確にすることは必要はない → 明確にする必要がある（時代によって価値観は変わるから）', //p40
                     ]"
                 />
                 <QuestionTemp1
@@ -105,9 +105,9 @@ const isDraft = true;
                     questionTitle="金融商品のリスク"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '資産運用における集中投資 → 資産運用における分散投資', //p68
+                        '一部ではあるが存在している → 存在しない', //p67
+                        '常にひとつの商品の長所と短所で考えることが重要 → ポートフォリオの視点で考えることが重要', //p67
                         '正しい',
                     ]"
                 />
@@ -144,10 +144,10 @@ const isDraft = true;
                     questionTitle="死亡保険金の活用方法等"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        'アドバイスすることまでは求められていない → アドバイスをするのが重要な役割', //p84
+                        '子どもの病気やケガに備えることが第一に必要 → 妻が家計の大黒柱となるため妻の保障も必要', //p84
                         '正しい',
+                        '障害者等の特別マル優は利用できない → 資産運用に利用可能', //p86
                     ]"
                 />
                 <QuestionTemp1
@@ -170,10 +170,10 @@ const isDraft = true;
                     questionTitle="消費者契約法に定める不適切な説明と不適切な行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '故意に不実のことを告げることが必要要件であり、誤った説明をしたとしても不実告知に該当しない → 故意に不実のことを告げることは必要要件ではなく、誤った説明をしていれば不実告知に該当する', //p141
                         '正しい',
-                        '', //p
-                        '', //p
+                        '不利益事実の不告知に該当しない → 該当する', //p142
+                        '間接的な表現や身振り手振りも退去すべき旨の意思表示に含まれる', //p142
                     ]"
                 />
                 <QuestionTemp1
@@ -197,7 +197,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '生命保険だけ → 生命保険と損害保険', //p16
                         '正しい',
                         '正しい',
                     ]"
@@ -212,7 +212,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        'アドオン方式 → リボルビング（回転信用）方式', //p36
                     ]"
                 />
                 <QuestionTemp1
@@ -237,7 +237,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '必要保障額に子どもの教育資金は含めない → 教育資金を含めることになる', //p56
                         '正しい',
                     ]"
                 />
@@ -250,7 +250,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '円を除いた → 円を含む', //p68
                         '正しい',
                     ]"
                 />
@@ -262,7 +262,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '雇用確保措置で定められた60歳定年を前提としたコンサルティング → 雇用確保措置で60歳定年という概念がなくなり、個々の老後生活設計に応じたコンサルティング', //p70
                         '正しい',
                         '正しい',
                     ]"
@@ -276,7 +276,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '法定相続分相当額以上 → 遺留分相当額以上', //p99
                         '正しい',
                     ]"
                 />
@@ -300,7 +300,7 @@ const isDraft = true;
                     questionTitle="保険募集と禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '禁止行為に該当しない → 該当する', //p132
                         '正しい',
                         '正しい',
                         '正しい',
@@ -314,7 +314,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '遅滞の責任を負わない → 遅滞に責任を負う（遅延利息の支払いなど）', //p160
                         '正しい',
                         '正しい',
                     ]"
@@ -327,7 +327,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        'アフターサビスのために利用することが認められている → 法令で限定的に定められている利用範囲を超えたマイナンバーの収集・利用はしてはいけない', //p169
                         '正しい',
                         '正しい',
                     ]"
@@ -340,11 +340,11 @@ const isDraft = true;
                     questionTitle="住宅借入金等特別控除（住宅ローン控除）"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '税額控除',
+                        '確定申告',
+                        '年末調整',
+                        '6',
+                        '適用となる', // 問25〜29
                     ]"
                     :labels="[
                         'イ', //25
@@ -362,11 +362,11 @@ const isDraft = true;
                     questionTitle="保険業法の主要内容"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '損害保険業',
+                        '公正',
+                        '公衆の縦覧',
+                        'ソルベンシー・マージン比率',
+                        '支払余力', // 問30〜34
                     ]"
                     :labels="[
                         'エ', //30
@@ -384,11 +384,11 @@ const isDraft = true;
                     questionTitle="生命保険相談所・裁定審査会"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '生命保険協会',
+                        '連絡所',
+                        '1ヶ月',
+                        '金融ADR',
+                        '業務規程', // 問35〜39
                     ]"
                     :labels="[
                         'ア', //35
@@ -427,17 +427,17 @@ const isDraft = true;
                         {
                             questionTitle: '健康保険の任意継続被保険者',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '全被保険者の平均のいずれか高い方の額 → 全被保険者の平均のいずれか低い方の額', //p76
                         }, //44
                         {
                             questionTitle: '相続対策のポイント',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '相続人の年齢 → 相続人の数', //p89
                         }, //45
                         {
                             questionTitle: '経営破綻した場合の契約条件の変更',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '原則70% → 原則90%', //p123
                         }, //46
                         {
                             questionTitle: 'コンプライアンスの重要性',
@@ -447,12 +447,12 @@ const isDraft = true;
                         {
                             questionTitle: '保険募集における違法行為',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '行政処分の対象とならない → 行政処分の対象となることがある', //p138
                         }, //48
                         {
                             questionTitle: '犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '拒むことはできない → 拒むことができる免責規定を設けている', //p162
                         }, //49
                     ]"
                 />

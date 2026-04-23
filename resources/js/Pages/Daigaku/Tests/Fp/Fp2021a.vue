@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "ファイナンシャルプランニングとコンプライアンス";
 const subject = "2021年度 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -107,8 +107,8 @@ const isDraft = true;
                     :contents="[
                         '40歳から50歳代前半の場合 → 退職を間近に控えている場合', //p73
                         '正しい',
-                        '', //p
-                        '', //p
+                        '必要な年数は退職時の平均余命 → 必要期間を見積もるのは困難', //p73
+                        '年金額が将来増えることが期待できる → 期待できない', //p74
                     ]"
                 />
                 <QuestionTemp1
@@ -118,10 +118,10 @@ const isDraft = true;
                     questionTitle="相続対策"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '財産を（遺産）を被相続人が取得した時の価額で評価を行う → 死亡時の時価で評価を行う', //p89
+                        '8割 → 3割', //p89
                         '正しい',
-                        '', //p
+                        '相続開始前5年以内 → 相続開始前7年以内', //p94
                     ]"
                 />
                 <QuestionTemp1
@@ -157,10 +157,10 @@ const isDraft = true;
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '実際の取引担当者については本人特定事項の確認が必要ない → 法人と実際の取引担当者双方で必要', //p161
                         '正しい',
-                        '', //p
-                        '', //p
+                        '罰則までは規定されていない → 1年以下の拘禁系もしくは100万円以下の罰金が課される', //p162
+                        '拒むことはできない → 拒むことができる免責規定を設けている', //p162
                     ]"
                 />
                 <QuestionTemp1
@@ -186,7 +186,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '額面給与から税金や社会保険料を差し引く前の額 → 差し引いた後の額<br>給与天引きの社内積立や生命保険料等を差し引いた後の額 → 差し引く前の手取額', //p8
                     ]"
                 />
                 <QuestionTemp1
@@ -199,7 +199,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '金額が正確に判明する支出 - 現在の支出合計 → 現在の支出合計 - 金額が正確に判明する支出', //p9
                     ]"
                 />
                 <QuestionTemp1
@@ -251,7 +251,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '総資産ポートフォリオ → マネーポートフォリオ', //p66
                     ]"
                 />
                 <QuestionTemp1
@@ -302,7 +302,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '贈与者が管理 → 受贈者が管理', //p103
                         '正しい',
                     ]"
                 />
@@ -313,7 +313,7 @@ const isDraft = true;
                     questionTitle="生命保険会社の経営破綻時の契約者保護"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '原則70%まで → 原則90%まで', //p123
                         '正しい',
                         '正しい',
                         '正しい',
@@ -323,11 +323,11 @@ const isDraft = true;
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle="保険法における保険募集に関する規定"
+                    questionTitle="保険法における保険募集に関連する規定"
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '告知義務違反を理由に契約を解除することができない', //p160
                         '正しい',
                         '正しい',
                     ]"
@@ -340,11 +340,11 @@ const isDraft = true;
                     questionTitle="マネープランニングにおける資金運用の3要素"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '中途解約',
+                        '元本割れ',
+                        '貯蓄預金',
+                        '外貨預金',
+                        '満期時一括受取型', // 問25〜29
                     ]"
                     :labels="[
                         'オ', //25
@@ -384,11 +384,11 @@ const isDraft = true;
                     questionTitle="保険募集におけるコンプライアンス"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '法令等',
+                        '適合性',
+                        '重要な事項',
+                        '低い',
+                        '20', // 問35〜39
                     ]"
                     :labels="[
                         'ウ', //35
@@ -422,17 +422,17 @@ const isDraft = true;
                         {
                             questionTitle: '家計の収支バランスが崩れるリスク',
                             relatedProblems: [],
-                            content: '',
+                            content: '3つに分類 → 2つに分類（火事や災害などの突発的な事態が発生するリスクは含まない）', //p14
                         }, //43
                         {
                             questionTitle: '有担保ローンと無担保ローン',
                             relatedProblems: [],
-                            content: '',
+                            content: '金利については無担保ローンの方が有担保ローンより低くなっている → 有担保ローンの方が無担保ローンより低くなっている', //p34
                         }, //44
                         {
                             questionTitle: '金融商品の中途解約リスク',
                             relatedProblems: [],
-                            content: '',
+                            content: '中途解約リスク → 金利変動リスク', //p66
                         }, //45
                         {
                             questionTitle: '後期高齢者医療制度',
@@ -447,12 +447,12 @@ const isDraft = true;
                         {
                             questionTitle: '保険募集における禁止行為',
                             relatedProblems: [],
-                            content: '',
+                            content: '禁止行為（他社の誹謗・中傷）に該当する', //p136-137
                         }, //48
                         {
                             questionTitle: '生命保険相談所',
                             relatedProblems: [],
-                            content: '',
+                            content: '消費生活センター → 生命保険協会', //p170
                         }, //49
                     ]"
                 />

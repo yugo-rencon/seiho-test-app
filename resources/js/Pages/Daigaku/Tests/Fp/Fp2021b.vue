@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "ファイナンシャルプランニングとコンプライアンス";
 const subject = "2021年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -53,10 +53,10 @@ const isDraft = true;
                     questionTitle="住宅ローンのプランニング"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '収益性が重要であり、流動性は考慮する必要はない → 収益性だけでなく、気に入った物件が見つかった場合、すぐに手付金等が準備できるような流動性も求められる', //p50
+                        'マイホームを取得してから1年以内 → 原則6ヶ月以内', //p50
                         '正しい',
-                        '', //p
+                        '団信は「当初融資額 = 保険金額」なので、保険料は融資時から一定 → 団信は「借入残高 = 保険金額」なので、保険料は融資時から年数が経つごとに下がっていく', //p55
                     ]"
                 />
                 <QuestionTemp1
@@ -118,10 +118,10 @@ const isDraft = true;
                     questionTitle="相続対策"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '財産を（遺産）を被相続人が取得した時の価額で評価を行う → 死亡時の時価で評価を行う', //p89
+                        '8割 → 3割', //p89
                         '正しい',
-                        '', //p
+                        '相続開始前5年以内 → 相続開始前7年以内', //p94
                     ]"
                 />
                 <QuestionTemp1
@@ -251,7 +251,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '総資産ポートフォリオ → マネーポートフォリオ', //p66
                     ]"
                 />
                 <QuestionTemp1
@@ -315,7 +315,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '該当しない → 該当する（断定的判断の提供）', //p141
                         '正しい',
                     ]"
                 />
@@ -323,11 +323,11 @@ const isDraft = true;
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle="保険法における保険募集に関する規定"
+                    questionTitle="保険法における保険募集に関連する規定"
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '告知義務違反を理由に契約を解除することができない', //p160
                         '正しい',
                         '正しい',
                     ]"
@@ -417,7 +417,7 @@ const isDraft = true;
                         {
                             questionTitle: '病気・ケガに伴うリスク',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '社会保障制度からの給付も大きいので内容を十分に把握する必要がある', //p16
                         }, //42
                         {
                             questionTitle: '教育資金設計',
@@ -427,12 +427,12 @@ const isDraft = true;
                         {
                             questionTitle: '有担保ローンと無担保ローン',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '金利については無担保ローンの方が有担保ローンより低くなっている → 有担保ローンの方が無担保ローンより低くなっている', //p34
                         }, //44
                         {
                             questionTitle: '金利変動リスク',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '金利変動リスク → 価格変動リスク', //p67
                         }, //45
                         {
                             questionTitle: '後期高齢者医療制度',
@@ -452,7 +452,7 @@ const isDraft = true;
                         {
                             questionTitle: '生命保険相談所',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '消費生活センター → 生命保険協会', //p170
                         }, //49
                     ]"
                 />

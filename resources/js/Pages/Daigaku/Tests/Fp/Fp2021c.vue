@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "ファイナンシャルプランニングとコンプライアンス";
 const subject = "2021年度 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -40,10 +40,10 @@ const isDraft = true;
                     questionTitle="キャッシュフロー表の収支項目の定義"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '可処分所得 - (所得税 + 住民税 + 社会保険料) → 可処分所得 + (所得税 + 住民税 + 社会保険料)', //p8
                         '正しい',
-                        '', //p
-                        '', //p
+                        '現在の支出可能額 → 現在の貯蓄可能額', //p8
+                        '金額が正確に判明する支出 - 現在の支出合計 → 現在の支出合計 - 金額が正確に判明する支出', //p9
                     ]"
                 />
                 <QuestionTemp1
@@ -118,10 +118,10 @@ const isDraft = true;
                     questionTitle="相続対策"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '財産を（遺産）を被相続人が取得した時の価額で評価を行う → 死亡時の時価で評価を行う', //p89
+                        '8割 → 3割', //p89
                         '正しい',
-                        '', //p
+                        '相続開始前5年以内 → 相続開始前7年以内', //p94
                     ]"
                 />
                 <QuestionTemp1
@@ -157,10 +157,10 @@ const isDraft = true;
                     questionTitle="保険募集におけるコンプライアンス"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '社会的規範や社内ルール（規程）なども含まれる', //p126
+                        '民法や必要性の原則 → 消費者契約法や適合性の原則', //p127
                         '正しい',
-                        '', //p
+                        '禁止行為（事実と異なる告知を勧める行為）に該当する', //p132
                     ]"
                 />
                 <QuestionTemp1
@@ -197,7 +197,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        'すべてがマネーポートフォリオの中心となる → 教育資金と住宅資金が中心となる', //p23
                         '正しい',
                         '正しい',
                     ]"
@@ -222,7 +222,7 @@ const isDraft = true;
                     questionTitle="必要資金の性格と運用の整合性"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '4つに大別 → 3つに大別（相続資金は含まれない）', //p63
                         '正しい',
                         '正しい',
                         '正しい',
@@ -251,7 +251,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '総資産ポートフォリオ → マネーポートフォリオ', //p66
                     ]"
                 />
                 <QuestionTemp1
@@ -417,7 +417,7 @@ const isDraft = true;
                         {
                             questionTitle: '団体信用生命保険',
                             relatedProblems: [],
-                            content: '',
+                            content: '団信は「当初融資額 = 保険金額」なので、保険料は融資時から一定 → 団信は「借入残高 = 保険金額」なので、保険料は融資時から年数が経つごとに下がっていく', //p55
                         }, //42
                         {
                             questionTitle: '金融商品のリスク',
@@ -427,7 +427,7 @@ const isDraft = true;
                         {
                             questionTitle: '有担保ローンと無担保ローン',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '金利については無担保ローンの方が有担保ローンより低くなっている → 有担保ローンの方が無担保ローンより低くなっている', //p34
                         }, //44
                         {
                             questionTitle: '住宅ローンの借換え',
@@ -452,7 +452,7 @@ const isDraft = true;
                         {
                             questionTitle: '生命保険相談所',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '消費生活センター → 生命保険協会', //p170
                         }, //49
                     ]"
                 />

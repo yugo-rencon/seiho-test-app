@@ -407,9 +407,9 @@ const subject = "2024年度 フォームB";
                         }, //40
                         {
                             questionTitle: '有担保ローンと無担保ローン',
-                            content: '有担保ローン ↔︎ 無担保ローン',
+                            content: '有担保ローン ↔︎ 無担保ローン', //p34
                             relatedProblems: ['2024b41'],
-                        }, //41 p34
+                        }, //41
                         {
                             questionTitle: '住宅ローンの借換え',
                             content: '正しい',

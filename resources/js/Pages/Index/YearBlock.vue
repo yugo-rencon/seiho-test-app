@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from "vue";
+
 const props = defineProps({
     year: {
         type: Number,
@@ -21,6 +23,8 @@ const props = defineProps({
         default: false,
     },
 });
+
+const latestFreeYear = computed(() => (props.currentSubjectId === "souron" ? 2025 : 2024));
 </script>
 
 <template>
@@ -30,7 +34,7 @@ const props = defineProps({
             <span
                 v-if="
                     !hasPremium &&
-                    Number(year) === 2024
+                    Number(year) === latestFreeYear
                 "
                 class="inline-flex items-center rounded-full border border-purple-300 bg-purple-50 px-2.5 py-1 text-xs font-semibold text-purple-700"
             >

@@ -223,7 +223,7 @@ const subject = "2023年度 フォームC";
                         { questionTitle: '死亡保険', content: '正しい' }, //34
                         { questionTitle: '資産運用の自由化', content: '正しい' }, //35
                         { questionTitle: '実体的監督主義', content: '正しい' }, //36
-                        { questionTitle: '組織変更', content: '100株未満 → 1株未満' }, //37
+                        { questionTitle: '組織変更', content: '100株未満 → 1株未満' }, //37 p162
                         { questionTitle: 'JA共済事業', content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
                         { questionTitle: '消費者ニーズの変化', content: '正しい' }, //39
                         { questionTitle: '医療保障商品', content: '倍額 → 同額' }, //40

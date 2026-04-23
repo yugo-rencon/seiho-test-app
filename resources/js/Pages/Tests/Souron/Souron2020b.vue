@@ -224,7 +224,7 @@ const subject = "2020年度 フォームB";
                         { questionTitle: '戦後混乱期から再建への足どり', content: '相互会社から株式会社 → 株式会社から相互会社' }, //36 p78
                         { questionTitle: '公的医療保険', content: '正しい' }, //37
                         { questionTitle: '保険業法における保険募集', content: '保険エージェント（保険代理人）制度 → 保険ブローカー（保険仲立人）制度' }, //38
-                        { questionTitle: '日本の金融制度', content: '今日 → 戦後' }, //39
+                        { questionTitle: '日本の金融制度', content: '今日 → 戦後' }, //39 //p174
                         { questionTitle: '営業職員以外の販売チャネル', content: '正しい' }, //40
                         // 問41〜50（ア〜オ）
                         { questionTitle: '保険金額', label: 'オ', content: '' }, //41

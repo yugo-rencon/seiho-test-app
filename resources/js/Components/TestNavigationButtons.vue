@@ -63,11 +63,13 @@ const isPaidCurrentPage = computed(() => {
     // seiho: /souron2024a
     const seihoMatched = path.match(/^\/([a-z]+)(\d{4})([abc])$/i);
     if (seihoMatched) {
+        const subjectKey = String(seihoMatched[1] || "").toLowerCase();
         const year = Number(seihoMatched[2]);
         const form = String(seihoMatched[3] || "").toUpperCase();
+        const latestFreeYear = subjectKey === "souron" || subjectKey === "keiri" ? 2025 : 2024;
 
-        // 生命保険講座は2024フォームAのみ無料
-        return !(year === 2024 && form === "A");
+        // 生命保険講座は総論・計理が2025フォームA無料、その他は2024フォームA無料
+        return !(year === latestFreeYear && form === "A");
     }
 
     return false;

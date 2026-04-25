@@ -6,7 +6,9 @@
       "Bash(php artisan:*)",
       "Bash(/Applications/MAMP/bin/php/php8.2.0/bin/php artisan:*)",
       "Bash(/Applications/MAMP/Library/bin/mysql -u seiho_test_user -prencon8910 -h 127.0.0.1 -P 3306 -e \"SELECT 1\")",
-      "Bash(/Applications/MAMP/Library/bin/mysql -u seiho_test_user -prencon8910 -h 127.0.0.1 -P 8889 -e \"SELECT 1\")"
+      "Bash(/Applications/MAMP/Library/bin/mysql -u seiho_test_user -prencon8910 -h 127.0.0.1 -P 8889 -e \"SELECT 1\")",
+      "Bash(awk '{sum += $5} END {print \"Total:\", sum/1024/1024 \"MB\"}')",
+      "Bash(sort -k5 -rh)"
     ]
   }
 }

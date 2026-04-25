@@ -3,6 +3,11 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
+    server: {
+        watch: {
+            ignored: ['**/vendor/**', '**/storage/**'],
+        },
+    },
     plugins: [
         laravel({
             input: 'resources/js/app.js',

@@ -24,7 +24,9 @@ const props = defineProps({
     },
 });
 
-const latestFreeYear = computed(() => (props.currentSubjectId === "souron" ? 2025 : 2024));
+const latestFreeYear = computed(() =>
+    props.currentSubjectId === "souron" || props.currentSubjectId === "keiri" ? 2025 : 2024,
+);
 </script>
 
 <template>

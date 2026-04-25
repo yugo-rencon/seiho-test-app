@@ -919,15 +919,15 @@ const subject = "2025年度 フォームA";
                         }, //40
                         // 問41〜50
                         { questionTitle: '死亡率', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険計理の基礎', label: 'イ', content: '現価' }, //42
-                        { questionTitle: '純保険料の変化', label: 'ア', content: '' }, //43
-                        { questionTitle: '養老保険の積立金', label: 'オ', content: '（1 + 予定利率）1/2乗' }, //44
-                        { questionTitle: '責任準備金', label: 'エ', content: '標準' }, //45
-                        { questionTitle: '解約返戻金', label: 'ア', content: '失効' }, //46
-                        { questionTitle: '払済保険', label: 'ア', content: '危険保険金額' }, //47
+                        { questionTitle: '保険計理の基礎', label: 'イ', content: '大数' }, //42
+                        { questionTitle: '純保険料の変化', label: 'ア', content: '定期保険と養老保険' }, //43
+                        { questionTitle: '養老保険の積立金', label: 'オ', content: '' }, //44
+                        { questionTitle: '責任準備金', label: 'エ', content: '予定利率' }, //45
+                        { questionTitle: '解約返戻金', label: 'ア', content: '契約者貸付' }, //46
+                        { questionTitle: '払済保険', label: 'ア', content: '差し引いた後' }, //47
                         { questionTitle: '配当割当方法', label: 'オ', content: '' }, //48
-                        { questionTitle: '配当金の計算方法', label: 'エ', content: 'を禁止されている' }, //49
-                        { questionTitle: '団体年金の保険料計算', label: 'オ', content: '総合保険料' }, //50
+                        { questionTitle: '配当金の計算方法', label: 'エ', content: '保険金' }, //49
+                        { questionTitle: '団体年金の保険料計算', label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

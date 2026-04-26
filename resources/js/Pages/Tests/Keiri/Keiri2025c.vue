@@ -809,7 +809,7 @@ const subject = "2025年度 フォームC";
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '最終的に死亡保険金相当額になる → 最終的にゼロになる', //p79
                     ]"
                 />
                 <QuestionTemp1
@@ -820,7 +820,7 @@ const subject = "2025年度 フォームC";
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険リスクに備えるためにのみ → 保険リスク、第三分野保険の保険リスク、予定利率リスクおよび最低保証リスクに備えるため', //p98
                     ]"
                 />
                 <QuestionTemp1
@@ -830,7 +830,7 @@ const subject = "2025年度 フォームC";
                     questionTitle="契約者配当の意義と割当"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '保険料は通常の有配当保険より高くなる → 安くなる', //p129
                         '正しい',
                     ]"
                 />
@@ -877,7 +877,7 @@ const subject = "2025年度 フォームC";
                         }, //36
                         {
                             questionTitle: '積立に関する法的規制',
-                            content: '',
+                            content: '資産十分性テスト → 負債十分性テスト', //p101
                         }, //37
                         {
                             questionTitle: '剰余金の発生源',
@@ -893,15 +893,15 @@ const subject = "2025年度 フォームC";
                         }, //40
                         // 問41〜50
                         { questionTitle: '資産の平均利回り', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険計理の基礎', label: 'イ', content: '現価' }, //42
-                        { questionTitle: '純保険料の変化', label: 'ア', content: '保険金に比例させる' }, //43
-                        { questionTitle: 'チルメル式保険料積立金', label: 'イ', content: '（1 + 予定利率）' }, //44
-                        { questionTitle: '危険保険料の計算', label: 'ア', content: '養老保険' }, //45
-                        { questionTitle: '解約返戻金', label: 'エ', content: '定款' }, //46
-                        { questionTitle: '払済保険', label: 'ア', content: '' }, //47
-                        { questionTitle: '加入年齢方式による転換', label: 'ウ', content: '' }, //48
-                        { questionTitle: 'アセット・シェア方式', label: 'オ', content: 'を禁止されている' }, //49
-                        { questionTitle: '団体定期保険の保険料', label: 'エ', content: '' }, //50
+                        { questionTitle: '保険計理の基礎', label: 'イ', content: '大数' }, //42
+                        { questionTitle: '純保険料の変化', label: 'ア', content: '定期保険と養老保険' }, //43
+                        { questionTitle: 'チルメル式保険料積立金', label: 'イ', content: '純保険料（貯蓄保険料）' }, //44
+                        { questionTitle: '危険保険料の計算', label: 'ア', content: '危険保険金' }, //45
+                        { questionTitle: '解約返戻金', label: 'エ', content: '契約者貸付' }, //46
+                        { questionTitle: '払済保険', label: 'ア', content: '差し引いた後' }, //47
+                        { questionTitle: '加入年齢方式による転換', label: 'ウ', content: '一時払か分割払（割賦払）' }, //48
+                        { questionTitle: 'アセット・シェア方式', label: 'オ', content: '' }, //49
+                        { questionTitle: '団体定期保険の保険料', label: 'エ', content: '特別の保険料率' }, //50
                     ]"
                 />
             </div>

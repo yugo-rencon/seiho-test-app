@@ -810,7 +810,7 @@ const subject = "2025年度 フォームB";
                     questionTitle="解約返戻金"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '告知義務違反により保険契約を解除する場合は支払いの対象外 → 支払いの対象', //p105
                         '正しい',
                     ]"
                 />
@@ -820,7 +820,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="契約変更および契約転換制度"
                     :contents="[
-                        '', //p
+                        '保険期間が元契約より延長される → 保険期間は短くなる', //p112
                         '正しい',
                         '正しい',
                     ]"
@@ -832,7 +832,7 @@ const subject = "2025年度 フォームB";
                     questionTitle="契約者配当の意義と割当"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '保険料は通常の有配当保険より高くなる → 安くなる', //p129
                         '正しい',
                     ]"
                 />
@@ -859,7 +859,7 @@ const subject = "2025年度 フォームB";
                         }, //31
                         {
                             questionTitle: '死亡率',
-                            content: '',
+                            content: '年齢別死亡率 → 補整後死亡率', //p7
                         }, //32
                         {
                             questionTitle: '保険料の計算原理',
@@ -871,7 +871,7 @@ const subject = "2025年度 フォームB";
                         }, //34
                         {
                             questionTitle: '純保険料式保険料積立金',
-                            content: '',
+                            content: '将来法で計算した方が保険料積立金額は大きくなる → 両者の方法による保険料積立金額は一致する', //p72
                         }, //35
                         {
                             questionTitle: '責任準備金の積立',
@@ -879,7 +879,7 @@ const subject = "2025年度 フォームB";
                         }, //36
                         {
                             questionTitle: '契約変更',
-                            content: '',
+                            content: 'いずれの方法でも解約返戻金等は支払われることはない → 保険金額の減額では支払われることがある', //p111~
                         }, //37
                         {
                             questionTitle: '最低保証機能',
@@ -894,16 +894,16 @@ const subject = "2025年度 フォームB";
                             content: '正しい',
                         }, //40
                         // 問41〜50
-                        { questionTitle: '資産の平均利回り', label: 'エ', content: '経験生命表' }, //41
-                        { questionTitle: '保険計理の基礎', label: 'イ', content: '現価' }, //42
-                        { questionTitle: '純保険料の変化', label: 'ア', content: '高くなる' }, //43
+                        { questionTitle: '資産の平均利回り', label: 'エ', content: '2' }, //41
+                        { questionTitle: '保険計理の基礎', label: 'イ', content: '大数' }, //42
+                        { questionTitle: '純保険料の変化', label: 'ア', content: '定期保険と養老保険' }, //43
                         { questionTitle: '準備金の積立根拠', label: 'オ', content: '' }, //44
-                        { questionTitle: '純保険料の分解', label: 'ウ', content: '純保険料式保険料積立金' }, //45
-                        { questionTitle: '積立に関する法的規制', label: 'オ', content: '定期保険' }, //46
-                        { questionTitle: '払済保険', label: 'ア', content: '保険種類別' }, //47
-                        { questionTitle: '配当準備金繰入', label: 'ウ', content: '' }, //48
-                        { questionTitle: '剰余金の発生源', label: 'エ', content: 'を禁止されている' }, //49
-                        { questionTitle: '配当金の計算方法', label: 'オ', content: '特別保険料' }, //50
+                        { questionTitle: '純保険料の分解', label: 'ウ', content: '危険保険金' }, //45
+                        { questionTitle: '積立に関する法的規制', label: 'オ', content: '' }, //46
+                        { questionTitle: '払済保険', label: 'ア', content: '差し引いた後' }, //47
+                        { questionTitle: '配当準備金繰入', label: 'ウ', content: '20%' }, //48
+                        { questionTitle: '剰余金の発生源', label: 'エ', content: '価格変動' }, //49
+                        { questionTitle: '配当金の計算方法', label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

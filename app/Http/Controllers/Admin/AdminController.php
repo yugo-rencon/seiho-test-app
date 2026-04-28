@@ -12,6 +12,8 @@ use Inertia\Response;
 
 class AdminController extends Controller
 {
+    private const INTERNAL_USER_IDS = [1, 2, 3, 4, 5];
+
     public function index(Request $request): Response
     {
         $q = trim((string) $request->query('q', ''));
@@ -46,6 +48,7 @@ class AdminController extends Controller
                 DB::raw('COALESCE(purchase_summary.daigaku_paid_count, 0) as daigaku_paid_count')
             )
             ->where('users.is_admin', 0)
+            ->whereNotIn('users.id', self::INTERNAL_USER_IDS)
             ->when($q !== '', function ($query) use ($q) {
                 $query->where('email', 'like', "%{$q}%");
             })
@@ -71,21 +74,25 @@ class AdminController extends Controller
         $endOfMonth = Carbon::now()->endOfMonth();
 
         $stats = [
-            'totalUsers' => DB::table('users')->where('is_admin', 0)->count(),
+            'totalUsers' => DB::table('users')
+                ->where('is_admin', 0)
+                ->whereNotIn('id', self::INTERNAL_USER_IDS)
+                ->count(),
             'newUsersThisMonth' => DB::table('users')
                 ->where('is_admin', 0)
+                ->whereNotIn('id', self::INTERNAL_USER_IDS)
                 ->whereBetween('created_at', [$startOfMonth, $endOfMonth])
                 ->count(),
             'seihoSalesCount' => DB::table('purchases')
                 ->where('status', 'paid')
-                ->where('user_id', '!=', 4)
+                ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
                 ->where(function ($query) {
                     $query->where('scope', 'seiho')->orWhereNull('scope');
                 })
                 ->count(),
             'daigakuSalesCount' => DB::table('purchases')
                 ->where('status', 'paid')
-                ->where('user_id', '!=', 4)
+                ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
                 ->where('scope', 'daigaku')
                 ->count(),
         ];

@@ -139,8 +139,8 @@ const subject = "2025年度 フォームB";
                     questionTitle="契約制限"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '短期 ↔︎ 長期', //p73
+                        '役員を被保険者とする場合には必要ない → 役員を被保険者とする場合も被保険者の書面による加入同意が必要', //p75
                     ]"
                 />
                 <QuestionTemp1
@@ -149,9 +149,9 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="入院・手術保障における「選択」"
                     :contents="[
-                        '', //p
+                        '影響が小さいという特性がある → 大きく影響される特性がある', //p149
                         '正しい',
-                        '', //p
+                        '給付金削減法 → 特別保険料領収法', //p152
                     ]"
                 />
                 <QuestionTemp1
@@ -162,7 +162,7 @@ const subject = "2025年度 フォームB";
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '告知義務がある旨定めている → 告知義務はないとしている', //p16
                     ]"
                 />
                 <QuestionTemp1
@@ -182,7 +182,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="逆選択の傾向と態様"
                     :contents="[
-                        '', //p
+                        '顕在的傾向から潜在化への傾向 → 潜在的傾向から顕在化への傾向', //p76
                         '正しい',
                         '正しい',
                     ]"
@@ -216,7 +216,7 @@ const subject = "2025年度 フォームB";
                     :items="[
                         {
                             questionTitle: '生命表',
-                            content: '標準生命表 → 国民生命表<br>簡易生命表 → 経験生命表' //p5
+                            content: '標準生命表 → 国民生命表<br>簡易生命表 → 経験生命表', //p5
                         }, //31
                         {
                             questionTitle: '危険選択の厳格度',
@@ -236,15 +236,15 @@ const subject = "2025年度 フォームB";
                         }, //35
                         {
                             questionTitle: '保険金確認後の契約の処理',
-                            content: '',
+                            content: '因果関係の有無にかかわらず契約を解除できる → 因果関係がなければ契約を解除できない', //p120
                         }, //36
                         {
                             questionTitle: '機微（センシティブ）情報',
-                            content: '',
+                            content: '機微（センシティブ）情報に該当する → 該当しない', //p132
                         }, //37
                         {
                             questionTitle: '元受保有額と出再額',
-                            content: '',
+                            content: '群団再保険 → 個別再保険', //p180
                         }, //38
                         {
                             questionTitle: '金額別死亡率',

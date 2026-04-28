@@ -134,6 +134,7 @@
 
     const showAdBefore = computed(() => {
         if (hasPremiumAccess(page.props)) return false;
+        if (isDaigaku.value && isPaidYear(props.subject, props.title)) return false;
         if (isIppan.value && (rangeStartQuestion.value === 11 || rangeStartQuestion.value === 21)) return true; // ippan: Q10/Q11の間、Q20/Q21の間
         if (isSeiho.value && rangeStartQuestion.value === 21) return true; // seiho: Q20/Q21の間
         return (isDaigaku.value || isOuyou.value || isSenmon.value) && rangeStartQuestion.value === 25; // daigaku/ouyou/senmon: Q24/Q25の間

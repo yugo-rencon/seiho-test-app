@@ -36,16 +36,19 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'string', 'max:255', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $returnTo = $this->sanitizeReturnTo($request->input('return_to'));
+
         $user = User::create([
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'registered_scope' => $this->resolveRegistrationScope($request->input('scope'), $returnTo),
+            'registered_return_to' => $returnTo,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        $returnTo = $this->sanitizeReturnTo($request->input('return_to'));
         if ($returnTo) {
             return redirect($returnTo)
                 ->with('status', 'アカウントを作成してログインしました。');
@@ -70,5 +73,14 @@ class RegisteredUserController extends Controller
         }
 
         return $returnTo;
+    }
+
+    private function resolveRegistrationScope(?string $scope, ?string $returnTo): string
+    {
+        if ($scope === 'daigaku' || ($returnTo && str_starts_with($returnTo, '/daigaku'))) {
+            return 'daigaku';
+        }
+
+        return 'seiho';
     }
 }

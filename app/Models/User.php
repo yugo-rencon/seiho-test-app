@@ -25,6 +25,8 @@ class User extends Authenticatable
         'stripe_customer_id',
         'google_id',
         'email_verified_at',
+        'registered_scope',
+        'registered_return_to',
         'is_admin',
         'is_premium',
         'is_seiho_premium',

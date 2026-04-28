@@ -151,7 +151,7 @@ const subject = "2020年度 フォームA";
                     :contents="[
                         '正しい',
                         '1保険金受取人 → 1被保険者', //p182
-                        '一般の保有限度額より高く → 低く', //p182
+                        '一般の保有限度額より高く → 一般の保有限度額より低く', //p182
                     ]"
                 />
                 <QuestionTemp1
@@ -215,16 +215,46 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '保険事故発生率', content: '危険一律性の原則 → 危険均一性の原則' }, //31 p18
-                        { questionTitle: '危険選択の厳格度', content: '期体死亡率 ↔︎ 実際死亡率' }, //32 p35
-                        { questionTitle: '体格', content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗' }, //33 p63
-                        { questionTitle: '診査実施上の制限', content: '区分を設けている生命保険会社は少ない → 区分を設けている生命保険会社が多い' }, //34 p74
-                        { questionTitle: '第1次選択で行う事柄', content: '正しい' }, //35
-                        { questionTitle: '医学的査定', content: '正しい' }, //36
-                        { questionTitle: '契約内容の相互照会', content: '厚生労働省ならびに農林水産省 → 全国共済農業協同組合連合会<br>生命共済 → 全国共済農業協同組合連合会' }, //37
-                        { questionTitle: '傷害特約', content: '正しい' }, //38
-                        { questionTitle: '再保険の意義', content: '正しい' }, //39
-                        { questionTitle: '金額別死亡率', content: '正しい' }, //40
+                        {
+                            questionTitle: '保険事故発生率',
+                            content: '危険一律性の原則 → 危険均一性の原則',
+                        }, //31 p18
+                        {
+                            questionTitle: '危険選択の厳格度',
+                            content: '期待死亡率についての目標値（実際死亡率） → 実際死亡率についての目標値（期待死亡率）', //p35
+                        }, //32
+                        {
+                            questionTitle: '体格',
+                            content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗',
+                        }, //33 p63
+                        {
+                            questionTitle: '診査実施上の制限',
+                            content: '区分を設けている生命保険会社は少ない → 区分を設けている生命保険会社が多い',
+                        }, //34 p74
+                        {
+                            questionTitle: '第1次選択で行う事柄',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '医学的査定',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '契約内容の相互照会',
+                            content: '厚生労働省ならびに農林水産省 → 全国共済農業協同組合連合会<br>生命共済 → 全国共済農業協同組合連合会',
+                        }, //37
+                        {
+                            questionTitle: '傷害特約',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '再保険の意義',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '金額別死亡率',
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
                         { questionTitle: '被保険者の危険', label: 'イ', content: '実体的危険' }, //41
                         { questionTitle: '告知義務者', label: 'ア', content: '保険法' }, //42

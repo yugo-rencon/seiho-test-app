@@ -171,7 +171,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="医学的選択上の制約条件"
                     :contents="[
-                        '純保険料 → 付加保険料', //p40
+                        '純保険料の範囲内 → 付加保険料の範囲内', //p40
                         '正しい',
                         '正しい',
                     ]"

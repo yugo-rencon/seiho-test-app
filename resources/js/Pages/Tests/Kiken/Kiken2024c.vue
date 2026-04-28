@@ -118,7 +118,7 @@ const subject = "2024年度 フォームC";
                     :contents="[
                         '国民生命表との比較でも3〜5年 → 国民生命表との比較ではかなり長期に及ぶ', //p32
                         '正しい',
-                        '若年齢層：診査の効果は顕著 → 診査の効果は顕著ではない<br>高年齢層：選択効果は期待できない → 選択効果を期待できる', //p32-33
+                        '若年齢層：診査の効果は顕著 → 診査の効果は顕著ではない（死因として不慮の事故が上位を占めるため）<br>高年齢層：選択効果は期待できない → 選択効果を期待できる', //p32-33
                     ]"
                 />
                 <QuestionTemp1
@@ -215,16 +215,46 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '死亡率', content: '比較することができる → 比較することはできない' }, //31 p7
-                        { questionTitle: '生命保険会社における経験死亡率', content: '件数死亡率 ↔︎ 金額死亡率' }, //32 p9
-                        { questionTitle: '販売政策と選択政策', content: '正しい' }, //33
-                        { questionTitle: '職業危険', content: '正しい' }, //34
-                        { questionTitle: '機微（センシティブ）情報', content: '正しい' }, //35
-                        { questionTitle: '契約確認', content: '大部分 ↔︎ 一部' }, //36 p114
-                        { questionTitle: '給付金確認', content: '正しい' }, //37
-                        { questionTitle: '団体定期保険における更新時の選択', content: '正しい' }, //38
-                        { questionTitle: '最高保険金額', content: '正しい' }, //39
-                        { questionTitle: '実際死亡状況の分析', content: '正しい' }, //40
+                        {
+                            questionTitle: '死亡率',
+                            content: '比較することができる → 比較することはできない',
+                        }, //31 p7
+                        {
+                            questionTitle: '生命保険会社における経験死亡率',
+                            content: '件数死亡率 ↔︎ 金額死亡率',
+                        }, //32 p9
+                        {
+                            questionTitle: '販売政策と選択政策',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '職業危険',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '機微（センシティブ）情報',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '契約確認',
+                            content: '大部分の契約 ↔︎ 一部の契約', //p113-114
+                        }, //36 p114
+                        {
+                            questionTitle: '給付金確認',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '団体定期保険における更新時の選択',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '最高保険金額',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '実際死亡状況の分析',
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
                         { questionTitle: '生命表', label: 'ア', content: '選択表' }, //41
                         { questionTitle: '保険料の仕組みと危険選択', label: 'イ', content: '純保険料' }, //42

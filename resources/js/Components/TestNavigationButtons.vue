@@ -66,9 +66,9 @@ const isPaidCurrentPage = computed(() => {
         const subjectKey = String(seihoMatched[1] || "").toLowerCase();
         const year = Number(seihoMatched[2]);
         const form = String(seihoMatched[3] || "").toUpperCase();
-        const latestFreeYear = subjectKey === "souron" || subjectKey === "keiri" ? 2025 : 2024;
+        const latestFreeYear = ["souron", "keiri", "kiken"].includes(subjectKey) ? 2025 : 2024;
 
-        // 生命保険講座は総論・計理が2025フォームA無料、その他は2024フォームA無料
+        // 生命保険講座は総論・計理・危険選択が2025フォームA無料、その他は2024フォームA無料
         return !(year === latestFreeYear && form === "A");
     }
 

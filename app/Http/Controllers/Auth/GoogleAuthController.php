@@ -17,8 +17,8 @@ class GoogleAuthController extends Controller
 {
     public function redirect(Request $request): RedirectResponse
     {
-        $scope = $this->sanitizeScope($request->query('scope'));
         $returnTo = $this->sanitizeReturnTo($request->query('return_to'));
+        $scope = $this->resolveRegistrationScope($request->query('scope'), $returnTo);
         $request->session()->put('auth_scope', $scope);
         $request->session()->put('auth_return_to', $returnTo);
 
@@ -71,6 +71,8 @@ class GoogleAuthController extends Controller
                 'password' => Hash::make(Str::random(40)),
                 'google_id' => $googleUser->getId(),
                 'email_verified_at' => now(),
+                'registered_scope' => $scope,
+                'registered_return_to' => $returnTo,
             ]);
         }
 
@@ -89,6 +91,15 @@ class GoogleAuthController extends Controller
     private function sanitizeScope(?string $scope): string
     {
         return in_array($scope, ['seiho', 'daigaku'], true) ? $scope : 'seiho';
+    }
+
+    private function resolveRegistrationScope(?string $scope, ?string $returnTo): string
+    {
+        if ($scope === 'daigaku' || ($returnTo && str_starts_with($returnTo, '/daigaku'))) {
+            return 'daigaku';
+        }
+
+        return 'seiho';
     }
 
     private function sanitizeReturnTo(?string $returnTo): ?string

@@ -136,14 +136,15 @@ const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
 const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value);
 
-const showAd = computed(() => {
-    return (isDaigaku.value || isIppan.value || isOuyou.value || isSenmon.value) && !hasPremiumAccess(page.props);
-});
-
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 
 const isLockedContext = computed(() => {
     return isPaidYear(props.subject, props.title) && !hasPremiumAccess(page.props);
+});
+
+const showAd = computed(() => {
+    if (isDaigaku.value && isLockedContext.value) return false;
+    return (isDaigaku.value || isIppan.value || isOuyou.value || isSenmon.value) && !hasPremiumAccess(page.props);
 });
 
 const normalizedItems = computed(() => {

@@ -37,6 +37,8 @@ class AdminController extends Controller
                 'users.is_premium',
                 'users.is_seiho_premium',
                 'users.is_daigaku_premium',
+                'users.registered_scope',
+                'users.registered_return_to',
                 'users.created_at',
                 DB::raw('COALESCE(purchase_summary.last_paid_at, NULL) as last_paid_at'),
                 DB::raw('COALESCE(purchase_summary.paid_count, 0) as paid_count'),

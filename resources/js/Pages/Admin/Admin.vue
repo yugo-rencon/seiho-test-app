@@ -227,6 +227,20 @@ const registrationSourceClass = (user) => {
     if (user.registered_scope === "seiho") return "bg-indigo-50 text-indigo-700";
     return "bg-gray-100 text-gray-600";
 };
+
+const paginationLabel = (label) => {
+    return String(label)
+        .replace("&laquo; Previous", "前へ")
+        .replace("Next &raquo;", "次へ");
+};
+
+const goToPage = (url) => {
+    if (!url) return;
+    router.visit(url, {
+        preserveState: true,
+        preserveScroll: true,
+    });
+};
 </script>
 
 <template>
@@ -510,6 +524,34 @@ const registrationSourceClass = (user) => {
                     class="rounded-xl border border-gray-100 bg-white px-3 py-8 text-center text-sm text-gray-500"
                 >
                     データがありません。
+                </div>
+            </div>
+
+            <div
+                v-if="users.links && users.links.length > 3"
+                class="mt-4 flex flex-col gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+            >
+                <p class="text-xs text-gray-500">
+                    {{ users.from ?? 0 }}〜{{ users.to ?? 0 }}件 / 全{{ users.total ?? 0 }}件
+                </p>
+                <div class="flex flex-wrap gap-1">
+                    <button
+                        v-for="link in users.links"
+                        :key="`${link.label}-${link.url}`"
+                        type="button"
+                        class="min-w-[2.25rem] rounded-lg border px-3 py-1.5 text-xs font-semibold transition"
+                        :class="[
+                            link.active
+                                ? 'border-purple-500 bg-purple-600 text-white'
+                                : link.url
+                                  ? 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'
+                                  : 'cursor-not-allowed border-gray-100 bg-gray-50 text-gray-300',
+                        ]"
+                        :disabled="!link.url"
+                        @click="goToPage(link.url)"
+                    >
+                        {{ paginationLabel(link.label) }}
+                    </button>
                 </div>
             </div>
             </template>

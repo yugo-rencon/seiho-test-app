@@ -229,9 +229,10 @@ const registrationSourceClass = (user) => {
 };
 
 const paginationLabel = (label) => {
-    return String(label)
-        .replace("&laquo; Previous", "前へ")
-        .replace("Next &raquo;", "次へ");
+    const value = String(label);
+    if (value.includes("&laquo;")) return "前へ";
+    if (value.includes("&raquo;")) return "次へ";
+    return value;
 };
 
 const goToPage = (url) => {

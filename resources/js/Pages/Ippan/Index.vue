@@ -29,6 +29,15 @@ const activePeriod = computed(
     () => IPPAN_PERIODS.find((period) => period.id === activePeriodId.value) ?? IPPAN_PERIODS[0],
 );
 
+const CIRCLE_NUMBERS = { a: "①", b: "②", c: "③", d: "④", e: "⑤" };
+
+const getFormLabel = (year, periodId, form) => {
+    if (year === 2021 && periodId === "h2") {
+        return `フォーム${CIRCLE_NUMBERS[form]}`;
+    }
+    return `フォーム${form.toUpperCase()}`;
+};
+
 const getFormHref = (year, period, form) => {
     return route("ippan.test", {
         year,
@@ -106,13 +115,13 @@ const getFormHref = (year, period, form) => {
                                         :href="getFormHref(year, activePeriod, form)"
                                         class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-pink-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-fuchsia-700 transition hover:bg-pink-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                                     >
-                                        フォーム{{ form.toUpperCase() }}
+                                        {{ getFormLabel(year, activePeriod.id, form) }}
                                     </Link>
                                     <span
                                         v-else
                                         class="inline-flex w-full cursor-not-allowed items-center justify-center whitespace-nowrap rounded-full border border-gray-200 bg-gray-50 px-2 py-1.5 text-[12px] font-semibold text-gray-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                                     >
-                                        フォーム{{ form.toUpperCase() }}
+                                        {{ getFormLabel(year, activePeriod.id, form) }}
                                     </span>
                                 </template>
                             </div>

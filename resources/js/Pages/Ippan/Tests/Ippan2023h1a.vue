@@ -195,10 +195,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '', //p
-                        '正しい', //p
+                        '正しい',
+                        '雑所得 → 一時所得', //p126
+                        '700万円 → 500万円', //p127
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -207,10 +207,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '保険業法の定める利率 → 生命保険会社の定める利率', //p50
+                        '途中で変更することはできない → 途中で変更することができる', //p51
                     ]"
                 />
                 <QuestionTemp1
@@ -219,10 +219,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険の募集等に関する法律"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '保険契約は対象外 → 保険契約も対象に含まれる', //p69
+                        '質問応答義務から自発的申告義務に変更 → 自発的申告義務から質問応答義務に変更', //p76
                     ]"
                 />
                 <QuestionTemp1
@@ -231,9 +231,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険金・給付金の請求と支払い"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        '正しい',
+                        '死亡した被保険者の数に関わらず死亡保険金は支払われない → 死亡した被保険者の数によって死亡保険金を全額または削減して支払う', //p104
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -242,9 +242,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="資産の運用"
                     :contents="[
-                        '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '積極的な資産運用をしなければならず、安全性に配慮して運用する必要はない → 効率的で安定した資産運用をしなければならない', //p34
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -253,9 +253,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保障の見直し"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        '正しい',
+                        '転換後の契約に関する事項のみを記載した書面を交付 → 転換前と転換後の契約に関する事項を対比して記載した書面を交付', //p92
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -264,9 +264,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保全・アフターサービス手続きと留意点"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '解約返戻金は必ずある → 解約返戻金が全くない場合もある', //p99
                     ]"
                 />
                 <QuestionTemp2
@@ -278,123 +278,123 @@ const isDraft = false;
                         // 問38〜67
                         {
                             questionTitle: '生命保険の役割',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //38
                         {
                             questionTitle: '生命保険の役割',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //39
                         {
                             questionTitle: '生命保険の役割',
-                            content: '', //p
+                            content: '男性・女性の平均寿命はともに90歳を超えている → 男性は約81歳、女性は約87歳（令和6年簡易生命表）', //p3
                         }, //40
                         {
                             questionTitle: '生命保険の役割',
-                            content: '', //p
+                            content: '平均寿命 → 平均余命', //p4
                         }, //41
                         {
                             questionTitle: '生命保険の役割',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //42
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //43
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //44
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //45
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //46
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                         }, //47
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //48
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //49
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //50
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '', //p
+                            content: '株式会社 → 相互会社', //p32
                         }, //51
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '', //p
+                            content: '他の事業を自由に営むことができる → 他の事業を営むことが制限されている', //p33
                         }, //52
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //53
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '単に会社員とか、あるいは会社名を記入していただければ良い → 現在の仕事の内容を具体的に記入していただく必要がある', //p40
                         }, //54
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '5ヶ月 → 6ヶ月', //p41
                         }, //55
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //56
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //57
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約成立後に契約確認を行うことはない → 契約確認は契約の成立前に行われる場合と成立後に行われる場合がある', //p85
                         }, //58
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //59
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //60
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'すでに払い込んだ保険料は返還される → すでに払い込んだ保険料は返還されない', //p87
                         }, //61
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //62
                         {
                             questionTitle: '企業向け商品',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //63
                         {
                             questionTitle: '企業向け商品',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //64
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '受取人が役員・幹部従業員の遺族 → 受取人が企業（団体）', //p
                         }, //65
                         {
                             questionTitle: '企業向け商品',
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //66
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '労災保険 → 健康保険<br>公的介護保険制度 → 公的医療保険制度', //p119
                         }, //67
                     ]"
                 />

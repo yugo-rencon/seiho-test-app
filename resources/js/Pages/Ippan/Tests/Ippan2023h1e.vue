@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2023年1月〜6月実施 フォームE";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="私たちの役割と心がまえ"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '割賦販売法等 → 保険業法等', //p11
                         '正しい',
                     ]"
                 />
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
                     :contents="[
-                        '', //p
+                        '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         '正しい',
                         '正しい',
                     ]"

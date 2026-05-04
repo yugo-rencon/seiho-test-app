@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2023年7月〜12月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,8 +195,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '申込みの動機・経路についても注意が必要', //p53
+                        '契約者や被保険者の年齢・職業・収入・資産状況などに比べて、保険金額や入院給付金日額が課題でないか確認する必要がある', //p53
                         '正しい',
                         '正しい',
                     ]"
@@ -209,8 +209,8 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '預金保険法等 → 保険業法等', //p11
+                        '生命保険募集人 → 生命保険会社', //p12
                     ]"
                 />
                 <QuestionTemp1
@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="生命保険の仕組み"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '公平性の法則 → 大数の法則', //p14
                         '正しい',
                     ]"
                 />
@@ -338,7 +338,7 @@ const isDraft = true;
                         }, //52
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '保険金受取人 → 契約者', //p78
                         }, //53
                         {
                             questionTitle: '募集時の正しい説明',
@@ -350,7 +350,7 @@ const isDraft = true;
                         }, //55
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '保険設計書 → 意向確認書面', //p81
                         }, //56
                         {
                             questionTitle: '募集時の正しい説明',

@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2023年7月〜12月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,8 +195,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '申込みの動機・経路についても注意が必要', //p53
+                        '契約者や被保険者の年齢・職業・収入・資産状況などに比べて、保険金額や入院給付金日額が課題でないか確認する必要がある', //p53
                         '正しい',
                         '正しい',
                     ]"

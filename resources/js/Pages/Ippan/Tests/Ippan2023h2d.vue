@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2023年7月〜12月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,8 +195,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '申込みの動機・経路についても注意が必要', //p53
+                        '契約者や被保険者の年齢・職業・収入・資産状況などに比べて、保険金額や入院給付金日額が課題でないか確認する必要がある', //p53
                         '正しい',
                         '正しい',
                     ]"
@@ -207,9 +207,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="私たちの役割と心がまえ"
                     :contents="[
-                        '', //p
+                        '適切なアフターサービスを提供していくことが大切', //p11
                         '正しい',
-                        '', //p
+                        '生命保険募集人 → 生命保険会社', //p12
                         '正しい',
                     ]"
                 />
@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="生命保険の種類"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '2倍の金額 → 同額', //p18
                         '正しい',
                     ]"
                 />
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         }, //54
                         {
                             questionTitle: '募集時の正しい説明',
@@ -354,7 +354,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '同意は不要 → 同意が必要', //p83
                         }, //57
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -386,11 +386,11 @@ const isDraft = true;
                         }, //64
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '', //p
+                            content: '相続税の課税対象', //p126
                         }, //65
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '', //p
+                            content: '50万円 → 110万円', //p127
                         }, //66
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',

@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2023年1月〜6月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約締結後、ただちに → 契約の申込みを受けるときまでに', //p78
                     ]"
                 />
                 <QuestionTemp1
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                     ]"
                 />
                 <QuestionTemp1
@@ -338,7 +338,7 @@ const isDraft = true;
                         }, //52
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '経済上の危険 → 環境上の危険', //p52
                         }, //53
                         {
                             questionTitle: '契約の選択',
@@ -346,7 +346,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '健康情報登録制度 → 契約内容登録制度や契約内容照会制度', //p53
                         }, //55
                         {
                             questionTitle: '契約の選択',

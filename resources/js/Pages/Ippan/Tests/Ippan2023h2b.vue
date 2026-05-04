@@ -195,8 +195,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '申込みの動機・経路についても注意が必要', //p53
+                        '契約者や被保険者の年齢・職業・収入・資産状況などに比べて、保険金額や入院給付金日額が課題でないか確認する必要がある', //p53
                         '正しい',
                         '正しい',
                     ]"
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
                     :contents="[
-                        '', //p
+                        '保険金受取人 → 契約者', //p78
                         '正しい',
                         '正しい',
                     ]"
@@ -322,11 +322,11 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '私たちの役割と心がまえ',
-                            content: '', //p
+                            content: '適切なアフターサービスを提供していくことが大切', //p11
                         }, //49
                         {
                             questionTitle: '私たちの役割と心がまえ',
-                            content: '', //p
+                            content: '生命保険協会 → 所属生命保険会社', //p11
                         }, //50
                         {
                             questionTitle: '私たちの役割と心がまえ',

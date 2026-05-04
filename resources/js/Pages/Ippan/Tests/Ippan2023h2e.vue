@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2023年7月〜12月実施 フォームE";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,8 +195,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '申込みの動機・経路についても注意が必要', //p53
+                        '契約者や被保険者の年齢・職業・収入・資産状況などに比べて、保険金額や入院給付金日額が課題でないか確認する必要がある', //p53
                         '正しい',
                         '正しい',
                     ]"
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一般勘定 → 特別勘定', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保全・アフターサービスの重要性"
                     :contents="[
-                        '', //p
+                        'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         '正しい',
                         '正しい',
                     ]"
@@ -326,11 +326,11 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '公平の法則 → 大数の法則', //p14
                         }, //50
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //51
                         {
                             questionTitle: '生命保険の仕組み',

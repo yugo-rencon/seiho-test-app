@@ -346,7 +346,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '12日以内 → 8日以内', //p47
                         }, //55
                         {
                             questionTitle: '契約申込み時の実務',
@@ -354,7 +354,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '重要な事項として契約者および被保険者、保険金受取人にも必ず説明 → 重要な事項として契約者に必ず説明 ', //p48
                         }, //57
                         {
                             questionTitle: '保障の見直し',

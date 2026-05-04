@@ -378,7 +378,7 @@ const isDraft = true;
                         }, //62
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '雇用保険法 → 生活保護法', //p112
                         }, //63
                         {
                             questionTitle: '社会保障制度',
@@ -394,7 +394,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '60歳以上の第1号被保険者と35歳以上60歳未満の第2号被保険者 → 65歳以上の第1号被保険者と40歳以上65歳未満の第2号被保険者', //p115
                         }, //67
                     ]"
                 />

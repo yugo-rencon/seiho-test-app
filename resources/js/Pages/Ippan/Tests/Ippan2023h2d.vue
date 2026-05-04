@@ -298,7 +298,7 @@ const isDraft = true;
                         }, //42
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '雇用保険法 → 生活保護法', //p112
                         }, //43
                         {
                             questionTitle: '社会保障制度',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '60歳以上の第1号被保険者と35歳以上60歳未満の第2号被保険者 → 65歳以上の第1号被保険者と40歳以上65歳未満の第2号被保険者', //p115
                         }, //47
                         {
                             questionTitle: '剰余金と配当金',
@@ -358,7 +358,7 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '事業税 → 住民税', //p120
                         }, //58
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '50000円 → 28000円', //p124
                         }, //62
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',

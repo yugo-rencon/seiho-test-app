@@ -208,8 +208,8 @@ const isDraft = true;
                     questionTitle="保険料の税法上の取り扱い"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '生命保険料控除の対象 → 生命保険料控除の対象から除れる', //p122
+                        '4月1日から翌年3月31日まで → 1月1日から12月31日まで', //p122
                         '正しい',
                     ]"
                 />
@@ -298,7 +298,7 @@ const isDraft = true;
                         }, //42
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '雇用保険法 → 生活保護法', //p112
                         }, //43
                         {
                             questionTitle: '社会保障制度',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '60歳以上の第1号被保険者と35歳以上60歳未満の第2号被保険者 → 65歳以上の第1号被保険者と40歳以上65歳未満の第2号被保険者', //p115
                         }, //47
                         {
                             questionTitle: '生命保険の役割',

@@ -219,10 +219,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険料の税法上の取り扱い"
                     :contents="[
-                        '', //p
+                        '事業税 → 所得税', //p120
                         '正しい',
                         '正しい',
-                        '', //p
+                        '35000円 → 28000円', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -243,7 +243,7 @@ const isDraft = false;
                     questionTitle="コンプライアンスの重要性"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '金融商品取引法 → 保険業法', //p60
                         '正しい',
                     ]"
                 />
@@ -346,7 +346,7 @@ const isDraft = false;
                         }, //54
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '10日以内 → 8日以内', //p47
                         }, //55
                         {
                             questionTitle: '契約申込み時の実務',
@@ -354,7 +354,7 @@ const isDraft = false;
                         }, //56
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '重要な事項に当たらないため、契約者への説明は不要 → 重要事項として契約者に必ず説明', //p48
                         }, //57
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -386,15 +386,15 @@ const isDraft = false;
                         }, //64
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '18歳以上65歳未満 → 20歳以上60歳未満', //p113
                         }, //65
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '70歳以上の高齢者（および60歳以上の障害があり、広域連合の認定を受けた人） → 75歳以上の高齢者（および65歳以上の障害があり、広域連合の認定を受けた人）', //p114
                         }, //66
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '70歳以上の第1号被保険者と40歳以上70歳未満の第2号被保険者 → 65歳以上の第1号被保険者と40歳以上65歳未満の第2号被保険者', //p115
                         }, //67
                     ]"
                 />

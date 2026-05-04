@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '4月1日から翌年3月31日まで → 1月1日から12月31日まで', //p122
                     ]"
                 />
                 <QuestionTemp2
@@ -362,11 +362,11 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '申込みがあった日 → 払い込みがあった日', //p45
                         }, //59
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '承諾のあった日から → 診査（告知）のあった日にさかのぼって', //p46
                         }, //60
                         {
                             questionTitle: '契約申込み時の実務',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '10日以内 → 8日以内', //p47
                         }, //62
                         {
                             questionTitle: '正しい告知の取り扱い',

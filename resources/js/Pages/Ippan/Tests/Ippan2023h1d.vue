@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '保険設計書 ↔︎ 生活設計書', //p136
                         '正しい',
                     ]"
                 />

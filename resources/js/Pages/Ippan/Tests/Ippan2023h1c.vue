@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2023年1月〜6月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -219,9 +219,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
-                        '', //p
+                        'ライフスタイル → ライフサイクル', //p133
                         '正しい',
-                        '', //p
+                        '末子の成人（18歳）までの生活資金（家族の生活資金）を確保 → 末子の大学卒業時（22歳）までの生活資金（家族の生活資金）とそれ以降の妻の平均余命期間の生活資金（妻の生活資金）とを確保', //p135
                         '正しい',
                     ]"
                 />
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="相続の法律"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '家庭裁判所による分割の調停・審判という方法もある', //p131
                         '正しい',
                     ]"
                 />

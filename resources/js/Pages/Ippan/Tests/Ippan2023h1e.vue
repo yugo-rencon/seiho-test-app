@@ -219,9 +219,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
-                        '', //p
+                        'ライフスタイル → ライフサイクル', //p133
                         '正しい',
-                        '', //p
+                        '保険設計書 ↔︎ 生活設計書', //p136
                         '正しい',
                     ]"
                 />

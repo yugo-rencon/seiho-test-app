@@ -358,7 +358,7 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '配偶者3/4、親1/4 → 配偶者2/3、親1/3', //p130
                         }, //58
                         {
                             questionTitle: '相続の法律',
@@ -370,7 +370,7 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '特定承認 → 限定承認', //p131
                         }, //61
                         {
                             questionTitle: '相続の法律',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '', //p
+                            content: '保険設計書 ↔︎ 生活設計書', //p136
                         }, //66
                         {
                             questionTitle: 'お客さまニーズへの対応',

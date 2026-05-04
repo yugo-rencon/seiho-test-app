@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '死亡保険金や死亡退職金も含まれる', //p132
                     ]"
                 />
                 <QuestionTemp2
@@ -378,7 +378,7 @@ const isDraft = true;
                         }, //62
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '', //p
+                            content: 'ライフスタイル → ライフサイクル', //p133
                         }, //63
                         {
                             questionTitle: 'お客さまニーズへの対応',

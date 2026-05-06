@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="資産の運用"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '資産運用の対象に貸付金も含まれる', //p35
                         '正しい',
                     ]"
                 />

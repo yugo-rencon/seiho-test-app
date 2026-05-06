@@ -318,7 +318,7 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '積極的な資産運用をしなければならず、安全性に配慮して運用する必要はない → 効率的で安定した資産運用をしなければならない', //p34
                         }, //48
                         {
                             questionTitle: '資産の運用',
@@ -330,11 +330,11 @@ const isDraft = true;
                         }, //50
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '資産運用の対象に貸付金も含まれる', //p35
                         }, //51
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '自社の営業用のものに限られる → 自社の営業用のものと投資用のものがある', //p35
                         }, //52
                         {
                             questionTitle: '契約の選択',

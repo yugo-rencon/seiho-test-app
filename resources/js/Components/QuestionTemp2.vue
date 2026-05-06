@@ -6,13 +6,7 @@
         class="h-0 scroll-mt-24"
     ></div>
     <template v-if="visibleItems.length > 0">
-        <div v-if="showAd" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
-            <AdSenseUnit ad-slot="8570892917" />
-        </div>
         <template v-for="(item, index) in visibleItems" :key="index">
-            <div v-if="shouldShowSeihoAdBeforeItem(item.questionNo) || shouldShowIppanAdBeforeItem(item.questionNo)" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
-                <AdSenseUnit ad-slot="8570892917" />
-            </div>
             <div :id="`q${item.questionNo}`" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24">
                 <div class="flex items-start gap-2 my-4">
                 <div
@@ -69,7 +63,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { usePage } from "@inertiajs/vue3";
-import AdSenseUnit from "./AdSenseUnit.vue";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
@@ -142,10 +135,6 @@ const isLockedContext = computed(() => {
     return isPaidYear(props.subject, props.title) && !hasPremiumAccess(page.props);
 });
 
-const showAd = computed(() => {
-    if (isDaigaku.value && isLockedContext.value) return false;
-    return (isDaigaku.value || isIppan.value || isOuyou.value || isSenmon.value) && !hasPremiumAccess(page.props);
-});
 
 const normalizedItems = computed(() => {
     // 新形式(items)があれば最優先。なければ従来の3配列から合成。
@@ -192,13 +181,6 @@ const shouldShowPaywallNotice = computed(() => {
     return paywallStartQuestion.value >= firstQuestion && paywallStartQuestion.value <= lastQuestion;
 });
 
-const shouldShowSeihoAdBeforeItem = (questionNo: number) => {
-    return isSeiho.value && !hasPremiumAccess(page.props) && Number(questionNo) === 41;
-};
-
-const shouldShowIppanAdBeforeItem = (questionNo: number) => {
-    return isIppan.value && !hasPremiumAccess(page.props) && Number(questionNo) === 53;
-};
 
 const getLabel = (index: number) => {
     // 互換対応:

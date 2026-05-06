@@ -1,8 +1,5 @@
 <template>
     <div :id="`q${props.questionNumber}`" class="h-0 scroll-mt-24"></div>
-    <div v-if="showAdBeforeQuestion" class="mt-2 rounded-lg bg-white p-2 shadow-sm">
-        <AdSenseUnit ad-slot="8570892917" />
-    </div>
     <div v-if="!shouldHideByPaywall" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md">
         <div class="flex items-start gap-2 my-4">
             <div
@@ -51,7 +48,6 @@
 import { computed, ref } from "vue";
 import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
-import AdSenseUnit from "./AdSenseUnit.vue";
 import RelatedProblems from "./RelatedProblems.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
 
@@ -96,7 +92,7 @@ const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
 const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
-const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value);
+
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 
@@ -110,14 +106,6 @@ const shouldShowPaywallNotice = computed(() => {
     return shouldHideByPaywall.value && Number(props.questionNumber) === paywallStartQuestion.value;
 });
 
-const showAdBeforeQuestion = computed(() => {
-    if (hasPremiumAccess(page.props)) return false;
-    if (isDaigaku.value && isPaidYear(props.subject, props.title)) return false;
-    if ((isDaigaku.value || isOuyou.value || isSenmon.value) && Number(props.questionNumber) === 13) return true; // daigaku/ouyou/senmon: Q12/Q13の間
-    if (isIppan.value && Number(props.questionNumber) === 31) return true; // ippan: Q30/Q31の間
-    if (isSeiho.value && (Number(props.questionNumber) === 21 || Number(props.questionNumber) === 31)) return true; // seiho: Q20/Q21の間、Q30/Q31の間
-    return false;
-});
 
 const getLabel = (index: number): string => {
     return labels.value[index] ?? `${index + 1}`;

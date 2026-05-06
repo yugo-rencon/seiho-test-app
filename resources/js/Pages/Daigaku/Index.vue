@@ -2,7 +2,6 @@
 import { Link, usePage } from "@inertiajs/vue3";
 import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
 const DAIGAKU_FORMS = ["a", "b", "c"];
@@ -260,9 +259,6 @@ const getDaigakuRoute = (sectionId, year, form) => {
                 </div>
             </div>
 
-            <div v-if="!hasPremium" class="mt-6">
-                <AdSenseUnit ad-slot="5135479704" />
-            </div>
         </div>
     </SeihoTestLayout>
 </template>

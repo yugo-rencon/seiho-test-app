@@ -195,10 +195,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="資産の運用"
                     :contents="[
-                        '', //p
+                        '積極的な資産運用をしなければならず、安全性に配慮する必要はない → 効率的で安定した資産運用をしなければならない', //p34
                         '正しい',
                         '正しい',
-                        '', //p
+                        '資産運用の対象に貸付金も含まれる', //p35
                     ]"
                 />
                 <QuestionTemp1

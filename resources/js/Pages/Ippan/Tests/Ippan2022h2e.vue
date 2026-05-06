@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '資産運用の対象に貸付金も含まれる', //p35
                     ]"
                 />
                 <QuestionTemp1

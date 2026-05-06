@@ -6,7 +6,6 @@ import { EXAM_FORMS, INDEX_SECTIONS } from "@/constants/subjects";
 import SectionHeader from "@/Pages/Index/SectionHeader.vue";
 import SubjectTabs from "@/Pages/Index/SubjectTabs.vue";
 import YearBlock from "@/Pages/Index/YearBlock.vue";
-import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
 // 科目タブ・年度/フォーム情報は constants 側に集約して再利用する
@@ -115,9 +114,6 @@ const pricingHref = computed(() =>
                 </div>
             </div>
 
-            <div v-if="!hasPremium" class="mt-6">
-                <AdSenseUnit ad-slot="5135479704" />
-            </div>
         </div>
 
     </SeihoTestLayout>

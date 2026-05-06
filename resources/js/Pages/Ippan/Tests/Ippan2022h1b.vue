@@ -195,10 +195,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="資産の運用"
                     :contents="[
-                        '', //p
+                        '積極的な資産運用をしなければならず、安全性に配慮する必要はない → 効率的で安定した資産運用をしなければならない', //p34
                         '正しい',
                         '正しい',
-                        '', //p
+                        '資産運用の対象に貸付金も含まれる', //p35
                     ]"
                 />
                 <QuestionTemp1
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約成立後に契約確認を行うことはない → 契約確認は契約の成立前に行われる場合と成立後に行われる場合がある', //p85
                         }, //59
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -370,7 +370,7 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'すでに払い込まれた保険料 → 解約返戻金', //p86
                         }, //61
                         {
                             questionTitle: '正しい告知の取り扱い',

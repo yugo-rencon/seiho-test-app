@@ -88,10 +88,27 @@ const accentTextClass = computed(() =>
             : "text-purple-500",
 );
 const resolveFormHref = (subjectKey, yearLabel, form) => {
-    const year = String(yearLabel).replace("年度", "");
+    const year = Number(String(yearLabel).replace("年度", ""));
+    const f = String(form).toLowerCase();
+
+    try {
+        if (props.isIppan) {
+            const months = subjectKey === "h1" ? "1-6" : "7-12";
+            return route("ippan.test", { year, months, form: f });
+        }
+        if (props.isSenmon) {
+            return route("senmon.test", { year, period: subjectKey, form: f });
+        }
+        if (props.isOuyou) {
+            return route("ouyou.test", { year, period: subjectKey, form: f });
+        }
+    } catch (_) {
+        return null;
+    }
+
     const routeName = props.isDaigaku
-        ? `daigaku.${subjectKey}${year}${String(form).toLowerCase()}`
-        : `${subjectKey}${year}${String(form).toLowerCase()}`;
+        ? `daigaku.${subjectKey}${year}${f}`
+        : `${subjectKey}${year}${f}`;
 
     if (!route().has(routeName)) {
         return null;

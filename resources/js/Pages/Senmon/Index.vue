@@ -1,7 +1,6 @@
 <script setup>
 import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import AdSenseUnit from "@/Components/AdSenseUnit.vue";
 import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
 const SENMON_VISIBLE_YEARS = [2025, 2024, 2023, 2022, 2021];
@@ -105,9 +104,6 @@ const getSenmonRoute = (year, periodId, form) => {
                 </div>
             </div>
 
-            <div class="mt-6">
-                <AdSenseUnit ad-slot="5135479704" />
-            </div>
         </div>
     </SeihoTestLayout>
 </template>

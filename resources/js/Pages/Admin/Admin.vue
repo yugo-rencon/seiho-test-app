@@ -234,11 +234,17 @@ const registrationSourceClass = (user) => {
     return "bg-gray-100 text-gray-600";
 };
 
-const purchaseStatusClass = (count, activeClass) =>
-    Number(count) > 0 ? activeClass : "bg-gray-100 text-gray-600";
+const purchaseProductOptions = [
+    { key: "seiho", label: "生保講座", countKey: "seiho_paid_count", className: "bg-indigo-50 text-indigo-700" },
+    { key: "daigaku", label: "生保大学", countKey: "daigaku_paid_count", className: "bg-blue-50 text-blue-700" },
+    { key: "ippan", label: "一般課程", countKey: "ippan_paid_count", className: "bg-fuchsia-50 text-fuchsia-700" },
+    { key: "senmon", label: "専門課程", countKey: "senmon_paid_count", className: "bg-emerald-50 text-emerald-700" },
+    { key: "ouyou", label: "応用課程", countKey: "ouyou_paid_count", className: "bg-amber-50 text-amber-700" },
+    { key: "basic", label: "一般・専門・応用セット", countKey: "basic_paid_count", className: "bg-cyan-100 text-cyan-700" },
+];
 
-const purchaseStatusLabel = (count) =>
-    Number(count) > 0 ? "購入済み" : "未購入";
+const purchasedProducts = (user) =>
+    purchaseProductOptions.filter((product) => Number(user?.[product.countKey]) > 0);
 
 const paginationLabel = (label) => {
     const value = String(label);
@@ -433,12 +439,7 @@ const goToPage = (url) => {
                             <th class="px-3 py-2">ID</th>
                             <th class="px-3 py-2">メール</th>
                             <th class="px-3 py-2">登録経由</th>
-                            <th class="px-3 py-2">生保講座</th>
-                            <th class="px-3 py-2">生保大学</th>
-                            <th class="px-3 py-2">一般</th>
-                            <th class="px-3 py-2">専門</th>
-                            <th class="px-3 py-2">応用</th>
-                            <th class="px-3 py-2">セット</th>
+                            <th class="px-3 py-2">購入商品</th>
                             <th class="px-3 py-2">登録日</th>
                             <th class="px-3 py-2">最終購入日時</th>
                         </tr>
@@ -464,52 +465,22 @@ const goToPage = (url) => {
                                 </span>
                             </td>
                             <td class="px-3 py-2 text-gray-700">
-                                <span
-                                    class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="purchaseStatusClass(user.seiho_paid_count, 'bg-indigo-50 text-indigo-700')"
-                                >
-                                    {{ purchaseStatusLabel(user.seiho_paid_count) }}
-                                </span>
-                            </td>
-                            <td class="px-3 py-2 text-gray-700">
-                                <span
-                                    class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="purchaseStatusClass(user.daigaku_paid_count, 'bg-blue-50 text-blue-700')"
-                                >
-                                    {{ purchaseStatusLabel(user.daigaku_paid_count) }}
-                                </span>
-                            </td>
-                            <td class="px-3 py-2 text-gray-700">
-                                <span
-                                    class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="purchaseStatusClass(user.ippan_paid_count, 'bg-fuchsia-50 text-fuchsia-700')"
-                                >
-                                    {{ purchaseStatusLabel(user.ippan_paid_count) }}
-                                </span>
-                            </td>
-                            <td class="px-3 py-2 text-gray-700">
-                                <span
-                                    class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="purchaseStatusClass(user.senmon_paid_count, 'bg-emerald-50 text-emerald-700')"
-                                >
-                                    {{ purchaseStatusLabel(user.senmon_paid_count) }}
-                                </span>
-                            </td>
-                            <td class="px-3 py-2 text-gray-700">
-                                <span
-                                    class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="purchaseStatusClass(user.ouyou_paid_count, 'bg-amber-50 text-amber-700')"
-                                >
-                                    {{ purchaseStatusLabel(user.ouyou_paid_count) }}
-                                </span>
-                            </td>
-                            <td class="px-3 py-2 text-gray-700">
-                                <span
-                                    class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="purchaseStatusClass(user.basic_paid_count, 'bg-cyan-100 text-cyan-700')"
-                                >
-                                    {{ purchaseStatusLabel(user.basic_paid_count) }}
-                                </span>
+                                <div class="flex max-w-[340px] flex-wrap gap-1.5">
+                                    <span
+                                        v-for="product in purchasedProducts(user)"
+                                        :key="`${user.id}-${product.key}`"
+                                        class="rounded-full px-2 py-1 text-xs font-semibold"
+                                        :class="product.className"
+                                    >
+                                        {{ product.label }}
+                                    </span>
+                                    <span
+                                        v-if="purchasedProducts(user).length === 0"
+                                        class="rounded-full bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-600"
+                                    >
+                                        未購入
+                                    </span>
+                                </div>
                             </td>
                             <td class="px-3 py-2 text-gray-600">
                                 {{ formatDateTime(user.created_at) }}
@@ -520,7 +491,7 @@ const goToPage = (url) => {
                         </tr>
                         <tr v-if="users.data.length === 0">
                             <td
-                                colspan="11"
+                                colspan="6"
                                 class="px-3 py-8 text-center text-sm text-gray-500"
                             >
                                 データがありません。
@@ -562,40 +533,18 @@ const goToPage = (url) => {
                     </div>
                     <div class="mt-2 flex flex-wrap gap-2">
                         <span
+                            v-for="product in purchasedProducts(user)"
+                            :key="`mobile-${user.id}-${product.key}`"
                             class="rounded-full px-2 py-1 text-xs font-semibold"
-                            :class="purchaseStatusClass(user.seiho_paid_count, 'bg-indigo-50 text-indigo-700')"
+                            :class="product.className"
                         >
-                            生保講座: {{ purchaseStatusLabel(user.seiho_paid_count) }}
+                            {{ product.label }}
                         </span>
                         <span
-                            class="rounded-full px-2 py-1 text-xs font-semibold"
-                            :class="purchaseStatusClass(user.daigaku_paid_count, 'bg-blue-50 text-blue-700')"
+                            v-if="purchasedProducts(user).length === 0"
+                            class="rounded-full bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-600"
                         >
-                            生保大学: {{ purchaseStatusLabel(user.daigaku_paid_count) }}
-                        </span>
-                        <span
-                            class="rounded-full px-2 py-1 text-xs font-semibold"
-                            :class="purchaseStatusClass(user.ippan_paid_count, 'bg-fuchsia-50 text-fuchsia-700')"
-                        >
-                            一般: {{ purchaseStatusLabel(user.ippan_paid_count) }}
-                        </span>
-                        <span
-                            class="rounded-full px-2 py-1 text-xs font-semibold"
-                            :class="purchaseStatusClass(user.senmon_paid_count, 'bg-emerald-50 text-emerald-700')"
-                        >
-                            専門: {{ purchaseStatusLabel(user.senmon_paid_count) }}
-                        </span>
-                        <span
-                            class="rounded-full px-2 py-1 text-xs font-semibold"
-                            :class="purchaseStatusClass(user.ouyou_paid_count, 'bg-amber-50 text-amber-700')"
-                        >
-                            応用: {{ purchaseStatusLabel(user.ouyou_paid_count) }}
-                        </span>
-                        <span
-                            class="rounded-full px-2 py-1 text-xs font-semibold"
-                            :class="purchaseStatusClass(user.basic_paid_count, 'bg-cyan-100 text-cyan-700')"
-                        >
-                            セット: {{ purchaseStatusLabel(user.basic_paid_count) }}
+                            未購入
                         </span>
                     </div>
                 </div>

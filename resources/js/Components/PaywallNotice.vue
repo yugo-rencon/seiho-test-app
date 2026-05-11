@@ -34,6 +34,40 @@ const unlockedCountText = computed(() => {
     if (scope.value === "senmon" || scope.value === "ouyou") return "全30解説";
     return "全144解説";
 });
+const paywallText = computed(() => {
+    if (scope.value === "daigaku") {
+        return {
+            lead: "一度の購入で、生保大学の全科目・全年度の解説が見放題",
+            cta: "全ての解説を解放",
+        };
+    }
+
+    if (scope.value === "ippan") {
+        return {
+            lead: "一度の購入で、生命保険一般課程の解説が見放題",
+            cta: "一般課程の解説を解放",
+        };
+    }
+
+    if (scope.value === "senmon") {
+        return {
+            lead: "一度の購入で、生命保険専門課程の解説が見放題",
+            cta: "専門課程の解説を解放",
+        };
+    }
+
+    if (scope.value === "ouyou") {
+        return {
+            lead: "一度の購入で、生命保険応用課程の解説が見放題",
+            cta: "応用課程の解説を解放",
+        };
+    }
+
+    return {
+        lead: "一度の購入で、全科目・全年度の解説が見放題",
+        cta: "全ての解説を解放",
+    };
+});
 const tone = computed(() => {
     if (scope.value === "daigaku") {
         return {
@@ -114,7 +148,7 @@ export default {
                 ￥{{ priceNumberText }}
             </p>
             <p class="mt-2 text-xs" :class="tone.text">
-                一度の購入で、全科目・全年度の解説が見放題
+                {{ paywallText.lead }}
             </p>
             <p class="mt-0.5 text-xs" :class="tone.priceSub">
                 <span class="font-semibold" :class="tone.countAccent">{{ unlockedCountText }}</span
@@ -126,7 +160,7 @@ export default {
                     class="inline-flex min-w-[220px] items-center justify-center rounded-xl px-7 py-3 text-base font-semibold text-white transition"
                     :class="tone.cta"
                 >
-                    全ての解説を解放
+                    {{ paywallText.cta }}
                 </Link>
             </div>
             <div class="mx-auto mt-5 flex max-w-3xl items-center gap-3">

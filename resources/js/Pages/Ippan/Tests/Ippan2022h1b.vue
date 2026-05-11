@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年1月〜6月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -207,8 +207,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の役割"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '男性・女性の平均寿命はともに90歳を超えている → 男性は約81歳、女性は約87歳（令和6年簡易生命表）', //p3
+                        '平均寿命 → 平均余命', //p4
                         '正しい',
                         '正しい',
                     ]"
@@ -219,10 +219,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の税法上の取り扱い"
                     :contents="[
-                        '', //p
+                        '事業税 → 所得税', //p120
                         '正しい',
                         '正しい',
-                        '', //p
+                        '35000円 → 28000円', //p124
                     ]"
                 />
                 <QuestionTemp1
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
+                        '払い込む保険料の割り引きはない → 保険料は生命保険会社の定める利率で割り引かれる', //p50
                         '正しい',
                         '正しい',
                     ]"
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '年末の生存者数 → 年始の生存者数', //p15
                     ]"
                 />
                 <QuestionTemp1
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '生命保険以外の事業を自由に営むことができる → 他の事業を営むことが制限されている', //p33
                     ]"
                 />
                 <QuestionTemp1
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                     ]"
                 />
                 <QuestionTemp2
@@ -282,11 +282,11 @@ const isDraft = true;
                         }, //38
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '第1回保険料充当金払い込みのあった日 → 診査（告知）のあった日', //p46
                         }, //39
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '12日以内 → 8日以内', //p47
                         }, //40
                         {
                             questionTitle: '契約申込み時の実務',
@@ -302,11 +302,11 @@ const isDraft = true;
                         }, //43
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '経済産業省 → 厚生労働省', //p108
                         }, //44
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '3年以内 → 1年以内', //p109
                         }, //45
                         {
                             questionTitle: '隣接業界',
@@ -314,19 +314,19 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '養老年金タイプ → 定期年金タイプ', //p110
                         }, //47
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '通称名でもよい → 戸籍等の公的書類記載のものを記入', //p40
                         }, //48
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '満年齢を使用するのではなく、保険年齢を使用する → 満年齢を使用する生命保険会社と保険年齢を使用する生命保険会社がある', //p41
                         }, //49
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '保険金受取人 → 契約者', //p51
                         }, //50
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '40000円以上 → 50000円以上<br>100円の収入印紙 → 200円の収入印紙', //p43
                         }, //52
                         {
                             questionTitle: '募集時の正しい説明',
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         }, //54
                         {
                             questionTitle: '募集時の正しい説明',
@@ -370,7 +370,7 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: 'すでに払い込まれた保険料 → 解約返戻金', //p86
+                            content: 'すでに払い込んだ保険料を払い戻す → 解約返戻金があれば払い戻すが、通常、払い込んだ保険料の合計額より少なくなる', //p86
                         }, //61
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '', //p
+                            content: '保険設計書 ↔︎ 生活設計書', //p136
                         }, //66
                         {
                             questionTitle: 'お客さまニーズへの対応',

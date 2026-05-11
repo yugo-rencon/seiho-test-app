@@ -44,10 +44,13 @@ Route::get('daigaku/terms', [TestController::class, 'terms'])->name('daigaku.ter
 Route::get('daigaku/tokusho', [TestController::class, 'tokusho'])->name('daigaku.tokusho');
 Route::get('senmon/policy', [TestController::class, 'policy'])->name('senmon.policy');
 Route::get('senmon/terms', [TestController::class, 'terms'])->name('senmon.terms');
+Route::get('senmon/tokusho', [TestController::class, 'tokusho'])->name('senmon.tokusho');
 Route::get('ouyou/policy', [TestController::class, 'policy'])->name('ouyou.policy');
 Route::get('ouyou/terms', [TestController::class, 'terms'])->name('ouyou.terms');
+Route::get('ouyou/tokusho', [TestController::class, 'tokusho'])->name('ouyou.tokusho');
 Route::get('ippan/policy', [TestController::class, 'policy'])->name('ippan.policy');
 Route::get('ippan/terms', [TestController::class, 'terms'])->name('ippan.terms');
+Route::get('ippan/tokusho', [TestController::class, 'tokusho'])->name('ippan.tokusho');
 Route::get('daigaku/shikumi-kojin2025a', [TestController::class, 'daigakuShikumiKojin2025a'])->name('daigaku.shikumi-kojin2025a');
 Route::get('daigaku/shikumi-kojin2025b', [TestController::class, 'daigakuShikumiKojin2025b'])->name('daigaku.shikumi-kojin2025b');
 Route::get('daigaku/shikumi-kojin2025c', [TestController::class, 'daigakuShikumiKojin2025c'])->name('daigaku.shikumi-kojin2025c');
@@ -177,6 +180,9 @@ Route::controller(TestController::class)->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('mypage', [TestController::class, 'mypage'])->name('mypage');
     Route::get('daigaku/mypage', [TestController::class, 'mypage'])->name('daigaku.mypage');
+    Route::get('ippan/mypage', [TestController::class, 'mypage'])->name('ippan.mypage');
+    Route::get('senmon/mypage', [TestController::class, 'mypage'])->name('senmon.mypage');
+    Route::get('ouyou/mypage', [TestController::class, 'mypage'])->name('ouyou.mypage');
     Route::post('mypage/pass-score', [TestController::class, 'updatePassScore'])->name('mypage.passScore');
     Route::post('daigaku/mypage/pass-score', [TestController::class, 'updatePassScore'])->name('daigaku.mypage.passScore');
     Route::post('mypage/results', [TestController::class, 'updateExamResult'])->name('mypage.results');

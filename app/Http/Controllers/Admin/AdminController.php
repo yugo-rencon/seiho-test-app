@@ -24,7 +24,11 @@ class AdminController extends Controller
                 DB::raw('MAX(CASE WHEN status = "paid" THEN paid_at ELSE NULL END) AS last_paid_at'),
                 DB::raw('SUM(CASE WHEN status = "paid" THEN 1 ELSE 0 END) AS paid_count'),
                 DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "seiho" THEN 1 ELSE 0 END) AS seiho_paid_count'),
-                DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "daigaku" THEN 1 ELSE 0 END) AS daigaku_paid_count')
+                DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "daigaku" THEN 1 ELSE 0 END) AS daigaku_paid_count'),
+                DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "ippan" THEN 1 ELSE 0 END) AS ippan_paid_count'),
+                DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "senmon" THEN 1 ELSE 0 END) AS senmon_paid_count'),
+                DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "ouyou" THEN 1 ELSE 0 END) AS ouyou_paid_count'),
+                DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "basic" THEN 1 ELSE 0 END) AS basic_paid_count')
             )
             ->groupBy('user_id');
 
@@ -45,7 +49,11 @@ class AdminController extends Controller
                 DB::raw('COALESCE(purchase_summary.last_paid_at, NULL) as last_paid_at'),
                 DB::raw('COALESCE(purchase_summary.paid_count, 0) as paid_count'),
                 DB::raw('COALESCE(purchase_summary.seiho_paid_count, 0) as seiho_paid_count'),
-                DB::raw('COALESCE(purchase_summary.daigaku_paid_count, 0) as daigaku_paid_count')
+                DB::raw('COALESCE(purchase_summary.daigaku_paid_count, 0) as daigaku_paid_count'),
+                DB::raw('COALESCE(purchase_summary.ippan_paid_count, 0) as ippan_paid_count'),
+                DB::raw('COALESCE(purchase_summary.senmon_paid_count, 0) as senmon_paid_count'),
+                DB::raw('COALESCE(purchase_summary.ouyou_paid_count, 0) as ouyou_paid_count'),
+                DB::raw('COALESCE(purchase_summary.basic_paid_count, 0) as basic_paid_count')
             )
             ->where('users.is_admin', 0)
             ->whereNotIn('users.id', self::INTERNAL_USER_IDS)
@@ -94,6 +102,26 @@ class AdminController extends Controller
                 ->where('status', 'paid')
                 ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
                 ->where('scope', 'daigaku')
+                ->count(),
+            'ippanSalesCount' => DB::table('purchases')
+                ->where('status', 'paid')
+                ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
+                ->where('scope', 'ippan')
+                ->count(),
+            'senmonSalesCount' => DB::table('purchases')
+                ->where('status', 'paid')
+                ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
+                ->where('scope', 'senmon')
+                ->count(),
+            'ouyouSalesCount' => DB::table('purchases')
+                ->where('status', 'paid')
+                ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
+                ->where('scope', 'ouyou')
+                ->count(),
+            'basicSalesCount' => DB::table('purchases')
+                ->where('status', 'paid')
+                ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
+                ->where('scope', 'basic')
                 ->count(),
         ];
 

@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年1月〜6月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -208,9 +208,9 @@ const isDraft = true;
                     questionTitle="正しい告知の取り扱い"
                     :contents="[
                         '正しい',
-                        'すでに払い込まれた保険料 → 解約返戻金', //p86
+                        'すでに払い込んだ保険料を払い戻す → 解約返戻金があれば払い戻すが、通常、払い込んだ保険料の合計額より少なくなる', //p86
                         '正しい',
-                        'お客さまに有利な説明であり、問題ない → 重大な法令違反に該当する', //p87
+                        'お客さまに有利な説明であり問題ない → 重大な法令違反に該当する', //p87
                     ]"
                 />
                 <QuestionTemp1
@@ -220,8 +220,8 @@ const isDraft = true;
                     questionTitle="生命保険料控除"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '生命保険料控除の対象 → 生命保険料控除の対象から除かれる', //p122
+                        '4月1日から翌年3月31日まで → 1月1日から12月31日まで', //p122
                         '正しい',
                     ]"
                 />
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
+                        '払い込む保険料の割り引きはない → 保険料は生命保険会社の定める利率で割り引かれる', //p50
                         '正しい',
                         '正しい',
                     ]"
@@ -242,7 +242,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
+                        '申込みの動機・経路についても注意が必要', //p53
                         '正しい',
                         '正しい',
                     ]"
@@ -253,8 +253,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保全・アフターサービスの重要性"
                     :contents="[
+                        'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         '正しい',
-                        '', //p
                         '正しい',
                     ]"
                 />
@@ -265,8 +265,8 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                         '正しい',
-                        '', //p
                     ]"
                 />
                 <QuestionTemp2
@@ -282,11 +282,11 @@ const isDraft = true;
                         }, //38
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '第1回保険料充当金払い込みのあった日 → 診査（告知）のあった日', //p46
                         }, //39
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '12日以内 → 8日以内', //p47
                         }, //40
                         {
                             questionTitle: '契約申込み時の実務',
@@ -302,11 +302,11 @@ const isDraft = true;
                         }, //43
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '経済産業省 → 厚生労働省', //p108
                         }, //44
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '3年以内 → 1年以内', //p109
                         }, //45
                         {
                             questionTitle: '隣接業界',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '養老年金タイプ → 定期年金タイプ', //p110
                         }, //47
                         {
                             questionTitle: '剰余金と配当金',
@@ -322,7 +322,7 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険料は割高 → 保険料は割安', //p27
                         }, //49
                         {
                             questionTitle: '剰余金と配当金',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険金買増方法 → 積立（据置）方法', //p29
                         }, //52
                         {
                             questionTitle: '生命保険会社の仕組み',
@@ -346,7 +346,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '', //p
+                            content: '保険事業と銀行業だけ → 保険事業だけ', //p32
                         }, //55
                         {
                             questionTitle: '生命保険会社の仕組み',
@@ -354,11 +354,11 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '', //p
+                            content: '兼営のみ認められている → 兼営は禁止されている', //p33
                         }, //57
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '生命保険会社と保険金受取人との間 → 生命保険会社と契約者との間', //p78
                         }, //58
                         {
                             questionTitle: '募集時の正しい説明',
@@ -370,7 +370,7 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '保険設計書 → 意向確認書面', //p81
                         }, //61
                         {
                             questionTitle: '募集時の正しい説明',
@@ -378,11 +378,11 @@ const isDraft = true;
                         }, //62
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '満期保険金の範囲内 → 解約返戻金の範囲内', //p93
                         }, //63
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '貸付を受けた契約では貸付を受けていない契約より配当金は少なくなる → 貸付を受けた契約でも貸付を受けていない契約と同様の配当金が支払われる', //p93
                         }, //64
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',

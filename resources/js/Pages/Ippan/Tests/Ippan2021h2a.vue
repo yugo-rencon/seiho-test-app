@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2021年7月〜12月実施 フォーム①";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,9 +195,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の役割"
                     :contents="[
-                        '', //p
+                        '大正時代 → 明治時代', //p1
                         '正しい',
-                        '', //p
+                        '平均寿命 → 平均余命', //p4
                         '正しい',
                     ]"
                 />
@@ -207,9 +207,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
+                        '金融庁の定める利率 → 生命保険会社の定める利率', //p50
                         '正しい',
-                        '', //p
+                        '途中で変更することはできない → 途中で変更することができる', //p51
                         '正しい',
                     ]"
                 />
@@ -219,10 +219,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="社会保障制度"
                     :contents="[
-                        '', //p
+                        '雇用保険法 → 生活保護法', //p112
                         '正しい',
                         '正しい',
-                        '', //p
+                        '4割 → 1割で所定水準以上の所得者は2割（そのうち特に所得の高い者は3割）', //p115
                     ]"
                 />
                 <QuestionTemp1
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '割賦販売法等 → 保険業法等', //p11
                     ]"
                 />
                 <QuestionTemp1
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '払込方法（回数）、保険期間によっても異なる', //p28
                     ]"
                 />
                 <QuestionTemp1
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険法 ↔︎ 保険業法', //p60
                     ]"
                 />
                 <QuestionTemp1
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険設計書 → 生活設計書', //p136
                     ]"
                 />
                 <QuestionTemp2
@@ -282,7 +282,7 @@ const isDraft = true;
                         }, //38
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '契約者本人のものに限る → 契約者本人またはその配偶者もしくはその他の親族', //p122
                         }, //39
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -294,11 +294,11 @@ const isDraft = true;
                         }, //41
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '35000円 → 40000円', //p124
                         }, //42
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '配偶者2/3、兄弟姉妹1/3 → 兄弟姉妹3/4、親1/4', //p
                         }, //43
                         {
                             questionTitle: '相続の法律',
@@ -318,7 +318,7 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '生命保険の種類',
-                            content: '', //p
+                            content: '定額保険 → 定期保険', //p17
                         }, //48
                         {
                             questionTitle: '生命保険の種類',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '生命保険の種類',
-                            content: '', //p
+                            content: '契約時に定めた保険金額（基本保険金額）は保証されない → 保証される', //p20
                         }, //52
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約成立後に契約確認を行うことはない → 契約確認は契約の成立前に行われる場合と成立後に行われる場合がある', //p85
                         }, //54
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -354,7 +354,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'すでに払い込んだ保険料は返還される → すでに払い込んだ保険料は返還されない', //p87
                         }, //57
                         {
                             questionTitle: '企業向け商品',
@@ -366,7 +366,7 @@ const isDraft = true;
                         }, //59
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '受取人 = 役員・幹部従業員の遺族 → 受取人 = 企業（団体）', //p118
                         }, //60
                         {
                             questionTitle: '企業向け商品',
@@ -374,15 +374,15 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '健康保険の本人半額負担性 → 健康保険の本人一部負担性', //p119
                         }, //62
                         {
                             questionTitle: '設計販売の基礎',
-                            content: '', //p
+                            content: '自分独自のプロセスのみに従って → 法的に定められたプロセスを遵守し', //p137
                         }, //63
                         {
                             questionTitle: '設計販売の基礎',
-                            content: '', //p
+                            content: 'ライフサイクル設計書 → 生活設計書', //p138
                         }, //64
                         {
                             questionTitle: '設計販売の基礎',

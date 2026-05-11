@@ -10,16 +10,51 @@ const authUi = computed(() => {
     const params = new URLSearchParams(query);
     const scope = params.get('scope');
     const returnTo = params.get('return_to') ?? '';
-    const isDaigaku = scope === 'daigaku' || returnTo.startsWith('/daigaku');
+    const currentScope = scope === 'daigaku' || returnTo.startsWith('/daigaku')
+        ? 'daigaku'
+        : scope === 'ippan' || returnTo.startsWith('/ippan')
+          ? 'ippan'
+          : scope === 'senmon' || returnTo.startsWith('/senmon')
+            ? 'senmon'
+            : scope === 'ouyou' || returnTo.startsWith('/ouyou')
+              ? 'ouyou'
+              : 'seiho';
+    const sites = {
+        seiho: {
+            brandName: '生保講座過去問解説',
+            homeRoute: 'tests.index',
+            logoSrc: '/images/rencon-favicon.svg?v=seiho',
+            ringClass: 'ring-purple-100 hover:ring-purple-200',
+        },
+        daigaku: {
+            brandName: '生命保険大学課程 過去問解説',
+            homeRoute: 'daigaku.index',
+            logoSrc: '/images/rencon-favicon-daigaku.svg?v=daigaku',
+            ringClass: 'ring-blue-100 hover:ring-blue-200',
+        },
+        ippan: {
+            brandName: '生命保険一般課程 過去問解説',
+            homeRoute: 'ippan.index',
+            logoSrc: '/images/rencon-favicon-ippan.svg?v=ippan',
+            ringClass: 'ring-fuchsia-100 hover:ring-fuchsia-200',
+        },
+        senmon: {
+            brandName: '生命保険専門課程 過去問解説',
+            homeRoute: 'senmon.index',
+            logoSrc: '/images/rencon-favicon-senmon.svg?v=senmon',
+            ringClass: 'ring-emerald-100 hover:ring-emerald-200',
+        },
+        ouyou: {
+            brandName: '生命保険応用課程 過去問解説',
+            homeRoute: 'ouyou.index',
+            logoSrc: '/images/rencon-favicon-ouyou.svg?v=ouyou',
+            ringClass: 'ring-amber-100 hover:ring-amber-200',
+        },
+    };
 
     return {
-        isDaigaku,
-        brandName: isDaigaku ? '生命保険大学課程 過去問解説' : '生保講座過去問解説',
-        homeRoute: isDaigaku ? 'daigaku.index' : 'tests.index',
-        logoSrc: isDaigaku
-            ? '/images/rencon-favicon-daigaku.svg?v=daigaku'
-            : '/images/rencon-favicon.svg?v=seiho',
-        ringClass: isDaigaku ? 'ring-blue-100 hover:ring-blue-200' : 'ring-purple-100 hover:ring-purple-200',
+        currentScope,
+        ...sites[currentScope],
     };
 });
 </script>

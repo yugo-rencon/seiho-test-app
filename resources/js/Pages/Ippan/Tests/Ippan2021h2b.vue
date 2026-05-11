@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2021年7月〜12月実施 フォーム②";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,9 +195,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の役割"
                     :contents="[
-                        '', //p
+                        '大正時代 → 明治時代', //p1
                         '正しい',
-                        '', //p
+                        '平均寿命 → 平均余命', //p4
                         '正しい',
                     ]"
                 />
@@ -208,9 +208,9 @@ const isDraft = true;
                     questionTitle="生命保険の種類"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '2倍の金額 → 同額', //p18
                         '正しい',
-                        '', //p
+                        '契約時に定めた保険金額（基本保険金額）は保証されない → 保証される', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -220,9 +220,9 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
-                        '', //p
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                     ]"
                 />
                 <QuestionTemp1
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '割賦販売法等 → 保険業法等', //p11
                     ]"
                 />
                 <QuestionTemp1
@@ -242,7 +242,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
+                        '保険金受取人の指定した口座 → 契約者の指定した口座', //p50
                         '正しい',
                         '正しい',
                     ]"
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '保険設計書 ↔︎ 生活設計書', //p136
                         '正しい',
                     ]"
                 />
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="設計販売の基礎"
                     :contents="[
-                        '', //p
+                        '自主的に定めたのプロセスのみを遵守し → 法的に定められたプロセスを遵守し', //p137
                         '正しい',
                         '正しい',
                     ]"
@@ -282,7 +282,7 @@ const isDraft = true;
                         }, //38
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '契約者本人のものに限る → 契約者本人またはその配偶者もしくはその他の親族', //p122
                         }, //39
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -294,11 +294,11 @@ const isDraft = true;
                         }, //41
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '35000円 → 40000円', //p124
                         }, //42
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '配偶者2/3、兄弟姉妹1/3 → 兄弟姉妹3/4、親1/4', //p
                         }, //43
                         {
                             questionTitle: '相続の法律',
@@ -318,11 +318,11 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '積極的な資産運用をしなければならず、安全性に配慮して運用する必要はない → 効率的で安定した資産運用をしなければならない', //p34
                         }, //48
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '資産はすべて → 資産は一部', //p34
                         }, //49
                         {
                             questionTitle: '資産の運用',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '自社の営業用のものに限られる → 自社の営業用のものと投資用のものがある', //p35
                         }, //52
                         {
                             questionTitle: '生命保険の募集等に関する法律',
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '行政処分や司法処分を受けない → 受ける', //p68
                         }, //54
                         {
                             questionTitle: '生命保険の募集等に関する法律',
@@ -354,15 +354,15 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '各種共済は対象外 → 対象', //p76
                         }, //57
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '既払込保険料総額の一定範囲内 → 解約返戻金の一定範囲内', //p93
                         }, //58
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '元の契約の保険期間を短縮したうえ → 元の契約の保険期間を変えないで', //p94
                         }, //59
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
@@ -374,11 +374,11 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '全くない場合はない → 全くない場合もある',
                         }, //62
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '5年更新 → 1年更新', //p116
                         }, //63
                         {
                             questionTitle: '企業向け商品',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '財形貯蓄積立保険・財形教育積立保険・財形医療積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険', //p119
                         }, //66
                         {
                             questionTitle: '企業向け商品',

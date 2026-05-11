@@ -34,7 +34,13 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        $scope = str_starts_with((string) $request->path(), 'daigaku') ? 'daigaku' : 'seiho';
+        $scope = match (true) {
+            str_starts_with((string) $request->path(), 'daigaku') => 'daigaku',
+            str_starts_with((string) $request->path(), 'ippan') => 'ippan',
+            str_starts_with((string) $request->path(), 'senmon') => 'senmon',
+            str_starts_with((string) $request->path(), 'ouyou') => 'ouyou',
+            default => 'seiho',
+        };
 
         return array_merge(parent::share($request), [
             'auth' => [
@@ -42,6 +48,10 @@ class HandleInertiaRequests extends Middleware
                 'hasPremium' => fn () => $request->user()?->hasPremiumAccess($scope) ?? false,
                 'hasPremiumSeiho' => fn () => $request->user()?->hasPremiumAccess('seiho') ?? false,
                 'hasPremiumDaigaku' => fn () => $request->user()?->hasPremiumAccess('daigaku') ?? false,
+                'hasPremiumIppan' => fn () => $request->user()?->hasPremiumAccess('ippan') ?? false,
+                'hasPremiumSenmon' => fn () => $request->user()?->hasPremiumAccess('senmon') ?? false,
+                'hasPremiumOuyou' => fn () => $request->user()?->hasPremiumAccess('ouyou') ?? false,
+                'hasPremiumBasic' => fn () => $request->user()?->hasPremiumAccess('basic') ?? false,
                 'isAdmin' => fn () => $request->user()?->is_admin ?? false,
             ],
             'ziggy' => function () use ($request) {

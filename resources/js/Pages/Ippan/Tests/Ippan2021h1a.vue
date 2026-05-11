@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2021年1月〜6月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,10 +195,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保障の見直し"
                     :contents="[
-                        '', //p
+                        '既払込保険料相当額や配当金など（転換価格） → 責任準備金や配当金など（転換価格）', //p91
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約者、保障内容、保険金額などが全く新しく切り替わる → 保障内容、保険金額、保険料などが全く新しく切り替わる', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -207,10 +207,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の仕組み"
                     :contents="[
-                        '', //p
+                        '公平性の原則 → 収支相当の原則', //p23
                         '正しい',
                         '正しい',
-                        '', //p
+                        '予定利率 → 予定事業費率', //p24
                     ]"
                 />
                 <QuestionTemp1
@@ -219,10 +219,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="社会保障制度"
                     :contents="[
-                        '', //p
+                        '雇用保険法 → 生活保護法', //p112
                         '正しい',
                         '正しい',
-                        '', //p
+                        '4割 → 1割で所定水準以上の所得者は2割（そのうち特に所得の高い者は3割）', //p115
                     ]"
                 />
                 <QuestionTemp1
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="コンプライアンスの重要性"
                     :contents="[
-                        '', //p
+                        '社会的規範や企業倫理を除き、法令や社内ルールだけを守るという意味で用いられる → 法令や社内ルールだけでなく、社会的規範や企業倫理を守るということも含めて用いられる', //p60
                         '正しい',
                         '正しい',
                     ]"
@@ -242,7 +242,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の種類"
                     :contents="[
-                        '', //p
+                        '養老保険 → 年金保険', //p18
                         '正しい',
                         '正しい',
                     ]"
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の募集等に関する法律"
                     :contents="[
-                        '', //p
+                        '保険契約は対象に含まれない → 保険契約も対象に含まれる', //p69
                         '正しい',
                         '正しい',
                     ]"
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '福祉販売 → 設計販売', //p136
                     ]"
                 />
                 <QuestionTemp2
@@ -290,11 +290,11 @@ const isDraft = true;
                         }, //40
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p50
                         }, //41
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '途中で変更することはできない → 途中で変更することができる', //p51
                         }, //42
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -306,7 +306,7 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //45
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -326,7 +326,7 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '短期の資金 → 長期の資金', //p35
                         }, //50
                         {
                             questionTitle: '資産の運用',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '自社の営業用のものに限られる → 自社の営業用のものと投資用のものがある', //p35
                         }, //52
                         {
                             questionTitle: '契約申込み時の実務',
@@ -342,11 +342,11 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '第1回保険料充当金払い込みのあった日 → 診査（告知）のあった日', //p46
                         }, //54
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '12日以内 → 8日以内', //p47
                         }, //55
                         {
                             questionTitle: '契約申込み時の実務',
@@ -358,7 +358,7 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '経済上の危険 → 環境上の危険', //p52
                         }, //58
                         {
                             questionTitle: '契約の選択',
@@ -366,7 +366,7 @@ const isDraft = true;
                         }, //59
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '健康情報登録制度 → 契約内容登録制度や契約内容照会制度', //p53
                         }, //60
                         {
                             questionTitle: '契約の選択',
@@ -378,7 +378,7 @@ const isDraft = true;
                         }, //62
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '', //p
+                            content: '相続税 → 贈与税', //p126
                         }, //63
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
@@ -394,7 +394,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '', //p
+                            content: '課税対象 → 非課税', //p128
                         }, //67
                     ]"
                 />

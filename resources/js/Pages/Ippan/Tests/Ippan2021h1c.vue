@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2021年1月〜6月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,10 +195,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保障の見直し"
                     :contents="[
-                        '', //p
+                        '既払込保険料相当額や配当金など（転換価格） → 責任準備金や配当金など（転換価格）', //p91
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約者、保障内容、保険金額などが全く新しく切り替わる → 保障内容、保険金額、保険料などが全く新しく切り替わる', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -209,8 +209,8 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '契約後7年目から → 契約後6年目から', //p28
+                        '保険金買増方法 → 積立（据置）方法', //p29
                     ]"
                 />
                 <QuestionTemp1
@@ -219,8 +219,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="資産の運用"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '積極的な資産運用をしなければならず、安全性に配慮して運用する必要はない → 効率的で安定した資産運用をしなければならない', //p34
+                        '3つの原則 → 4つの原則（安全性、収益性、換金性（流動性）、公共性）', //p34
                         '正しい',
                         '正しい',
                     ]"
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="コンプライアンスの重要性"
                     :contents="[
-                        '', //p
+                        '社会的規範や企業倫理を除き、法令や社内ルールだけを守るという意味で用いられる → 法令や社内ルールだけでなく、社会的規範や企業倫理を守るということも含めて用いられる', //p60
                         '正しい',
                         '正しい',
                     ]"
@@ -242,7 +242,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
                     :contents="[
-                        '', //p
+                        '生命保険会社と保険金受取人との間 → 生命保険会社と契約者との間', //p78
                         '正しい',
                         '正しい',
                     ]"
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="正しい告知の取り扱い"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '被保険者（または保険金受取人） → 被保険者（または契約者）', //p86
                         '正しい',
                     ]"
                 />
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '配当所得 → 一時所得', //p126
                         '正しい',
                     ]"
                 />
@@ -290,11 +290,11 @@ const isDraft = true;
                         }, //40
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p50
                         }, //41
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '途中で変更することはできない → 途中で変更することができる', //p51
                         }, //42
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -306,7 +306,7 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //45
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -326,11 +326,11 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //50
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '生命保険では〜 → 預貯金では〜', //p15
                         }, //51
                         {
                             questionTitle: '生命保険の仕組み',
@@ -346,11 +346,11 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '', //p
+                            content: '保険事業と銀行業だけ → 保険事業だけ', //p32
                         }, //55
                         {
                             questionTitle: '生命保険会社の仕組み',
-                            content: '', //p
+                            content: '株式会社 → 相互会社', //p32
                         }, //56
                         {
                             questionTitle: '生命保険会社の仕組み',
@@ -362,11 +362,11 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '単に会社員とか、あるいは会社名を記入していただければ良い → 現在の仕事の内容を具体的に記入していただく必要がある', //p40
                         }, //59
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '5ヶ月 → 6ヶ月', //p41
                         }, //60
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -386,7 +386,7 @@ const isDraft = true;
                         }, //64
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '保険契約は対象外 → 保険契約も対象', //p69
                         }, //65
                         {
                             questionTitle: '生命保険の募集等に関する法律',
@@ -394,7 +394,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '質問応答義務から自発的申告義務に変更 → 自発的申告義務から質問応答義務に変更', //p76
                         }, //67
                     ]"
                 />

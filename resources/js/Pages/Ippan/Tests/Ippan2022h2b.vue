@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年7月〜12月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,8 +196,8 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '自営業者等、一般の勤労者等ともに → 自営業者等は個別に納める', //p113
+                        '被保険者と事業主が1:2で負担 → 被保険者と事業主が折半で負担', //p113
                         '正しい',
                     ]"
                 />
@@ -208,8 +208,8 @@ const isDraft = true;
                     questionTitle="保険料の仕組み"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '満期保険料 → 生存保険料', //p24
+                        '予定利率 → 予定事業費率', //p24
                         '正しい',
                     ]"
                 />
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '生命保険以外の事業を自由に営むことができる → 他の事業を営むことが制限されている', //p33
                     ]"
                 />
                 <QuestionTemp1
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '20000円以上 → 50000円以上', //p43
                     ]"
                 />
                 <QuestionTemp1
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="契約申込み時の実務"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '既払込金額をお返ししない → 既払込金額をお返しする', //p47
                         '正しい',
                     ]"
                 />
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
                     :contents="[
-                        '', //p
+                        '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         '正しい',
                         '正しい',
                     ]"
@@ -286,7 +286,7 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //40
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -310,7 +310,7 @@ const isDraft = true;
                         }, //45
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '', //p
+                            content: '福祉販売 → 設計販売', //p136
                         }, //46
                         {
                             questionTitle: 'お客さまニーズへの対応',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '生命保険の種類',
-                            content: '', //p
+                            content: '契約時に定めた保険金額（基本保険金額）は保証されない → 保証される', //p20
                         }, //52
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -342,11 +342,11 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約成立後に契約確認を行うことはない → 契約確認は契約の成立前に行われる場合と成立後に行われる場合がある', //p85
                         }, //54
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '1年 → 2年', //p87
                         }, //55
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -354,7 +354,7 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'すでに払い込んだ保険料は返還される → すでに払い込んだ保険料は返還されない', //p87
                         }, //57
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -370,7 +370,7 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '4月1日から翌年3月31日まで → 1月1日から12月31日まで', //p122
                         }, //61
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -378,7 +378,7 @@ const isDraft = true;
                         }, //62
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '', //p
+                            content: '相続税 → 贈与税', //p126
                         }, //63
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',
-                            content: '', //p
+                            content: '50万円 → 110万円', //p127
                         }, //66
                         {
                             questionTitle: '保険金・給付金の税法上の取り扱い（一時金で受け取った場合）',

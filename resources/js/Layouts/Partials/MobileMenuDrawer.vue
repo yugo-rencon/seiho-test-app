@@ -38,16 +38,28 @@ watch(
 const isActive = (name) => route().current(name);
 
 const closeMenu = () => emit("close");
+const currentScope = computed(() => {
+    if (props.isDaigaku) return "daigaku";
+    if (props.isIppan) return "ippan";
+    if (props.isSenmon) return "senmon";
+    if (props.isOuyou) return "ouyou";
+    return "seiho";
+});
 const pricingHref = computed(() =>
     props.isDaigaku
         ? route("daigaku.pricing", { return_to: String(page.url ?? "/daigaku") })
-        : route("pricing", { return_to: String(page.url ?? "/tests") }),
+        : route("pricing", {
+            ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
+            return_to: String(page.url ?? "/tests"),
+        }),
 );
-const loginHref = computed(() =>
-    props.isDaigaku
-        ? route("login", { scope: "daigaku", return_to: String(page.url ?? "/daigaku") })
-        : route("login", { return_to: String(page.url ?? "/tests") }),
-);
+const loginHref = computed(() => {
+    const returnTo = String(page.url ?? (props.isDaigaku ? "/daigaku" : "/tests"));
+    return route("login", {
+        ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
+        return_to: returnTo,
+    });
+});
 
 // 科目アコーディオンを開閉。閉じる時は年度選択もリセット
 const toggleSubject = (key) => {
@@ -74,7 +86,13 @@ const homeRouteName = () =>
             : props.isIppan
               ? "ippan.index"
               : "tests.index";
-const mypageRouteName = () => (props.isDaigaku ? "daigaku.mypage" : "mypage");
+const mypageRouteName = () => {
+    if (props.isDaigaku) return "daigaku.mypage";
+    if (props.isIppan) return "ippan.mypage";
+    if (props.isSenmon) return "senmon.mypage";
+    if (props.isOuyou) return "ouyou.mypage";
+    return "mypage";
+};
 const adminRouteName = () => (props.isDaigaku ? "daigaku.admin.index" : "admin.index");
 const accentTextClass = computed(() =>
     props.isDaigaku

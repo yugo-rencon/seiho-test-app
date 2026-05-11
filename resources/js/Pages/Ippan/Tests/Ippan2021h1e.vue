@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2021年1月〜6月実施 フォームE";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,10 +195,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保障の見直し"
                     :contents="[
-                        '', //p
+                        '既払込保険料相当額や配当金など（転換価格） → 責任準備金や配当金など（転換価格）', //p91
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約者、保障内容、保険金額などが全く新しく切り替わる → 保障内容、保険金額、保険料などが全く新しく切り替わる', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -208,8 +208,8 @@ const isDraft = true;
                     questionTitle="生命保険会社の仕組み"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '保険事業と銀行業だけ → 保険事業だけ', //p32
+                        '株式会社 → 相互会社', //p32
                         '正しい',
                     ]"
                 />
@@ -219,10 +219,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
-                        '', //p
+                        'ライフプラン → ライフサイクル', //p133
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険設計書 → 生活設計書', //p136
                     ]"
                 />
                 <QuestionTemp1
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="コンプライアンスの重要性"
                     :contents="[
-                        '', //p
+                        '社会的規範や企業倫理を除き、法令や社内ルールだけを守るという意味で用いられる → 法令や社内ルールだけでなく、社会的規範や企業倫理を守るということも含めて用いられる', //p60
                         '正しい',
                         '正しい',
                     ]"
@@ -242,7 +242,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="資産の運用"
                     :contents="[
-                        '', //p
+                        '積極的な資産運用をしなければならず、安全性に配慮して運用する必要はない → 効率的で安定した資産運用をしなければならない', //p34
                         '正しい',
                         '正しい',
                     ]"
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="契約の選択"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '申込みの動機・経路についても注意が必要', //p53
                         '正しい',
                     ]"
                 />
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="正しい告知の取り扱い"
                     :contents="[
-                        '', //p
+                        '契約成立後に契約確認を行うことはない → 契約確認は契約の成立前に行われる場合と成立後に行われる場合がある', //p85
                         '正しい',
                         '正しい',
                     ]"
@@ -290,11 +290,11 @@ const isDraft = true;
                         }, //40
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p50
                         }, //41
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '途中で変更することはできない → 途中で変更することができる', //p51
                         }, //42
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -306,7 +306,7 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //45
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -322,11 +322,11 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '私たちの役割と心がまえ',
-                            content: '', //p
+                            content: '厚生労働大臣 → 所属生命保険会社', //p11
                         }, //49
                         {
                             questionTitle: '私たちの役割と心がまえ',
-                            content: '', //p
+                            content: '生命保険募集人 → 生命保険会社', //p12
                         }, //50
                         {
                             questionTitle: '私たちの役割と心がまえ',
@@ -346,15 +346,15 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '収支相当の法則 → 大数の法則', //p14
                         }, //55
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //56
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '出生率 → 死亡率', //p15
                         }, //57
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '結婚しているか否かに関わらず → 結婚している場合不要となるケースもある', //不明
                         }, //59
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '30000円以上 → 50000円以上<br>100円の収入印紙 → 200円の収入印紙', //p43
                         }, //62
                         {
                             questionTitle: '照会・苦情時の対応',
@@ -382,7 +382,7 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '', //p
+                            content: '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         }, //64
                         {
                             questionTitle: '照会・苦情時の対応',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '', //p
+                            content: '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                         }, //66
                         {
                             questionTitle: '照会・苦情時の対応',

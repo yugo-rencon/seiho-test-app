@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年7月〜12月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,8 +196,8 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '自営業者等、一般の勤労者等ともに → 自営業者等は個別に納める', //p113
+                        '被保険者と事業主が1:2で負担 → 被保険者と事業主が折半で負担', //p113
                         '正しい',
                     ]"
                 />
@@ -209,8 +209,8 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '復活契約 → 追加契約', //p91
+                        '転換前契約の加入時 → 転換時', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -220,8 +220,8 @@ const isDraft = true;
                     questionTitle="隣接業界"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '3年更新 → 1年更新', //p108
+                        '損害保険は取り扱えない → 生命保険も損害保険も取り扱える', //p109
                         '正しい',
                     ]"
                 />
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '生命保険以外の事業を自由に営むことができる → 他の事業を営むことが制限されている', //p33
                     ]"
                 />
                 <QuestionTemp1
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '自社の営業用のものに限られる → 自社の営業用のものと投資用のものがある', //p35
                     ]"
                 />
                 <QuestionTemp1
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約者 = 経営者（個人） → 契約者 = 企業（団体）', //p118
                     ]"
                 />
                 <QuestionTemp2
@@ -286,7 +286,7 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //40
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -310,7 +310,7 @@ const isDraft = true;
                         }, //45
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '', //p
+                            content: '福祉販売 → 設計販売', //p136
                         }, //46
                         {
                             questionTitle: 'お客さまニーズへの対応',
@@ -318,11 +318,11 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '経済上の危険 → 環境上の危険', //p52
                         }, //48
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '申込みの動機・経路についても注意が必要', //p53
                         }, //49
                         {
                             questionTitle: '契約の選択',
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約成立後に契約確認を行うことはない → 契約確認は契約の成立前に行われる場合と成立後に行われる場合がある', //p85
                         }, //54
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -350,7 +350,7 @@ const isDraft = true;
                         }, //55
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'すでに払い込んだ保険料を払い戻す → 解約返戻金があれば払い戻すが、通常、払い込んだ保険料の合計額より少なくなる', //p86
                         }, //56
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -358,11 +358,11 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '既払込保険料総額の一定範囲内 → 解約返戻金の一定範囲内', //p93
                         }, //58
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '元の契約の保険期間を短縮したうえ → 元の契約の保険期間を変えないで', //p94
                         }, //59
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '全くない場合はない → 全くない場合もある',
                         }, //62
                         {
                             questionTitle: '保険金・給付金の請求と支払い',
@@ -382,7 +382,7 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '保険金・給付金の請求と支払い',
-                            content: '', //p
+                            content: '他の受取人に対しても死亡保険金を支払われない → 他の受取人に対してはその残額を支払う', //p104
                         }, //64
                         {
                             questionTitle: '保険金・給付金の請求と支払い',

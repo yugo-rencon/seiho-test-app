@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\UserExamResult;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class TestController extends Controller
@@ -520,9 +521,15 @@ class TestController extends Controller
     // 料金
     public function pricing(Request $request){
         $scope = $request->query('scope');
-        if (!in_array($scope, ['seiho', 'daigaku'], true)) {
+        if (!in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou'], true)) {
             $returnTo = (string) $request->query('return_to', '');
-            $scope = str_starts_with($returnTo, '/daigaku') ? 'daigaku' : 'seiho';
+            $scope = match (true) {
+                str_starts_with($returnTo, '/daigaku') => 'daigaku',
+                str_starts_with($returnTo, '/ippan') => 'ippan',
+                str_starts_with($returnTo, '/senmon') => 'senmon',
+                str_starts_with($returnTo, '/ouyou') => 'ouyou',
+                default => 'seiho',
+            };
         }
 
         return Inertia::render('Info/Pricing', [
@@ -542,7 +549,13 @@ class TestController extends Controller
     public function mypage(Request $request){
         /** @var User $user */
         $user = auth()->user();
-        $scope = $request->routeIs('daigaku.*') ? 'daigaku' : 'seiho';
+        $scope = match (true) {
+            $request->routeIs('daigaku.*') => 'daigaku',
+            $request->routeIs('ippan.*') => 'ippan',
+            $request->routeIs('senmon.*') => 'senmon',
+            $request->routeIs('ouyou.*') => 'ouyou',
+            default => 'seiho',
+        };
         $subjects = $this->subjectsByScope($scope);
 
         $results = $user->examResults()
@@ -554,6 +567,16 @@ class TestController extends Controller
                     'score' => $result->score,
                 ];
             });
+        $paidBasicScopes = DB::table('purchases')
+            ->where('user_id', $user->id)
+            ->where('status', 'paid')
+            ->whereIn('scope', ['ippan', 'senmon', 'ouyou', 'basic'])
+            ->pluck('scope')
+            ->all();
+        $hasPurchasedIppan = in_array('ippan', $paidBasicScopes, true);
+        $hasPurchasedSenmon = in_array('senmon', $paidBasicScopes, true);
+        $hasPurchasedOuyou = in_array('ouyou', $paidBasicScopes, true);
+        $hasPurchasedBasic = in_array('basic', $paidBasicScopes, true);
 
         return Inertia::render('Info/MyPage', [
             'scope' => $scope,
@@ -563,6 +586,14 @@ class TestController extends Controller
             'hasPremium' => $user->hasPremiumAccess($scope),
             'hasPremiumSeiho' => $user->hasPremiumAccess('seiho'),
             'hasPremiumDaigaku' => $user->hasPremiumAccess('daigaku'),
+            'hasPremiumIppan' => $user->hasPremiumAccess('ippan'),
+            'hasPremiumSenmon' => $user->hasPremiumAccess('senmon'),
+            'hasPremiumOuyou' => $user->hasPremiumAccess('ouyou'),
+            'hasPremiumBasic' => $user->hasPremiumAccess('basic'),
+            'hasPurchasedIppan' => $hasPurchasedIppan,
+            'hasPurchasedSenmon' => $hasPurchasedSenmon,
+            'hasPurchasedOuyou' => $hasPurchasedOuyou,
+            'hasPurchasedBasic' => $hasPurchasedBasic,
         ]);
     }
 
@@ -643,6 +674,10 @@ class TestController extends Controller
     {
         if ($scope === 'daigaku') {
             return $this->daigakuSubjects();
+        }
+
+        if (in_array($scope, ['ippan', 'senmon', 'ouyou'], true)) {
+            return [];
         }
 
         return $this->seihoSubjects();

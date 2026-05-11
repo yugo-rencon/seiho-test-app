@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年1月〜6月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -207,10 +207,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の種類"
                     :contents="[
-                        '', //p
+                        '定額保険 → 定期保険', //p17
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約時に定めた保険金額（基本保険金額）は保証されない → 保証される', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -219,8 +219,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '契約者のみの権利義務を規定 → お互いの権利義務を規定', //p78
+                        '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         '正しい',
                         '正しい',
                     ]"
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
+                        '払い込む保険料の割り引きはない → 保険料は生命保険会社の定める利率で割り引かれる', //p50
                         '正しい',
                         '正しい',
                     ]"
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '60歳以上の第1号被保険者と40歳以上60歳未満の第2号被保険者 → 65歳以上の第1号被保険者と40歳以上65歳未満の第2号被保険者', //p115
                     ]"
                 />
                 <QuestionTemp1
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '死亡保険金や死亡退職金も含まれる', //p132
                     ]"
                 />
                 <QuestionTemp1
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '資産管理 → 経済準備', //p134
                         '正しい',
                     ]"
                 />
@@ -282,11 +282,11 @@ const isDraft = true;
                         }, //38
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '第1回保険料充当金払い込みのあった日 → 診査（告知）のあった日', //p46
                         }, //39
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '12日以内 → 8日以内', //p47
                         }, //40
                         {
                             questionTitle: '契約申込み時の実務',
@@ -302,11 +302,11 @@ const isDraft = true;
                         }, //43
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '経済産業省 → 厚生労働省', //p108
                         }, //44
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '3年以内 → 1年以内', //p109
                         }, //45
                         {
                             questionTitle: '隣接業界',
@@ -314,11 +314,11 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '養老年金タイプ → 定期年金タイプ', //p110
                         }, //47
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約成立後に契約確認を行うことはない → 契約確認は契約の成立前に行われる場合と成立後に行われる場合がある', //p85
                         }, //48
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -330,7 +330,7 @@ const isDraft = true;
                         }, //50
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'すでに払い込んだ保険料は返還される → すでに払い込んだ保険料は返還されない', //p87
                         }, //51
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -350,11 +350,11 @@ const isDraft = true;
                         }, //55
                         {
                             questionTitle: '保障の見直し',
-                            content: '', //p
+                            content: '転換前と転換後の契約に関する重要な事項を対比して記載した書面を交付および受領印の取付等を得なければならない', //p92
                         }, //56
                         {
                             questionTitle: '保障の見直し',
-                            content: '', //p
+                            content: '転換前の契約の加入時 → 転換時', //p92
                         }, //57
                         {
                             questionTitle: '保険金・給付金の請求と支払い',
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '保険金・給付金の請求と支払い',
-                            content: '', //p
+                            content: '他の受取人に対しても死亡保険金を支払われない → 他の受取人に対してはその残額を支払う', //p104
                         }, //59
                         {
                             questionTitle: '保険金・給付金の請求と支払い',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '保険金・給付金の請求と支払い',
-                            content: '', //p
+                            content: '死亡した被保険者の数にかかわらず支払われない → 死亡した被保険者の数によっては全額または削減して支払う', //p104
                         }, //62
                         {
                             questionTitle: '照会・苦情時の対応',
@@ -382,7 +382,7 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '', //p
+                            content: '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         }, //64
                         {
                             questionTitle: '照会・苦情時の対応',

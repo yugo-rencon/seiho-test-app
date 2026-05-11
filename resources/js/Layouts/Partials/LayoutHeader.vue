@@ -2,7 +2,7 @@
 import { Link, usePage } from "@inertiajs/vue3";
 import { computed } from "vue";
 
-defineProps({
+const props = defineProps({
     // 右上リンクの出し分けに使用
     isAuthenticated: { type: Boolean, default: false },
     isAdmin: { type: Boolean, default: false },
@@ -18,14 +18,33 @@ defineProps({
 
 defineEmits(["open-menu"]);
 const page = usePage();
+const currentScope = computed(() => {
+    if (props.isDaigaku) return "daigaku";
+    if (props.isIppan) return "ippan";
+    if (props.isSenmon) return "senmon";
+    if (props.isOuyou) return "ouyou";
+
+    const returnTo = String(page.url ?? "");
+    if (returnTo.startsWith("/daigaku")) return "daigaku";
+    if (returnTo.startsWith("/ippan")) return "ippan";
+    if (returnTo.startsWith("/senmon")) return "senmon";
+    if (returnTo.startsWith("/ouyou")) return "ouyou";
+    return "seiho";
+});
 const loginHref = computed(() => {
     if (!route().has("login")) return "#";
     const returnTo = String(page.url ?? "");
-    if (returnTo.startsWith("/daigaku")) {
-        return route("login", { scope: "daigaku", return_to: returnTo });
-    }
-
-    return route("login", { return_to: returnTo || "/tests" });
+    return route("login", {
+        ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
+        return_to: returnTo || "/tests",
+    });
+});
+const mypageRouteName = computed(() => {
+    if (props.isDaigaku) return "daigaku.mypage";
+    if (props.isIppan) return "ippan.mypage";
+    if (props.isSenmon) return "senmon.mypage";
+    if (props.isOuyou) return "ouyou.mypage";
+    return "mypage";
 });
 
 // 現在表示中のルート判定（アクティブ色に利用）
@@ -78,10 +97,10 @@ const isActive = (name) => route().current(name);
                     </Link>
                     <template v-if="isAuthenticated">
                         <Link
-                            :href="route(isDaigaku ? 'daigaku.mypage' : 'mypage')"
+                            :href="route(mypageRouteName)"
                             class="py-1 transition-colors"
                             :class="
-                                    isActive('mypage')
+                                    isActive(mypageRouteName)
                                         ? isDaigaku
                                             ? 'pointer-events-none text-blue-700'
                                             : isSenmon
@@ -101,7 +120,7 @@ const isActive = (name) => route().current(name);
                                               ? 'text-gray-700 hover:text-fuchsia-700'
                                             : 'text-gray-700 hover:text-purple-700'
                             "
-                            :aria-current="isActive('mypage') ? 'page' : null"
+                            :aria-current="isActive(mypageRouteName) ? 'page' : null"
                         >
                             マイページ
                         </Link>

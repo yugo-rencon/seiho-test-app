@@ -218,15 +218,27 @@ const formatDateTime = (value) => {
 
 const registrationSourceLabel = (user) => {
     if (user.registered_scope === "daigaku") return "生保大学";
+    if (user.registered_scope === "ippan") return "一般課程";
+    if (user.registered_scope === "senmon") return "専門課程";
+    if (user.registered_scope === "ouyou") return "応用課程";
     if (user.registered_scope === "seiho") return "生保講座";
     return "-";
 };
 
 const registrationSourceClass = (user) => {
     if (user.registered_scope === "daigaku") return "bg-blue-50 text-blue-700";
+    if (user.registered_scope === "ippan") return "bg-fuchsia-50 text-fuchsia-700";
+    if (user.registered_scope === "senmon") return "bg-emerald-50 text-emerald-700";
+    if (user.registered_scope === "ouyou") return "bg-amber-50 text-amber-700";
     if (user.registered_scope === "seiho") return "bg-indigo-50 text-indigo-700";
     return "bg-gray-100 text-gray-600";
 };
+
+const purchaseStatusClass = (count, activeClass) =>
+    Number(count) > 0 ? activeClass : "bg-gray-100 text-gray-600";
+
+const purchaseStatusLabel = (count) =>
+    Number(count) > 0 ? "購入済み" : "未購入";
 
 const paginationLabel = (label) => {
     const value = String(label);
@@ -334,6 +346,30 @@ const goToPage = (url) => {
                         {{ stats.daigakuSalesCount }}
                     </p>
                 </div>
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-xs text-gray-500">一般課程 売上件数</p>
+                    <p class="mt-1 text-2xl font-bold text-fuchsia-700">
+                        {{ stats.ippanSalesCount }}
+                    </p>
+                </div>
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-xs text-gray-500">専門課程 売上件数</p>
+                    <p class="mt-1 text-2xl font-bold text-emerald-700">
+                        {{ stats.senmonSalesCount }}
+                    </p>
+                </div>
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-xs text-gray-500">応用課程 売上件数</p>
+                    <p class="mt-1 text-2xl font-bold text-amber-700">
+                        {{ stats.ouyouSalesCount }}
+                    </p>
+                </div>
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-xs text-gray-500">一般・専門・応用セット 売上件数</p>
+                    <p class="mt-1 text-2xl font-bold text-cyan-700">
+                        {{ stats.basicSalesCount }}
+                    </p>
+                </div>
             </div>
             <div
                 v-if="activeTab === 'dashboard'"
@@ -399,6 +435,10 @@ const goToPage = (url) => {
                             <th class="px-3 py-2">登録経由</th>
                             <th class="px-3 py-2">生保講座</th>
                             <th class="px-3 py-2">生保大学</th>
+                            <th class="px-3 py-2">一般</th>
+                            <th class="px-3 py-2">専門</th>
+                            <th class="px-3 py-2">応用</th>
+                            <th class="px-3 py-2">セット</th>
                             <th class="px-3 py-2">登録日</th>
                             <th class="px-3 py-2">最終購入日時</th>
                         </tr>
@@ -426,25 +466,49 @@ const goToPage = (url) => {
                             <td class="px-3 py-2 text-gray-700">
                                 <span
                                     class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="
-                                        user.seiho_paid_count > 0
-                                            ? 'bg-indigo-50 text-indigo-700'
-                                            : 'bg-gray-100 text-gray-600'
-                                    "
+                                    :class="purchaseStatusClass(user.seiho_paid_count, 'bg-indigo-50 text-indigo-700')"
                                 >
-                                    {{ user.seiho_paid_count > 0 ? "購入済み" : "未購入" }}
+                                    {{ purchaseStatusLabel(user.seiho_paid_count) }}
                                 </span>
                             </td>
                             <td class="px-3 py-2 text-gray-700">
                                 <span
                                     class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="
-                                        user.daigaku_paid_count > 0
-                                            ? 'bg-blue-50 text-blue-700'
-                                            : 'bg-gray-100 text-gray-600'
-                                    "
+                                    :class="purchaseStatusClass(user.daigaku_paid_count, 'bg-blue-50 text-blue-700')"
                                 >
-                                    {{ user.daigaku_paid_count > 0 ? "購入済み" : "未購入" }}
+                                    {{ purchaseStatusLabel(user.daigaku_paid_count) }}
+                                </span>
+                            </td>
+                            <td class="px-3 py-2 text-gray-700">
+                                <span
+                                    class="rounded-full px-2 py-1 text-xs font-semibold"
+                                    :class="purchaseStatusClass(user.ippan_paid_count, 'bg-fuchsia-50 text-fuchsia-700')"
+                                >
+                                    {{ purchaseStatusLabel(user.ippan_paid_count) }}
+                                </span>
+                            </td>
+                            <td class="px-3 py-2 text-gray-700">
+                                <span
+                                    class="rounded-full px-2 py-1 text-xs font-semibold"
+                                    :class="purchaseStatusClass(user.senmon_paid_count, 'bg-emerald-50 text-emerald-700')"
+                                >
+                                    {{ purchaseStatusLabel(user.senmon_paid_count) }}
+                                </span>
+                            </td>
+                            <td class="px-3 py-2 text-gray-700">
+                                <span
+                                    class="rounded-full px-2 py-1 text-xs font-semibold"
+                                    :class="purchaseStatusClass(user.ouyou_paid_count, 'bg-amber-50 text-amber-700')"
+                                >
+                                    {{ purchaseStatusLabel(user.ouyou_paid_count) }}
+                                </span>
+                            </td>
+                            <td class="px-3 py-2 text-gray-700">
+                                <span
+                                    class="rounded-full px-2 py-1 text-xs font-semibold"
+                                    :class="purchaseStatusClass(user.basic_paid_count, 'bg-cyan-100 text-cyan-700')"
+                                >
+                                    {{ purchaseStatusLabel(user.basic_paid_count) }}
                                 </span>
                             </td>
                             <td class="px-3 py-2 text-gray-600">
@@ -456,7 +520,7 @@ const goToPage = (url) => {
                         </tr>
                         <tr v-if="users.data.length === 0">
                             <td
-                                colspan="7"
+                                colspan="11"
                                 class="px-3 py-8 text-center text-sm text-gray-500"
                             >
                                 データがありません。
@@ -499,23 +563,39 @@ const goToPage = (url) => {
                     <div class="mt-2 flex flex-wrap gap-2">
                         <span
                             class="rounded-full px-2 py-1 text-xs font-semibold"
-                            :class="
-                                user.seiho_paid_count > 0
-                                    ? 'bg-indigo-50 text-indigo-700'
-                                    : 'bg-gray-100 text-gray-600'
-                            "
+                            :class="purchaseStatusClass(user.seiho_paid_count, 'bg-indigo-50 text-indigo-700')"
                         >
-                            生保講座: {{ user.seiho_paid_count > 0 ? "購入済み" : "未購入" }}
+                            生保講座: {{ purchaseStatusLabel(user.seiho_paid_count) }}
                         </span>
                         <span
                             class="rounded-full px-2 py-1 text-xs font-semibold"
-                            :class="
-                                user.daigaku_paid_count > 0
-                                    ? 'bg-blue-50 text-blue-700'
-                                    : 'bg-gray-100 text-gray-600'
-                            "
+                            :class="purchaseStatusClass(user.daigaku_paid_count, 'bg-blue-50 text-blue-700')"
                         >
-                            生保大学: {{ user.daigaku_paid_count > 0 ? "購入済み" : "未購入" }}
+                            生保大学: {{ purchaseStatusLabel(user.daigaku_paid_count) }}
+                        </span>
+                        <span
+                            class="rounded-full px-2 py-1 text-xs font-semibold"
+                            :class="purchaseStatusClass(user.ippan_paid_count, 'bg-fuchsia-50 text-fuchsia-700')"
+                        >
+                            一般: {{ purchaseStatusLabel(user.ippan_paid_count) }}
+                        </span>
+                        <span
+                            class="rounded-full px-2 py-1 text-xs font-semibold"
+                            :class="purchaseStatusClass(user.senmon_paid_count, 'bg-emerald-50 text-emerald-700')"
+                        >
+                            専門: {{ purchaseStatusLabel(user.senmon_paid_count) }}
+                        </span>
+                        <span
+                            class="rounded-full px-2 py-1 text-xs font-semibold"
+                            :class="purchaseStatusClass(user.ouyou_paid_count, 'bg-amber-50 text-amber-700')"
+                        >
+                            応用: {{ purchaseStatusLabel(user.ouyou_paid_count) }}
+                        </span>
+                        <span
+                            class="rounded-full px-2 py-1 text-xs font-semibold"
+                            :class="purchaseStatusClass(user.basic_paid_count, 'bg-cyan-100 text-cyan-700')"
+                        >
+                            セット: {{ purchaseStatusLabel(user.basic_paid_count) }}
                         </span>
                     </div>
                 </div>

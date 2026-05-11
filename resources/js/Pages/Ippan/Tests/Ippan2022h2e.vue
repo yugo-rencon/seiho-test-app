@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年7月〜12月実施 フォームE";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,8 +196,8 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '自営業者等、一般の勤労者等ともに → 自営業者等は個別に納める', //p113
+                        '被保険者と事業主が1:2で負担 → 被保険者と事業主が折半で負担', //p113
                         '正しい',
                     ]"
                 />
@@ -207,9 +207,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の種類"
                     :contents="[
-                        '', //p
+                        '定額保険 → 定期保険', //p17
                         '正しい',
-                        '', //p
+                        '2倍の金額 → 同額', //p18
                         '正しい',
                     ]"
                 />
@@ -220,8 +220,8 @@ const isDraft = true;
                     questionTitle="隣接業界"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '有診査で、小口の死亡保証であり、特約は付加できない → 無診査（告知扱い）で、小口の死亡保証に各種特約が付加される', //p108
+                        '生命保険契約者保護機構の対象となる → 対象とならない', //p109
                         '正しい',
                     ]"
                 />
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '生命保険以外の事業を自由に営むことができる → 他の事業を営むことが制限されている', //p33
                     ]"
                 />
                 <QuestionTemp1
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '払込期月の翌月初日から月単位の契約応当日まで → 払込期月の翌月初日から末日まで', //p96
                     ]"
                 />
                 <QuestionTemp1
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :contents="[
-                        '', //p
+                        '相続税 → 贈与税', //p126
                         '正しい',
                         '正しい',
                     ]"
@@ -286,7 +286,7 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //40
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -310,7 +310,7 @@ const isDraft = true;
                         }, //45
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '', //p
+                            content: '福祉販売 → 設計販売', //p136
                         }, //46
                         {
                             questionTitle: 'お客さまニーズへの対応',
@@ -322,7 +322,7 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '行政処分や司法処分を受けない → 受ける', //p68
                         }, //49
                         {
                             questionTitle: '生命保険の募集等に関する法律',
@@ -334,11 +334,11 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '各種共済は対象外 → 対象', //p76
                         }, //52
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約成立後に契約確認を行うことはない → 契約確認は契約の成立前に行われる場合と成立後に行われる場合がある', //p85
                         }, //53
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -350,7 +350,7 @@ const isDraft = true;
                         }, //55
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'すでに払い込んだ保険料は返還される → すでに払い込んだ保険料は返還されない', //p87
                         }, //56
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -370,15 +370,15 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '財形貯蓄積立保険・財形教育積立保険・財形医療積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険', //p119
                         }, //61
                         {
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '労災保険 → 健康保険<br>公的労災保険制度 → 公的医療保険制度', //p119
                         }, //62
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '事業税 → 住民税', //p120
                         }, //63
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -390,11 +390,11 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '払い込まれた保険料から社員（契約者）配当金を差し引いた金額が生命保険料控除の対象 → 払い込まれた保険料がそのまま生命保険料控除の対象', //p122
                         }, //66
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '最高28000円（合計で最高70000円が限度） → 最高40000円（合計で最高120000円が限度）', //p124
                         }, //67
                     ]"
                 />

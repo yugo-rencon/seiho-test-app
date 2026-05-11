@@ -81,15 +81,40 @@ class AuthenticatedSessionController extends Controller
     private function resolveLogoutRedirectRoute(Request $request): string
     {
         $returnTo = $this->sanitizeReturnTo($request->input('return_to'));
-        if ($returnTo && Str::startsWith($returnTo, '/daigaku')) {
-            return 'daigaku.index';
+        if ($returnTo) {
+            $route = $this->routeNameForPath($returnTo);
+            if ($route) {
+                return $route;
+            }
         }
 
         $refererPath = (string) parse_url((string) $request->headers->get('referer'), PHP_URL_PATH);
-        if (Str::startsWith($refererPath, '/daigaku')) {
-            return 'daigaku.index';
+        $route = $this->routeNameForPath($refererPath);
+        if ($route) {
+            return $route;
         }
 
         return 'tests.index';
+    }
+
+    private function routeNameForPath(string $path): ?string
+    {
+        if (Str::startsWith($path, '/daigaku')) {
+            return 'daigaku.index';
+        }
+
+        if (Str::startsWith($path, '/ippan')) {
+            return 'ippan.index';
+        }
+
+        if (Str::startsWith($path, '/senmon')) {
+            return 'senmon.index';
+        }
+
+        if (Str::startsWith($path, '/ouyou')) {
+            return 'ouyou.index';
+        }
+
+        return null;
     }
 }

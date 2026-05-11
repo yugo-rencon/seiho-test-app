@@ -1,11 +1,10 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
 import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
 const IPPAN_YEARS = [2025, 2024, 2023, 2022, 2021];
-const IPPAN_PUBLISHED_YEARS = [2025, 2024, 2023];
 const IPPAN_PERIODS = [
     {
         id: "h1",
@@ -26,6 +25,11 @@ const IPPAN_PERIODS = [
 const activePeriodId = ref(IPPAN_PERIODS[0].id);
 const activePeriod = computed(
     () => IPPAN_PERIODS.find((period) => period.id === activePeriodId.value) ?? IPPAN_PERIODS[0],
+);
+const page = usePage();
+const hasPremium = computed(() => page.props.auth?.hasPremiumIppan === true);
+const pricingHref = computed(() =>
+    route("pricing", { scope: "ippan", return_to: String(page.url ?? "/ippan") }),
 );
 
 const CIRCLE_NUMBERS = { a: "①", b: "②", c: "③", d: "④", e: "⑤" };
@@ -56,13 +60,37 @@ const getFormHref = (year, period, form) => {
 
                 <div class="relative">
                     <div
+                        v-if="!hasPremium"
                         class="mb-5 rounded-xl border border-pink-100 bg-pink-50/50 px-3 py-2 text-left text-[12px] leading-5 text-fuchsia-700 sm:px-4 sm:py-2.5 sm:text-center"
                     >
                         <span class="block font-semibold tracking-wide">
                             生命保険一般課程の過去問解説ページです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-fuchsia-700/90">
-                            試験期間・年度・フォーム別に順次公開していきます。
+                            最新年度フォームAからお試しください。
+                            <Link
+                                :href="pricingHref"
+                                class="ml-1 hidden font-semibold text-fuchsia-700 underline decoration-fuchsia-300 underline-offset-2 transition hover:text-fuchsia-800 md:inline"
+                            >
+                                ▶ すべての解説をまとめて閲覧
+                            </Link>
+                        </span>
+                        <Link
+                            :href="pricingHref"
+                            class="mt-1 inline-block text-xs font-semibold text-fuchsia-700 underline decoration-fuchsia-300 underline-offset-2 transition hover:text-fuchsia-800 md:hidden"
+                        >
+                            ▶ すべての解説をまとめて閲覧
+                        </Link>
+                    </div>
+
+                    <div
+                        v-if="hasPremium"
+                        class="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-pink-300 bg-gradient-to-r from-pink-50 to-fuchsia-50 px-4 py-2 text-xs font-semibold text-fuchsia-800 shadow-sm max-sm:gap-1.5 max-sm:px-3 max-sm:py-1.5"
+                    >
+                        <img src="/images/bolt.svg" alt="" class="h-3.5 w-3.5" />
+                        <span>プレミアムユーザー</span>
+                        <span class="rounded-full bg-pink-200/70 px-2 py-0.5 text-[10px] font-bold text-fuchsia-900 max-sm:px-1.5 max-sm:text-[9px]">
+                            ALL ACCESS
                         </span>
                     </div>
 
@@ -94,16 +122,10 @@ const getFormHref = (year, period, form) => {
                                     {{ year }}年
                                 </div>
                                 <span
-                                    v-if="IPPAN_PUBLISHED_YEARS.includes(year)"
-                                    class="inline-flex items-center rounded-full border border-emerald-300 bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-700"
+                                    v-if="Number(year) === 2025 && !hasPremium"
+                                    class="inline-flex items-center rounded-full border border-pink-300 bg-pink-50 px-2.5 py-1 text-xs font-semibold text-fuchsia-700"
                                 >
-                                    公開中
-                                </span>
-                                <span
-                                    v-else
-                                    class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600"
-                                >
-                                    準備中
+                                    最新年度フォームA・無料
                                 </span>
                             </div>
 

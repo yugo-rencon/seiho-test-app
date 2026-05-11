@@ -18,18 +18,29 @@ const props = defineProps({
         type: String,
         default: "",
     },
+    siteScope: {
+        type: String,
+        default: "",
+    },
 });
 
 const page = usePage();
-const isDaigakuPage = computed(() => String(page.url ?? "").startsWith("/daigaku"));
-const isSenmonPage = computed(() => String(page.url ?? "").startsWith("/senmon"));
-const isOuyouPage = computed(() => String(page.url ?? "").startsWith("/ouyou"));
-const isIppanPage = computed(() => String(page.url ?? "").startsWith("/ippan"));
-const isFreeExamPage = computed(() =>
-    String(page.url ?? "").startsWith("/senmon") ||
-    String(page.url ?? "").startsWith("/ouyou") ||
-    String(page.url ?? "").startsWith("/ippan"),
-);
+const resolvedSiteScope = computed(() => {
+    if (["daigaku", "ippan", "senmon", "ouyou", "seiho"].includes(props.siteScope)) {
+        return props.siteScope;
+    }
+
+    const url = String(page.url ?? "");
+    if (url.startsWith("/daigaku")) return "daigaku";
+    if (url.startsWith("/senmon")) return "senmon";
+    if (url.startsWith("/ouyou")) return "ouyou";
+    if (url.startsWith("/ippan")) return "ippan";
+    return "seiho";
+});
+const isDaigakuPage = computed(() => resolvedSiteScope.value === "daigaku");
+const isSenmonPage = computed(() => resolvedSiteScope.value === "senmon");
+const isOuyouPage = computed(() => resolvedSiteScope.value === "ouyou");
+const isIppanPage = computed(() => resolvedSiteScope.value === "ippan");
 const currentBrandName = computed(() => {
     if (props.brandName) return props.brandName;
     if (isDaigakuPage.value) return "生命保険大学課程 過去問解説";
@@ -304,12 +315,6 @@ onBeforeUnmount(() => {
             rel="apple-touch-icon"
             :href="currentLogoSrc"
         />
-        <link
-            head-key="site-favicon-png-fallback"
-            rel="icon"
-            type="image/png"
-            href="/images/rencon-favicon.png?v=png1"
-        />
     </Head>
 
     <div
@@ -317,6 +322,10 @@ onBeforeUnmount(() => {
         :class="
             isDaigakuPage
                 ? 'bg-[#f7fbff]'
+                : isSenmonPage
+                  ? 'bg-[#fbfffb]'
+                : isOuyouPage
+                  ? 'bg-[#fffdf7]'
                 : isIppanPage
                   ? 'bg-[#fffdfd]'
                   : 'bg-[#fdfbff]'
@@ -342,7 +351,6 @@ onBeforeUnmount(() => {
             :is-senmon="isSenmonPage"
             :is-ouyou="isOuyouPage"
             :is-ippan="isIppanPage"
-            :hide-auth-ui="isFreeExamPage"
             @open-menu="isMenuOpen = true"
         />
 
@@ -360,8 +368,6 @@ onBeforeUnmount(() => {
             :is-senmon="isSenmonPage"
             :is-ouyou="isOuyouPage"
             :is-ippan="isIppanPage"
-            :hide-auth-ui="isFreeExamPage"
-            :hide-pricing-ui="isFreeExamPage"
             :subjects="menuSubjects"
             @close="isMenuOpen = false"
         />
@@ -375,7 +381,6 @@ onBeforeUnmount(() => {
             :is-senmon="isSenmonPage"
             :is-ouyou="isOuyouPage"
             :is-ippan="isIppanPage"
-            :hide-pricing-ui="isFreeExamPage"
         />
     </div>
 </template>

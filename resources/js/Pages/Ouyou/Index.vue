@@ -1,4 +1,5 @@
 <script setup>
+import { Link, usePage } from "@inertiajs/vue3";
 import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
@@ -22,6 +23,11 @@ const OUYOU_PERIODS = [
 const activePeriodId = ref(OUYOU_PERIODS[0].id);
 const activePeriod = computed(
     () => OUYOU_PERIODS.find((period) => period.id === activePeriodId.value) ?? OUYOU_PERIODS[0],
+);
+const page = usePage();
+const hasPremium = computed(() => page.props.auth?.hasPremiumOuyou === true);
+const pricingHref = computed(() =>
+    route("pricing", { scope: "ouyou", return_to: String(page.url ?? "/ouyou") }),
 );
 const periodRouteKeyMap = {
     "apr-aug": "h1",
@@ -47,13 +53,37 @@ const getOuyouRoute = (year, periodId, form) => {
 
                 <div class="relative">
                     <div
+                        v-if="!hasPremium"
                         class="mb-5 rounded-xl border border-amber-200 bg-amber-50/80 px-3 py-2 text-left text-[12px] leading-5 text-amber-800 sm:px-4 sm:py-2.5 sm:text-center"
                     >
                         <span class="block font-semibold tracking-wide">
                             生命保険応用課程の過去問解説ページです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-amber-700/90">
-                            試験期間・年度・フォーム別に順次公開していきます。
+                            最新年度フォームAからお試しください。
+                            <Link
+                                :href="pricingHref"
+                                class="ml-1 hidden font-semibold text-amber-700 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-800 md:inline"
+                            >
+                                ▶ すべての解説をまとめて閲覧
+                            </Link>
+                        </span>
+                        <Link
+                            :href="pricingHref"
+                            class="mt-1 inline-block text-xs font-semibold text-amber-700 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-800 md:hidden"
+                        >
+                            ▶ すべての解説をまとめて閲覧
+                        </Link>
+                    </div>
+
+                    <div
+                        v-if="hasPremium"
+                        class="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-amber-300 bg-gradient-to-r from-amber-50 to-orange-50 px-4 py-2 text-xs font-semibold text-amber-800 shadow-sm max-sm:gap-1.5 max-sm:px-3 max-sm:py-1.5"
+                    >
+                        <img src="/images/bolt.svg" alt="" class="h-3.5 w-3.5" />
+                        <span>プレミアムユーザー</span>
+                        <span class="rounded-full bg-amber-200/70 px-2 py-0.5 text-[10px] font-bold text-amber-900 max-sm:px-1.5 max-sm:text-[9px]">
+                            ALL ACCESS
                         </span>
                     </div>
 

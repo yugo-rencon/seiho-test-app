@@ -3,6 +3,39 @@
     <head>
         @php
             $shouldLoadAds = !auth()->check() || !auth()->user()?->hasPremiumAccess();
+            $path = request()->path();
+            $siteKey = str_starts_with($path, 'daigaku') ? 'daigaku'
+                : (str_starts_with($path, 'senmon') ? 'senmon'
+                    : (str_starts_with($path, 'ouyou') ? 'ouyou'
+                        : (str_starts_with($path, 'ippan') ? 'ippan' : 'seiho')));
+            $siteAssets = [
+                'seiho' => [
+                    'icon' => '/images/rencon-favicon.svg?v=seiho',
+                    'manifest' => '/site-seiho.webmanifest',
+                    'theme' => '#7c3aed',
+                ],
+                'daigaku' => [
+                    'icon' => '/images/rencon-favicon-daigaku.svg?v=daigaku',
+                    'manifest' => '/site-daigaku.webmanifest',
+                    'theme' => '#0284c7',
+                ],
+                'senmon' => [
+                    'icon' => '/images/rencon-favicon-senmon.svg?v=senmon',
+                    'manifest' => '/site-senmon.webmanifest',
+                    'theme' => '#16a34a',
+                ],
+                'ouyou' => [
+                    'icon' => '/images/rencon-favicon-ouyou.svg?v=ouyou',
+                    'manifest' => '/site-ouyou.webmanifest',
+                    'theme' => '#d97706',
+                ],
+                'ippan' => [
+                    'icon' => '/images/rencon-favicon-ippan.svg?v=ippan',
+                    'manifest' => '/site-ippan.webmanifest',
+                    'theme' => '#d946ef',
+                ],
+            ];
+            $currentSiteAssets = $siteAssets[$siteKey];
         @endphp
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TB0WW8SWW"></script>
@@ -23,7 +56,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="format-detection" content="telephone=no,email=no,address=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="manifest" href="/site.webmanifest">
+        <meta name="theme-color" content="{{ $currentSiteAssets['theme'] }}">
+        <link rel="icon" type="image/svg+xml" href="{{ $currentSiteAssets['icon'] }}">
+        <link rel="apple-touch-icon" href="{{ $currentSiteAssets['icon'] }}">
+        <link rel="manifest" href="{{ $currentSiteAssets['manifest'] }}">
 
         {{-- <title inertia>{{ config('app.name', 'Laravel') }}</title> --}}
         <title inertia>{{ config('app.name', 'Laravel') }}</title>

@@ -3,21 +3,40 @@ import { Link, usePage } from "@inertiajs/vue3";
 import { computed } from "vue";
 
 const page = usePage();
-const scope = computed(() =>
-    String(page.url ?? "").startsWith("/daigaku") ? "daigaku" : "seiho",
+const scope = computed(() => {
+    const url = String(page.url ?? "");
+    if (url.startsWith("/daigaku")) return "daigaku";
+    if (url.startsWith("/ippan")) return "ippan";
+    if (url.startsWith("/senmon")) return "senmon";
+    if (url.startsWith("/ouyou")) return "ouyou";
+    return "seiho";
+});
+const pricingHref = computed(() => {
+    if (scope.value === "daigaku") {
+        return route("daigaku.pricing", { return_to: page.url });
+    }
+
+    return route("pricing", {
+        return_to: page.url,
+        ...(scope.value !== "seiho" ? { scope: scope.value } : {}),
+    });
+});
+const priceNumberText = computed(() =>
+    ["ippan", "senmon", "ouyou"].includes(scope.value)
+        ? "480"
+        : scope.value === "daigaku"
+          ? "980"
+          : "1,980",
 );
-const pricingHref = computed(() =>
-    scope.value === "daigaku"
-        ? route("daigaku.pricing", { return_to: page.url })
-        : route("pricing", { return_to: page.url }),
-);
-const priceNumberText = computed(() => (scope.value === "daigaku" ? "980" : "1,980"));
-const unlockedCountText = computed(() =>
-    scope.value === "daigaku" ? "全90解説" : "全144解説",
-);
-const tone = computed(() =>
-    scope.value === "daigaku"
-        ? {
+const unlockedCountText = computed(() => {
+    if (scope.value === "daigaku") return "全90解説";
+    if (scope.value === "ippan") return "全50解説";
+    if (scope.value === "senmon" || scope.value === "ouyou") return "全30解説";
+    return "全144解説";
+});
+const tone = computed(() => {
+    if (scope.value === "daigaku") {
+        return {
               card: "border-blue-100",
               dash: "border-blue-200",
               title: "text-slate-900",
@@ -25,17 +44,55 @@ const tone = computed(() =>
               priceSub: "text-slate-500",
               countAccent: "text-blue-700",
               cta: "bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400",
-          }
-        : {
-              card: "border-purple-100",
-              dash: "border-purple-200",
-              title: "text-slate-900",
-              text: "text-slate-600",
-              priceSub: "text-slate-500",
-              countAccent: "text-purple-700",
-              cta: "bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-400 hover:to-indigo-400",
-          },
-);
+        };
+    }
+
+    if (scope.value === "ippan") {
+        return {
+            card: "border-pink-100",
+            dash: "border-pink-200",
+            title: "text-slate-900",
+            text: "text-slate-600",
+            priceSub: "text-slate-500",
+            countAccent: "text-fuchsia-700",
+            cta: "bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-400 hover:to-fuchsia-400",
+        };
+    }
+
+    if (scope.value === "senmon") {
+        return {
+            card: "border-emerald-100",
+            dash: "border-emerald-200",
+            title: "text-slate-900",
+            text: "text-slate-600",
+            priceSub: "text-slate-500",
+            countAccent: "text-emerald-700",
+            cta: "bg-gradient-to-r from-emerald-500 to-lime-500 hover:from-emerald-400 hover:to-lime-400",
+        };
+    }
+
+    if (scope.value === "ouyou") {
+        return {
+            card: "border-amber-100",
+            dash: "border-amber-200",
+            title: "text-slate-900",
+            text: "text-slate-600",
+            priceSub: "text-slate-500",
+            countAccent: "text-amber-700",
+            cta: "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400",
+        };
+    }
+
+    return {
+        card: "border-purple-100",
+        dash: "border-purple-200",
+        title: "text-slate-900",
+        text: "text-slate-600",
+        priceSub: "text-slate-500",
+        countAccent: "text-purple-700",
+        cta: "bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-400 hover:to-indigo-400",
+    };
+});
 </script>
 
 <script lang="ts">

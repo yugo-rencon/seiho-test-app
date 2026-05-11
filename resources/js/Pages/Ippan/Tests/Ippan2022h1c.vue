@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年1月〜6月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -209,8 +209,8 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '株式会社 → 相互会社', //p32
+                        '保険事業と銀行業だけ → 保険事業だけ', //p32
                     ]"
                 />
                 <QuestionTemp1
@@ -220,9 +220,9 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
-                        '', //p
+                        '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                     ]"
                 />
                 <QuestionTemp1
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
+                        '払い込む保険料の割り引きはない → 保険料は生命保険会社の定める利率で割り引かれる', //p50
                         '正しい',
                         '正しい',
                     ]"
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一般勘定 → 特別勘定', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
+                        '生命保険を解約したがる傾向 → 生命保険に加入したがる傾向', //p53
                         '正しい',
                         '正しい',
                     ]"
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="正しい告知の取り扱い"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '被保険者（または保険金受取人） → 被保険者（または契約者）', //p86
                         '正しい',
                     ]"
                 />
@@ -282,11 +282,11 @@ const isDraft = true;
                         }, //38
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '第1回保険料充当金払い込みのあった日 → 診査（告知）のあった日', //p46
                         }, //39
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '12日以内 → 8日以内', //p47
                         }, //40
                         {
                             questionTitle: '契約申込み時の実務',
@@ -302,11 +302,11 @@ const isDraft = true;
                         }, //43
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '経済産業省 → 厚生労働省', //p108
                         }, //44
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '3年以内 → 1年以内', //p109
                         }, //45
                         {
                             questionTitle: '隣接業界',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '養老年金タイプ → 定期年金タイプ', //p110
                         }, //47
                         {
                             questionTitle: '生命保険の募集等に関する法律',
@@ -330,7 +330,7 @@ const isDraft = true;
                         }, //50
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '100万円超 → 200万円超', //p74
                         }, //51
                         {
                             questionTitle: '生命保険の募集等に関する法律',
@@ -354,11 +354,11 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '説明する必要はない → わかりやすく説明する必要がある', //p78
                         }, //57
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '雇用保険法 → 生活保護法', //p112
                         }, //58
                         {
                             questionTitle: '社会保障制度',
@@ -366,7 +366,7 @@ const isDraft = true;
                         }, //59
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '老齢・疾病・遺族 → 老齢・障害・遺族', //p113
                         }, //60
                         {
                             questionTitle: '社会保障制度',
@@ -374,11 +374,11 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '60歳以上の第1号被保険者と40歳以上60歳未満の第2号被保険者 → 65歳以上の第1号被保険者と40歳以上65歳未満の第2号被保険者', //p115
                         }, //62
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '配偶者3/4、親1/4 → 配偶者2/3、親1/3', //p
                         }, //63
                         {
                             questionTitle: '相続の法律',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '特定承認 → 限定承認', //p131
                         }, //66
                         {
                             questionTitle: '相続の法律',

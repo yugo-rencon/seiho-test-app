@@ -1,7 +1,8 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
+import { computed } from "vue";
 
-defineProps({
+const props = defineProps({
     brandName: { type: String, default: "生保講座過去問解説" },
     homeRouteName: { type: String, default: "tests.index" },
     logoSrc: { type: String, default: "/images/rencon-favicon.svg" },
@@ -10,6 +11,32 @@ defineProps({
     isOuyou: { type: Boolean, default: false },
     isIppan: { type: Boolean, default: false },
     hidePricingUi: { type: Boolean, default: false },
+});
+
+const page = usePage();
+const currentScope = computed(() => {
+    if (props.isDaigaku) return "daigaku";
+    if (props.isIppan) return "ippan";
+    if (props.isSenmon) return "senmon";
+    if (props.isOuyou) return "ouyou";
+    return "seiho";
+});
+const pricingHref = computed(() => {
+    if (props.isDaigaku) {
+        return route("daigaku.pricing", { return_to: String(page.url ?? "/daigaku") });
+    }
+
+    return route("pricing", {
+        ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
+        return_to: String(page.url ?? "/tests"),
+    });
+});
+const tokushoRouteName = computed(() => {
+    if (props.isDaigaku) return "daigaku.tokusho";
+    if (props.isIppan) return "ippan.tokusho";
+    if (props.isSenmon) return "senmon.tokusho";
+    if (props.isOuyou) return "ouyou.tokusho";
+    return "tokusho";
 });
 </script>
 
@@ -127,7 +154,7 @@ defineProps({
                             <li>
                                 <Link
                                     v-if="!hidePricingUi"
-                                    :href="route('daigaku.pricing')"
+                                    :href="pricingHref"
                                     class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
                                 >
                                     料金
@@ -188,9 +215,9 @@ defineProps({
                                     利用規約
                                 </Link>
                             </li>
-                            <li v-if="!isSenmon && !isOuyou && !isIppan">
+                            <li>
                                 <Link
-                                    :href="route(isDaigaku ? 'daigaku.tokusho' : 'tokusho')"
+                                    :href="route(tokushoRouteName)"
                                     class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
                                 >
                                     特商法に基づく表記
@@ -342,7 +369,7 @@ defineProps({
                         <li>
                             <Link
                                 v-if="!hidePricingUi"
-                                :href="isDaigaku ? route('daigaku.pricing') : route('pricing')"
+                                :href="pricingHref"
                                 class="text-gray-600 transition-colors duration-200"
                                 :class="
                                     isSenmon
@@ -443,9 +470,9 @@ defineProps({
                                 利用規約
                             </Link>
                         </li>
-                        <li v-if="!isSenmon && !isOuyou && !isIppan">
+                        <li>
                             <Link
-                                :href="route(isDaigaku ? 'daigaku.tokusho' : 'tokusho')"
+                                :href="route(tokushoRouteName)"
                                 class="text-gray-600 transition-colors duration-200"
                                 :class="
                                     isSenmon

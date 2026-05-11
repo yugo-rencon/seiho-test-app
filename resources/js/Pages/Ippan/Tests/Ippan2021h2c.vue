@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2021年7月〜12月実施 フォーム③";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,9 +195,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の役割"
                     :contents="[
-                        '', //p
+                        '大正時代 → 明治時代', //p1
                         '正しい',
-                        '', //p
+                        '平均寿命 → 平均余命', //p4
                         '正しい',
                     ]"
                 />
@@ -208,9 +208,9 @@ const isDraft = true;
                     questionTitle="生命保険の仕組み"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '収支相当の原則 → 大数の法則', //p14
                         '正しい',
-                        '', //p
+                        'ライフサイクル表 → 生命表', //p15
                     ]"
                 />
                 <QuestionTemp1
@@ -219,9 +219,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の種類"
                     :contents="[
-                        '', //p
+                        '定額保険 → 定期保険', //p17
                         '正しい',
-                        '', //p
+                        '2倍の金額 → 同額', //p18
                         '正しい',
                     ]"
                 />
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '割賦販売法等 → 保険業法等', //p11
                     ]"
                 />
                 <QuestionTemp1
@@ -242,7 +242,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
+                        '経済上の危険 → 環境上の危険', //p52
                         '正しい',
                         '正しい',
                     ]"
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="照会・苦情時の対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         '正しい',
                     ]"
                 />
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="企業向け商品"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '財形貯蓄積立保険・財形教育積立保険・財形医療積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険', //p119
                         '正しい',
                     ]"
                 />
@@ -282,7 +282,7 @@ const isDraft = true;
                         }, //38
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '契約者本人のものに限る → 契約者本人またはその配偶者もしくはその他の親族', //p122
                         }, //39
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -294,11 +294,11 @@ const isDraft = true;
                         }, //41
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '35000円 → 40000円', //p124
                         }, //42
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '配偶者2/3、兄弟姉妹1/3 → 兄弟姉妹3/4、親1/4', //p
                         }, //43
                         {
                             questionTitle: '相続の法律',
@@ -318,7 +318,7 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '積極的な資産運用をしなければならず、安全性に配慮して運用する必要はない → 効率的で安定した資産運用をしなければならない', //p34
                         }, //48
                         {
                             questionTitle: '資産の運用',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '自社の営業用のものに限られる → 自社の営業用のものと投資用のものがある', //p35
                         }, //52
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -346,7 +346,7 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //55
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p93
                         }, //59
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '生存保険金は支払われない → 満了日に生存保険金が支払われる', //p95
                         }, //62
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
@@ -382,7 +382,7 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
-                            content: '', //p
+                            content: '他の受取人に対しても死亡保険金を支払われない → 他の受取人に対してはその残額を支払う', //p104
                         }, //64
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
@@ -394,7 +394,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
-                            content: '', //p
+                            content: '死亡した被保険者の数にかかわらず支払われない → 死亡した被保険者の数によっては全額または削減して支払う', //p104
                         }, //67
                     ]"
                 />

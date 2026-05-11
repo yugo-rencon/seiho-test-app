@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\UserExamResult;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -44,12 +45,48 @@ class User extends Authenticatable
             return (bool) $this->is_daigaku_premium;
         }
 
+        if (in_array($scope, ['ippan', 'senmon', 'ouyou'], true)) {
+            return DB::table('purchases')
+                ->where('user_id', $this->id)
+                ->where('status', 'paid')
+                ->whereIn('scope', [$scope, 'basic'])
+                ->exists();
+        }
+
+        if ($scope === 'basic') {
+            if (DB::table('purchases')
+                ->where('user_id', $this->id)
+                ->where('status', 'paid')
+                ->where('scope', 'basic')
+                ->exists()) {
+                return true;
+            }
+
+            $paidScopes = DB::table('purchases')
+                ->where('user_id', $this->id)
+                ->where('status', 'paid')
+                ->whereIn('scope', ['ippan', 'senmon', 'ouyou'])
+                ->distinct()
+                ->pluck('scope')
+                ->all();
+
+            return count($paidScopes) === 3;
+        }
+
         return (bool) $this->is_seiho_premium;
     }
 
     public function hasAnyPremiumAccess(): bool
     {
-        return (bool) $this->is_seiho_premium || (bool) $this->is_daigaku_premium;
+        if ((bool) $this->is_seiho_premium || (bool) $this->is_daigaku_premium) {
+            return true;
+        }
+
+        return DB::table('purchases')
+            ->where('user_id', $this->id)
+            ->where('status', 'paid')
+            ->whereIn('scope', ['ippan', 'senmon', 'ouyou', 'basic'])
+            ->exists();
     }
 
     /**

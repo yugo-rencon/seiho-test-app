@@ -27,19 +27,57 @@ const query = computed(() => {
         returnTo: params.get("return_to") ?? "",
     };
 });
-const isDaigaku = computed(
-    () => query.value.scope === "daigaku" || query.value.returnTo.startsWith("/daigaku"),
-);
+const currentScope = computed(() => {
+    if (query.value.scope === "daigaku" || query.value.returnTo.startsWith("/daigaku")) return "daigaku";
+    if (query.value.scope === "ippan" || query.value.returnTo.startsWith("/ippan")) return "ippan";
+    if (query.value.scope === "senmon" || query.value.returnTo.startsWith("/senmon")) return "senmon";
+    if (query.value.scope === "ouyou" || query.value.returnTo.startsWith("/ouyou")) return "ouyou";
+    return "seiho";
+});
 const authQuery = computed(() => ({
-    ...(query.value.scope ? { scope: query.value.scope } : {}),
+    ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
     ...(query.value.returnTo ? { return_to: query.value.returnTo } : {}),
 }));
-const inputClass = computed(() =>
-    isDaigaku.value ? "focus:border-blue-500 focus:ring-blue-500" : "focus:border-purple-500 focus:ring-purple-500",
-);
+const siteUi = computed(() => {
+    const styles = {
+        seiho: {
+            inputClass: "focus:border-purple-500 focus:ring-purple-500",
+            iconButtonClass: "hover:text-purple-600 focus:ring-purple-400",
+            primaryButtonClass: "bg-purple-600 hover:bg-purple-700 focus:ring-purple-500",
+            secondaryLinkClass: "border-purple-100 text-purple-500 hover:bg-purple-50",
+        },
+        daigaku: {
+            inputClass: "focus:border-blue-500 focus:ring-blue-500",
+            iconButtonClass: "hover:text-blue-600 focus:ring-blue-400",
+            primaryButtonClass: "bg-blue-600 hover:bg-blue-700 focus:ring-blue-500",
+            secondaryLinkClass: "border-blue-100 text-blue-500 hover:bg-blue-50",
+        },
+        ippan: {
+            inputClass: "focus:border-fuchsia-500 focus:ring-fuchsia-500",
+            iconButtonClass: "hover:text-fuchsia-600 focus:ring-fuchsia-400",
+            primaryButtonClass: "bg-fuchsia-600 hover:bg-fuchsia-700 focus:ring-fuchsia-500",
+            secondaryLinkClass: "border-fuchsia-100 text-fuchsia-500 hover:bg-fuchsia-50",
+        },
+        senmon: {
+            inputClass: "focus:border-emerald-500 focus:ring-emerald-500",
+            iconButtonClass: "hover:text-emerald-600 focus:ring-emerald-400",
+            primaryButtonClass: "bg-emerald-600 hover:bg-emerald-700 focus:ring-emerald-500",
+            secondaryLinkClass: "border-emerald-100 text-emerald-500 hover:bg-emerald-50",
+        },
+        ouyou: {
+            inputClass: "focus:border-amber-500 focus:ring-amber-500",
+            iconButtonClass: "hover:text-amber-600 focus:ring-amber-400",
+            primaryButtonClass: "bg-amber-600 hover:bg-amber-700 focus:ring-amber-500",
+            secondaryLinkClass: "border-amber-100 text-amber-500 hover:bg-amber-50",
+        },
+    };
+
+    return styles[currentScope.value];
+});
+const inputClass = computed(() => siteUi.value.inputClass);
 
 const submit = () => {
-    form.scope = query.value.scope;
+    form.scope = currentScope.value;
     form.return_to = query.value.returnTo;
     form.post(route("register"), {
         onFinish: () => form.reset("password", "password_confirmation"),
@@ -55,7 +93,7 @@ const submit = () => {
             <h1 class="text-2xl font-semibold text-gray-900">新規登録</h1>
             <p class="mt-2 text-xs text-gray-500">
                 1つのアカウントで
-                <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">生保講座・生保大学の両方</span>
+                <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">各試験の過去問解説</span>
                 をご利用いただけます。
             </p>
         </div>
@@ -94,7 +132,7 @@ const submit = () => {
                     <button
                         type="button"
                         class="absolute right-1 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md text-gray-500 focus:outline-none focus:ring-2"
-                        :class="isDaigaku ? 'hover:text-blue-600 focus:ring-blue-400' : 'hover:text-purple-600 focus:ring-purple-400'"
+                        :class="siteUi.iconButtonClass"
                         @click="showPassword = !showPassword"
                         :aria-pressed="showPassword"
                         aria-label="パスワードを表示"
@@ -151,7 +189,7 @@ const submit = () => {
                     <button
                         type="button"
                         class="absolute right-1 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md text-gray-500 focus:outline-none focus:ring-2"
-                        :class="isDaigaku ? 'hover:text-blue-600 focus:ring-blue-400' : 'hover:text-purple-600 focus:ring-purple-400'"
+                        :class="siteUi.iconButtonClass"
                         @click="showPasswordConfirmation = !showPasswordConfirmation"
                         :aria-pressed="showPasswordConfirmation"
                         aria-label="パスワードを表示"
@@ -195,7 +233,7 @@ const submit = () => {
                 <PrimaryButton
                     class="w-full justify-center"
                     :class="[
-                        isDaigaku ? 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500' : 'bg-purple-600 hover:bg-purple-700 focus:ring-purple-500',
+                        siteUi.primaryButtonClass,
                         { 'opacity-60': form.processing },
                     ]"
                     :disabled="form.processing"
@@ -238,7 +276,7 @@ const submit = () => {
             <Link
                 :href="route('login', authQuery)"
                 class="w-full inline-flex items-center justify-center rounded-md border px-4 py-2.5 text-sm font-semibold transition"
-                :class="isDaigaku ? 'border-blue-100 text-blue-500 hover:bg-blue-50' : 'border-purple-100 text-purple-500 hover:bg-purple-50'"
+                :class="siteUi.secondaryLinkClass"
             >
                 すでに登録済みの方はこちら
             </Link>

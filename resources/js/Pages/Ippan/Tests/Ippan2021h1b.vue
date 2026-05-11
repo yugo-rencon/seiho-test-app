@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2021年1月〜6月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -159,9 +159,9 @@ const isDraft = true;
                     questionRange="23〜25"
                     questionTitle="お客さまニーズへの対応-②"
                     :contents="[
-                        '',
-                        '',
-                        '', // 問23〜25
+                        '経済準備',
+                        '保険',
+                        '設計', // 問23〜25
                     ]"
                     :labels="[
                         'ウ', //23
@@ -195,10 +195,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保障の見直し"
                     :contents="[
-                        '', //p
+                        '既払込保険料相当額や配当金など（転換価格） → 責任準備金や配当金など（転換価格）', //p91
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約者、保障内容、保険金額などが全く新しく切り替わる → 保障内容、保険金額、保険料などが全く新しく切り替わる', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -208,8 +208,8 @@ const isDraft = true;
                     questionTitle="契約取り扱いの手続き"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '単に会社員とか、あるいは会社名を記入していただければ良い → 現在の仕事の内容を具体的に記入していただく必要がある', //p40
+                        '5ヶ月 → 6ヶ月', //p41
                         '正しい',
                     ]"
                 />
@@ -221,8 +221,8 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '財形貯蓄積立保険・財形教育積立保険・財形医療積立保険 → 財形貯蓄積立保険・財形住宅積立保険・財形年金積立保険', //p119
+                        '介護保険 → 健康保険<br>公的介護保険制度 → 公的医療保険制度', //p119
                     ]"
                 />
                 <QuestionTemp1
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="コンプライアンスの重要性"
                     :contents="[
-                        '', //p
+                        '社会的規範や企業倫理を除き、法令や社内ルールだけを守るという意味で用いられる → 法令や社内ルールだけでなく、社会的規範や企業倫理を守るということも含めて用いられる', //p60
                         '正しい',
                         '正しい',
                     ]"
@@ -244,7 +244,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '5万円超 → 10万円超', //p74
                     ]"
                 />
                 <QuestionTemp1
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
                     :contents="[
-                        '', //p
+                        '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         '正しい',
                         '正しい',
                     ]"
@@ -266,7 +266,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '制度の運営主体となる都道府県 → 制度の運営主体となる市（区）町村', //p115
                     ]"
                 />
                 <QuestionTemp2
@@ -290,11 +290,11 @@ const isDraft = true;
                         }, //40
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p50
                         }, //41
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '途中で変更することはできない → 途中で変更することができる', //p51
                         }, //42
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -306,7 +306,7 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //45
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -326,11 +326,11 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '年末の生存者数 → 年始の生存者数', //p15
                         }, //50
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '', //p
+                            content: '生命保険では〜 → 預貯金では〜', //p15
                         }, //51
                         {
                             questionTitle: '生命保険の仕組み',
@@ -350,7 +350,7 @@ const isDraft = true;
                         }, //55
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                         }, //56
                         {
                             questionTitle: '剰余金と配当金',
@@ -358,7 +358,7 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '積極的な資産運用をしなければならず、安全性に配慮して運用する必要はない → 効率的で安定した資産運用をしなければならない', //p34
                         }, //58
                         {
                             questionTitle: '資産の運用',
@@ -370,11 +370,11 @@ const isDraft = true;
                         }, //60
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '資産運用の対象に貸付金も含まれる', //p35
                         }, //61
                         {
                             questionTitle: '資産の運用',
-                            content: '', //p
+                            content: '自社の営業用のものに限られる → 自社の営業用のものと投資用のものがある', //p35
                         }, //62
                         {
                             questionTitle: '照会・苦情時の対応',
@@ -382,7 +382,7 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '', //p
+                            content: '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         }, //64
                         {
                             questionTitle: '照会・苦情時の対応',
@@ -394,7 +394,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '', //p
+                            content: '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                         }, //67
                     ]"
                 />

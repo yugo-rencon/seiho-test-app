@@ -116,7 +116,7 @@ class StripeWebhookController extends Controller
 
             if ($scope === 'daigaku') {
                 $update['is_daigaku_premium'] = 1;
-            } else {
+            } elseif ($scope === 'seiho') {
                 $update['is_seiho_premium'] = 1;
             }
 
@@ -125,7 +125,7 @@ class StripeWebhookController extends Controller
         }
 
         $priceId = $this->resolvePriceId($scope);
-        $amount = isset($session->amount_total) ? (int) round($session->amount_total / 100) : 1980;
+        $amount = isset($session->amount_total) ? (int) round($session->amount_total / 100) : $this->defaultAmount($scope);
         $currency = isset($session->currency) ? strtolower((string) $session->currency) : 'jpy';
 
         $productId = DB::table('products')
@@ -135,9 +135,7 @@ class StripeWebhookController extends Controller
 
         if (!$productId) {
             $productId = DB::table('products')->insertGetId([
-                'name' => $scope === 'daigaku'
-                    ? '生命保険大学課程 プレミアムプラン（買い切り）'
-                    : '生保講座 プレミアムプラン（買い切り）',
+                'name' => $this->productName($scope),
                 'price' => $amount,
                 'currency' => $currency,
                 'stripe_product_id' => null,
@@ -181,18 +179,43 @@ class StripeWebhookController extends Controller
 
     private function sanitizeScope(?string $scope): string
     {
-        return in_array($scope, ['seiho', 'daigaku'], true) ? $scope : 'seiho';
+        return in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'basic'], true) ? $scope : 'seiho';
     }
 
     private function resolvePriceId(string $scope): ?string
     {
-        if ($scope === 'daigaku') {
-            return config('services.stripe.price_daigaku_premium')
-                ?: config('services.stripe.price_premium');
-        }
+        return match ($scope) {
+            'daigaku' => config('services.stripe.price_daigaku_premium')
+                ?: config('services.stripe.price_premium'),
+            'ippan' => config('services.stripe.price_ippan_premium'),
+            'senmon' => config('services.stripe.price_senmon_premium'),
+            'ouyou' => config('services.stripe.price_ouyou_premium'),
+            'basic' => config('services.stripe.price_basic_premium'),
+            default => config('services.stripe.price_seiho_premium')
+                ?: config('services.stripe.price_premium'),
+        };
+    }
 
-        return config('services.stripe.price_seiho_premium')
-            ?: config('services.stripe.price_premium');
+    private function defaultAmount(string $scope): int
+    {
+        return match ($scope) {
+            'daigaku' => 980,
+            'ippan', 'senmon', 'ouyou' => 480,
+            'basic' => 980,
+            default => 1980,
+        };
+    }
+
+    private function productName(string $scope): string
+    {
+        return match ($scope) {
+            'daigaku' => '生命保険大学課程 プレミアムプラン（買い切り）',
+            'ippan' => '生命保険一般課程 プレミアムプラン（買い切り）',
+            'senmon' => '生命保険専門課程 プレミアムプラン（買い切り）',
+            'ouyou' => '生命保険応用課程 プレミアムプラン（買い切り）',
+            'basic' => '一般・専門・応用セット（買い切り）',
+            default => '生保講座 プレミアムプラン（買い切り）',
+        };
     }
 
     private function syncAnyPremiumFlag(int $userId): void

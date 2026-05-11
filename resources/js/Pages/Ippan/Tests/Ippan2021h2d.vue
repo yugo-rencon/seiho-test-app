@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2021年7月〜12月実施 フォーム④";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,9 +195,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の役割"
                     :contents="[
-                        '', //p
+                        '大正時代 → 明治時代', //p1
                         '正しい',
-                        '', //p
+                        '平均寿命 → 平均余命', //p4
                         '正しい',
                     ]"
                 />
@@ -207,10 +207,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="剰余金と配当金"
                     :contents="[
-                        '', //p
+                        '実際の死亡者数が多い場合 → 実際の死亡者数が少ない場合', //p26
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                     ]"
                 />
                 <QuestionTemp1
@@ -219,10 +219,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="契約の選択"
                     :contents="[
-                        '', //p
+                        '職業上の危険、遺伝上の危険、道徳上の危険 → 身体上の危険、環境上の危険、道徳上の危険', //p52
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険金受取人 → 被保険者（または契約者）', //p56
                     ]"
                 />
                 <QuestionTemp1
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '割賦販売法等 → 保険業法等', //p11
                     ]"
                 />
                 <QuestionTemp1
@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="生命保険の仕組み"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '公平の法則 → 大数の法則', //p14
                         '正しい',
                     ]"
                 />
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
+                        '保険業法の定める利率 → 生命保険会社の定める利率', //p50
                         '正しい',
                         '正しい',
                     ]"
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '資産管理 → 経済準備', //p134
                         '正しい',
                     ]"
                 />
@@ -282,7 +282,7 @@ const isDraft = true;
                         }, //38
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '契約者本人のものに限る → 契約者本人またはその配偶者もしくはその他の親族', //p122
                         }, //39
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -294,11 +294,11 @@ const isDraft = true;
                         }, //41
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '35000円 → 40000円', //p124
                         }, //42
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '配偶者2/3、兄弟姉妹1/3 → 兄弟姉妹3/4、親1/4', //p
                         }, //43
                         {
                             questionTitle: '相続の法律',
@@ -322,11 +322,11 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '結婚しているか否かに関わらず → 結婚している場合不要となるケースもある', //不明
                         }, //49
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '平均年齢 → 満年齢', //p41
                         }, //50
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -334,7 +334,7 @@ const isDraft = true;
                         }, //51
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '30000円以上 → 50000円以上<br>100円の収入印紙 → 200円の収入印紙', //p43
                         }, //52
                         {
                             questionTitle: '契約申込み時の実務',
@@ -346,11 +346,11 @@ const isDraft = true;
                         }, //54
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '申込みがあった日にさかのぼって → 払い込みのあった日にさかのぼって', //p45
                         }, //55
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '承諾のあった日 → 診査（告知）のあった日にさかのぼって', //p46
                         }, //56
                         {
                             questionTitle: '契約申込み時の実務',
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約成立後に契約確認を行うことはない → 契約確認は契約の成立前に行われる場合と成立後に行われる場合がある', //p85
                         }, //59
                         {
                             questionTitle: '正しい告知の取り扱い',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'すでに払い込んだ保険料は返還される → すでに払い込んだ保険料は返還されない', //p87
                         }, //62
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -386,7 +386,7 @@ const isDraft = true;
                         }, //64
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //65
                         {
                             questionTitle: '保全・アフターサービスの重要性',

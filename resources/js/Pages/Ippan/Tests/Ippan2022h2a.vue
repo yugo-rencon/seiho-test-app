@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年7月〜12月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,8 +196,8 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '自営業者等、一般の勤労者等ともに → 自営業者等は個別に納める', //p113
+                        '被保険者と事業主が1:2で負担 → 被保険者と事業主が折半で負担', //p113
                         '正しい',
                     ]"
                 />
@@ -209,8 +209,8 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '一般勘定 → 特別勘定', //p20
+                        '契約時に定めた保険金額（基本保険金額）は保証されない → 保証される', //p20
                     ]"
                 />
                 <QuestionTemp1
@@ -219,9 +219,9 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :contents="[
-                        '', //p
+                        '相続税 → 贈与税', //p126
                         '正しい',
-                        '', //p
+                        '1000万円 → 500万円', //p127
                         '正しい',
                     ]"
                 />
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '生命保険以外の事業を自由に営むことができる → 他の事業を営むことが制限されている', //p33
                     ]"
                 />
                 <QuestionTemp1
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="コンプライアンスの重要性"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '金融サービス提供法 → 保険業法', //p60
                         '正しい',
                     ]"
                 />
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="正しい告知の取り扱い"
                     :contents="[
                         '正しい',
-                        '', //p
+                        'すでに払い込んだ保険料を払い戻す → 解約返戻金があれば払い戻す', //p86
                         '正しい',
                     ]"
                 />
@@ -286,7 +286,7 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //40
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -310,7 +310,7 @@ const isDraft = true;
                         }, //45
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '', //p
+                            content: '福祉販売 → 設計販売', //p136
                         }, //46
                         {
                             questionTitle: 'お客さまニーズへの対応',
@@ -326,7 +326,7 @@ const isDraft = true;
                         }, //49
                         {
                             questionTitle: '生命保険の役割',
-                            content: '', //p
+                            content: '平均寿命 → 平均余命', //p4
                         }, //50
                         {
                             questionTitle: '生命保険の役割',
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '満年齢を使用するのではなく、保険年齢を使用する → 満年齢を使用する生命保険会社と保険年齢を使用する生命保険会社がある', //p41
                         }, //54
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -350,7 +350,7 @@ const isDraft = true;
                         }, //55
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '40000円以上 → 50000円以上<br>100円の収入印紙 → 200円の収入印紙', //p43
                         }, //56
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -358,7 +358,7 @@ const isDraft = true;
                         }, //57
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '既払込保険料総額の一定範囲内 → 解約返戻金の一定範囲内', //p93
                         }, //58
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
@@ -366,7 +366,7 @@ const isDraft = true;
                         }, //59
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '既払込保険料の範囲内 → 解約返戻金の範囲内', //p93
                         }, //60
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
@@ -374,11 +374,11 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
-                            content: '', //p
+                            content: '満了日に生存保険金は支払われない → 満了日に生存保険金が支払われる', //p95
                         }, //62
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '事業税 → 住民税', //p120
                         }, //63
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -394,7 +394,7 @@ const isDraft = true;
                         }, //66
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '50000円 → 28000円', //p124
                         }, //67
                     ]"
                 />

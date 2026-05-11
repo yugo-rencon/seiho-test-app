@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2021年1月〜6月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -195,10 +195,10 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保障の見直し"
                     :contents="[
-                        '', //p
+                        '既払込保険料相当額や配当金など（転換価格） → 責任準備金や配当金など（転換価格）', //p91
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約者、保障内容、保険金額などが全く新しく切り替わる → 保障内容、保険金額、保険料などが全く新しく切り替わる', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -209,19 +209,19 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '保険事業と銀行業だけ → 保険事業だけ', //p32
+                        '生命保険以外の事業を自由に営むことができる → 他の事業を営むことが制限されている', //p33
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="33"
                     :title="title"
                     :subject="subject"
-                    questionTitle="契約申込みの実務"
+                    questionTitle="契約申込み時の実務"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '承諾した日 → 払い込みのあった日にさかのぼって', //p46
+                        '12日以内 → 8日以内', //p47
                         '正しい',
                     ]"
                 />
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="コンプライアンスの重要性"
                     :contents="[
-                        '', //p
+                        '社会的規範や企業倫理を除き、法令や社内ルールだけを守るという意味で用いられる → 法令や社内ルールだけでなく、社会的規範や企業倫理を守るということも含めて用いられる', //p60
                         '正しい',
                         '正しい',
                     ]"
@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="私たちの役割と心がまえ"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '生命保険募集人 → 生命保険会社', //p12
                         '正しい',
                     ]"
                 />
@@ -253,7 +253,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :contents="[
-                        '', //p
+                        '相続税 → 贈与税', //p126
                         '正しい',
                         '正しい',
                     ]"
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
-                        '', //p
+                        'ライフプラン → ライフサイクル', //p133
                         '正しい',
                         '正しい',
                     ]"
@@ -290,11 +290,11 @@ const isDraft = true;
                         }, //40
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p50
                         }, //41
                         {
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '途中で変更することはできない → 途中で変更することができる', //p51
                         }, //42
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -306,7 +306,7 @@ const isDraft = true;
                         }, //44
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //45
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -318,7 +318,7 @@ const isDraft = true;
                         }, //47
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '', //p
+                            content: '公平性の原則 → 収支相当の原則', //p23
                         }, //48
                         {
                             questionTitle: '保険料の仕組み',
@@ -330,7 +330,7 @@ const isDraft = true;
                         }, //50
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '', //p
+                            content: '満期保険料 → 生存保険料', //p24
                         }, //51
                         {
                             questionTitle: '保険料の仕組み',
@@ -338,11 +338,11 @@ const isDraft = true;
                         }, //52
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '通称名でもよい → 戸籍等の公的書類記載のものを記入', //p40
                         }, //53
                         {
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '結婚しているか否かに関わらず → 結婚している場合不要となるケースもある', //不明
                         }, //54
                         {
                             questionTitle: '契約取り扱いの手続き',
@@ -362,7 +362,7 @@ const isDraft = true;
                         }, //58
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '', //p
+                            content: '所属会社の専門の担当者を頼りにせず → 判断のつかない事項は専門の担当者に確認', //p106
                         }, //59
                         {
                             questionTitle: '照会・苦情時の対応',
@@ -374,7 +374,7 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '照会・苦情時の対応',
-                            content: '', //p
+                            content: '契約者に代わって行うことができる → 行うことができない（委任状があれば可能）', //p107
                         }, //62
                         {
                             questionTitle: '保険料の税法上の取り扱い',
@@ -390,7 +390,7 @@ const isDraft = true;
                         }, //65
                         {
                             questionTitle: '保険料の税法上の取り扱い',
-                            content: '', //p
+                            content: '4月1日から翌年3月31日まで → 1月1日から12月31日まで', //p122
                         }, //66
                         {
                             questionTitle: '保険料の税法上の取り扱い',

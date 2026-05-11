@@ -1,14 +1,19 @@
 const isDaigakuPath = (): boolean =>
     typeof window !== "undefined" && window.location.pathname.startsWith("/daigaku");
-const isFreeExamPath = (): boolean =>
-    typeof window !== "undefined" &&
-    (window.location.pathname.startsWith("/senmon") ||
-        window.location.pathname.startsWith("/ouyou") ||
-        window.location.pathname.startsWith("/ippan"));
+const currentExamScope = (): string => {
+    if (typeof window === "undefined") return "seiho";
+
+    const path = window.location.pathname;
+    if (path.startsWith("/daigaku")) return "daigaku";
+    if (path.startsWith("/ippan")) return "ippan";
+    if (path.startsWith("/senmon")) return "senmon";
+    if (path.startsWith("/ouyou")) return "ouyou";
+    return "seiho";
+};
 
 const parseFormCode = (subject: string): string => {
     const text = String(subject ?? "").toUpperCase();
-    const matched = text.match(/フォーム\s*([A-C])/);
+    const matched = text.match(/フォーム\s*([A-E])/);
     return matched?.[1] ?? "";
 };
 
@@ -22,10 +27,11 @@ const parseSeihoSubjectKeyFromPath = (): string => {
 export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     const year = Number(String(subject ?? "").slice(0, 4));
     const formCode = parseFormCode(subject);
+    const scope = currentExamScope();
 
-    if (isFreeExamPath()) {
-        // 一般・専門・応用課程は全ページ無料
-        return false;
+    if (scope === "ippan" || scope === "senmon" || scope === "ouyou") {
+        // 一般・専門・応用課程: 最新年度フォームAのみ無料
+        return !(year === 2025 && formCode === "A");
     }
 
     if (isDaigakuPath()) {
@@ -50,9 +56,16 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
 };
 
 export const getPaywallStartQuestion = (title: string): number => {
-    if (isDaigakuPath()) {
-        // 大学課程: 有料部分は4問目から
+    const scope = currentExamScope();
+
+    if (scope === "daigaku" || scope === "senmon" || scope === "ouyou") {
+        // 大学・専門・応用課程: 有料部分は4問目から
         return 4;
+    }
+
+    if (scope === "ippan") {
+        // 一般課程: 有料部分は33問目から
+        return 33;
     }
 
     // 計理のみ4問目から、それ以外は23問目から

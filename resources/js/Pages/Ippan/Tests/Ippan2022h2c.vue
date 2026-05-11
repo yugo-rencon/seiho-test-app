@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年7月〜12月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -196,8 +196,8 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '自営業者等、一般の勤労者等ともに → 自営業者等は個別に納める', //p113
+                        '被保険者と事業主が1:2で負担 → 被保険者と事業主が折半で負担', //p113
                         '正しい',
                     ]"
                 />
@@ -207,8 +207,8 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="生命保険の役割"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '男性・女性の平均寿命はともに90歳を超えている → 男性は約81歳、女性は約87歳（令和6年簡易生命表）', //p3
+                        '平均寿命 → 平均余命', //p4
                         '正しい',
                         '正しい',
                     ]"
@@ -220,8 +220,8 @@ const isDraft = true;
                     questionTitle="保険料の税法上の取り扱い"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
+                        '生命保険料控除の対象 → 生命保険料控除の対象から除かれる', //p122
+                        '4月1日から翌年3月31日まで → 1月1日から12月31日まで', //p122
                         '正しい',
                     ]"
                 />
@@ -233,7 +233,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '生命保険以外の事業を自由に営むことができる → 他の事業を営むことが制限されている', //p33
                     ]"
                 />
                 <QuestionTemp1
@@ -242,7 +242,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
+                        '払い込む保険料の割り引きはない → 保険料は生命保険会社の定める利率で割り引かれる', //p50
                         '正しい',
                         '正しい',
                     ]"
@@ -255,7 +255,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険法 ↔︎ 保険業法', //p60
                     ]"
                 />
                 <QuestionTemp1
@@ -264,7 +264,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険金・給付金の税法上の取り扱い"
                     :contents="[
-                        '', //p
+                        '相続税 → 贈与税', //p126
                         '正しい',
                         '正しい',
                     ]"
@@ -286,7 +286,7 @@ const isDraft = true;
                         }, //39
                         {
                             questionTitle: '保全・アフターサービスの重要性',
-                            content: '', //p
+                            content: 'お客さまの生活環境、家族構成等に変化がないかどうか等の情報収集を行うことも大切', //p89
                         }, //40
                         {
                             questionTitle: '保全・アフターサービスの重要性',
@@ -310,7 +310,7 @@ const isDraft = true;
                         }, //45
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '', //p
+                            content: '福祉販売 → 設計販売', //p136
                         }, //46
                         {
                             questionTitle: 'お客さまニーズへの対応',
@@ -338,7 +338,7 @@ const isDraft = true;
                         }, //52
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '経済上の危険 → 環境上の危険', //p52
                         }, //53
                         {
                             questionTitle: '契約の選択',
@@ -354,15 +354,15 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '自由条件付契約 → 特別条件付契約', //p59
                         }, //57
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '財務大臣 → 内閣総理大臣', //p63
                         }, //58
                         {
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '承諾 → 媒介', //p64
                         }, //59
                         {
                             questionTitle: '生命保険の募集等に関する法律',
@@ -382,15 +382,15 @@ const isDraft = true;
                         }, //63
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '総務省 → 厚生労働省', //p108
                         }, //64
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '損害保険は取り扱えない → 生命保険も損害保険も取り扱える', //p109
                         }, //65
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '人に関する保険 → 物に関する保険', //p109
                         }, //66
                         {
                             questionTitle: '隣接業界',

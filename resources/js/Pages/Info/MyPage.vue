@@ -38,9 +38,49 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hasPremiumIppan: {
+    type: Boolean,
+    default: false,
+  },
+  hasPremiumSenmon: {
+    type: Boolean,
+    default: false,
+  },
+  hasPremiumOuyou: {
+    type: Boolean,
+    default: false,
+  },
+  hasPremiumBasic: {
+    type: Boolean,
+    default: false,
+  },
+  hasPurchasedIppan: {
+    type: Boolean,
+    default: false,
+  },
+  hasPurchasedSenmon: {
+    type: Boolean,
+    default: false,
+  },
+  hasPurchasedOuyou: {
+    type: Boolean,
+    default: false,
+  },
+  hasPurchasedBasic: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const isDaigaku = computed(() => props.scope === 'daigaku');
+const supportsScoreTracking = computed(() => ['seiho', 'daigaku'].includes(props.scope));
+const currentSiteName = computed(() => {
+  if (props.scope === 'daigaku') return '生保大学';
+  if (props.scope === 'ippan') return '生命保険一般課程';
+  if (props.scope === 'senmon') return '生命保険専門課程';
+  if (props.scope === 'ouyou') return '生命保険応用課程';
+  return '生保講座';
+});
 const mypageResultsRouteName = computed(() =>
   isDaigaku.value ? 'daigaku.mypage.results' : 'mypage.results',
 );
@@ -48,8 +88,79 @@ const mypagePassScoreRouteName = computed(() =>
   isDaigaku.value ? 'daigaku.mypage.passScore' : 'mypage.passScore',
 );
 const pricingHref = computed(() =>
-  isDaigaku.value ? route('daigaku.pricing') : route('pricing'),
+  isDaigaku.value
+    ? route('daigaku.pricing')
+    : route('pricing', {
+        ...(props.scope !== 'seiho' ? { scope: props.scope } : {}),
+        return_to: page.url,
+      }),
 );
+const purchaseStatuses = computed(() => [
+  {
+    key: 'seiho',
+    label: '生保講座',
+    active: props.hasPremiumSeiho,
+    activeClass: 'text-purple-700',
+    badgeClass: 'bg-purple-100 text-purple-700',
+    statusText: 'プレミアム購入済み',
+    badgeText: '有効',
+  },
+  {
+    key: 'daigaku',
+    label: '生保大学',
+    active: props.hasPremiumDaigaku,
+    activeClass: 'text-blue-700',
+    badgeClass: 'bg-blue-100 text-blue-700',
+    statusText: 'プレミアム購入済み',
+    badgeText: '有効',
+  },
+  {
+    key: 'ippan',
+    label: '生命保険一般課程',
+    active: props.hasPurchasedIppan,
+    activeClass: 'text-fuchsia-700',
+    badgeClass: 'bg-pink-100 text-fuchsia-700',
+    statusText: 'プレミアム購入済み',
+    badgeText: '有効',
+  },
+  {
+    key: 'senmon',
+    label: '生命保険専門課程',
+    active: props.hasPurchasedSenmon,
+    activeClass: 'text-emerald-700',
+    badgeClass: 'bg-emerald-100 text-emerald-700',
+    statusText: 'プレミアム購入済み',
+    badgeText: '有効',
+  },
+  {
+    key: 'ouyou',
+    label: '生命保険応用課程',
+    active: props.hasPurchasedOuyou,
+    activeClass: 'text-amber-700',
+    badgeClass: 'bg-amber-100 text-amber-700',
+    statusText: 'プレミアム購入済み',
+    badgeText: '有効',
+  },
+  {
+    key: 'basic',
+    label: '一般・専門・応用セット',
+    active: props.hasPurchasedBasic,
+    activeClass: 'text-cyan-700',
+    badgeClass: 'bg-cyan-100 text-cyan-700',
+    statusText: 'プレミアム購入済み',
+    badgeText: '有効',
+  },
+]);
+const activePurchaseStatuses = computed(() =>
+  purchaseStatuses.value.filter((status) => status.active),
+);
+const pricingButtonClass = computed(() => {
+  if (props.scope === 'daigaku') return 'bg-blue-600 hover:bg-blue-700';
+  if (props.scope === 'ippan') return 'bg-fuchsia-600 hover:bg-fuchsia-700';
+  if (props.scope === 'senmon') return 'bg-emerald-600 hover:bg-emerald-700';
+  if (props.scope === 'ouyou') return 'bg-amber-600 hover:bg-amber-700';
+  return 'bg-purple-600 hover:bg-purple-700';
+});
 
 const localResults = ref({ ...props.results });
 const localPassScore = ref(props.passScore);
@@ -254,7 +365,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
       <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
         <div class="flex items-center gap-2">
           <div class="text-sm text-gray-500">ログイン中のユーザー</div>
-          <span class="inline-flex items-center rounded-full border border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50 px-2 py-0.5 text-[11px] font-semibold text-purple-600">生保講座・生保大学 共通</span>
+          <span class="inline-flex items-center rounded-full border border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50 px-2 py-0.5 text-[11px] font-semibold text-purple-600">全試験共通</span>
         </div>
         <div class="no-data-detectors mt-1 text-lg font-semibold text-gray-800">
           {{ user?.email || '未ログイン' }}
@@ -262,43 +373,37 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
 
         <div class="mt-6 border-t border-gray-100 pt-4">
           <div class="mb-3 text-sm text-gray-500">購入状況</div>
-          <div class="flex flex-col gap-2">
-            <!-- 生保講座 -->
-            <div class="flex items-center justify-between rounded-lg border border-gray-100 bg-gray-50 px-4 py-3">
+          <div v-if="activePurchaseStatuses.length" class="grid gap-2 sm:grid-cols-2">
+            <div
+              v-for="status in activePurchaseStatuses"
+              :key="status.key"
+              class="flex items-center justify-between rounded-lg border border-gray-100 bg-gray-50 px-4 py-3"
+            >
               <div>
-                <div class="text-xs font-semibold text-gray-500">生保講座</div>
-                <div class="mt-0.5 text-sm font-semibold" :class="props.hasPremiumSeiho ? 'text-emerald-700' : 'text-gray-500'">
-                  {{ props.hasPremiumSeiho ? 'プレミアム購入済み' : '未購入' }}
+                <div class="text-xs font-semibold text-gray-500">{{ status.label }}</div>
+                <div
+                  class="mt-0.5 text-sm font-semibold"
+                  :class="status.activeClass"
+                >
+                  {{ status.statusText }}
                 </div>
               </div>
               <span
                 class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold"
-                :class="props.hasPremiumSeiho ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-200 text-gray-500'"
+                :class="status.badgeClass"
               >
-                {{ props.hasPremiumSeiho ? '有効' : '無効' }}
+                {{ status.badgeText }}
               </span>
             </div>
-            <!-- 生保大学 -->
-            <div class="flex items-center justify-between rounded-lg border border-gray-100 bg-gray-50 px-4 py-3">
-              <div>
-                <div class="text-xs font-semibold text-gray-500">生保大学</div>
-                <div class="mt-0.5 text-sm font-semibold" :class="props.hasPremiumDaigaku ? 'text-blue-700' : 'text-gray-500'">
-                  {{ props.hasPremiumDaigaku ? 'プレミアム購入済み' : '未購入' }}
-                </div>
-              </div>
-              <span
-                class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold"
-                :class="props.hasPremiumDaigaku ? 'bg-blue-100 text-blue-700' : 'bg-gray-200 text-gray-500'"
-              >
-                {{ props.hasPremiumDaigaku ? '有効' : '無効' }}
-              </span>
-            </div>
+          </div>
+          <div v-else class="rounded-lg border border-gray-100 bg-gray-50 px-4 py-3 text-sm font-semibold text-gray-500">
+            購入済みの商品はありません。
           </div>
           <div v-if="!props.hasPremium" class="mt-3">
             <Link
               :href="pricingHref"
               class="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold text-white transition"
-              :class="isDaigaku ? 'bg-blue-600 hover:bg-blue-700' : 'bg-purple-600 hover:bg-purple-700'"
+              :class="pricingButtonClass"
             >
               料金プランを見る
             </Link>
@@ -306,7 +411,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
         </div>
       </div>
 
-      <div id="score-input" class="mt-8 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+      <div v-if="supportsScoreTracking" id="score-input" class="mt-8 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
         <div class="flex items-center justify-between">
           <div>
             <div class="flex items-center gap-2">
@@ -439,7 +544,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
     </div>
 
     <div
-      v-if="isModalOpen"
+      v-if="supportsScoreTracking && isModalOpen"
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
       @click.self="closeModal"
     >
@@ -501,7 +606,7 @@ const scoreTargetReached = computed(() => remainingToTarget.value === 0);
     </div>
 
     <div
-      v-if="isPassScoreModalOpen"
+      v-if="supportsScoreTracking && isPassScoreModalOpen"
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
       @click.self="closePassScoreModal"
     >

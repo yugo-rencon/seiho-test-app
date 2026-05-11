@@ -105,18 +105,21 @@ class BillingController extends Controller
 
     private function sanitizeScope(?string $scope): string
     {
-        return in_array($scope, ['seiho', 'daigaku'], true) ? $scope : 'seiho';
+        return in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'basic'], true) ? $scope : 'seiho';
     }
 
     private function resolvePriceId(string $scope): ?string
     {
-        if ($scope === 'daigaku') {
-            return config('services.stripe.price_daigaku_premium')
-                ?: config('services.stripe.price_premium');
-        }
-
-        return config('services.stripe.price_seiho_premium')
-            ?: config('services.stripe.price_premium');
+        return match ($scope) {
+            'daigaku' => config('services.stripe.price_daigaku_premium')
+                ?: config('services.stripe.price_premium'),
+            'ippan' => config('services.stripe.price_ippan_premium'),
+            'senmon' => config('services.stripe.price_senmon_premium'),
+            'ouyou' => config('services.stripe.price_ouyou_premium'),
+            'basic' => config('services.stripe.price_basic_premium'),
+            default => config('services.stripe.price_seiho_premium')
+                ?: config('services.stripe.price_premium'),
+        };
     }
 
     private function appendQueryToUrl(string $url, array $query): string

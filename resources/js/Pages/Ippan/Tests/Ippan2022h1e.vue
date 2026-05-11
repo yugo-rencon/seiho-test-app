@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険一般課程試験";
 const subject = "2022年1月〜6月実施 フォームE";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -208,9 +208,9 @@ const isDraft = true;
                     questionTitle="契約の選択"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '申込みの動機・経路についても注意が必要', //p53
                         '正しい',
-                        '', //p
+                        '金融庁 → 生命保険協会', //p53
                     ]"
                 />
                 <QuestionTemp1
@@ -221,8 +221,8 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '被保険者と事業主が1:2で負担 → 被保険者と事業主が折半で負担', //p113
+                        '制度の運営主体となる都道府県 → 制度の運営主体となる市（区）町村', //p115
                     ]"
                 />
                 <QuestionTemp1
@@ -231,7 +231,7 @@ const isDraft = true;
                     :subject="subject"
                     questionTitle="保険料の払い込み"
                     :contents="[
-                        '', //p
+                        '払い込む保険料の割り引きはない → 保険料は生命保険会社の定める利率で割り引かれる', //p50
                         '正しい',
                         '正しい',
                     ]"
@@ -243,7 +243,7 @@ const isDraft = true;
                     questionTitle="契約取り扱いの手続き"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '正確に訂正し、必ず生命保険会社の訂正印を押印しなければならない → 正確なものを新しく発行する', //p43
                         '正しい',
                     ]"
                 />
@@ -254,7 +254,7 @@ const isDraft = true;
                     questionTitle="保険金・給付金の請求と支払い"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '他の受取人に対しても死亡保険金を支払われない → 他の受取人に対してはその残額を支払う', //p104
                         '正しい',
                     ]"
                 />
@@ -265,7 +265,7 @@ const isDraft = true;
                     questionTitle="保険料の税法上の取り扱い"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '保険期間が5年以上 → 保険期間が5年未満', //p122
                         '正しい',
                     ]"
                 />
@@ -282,11 +282,11 @@ const isDraft = true;
                         }, //38
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '第1回保険料充当金払い込みのあった日 → 診査（告知）のあった日', //p46
                         }, //39
                         {
                             questionTitle: '契約申込み時の実務',
-                            content: '', //p
+                            content: '12日以内 → 8日以内', //p47
                         }, //40
                         {
                             questionTitle: '契約申込み時の実務',
@@ -302,11 +302,11 @@ const isDraft = true;
                         }, //43
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '経済産業省 → 厚生労働省', //p108
                         }, //44
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '3年以内 → 1年以内', //p109
                         }, //45
                         {
                             questionTitle: '隣接業界',
@@ -314,7 +314,7 @@ const isDraft = true;
                         }, //46
                         {
                             questionTitle: '隣接業界',
-                            content: '', //p
+                            content: '養老年金タイプ → 定期年金タイプ', //p110
                         }, //47
                         {
                             questionTitle: '剰余金と配当金',
@@ -322,11 +322,11 @@ const isDraft = true;
                         }, //48
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険料は割高 → 保険料は割安', //p27
                         }, //49
                         {
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '同じ性格 → 異なる性格', //p27
                         }, //50
                         {
                             questionTitle: '剰余金と配当金',
@@ -342,7 +342,7 @@ const isDraft = true;
                         }, //53
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '全保険種類共通の約款 → 保険種類ごとの約款', //p78
                         }, //54
                         {
                             questionTitle: '募集時の正しい説明',
@@ -354,11 +354,11 @@ const isDraft = true;
                         }, //56
                         {
                             questionTitle: '募集時の正しい説明',
-                            content: '', //p
+                            content: '合理性の原則 → 適合性の原則', //p83
                         }, //57
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '内縁の場合を含む → 内縁の場合は含まない', //p130
                         }, //58
                         {
                             questionTitle: '相続の法律',
@@ -374,11 +374,11 @@ const isDraft = true;
                         }, //61
                         {
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '原則として年長者の方が多くなる → 原則として均等になる', //p130
                         }, //62
                         {
                             questionTitle: 'お客さまニーズへの対応',
-                            content: '', //p
+                            content: 'ライフスタイル → ライフサイクル', //p133
                         }, //63
                         {
                             questionTitle: 'お客さまニーズへの対応',

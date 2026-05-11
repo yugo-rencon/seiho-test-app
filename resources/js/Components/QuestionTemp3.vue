@@ -129,15 +129,32 @@
     const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 
     const blockStartQuestion = computed(() => {
+        if (rangeStartQuestion.value > 0) {
+            return rangeStartQuestion.value;
+        }
+
         return (Number(props.questionNumber) - 1) * 5 + 1;
     });
 
     const blockEndQuestion = computed(() => {
+        const range = String(props.questionRange ?? "").trim();
+        const normalized = range
+            .replace(/[０-９]/g, (char) => String.fromCharCode(char.charCodeAt(0) - 0xfee0))
+            .replace(/〜|~|－|–|—/g, "-");
+        const matched = normalized.match(/^\d+\s*-\s*(\d+)$/);
+
+        if (matched) {
+            return Number(matched[1]);
+        }
+
         return blockStartQuestion.value + 4;
     });
 
     const questionNumbersInBlock = computed(() => {
-        return Array.from({ length: 5 }, (_, i) => blockStartQuestion.value + i);
+        return Array.from(
+            { length: Math.max(0, blockEndQuestion.value - blockStartQuestion.value + 1) },
+            (_, i) => blockStartQuestion.value + i,
+        );
     });
 
     const relatedCurrentQuestionNumber = computed(() => {

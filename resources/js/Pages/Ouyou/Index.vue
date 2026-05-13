@@ -8,13 +8,13 @@ const OUYOU_VISIBLE_YEARS = [2025, 2024, 2023, 2022, 2021];
 const OUYOU_PERIODS = [
     {
         id: "apr-aug",
-        label: "4月〜8月実施",
+        label: "4月〜7月実施",
         forms: ["a", "b"],
         note: "フォームA / フォームB",
     },
     {
         id: "sep-mar",
-        label: "9月〜3月実施",
+        label: "8月〜3月実施",
         forms: ["a", "b", "c", "d"],
         note: "フォームA / フォームB / フォームC / フォームD",
     },

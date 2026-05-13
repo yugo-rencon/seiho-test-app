@@ -178,7 +178,7 @@ const ippanSubjects = [
 const ouyouSubjects = [
     {
         key: "h1",
-        name: "4月〜8月実施",
+        name: "4月〜7月実施",
         tests: {
             "2025年度": ["a", "b"],
             "2024年度": ["a", "b"],
@@ -189,7 +189,7 @@ const ouyouSubjects = [
     },
     {
         key: "h2",
-        name: "9月〜3月実施",
+        name: "8月〜3月実施",
         tests: {
             "2025年度": ["a", "b", "c", "d"],
             "2024年度": ["a", "b", "c", "d"],

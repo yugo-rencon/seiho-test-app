@@ -66,8 +66,8 @@ const SENMON_YEARS = [2025, 2024, 2023, 2022, 2021];
 
 // 応用課程
 const OUYOU_PERIODS = [
-    { key: "h1", label: "4-8月",  forms: ["a", "b"] },
-    { key: "h2", label: "9-3月", forms: ["a", "b", "c", "d"] },
+    { key: "h1", label: "4-7月",  forms: ["a", "b"] },
+    { key: "h2", label: "8-3月", forms: ["a", "b", "c", "d"] },
 ];
 const OUYOU_YEARS = [2025, 2024, 2023, 2022, 2021];
 

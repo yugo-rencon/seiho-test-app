@@ -197,7 +197,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '1500万円 → 2000万円', //p34
                         '正しい',
                         '正しい',
                     ]"

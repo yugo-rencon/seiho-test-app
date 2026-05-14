@@ -27,10 +27,10 @@ const isDraft = true;
                     questionTitle="所得税の申告"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '1月16日から2月25日まで → 2月16日から3月15日まで', //p34
                         '正しい',
-                        '', //p
-                        '', //p
+                        '10万円 → 20万円', //p34
+                        '医療費控除は年末調整の対象 → 医療費控除は年末調整の対象とならない', //p34
                     ]"
                 />
                 <QuestionTemp1

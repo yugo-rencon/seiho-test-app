@@ -87,8 +87,46 @@ const ippanAutoNavigation = computed(() => {
     };
 });
 
-const previousLink = computed(() => props.previousHref || (props.previousRoute ? route(props.previousRoute) : null) || ippanAutoNavigation.value.previous);
-const nextLink = computed(() => props.nextHref || (props.nextRoute ? route(props.nextRoute) : null) || ippanAutoNavigation.value.next);
+const seihoAutoNavigation = computed(() => {
+    if (isDaigaku.value || isSenmon.value || isOuyou.value || isIppan.value) {
+        return { previous: null, next: null };
+    }
+
+    const path = (page.url || "").split("?")[0];
+    const matched = path.match(/^\/(souron|keiri|kiken|yakkan|kaikei|eigyo|zeihou|sisan)(202[0-5])([a-c])$/i);
+
+    if (!matched) {
+        return { previous: null, next: null };
+    }
+
+    const subject = matched[1].toLowerCase();
+    const currentId = `${matched[2]}|${matched[3].toLowerCase()}`;
+    const years = ["2025", "2024", "2023", "2022", "2021", "2020"];
+    const forms = ["a", "b", "c"];
+    const orderedIds = years.flatMap((year) => forms.map((form) => `${year}|${form}`));
+    const currentIndex = orderedIds.indexOf(currentId);
+
+    if (currentIndex === -1) {
+        return { previous: null, next: null };
+    }
+
+    const toHref = (id) => {
+        if (!id) {
+            return null;
+        }
+
+        const [year, form] = id.split("|");
+        return `/${subject}${year}${form}`;
+    };
+
+    return {
+        previous: toHref(orderedIds[currentIndex - 1] ?? null),
+        next: toHref(orderedIds[currentIndex + 1] ?? null),
+    };
+});
+
+const previousLink = computed(() => props.previousHref || (props.previousRoute ? route(props.previousRoute) : null) || ippanAutoNavigation.value.previous || seihoAutoNavigation.value.previous);
+const nextLink = computed(() => props.nextHref || (props.nextRoute ? route(props.nextRoute) : null) || ippanAutoNavigation.value.next || seihoAutoNavigation.value.next);
 const homeLink = computed(() => props.homeHref || (props.homeRoute ? route(props.homeRoute) : null));
 </script>
 

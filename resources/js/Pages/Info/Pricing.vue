@@ -100,7 +100,7 @@ const scopePlan = computed(() => {
     if (currentScope.value === "ippan") {
         return {
             price: "¥480",
-            description: "科目別ではなく、生命保険一般課程の対象年度・対象フォームの解説一式を解放できます。",
+            description: "生命保険一般課程の対象年度・対象フォームの解説一式を解放できます。",
             features: [
                 "生命保険一般課程 全50解説を閲覧可能",
                 "広告なし。勉強の邪魔を一切しません",
@@ -114,7 +114,7 @@ const scopePlan = computed(() => {
     if (currentScope.value === "senmon") {
         return {
             price: "¥480",
-            description: "科目別ではなく、生命保険専門課程の対象年度・対象フォームの解説一式を解放できます。",
+            description: "生命保険専門課程の対象年度・対象フォームの解説一式を解放できます。",
             features: [
                 "生命保険専門課程 全30解説を閲覧可能",
                 "広告なし。勉強の邪魔を一切しません",
@@ -128,7 +128,7 @@ const scopePlan = computed(() => {
     if (currentScope.value === "ouyou") {
         return {
             price: "¥480",
-            description: "科目別ではなく、生命保険応用課程の対象年度・対象フォームの解説一式を解放できます。",
+            description: "生命保険応用課程の対象年度・対象フォームの解説一式を解放できます。",
             features: [
                 "生命保険応用課程 全30解説を閲覧可能",
                 "広告なし。勉強の邪魔を一切しません",
@@ -147,8 +147,8 @@ const scopePlan = computed(() => {
             "広告なし。勉強の邪魔を一切しません",
             "今後の追加コンテンツも閲覧可",
         ],
-        freeDescription: "全8科目の最新年度フォームAを無料公開しています。",
-        freeFeatures: ["全8科目 最新年度 フォームA"],
+        freeDescription: "各科目の最新年度フォームAを無料公開しています。",
+        freeFeatures: ["生命保険計理を除く最新年度の科目 フォームA"],
     };
 });
 const freeRouteName = computed(() => {
@@ -178,7 +178,7 @@ const plans = computed(() => [
               name: "一般・専門・応用セット（買い切り）",
               price: "¥980",
               note: "セット販売",
-              description: "科目別ではなく、一般課程・専門課程・応用課程の解説一式をまとめて解放できます。",
+              description: "一般課程・専門課程・応用課程の解説一式をまとめて解放できます。",
               features: [
                   "一般課程 全50解説を閲覧可能",
                   "専門課程 全30解説を閲覧可能",

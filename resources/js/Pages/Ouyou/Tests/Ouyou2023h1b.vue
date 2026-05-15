@@ -210,7 +210,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '1年以内 → 10ヶ月以内', //p52
                         '正しい',
                         '正しい',
                     ]"

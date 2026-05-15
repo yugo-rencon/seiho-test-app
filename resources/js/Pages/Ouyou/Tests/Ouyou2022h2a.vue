@@ -209,7 +209,7 @@ const isDraft = true;
                     questionTitle="契約形態による課税関係"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '一時所得として所得税の課税対象 → 贈与税の課税対象', //p59
                         '正しい',
                         '正しい',
                         '正しい',
@@ -340,11 +340,11 @@ const isDraft = true;
                     questionTitle="相続税の申告手続と納付方法"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '10ヶ月',
+                        '被相続人の死亡時',
+                        '延滞税',
+                        '10万円',
+                        '年賦', // 問25〜29
                     ]"
                     :labels="[
                         'イ', //p

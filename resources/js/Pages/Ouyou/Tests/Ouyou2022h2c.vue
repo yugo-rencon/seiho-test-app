@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -106,9 +107,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '法人の所在地に応じて課せられる「地域割」 → 法人の所得に関係なく法人の規模に応じて決められる「均等割」', //p79
+                        '法人の事業税 → 法人の住民税', //p79
+                        '法人の規模や営む事業にかかわらず一律の税率 → 法人の規模や営む事業により税率が異なる', //p80
                     ]"
                 />
                 <QuestionTemp1
@@ -137,17 +138,56 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="10"
                     :title="title"
                     :subject="subject"
-                    questionTitle="金融商品の税引き後利回り"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '正しい',
-                        '', //p
-                        '', //p
+                        {
+                            answer: '1.33%',
+                            questionTitle: '金融商品の税引き後利回り',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '1年複利なので、2年後の元利合計を求めたうえで、利息部分に20%の税金をかけます。税引き後利息を元本と期間で割ることで、税引き後利回りを求めます。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['満期時の元利合計 ＝ 元本 ×（1＋年利率）<sup>年数</sup>', '税引き後利息 ＝ 税引き前利息 − 税金', '税引き後利回り ＝ 税引き後利息 ÷ 元本 ÷ 年数 × 100'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['1,000,000円 ×（1＋0.0165）<sup>2</sup>', '＝ 1,033,272円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['税引き前利息：1,033,272円 − 1,000,000円 ＝ 33,272円', '税金：33,272円 × 20% ＝ 6,654円', '税引き後利息：33,272円 − 6,654円 ＝ 26,618円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['26,618円 ÷ 1,000,000円 ÷ 2年 × 100', '＝ 1.3309%', '＝ 1.33%'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 1.33%（小数第3位を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'イ', //10
                     ]"
                 />
                 <QuestionTemp1
@@ -170,9 +210,9 @@ const isDraft = true;
                     questionTitle="公的年金制度の老齢給付の内容"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '30年（360月） → 40年（480月）', //p138
+                        '年金の給付は6ヶ月ごとに6ヶ月分が支給 → 年金の給付は2ヶ月ごとに2ヶ月分が支給', //p138
+                        '年金額が増額される「繰上げ支給」 → 年金額が減額される「繰上げ支給」<br>年金額が減額される「繰下げ支給」 → 年金額が増額される「繰下げ支給」', //p138
                         '正しい',
                     ]"
                 />
@@ -251,7 +291,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '多くの個人保険商品と同様、積立金等の計算の基礎（予定利率）は固定しており、変更されることはない → 多くの個人保険商品と異なり、積立金等の計算の基礎（予定利率）は変更される場合がある', //p117
                     ]"
                 />
                 <QuestionTemp1
@@ -326,7 +366,7 @@ const isDraft = true;
                     questionTitle="解約手続きの留意点"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '所定の期間内であれば復活して元に戻すことができる → 契約を元に戻すことはできない', //p174
                         '正しい',
                         '正しい',
                         '正しい',

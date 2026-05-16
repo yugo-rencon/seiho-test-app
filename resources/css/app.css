@@ -66,6 +66,14 @@ body {
     @apply border-blue-200 bg-blue-50 text-blue-700;
 }
 
+.question-temp4-structured.is-senmon .calc-block-title {
+    @apply border-emerald-200 bg-emerald-50 text-emerald-700;
+}
+
+.question-temp4-structured.is-ouyou .calc-block-title {
+    @apply border-amber-200 bg-amber-50 text-amber-700;
+}
+
 .question-temp4-structured.is-ippan .calc-block-title {
     @apply border-red-200 bg-red-50 text-red-700;
 }
@@ -113,6 +121,22 @@ body {
 
 .question-temp4-explanation.is-daigaku .calc-result {
     @apply text-blue-700;
+}
+
+.question-temp4-structured.is-senmon .calc-result {
+    @apply text-emerald-700;
+}
+
+.question-temp4-explanation.is-senmon .calc-result {
+    @apply text-emerald-700;
+}
+
+.question-temp4-structured.is-ouyou .calc-result {
+    @apply text-amber-700;
+}
+
+.question-temp4-explanation.is-ouyou .calc-result {
+    @apply text-amber-700;
 }
 
 .question-temp4-structured.is-ippan .calc-result {

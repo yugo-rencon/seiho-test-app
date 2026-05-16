@@ -60,7 +60,7 @@ const getOuyouRoute = (year, periodId, form) => {
                             生命保険応用課程の過去問解説ページです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-amber-700/90">
-                            最新年度フォームAからお試しください。
+                            最新年度・前期フォームAからお試しください。
                             <Link
                                 :href="pricingHref"
                                 class="ml-1 hidden font-semibold text-amber-700 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-800 md:inline"

@@ -106,8 +106,8 @@ const scopePlan = computed(() => {
                 "広告なし。勉強の邪魔を一切しません",
                 "今後の追加コンテンツも閲覧可",
             ],
-            freeDescription: "生命保険一般課程の最新年度フォームAを無料公開しています。",
-            freeFeatures: ["生命保険一般課程 最新年度 フォームA"],
+            freeDescription: "生命保険一般課程の最新年度・前期フォームAを無料公開しています。",
+            freeFeatures: ["生命保険一般課程 最新年度 前期フォームA"],
         };
     }
 
@@ -120,8 +120,8 @@ const scopePlan = computed(() => {
                 "広告なし。勉強の邪魔を一切しません",
                 "今後の追加コンテンツも閲覧可",
             ],
-            freeDescription: "生命保険専門課程の最新年度フォームAを無料公開しています。",
-            freeFeatures: ["生命保険専門課程 最新年度 フォームA"],
+            freeDescription: "生命保険専門課程の最新年度・前期フォームAを無料公開しています。",
+            freeFeatures: ["生命保険専門課程 最新年度 前期フォームA"],
         };
     }
 
@@ -134,8 +134,8 @@ const scopePlan = computed(() => {
                 "広告なし。勉強の邪魔を一切しません",
                 "今後の追加コンテンツも閲覧可",
             ],
-            freeDescription: "生命保険応用課程の最新年度フォームAを無料公開しています。",
-            freeFeatures: ["生命保険応用課程 最新年度 フォームA"],
+            freeDescription: "生命保険応用課程の最新年度・前期フォームAを無料公開しています。",
+            freeFeatures: ["生命保険応用課程 最新年度 前期フォームA"],
         };
     }
 

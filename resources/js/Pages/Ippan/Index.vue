@@ -67,7 +67,7 @@ const getFormHref = (year, period, form) => {
                             生命保険一般課程の過去問解説ページです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-fuchsia-700/90">
-                            最新年度フォームAからお試しください。
+                            最新年度・前期フォームAからお試しください。
                             <Link
                                 :href="pricingHref"
                                 class="ml-1 hidden font-semibold text-fuchsia-700 underline decoration-fuchsia-300 underline-offset-2 transition hover:text-fuchsia-800 md:inline"
@@ -122,10 +122,10 @@ const getFormHref = (year, period, form) => {
                                     {{ year }}年
                                 </div>
                                 <span
-                                    v-if="Number(year) === 2025 && !hasPremium"
+                                    v-if="Number(year) === 2025 && activePeriod.id === 'h1' && !hasPremium"
                                     class="inline-flex items-center rounded-full border border-pink-300 bg-pink-50 px-2.5 py-1 text-xs font-semibold text-fuchsia-700"
                                 >
-                                    最新年度フォームA・無料
+                                    最新年度・前期フォームA・無料
                                 </span>
                             </div>
 

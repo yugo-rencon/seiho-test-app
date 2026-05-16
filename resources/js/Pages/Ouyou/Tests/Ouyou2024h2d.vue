@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -79,10 +80,10 @@ const isDraft = true;
                     questionTitle="法人の住民税・事業税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '法人の所在地に応じて課せられる「地域割」 → 法人の所得に関係なく法人の規模に応じて決められる「均等割」', //p79
                         '正しい',
-                        '', //p
-                        '', //p
+                        '市町村（東京都23区は「特別区」） → 都道府県', //p80
+                        '法人の規模や営む事業にかかわらず一律の税率 → 法人の規模や営む事業により税率が異なる', //p80
                     ]"
                 />
                 <QuestionTemp1
@@ -111,17 +112,56 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle="金融商品の税引き後利回り"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '正しい',
-                        '', //p
-                        '', //p
+                        {
+                            answer: '2.15%',
+                            questionTitle: '金融商品の税引き後利回り',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '1年複利なので、2年後の元利合計を求めたうえで、利息部分に20%の税金をかけます。税引き後利息を元本と期間で割ることで、税引き後利回りを求めます。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['満期時の元利合計 ＝ 元本 ×（1＋年利率）<sup>年数</sup>', '税引き後利息 ＝ 税引き前利息 − 税金', '税引き後利回り ＝ 税引き後利息 ÷ 元本 ÷ 年数 × 100'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['1,000,000円 ×（1＋0.0265）<sup>2</sup>', '＝ 1,053,702円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['税引き前利息：1,053,702.円 − 1,000,000円 ＝ 53,702円', '税金：53,702円 × 20% ＝ 10,740円', '税引き後利息：53,702円 − 10,740円 ＝ 42,962円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['42,962円 ÷ 1,000,000円 ÷ 2年 × 100', '＝ 2.1481%', '＝ 2.15%'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 2.15%（小数第3位を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'イ', //8
                     ]"
                 />
                 <QuestionTemp1
@@ -131,10 +171,10 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '特約保険料は損金算入できない → 特約保険料も含めて全額を損金算入できる', //p86
                         '正しい',
-                        '', //p
-                        '', //p
+                        '従業員に対する給与とみなされ所得税が課税される → 従業員に対する給与とみなされることはなく所得税は課税されない', //p86
+                        '雑所得として所得税の課税対象 → 全額非課税', //p87
                     ]"
                 />
                 <QuestionTemp1
@@ -144,10 +184,10 @@ const isDraft = true;
                     questionTitle="公的年金制度の老齢給付の内容"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '35年（420月） → 40年（480月）', //p138
+                        '年金の給付は3ヶ月ごとに3ヶ月分が支給 → 年金の給付は2ヶ月ごとに2ヶ月分が支給', //p138
                         '正しい',
-                        '', //p
+                        '被保険者期間が3年以上 → 被保険者期間が1ヶ月以上<br>63歳から支給 → 65歳から支給', //p139
                     ]"
                 />
                 <QuestionTemp1
@@ -263,7 +303,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        'すべて所得税の課税対象 → 所定の手続きを前提として、所得税は非課税', //p99
                         '正しい',
                     ]"
                 />
@@ -288,7 +328,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '一律30% → 一律20%', //p117
                         '正しい',
                         '正しい',
                     ]"
@@ -327,7 +367,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '解約請求できるのは契約者と被保険者 → 契約者のみ<br>契約者・被保険者の意思確認 → 契約者の意思確認', //p174
                         '正しい',
                         '正しい',
                     ]"

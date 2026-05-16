@@ -19,9 +19,13 @@
                     :class="
                         isDaigaku
                             ? 'bg-gradient-to-b from-blue-400 to-cyan-400'
-                            : isIppan
-                                ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
-                                : 'bg-gradient-to-b from-purple-400 to-blue-400'
+                            : isSenmon
+                                ? 'bg-gradient-to-b from-emerald-400 to-lime-400'
+                                : isOuyou
+                                    ? 'bg-gradient-to-b from-amber-400 to-orange-400'
+                                    : isIppan
+                                        ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
+                                        : 'bg-gradient-to-b from-purple-400 to-blue-400'
                     "
                 ></div>
                 <h2 class="text-base font-bold leading-tight text-gray-700">
@@ -53,7 +57,7 @@
                 <template v-if="isStructuredExplanation(item.content.explanation)">
                     <div
                         class="question-temp4-structured text-sm sm:text-base leading-relaxed text-gray-800"
-                        :class="{ 'is-daigaku': isDaigaku, 'is-ippan': isIppan }"
+                        :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan }"
                     >
                         <template
                             v-for="(part, partIndex) in item.content.explanation"
@@ -102,7 +106,7 @@
                 <div
                     v-else
                     class="question-temp4-explanation text-sm sm:text-base leading-relaxed text-gray-800"
-                    :class="{ 'is-daigaku': isDaigaku, 'is-ippan': isIppan }"
+                    :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan }"
                     v-html="item.content.explanation"
                 ></div>
             </div>
@@ -201,6 +205,8 @@ const props = defineProps({
 
 const page = usePage();
 const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
+const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));

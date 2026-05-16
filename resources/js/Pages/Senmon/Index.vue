@@ -60,7 +60,7 @@ const getSenmonRoute = (year, periodId, form) => {
                             生命保険専門課程の過去問解説ページです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-emerald-700/90">
-                            最新年度フォームAからお試しください。
+                            最新年度・前期フォームAからお試しください。
                             <Link
                                 :href="pricingHref"
                                 class="ml-1 hidden font-semibold text-emerald-700 underline decoration-emerald-300 underline-offset-2 transition hover:text-emerald-800 md:inline"

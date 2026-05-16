@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -92,9 +93,9 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '特約保険料は損金算入できない → 特約保険料も含めて全額を損金算入できる', //p86
+                        '従業員に対する給与とみなされ所得税が課税される → 従業員に対する給与とみなされることはなく所得税は課税されない', //p86
+                        '事業年度の翌年度に益金に算入 → 事業年度の益金に算入', //p87
                         '正しい',
                     ]"
                 />
@@ -111,17 +112,56 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle="金融商品の税引き後利回り"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                        {
+                            answer: '1.75%',
+                            questionTitle: '金融商品の税引き後利回り',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '1年複利なので、5年後の元利合計を求めたうえで、利息部分に20%の税金をかけます。税引き後利息を元本と期間で割ることで、税引き後利回りを求めます。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['満期時の元利合計 ＝ 元本 ×（1＋年利率）<sup>年数</sup>', '税引き後利息 ＝ 税引き前利息 − 税金', '税引き後利回り ＝ 税引き後利息 ÷ 元本 ÷ 年数 × 100'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['1,000,000円 ×（1＋0.021）<sup>5</sup>', '＝ 1,109,456円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['税引き前利息：1,109,456円 − 1,000,000円 ＝ 109,456円', '税金：109,456円 × 20% ＝ 21,891円', '税引き後利息：109,456円 − 21,891円 ＝ 87,565円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['87,565円 ÷ 1,000,000円 ÷ 5年 × 100', '＝ 1.7513%', '＝ 1.75%'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 1.75%（小数第3位を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ウ', //8
                     ]"
                 />
                 <QuestionTemp1
@@ -131,9 +171,9 @@ const isDraft = true;
                     questionTitle="勤労者財産形成制度（財形制度）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '4つ → 3つ（一般財形貯蓄制度、財形住宅貯蓄制度、財形年金貯蓄制度）', //p117
+                        '500万円 → 550万円<br>300万円 → 385万円<br>800万円 → 550万円', //p117
+                        '2年以上 → 3年以上', //p117
                         '正しい',
                     ]"
                 />
@@ -251,7 +291,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '雑所得として所得税の課税対象 → 非課税', //p99
                     ]"
                 />
                 <QuestionTemp1
@@ -287,7 +327,7 @@ const isDraft = true;
                     questionTitle="公的年金制度の老齢給付の内容"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '30年（360月） → 40年（480月）', //p138
                         '正しい',
                         '正しい',
                         '正しい',
@@ -362,11 +402,11 @@ const isDraft = true;
                     questionTitle="確定拠出年金制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        'ポータビリティ',
+                        '加入者自ら',
+                        '時価評価',
+                        'リスク・リターン',
+                        '3ヶ月', // 問30〜34
                     ]"
                     :labels="[
                         'ア', //30
@@ -452,7 +492,7 @@ const isDraft = true;
                         {
                             questionTitle: '解約手続きの留意点',
                             relatedProblems: [],
-                            content: '',
+                            content: '解約請求できるのは契約者と被保険者 → 契約者のみ<br>契約者・被保険者の意思確認 → 契約者の意思確認', //p174
                         }, //49
                     ]"
                 />

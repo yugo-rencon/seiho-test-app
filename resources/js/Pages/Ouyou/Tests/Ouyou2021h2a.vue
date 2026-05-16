@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -92,10 +93,10 @@ const isDraft = true;
                     questionTitle="確定拠出年金の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '所得控除の対象とはならない → 全額所得控除（小規模企業共済等掛金控除）の対象', //p98
+                        '損金算入できない → 全額損金算入となる', //p98
                         '正しい',
-                        '', //p
+                        '雑所得として所得税の課税対象 → 非課税', //p99
                     ]"
                 />
                 <QuestionTemp1
@@ -111,17 +112,56 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle="金融商品の税引き後利回り"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                        {
+                            answer: '1.75%',
+                            questionTitle: '金融商品の税引き後利回り',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '1年複利なので、5年後の元利合計を求めたうえで、利息部分に20%の税金をかけます。税引き後利息を元本と期間で割ることで、税引き後利回りを求めます。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['満期時の元利合計 ＝ 元本 ×（1＋年利率）<sup>年数</sup>', '税引き後利息 ＝ 税引き前利息 − 税金', '税引き後利回り ＝ 税引き後利息 ÷ 元本 ÷ 年数 × 100'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['1,000,000円 ×（1＋0.021）<sup>5</sup>', '＝ 1,109,456円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['税引き前利息：1,109,456円 − 1,000,000円 ＝ 109,456円', '税金：109,456円 × 20% ＝ 21,891円', '税引き後利息：109,456円 − 21,891円 ＝ 87,565円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['87,565円 ÷ 1,000,000円 ÷ 5年 × 100', '＝ 1.7513%', '＝ 1.75%'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 1.75%（小数第3位を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ウ', //8
                     ]"
                 />
                 <QuestionTemp1
@@ -235,7 +275,7 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '特約保険料は損金算入できない → 特約保険料も含めて全額を損金算入できる', //p86
                         '正しい',
                         '正しい',
                         '正しい',
@@ -277,7 +317,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '多くの個人保険商品と同様、積立金等の計算の基礎（予定利率）は固定しており、変更されることはない → 多くの個人保険商品と異なり、積立金等の計算の基礎（予定利率）は変更される場合がある', //p117
                     ]"
                 />
                 <QuestionTemp1
@@ -326,7 +366,7 @@ const isDraft = true;
                     questionTitle="解約手続きの留意点"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '所定の期間内であれば復活して元に戻すことができる → 契約を元に戻すことはできない', //p174
                         '正しい',
                         '正しい',
                         '正しい',
@@ -362,11 +402,11 @@ const isDraft = true;
                     questionTitle="確定拠出年金制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        'ポータビリティ',
+                        '加入者自ら',
+                        '時価評価',
+                        'リスク・リターン',
+                        '3ヶ月', // 問30〜34
                     ]"
                     :labels="[
                         'ア', //30

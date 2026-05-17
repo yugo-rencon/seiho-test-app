@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2025年度 8月〜3月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -27,7 +27,7 @@ const isDraft = true;
                     questionTitle="所得の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '収入金額は、金銭で支給されたものに限られ、一般に現物給与といわれている物品やその他の経済的利益は含まれない → 収入金額は必ずしも金銭で支給されたものに限らず、一般に現物給与といわれている物品やその他の経済的利益も含まれる', //p15
+                        '収入金額は必ずしも金銭で支給されたものに限らず、一般に現物給与といわれている物品やその他の経済的利益も含まれる', //p15
                         '事業所得の金額とは総収入金額のこと → 事業所得の金額とは総収入金額から、その収入を得るために支出した金額（必要経費）を差し引いた金額のこと', //p16
                         '1/3 → 1/2', //p17
                         '正しい',
@@ -41,9 +41,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '相続財産に特許権、営業権も含まれる', //p42
+                        '600万円 → 500万円', //p44
+                        '1年分相当額 → 6ヶ月分相当額', //p44
                     ]"
                 />
                 <QuestionTemp1
@@ -79,10 +79,10 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '3つに区分 → 4つに区分（第Ⅰ種から第Ⅳ種）', //p82
+                        '5年 → 1年', //p83
                         '正しい',
-                        '', //p
+                        '30名以上 → 10名以上', //p83
                     ]"
                 />
                 <QuestionTemp1
@@ -184,7 +184,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '同居・非同居にかかわらず1人につき同額 → 同居の場合1人につき58万円、非同居の場合1人につき48万円', //p22
                         '正しい',
                         '正しい',
                     ]"
@@ -222,7 +222,7 @@ const isDraft = true;
                     questionTitle="企業市場"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '以前は株式会社の設立に1000万円以上の資本金が必要だったが、会社法の施行によりその規定がなくなった', //p71
                         '正しい',
                         '正しい',
                         '正しい',
@@ -250,7 +250,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '脱退一時金もある', //p101
                         '正しい',
                     ]"
                 />
@@ -289,7 +289,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '借りたい人が多ければ金利は[[上昇]]し、貸したい人が多ければ金利は[[低下]]する', //p127
                         '正しい',
                     ]"
                 />

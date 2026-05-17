@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2023年度 4月〜7月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -40,9 +40,9 @@ const isDraft = true;
                     questionTitle="所得税の所得控除"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '介護保険の保険料も控除の対象', //p27
+                        '合計所得金額が2000万円以下 → 1000万円以下<br>最高48万円まで → 最高38万円まで', //p20
+                        '同居・非同居にかかわらず1人につき一律38万円 → 同居の場合1人につき58万円、非同居の場合1人につき48万円', //p22
                         '正しい',
                     ]"
                 />
@@ -224,7 +224,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '以前は株式会社の設立に1000万円以上の資本金が必要だったが、会社法の施行によりその規定がなくなった', //p71
                         '正しい',
                     ]"
                 />
@@ -249,7 +249,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '平準保険料 → 平均保険料', //p84
                         '正しい',
                         '正しい',
                     ]"

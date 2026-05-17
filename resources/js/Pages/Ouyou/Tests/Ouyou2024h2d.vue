@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2024年度 8月〜3月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -28,7 +28,7 @@ const isDraft = true;
                     questionTitle="所得の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '収入金額は、金銭で支給されたものに限られ、一般に現物給与といわれている物品やその他の経済的利益は含まれない → 収入金額は必ずしも金銭で支給されたものに限らず、一般に現物給与といわれている物品やその他の経済的利益も含まれる', //p15
+                        '収入金額は必ずしも金銭で支給されたものに限らず、一般に現物給与といわれている物品やその他の経済的利益も含まれる', //p15
                         '正しい',
                         '1/3 → 1/2', //p17
                         '100万円限度 → 50万円限度', //p17
@@ -68,9 +68,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '資本金1億円超 → 資本金1億円以下', //p70
+                        '普通法人企業に合同会社・合資会社も含まれる', //p71
+                        '以前は株式会社の設立に1000万円以上の資本金が必要だったが、会社法の施行によりその規定がなくなった', //p71
                     ]"
                 />
                 <QuestionTemp1
@@ -93,10 +93,10 @@ const isDraft = true;
                     questionTitle="確定給付企業年金制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '規約型企業年金 → 基金型企業年金', //p99
                         '正しい',
-                        '', //p
-                        '', //p
+                        '脱退一時金もある', //p101
+                        '7年 → 5年', //p101
                     ]"
                 />
                 <QuestionTemp1
@@ -106,10 +106,10 @@ const isDraft = true;
                     questionTitle="確定給付企業年金の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '企業の拠出した掛金額は損金算入することができる', //p102
                         '正しい',
-                        '', //p
-                        '', //p
+                        '雑所得として所得税の課税対象 → 非課税', //p102
+                        '雑所得として所得税の課税対象 → 非課税', //p102
                     ]"
                 />
                 <QuestionTemp4
@@ -225,7 +225,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '同居・非同居にかかわらず1人につき一律58万円 → 同居の場合1人につき58万円、非同居の場合1人につき48万円', //p22
                         '正しい',
                     ]"
                 />
@@ -250,7 +250,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '相続財産に特許権、営業権も含まれる', //p42
                         '正しい',
                         '正しい',
                     ]"
@@ -275,7 +275,7 @@ const isDraft = true;
                     questionTitle="贈与税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '贈与税（暦年課税）の控除に配偶者控除（贈与の特例）もある', //p55
                         '正しい',
                         '正しい',
                         '正しい',
@@ -291,7 +291,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '特約を付加する時期は主契約締結時あるいは更新時に限られ、被保険者の同意が必要', //p85
                     ]"
                 />
                 <QuestionTemp1

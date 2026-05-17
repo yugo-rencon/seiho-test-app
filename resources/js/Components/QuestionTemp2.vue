@@ -66,6 +66,7 @@ import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
+import { formatInlineContentHtml } from "@/utils/formatContentHtml";
 
 const props = defineProps({
     questionNumber: {
@@ -215,8 +216,7 @@ const getRelatedProblems = (index: number) => {
 };
 
 const normalizeBiArrowHtml = (value: unknown): string => {
-    const raw = String(value ?? "");
-    return raw.replace(/↔︎|↔|←→|⇔/g, " <strong>⇔</strong> ");
+    return formatInlineContentHtml(value);
 };
 
 const formatContent = (item: { label: string; content: string }) => {

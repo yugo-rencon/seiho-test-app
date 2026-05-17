@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2021年度 8月〜3月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -67,10 +67,10 @@ const isDraft = true;
                     questionTitle="贈与税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '贈与税（暦年課税）に配偶者控除もある', //p55
+                        '一度適用すると、選択した親や祖父母からの贈与については、暦年課税に変更できない', //p57
                         '正しい',
-                        '', //p
+                        '贈与した人の居住地の所轄税務署長 → 贈与を受けた人の居住地の所轄税務署長', //p57
                     ]"
                 />
                 <QuestionTemp1
@@ -93,9 +93,9 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '3つに区分 → 4つに区分（第Ⅰ種から第Ⅳ種）', //p82
+                        '5年 → 1年', //p83
+                        '統一保険料率 → 平均保険料率', //p84
                         '正しい',
                     ]"
                 />
@@ -171,10 +171,10 @@ const isDraft = true;
                     questionTitle="確定給付企業年金の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '加入者個人の拠出がある場合は生命保険料控除（一般生命保険料控除）の対象となる', //p102
                         '正しい',
-                        '', //p
-                        '', //p
+                        '給与所得として所得税の課税対象 → 雑所得として所得税の課税対象', //p102
+                        '給与所得として所得税の課税対象 → 非課税', //p102
                     ]"
                 />
                 <QuestionTemp1
@@ -263,7 +263,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '普通法人企業に合同会社・合名会社・合資会社も含まれる', //p71
                         '正しい',
                         '正しい',
                     ]"
@@ -290,7 +290,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '脱退一時金もある', //p101
                         '正しい',
                     ]"
                 />

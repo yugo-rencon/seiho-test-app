@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2024年度 8月〜3月実施 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -41,9 +41,9 @@ const isDraft = true;
                     questionTitle="贈与税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '贈与税（暦年課税）の控除に配偶者控除（贈与の特例）もある', //p55
+                        '基礎控除額以下の場合には贈与税の申告をする必要はない', //p57
+                        '贈与を受けた年の翌年1月15日から2月15日まで → 贈与を受けた年の翌年2月1日から3月15日まで', //p57
                         '正しい',
                     ]"
                 />
@@ -93,10 +93,10 @@ const isDraft = true;
                     questionTitle="確定給付企業年金制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '規約型企業年金 → 基金型企業年金', //p99
                         '正しい',
-                        '', //p
-                        '', //p
+                        '脱退一時金もある', //p101
+                        '7年 → 5年', //p101
                     ]"
                 />
                 <QuestionTemp1
@@ -106,9 +106,9 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '3つに区分 → 4つに区分（第Ⅰ種から第Ⅳ種）', //p82
+                        '5年 → 1年', //p83
+                        '30名以上 → 10名以上', //p83
                         '正しい',
                     ]"
                 />
@@ -225,7 +225,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '同居・非同居にかかわらず1人につき一律58万円 → 同居の場合1人につき58万円、非同居の場合1人につき48万円', //p22
                         '正しい',
                     ]"
                 />
@@ -250,7 +250,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '相続財産に特許権、営業権も含まれる', //p42
                         '正しい',
                         '正しい',
                     ]"
@@ -278,7 +278,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '以前は株式会社の設立に1000万円以上の資本金が必要だったが、会社法の施行によりその規定がなくなった', //p71
                     ]"
                 />
                 <QuestionTemp1

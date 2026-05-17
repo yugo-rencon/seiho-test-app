@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2021年度 8月〜3月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -28,9 +28,9 @@ const isDraft = true;
                     questionTitle="所得税の所得控除"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '合計所得金額にかかわらず48万円が一律に控除される → 合計所得金額に応じて控除額が変動する', //p20
+                        '合計所得金額が2000万円以下 → 1000万円以下', //p20
+                        '同居・非同居にかかわらず1人につき38万円 → 同居の場合1人につき58万円、非同居の場合1人につき48万円', //p22
                         '正しい',
                     ]"
                 />
@@ -80,10 +80,10 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '3つに区分 → 4つに区分（第Ⅰ種から第Ⅳ種）', //p82
                         '正しい',
-                        '', //p
-                        '', //p
+                        '統一保険料率 → 平均保険料率', //p84
+                        '特約を付加する時期は主契約締結時あるいは更新時に限られ、被保険者の同意が必要', //p85
                     ]"
                 />
                 <QuestionTemp1
@@ -107,9 +107,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '年金規約に一時金との選択支給を定めることもできる', //p101
+                        '脱退一時金もある', //p101
+                        '7年 → 5年', //p101
                     ]"
                 />
                 <QuestionTemp4
@@ -263,7 +263,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '普通法人企業に合同会社・合名会社・合資会社も含まれる', //p71
                         '正しい',
                         '正しい',
                     ]"
@@ -288,7 +288,7 @@ const isDraft = true;
                     questionTitle="確定給付企業年金の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '企業の拠出した掛金額は損金算入することができる', //p102
                         '正しい',
                         '正しい',
                         '正しい',
@@ -328,7 +328,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '1年複利よりも半年複利、半年複利よりも1ヶ月複利のほうが元利合計が大きくなる', //p131
                         '正しい',
                         '正しい',
                     ]"
@@ -462,7 +462,7 @@ const isDraft = true;
                         {
                             questionTitle: '贈与税',
                             relatedProblems: [],
-                            content: '',
+                            content: '相続税よりも税負担が軽い → 相続税よりも税負担が重い', //p55
                         }, //43
                         {
                             questionTitle: '同族会社',

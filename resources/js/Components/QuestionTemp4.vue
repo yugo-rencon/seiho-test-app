@@ -46,7 +46,7 @@
                         {{ item.label }}
                     </span>
                     <span class="text-gray-400">:</span>
-                    <p class="text-base font-semibold text-gray-700" v-html="item.content.answer"></p>
+                    <p class="text-base font-semibold text-gray-700" v-html="formatInlineContentHtml(item.content.answer)"></p>
                 </div>
             </div>
             <!-- 解説 -->
@@ -69,7 +69,7 @@
                             <p
                                 v-else-if="part.type === 'text'"
                                 class="calc-text"
-                                v-html="toText(part.value)"
+                                v-html="formatInlineContentHtml(toText(part.value))"
                             ></p>
                             <div v-else-if="part.type === 'kv'" class="calc-kv">
                                 <span class="calc-kv-label">{{ part.label }}</span>
@@ -84,7 +84,7 @@
                                     v-for="(line, lineIndex) in toLines(part.value)"
                                     :key="`visible-${item.questionNo}-${partIndex}-${lineIndex}`"
                                     class="calc-formula-block-line"
-                                    v-html="line"
+                                    v-html="formatInlineContentHtml(line)"
                                 ></div>
                             </div>
                             <p v-else-if="part.type === 'result'" class="calc-result">
@@ -93,7 +93,7 @@
                             <p
                                 v-else-if="part.type === 'note'"
                                 class="calc-note"
-                                v-html="toText(part.value)"
+                                v-html="formatInlineContentHtml(toText(part.value))"
                             ></p>
                             <div
                                 v-else-if="part.type === 'tex'"
@@ -107,7 +107,7 @@
                     v-else
                     class="question-temp4-explanation text-sm sm:text-base leading-relaxed text-gray-800"
                     :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan }"
-                    v-html="item.content.explanation"
+                    v-html="formatInlineContentHtml(item.content.explanation)"
                 ></div>
             </div>
             <div
@@ -142,6 +142,7 @@ import katex from "katex";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
+import { formatInlineContentHtml } from "@/utils/formatContentHtml";
 
 type ExplanationType = "blockTitle" | "text" | "kv" | "formula" | "formulaBlock" | "result" | "note" | "tex";
 type ExplanationPart = {

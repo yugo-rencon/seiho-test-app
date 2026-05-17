@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2023年度 8月〜3月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -41,10 +41,10 @@ const isDraft = true;
                     questionTitle="相続税の課税財産と非課税財産"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '相続財産に特許権、営業権も含まれる', //p42
                         '正しい',
-                        '', //p
-                        '', //p
+                        '600万円 → 500万円', //p44
+                        '1年分相当額 → 6ヶ月分相当額', //p44
                     ]"
                 />
                 <QuestionTemp1
@@ -225,7 +225,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '同居・非同居にかかわらず1人につき一律58万円 → 同居の場合1人につき58万円、非同居の場合1人につき48万円', //p22
                         '正しい',
                     ]"
                 />
@@ -263,7 +263,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '普通法人企業に合同会社・合名会社・合資会社も含まれる', //p71
                         '正しい',
                         '正しい',
                     ]"
@@ -289,7 +289,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '被保険者の同意は不要 → 被保険者の同意が必要', //p86
                         '正しい',
                         '正しい',
                     ]"

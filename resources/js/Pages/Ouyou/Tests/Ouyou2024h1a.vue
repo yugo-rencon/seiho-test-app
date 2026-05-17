@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2024年度 4月〜7月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -27,10 +27,10 @@ const isDraft = true;
                     questionTitle="相続税の課税財産と非課税財産"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '相続財産に特許権、営業権も含まれる', //p42
                         '正しい',
-                        '', //p
-                        '', //p
+                        '業務上死亡・業務外死亡を問わず3年分相当額 → 業務上死亡では3年分相当額、業務上死亡では6ヶ月分相当額', //p44
+                        'みなし相続財産も相続税の課税対象となる', //p43
                     ]"
                 />
                 <QuestionTemp1
@@ -79,9 +79,9 @@ const isDraft = true;
                     questionTitle="企業市場"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '資本金1億円超 → 資本金1億円以下', //p70
+                        '普通法人企業に合同会社・合資会社も含まれる', //p71
+                        '以前は株式会社の設立に1000万円以上の資本金が必要だったが、会社法の施行によりその規定がなくなった', //p71
                         '正しい',
                     ]"
                 />
@@ -119,9 +119,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '年金規約に一時金との選択支給を定めることもできる', //p101
+                        '脱退一時金もある', //p101
+                        '7年 → 5年', //p101
                     ]"
                 />
                 <QuestionTemp1
@@ -210,7 +210,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '基礎控除額以下の場合には贈与税の申告をする必要はない', //p57
                         '正しい',
                         '正しい',
                     ]"
@@ -225,7 +225,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '特約を付加する時期は主契約締結時あるいは更新時に限られ、被保険者の同意が必要', //p85
                     ]"
                 />
                 <QuestionTemp1
@@ -262,7 +262,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '加入者個人の拠出がある場合は生命保険料控除（一般生命保険料控除）の対象となる', //p102
                         '正しい',
                         '正しい',
                     ]"
@@ -289,7 +289,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        'お客さまにとって金利が今後上昇しそうな場合には[[変動金利商品]]が有利', //p130
                         '正しい',
                     ]"
                 />

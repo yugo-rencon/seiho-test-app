@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2024年度 4月〜7月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -27,7 +27,7 @@ const isDraft = true;
                     questionTitle="所得の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '収入金額は、金銭で支給されたものに限られ、一般に現物給与といわれている物品やその他の経済的利益は含まれない → 収入金額は必ずしも金銭で支給されたものに限らず、一般に現物給与といわれている物品やその他の経済的利益も含まれる', //p15
+                        '収入金額は必ずしも金銭で支給されたものに限らず、一般に現物給与といわれている物品やその他の経済的利益も含まれる', //p15
                         '事業所得の金額とは総収入金額のこと → 事業所得の金額とは総収入金額から、その収入を得るために支出した金額（必要経費）を差し引いた金額のこと', //p16
                         '正しい',
                         '総収入金額の全額が雑所得 → 総収入金額から公的年金等控除額を差し引いた金額が雑所得', //p18
@@ -79,10 +79,10 @@ const isDraft = true;
                     questionTitle="企業市場"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '資本金1億円超 → 資本金1億円以下', //p70
+                        '普通法人企業に合同会社・合資会社も含まれる', //p71
                         '正しい',
-                        '', //p
+                        '以前は株式会社の設立に1000万円以上の資本金が必要だったが、会社法の施行によりその規定がなくなった', //p71
                     ]"
                 />
                 <QuestionTemp1
@@ -119,9 +119,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '年金規約に一時金との選択支給を定めることもできる', //p101
+                        '脱退一時金もある', //p101
+                        '7年 → 5年', //p101
                     ]"
                 />
                 <QuestionTemp1
@@ -184,7 +184,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '地上権、借地権等、不動産上にある権利も相続財産となる', //p42
                         '正しい',
                         '正しい',
                     ]"
@@ -209,7 +209,7 @@ const isDraft = true;
                     questionTitle="贈与税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '80万円 → 110万円', //p56
                         '正しい',
                         '正しい',
                         '正しい',
@@ -224,7 +224,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '30名以上 → 10名以上', //p83
                         '正しい',
                     ]"
                 />
@@ -250,7 +250,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '給与所得として所得税の課税対象 → 雑所得として所得税の課税対象', //p102
                         '正しい',
                     ]"
                 />

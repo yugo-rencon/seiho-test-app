@@ -9,7 +9,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2022年度 4月〜7月実施 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -27,9 +27,9 @@ const isDraft = true;
                     questionTitle="所得税の所得控除"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '雇用保険の保険料も控除の対象', //p27
+                        '合計所得金額が2000万円以下 → 1000万円以下', //p20
+                        '同居・非同居にかかわらず1人につき38万円 → 同居の場合1人につき58万円、非同居の場合1人につき48万円', //p22
                         '正しい',
                     ]"
                 />
@@ -41,9 +41,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '業務上死亡・業務外死亡を問わず3年分相当額 → 業務上死亡では3年分相当額、業務上死亡では6ヶ月分相当額', //p44
+                        'みなし相続財産も相続税の課税対象となる', //p43
+                        '相続財産に特許権、営業権も含まれる', //p42
                     ]"
                 />
                 <QuestionTemp1
@@ -93,9 +93,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '3つに区分 → 4つに区分（第Ⅰ種から第Ⅳ種）', //p82
+                        '2年 → 1年', //p83
+                        '特約を付加する時期は主契約締結時あるいは更新時に限られ、被保険者の同意が必要', //p85
                     ]"
                 />
                 <QuestionTemp1
@@ -237,7 +237,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '以前は株式会社の設立に1000万円以上の資本金が必要だったが、会社法の施行によりその規定がなくなった', //p71
                         '正しい',
                     ]"
                 />
@@ -287,7 +287,7 @@ const isDraft = true;
                     questionTitle="金利"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '借りたい人が多ければ金利は[[上昇]]し、貸したい人が多ければ金利は[[低下]]する', //p127
                         '正しい',
                         '正しい',
                         '正しい',

@@ -50,6 +50,7 @@ import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
+import { formatInlineContentHtml } from "@/utils/formatContentHtml";
 
 const props = defineProps({
     questionNumber: {
@@ -112,7 +113,6 @@ const getLabel = (index: number): string => {
 };
 
 const formatContentHtml = (value: unknown): string => {
-    const raw = String(value ?? "");
-    return raw.replace(/↔︎|↔|←→|⇔/g, " <strong>⇔</strong> ");
+    return formatInlineContentHtml(value);
 };
 </script>

@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2023年度 8月〜3月実施 フォームD";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -41,10 +41,10 @@ const isDraft = true;
                     questionTitle="相続税の課税財産と非課税財産"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '相続財産に特許権、営業権も含まれる', //p42
                         '正しい',
-                        '', //p
-                        '', //p
+                        '600万円 → 500万円', //p44
+                        '1年分相当額 → 6ヶ月分相当額', //p44
                     ]"
                 />
                 <QuestionTemp1
@@ -67,9 +67,9 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '3つに区分 → 4つに区分（第Ⅰ種から第Ⅳ種）', //p82
+                        '30名以上 → 10名以上', //p83
+                        '5年 → 1年', //p83
                         '正しい',
                     ]"
                 />
@@ -263,7 +263,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '普通法人企業に合同会社・合名会社・合資会社も含まれる', //p71
                         '正しい',
                         '正しい',
                     ]"
@@ -290,7 +290,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '給与所得として所得税の課税対象 → 雑所得として所得税の課税対象', //p102
                         '正しい',
                     ]"
                 />

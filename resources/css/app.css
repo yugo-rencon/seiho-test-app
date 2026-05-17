@@ -58,6 +58,11 @@ body {
     @apply break-words text-[0.95em] leading-relaxed text-gray-700;
 }
 
+.answer-highlight {
+    @apply inline rounded px-1 font-bold text-amber-900;
+    background: linear-gradient(transparent 55%, #fde68a 55%);
+}
+
 .question-temp4-structured .calc-block-title {
     @apply inline-flex w-fit items-center rounded-md border border-purple-200 bg-purple-50 px-2.5 py-1 text-xs font-bold tracking-wide text-purple-700;
 }

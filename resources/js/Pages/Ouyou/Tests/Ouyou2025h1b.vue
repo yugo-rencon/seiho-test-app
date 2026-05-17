@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
 const subject = "2025年度 4月〜7月実施 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -29,9 +29,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '地震保険料控除も所得控除に該当する', //p19
+                        '同居・非同居にかかわらず1人につき同額 → 同居の場合1人につき58万円、非同居の場合1人につき48万円', //p22
+                        '雇用保険の保険料も控除の対象', //p27
                     ]"
                 />
                 <QuestionTemp1
@@ -250,7 +250,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '基礎控除額以下の場合には贈与税の申告をする必要はない', //p57
                         '正しい',
                         '正しい',
                     ]"
@@ -278,7 +278,7 @@ const isDraft = true;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '以前は株式会社の設立に1000万円以上の資本金が必要だったが、会社法の施行によりその規定がなくなった', //p71
                     ]"
                 />
                 <QuestionTemp1
@@ -289,7 +289,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '5年 → 1年', //p83
                         '正しい',
                         '正しい',
                     ]"
@@ -301,7 +301,7 @@ const isDraft = true;
                     questionTitle="確定給付企業年金の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '加入者個人の拠出がある場合は生命保険料控除（一般生命保険料控除）の対象となる', //p102
                         '正しい',
                         '正しい',
                         '正しい',
@@ -316,7 +316,7 @@ const isDraft = true;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '借りたい人が多ければ金利は[[上昇]]し、貸したい人が多ければ金利は[[低下]]する', //p127
                         '正しい',
                     ]"
                 />

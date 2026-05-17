@@ -329,7 +329,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '第3号被保険者 → 第1号被保険者', //p136
                         '正しい',
                     ]"
                 />
@@ -340,7 +340,7 @@ const isDraft = false;
                     questionTitle="募集時の正しい説明"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '保険契約締結後 → 保険契約締結前', //p168
                         '正しい',
                         '正しい',
                         '正しい',
@@ -353,7 +353,7 @@ const isDraft = false;
                     questionTitle="法令上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '「誤解を招く表示・説明」に[[該当する]]', //p161
                         '正しい',
                         '正しい',
                         '正しい',
@@ -369,7 +369,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '金融庁 → 生命保険会社', //p172
                     ]"
                 />
                 <QuestionTemp3

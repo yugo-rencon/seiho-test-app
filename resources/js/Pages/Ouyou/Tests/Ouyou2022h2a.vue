@@ -197,9 +197,9 @@ const isDraft = false;
                     questionTitle="国民年金（基礎年金）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '20歳未満または60歳以上の被用者年金（厚生年金保険）制度の加入者も対象に含まれる', //p136
+                        '第[[2]]号被保険者の被扶養配偶者が第3号被保険者となる', //p136
+                        '第2号被保険者 → 第1号被保険者', //p136
                         '正しい',
                     ]"
                 />
@@ -487,7 +487,7 @@ const isDraft = false;
                         {
                             questionTitle: '募集時の正しい説明',
                             relatedProblems: [],
-                            content: '',
+                            content: '契約概要 → 注意喚起情報', //p165
                         }, //48
                         {
                             questionTitle: '解約手続きの留意点',

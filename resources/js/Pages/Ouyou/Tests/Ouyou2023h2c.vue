@@ -353,7 +353,7 @@ const isDraft = false;
                     questionTitle="募集時の正しい説明"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '保険契約締結後 → 保険契約締結前', //p168
                         '正しい',
                         '正しい',
                         '正しい',

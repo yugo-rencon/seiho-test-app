@@ -184,10 +184,10 @@ const isDraft = false;
                     questionTitle="国民年金（基礎年金）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '20歳未満または60歳以上の被用者年金（厚生年金保険）制度の加入者も対象に含まれる', //p136
                         '正しい',
-                        '', //p
-                        '', //p
+                        '第[[2]]号被保険者の被扶養配偶者が第[[3]]号被保険者となる', //p136
+                        '第3号被保険者 → 第2号被保険者', //p136
                     ]"
                 />
                 <QuestionTemp1
@@ -197,10 +197,10 @@ const isDraft = false;
                     questionTitle="募集時の正しい説明"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '契約概要 → 注意喚起情報', //p165
+                        '注意喚起情報 → 契約概要', //p165
                         '正しい',
-                        '', //p
+                        '契約締結後 → 契約締結前', //p168
                     ]"
                 />
                 <QuestionTemp1
@@ -354,7 +354,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '「不適正な乗換募集」として保険業法上の[[禁止行為に該当する]]', //p160
                         '正しい',
                         '正しい',
                     ]"

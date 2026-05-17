@@ -63,6 +63,22 @@ body {
     background: linear-gradient(transparent 55%, #fde68a 55%);
 }
 
+.answer-diff-list {
+    @apply my-1.5 grid gap-1.5;
+}
+
+.answer-diff-item {
+    @apply block pl-1 text-gray-800;
+}
+
+.answer-diff-item-break {
+    @apply grid gap-0.5;
+}
+
+.answer-auto-arrow {
+    @apply grid gap-0.5;
+}
+
 .question-temp4-structured .calc-block-title {
     @apply inline-flex w-fit items-center rounded-md border border-purple-200 bg-purple-50 px-2.5 py-1 text-xs font-bold tracking-wide text-purple-700;
 }

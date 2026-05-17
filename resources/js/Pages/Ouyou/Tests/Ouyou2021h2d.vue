@@ -197,10 +197,10 @@ const isDraft = false;
                     questionTitle="募集時の正しい説明"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '公平性の原則 → 適合性の原則', //p166
                         '正しい',
-                        '', //p
-                        '', //p
+                        '法定代理人(親権者または未成年後見人）の同意が[[必要]]', //p168
+                        '契約締結後 → 契約締結前', //p168
                     ]"
                 />
                 <QuestionTemp1
@@ -328,7 +328,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '第[[2]]号被保険者の被扶養配偶者が第[[3]]号被保険者となる', //p136
                         '正しい',
                         '正しい',
                     ]"

@@ -184,10 +184,10 @@ const isDraft = false;
                     questionTitle="公的年金制度の障害給付と遺族給付の内容"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '3つの要件を[[すべて満たせ]]ば受給することができる', //p
                         '正しい',
-                        '', //p
-                        '', //p
+                        '1/4 → 2/3', //p143
+                        '遺族基礎年金の受給額は、[[加入期間にかかわらず定額であり、子の人数に応じて加算額が上乗せされる]]', //p144
                     ]"
                 />
                 <QuestionTemp1
@@ -197,9 +197,9 @@ const isDraft = false;
                     questionTitle="生命保険募集人が遵守すべき法令等（保険業法）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '厚生労働大臣 → 内閣総理大臣', //p148
+                        '媒介 → 代理', //p149
+                        '契約成立後 → 保険募集を行う際', //p149
                         '正しい',
                     ]"
                 />
@@ -211,9 +211,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '金融庁 → 生命保険会社', //p172
+                        '安易に回答せず、生命保険会社のしかるべき専門の担当者や担当部門に確認することが大切', //p173
+                        '保険事故に関する情報は、[[特にセンシティブな個人情報]]', //p173
                     ]"
                 />
                 <QuestionTemp1
@@ -251,7 +251,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        'その保険料は[[必要経費とされる]]', //p67
                         '正しい',
                     ]"
                 />
@@ -304,7 +304,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一時所得 → 退職所得', //p112
                     ]"
                 />
                 <QuestionTemp1
@@ -380,11 +380,11 @@ const isDraft = false;
                     questionTitle="相続財産の評価"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '現金',
+                        '支払事由',
+                        '高い',
+                        '一時金',
+                        '予定利率', // 問25〜29
                     ]"
                     :labels="[
                         'エ', //25
@@ -477,7 +477,7 @@ const isDraft = false;
                         {
                             questionTitle: '医療保障保険（団体型）',
                             relatedProblems: [],
-                            content: '',
+                            content: '5年更新 → 1年更新', //p120
                         }, //46
                         {
                             questionTitle: '金利の基礎知識',

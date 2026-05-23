@@ -93,10 +93,10 @@ const isDraft = false;
                     questionTitle="個人の住民税・事業税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '国が課税する住民税 → 都道府県が課税する道府県民税', //p62
                         '正しい',
-                        '', //p
-                        '', //p
+                        '市町村が課税 → 都道府県が課税', //p65
+                        '個人事業主本人を被保険者 → 使用人を被保険者', //p67
                     ]"
                 />
                 <QuestionTemp1
@@ -132,10 +132,10 @@ const isDraft = false;
                     questionTitle="経営者保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '損金算入 → 資産計上', //p106
+                        '保険料のうち[[定期保険部分、特約部分はどちらも損金算入できる]]', //p115
                         '正しい',
-                        '', //p
+                        '企業が受け取る配当金は原則として[[益金に算入することになっている]]', //p111
                     ]"
                 />
                 <QuestionTemp4
@@ -341,7 +341,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '100万円 → 200万円', //p157
                         '正しい',
                         '正しい',
                     ]"
@@ -368,7 +368,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '金融庁 → 生命保険会社', //p172
                         '正しい',
                     ]"
                 />
@@ -380,11 +380,11 @@ const isDraft = false;
                     questionTitle="相続財産の評価"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '現金',
+                        '解約返戻金',
+                        '高い',
+                        '一時金',
+                        '予定利率', // 問25〜29
                     ]"
                     :labels="[
                         'エ', //p

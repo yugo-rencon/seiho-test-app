@@ -197,10 +197,10 @@ const isDraft = false;
                     questionTitle="生命保険募集人が遵守すべき法令等（保険業法）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '厚生労働大臣 → 内閣総理大臣', //p148
                         '正しい',
-                        '', //p
-                        '', //p
+                        '媒介 → 代理', //p149
+                        '司法処分（拘禁系もしくは罰金または両者の併科）の[[対象となる]]', //p154
                     ]"
                 />
                 <QuestionTemp1
@@ -239,7 +239,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '年金の種類を問わず、原則として[[（ア）解約返戻金相当額（イ）年金に代えて一時金の給付を受けられる場合は一時金相当額（ウ）予定利率等をもとに算出した金額 のうちいずれか多い金額]]で評価される', //p45
                     ]"
                 />
                 <QuestionTemp1
@@ -317,7 +317,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一時所得 → 退職所得', //p112
                     ]"
                 />
                 <QuestionTemp1
@@ -343,7 +343,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '遺族基礎年金の受給額は、加入期間にかかわらず定額であり、[[子の人数に応じて加算額が上乗せされる]]', //p144
                     ]"
                 />
                 <QuestionTemp1
@@ -462,7 +462,7 @@ const isDraft = false;
                         {
                             questionTitle: '個人の住民税',
                             relatedProblems: [],
-                            content: '',
+                            content: '所得税の確定申告書を税務署長に提出した人は、[[住民税の申告書を提出したものとみなされる]]', //p62
                         }, //43
                         {
                             questionTitle: '同族会社',
@@ -482,7 +482,7 @@ const isDraft = false;
                         {
                             questionTitle: '厚生年金保険の保険料負担',
                             relatedProblems: [],
-                            content: '',
+                            content: '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                         }, //47
                         {
                             questionTitle: '個人情報の保護に関する法律（個人情報保護法）',
@@ -492,7 +492,7 @@ const isDraft = false;
                         {
                             questionTitle: '失効（復活）手続きの留意点',
                             relatedProblems: [],
-                            content: '',
+                            content: '契約を復活しても失効期間中の支払事由に相当する事故は[[保障の対象にならない]]', //p173
                         }, //49
                     ]"
                 />

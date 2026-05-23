@@ -68,7 +68,7 @@
                             </p>
                             <p
                                 v-else-if="part.type === 'text'"
-                                class="calc-text"
+                                class="calc-text jp-kagi-tight"
                                 v-html="formatInlineContentHtml(toText(part.value))"
                             ></p>
                             <div v-else-if="part.type === 'kv'" class="calc-kv">
@@ -92,7 +92,7 @@
                             </p>
                             <p
                                 v-else-if="part.type === 'note'"
-                                class="calc-note"
+                                class="calc-note jp-kagi-tight"
                                 v-html="formatInlineContentHtml(toText(part.value))"
                             ></p>
                             <div
@@ -105,7 +105,7 @@
                 </template>
                 <div
                     v-else
-                    class="question-temp4-explanation text-sm sm:text-base leading-relaxed text-gray-800"
+                    class="question-temp4-explanation jp-kagi-tight text-sm sm:text-base leading-relaxed text-gray-800"
                     :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan }"
                     v-html="formatInlineContentHtml(item.content.explanation)"
                 ></div>

@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -124,17 +125,53 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="9"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価計算"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                        {
+                            answer: '961,992円',
+                            questionTitle: '現価計算',
+                            relatedProblems: [''],
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来受け取る金額の現価は、利率を用いて現在価値に割り引いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価 ＝ 将来価値 ÷（1 ＋ 利率）<sup>年数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：100万円', '利率：1.3%（＝ 0.013）', '期間：3年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価', '= 1,000,000 ÷ （1 ＋ 0.013）<sup>3</sup> ・・・（1.013）<sup>3</sup> = 1.039509 = 1.03951（小数点第6位を四捨五入）', '= 1,000,000 ÷ 1.03951 = 961,991.7'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 961,992円（円未満を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ウ', //9
                     ]"
                 />
                 <QuestionTemp1
@@ -157,9 +194,9 @@ const isDraft = false;
                     questionTitle="保険金・給付金等の請求と支払い"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '[[「契約募集時」「契約期間中」「請求受付・案内時」の各段階]]にこれらの支払いに関する情報提供を行うことが大切', //p172
+                        '[[「契約内容登録制度」「契約内容照会制度」に加え]]、2005年から[[「支払査定時照会制度」]]を管理・運営している', //p172
+                        '金融庁 → 生命保険会社', //p172
                         '正しい',
                     ]"
                 />
@@ -225,7 +262,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '個人事業主本人を被保険者 → 使用人を被保険者', //p67
                     ]"
                 />
                 <QuestionTemp1
@@ -427,7 +464,7 @@ const isDraft = false;
                         {
                             questionTitle: '固定金利商品と変動金利商品',
                             relatedProblems: [],
-                            content: '',
+                            content: '金利が今後上昇しそうな場合には[[変動金利商品]]が有利となり、逆に金利が今後下降しそうな場合には、[[固定金利商品]]が有利となる', //p130
                         }, //44
                         {
                             questionTitle: '公的年金（障害年金）の障害認定の要件',
@@ -447,7 +484,7 @@ const isDraft = false;
                         {
                             questionTitle: '犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）',
                             relatedProblems: [],
-                            content: '',
+                            content: '100万円 → 200万円', //p157
                         }, //48
                         {
                             questionTitle: '銀行窓販の弊害防止措置',

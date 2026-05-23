@@ -41,7 +41,7 @@
         <div v-for="(content, index) in props.contents" :key="index"
              class="grid gap-2 text-sm leading-6 text-gray-800 select-none md:text-[15px] grid-cols-[2em_1fr]">
           <span class="font-semibold">{{ props.labels[index] }}：</span>
-          <p>{{ normalizeBiArrow(content) }}</p>
+          <p class="jp-kagi-tight">{{ normalizeBiArrow(content) }}</p>
         </div>
       </div>
       <RelatedProblems

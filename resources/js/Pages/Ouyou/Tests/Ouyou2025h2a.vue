@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -66,10 +67,10 @@ const isDraft = false;
                     questionTitle="個人の住民税・事業税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '個人の住所地に応じて課せられる「地域割」 → 所得額に一律の税率で課せられる「所得割」', //p62
                         '正しい',
-                        '', //p
-                        '', //p
+                        '（前年中における事業の所得 - 事業専従者控除 [[- 事業主控除]]） × 税率', //p65
+                        'その保険料は[[必要経費とされる]]', //p67
                     ]"
                 />
                 <QuestionTemp1
@@ -111,17 +112,53 @@ const isDraft = false;
                         '雑所得として所得税の課税対象 → 非課税', //p99
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価計算"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                        {
+                            answer: '961,992円',
+                            questionTitle: '現価計算',
+                            relatedProblems: [''],
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来受け取る金額の現価は、利率を用いて現在価値に割り引いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価 ＝ 将来価値 ÷（1 ＋ 利率）<sup>年数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：100万円', '利率：1.3%（＝ 0.013）', '期間：3年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価', '= 1,000,000 ÷ （1 ＋ 0.013）<sup>3</sup> ・・・（1.013）<sup>3</sup> = 1.039509 = 1.03951（小数点第6位を四捨五入）', '= 1,000,000 ÷ 1.03951 = 961,991.7'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 961,992円（円未満を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ウ', //7
                     ]"
                 />
                 <QuestionTemp1
@@ -132,9 +169,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '対象が狭くなっている → 対象が幅広くなっている', //p144
+                        '1/4 → 2/3', //p143
+                        '遺族基礎年金の受給額は、加入期間にかかわらず定額であり、[[子の人数に応じて加算額が上乗せされる]]', //p144
                     ]"
                 />
                 <QuestionTemp1
@@ -144,10 +181,10 @@ const isDraft = false;
                     questionTitle="生命保険募集人が遵守すべき法令等（保険業法）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '厚生労働大臣 → 内閣総理大臣', //p148
                         '正しい',
-                        '', //p
-                        '', //p
+                        '媒介 → 代理', //p149
+                        '司法処分（拘禁系もしくは罰金または両者の併科）の[[対象となる]]', //p154
                     ]"
                 />
                 <QuestionTemp1
@@ -157,9 +194,9 @@ const isDraft = false;
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '100万円 → 200万円', //p157
+                        '[[お客さま]]と[[実際に手続きをする担当者（代理人）本人]]の双方の確認が必要', //p
+                        '本人特定事項を隠蔽する目的で虚偽の申告を行った場合には、[[刑事罰の対象となる]]', //p158
                         '正しい',
                     ]"
                 />
@@ -264,7 +301,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一時所得 → 退職所得', //p112
                     ]"
                 />
                 <QuestionTemp1
@@ -427,12 +464,12 @@ const isDraft = false;
                         {
                             questionTitle: '同族会社',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '30% → 50%', //p79
                         }, //44
                         {
                             questionTitle: '医療保障保険（団体型）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '5年更新 → 1年更新', //p120
                         }, //45
                         {
                             questionTitle: '複利型商品',
@@ -452,7 +489,7 @@ const isDraft = false;
                         {
                             questionTitle: '失効（復活）手続きの留意点',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '契約を復活しても失効期間中の支払事由に相当する事故は[[保障の対象にならない]]', //p173
                         }, //49
                     ]"
                 />

@@ -54,10 +54,10 @@ const isDraft = false;
                     questionTitle="相続財産の評価"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '不動産以外の財産 → 現金以外の財産', //p45
                         '正しい',
-                        '', //p
-                        '', //p
+                        '既払込保険料相当額 → 解約返戻金の額', //p45
+                        '年金の種類を問わず、原則として[[（ア）解約返戻金相当額（イ）年金に代えて一時金の給付を受けられる場合は一時金相当額（ウ）予定利率等をもとに算出した金額 のうちいずれか多い金額]]で評価される', //p45
                     ]"
                 />
                 <QuestionTemp1
@@ -93,10 +93,10 @@ const isDraft = false;
                     questionTitle="個人の住民税・事業税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '国が課税する住民税 → 都道府県が課税する道府県民税', //p62
+                        '所得税の確定申告書を税務署長に提出した人は、[[住民税の申告書を提出したものとみなされる]]', //p62
                         '正しい',
-                        '', //p
+                        '個人事業主本人を被保険者 → 使用人を被保険者', //p67
                     ]"
                 />
                 <QuestionTemp1
@@ -132,10 +132,10 @@ const isDraft = false;
                     questionTitle="経営者保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '損金算入 → 資産計上', //p106
+                        '保険料のうち[[定期保険部分、特約部分はどちらも損金算入できる]]', //p115
                         '正しい',
-                        '', //p
+                        '企業が受け取る配当金は原則として[[益金に算入することになっている]]', //p111
                     ]"
                 />
                 <QuestionTemp4
@@ -327,7 +327,7 @@ const isDraft = false;
                     questionTitle="生命保険募集人が遵守すべき法令等（保険業法）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '法務大臣 → 内閣総理大臣', //p148
                         '正しい',
                         '正しい',
                         '正しい',
@@ -341,7 +341,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '100万円 → 200万円', //p157
                         '正しい',
                         '正しい',
                     ]"
@@ -369,7 +369,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険事故に関する情報は、[[特にセンシティブな個人情報]]', //p173
                     ]"
                 />
                 <QuestionTemp3
@@ -462,7 +462,7 @@ const isDraft = false;
                         {
                             questionTitle: '同族会社',
                             relatedProblems: [],
-                            content: '',
+                            content: '5人 → 3人<br>30% → 50%', //p79
                         }, //43
                         {
                             questionTitle: '金利の基礎知識',

@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -67,9 +68,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '所得税の確定申告書を税務署長に提出した人は、[[住民税の申告書を提出したものとみなされる]]', //p62
+                        '市町村が課税 → 都道府県が課税', //p65
+                        '個人事業主本人を被保険者 → 使用人を被保険者', //p67
                     ]"
                 />
                 <QuestionTemp1
@@ -124,17 +125,53 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="9"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価計算"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                        {
+                            answer: '967,717円',
+                            questionTitle: '現価計算',
+                            relatedProblems: [''],
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来受け取る金額の現価は、利率を用いて現在価値に割り引いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価 ＝ 将来価値 ÷（1 ＋ 利率）<sup>年数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：100万円', '利率：1.1%（＝ 0.011）', '期間：3年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価', '= 1,000,000 ÷ （1 ＋ 0.011）<sup>3</sup> ・・・（1.011）<sup>3</sup> = 1.033364 = 1.03336（小数点第6位を四捨五入）', '= 1,000,000 ÷ 1.03336 = 967,716.9'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 967,717円（円未満を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ウ', //9
                     ]"
                 />
                 <QuestionTemp1
@@ -199,7 +236,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        'いずれか少ない金額 → いずれか多い金額', //p45
                     ]"
                 />
                 <QuestionTemp1
@@ -314,7 +351,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '媒介 → 代理', //p149
                         '正しい',
                         '正しい',
                     ]"
@@ -327,7 +364,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '[[「契約内容登録制度」「契約内容照会制度」に加え]]、2005年から[[「支払査定時照会制度」]]を管理・運営している', //p172
                         '正しい',
                         '正しい',
                     ]"
@@ -417,7 +454,7 @@ const isDraft = false;
                         {
                             questionTitle: '同族会社',
                             relatedProblems: [],
-                            content: '',
+                            content: '5人 → 3人<br>30% → 50%', //p79
                         }, //42
                         {
                             questionTitle: '医療保障保険（団体型）',

@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -66,9 +67,9 @@ const isDraft = false;
                     questionTitle="個人の住民税・事業税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '国が課税する住民税 → 都道府県が課税する道府県民税', //p62
+                        '所得税の確定申告書を税務署長に提出した人は、[[住民税の申告書を提出したものとみなされる]]', //p62
+                        '市町村が課税 → 都道府県が課税', //p65
                         '正しい',
                     ]"
                 />
@@ -124,17 +125,53 @@ const isDraft = false;
                         '7年 → 5年', //p101
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="9"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価計算"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                        {
+                            answer: '945,099円',
+                            questionTitle: '現価計算',
+                            relatedProblems: [''],
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来受け取る金額の現価は、利率を用いて現在価値に割り引いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価 ＝ 将来価値 ÷（1 ＋ 利率）<sup>年数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：100万円', '利率：1.9%（＝ 0.019）', '期間：3年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価', '= 1,000,000 ÷ （1 ＋ 0.019）<sup>3</sup> ・・・（1.019）<sup>3</sup> = 1.058089 = 1.05809（小数点第6位を四捨五入）', '= 1,000,000 ÷ 1.05809 = 945,099.1'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 945,099円（円未満を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ウ', //7
                     ]"
                 />
                 <QuestionTemp1
@@ -173,7 +210,7 @@ const isDraft = false;
                         '[[「契約募集時」「契約期間中」「請求受付・案内時」の各段階]]にこれらの支払いに関する情報提供を行うことが大切', //p172
                         '[[「契約内容登録制度」「契約内容照会制度」に加え]]、2005年から[[「支払査定時照会制度」]]を管理・運営している', //p172
                         '正しい',
-                        '保険事故に関する情報は、[[特にセンシティブな個人情報]]', //p
+                        '保険事故に関する情報は、[[特にセンシティブな個人情報]]', //p173
                     ]"
                 />
                 <QuestionTemp1
@@ -302,7 +339,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '媒介 → 代理', //p149
                         '正しい',
                     ]"
                 />

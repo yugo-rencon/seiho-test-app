@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -67,9 +68,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '所得税の確定申告書を税務署長に提出した人は、[[住民税の申告書を提出したものとみなされる]]', //p62
+                        '（前年中における事業の所得 - 事業専従者控除 [[- 事業主控除]]） × 税率', //p65
+                        'その保険料は[[必要経費とされる]]', //p67
                     ]"
                 />
                 <QuestionTemp1
@@ -131,10 +132,10 @@ const isDraft = false;
                     questionTitle="経営者保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '損金算入 → 資産計上', //p106
                         '正しい',
-                        '', //p
-                        '', //p
+                        '企業が受け取る配当金は原則として[[益金に算入することになっている]]', //p111
+                        '[[支払った金額が社会通念上妥当]]なものであれば損金算入できる', //p111
                     ]"
                 />
                 <QuestionTemp1
@@ -150,17 +151,53 @@ const isDraft = false;
                         '1年複利よりも半年複利、半年複利よりも1ヶ月複利のほうが元利合計が大きくなる', //p131
                     ]"
                 />
-                <QuestionTemp1
-                    :questionNumber="11"
+                <QuestionTemp4
+                    :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価計算"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                        {
+                            answer: '2,877,449円',
+                            questionTitle: '現価計算',
+                            relatedProblems: [''],
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来受け取る金額の現価は、利率を用いて現在価値に割り引いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価 ＝ 将来価値 ÷（1 ＋ 利率）<sup>年数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：300万円', '利率：1.4%（＝ 0.014）', '期間：3年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価', '= 3,000,000 ÷ （1 ＋ 0.014）<sup>3</sup> ・・・（1.014）<sup>3</sup> = 1.042590 = 1.04259（小数点第6位を四捨五入）', '= 3,000,000 ÷ 1.04259 = 2,877,449.4'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 2,877,449円（円未満を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ウ', //11
                     ]"
                 />
                 <QuestionTemp1
@@ -302,7 +339,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '1/4 → 2/3', //p143
                         '正しい',
                     ]"
                 />
@@ -422,7 +459,7 @@ const isDraft = false;
                         {
                             questionTitle: '同族会社',
                             relatedProblems: [],
-                            content: '',
+                            content: '5人 → 3人<br>30% → 50%', //p79
                         }, //43
                         {
                             questionTitle: '経営者保険の販売活動',

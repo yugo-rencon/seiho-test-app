@@ -132,10 +132,10 @@ const isDraft = false;
                     questionTitle="経営者保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '資産計上 → 損金算入', //p106
+                        '損金算入 → 資産計上', //p106
                         '正しい',
-                        '', //p
+                        '一時所得 → 退職所得', //p112
                     ]"
                 />
                 <QuestionTemp4
@@ -197,10 +197,10 @@ const isDraft = false;
                     questionTitle="生命保険募集人が遵守すべき法令等（保険業法）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '厚生労働大臣 → 内閣総理大臣', //p148
                         '正しい',
-                        '', //p
-                        '', //p
+                        '媒介 → 代理', //p149
+                        '司法処分（拘禁系もしくは罰金または両者の併科）の[[対象となる]]', //p154
                     ]"
                 />
                 <QuestionTemp1
@@ -239,7 +239,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '年金の種類を問わず、原則として[[（ア）解約返戻金相当額（イ）年金に代えて一時金の給付を受けられる場合は一時金相当額（ウ）予定利率等をもとに算出した金額 のうちいずれか多い金額]]で評価される', //p45
                     ]"
                 />
                 <QuestionTemp1
@@ -263,7 +263,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '個人の住所地に応じて課せられる「地域割」 → 所得額に一律の税率で課せられる「所得割」', //p62
                         '正しい',
                         '正しい',
                     ]"
@@ -343,7 +343,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '遺族基礎年金の受給額は、加入期間にかかわらず定額であり、[[子の人数に応じて加算額が上乗せされる]]', //p144
                     ]"
                 />
                 <QuestionTemp1
@@ -457,7 +457,7 @@ const isDraft = false;
                         {
                             questionTitle: '個人の住民税',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '所得税の確定申告書を税務署長に提出した人は、[[住民税の申告書を提出したものとみなされる]]', //p62
                         }, //42
                         {
                             questionTitle: '同族会社',
@@ -472,17 +472,17 @@ const isDraft = false;
                         {
                             questionTitle: '固定金利商品と変動金利商品',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '金利が今後上昇しそうな場合には[[変動金利商品]]が有利となり、逆に金利が今後下降しそうな場合には、[[固定金利商品]]が有利となる', //p130
                         }, //45
                         {
                             questionTitle: '医療保障保険（団体型）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '5年更新 → 1年更新', //p120
                         }, //46
                         {
                             questionTitle: '厚生年金保険の保険料負担',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                         }, //47
                         {
                             questionTitle: '消費者契約法',
@@ -492,7 +492,7 @@ const isDraft = false;
                         {
                             questionTitle: '失効（復活）手続きの留意点',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '契約を復活しても失効期間中の支払事由に相当する事故は[[保障の対象にならない]]', //p173
                         }, //49
                     ]"
                 />

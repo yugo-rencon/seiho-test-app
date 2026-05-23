@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -118,23 +119,59 @@ const isDraft = false;
                     questionTitle="経営者保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '損金算入 → 資産計上', //p106
                         '正しい',
-                        '', //p
-                        '', //p
+                        '[[支払った金額が社会通念上妥当]]なものであれば損金算入できる', //p111
+                        '企業が受け取る配当金は原則として[[益金に算入することになっている]]', //p111
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="9"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価計算"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                        {
+                            answer: '961,992円',
+                            questionTitle: '現価計算',
+                            relatedProblems: [''],
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来受け取る金額の現価は、利率を用いて現在価値に割り引いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価 ＝ 将来価値 ÷（1 ＋ 利率）<sup>年数</sup>'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来価値：100万円', '利率：1.3%（＝ 0.013）', '期間：3年'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現価', '= 1,000,000 ÷ （1 ＋ 0.013）<sup>3</sup> ・・・（1.013）<sup>3</sup> = 1.039509 = 1.03951（小数点第6位を四捨五入）', '= 1,000,000 ÷ 1.03951 = 961,991.7'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 961,992円（円未満を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'ウ', //9
                     ]"
                 />
                 <QuestionTemp1
@@ -157,10 +194,10 @@ const isDraft = false;
                     questionTitle="公的年金制度の障害給付と遺族給付の内容"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '3つの要件を[[すべて満たせ]]ば受給することができる', //p142
+                        '遺族厚生年金を受給できる遺族は、遺族基礎年金より[[対象が幅広くなっている（同一でない）]]', //p144
                         '正しい',
-                        '', //p
+                        '遺族基礎年金の受給額は、[[加入期間にかかわらず定額であり、子の人数に応じて加算額が上乗せされる]]', //p144
                     ]"
                 />
                 <QuestionTemp1
@@ -170,9 +207,9 @@ const isDraft = false;
                     questionTitle="保険金・給付金等の請求と支払い"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '[[「契約内容登録制度」「契約内容照会制度」に加え]]、2005年から[[「支払査定時照会制度」]]を管理・運営している', //p172
+                        '金融庁 → 生命保険会社', //p172
+                        '安易に回答せず、生命保険会社のしかるべき専門の担当者や担当部門に確認することが大切', //p173
                         '正しい',
                     ]"
                 />
@@ -199,7 +236,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '年金の種類を問わず、原則として[[（ア）解約返戻金相当額（イ）年金に代えて一時金の給付を受けられる場合は一時金相当額（ウ）予定利率等をもとに算出した金額 のうちいずれか多い金額]]で評価される', //p45
                     ]"
                 />
                 <QuestionTemp1
@@ -225,7 +262,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '個人事業主本人を被保険者 → 使用人を被保険者', //p67
                     ]"
                 />
                 <QuestionTemp1
@@ -302,7 +339,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '媒介 → 代理', //p149
                         '正しい',
                     ]"
                 />

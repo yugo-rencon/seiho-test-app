@@ -184,10 +184,10 @@ const isDraft = false;
                     questionTitle="公的年金制度の障害給付と遺族給付の内容"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '3つの要件を[[すべて満たせ]]ば受給することができる', //p142
                         '正しい',
-                        '', //p
-                        '', //p
+                        '1/4 → 2/3', //p143
+                        '遺族基礎年金の受給額は、[[加入期間にかかわらず定額であり、子の人数に応じて加算額が上乗せされる]]', //p144
                     ]"
                 />
                 <QuestionTemp1
@@ -211,9 +211,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '金融庁 → 生命保険会社', //p172
+                        '安易に回答せず、生命保険会社のしかるべき専門の担当者や担当部門に確認することが大切', //p173
+                        '保険事故に関する情報は、[[特にセンシティブな個人情報]]', //p173
                     ]"
                 />
                 <QuestionTemp1
@@ -304,7 +304,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一時所得 → 退職所得', //p112
                     ]"
                 />
                 <QuestionTemp1
@@ -356,7 +356,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '司法処分（拘禁系もしくは罰金または両者の併科）を[[受けることがある]]', //p154
                     ]"
                 />
                 <QuestionTemp1
@@ -467,7 +467,7 @@ const isDraft = false;
                         {
                             questionTitle: '医療保障保険（団体型）',
                             relatedProblems: [],
-                            content: '',
+                            content: '3年更新 → 1年更新', //p120
                         }, //44
                         {
                             questionTitle: '総合福祉団体定期保険のクロージング',
@@ -477,7 +477,7 @@ const isDraft = false;
                         {
                             questionTitle: '固定金利商品と変動金利商品',
                             relatedProblems: [],
-                            content: '',
+                            content: '金利が今後上昇しそうな場合には[[変動金利商品]]が有利となり、逆に金利が今後下降しそうな場合には、[[固定金利商品]]が有利となる', //p130
                         }, //46
                         {
                             questionTitle: '金利の基礎知識',

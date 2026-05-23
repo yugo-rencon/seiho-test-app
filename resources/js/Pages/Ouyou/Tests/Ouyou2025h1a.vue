@@ -457,12 +457,12 @@ const isDraft = false;
                         {
                             questionTitle: '個人の住民税',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '所得税の確定申告書を税務署長に提出した人は、[[住民税の申告書を提出したものとみなされる]]', //p62
                         }, //42
                         {
                             questionTitle: '同族会社',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '30% → 50%', //p79
                         }, //43
                         {
                             questionTitle: '医療保障保険（団体型）',
@@ -472,12 +472,12 @@ const isDraft = false;
                         {
                             questionTitle: '固定金利商品と変動金利商品',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '金利が今後上昇しそうな場合には[[変動金利商品]]が有利となり、逆に金利が今後下降しそうな場合には、[[固定金利商品]]が有利となる', //p130
                         }, //45
                         {
                             questionTitle: '公的年金（障害年金）の障害の状態の要件',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '国民年金の場合は[[障害等級1級・2級]]、厚生年金保険の場合は[[1級・2級・3級]]の状態であること', //p
                         }, //46
                         {
                             questionTitle: '金融商品取引法',
@@ -492,7 +492,7 @@ const isDraft = false;
                         {
                             questionTitle: '失効（復活）手続きの留意点',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '契約を復活しても失効期間中の支払事由に相当する事故は[[保障の対象にならない]]', //p173
                         }, //49
                     ]"
                 />

@@ -41,6 +41,18 @@ const getOuyouRoute = (year, periodId, form) => {
         form: String(form).toLowerCase(),
     });
 };
+
+const getFormLabel = (year, periodId, form) => {
+    const numericYear = Number(year);
+    const formKey = String(form).toLowerCase();
+
+    if (periodId === "apr-aug" && (numericYear === 2021 || numericYear === 2022)) {
+        if (formKey === "a") return "フォーム①";
+        if (formKey === "b") return "フォーム②";
+    }
+
+    return `フォーム${formKey.toUpperCase()}`;
+};
 </script>
 
 <template>
@@ -121,6 +133,16 @@ const getOuyouRoute = (year, periodId, form) => {
                                     最新年度フォームA・無料
                                 </span>
                             </div>
+                            <p
+                                v-if="Number(year) === 2021"
+                                class="mt-1 text-[11px] text-gray-500"
+                            >
+                                {{
+                                    activePeriod.id === "apr-aug"
+                                        ? "※2021年度は4月〜5月実施です。"
+                                        : "※2021年度は8月〜1月実施です。"
+                                }}
+                            </p>
 
                             <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
                                 <a
@@ -129,7 +151,7 @@ const getOuyouRoute = (year, periodId, form) => {
                                     :href="getOuyouRoute(year, activePeriod.id, form)"
                                     class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-amber-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-amber-700 transition hover:bg-amber-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                                 >
-                                    フォーム{{ form.toUpperCase() }}
+                                    {{ getFormLabel(year, activePeriod.id, form) }}
                                 </a>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ import DraftNotice from "@/Components/DraftNotice.vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
-const subject = "2021年度 4月〜7月実施 フォームA";
+const subject = "2021年度 4月〜7月実施 フォーム①";
 const isDraft = false;
 </script>
 

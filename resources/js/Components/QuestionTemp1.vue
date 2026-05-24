@@ -1,6 +1,10 @@
 <template>
     <div :id="`q${props.questionNumber}`" class="h-0 scroll-mt-24"></div>
-    <div v-if="!shouldHideByPaywall" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md">
+    <div
+        v-if="!shouldHideByPaywall"
+        class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md"
+        :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
+    >
         <div class="flex items-start gap-2 my-4">
             <div
                 class="w-1.5 h-6 rounded-full"
@@ -13,7 +17,9 @@
                             ? 'bg-gradient-to-b from-amber-400 to-orange-400'
                             : isIppan
                               ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
-                              : 'bg-gradient-to-b from-purple-400 to-blue-400'
+                              : isSeiho
+                                ? 'bg-gradient-to-b from-violet-400 to-indigo-400'
+                                : 'bg-gradient-to-b from-purple-400 to-blue-400'
                 "
             ></div>
             <h2 class="text-base font-bold leading-tight text-gray-700">
@@ -93,6 +99,7 @@ const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
 const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value);
 
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));

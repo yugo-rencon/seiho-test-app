@@ -24,12 +24,12 @@ const isDraft = true;
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="生命保険を取り巻く生活環境の変化"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -37,12 +37,12 @@ const isDraft = true;
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="約款とご契約のしおり"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -50,11 +50,11 @@ const isDraft = true;
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="告知"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -63,11 +63,11 @@ const isDraft = true;
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="「死亡保険金」を支払わない場合"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -76,10 +76,10 @@ const isDraft = true;
                     :questionNumber="5"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="特約"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -89,23 +89,23 @@ const isDraft = true;
                     :questionNumber="6"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険業法"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="7"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="法令上の禁止行為（虚偽の説明となる事例）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -115,11 +115,11 @@ const isDraft = true;
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="失効・復活手続きの留意点"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -128,11 +128,11 @@ const isDraft = true;
                     :questionNumber="9"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="JA共済"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -141,12 +141,12 @@ const isDraft = true;
                     :questionNumber="10"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="社会保障制度"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -154,11 +154,11 @@ const isDraft = true;
                     :questionNumber="11"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="財形制度"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -167,10 +167,10 @@ const isDraft = true;
                     :questionNumber="12"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="お客さまニーズへの対応"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -180,77 +180,77 @@ const isDraft = true;
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険料の仕組み"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険料の払い込み等"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="配当金の支払方法"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保障の見直しに関する制度"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="コンプライアンスと基本的姿勢"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="募集時の情報提供と正しい説明"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -258,78 +258,78 @@ const isDraft = true;
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="適切な保険金・給付金等の支払い"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="労働者共済、各都道府県民共済"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="損害保険業界とその主な商品"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="金利の種類と金融商品"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="相続税"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3
@@ -337,21 +337,21 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="25〜29"
-                    questionTitle=""
+                    questionTitle="国民年金と厚生年金保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '国民皆年金',
+                        '障害',
+                        '報酬比例',
+                        '任意加入',
+                        '60歳', // 問25〜29
                     ]"
                     :labels="[
-                        '', //25
-                        '', //26
-                        '', //27
-                        '', //28
-                        '', //29
+                        'ク', //25
+                        'イ', //26
+                        'エ', //27
+                        'コ', //28
+                        'オ', //29
                     ]"
                 />
                 <QuestionTemp3
@@ -359,21 +359,21 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="30〜34"
-                    questionTitle=""
+                    questionTitle="保険金と税金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '満期保険金',
+                        '贈与税',
+                        '一時所得',
+                        '死亡保険金',
+                        '配偶者', // 問30〜34
                     ]"
                     :labels="[
-                        '', //30
-                        '', //31
-                        '', //32
-                        '', //33
-                        '', //34
+                        'カ', //30
+                        'キ', //31
+                        'ア', //32
+                        'ウ', //33
+                        'ケ', //34
                     ]"
                 />
                 <QuestionTemp3
@@ -381,21 +381,21 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="35〜39"
-                    questionTitle=""
+                    questionTitle="遺族生活資金と老後生活資金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '6048',
+                        '7920',
+                        '8064',
+                        '3600',
+                        '11664', // 問35〜39
                     ]"
                     :labels="[
-                        '', //35
-                        '', //36
-                        '', //37
-                        '', //38
-                        '', //39
+                        'ウ', //35
+                        'キ', //36
+                        'ク', //37
+                        'イ', //38
+                        'コ', //39
                     ]"
                 />
                 <QuestionTemp2
@@ -405,54 +405,54 @@ const isDraft = true;
                     :items="[
                         // 問40〜49
                         {
-                            questionTitle: '',
+                            questionTitle: '保険金の減額',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //40
                         {
-                            questionTitle: '',
+                            questionTitle: '契約者貸付',
                             relatedProblems: [],
-                            content: '',
+                            content: '', //p
                         }, //41
                         {
-                            questionTitle: '',
+                            questionTitle: '契約内容登録制度',
                             relatedProblems: [],
-                            content: '',
+                            content: '', //p
                         }, //42
                         {
-                            questionTitle: '',
+                            questionTitle: '消費者契約法',
                             relatedProblems: [],
-                            content: '',
+                            content: '', //p
                         }, //43
                         {
-                            questionTitle: '',
+                            questionTitle: '個人情報保護法',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //44
                         {
-                            questionTitle: '',
+                            questionTitle: '生命保険募集人としての具体的対応と留意点',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //45
                         {
-                            questionTitle: '',
+                            questionTitle: '個人向け融資（ローン）の種類',
                             relatedProblems: [],
-                            content: '',
+                            content: '', //p
                         }, //46
                         {
-                            questionTitle: '',
+                            questionTitle: '投資信託',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //47
                         {
-                            questionTitle: '',
+                            questionTitle: '経営者保険',
                             relatedProblems: [],
-                            content: '',
+                            content: '', //p
                         }, //48
                         {
-                            questionTitle: '',
+                            questionTitle: '相続制度',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //49
                     ]"
                 />

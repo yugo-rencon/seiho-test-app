@@ -11,6 +11,7 @@
             :key="index"
             :id="`q${item.questionNo}`"
             class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24"
+            :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
         >
             <!-- 問題番号 -->
             <div class="flex items-start gap-2 my-4">
@@ -25,6 +26,8 @@
                                     ? 'bg-gradient-to-b from-amber-400 to-orange-400'
                                     : isIppan
                                         ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
+                                        : isSeiho
+                                            ? 'bg-gradient-to-b from-violet-400 to-indigo-400'
                                         : 'bg-gradient-to-b from-purple-400 to-blue-400'
                     "
                 ></div>
@@ -57,7 +60,7 @@
                 <template v-if="isStructuredExplanation(item.content.explanation)">
                     <div
                         class="question-temp4-structured text-sm sm:text-base leading-relaxed text-gray-800"
-                        :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan }"
+                        :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
                     >
                         <template
                             v-for="(part, partIndex) in item.content.explanation"
@@ -106,7 +109,7 @@
                 <div
                     v-else
                     class="question-temp4-explanation jp-kagi-tight text-sm sm:text-base leading-relaxed text-gray-800"
-                    :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan }"
+                    :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
                     v-html="formatInlineContentHtml(item.content.explanation)"
                 ></div>
             </div>
@@ -209,6 +212,7 @@ const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
 const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value);
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 

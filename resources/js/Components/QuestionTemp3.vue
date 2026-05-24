@@ -8,6 +8,7 @@
     <div
         v-if="!shouldHideByPaywall"
         class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24"
+        :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
     >
 
         <!-- 問題番号 -->
@@ -21,9 +22,11 @@
                             ? 'bg-gradient-to-b from-emerald-400 to-lime-400'
                             : isOuyou
                                 ? 'bg-gradient-to-b from-amber-400 to-orange-400'
-                        : isIppan
-                            ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
-                            : 'bg-gradient-to-b from-purple-400 to-blue-400'
+                            : isIppan
+                                ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
+                                : isSeiho
+                                    ? 'bg-gradient-to-b from-violet-400 to-indigo-400'
+                                    : 'bg-gradient-to-b from-purple-400 to-blue-400'
                 "
             ></div>
             <h2 class="text-base font-bold leading-tight text-gray-700">
@@ -111,10 +114,11 @@
     })
 
     const page = usePage();
-    const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
-    const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
-    const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
-    const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
+const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
+const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
+const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value);
 
     const rangeStartQuestion = computed(() => {
         const range = String(props.questionRange ?? "").trim();

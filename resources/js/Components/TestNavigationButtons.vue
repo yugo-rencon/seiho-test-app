@@ -61,7 +61,7 @@ const ippanAutoNavigation = computed(() => {
     }
 
     const currentId = `${matched[1]}|${matched[2]}|${matched[3].toLowerCase()}`;
-    const years = ["2025", "2024", "2023", "2022", "2021", "2020"];
+    const years = ["2025", "2024", "2023", "2022", "2021"];
     const months = ["1-6", "7-12"];
     const forms = ["a", "b", "c", "d", "e"];
 

@@ -7,7 +7,11 @@
     ></div>
     <template v-if="visibleItems.length > 0">
         <template v-for="(item, index) in visibleItems" :key="index">
-            <div :id="`q${item.questionNo}`" class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24">
+            <div
+                :id="`q${item.questionNo}`"
+                class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24"
+                :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
+            >
                 <div class="flex items-start gap-2 my-4">
                 <div
                     class="w-1.5 h-6 rounded-full"
@@ -20,7 +24,9 @@
                                     ? 'bg-gradient-to-b from-amber-400 to-orange-400'
                             : isIppan
                                 ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
-                                : 'bg-gradient-to-b from-purple-400 to-blue-400'
+                                : isSeiho
+                                    ? 'bg-gradient-to-b from-violet-400 to-indigo-400'
+                                    : 'bg-gradient-to-b from-purple-400 to-blue-400'
                     "
                 ></div>
                 <h2 class="text-base font-bold leading-tight text-gray-700">

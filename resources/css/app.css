@@ -9,9 +9,9 @@ body {
 
 /* 日本語の句読点・かぎ括弧の見た目をわずかに詰める */
 .jp-kagi-tight {
-    letter-spacing: -0.003em;
-    font-kerning: normal;
-    font-feature-settings: "palt" 1;
+    letter-spacing: normal;
+    font-kerning: auto;
+    font-feature-settings: normal;
 }
 
 .secondary-title {

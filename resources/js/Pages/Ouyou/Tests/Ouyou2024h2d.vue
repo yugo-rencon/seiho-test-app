@@ -380,11 +380,11 @@ const isDraft = false;
                     questionTitle="募集上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '虚偽の説明',
+                        '虚偽告知教唆',
+                        '団体',
+                        '威迫',
+                        '誹謗・中傷', // 問25〜29
                     ]"
                     :labels="[
                         'キ', //25
@@ -402,11 +402,11 @@ const isDraft = false;
                     questionTitle="法人税の仕組み"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '協同組合',
+                        '申告納税',
+                        '2ヶ月',
+                        '決算利益',
+                        '税務調整', // 問30〜34
                     ]"
                     :labels="[
                         'エ', //30
@@ -424,11 +424,11 @@ const isDraft = false;
                     questionTitle="相続税額の計算"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '8500',
+                        '10000',
+                        '5228',
+                        '1725',
+                        '931', // 問35〜39
                     ]"
                     :labels="[
                         'ウ', //35
@@ -482,12 +482,12 @@ const isDraft = false;
                         {
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
-                            content: '',
+                            content: '契約の取消し等ができるのは、お客さまが誤認に気づいた時や困惑の状況から解放された時などから原則[[1年以内]]で、契約締結時から原則[[5年以内]]となる', //p153
                         }, //47
                         {
                             questionTitle: '個人情報の保護に関する法律（個人情報保護法）',
                             relatedProblems: [],
-                            content: '',
+                            content: '「個人情報の取得・利用時の義務」「個人情報を適切・安全に管理する義務」「[[本人からの求めに対応する義務]]」の[[3つ]]', //p155-156
                         }, //48
                         {
                             questionTitle: '失効（復活）手続きの留意点',

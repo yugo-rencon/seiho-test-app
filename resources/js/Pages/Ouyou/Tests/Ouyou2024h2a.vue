@@ -107,9 +107,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '加入者個人の拠出がある場合は[[生命保険料控除の対象となる]]', //p102
+                        '加入者が障害給付金を年金で受け取った場合、[[非課税扱いとなる]]', //p102
+                        '加入者が障害給付金を一時金で受け取った場合、[[非課税扱いとなる]]', //p102
                     ]"
                 />
                 <QuestionTemp4
@@ -380,11 +380,11 @@ const isDraft = false;
                     questionTitle="募集上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '虚偽の説明',
+                        '虚偽告知教唆',
+                        '団体',
+                        '威迫',
+                        '誹謗・中傷', // 問25〜29
                     ]"
                     :labels="[
                         'キ', //25
@@ -402,11 +402,11 @@ const isDraft = false;
                     questionTitle="厚生年金保険（被用者年金）"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '二階建て',
+                        '1/2',
+                        '70歳',
+                        '標準報酬月額',
+                        '被扶養配偶者分', // 問30〜34
                     ]"
                     :labels="[
                         'オ', //30
@@ -424,11 +424,11 @@ const isDraft = false;
                     questionTitle="相続税額の計算"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '10000',
+                        '7800',
+                        '5620',
+                        '1405',
+                        '1226', // 問35〜39
                     ]"
                     :labels="[
                         'ア', //35
@@ -447,7 +447,7 @@ const isDraft = false;
                         {
                             questionTitle: '国税と地方税',
                             relatedProblems: [],
-                            content: '',
+                            content: '国税は、所得税、法人税などの[[直接税]]、消費税、酒税などの[[間接税]]とに分けられる', //p14
                         }, //40
                         {
                             questionTitle: 'みなし相続財産',
@@ -487,7 +487,7 @@ const isDraft = false;
                         {
                             questionTitle: '個人情報の保護に関する法律（個人情報保護法）',
                             relatedProblems: [],
-                            content: '',
+                            content: '「個人情報の取得・利用時の義務」「個人情報を適切・安全に管理する義務」「[[本人からの求めに対応する義務]]」の[[3つ]]', //p155-156
                         }, //48
                         {
                             questionTitle: '失効（復活）手続きの留意点',

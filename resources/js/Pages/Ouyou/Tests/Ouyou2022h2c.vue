@@ -67,9 +67,9 @@ const isDraft = false;
                     questionTitle="相続対策"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '死亡保険金を受け取ることによる[[相続税額の増加分も考慮して]]生命保険に加入することが必要', //p54
+                        '代襲相続 → 代襲分割', //p54
+                        '[[遺言は原則的に法定相続の規定に優先する]]効力をもっている', //p55
                         '正しい',
                     ]"
                 />
@@ -304,7 +304,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '金利が今後上昇しそうな場合には[[変動金利商品]]が有利となり、逆に金利が今後下降しそうな場合には、[[固定金利商品]]が有利となる', //p130
                     ]"
                 />
                 <QuestionTemp1
@@ -315,7 +315,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '80歳 → 70歳', //p137
                         '正しい',
                         '正しい',
                     ]"
@@ -354,7 +354,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '「特別の利益の提供」に[[該当する]]', //p161
                         '正しい',
                         '正しい',
                     ]"
@@ -424,11 +424,11 @@ const isDraft = false;
                     questionTitle="所得税の税額の計算過程"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '476',
+                        '20',
+                        '95',
+                        '48',
+                        '10.45', // 問35〜39
                     ]"
                     :labels="[
                         'ケ', //p
@@ -467,7 +467,7 @@ const isDraft = false;
                         {
                             questionTitle: '複利型商品',
                             relatedProblems: [],
-                            content: '',
+                            content: '利率・期間が同じ場合、1年複利よりも半年複利、半年複利よりも1ヶ月複利商品の方が元利合計は[[大きくなる]]', //p131
                         }, //44
                         {
                             questionTitle: '公的年金（障害年金）の障害認定の要件',
@@ -477,7 +477,7 @@ const isDraft = false;
                         {
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
-                            content: '',
+                            content: '契約の取消し等ができるのは、お客さまが誤認に気づいた時や困惑の状況から解放された時などから原則[[1年以内]]で、契約締結時から原則[[5年以内]]となる', //p153
                         }, //46
                         {
                             questionTitle: '募集時の正しい説明',

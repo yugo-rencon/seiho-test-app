@@ -54,10 +54,10 @@ const isDraft = false;
                     questionTitle="相続対策"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '死亡保険金を受け取ることによる[[相続税額の増加分も考慮して]]生命保険に加入することが必要', //p54
+                        '代襲相続 → 代襲分割', //p54
                         '正しい',
-                        '', //p
+                        '遺言には、主に「自筆証書遺言」「[[公正証書遺言]]」「[[秘密証書遺言]]」の3通りの方式がある', //p55
                     ]"
                 />
                 <QuestionTemp1
@@ -301,7 +301,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険料のうち[[定期保険部分、特約部分は損金算入できる]]', //p115
                     ]"
                 />
                 <QuestionTemp1
@@ -377,11 +377,11 @@ const isDraft = false;
                     questionTitle="厚生年金保険（被用者年金）"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '二階建て',
+                        '1/2',
+                        '70歳',
+                        '標準報酬月額',
+                        '被扶養配偶者分', // 問25〜29
                     ]"
                     :labels="[
                         'オ', //p
@@ -399,11 +399,11 @@ const isDraft = false;
                     questionTitle="募集上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '虚偽の説明',
+                        '虚偽告知教唆',
+                        '団体',
+                        '威迫',
+                        '誹謗・中傷', // 問30〜34
                     ]"
                     :labels="[
                         'オ', //p
@@ -444,7 +444,7 @@ const isDraft = false;
                         {
                             questionTitle: '税金',
                             relatedProblems: [],
-                            content: '',
+                            content: '直接税と間接税 → 国税と地方税', //p14
                         }, //40
                         {
                             questionTitle: '住宅借入金等特別控除',
@@ -469,7 +469,7 @@ const isDraft = false;
                         {
                             questionTitle: '公的年金（障害年金）の障害認定の要件',
                             relatedProblems: [],
-                            content: '',
+                            content: '障害認定日に、[[国民年金の場合は障害等級1級・2級]]、[[厚生年金保険の場合は1級・2級・3級]]の状態にあること', //p142
                         }, //45
                         {
                             questionTitle: '遺族基礎年金の受給額',

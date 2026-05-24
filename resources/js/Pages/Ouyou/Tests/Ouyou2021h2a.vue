@@ -342,7 +342,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                         '正しい',
                     ]"
                 />
@@ -457,7 +457,7 @@ const isDraft = false;
                         {
                             questionTitle: '相続時精算課税制度',
                             relatedProblems: [],
-                            content: '',
+                            content: '一度この制度を適用すると、選択した親や祖父母からの贈与については、[[暦年課税に変更できない]]', //p57
                         }, //42
                         {
                             questionTitle: '贈与税',
@@ -482,7 +482,7 @@ const isDraft = false;
                         {
                             questionTitle: '金利の基礎知識',
                             relatedProblems: [],
-                            content: '',
+                            content: '終価 → 現価', //p126
                         }, //47
                         {
                             questionTitle: '個人情報保護法',

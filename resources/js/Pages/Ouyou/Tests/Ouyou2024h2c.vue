@@ -301,7 +301,7 @@ const isDraft = false;
                     questionTitle="確定給付企業年金制度の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '加入者個人の拠出がある場合は[[生命保険料控除の対象となる]]', //p102
                         '正しい',
                         '正しい',
                         '正しい',
@@ -328,7 +328,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '負担すべき保険料は、被保険者の「標準報酬月額」[[「標準賞与額」]]に所定の保険料率を乗じて算出する', //p137
                         '正しい',
                         '正しい',
                     ]"
@@ -380,11 +380,11 @@ const isDraft = false;
                     questionTitle="募集上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '虚偽の説明',
+                        '虚偽告知教唆',
+                        '団体',
+                        '威迫',
+                        '誹謗・中傷', // 問25〜29
                     ]"
                     :labels="[
                         'キ', //25
@@ -402,11 +402,11 @@ const isDraft = false;
                     questionTitle="総合福祉団体定期保険の販売手順"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        'アプローチ',
+                        '性別',
+                        '平均年齢',
+                        '保険金額',
+                        '保険証券', // 問30〜34
                     ]"
                     :labels="[
                         'キ', //30
@@ -424,11 +424,11 @@ const isDraft = false;
                     questionTitle="相続税額の計算"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '13000',
+                        '8000',
+                        '6279',
+                        '1506',
+                        '1183', // 問35〜39
                     ]"
                     :labels="[
                         'ア', //35
@@ -447,7 +447,7 @@ const isDraft = false;
                         {
                             questionTitle: '国税と地方税',
                             relatedProblems: [],
-                            content: '',
+                            content: '国税は、所得税、法人税などの[[直接税]]、消費税、酒税などの[[間接税]]とに分けられる', //p14
                         }, //40
                         {
                             questionTitle: '遺言',
@@ -457,7 +457,7 @@ const isDraft = false;
                         {
                             questionTitle: '金利の基礎知識',
                             relatedProblems: [],
-                            content: '',
+                            content: '終価 → 現価', //p126
                         }, //42
                         {
                             questionTitle: '個人の住民税',
@@ -482,12 +482,12 @@ const isDraft = false;
                         {
                             questionTitle: '保険法',
                             relatedProblems: [],
-                            content: '',
+                            content: '[[商法]]では、告知する事項を契約者等が判断して告知する義務（自発的申告義務）と規定されていたのに対し、[[保険法では、保険会社が質問したことだけを答えれば良いという義務（質問応答義務）に変更された]]', //p158-159
                         }, //47
                         {
                             questionTitle: '個人情報の保護に関する法律（個人情報保護法）',
                             relatedProblems: [],
-                            content: '',
+                            content: '「個人情報の取得・利用時の義務」「個人情報を適切・安全に管理する義務」「[[本人からの求めに対応する義務]]」の[[3つ]]', //p155-156
                         }, //48
                         {
                             questionTitle: '失効（復活）手続きの留意点',

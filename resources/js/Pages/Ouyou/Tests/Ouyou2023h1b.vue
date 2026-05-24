@@ -107,9 +107,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '年金規約に年金と一時金との選択支給を[[定めることができる]]', //p101
+                        '確定給付企業年金の給付には、老齢給付金、障害給付金、遺族給付金（および死亡一時金）、[[脱退一時金]]がある', //p101
+                        '委託者責任 → 受託者責任', //p102
                     ]"
                 />
                 <QuestionTemp1
@@ -181,10 +181,10 @@ const isDraft = false;
                     questionTitle="厚生年金保険（被用者年金）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '従業員全員の同意 → 従業員の1/2以上の同意', //p137
+                        '80歳 → 70歳', //p137
                         '正しい',
-                        '', //p
+                        '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                     ]"
                 />
                 <QuestionTemp1
@@ -312,7 +312,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '5年 → 1年', //p128
                         '正しい',
                         '正しい',
                     ]"
@@ -353,7 +353,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '「断定的な予想配当等の表示・説明」に[[該当する]]', //p161
                     ]"
                 />
                 <QuestionTemp1
@@ -421,11 +421,11 @@ const isDraft = false;
                     questionTitle="所得税の税額の計算過程"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '476',
+                        '20',
+                        '95',
+                        '48',
+                        '10.45', // 問35〜39
                     ]"
                     :labels="[
                         'ケ', //35
@@ -444,7 +444,7 @@ const isDraft = false;
                         {
                             questionTitle: '国税と地方税',
                             relatedProblems: [],
-                            content: '',
+                            content: '国税は、所得税、法人税などの[[直接税]]、消費税、酒税などの[[間接税]]とに分けられる', //p14
                         }, //40
                         {
                             questionTitle: '住宅借入金等特別控除',
@@ -474,7 +474,7 @@ const isDraft = false;
                         {
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
-                            content: '',
+                            content: '契約の取消し等ができるのは、お客さまが誤認に気づいた時や困惑の状況から解放された時などから原則[[1年以内]]で、契約締結時から原則[[5年以内]]となる', //p153
                         }, //46
                         {
                             questionTitle: '金融商品取引法',
@@ -489,7 +489,7 @@ const isDraft = false;
                         {
                             questionTitle: '保険法',
                             relatedProblems: [],
-                            content: '',
+                            content: '[[商法]]では、告知する事項を契約者等が判断して告知する義務（自発的申告義務）と規定されていたのに対し、[[保険法では、保険会社が質問したことだけを答えれば良いという義務（質問応答義務）に変更された]]', //p158-159
                         }, //49
                     ]"
                 />

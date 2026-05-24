@@ -252,7 +252,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '[[遺言は原則的に法定相続の規定に優先する]]効力をもっている', //p55
                     ]"
                 />
                 <QuestionTemp1
@@ -342,7 +342,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                         '正しい',
                     ]"
                 />
@@ -424,11 +424,11 @@ const isDraft = false;
                     questionTitle="相続税額の計算"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '14800',
+                        '6700',
+                        '6070',
+                        '1214',
+                        '1082', // 問35〜39
                     ]"
                     :labels="[
                         'ケ', //35
@@ -447,7 +447,7 @@ const isDraft = false;
                         {
                             questionTitle: '税金',
                             relatedProblems: [],
-                            content: '',
+                            content: '普通税と目的税 → 国税と地方税', //p14
                         }, //40
                         {
                             questionTitle: '住宅借入金等特別控除',
@@ -457,7 +457,7 @@ const isDraft = false;
                         {
                             questionTitle: '相続時精算課税制度',
                             relatedProblems: [],
-                            content: '',
+                            content: '受贈者である子または孫は、この制度の適用を贈与者である親や祖父母ごとに[[選択することができる]]', //p57
                         }, //42
                         {
                             questionTitle: '個人の住民税の申告',
@@ -477,7 +477,7 @@ const isDraft = false;
                         {
                             questionTitle: '保険法',
                             relatedProblems: [],
-                            content: '',
+                            content: '[[商法]]では、告知する事項を契約者等が判断して告知する義務（自発的申告義務）と規定されていたのに対し、[[保険法では、保険会社が質問したことだけを答えれば良いという義務（質問応答義務）に変更された]]', //p158-159
                         }, //46
                         {
                             questionTitle: '金利の基礎知識',

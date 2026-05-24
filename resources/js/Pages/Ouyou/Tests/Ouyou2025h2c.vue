@@ -249,7 +249,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '[[遺言は原則的に法定相続の規定に優先する]]効力をもっている', //p55
                     ]"
                 />
                 <QuestionTemp1
@@ -275,7 +275,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '加入者が障害給付金を一時金で受け取った場合、[[非課税扱いとなる]]', //p102
                     ]"
                 />
                 <QuestionTemp1
@@ -454,7 +454,7 @@ const isDraft = false;
                         {
                             questionTitle: '相続時精算課税制度',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '一度この制度を適用すると、選択した親や祖父母からの贈与については、[[暦年課税に変更できない]]', //p57
                         }, //42
                         {
                             questionTitle: '個人の住民税',

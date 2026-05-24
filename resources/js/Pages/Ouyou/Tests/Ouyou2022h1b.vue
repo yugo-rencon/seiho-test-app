@@ -54,10 +54,10 @@ const isDraft = false;
                     questionTitle="相続対策"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '死亡保険金を受け取ることによる[[相続税額の増加分も考慮して]]生命保険に加入することが必要', //p54
+                        '代襲相続 → 代襲分割', //p54
                         '正しい',
-                        '', //p
+                        '遺言には、主に「自筆証書遺言」「[[公正証書遺言]]」「[[秘密証書遺言]]」の3通りの方式がある', //p55
                     ]"
                 />
                 <QuestionTemp1
@@ -182,9 +182,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '80歳 → 70歳', //p137
+                        '負担すべき保険料は、被保険者の「標準報酬月額」[[「標準賞与額」]]に所定の保険料率を乗じて算出する', //p137
+                        '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                     ]"
                 />
                 <QuestionTemp1
@@ -301,7 +301,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険料のうち[[定期保険部分、特約部分は損金算入できる]]', //p115
                     ]"
                 />
                 <QuestionTemp1
@@ -399,11 +399,11 @@ const isDraft = false;
                     questionTitle="募集上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '虚偽の説明',
+                        '虚偽告知教唆',
+                        '保険料の割引・割戻',
+                        '断定的',
+                        '業務上の地位', // 問30〜34
                     ]"
                     :labels="[
                         'オ', //p
@@ -421,11 +421,11 @@ const isDraft = false;
                     questionTitle="所得税の税額の計算過程"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '565',
+                        '15',
+                        '90',
+                        '48',
+                        '19.35', // 問35〜39
                     ]"
                     :labels="[
                         'コ', //p
@@ -444,7 +444,7 @@ const isDraft = false;
                         {
                             questionTitle: '税金',
                             relatedProblems: [],
-                            content: '',
+                            content: '直接税と間接税 → 国税と地方税', //p14
                         }, //40
                         {
                             questionTitle: '住宅借入金等特別控除',
@@ -464,7 +464,7 @@ const isDraft = false;
                         {
                             questionTitle: '複利型商品',
                             relatedProblems: [],
-                            content: '',
+                            content: '利率・期間が同じ場合、[[1年複利よりも半年複利、半年複利よりも1ヶ月複利商品]]の方が元利合計は大きくなる', //p131
                         }, //44
                         {
                             questionTitle: '公的年金（障害年金）の障害認定の要件',

@@ -158,7 +158,7 @@ const isDraft = false;
                         },
                     ]"
                     :labels="[
-                        'ウ', //7
+                        'ウ', //8
                     ]"
                 />
                 <QuestionTemp1
@@ -249,7 +249,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '[[遺言は原則的に法定相続の規定に優先する]]効力をもっている', //p55
                     ]"
                 />
                 <QuestionTemp1
@@ -474,7 +474,7 @@ const isDraft = false;
                         {
                             questionTitle: '複利型商品',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '利率・期間が同じ場合、1年複利よりも半年複利、半年複利よりも1ヶ月複利商品の方が元利合計は[[大きくなる]]', //p131
                         }, //46
                         {
                             questionTitle: '消費者契約法',

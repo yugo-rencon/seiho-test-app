@@ -328,7 +328,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '利率・期間が同じ場合、[[1年複利よりも半年複利、半年複利よりも1ヶ月複利商品]]の方が元利合計は大きくなる', //p131
                         '正しい',
                         '正しい',
                     ]"
@@ -342,7 +342,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                         '正しい',
                     ]"
                 />
@@ -353,7 +353,7 @@ const isDraft = false;
                     questionTitle="保険業法上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '「告知妨害・不告知教唆」に[[該当する]]', //p160
                         '正しい',
                         '正しい',
                         '正しい',
@@ -424,11 +424,11 @@ const isDraft = false;
                     questionTitle="相続税額の計算"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '14200',
+                        '6800',
+                        '5980',
+                        '1255',
+                        '1066', // 問35〜39
                     ]"
                     :labels="[
                         'コ', //35
@@ -457,7 +457,7 @@ const isDraft = false;
                         {
                             questionTitle: '相続時精算課税制度',
                             relatedProblems: [],
-                            content: '',
+                            content: '一度この制度を適用すると、選択した親や祖父母からの贈与については、[[暦年課税に変更できない]]', //p57
                         }, //42
                         {
                             questionTitle: '贈与税',

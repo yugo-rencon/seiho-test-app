@@ -107,9 +107,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '年金規約に年金と一時金との選択支給を[[定めることができる]]', //p101
+                        '確定給付企業年金の給付には、老齢給付金、障害給付金、遺族給付金（および死亡一時金）、[[脱退一時金]]がある', //p101
+                        '事業主等は、掛金納付状況、資産運用状況、財務状況について、[[加入者等への情報開示を行わなければならない]]', //p102
                     ]"
                 />
                 <QuestionTemp4
@@ -328,7 +328,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '6ヶ月 → 1年', //p128
                         '正しい',
                         '正しい',
                     ]"
@@ -342,7 +342,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                         '正しい',
                     ]"
                 />
@@ -424,11 +424,11 @@ const isDraft = false;
                     questionTitle="相続税額の計算"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '14500',
+                        '6900',
+                        '6160',
+                        '1293',
+                        '1098', // 問35〜39
                     ]"
                     :labels="[
                         'コ', //35
@@ -447,7 +447,7 @@ const isDraft = false;
                         {
                             questionTitle: '税金',
                             relatedProblems: [],
-                            content: '',
+                            content: '直接税と間接税 → 国税と地方税', //p14
                         }, //40
                         {
                             questionTitle: '住宅借入金等特別控除',
@@ -467,7 +467,7 @@ const isDraft = false;
                         {
                             questionTitle: '複利型商品',
                             relatedProblems: [],
-                            content: '',
+                            content: '利率・期間が同じ場合、[[1年複利よりも半年複利、半年複利よりも1ヶ月複利商品]]の方が元利合計は大きくなる', //p131
                         }, //44
                         {
                             questionTitle: '総合福祉団体定期保険の販売手順',
@@ -477,7 +477,7 @@ const isDraft = false;
                         {
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
-                            content: '',
+                            content: '契約の取消し等ができるのは、お客さまが誤認に気づいた時や困惑の状況から解放された時などから原則[[1年以内]]で、契約締結時から原則[[5年以内]]となる', //p153
                         }, //46
                         {
                             questionTitle: '金利の基礎知識',

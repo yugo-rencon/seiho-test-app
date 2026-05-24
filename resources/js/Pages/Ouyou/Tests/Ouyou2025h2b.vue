@@ -158,7 +158,7 @@ const isDraft = false;
                         },
                     ]"
                     :labels="[
-                        'ウ', //7
+                        'ウ', //8
                     ]"
                 />
                 <QuestionTemp1
@@ -168,10 +168,10 @@ const isDraft = false;
                     questionTitle="厚生年金保険（被用者年金）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '80歳 → 70歳', //p137
                         '正しい',
-                        '', //p
-                        '', //p
+                        '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
+                        '子が3歳になるまでの期間を最長として、[[申請により免除される制度がある]]', //p137
                     ]"
                 />
                 <QuestionTemp1
@@ -314,7 +314,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '加入者が障害給付金を一時金で受け取った場合、[[非課税扱いとなる]]', //p102
                     ]"
                 />
                 <QuestionTemp1
@@ -444,7 +444,7 @@ const isDraft = false;
                         {
                             questionTitle: '国税と地方税',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '国税は、所得税、法人税などの[[直接税]]、消費税、酒税などの[[間接税]]とに分けられる', //p14
                         }, //40
                         {
                             questionTitle: '所得税の税額控除',

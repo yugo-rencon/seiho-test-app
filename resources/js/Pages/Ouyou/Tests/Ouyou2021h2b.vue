@@ -68,9 +68,9 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '死亡保険金を受け取ることによる[[相続税額の増加分も考慮して]]生命保険に加入することが必要', //p54
+                        '代襲相続 → 代襲分割', //p54
+                        '特に主たる財産が自宅の場合、遺産分割には[[苦労を要する]]', //p54
                     ]"
                 />
                 <QuestionTemp1
@@ -342,7 +342,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                         '正しい',
                     ]"
                 />
@@ -482,7 +482,7 @@ const isDraft = false;
                         {
                             questionTitle: '金利の基礎知識',
                             relatedProblems: [],
-                            content: '',
+                            content: '終価 → 現価', //p126
                         }, //47
                         {
                             questionTitle: '個人情報保護法',

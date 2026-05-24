@@ -171,7 +171,7 @@ const isDraft = false;
                         },
                     ]"
                     :labels="[
-                        'ウ', //7
+                        'ウ', //9
                     ]"
                 />
                 <QuestionTemp1
@@ -235,7 +235,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '[[遺言は原則的に法定相続の規定に優先する]]効力をもっている', //p55
                         '正しい',
                     ]"
                 />
@@ -312,7 +312,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '負担すべき保険料は、被保険者の「標準報酬月額」[[「標準賞与額」]]に所定の保険料率を乗じて算出する', //p137
                         '正しい',
                         '正しい',
                     ]"
@@ -377,11 +377,11 @@ const isDraft = false;
                     questionTitle="法人税の仕組み"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '公益法人',
+                        '申告納税',
+                        '2ヶ月',
+                        '決算利益',
+                        '税務調整', // 問25〜29
                     ]"
                     :labels="[
                         'イ', //25
@@ -399,18 +399,18 @@ const isDraft = false;
                     questionTitle="総合福祉団体定期保険の販売手順"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        'アプローチ',
+                        '性別',
+                        '平均年齢',
+                        '保険金額',
+                        '保険証券', // 問30〜34
                     ]"
                     :labels="[
                         'カ', //30
                         'エ', //31
                         'コ', //32
                         'ウ', //33
-                        'カ', //34
+                        'ア', //34
                     ]"
                 />
                 <QuestionTemp3
@@ -421,11 +421,11 @@ const isDraft = false;
                     questionTitle="所得税の税額の計算過程"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '502',
+                        '15',
+                        '98',
+                        '48',
+                        '12.25', // 問35〜39
                     ]"
                     :labels="[
                         'キ', //35
@@ -444,7 +444,7 @@ const isDraft = false;
                         {
                             questionTitle: '税金',
                             relatedProblems: [],
-                            content: '',
+                            content: '直接税と間接税 → 国税と地方税', //p14
                         }, //40
                         {
                             questionTitle: '所得税の税額控除',
@@ -454,7 +454,7 @@ const isDraft = false;
                         {
                             questionTitle: '相続時精算課税制度',
                             relatedProblems: [],
-                            content: '',
+                            content: '一度この制度を適用すると、選択した親や祖父母からの贈与については、[[暦年課税に変更できない]]', //p57
                         }, //42
                         {
                             questionTitle: '同族会社',
@@ -479,7 +479,7 @@ const isDraft = false;
                         {
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
-                            content: '',
+                            content: '契約の取消し等ができるのは、お客さまが誤認に気づいた時や困惑の状況から解放された時などから原則[[1年以内]]で、契約締結時から原則[[5年以内]]となる', //p153
                         }, //47
                         {
                             questionTitle: '保険法',

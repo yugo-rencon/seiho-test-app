@@ -41,10 +41,10 @@ const isDraft = false;
                     questionTitle="相続税の課税財産と非課税財産"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '相続財産に特許権、営業権も含まれる', //p42
                         '正しい',
-                        '', //p
-                        '', //p
+                        '800万円 → 500万円', //p44
+                        '4年分相当額 → 6ヶ月分相当額', //p44
                     ]"
                 />
                 <QuestionTemp1
@@ -369,7 +369,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '復活して失効期間中の支払事由に相当する事故は[[保障の対象とならない]]', //p173
                     ]"
                 />
                 <QuestionTemp3
@@ -380,11 +380,11 @@ const isDraft = false;
                     questionTitle="所得税の確定申告"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '2月16日から3月15日まで',
+                        '源泉徴収',
+                        '退職所得',
+                        '20',
+                        '医療費控除', // 問25〜29
                     ]"
                     :labels="[
                         'ア', //25
@@ -424,11 +424,11 @@ const isDraft = false;
                     questionTitle="相続税の税額の計算過程"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '14500',
+                        '6900',
+                        '6160',
+                        '1293',
+                        '1078', // 問35〜39
                     ]"
                     :labels="[
                         'コ', //35
@@ -462,12 +462,12 @@ const isDraft = false;
                         {
                             questionTitle: '短期金利と長期金利',
                             relatedProblems: [],
-                            content: '',
+                            content: '3年 → 1年', //p128
                         }, //43
                         {
                             questionTitle: '厚生年金保険（老齢厚生年金）の受給条件',
                             relatedProblems: [],
-                            content: '',
+                            content: '6ヶ月 → 1ヶ月', //p139
                         }, //44
                         {
                             questionTitle: '総合福祉団体定期保険のクロージング',

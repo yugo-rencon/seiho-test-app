@@ -21,17 +21,16 @@ const isDraft = false;
             <DraftNotice v-if="isDraft" />
 
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
-                <QuestionTemp1
+                <QuestionTemp2
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="相続時精算課税制度選択による贈与税額"
-                    :relatedProblems="[]"
-                    :contents="[
-                        '', //p
-                        '正しい',
-                        '', //p
-                        '', //p
+                    :items="[
+                        {
+                            questionTitle: '相続時精算課税制度選択による贈与税額',
+                            relatedProblems: [],
+                            content: '贈与税額 = （基礎控除後の課税価格 - 2,500万円） × 20% より[[「イ」]]が正しい', //p56
+                        }, //1
                     ]"
                 />
                 <QuestionTemp1

@@ -47,17 +47,16 @@ const isDraft = false;
                         '年金の種類を問わず、原則として[[（ア）解約返戻金相当額（イ）年金に代えて一時金の給付を受けられる場合は一時金相当額（ウ）予定利率等をもとに算出した金額 のうちいずれか多い金額]]で評価される', //p45
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp2
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle="相続時精算課税制度選択による贈与税額"
-                    :relatedProblems="[]"
-                    :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                    :items="[
+                        {
+                            questionTitle: '相続時精算課税制度選択による贈与税額',
+                            relatedProblems: [],
+                            content: '贈与税額 = （基礎控除後の課税価格 - 2,500万円） × 20% より[[「ウ」]]が正しい', //p56
+                        }, //3
                     ]"
                 />
                 <QuestionTemp1
@@ -106,10 +105,10 @@ const isDraft = false;
                     questionTitle="法人税の基礎知識"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '公共目的で設立された公共法人には、[[一切法人税はかからない]]', //p74
+                        '会社の課税所得は、会社の決算利益とは[[必ずしも一致しない]]', //p76
                         '正しい',
-                        '', //p
+                        '法人は、原則として各事業年度終了日の翌日から[[2ヶ月以内]]に確定申告書を税務署に提出し、[[その提出期限まで]]に税金を納付する', //p75
                     ]"
                 />
                 <QuestionTemp1
@@ -380,11 +379,11 @@ const isDraft = false;
                     questionTitle="所得税の確定申告"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '2月16日から3月15日まで',
+                        '年末調整',
+                        '源泉徴収',
+                        '退職所得',
+                        '医療費控除', // 問25〜29
                     ]"
                     :labels="[
                         'ア', //p
@@ -402,11 +401,11 @@ const isDraft = false;
                     questionTitle="確定給付企業年金の受給権保護"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '受託者',
+                        '事業主',
+                        '5年',
+                        '忠実義務',
+                        '厚生労働大臣', // 問30〜34
                     ]"
                     :labels="[
                         'ア', //p

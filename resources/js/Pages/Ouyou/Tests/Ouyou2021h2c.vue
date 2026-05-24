@@ -41,10 +41,10 @@ const isDraft = false;
                     questionTitle="相続税の課税財産と非課税財産"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '相続財産に特許権、営業権も含まれる', //p42
                         '正しい',
-                        '', //p
-                        '', //p
+                        '800万円 → 500万円', //p44
+                        '4年分相当額 → 6ヶ月分相当額', //p44
                     ]"
                 />
                 <QuestionTemp1
@@ -369,7 +369,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '復活して失効期間中の支払事由に相当する事故は[[保障の対象とならない]]', //p173
                     ]"
                 />
                 <QuestionTemp3
@@ -380,11 +380,11 @@ const isDraft = false;
                     questionTitle="金利の決まり方"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '利息（価格）',
+                        '設備投資',
+                        '日本銀行',
+                        '公開市場操作（オペレーション）',
+                        '1年', // 問25〜29
                     ]"
                     :labels="[
                         'ケ', //25
@@ -424,11 +424,11 @@ const isDraft = false;
                     questionTitle="相続税の税額の計算過程"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '14800',
+                        '6700',
+                        '6070',
+                        '1214',
+                        '1062', // 問35〜39
                     ]"
                     :labels="[
                         'ケ', //35

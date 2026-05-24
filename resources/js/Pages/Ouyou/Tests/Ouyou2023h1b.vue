@@ -60,17 +60,16 @@ const isDraft = false;
                         '年金の種類を問わず、原則として[[（ア）解約返戻金相当額（イ）年金に代えて一時金の給付を受けられる場合は一時金相当額（ウ）予定利率等をもとに算出した金額 のうちいずれか多い金額]]で評価される', //p45
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp2
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle="相続時精算課税制度選択による贈与税額"
-                    :relatedProblems="[]"
-                    :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                    :items="[
+                        {
+                            questionTitle: '相続時精算課税制度選択による贈与税額',
+                            relatedProblems: [],
+                            content: '贈与税額 = （基礎控除後の課税価格 - 2,500万円） × 20% より[[「ウ」]]が正しい', //p56
+                        }, //4
                     ]"
                 />
                 <QuestionTemp1
@@ -133,7 +132,7 @@ const isDraft = false;
                         {
                             answer: '961,992円',
                             questionTitle: '現価計算',
-                            relatedProblems: [''],
+                            relatedProblems: [],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -234,7 +233,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '贈与税の課税対象 → 相続税の課税対象', //p43
                         '正しい',
                         '正しい',
                     ]"
@@ -275,7 +274,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '法人は、原則として各事業年度終了日の翌日から[[2ヶ月以内]]に確定申告書を税務署に提出し、[[その提出期限まで]]に税金を納付する', //p75
                     ]"
                 />
                 <QuestionTemp1
@@ -449,7 +448,7 @@ const isDraft = false;
                         {
                             questionTitle: '住宅借入金等特別控除',
                             relatedProblems: [],
-                            content: '',
+                            content: '租税特別所得控除 → 税額控除', //p29
                         }, //41
                         {
                             questionTitle: '年金と税金',

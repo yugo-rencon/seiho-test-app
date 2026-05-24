@@ -59,17 +59,16 @@ const isDraft = false;
                         '申告書の提出期限の翌月末日まで → 申告書の提出期限まで', //p52
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp2
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle="相続時精算課税制度選択による贈与税額"
-                    :relatedProblems="[]"
-                    :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                    :items="[
+                        {
+                            questionTitle: '相続時精算課税制度選択による贈与税額',
+                            relatedProblems: [],
+                            content: '贈与税額 = （基礎控除後の課税価格 - 2,500万円） × 20% より[[「ウ」]]が正しい', //p56
+                        }, //4
                     ]"
                 />
                 <QuestionTemp1
@@ -196,7 +195,7 @@ const isDraft = false;
                     questionTitle="相続税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '5年 → 3年', //p44
                         '正しい',
                         '正しい',
                         '正しい',
@@ -340,11 +339,11 @@ const isDraft = false;
                     questionTitle="相続税の課税財産と非課税財産"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '社会政策',
+                        '借地権',
+                        'みなし相続',
+                        '3',
+                        '500', // 問25〜29
                     ]"
                     :labels="[
                         'ウ', //25
@@ -412,17 +411,17 @@ const isDraft = false;
                         {
                             questionTitle: '年金受給権の評価',
                             relatedProblems: [],
-                            content: '',
+                            content: 'まだ給付事由が発生していない生命保険契約の年金受給権は、[[個々の契約に係る解約返戻金の額を用いて評価される]]', //p45
                         }, //41
                         {
                             questionTitle: '相続税の未成年者控除',
                             relatedProblems: [],
-                            content: '',
+                            content: '3万円 → 10万円', //p48
                         }, //42
                         {
                             questionTitle: '総合福祉団体定期保険への特約付加',
                             relatedProblems: [],
-                            content: '',
+                            content: '特約の付加に際しては[[被保険者の同意が必要]]', //p85
                         }, //43
                         {
                             questionTitle: '経営者保険の販売活動',

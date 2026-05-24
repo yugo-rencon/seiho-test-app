@@ -262,7 +262,7 @@ const isDraft = false;
                     questionTitle="法人税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '公共目的で設立された公共法人には、[[一切法人税はかからない]]', //p74
                         '正しい',
                         '正しい',
                         '正しい',
@@ -402,11 +402,11 @@ const isDraft = false;
                     questionTitle="確定給付企業年金の受給権保護"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        '受託者',
+                        '5年',
+                        '財政再計算',
+                        '忠実義務',
+                        '厚生労働大臣', // 問30〜34
                     ]"
                     :labels="[
                         'ア', //p

@@ -67,9 +67,9 @@ const isDraft = false;
                     questionTitle="契約形態による課税関係"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '雑所得として所得税の課税対象 → 贈与税の課税対象', //p59
+                        '相続税の課税対象 → 贈与税の課税対象', //p59
+                        '贈与税の課税対象 → 相続税の課税対象', //p
                         '正しい',
                     ]"
                 />
@@ -80,10 +80,10 @@ const isDraft = false;
                     questionTitle="法人税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '公共目的で設立された公共法人には、[[一切法人税はかからない]]', //p74
+                        '会社の課税所得は、会社の決算利益とは[[必ずしも一致しない]]', //p76
                         '正しい',
-                        '', //p
+                        '法人は、原則として各事業年度終了日の翌日から[[2ヶ月以内]]に確定申告書を税務署に提出し、その提出期限までに税金を納付する', //p75
                     ]"
                 />
                 <QuestionTemp1
@@ -133,7 +133,7 @@ const isDraft = false;
                         {
                             answer: '961,992円',
                             questionTitle: '現価計算',
-                            relatedProblems: [''],
+                            relatedProblems: [],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -236,7 +236,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        'いずれか少ない金額 → いずれか多い金額', //p45
                     ]"
                 />
                 <QuestionTemp1
@@ -365,7 +365,7 @@ const isDraft = false;
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '復活して失効期間中の支払事由に相当する事故は[[保障の対象とならない]]', //p173
                         '正しい',
                     ]"
                 />
@@ -421,11 +421,11 @@ const isDraft = false;
                     questionTitle="所得税の税額の計算過程"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '520',
+                        '20',
+                        '80',
+                        '48',
+                        '16.35', // 問35〜39
                     ]"
                     :labels="[
                         'コ', //p
@@ -449,12 +449,12 @@ const isDraft = false;
                         {
                             questionTitle: '住宅借入金等特別控除',
                             relatedProblems: [],
-                            content: '',
+                            content: '租税特別所得控除 → 税額控除', //p29
                         }, //41
                         {
                             questionTitle: '経営者保険',
                             relatedProblems: [],
-                            content: '',
+                            content: '経営者保険の一般的な契約形態は、「契約者＝企業（団体）、被保険者＝役員・幹部従業員、[[受取人＝企業（団体）]]」',
                         }, //42
                         {
                             questionTitle: '医療保障保険（団体型）',
@@ -489,7 +489,7 @@ const isDraft = false;
                         {
                             questionTitle: '銀行窓販の弊害防止措置',
                             relatedProblems: [],
-                            content: '',
+                            content: '窓口販売（銀行窓販）において、保険商品の複雑性・特殊性や銀行等の業務の特性から、保険募集時のさらなる契約者保護を図るため、募集にあたっての各種[[「弊害防止措置」が設けられている]]', //p159
                         }, //49
                     ]"
                 />

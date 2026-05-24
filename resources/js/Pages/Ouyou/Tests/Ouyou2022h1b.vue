@@ -133,7 +133,7 @@ const isDraft = false;
                         {
                             answer: '967,717円',
                             questionTitle: '現価計算',
-                            relatedProblems: [''],
+                            relatedProblems: [],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -259,7 +259,7 @@ const isDraft = false;
                     questionTitle="契約形態による課税関係"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '雑所得として所得税の課税対象 → 贈与税の課税対象', //p59
                         '正しい',
                         '正しい',
                         '正しい',
@@ -273,7 +273,7 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
-                        '', //p
+                        '会社の課税所得は、会社の決算利益とは[[必ずしも一致しない]]', //p76
                         '正しい',
                         '正しい',
                     ]"
@@ -449,7 +449,7 @@ const isDraft = false;
                         {
                             questionTitle: '住宅借入金等特別控除',
                             relatedProblems: [],
-                            content: '',
+                            content: '租税特別所得控除 → 税額控除', //p29
                         }, //41
                         {
                             questionTitle: '同族会社',

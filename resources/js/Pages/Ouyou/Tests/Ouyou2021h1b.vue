@@ -152,14 +152,14 @@ const isDraft = false;
                     ]"
                 />
                 <QuestionTemp4
-                    :questionNumber="8"
+                    :questionNumber="11"
                     :title="title"
                     :subject="subject"
                     :contents="[
                         {
                             answer: '2,877,449円',
                             questionTitle: '現価計算',
-                            relatedProblems: [''],
+                            relatedProblems: [],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -223,7 +223,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '相続人が負担した被相続人の債務の金額と[[葬式にかかった金額]]は、マイナスの財産として[[相続財産から控除することができる]]', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -366,7 +366,7 @@ const isDraft = false;
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '[[「契約募集時」「契約期間中」「請求受付・案内時」の各段階]]にこれらの支払いに関する情報提供を行うことが大切', //p172
                     ]"
                 />
                 <QuestionTemp3
@@ -377,11 +377,11 @@ const isDraft = false;
                     questionTitle="生命保険募集人が遵守すべき法令等"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        '1',
+                        '特定保険',
+                        '契約締結前交付書面',
+                        '本人からの求めに対応',
+                        '10', // 問25〜29
                     ]"
                     :labels="[
                         'ウ', //25
@@ -449,12 +449,12 @@ const isDraft = false;
                         {
                             questionTitle: '配偶者の税額軽減',
                             relatedProblems: [],
-                            content: '',
+                            content: '2億2千万 → 1億6千万', //p48,
                         }, //41
                         {
                             questionTitle: '相続税の未成年者控除',
                             relatedProblems: [],
-                            content: '',
+                            content: '3万円 → 10万円', //p48
                         }, //42
                         {
                             questionTitle: '同族会社',
@@ -474,7 +474,7 @@ const isDraft = false;
                         {
                             questionTitle: '財形保険の予定利率の変更',
                             relatedProblems: [],
-                            content: '',
+                            content: '財形制度にもとづく保険は、[[多くの個人保険商品と異なり]]、積立金等の計算の基礎（予定利率）が[[変更される場合がある]]', //p117
                         }, //46
                         {
                             questionTitle: '厚生年金保険',
@@ -484,7 +484,7 @@ const isDraft = false;
                         {
                             questionTitle: '銀行窓販の弊害防止措置',
                             relatedProblems: [],
-                            content: '',
+                            content: '窓口販売（銀行窓販）において、保険商品の複雑性・特殊性や銀行等の業務の特性から、保険募集時のさらなる契約者保護を図るため、募集にあたっての各種[[「弊害防止措置」が設けられている]]', //p159
                         }, //48
                         {
                             questionTitle: '失効（復活）手続きの留意点',

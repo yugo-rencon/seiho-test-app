@@ -21,17 +21,16 @@ const isDraft = false;
             <DraftNotice v-if="isDraft" />
 
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
-                <QuestionTemp1
+                <QuestionTemp2
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="相続時精算課税制度選択による贈与税額"
-                    :relatedProblems="[]"
-                    :contents="[
-                        '', //p
-                        '正しい',
-                        '', //p
-                        '', //p
+                    :items="[
+                        {
+                            questionTitle: '相続時精算課税制度選択による贈与税額',
+                            relatedProblems: [],
+                            content: '贈与税額 = （基礎控除後の課税価格 - 2,500万円） × 20% より[[「イ」]]が正しい', //p56
+                        }, //1
                     ]"
                 />
                 <QuestionTemp1
@@ -41,10 +40,10 @@ const isDraft = false;
                     questionTitle="相続税の課税財産と非課税財産"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '相続財産に特許権、営業権も含まれる', //p42
                         '正しい',
-                        '', //p
-                        '', //p
+                        '800万円 → 500万円', //p44
+                        '4年分相当額 → 6ヶ月分相当額', //p44
                     ]"
                 />
                 <QuestionTemp1
@@ -199,7 +198,7 @@ const isDraft = false;
                     :contents="[
                         '公平性の原則 → 適合性の原則', //p166
                         '正しい',
-                        '法定代理人(親権者または未成年後見人）の同意が[[必要]]', //p168
+                        '法定代理人（親権者または未成年後見人）の同意が[[必要]]', //p168
                         '契約締結後 → 契約締結前', //p168
                     ]"
                 />
@@ -424,11 +423,11 @@ const isDraft = false;
                     questionTitle="相続税の税額の計算過程"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        '12000',
+                        '6450',
+                        '4225',
+                        '1014',
+                        '646', // 問35〜39
                     ]"
                     :labels="[
                         'ケ', //35

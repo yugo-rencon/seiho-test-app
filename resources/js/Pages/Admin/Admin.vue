@@ -30,10 +30,21 @@ const props = defineProps({
     },
 });
 
-const q = ref(props.filters?.q ?? "");
+const purchaseScope = ref(props.filters?.purchase_scope ?? "all");
+const purchaseState = ref(props.filters?.purchase_state ?? "all");
 const activeTab = ref("dashboard");
 const salesTab = ref("overview");
 const page = usePage();
+
+const purchaseScopeOptions = [
+    { value: "all", label: "全科目" },
+    { value: "seiho", label: "生保講座" },
+    { value: "daigaku", label: "生保大学" },
+    { value: "ouyou", label: "応用課程" },
+    { value: "senmon", label: "専門課程" },
+    { value: "ippan", label: "一般課程" },
+    { value: "basic", label: "セット" },
+];
 
 // リリース管理
 // 生保講座 (8科目, 年度×フォームa/b/c)
@@ -214,7 +225,10 @@ const isActiveMenu = (key) => activeTab.value === key;
 const submitSearch = () => {
     router.get(
         route(adminIndexRoute.value),
-        { q: q.value },
+        {
+            purchase_scope: purchaseScope.value,
+            purchase_state: purchaseState.value,
+        },
         { preserveState: true, replace: true },
     );
 };
@@ -462,53 +476,53 @@ const peakHour2h = computed(() => {
 
             <div
                 v-if="activeTab === 'dashboard'"
-                class="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+                class="mb-4 grid grid-cols-2 gap-2.5 sm:mb-6 sm:gap-3 lg:grid-cols-4"
             >
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <p class="text-xs text-gray-500">総ユーザー数</p>
-                    <p class="mt-1 text-2xl font-bold text-gray-900">
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">総ユーザー数</p>
+                    <p class="mt-1 text-xl font-bold text-gray-900 sm:text-2xl">
                         {{ stats.totalUsers }}
                     </p>
                 </div>
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <p class="text-xs text-gray-500">今月の新規登録数</p>
-                    <p class="mt-1 text-2xl font-bold text-gray-900">
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">今月の新規登録数</p>
+                    <p class="mt-1 text-xl font-bold text-gray-900 sm:text-2xl">
                         {{ stats.newUsersThisMonth }}
                     </p>
                 </div>
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <p class="text-xs text-gray-500">生保講座 売上件数</p>
-                    <p class="mt-1 text-2xl font-bold text-indigo-700">
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">生保講座 売上件数</p>
+                    <p class="mt-1 text-xl font-bold text-indigo-700 sm:text-2xl">
                         {{ stats.seihoSalesCount }}
                     </p>
                 </div>
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <p class="text-xs text-gray-500">生保大学 売上件数</p>
-                    <p class="mt-1 text-2xl font-bold text-blue-700">
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">生保大学 売上件数</p>
+                    <p class="mt-1 text-xl font-bold text-blue-700 sm:text-2xl">
                         {{ stats.daigakuSalesCount }}
                     </p>
                 </div>
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <p class="text-xs text-gray-500">一般課程 売上件数</p>
-                    <p class="mt-1 text-2xl font-bold text-fuchsia-700">
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">一般課程 売上件数</p>
+                    <p class="mt-1 text-xl font-bold text-fuchsia-700 sm:text-2xl">
                         {{ stats.ippanSalesCount }}
                     </p>
                 </div>
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <p class="text-xs text-gray-500">専門課程 売上件数</p>
-                    <p class="mt-1 text-2xl font-bold text-emerald-700">
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">専門課程 売上件数</p>
+                    <p class="mt-1 text-xl font-bold text-emerald-700 sm:text-2xl">
                         {{ stats.senmonSalesCount }}
                     </p>
                 </div>
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <p class="text-xs text-gray-500">応用課程 売上件数</p>
-                    <p class="mt-1 text-2xl font-bold text-amber-700">
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">応用課程 売上件数</p>
+                    <p class="mt-1 text-xl font-bold text-amber-700 sm:text-2xl">
                         {{ stats.ouyouSalesCount }}
                     </p>
                 </div>
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <p class="text-xs text-gray-500">一般・専門・応用セット 売上件数</p>
-                    <p class="mt-1 text-2xl font-bold text-cyan-700">
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">一般・専門・応用セット 売上件数</p>
+                    <p class="mt-1 text-xl font-bold text-cyan-700 sm:text-2xl">
                         {{ stats.basicSalesCount }}
                     </p>
                 </div>
@@ -744,19 +758,33 @@ const peakHour2h = computed(() => {
             <template v-if="activeTab === 'users'">
             <form
                 @submit.prevent="submitSearch"
-                class="mb-4 flex flex-col gap-2 sm:flex-row"
+                class="mb-4 grid gap-2 md:grid-cols-[1.2fr_1fr_auto]"
             >
-                <input
-                    v-model="q"
-                    type="text"
-                    placeholder="メールアドレスで検索"
-                    class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-purple-300 focus:outline-none"
-                />
+                <select
+                    v-model="purchaseScope"
+                    class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
+                >
+                    <option
+                        v-for="option in purchaseScopeOptions"
+                        :key="option.value"
+                        :value="option.value"
+                    >
+                        {{ option.label }}
+                    </option>
+                </select>
+                <select
+                    v-model="purchaseState"
+                    class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
+                >
+                    <option value="all">購入状況: すべて</option>
+                    <option value="purchased">購入あり</option>
+                    <option value="unpurchased">未購入</option>
+                </select>
                 <button
                     type="submit"
-                    class="whitespace-nowrap rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500 sm:w-auto"
+                    class="whitespace-nowrap rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500"
                 >
-                    検索
+                    絞り込み
                 </button>
             </form>
 
@@ -833,46 +861,41 @@ const peakHour2h = computed(() => {
                 <div
                     v-for="user in users.data"
                     :key="`mobile-${user.id}`"
-                    class="rounded-xl border border-gray-100 bg-white p-4"
+                    class="rounded-xl border border-gray-100 bg-white p-2.5"
                 >
-                    <div>
-                        <div>
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-1.5">
                             <p class="text-xs text-gray-500">ID: {{ user.id }}</p>
-                            <p class="mt-1 text-sm font-semibold text-gray-900 break-all">
-                                {{ user.email }}
-                            </p>
+                            <span
+                                class="rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                                :class="registrationSourceClass(user)"
+                            >
+                                {{ registrationSourceLabel(user) }}
+                            </span>
                         </div>
-                    </div>
-
-                    <div class="mt-3 text-xs text-gray-600">
-                        登録日: {{ formatDateTime(user.created_at) }}
-                    </div>
-                    <div class="mt-1 text-xs text-gray-600">
-                        登録経由:
                         <span
-                            class="rounded-full px-2 py-1 text-xs font-semibold"
-                            :class="registrationSourceClass(user)"
+                            class="rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                            :class="purchasedProducts(user).length > 0 ? 'bg-emerald-50 text-emerald-700' : 'bg-gray-100 text-gray-600'"
                         >
-                            {{ registrationSourceLabel(user) }}
+                            {{ purchasedProducts(user).length > 0 ? "購入あり" : "未購入" }}
                         </span>
                     </div>
-                    <div class="mt-1 text-xs text-gray-600">
-                        最終購入日時: {{ formatDateTime(user.last_paid_at) }}
+                    <p class="mt-1 text-sm font-semibold leading-snug text-gray-900 break-all">
+                        {{ user.email }}
+                    </p>
+
+                    <div class="mt-1.5 grid gap-0.5 text-[11px] text-gray-600">
+                        <p>登録日: {{ formatDateTime(user.created_at) }}</p>
+                        <p>最終購入: {{ formatDateTime(user.last_paid_at) }}</p>
                     </div>
-                    <div class="mt-2 flex flex-wrap gap-2">
+                    <div v-if="purchasedProducts(user).length > 0" class="mt-1.5 flex flex-wrap gap-1">
                         <span
                             v-for="product in purchasedProducts(user)"
                             :key="`mobile-${user.id}-${product.key}`"
-                            class="rounded-full px-2 py-1 text-xs font-semibold"
+                            class="rounded-full px-2 py-0.5 text-[11px] font-semibold"
                             :class="product.className"
                         >
                             {{ product.label }}
-                        </span>
-                        <span
-                            v-if="purchasedProducts(user).length === 0"
-                            class="rounded-full bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-600"
-                        >
-                            未購入
                         </span>
                     </div>
                 </div>

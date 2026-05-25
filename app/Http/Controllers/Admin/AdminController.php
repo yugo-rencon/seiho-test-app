@@ -16,7 +16,18 @@ class AdminController extends Controller
 
     public function index(Request $request): Response
     {
-        $q = trim((string) $request->query('q', ''));
+        $purchaseScope = (string) $request->query('purchase_scope', 'all');
+        $purchaseState = (string) $request->query('purchase_state', 'all');
+
+        $allowedScopes = ['all', 'seiho', 'daigaku', 'ouyou', 'senmon', 'ippan', 'basic'];
+        if (!in_array($purchaseScope, $allowedScopes, true)) {
+            $purchaseScope = 'all';
+        }
+
+        $allowedStates = ['all', 'purchased', 'unpurchased'];
+        if (!in_array($purchaseState, $allowedStates, true)) {
+            $purchaseState = 'all';
+        }
 
         $purchaseSummary = DB::table('purchases')
             ->select(
@@ -57,8 +68,25 @@ class AdminController extends Controller
             )
             ->where('users.is_admin', 0)
             ->whereNotIn('users.id', self::INTERNAL_USER_IDS)
-            ->when($q !== '', function ($query) use ($q) {
-                $query->where('email', 'like', "%{$q}%");
+            ->when($purchaseState === 'purchased', function ($query) {
+                $query->whereRaw('COALESCE(purchase_summary.paid_count, 0) > 0');
+            })
+            ->when($purchaseState === 'unpurchased', function ($query) {
+                $query->whereRaw('COALESCE(purchase_summary.paid_count, 0) = 0');
+            })
+            ->when($purchaseScope !== 'all', function ($query) use ($purchaseScope) {
+                $columnMap = [
+                    'seiho' => 'seiho_paid_count',
+                    'daigaku' => 'daigaku_paid_count',
+                    'ouyou' => 'ouyou_paid_count',
+                    'senmon' => 'senmon_paid_count',
+                    'ippan' => 'ippan_paid_count',
+                    'basic' => 'basic_paid_count',
+                ];
+                $column = $columnMap[$purchaseScope] ?? null;
+                if ($column) {
+                    $query->whereRaw("COALESCE(purchase_summary.{$column}, 0) > 0");
+                }
             })
             ->orderByDesc('users.id')
             ->paginate(30)
@@ -279,7 +307,8 @@ class AdminController extends Controller
             'stats' => $stats,
             'newContactCount' => $newContactCount,
             'filters' => [
-                'q' => $q,
+                'purchase_scope' => $purchaseScope,
+                'purchase_state' => $purchaseState,
             ],
             'releasedKeys' => $releasedKeys,
         ]);

@@ -32,6 +32,7 @@ const props = defineProps({
 
 const q = ref(props.filters?.q ?? "");
 const activeTab = ref("dashboard");
+const salesTab = ref("overview");
 const page = usePage();
 
 // リリース管理
@@ -279,6 +280,18 @@ const scopeLabel = (scope) => {
     if (scope === "basic") return "一般・専門・応用セット";
     return scope || "-";
 };
+
+const maxSalesCount = (rows) => {
+    const list = Array.isArray(rows) ? rows : [];
+    return list.reduce((max, row) => Math.max(max, Number(row?.salesCount ?? 0)), 0);
+};
+
+const barWidthPercent = (value, max) => {
+    const v = Number(value ?? 0);
+    const m = Number(max ?? 0);
+    if (!Number.isFinite(v) || !Number.isFinite(m) || m <= 0) return 0;
+    return Math.max(0, Math.min(100, (v / m) * 100));
+};
 </script>
 
 <template>
@@ -451,7 +464,28 @@ const scopeLabel = (scope) => {
                     <p class="text-xs text-gray-500">対象: {{ stats.salesInsights?.fromDate }} 以降</p>
                 </div>
 
-                <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="mb-4 flex flex-wrap gap-2">
+                    <button
+                        v-for="tab in [
+                            { key: 'overview', label: '概要' },
+                            { key: 'scope', label: '商品別' },
+                            { key: 'monthly', label: '月次' },
+                            { key: 'weekday', label: '曜日' },
+                            { key: 'hourly', label: '時間帯' },
+                        ]"
+                        :key="`sales-${tab.key}`"
+                        type="button"
+                        class="rounded-lg border px-3 py-1.5 text-xs font-semibold transition"
+                        :class="salesTab === tab.key
+                            ? 'border-purple-200 bg-purple-50 text-purple-700'
+                            : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
+                        @click="salesTab = tab.key"
+                    >
+                        {{ tab.label }}
+                    </button>
+                </div>
+
+                <div v-if="salesTab === 'overview'" class="grid gap-3 sm:grid-cols-2">
                     <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
                         <p class="text-xs text-gray-500">売上件数</p>
                         <p class="mt-1 text-xl font-bold text-gray-900">{{ stats.salesInsights?.salesCount ?? 0 }}</p>
@@ -460,20 +494,12 @@ const scopeLabel = (scope) => {
                         <p class="text-xs text-gray-500">売上合計</p>
                         <p class="mt-1 text-xl font-bold text-gray-900">{{ formatYen(stats.salesInsights?.totalAmount) }}</p>
                     </div>
-                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
-                        <p class="text-xs text-gray-500">購入ユーザー数</p>
-                        <p class="mt-1 text-xl font-bold text-gray-900">{{ stats.salesInsights?.buyersCount ?? 0 }}</p>
-                    </div>
-                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
-                        <p class="text-xs text-gray-500">平均単価</p>
-                        <p class="mt-1 text-xl font-bold text-gray-900">{{ formatYen(stats.salesInsights?.averageAmount) }}</p>
-                    </div>
                 </div>
 
-                <div class="mt-4 grid gap-4 lg:grid-cols-2">
+                <div v-if="salesTab === 'scope'" class="mt-2 rounded-lg border border-gray-100">
                     <div class="rounded-lg border border-gray-100">
                         <div class="border-b border-gray-100 px-3 py-2 text-xs font-semibold text-gray-700">商品別売上</div>
-                        <div class="max-h-64 overflow-auto">
+                        <div>
                             <table class="min-w-full text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
@@ -499,10 +525,12 @@ const scopeLabel = (scope) => {
                             </table>
                         </div>
                     </div>
+                </div>
 
+                <div v-if="salesTab === 'monthly'" class="mt-2 rounded-lg border border-gray-100">
                     <div class="rounded-lg border border-gray-100">
                         <div class="border-b border-gray-100 px-3 py-2 text-xs font-semibold text-gray-700">月次売上</div>
-                        <div class="max-h-64 overflow-auto">
+                        <div>
                             <table class="min-w-full text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
@@ -526,6 +554,50 @@ const scopeLabel = (scope) => {
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="salesTab === 'weekday'" class="mt-2 rounded-lg border border-gray-100 p-3">
+                    <div class="rounded-lg border border-gray-100 p-3">
+                        <div class="mb-2 text-xs font-semibold text-gray-700">曜日別売上件数</div>
+                        <div class="space-y-2">
+                            <div
+                                v-for="row in stats.salesInsights?.weekdaySales ?? []"
+                                :key="`weekday-${row.day}`"
+                                class="grid grid-cols-[2rem_1fr_3rem] items-center gap-2"
+                            >
+                                <div class="text-xs text-gray-600">{{ row.day }}</div>
+                                <div class="h-2 rounded bg-gray-100">
+                                    <div
+                                        class="h-2 rounded bg-indigo-500"
+                                        :style="{ width: `${barWidthPercent(row.salesCount, maxSalesCount(stats.salesInsights?.weekdaySales))}%` }"
+                                    ></div>
+                                </div>
+                                <div class="text-right text-xs text-gray-700">{{ row.salesCount }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="salesTab === 'hourly'" class="mt-2 rounded-lg border border-gray-100 p-3">
+                    <div class="rounded-lg border border-gray-100 p-3">
+                        <div class="mb-2 text-xs font-semibold text-gray-700">時間帯別売上件数</div>
+                        <div class="space-y-1.5">
+                            <div
+                                v-for="row in stats.salesInsights?.hourlySales ?? []"
+                                :key="`hour-${row.hour}`"
+                                class="grid grid-cols-[2.5rem_1fr_3rem] items-center gap-2"
+                            >
+                                <div class="text-xs text-gray-600">{{ row.hour }}時</div>
+                                <div class="h-2 rounded bg-gray-100">
+                                    <div
+                                        class="h-2 rounded bg-emerald-500"
+                                        :style="{ width: `${barWidthPercent(row.salesCount, maxSalesCount(stats.salesInsights?.hourlySales))}%` }"
+                                    ></div>
+                                </div>
+                                <div class="text-right text-xs text-gray-700">{{ row.salesCount }}</div>
+                            </div>
                         </div>
                     </div>
                 </div>

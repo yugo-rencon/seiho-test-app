@@ -125,6 +125,61 @@ class AdminController extends Controller
                 ->count(),
         ];
 
+        $salesSince = Carbon::create(2026, 4, 1)->startOfDay();
+
+        $salesBaseQuery = DB::table('purchases')
+            ->join('products', 'products.id', '=', 'purchases.product_id')
+            ->where('purchases.status', 'paid')
+            ->whereNotIn('purchases.user_id', self::INTERNAL_USER_IDS)
+            ->whereNotNull('purchases.paid_at')
+            ->where('purchases.paid_at', '>=', $salesSince);
+
+        $salesSummary = (clone $salesBaseQuery)
+            ->selectRaw('COUNT(*) as sales_count')
+            ->selectRaw('COALESCE(SUM(products.price), 0) as total_amount')
+            ->selectRaw('COUNT(DISTINCT purchases.user_id) as buyers_count')
+            ->first();
+
+        $salesByScope = (clone $salesBaseQuery)
+            ->selectRaw('COALESCE(purchases.scope, "seiho") as scope')
+            ->selectRaw('COUNT(*) as sales_count')
+            ->selectRaw('COALESCE(SUM(products.price), 0) as total_amount')
+            ->groupBy('scope')
+            ->orderByDesc('total_amount')
+            ->get();
+
+        $monthlySales = (clone $salesBaseQuery)
+            ->selectRaw('DATE_FORMAT(purchases.paid_at, "%Y-%m") as month')
+            ->selectRaw('COUNT(*) as sales_count')
+            ->selectRaw('COALESCE(SUM(products.price), 0) as total_amount')
+            ->groupBy('month')
+            ->orderBy('month')
+            ->get();
+
+        $stats['salesInsights'] = [
+            'fromDate' => $salesSince->toDateString(),
+            'salesCount' => (int) ($salesSummary->sales_count ?? 0),
+            'totalAmount' => (int) ($salesSummary->total_amount ?? 0),
+            'buyersCount' => (int) ($salesSummary->buyers_count ?? 0),
+            'averageAmount' => (int) (((int) ($salesSummary->sales_count ?? 0)) > 0
+                ? round(((int) ($salesSummary->total_amount ?? 0)) / ((int) ($salesSummary->sales_count ?? 0)))
+                : 0),
+            'scopeBreakdown' => $salesByScope->map(function ($row) {
+                return [
+                    'scope' => (string) $row->scope,
+                    'salesCount' => (int) $row->sales_count,
+                    'totalAmount' => (int) $row->total_amount,
+                ];
+            })->values(),
+            'monthlySales' => $monthlySales->map(function ($row) {
+                return [
+                    'month' => (string) $row->month,
+                    'salesCount' => (int) $row->sales_count,
+                    'totalAmount' => (int) $row->total_amount,
+                ];
+            })->values(),
+        ];
+
         $newContactCount = DB::table('contacts')
             ->where('status', 'new')
             ->count();

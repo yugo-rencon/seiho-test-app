@@ -260,6 +260,25 @@ const goToPage = (url) => {
         preserveScroll: true,
     });
 };
+
+const formatYen = (value) => {
+    const amount = Number(value ?? 0);
+    return new Intl.NumberFormat("ja-JP", {
+        style: "currency",
+        currency: "JPY",
+        maximumFractionDigits: 0,
+    }).format(Number.isFinite(amount) ? amount : 0);
+};
+
+const scopeLabel = (scope) => {
+    if (scope === "seiho") return "生保講座";
+    if (scope === "daigaku") return "生保大学";
+    if (scope === "ippan") return "一般課程";
+    if (scope === "senmon") return "専門課程";
+    if (scope === "ouyou") return "応用課程";
+    if (scope === "basic") return "一般・専門・応用セット";
+    return scope || "-";
+};
 </script>
 
 <template>
@@ -299,6 +318,16 @@ const goToPage = (url) => {
                     @click="activeTab = 'users'"
                 >
                     ユーザー管理
+                </button>
+                <button
+                    type="button"
+                    class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
+                    :class="isActiveMenu('sales')
+                        ? 'border-purple-200 bg-purple-50 text-purple-700'
+                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
+                    @click="activeTab = 'sales'"
+                >
+                    売上分析
                 </button>
                 <button
                     type="button"
@@ -411,6 +440,95 @@ const goToPage = (url) => {
                 <p v-else class="mt-2 text-sm text-gray-500">
                     管理者ユーザーは登録されていません。
                 </p>
+            </div>
+
+            <div
+                v-if="activeTab === 'sales'"
+                class="mt-6 rounded-xl border border-gray-100 bg-white p-4"
+            >
+                <div class="mb-3 flex flex-wrap items-end justify-between gap-2">
+                    <h2 class="text-sm font-semibold text-gray-900">売上分析</h2>
+                    <p class="text-xs text-gray-500">対象: {{ stats.salesInsights?.fromDate }} 以降</p>
+                </div>
+
+                <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                        <p class="text-xs text-gray-500">売上件数</p>
+                        <p class="mt-1 text-xl font-bold text-gray-900">{{ stats.salesInsights?.salesCount ?? 0 }}</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                        <p class="text-xs text-gray-500">売上合計</p>
+                        <p class="mt-1 text-xl font-bold text-gray-900">{{ formatYen(stats.salesInsights?.totalAmount) }}</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                        <p class="text-xs text-gray-500">購入ユーザー数</p>
+                        <p class="mt-1 text-xl font-bold text-gray-900">{{ stats.salesInsights?.buyersCount ?? 0 }}</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                        <p class="text-xs text-gray-500">平均単価</p>
+                        <p class="mt-1 text-xl font-bold text-gray-900">{{ formatYen(stats.salesInsights?.averageAmount) }}</p>
+                    </div>
+                </div>
+
+                <div class="mt-4 grid gap-4 lg:grid-cols-2">
+                    <div class="rounded-lg border border-gray-100">
+                        <div class="border-b border-gray-100 px-3 py-2 text-xs font-semibold text-gray-700">商品別売上</div>
+                        <div class="max-h-64 overflow-auto">
+                            <table class="min-w-full text-xs">
+                                <thead class="bg-gray-50 text-left text-gray-500">
+                                    <tr>
+                                        <th class="px-3 py-2">商品</th>
+                                        <th class="px-3 py-2">件数</th>
+                                        <th class="px-3 py-2">売上</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        v-for="row in stats.salesInsights?.scopeBreakdown ?? []"
+                                        :key="`scope-${row.scope}`"
+                                        class="border-t border-gray-100"
+                                    >
+                                        <td class="px-3 py-2 text-gray-700">{{ scopeLabel(row.scope) }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
+                                    </tr>
+                                    <tr v-if="(stats.salesInsights?.scopeBreakdown ?? []).length === 0">
+                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="rounded-lg border border-gray-100">
+                        <div class="border-b border-gray-100 px-3 py-2 text-xs font-semibold text-gray-700">月次売上</div>
+                        <div class="max-h-64 overflow-auto">
+                            <table class="min-w-full text-xs">
+                                <thead class="bg-gray-50 text-left text-gray-500">
+                                    <tr>
+                                        <th class="px-3 py-2">月</th>
+                                        <th class="px-3 py-2">件数</th>
+                                        <th class="px-3 py-2">売上</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        v-for="row in stats.salesInsights?.monthlySales ?? []"
+                                        :key="`month-${row.month}`"
+                                        class="border-t border-gray-100"
+                                    >
+                                        <td class="px-3 py-2 text-gray-700">{{ row.month }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
+                                    </tr>
+                                    <tr v-if="(stats.salesInsights?.monthlySales ?? []).length === 0">
+                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <template v-if="activeTab === 'users'">

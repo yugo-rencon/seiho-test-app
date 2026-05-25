@@ -521,7 +521,10 @@ const peakHour2h = computed(() => {
                     </p>
                 </div>
                 <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
-                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">一般・専門・応用セット 売上件数</p>
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">
+                        <span class="sm:hidden">セット 売上件数</span>
+                        <span class="hidden sm:inline">一般・専門・応用セット 売上件数</span>
+                    </p>
                     <p class="mt-1 text-xl font-bold text-cyan-700 sm:text-2xl">
                         {{ stats.basicSalesCount }}
                     </p>

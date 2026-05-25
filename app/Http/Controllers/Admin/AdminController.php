@@ -215,6 +215,31 @@ class AdminController extends Controller
             ];
         })->values();
 
+        $todayStart = Carbon::today();
+        $todayEnd = Carbon::today()->endOfDay();
+        $yesterdayStart = Carbon::yesterday()->startOfDay();
+        $yesterdayEnd = Carbon::yesterday()->endOfDay();
+        $last7daysStart = Carbon::today()->subDays(6)->startOfDay();
+
+        $buildPeriodSummary = function ($from, $to) use ($salesBaseQuery, $scopePriceCaseSql) {
+            $row = (clone $salesBaseQuery)
+                ->whereBetween('purchases.paid_at', [$from, $to])
+                ->selectRaw('COUNT(*) as sales_count')
+                ->selectRaw("COALESCE(SUM({$scopePriceCaseSql}), 0) as total_amount")
+                ->first();
+
+            return [
+                'salesCount' => (int) ($row->sales_count ?? 0),
+                'totalAmount' => (int) ($row->total_amount ?? 0),
+            ];
+        };
+
+        $recentSales = [
+            'today' => $buildPeriodSummary($todayStart, $todayEnd),
+            'yesterday' => $buildPeriodSummary($yesterdayStart, $yesterdayEnd),
+            'last7days' => $buildPeriodSummary($last7daysStart, $todayEnd),
+        ];
+
         $stats['salesInsights'] = [
             'fromDate' => $salesSince->toDateString(),
             'salesCount' => (int) ($salesSummary->sales_count ?? 0),
@@ -235,6 +260,7 @@ class AdminController extends Controller
                     'totalAmount' => (int) $row->total_amount,
                 ];
             })->values(),
+            'recentSales' => $recentSales,
             'weekdaySales' => $weekdaySales,
             'hourlySales' => $hourlySales,
         ];

@@ -579,14 +579,40 @@ const peakHour2h = computed(() => {
                     </button>
                 </div>
 
-                <div v-if="salesTab === 'overview'" class="grid gap-3 sm:grid-cols-2">
-                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
-                        <p class="text-xs text-gray-500">売上件数</p>
-                        <p class="mt-1 text-xl font-bold text-gray-900">{{ stats.salesInsights?.salesCount ?? 0 }}</p>
+                <div v-if="salesTab === 'overview'" class="space-y-3">
+                    <div class="grid gap-3 sm:grid-cols-2">
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">売上件数</p>
+                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ stats.salesInsights?.salesCount ?? 0 }}</p>
+                        </div>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">売上合計</p>
+                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(stats.salesInsights?.totalAmount) }}</p>
+                        </div>
                     </div>
-                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
-                        <p class="text-xs text-gray-500">売上合計</p>
-                        <p class="mt-1 text-xl font-bold text-gray-900">{{ formatYen(stats.salesInsights?.totalAmount) }}</p>
+
+                    <div class="grid gap-3 md:grid-cols-3">
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">今日</p>
+                            <div class="mt-2 flex items-end justify-between">
+                                <p class="text-lg font-bold text-slate-900">{{ formatYen(stats.salesInsights?.recentSales?.today?.totalAmount) }}</p>
+                                <p class="text-xs font-semibold text-slate-500">{{ stats.salesInsights?.recentSales?.today?.salesCount ?? 0 }}件</p>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">昨日</p>
+                            <div class="mt-2 flex items-end justify-between">
+                                <p class="text-lg font-bold text-slate-900">{{ formatYen(stats.salesInsights?.recentSales?.yesterday?.totalAmount) }}</p>
+                                <p class="text-xs font-semibold text-slate-500">{{ stats.salesInsights?.recentSales?.yesterday?.salesCount ?? 0 }}件</p>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">直近7日</p>
+                            <div class="mt-2 flex items-end justify-between">
+                                <p class="text-lg font-bold text-slate-900">{{ formatYen(stats.salesInsights?.recentSales?.last7days?.totalAmount) }}</p>
+                                <p class="text-xs font-semibold text-slate-500">{{ stats.salesInsights?.recentSales?.last7days?.salesCount ?? 0 }}件</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -687,9 +713,9 @@ const peakHour2h = computed(() => {
                 <div v-if="salesTab === 'hourly'" class="mt-2 rounded-lg border border-gray-100 p-3">
                     <div class="rounded-lg border border-gray-100 p-3">
                         <div class="mb-2 flex items-center justify-between text-xs">
-                            <span class="font-semibold text-gray-700">時間帯別売上件数（2時間ごと）</span>
+                            <span class="font-semibold text-gray-700">時間帯（2h）</span>
                             <span v-if="peakHour2h" class="rounded-full bg-emerald-50 px-2 py-1 font-semibold text-emerald-700">
-                                ピーク: {{ peakHour2h.hourRange }}時 {{ peakHour2h.salesCount }}件
+                                {{ peakHour2h.hourRange }}時・{{ peakHour2h.salesCount }}件
                             </span>
                         </div>
                         <div class="space-y-1.5">
@@ -905,7 +931,7 @@ const peakHour2h = computed(() => {
                     </div>
                     <div class="h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
                         <div
-                            class="h-full rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-orange-500 transition-all duration-300"
+                            class="h-full rounded-full bg-gradient-to-r from-slate-500 to-slate-700 transition-all duration-300"
                             :style="{ width: `${totalStats.total === 0 ? 0 : Math.round(totalStats.released / totalStats.total * 100)}%` }"
                         />
                     </div>

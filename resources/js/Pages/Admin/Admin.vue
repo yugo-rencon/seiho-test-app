@@ -905,7 +905,7 @@ const peakHour2h = computed(() => {
                     </div>
                     <div class="h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
                         <div
-                            class="h-full rounded-full bg-gradient-to-r from-slate-500 to-slate-700 transition-all duration-300"
+                            class="h-full rounded-full bg-gradient-to-r from-rose-500 via-pink-500 to-orange-500 transition-all duration-300"
                             :style="{ width: `${totalStats.total === 0 ? 0 : Math.round(totalStats.released / totalStats.total * 100)}%` }"
                         />
                     </div>

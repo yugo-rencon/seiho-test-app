@@ -70,31 +70,6 @@ body {
     background: linear-gradient(transparent 55%, #fde68a 55%);
 }
 
-.is-daigaku .answer-highlight {
-    @apply text-blue-900;
-    background: linear-gradient(transparent 55%, #bfdbfe 55%);
-}
-
-.is-senmon .answer-highlight {
-    @apply text-emerald-900;
-    background: linear-gradient(transparent 55%, #bbf7d0 55%);
-}
-
-.is-ouyou .answer-highlight {
-    @apply text-amber-900;
-    background: linear-gradient(transparent 55%, #fde68a 55%);
-}
-
-.is-ippan .answer-highlight {
-    @apply text-pink-900;
-    background: linear-gradient(transparent 55%, #fbcfe8 55%);
-}
-
-.is-seiho .answer-highlight {
-    @apply text-violet-900;
-    background: linear-gradient(transparent 55%, #ddd6fe 55%);
-}
-
 .answer-diff-list {
     @apply my-1.5 grid gap-1.5;
 }
@@ -104,11 +79,11 @@ body {
 }
 
 .answer-diff-item-break {
-    @apply inline-flex flex-nowrap items-baseline gap-1 whitespace-nowrap;
+    @apply inline;
 }
 
 .answer-auto-arrow {
-    @apply inline-flex flex-nowrap items-baseline gap-1 whitespace-nowrap;
+    @apply inline;
 }
 
 .question-temp4-structured .calc-block-title {

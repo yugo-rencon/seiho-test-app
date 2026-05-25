@@ -222,7 +222,7 @@ const subject = "2024年度 フォームA";
                         { questionTitle: '給付事由発生の通知等', content: ' 保険者は保険給付の責任を免れる → 責任を免れることはない' }, //35 p60
                         { questionTitle: '保険契約者の住所変更', content: '一般原則を適用する性質を有する → 性質を有するものではない' }, //36 p109
                         { questionTitle: '災害入院特約と疾病入院特約', content: '4日不担保等の免責規定が適用される → 適用されない' }, //37 p178
-                        { questionTitle: 'resources/js/Pages/Tests/Yakkan/Yakkan2024a.vueの比較', content: '一般社団法人 → 中間法人' }, //38 p225
+                        { questionTitle: '株式会社と相互会社の比較', content: '一般社団法人 → 中間法人' }, //38 p225
                         { questionTitle: '保険計理人', content: '正しい' }, //39
                         { questionTitle: '乗合の禁止', content: '正しい' }, //40
                         // 問41〜50

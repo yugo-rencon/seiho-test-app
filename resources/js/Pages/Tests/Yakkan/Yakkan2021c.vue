@@ -149,8 +149,8 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="解約返戻金"
                     :contents="[
-                        '重大事由による保険契約の解除の場合も支払われる', //p153-154
-                        '保険金額の減額の場合も支払われる', //p153-154
+                        '重大事由による保険契約時の解除の場合にも[[支払われる]]', //p153-154
+                        '保険金額の減額の場合にも減額した部分に対応する解約返戻金が[[支払われる]]', //p153-154
                         '正しい',
                     ]"
                 />
@@ -215,16 +215,46 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '約款と特約', content: '普通保険約款 ↔︎ 特約' }, //31 p12
-                        { questionTitle: '生命保険契約等の定義', content: '正しい' }, //32
-                        { questionTitle: '保険期間', content: '死亡保険契約 → 生存保険契約' }, //33 p40
-                        { questionTitle: '保険料の自動振替貸付', content: '正しい' }, //34
-                        { questionTitle: '保険契約者の住所変更', content: '正しい' }, //35
-                        { questionTitle: '災害入院特約と疾病入院特約', content: '重複して支払われる → 災害入院給付金が支払われる' }, //36 p178
-                        { questionTitle: '告知義務違反による解除権', content: '正しい' }, //37
-                        { questionTitle: '疾病入院特約', content: '正しい' }, //38
-                        { questionTitle: '保険計理人', content: '死亡保険契約ではなく生存保険契約。' }, //39
-                        { questionTitle: '定款以外の基礎書類の変更', content: '正しい' }, //40
+                        {
+                            questionTitle: '約款と特約',
+                            content: '普通保険約款 ↔︎ 特約',
+                        }, //31 p12
+                        {
+                            questionTitle: '生命保険契約等の定義',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '保険期間',
+                            content: '[[生存保険契約]]にあってはその始期は実際上問題とならず、[[終身保険契約]]にあっては保険期間の終期は不定である', //p40
+                        }, //33
+                        {
+                            questionTitle: '保険料の自動振替貸付',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '保険契約者の住所変更',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '災害入院特約と疾病入院特約',
+                            content: '重複して支払われる → 災害入院給付金が支払われる',
+                        }, //36 p178
+                        {
+                            questionTitle: '告知義務違反による解除権',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '疾病入院特約',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '保険計理人',
+                            content: '死亡保険契約ではなく生存保険契約。',
+                        }, //39
+                        {
+                            questionTitle: '定款以外の基礎書類の変更',
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
                         { questionTitle: '金融商品取引法', label: 'ウ', content: '適合性の原則' }, //41
                         { questionTitle: '保険料の返還', label: 'オ', content: '' }, //42

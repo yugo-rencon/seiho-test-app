@@ -23,89 +23,89 @@ const subject = "2025年度 フォームC";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険契約の失効および自動振替貸付の取扱い-①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問１〜５
+                        '猶予期間',
+                        'オーバーローン',
+                        '契約者貸付金',
+                        '解約返戻金',
+                        '生命保険会社所定', // 問１〜５
                     ]"
                     :labels="[
-                        '', //1
-                        '', //2
-                        '', //3
-                        '', //4
-                        '', //5
+                        'コ', //1
+                        'イ', //2
+                        'エ', //3
+                        'ウ', //4
+                        'オ', //5
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険契約の失効および自動振替貸付の取扱い-②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問6〜10
+                        '解約返戻金',
+                        '復活',
+                        '3年',
+                        '延滞保険料',
+                        '遅い時', // 問6〜10
                     ]"
                     :labels="[
-                        '', //6
-                        '', //7
-                        '', //8
-                        '', //9
-                        '', //10
+                        'ウ', //6
+                        'ケ', //7
+                        'カ', //8
+                        'ア', //9
+                        'イ', //10
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="金融庁長官等による監督など-①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問11〜15
+                        '事業方法書',
+                        '停止',
+                        '財産の供託',
+                        '免許の取消',
+                        '会計参与', // 問11〜15
                     ]"
                     :labels="[
-                        '', //11
-                        '', //12
-                        '', //13
-                        '', //14
-                        '', //15
+                        'カ', //11
+                        'ケ', //12
+                        'オ', //13
+                        'コ', //14
+                        'イ', //15
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="金融庁長官等による監督など-②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問16〜20
+                        '基金',
+                        '通常の予測',
+                        '最低保証リスク',
+                        '200%',
+                        '早期是正措置', // 問16〜20
                     ]"
                     :labels="[
-                        '', //16
-                        '', //17
-                        '', //18
-                        '', //19
-                        '', //20
+                        'ウ', //16
+                        'ク', //17
+                        'オ', //18
+                        'イ', //19
+                        'キ', //20
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="配当金の支払"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -114,21 +114,21 @@ const subject = "2025年度 フォームC";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険約款の必要性と拘束力・監督"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '保険契約のすべてについて申込人の理解や納得のない場合でも、保険約款は[[拘束力あり]]とされている', //p7
+                        '認可を受けない保険約款もその内容が強行規定や公益に反するものでない限り、保険契約者との間では[[有効である]]とするのが判例、通説である', //p11
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険業免許の定義"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -136,77 +136,77 @@ const subject = "2025年度 フォームC";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="生命保険会社の経理"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険仲立人"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="生命保険契約等の当事者、その他の関係者"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '民法では、未成年者、成年被後見人、成年被保佐人、および成年被補助人の場合、[[所定の手続きを経ずに締結された契約については、後で取り消されることがある]]', //p37
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="消費者契約法"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="クーリング・オフ制度の取扱の制限"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険契約の解約"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="保険契約の締結または保険募集に関する禁止行為"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '営業職員による保険料の立替も「特別の利益の提供」に[[該当する]]', //p266
                     ]"
                 />
                 <QuestionTemp2
@@ -215,27 +215,57 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '', content: '' }, //31
-                        { questionTitle: '', content: '' }, //32
-                        { questionTitle: '', content: '' }, //33
-                        { questionTitle: '', content: '' }, //34
-                        { questionTitle: '', content: '' }, //35
-                        { questionTitle: '', content: '' }, //36
-                        { questionTitle: '', content: '' }, //37
-                        { questionTitle: '', content: '' }, //38
-                        { questionTitle: '', content: '' }, //39
-                        { questionTitle: '', content: '' }, //40
+                        {
+                            questionTitle: '法律と保険約款',
+                            content: '',
+                        }, //31
+                        {
+                            questionTitle: '保険料不可分の原則',
+                            content: '',
+                        }, //32
+                        {
+                            questionTitle: '保険金受取人の死亡',
+                            content: '保険契約者 → 相続人の全員', //p58
+                        }, //33
+                        {
+                            questionTitle: '保険給付の履行期',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '生命保険募集人',
+                            content: '',
+                        }, //35
+                        {
+                            questionTitle: '特約の消滅',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '責任開始期',
+                            content: '',
+                        }, //37
+                        {
+                            questionTitle: '疾病入院特約',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '外国保険業者',
+                            content: '',
+                        }, //39
+                        {
+                            questionTitle: '乗合の禁止',
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
-                        { questionTitle: '', label: '', content: '' }, //41
-                        { questionTitle: '', label: '', content: '' }, //42
-                        { questionTitle: '', label: '', content: '' }, //43
-                        { questionTitle: '', label: '', content: '' }, //44
-                        { questionTitle: '', label: '', content: '' }, //45
-                        { questionTitle: '', label: '', content: '' }, //46
-                        { questionTitle: '', label: '', content: '' }, //47
-                        { questionTitle: '', label: '', content: '' }, //48
-                        { questionTitle: '', label: '', content: '' }, //49
-                        { questionTitle: '', label: '', content: '' }, //50
+                        { questionTitle: '生命保険契約等の性質', label: 'オ', content: '' }, //41
+                        { questionTitle: '保険料の返還', label: 'オ', content: '' }, //42
+                        { questionTitle: '生命保険契約等の効力', label: 'オ', content: '' }, //43
+                        { questionTitle: '生死不明の場合の取扱', label: 'イ', content: '生命保険会社' }, //44
+                        { questionTitle: '保険契約の解除', label: 'ウ', content: '重大事由' }, //45
+                        { questionTitle: '保険契約者の変更', label: 'ア', content: '承継人' }, //46
+                        { questionTitle: '保険会社の業務の範囲', label: 'ア', content: '法定他業' }, //47
+                        { questionTitle: '保険業の監督の方法', label: 'イ', content: '実体的監督' }, //48
+                        { questionTitle: '株主の権利行使の基準日', label: 'イ', content: '3ヶ月' }, //49
+                        { questionTitle: '供託', label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

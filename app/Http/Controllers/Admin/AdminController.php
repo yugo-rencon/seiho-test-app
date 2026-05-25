@@ -127,8 +127,19 @@ class AdminController extends Controller
 
         $salesSince = Carbon::create(2026, 4, 1)->startOfDay();
 
+        $scopePriceCaseSql = 'CASE COALESCE(purchases.scope, "seiho")
+            WHEN "seiho" THEN 1980
+            WHEN "daigaku" THEN 980
+            WHEN "ouyou" THEN 480
+            WHEN "senmon" THEN 480
+            WHEN "ippan" THEN 480
+            WHEN "basic" THEN 980
+            ELSE 1980
+        END';
+
+        $scopeOrder = ['seiho', 'daigaku', 'ouyou', 'senmon', 'ippan', 'basic'];
+
         $salesBaseQuery = DB::table('purchases')
-            ->join('products', 'products.id', '=', 'purchases.product_id')
             ->where('purchases.status', 'paid')
             ->whereNotIn('purchases.user_id', self::INTERNAL_USER_IDS)
             ->whereNotNull('purchases.paid_at')
@@ -136,25 +147,26 @@ class AdminController extends Controller
 
         $salesSummary = (clone $salesBaseQuery)
             ->selectRaw('COUNT(*) as sales_count')
-            ->selectRaw('COALESCE(SUM(products.price), 0) as total_amount')
+            ->selectRaw("COALESCE(SUM({$scopePriceCaseSql}), 0) as total_amount")
             ->selectRaw('COUNT(DISTINCT purchases.user_id) as buyers_count')
             ->first();
 
         $salesByScope = (clone $salesBaseQuery)
             ->selectRaw('COALESCE(purchases.scope, "seiho") as scope')
             ->selectRaw('COUNT(*) as sales_count')
-            ->selectRaw('COALESCE(SUM(products.price), 0) as total_amount')
+            ->selectRaw("COALESCE(SUM({$scopePriceCaseSql}), 0) as total_amount")
             ->groupBy('scope')
-            ->orderByDesc('total_amount')
             ->get();
 
         $monthlySales = (clone $salesBaseQuery)
             ->selectRaw('DATE_FORMAT(purchases.paid_at, "%Y-%m") as month')
             ->selectRaw('COUNT(*) as sales_count')
-            ->selectRaw('COALESCE(SUM(products.price), 0) as total_amount')
+            ->selectRaw("COALESCE(SUM({$scopePriceCaseSql}), 0) as total_amount")
             ->groupBy('month')
             ->orderBy('month')
             ->get();
+
+        $scopeOrderMap = array_flip($scopeOrder);
 
         $stats['salesInsights'] = [
             'fromDate' => $salesSince->toDateString(),
@@ -170,6 +182,8 @@ class AdminController extends Controller
                     'salesCount' => (int) $row->sales_count,
                     'totalAmount' => (int) $row->total_amount,
                 ];
+            })->sortBy(function ($row) use ($scopeOrderMap) {
+                return $scopeOrderMap[$row['scope']] ?? 999;
             })->values(),
             'monthlySales' => $monthlySales->map(function ($row) {
                 return [

@@ -183,10 +183,25 @@ const totalStats = computed(() => {
 const btnClass = (testKey) => {
     const released = isReleased(testKey);
     const pending  = isPending(testKey);
-    if (pending && released)  return "bg-emerald-100 text-emerald-700 ring-2 ring-emerald-400";
-    if (pending && !released) return "bg-rose-100 text-rose-500 ring-2 ring-rose-300";
-    if (released)             return "bg-emerald-500 text-white hover:bg-emerald-600";
-    return "bg-gray-200 text-gray-400 hover:bg-gray-300";
+    const releasedByGroup = {
+        seiho: "border border-violet-500 bg-gradient-to-br from-violet-400 to-violet-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(139,92,246,0.35)]",
+        daigaku: "border border-blue-500 bg-gradient-to-br from-blue-400 to-blue-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(59,130,246,0.35)]",
+        ouyou: "border border-amber-500 bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(245,158,11,0.35)]",
+        senmon: "border border-emerald-500 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(16,185,129,0.35)]",
+        ippan: "border border-fuchsia-500 bg-gradient-to-br from-fuchsia-400 to-fuchsia-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(217,70,239,0.35)]",
+    };
+    const pendingReleasedByGroup = {
+        seiho: "border border-violet-400 bg-violet-400 text-white shadow-sm",
+        daigaku: "border border-blue-400 bg-blue-400 text-white shadow-sm",
+        ouyou: "border border-amber-400 bg-amber-400 text-white shadow-sm",
+        senmon: "border border-emerald-400 bg-emerald-400 text-white shadow-sm",
+        ippan: "border border-fuchsia-400 bg-fuchsia-400 text-white shadow-sm",
+    };
+
+    if (pending && released)  return pendingReleasedByGroup[releaseGroup.value] ?? pendingReleasedByGroup.seiho;
+    if (pending && !released) return "border border-rose-500 bg-rose-500 text-white shadow-sm";
+    if (released)             return releasedByGroup[releaseGroup.value] ?? releasedByGroup.seiho;
+    return "border border-slate-200 bg-slate-100 text-slate-500 hover:bg-slate-200";
 };
 const isDaigakuAdmin = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 const adminIndexRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.index" : "admin.index"));
@@ -231,12 +246,12 @@ const registrationSourceClass = (user) => {
     if (user.registered_scope === "ippan") return "bg-fuchsia-50 text-fuchsia-700";
     if (user.registered_scope === "senmon") return "bg-emerald-50 text-emerald-700";
     if (user.registered_scope === "ouyou") return "bg-amber-50 text-amber-700";
-    if (user.registered_scope === "seiho") return "bg-indigo-50 text-indigo-700";
+    if (user.registered_scope === "seiho") return "bg-violet-50 text-violet-700";
     return "bg-gray-100 text-gray-600";
 };
 
 const purchaseProductOptions = [
-    { key: "seiho", label: "生保講座", countKey: "seiho_paid_count", className: "bg-indigo-50 text-indigo-700" },
+    { key: "seiho", label: "生保講座", countKey: "seiho_paid_count", className: "bg-violet-50 text-violet-700" },
     { key: "daigaku", label: "生保大学", countKey: "daigaku_paid_count", className: "bg-blue-50 text-blue-700" },
     { key: "ippan", label: "一般課程", countKey: "ippan_paid_count", className: "bg-fuchsia-50 text-fuchsia-700" },
     { key: "senmon", label: "専門課程", countKey: "senmon_paid_count", className: "bg-emerald-50 text-emerald-700" },
@@ -280,6 +295,46 @@ const scopeLabel = (scope) => {
     if (scope === "basic") return "一般・専門・応用セット";
     return scope || "-";
 };
+
+const scopeClass = (scope) => {
+    if (scope === "seiho") return "bg-violet-50 text-violet-700";
+    if (scope === "daigaku") return "bg-blue-50 text-blue-700";
+    if (scope === "ouyou") return "bg-amber-50 text-amber-700";
+    if (scope === "senmon") return "bg-emerald-50 text-emerald-700";
+    if (scope === "ippan") return "bg-fuchsia-50 text-fuchsia-700";
+    if (scope === "basic") return "bg-cyan-100 text-cyan-700";
+    return "bg-gray-100 text-gray-600";
+};
+
+const releaseTheme = {
+    seiho: {
+        activeButton: "border-violet-500 bg-gradient-to-br from-violet-500 to-indigo-500 text-white shadow-md ring-1 ring-violet-300/60",
+        activeTab: "border-violet-200 bg-violet-50 text-violet-700",
+        progressBar: "bg-gradient-to-r from-violet-500 to-indigo-500",
+    },
+    daigaku: {
+        activeButton: "border-blue-500 bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-md ring-1 ring-blue-300/60",
+        activeTab: "border-blue-200 bg-blue-50 text-blue-700",
+        progressBar: "bg-gradient-to-r from-blue-500 to-cyan-500",
+    },
+    ouyou: {
+        activeButton: "border-amber-500 bg-gradient-to-br from-amber-500 to-orange-500 text-white shadow-md ring-1 ring-amber-300/60",
+        activeTab: "border-amber-200 bg-amber-50 text-amber-700",
+        progressBar: "bg-gradient-to-r from-amber-500 to-orange-500",
+    },
+    senmon: {
+        activeButton: "border-emerald-500 bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-md ring-1 ring-emerald-300/60",
+        activeTab: "border-emerald-200 bg-emerald-50 text-emerald-700",
+        progressBar: "bg-gradient-to-r from-emerald-500 to-teal-500",
+    },
+    ippan: {
+        activeButton: "border-fuchsia-500 bg-gradient-to-br from-fuchsia-500 to-pink-500 text-white shadow-md ring-1 ring-fuchsia-300/60",
+        activeTab: "border-fuchsia-200 bg-fuchsia-50 text-fuchsia-700",
+        progressBar: "bg-gradient-to-r from-fuchsia-500 to-pink-500",
+    },
+};
+
+const currentReleaseTheme = computed(() => releaseTheme[releaseGroup.value] ?? releaseTheme.seiho);
 
 const maxSalesCount = (rows) => {
     const list = Array.isArray(rows) ? rows : [];
@@ -553,7 +608,11 @@ const peakHour2h = computed(() => {
                                         :key="`scope-${row.scope}`"
                                         class="border-t border-gray-100"
                                     >
-                                        <td class="px-3 py-2 text-gray-700">{{ scopeLabel(row.scope) }}</td>
+                                        <td class="px-3 py-2 text-gray-700">
+                                            <span class="rounded-full px-2 py-1 text-xs font-semibold" :class="scopeClass(row.scope)">
+                                                {{ scopeLabel(row.scope) }}
+                                            </span>
+                                        </td>
                                         <td class="px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
                                     </tr>
@@ -832,14 +891,21 @@ const peakHour2h = computed(() => {
             <!-- リリース管理タブ -->
             <template v-if="activeTab === 'releases'">
                 <!-- 全体進捗 -->
-                <div class="mb-4 rounded-xl border border-gray-200 bg-white px-5 py-3">
-                    <div class="mb-1 flex justify-between text-xs text-gray-500">
-                        <span class="font-semibold text-gray-700">全コース合計</span>
-                        <span>完成 {{ totalStats.released }} / 全 {{ totalStats.total }} ページ　残り {{ totalStats.total - totalStats.released }} ページ</span>
+                <div class="mb-4 rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-slate-50/60 px-5 py-4 shadow-sm">
+                    <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                        <span class="text-sm font-semibold text-slate-800">全コース合計</span>
+                        <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">
+                            進捗 {{ totalStats.total === 0 ? 0 : Math.round(totalStats.released / totalStats.total * 100) }}%
+                        </span>
                     </div>
-                    <div class="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+                    <div class="mb-2 flex flex-wrap items-center gap-3 text-xs text-slate-600">
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">完成 <b class="text-slate-900">{{ totalStats.released }}</b></span>
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">全体 <b class="text-slate-900">{{ totalStats.total }}</b></span>
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">残り <b class="text-slate-900">{{ totalStats.total - totalStats.released }}</b></span>
+                    </div>
+                    <div class="h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
                         <div
-                            class="h-full rounded-full bg-indigo-500 transition-all duration-300"
+                            class="h-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 transition-all duration-300"
                             :style="{ width: `${totalStats.total === 0 ? 0 : Math.round(totalStats.released / totalStats.total * 100)}%` }"
                         />
                     </div>
@@ -847,19 +913,19 @@ const peakHour2h = computed(() => {
                 <!-- コース選択 -->
                 <div class="mb-3 flex flex-wrap gap-2">
                     <button
-                        v-for="({ key, label, activeClass }) in [
-                            { key: 'seiho',   label: '生保講座', activeClass: 'border-purple-500 bg-purple-500 text-white'  },
-                            { key: 'daigaku', label: '生保大学', activeClass: 'border-blue-500 bg-blue-500 text-white'      },
-                            { key: 'ouyou',   label: '応用課程', activeClass: 'border-amber-500 bg-amber-500 text-white'    },
-                            { key: 'senmon',  label: '専門課程', activeClass: 'border-emerald-500 bg-emerald-500 text-white' },
-                            { key: 'ippan',   label: '一般課程', activeClass: 'border-fuchsia-500 bg-fuchsia-500 text-white' },
+                        v-for="({ key, label }) in [
+                            { key: 'seiho',   label: '生保講座' },
+                            { key: 'daigaku', label: '生保大学' },
+                            { key: 'ouyou',   label: '応用課程' },
+                            { key: 'senmon',  label: '専門課程' },
+                            { key: 'ippan',   label: '一般課程' },
                         ]"
                         :key="key"
                         type="button"
-                        class="flex items-center gap-2 rounded-lg border-2 px-4 py-2 text-sm font-bold transition"
+                        class="flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold transition"
                         :class="releaseGroup === key
-                            ? activeClass
-                            : 'border-gray-200 bg-white text-gray-500 hover:border-gray-300 hover:text-gray-700'"
+                            ? releaseTheme[key].activeButton
+                            : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50'"
                         @click="releaseGroup = key"
                     >
                         {{ label }}
@@ -867,14 +933,21 @@ const peakHour2h = computed(() => {
                 </div>
 
                 <!-- 選択中コースの進捗バー -->
-                <div class="mb-4">
-                    <div class="mb-1 flex justify-between text-xs text-gray-500">
-                        <span>完成 {{ groupStats[releaseGroup].released }} / 全 {{ groupStats[releaseGroup].total }} ページ</span>
-                        <span>残り {{ groupStats[releaseGroup].total - groupStats[releaseGroup].released }} ページ</span>
+                <div class="mb-4 rounded-xl border border-slate-200 bg-white px-4 py-3">
+                    <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                        <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">
+                            進捗 {{ groupStats[releaseGroup].total === 0 ? 0 : Math.round(groupStats[releaseGroup].released / groupStats[releaseGroup].total * 100) }}%
+                        </span>
                     </div>
-                    <div class="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+                    <div class="mb-2 flex flex-wrap items-center gap-3 text-xs text-slate-600">
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">完成 <b class="text-slate-900">{{ groupStats[releaseGroup].released }}</b></span>
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">全体 <b class="text-slate-900">{{ groupStats[releaseGroup].total }}</b></span>
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">残り <b class="text-slate-900">{{ groupStats[releaseGroup].total - groupStats[releaseGroup].released }}</b></span>
+                    </div>
+                    <div class="h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
                         <div
-                            class="h-full rounded-full bg-emerald-500 transition-all duration-300"
+                            class="h-full rounded-full transition-all duration-300"
+                            :class="currentReleaseTheme.progressBar"
                             :style="{ width: `${groupStats[releaseGroup].total === 0 ? 0 : Math.round(groupStats[releaseGroup].released / groupStats[releaseGroup].total * 100)}%` }"
                         />
                     </div>
@@ -886,25 +959,25 @@ const peakHour2h = computed(() => {
                         <button
                             v-for="s in SEIHO_SUBJECTS" :key="s.key"
                             type="button"
-                            class="rounded-lg border px-3 py-1.5 text-sm font-semibold transition"
+                            class="rounded-xl border px-3 py-1.5 text-sm font-semibold transition"
                             :class="releaseSeihoTab === s.key
-                                ? 'border-purple-400 bg-purple-100 text-purple-800'
-                                : 'border-gray-200 bg-white text-gray-500 hover:bg-gray-50'"
+                                ? currentReleaseTheme.activeTab
+                                : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'"
                             @click="releaseSeihoTab = s.key"
                         >{{ s.label }}</button>
                     </div>
-                    <div v-if="activeSeihoSubject" class="rounded-xl border border-gray-200 bg-white overflow-hidden">
+                    <div v-if="activeSeihoSubject" class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <div class="overflow-x-auto">
                             <table class="min-w-full text-sm">
-                                <thead class="bg-gray-100 text-left text-gray-600">
+                                <thead class="bg-slate-50 text-left text-slate-600">
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
                                         <th v-for="f in SEIHO_FORMS" :key="f" class="px-4 py-2.5 font-semibold text-center uppercase">{{ f }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="year in SEIHO_YEARS" :key="year" class="border-t border-gray-100 hover:bg-gray-50">
-                                        <td class="px-4 py-2.5 font-bold text-gray-800 border-r border-gray-100">{{ year }}</td>
+                                    <tr v-for="year in SEIHO_YEARS" :key="year" class="border-t border-slate-100 hover:bg-slate-50/70">
+                                        <td class="border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
                                         <td v-for="f in SEIHO_FORMS" :key="f" class="px-4 py-2.5 text-center">
                                             <button type="button"
                                                 class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
@@ -921,10 +994,10 @@ const peakHour2h = computed(() => {
 
                 <!-- 一般課程：年度×期×フォーム -->
                 <template v-if="releaseGroup === 'ippan'">
-                    <div class="rounded-xl border border-gray-200 bg-white overflow-hidden">
+                    <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <div class="overflow-x-auto">
                             <table class="min-w-full text-sm">
-                                <thead class="bg-gray-100 text-left text-gray-600">
+                                <thead class="bg-slate-50 text-left text-slate-600">
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
                                         <th class="px-4 py-2.5 font-semibold">月</th>
@@ -933,9 +1006,9 @@ const peakHour2h = computed(() => {
                                 </thead>
                                 <tbody>
                                     <template v-for="year in IPPAN_YEARS" :key="year">
-                                        <tr v-for="(period, pIdx) in IPPAN_PERIODS" :key="`${year}-${period.key}`" class="border-t border-gray-100 hover:bg-gray-50">
-                                            <td v-if="pIdx === 0" :rowspan="IPPAN_PERIODS.length" class="px-4 py-2.5 font-bold text-gray-800 align-middle border-r border-gray-100">{{ year }}</td>
-                                            <td class="px-4 py-2.5 text-gray-500 whitespace-nowrap border-r border-gray-100">{{ period.label }}</td>
+                                        <tr v-for="(period, pIdx) in IPPAN_PERIODS" :key="`${year}-${period.key}`" class="border-t border-slate-100 hover:bg-slate-50/70">
+                                            <td v-if="pIdx === 0" :rowspan="IPPAN_PERIODS.length" class="align-middle border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
+                                            <td class="whitespace-nowrap border-r border-slate-100 px-4 py-2.5 text-slate-500">{{ period.label }}</td>
                                             <td v-for="f in IPPAN_FORMS" :key="f" class="px-4 py-2.5 text-center">
                                                 <button type="button"
                                                     class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
@@ -953,10 +1026,10 @@ const peakHour2h = computed(() => {
 
                 <!-- 専門課程：年度×期×フォーム -->
                 <template v-if="releaseGroup === 'senmon'">
-                    <div class="rounded-xl border border-gray-200 bg-white overflow-hidden">
+                    <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <div class="overflow-x-auto">
                             <table class="min-w-full text-sm">
-                                <thead class="bg-gray-100 text-left text-gray-600">
+                                <thead class="bg-slate-50 text-left text-slate-600">
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
                                         <th class="px-4 py-2.5 font-semibold">月</th>
@@ -965,9 +1038,9 @@ const peakHour2h = computed(() => {
                                 </thead>
                                 <tbody>
                                     <template v-for="year in SENMON_YEARS" :key="year">
-                                        <tr v-for="(period, pIdx) in SENMON_PERIODS" :key="`${year}-${period.key}`" class="border-t border-gray-100 hover:bg-gray-50">
-                                            <td v-if="pIdx === 0" :rowspan="SENMON_PERIODS.length" class="px-4 py-2.5 font-bold text-gray-800 align-middle border-r border-gray-100">{{ year }}</td>
-                                            <td class="px-4 py-2.5 text-gray-500 whitespace-nowrap border-r border-gray-100">{{ period.label }}</td>
+                                        <tr v-for="(period, pIdx) in SENMON_PERIODS" :key="`${year}-${period.key}`" class="border-t border-slate-100 hover:bg-slate-50/70">
+                                            <td v-if="pIdx === 0" :rowspan="SENMON_PERIODS.length" class="align-middle border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
+                                            <td class="whitespace-nowrap border-r border-slate-100 px-4 py-2.5 text-slate-500">{{ period.label }}</td>
                                             <td v-for="f in period.forms" :key="f" class="px-4 py-2.5 text-center">
                                                 <button type="button"
                                                     class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
@@ -986,10 +1059,10 @@ const peakHour2h = computed(() => {
 
                 <!-- 応用課程：年度×期×フォーム -->
                 <template v-if="releaseGroup === 'ouyou'">
-                    <div class="rounded-xl border border-gray-200 bg-white overflow-hidden">
+                    <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <div class="overflow-x-auto">
                             <table class="min-w-full text-sm">
-                                <thead class="bg-gray-100 text-left text-gray-600">
+                                <thead class="bg-slate-50 text-left text-slate-600">
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
                                         <th class="px-4 py-2.5 font-semibold">月</th>
@@ -998,9 +1071,9 @@ const peakHour2h = computed(() => {
                                 </thead>
                                 <tbody>
                                     <template v-for="year in OUYOU_YEARS" :key="year">
-                                        <tr v-for="(period, pIdx) in OUYOU_PERIODS" :key="`${year}-${period.key}`" class="border-t border-gray-100 hover:bg-gray-50">
-                                            <td v-if="pIdx === 0" :rowspan="OUYOU_PERIODS.length" class="px-4 py-2.5 font-bold text-gray-800 align-middle border-r border-gray-100">{{ year }}</td>
-                                            <td class="px-4 py-2.5 text-gray-500 whitespace-nowrap border-r border-gray-100">{{ period.label }}</td>
+                                        <tr v-for="(period, pIdx) in OUYOU_PERIODS" :key="`${year}-${period.key}`" class="border-t border-slate-100 hover:bg-slate-50/70">
+                                            <td v-if="pIdx === 0" :rowspan="OUYOU_PERIODS.length" class="align-middle border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
+                                            <td class="whitespace-nowrap border-r border-slate-100 px-4 py-2.5 text-slate-500">{{ period.label }}</td>
                                             <td v-for="f in period.forms" :key="f" class="px-4 py-2.5 text-center">
                                                 <button type="button"
                                                     class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
@@ -1023,25 +1096,25 @@ const peakHour2h = computed(() => {
                         <button
                             v-for="s in DAIGAKU_SUBJECTS" :key="s.key"
                             type="button"
-                            class="rounded-lg border px-3 py-1.5 text-sm font-semibold transition"
+                            class="rounded-xl border px-3 py-1.5 text-sm font-semibold transition"
                             :class="releaseDaigakuTab === s.key
-                                ? 'border-blue-400 bg-blue-100 text-blue-800'
-                                : 'border-gray-200 bg-white text-gray-500 hover:bg-gray-50'"
+                                ? currentReleaseTheme.activeTab
+                                : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'"
                             @click="releaseDaigakuTab = s.key"
                         >{{ s.label }}</button>
                     </div>
-                    <div v-if="activeDaigakuSubject" class="rounded-xl border border-gray-200 bg-white overflow-hidden">
+                    <div v-if="activeDaigakuSubject" class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <div class="overflow-x-auto">
                             <table class="min-w-full text-sm">
-                                <thead class="bg-gray-100 text-left text-gray-600">
+                                <thead class="bg-slate-50 text-left text-slate-600">
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
                                         <th v-for="f in DAIGAKU_FORMS" :key="f" class="px-4 py-2.5 font-semibold text-center uppercase">{{ f }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="year in DAIGAKU_YEARS" :key="year" class="border-t border-gray-100 hover:bg-gray-50">
-                                        <td class="px-4 py-2.5 font-bold text-gray-800 border-r border-gray-100">{{ year }}</td>
+                                    <tr v-for="year in DAIGAKU_YEARS" :key="year" class="border-t border-slate-100 hover:bg-slate-50/70">
+                                        <td class="border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
                                         <td v-for="f in DAIGAKU_FORMS" :key="f" class="px-4 py-2.5 text-center">
                                             <button type="button"
                                                 class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
@@ -1056,27 +1129,27 @@ const peakHour2h = computed(() => {
                     </div>
                 </template>
 
-                <div class="mt-3 text-sm text-gray-400 px-1">
+                <div class="mt-3 px-1 text-sm text-slate-400">
                     ✓ = 公開中　– = 非公開　クリックで切り替え
                 </div>
 
                 <!-- 保存バー -->
                 <div
                     v-if="hasPending"
-                    class="mt-4 flex flex-col gap-2 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+                    class="mt-4 flex flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
                 >
-                    <span class="text-sm font-medium text-amber-700">
+                    <span class="text-sm font-medium text-slate-700">
                         {{ Object.keys(pendingChanges).length }}件の未保存の変更があります
                     </span>
                     <div class="flex gap-2">
                         <button
                             type="button"
-                            class="flex-1 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-semibold text-gray-600 hover:bg-gray-50 sm:flex-none"
+                            class="flex-1 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-100 sm:flex-none"
                             @click="resetReleases"
                         >リセット</button>
                         <button
                             type="button"
-                            class="flex-1 rounded-lg bg-gray-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gray-700 sm:flex-none"
+                            class="flex-1 rounded-lg bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-slate-800 sm:flex-none"
                             @click="saveReleases"
                         >保存する</button>
                     </div>

@@ -180,6 +180,15 @@ class AdminController extends Controller
             ->get();
 
         $scopeOrderMap = array_flip($scopeOrder);
+        $scopeStatsMap = [];
+        foreach ($salesByScope as $row) {
+            $scopeKey = (string) $row->scope;
+            $scopeStatsMap[$scopeKey] = [
+                'scope' => $scopeKey,
+                'salesCount' => (int) $row->sales_count,
+                'totalAmount' => (int) $row->total_amount,
+            ];
+        }
 
         $weekdayMap = [1 => '日', 2 => '月', 3 => '火', 4 => '水', 5 => '木', 6 => '金', 7 => '土'];
         $weekdayCountMap = [];
@@ -210,11 +219,11 @@ class AdminController extends Controller
             'fromDate' => $salesSince->toDateString(),
             'salesCount' => (int) ($salesSummary->sales_count ?? 0),
             'totalAmount' => (int) ($salesSummary->total_amount ?? 0),
-            'scopeBreakdown' => $salesByScope->map(function ($row) {
-                return [
-                    'scope' => (string) $row->scope,
-                    'salesCount' => (int) $row->sales_count,
-                    'totalAmount' => (int) $row->total_amount,
+            'scopeBreakdown' => collect($scopeOrder)->map(function ($scope) use ($scopeStatsMap) {
+                return $scopeStatsMap[$scope] ?? [
+                    'scope' => $scope,
+                    'salesCount' => 0,
+                    'totalAmount' => 0,
                 ];
             })->sortBy(function ($row) use ($scopeOrderMap) {
                 return $scopeOrderMap[$row['scope']] ?? 999;

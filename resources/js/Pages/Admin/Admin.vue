@@ -292,6 +292,45 @@ const barWidthPercent = (value, max) => {
     if (!Number.isFinite(v) || !Number.isFinite(m) || m <= 0) return 0;
     return Math.max(0, Math.min(100, (v / m) * 100));
 };
+
+const totalSalesCount = computed(() => Number(props.stats?.salesInsights?.salesCount ?? 0));
+
+const ratioPercent = (value, total) => {
+    const v = Number(value ?? 0);
+    const t = Number(total ?? 0);
+    if (!Number.isFinite(v) || !Number.isFinite(t) || t <= 0) return 0;
+    return Math.round((v / t) * 1000) / 10;
+};
+
+const maxWeekdayCount = computed(() => maxSalesCount(props.stats?.salesInsights?.weekdaySales));
+const peakWeekday = computed(() => {
+    const rows = props.stats?.salesInsights?.weekdaySales ?? [];
+    if (!rows.length) return null;
+    return rows.reduce((a, b) => (Number(a.salesCount ?? 0) >= Number(b.salesCount ?? 0) ? a : b));
+});
+
+const hourlySalesBy2Hours = computed(() => {
+    const rows = props.stats?.salesInsights?.hourlySales ?? [];
+    const hourMap = new Map(rows.map((row) => [Number(row.hour), Number(row.salesCount ?? 0)]));
+
+    const bins = [];
+    for (let h = 0; h < 24; h += 2) {
+        const count = (hourMap.get(h) ?? 0) + (hourMap.get(h + 1) ?? 0);
+        bins.push({
+            hourRange: `${h}〜${h + 2}`,
+            salesCount: count,
+        });
+    }
+    return bins;
+});
+
+const maxHourly2hCount = computed(() => maxSalesCount(hourlySalesBy2Hours.value));
+
+const peakHour2h = computed(() => {
+    const rows = hourlySalesBy2Hours.value;
+    if (!rows.length) return null;
+    return rows.reduce((a, b) => (Number(a.salesCount ?? 0) >= Number(b.salesCount ?? 0) ? a : b));
+});
 </script>
 
 <template>
@@ -560,20 +599,26 @@ const barWidthPercent = (value, max) => {
 
                 <div v-if="salesTab === 'weekday'" class="mt-2 rounded-lg border border-gray-100 p-3">
                     <div class="rounded-lg border border-gray-100 p-3">
-                        <div class="mb-2 text-xs font-semibold text-gray-700">曜日別売上件数</div>
+                        <div class="mb-2 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-gray-700">曜日別売上件数</span>
+                            <span v-if="peakWeekday" class="rounded-full bg-indigo-50 px-2 py-1 font-semibold text-indigo-700">
+                                ピーク: {{ peakWeekday.day }}曜 {{ peakWeekday.salesCount }}件
+                            </span>
+                        </div>
                         <div class="space-y-2">
                             <div
                                 v-for="row in stats.salesInsights?.weekdaySales ?? []"
                                 :key="`weekday-${row.day}`"
-                                class="grid grid-cols-[2rem_1fr_3rem] items-center gap-2"
+                                class="grid grid-cols-[2rem_1fr_5rem_3rem] items-center gap-2"
                             >
                                 <div class="text-xs text-gray-600">{{ row.day }}</div>
-                                <div class="h-2 rounded bg-gray-100">
+                                <div class="h-3 rounded bg-gray-100">
                                     <div
-                                        class="h-2 rounded bg-indigo-500"
-                                        :style="{ width: `${barWidthPercent(row.salesCount, maxSalesCount(stats.salesInsights?.weekdaySales))}%` }"
+                                        class="h-3 rounded bg-indigo-500"
+                                        :style="{ width: `${barWidthPercent(row.salesCount, maxWeekdayCount)}%` }"
                                     ></div>
                                 </div>
+                                <div class="text-right text-[11px] text-gray-500">{{ ratioPercent(row.salesCount, totalSalesCount) }}%</div>
                                 <div class="text-right text-xs text-gray-700">{{ row.salesCount }}</div>
                             </div>
                         </div>
@@ -582,20 +627,28 @@ const barWidthPercent = (value, max) => {
 
                 <div v-if="salesTab === 'hourly'" class="mt-2 rounded-lg border border-gray-100 p-3">
                     <div class="rounded-lg border border-gray-100 p-3">
-                        <div class="mb-2 text-xs font-semibold text-gray-700">時間帯別売上件数</div>
+                        <div class="mb-2 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-gray-700">時間帯別売上件数（2時間ごと）</span>
+                            <span v-if="peakHour2h" class="rounded-full bg-emerald-50 px-2 py-1 font-semibold text-emerald-700">
+                                ピーク: {{ peakHour2h.hourRange }}時 {{ peakHour2h.salesCount }}件
+                            </span>
+                        </div>
                         <div class="space-y-1.5">
                             <div
-                                v-for="row in stats.salesInsights?.hourlySales ?? []"
-                                :key="`hour-${row.hour}`"
-                                class="grid grid-cols-[2.5rem_1fr_3rem] items-center gap-2"
+                                v-for="row in hourlySalesBy2Hours"
+                                :key="`hour-${row.hourRange}`"
+                                class="grid grid-cols-[4rem_1fr_5rem_3rem] items-center gap-2"
                             >
-                                <div class="text-xs text-gray-600">{{ row.hour }}時</div>
-                                <div class="h-2 rounded bg-gray-100">
+                                <div class="text-xs text-gray-600">{{ row.hourRange }}時</div>
+                                <div class="h-3 rounded bg-gray-100">
                                     <div
-                                        class="h-2 rounded bg-emerald-500"
-                                        :style="{ width: `${barWidthPercent(row.salesCount, maxSalesCount(stats.salesInsights?.hourlySales))}%` }"
-                                    ></div>
+                                        class="flex h-3 items-center justify-end rounded bg-emerald-500 pr-1"
+                                        :style="{ width: `${barWidthPercent(row.salesCount, maxHourly2hCount)}%` }"
+                                    >
+                                        <span v-if="row.salesCount > 0" class="text-[9px] font-semibold leading-none text-white">{{ row.salesCount }}</span>
+                                    </div>
                                 </div>
+                                <div class="text-right text-[11px] text-gray-500">{{ ratioPercent(row.salesCount, totalSalesCount) }}%</div>
                                 <div class="text-right text-xs text-gray-700">{{ row.salesCount }}</div>
                             </div>
                         </div>

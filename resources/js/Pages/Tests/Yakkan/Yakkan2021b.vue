@@ -151,7 +151,7 @@ const subject = "2021年度 フォームB";
                     :contents="[
                         '労働基準監督署 → 財務局・福岡財務支局', //p259
                         '正しい',
-                        '12か月 → 6か月', //p260
+                        '12ヶ月 → 6ヶ月', //p260
                     ]"
                 />
                 <QuestionTemp1
@@ -215,16 +215,46 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '法律と保険約款', content: '民法、商法の順 → 保険法、民法の順' }, //31 //p13
-                        { questionTitle: '生命保険契約等の定義', content: '正しい' }, //32
-                        { questionTitle: '保険料の返還', content: '正しい' }, //33
-                        { questionTitle: '被保険者の同意', content: 'すべて被保険者の同意が必要 → すべてではない' }, //34 p50
-                        { questionTitle: '遺言による保険金受取人の変更', content: '正しい' }, //35
-                        { questionTitle: '契約内容の登録', content: '満期保険金登録制度 → 死亡保険金登録制度' }, //36 p168
-                        { questionTitle: '告知義務違反による解除権', content: '正しい' }, //37
-                        { questionTitle: '配当金', content: '利益分配金 → 契約者配当金' }, //38 p158
-                        { questionTitle: '保険会社の合併', content: '保険株式会社と合併することができない → 相互会社または保険株式会社と合併することができる' }, //39 p251
-                        { questionTitle: '定款以外の基礎書類の変更', content: '正しい' }, //40
+                        {
+                            questionTitle: '法律と保険約款',
+                            content: '保険約款に規定のない事項については、おおむね、[[保険法、民法]]の順に適用される', //p13
+                        }, //31
+                        {
+                            questionTitle: '生命保険契約等の定義',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '保険料の返還',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '被保険者の同意',
+                            content: 'すべて被保険者の同意が必要 → すべてではない',
+                        }, //34 p50
+                        {
+                            questionTitle: '遺言による保険金受取人の変更',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '契約内容の登録',
+                            content: '満期保険金登録制度 → 死亡保険金登録制度',
+                        }, //36 p168
+                        {
+                            questionTitle: '告知義務違反による解除権',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '配当金',
+                            content: '利益分配金 → 契約者配当金',
+                        }, //38 p158
+                        {
+                            questionTitle: '保険会社の合併',
+                            content: '保険株式会社と合併することができない → 相互会社または保険株式会社と合併することができる',
+                        }, //39 p251
+                        {
+                            questionTitle: '定款以外の基礎書類の変更',
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
                         { questionTitle: '消費者契約法', label: 'ウ', content: '契約を取り消し得る' }, //41
                         { questionTitle: '保険契約上の保障責任', label: 'オ', content: '' }, //42

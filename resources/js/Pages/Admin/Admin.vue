@@ -233,6 +233,12 @@ const submitSearch = () => {
     );
 };
 
+const resetSearch = () => {
+    purchaseScope.value = "all";
+    purchaseState.value = "all";
+    submitSearch();
+};
+
 const formatDateTime = (value) => {
     if (!value) return "-";
     const date = new Date(value);
@@ -765,6 +771,7 @@ const peakHour2h = computed(() => {
             >
                 <select
                     v-model="purchaseScope"
+                    @change="submitSearch"
                     class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
                 >
                     <option
@@ -777,6 +784,7 @@ const peakHour2h = computed(() => {
                 </select>
                 <select
                     v-model="purchaseState"
+                    @change="submitSearch"
                     class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
                 >
                     <option value="all">購入状況: すべて</option>
@@ -784,10 +792,11 @@ const peakHour2h = computed(() => {
                     <option value="unpurchased">未購入</option>
                 </select>
                 <button
-                    type="submit"
-                    class="whitespace-nowrap rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500"
+                    type="button"
+                    class="whitespace-nowrap rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+                    @click="resetSearch"
                 >
-                    絞り込み
+                    リセット
                 </button>
             </form>
 

@@ -104,11 +104,11 @@ body {
 }
 
 .answer-diff-item-break {
-    @apply grid gap-0.5;
+    @apply inline-flex flex-nowrap items-baseline gap-1 whitespace-nowrap;
 }
 
 .answer-auto-arrow {
-    @apply grid gap-0.5;
+    @apply inline-flex flex-nowrap items-baseline gap-1 whitespace-nowrap;
 }
 
 .question-temp4-structured .calc-block-title {

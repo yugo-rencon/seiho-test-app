@@ -33,9 +33,13 @@
             {{ props.note }}
         </p>
 
-        <div class="grid gap-2">
-            <div v-for="(content, index) in props.contents" :key="index" class="grid gap-2 text-sm leading-6 text-gray-800 select-none md:text-[15px] grid-cols-[2em_1fr]">
-                <span class="font-semibold">{{ getLabel(index) }}：</span>
+        <div class="grid gap-1.5">
+            <div
+                v-for="(content, index) in props.contents"
+                :key="index"
+                class="grid grid-cols-[2.6em_1fr] items-start gap-2 border-b border-gray-100 pb-1.5 text-sm leading-6 text-gray-800 select-none md:text-[15px]"
+            >
+                <span class="pt-[1px] font-semibold text-gray-900">{{ getLabel(index) }}：</span>
                 <p class="jp-kagi-tight" v-html="formatContentHtml(content)"></p>
             </div>
         </div>

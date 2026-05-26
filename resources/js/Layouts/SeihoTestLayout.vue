@@ -6,6 +6,8 @@ import LayoutHeader from "@/Layouts/Partials/LayoutHeader.vue";
 import LayoutToast from "@/Layouts/Partials/LayoutToast.vue";
 import MobileMenuDrawer from "@/Layouts/Partials/MobileMenuDrawer.vue";
 import { MOBILE_MENU_SUBJECTS } from "@/constants/subjects";
+import QuestionQuickNav from "@/Components/QuestionQuickNav.vue";
+import SouronFormNav from "@/Components/SouronFormNav.vue";
 
 const props = defineProps({
     // 各ページ側から渡されるブラウザタイトル
@@ -357,6 +359,9 @@ onBeforeUnmount(() => {
         <main class="overflow-x-hidden">
             <slot />
         </main>
+
+        <SouronFormNav />
+        <QuestionQuickNav />
 
         <!-- ハンバーガーメニュー本体 -->
         <MobileMenuDrawer

@@ -19,21 +19,8 @@ const props = defineProps({
 
 const emit = defineEmits(["close"]);
 const page = usePage();
-
-// 科目アコーディオン開閉状態
-const openSubjects = ref(new Set());
-// 科目ごとの選択年度（例: 2024年度）
-const activeYears = ref(new Map());
-
-watch(
-    () => props.open,
-    (isOpen) => {
-        if (!isOpen) {
-            openSubjects.value.clear();
-            activeYears.value.clear();
-        }
-    },
-);
+const currentPath = computed(() => String(page.url ?? "").split("?")[0]);
+const activePeriodKey = ref("");
 
 const isActive = (name) => route().current(name);
 
@@ -60,21 +47,6 @@ const loginHref = computed(() => {
         return_to: returnTo,
     });
 });
-
-// 科目アコーディオンを開閉。閉じる時は年度選択もリセット
-const toggleSubject = (key) => {
-    if (openSubjects.value.has(key)) {
-        openSubjects.value.delete(key);
-        activeYears.value.delete(key);
-    } else {
-        openSubjects.value.add(key);
-    }
-};
-
-// 科目ごとの表示年度を切り替え
-const setActiveYear = (subjectKey, yearLabel) => {
-    activeYears.value.set(subjectKey, yearLabel);
-};
 
 const homeRouteName = () =>
     props.isDaigaku
@@ -134,6 +106,69 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
 
     return route(routeName);
 };
+const isCurrentFormHref = (href) => {
+    if (!href) return false;
+    try {
+        const url = new URL(String(href), window.location.origin);
+        return url.pathname === currentPath.value;
+    } catch (_) {
+        return String(href).split("?")[0] === currentPath.value;
+    }
+};
+
+const currentSubjectKey = computed(() => {
+    const path = String(page.url ?? "").split("?")[0];
+
+    if (props.isIppan) {
+        const matched = path.match(/^\/ippan\/\d{4}-(1-6|7-12)-[a-e]$/i);
+        if (!matched) return null;
+        return matched[1] === "1-6" ? "h1" : "h2";
+    }
+
+    if (props.isSenmon || props.isOuyou) {
+        const matched = path.match(/^\/(?:senmon|ouyou)\/\d{4}-(h[12])-[a-d]$/i);
+        return matched?.[1]?.toLowerCase() ?? null;
+    }
+
+    if (props.isDaigaku) {
+        const matched = path.match(/^\/daigaku\/([a-z-]+)\d{4}[a-c]$/i);
+        return matched?.[1]?.toLowerCase() ?? null;
+    }
+
+    const matched = path.match(/^\/([a-z]+)\d{4}[a-c]$/i);
+    return matched?.[1]?.toLowerCase() ?? null;
+});
+
+const isPeriodScope = computed(() => props.isIppan || props.isSenmon || props.isOuyou);
+const periodTabOptions = computed(() => {
+    if (!isPeriodScope.value) return [];
+    return props.subjects.map((subject) => ({
+        key: subject.key,
+        name: subject.name,
+    }));
+});
+
+watch(
+    () => [props.open, currentSubjectKey.value, periodTabOptions.value.length],
+    ([isOpen]) => {
+        if (!isOpen || !isPeriodScope.value) return;
+        const fallback = periodTabOptions.value[0]?.key ?? "";
+        activePeriodKey.value = currentSubjectKey.value || fallback;
+    },
+    { immediate: true },
+);
+
+const visibleSubjects = computed(() => {
+    if (isPeriodScope.value) {
+        const key = activePeriodKey.value || currentSubjectKey.value || periodTabOptions.value[0]?.key;
+        const target = props.subjects.find((s) => s.key === key);
+        return target ? [target] : props.subjects;
+    }
+
+    if (!currentSubjectKey.value) return props.subjects;
+    const target = props.subjects.find((s) => s.key === currentSubjectKey.value);
+    return target ? [target] : props.subjects;
+});
 </script>
 
 <template>
@@ -265,91 +300,49 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                         </div>
 
                         <div
-                            v-for="subject in subjects"
-                            :key="subject.key"
-                            class="overflow-hidden rounded-xl border border-gray-100"
+                            v-if="isPeriodScope && periodTabOptions.length > 1"
+                            class="mb-3 grid grid-cols-2 gap-2"
                         >
                             <button
-                                class="flex w-full items-center justify-between px-4 py-3 text-sm font-semibold text-gray-800 transition-all duration-200 hover:bg-gray-50"
-                                :class="openSubjects.has(subject.key) ? 'bg-gray-50' : ''"
-                                @click="toggleSubject(subject.key)"
+                                v-for="tab in periodTabOptions"
+                                :key="tab.key"
+                                type="button"
+                                class="rounded-lg border px-3 py-2 text-xs font-semibold transition"
+                                :class="
+                                    activePeriodKey === tab.key
+                                        ? (isSenmon
+                                            ? 'border-emerald-200 bg-emerald-100 text-emerald-700'
+                                            : isOuyou
+                                              ? 'border-amber-200 bg-amber-100 text-amber-700'
+                                              : 'border-fuchsia-200 bg-fuchsia-100 text-fuchsia-700')
+                                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'
+                                "
+                                @click="activePeriodKey = tab.key"
                             >
-                                <span>{{ subject.name }}</span>
-                                <div class="flex items-center gap-2">
-                                    <span
-                                        class="rounded-full bg-gray-100 px-2 py-1 text-[10px] text-gray-500"
-                                    >
-                                        {{ Object.keys(subject.tests).length }}年度分
-                                    </span>
-                                    <svg
-                                        class="h-4 w-4 transition-transform duration-200"
-                                        :class="[accentTextClass, openSubjects.has(subject.key) ? 'rotate-180' : '']"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            d="M19 9l-7 7-7-7"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                        />
-                                    </svg>
-                                </div>
+                                {{ tab.name }}
                             </button>
+                        </div>
 
-                            <transition name="slide-down">
+                        <div
+                            v-for="subject in visibleSubjects"
+                            :key="subject.key"
+                            class="overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-gray-50/80"
+                        >
+                            <div class="flex items-center justify-between border-b border-gray-100 px-4 py-3 text-sm font-semibold text-gray-800">
+                                <span>{{ subject.name }}</span>
+                                <span class="rounded-full bg-white px-2 py-1 text-[10px] text-gray-500 ring-1 ring-gray-200">
+                                    {{ Object.keys(subject.tests).length }}年度分
+                                </span>
+                            </div>
+
+                            <div class="space-y-2 p-3">
                                 <div
-                                    v-if="openSubjects.has(subject.key)"
-                                    class="space-y-3 px-3 pb-3"
+                                    v-for="(forms, yearLabel) in subject.tests"
+                                    :key="yearLabel"
+                                    class="rounded-xl border border-gray-200 bg-white p-2.5"
                                 >
-                                    <div class="flex flex-wrap gap-2 px-1">
-                                        <button
-                                            v-for="yearLabel in Object.keys(subject.tests)"
-                                            :key="yearLabel"
-                                            type="button"
-                                            class="rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors"
-                                            :class="
-                                                (activeYears.get(subject.key) ||
-                                                    Object.keys(subject.tests)[0]) ===
-                                                yearLabel
-                                                    ? isDaigaku
-                                                        ? 'border-blue-200 bg-blue-100 text-blue-700'
-                                                        : isSenmon
-                                                          ? 'border-emerald-200 bg-emerald-100 text-emerald-700'
-                                                          : isOuyou
-                                                            ? 'border-amber-200 bg-amber-100 text-amber-700'
-                                                          : isIppan
-                                                            ? 'border-pink-200 bg-pink-100 text-fuchsia-700'
-                                                        : 'border-purple-200 bg-purple-100 text-purple-700'
-                                                    : isDaigaku
-                                                      ? 'border-gray-200 bg-white text-gray-600 hover:border-blue-200'
-                                                      : isSenmon
-                                                        ? 'border-gray-200 bg-white text-gray-600 hover:border-emerald-200'
-                                                        : isOuyou
-                                                          ? 'border-gray-200 bg-white text-gray-600 hover:border-amber-200'
-                                                        : isIppan
-                                                          ? 'border-gray-200 bg-white text-gray-600 hover:border-pink-200'
-                                                      : 'border-gray-200 bg-white text-gray-600 hover:border-purple-200'
-                                            "
-                                            @click="setActiveYear(subject.key, yearLabel)"
-                                        >
-                                            {{ yearLabel }}
-                                        </button>
-                                    </div>
-
-                                    <div
-                                        v-for="(forms, yearLabel) in subject.tests"
-                                        v-show="
-                                            (activeYears.get(subject.key) ||
-                                                Object.keys(subject.tests)[0]) ===
-                                            yearLabel
-                                        "
-                                        :key="yearLabel"
-                                        class="rounded-lg bg-gray-50 p-3"
-                                    >
                                         <div
-                                            class="mb-2 flex items-center gap-2 px-2 text-xs font-semibold text-gray-700"
+                                            class="mb-2 flex items-center gap-2 px-1 text-xs font-bold text-gray-700"
                                         >
                                             <div
                                                 class="h-2 w-2 rounded-full bg-gradient-to-r"
@@ -368,67 +361,47 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
                                             <span>{{ yearLabel }}</span>
                                         </div>
 
-                                        <ul class="space-y-1">
+                                        <ul class="grid grid-cols-3 gap-1.5">
                                             <li v-for="form in forms" :key="form">
                                                 <Link
                                                     v-if="resolveFormHref(subject.key, yearLabel, form)"
                                                     :href="resolveFormHref(subject.key, yearLabel, form)"
-                                                    class="group flex items-center justify-between rounded-lg px-3 py-2 text-sm text-gray-600 transition-all duration-150 hover:bg-white"
+                                                    class="flex items-center justify-center rounded-lg px-1 py-2 text-xs font-semibold transition-all duration-150"
                                                     :class="
-                                                        isDaigaku
-                                                            ? 'hover:text-blue-700'
-                                                            : isSenmon
-                                                              ? 'hover:text-emerald-700'
-                                                              : isOuyou
-                                                                ? 'hover:text-amber-700'
-                                                              : isIppan
-                                                                ? 'hover:text-fuchsia-700'
-                                                                : 'hover:text-purple-700'
+                                                        isCurrentFormHref(resolveFormHref(subject.key, yearLabel, form))
+                                                            ? (isDaigaku
+                                                                ? 'bg-blue-600 text-white shadow-sm'
+                                                                : isSenmon
+                                                                  ? 'bg-emerald-600 text-white shadow-sm'
+                                                                  : isOuyou
+                                                                    ? 'bg-amber-500 text-white shadow-sm'
+                                                                  : isIppan
+                                                                    ? 'bg-fuchsia-600 text-white shadow-sm'
+                                                                    : 'bg-violet-600 text-white shadow-sm')
+                                                            : (isDaigaku
+                                                                ? 'bg-blue-50 text-blue-700 hover:bg-blue-100'
+                                                                : isSenmon
+                                                                  ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+                                                                  : isOuyou
+                                                                    ? 'bg-amber-50 text-amber-700 hover:bg-amber-100'
+                                                                  : isIppan
+                                                                    ? 'bg-fuchsia-50 text-fuchsia-700 hover:bg-fuchsia-100'
+                                                                    : 'bg-violet-50 text-violet-700 hover:bg-violet-100')
                                                     "
                                                     @click="closeMenu"
                                                 >
-                                                    <span
-                                                        class="flex items-center gap-2 font-medium"
-                                                    >
-                                                        フォーム{{ form.toUpperCase() }}
-                                                    </span>
-                                                    <svg
-                                                        class="h-4 w-4 transition-transform group-hover:translate-x-1"
-                                                        :class="
-                                                            isDaigaku
-                                                                ? 'text-blue-400'
-                                                                : isSenmon
-                                                                  ? 'text-emerald-400'
-                                                                  : isOuyou
-                                                                    ? 'text-amber-400'
-                                                                  : isIppan
-                                                                    ? 'text-fuchsia-400'
-                                                                    : 'text-indigo-400'
-                                                        "
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        viewBox="0 0 24 24"
-                                                    >
-                                                        <path
-                                                            d="M9 5l7 7-7 7"
-                                                            stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                        />
-                                                    </svg>
+                                                    フォーム{{ form.toUpperCase() }}
                                                 </Link>
                                                 <span
                                                     v-else
-                                                    class="flex items-center justify-between rounded-lg px-3 py-2 text-sm text-gray-400"
+                                                    class="flex items-center justify-center rounded-lg bg-gray-100 px-1 py-2 text-xs font-semibold text-gray-400"
                                                 >
-                                                    <span class="font-medium">フォーム{{ form.toUpperCase() }}</span>
-                                                    <span class="text-[11px]">準備中</span>
+                                                    フォーム{{ form.toUpperCase() }}
                                                 </span>
                                             </li>
                                         </ul>
-                                    </div>
                                 </div>
-                            </transition>
+                            </div>
                         </div>
                     </div>
 
@@ -502,15 +475,4 @@ const resolveFormHref = (subjectKey, yearLabel, form) => {
     opacity: 0;
 }
 
-.slide-down-enter-active,
-.slide-down-leave-active {
-    max-height: 500px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-.slide-down-enter-from,
-.slide-down-leave-to {
-    max-height: 0;
-    opacity: 0;
-}
 </style>

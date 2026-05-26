@@ -117,4 +117,23 @@ git commit -m "Disable iOS data detectors for email/phone/address"
 git push origin main
 ```
 
+## 1コマンド化（任意）
+
+毎回 `npm run build` → `git add .` → `git commit` → `git push` が面倒な場合は、`zsh` のエイリアスを作る。
+
+`~/.zshrc` に追加:
+
+```bash
+alias gpub='npm run build && git add . && git commit -m "アップデート" && git push origin main'
+```
+
+反映:
+
+```bash
+source ~/.zshrc
+```
+
+以後は `gpub` だけで実行できる。  
+（途中で失敗したらその時点で停止する）
+
 ssh -i ~/.ssh/xs599734.key xs599734@sv16219.xserver.jp -p 10022

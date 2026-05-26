@@ -174,11 +174,20 @@ const visibleSubjects = computed(() => {
                 class="fixed right-0 top-0 z-50 h-full w-80 overflow-y-auto bg-white shadow-xl"
                 @click.stop
             >
-                <div class="border-b border-gray-100 px-6 py-5">
+                <div class="border-b border-gray-100 px-4 py-2">
                     <div class="flex items-center justify-between">
-                        <h2 class="text-lg font-bold text-gray-900">メニュー</h2>
+                        <Link
+                            v-if="isAdmin"
+                            :href="route(adminRouteName())"
+                            class="rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-700 transition hover:bg-amber-100"
+                            @click="closeMenu"
+                        >
+                            管理者画面
+                        </Link>
+                        <span v-else></span>
                         <button
                             class="rounded-lg p-2 transition-colors hover:bg-gray-100"
+                            aria-label="メニューを閉じる"
                             @click="closeMenu"
                         >
                             <svg
@@ -198,17 +207,9 @@ const visibleSubjects = computed(() => {
                     </div>
                 </div>
 
-                <div class="space-y-6 px-6 py-6">
+                <div class="space-y-5 px-5 py-4">
                     <!-- ログイン状態で出し分ける上部リンク -->
                     <div v-if="!hideAuthUi" class="space-y-2">
-                        <Link
-                            v-if="isAdmin"
-                            :href="route(adminRouteName())"
-                            class="block rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-700 transition hover:bg-amber-100"
-                            @click="closeMenu"
-                        >
-                            管理
-                        </Link>
                         <template v-if="isAuthenticated">
                             <Link
                                 :href="route(mypageRouteName())"

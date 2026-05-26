@@ -108,6 +108,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険の対象となる危険の種類"
                     :contents="[
+                        // rev: 2026-05-26 確認済み
                         '正しい',
                         '同様な危険を多数引き受けることにより、危険の発生頻度の変動幅を[[縮小]]させ、[[平均経験率]]を得る必要がある', //p4
                         '保険料と危険度の積 → 保険金額と危険度の積', //p4
@@ -227,6 +228,7 @@ const isDraft = false;
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-05-26 確認済み
                             questionTitle: '危険選択の意義',
                             content: '収支相当の原則 → 危険均一性の原則', //p16
                         }, //32
@@ -243,12 +245,14 @@ const isDraft = false;
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-05-26 確認済み
                             questionTitle: '組織変更',
-                            content: '100株未満 → 1株未満', //p162
+                            content: '100株未満 → 1株未満', //p163
                         }, //36
                         {
+                            // rev: 2026-05-26 確認済み
                             questionTitle: '共済と保険',
-                            content: '適合性の原則 → 給付・反対給付均等の原則', //p164
+                            content: '適合性の原則 → 給付・反対給付均等の原則', //p165
                         }, //37
                         {
                             questionTitle: 'こくみん共済coop（全労災）',

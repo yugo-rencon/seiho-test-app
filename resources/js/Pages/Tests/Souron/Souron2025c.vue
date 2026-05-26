@@ -174,6 +174,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="早期是正措置の導入と保険業法の一部改正"
                     :contents="[
+                        // rev: 2026-05-26 確認済み
                         '正しい',
                         '①持株会社制度の導入 → ①保険相互会社の株式会社化の規定整備', //p100
                         '正しい',
@@ -185,6 +186,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="狭義の社会保障制度"
                     :contents="[
+                        // rev: 2026-05-26 確認済み
                         '正しい',
                         '正しい',
                         '社会扶助制度 → 公的扶助制度', //p123
@@ -196,8 +198,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険業法の概要"
                     :contents="[
+                        // rev: 2026-05-26 確認済み
                         '正しい',
-                        '登録制（少額短期保険業者については免許制） → 免許制（少額短期保険業者については登録制）', //p150
+                        '[[免許制]]（少額短期保険業者については[[登録制]]）が採用されている', //p150
                         '正しい',
                     ]"
                 />
@@ -207,7 +210,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生保業界におけるシステム動向"
                     :contents="[
-                        '団体保険分野 → 個人保険分野', //p197-198
+                        // rev: 2026-05-26 確認済み
+                        '最初に機械化されたのは最も事務量の多い[[個人保険分野]]である', //p198
                         '正しい',
                         '正しい',
                     ]"

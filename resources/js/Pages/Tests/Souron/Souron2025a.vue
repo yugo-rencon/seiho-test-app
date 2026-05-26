@@ -232,7 +232,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '保険の始期',
                             content: '正しい',
@@ -278,7 +277,6 @@ const isDraft = false;
                             questionTitle: '国際化の方向',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         // rev: 2026-05-26 確認済み
                         { questionTitle: '保険事故の発生', label: 'ア', content: '保険金' }, //41
                         { questionTitle: '死亡表', label: 'オ', content: '' }, //42

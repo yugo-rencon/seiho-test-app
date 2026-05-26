@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { usePage } from "@inertiajs/vue3";
 
 type LinkItem = { label: string; href: string; active: boolean };
@@ -7,6 +7,12 @@ type Group = { heading: string; links: LinkItem[] };
 
 const page = usePage();
 const path = computed(() => String(page.url ?? "").split("?")[0]);
+const hideOnFooter = ref(false);
+const navRef = ref<HTMLElement | null>(null);
+const navScale = ref(1);
+const viewportWidth = ref<number>(typeof window !== "undefined" ? window.innerWidth : 0);
+let footerObserver: IntersectionObserver | null = null;
+let resizeHandler: (() => void) | null = null;
 
 const block = computed<{ title: string; groups: Group[] } | null>(() => {
     const p = path.value;
@@ -67,113 +73,117 @@ const block = computed<{ title: string; groups: Group[] } | null>(() => {
         return { title: labelMap[subject] ?? subject, groups };
     }
 
-    const ippan = p.match(/^\/ippan\/(\d{4})-(1-6|7-12)-([a-e])$/i);
-    if (ippan) {
-        const year = ippan[1];
-        const period = ippan[2];
-        const form = ippan[3].toLowerCase();
-        const current = `${year}-${period}-${form}`;
-        const groups = [
-            {
-                heading: `${year} 1-6月`,
-                links: ["a", "b", "c", "d", "e"].map((f) => ({
-                    label: `フォーム${f.toUpperCase()}`,
-                    href: `/ippan/${year}-1-6-${f}`,
-                    active: `${year}-1-6-${f}` === current,
-                })),
-            },
-            {
-                heading: `${year} 7-12月`,
-                links: ["a", "b", "c", "d", "e"].map((f) => ({
-                    label: `フォーム${f.toUpperCase()}`,
-                    href: `/ippan/${year}-7-12-${f}`,
-                    active: `${year}-7-12-${f}` === current,
-                })),
-            },
-        ];
-        return { title: "一般課程", groups };
-    }
-
-    const senmon = p.match(/^\/senmon\/(\d{4})-(h[12])-([a-d])$/i);
-    if (senmon) {
-        const year = senmon[1];
-        const period = senmon[2].toLowerCase();
-        const form = senmon[3].toLowerCase();
-        const current = `${year}-${period}-${form}`;
-        const groups = [
-            {
-                heading: `${year} 前半`,
-                links: ["a", "b"].map((f) => ({
-                    label: `フォーム${f.toUpperCase()}`,
-                    href: `/senmon/${year}-h1-${f}`,
-                    active: `${year}-h1-${f}` === current,
-                })),
-            },
-            {
-                heading: `${year} 後半`,
-                links: ["a", "b", "c", "d"].map((f) => ({
-                    label: `フォーム${f.toUpperCase()}`,
-                    href: `/senmon/${year}-h2-${f}`,
-                    active: `${year}-h2-${f}` === current,
-                })),
-            },
-        ];
-        return { title: "専門課程", groups };
-    }
-
-    const ouyou = p.match(/^\/ouyou\/(\d{4})-(h[12])-([a-d])$/i);
-    if (ouyou) {
-        const year = ouyou[1];
-        const period = ouyou[2].toLowerCase();
-        const form = ouyou[3].toLowerCase();
-        const current = `${year}-${period}-${form}`;
-        const groups = [
-            {
-                heading: `${year} 前半`,
-                links: ["a", "b"].map((f) => ({
-                    label: `フォーム${f.toUpperCase()}`,
-                    href: `/ouyou/${year}-h1-${f}`,
-                    active: `${year}-h1-${f}` === current,
-                })),
-            },
-            {
-                heading: `${year} 後半`,
-                links: ["a", "b", "c", "d"].map((f) => ({
-                    label: `フォーム${f.toUpperCase()}`,
-                    href: `/ouyou/${year}-h2-${f}`,
-                    active: `${year}-h2-${f}` === current,
-                })),
-            },
-        ];
-        return { title: "応用課程", groups };
-    }
-
     return null;
+});
+
+const navColsClass = (count: number): string => {
+    if (count >= 1) return "grid-cols-1";
+    return "grid-cols-1";
+};
+
+const compactLabel = (label: string): string => {
+    return String(label).replace("フォーム", "");
+};
+
+const activeButtonClass = computed(() => {
+    const p = path.value;
+    if (p.startsWith("/daigaku")) return "bg-blue-600 text-white";
+    if (p.startsWith("/ippan")) return "bg-fuchsia-600 text-white";
+    if (p.startsWith("/senmon")) return "bg-emerald-600 text-white";
+    if (p.startsWith("/ouyou")) return "bg-amber-500 text-white";
+    return "bg-violet-600 text-white";
+});
+
+const sideSpace = computed(() => Math.max(0, (viewportWidth.value - 896) / 2)); // 896px = max-w-4xl
+const canShowSidebar = computed(() => sideSpace.value >= 170);
+const sidebarWidth = computed(() => {
+    const available = sideSpace.value - 14; // 右側マージンぶん
+    return Math.max(0, Math.min(204, available)); // 最大12.75rem
+});
+const sidebarRight = computed(() => {
+    return Math.max(8, (sideSpace.value - sidebarWidth.value) / 2);
+});
+
+const updateNavScale = () => {
+    const node = navRef.value;
+    if (!node) return;
+    const topOffset = 96; // ヘッダー回避
+    const bottomMargin = 20;
+    const available = window.innerHeight - topOffset - bottomMargin;
+    const required = node.scrollHeight;
+    if (required <= available) {
+        navScale.value = 1;
+        return;
+    }
+    navScale.value = Math.max(0.78, available / required);
+};
+
+onMounted(() => {
+    const footer = document.querySelector("footer");
+    if (footer) {
+        footerObserver = new IntersectionObserver(
+            (entries) => {
+                hideOnFooter.value = entries.some((entry) => entry.isIntersecting);
+            },
+            {
+                root: null,
+                threshold: 0.35,
+            },
+        );
+
+        footerObserver.observe(footer);
+    }
+    nextTick(updateNavScale);
+    resizeHandler = () => {
+        viewportWidth.value = window.innerWidth;
+        updateNavScale();
+    };
+    window.addEventListener("resize", resizeHandler);
+});
+
+onBeforeUnmount(() => {
+    if (!footerObserver) return;
+    footerObserver.disconnect();
+    footerObserver = null;
+    if (resizeHandler) {
+        window.removeEventListener("resize", resizeHandler);
+        resizeHandler = null;
+    }
+});
+
+watch(block, () => {
+    nextTick(updateNavScale);
 });
 </script>
 
 <template>
     <aside
-        v-if="block"
-        class="fixed right-[max(0.75rem,calc((100vw-56rem)/4-3.5rem))] top-1/2 z-30 hidden max-h-[74vh] w-40 -translate-y-1/2 overflow-y-auto rounded-xl border border-gray-200 bg-white/95 p-2.5 shadow-lg backdrop-blur xl:block"
+        ref="navRef"
+        v-if="block && !hideOnFooter && canShowSidebar"
+        class="fixed top-24 z-30 hidden origin-top rounded-xl border border-gray-200 bg-white/95 p-1.5 shadow-lg backdrop-blur xl:block 2xl:p-2"
+        :style="{
+            right: `${sidebarRight}px`,
+            width: `${sidebarWidth}px`,
+            transform: `scale(${navScale})`,
+        }"
     >
-        <p class="mb-1.5 px-1 text-[11px] font-bold tracking-wide text-gray-500">{{ block.title }}</p>
-        <div class="grid gap-1.5">
+        <p class="mb-1 px-1 text-center text-[11px] font-bold tracking-wide text-gray-500 2xl:text-xs">{{ block.title }}</p>
+        <div class="grid gap-1">
             <div
                 v-for="group in block.groups"
                 :key="group.heading"
                 class="rounded-md border border-gray-100 bg-gray-50 p-1"
             >
-                <p class="mb-1 px-1 text-[11px] font-bold text-gray-500">{{ group.heading }}</p>
-                <div class="grid gap-1">
+                <p class="mb-1 px-1 text-center text-[10px] font-bold text-gray-500">{{ group.heading }}</p>
+                <div class="grid gap-1" :class="navColsClass(group.links.length)">
                     <a
                         v-for="item in group.links"
                         :key="item.href"
                         :href="item.href"
-                        class="rounded px-1.5 py-1.5 text-center text-xs font-semibold transition"
-                        :class="item.active ? 'bg-violet-600 text-white' : 'bg-white text-gray-600 ring-1 ring-gray-200 hover:bg-gray-100'"
+                        class="rounded px-1 py-1.5 text-center text-[10px] font-semibold leading-none transition xl:px-1 xl:py-1.5"
+                        :class="item.active ? activeButtonClass : 'bg-white text-gray-600 ring-1 ring-gray-200 hover:bg-gray-100'"
                     >
-                        {{ item.label }}
+                        {{ compactLabel(item.label) }}
                     </a>
                 </div>
             </div>

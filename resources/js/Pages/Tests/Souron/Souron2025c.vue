@@ -28,6 +28,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="団体保険の主な保険種類-①"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         '無診査',
                         '1年',
                         '損金',
@@ -48,6 +49,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="団体保険の主な保険種類-②"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         '減少',
                         '退職後',
                         '一時払い',
@@ -120,6 +122,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="アメリカにおける金融革命の進展と生命保険事業"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         'デリバティブ商品 → ニューウェーブ商品', //p69
                         '正しい',
                         '金融規制改革法（ドット・フランク法） → グラム・リーチ・ブライリー法', //p71
@@ -131,6 +134,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="公的年金制度"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         '18歳以上65歳未満 → 20歳以上60歳未満', //p127
                         '付加年金制度 → 確定拠出年金（企業型）', //p127
                         '正しい',
@@ -142,8 +146,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="JA共済"
                     :contents="[
-                        '消費生活協同組合法 → 農業協同組合法', //p165
-                        '損害系の共済商品は取り扱っていない → 自動車共済・建物更正共済といった損害系の共済商品を取り扱っている', //p166
+                        // rev: 2026-05-27 確認済み
+                        '消費生活協同組合法 → 農業協同組合法', //p166
+                        '自動車共済・建物更正共済といった[[損害系の共済商品も取り扱っている]]', //p166
                         '正しい',
                     ]"
                 />
@@ -153,9 +158,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="民間生命保険会社のサービスの今後のあり方"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         '正しい',
-                        '人間ドッグ紹介、健康相談サービス、介護事業者の紹介等を行なっている', //p193
-                        '契約内容登録制度 → 生命保険契約照会制度', //p194
+                        '生命保険会社は早くから医療や健康問題に関心を持ち、[[人間ドック紹介、健康相談サービス、介護事業者の紹介等を行なっている]]', //p194
+                        '契約内容登録制度 → 生命保険契約照会制度', //p195
                     ]"
                 />
                 <QuestionTemp1
@@ -164,6 +170,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険契約の要素"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         '正しい',
                         '正しい',
                         '被保険者が危険を負担 → 保険者が危険を負担', //p15
@@ -222,7 +229,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '生命保険契約の特殊性',
                             content: '正しい',
@@ -237,6 +243,7 @@ const isDraft = false;
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-05-27 確認済み
                             questionTitle: 'イギリスにおける科学的な生命保険会社',
                             content: '賦課式 → 平準保険料方式', //p57
                         }, //34
@@ -255,6 +262,7 @@ const isDraft = false;
                             content: '適合性の原則 → 給付・反対給付均等の原則', //p165
                         }, //37
                         {
+                            // rev: 2026-05-27 確認済み
                             questionTitle: 'こくみん共済coop（全労災）',
                             content: '各都道府県民共済 → こくみん共済', //p169
                         }, //38
@@ -266,7 +274,7 @@ const isDraft = false;
                             questionTitle: '消費者ニーズの変化',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
+                        // rev: 2026-05-27 確認済み
                         { questionTitle: '生命保険契約の法的性質', label: 'イ', content: '射倖契約' }, //41
                         { questionTitle: '死亡表', label: 'オ', content: '' }, //42
                         { questionTitle: '責任準備金', label: 'ア', content: '負債' }, //43

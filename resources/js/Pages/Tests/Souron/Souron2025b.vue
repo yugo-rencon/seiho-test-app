@@ -28,6 +28,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="狭義の社会保障制度-①"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         '保険料の拠出',
                         '全国健康保険協会管掌保険',
                         '国家公務員',
@@ -48,6 +49,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="狭義の社会保障制度-②"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         '共済年金',
                         '国民年金',
                         '労働者災害補償保険',
@@ -68,6 +70,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="社会構造の変化-①"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         '平均寿命',
                         '7',
                         '速い',
@@ -88,6 +91,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="社会構造の変化-②"
                     :contents="[
+                        // rev: 2026-05-27 確認済み
                         '年金',
                         '70',
                         '合計特殊出生率',
@@ -275,6 +279,7 @@ const isDraft = false;
                             content: '正しい',
                         }, //40
                         // 問41〜50
+                        // rev: 2026-05-27 確認済み
                         { questionTitle: '保険契約の当事者', label: 'ア', content: '保険契約者' }, //41
                         { questionTitle: '死亡表', label: 'オ', content: '' }, //42
                         { questionTitle: '生命保険商品の基本型', label: 'イ', content: '生存保険' }, //43

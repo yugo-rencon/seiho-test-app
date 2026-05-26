@@ -32,14 +32,6 @@ const currentScope = computed(() => {
     if (props.isOuyou) return "ouyou";
     return "seiho";
 });
-const pricingHref = computed(() =>
-    props.isDaigaku
-        ? route("daigaku.pricing", { return_to: String(page.url ?? "/daigaku") })
-        : route("pricing", {
-            ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
-            return_to: String(page.url ?? "/tests"),
-        }),
-);
 const loginHref = computed(() => {
     const returnTo = String(page.url ?? (props.isDaigaku ? "/daigaku" : "/tests"));
     return route("login", {
@@ -275,15 +267,15 @@ const visibleSubjects = computed(() => {
                         <div class="mb-3 text-xs font-semibold text-gray-500">
                             試験科目
                         </div>
-                        <div class="mb-3 overflow-hidden rounded-xl border border-gray-100">
+                        <div class="mb-3">
                             <Link
                                 :href="route(homeRouteName())"
-                                class="flex w-full items-center justify-between px-4 py-3 text-sm font-semibold text-gray-800 transition-all duration-200 hover:bg-gray-50"
+                                class="group flex w-full items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-semibold text-gray-700 transition-all duration-200 hover:border-gray-300 hover:bg-gray-50"
                                 @click="closeMenu"
                             >
-                                <span>解説一覧</span>
+                                <span>解説一覧へ戻る</span>
                                 <svg
-                                    class="h-4 w-4"
+                                    class="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5"
                                     :class="accentTextClass"
                                     fill="none"
                                     stroke="currentColor"
@@ -361,7 +353,10 @@ const visibleSubjects = computed(() => {
                                             <span>{{ yearLabel }}</span>
                                         </div>
 
-                                        <ul class="grid grid-cols-3 gap-1.5">
+                                        <ul
+                                            class="grid gap-1.5"
+                                            :class="forms.length === 4 ? 'grid-cols-2' : 'grid-cols-3'"
+                                        >
                                             <li v-for="form in forms" :key="form">
                                                 <Link
                                                     v-if="resolveFormHref(subject.key, yearLabel, form)"
@@ -406,50 +401,6 @@ const visibleSubjects = computed(() => {
                     </div>
 
                     <!-- 下部の固定ページリンク -->
-                    <div class="border-t border-gray-100 pt-4">
-                        <div class="space-y-2">
-                            <Link
-                                v-if="!hidePricingUi"
-                                :href="pricingHref"
-                                class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition"
-                                :class="
-                                    isDaigaku
-                                        ? 'hover:bg-blue-50 hover:text-blue-700'
-                                        : isSenmon
-                                          ? 'hover:bg-emerald-50 hover:text-emerald-700'
-                                          : isOuyou
-                                            ? 'hover:bg-amber-50 hover:text-amber-700'
-                                          : isIppan
-                                            ? 'hover:bg-pink-50 hover:text-fuchsia-700'
-                                            : 'hover:bg-purple-50 hover:text-purple-700'
-                                "
-                                @click="closeMenu"
-                            >
-                                料金
-                            </Link>
-                            <Link
-                                v-if="isAuthenticated && !hideAuthUi"
-                                :href="route('logout')"
-                                method="post"
-                                as="button"
-                                class="block w-full rounded-lg px-3 py-2 text-left text-sm font-semibold text-gray-700 transition"
-                                :class="
-                                    isDaigaku
-                                        ? 'hover:bg-blue-50 hover:text-blue-700'
-                                        : isSenmon
-                                          ? 'hover:bg-emerald-50 hover:text-emerald-700'
-                                          : isOuyou
-                                            ? 'hover:bg-amber-50 hover:text-amber-700'
-                                          : isIppan
-                                            ? 'hover:bg-pink-50 hover:text-fuchsia-700'
-                                            : 'hover:bg-purple-50 hover:text-purple-700'
-                                "
-                                @click="closeMenu"
-                            >
-                                ログアウト
-                            </Link>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="border-t border-white/10 px-6 py-6">

@@ -434,6 +434,7 @@ const subject = "2025年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-05-27 確認済み
                             questionTitle: '道徳的危険（モラルリスク）',
                             relatedProblems: ['2025b41'],
                             content: '正しい',
@@ -445,6 +446,7 @@ const subject = "2025年度 フォームB";
                             content: '保険法では保険料不可分の原則が[[採用されていない]]ため、（中略）保険料の残額を保険契約者に[[支払う]]旨が保険約款に規定されている。', //p44
                         }, //42
                         {
+                            // rev: 2026-05-27 確認済み
                             questionTitle: '体格',
                             relatedProblems: ['2025b43'],
                             content: '正しい',
@@ -462,11 +464,13 @@ const subject = "2025年度 フォームB";
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-05-27 確認済み
                             questionTitle: '責任準備金の積み立て',
                             relatedProblems: ['2025b46'],
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-05-27 確認済み
                             questionTitle: '剰余金と配当金',
                             relatedProblems: ['2025b47'],
                             content: '正しい',
@@ -478,10 +482,11 @@ const subject = "2025年度 フォームB";
                             content: '保障の範囲を広げたり保障額を増やしたりする場合は、[[告知（または診査）が必要]]である。', //p136-137
                         }, //48
                         {
+                            // rev: 2026-05-27 確認済み
                             questionTitle: '市場価格調整を利用した生命保険',
                             relatedProblems: ['2025b49'],
-                            content: '責任準備金 → 解約返戻金',
-                        }, //49 p153
+                            content: '責任準備金 → 解約返戻金', //p153
+                        }, //49
                     ]"
                 />
             </div>

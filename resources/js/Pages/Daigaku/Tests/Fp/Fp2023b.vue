@@ -21,7 +21,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融ビッグバンによる金融システムの規制緩和後の資産運用"
-                    :relatedProblems="['2025c4', '2024a13', '2024b13', '2024c13', '2023a25', '2023b1', '2023c14']"
+                    :relatedProblems="['2023a25', '2023b1', '2023c14']"
                     :contents="[
                         '外為の規制強化 → 規制緩和<br>金融機関の垣根の拡大 → 垣根の撤廃<br>外国資本の参入制限 → 参入', //p4
                         '正しい',
@@ -34,7 +34,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="リスクマネジメント"
-                    :relatedProblems="['2025a3', '2025a42', '2025b3', '2025b42', '2025c3', '2025c41', '2024a2', '2024b2', '2024c2', '2023a2', '2023b2', '2023c2']"
+                    :relatedProblems="['2023a2', '2023b2', '2023c2']"
                     :contents="[
                         'ライフプランニングとリスクマネジメントは相反する関係 → 表裏一体の関係', //p14
                         '正しい',
@@ -47,7 +47,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの返済方法"
-                    :relatedProblems="['2024a15', '2024c3', '2023a15', '2023b3', '2023c15']"
+                    :relatedProblems="['2023a15', '2023b3', '2023c15']"
                     :contents="[
                         '元利均等返済方式よりも多くなる → 少なくなる', //p35
                         '返済額の利息部分が一定・返済額が増えてくる → 返済額が一定', //p35
@@ -60,7 +60,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="住宅取得資金計画"
-                    :relatedProblems="['2025a5', '2025b5', '2025c5', '2024b4', '2024c16', '2023a4', '2023b4', '2023b17', '2023c4']"
+                    :relatedProblems="['2023a4', '2023b4', '2023b17', '2023c4']"
                     :contents="[
                         '明確にする必要はない → 明確にする必要がある（時代によって価値観は変わるから）', //p40
                         'ライフプランやライフスタイルに合う→ 合わない（時代変化により）', //p39
@@ -73,7 +73,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="独立行政法人住宅金融支援機構（「機構」）"
-                    :relatedProblems="['2025a16', '2025b15', '2025c16', '2024a16', '2024b15', '2024c4', '2023a17', '2023b5']"
+                    :relatedProblems="['2023a17', '2023b5']"
                     :contents="[
                         '団体信用生命保険契約 → 住宅融資保険契約', //p40
                         '5年以上継続して加入 → 1年以上継続して加入<br>残高が30万円以上 → 残高が50万円以上', //p41
@@ -86,7 +86,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="教育資金設計"
-                    :relatedProblems="['2025b16', '2025c30', '2025c44', '2024a4', '2024b16', '2024c17', '2023a5', '2023b6', '2023c25']"
+                    :relatedProblems="['2023a5', '2023b6', '2023c25']"
                     :contents="[
                         '有担保の変動金利商品のみ → 有担保や無担保、変動金利や固定金利の商品がそれぞれある', //p59
                         '親が病気やケガで入院 → 子どもが病気やケガで入院<br>子どもに万が一のことがあった場合 → 親に万が一のことがあった場合', //p60
@@ -99,7 +99,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の医療費等"
-                    :relatedProblems="['2025b30', '2024a18', '2024b35', '2024c8', '2023a30', '2023b7', '2023c43']"
+                    :relatedProblems="['2023a30', '2023b7', '2023c43']"
                     :contents="[
                         '3ヶ月以内 → 14日以内', //p76
                         '退職後5年間 → 2年間', //p76
@@ -112,7 +112,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の資金運用"
-                    :relatedProblems="['2025a20', '2025b20', '2025c20', '2024a8', '2024b17', '2024c18', '2023a8', '2023b8', '2023c8']"
+                    :relatedProblems="['2023a8', '2023b8', '2023c8']"
                     :contents="[
                         '遺贈資金 → 生きがい資金', //p79
                         '生活資金 → 予備資金', //p79
@@ -125,7 +125,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保険金の活用方法等"
-                    :relatedProblems="['2025b9', '2025c19', '2024b45', '2024c45', '2023a9', '2023b9', '2023c9']"
+                    :relatedProblems="['2023a9', '2023b9', '2023c9']"
                     :contents="[
                         'アドバイスまでは求められていない → アドバイスをするのが重要な役割', //p84
                         '子ども優先 → 妻が家計の大黒柱となるため妻の保障も必要', //p84
@@ -138,7 +138,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="2016年（平成28年）5月施行の保険業法の主な改正内容"
-                    :relatedProblems="['2025b22', '2024a47', '2024b46', '2024c47', '2023a22', '2023b10', '2023c22']"
+                    :relatedProblems="['2023a22', '2023b10', '2023c22']"
                     :contents="[
                         '注意喚起情報 → 契約概要', //p116
                         '契約締結後に意向確認 → 契約締結前に意向確認', //p117
@@ -151,7 +151,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法"
-                    :relatedProblems="['2025a24', '2025b24', '2025c24', '2024a49', '2024c49', '2023a23', '2023b11', '2023c23', '2023c48']"
+                    :relatedProblems="['2023a23', '2023b11', '2023c23', '2023c48']"
                     :contents="[
                         '解除できる → 解除できない', //p160
                         '遅滞の責任を負わない → 責任を負う（遅延利息の支払いなど）', //p160
@@ -164,7 +164,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）"
-                    :relatedProblems="['2025a11', '2025c11', '2024a23', '2024b49', '2024c23', '2023a12', '2023b12', '2023c24']"
+                    :relatedProblems="['2023a12', '2023b12', '2023c24']"
                     :contents="[
                         '実際の取引担当者については本人特定事項の確認が必要ない → 法人と実際の取引担当者双方で必要', //p161
                         '必ず取引時確認が必要 → 再度の取引時確認は不要', //p162
@@ -177,7 +177,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険FPの役割"
-                    :relatedProblems="['2025a1', '2025b1', '2025c1', '2024a1', '2024b1', '2024c1', '2023a13', '2023b13', '2023c13']"
+                    :relatedProblems="['2023a13', '2023b13', '2023c13']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -190,7 +190,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフステージ別のプランニング（50歳代既婚者）"
-                    :relatedProblems="['2025a4', '2025a14', '2025b4', '2025c14', '2024a14', '2024b14', '2024c14', '2023a14', '2023b14']"
+                    :relatedProblems="['2023a14', '2023b14']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -203,7 +203,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの種類"
-                    :relatedProblems="['2025a15', '2025b14', '2025c15', '2024a3', '2024c41', '2023b15', '2023c3']"
+                    :relatedProblems="['2023b15', '2023c3']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -216,7 +216,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="ローン金利の種類"
-                    :relatedProblems="['2025a25', '2025b25', '2025c25', '2024a30', '2024b3', '2024c15', '2023a16', '2023b16', '2023c16']"
+                    :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
                         '正しい',
                         '固定金利型ローンの一種 → 変動金利型ローンの一種', //p37
@@ -229,7 +229,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="住宅取得資金計画"
-                    :relatedProblems="['2025a5', '2025b5', '2025c5', '2024b4', '2024c16', '2023a4', '2023b4', '2023b17', '2023c4']"
+                    :relatedProblems="['2023a4', '2023b4', '2023b17', '2023c4']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -242,7 +242,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="確実性資金の商品選択"
-                    :relatedProblems="['2025a17', '2025b17', '2023a18', '2023b18', '2023c18']"
+                    :relatedProblems="['2023a18', '2023b18', '2023c18']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -255,7 +255,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の考え方"
-                    :relatedProblems="['2025a19', '2023b19', '2023c19']"
+                    :relatedProblems="['2023b19', '2023c19']"
                     :contents="[
                         '正しい',
                         '雇用確保措置で定められた60歳定年を前提としたコンサルティング → 雇用確保措置で60歳定年という概念がなくなり、個々の老後生活設計に応じたコンサルティング', //p70
@@ -268,7 +268,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の保障"
-                    :relatedProblems="['2025a8', '2025b8', '2025c8', '2024a9', '2024b9', '2024c9', '2023a19', '2023b20', '2023c20']"
+                    :relatedProblems="['2023a19', '2023b20', '2023c20']"
                     :contents="[
                         '資産家なども準備は有効でない → 有効である（相続対策になる）', //p80
                         '正しい',
@@ -281,7 +281,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を活用した相続対策"
-                    :relatedProblems="['2025a22', '2025b21', '2025c21', '2024a19', '2024b19', '2024c19', '2023a21', '2023b21', '2023c21']"
+                    :relatedProblems="['2023a21', '2023b21', '2023c21']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -294,7 +294,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="['2025a10', '2025b11', '2025c10', '2024a11', '2024b11', '2024c11', '2023a10', '2023b22', '2023c10']"
+                    :relatedProblems="['2023a10', '2023b22', '2023c10']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -307,7 +307,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法に定める不適切な説明と不適切な行為"
-                    :relatedProblems="['2025b23', '2025c48', '2024a20', '2024b20', '2024c20', '2023a11', '2023b23', '2023c47']"
+                    :relatedProblems="['2023a11', '2023b23', '2023c47']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -320,7 +320,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険相談所・裁定審査会"
-                    :relatedProblems="['2025c35', '2024a24', '2024b24', '2024c35', '2023a49', '2023b24', '2023c12']"
+                    :relatedProblems="['2023a49', '2023b24', '2023c12']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -334,7 +334,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="キャッシュフロー表の作成"
-                    :relatedProblems="['2025a13', '2025b13', '2025c13', '2024a25', '2024b25', '2024c25', '2023b25']"
+                    :relatedProblems="['2023b25']"
                     :contents="[
                         'ライフサイクル',
                         'ストック',
@@ -378,7 +378,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="保険募集におけるコンプライアンスと禁止行為"
-                    :relatedProblems="['2025a7', '2023a35', '2023b35', '2023c35']"
+                    :relatedProblems="['2023a35', '2023b35', '2023c35']"
                     :contents="[
                         '潜在的',
                         '適合性',
@@ -403,7 +403,7 @@ const subject = "2023年度 フォームB";
                         {
                             questionTitle: 'キャッシュフロー表の変動要素',
                             content: '正しい',
-                            relatedProblems: ['2025a41', '2025b41', '2024a43', '2024b43', '2024c43', '2023a40', '2023b40', '2023c40'],
+                            relatedProblems: ['2023a40', '2023b40', '2023c40'],
                         }, //40
                         {
                             questionTitle: '住宅ローンの繰上げ返済',
@@ -413,32 +413,32 @@ const subject = "2023年度 フォームB";
                         {
                             questionTitle: '金融商品のリスク',
                             content: '中途解約リスク → 金利変動リスク',
-                            relatedProblems: ['2025a6', '2025a18', '2025b7', '2025b18', '2025c6', '2025c18', '2024a6', '2024a17', '2024b6', '2024c6', '2023a6', '2023a42', '2023b42', '2023c42'],
+                            relatedProblems: ['2023a6', '2023a42', '2023b42', '2023c42'],
                         }, //42 p66
                         {
                             questionTitle: '老後生活設計の基礎知識',
                             content: '年金額が増えることを期待できる → 期待できない',
-                            relatedProblems: ['2025a7', '2025b19', '2025c7', '2024a7', '2024b8', '2024c7', '2023a7', '2023b43', '2023c7'],
+                            relatedProblems: ['2023a7', '2023b43', '2023c7'],
                         }, //43 p74
                         {
                             questionTitle: '相続税の計算手順',
                             content: '相続開始前5年以内 → 7年以内',
-                            relatedProblems: ['2025a9', '2025c9', '2024a10', '2024b10', '2024c10', '2023a44', '2023b44', '2023c44'],
+                            relatedProblems: ['2023a44', '2023b44', '2023c44'],
                         }, //44 p94
                         {
                             questionTitle: '生命保険会社の経営破綻時の取引制限',
                             content: '保険料の払込みはできない → 継続のために払込みが必要',
-                            relatedProblems: ['2025a47', '2025c47', '2024b47', '2023b45'],
+                            relatedProblems: ['2023b45'],
                         }, //45 p125
                         {
                             questionTitle: '保険募集における違法行為',
                             content: '正しい',
-                            relatedProblems: ['2025a49', '2025b49', '2025c49', '2024a48', '2024c48', '2023a46', '2023b46', '2023c46'],
+                            relatedProblems: ['2023a46', '2023b46', '2023c46'],
                         }, //46
                         {
                             questionTitle: '金融サービスの提供に関する法律（金融サービス提供法）',
                             content: '正しい',
-                            relatedProblems: ['2025c23', '2024a21', '2024b21', '2024b48', '2024c21', '2023a47', '2023b47'],
+                            relatedProblems: ['2023a47', '2023b47'],
                         }, //47
                         {
                             questionTitle: '金融商品取引法',
@@ -448,7 +448,7 @@ const subject = "2023年度 フォームB";
                         {
                             questionTitle: '個人情報の保護に関する法律（個人情報保護法）',
                             content: '正しい',
-                            relatedProblems: ['2024b23', '2024c24', '2023a24', '2023b49', '2023c49'],
+                            relatedProblems: ['2023a24', '2023b49', '2023c49'],
                         }, //49
                     ]"
                 />

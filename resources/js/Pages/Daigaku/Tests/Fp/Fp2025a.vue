@@ -21,7 +21,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険FPの役割"
-                    :relatedProblems="['2025a1', '2025b1', '2025c1', '2024a1', '2024b1', '2024c1', '2023a13', '2023b13', '2023c13']"
+                    :relatedProblems="['2025a1', '2025b1', '2025c1']"
                     :contents="[
                         '協力は一切得ず → 協力を得ながら', //p1
                         '応えることができるようになってきた → 応えることが難しくなってきた', //p2
@@ -34,7 +34,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフプランニングの基礎"
-                    :relatedProblems="['2025', '2025b2', '2025c2', '2023a1', '2023c1']"
+                    :relatedProblems="['2025b2', '2025c2']"
                     :contents="[
                         '生保FPが決めていく姿勢 → 生保FPがお客さまの希望を聞き出す姿勢', //p6
                         '正しい',
@@ -47,7 +47,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="リスクマネジメント"
-                    :relatedProblems="['2025a3', '2025a42', '2025b3', '2025b42', '2025c3', '2025c41', '2024a2', '2024b2', '2024c2', '2023a2', '2023b2', '2023c2']"
+                    :relatedProblems="['2025a3', '2025a42', '2025b3', '2025b42', '2025c3', '2025c41']"
                     :contents="[
                         '正しい',
                         '予定外の大きな支出が発生するリスクは考えにくい → 考えられる', //p16
@@ -60,7 +60,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフステージ別のプランニング（20歳代〜40歳代）"
-                    :relatedProblems="['2025a4', '2025a14', '2025b4', '2025c14', '2024a14', '2024b14', '2024c14', '2023a14', '2023b14']"
+                    :relatedProblems="['2025a4', '2025a14', '2025b4', '2025c14']"
                     :contents="[
                         '提案する必要はない → 提案する必要がある（医療・死亡リスクにも備える）', //p21
                         'すべてがマネーポートフォリオの中心となる → 教育資金と住宅資金が中心となる', //p23
@@ -73,7 +73,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="住宅取得資金計画"
-                    :relatedProblems="['2025a5', '2025b5', '2025c5', '2024b4', '2024c16', '2023a4', '2023b4', '2023b17', '2023c4']"
+                    :relatedProblems="['2025a5', '2025b5', '2025c5']"
                     :contents="[
                         '購入金額の1割以上 → 購入金額の2割以上', //p49
                         '流動性は求められない → 求められる（手付金等を準備するため）', //p50
@@ -86,7 +86,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品のリスク"
-                    :relatedProblems="['2025a6', '2025a18', '2025b7', '2025b18', '2025c6', '2025c18', '2024a6', '2024a17', '2024b6', '2024c6', '2023a6', '2023a42', '2023b42', '2023c42']"
+                    :relatedProblems="['2025a6', '2025a18', '2025b7', '2025b18', '2025c6', '2025c18']"
                     :contents="[
                         '集中投資 → 分散投資', //p68
                         '潜在化 → 顕在化', //p66
@@ -99,7 +99,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の基礎知識"
-                    :relatedProblems="['2025a7', '2025b19', '2025c7', '2024a7', '2024b8', '2024c7', '2023a7', '2023b43', '2023c7']"
+                    :relatedProblems="['2025a7', '2025b19', '2025c7']"
                     :contents="[
                         '生活費が極端に少なくなる → 極端に少なくなることはない（近所付き合い等の費用が増える）', //p73
                         '平均余命を超えないようにする → 平均余命に10年加算する', //p73
@@ -112,7 +112,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の保障"
-                    :relatedProblems="['2025a8', '2025b8', '2025c8', '2024a9', '2024b9', '2024c9', '2023a19', '2023b20', '2023c20']"
+                    :relatedProblems="['2025a8', '2025b8', '2025c8']"
                     :contents="[
                         '保険料の自己負担額を減らすことが必要 → 医療保障の充実が必要', //p80
                         '家族特約で確保するしかない → 単体で準備するのが望ましい（夫死亡時に保障が消失）', //p80
@@ -125,7 +125,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の計算手順"
-                    :relatedProblems="['2025a9', '2025c9', '2024a10', '2024b10', '2024c10', '2023a44', '2023b44', '2023c44']"
+                    :relatedProblems="['2025a9', '2025c9']"
                     :contents="[
                         '相続開始前10年以内 → 7年以内<br>相続開始前4〜10年 → 3〜7年', //p94
                         '基礎控除（5000万円 + 1000万円 × 法定相続人の数 → 3000万円 + 600万円 × 法定相続人の数', //p 94
@@ -138,7 +138,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="['2025a10', '2025b11', '2025c10', '2024a11', '2024b11', '2024c11', '2023a10', '2023b22', '2023c10']"
+                    :relatedProblems="['2025a10', '2025b11', '2025c10']"
                     :contents="[
                         '保険監督法：民法と保険法 → 保険業法<br>保険取引法：保険業法 → 民法と保険法', //p114
                         '正しい',
@@ -151,7 +151,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）"
-                    :relatedProblems="['2025a11', '2025c11', '2024a23', '2024b49', '2024c23', '2023a12', '2023b12', '2023c24']"
+                    :relatedProblems="['2025a11', '2025c11']"
                     :contents="[
                         '実際の取引担当者については本人特定事項の確認が必要ない → 法人と実際の取引担当者双方で必要', //p161
                         '必ず取引時確認が必要 → 再度の取引時確認は不要', //p162
@@ -164,7 +164,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険販売等に関する法律"
-                    :relatedProblems="['2025a12', '2025b12', '2025c12', '2024b22', '2023c11']"
+                    :relatedProblems="['2025a12', '2025b12', '2025c12']"
                     :contents="[
                         '原則1ヶ月以内で、契約締結時から原則2年以内 → 原則1年以内で、契約時から原則5年以内', //p143
                         '認められている → 認められていない（顧客管理目的は不可）', //p169
@@ -177,7 +177,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="キャッシュフロー表の作成"
-                    :relatedProblems="['2025a13', '2025b13', '2025c13', '2024a25', '2024b25', '2024c25', '2023b25']"
+                    :relatedProblems="['2025a13', '2025b13', '2025c13']"
                     :contents="[
                         '正しい',
                         '住宅ローンの返済額は含めない → 含める', //p8
@@ -190,7 +190,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフステージ別のプランニング（50歳代既婚者）"
-                    :relatedProblems="['2025a4', '2025a14', '2025b4', '2025c14', '2024a14', '2024b14', '2024c14', '2023a14', '2023b14']"
+                    :relatedProblems="['2025a4', '2025a14', '2025b4', '2025c14']"
                     :contents="[
                         '大幅に上回っている → 不足している', //p31
                         '正しい',
@@ -203,7 +203,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの種類"
-                    :relatedProblems="['2025a15', '2025b14', '2025c15', '2024a3', '2024c41', '2023b15', '2023c3']"
+                    :relatedProblems="['2025a15', '2025b14', '2025c15']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -216,7 +216,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="独立行政法人住宅金融支援機構（「機構」）"
-                    :relatedProblems="['2025a16', '2025b15', '2025c16', '2024a16', '2024b15', '2024c4', '2023a17', '2023b5']"
+                    :relatedProblems="['2025a16', '2025b15', '2025c16']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -229,7 +229,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="確実性資金の商品選択"
-                    :relatedProblems="['2025a17', '2025b17', '2023a18', '2023b18', '2023c18']"
+                    :relatedProblems="['2025a17', '2025b17']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -242,7 +242,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品のリスクの種類"
-                    :relatedProblems="['2025a6', '2025a18', '2025b7', '2025b18', '2025c6', '2025c18', '2024a6', '2024a17', '2024b6', '2024c6', '2023a6', '2023a42', '2023b42', '2023c42']"
+                    :relatedProblems="['2025a6', '2025a18', '2025b7', '2025b18', '2025c6', '2025c18']"
                     :contents="[
                         '正しい',
                         '貨幣価値の上昇するリスク → 下落するリスク', //p67
@@ -255,7 +255,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の考え方"
-                    :relatedProblems="['2025a19', '2023b19', '2023c19']"
+                    :relatedProblems="['2025a19']"
                     :contents="[
                         '正しい',
                         '雇用確保措置で定められた60歳定年を前提としたコンサルティング → 雇用確保措置で60歳定年という概念がなくなり、個々の老後生活設計に応じたコンサルティング', //p70
@@ -268,7 +268,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の資金運用"
-                    :relatedProblems="['2025a20', '2025b20', '2025c20', '2024a8', '2024b17', '2024c18', '2023a8', '2023b8', '2023c8']"
+                    :relatedProblems="['2025a20', '2025b20', '2025c20']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -281,7 +281,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続時精算課税制度"
-                    :relatedProblems="['2025a21', '2025b47', '2024b18', '2024c46', '2023a20', '2023c30']"
+                    :relatedProblems="['2025a21', '2025b47']"
                     :contents="[
                         '正しい',
                         '暦年課税に変更できる → 変更できない', //p90-91
@@ -294,7 +294,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を活用した相続対策"
-                    :relatedProblems="['2025a22', '2025b21', '2025c21', '2024a19', '2024b19', '2024c19', '2023a21', '2023b21', '2023c21']"
+                    :relatedProblems="['2025a22', '2025b21', '2025c21']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -307,7 +307,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険募集と禁止行為"
-                    :relatedProblems="['2025a23', '2025a48', '2025b48', '2025c22', '2024a12', '2024b12', '2024c12', '2023c45']"
+                    :relatedProblems="['2025a23', '2025a48', '2025b48', '2025c22']"
                     :contents="[
                         '禁止行為に該当しない → 該当する', //p132
                         '正しい',
@@ -320,7 +320,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法"
-                    :relatedProblems="['2025a24', '2025b24', '2025c24', '2024a49', '2024c49', '2023a23', '2023b11', '2023c23', '2023c48']"
+                    :relatedProblems="['2025a24', '2025b24', '2025c24']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -334,7 +334,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="ローン金利の種類"
-                    :relatedProblems="['2025a25', '2025b25', '2025c25', '2024a30', '2024b3', '2024c15', '2023a16', '2023b16', '2023c16']"
+                    :relatedProblems="['2025a25', '2025b25', '2025c25']"
                     :contents="[
                         '2',
                         '5',
@@ -356,7 +356,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="相続対策"
-                    :relatedProblems="['2025a30', '2025b10', '2024a46', '2024c30']"
+                    :relatedProblems="['2025a30', '2025b10']"
                     :contents="[
                         '財産の種類',
                         '相続人',
@@ -378,7 +378,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="保険募集のコンプライアンスと禁止行為"
-                    :relatedProblems="['2025a7', '2023a35', '2023b35', '2023c35']"
+                    :relatedProblems="['2025a7']"
                     :contents="[
                         '潜在的',
                         '適合性',
@@ -408,47 +408,47 @@ const subject = "2025年度 フォームA";
                         {
                             questionTitle: 'キャッシュフロー表の変動要素',
                             content: '正しい',
-                            relatedProblems: ['2025a41', '2025b41', '2024a43', '2024b43', '2024c43', '2023a40', '2023b40', '2023c40'],
+                            relatedProblems: ['2025a41', '2025b41'],
                         }, //41
                         {
                             questionTitle: 'リスクマネジメント',
                             content: 'リスクマネジメントと切り離して → ライフプランニングとリスクマネジメントは表裏一体', //p14
-                            relatedProblems: ['2025a3', '2025a42', '2025b3', '2025b42', '2025c3', '2025c41', '2024a2', '2024b2', '2024c2', '2023a2', '2023b2', '2023c2'],
+                            relatedProblems: ['2025a3', '2025a42', '2025b3', '2025b42', '2025c3', '2025c41'],
                         }, //42
                         {
                             questionTitle: '住宅に対する考え方',
                             content: '正しい',
-                            relatedProblems: ['2025a43', '2025b43', '2025c43', '2024a41'],
+                            relatedProblems: ['2025a43', '2025b43', '2025c43'],
                         }, //43
                         {
                             questionTitle: '住宅ローンの借換え',
                             content: '正しい',
-                            relatedProblems: ['2025a44', '2025b44', '2025c42', '2024a42', '2024b42', '2024c42'],
+                            relatedProblems: ['2025a44', '2025b44', '2025c42'],
                         }, //44
                         {
                             questionTitle: 'ゆとりある老後生活費',
                             content: '正しい',
-                            relatedProblems: ['2025a45', '2024a44', '2024b44', '2024c44'],
+                            relatedProblems: ['2025a45'],
                         }, //45
                         {
                             questionTitle: '高齢者医療制度',
                             content: '費用の1割（現役並み所得者も同様） → 費用の1割、所定水準以上の所得者の場合2割（現役並の所得者は3割）',
-                            relatedProblems: ['2025a46', '2025b46', '2025c46', '2024a45', '2023a43'],
+                            relatedProblems: ['2025a46', '2025b46', '2025c46'],
                         }, //46 p77
                         {
                             questionTitle: '生命保険会社の経営破綻時の取引制限',
                             content: '正しい',
-                            relatedProblems: ['2025a47', '2025c47', '2024b47', '2023b45'],
+                            relatedProblems: ['2025a47', '2025c47'],
                         }, //47
                         {
                             questionTitle: '保険募集と禁止行為',
                             content: '正しい',
-                            relatedProblems: ['2025a23', '2025a48', '2025b48', '2025c22', '2024a12', '2024b12', '2024c12', '2023c45'],
+                            relatedProblems: ['2025a23', '2025a48', '2025b48', '2025c22'],
                         }, //48
                         {
                             questionTitle: '保険募集における違法行為',
                             content: '行政処分の対象とならない → 行政処分の対象となることがある',
-                            relatedProblems: ['2025a49', '2025b49', '2025c49', '2024a48', '2024c48', '2023a46', '2023b46', '2023c46'],
+                            relatedProblems: ['2025a49', '2025b49', '2025c49'],
                         }, //49 p138
                     ]"
                 />

@@ -205,6 +205,7 @@ Route::controller(ContactController::class)->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::post('admins/{userId}/purchase-scopes', [AdminController::class, 'updateAdminPurchaseScopes'])->name('admin.admins.purchaseScopes.update');
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('admin.contacts.index');
     Route::post('contacts/{contact}/status', [ContactAdminController::class, 'updateStatus'])->name('admin.contacts.updateStatus');
     Route::post('contacts/{contact}/note', [ContactAdminController::class, 'updateNote'])->name('admin.contacts.updateNote');
@@ -213,6 +214,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('daigaku/admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('daigaku.admin.index');
+    Route::post('admins/{userId}/purchase-scopes', [AdminController::class, 'updateAdminPurchaseScopes'])->name('daigaku.admin.admins.purchaseScopes.update');
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('daigaku.admin.contacts.index');
     Route::post('contacts/{contact}/status', [ContactAdminController::class, 'updateStatus'])->name('daigaku.admin.contacts.updateStatus');
     Route::post('contacts/{contact}/note', [ContactAdminController::class, 'updateNote'])->name('daigaku.admin.contacts.updateNote');

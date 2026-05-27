@@ -100,6 +100,12 @@ class AdminController extends Controller
                 'users.id',
                 'users.email',
                 'users.is_premium',
+                'users.is_seiho_premium',
+                'users.is_daigaku_premium',
+                DB::raw('COALESCE(purchase_summary.ippan_paid_count, 0) as ippan_paid_count'),
+                DB::raw('COALESCE(purchase_summary.senmon_paid_count, 0) as senmon_paid_count'),
+                DB::raw('COALESCE(purchase_summary.ouyou_paid_count, 0) as ouyou_paid_count'),
+                DB::raw('COALESCE(purchase_summary.basic_paid_count, 0) as basic_paid_count'),
                 DB::raw('COALESCE(purchase_summary.last_paid_at, NULL) as last_paid_at')
             )
             ->where('users.is_admin', 1)
@@ -369,5 +375,113 @@ class AdminController extends Controller
         }
 
         return back();
+    }
+
+    public function updateAdminPurchaseScopes(Request $request, int $userId): RedirectResponse
+    {
+        $scopeInputs = $request->input('scopes', []);
+        $allowedScopes = ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'basic'];
+
+        if (!is_array($scopeInputs)) {
+            return back()->with('status', '更新データが不正です。');
+        }
+
+        $normalized = [];
+        foreach ($allowedScopes as $scope) {
+            $normalized[$scope] = (bool) ($scopeInputs[$scope] ?? false);
+        }
+
+        $adminUser = DB::table('users')
+            ->where('id', $userId)
+            ->where('is_admin', 1)
+            ->first();
+
+        if (!$adminUser) {
+            return back()->with('status', '管理者ユーザーが見つかりません。');
+        }
+
+        DB::transaction(function () use ($userId, $normalized) {
+            DB::table('users')
+                ->where('id', $userId)
+                ->update([
+                    'is_seiho_premium' => $normalized['seiho'] ? 1 : 0,
+                    'is_daigaku_premium' => $normalized['daigaku'] ? 1 : 0,
+                    'is_premium' => ($normalized['seiho'] || $normalized['daigaku']) ? 1 : 0,
+                    'updated_at' => now(),
+                ]);
+
+            foreach (['ippan', 'senmon', 'ouyou', 'basic'] as $scope) {
+                if ($normalized[$scope]) {
+                    $existsPaid = DB::table('purchases')
+                        ->where('user_id', $userId)
+                        ->where('scope', $scope)
+                        ->where('status', 'paid')
+                        ->exists();
+
+                    if (!$existsPaid) {
+                        $productId = $this->ensureScopeProduct($scope);
+                        DB::table('purchases')->insert([
+                            'user_id' => $userId,
+                            'product_id' => $productId,
+                            'stripe_session_id' => sprintf('admin-manual-%s-%d-%s', $scope, $userId, now()->format('YmdHisv')),
+                            'stripe_payment_intent_id' => null,
+                            'status' => 'paid',
+                            'scope' => $scope,
+                            'paid_at' => now(),
+                            'created_at' => now(),
+                            'updated_at' => now(),
+                        ]);
+                    }
+                } else {
+                    DB::table('purchases')
+                        ->where('user_id', $userId)
+                        ->where('scope', $scope)
+                        ->where('status', 'paid')
+                        ->update([
+                            'status' => 'canceled',
+                            'paid_at' => null,
+                            'updated_at' => now(),
+                        ]);
+                }
+            }
+        });
+
+        return back()->with('status', '管理者ユーザーの購入状態を更新しました。');
+    }
+
+    private function ensureScopeProduct(string $scope): int
+    {
+        $productId = DB::table('products')
+            ->where('scope', $scope)
+            ->where('active', 1)
+            ->value('id');
+
+        if ($productId) {
+            return (int) $productId;
+        }
+
+        return (int) DB::table('products')->insertGetId([
+            'name' => match ($scope) {
+                'daigaku' => '生命保険大学課程 プレミアムプラン（買い切り）',
+                'ippan' => '生命保険一般課程 プレミアムプラン（買い切り）',
+                'senmon' => '生命保険専門課程 プレミアムプラン（買い切り）',
+                'ouyou' => '生命保険応用課程 プレミアムプラン（買い切り）',
+                'basic' => '一般・専門・応用セット（買い切り）',
+                default => '生保講座 プレミアムプラン（買い切り）',
+            },
+            'price' => match ($scope) {
+                'daigaku' => 980,
+                'ippan', 'senmon', 'ouyou' => 480,
+                'basic' => 980,
+                default => 1980,
+            },
+            'currency' => 'jpy',
+            'stripe_product_id' => null,
+            'stripe_price_id' => null,
+            'scope' => $scope,
+            'active' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

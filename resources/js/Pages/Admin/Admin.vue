@@ -34,6 +34,8 @@ const purchaseScope = ref(props.filters?.purchase_scope ?? "all");
 const purchaseState = ref(props.filters?.purchase_state ?? "all");
 const activeTab = ref("dashboard");
 const salesTab = ref("overview");
+const adminPurchaseSaving = ref({});
+const adminPurchaseDrafts = ref({});
 const page = usePage();
 
 const purchaseScopeOptions = [
@@ -221,6 +223,84 @@ const adminContactsRoute = computed(() =>
 );
 
 const isActiveMenu = (key) => activeTab.value === key;
+
+const adminPurchaseRoute = computed(() =>
+    isDaigakuAdmin.value
+        ? "daigaku.admin.admins.purchaseScopes.update"
+        : "admin.admins.purchaseScopes.update",
+);
+
+const adminScopeKeys = ["seiho", "daigaku", "ouyou", "senmon", "ippan", "basic"];
+
+const adminScopeOptions = [
+    { key: "seiho", label: "生保講座", badgeClass: "bg-violet-50 text-violet-700" },
+    { key: "daigaku", label: "生保大学", badgeClass: "bg-blue-50 text-blue-700" },
+    { key: "ouyou", label: "応用課程", badgeClass: "bg-amber-50 text-amber-700" },
+    { key: "senmon", label: "専門課程", badgeClass: "bg-emerald-50 text-emerald-700" },
+    { key: "ippan", label: "一般課程", badgeClass: "bg-fuchsia-50 text-fuchsia-700" },
+    { key: "basic", label: "セット", badgeClass: "bg-cyan-100 text-cyan-700" },
+];
+
+const adminInitialScopes = (admin) => ({
+    seiho: !!admin.is_seiho_premium,
+    daigaku: !!admin.is_daigaku_premium,
+    ouyou: Number(admin.ouyou_paid_count ?? 0) > 0,
+    senmon: Number(admin.senmon_paid_count ?? 0) > 0,
+    ippan: Number(admin.ippan_paid_count ?? 0) > 0,
+    basic: Number(admin.basic_paid_count ?? 0) > 0,
+});
+
+const ensureAdminDraft = (admin) => {
+    const key = String(admin.id);
+    if (!adminPurchaseDrafts.value[key]) {
+        adminPurchaseDrafts.value[key] = adminInitialScopes(admin);
+    }
+    return adminPurchaseDrafts.value[key];
+};
+
+const isAdminScopeChecked = (admin, scopeKey) => {
+    const draft = ensureAdminDraft(admin);
+    return !!draft?.[scopeKey];
+};
+
+const setAdminScopeChecked = (admin, scopeKey, checked) => {
+    const key = String(admin.id);
+    const draft = ensureAdminDraft(admin);
+    adminPurchaseDrafts.value = {
+        ...adminPurchaseDrafts.value,
+        [key]: {
+            ...draft,
+            [scopeKey]: !!checked,
+        },
+    };
+};
+
+const saveAdminScopes = (admin) => {
+    const key = String(admin.id);
+    const draft = ensureAdminDraft(admin);
+    adminPurchaseSaving.value = { ...adminPurchaseSaving.value, [key]: true };
+
+    router.post(
+        route(adminPurchaseRoute.value, { userId: admin.id }),
+        { scopes: draft },
+        {
+            preserveScroll: true,
+            onSuccess: () => {
+                activeTab.value = 'dashboard';
+                router.visit(route(adminIndexRoute.value), {
+                    preserveState: false,
+                    preserveScroll: true,
+                    replace: true,
+                });
+            },
+            onFinish: () => {
+                const next = { ...adminPurchaseSaving.value };
+                delete next[key];
+                adminPurchaseSaving.value = next;
+            },
+        },
+    );
+};
 
 const submitSearch = () => {
     router.get(
@@ -466,6 +546,16 @@ const peakHour2h = computed(() => {
                 >
                     リリース管理
                 </button>
+                <button
+                    type="button"
+                    class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
+                    :class="isActiveMenu('adminPurchases')
+                        ? 'border-purple-200 bg-purple-50 text-purple-700'
+                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
+                    @click="activeTab = 'adminPurchases'"
+                >
+                    管理者購入管理
+                </button>
                 <Link
                     :href="route(adminContactsRoute)"
                     class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
@@ -570,6 +660,55 @@ const peakHour2h = computed(() => {
                 <p v-else class="mt-2 text-sm text-gray-500">
                     管理者ユーザーは登録されていません。
                 </p>
+            </div>
+
+            <div
+                v-if="activeTab === 'adminPurchases'"
+                class="rounded-xl border border-gray-100 bg-white p-4"
+            >
+                <h2 class="text-sm font-semibold text-gray-900">管理者ユーザーの購入状態</h2>
+                <p class="mt-1 text-xs text-gray-500">管理者ユーザーのみ変更できます。一般ユーザーは変更対象外です。</p>
+
+                <div v-if="admins.length" class="mt-4 space-y-3">
+                    <div
+                        v-for="admin in admins"
+                        :key="`admin-purchase-${admin.id}`"
+                        class="rounded-lg border border-gray-100 bg-gray-50/50 p-3"
+                    >
+                        <div class="mb-2 flex items-center justify-between gap-2">
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">{{ admin.email }}</p>
+                                <p class="text-xs text-gray-500">ID: {{ admin.id }}</p>
+                            </div>
+                            <button
+                                type="button"
+                                class="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-xs font-semibold text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
+                                :disabled="!!adminPurchaseSaving[String(admin.id)]"
+                                @click="saveAdminScopes(admin)"
+                            >
+                                {{ adminPurchaseSaving[String(admin.id)] ? '保存中...' : '保存' }}
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+                            <label
+                                v-for="scope in adminScopeOptions"
+                                :key="`${admin.id}-${scope.key}`"
+                                class="flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 text-xs"
+                            >
+                                <input
+                                    :checked="isAdminScopeChecked(admin, scope.key)"
+                                    type="checkbox"
+                                    class="h-3.5 w-3.5 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                                    @change="setAdminScopeChecked(admin, scope.key, $event.target.checked)"
+                                />
+                                <span class="rounded-full px-1.5 py-0.5 font-semibold" :class="scope.badgeClass">{{ scope.label }}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <p v-else class="mt-3 text-sm text-gray-500">管理者ユーザーは登録されていません。</p>
             </div>
 
             <div

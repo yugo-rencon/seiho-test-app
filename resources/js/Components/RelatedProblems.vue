@@ -1,6 +1,6 @@
 <template>
   <div v-if="shouldRender" class="mt-4 mb-3 rounded-md border border-gray-50 bg-transparent px-2 py-2">
-    <p class="text-[10px] font-semibold" :class="titleClass">【{{ title }}】</p>
+    <p class="text-[10px] font-semibold" :class="titleClass">【{{ displayTitle }}】</p>
     <div v-if="displayItems.length" class="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
       <template v-for="(item, index) in visibleDisplayItems" :key="index">
         <a
@@ -19,8 +19,8 @@
         </span>
       </template>
     </div>
-    <p v-else-if="hasOnlySelfItems" class="mt-2 text-[10px] text-gray-500">
-      関連問題はありません
+    <p v-else class="mt-2 text-[10px] text-gray-500">
+      {{ displayTitle }}はありません
     </p>
     <button
       v-if="displayItems.length && hiddenCount > 0 && !isExpanded"
@@ -55,7 +55,7 @@ type RelatedProblem = {
 const props = defineProps({
   title: {
     type: String,
-    default: "関連問題",
+    default: "",
   },
   isDaigaku: {
     type: Boolean,
@@ -82,6 +82,18 @@ const isDaigakuPage = computed(() => String(page.url ?? "").startsWith("/daigaku
 const isSenmonPage = computed(() => String(page.url ?? "").startsWith("/senmon"));
 const isOuyouPage = computed(() => String(page.url ?? "").startsWith("/ouyou"));
 const isIppanPage = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const displayTitle = computed(() => {
+  const givenTitle = String(props.title ?? "").trim();
+  if (givenTitle.includes("年度")) return givenTitle;
+
+  const fromContext = String(props.contextTitle ?? "").match(/(20\d{2})/);
+  if (fromContext?.[1]) return `${fromContext[1]}年度の関連問題`;
+
+  const fromPath = currentPath.value.match(/20\d{2}/);
+  if (fromPath?.[0]) return `${fromPath[0]}年度の関連問題`;
+
+  return givenTitle || "同年度の関連問題";
+});
 let mediaQuery: MediaQueryList | null = null;
 
 const updateIsMobile = () => {
@@ -143,6 +155,14 @@ const toHalfWidth = (value: string) =>
     String.fromCharCode(char.charCodeAt(0) - 0xfee0),
   );
 
+const toFullWidthDigits = (value: string | number) =>
+  String(value).replace(/[0-9]/g, (char) => String.fromCharCode(char.charCodeAt(0) + 0xfee0));
+
+const formatQuestionNumber = (value: string | number) => {
+  const normalized = String(Number(value));
+  return normalized.length === 1 ? toFullWidthDigits(normalized) : normalized;
+};
+
 const parseCode = (value: string) => {
   const normalized = toHalfWidth(String(value ?? "")).replace(/\s+/g, "");
   const matched = normalized.match(/^(\d{4})([abc])(\d+)$/i);
@@ -185,13 +205,15 @@ const normalizeRawItem = (rawItem: RelatedProblem | string) => {
     const parsed = parseCode(rawItem);
     if (parsed) {
       return {
-        label: `${parsed.year}年${parsed.form}問${parsed.question}`,
+        label: `フォーム${parsed.form}問${formatQuestionNumber(parsed.question)}`,
         href: buildHrefFromCode(rawItem),
+        code: `${parsed.year}${parsed.form.toLowerCase()}${parsed.question}`,
       };
     }
     return {
       label: String(rawItem).trim(),
       href: "",
+      code: "",
     };
   }
 
@@ -202,8 +224,9 @@ const normalizeRawItem = (rawItem: RelatedProblem | string) => {
       return {
         label: rawItem?.label
           ? String(rawItem.label).trim()
-          : `${parsed.year}年${parsed.form}問${parsed.question}`,
+          : `フォーム${parsed.form}問${formatQuestionNumber(parsed.question)}`,
         href: rawItem?.href ? String(rawItem.href) : buildHrefFromCode(code),
+        code: `${parsed.year}${parsed.form.toLowerCase()}${parsed.question}`,
       };
     }
   }
@@ -211,6 +234,7 @@ const normalizeRawItem = (rawItem: RelatedProblem | string) => {
   return {
     label: String(rawItem?.label ?? "").trim(),
     href: rawItem?.href ? String(rawItem.href) : "",
+    code: "",
   };
 };
 
@@ -222,22 +246,14 @@ const normalizedItemsWithSelf = computed(() =>
 
 const normalizedItems = computed(() =>
   normalizedItemsWithSelf.value
-    .filter((item) => {
-      const normalized = toHalfWidth(String(item.label ?? "")).replace(/\s+/g, "");
-      const matched = normalized.match(/^(\d{4})年?([ABC])問?(\d+)$/i);
-      if (!matched) return true;
-
-      const itemCode = `${matched[1]}${matched[2].toLowerCase()}${String(Number(matched[3]))}`;
-      return itemCode !== currentPageCode.value;
-    }),
+    .filter((item) => item.code !== currentPageCode.value),
 );
 
 const hasUsableItemsInput = computed(() => normalizedItemsWithSelf.value.length > 0);
 
 const parsedItems = computed(() =>
   normalizedItems.value.map((item) => {
-    const normalized = toHalfWidth(item.label).replace(/\s+/g, "");
-    const matched = normalized.match(/^(\d{4})年?([ABC])問?(\d+)$/i);
+    const matched = item.code.match(/^(\d{4})([abc])(\d+)$/i);
     if (!matched) return null;
     return {
       year: matched[1],
@@ -269,8 +285,9 @@ const displayItems = computed(() => {
   if (groupedByYear.value.length > 0) {
     return groupedByYear.value.flatMap((group) =>
       group.items.map((item) => ({
-        label: `${group.year}年${item.form}問${item.question}`,
+        label: `フォーム${item.form}問${formatQuestionNumber(item.question)}`,
         href: item.href,
+        code: `${group.year}${item.form.toLowerCase()}${item.question}`,
       })),
     );
   }
@@ -278,14 +295,13 @@ const displayItems = computed(() => {
   return normalizedItems.value;
 });
 
-const hasOnlySelfItems = computed(() => hasUsableItemsInput.value && displayItems.value.length === 0);
-const shouldRender = computed(() => hasUsableItemsInput.value);
+const shouldRender = computed(() => (props.items ?? []).length > 0);
 
 const hiddenCount = computed(() =>
   Math.max(0, displayItems.value.length - maxVisibleCount.value),
 );
 
-const maxVisibleCount = computed(() => (isMobile.value ? 3 : 5));
+const maxVisibleCount = computed(() => 6);
 
 const visibleDisplayItems = computed(() =>
   isExpanded.value ? displayItems.value : displayItems.value.slice(0, maxVisibleCount.value),

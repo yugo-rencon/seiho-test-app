@@ -6,7 +6,10 @@ type LinkItem = { label: string; href: string; active: boolean };
 type Group = { heading: string; links: LinkItem[] };
 
 const page = usePage();
-const path = computed(() => String(page.url ?? "").split("?")[0]);
+const path = computed(() => {
+    const raw = String(page.url ?? "");
+    return raw.split("?")[0].split("#")[0].replace(/\/+$/, "") || "/";
+});
 const hideOnFooter = ref(false);
 const navRef = ref<HTMLElement | null>(null);
 const navScale = ref(1);

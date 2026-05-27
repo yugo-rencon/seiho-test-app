@@ -120,7 +120,7 @@ const isDraft = false;
                         {
                             answer: '892,538円',
                             questionTitle: '保険料の現価',
-                            relatedProblems: ['2025a7', '2024c45', '2023b47'],
+                            relatedProblems: [],
                             explanation: [
                                 {
                                     type: 'blockTitle',

@@ -21,7 +21,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="クーリング・オフ（契約撤回請求権）"
-                    :relatedProblems="['2025a14', '2025b1', '2023c1']"
+                    :relatedProblems="['2025a14', '2025b1']"
                     :contents="[
                         '生命保険契約の申し込みは該当しない → 該当する', //p7
                         '告知をした日 → 申し込みをした日<br>早い日を含め8日以内 → 遅い日を含め8日以内', //p7
@@ -48,7 +48,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効・復活"
-                    :relatedProblems="['2025a15', '2025b3', '2025b15', '2025c3', '2025c15', '2024a16', '2024b3', '2023c4']"
+                    :relatedProblems="['2025a15', '2025b3', '2025b15', '2025c3', '2025c15']"
                     :contents="[
                         '保険契約は失効しない → 失効する', //p34
                         '翌月初日 → 翌日', //p34
@@ -75,7 +75,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="身体的危険"
-                    :relatedProblems="['2025b5', '2024b7', '2024c16', '2023a16', '2023b16', '2023c16']"
+                    :relatedProblems="['2025b5']"
                     :contents="[
                         '痩身体 → 過軽体', //p49
                         '正しい',
@@ -102,7 +102,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="営業保険料の構成と計算基礎"
-                    :relatedProblems="['2025b7', '2024b8', '2023a8']"
+                    :relatedProblems="['2025b7']"
                     :contents="[
                         '純保険料 → 付加保険料', //p89
                         '正しい',
@@ -157,7 +157,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="特約の種類"
-                    :relatedProblems="['2025b11', '2024a11']"
+                    :relatedProblems="['2025b11']"
                     :contents="[
                         '正しい',
                         '支払回数に最低保証はない → 最低保証がある', //p156
@@ -184,7 +184,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社の免責事由"
-                    :relatedProblems="['2025a30', '2025b13', '2025c14', '2024b25', '2023b3', '2023c3']"
+                    :relatedProblems="['2025a30', '2025b13', '2025c14']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -211,7 +211,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効・復活"
-                    :relatedProblems="['2025a15', '2025b3', '2025b15', '2025c3', '2025c15', '2024a16', '2024b3', '2023c4']"
+                    :relatedProblems="['2025a15', '2025b3', '2025b15', '2025c3', '2025c15']"
                     :contents="[
                         '正しい',
                         '解約返戻金の請求権は消滅する → 存続する', //p35
@@ -224,7 +224,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反による保険契約の解除"
-                    :relatedProblems="['2025a16', '2025b16', '2025c16', '2024a13', '2024c5', '2023a5', '2023c21']"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -250,7 +250,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択上、被保険者集団が具備すべき4つの条件"
-                    :relatedProblems="['2025b18', '2023c23']"
+                    :relatedProblems="['2025b18']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -263,7 +263,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金発生の仕組みと配当金との関係"
-                    :relatedProblems="['2025a19', '2025b19', '2025c19', '2024a21', '2024c20', '2023b24']"
+                    :relatedProblems="['2025a19', '2025b19', '2025c19']"
                     :contents="[
                         '正しい',
                         '実際死亡率 ÷ 予定死亡率 × 危険保険金 → （予定死亡率 - 実際死亡率）× 危険保険金', //p103
@@ -276,7 +276,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果の検証等"
-                    :relatedProblems="['2025a18', '2025b20', '2025b44', '2025c44', '2024a18', '2024b18', '2024b43', '2024c30', '2023a18']"
+                    :relatedProblems="['2025a18', '2025b20', '2025b44', '2025c44']"
                     :contents="[
                         '正しい',
                         '将来の危険選択に活かすことができる → 活かす目的には適さない', //p69
@@ -289,7 +289,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約内容の変更"
-                    :relatedProblems="['2025b21', '2024a9', '2024b9', '2024c9', '2023b18', '2023c7']"
+                    :relatedProblems="['2025b21']"
                     :contents="[
                         '正しい',
                         '最新の計算基礎率 → 元契約と同じ計算基礎率', //p114
@@ -302,7 +302,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="特定疾病保障保険（三大疾病保障保険）"
-                    :relatedProblems="['2025a22', '2025b22', '2025c22', '2024a48', '2024b48', '2023a47']"
+                    :relatedProblems="['2025a22', '2025b22', '2025c22']"
                     :contents="[
                         '正しい',
                         '高度障害保険金は一切支払われない → 支払うタイプと支払わないタイプがある', //p137
@@ -329,7 +329,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
-                    :relatedProblems="['2025a24', '2025b24', '2025c11', '2025c24', '2024a24', '2024b12', '2024c24', '2023a12', '2023c20']"
+                    :relatedProblems="['2025a24', '2025b24', '2025c11', '2025c24']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -343,7 +343,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="保険契約の当事者"
-                    :relatedProblems="['2025b25', '2024b13', '2024c3', '2023a25', '2023b13', '2023c11']"
+                    :relatedProblems="['2025b25']"
                     :contents="[
                         '10億円',
                         '50億円',
@@ -412,12 +412,12 @@ const subject = "2025年度 フォームB";
                         // 問40〜49
                         {
                             questionTitle: '保険金等の請求手続き',
-                            relatedProblems: ['2025b40', '2025c5', '2024a15', '2024b15', '2024c15', '2023a4', '2023b15'],
+                            relatedProblems: ['2025b40', '2025c5'],
                             content: '正しい',
                         }, //40
                         {
                             questionTitle: '道徳的危険（モラルリスク）',
-                            relatedProblems: ['2025b41', '2023a17', '2023b17', '2023c17', '2023c41'],
+                            relatedProblems: ['2025b41'],
                             content: '正しい',
                         }, //41
                         {
@@ -433,7 +433,7 @@ const subject = "2025年度 フォームB";
                         }, //43
                         {
                             questionTitle: '選択効果の検証',
-                            relatedProblems: ['2025a18', '2025b20', '2025b44', '2025c44', '2024a18', '2024b18', '2024b43', '2024c30', '2023a18'],
+                            relatedProblems: ['2025a18', '2025b20', '2025b44', '2025c44'],
                             content: '高い死亡率 → 低い死亡率',
                         }, //44 p70
                         {
@@ -454,7 +454,7 @@ const subject = "2025年度 フォームB";
                         }, //47
                         {
                             questionTitle: '利率変動型積立終身保険（アカウント型保険）',
-                            relatedProblems: ['2025a48', '2025b48', '2025c48', '2023b12', '2023c15'],
+                            relatedProblems: ['2025a48', '2025b48', '2025c48'],
                             content: '無告知で → 告知が必要',
                         }, //48 p137
                         {

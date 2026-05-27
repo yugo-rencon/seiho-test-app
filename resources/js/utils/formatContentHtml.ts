@@ -79,5 +79,7 @@ export const formatInlineContentHtml = (value: unknown): string => {
         })
         .replace(highlightPattern, '<span class="answer-highlight">$1</span>');
 
-    return formatAutoBreakArrowLines(formatted).replace(/↔︎|↔|←→|⇔/g, " <strong>⇔</strong> ");
+    return formatAutoBreakArrowLines(formatted)
+        .replace(/\s*→\s*/g, ' <span class="answer-arrow" aria-hidden="true">→</span> ')
+        .replace(/↔︎|↔|←→|⇔/g, " <strong>⇔</strong> ");
 };

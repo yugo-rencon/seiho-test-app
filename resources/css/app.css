@@ -86,6 +86,11 @@ body {
     @apply inline;
 }
 
+.answer-arrow {
+    @apply mx-1 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full border border-violet-200 bg-violet-50 px-1.5 text-[0.72rem] font-bold leading-none text-violet-700;
+    transform: translateY(-0.04em);
+}
+
 .question-temp4-structured .calc-block-title {
     @apply inline-flex w-fit items-center rounded-md border border-purple-200 bg-purple-50 px-2.5 py-1 text-xs font-bold tracking-wide text-purple-700;
 }

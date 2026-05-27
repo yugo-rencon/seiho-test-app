@@ -278,7 +278,16 @@ const groupedByYear = computed(() => {
     });
   }
 
-  return Array.from(groups.entries()).map(([year, items]) => ({ year, items }));
+  const formOrder: Record<string, number> = { A: 1, B: 2, C: 3 };
+
+  return Array.from(groups.entries()).map(([year, items]) => ({
+    year,
+    items: [...items].sort((a, b) => {
+      const formDiff = (formOrder[a.form] ?? 99) - (formOrder[b.form] ?? 99);
+      if (formDiff !== 0) return formDiff;
+      return Number(a.question) - Number(b.question);
+    }),
+  }));
 });
 
 const displayItems = computed(() => {

@@ -91,6 +91,26 @@ body {
     transform: translateY(-0.04em);
 }
 
+.is-daigaku .answer-arrow {
+    @apply border-blue-200 bg-blue-50 text-blue-700;
+}
+
+.is-senmon .answer-arrow {
+    @apply border-emerald-200 bg-emerald-50 text-emerald-700;
+}
+
+.is-ouyou .answer-arrow {
+    @apply border-amber-200 bg-amber-50 text-amber-700;
+}
+
+.is-ippan .answer-arrow {
+    @apply border-fuchsia-200 bg-fuchsia-50 text-fuchsia-700;
+}
+
+.is-seiho .answer-arrow {
+    @apply border-violet-200 bg-violet-50 text-violet-700;
+}
+
 .question-temp4-structured .calc-block-title {
     @apply inline-flex w-fit items-center rounded-md border border-purple-200 bg-purple-50 px-2.5 py-1 text-xs font-bold tracking-wide text-purple-700;
 }

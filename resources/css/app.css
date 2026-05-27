@@ -70,6 +70,31 @@ body {
     background: linear-gradient(transparent 55%, #fde68a 55%);
 }
 
+.is-daigaku .answer-highlight {
+    @apply text-blue-900;
+    background: linear-gradient(transparent 55%, #dbeafe 55%);
+}
+
+.is-senmon .answer-highlight {
+    @apply text-emerald-900;
+    background: linear-gradient(transparent 55%, #d1fae5 55%);
+}
+
+.is-ouyou .answer-highlight {
+    @apply text-amber-900;
+    background: linear-gradient(transparent 55%, #fde68a 55%);
+}
+
+.is-ippan .answer-highlight {
+    @apply text-fuchsia-900;
+    background: linear-gradient(transparent 55%, #fae8ff 55%);
+}
+
+.is-seiho .answer-highlight {
+    @apply text-violet-900;
+    background: linear-gradient(transparent 55%, #ede9fe 55%);
+}
+
 .answer-diff-list {
     @apply my-1.5 grid gap-1.5;
 }

@@ -112,7 +112,7 @@ body {
 }
 
 .answer-arrow {
-    @apply mx-1 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full border border-violet-200 bg-violet-50 px-1.5 text-[0.72rem] font-bold leading-none text-violet-700;
+    @apply mx-0.5 inline-flex h-4 min-w-[1rem] items-center justify-center rounded-full border border-violet-100 bg-violet-50/60 px-1 text-[0.66rem] font-semibold leading-none text-violet-600;
     transform: translateY(-0.04em);
 }
 

@@ -150,6 +150,14 @@ const currentPageCode = computed(() => {
   return "";
 });
 
+const currentPageMeta = computed(() => {
+  const code = currentPageCode.value;
+  const parsed = parseCode(code);
+  return parsed
+    ? { year: parsed.year, form: parsed.form, question: parsed.question }
+    : null;
+});
+
 const toHalfWidth = (value: string) =>
   value.replace(/[０-９Ａ-Ｚａ-ｚ]/g, (char) =>
     String.fromCharCode(char.charCodeAt(0) - 0xfee0),
@@ -238,6 +246,79 @@ const normalizeRawItem = (rawItem: RelatedProblem | string) => {
   };
 };
 
+const parseCodeFromHref = (href: string) => {
+  const raw = String(href ?? "").trim();
+  if (!raw) return null;
+  const path = raw.split("?")[0].split("#")[0];
+
+  const daigakuMatched = path.match(/^\/daigaku\/[a-z-]+(\d{4})([abc])\/?$/i);
+  if (daigakuMatched) {
+    return {
+      year: daigakuMatched[1],
+      form: daigakuMatched[2].toUpperCase(),
+      question: "",
+    };
+  }
+
+  const seihoMatched = path.match(/^\/([a-z]+)(\d{4})([abc])\/?$/i);
+  if (seihoMatched) {
+    return {
+      year: seihoMatched[2],
+      form: seihoMatched[3].toUpperCase(),
+      question: "",
+    };
+  }
+
+  return null;
+};
+
+const parseQuestionFromHref = (href: string) => {
+  const matched = String(href ?? "").match(/#q(\d+)$/i);
+  if (!matched) return "";
+  return String(Number(matched[1]));
+};
+
+const parseFromLabel = (label: string) => {
+  const normalized = toHalfWidth(String(label ?? "")).replace(/\s+/g, "");
+  const matched = normalized.match(/^フォーム([ABC])問(\d+)$/i);
+  if (!matched) return null;
+  return {
+    form: matched[1].toUpperCase(),
+    question: String(Number(matched[2])),
+  };
+};
+
+const isSelfItem = (item: { label: string; href: string; code: string }) => {
+  const current = currentPageMeta.value;
+  if (!current) return false;
+
+  const codeParsed = parseCode(item.code);
+  if (codeParsed) {
+    return (
+      codeParsed.year === current.year
+      && codeParsed.form === current.form
+      && codeParsed.question === current.question
+    );
+  }
+
+  const hrefMeta = parseCodeFromHref(item.href);
+  const hrefQuestion = parseQuestionFromHref(item.href);
+  if (hrefMeta && hrefQuestion) {
+    return (
+      hrefMeta.year === current.year
+      && hrefMeta.form === current.form
+      && hrefQuestion === current.question
+    );
+  }
+
+  const labelMeta = parseFromLabel(item.label);
+  if (labelMeta) {
+    return labelMeta.form === current.form && labelMeta.question === current.question;
+  }
+
+  return false;
+};
+
 const normalizedItemsWithSelf = computed(() =>
   (props.items ?? [])
     .map((rawItem) => normalizeRawItem(rawItem))
@@ -246,7 +327,7 @@ const normalizedItemsWithSelf = computed(() =>
 
 const normalizedItems = computed(() =>
   normalizedItemsWithSelf.value
-    .filter((item) => item.code !== currentPageCode.value),
+    .filter((item) => !isSelfItem(item)),
 );
 
 const hasUsableItemsInput = computed(() => normalizedItemsWithSelf.value.length > 0);

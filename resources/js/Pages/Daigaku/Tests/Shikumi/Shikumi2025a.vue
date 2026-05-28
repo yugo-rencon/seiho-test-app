@@ -22,7 +22,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険者"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2025a1']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '保険業法 → 保険法', //p3

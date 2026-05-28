@@ -402,7 +402,7 @@ const titleClass = computed(() => {
   if (isSenmonPage.value) return "text-emerald-700";
   if (isOuyouPage.value) return "text-amber-700";
   if (isIppanPage.value) return "text-fuchsia-700";
-  return "text-blue-700";
+  return "text-violet-700";
 });
 
 const linkTagClass = computed(() => {
@@ -410,7 +410,7 @@ const linkTagClass = computed(() => {
   if (isSenmonPage.value) return "border-emerald-200 hover:border-emerald-300";
   if (isOuyouPage.value) return "border-amber-200 hover:border-amber-300";
   if (isIppanPage.value) return "border-pink-200 hover:border-pink-300";
-  return "border-blue-200 hover:border-blue-300";
+  return "border-violet-200 hover:border-violet-300";
 });
 
 </script>

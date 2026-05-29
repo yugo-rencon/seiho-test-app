@@ -23,6 +23,10 @@ const props = defineProps({
         type: String,
         default: "",
     },
+    noindex: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const page = usePage();
@@ -305,6 +309,12 @@ onBeforeUnmount(() => {
 
 <template>
     <Head :title="props.title">
+        <meta
+            v-if="props.noindex"
+            head-key="meta-robots"
+            name="robots"
+            content="noindex, nofollow"
+        />
         <link
             head-key="site-favicon"
             rel="icon"

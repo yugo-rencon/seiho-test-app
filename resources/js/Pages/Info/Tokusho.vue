@@ -32,7 +32,7 @@ const contactHref = computed(() => {
 </script>
 
 <template>
-    <SeihoTestLayout title="特商法に基づく表記">
+    <SeihoTestLayout title="特商法に基づく表記" :noindex="true">
         <div class="container mx-auto px-5 sm:px-6 max-w-4xl py-12 md:py-16">
             <section class="border-b border-gray-100 pb-8">
                 <p class="text-sm font-semibold" :class="legalTextClass">Legal</p>

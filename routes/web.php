@@ -8,11 +8,10 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StripeWebhookController;
 use App\Http\Controllers\TestController;
 
-Route::get('/', function () {
-    return redirect('tests');
+Route::get('/', [TestController::class, 'index'])->name('tests.index');
+Route::get('tests', function () {
+    abort(404);
 });
-
-Route::get('tests', [TestController::class, 'index'])->name('tests.index');
 Route::get('daigaku', [TestController::class, 'daigakuIndex'])->name('daigaku.index');
 Route::get('senmon', [TestController::class, 'senmonIndex'])->name('senmon.index');
 Route::get('senmon/{year}-{period}-{form}', [TestController::class, 'senmonTest'])

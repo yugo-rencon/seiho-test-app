@@ -331,10 +331,11 @@ const subject = "2025年度 フォームB";
                     questionTitle="消費者契約法に定める不適切な説明と不適切な行為"
                     :relatedProblems="['2025b23', '2025c48']"
                     :contents="[
+                        // rev: 2026-05-29 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '間接的な表現や身振り手振りも退去すべき旨の意思表示に含まれる', //p142
+                        '退去すべき旨の意思表示には、直接的な表現だけでなく、[[間接的な表現や身振り手振りも含まれる]]。', //p142
                     ]"
                 />
                 <QuestionTemp1
@@ -382,6 +383,7 @@ const subject = "2025年度 フォームB";
                     questionTitle="老後生活設計の医療費等"
                     :relatedProblems="['2025b30']"
                     :contents="[
+                        // rev: 2026-05-29 確認済み
                         '14',
                         '20',
                         '2',
@@ -404,6 +406,7 @@ const subject = "2025年度 フォームB";
                     questionTitle="保険業法の主要内容"
                     :relatedProblems="['2025b35']"
                     :contents="[
+                        // rev: 2026-05-29 確認済み
                         '損害保険業',
                         '公正',
                         '公衆の縦覧',
@@ -442,6 +445,7 @@ const subject = "2025年度 フォームB";
                             relatedProblems: ['2025a3', '2025a42', '2025b3', '2025b42', '2025c3', '2025c41'],
                         }, //42
                         {
+                            // rev: 2026-05-29 確認済み
                             questionTitle: '住宅に対する考え方',
                             content: '正しい',
                             relatedProblems: ['2025a43', '2025b43', '2025c43'],
@@ -453,6 +457,7 @@ const subject = "2025年度 フォームB";
                             relatedProblems: ['2025a44', '2025b44', '2025c42'],
                         }, //44
                         {
+                            // rev: 2026-05-29 確認済み
                             questionTitle: '中途解約リスク',
                             content: '正しい',
                             relatedProblems: ['2025b45', '2025c45'],

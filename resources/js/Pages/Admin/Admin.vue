@@ -34,6 +34,7 @@ const purchaseScope = ref(props.filters?.purchase_scope ?? "all");
 const purchaseState = ref(props.filters?.purchase_state ?? "all");
 const activeTab = ref("dashboard");
 const salesTab = ref("overview");
+const salesScopeFilter = ref("all");
 const adminPurchaseSaving = ref({});
 const adminPurchaseDrafts = ref({});
 const page = usePage();
@@ -406,6 +407,107 @@ const scopeClass = (scope) => {
     return "bg-gray-100 text-gray-600";
 };
 
+const salesInsights = computed(() => props.stats?.salesInsights ?? {});
+
+const salesScopeOptions = [
+    { value: "all", label: "全試験" },
+    { value: "seiho", label: "生保講座" },
+    { value: "daigaku", label: "生保大学" },
+    { value: "ouyou", label: "応用課程" },
+    { value: "senmon", label: "専門課程" },
+    { value: "ippan", label: "一般課程" },
+    { value: "basic", label: "セット" },
+];
+
+const groupSalesRows = (rows, keyName) => {
+    const map = new Map();
+    for (const row of rows ?? []) {
+        const key = String(row?.[keyName] ?? "");
+        if (!key) continue;
+        const prev = map.get(key) ?? { [keyName]: key, salesCount: 0, totalAmount: 0 };
+        prev.salesCount += Number(row?.salesCount ?? 0);
+        prev.totalAmount += Number(row?.totalAmount ?? 0);
+        map.set(key, prev);
+    }
+    return Array.from(map.values()).sort((a, b) => String(a[keyName]).localeCompare(String(b[keyName])));
+};
+
+const filteredScopeBreakdown = computed(() => {
+    const rows = salesInsights.value?.scopeBreakdown ?? [];
+    if (salesScopeFilter.value === "all") return rows;
+    return rows.filter((row) => row.scope === salesScopeFilter.value);
+});
+
+const filteredMonthlySales = computed(() => {
+    if (salesScopeFilter.value === "all") {
+        return salesInsights.value?.monthlySales ?? [];
+    }
+    const rows = (salesInsights.value?.monthlySalesByScope ?? [])
+        .filter((row) => row.scope === salesScopeFilter.value);
+    return groupSalesRows(rows, "month");
+});
+
+const filteredDailySales = computed(() => {
+    const rows = salesInsights.value?.dailySalesByScope ?? [];
+    const targetRows = salesScopeFilter.value === "all"
+        ? rows
+        : rows.filter((row) => row.scope === salesScopeFilter.value);
+    return groupSalesRows(targetRows, "day");
+});
+
+const filteredOverviewTotal = computed(() => {
+    const rows = filteredScopeBreakdown.value;
+    return rows.reduce(
+        (acc, row) => ({
+            salesCount: acc.salesCount + Number(row?.salesCount ?? 0),
+            totalAmount: acc.totalAmount + Number(row?.totalAmount ?? 0),
+        }),
+        { salesCount: 0, totalAmount: 0 },
+    );
+});
+
+const filteredRecentSales = computed(() => {
+    if (salesScopeFilter.value === "all") return salesInsights.value?.recentSales ?? {};
+
+    const rows = filteredDailySales.value;
+    const byDay = new Map(rows.map((row) => [String(row.day), row]));
+    const today = new Date();
+    const asYmd = (d) => {
+        const y = d.getFullYear();
+        const m = `${d.getMonth() + 1}`.padStart(2, "0");
+        const day = `${d.getDate()}`.padStart(2, "0");
+        return `${y}-${m}-${day}`;
+    };
+    const sumDays = (days) =>
+        days.reduce(
+            (acc, dayKey) => {
+                const row = byDay.get(dayKey);
+                acc.salesCount += Number(row?.salesCount ?? 0);
+                acc.totalAmount += Number(row?.totalAmount ?? 0);
+                return acc;
+            },
+            { salesCount: 0, totalAmount: 0 },
+        );
+
+    const todayKey = asYmd(today);
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayKey = asYmd(yesterday);
+
+    const last7Keys = [];
+    for (let i = 0; i < 7; i += 1) {
+        const d = new Date(today);
+        d.setDate(today.getDate() - i);
+        last7Keys.push(asYmd(d));
+    }
+
+    return {
+        today: sumDays([todayKey]),
+        yesterday: sumDays([yesterdayKey]),
+        last7days: sumDays(last7Keys),
+    };
+});
+
 const releaseTheme = {
     seiho: {
         activeButton: "border-violet-500 bg-gradient-to-br from-violet-500 to-indigo-500 text-white shadow-md ring-1 ring-violet-300/60",
@@ -725,6 +827,7 @@ const peakHour2h = computed(() => {
                         v-for="tab in [
                             { key: 'overview', label: '概要' },
                             { key: 'scope', label: '商品別' },
+                            { key: 'daily', label: '日次' },
                             { key: 'monthly', label: '月次' },
                             { key: 'weekday', label: '曜日' },
                             { key: 'hourly', label: '時間帯' },
@@ -741,15 +844,32 @@ const peakHour2h = computed(() => {
                     </button>
                 </div>
 
+                <div class="mb-4 flex items-center gap-2">
+                    <label for="sales-scope-filter" class="text-xs font-semibold text-gray-600">試験フィルター</label>
+                    <select
+                        id="sales-scope-filter"
+                        v-model="salesScopeFilter"
+                        class="rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs text-gray-700"
+                    >
+                        <option
+                            v-for="option in salesScopeOptions"
+                            :key="`sales-scope-${option.value}`"
+                            :value="option.value"
+                        >
+                            {{ option.label }}
+                        </option>
+                    </select>
+                </div>
+
                 <div v-if="salesTab === 'overview'" class="space-y-3">
                     <div class="grid gap-3 sm:grid-cols-2">
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">売上件数</p>
-                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ stats.salesInsights?.salesCount ?? 0 }}</p>
+                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ filteredOverviewTotal.salesCount }}</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">売上合計</p>
-                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(stats.salesInsights?.totalAmount) }}</p>
+                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewTotal.totalAmount) }}</p>
                         </div>
                     </div>
 
@@ -757,22 +877,22 @@ const peakHour2h = computed(() => {
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">今日</p>
                             <div class="mt-2 flex items-end justify-between">
-                                <p class="text-lg font-bold text-slate-900">{{ formatYen(stats.salesInsights?.recentSales?.today?.totalAmount) }}</p>
-                                <p class="text-xs font-semibold text-slate-500">{{ stats.salesInsights?.recentSales?.today?.salesCount ?? 0 }}件</p>
+                                <p class="text-lg font-bold text-slate-900">{{ formatYen(filteredRecentSales?.today?.totalAmount) }}</p>
+                                <p class="text-xs font-semibold text-slate-500">{{ filteredRecentSales?.today?.salesCount ?? 0 }}件</p>
                             </div>
                         </div>
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">昨日</p>
                             <div class="mt-2 flex items-end justify-between">
-                                <p class="text-lg font-bold text-slate-900">{{ formatYen(stats.salesInsights?.recentSales?.yesterday?.totalAmount) }}</p>
-                                <p class="text-xs font-semibold text-slate-500">{{ stats.salesInsights?.recentSales?.yesterday?.salesCount ?? 0 }}件</p>
+                                <p class="text-lg font-bold text-slate-900">{{ formatYen(filteredRecentSales?.yesterday?.totalAmount) }}</p>
+                                <p class="text-xs font-semibold text-slate-500">{{ filteredRecentSales?.yesterday?.salesCount ?? 0 }}件</p>
                             </div>
                         </div>
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">直近7日</p>
                             <div class="mt-2 flex items-end justify-between">
-                                <p class="text-lg font-bold text-slate-900">{{ formatYen(stats.salesInsights?.recentSales?.last7days?.totalAmount) }}</p>
-                                <p class="text-xs font-semibold text-slate-500">{{ stats.salesInsights?.recentSales?.last7days?.salesCount ?? 0 }}件</p>
+                                <p class="text-lg font-bold text-slate-900">{{ formatYen(filteredRecentSales?.last7days?.totalAmount) }}</p>
+                                <p class="text-xs font-semibold text-slate-500">{{ filteredRecentSales?.last7days?.salesCount ?? 0 }}件</p>
                             </div>
                         </div>
                     </div>
@@ -792,7 +912,7 @@ const peakHour2h = computed(() => {
                                 </thead>
                                 <tbody>
                                     <tr
-                                        v-for="row in stats.salesInsights?.scopeBreakdown ?? []"
+                                        v-for="row in filteredScopeBreakdown"
                                         :key="`scope-${row.scope}`"
                                         class="border-t border-gray-100"
                                     >
@@ -804,7 +924,38 @@ const peakHour2h = computed(() => {
                                         <td class="px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
                                     </tr>
-                                    <tr v-if="(stats.salesInsights?.scopeBreakdown ?? []).length === 0">
+                                    <tr v-if="filteredScopeBreakdown.length === 0">
+                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="salesTab === 'daily'" class="mt-2 rounded-lg border border-gray-100">
+                    <div class="rounded-lg border border-gray-100">
+                        <div class="border-b border-gray-100 px-3 py-2 text-xs font-semibold text-gray-700">日次売上</div>
+                        <div>
+                            <table class="min-w-full text-xs">
+                                <thead class="bg-gray-50 text-left text-gray-500">
+                                    <tr>
+                                        <th class="px-3 py-2">日付</th>
+                                        <th class="px-3 py-2">件数</th>
+                                        <th class="px-3 py-2">売上</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        v-for="row in filteredDailySales"
+                                        :key="`day-${row.day}`"
+                                        class="border-t border-gray-100"
+                                    >
+                                        <td class="px-3 py-2 text-gray-700">{{ row.day }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
+                                    </tr>
+                                    <tr v-if="filteredDailySales.length === 0">
                                         <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
                                     </tr>
                                 </tbody>
@@ -827,7 +978,7 @@ const peakHour2h = computed(() => {
                                 </thead>
                                 <tbody>
                                     <tr
-                                        v-for="row in stats.salesInsights?.monthlySales ?? []"
+                                        v-for="row in filteredMonthlySales"
                                         :key="`month-${row.month}`"
                                         class="border-t border-gray-100"
                                     >
@@ -835,7 +986,7 @@ const peakHour2h = computed(() => {
                                         <td class="px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
                                     </tr>
-                                    <tr v-if="(stats.salesInsights?.monthlySales ?? []).length === 0">
+                                    <tr v-if="filteredMonthlySales.length === 0">
                                         <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
                                     </tr>
                                 </tbody>

@@ -200,6 +200,24 @@ class AdminController extends Controller
             ->orderBy('month')
             ->get();
 
+        $monthlySalesByScope = (clone $salesBaseQuery)
+            ->selectRaw('DATE_FORMAT(purchases.paid_at, "%Y-%m") as month')
+            ->selectRaw('COALESCE(purchases.scope, "seiho") as scope')
+            ->selectRaw('COUNT(*) as sales_count')
+            ->selectRaw("COALESCE(SUM({$scopePriceCaseSql}), 0) as total_amount")
+            ->groupBy('month', 'scope')
+            ->orderBy('month')
+            ->get();
+
+        $dailySalesByScope = (clone $salesBaseQuery)
+            ->selectRaw('DATE(purchases.paid_at) as day')
+            ->selectRaw('COALESCE(purchases.scope, "seiho") as scope')
+            ->selectRaw('COUNT(*) as sales_count')
+            ->selectRaw("COALESCE(SUM({$scopePriceCaseSql}), 0) as total_amount")
+            ->groupBy('day', 'scope')
+            ->orderBy('day')
+            ->get();
+
         $weekdaySalesRaw = (clone $salesBaseQuery)
             ->selectRaw('DAYOFWEEK(purchases.paid_at) as weekday_mysql')
             ->selectRaw('COUNT(*) as sales_count')
@@ -290,6 +308,22 @@ class AdminController extends Controller
             'monthlySales' => $monthlySales->map(function ($row) {
                 return [
                     'month' => (string) $row->month,
+                    'salesCount' => (int) $row->sales_count,
+                    'totalAmount' => (int) $row->total_amount,
+                ];
+            })->values(),
+            'monthlySalesByScope' => $monthlySalesByScope->map(function ($row) {
+                return [
+                    'month' => (string) $row->month,
+                    'scope' => (string) $row->scope,
+                    'salesCount' => (int) $row->sales_count,
+                    'totalAmount' => (int) $row->total_amount,
+                ];
+            })->values(),
+            'dailySalesByScope' => $dailySalesByScope->map(function ($row) {
+                return [
+                    'day' => (string) $row->day,
+                    'scope' => (string) $row->scope,
                     'salesCount' => (int) $row->sales_count,
                     'totalAmount' => (int) $row->total_amount,
                 ];

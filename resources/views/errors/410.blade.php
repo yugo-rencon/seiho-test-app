@@ -50,18 +50,6 @@
             line-height: 1.7;
             font-size: 14px;
         }
-        .actions { margin-top: 18px; }
-        a {
-            display: inline-block;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            color: #fff;
-            background: #6d28d9;
-            border-radius: 9999px;
-            padding: 10px 16px;
-        }
-        a:hover { background: #5b21b6; }
     </style>
 </head>
 <body>
@@ -71,11 +59,8 @@
             <h1>このページは削除されました</h1>
             <p>
                 お探しのページは提供を終了しました。<br>
-                トップページから最新のコンテンツをご利用ください。
+                このURLは現在利用できません。
             </p>
-            <div class="actions">
-                <a href="{{ url('/') }}">トップページへ戻る</a>
-            </div>
         </section>
     </main>
 </body>

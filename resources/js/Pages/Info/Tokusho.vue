@@ -47,8 +47,8 @@ const contactHref = computed(() => {
             <section class="mt-7 overflow-hidden rounded-xl border border-gray-200 bg-white">
                 <dl class="divide-y divide-gray-100 text-sm leading-relaxed">
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
-                        <dt class="font-medium text-gray-800">販売事業者名（運営責任者）</dt>
-                        <dd class="text-gray-700">栗野 勇吾</dd>
+                        <dt class="font-medium text-gray-800">運営者（販売業者）</dt>
+                        <dd class="text-gray-700">seiho-test 運営事務局</dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
                         <dt class="font-medium text-gray-800">サービス名</dt>
@@ -77,12 +77,10 @@ const contactHref = computed(() => {
                         </dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
-                        <dt class="font-medium text-gray-800">所在地</dt>
-                        <dd class="text-gray-700">請求があった場合に遅滞なく開示します。</dd>
-                    </div>
-                    <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
-                        <dt class="font-medium text-gray-800">電話番号</dt>
-                        <dd class="text-gray-700">請求があった場合に遅滞なく開示します。</dd>
+                        <dt class="font-medium text-gray-800">氏名・住所・電話番号</dt>
+                        <dd class="text-gray-700">
+                            個人情報保護および防犯の観点から、Webサイト上での常時公開は控えております。上記の記載事項について開示をご希望される場合は、下記のお問い合わせフォームよりご請求ください。特商法に基づき、遅滞なく電子メール等の書面にて開示いたします。
+                        </dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
                         <dt class="font-medium text-gray-800">お問い合わせ先</dt>

@@ -35,6 +35,7 @@ const purchaseState = ref(props.filters?.purchase_state ?? "all");
 const activeTab = ref("dashboard");
 const salesTab = ref("overview");
 const salesScopeFilter = ref("all");
+const dailyViewMode = ref("calendar");
 const adminPurchaseSaving = ref({});
 const adminPurchaseDrafts = ref({});
 const page = usePage();
@@ -506,6 +507,62 @@ const filteredRecentSales = computed(() => {
         today: sumDays([todayKey]),
         yesterday: sumDays([yesterdayKey]),
         last7days: sumDays(last7Keys),
+    };
+});
+
+const parseYmd = (value) => {
+    const m = String(value ?? "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return null;
+    return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+};
+
+const dailyCalendar = computed(() => {
+    const rows = filteredDailySales.value ?? [];
+    if (!rows.length) return null;
+
+    const latest = rows[rows.length - 1];
+    const latestDate = parseYmd(latest.day);
+    if (!latestDate) return null;
+
+    const year = latestDate.getFullYear();
+    const month = latestDate.getMonth();
+    const first = new Date(year, month, 1);
+    const last = new Date(year, month + 1, 0);
+
+    const amountMap = new Map(rows.map((r) => [String(r.day), Number(r.totalAmount ?? 0)]));
+    const maxAmount = Math.max(
+        1,
+        ...Array.from(amountMap.values()).map((v) => Number(v || 0)),
+    );
+
+    const cells = [];
+    const startWeekday = first.getDay();
+    for (let i = 0; i < startWeekday; i += 1) {
+        cells.push({ empty: true });
+    }
+
+    for (let d = 1; d <= last.getDate(); d += 1) {
+        const date = new Date(year, month, d);
+        const ymd = `${year}-${`${month + 1}`.padStart(2, "0")}-${`${d}`.padStart(2, "0")}`;
+        const amount = Number(amountMap.get(ymd) ?? 0);
+        const intensity = Math.max(0, Math.min(1, amount / maxAmount));
+        cells.push({
+            empty: false,
+            day: d,
+            ymd,
+            amount,
+            intensity,
+        });
+    }
+
+    while (cells.length % 7 !== 0) {
+        cells.push({ empty: true });
+    }
+
+    return {
+        year,
+        month: month + 1,
+        cells,
     };
 });
 const maxDailyTotalAmount = computed(() =>
@@ -987,7 +1044,49 @@ const peakHour2h = computed(() => {
                             <span class="font-semibold text-gray-700">日次売上（横軸: 日付 / 縦軸: 売上）</span>
                             <span class="text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</span>
                         </div>
-                        <div v-if="filteredDailySales.length > 0" class="overflow-x-auto">
+                        <div class="mb-3 flex flex-wrap gap-2">
+                            <button
+                                type="button"
+                                class="rounded-lg border px-3 py-1.5 text-xs font-semibold transition"
+                                :class="dailyViewMode === 'calendar'
+                                    ? 'border-purple-200 bg-purple-50 text-purple-700'
+                                    : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
+                                @click="dailyViewMode = 'calendar'"
+                            >
+                                カレンダー
+                            </button>
+                            <button
+                                type="button"
+                                class="rounded-lg border px-3 py-1.5 text-xs font-semibold transition"
+                                :class="dailyViewMode === 'graph'
+                                    ? 'border-purple-200 bg-purple-50 text-purple-700'
+                                    : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
+                                @click="dailyViewMode = 'graph'"
+                            >
+                                グラフ
+                            </button>
+                        </div>
+                        <div v-if="dailyViewMode === 'calendar' && dailyCalendar" class="mb-4 rounded-lg border border-gray-100 p-3">
+                            <div class="mb-2 text-xs font-semibold text-gray-700">{{ dailyCalendar.year }}年{{ dailyCalendar.month }}月 カレンダー</div>
+                            <div class="mb-1 grid grid-cols-7 gap-1 text-center text-[10px] text-gray-500">
+                                <div>日</div><div>月</div><div>火</div><div>水</div><div>木</div><div>金</div><div>土</div>
+                            </div>
+                            <div class="grid grid-cols-7 gap-1">
+                                <div
+                                    v-for="(cell, idx) in dailyCalendar.cells"
+                                    :key="`cal-${idx}`"
+                                    class="min-h-[44px] rounded border p-1"
+                                    :class="cell.empty ? 'border-transparent bg-transparent' : 'border-gray-100'"
+                                    :style="!cell.empty ? { backgroundColor: `rgba(124, 58, 237, ${0.08 + (cell.intensity * 0.28)})` } : {}"
+                                >
+                                    <template v-if="!cell.empty">
+                                        <div class="text-[10px] font-semibold text-gray-700">{{ cell.day }}</div>
+                                        <div class="mt-0.5 text-[9px] text-gray-600">{{ formatAxisYenJa(cell.amount) }}</div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="dailyViewMode === 'graph' && filteredDailySales.length > 0" class="overflow-x-auto">
                             <svg
                                 :width="dailyChart.width"
                                 :height="dailyChart.height"
@@ -1060,7 +1159,8 @@ const peakHour2h = computed(() => {
                                 ピーク売上: {{ formatYen(maxDailyTotalAmount) }}
                             </div>
                         </div>
-                        <p v-else class="py-5 text-center text-xs text-gray-500">データがありません。</p>
+                        <p v-if="dailyViewMode === 'calendar' && !dailyCalendar" class="py-5 text-center text-xs text-gray-500">データがありません。</p>
+                        <p v-if="dailyViewMode === 'graph' && filteredDailySales.length === 0" class="py-5 text-center text-xs text-gray-500">データがありません。</p>
                     </div>
                 </div>
 

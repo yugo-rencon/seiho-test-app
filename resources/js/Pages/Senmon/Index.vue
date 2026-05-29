@@ -70,6 +70,7 @@ const getFormLabel = (year, periodId, form) => {
                 />
 
                 <div class="relative">
+                    <h1 class="sr-only">生命保険専門課程 過去問解説</h1>
                     <div
                         v-if="!hasPremium"
                         class="mb-5 rounded-xl border border-emerald-200 bg-emerald-50/80 px-3 py-2 text-left text-[12px] leading-5 text-emerald-800 sm:px-4 sm:py-2.5 sm:text-center"

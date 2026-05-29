@@ -149,6 +149,7 @@ const getDaigakuRoute = (sectionId, year, form) => {
                 />
 
                 <div class="relative">
+                    <h1 class="sr-only">生命保険大学課程 過去問解説</h1>
                     <div
                         v-if="!hasPremium"
                         class="mb-4 rounded-xl border border-indigo-200 bg-indigo-50/80 px-3 py-2 text-left text-[12px] leading-5 text-indigo-800 sm:mb-5 sm:px-4 sm:py-2.5 sm:text-center"

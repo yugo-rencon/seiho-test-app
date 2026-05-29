@@ -45,6 +45,7 @@ const pricingHref = computed(() =>
                 ></div>
 
                 <div class="relative">
+                    <h1 class="sr-only">生命保険講座過去問解説</h1>
                     <div
                         v-if="!hasPremium"
                         class="mb-5 rounded-2xl border border-purple-100 bg-purple-50/70 px-3 py-2 text-left text-[12px] leading-5 text-purple-800 sm:px-4 sm:py-2.5 sm:text-center"

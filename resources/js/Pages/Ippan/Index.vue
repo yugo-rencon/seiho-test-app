@@ -59,6 +59,7 @@ const getFormHref = (year, period, form) => {
                 />
 
                 <div class="relative">
+                    <h1 class="sr-only">生命保険一般課程 過去問解説</h1>
                     <div
                         v-if="!hasPremium"
                         class="mb-5 rounded-xl border border-pink-100 bg-pink-50/50 px-3 py-2 text-left text-[12px] leading-5 text-fuchsia-700 sm:px-4 sm:py-2.5 sm:text-center"

@@ -50,6 +50,19 @@
             line-height: 1.7;
             font-size: 14px;
         }
+        .subtle-link {
+            margin-top: 14px;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+        .subtle-link a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .subtle-link a:hover {
+            color: #6b7280;
+        }
     </style>
 </head>
 <body>
@@ -61,6 +74,7 @@
                 お探しのページは提供を終了しました。<br>
                 このURLは現在利用できません。
             </p>
+            <p class="subtle-link">必要な場合は <a href="{{ url('/') }}">トップページ</a> をご利用ください。</p>
         </section>
     </main>
 </body>

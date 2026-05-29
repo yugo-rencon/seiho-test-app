@@ -28,7 +28,7 @@ const pricingHref = computed(() => {
 
     return route("pricing", {
         ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
-        return_to: String(page.url ?? "/tests"),
+        return_to: String(page.url ?? "/"),
     });
 });
 const tokushoRouteName = computed(() => {

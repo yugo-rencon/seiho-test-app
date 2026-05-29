@@ -20,7 +20,6 @@ const sites = [
 const sisterSites = computed(() => sites.filter((site) => site.key !== props.currentSite));
 
 const isOpen = ref(false);
-const getSiteHref = (site) => (site.key === "seiho" ? "https://seiho-test.com" : route(site.route));
 </script>
 
 <template>
@@ -50,7 +49,7 @@ const getSiteHref = (site) => (site.key === "seiho" ? "https://seiho-test.com" :
                 <Link
                     v-for="site in sisterSites"
                     :key="site.key"
-                    :href="getSiteHref(site)"
+                    :href="route(site.route)"
                     class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-3 py-1.5 text-[11px] font-medium text-gray-600 transition"
                     :class="site.color"
                 >
@@ -64,7 +63,7 @@ const getSiteHref = (site) => (site.key === "seiho" ? "https://seiho-test.com" :
             <Link
                 v-for="site in sisterSites"
                 :key="site.key"
-                :href="getSiteHref(site)"
+                :href="route(site.route)"
                 class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-3 py-1.5 text-[11px] font-medium text-gray-600 transition"
                 :class="site.color"
             >

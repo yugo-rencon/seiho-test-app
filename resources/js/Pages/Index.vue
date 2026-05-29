@@ -28,7 +28,7 @@ const mypageInputHref = computed(() => {
     return `${route("mypage")}#score-input`;
 });
 const pricingHref = computed(() =>
-    route("pricing", { scope: "seiho", return_to: String(page.url ?? "/tests") }),
+    route("pricing", { scope: "seiho", return_to: String(page.url ?? "/") }),
 );
 
 </script>

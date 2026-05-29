@@ -69,7 +69,7 @@ createInertiaApp({
             ? 'ippan'
             : '';
 
-    if (path === '/tests') return appName;
+    if (path === '/' || path === '/tests') return appName;
     if (path === '/daigaku') return siteName('daigaku');
     if (path === '/senmon') return siteName('senmon');
     if (path === '/ouyou') return siteName('ouyou');

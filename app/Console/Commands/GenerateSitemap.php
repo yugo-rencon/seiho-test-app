@@ -19,7 +19,6 @@ class GenerateSitemap extends Command
 
         $staticPaths = [
             '/',
-            '/tests',
             '/about',
             '/pricing',
             '/policy',

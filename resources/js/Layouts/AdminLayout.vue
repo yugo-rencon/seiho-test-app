@@ -27,7 +27,7 @@ const logout = () => {
                 </div>
                 <div class="flex items-center gap-4">
                     <Link
-                        :href="isDaigakuAdmin ? '/daigaku' : '/tests'"
+                        :href="isDaigakuAdmin ? '/daigaku' : '/'"
                         class="text-xs text-gray-400 hover:text-gray-600"
                     >
                         サイトに戻る

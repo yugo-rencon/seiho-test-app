@@ -36,7 +36,7 @@ const loginHref = computed(() => {
     const returnTo = String(page.url ?? "");
     return route("login", {
         ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
-        return_to: returnTo || "/tests",
+        return_to: returnTo || "/",
     });
 });
 const mypageRouteName = computed(() => {

@@ -33,7 +33,7 @@ const currentScope = computed(() => {
     return "seiho";
 });
 const loginHref = computed(() => {
-    const returnTo = String(page.url ?? (props.isDaigaku ? "/daigaku" : "/tests"));
+    const returnTo = String(page.url ?? (props.isDaigaku ? "/daigaku" : "/"));
     return route("login", {
         ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
         return_to: returnTo,

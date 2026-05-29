@@ -6,11 +6,6 @@
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>https://seiho-test.com/tests</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
         <loc>https://seiho-test.com/about</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>

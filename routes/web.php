@@ -10,7 +10,7 @@ use App\Http\Controllers\TestController;
 
 Route::get('/', [TestController::class, 'index'])->name('tests.index');
 Route::get('tests', function () {
-    abort(404);
+    abort(410);
 });
 Route::get('daigaku', [TestController::class, 'daigakuIndex'])->name('daigaku.index');
 Route::get('senmon', [TestController::class, 'senmonIndex'])->name('senmon.index');

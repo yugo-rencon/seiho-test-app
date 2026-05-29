@@ -36,6 +36,7 @@ const activeTab = ref("dashboard");
 const salesTab = ref("overview");
 const salesScopeFilter = ref("all");
 const dailyViewMode = ref("calendar");
+const dailyCalendarMonthKey = ref("");
 const adminPurchaseSaving = ref({});
 const adminPurchaseDrafts = ref({});
 const page = usePage();
@@ -516,20 +517,37 @@ const parseYmd = (value) => {
     return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
 };
 
+const dailyAvailableMonths = computed(() => {
+    const rows = filteredDailySales.value ?? [];
+    const set = new Set(
+        rows
+            .map((row) => String(row?.day ?? "").slice(0, 7))
+            .filter((v) => /^\d{4}-\d{2}$/.test(v)),
+    );
+    return Array.from(set).sort();
+});
+
+const activeDailyMonthKey = computed(() => {
+    const months = dailyAvailableMonths.value;
+    if (!months.length) return "";
+    if (months.includes(dailyCalendarMonthKey.value)) return dailyCalendarMonthKey.value;
+    return months[months.length - 1];
+});
+
 const dailyCalendar = computed(() => {
     const rows = filteredDailySales.value ?? [];
     if (!rows.length) return null;
-
-    const latest = rows[rows.length - 1];
-    const latestDate = parseYmd(latest.day);
-    if (!latestDate) return null;
-
-    const year = latestDate.getFullYear();
-    const month = latestDate.getMonth();
+    const monthKey = activeDailyMonthKey.value;
+    if (!monthKey) return null;
+    const matched = monthKey.match(/^(\d{4})-(\d{2})$/);
+    if (!matched) return null;
+    const year = Number(matched[1]);
+    const month = Number(matched[2]) - 1;
     const first = new Date(year, month, 1);
     const last = new Date(year, month + 1, 0);
 
-    const amountMap = new Map(rows.map((r) => [String(r.day), Number(r.totalAmount ?? 0)]));
+    const monthRows = rows.filter((r) => String(r?.day ?? "").startsWith(`${monthKey}-`));
+    const amountMap = new Map(monthRows.map((r) => [String(r.day), Number(r.totalAmount ?? 0)]));
     const maxAmount = Math.max(
         1,
         ...Array.from(amountMap.values()).map((v) => Number(v || 0)),
@@ -546,12 +564,20 @@ const dailyCalendar = computed(() => {
         const ymd = `${year}-${`${month + 1}`.padStart(2, "0")}-${`${d}`.padStart(2, "0")}`;
         const amount = Number(amountMap.get(ymd) ?? 0);
         const intensity = Math.max(0, Math.min(1, amount / maxAmount));
+        let level = 0;
+        if (amount > 0) {
+            if (intensity >= 0.75) level = 4;
+            else if (intensity >= 0.5) level = 3;
+            else if (intensity >= 0.25) level = 2;
+            else level = 1;
+        }
         cells.push({
             empty: false,
             day: d,
             ymd,
             amount,
             intensity,
+            level,
         });
     }
 
@@ -563,6 +589,7 @@ const dailyCalendar = computed(() => {
         year,
         month: month + 1,
         cells,
+        monthKey,
     };
 });
 const maxDailyTotalAmount = computed(() =>
@@ -1067,7 +1094,39 @@ const peakHour2h = computed(() => {
                             </button>
                         </div>
                         <div v-if="dailyViewMode === 'calendar' && dailyCalendar" class="mb-4 rounded-lg border border-gray-100 p-3">
-                            <div class="mb-2 text-xs font-semibold text-gray-700">{{ dailyCalendar.year }}年{{ dailyCalendar.month }}月 カレンダー</div>
+                            <div class="mb-2 flex items-center justify-between gap-2">
+                                <div class="text-xs font-semibold text-gray-700">{{ dailyCalendar.year }}年{{ dailyCalendar.month }}月 カレンダー</div>
+                                <div class="flex items-center gap-1.5">
+                                    <button
+                                        type="button"
+                                        class="rounded border border-gray-200 bg-white px-2 py-1 text-[10px] text-gray-600 hover:bg-gray-50"
+                                        :disabled="dailyAvailableMonths.indexOf(activeDailyMonthKey) <= 0"
+                                        @click="dailyCalendarMonthKey = dailyAvailableMonths[Math.max(0, dailyAvailableMonths.indexOf(activeDailyMonthKey) - 1)]"
+                                    >
+                                        前月
+                                    </button>
+                                    <select
+                                        v-model="dailyCalendarMonthKey"
+                                        class="rounded border border-gray-200 bg-white px-2 py-1 text-[10px] text-gray-700"
+                                    >
+                                        <option
+                                            v-for="m in dailyAvailableMonths"
+                                            :key="`month-opt-${m}`"
+                                            :value="m"
+                                        >
+                                            {{ m }}
+                                        </option>
+                                    </select>
+                                    <button
+                                        type="button"
+                                        class="rounded border border-gray-200 bg-white px-2 py-1 text-[10px] text-gray-600 hover:bg-gray-50"
+                                        :disabled="dailyAvailableMonths.indexOf(activeDailyMonthKey) === -1 || dailyAvailableMonths.indexOf(activeDailyMonthKey) >= dailyAvailableMonths.length - 1"
+                                        @click="dailyCalendarMonthKey = dailyAvailableMonths[Math.min(dailyAvailableMonths.length - 1, dailyAvailableMonths.indexOf(activeDailyMonthKey) + 1)]"
+                                    >
+                                        次月
+                                    </button>
+                                </div>
+                            </div>
                             <div class="mb-1 grid grid-cols-7 gap-1 text-center text-[10px] text-gray-500">
                                 <div>日</div><div>月</div><div>火</div><div>水</div><div>木</div><div>金</div><div>土</div>
                             </div>
@@ -1077,11 +1136,28 @@ const peakHour2h = computed(() => {
                                     :key="`cal-${idx}`"
                                     class="min-h-[44px] rounded border p-1"
                                     :class="cell.empty ? 'border-transparent bg-transparent' : 'border-gray-100'"
-                                    :style="!cell.empty ? { backgroundColor: `rgba(124, 58, 237, ${0.08 + (cell.intensity * 0.28)})` } : {}"
+                                    :style="!cell.empty ? {
+                                        backgroundColor:
+                                            cell.level === 4 ? '#7c3aed'
+                                            : cell.level === 3 ? '#a78bfa'
+                                            : cell.level === 2 ? '#ddd6fe'
+                                            : cell.level === 1 ? '#f3f0ff'
+                                            : '#ffffff',
+                                    } : {}"
                                 >
                                     <template v-if="!cell.empty">
-                                        <div class="text-[10px] font-semibold text-gray-700">{{ cell.day }}</div>
-                                        <div class="mt-0.5 text-[9px] text-gray-600">{{ formatAxisYenJa(cell.amount) }}</div>
+                                        <div
+                                            class="text-[10px] font-semibold"
+                                            :class="cell.level >= 3 ? 'text-white' : 'text-gray-700'"
+                                        >
+                                            {{ cell.day }}
+                                        </div>
+                                        <div
+                                            class="mt-0.5 text-[9px]"
+                                            :class="cell.level >= 3 ? 'text-white/90' : 'text-gray-600'"
+                                        >
+                                            {{ formatAxisYenJa(cell.amount) }}
+                                        </div>
                                     </template>
                                 </div>
                             </div>

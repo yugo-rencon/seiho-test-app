@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Carbon;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -161,7 +162,7 @@ class AdminController extends Controller
 
         $salesSince = Carbon::create(2026, 4, 1)->startOfDay();
 
-        $daigakuPriceSwitchAt = '2026-06-01 00:00:00';
+        $daigakuPriceSwitchAt = '2026-05-30 17:34:32';
 
         $scopePriceCaseSql = 'CASE COALESCE(purchases.scope, "seiho")
             WHEN "seiho" THEN 1980
@@ -297,6 +298,23 @@ class AdminController extends Controller
             'last7days' => $buildPeriodSummary($last7daysStart, $todayEnd),
         ];
 
+        $pageViewsSince = Carbon::now()->subDays(30)->startOfDay();
+        $topPageViews = collect();
+
+        if (Schema::hasTable('page_views')) {
+            $topPageViews = DB::table('page_views')
+                ->where('viewed_at', '>=', $pageViewsSince)
+                ->where('path', 'not like', '/admin%')
+                ->where('path', 'not like', '/daigaku/admin%')
+                ->select('path')
+                ->selectRaw('COUNT(*) as views')
+                ->selectRaw('COUNT(DISTINCT session_id) as unique_sessions')
+                ->groupBy('path')
+                ->orderByDesc('views')
+                ->limit(20)
+                ->get();
+        }
+
         $stats['salesInsights'] = [
             'fromDate' => $salesSince->toDateString(),
             'salesCount' => (int) ($salesSummary->sales_count ?? 0),
@@ -334,6 +352,14 @@ class AdminController extends Controller
                 ];
             })->values(),
             'recentSales' => $recentSales,
+            'pageViewsSince' => $pageViewsSince->toDateString(),
+            'topPageViews' => $topPageViews->map(function ($row) {
+                return [
+                    'path' => (string) $row->path,
+                    'views' => (int) $row->views,
+                    'uniqueSessions' => (int) $row->unique_sessions,
+                ];
+            })->values(),
             'weekdaySales' => $weekdaySales,
             'hourlySales' => $hourlySales,
         ];

@@ -1028,6 +1028,38 @@ const peakHour2h = computed(() => {
                             </div>
                         </div>
                     </div>
+
+                    <div class="rounded-lg border border-gray-100">
+                        <div class="flex items-center justify-between border-b border-gray-100 px-3 py-2">
+                            <p class="text-xs font-semibold text-gray-700">人気ページ Top20</p>
+                            <p class="text-[11px] text-gray-500">対象: {{ stats.salesInsights?.pageViewsSince }} 以降</p>
+                        </div>
+                        <div>
+                            <table class="min-w-full text-xs">
+                                <thead class="bg-gray-50 text-left text-gray-500">
+                                    <tr>
+                                        <th class="px-3 py-2">ページ</th>
+                                        <th class="px-3 py-2">PV</th>
+                                        <th class="px-3 py-2">セッション数</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        v-for="row in stats.salesInsights?.topPageViews ?? []"
+                                        :key="`top-page-${row.path}`"
+                                        class="border-t border-gray-100"
+                                    >
+                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-700">{{ row.path }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ row.views }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ row.uniqueSessions }}</td>
+                                    </tr>
+                                    <tr v-if="(stats.salesInsights?.topPageViews ?? []).length === 0">
+                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません（migration後に集計されます）。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
                 <div v-if="salesTab === 'scope'" class="mt-2 rounded-lg border border-gray-100">

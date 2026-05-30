@@ -161,9 +161,14 @@ class AdminController extends Controller
 
         $salesSince = Carbon::create(2026, 4, 1)->startOfDay();
 
+        $daigakuPriceSwitchAt = '2026-06-01 00:00:00';
+
         $scopePriceCaseSql = 'CASE COALESCE(purchases.scope, "seiho")
             WHEN "seiho" THEN 1980
-            WHEN "daigaku" THEN 980
+            WHEN "daigaku" THEN CASE
+                WHEN purchases.paid_at < "'.$daigakuPriceSwitchAt.'" THEN 980
+                ELSE 1480
+            END
             WHEN "ouyou" THEN 480
             WHEN "senmon" THEN 480
             WHEN "ippan" THEN 480
@@ -504,7 +509,7 @@ class AdminController extends Controller
                 default => '生保講座 プレミアムプラン（買い切り）',
             },
             'price' => match ($scope) {
-                'daigaku' => 980,
+                'daigaku' => 1480,
                 'ippan', 'senmon', 'ouyou' => 480,
                 'basic' => 980,
                 default => 1980,

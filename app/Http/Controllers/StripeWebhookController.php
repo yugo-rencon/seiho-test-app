@@ -199,7 +199,7 @@ class StripeWebhookController extends Controller
     private function defaultAmount(string $scope): int
     {
         return match ($scope) {
-            'daigaku' => 980,
+            'daigaku' => 1480,
             'ippan', 'senmon', 'ouyou' => 480,
             'basic' => 980,
             default => 1980,

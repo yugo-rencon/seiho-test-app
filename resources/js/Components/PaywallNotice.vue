@@ -25,7 +25,7 @@ const priceNumberText = computed(() =>
     ["ippan", "senmon", "ouyou"].includes(scope.value)
         ? "480"
         : scope.value === "daigaku"
-          ? "980"
+          ? "1,480"
           : "1,980",
 );
 const unlockedCountText = computed(() => {

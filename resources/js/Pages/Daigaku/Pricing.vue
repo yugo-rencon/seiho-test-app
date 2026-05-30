@@ -17,7 +17,7 @@ const plans = [
     {
         key: "premium",
         name: "プレミアム（買い切り）",
-        price: "¥980",
+        price: "¥1,480",
         note: "有料",
         description: "全科目・全年度・全フォームの解説を一括で解放できます。",
         features: [

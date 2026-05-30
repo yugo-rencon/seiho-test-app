@@ -51,6 +51,10 @@ class TrackPageView
 
     private function shouldTrack(Request $request, Response $response): bool
     {
+        if ($request->user()?->is_admin) {
+            return false;
+        }
+
         if (!$request->isMethod('GET')) {
             return false;
         }

@@ -4,6 +4,7 @@
         @php
             $shouldLoadAds = !auth()->check() || !auth()->user()?->hasPremiumAccess();
             $path = request()->path();
+            $normalizedPath = '/'.ltrim($path, '/');
             $siteKey = str_starts_with($path, 'daigaku') ? 'daigaku'
                 : (str_starts_with($path, 'senmon') ? 'senmon'
                     : (str_starts_with($path, 'ouyou') ? 'ouyou'
@@ -46,6 +47,30 @@
                 ],
             ];
             $currentSiteAssets = $siteAssets[$siteKey];
+            $canonicalUrl = rtrim(config('app.url', url('/')), '/').($normalizedPath === '/' ? '' : $normalizedPath);
+            $defaultSeo = [
+                'seiho' => [
+                    'title' => '生保講座過去問解説',
+                    'description' => '生保講座（生命保険講座）の過去問解説サイト。全科目の年度別・フォーム別解説を掲載。',
+                ],
+                'daigaku' => [
+                    'title' => '生命保険大学課程 過去問解説',
+                    'description' => '生命保険大学課程の過去問解説。科目別・年度別・フォーム別に学習できます。',
+                ],
+                'senmon' => [
+                    'title' => '生命保険専門課程 過去問解説',
+                    'description' => '生命保険専門課程の過去問解説。年度別・フォーム別に学習できます。',
+                ],
+                'ouyou' => [
+                    'title' => '生命保険応用課程 過去問解説',
+                    'description' => '生命保険応用課程の過去問解説。年度別・フォーム別に学習できます。',
+                ],
+                'ippan' => [
+                    'title' => '生命保険一般課程 過去問解説',
+                    'description' => '生命保険一般課程の過去問解説。年度別・フォーム別に学習できます。',
+                ],
+            ];
+            $seo = $defaultSeo[$siteKey] ?? $defaultSeo['seiho'];
         @endphp
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TB0WW8SWW"></script>
@@ -67,14 +92,23 @@
         <meta name="format-detection" content="telephone=no,email=no,address=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="theme-color" content="{{ $currentSiteAssets['theme'] }}">
+        <meta name="description" content="{{ $seo['description'] }}">
+        <link rel="canonical" href="{{ $canonicalUrl }}">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="seiho-test.com">
+        <meta property="og:title" content="{{ $seo['title'] }}">
+        <meta property="og:description" content="{{ $seo['description'] }}">
+        <meta property="og:url" content="{{ $canonicalUrl }}">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ $seo['title'] }}">
+        <meta name="twitter:description" content="{{ $seo['description'] }}">
         <link rel="icon" type="image/png" sizes="48x48" href="{{ $currentSiteAssets['icon48'] }}">
         <link rel="icon" type="image/png" sizes="192x192" href="{{ $currentSiteAssets['icon192'] }}">
         <link rel="icon" type="image/svg+xml" href="{{ $currentSiteAssets['icon'] }}">
         <link rel="apple-touch-icon" sizes="192x192" href="{{ $currentSiteAssets['icon192'] }}">
         <link rel="manifest" href="{{ $currentSiteAssets['manifest'] }}">
 
-        {{-- <title inertia>{{ config('app.name', 'Laravel') }}</title> --}}
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>{{ $seo['title'] }}</title>
 
         <!-- Scripts -->
         @routes

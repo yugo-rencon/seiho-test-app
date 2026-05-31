@@ -202,7 +202,7 @@ Route::controller(ContactController::class)->group(function () {
     Route::post('ippan/contact', 'store')->middleware('throttle:10,1')->name('ippan.contact.store');
 });
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+Route::middleware(['auth', 'admin', 'admin.cooldown'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::post('admins/{userId}/purchase-scopes', [AdminController::class, 'updateAdminPurchaseScopes'])->name('admin.admins.purchaseScopes.update');
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('admin.contacts.index');
@@ -211,7 +211,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::post('releases/bulk', [AdminController::class, 'bulkUpdateReleases'])->name('admin.releases.bulkUpdate');
 });
 
-Route::middleware(['auth', 'admin'])->prefix('daigaku/admin')->group(function () {
+Route::middleware(['auth', 'admin', 'admin.cooldown'])->prefix('daigaku/admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('daigaku.admin.index');
     Route::post('admins/{userId}/purchase-scopes', [AdminController::class, 'updateAdminPurchaseScopes'])->name('daigaku.admin.admins.purchaseScopes.update');
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('daigaku.admin.contacts.index');

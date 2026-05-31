@@ -1060,6 +1060,43 @@ const peakHour2h = computed(() => {
                             </table>
                         </div>
                     </div>
+
+                    <div class="rounded-lg border border-gray-100">
+                        <div class="flex items-center justify-between border-b border-gray-100 px-3 py-2">
+                            <p class="text-xs font-semibold text-gray-700">ページ別CV（直近30日）</p>
+                            <p class="text-[11px] text-gray-500">購入判定: 閲覧後7日以内・同一ユーザー</p>
+                        </div>
+                        <div>
+                            <table class="min-w-full text-xs">
+                                <thead class="bg-gray-50 text-left text-gray-500">
+                                    <tr>
+                                        <th class="px-3 py-2">対象ページ</th>
+                                        <th class="px-3 py-2">閲覧セッション</th>
+                                        <th class="px-3 py-2">購入ユーザー</th>
+                                        <th class="px-3 py-2">CVR</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        v-for="row in stats.salesInsights?.pageConversions ?? []"
+                                        :key="`page-cvr-${row.pathPrefix}`"
+                                        class="border-t border-gray-100"
+                                    >
+                                        <td class="px-3 py-2 text-gray-700">
+                                            <div class="font-semibold">{{ row.label }}</div>
+                                            <div class="font-mono text-[11px] text-gray-500">{{ row.pathPrefix }}</div>
+                                        </td>
+                                        <td class="px-3 py-2 text-gray-700">{{ row.sessions }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ row.purchaserUsers }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ Number(row.conversionRate ?? 0).toFixed(2) }}%</td>
+                                    </tr>
+                                    <tr v-if="(stats.salesInsights?.pageConversions ?? []).length === 0">
+                                        <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません（migration後に集計されます）。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
                 <div v-if="salesTab === 'scope'" class="mt-2 rounded-lg border border-gray-100">

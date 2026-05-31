@@ -300,6 +300,7 @@ class AdminController extends Controller
 
         $pageViewsSince = Carbon::now()->subDays(30)->startOfDay();
         $topPageViews = collect();
+        $pageConversionRows = collect();
 
         if (Schema::hasTable('page_views')) {
             $topPageViews = DB::table('page_views')
@@ -313,6 +314,53 @@ class AdminController extends Controller
                 ->orderByDesc('views')
                 ->limit(20)
                 ->get();
+
+            $conversionTargets = [
+                ['label' => 'トップ', 'pathPrefix' => '/', 'scope' => 'seiho'],
+                ['label' => '生保講座 料金', 'pathPrefix' => '/pricing', 'scope' => 'seiho'],
+                ['label' => '生保大学 トップ', 'pathPrefix' => '/daigaku', 'scope' => 'daigaku'],
+                ['label' => '生保大学 料金', 'pathPrefix' => '/daigaku/pricing', 'scope' => 'daigaku'],
+                ['label' => '一般課程 トップ', 'pathPrefix' => '/ippan', 'scope' => 'ippan'],
+                ['label' => '専門課程 トップ', 'pathPrefix' => '/senmon', 'scope' => 'senmon'],
+                ['label' => '応用課程 トップ', 'pathPrefix' => '/ouyou', 'scope' => 'ouyou'],
+            ];
+
+            foreach ($conversionTargets as $target) {
+                $pathPrefix = (string) $target['pathPrefix'];
+                $scope = (string) $target['scope'];
+                $pathLike = $pathPrefix === '/' ? '/' : $pathPrefix.'%';
+
+                $sessions = (int) DB::table('page_views')
+                    ->where('viewed_at', '>=', $pageViewsSince)
+                    ->where('path', 'like', $pathLike)
+                    ->distinct('session_id')
+                    ->count('session_id');
+
+                $purchaserUsers = (int) DB::table('purchases')
+                    ->where('status', 'paid')
+                    ->whereNotNull('paid_at')
+                    ->where('paid_at', '>=', $pageViewsSince)
+                    ->whereIn('scope', $scope === 'ouyou' ? ['ouyou', 'basic'] : [$scope])
+                    ->whereExists(function ($query) use ($pathLike) {
+                        $query->selectRaw('1')
+                            ->from('page_views')
+                            ->whereColumn('page_views.user_id', 'purchases.user_id')
+                            ->where('page_views.path', 'like', $pathLike)
+                            ->whereRaw('page_views.viewed_at <= purchases.paid_at')
+                            ->whereRaw('page_views.viewed_at >= DATE_SUB(purchases.paid_at, INTERVAL 7 DAY)');
+                    })
+                    ->distinct('user_id')
+                    ->count('user_id');
+
+                $pageConversionRows->push([
+                    'label' => (string) $target['label'],
+                    'pathPrefix' => $pathPrefix,
+                    'scope' => $scope,
+                    'sessions' => $sessions,
+                    'purchaserUsers' => $purchaserUsers,
+                    'conversionRate' => $sessions > 0 ? round(($purchaserUsers / $sessions) * 100, 2) : 0.0,
+                ]);
+            }
         }
 
         $stats['salesInsights'] = [
@@ -360,6 +408,7 @@ class AdminController extends Controller
                     'uniqueSessions' => (int) $row->unique_sessions,
                 ];
             })->values(),
+            'pageConversions' => $pageConversionRows->values(),
             'weekdaySales' => $weekdaySales,
             'hourlySales' => $hourlySales,
         ];

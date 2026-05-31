@@ -74,7 +74,6 @@
                 お探しのページは提供を終了しました。<br>
                 このURLは現在利用できません。
             </p>
-            <p class="subtle-link">必要な場合は <a href="{{ url('/') }}">トップページ</a> をご利用ください。</p>
         </section>
     </main>
 </body>

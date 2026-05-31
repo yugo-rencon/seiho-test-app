@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AdminDashboardCooldown
 {
-    private const COOLDOWN_HOURS = 6;
+    private const COOLDOWN_HOURS = 24;
 
     public function handle(Request $request, Closure $next): Response
     {

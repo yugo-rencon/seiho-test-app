@@ -303,6 +303,8 @@ class AdminController extends Controller
         $pageConversionRows = collect();
 
         if (Schema::hasTable('page_views')) {
+            $hasFullPathColumn = Schema::hasColumn('page_views', 'full_path');
+
             $topPageViews = DB::table('page_views')
                 ->where('viewed_at', '>=', $pageViewsSince)
                 ->where('path', 'not like', '/admin%')
@@ -316,39 +318,67 @@ class AdminController extends Controller
                 ->get();
 
             $conversionTargets = [
-                ['label' => 'トップ', 'pathPrefix' => '/', 'scope' => 'seiho'],
-                ['label' => '生保講座 料金', 'pathPrefix' => '/pricing', 'scope' => 'seiho'],
-                ['label' => '生保大学 トップ', 'pathPrefix' => '/daigaku', 'scope' => 'daigaku'],
-                ['label' => '生保大学 料金', 'pathPrefix' => '/daigaku/pricing', 'scope' => 'daigaku'],
-                ['label' => '一般課程 トップ', 'pathPrefix' => '/ippan', 'scope' => 'ippan'],
-                ['label' => '専門課程 トップ', 'pathPrefix' => '/senmon', 'scope' => 'senmon'],
-                ['label' => '応用課程 トップ', 'pathPrefix' => '/ouyou', 'scope' => 'ouyou'],
+                ['label' => 'トップ', 'pathPrefix' => '/', 'scope' => 'seiho', 'match' => 'path_prefix'],
+                ['label' => '生保講座 料金', 'pathPrefix' => '/pricing', 'scope' => 'seiho', 'match' => 'path_exact'],
+                ['label' => '生保大学 トップ', 'pathPrefix' => '/daigaku', 'scope' => 'daigaku', 'match' => 'path_prefix'],
+                ['label' => '生保大学 料金', 'pathPrefix' => '/daigaku/pricing', 'scope' => 'daigaku', 'match' => 'path_exact'],
+                ['label' => '一般課程 トップ', 'pathPrefix' => '/ippan', 'scope' => 'ippan', 'match' => 'path_prefix'],
+                ['label' => '一般課程 料金', 'pathPrefix' => '/pricing?scope=ippan', 'scope' => 'ippan', 'match' => 'full_path_exact'],
+                ['label' => '専門課程 トップ', 'pathPrefix' => '/senmon', 'scope' => 'senmon', 'match' => 'path_prefix'],
+                ['label' => '専門課程 料金', 'pathPrefix' => '/pricing?scope=senmon', 'scope' => 'senmon', 'match' => 'full_path_exact'],
+                ['label' => '応用課程 トップ', 'pathPrefix' => '/ouyou', 'scope' => 'ouyou', 'match' => 'path_prefix'],
+                ['label' => '応用課程 料金', 'pathPrefix' => '/pricing?scope=ouyou', 'scope' => 'ouyou', 'match' => 'full_path_exact'],
             ];
 
             foreach ($conversionTargets as $target) {
                 $pathPrefix = (string) $target['pathPrefix'];
                 $scope = (string) $target['scope'];
-                $pathLike = $pathPrefix === '/' ? '/' : $pathPrefix.'%';
+                $matchType = (string) ($target['match'] ?? 'path_prefix');
 
-                $sessions = (int) DB::table('page_views')
-                    ->where('viewed_at', '>=', $pageViewsSince)
-                    ->where('path', 'like', $pathLike)
+                $sessionsQuery = DB::table('page_views')
+                    ->where('viewed_at', '>=', $pageViewsSince);
+
+                if ($matchType === 'path_exact') {
+                    $sessionsQuery->where('path', $pathPrefix);
+                } elseif ($matchType === 'full_path_exact' && $hasFullPathColumn) {
+                    $sessionsQuery->where('full_path', $pathPrefix);
+                } else {
+                    $pathLike = $pathPrefix === '/' ? '/' : $pathPrefix.'%';
+                    $sessionsQuery->where('path', 'like', $pathLike);
+                }
+
+                $sessions = (int) $sessionsQuery
                     ->distinct('session_id')
                     ->count('session_id');
 
-                $purchaserUsers = (int) DB::table('purchases')
+                $purchasersQuery = DB::table('purchases')
                     ->where('status', 'paid')
                     ->whereNotNull('paid_at')
                     ->where('paid_at', '>=', $pageViewsSince)
-                    ->whereIn('scope', $scope === 'ouyou' ? ['ouyou', 'basic'] : [$scope])
-                    ->whereExists(function ($query) use ($pathLike) {
-                        $query->selectRaw('1')
-                            ->from('page_views')
-                            ->whereColumn('page_views.user_id', 'purchases.user_id')
-                            ->where('page_views.path', 'like', $pathLike)
-                            ->whereRaw('page_views.viewed_at <= purchases.paid_at')
-                            ->whereRaw('page_views.viewed_at >= DATE_SUB(purchases.paid_at, INTERVAL 7 DAY)');
-                    })
+                    ->whereIn('scope', $scope === 'ouyou' ? ['ouyou', 'basic'] : [$scope]);
+
+                $purchasersQuery->whereExists(function ($query) use ($matchType, $pathPrefix, $hasFullPathColumn) {
+                    $query->selectRaw('1')
+                        ->from('page_views')
+                        ->whereColumn('page_views.user_id', 'purchases.user_id')
+                        ->whereRaw('page_views.viewed_at <= purchases.paid_at')
+                        ->whereRaw('page_views.viewed_at >= DATE_SUB(purchases.paid_at, INTERVAL 7 DAY)');
+
+                    if ($matchType === 'path_exact') {
+                        $query->where('page_views.path', $pathPrefix);
+                        return;
+                    }
+
+                    if ($matchType === 'full_path_exact' && $hasFullPathColumn) {
+                        $query->where('page_views.full_path', $pathPrefix);
+                        return;
+                    }
+
+                    $pathLike = $pathPrefix === '/' ? '/' : $pathPrefix.'%';
+                    $query->where('page_views.path', 'like', $pathLike);
+                });
+
+                $purchaserUsers = (int) $purchasersQuery
                     ->distinct('user_id')
                     ->count('user_id');
 

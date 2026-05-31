@@ -19,6 +19,7 @@ class TrackPageView
         }
 
         static $pageViewsTableExists = null;
+        static $hasFullPathColumn = null;
 
         if ($pageViewsTableExists === null) {
             try {
@@ -32,8 +33,16 @@ class TrackPageView
             return $response;
         }
 
+        if ($hasFullPathColumn === null) {
+            try {
+                $hasFullPathColumn = Schema::hasColumn('page_views', 'full_path');
+            } catch (\Throwable $e) {
+                $hasFullPathColumn = false;
+            }
+        }
+
         try {
-            DB::table('page_views')->insert([
+            $insert = [
                 'user_id' => $request->user()?->id,
                 'session_id' => $request->hasSession() ? (string) $request->session()->getId() : null,
                 'path' => '/'.ltrim($request->path(), '/'),
@@ -41,7 +50,13 @@ class TrackPageView
                 'viewed_at' => now(),
                 'created_at' => now(),
                 'updated_at' => now(),
-            ]);
+            ];
+
+            if ($hasFullPathColumn) {
+                $insert['full_path'] = mb_substr((string) $request->getRequestUri(), 0, 512);
+            }
+
+            DB::table('page_views')->insert($insert);
         } catch (\Throwable $e) {
             // Ignore tracking failures to keep page delivery stable.
         }
@@ -81,6 +96,22 @@ class TrackPageView
     private function detectScope(Request $request): string
     {
         $path = '/'.ltrim($request->path(), '/');
+        $scope = (string) $request->query('scope', '');
+
+        if ($path === '/pricing' && in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou'], true)) {
+            return $scope;
+        }
+
+        if ($path === '/pricing') {
+            $returnTo = (string) $request->query('return_to', '');
+            return match (true) {
+                str_starts_with($returnTo, '/daigaku') => 'daigaku',
+                str_starts_with($returnTo, '/ippan') => 'ippan',
+                str_starts_with($returnTo, '/senmon') => 'senmon',
+                str_starts_with($returnTo, '/ouyou') => 'ouyou',
+                default => 'seiho',
+            };
+        }
 
         return match (true) {
             str_starts_with($path, '/daigaku') => 'daigaku',

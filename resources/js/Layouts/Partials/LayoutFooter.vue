@@ -160,15 +160,6 @@ const tokushoRouteName = computed(() => {
                                     料金
                                 </Link>
                             </li>
-                        <li>
-                            <Link
-                                v-if="!isDaigaku && !isSenmon && !isOuyou && !isIppan"
-                                :href="route('updateInfo')"
-                                class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
-                            >
-                                更新履歴
-                            </Link>
-                            </li>
                         </ul>
                     </div>
 
@@ -382,24 +373,6 @@ const tokushoRouteName = computed(() => {
                                 "
                             >
                                 料金
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                v-if="!isDaigaku && !isSenmon && !isOuyou && !isIppan"
-                                :href="route('updateInfo')"
-                                class="text-gray-600 transition-colors duration-200"
-                                :class="
-                                    isSenmon
-                                        ? 'hover:text-emerald-600'
-                                        : isOuyou
-                                          ? 'hover:text-amber-600'
-                                          : isIppan
-                                            ? 'hover:text-fuchsia-600'
-                                          : 'hover:text-indigo-600'
-                                "
-                            >
-                                更新履歴
                             </Link>
                         </li>
                     </ul>

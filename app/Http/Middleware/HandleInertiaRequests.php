@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Support\PremiumSessionLimiter;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -34,6 +35,7 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        $premiumSessionLimiter = app(PremiumSessionLimiter::class);
         $scope = match (true) {
             str_starts_with((string) $request->path(), 'daigaku') => 'daigaku',
             str_starts_with((string) $request->path(), 'ippan') => 'ippan',
@@ -41,17 +43,23 @@ class HandleInertiaRequests extends Middleware
             str_starts_with((string) $request->path(), 'ouyou') => 'ouyou',
             default => 'seiho',
         };
+        $hasPremiumAccess = fn (string $targetScope): bool => (
+            $request->user()?->hasPremiumAccess($targetScope) ?? false
+        ) && $premiumSessionLimiter->allows($request);
 
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user(),
-                'hasPremium' => fn () => $request->user()?->hasPremiumAccess($scope) ?? false,
-                'hasPremiumSeiho' => fn () => $request->user()?->hasPremiumAccess('seiho') ?? false,
-                'hasPremiumDaigaku' => fn () => $request->user()?->hasPremiumAccess('daigaku') ?? false,
-                'hasPremiumIppan' => fn () => $request->user()?->hasPremiumAccess('ippan') ?? false,
-                'hasPremiumSenmon' => fn () => $request->user()?->hasPremiumAccess('senmon') ?? false,
-                'hasPremiumOuyou' => fn () => $request->user()?->hasPremiumAccess('ouyou') ?? false,
-                'hasPremiumBasic' => fn () => $request->user()?->hasPremiumAccess('basic') ?? false,
+                'hasPremium' => fn () => $hasPremiumAccess($scope),
+                'hasPremiumSeiho' => fn () => $hasPremiumAccess('seiho'),
+                'hasPremiumDaigaku' => fn () => $hasPremiumAccess('daigaku'),
+                'hasPremiumIppan' => fn () => $hasPremiumAccess('ippan'),
+                'hasPremiumSenmon' => fn () => $hasPremiumAccess('senmon'),
+                'hasPremiumOuyou' => fn () => $hasPremiumAccess('ouyou'),
+                'hasPremiumBasic' => fn () => $hasPremiumAccess('basic'),
+                'premiumSessionLimitExceeded' => fn () => (
+                    $request->user()?->hasAnyPremiumAccess() ?? false
+                ) && !$premiumSessionLimiter->allows($request),
                 'isAdmin' => fn () => $request->user()?->is_admin ?? false,
             ],
             'ziggy' => function () use ($request) {

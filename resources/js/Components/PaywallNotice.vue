@@ -21,6 +21,7 @@ const pricingHref = computed(() => {
         ...(scope.value !== "seiho" ? { scope: scope.value } : {}),
     });
 });
+const sessionLimitExceeded = computed(() => page.props?.auth?.premiumSessionLimitExceeded === true);
 const priceNumberText = computed(() =>
     ["ippan", "senmon", "ouyou"].includes(scope.value)
         ? "480"
@@ -35,6 +36,13 @@ const unlockedCountText = computed(() => {
     return "全144解説";
 });
 const paywallText = computed(() => {
+    if (sessionLimitExceeded.value) {
+        return {
+            lead: "プレミアムの同時利用は2端末までです。別の端末でログアウトしてから、このページを再読み込みしてください。",
+            cta: "",
+        };
+    }
+
     if (scope.value === "daigaku") {
         return {
             lead: "一度の購入で、生保大学の全科目・全年度の解説が見放題",
@@ -143,18 +151,18 @@ export default {
                 <p class="text-base font-semibold tracking-tight sm:text-lg" :class="tone.title">ここから先は</p>
                 <span class="h-px flex-1 border-t border-dashed" :class="tone.dash"></span>
             </div>
-            <p class="mt-2 text-xs" :class="tone.priceSub">買い切り</p>
-            <p class="mt-1 text-2xl font-semibold leading-none sm:text-3xl" :class="tone.title">
+            <p v-if="!sessionLimitExceeded" class="mt-2 text-xs" :class="tone.priceSub">買い切り</p>
+            <p v-if="!sessionLimitExceeded" class="mt-1 text-2xl font-semibold leading-none sm:text-3xl" :class="tone.title">
                 ￥{{ priceNumberText }}
             </p>
             <p class="mt-2 text-xs" :class="tone.text">
                 {{ paywallText.lead }}
             </p>
-            <p class="mt-0.5 text-xs" :class="tone.priceSub">
+            <p v-if="!sessionLimitExceeded" class="mt-0.5 text-xs" :class="tone.priceSub">
                 <span class="font-semibold" :class="tone.countAccent">{{ unlockedCountText }}</span
                 >が閲覧可能（今後の追加コンテンツを含む）
             </p>
-            <div class="mt-3 mb-1 flex justify-center">
+            <div v-if="!sessionLimitExceeded" class="mt-3 mb-1 flex justify-center">
                 <Link
                     :href="pricingHref"
                     class="inline-flex min-w-[220px] items-center justify-center rounded-xl px-7 py-3 text-base font-semibold text-white transition"

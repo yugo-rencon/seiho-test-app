@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\UserExamResult;
+use App\Support\PremiumSessionLimiter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
@@ -549,6 +550,7 @@ class TestController extends Controller
     public function mypage(Request $request){
         /** @var User $user */
         $user = auth()->user();
+        $premiumSessionAllowed = app(PremiumSessionLimiter::class)->allows($request);
         $scope = match (true) {
             $request->routeIs('daigaku.*') => 'daigaku',
             $request->routeIs('ippan.*') => 'ippan',
@@ -583,13 +585,14 @@ class TestController extends Controller
             'passScore' => $scope === 'daigaku' ? 60 : $user->pass_score,
             'subjects' => $subjects,
             'results' => $results,
-            'hasPremium' => $user->hasPremiumAccess($scope),
-            'hasPremiumSeiho' => $user->hasPremiumAccess('seiho'),
-            'hasPremiumDaigaku' => $user->hasPremiumAccess('daigaku'),
-            'hasPremiumIppan' => $user->hasPremiumAccess('ippan'),
-            'hasPremiumSenmon' => $user->hasPremiumAccess('senmon'),
-            'hasPremiumOuyou' => $user->hasPremiumAccess('ouyou'),
-            'hasPremiumBasic' => $user->hasPremiumAccess('basic'),
+            'hasPremium' => $premiumSessionAllowed && $user->hasPremiumAccess($scope),
+            'hasPremiumSeiho' => $premiumSessionAllowed && $user->hasPremiumAccess('seiho'),
+            'hasPremiumDaigaku' => $premiumSessionAllowed && $user->hasPremiumAccess('daigaku'),
+            'hasPremiumIppan' => $premiumSessionAllowed && $user->hasPremiumAccess('ippan'),
+            'hasPremiumSenmon' => $premiumSessionAllowed && $user->hasPremiumAccess('senmon'),
+            'hasPremiumOuyou' => $premiumSessionAllowed && $user->hasPremiumAccess('ouyou'),
+            'hasPremiumBasic' => $premiumSessionAllowed && $user->hasPremiumAccess('basic'),
+            'premiumSessionLimitExceeded' => $user->hasAnyPremiumAccess() && !$premiumSessionAllowed,
             'hasPurchasedIppan' => $hasPurchasedIppan,
             'hasPurchasedSenmon' => $hasPurchasedSenmon,
             'hasPurchasedOuyou' => $hasPurchasedOuyou,

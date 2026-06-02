@@ -3,7 +3,7 @@
     <url>
         <loc>https://seiho-test.com/</loc>
             <changefreq>daily</changefreq>
-        <priority>0.8</priority>
+        <priority>1.0</priority>
             </url>
     <url>
         <loc>https://seiho-test.com/about</loc>
@@ -27,16 +27,6 @@
             </url>
     <url>
         <loc>https://seiho-test.com/tokusho</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/study-method</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/updateInfo</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
@@ -1396,6 +1386,96 @@
         <priority>0.8</priority>
             </url>
     <url>
+        <loc>https://seiho-test.com/senmon/2022-h1-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2022-h1-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2022-h2-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2022-h2-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2022-h2-c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2022-h2-d</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2021-h1-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2021-h1-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2021-h2-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2021-h2-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2021-h2-c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2021-h2-d</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2020-h1-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2020-h1-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2020-h2-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2020-h2-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2020-h2-c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/senmon/2020-h2-d</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
         <loc>https://seiho-test.com/ouyou/2025-h1-a</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
@@ -1486,6 +1566,96 @@
         <priority>0.8</priority>
             </url>
     <url>
+        <loc>https://seiho-test.com/ouyou/2022-h1-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2022-h1-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2022-h2-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2022-h2-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2022-h2-c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2022-h2-d</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2021-h1-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2021-h1-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2021-h2-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2021-h2-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2021-h2-c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2021-h2-d</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2020-h1-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2020-h1-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2020-h2-a</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2020-h2-b</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2020-h2-c</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>https://seiho-test.com/ouyou/2020-h2-d</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
         <loc>https://seiho-test.com/ippan/2025-1-6-a</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
@@ -1532,106 +1702,6 @@
             </url>
     <url>
         <loc>https://seiho-test.com/ippan/2025-7-12-e</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-1-6-a</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-1-6-b</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-1-6-c</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-1-6-d</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-1-6-e</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-7-12-a</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-7-12-b</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-7-12-c</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-7-12-d</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2024-7-12-e</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-1-6-a</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-1-6-b</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-1-6-c</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-1-6-d</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-1-6-e</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-7-12-a</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-7-12-b</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-7-12-c</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-7-12-d</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>https://seiho-test.com/ippan/2023-7-12-e</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>

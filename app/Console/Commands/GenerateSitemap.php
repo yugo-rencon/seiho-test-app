@@ -17,15 +17,18 @@ class GenerateSitemap extends Command
 
         $sitemap = Sitemap::create();
 
+        $sitemap->add(
+            Url::create("{$baseUrl}/")
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                ->setPriority(1.0)
+        );
+
         $staticPaths = [
-            '/',
             '/about',
             '/pricing',
             '/policy',
             '/terms',
             '/tokusho',
-            '/study-method',
-            '/updateInfo',
             '/contact',
             '/daigaku',
             '/daigaku/pricing',

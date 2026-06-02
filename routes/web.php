@@ -10,7 +10,7 @@ use App\Http\Controllers\TestController;
 
 Route::get('/', [TestController::class, 'index'])->name('tests.index');
 Route::get('tests', function () {
-    abort(410);
+    return response()->view('errors.410', [], 410);
 });
 Route::get('daigaku', [TestController::class, 'daigakuIndex'])->name('daigaku.index');
 Route::get('senmon', [TestController::class, 'senmonIndex'])->name('senmon.index');
@@ -172,12 +172,8 @@ Route::controller(TestController::class)->group(function () {
     Route::get('policy', 'policy')->name('policy');
     Route::get('terms', 'terms')->name('terms');
     Route::get('tokusho', 'tokusho')->name('tokusho');
-    Route::get('updateInfo', function () {
-        abort(404);
-    })->name('updateInfo');
-    Route::get('study-method', function () {
-        abort(404);
-    })->name('study-method');
+    Route::redirect('updateInfo', '/', 301)->name('updateInfo');
+    Route::redirect('study-method', '/', 301)->name('study-method');
 });
 
 Route::middleware('auth')->group(function () {
@@ -206,7 +202,7 @@ Route::controller(ContactController::class)->group(function () {
     Route::post('ippan/contact', 'store')->middleware('throttle:10,1')->name('ippan.contact.store');
 });
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+Route::middleware(['auth', 'admin', 'admin.cooldown'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::post('admins/{userId}/purchase-scopes', [AdminController::class, 'updateAdminPurchaseScopes'])->name('admin.admins.purchaseScopes.update');
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('admin.contacts.index');
@@ -215,7 +211,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::post('releases/bulk', [AdminController::class, 'bulkUpdateReleases'])->name('admin.releases.bulkUpdate');
 });
 
-Route::middleware(['auth', 'admin'])->prefix('daigaku/admin')->group(function () {
+Route::middleware(['auth', 'admin', 'admin.cooldown'])->prefix('daigaku/admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('daigaku.admin.index');
     Route::post('admins/{userId}/purchase-scopes', [AdminController::class, 'updateAdminPurchaseScopes'])->name('daigaku.admin.admins.purchaseScopes.update');
     Route::get('contacts', [ContactAdminController::class, 'index'])->name('daigaku.admin.contacts.index');

@@ -68,6 +68,5 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'premium' => \App\Http\Middleware\EnsurePremiumAccess::class,
         'admin' => \App\Http\Middleware\EnsureAdmin::class,
-        'admin.cooldown' => \App\Http\Middleware\AdminDashboardCooldown::class,
     ];
 }

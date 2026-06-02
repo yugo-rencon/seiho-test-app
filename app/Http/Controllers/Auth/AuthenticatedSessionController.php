@@ -36,6 +36,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if (!app(PremiumSessionLimiter::class)->allows($request)) {
+            Auth::guard('web')->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            return back()
+                ->withErrors(['email' => 'プレミアムの同時利用は2端末までです。別の端末でログアウトしてから、もう一度ログインしてください。'])
+                ->onlyInput('email');
+        }
+
         $returnTo = $this->sanitizeReturnTo($request->input('return_to'));
         if ($returnTo) {
             return redirect($returnTo)->with('status', 'ログインしました。');

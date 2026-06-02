@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use App\Support\PremiumSessionLimiter;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,7 @@ class GoogleAuthController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
-    public function callback(): RedirectResponse
+    public function callback(Request $request): RedirectResponse
     {
         $scope = $this->sanitizeScope(session('auth_scope'));
         $returnTo = $this->sanitizeReturnTo(session('auth_return_to'));
@@ -77,7 +78,16 @@ class GoogleAuthController extends Controller
         }
 
         Auth::login($user, true);
-        request()->session()->regenerate();
+        $request->session()->regenerate();
+
+        if (!app(PremiumSessionLimiter::class)->allows($request)) {
+            Auth::guard('web')->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            return redirect()->route('login', $this->buildLoginQuery($scope, $returnTo))
+                ->with('status', 'プレミアムの同時利用は2端末までです。別の端末でログアウトしてから、もう一度ログインしてください。');
+        }
 
         if ($returnTo) {
             return redirect($returnTo)->with('status', 'ログインしました。');

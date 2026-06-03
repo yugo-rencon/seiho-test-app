@@ -20,32 +20,320 @@ const isDraft = true;
             <DraftNotice v-if="isDraft" />
 
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
-                <QuestionTemp1 :questionNumber="1" :title="title" :subject="subject" questionTitle="生命保険を取り巻く生活環境の変化" :relatedProblems="[]" :contents="['', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="2" :title="title" :subject="subject" questionTitle="個人を対象とした主な保険種類" :relatedProblems="[]" :contents="['', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="3" :title="title" :subject="subject" questionTitle="保険料の払い込みと契約の失効・復活" :relatedProblems="[]" :contents="['', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="4" :title="title" :subject="subject" questionTitle="死亡保険金を支払わない場合" :relatedProblems="[]" :contents="['', '正しい', '', '']" />
-                <QuestionTemp1 :questionNumber="5" :title="title" :subject="subject" questionTitle="法令上の禁止行為" :relatedProblems="[]" :contents="['', '正しい', '', '']" />
-                <QuestionTemp1 :questionNumber="6" :title="title" :subject="subject" questionTitle="保険業法" :relatedProblems="[]" :contents="['', '', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="7" :title="title" :subject="subject" questionTitle="解約手続きの留意点" :relatedProblems="[]" :contents="['', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="8" :title="title" :subject="subject" questionTitle="社会保障制度" :relatedProblems="[]" :contents="['正しい', '', '', '']" />
-                <QuestionTemp1 :questionNumber="9" :title="title" :subject="subject" questionTitle="証券業界とその主な商品" :relatedProblems="[]" :contents="['', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="10" :title="title" :subject="subject" questionTitle="経営者保険、医療保障保険（団体型）" :relatedProblems="[]" :contents="['正しい', '', '', '']" />
-                <QuestionTemp1 :questionNumber="11" :title="title" :subject="subject" questionTitle="確定拠出年金" :relatedProblems="[]" :contents="['', '', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="12" :title="title" :subject="subject" questionTitle="お客さまニーズへの対応" :relatedProblems="[]" :contents="['正しい', '', '', '']" />
-
-                <QuestionTemp1 :questionNumber="13" :title="title" :subject="subject" questionTitle="保険料の仕組み" :relatedProblems="[]" :contents="['正しい', '正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="14" :title="title" :subject="subject" questionTitle="適切な保険金・給付金等の支払いと留意点" :relatedProblems="[]" :contents="['正しい', '正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="15" :title="title" :subject="subject" questionTitle="保障の見直しに関する諸制度" :relatedProblems="[]" :contents="['正しい', '', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="16" :title="title" :subject="subject" questionTitle="金融サービスの提供に関する法律（金融サービス提供法）" :relatedProblems="[]" :contents="['正しい', '', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="17" :title="title" :subject="subject" questionTitle="労働者共済、各都道府県民共済" :relatedProblems="[]" :contents="['', '正しい', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="18" :title="title" :subject="subject" questionTitle="募集時の情報提供と正しい説明" :relatedProblems="[]" :contents="['正しい', '正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="19" :title="title" :subject="subject" questionTitle="総合福祉団体定期保険" :relatedProblems="[]" :contents="['正しい', '', '正しい', '正しい']" />
-                <QuestionTemp1 :questionNumber="20" :title="title" :subject="subject" questionTitle="銀行預金" :relatedProblems="[]" :contents="['正しい', '正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="21" :title="title" :subject="subject" questionTitle="相続税" :relatedProblems="[]" :contents="['正しい', '正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="22" :title="title" :subject="subject" questionTitle="介護保険制度" :relatedProblems="[]" :contents="['正しい', '正しい', '', '正しい']" />
-                <QuestionTemp1 :questionNumber="23" :title="title" :subject="subject" questionTitle="信託銀行の業務・商品" :relatedProblems="[]" :contents="['正しい', '正しい', '正しい', '']" />
-                <QuestionTemp1 :questionNumber="24" :title="title" :subject="subject" questionTitle="特約の種類" :relatedProblems="[]" :contents="['正しい', '正しい', '正しい', '']" />
-
+                <QuestionTemp1
+                    :questionNumber="1"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="生命保険を取り巻く生活環境の変化"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="2"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="個人を対象とした主な保険種類"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="3"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険料の払い込みと契約の失効・復活"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="4"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="死亡保険金を支払わない場合"
+                    :relatedProblems="[]"
+                    :contents="[
+                        // rev: 2026-06-04 確認済み
+                        '被保険者が[[契約日または復活日から所定期間以内]]に自殺したとき、「死亡保険金」は支払われない。', //p54
+                        '正しい',
+                        '契約者が過失によって被保険者を死亡させたとき、「死亡保険金」を[[支払う場合もある]]。', //p55の（注）
+                        '保険の計算基礎に及ぼす影響が少ないと生命保険会社が認めた場合には、[[保険金を全額または削減して支払うことがある]]。', //p54
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="5"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="法令上の禁止行為"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="6"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険業法"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="7"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="解約手続きの留意点"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="8"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="社会保障制度"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="9"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="証券業界とその主な商品"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="10"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="経営者保険、医療保障保険（団体型）"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="11"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="確定拠出年金"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="12"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="お客さまニーズへの対応"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '', //p
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="13"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保険料の仕組み"
+                    :relatedProblems="[]"
+                    :contents="[
+                        // rev: 2026-06-03 確認済み
+                        '正しい',
+                        '正しい',
+                        '純保険料は､死亡保険金を支払うための財源となる死亡保険料と､[[満期保険金]]を支払うための財源となる[[生存保険料]]の2つの部分から構成されています｡', //p41
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="14"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="適切な保険金・給付金等の支払いと留意点"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="15"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="保障の見直しに関する諸制度"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="16"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="金融サービスの提供に関する法律（金融サービス提供法）"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="17"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="労働者共済、各都道府県民共済"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="18"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="募集時の情報提供と正しい説明"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="19"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="総合福祉団体定期保険"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="20"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="銀行預金"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="21"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="相続税"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="22"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="介護保険制度"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="23"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="信託銀行の業務・商品"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="24"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="特約の種類"
+                    :relatedProblems="[]"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
                 <QuestionTemp3
                     :questionNumber="5"
                     :title="title"
@@ -53,8 +341,20 @@ const isDraft = true;
                     questionRange="25〜29"
                     questionTitle="保険料の払い込みが困難になった場合"
                     :relatedProblems="[]"
-                    :contents="['保険期間', '養老保険', 'なくなります', '保険金額', '生命保険会社']"
-                    :labels="['キ', 'エ', 'イ', 'カ', 'コ']"
+                    :contents="[
+                        '保険期間',
+                        '養老保険',
+                        'なくなります',
+                        '保険金額',
+                        '生命保険会社', // 問25〜29
+                    ]"
+                    :labels="[
+                        'キ', //25
+                        'エ', //26
+                        'イ', //27
+                        'カ', //28
+                        'コ', //29
+                    ]"
                 />
                 <QuestionTemp3
                     :questionNumber="6"
@@ -63,8 +363,20 @@ const isDraft = true;
                     questionRange="30〜34"
                     questionTitle="債券（公社債など）"
                     :relatedProblems="[]"
-                    :contents="['安全性', '割引債', '個人向け', '固定金利', '2年満期']"
-                    :labels="['ア', 'ケ', 'カ', 'ク', 'ウ']"
+                    :contents="[
+                        '安全性',
+                        '割引債',
+                        '個人向け',
+                        '固定金利',
+                        '2年満期', // 問30〜34
+                    ]"
+                    :labels="[
+                        'ア', //30
+                        'ケ', //31
+                        'カ', //32
+                        'ク', //33
+                        'ウ', //34
+                    ]"
                 />
                 <QuestionTemp3
                     :questionNumber="7"
@@ -73,24 +385,77 @@ const isDraft = true;
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
                     :relatedProblems="[]"
-                    :contents="['5712', '8880', '8064', '3120', '11184']"
-                    :labels="['ウ', 'キ', 'カ', 'ア', 'コ']"
+                    :contents="[
+                        '5712',
+                        '8880',
+                        '8064',
+                        '3120',
+                        '11184', // 問35〜39
+                    ]"
+                    :labels="[
+                        'ウ', //35
+                        'キ', //36
+                        'カ', //37
+                        'ア', //38
+                        'コ', //39
+                    ]"
                 />
                 <QuestionTemp2
                     :questionNumber="40"
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '生命保険の現状', relatedProblems: [], content: '正しい' },
-                        { questionTitle: '解約', relatedProblems: [], content: '正しい' },
-                        { questionTitle: '個人情報保護法', relatedProblems: [], content: '正しい' },
-                        { questionTitle: '金融商品取引法', relatedProblems: [], content: '正しい' },
-                        { questionTitle: '銀行窓販', relatedProblems: [], content: '正しい' },
-                        { questionTitle: '消費者契約法', relatedProblems: [], content: '正しい' },
-                        { questionTitle: '生命保険料控除の対象', relatedProblems: [], content: '正しい' },
-                        { questionTitle: '固定金利と変動金利', relatedProblems: [], content: '正しい' },
-                        { questionTitle: '死亡保険金の非課税限度額', relatedProblems: [], content: '' },
-                        { questionTitle: '寄与分制度', relatedProblems: [], content: '正しい' },
+                        {
+                            // rev: 2026-06-03 確認済み
+                            questionTitle: '生命保険の現状',
+                            relatedProblems: [],
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '解約',
+                            relatedProblems: [],
+                            content: '正しい',
+                        }, //41
+                        {
+                            questionTitle: '個人情報保護法',
+                            relatedProblems: [],
+                            content: '正しい',
+                        }, //42
+                        {
+                            questionTitle: '金融商品取引法',
+                            relatedProblems: [],
+                            content: '正しい',
+                        }, //43
+                        {
+                            questionTitle: '銀行窓販',
+                            relatedProblems: [],
+                            content: '正しい',
+                        }, //44
+                        {
+                            questionTitle: '消費者契約法',
+                            relatedProblems: [],
+                            content: '正しい',
+                        }, //45
+                        {
+                            questionTitle: '生命保険料控除の対象',
+                            relatedProblems: [],
+                            content: '正しい',
+                        }, //46
+                        {
+                            questionTitle: '固定金利と変動金利',
+                            relatedProblems: [],
+                            content: '正しい',
+                        }, //47
+                        {
+                            questionTitle: '死亡保険金の非課税限度額',
+                            relatedProblems: [],
+                            content: '', //p
+                        }, //48
+                        {
+                            questionTitle: '寄与分制度',
+                            relatedProblems: [],
+                            content: '正しい',
+                        }, //49
                     ]"
                 />
             </div>

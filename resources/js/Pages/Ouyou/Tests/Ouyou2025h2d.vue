@@ -9,7 +9,7 @@ import DraftNotice from "@/Components/DraftNotice.vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険応用課程試験";
-const subject = "2025年度 8月〜3月実施 フォームD";
+const subject = "2025年 8月〜3月実施 フォームD";
 const isDraft = false;
 </script>
 

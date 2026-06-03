@@ -79,7 +79,7 @@ const getFormLabel = (year, periodId, form) => {
                             生命保険専門課程の過去問解説ページです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-emerald-700/90">
-                            最新年度・前期フォームAからお試しください。
+                            2025年の試験はすべて無料でお試しいただけます。
                             <Link
                                 :href="pricingHref"
                                 class="ml-1 hidden font-semibold text-emerald-700 underline decoration-emerald-300 underline-offset-2 transition hover:text-emerald-800 md:inline"
@@ -131,8 +131,14 @@ const getFormLabel = (year, periodId, form) => {
                         <div v-for="year in SENMON_VISIBLE_YEARS" :key="year" class="p-4 md:p-6">
                             <div class="flex items-center gap-2">
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
-                                    {{ year }}年度
+                                    {{ Number(year) === 2025 ? `${year}年` : `${year}年度` }}
                                 </div>
+                                <span
+                                    v-if="Number(year) === 2025 && !hasPremium"
+                                    class="inline-flex items-center rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700"
+                                >
+                                    2025年 全フォーム無料
+                                </span>
                                 <span class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600">
                                     準備中
                                 </span>

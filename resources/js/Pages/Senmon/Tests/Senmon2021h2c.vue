@@ -454,6 +454,7 @@ const isDraft = true;
                             content: '', //p
                         }, //47
                         {
+                            // rev: 2026-06-05 確認済み
                             questionTitle: '投資信託',
                             relatedProblems: [],
                             content: '正しい',

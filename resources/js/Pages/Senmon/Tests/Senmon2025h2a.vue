@@ -318,10 +318,11 @@ const isDraft = true;
                     questionTitle="投資信託"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '「MRF（マネー・リザーブ・ファンド）」はこの[[公社債投資信託]]の一種。', //p113
                     ]"
                 />
                 <QuestionTemp1

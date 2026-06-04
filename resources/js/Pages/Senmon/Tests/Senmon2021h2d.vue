@@ -294,10 +294,11 @@ const isDraft = true;
                     questionTitle="投資信託"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '正しい',
-                        '', //p
                         '正しい',
                         '正しい',
+                        '「MRF（マネー・リザーブ・ファンド）」はこの[[公社債投資信託]]の一種。', //p113
                     ]"
                 />
                 <QuestionTemp1
@@ -334,10 +335,10 @@ const isDraft = true;
                     questionTitle="生命保険料控除を受けるための手続き"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3
@@ -454,6 +455,7 @@ const isDraft = true;
                             content: '', //p
                         }, //47
                         {
+                            // rev: 2026-06-05 確認済み
                             questionTitle: '投資信託',
                             relatedProblems: [],
                             content: '正しい',

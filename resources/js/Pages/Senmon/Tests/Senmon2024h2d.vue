@@ -271,10 +271,11 @@ const isDraft = true;
                     questionTitle="損害保険業界とその主な商品"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '死亡保険金の支払事由や、後遺障害保険金の支払割合、入院保険金の免責期間など[[異なっている点もある]]。', //p106
                     ]"
                 />
                 <QuestionTemp1

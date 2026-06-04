@@ -347,6 +347,7 @@ const isDraft = true;
                     questionTitle="少額短期保険"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '1年以内',
                         '1000万円',
                         'セーフティネット',

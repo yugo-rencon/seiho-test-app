@@ -267,10 +267,11 @@ const isDraft = true;
                     questionTitle="少額短期保険"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険法 → 保険業法', //p104
                     ]"
                 />
                 <QuestionTemp1

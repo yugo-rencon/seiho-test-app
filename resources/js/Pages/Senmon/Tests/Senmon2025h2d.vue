@@ -436,6 +436,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-04 確認済み
                             questionTitle: 'JA共済',
                             relatedProblems: [],
                             content: '正しい',

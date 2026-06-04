@@ -243,9 +243,10 @@ const isDraft = true;
                     questionTitle="JA共済"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '団体向けに[[団体定期生命共済などもある]]。', //p101
                         '正しい',
                     ]"
                 />

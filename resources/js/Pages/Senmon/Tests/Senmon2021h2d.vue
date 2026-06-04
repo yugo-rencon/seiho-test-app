@@ -280,9 +280,10 @@ const isDraft = true;
                     questionTitle="JA共済"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '2,000万円 → 3,000万円', //不明
                         '正しい',
                     ]"
                 />

@@ -281,10 +281,11 @@ const isDraft = true;
                     questionTitle="銀行預金"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '長期間 → 短期間', //p108
                     ]"
                 />
                 <QuestionTemp1

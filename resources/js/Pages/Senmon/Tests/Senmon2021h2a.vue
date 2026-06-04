@@ -29,7 +29,7 @@ const isDraft = true;
                     :contents="[
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -41,7 +41,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -54,7 +54,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -66,10 +66,10 @@ const isDraft = true;
                     questionTitle="契約者貸付"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '3回 → 2回', //p61
+                        '契約者に対する貸付も生命保険会社が行う[[資産運用の一部である]]。', //p61
+                        '契約者貸付を受けた契約でも受けていない契約と[[同様の配当金が支払われる]]。', //p61
                     ]"
                 />
                 <QuestionTemp1
@@ -79,10 +79,11 @@ const isDraft = true;
                     questionTitle="契約の選択"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '正しい', //p
+                        // rev: 2026-06-04 確認済み
+                        '契約の失効や解約は、一般に危険度の[[低い]]契約に多いと考えらる。', //p67
+                        '契約の選択とは、[[生命保険会社が契約希望者を選別]]し、契約の諾否、保険料率、保険金額、保険種類などの契約条件を決めること。', //p67
+                        '契約の選択に必要な情報について、[[ありのままを生命保険会社へ報告しなければならない]]。', //p68
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -92,10 +93,11 @@ const isDraft = true;
                     questionTitle="保険業法"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '正しい', //p
+                        // rev: 2026-06-04 確認済み
+                        '厚生労働大臣 → 内閣総理大臣', //p72
+                        '保険契約締結に関して「媒介」をするのか、「代理」をするのかを[[明示しなければならない]]。', //p73
+                        'お客さまから「契約概要」および「注意喚起情報」を記載した書面の記載事項を了知した旨の[[確認をいただく必要がある]]。', //p73
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -106,7 +108,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -121,7 +123,7 @@ const isDraft = true;
                         '', //p
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -133,7 +135,7 @@ const isDraft = true;
                     :contents="[
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -144,7 +146,7 @@ const isDraft = true;
                     questionTitle="経営者保険、医療保障保険（団体型）"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -158,7 +160,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -171,7 +173,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -184,9 +186,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -196,10 +198,10 @@ const isDraft = true;
                     questionTitle="保険料の払い込み等"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -209,10 +211,11 @@ const isDraft = true;
                     questionTitle="配当金の支払方法"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        // rev: 2026-06-04 確認済み
+                        '正しい',
+                        '正しい',
+                        '保険金額 → 保険料', //p63
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -222,10 +225,10 @@ const isDraft = true;
                     questionTitle="コンプライアンスと基本的姿勢"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -235,10 +238,10 @@ const isDraft = true;
                     questionTitle="「犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）」による取引時確認"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -248,10 +251,10 @@ const isDraft = true;
                     questionTitle="法令上の禁止行為(虚偽の説明となる事例)"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -261,10 +264,11 @@ const isDraft = true;
                     questionTitle="適切な保険金・給付金等の支払い"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
+                        // rev: 2026-06-04 確認済み
+                        '正しい',
+                        '正しい',
+                        '割賦販売法 → 生命保険会社', //p95
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -274,10 +278,10 @@ const isDraft = true;
                     questionTitle="JA共済"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -287,10 +291,10 @@ const isDraft = true;
                     questionTitle="信託銀行の業務・商品"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -300,10 +304,10 @@ const isDraft = true;
                     questionTitle="介護保険制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -313,10 +317,10 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -326,10 +330,10 @@ const isDraft = true;
                     questionTitle="相続の法律"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3
@@ -403,21 +407,21 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
                             questionTitle: '保険料の払い込みが困難になった場合',
                             relatedProblems: [],
                             content: '', //p
                         }, //40
                         {
+                            // rev: 2026-06-04 確認済み
                             questionTitle: '解約',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '通常の場合、その金額は払い込んだ保険料合計額より[[少なく]]なる。', //p62
                         }, //41
                         {
                             questionTitle: '特約',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //42
                         {
                             questionTitle: '消費者契約法',
@@ -425,19 +429,21 @@ const isDraft = true;
                             content: '', //p
                         }, //43
                         {
+                            // rev: 2026-06-04 確認済み
                             questionTitle: '個人情報保護法',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //44
                         {
                             questionTitle: '生命保険募集人としての具体的対応と留意点',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-04 確認済み
                             questionTitle: '各都道府県民共済',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '掛金は、[[選択する型や特約コースの付加により異なる]]が、それぞれの商品、特約コースごとに[[年齢・性別にかかわらず一律]]となっている。', //p103
                         }, //46
                         {
                             questionTitle: '預金の種類',
@@ -447,12 +453,12 @@ const isDraft = true;
                         {
                             questionTitle: '投資信託',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //48
                         {
                             questionTitle: '複利と期間',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //49
                     ]"
                 />

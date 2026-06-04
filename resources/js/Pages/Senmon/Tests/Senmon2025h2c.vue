@@ -28,7 +28,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -40,7 +40,7 @@ const isDraft = true;
                     questionTitle="剰余金と配当金"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -54,7 +54,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -68,7 +68,7 @@ const isDraft = true;
                     :contents="[
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -79,10 +79,11 @@ const isDraft = true;
                     questionTitle="配当金の支払方法"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい', //p
-                        '', //p
+                        // rev: 2026-06-04 確認済み
+                        '初回の配当金受取時 → 契約時', //p63
+                        '現金支払方法 → 相殺方法', //p63-64
+                        '正しい',
+                        '相殺方法 → 現金支払方法', //p63-64
                     ]"
                 />
                 <QuestionTemp1
@@ -92,7 +93,7 @@ const isDraft = true;
                     questionTitle="特約"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -105,7 +106,7 @@ const isDraft = true;
                     questionTitle="法令上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -121,7 +122,7 @@ const isDraft = true;
                         '', //p
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -134,7 +135,7 @@ const isDraft = true;
                         '', //p
                         '', //p
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -144,7 +145,7 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -158,7 +159,7 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -170,7 +171,7 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -184,9 +185,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -196,10 +197,11 @@ const isDraft = true;
                     questionTitle="保障の見直しに関する諸制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        // rev: 2026-06-04 確認済み
+                        '正しい',
+                        '長期契約における特別配当の権利は、[[新しい契約にも引き継がれる]]。', //p65
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -209,10 +211,11 @@ const isDraft = true;
                     questionTitle="契約の選択"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        // rev: 2026-06-04 確認済み
+                        '正しい',
+                        '通常体契約 → 標準体契約', //p68-69
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -222,10 +225,11 @@ const isDraft = true;
                     questionTitle="契約者貸付"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        // rev: 2026-06-04 確認済み
+                        '正しい',
+                        '3回 → 2回', //p61
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -235,10 +239,10 @@ const isDraft = true;
                     questionTitle="「犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）」による取引時確認"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -248,9 +252,9 @@ const isDraft = true;
                     questionTitle="募集時の情報提供と正しい説明"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -261,10 +265,10 @@ const isDraft = true;
                     questionTitle="契約失効・復活手続きの留意点"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -275,9 +279,9 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -287,10 +291,10 @@ const isDraft = true;
                     questionTitle="信託銀行の業務・商品"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
+                        '正しい',
                         '', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -300,10 +304,10 @@ const isDraft = true;
                     questionTitle="介護保険制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -313,9 +317,9 @@ const isDraft = true;
                     questionTitle="投資信託"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -326,10 +330,10 @@ const isDraft = true;
                     questionTitle="相続の法律"
                     :relatedProblems="[]"
                     :contents="[
-                        '正しい', //p
-                        '正しい', //p
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '正しい', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3
@@ -403,21 +407,22 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
                             questionTitle: 'コンプライアンスと基本的姿勢',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-04 確認済み
                             questionTitle: '解約',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '通常の場合、その金額は払い込んだ保険料合計額より[[少なく]]なる。', //p62
                         }, //41
                         {
+                            // rev: 2026-06-04 確認済み
                             questionTitle: '保険業法',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '保険契約締結に関して「媒介」をするのか、「代理」をするのかを[[明示しなければならない]]。', //p73
                         }, //42
                         {
                             questionTitle: '契約内容登録制度',
@@ -425,19 +430,21 @@ const isDraft = true;
                             content: '', //p
                         }, //43
                         {
+                            // rev: 2026-06-04 確認済み
                             questionTitle: '個人情報保護法',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //44
                         {
                             questionTitle: 'JA共済',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-04 確認済み
                             questionTitle: '各都道府県民共済',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '掛金は、[[選択する型や特約コースの付加により異なる]]が、それぞれの商品、特約コースごとに[[年齢・性別にかかわらず一律]]となっている。', //p103
                         }, //46
                         {
                             questionTitle: '預金の種類',
@@ -447,12 +454,12 @@ const isDraft = true;
                         {
                             questionTitle: '相続税',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //48
                         {
                             questionTitle: '複利と期間',
                             relatedProblems: [],
-                            content: '正しい', //p
+                            content: '正しい',
                         }, //49
                     ]"
                 />

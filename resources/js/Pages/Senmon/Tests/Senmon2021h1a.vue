@@ -335,9 +335,10 @@ const isDraft = true;
                     questionTitle="相続税"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '相続税の特別控除 → 基礎控除', //p156
                         '正しい',
                     ]"
                 />

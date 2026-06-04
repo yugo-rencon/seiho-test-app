@@ -334,7 +334,8 @@ const isDraft = true;
                     questionTitle="相続税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-05 確認済み
+                        '12ヶ月 → 10ヶ月', //p154
                         '正しい',
                         '正しい',
                         '正しい',

@@ -378,11 +378,12 @@ const isDraft = true;
                     questionTitle="相続の法律"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        // rev: 2026-06-05 確認済み
+                        '遺贈',
+                        '遺留分',
+                        '代襲相続',
+                        '3ヶ月',
+                        '代償分割', // 問30〜34
                     ]"
                     :labels="[
                         'イ', //30
@@ -458,6 +459,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-05 確認済み
                             questionTitle: '株式',
                             relatedProblems: [],
                             content: '正しい',

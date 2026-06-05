@@ -350,6 +350,7 @@ const isDraft = true;
                     questionTitle="株式"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-05 確認済み
                         '利益配当',
                         '売却益',
                         'ハイリスク・ハイリターン',

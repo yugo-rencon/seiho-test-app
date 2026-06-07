@@ -453,9 +453,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '個人向け融資（ローン）の種類',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '一般に、有担保ローンは無担保ローンに比べ融資限度額は[[大きく]]なり、金利は[[低く]]なる。', //p108
                         }, //47
                         {
                             // rev: 2026-06-05 確認済み

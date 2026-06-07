@@ -462,9 +462,10 @@ const isDraft = true;
                             content: '金融庁 → 生命保険会社', //p96
                         }, //44
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '個人向け融資（ローン）の種類',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '目的別ローンとフリーローンを比較すると、一般に[[目的別ローン]]の方が融資限度額は大きく、金利は低くなる。', //p108
                         }, //45
                         {
                             questionTitle: '金銭信託',

@@ -299,10 +299,11 @@ const isDraft = true;
                     questionTitle="個人向け融資（ローン）の種類"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '目的別ローンとフリーローンを比較すると、一般に[[目的別ローン]]の方が融資限度額は大きく、金利は低くなる。', //p108
                     ]"
                 />
                 <QuestionTemp1

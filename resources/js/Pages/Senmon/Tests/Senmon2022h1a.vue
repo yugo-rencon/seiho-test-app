@@ -455,6 +455,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '個人向け融資（ローン）の種類',
                             relatedProblems: [],
                             content: '正しい',

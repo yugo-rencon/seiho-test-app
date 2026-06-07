@@ -369,6 +369,7 @@ const isDraft = true;
                     questionTitle="相続の法律"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '遺贈',
                         '遺留分',
                         '代襲相続',

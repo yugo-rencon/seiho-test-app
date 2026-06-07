@@ -335,9 +335,10 @@ const isDraft = true;
                     questionTitle="相続の法律"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '代理相続 → 代襲相続', //p152
                         '正しい',
                     ]"
                 />
@@ -394,11 +395,12 @@ const isDraft = true;
                     questionTitle="遺族生活資金と老後生活資金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        // rev: 2026-06-07 確認済み
+                        '3,528',
+                        '6,840',
+                        '6,048',
+                        '2,340',
+                        '8,388', // 問35〜39
                     ]"
                     :labels="[
                         'ウ', //35

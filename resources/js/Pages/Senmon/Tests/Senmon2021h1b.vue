@@ -336,9 +336,10 @@ const isDraft = true;
                     questionTitle="相続の法律"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '代理相続 → 代襲相続', //p152
                         '正しい',
                     ]"
                 />

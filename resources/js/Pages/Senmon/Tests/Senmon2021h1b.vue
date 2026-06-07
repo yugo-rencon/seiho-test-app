@@ -465,6 +465,7 @@ const isDraft = true;
                             content: '', //p
                         }, //47
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '財形制度にもとづく保険',
                             relatedProblems: [],
                             content: '正しい',

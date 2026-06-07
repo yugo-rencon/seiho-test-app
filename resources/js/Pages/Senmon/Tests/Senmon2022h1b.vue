@@ -341,8 +341,9 @@ const isDraft = true;
                     questionTitle="財形制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
-                        '', //p
+                        '435万円 → 385万円', //p134
                         '正しい',
                         '正しい',
                     ]"

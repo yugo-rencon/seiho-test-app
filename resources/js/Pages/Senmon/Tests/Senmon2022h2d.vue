@@ -353,6 +353,7 @@ const isDraft = true;
                     questionTitle="財形制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '年金',
                         '550万円',
                         '385万円',

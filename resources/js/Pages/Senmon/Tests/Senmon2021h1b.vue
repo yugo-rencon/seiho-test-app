@@ -189,10 +189,11 @@ const isDraft = true;
                     questionTitle="剰余金と配当金"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '優待配当 → 特別配当', //p44
                     ]"
                 />
                 <QuestionTemp1

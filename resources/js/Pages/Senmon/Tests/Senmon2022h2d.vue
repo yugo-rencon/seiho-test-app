@@ -200,7 +200,8 @@ const isDraft = true;
                     questionTitle="剰余金と配当金"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-07 確認済み
+                        '予定死亡率による死亡者数より、実際の死亡者数が[[少ない]]場合に生じる利益のこと。', //p43
                         '正しい',
                         '正しい',
                         '正しい',

@@ -456,6 +456,7 @@ const isDraft = true;
                             content: '目的別ローンとフリーローンを比較すると、一般に[[目的別ローン]]の方が融資限度額は大きく、金利は低くなる。', //p108
                         }, //45
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '金銭信託',
                             relatedProblems: [],
                             content: '正しい',
@@ -472,6 +473,7 @@ const isDraft = true;
                             content: '', //p
                         }, //48
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '女性市場',
                             relatedProblems: [],
                             content: '正しい',

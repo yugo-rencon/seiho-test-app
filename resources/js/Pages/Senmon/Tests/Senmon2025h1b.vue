@@ -335,7 +335,8 @@ const isDraft = true;
                     questionTitle="保険金・年金・給付金と税金（個人契約の場合）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-07 確認済み
+                        '相続人 → 相続人以外', //p143
                         '正しい',
                         '正しい',
                         '正しい',
@@ -348,9 +349,10 @@ const isDraft = true;
                     questionTitle="生命保険料控除の対象となる保険料"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '（自動）振替貸付の保険料も、正常に保険料の払い込みがされている場合と[[同様]]に、控除の対象となる。', //p138
                         '正しい',
                     ]"
                 />
@@ -435,11 +437,13 @@ const isDraft = true;
                             content: '1回 → 2回', //p61
                         }, //40
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '権限の明示',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '媒介 → 代理', //p73
                         }, //41
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
                             content: '正しい',

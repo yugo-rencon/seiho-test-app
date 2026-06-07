@@ -436,9 +436,10 @@ const isDraft = true;
                             content: '保険契約締結に関して「媒介」をするのか、「代理」をするのかを[[明示しなければならない]]。', //p73
                         }, //42
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '2年 → 1年', //p77
                         }, //43
                         {
                             // rev: 2026-06-04 確認済み

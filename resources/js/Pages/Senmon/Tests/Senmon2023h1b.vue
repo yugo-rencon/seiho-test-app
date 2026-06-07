@@ -326,10 +326,11 @@ const isDraft = true;
                     questionTitle="保険金・年金・給付金と税金（個人契約の場合）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '身体の傷害などを原因として支払いを受ける高度障害保険金（給付金）、障害給付金、入院給付金などは、[[被保険者本人が受け取る場合はもちろん、被保険者の配偶者や直系血族あるいは生計を一にするその他の親族が受け取る場合も非課税とる]]。', //p147
                     ]"
                 />
                 <QuestionTemp1
@@ -436,9 +437,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '2年 → 1年', //p77
                         }, //43
                         {
                             questionTitle: '確定拠出年金制度',

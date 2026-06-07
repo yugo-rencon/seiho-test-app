@@ -436,9 +436,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '2年 → 1年', //p77
                         }, //43
                         {
                             questionTitle: '銀行窓販',

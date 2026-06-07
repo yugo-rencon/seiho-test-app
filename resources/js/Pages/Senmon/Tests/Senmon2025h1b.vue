@@ -307,9 +307,10 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '被保険者の遺族 → 企業（団体）', //p130
                         '正しい',
                     ]"
                 />

@@ -469,6 +469,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '総合福祉団体定期保険',
                             relatedProblems: [],
                             content: '正しい',

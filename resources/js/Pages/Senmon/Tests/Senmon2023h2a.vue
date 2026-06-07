@@ -354,6 +354,7 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '告知扱',
                         '付加保険料',
                         '損金',

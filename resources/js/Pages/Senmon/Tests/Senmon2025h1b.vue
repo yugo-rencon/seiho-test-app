@@ -479,9 +479,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '雇用保険',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '[[就職促進給付]]は、失業者が再就職するのを援助・促進することを目的として支給され、「就業促進手当」等がある。', //p126
                         }, //48
                         {
                             // rev: 2026-06-07 確認済み

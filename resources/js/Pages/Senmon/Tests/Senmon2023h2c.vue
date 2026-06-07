@@ -354,6 +354,7 @@ const isDraft = true;
                     questionTitle="保険料の払い込みが困難になった場合"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '保険期間',
                         '養老保険',
                         'なくなります',

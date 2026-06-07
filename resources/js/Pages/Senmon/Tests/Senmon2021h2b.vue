@@ -423,11 +423,11 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '保険料の払い込みが困難になった場合',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '既払込保険料総額 → 解約返戻金', //p60
                         }, //40
                         {
                             questionTitle: '死亡保険金を支払わない場合',

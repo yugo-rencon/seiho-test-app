@@ -418,6 +418,7 @@ const isDraft = true;
                     :items="[
                         // 問40〜49
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '特約',
                             relatedProblems: [],
                             content: '正しい',

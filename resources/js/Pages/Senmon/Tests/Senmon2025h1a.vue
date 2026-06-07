@@ -432,11 +432,13 @@ const isDraft = true;
                     :items="[
                         // 問40〜49
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '契約の申込み',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '生命保険協会 → 生命保険会社', //p46
                         }, //40
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '特約',
                             relatedProblems: [],
                             content: '正しい',

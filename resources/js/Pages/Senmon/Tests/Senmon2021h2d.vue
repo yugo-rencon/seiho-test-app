@@ -395,11 +395,12 @@ const isDraft = true;
                     questionTitle="遺族生活資金と老後生活資金"
                     :relatedProblems="[]"
                     :contents="[
-                        '6426',
-                        '9450',
-                        '9072',
-                        '3510',
-                        '12582', // 問35〜39
+                        // rev: 2026-06-07 確認済み
+                        '6,426',
+                        '9,450',
+                        '9,072',
+                        '3,510',
+                        '12,582', // 問35〜39
                     ]"
                     :labels="[
                         'ウ', //35
@@ -426,6 +427,7 @@ const isDraft = true;
                             content: '', //p
                         }, //41
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '特約',
                             relatedProblems: [],
                             content: '正しい',

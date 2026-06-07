@@ -468,7 +468,7 @@ const isDraft = true;
                         {
                             questionTitle: '経営者保険',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '受取人 = [[企業（団体）]]', //p131
                         }, //48
                         {
                             questionTitle: '医療保障保険（団体型）',

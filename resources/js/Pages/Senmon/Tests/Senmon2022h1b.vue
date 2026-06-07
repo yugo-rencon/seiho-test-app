@@ -458,6 +458,7 @@ const isDraft = true;
                             content: '掛金は、[[選択する型や特約コースの付加により異なる]]が、それぞれの商品、特約コースごとに[[年齢・性別にかかわらず一律]]となっている。', //p103
                         }, //46
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '経営者保険',
                             relatedProblems: [],
                             content: '正しい',

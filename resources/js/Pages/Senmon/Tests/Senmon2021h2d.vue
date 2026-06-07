@@ -468,6 +468,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '経営者保険',
                             relatedProblems: [],
                             content: '正しい',

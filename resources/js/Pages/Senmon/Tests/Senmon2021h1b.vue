@@ -314,9 +314,10 @@ const isDraft = true;
                     questionTitle="経営者保険、医療保障保険（団体型）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '受取人 = [[企業（団体）]]', //p131
                         '正しい',
                     ]"
                 />

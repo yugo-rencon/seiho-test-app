@@ -462,9 +462,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-07 確認済
                             questionTitle: '経営者保険',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '受取人 = [[企業（団体）]]', //p131
                         }, //48
                         {
                             questionTitle: '相続制度',

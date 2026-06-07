@@ -412,8 +412,8 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: 'コンプライアンスと基本的姿勢',
                             relatedProblems: [],
                             content: '正しい',

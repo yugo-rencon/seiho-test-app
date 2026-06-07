@@ -139,10 +139,11 @@ const isDraft = true;
                     questionTitle="募集時の情報提供と正しい説明"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-07 確認済み
+                        '契約概要 → 注意喚起情報', //p88
+                        '注意喚起情報 → 契約概要', //p88
                         '正しい',
-                        '', //p
+                        '[[契約締結前の段階]]において、お客さまの最終的な意向と契約の申込みを行おうとする保険契約の内容が合致しているかどうかを確認（＝意向確認）する。', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -205,12 +206,12 @@ const isDraft = true;
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
-                    questionTitle="コンプライアンスと基本的姿勢について"
+                    questionTitle="コンプライアンスと基本的姿勢"
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険法 ↔︎ 保険業法', //p71
                         '正しい',
                     ]"
                 />

@@ -254,10 +254,11 @@ const isDraft = true;
                     questionTitle="募集時の情報提供と正しい説明"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '[[契約締結前の段階]]において、お客さまの最終的な意向と契約の申込みを行おうとする保険契約の内容が合致しているかどうかを確認（＝意向確認）する。', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -413,6 +414,7 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: 'コンプライアンスと基本的姿勢',
                             relatedProblems: [],
                             content: '正しい',

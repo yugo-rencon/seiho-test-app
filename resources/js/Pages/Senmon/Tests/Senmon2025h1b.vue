@@ -237,7 +237,8 @@ const isDraft = true;
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）による取引時確認"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-07 確認済み
+                        '100万円 → 200万円', //p81
                         '正しい',
                         '正しい',
                         '正しい',

@@ -260,8 +260,9 @@ const isDraft = true;
                     questionTitle="法令上の禁止行為（虚偽の説明となる事例）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
-                        '', //p
+                        '虚偽の説明 → 不適正な乗換募集', //p84
                         '正しい',
                         '正しい',
                     ]"

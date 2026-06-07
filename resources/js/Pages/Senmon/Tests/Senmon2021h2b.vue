@@ -125,10 +125,11 @@ const isDraft = true;
                     questionTitle="法令上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-08 確認済み
+                        '断定的な予想配当等の表示・説明 → 虚偽の説明', //p84
                         '正しい',
-                        '', //p
-                        '', //p
+                        '特別の利益の提供 → 虚偽の説明', //p84
+                        '虚偽の説明 → 誤解されるおそれのある比較', //p85
                     ]"
                 />
                 <QuestionTemp1

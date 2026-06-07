@@ -427,9 +427,10 @@ const isDraft = true;
                             content: '', //p
                         }, //40
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '死亡保険金を支払わない場合',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '生命保険会社は、保険料積立金を契約者に払い戻す必要があるが、[[契約者が死亡保険契約の被保険者を故意に死亡させたときを除く]]。', //p54
                         }, //41
                         {
                             questionTitle: '減額',

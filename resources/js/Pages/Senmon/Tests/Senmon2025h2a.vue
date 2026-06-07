@@ -209,9 +209,10 @@ const isDraft = true;
                     questionTitle="保険料の払い込み等"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '既払込保険料総額 → 解約返戻金', //p59
                         '正しい',
                     ]"
                 />

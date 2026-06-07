@@ -205,10 +205,11 @@ const isDraft = true;
                     questionTitle="保険料の払い込み等"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '各種特約の保障は[[なくなる]]。', //p60-61
                     ]"
                 />
                 <QuestionTemp1

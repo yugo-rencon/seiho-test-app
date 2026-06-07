@@ -444,11 +444,13 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '金融サービスの提供及び利用環境の整備等に関する法律（金融サービス提供法）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '金融商品販売業者には、生命保険会社はもちろん[[保険代理店等も含まれる]]。', //p77
                         }, //42
                         {
+                            // rev: 2026-06-07 確認済み
                             questionTitle: '契約概要',
                             relatedProblems: [],
                             content: '正しい',

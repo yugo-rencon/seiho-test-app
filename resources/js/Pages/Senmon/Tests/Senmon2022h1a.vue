@@ -232,9 +232,10 @@ const isDraft = true;
                     questionTitle="コンプライアンスと基本的姿勢"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険法 ↔︎ 保険業法', //p71
                         '正しい',
                     ]"
                 />

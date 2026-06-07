@@ -195,7 +195,8 @@ const isDraft = true;
                     questionTitle="生命保険を取り巻く生活環境の変化"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-08 確認済み
+                        '地域共同体意識 → 自己責任意識', //p22
                         '正しい',
                         '正しい',
                         '正しい',

@@ -502,9 +502,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '生命保険料控除の対象となる契約',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '被保険者 → 保険金などの受取人', //p136
                         }, //49
                     ]"
                 />

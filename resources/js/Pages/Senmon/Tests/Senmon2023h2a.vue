@@ -463,6 +463,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '生命保険料控除の対象',
                             relatedProblems: [],
                             content: '正しい',

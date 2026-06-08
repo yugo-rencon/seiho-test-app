@@ -462,6 +462,7 @@ x                    :contents="[
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '固定金利と変動金利',
                             relatedProblems: [],
                             content: '正しい',

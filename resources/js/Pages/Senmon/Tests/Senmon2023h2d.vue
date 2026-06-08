@@ -460,6 +460,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '募集人としての具体的対応と留意点',
                             relatedProblems: [],
                             content: '正しい',
@@ -477,9 +478,10 @@ const isDraft = true;
                             content: '医療費の負担額は、[[その費用の原則1割、所定水準以上の所得者の場合は2割（そのうち現役並み所得者は3割）]]となっている。', //p119
                         }, //47
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '死亡保険金の非課税限度額',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '死亡保険金の非課税限度額 = [[500万円 × 法定相続人の数]]', //p143
                         }, //48
                         {
                             // rev: 2026-06-08 確認済み

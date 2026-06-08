@@ -69,6 +69,7 @@ const isDraft = true;
                     questionTitle="契約者貸付"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '3回 → 2回', //p61
                         '契約者に対する貸付も生命保険会社が行う[[資産運用の一部である]]。', //p61
@@ -152,10 +153,11 @@ const isDraft = true;
                     questionTitle="経営者保険、医療保障保険（団体型）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-07 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '経営者保険の保険種類は、一般の個人保険（財形商品を除く）と[[同じ]]で養老保険、定期保険特約付養老保険、定期保険、終身保険、定期保険特約付終身保険、個人年金保険など。', //p130
+                        '受取人 = [[企業（団体）]]', //p131
+                        '半額負担制 → 一部負担制', //p131
                     ]"
                 />
                 <QuestionTemp1
@@ -459,6 +461,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '募集人としての具体的対応と留意点',
                             relatedProblems: [],
                             content: '正しい',
@@ -470,14 +473,16 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '固定金利と変動金利',
                             relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '死亡保険金の非課税限度額',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '死亡保険金の非課税限度額 = [[500万円 × 法定相続人の数]]', //p143
                         }, //48
                         {
                             // rev: 2026-06-08 確認済み

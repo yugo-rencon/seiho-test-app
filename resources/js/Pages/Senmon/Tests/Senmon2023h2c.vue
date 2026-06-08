@@ -472,14 +472,16 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '固定金利と変動金利',
                             relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '死亡保険金の非課税限度額',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '死亡保険金の非課税限度額 = [[500万円 × 法定相続人の数]]', //p143
                         }, //48
                         {
                             // rev: 2026-06-08 確認済み

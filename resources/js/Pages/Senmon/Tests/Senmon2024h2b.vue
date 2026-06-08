@@ -443,6 +443,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '契約内容登録制度',
                             relatedProblems: [],
                             content: '正しい',

@@ -436,9 +436,10 @@ const isDraft = true;
                             content: '契約者貸付を受けた契約でも受けていない契約と[[同様の配当金が支払われる]]。', //p61
                         }, //41
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '契約内容登録制度',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '金融庁 → 生命保険協会', //p69-70
                         }, //42
                         {
                             // rev: 2026-06-07 確認済み

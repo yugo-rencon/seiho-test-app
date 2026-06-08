@@ -461,9 +461,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '契約内容登録制度',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '金融庁 → 生命保険協会', //p69-70
                         }, //46
                         {
                             // rev: 2026-06-08 確認済み

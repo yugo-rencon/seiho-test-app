@@ -235,9 +235,10 @@ const isDraft = true;
                     questionTitle="解約手続きの留意点"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '被保険者本人 → 契約者本人', //p98
                         '正しい',
                     ]"
                 />

@@ -458,6 +458,7 @@ const isDraft = true;
                             content: '', //p
                         }, //40
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '保険料の払込猶予期間',
                             relatedProblems: [],
                             content: '正しい',

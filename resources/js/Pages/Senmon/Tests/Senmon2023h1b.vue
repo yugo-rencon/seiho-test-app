@@ -429,8 +429,8 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '保険料の払込猶予期間',
                             relatedProblems: [],
                             content: '正しい',

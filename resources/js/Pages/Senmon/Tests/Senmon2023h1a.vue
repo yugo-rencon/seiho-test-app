@@ -335,9 +335,10 @@ const isDraft = true;
                     questionTitle="生命保険料控除"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '（自動）振替貸付の保険料も、正常に保険料の払い込みがされている場合と[[同様]]に、[[控除の対象となる]]。', //p138
                         '正しい',
                     ]"
                 />
@@ -429,8 +430,8 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '保険料の払込猶予期間',
                             relatedProblems: [],
                             content: '正しい',
@@ -442,6 +443,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '生命保険契約照会制度',
                             relatedProblems: [],
                             content: '正しい',
@@ -465,14 +467,16 @@ const isDraft = true;
                             content: '同じ利率の複利商品であれば[[１年複利より半年複利、半年複利より１カ月複利]]のほうがお金の増え方は大きくなる。', //p114
                         }, //45
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '個人向け融資（ローン）の種類',
                             relatedProblems: [],
                             content: '一般に、有担保ローンは無担保ローンに比べ融資限度額は[[大きく]]なり、金利は[[低く]]なる。', //p108
                         }, //46
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '相続',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '遺留分制度 → 寄与分制度', //p154
                         }, //47
                         {
                             // rev: 2026-06-08 確認済み

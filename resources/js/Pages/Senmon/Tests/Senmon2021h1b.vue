@@ -382,6 +382,7 @@ x                    :contents="[
                     questionTitle="債券（公社債など）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '安全性',
                         '割引債',
                         '個人向け',

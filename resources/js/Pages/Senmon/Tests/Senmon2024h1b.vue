@@ -459,6 +459,7 @@ const isDraft = true;
                             content: '', //p
                         }, //45
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '銀行窓販',
                             relatedProblems: [],
                             content: '正しい',

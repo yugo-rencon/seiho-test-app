@@ -260,10 +260,11 @@ const isDraft = true;
                     questionTitle="債券"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '個人向け国債は、[[半年ごとに利率が見直される変動金利の10年満期と、固定金利の5年満期・3年満期]]の3つがある。', //p111
                     ]"
                 />
                 <QuestionTemp1

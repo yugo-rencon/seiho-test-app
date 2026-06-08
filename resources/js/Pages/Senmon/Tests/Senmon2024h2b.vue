@@ -458,14 +458,16 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '銀行窓販',
                             relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '債券',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '債券には、買い入れるときに利子を前取りする「[[割引債]]」と、一定の利子が一定の期日に支払われる「[[利付債]]」がある。', //p110
                         }, //47
                         {
                             // rev: 2026-06-07 確認済み

@@ -383,6 +383,7 @@ const isDraft = true;
                     questionTitle="債券（公社債など）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '安全性',
                         '割引債',
                         '個人向け',
@@ -449,6 +450,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '銀行窓販',
                             relatedProblems: [],
                             content: '正しい',

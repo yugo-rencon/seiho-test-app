@@ -454,6 +454,7 @@ const isDraft = true;
                             content: '2年 → 1年', //p77
                         }, //43
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '銀行窓販',
                             relatedProblems: [],
                             content: '正しい',
@@ -471,6 +472,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '債券',
                             relatedProblems: [],
                             content: '正しい',

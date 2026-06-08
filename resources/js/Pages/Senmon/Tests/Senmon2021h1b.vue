@@ -357,6 +357,7 @@ const isDraft = true;
                     questionTitle="信託銀行の業務・商品"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '合同運用',
                         '遺産整理業務',
                         '信託配当',

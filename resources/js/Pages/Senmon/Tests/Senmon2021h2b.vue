@@ -455,6 +455,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '生命保険募集人としての具体的対応と留意点',
                             relatedProblems: [],
                             content: '正しい',

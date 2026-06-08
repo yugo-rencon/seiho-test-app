@@ -363,6 +363,7 @@ const isDraft = true;
                     questionTitle="労働者共済"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '厚生労働省',
                         '関係なく一律の',
                         '1年更新',

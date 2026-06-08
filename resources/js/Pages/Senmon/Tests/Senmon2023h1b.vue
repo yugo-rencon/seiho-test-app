@@ -385,6 +385,7 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '経済準備',
                         '自助努力',
                         '失業',

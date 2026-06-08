@@ -150,10 +150,11 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-08 確認済み
+                        '社会保険制度 → 社会福祉制度', //p116
+                        '自立支援法 → 生活保護法', //p116
                         '正しい',
-                        '', //p
+                        '社会福祉制度 → 社会保険制度', //p116
                     ]"
                 />
                 <QuestionTemp1

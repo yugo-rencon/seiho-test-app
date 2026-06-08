@@ -314,13 +314,14 @@ const isDraft = true;
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
-                    questionTitle="共済"
+                    questionTitle="JA共済"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        'ＪＡ共済の養老生命共済・終身共済・定期生命共済の最高限度額は、通算して5億円、こども共済は[[1,000万円]]、医療共済は30万円（1回の入院）となっている。', //不明
                     ]"
                 />
                 <QuestionTemp1
@@ -344,8 +345,9 @@ const isDraft = true;
                     questionTitle="金利の種類と金融商品"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
-                        '', //p
+                        '小さく → 大きく', //p114
                         '正しい',
                         '正しい',
                     ]"

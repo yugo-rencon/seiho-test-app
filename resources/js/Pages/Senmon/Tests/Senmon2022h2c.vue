@@ -318,8 +318,9 @@ const isDraft = true;
                     questionTitle="金利の種類と金融商品"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
-                        '', //p
+                        '小さく → 大きく', //p114
                         '正しい',
                         '正しい',
                     ]"

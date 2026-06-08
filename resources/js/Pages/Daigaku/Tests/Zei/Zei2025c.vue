@@ -24,24 +24,25 @@ const isDraft = true;
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="所得の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-09 確認済み
+                        '金銭で受領せずに商品等の現物を支給される、いわゆる現物給与も給与所得として[[課税対象となる]]。', //p10
+                        '山林所得または譲渡所得に該当するものは[[除く]]。', //p11
+                        '正しい',
+                        '配当所得 → 一時所得', //p12
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="所得税の申告と納税"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -50,11 +51,11 @@ const isDraft = true;
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="個人住民税の知識"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -63,10 +64,10 @@ const isDraft = true;
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="法定相続分"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -76,10 +77,10 @@ const isDraft = true;
                     :questionNumber="5"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="相続人"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -89,37 +90,37 @@ const isDraft = true;
                     :questionNumber="6"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="みなし相続財産"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="7"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="贈与税の税額計算・申告・納付等"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="こども保険（学資保険）に関する税務"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -128,12 +129,12 @@ const isDraft = true;
                     :questionNumber="9"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="法人向け保険商品の課税関係"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -141,12 +142,12 @@ const isDraft = true;
                     :questionNumber="10"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="生命保険を活用した相続対策"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -154,10 +155,10 @@ const isDraft = true;
                     :questionNumber="11"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="同族会社"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -167,51 +168,51 @@ const isDraft = true;
                     :questionNumber="12"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="法人税の申告・納付・処分"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="各種所得と損益通算"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="青色申告制度"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="生命保険料控除"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -219,64 +220,64 @@ const isDraft = true;
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="公的年金等についての税金の知識"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="遺贈・遺言と遺留分"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="相続分"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="相続財産の評価"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="贈与税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -284,12 +285,12 @@ const isDraft = true;
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="相続時精算課税制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -297,25 +298,25 @@ const isDraft = true;
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="契約内容等の変更に関する税務（個人契約）"
                     :relatedProblems="[]"
                     :contents="[
+                        '正しい',
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="法人税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -323,12 +324,12 @@ const isDraft = true;
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="入院給付金等に関する税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -337,7 +338,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="25〜29"
-                    questionTitle=""
+                    questionTitle="予定納税"
                     :relatedProblems="[]"
                     :contents="[
                         '',
@@ -347,11 +348,11 @@ const isDraft = true;
                         '', // 問25〜29
                     ]"
                     :labels="[
-                        '', //25
-                        '', //26
-                        '', //27
-                        '', //28
-                        '', //29
+                        'ケ', //25
+                        'イ', //26
+                        'エ', //27
+                        'オ', //28
+                        'ク', //29
                     ]"
                 />
                 <QuestionTemp3
@@ -359,7 +360,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="30〜34"
-                    questionTitle=""
+                    questionTitle="所得税の特徴"
                     :relatedProblems="[]"
                     :contents="[
                         '',
@@ -369,11 +370,11 @@ const isDraft = true;
                         '', // 問30〜34
                     ]"
                     :labels="[
-                        '', //30
-                        '', //31
-                        '', //32
-                        '', //33
-                        '', //34
+                        'コ', //30
+                        'ケ', //31
+                        'イ', //32
+                        'キ', //33
+                        'ウ', //34
                     ]"
                 />
                 <QuestionTemp3
@@ -381,7 +382,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="35〜39"
-                    questionTitle=""
+                    questionTitle="相続税の申告と納付"
                     :relatedProblems="[]"
                     :contents="[
                         '',
@@ -391,11 +392,11 @@ const isDraft = true;
                         '', // 問35〜39
                     ]"
                     :labels="[
-                        '', //35
-                        '', //36
-                        '', //37
-                        '', //38
-                        '', //39
+                        'キ', //35
+                        'カ', //36
+                        'エ', //37
+                        'ア', //38
+                        'オ', //39
                     ]"
                 />
                 <QuestionTemp2
@@ -405,52 +406,52 @@ const isDraft = true;
                     :items="[
                         // 問40〜49
                         {
-                            questionTitle: '',
+                            questionTitle: '住宅借入金等特別控除（住宅ローン控除）',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //40
                         {
-                            questionTitle: '',
+                            questionTitle: '所得税の計算',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //41
                         {
-                            questionTitle: '',
+                            questionTitle: '賦課課税',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //42
                         {
-                            questionTitle: '',
+                            questionTitle: '遺言の効力',
                             relatedProblems: [],
                             content: '',
                         }, //43
                         {
-                            questionTitle: '',
+                            questionTitle: '相続税の納税',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //44
                         {
-                            questionTitle: '',
+                            questionTitle: '贈与税の課税制度',
                             relatedProblems: [],
                             content: '',
                         }, //45
                         {
-                            questionTitle: '',
+                            questionTitle: '保証期間付終身年金の課税',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //46
                         {
-                            questionTitle: '',
+                            questionTitle: '契約内容などの変更に関する税務',
                             relatedProblems: [],
-                            content: '',
+                            content: '正しい',
                         }, //47
                         {
-                            questionTitle: '',
+                            questionTitle: '法人税の受取配当等の益金不算入',
                             relatedProblems: [],
                             content: '',
                         }, //48
                         {
-                            questionTitle: '',
+                            questionTitle: '法人契約の個人年金の配当金の税務',
                             relatedProblems: [],
                             content: '',
                         }, //49

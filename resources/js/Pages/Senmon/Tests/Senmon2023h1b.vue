@@ -208,8 +208,9 @@ const isDraft = true;
                     questionTitle="契約を有効に続けるための方法"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
-                        '', //p
+                        '定期保険 → 養老保険', //p60
                         '正しい',
                         '正しい',
                     ]"

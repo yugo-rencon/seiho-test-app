@@ -236,8 +236,9 @@ const isDraft = true;
                     questionTitle="保障の見直しに関する制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
-                        '', //p
+                        '長期契約における特別配当の権利は、[[新しい契約にも引き継がれる]]。', //p65
                         '正しい',
                         '正しい',
                     ]"
@@ -428,8 +429,8 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '保険金の減額',
                             relatedProblems: [],
                             content: '正しい',
@@ -483,6 +484,7 @@ const isDraft = true;
                             content: '受取人 = [[企業（団体）]]', //p131
                         }, //48
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '相続制度',
                             relatedProblems: [],
                             content: '正しい',

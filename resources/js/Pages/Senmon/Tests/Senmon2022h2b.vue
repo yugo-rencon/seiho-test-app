@@ -247,10 +247,11 @@ const isDraft = true;
                     questionTitle="契約の失効と復活"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '契約を復活した場合でも、失効中に支払事由に相当する事故が発生した場合は[[保障の対象とはならない]]。', //p58
                     ]"
                 />
                 <QuestionTemp1
@@ -260,8 +261,9 @@ const isDraft = true;
                     questionTitle="保障の見直しに関する制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
-                        '', //p
+                        '長期契約における特別配当の権利は、[[新しい契約にも引き継がれる]]。', //p65
                         '正しい',
                         '正しい',
                     ]"
@@ -452,8 +454,8 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '保険金の減額',
                             relatedProblems: [],
                             content: '正しい',

@@ -452,6 +452,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '保全・アフターサービスの重要性',
                             relatedProblems: [],
                             content: '正しい',

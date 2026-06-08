@@ -83,6 +83,7 @@ const isDraft = true;
                     questionTitle="特約"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '特約は、[[もとになる契約（主契約）なしで単独で契約することはできず]]、また、特約の種類によっては、他の特約とあわせて契約しなければならないものもある。', //p66
                         'これらの特約商品は、主契約を契約するときに付加しますが、[[特約商品によっては保険期間の途中で付加することもできる]]。', //p66
@@ -205,12 +206,13 @@ const isDraft = true;
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
-                    questionTitle="保険料の払い込み"
+                    questionTitle="保険料の払い込み等"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '既払込生命保険料総額 → 解約返戻金', //p59
                         '正しい',
                     ]"
                 />
@@ -435,9 +437,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '危険選択',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '身体上の危険 → 環境上の危険', //p68
                         }, //41
                         {
                             // rev: 2026-06-07 確認済み
@@ -452,6 +455,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '保全・アフターサービスの重要性',
                             relatedProblems: [],
                             content: '正しい',

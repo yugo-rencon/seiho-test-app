@@ -432,6 +432,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '契約転換制度',
                             relatedProblems: [],
                             content: '正しい',

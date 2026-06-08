@@ -349,10 +349,11 @@ const isDraft = true;
                     questionTitle="特約の種類"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '生活習慣病で手術したときに所定の手術給付金が[[支払われる]]ものもある。', //p37
                     ]"
                 />
                 <QuestionTemp3

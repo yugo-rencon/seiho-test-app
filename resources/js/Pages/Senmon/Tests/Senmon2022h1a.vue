@@ -447,7 +447,7 @@ const isDraft = true;
                             questionTitle: '消費者契約法',
                             relatedProblems: [],
                             content: '2年 → 1年', //p77
-                        }, //43
+                        }, //42
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '個人情報保護法',

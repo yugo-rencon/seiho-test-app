@@ -475,6 +475,7 @@ const isDraft = true;
                             content: '受取人 = [[企業（団体）]]', //p131
                         }, //48
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '確定拠出年金制度',
                             relatedProblems: [],
                             content: '正しい',

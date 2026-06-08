@@ -345,7 +345,8 @@ const isDraft = true;
                     questionTitle="確定拠出年金"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-08 確認済み
+                        '加入者自身が掛金の運用方法を選択し、[[運用実績次第で受け取る年金額が変動する]]。', //p132
                         '正しい',
                         '正しい',
                         '正しい',

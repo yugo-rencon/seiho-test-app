@@ -450,9 +450,10 @@ const isDraft = true;
                             content: '2年 → 1年', //p77
                         }, //43
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '確定拠出年金制度',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '[[加入者自身]]が掛金の運用方法を選択し、運用実績次第で受け取る年金額が変動する。', //p132
                         }, //44
                         {
                             // rev: 2026-06-08 確認済み

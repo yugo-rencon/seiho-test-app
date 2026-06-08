@@ -315,9 +315,10 @@ const isDraft = true;
                     questionTitle="介護保険制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '7割 → 半分', //p125
                         '正しい',
                     ]"
                 />

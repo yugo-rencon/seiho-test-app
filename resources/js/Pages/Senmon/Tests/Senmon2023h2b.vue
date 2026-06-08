@@ -465,9 +465,10 @@ const isDraft = true;
                             content: '', //p
                         }, //46
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '後期高齢者医療制度',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '医療費の負担額は、[[その費用の原則1割、所定水準以上の所得者の場合は2割（そのうち現役並み所得者は3割）]]となっている。', //p119
                         }, //47
                         {
                             questionTitle: '死亡保険金の非課税限度額',

@@ -385,6 +385,7 @@ const isDraft = true;
                     questionTitle="後期高齢者医療制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '65歳',
                         '広域連合',
                         '1割',

@@ -332,8 +332,9 @@ const isDraft = true;
                     questionTitle="証券業界とその主な商品"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
-                        '', //p
+                        '株式累積投資（るいとう） → 単元未満株投資（株式ミニ投資）', //p112
                         '正しい',
                         '正しい',
                     ]"

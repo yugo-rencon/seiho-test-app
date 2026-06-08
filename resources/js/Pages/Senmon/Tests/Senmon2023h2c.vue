@@ -480,6 +480,7 @@ const isDraft = true;
                             content: '', //p
                         }, //48
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '寄与分制度',
                             relatedProblems: [],
                             content: '正しい',

@@ -457,9 +457,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '外貨建保険における重要事項の説明',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '保険料・保険金等が外貨建てであるため、通常、支払いや受け取りの際に円と外貨の換算手数料が必要となることなどを[[説明する必要がある]]。', //p89
                         }, //45
                         {
                             // rev: 2026-06-08 確認済み
@@ -479,6 +480,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '寄与分制度',
                             relatedProblems: [],
                             content: '正しい',

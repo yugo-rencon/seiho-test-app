@@ -178,13 +178,14 @@ const isDraft = true;
                     :questionNumber="12"
                     :title="title"
                     :subject="subject"
-                    questionTitle="保険募集法"
+                    questionTitle="保険業法"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-08 確認済み
+                        '法務大臣 → 内閣総理大臣', //p72
                         '正しい',
-                        '', //p
-                        '', //p
+                        '媒介 → 代理', //p73
+                        '代理 → 媒介', //p73
                     ]"
                 />
                 <QuestionTemp1

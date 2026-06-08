@@ -448,6 +448,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '金融商品取引法',
                             relatedProblems: [],
                             content: '正しい',

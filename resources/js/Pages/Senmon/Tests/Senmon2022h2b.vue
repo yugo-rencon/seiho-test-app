@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -159,17 +160,41 @@ const isDraft = true;
                         '財形制度にもとづく保険は、多くの個人保険とは異なり、積立金等の計算基礎（予定利率）が積立期間中および据置期間中でも[[変更される場合がある]]。', //p135
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="11"
                     :title="title"
                     :subject="subject"
-                    questionTitle="保険金と税金（個人契約の場合）"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '正しい',
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-06-08 確認済み
+                            answer: '800万円',
+                            questionTitle: '保険金と税金（個人契約の場合）',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['契約者・死亡保険金受取人：夫', '被保険者：妻', '死亡保険金：2,000万円', '正味払込保険料：350万円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['死亡保険金 - 正味払込保険料 - 特別控除額 = 一時所得の金額', '2,000万円 - 350万円 - 50万円 = 1,600万円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['1,600万円の1/2の800万円が、その年の他の所得と合算され所得税の課税対象となる。'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え 800万円',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'イ', //11
                     ]"
                 />
                 <QuestionTemp1

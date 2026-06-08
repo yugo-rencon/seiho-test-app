@@ -437,6 +437,7 @@ const isDraft = true;
                             content: '既払込保険料総額 → 解約返戻金', //p60
                         }, //40
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '死亡保険金を支払わない場合',
                             relatedProblems: [],
                             content: '正しい',

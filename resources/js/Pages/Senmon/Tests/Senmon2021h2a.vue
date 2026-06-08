@@ -69,6 +69,7 @@ const isDraft = true;
                     questionTitle="契約者貸付"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '正しい',
                         '3回 → 2回', //p61
                         '契約者に対する貸付も生命保険会社が行う[[資産運用の一部である]]。', //p61
@@ -484,6 +485,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '複利と期間',
                             relatedProblems: [],
                             content: '正しい',

@@ -468,9 +468,10 @@ const isDraft = true;
                             content: '掛金は、[[選択する型や特約コースの付加により異なる]]が、それぞれの商品、特約コースごとに[[年齢・性別にかかわらず一律]]となっている。', //p103
                         }, //46
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '預金の種類',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '5日 → 2日', //p108
                         }, //47
                         {
                             // rev: 2026-06-05 確認済み
@@ -479,6 +480,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '複利と期間',
                             relatedProblems: [],
                             content: '正しい',

@@ -462,6 +462,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '預金の種類',
                             relatedProblems: [],
                             content: '正しい',

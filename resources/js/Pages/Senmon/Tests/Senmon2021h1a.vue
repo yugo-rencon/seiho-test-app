@@ -456,9 +456,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '預金の種類',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '通知預金 → 当座預金', //p108
                         }, //46
                         {
                             questionTitle: '医療保障保険（団体型）',

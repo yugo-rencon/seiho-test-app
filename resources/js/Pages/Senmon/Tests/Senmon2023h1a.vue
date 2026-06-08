@@ -454,9 +454,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '複利と期間',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '同じ利率の複利商品であれば[[１年複利より半年複利、半年複利より１カ月複利]]のほうがお金の増え方は大きくなる。', //p114
                         }, //45
                         {
                             questionTitle: '個人向け融資（ローン）の種類',

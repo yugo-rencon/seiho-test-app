@@ -472,6 +472,7 @@ const isDraft = true;
                             content: '', //p
                         }, //48
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '複利と期間',
                             relatedProblems: [],
                             content: '正しい',

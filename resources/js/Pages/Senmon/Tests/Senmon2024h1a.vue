@@ -5,20 +5,16 @@ import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
 import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
-import DraftNotice from "@/Components/DraftNotice.vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険専門課程試験";
 const subject = "2024年度 4月〜8月実施 フォームA";
-const isDraft = true;
 </script>
 
 <template>
     <SeihoTestLayout :title="title">
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
-
-            <DraftNotice v-if="isDraft" />
 
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1

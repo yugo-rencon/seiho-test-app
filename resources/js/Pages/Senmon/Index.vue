@@ -139,9 +139,6 @@ const getFormLabel = (year, periodId, form) => {
                                 >
                                     2025年 全フォーム無料
                                 </span>
-                                <span class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600">
-                                    準備中
-                                </span>
                             </div>
                             <p
                                 v-if="Number(year) === 2021 && activePeriod.id === 'apr-aug'"

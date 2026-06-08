@@ -386,6 +386,7 @@ const isDraft = true;
                     questionTitle="国民年金と厚生年金"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '国民皆年金',
                         '障害',
                         '報酬比例',

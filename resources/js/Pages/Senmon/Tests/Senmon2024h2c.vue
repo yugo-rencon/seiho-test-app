@@ -97,6 +97,7 @@ const isDraft = true;
                     questionTitle="「死亡保険金」を支払わない場合"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '被保険者が[[契約日または復活日から所定期間以内]]に自殺したとき、「死亡保険金」は支払われない。', //p54
                         '正しい',
                         '契約者が過失によって被保険者を死亡させたとき、「死亡保険金」を[[支払う場合もある]]。', //p55の（注）
@@ -386,11 +387,12 @@ const isDraft = true;
                     questionTitle="生命保険と相続"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        // rev: 2026-06-08 確認済み
+                        '遺贈',
+                        '遺留分',
+                        '代襲相続',
+                        '10ヶ月',
+                        'みなし相続', // 問30〜34
                     ]"
                     :labels="[
                         'コ', //30
@@ -441,6 +443,7 @@ const isDraft = true;
                             content: '「契約転換制度」を利用する際の保険料は、[[転換時]]の契約年齢、保険料率により計算されるため、[[保険種類によっては、転換前契約よりも保険料が高くなる場合がある]]。', //p65
                         }, //41
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: 'コンプライアンスの重要性',
                             relatedProblems: [],
                             content: '正しい',
@@ -464,24 +467,28 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
-                            questionTitle: '共済',
+                            // rev: 2026-06-08 確認済み
+                            questionTitle: 'JA共済',
                             relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '債券',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '債券には、買い入れるときに利子を前取りする「[[割引債]]」と、一定の利子が一定の期日に支払われる「[[利付債]]」がある。', //p110
                         }, //47
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '経営者保険',
                             relatedProblems: [],
                             content: '受取人 = [[企業（団体）]]', //p131
                         }, //48
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '給付内容には、[[治療給付金]]、入院給付金および死亡保険金がある。', //p131
                         }, //49
                     ]"
                 />

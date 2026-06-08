@@ -467,9 +467,10 @@ x                    :contents="[
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '給付内容には、治療給付金、入院給付金および[[死亡保険金]]がある。', //p131
                         }, //47
                         {
                             // rev: 2026-06-08 確認済み

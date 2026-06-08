@@ -385,6 +385,7 @@ const isDraft = true;
                     questionTitle="保険金と税金"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '満期保険金',
                         '贈与税',
                         '一時所得',

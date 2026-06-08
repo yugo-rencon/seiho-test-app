@@ -384,11 +384,12 @@ const isDraft = true;
                     questionTitle="保険金と税金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        // rev: 2026-06-08 確認済み
+                        '満期',
+                        '贈与税',
+                        '一時',
+                        '死亡',
+                        '配偶者', // 問30〜34
                     ]"
                     :labels="[
                         'カ', //30

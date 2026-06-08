@@ -479,6 +479,7 @@ const isDraft = true;
                             content: '債券には、買い入れるときに利子を前取りする「[[割引債]]」と、一定の利子が一定の期日に支払われる「[[利付債]]」がある。', //p110
                         }, //47
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: '株式投資',
                             relatedProblems: [],
                             content: '正しい',

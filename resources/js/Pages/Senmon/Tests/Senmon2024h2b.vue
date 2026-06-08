@@ -97,6 +97,7 @@ const isDraft = true;
                     questionTitle="「死亡保険金」を支払わない場合"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-08 確認済み
                         '被保険者が[[契約日または復活日から所定期間以内]]に自殺したとき、「死亡保険金」は支払われない。', //p54
                         '正しい',
                         '契約者が過失によって被保険者を死亡させたとき、「死亡保険金」を[[支払う場合もある]]。', //p55の（注）
@@ -363,11 +364,12 @@ const isDraft = true;
                     questionTitle="国民年金と厚生年金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        // rev: 2026-06-08 確認済み
+                        '国民皆年金',
+                        '障害',
+                        '報酬比例',
+                        '60歳',
+                        '第1号', // 問25〜29
                     ]"
                     :labels="[
                         'ク', //25
@@ -385,11 +387,12 @@ const isDraft = true;
                     questionTitle="保険金と税金"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        // rev: 2026-06-08 確認済み
+                        '満期',
+                        '贈与税',
+                        '一時',
+                        '死亡',
+                        '配偶者', // 問30〜34
                     ]"
                     :labels="[
                         'カ', //30
@@ -452,6 +455,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-08 確認済み
                             questionTitle: 'コンプライアンスの重要性',
                             relatedProblems: [],
                             content: '正しい',

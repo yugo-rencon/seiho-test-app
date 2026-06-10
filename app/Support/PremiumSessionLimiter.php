@@ -14,7 +14,7 @@ class PremiumSessionLimiter
     private const DEVICE_COOKIE_NAME = 'premium_device_id';
     private const DEVICE_COOKIE_MINUTES = 60 * 24 * 365;
     private const MAX_ACTIVE_DEVICES = 2;
-    private const ACTIVE_WINDOW_DAYS = 7;
+    private const ACTIVE_WINDOW_MINUTES = 30;
 
     public function allows(Request $request): bool
     {
@@ -65,8 +65,8 @@ class PremiumSessionLimiter
             return true;
         }
 
-        if (count($devices) >= self::MAX_ACTIVE_DEVICES) {
-            return false;
+        while (count($devices) >= self::MAX_ACTIVE_DEVICES) {
+            array_pop($devices);
         }
 
         $devices[$deviceHash] = [
@@ -85,7 +85,7 @@ class PremiumSessionLimiter
      */
     private function activeDevices(array $devices): array
     {
-        $cutoff = Carbon::now()->subDays(self::ACTIVE_WINDOW_DAYS)->timestamp;
+        $cutoff = Carbon::now()->subMinutes(self::ACTIVE_WINDOW_MINUTES)->timestamp;
         $active = [];
 
         foreach ($devices as $deviceHash => $device) {
@@ -151,6 +151,6 @@ class PremiumSessionLimiter
 
     private function cacheTtl(): Carbon
     {
-        return now()->addDays(self::ACTIVE_WINDOW_DAYS + 1);
+        return now()->addMinutes(self::ACTIVE_WINDOW_MINUTES + 10);
     }
 }

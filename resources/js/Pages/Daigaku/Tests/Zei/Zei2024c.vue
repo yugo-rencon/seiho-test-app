@@ -183,10 +183,11 @@ const isDraft = true;
                     questionTitle="雑所得"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-09 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '1回に支払われる金額のうち[[100万円以下の部分は10％、100万円を超える部分は20％]]が源泉徴収される。', //p15
                     ]"
                 />
                 <QuestionTemp1

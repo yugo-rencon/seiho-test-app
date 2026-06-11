@@ -300,15 +300,53 @@ class AdminController extends Controller
 
         $pageViewsSince = Carbon::now()->subDays(30)->startOfDay();
         $topPageViews = collect();
-        $pageConversionRows = collect();
+        $dailyPageViews = collect();
+        $pageViewSummary = [
+            'today' => ['views' => 0, 'uniqueSessions' => 0],
+            'yesterday' => ['views' => 0, 'uniqueSessions' => 0],
+            'last7days' => ['views' => 0, 'uniqueSessions' => 0],
+            'last30days' => ['views' => 0, 'uniqueSessions' => 0],
+            'total' => ['views' => 0, 'uniqueSessions' => 0],
+        ];
 
         if (Schema::hasTable('page_views')) {
-            $hasFullPathColumn = Schema::hasColumn('page_views', 'full_path');
+            $pageViewsBaseQuery = function () {
+                return DB::table('page_views')
+                    ->where('path', 'not like', '/admin%')
+                    ->where('path', 'not like', '/daigaku/admin%');
+            };
 
-            $topPageViews = DB::table('page_views')
+            $buildPageViewSummary = function ($from = null, $to = null) use ($pageViewsBaseQuery) {
+                $query = $pageViewsBaseQuery();
+                if ($from !== null && $to !== null) {
+                    $query->whereBetween('viewed_at', [$from, $to]);
+                } elseif ($from !== null) {
+                    $query->where('viewed_at', '>=', $from);
+                } elseif ($to !== null) {
+                    $query->where('viewed_at', '<=', $to);
+                }
+
+                $row = $query
+                    ->selectRaw('COUNT(*) as views')
+                    ->selectRaw('COUNT(DISTINCT session_id) as unique_sessions')
+                    ->first();
+
+                return [
+                    'views' => (int) ($row->views ?? 0),
+                    'uniqueSessions' => (int) ($row->unique_sessions ?? 0),
+                ];
+            };
+
+            $pageViewSummary = [
+                'today' => $buildPageViewSummary($todayStart, $todayEnd),
+                'yesterday' => $buildPageViewSummary($yesterdayStart, $yesterdayEnd),
+                'last7days' => $buildPageViewSummary($last7daysStart, $todayEnd),
+                'last30days' => $buildPageViewSummary($pageViewsSince, $todayEnd),
+                'total' => $buildPageViewSummary(),
+            ];
+
+            $topPageViews = $pageViewsBaseQuery()
                 ->where('viewed_at', '>=', $pageViewsSince)
-                ->where('path', 'not like', '/admin%')
-                ->where('path', 'not like', '/daigaku/admin%')
                 ->select('path')
                 ->selectRaw('COUNT(*) as views')
                 ->selectRaw('COUNT(DISTINCT session_id) as unique_sessions')
@@ -317,80 +355,15 @@ class AdminController extends Controller
                 ->limit(20)
                 ->get();
 
-            $conversionTargets = [
-                ['label' => 'トップ', 'pathPrefix' => '/', 'scope' => 'seiho', 'match' => 'path_prefix'],
-                ['label' => '生保講座 料金', 'pathPrefix' => '/pricing', 'scope' => 'seiho', 'match' => 'path_exact'],
-                ['label' => '生保大学 トップ', 'pathPrefix' => '/daigaku', 'scope' => 'daigaku', 'match' => 'path_prefix'],
-                ['label' => '生保大学 料金', 'pathPrefix' => '/daigaku/pricing', 'scope' => 'daigaku', 'match' => 'path_exact'],
-                ['label' => '一般課程 トップ', 'pathPrefix' => '/ippan', 'scope' => 'ippan', 'match' => 'path_prefix'],
-                ['label' => '一般課程 料金', 'pathPrefix' => '/pricing?scope=ippan', 'scope' => 'ippan', 'match' => 'full_path_exact'],
-                ['label' => '専門課程 トップ', 'pathPrefix' => '/senmon', 'scope' => 'senmon', 'match' => 'path_prefix'],
-                ['label' => '専門課程 料金', 'pathPrefix' => '/pricing?scope=senmon', 'scope' => 'senmon', 'match' => 'full_path_exact'],
-                ['label' => '応用課程 トップ', 'pathPrefix' => '/ouyou', 'scope' => 'ouyou', 'match' => 'path_prefix'],
-                ['label' => '応用課程 料金', 'pathPrefix' => '/pricing?scope=ouyou', 'scope' => 'ouyou', 'match' => 'full_path_exact'],
-            ];
-
-            foreach ($conversionTargets as $target) {
-                $pathPrefix = (string) $target['pathPrefix'];
-                $scope = (string) $target['scope'];
-                $matchType = (string) ($target['match'] ?? 'path_prefix');
-
-                $sessionsQuery = DB::table('page_views')
-                    ->where('viewed_at', '>=', $pageViewsSince);
-
-                if ($matchType === 'path_exact') {
-                    $sessionsQuery->where('path', $pathPrefix);
-                } elseif ($matchType === 'full_path_exact' && $hasFullPathColumn) {
-                    $sessionsQuery->where('full_path', $pathPrefix);
-                } else {
-                    $pathLike = $pathPrefix === '/' ? '/' : $pathPrefix.'%';
-                    $sessionsQuery->where('path', 'like', $pathLike);
-                }
-
-                $sessions = (int) $sessionsQuery
-                    ->distinct('session_id')
-                    ->count('session_id');
-
-                $purchasersQuery = DB::table('purchases')
-                    ->where('status', 'paid')
-                    ->whereNotNull('paid_at')
-                    ->where('paid_at', '>=', $pageViewsSince)
-                    ->whereIn('scope', $scope === 'ouyou' ? ['ouyou', 'basic'] : [$scope]);
-
-                $purchasersQuery->whereExists(function ($query) use ($matchType, $pathPrefix, $hasFullPathColumn) {
-                    $query->selectRaw('1')
-                        ->from('page_views')
-                        ->whereColumn('page_views.user_id', 'purchases.user_id')
-                        ->whereRaw('page_views.viewed_at <= purchases.paid_at')
-                        ->whereRaw('page_views.viewed_at >= DATE_SUB(purchases.paid_at, INTERVAL 7 DAY)');
-
-                    if ($matchType === 'path_exact') {
-                        $query->where('page_views.path', $pathPrefix);
-                        return;
-                    }
-
-                    if ($matchType === 'full_path_exact' && $hasFullPathColumn) {
-                        $query->where('page_views.full_path', $pathPrefix);
-                        return;
-                    }
-
-                    $pathLike = $pathPrefix === '/' ? '/' : $pathPrefix.'%';
-                    $query->where('page_views.path', 'like', $pathLike);
-                });
-
-                $purchaserUsers = (int) $purchasersQuery
-                    ->distinct('user_id')
-                    ->count('user_id');
-
-                $pageConversionRows->push([
-                    'label' => (string) $target['label'],
-                    'pathPrefix' => $pathPrefix,
-                    'scope' => $scope,
-                    'sessions' => $sessions,
-                    'purchaserUsers' => $purchaserUsers,
-                    'conversionRate' => $sessions > 0 ? round(($purchaserUsers / $sessions) * 100, 2) : 0.0,
-                ]);
-            }
+            $dailyPageViews = $pageViewsBaseQuery()
+                ->where('viewed_at', '>=', $pageViewsSince)
+                ->selectRaw('DATE(viewed_at) as day')
+                ->selectRaw('COUNT(*) as views')
+                ->selectRaw('COUNT(DISTINCT session_id) as unique_sessions')
+                ->groupBy('day')
+                ->orderByDesc('day')
+                ->limit(30)
+                ->get();
         }
 
         $stats['salesInsights'] = [
@@ -438,7 +411,14 @@ class AdminController extends Controller
                     'uniqueSessions' => (int) $row->unique_sessions,
                 ];
             })->values(),
-            'pageConversions' => $pageConversionRows->values(),
+            'pageViewSummary' => $pageViewSummary,
+            'dailyPageViews' => $dailyPageViews->map(function ($row) {
+                return [
+                    'day' => (string) $row->day,
+                    'views' => (int) $row->views,
+                    'uniqueSessions' => (int) $row->unique_sessions,
+                ];
+            })->values(),
             'weekdaySales' => $weekdaySales,
             'hourlySales' => $hourlySales,
         ];

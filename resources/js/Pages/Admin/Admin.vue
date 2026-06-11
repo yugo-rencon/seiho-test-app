@@ -389,6 +389,11 @@ const formatYen = (value) => {
     }).format(Number.isFinite(amount) ? amount : 0);
 };
 
+const formatNumber = (value) => {
+    const amount = Number(value ?? 0);
+    return new Intl.NumberFormat("ja-JP").format(Number.isFinite(amount) ? amount : 0);
+};
+
 const formatAxisYenJa = (value) => {
     const amount = Number(value ?? 0);
     if (!Number.isFinite(amount) || amount <= 0) return "0円";
@@ -420,6 +425,8 @@ const scopeClass = (scope) => {
 };
 
 const salesInsights = computed(() => props.stats?.salesInsights ?? {});
+const pageViewSummary = computed(() => salesInsights.value?.pageViewSummary ?? {});
+const dailyPageViews = computed(() => salesInsights.value?.dailyPageViews ?? []);
 
 const salesScopeOptions = [
     { value: "all", label: "全試験" },
@@ -1029,6 +1036,29 @@ const peakHour2h = computed(() => {
                         </div>
                     </div>
 
+                    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">今日のPV</p>
+                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatNumber(pageViewSummary?.today?.views) }}</p>
+                            <p class="mt-1 text-xs text-slate-500">セッション {{ formatNumber(pageViewSummary?.today?.uniqueSessions) }}</p>
+                        </div>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">昨日のPV</p>
+                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatNumber(pageViewSummary?.yesterday?.views) }}</p>
+                            <p class="mt-1 text-xs text-slate-500">セッション {{ formatNumber(pageViewSummary?.yesterday?.uniqueSessions) }}</p>
+                        </div>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">直近7日のPV</p>
+                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatNumber(pageViewSummary?.last7days?.views) }}</p>
+                            <p class="mt-1 text-xs text-slate-500">セッション {{ formatNumber(pageViewSummary?.last7days?.uniqueSessions) }}</p>
+                        </div>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">累計PV</p>
+                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatNumber(pageViewSummary?.total?.views) }}</p>
+                            <p class="mt-1 text-xs text-slate-500">セッション {{ formatNumber(pageViewSummary?.total?.uniqueSessions) }}</p>
+                        </div>
+                    </div>
+
                     <div class="rounded-lg border border-gray-100">
                         <div class="flex items-center justify-between border-b border-gray-100 px-3 py-2">
                             <p class="text-xs font-semibold text-gray-700">人気ページ Top20</p>
@@ -1063,35 +1093,30 @@ const peakHour2h = computed(() => {
 
                     <div class="rounded-lg border border-gray-100">
                         <div class="flex items-center justify-between border-b border-gray-100 px-3 py-2">
-                            <p class="text-xs font-semibold text-gray-700">ページ別CV（直近30日）</p>
-                            <p class="text-[11px] text-gray-500">購入判定: 閲覧後7日以内・同一ユーザー</p>
+                            <p class="text-xs font-semibold text-gray-700">日別PV（直近30日）</p>
+                            <p class="text-[11px] text-gray-500">対象: {{ stats.salesInsights?.pageViewsSince }} 以降</p>
                         </div>
                         <div>
                             <table class="min-w-full text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
-                                        <th class="px-3 py-2">対象ページ</th>
-                                        <th class="px-3 py-2">閲覧セッション</th>
-                                        <th class="px-3 py-2">購入ユーザー</th>
-                                        <th class="px-3 py-2">CVR</th>
+                                        <th class="px-3 py-2">日付</th>
+                                        <th class="px-3 py-2">PV</th>
+                                        <th class="px-3 py-2">セッション数</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr
-                                        v-for="row in stats.salesInsights?.pageConversions ?? []"
-                                        :key="`page-cvr-${row.pathPrefix}`"
+                                        v-for="row in dailyPageViews"
+                                        :key="`daily-pv-${row.day}`"
                                         class="border-t border-gray-100"
                                     >
-                                        <td class="px-3 py-2 text-gray-700">
-                                            <div class="font-semibold">{{ row.label }}</div>
-                                            <div class="font-mono text-[11px] text-gray-500">{{ row.pathPrefix }}</div>
-                                        </td>
-                                        <td class="px-3 py-2 text-gray-700">{{ row.sessions }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ row.purchaserUsers }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ Number(row.conversionRate ?? 0).toFixed(2) }}%</td>
+                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-700">{{ row.day }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.views) }}</td>
+                                        <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.uniqueSessions) }}</td>
                                     </tr>
-                                    <tr v-if="(stats.salesInsights?.pageConversions ?? []).length === 0">
-                                        <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません（migration後に集計されます）。</td>
+                                    <tr v-if="dailyPageViews.length === 0">
+                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません（migration後に集計されます）。</td>
                                     </tr>
                                 </tbody>
                             </table>

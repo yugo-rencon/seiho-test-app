@@ -157,10 +157,11 @@ const isDraft = true;
                     questionTitle="法人事業税"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-13 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '事業を行う法人はすべて納税義務者であるが、国、都道府県、市町村等の公共法人、林業、鉱物の掘採事業等を行う法人には[[課税されない]]。', //p219
+                        '事業年度の所得金額 → 事業年度の収入金額', //p219
+                        '地方税 → 国税', //p221
                     ]"
                 />
                 <QuestionTemp1
@@ -416,6 +417,7 @@ const isDraft = true;
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-06-13 確認済み
                             questionTitle: '個人事業税の申告と納付',
                             relatedProblems: [],
                             content: '正しい',

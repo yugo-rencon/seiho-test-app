@@ -108,7 +108,7 @@ const contactHref = computed(() => {
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
                         <dt class="font-medium text-gray-800">支払い方法</dt>
-                        <dd class="text-gray-700">クレジットカード決済（Stripe）</dd>
+                        <dd class="text-gray-700">クレジットカード決済、Apple Pay、Google Pay、Link（Stripe）</dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
                         <dt class="font-medium text-gray-800">支払い時期</dt>
@@ -132,7 +132,7 @@ const contactHref = computed(() => {
             </section>
 
             <div class="mt-6 text-xs text-gray-500 border-t border-gray-100 pt-4">
-                最終更新日：2026年5月11日
+                最終更新日：2026年6月13日
             </div>
         </div>
     </SeihoTestLayout>

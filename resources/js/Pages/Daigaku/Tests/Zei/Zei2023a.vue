@@ -416,6 +416,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-13 確認済み
                             questionTitle: '個人事業税の申告と納付',
                             relatedProblems: [],
                             content: '正しい',

@@ -283,6 +283,12 @@ const plans = computed(() => [
                             </li>
                         </ul>
                         <p
+                            v-if="plan.key === 'premium' || plan.key === 'basic_bundle'"
+                            class="mt-5 rounded-lg bg-gray-50 px-3 py-2 text-xs font-medium text-gray-600"
+                        >
+                            お支払い方法：クレジットカード / Apple Pay / Google Pay / Link
+                        </p>
+                        <p
                             v-if="plan.key === 'free'"
                             class="mt-3 text-xs text-gray-500"
                         >
@@ -346,7 +352,7 @@ const plans = computed(() => [
                     <li>問題文は掲載していません。解説のみを提供します。</li>
                     <li>内容は随時更新される場合があります。</li>
                     <li>追加課金なしの買い切りプランです。</li>
-                    <li>決済は世界基準のStripeを利用しており安全です。</li>
+                    <li>決済はStripeを利用しています。クレジットカード、Apple Pay、Google Pay、Linkに対応しています。</li>
                 </ul>
             </section>
         </div>

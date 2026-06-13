@@ -170,10 +170,11 @@ const isDraft = true;
                     questionTitle="法人住民税と法人事業税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-13 確認済み
+                        '地域割と均等割 → 法人税割と均等割', //p217
+                        '均等割額（標準税率）は、道府県民税および市町村民税のそれぞれについて、[[法人の規模等に応じて定められている]]。', //p218
                         '正しい',
-                        '', //p
+                        '事業年度の所得金額 → 事業年度の収入金額', //p219
                     ]"
                 />
                 <QuestionTemp1
@@ -411,6 +412,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-13 確認済み
                             questionTitle: '個人事業税の知識',
                             relatedProblems: [],
                             content: '正しい',

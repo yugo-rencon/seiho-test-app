@@ -237,8 +237,9 @@ const isDraft = true;
                     questionTitle="相続人"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-14 確認済み
                         '正しい',
-                        '', //p
+                        '[[他へ養子に行った子]]、嫁に行った娘も[[相続人となる]]（特別養子を除く）。', //p93
                         '正しい',
                         '正しい',
                     ]"

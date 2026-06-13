@@ -224,8 +224,9 @@ const isDraft = true;
                     questionTitle="公的年金等についての税金の知識"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-13 確認済み
                         '正しい',
-                        '', //p
+                        '公的年金等の受給者全員が[[源泉徴収の対象となるわけではない]]。', //p86
                         '正しい',
                         '正しい',
                     ]"

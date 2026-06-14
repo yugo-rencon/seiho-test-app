@@ -264,10 +264,11 @@ const isDraft = true;
                     questionTitle="贈与税"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-14 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '5年 → 2年', //p145
                     ]"
                 />
                 <QuestionTemp1
@@ -439,9 +440,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-14 確認済み
                             questionTitle: '結婚・子育て資金の一括贈与に係る贈与税の非課税措置',
                             relatedProblems: [],
-                            content: '',
+                            content: '結婚・子育て資金にあてるために、父母や祖父母等の直系尊属が金銭を拠出し、信託銀行等の所定の金融機関等に信託等をした場合に、[[信託受益権の価額または拠出された金銭等の額のうち別途定める金額を非課税とする]]。',//p154
                         }, //46
                         {
                             questionTitle: '使途秘匿金に対する追加課税',

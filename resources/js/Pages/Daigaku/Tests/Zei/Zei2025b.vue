@@ -277,9 +277,10 @@ const isDraft = true;
                     questionTitle="贈与税の税額計算・申告・納付"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-14 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '原則として[[受贈者]]の住所地の所轄税務署長に提出する。', //p149
                         '正しい',
                     ]"
                 />
@@ -433,9 +434,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-14 確認済み
                             questionTitle: '贈与税の課税制度',
                             relatedProblems: [],
-                            content: '',
+                            content: '受贈者は贈与者ごとに[[異なる課税方法を選択することができる]]。', //p146
                         }, //45
                         {
                             questionTitle: '個人年金受取時の課税',

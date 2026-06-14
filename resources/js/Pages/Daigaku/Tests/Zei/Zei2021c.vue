@@ -106,10 +106,11 @@ const isDraft = true;
                     questionTitle="贈与税の税額計算・申告・納付等"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-14 確認済み
+                        '贈与税は、その年の[[1月1日から12月31日まで]]の間に贈与を受けた財産の価額の合計額に対して課税される。', //p147
                         '正しい',
-                        '', //p
-                        '', //p
+                        '贈与税の申告書の提出期限は、贈与を受けた年の[[翌年2月1日から3月15日まで]]である。', //p149
+                        '3年 → 5年', //p150
                     ]"
                 />
                 <QuestionTemp1
@@ -277,10 +278,11 @@ const isDraft = true;
                     questionTitle="贈与税"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-14 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '5年 → 2年', //p145
                     ]"
                 />
                 <QuestionTemp1

@@ -278,10 +278,11 @@ const isDraft = true;
                     questionTitle="贈与税の税額計算・申告・納付"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-14 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '3年 → 5年', //p150
                     ]"
                 />
                 <QuestionTemp1

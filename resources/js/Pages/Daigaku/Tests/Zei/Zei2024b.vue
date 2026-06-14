@@ -250,10 +250,11 @@ const isDraft = true;
                     questionTitle="贈与税"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-14 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '5年 → 2年', //p145
                     ]"
                 />
                 <QuestionTemp1

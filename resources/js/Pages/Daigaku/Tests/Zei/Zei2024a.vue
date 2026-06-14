@@ -250,8 +250,9 @@ const isDraft = true;
                     questionTitle="贈与税の税額計算・申告・納付等"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-14 確認済み
                         '正しい',
-                        '', //p
+                        '2500万円 → 2000万円', //p148
                         '正しい',
                         '正しい',
                     ]"

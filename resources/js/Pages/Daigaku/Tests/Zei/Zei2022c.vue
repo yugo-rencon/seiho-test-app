@@ -387,11 +387,12 @@ const isDraft = true;
                     questionTitle="贈与税"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        // rev: 2026-06-14 確認済み
+                        '個人',
+                        '経済的',
+                        '110',
+                        '2,000',
+                        '提出期限', // 問35〜39
                     ]"
                     :labels="[
                         'ウ', //35

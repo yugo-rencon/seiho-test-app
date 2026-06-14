@@ -11,35 +11,35 @@
                         : (str_starts_with($path, 'ippan') ? 'ippan' : 'seiho')));
             $siteAssets = [
                 'seiho' => [
-                    'icon' => '/images/rencon-favicon.svg?v=20260615-seiho',
+                    'icon' => '/images/rencon-favicon.svg?v=seiho',
                     'icon48' => '/images/favicons/rencon-favicon-seiho-48.png?v=20260516',
                     'icon192' => '/images/favicons/rencon-favicon-seiho-192.png?v=20260516',
                     'manifest' => '/site-seiho.webmanifest',
                     'theme' => '#7c3aed',
                 ],
                 'daigaku' => [
-                    'icon' => '/images/rencon-favicon-daigaku.svg?v=20260615-daigaku',
+                    'icon' => '/images/rencon-favicon-daigaku.svg?v=daigaku',
                     'icon48' => '/images/favicons/rencon-favicon-daigaku-48.png?v=20260516',
                     'icon192' => '/images/favicons/rencon-favicon-daigaku-192.png?v=20260516',
                     'manifest' => '/site-daigaku.webmanifest',
                     'theme' => '#0284c7',
                 ],
                 'senmon' => [
-                    'icon' => '/images/rencon-favicon-senmon.svg?v=20260615-senmon',
+                    'icon' => '/images/rencon-favicon-senmon.svg?v=senmon',
                     'icon48' => '/images/favicons/rencon-favicon-senmon-48.png?v=20260516',
                     'icon192' => '/images/favicons/rencon-favicon-senmon-192.png?v=20260516',
                     'manifest' => '/site-senmon.webmanifest',
                     'theme' => '#16a34a',
                 ],
                 'ouyou' => [
-                    'icon' => '/images/rencon-favicon-ouyou.svg?v=20260615-ouyou',
+                    'icon' => '/images/rencon-favicon-ouyou.svg?v=ouyou',
                     'icon48' => '/images/favicons/rencon-favicon-ouyou-48.png?v=20260516',
                     'icon192' => '/images/favicons/rencon-favicon-ouyou-192.png?v=20260516',
                     'manifest' => '/site-ouyou.webmanifest',
                     'theme' => '#d97706',
                 ],
                 'ippan' => [
-                    'icon' => '/images/rencon-favicon-ippan.svg?v=20260615-ippan',
+                    'icon' => '/images/rencon-favicon-ippan.svg?v=ippan',
                     'icon48' => '/images/favicons/rencon-favicon-ippan-48.png?v=20260516',
                     'icon192' => '/images/favicons/rencon-favicon-ippan-192.png?v=20260516',
                     'manifest' => '/site-ippan.webmanifest',

@@ -435,9 +435,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-14 確認済み
                             questionTitle: '贈与税の課税制度',
                             relatedProblems: [],
-                            content: '',
+                            content: '受贈者は贈与者ごとに[[異なる課税方法を選択することができる]]。', //p146
                         }, //45
                         {
                             questionTitle: '保証期間付終身年金の課税',

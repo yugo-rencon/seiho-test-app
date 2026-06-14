@@ -439,6 +439,7 @@ const isDraft = true;
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-06-15 確認済み
                             questionTitle: '暦年課税の贈与税額計算の仕組み',
                             relatedProblems: [],
                             content: '正しい',

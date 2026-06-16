@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use App\Support\PremiumSessionLimiter;
+use App\Support\UserActivityLogger;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,6 +36,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        app(UserActivityLogger::class)->logLogin($request, $request->user(), 'password');
 
         if (!app(PremiumSessionLimiter::class)->allows($request)) {
             Auth::guard('web')->logout();

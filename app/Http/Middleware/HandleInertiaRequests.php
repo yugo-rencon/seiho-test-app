@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Support\PremiumSessionLimiter;
+use App\Support\UserActivityLogger;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -36,6 +37,7 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         $premiumSessionLimiter = app(PremiumSessionLimiter::class);
+        $user = $request->user();
         $scope = match (true) {
             str_starts_with((string) $request->path(), 'daigaku') => 'daigaku',
             str_starts_with((string) $request->path(), 'ippan') => 'ippan',
@@ -43,24 +45,34 @@ class HandleInertiaRequests extends Middleware
             str_starts_with((string) $request->path(), 'ouyou') => 'ouyou',
             default => 'seiho',
         };
+        $premiumSessionAllowed = $premiumSessionLimiter->allows($request);
         $hasPremiumAccess = fn (string $targetScope): bool => (
-            $request->user()?->hasPremiumAccess($targetScope) ?? false
-        ) && $premiumSessionLimiter->allows($request);
+            $user?->hasPremiumAccess($targetScope) ?? false
+        ) && $premiumSessionAllowed;
+        $hasAnyPremium = $user?->hasAnyPremiumAccess() ?? false;
+        $hasCurrentPremium = $hasPremiumAccess($scope);
+
+        app(UserActivityLogger::class)->logPremiumAccess(
+            $request,
+            $user,
+            $scope,
+            $hasCurrentPremium,
+            $hasAnyPremium,
+            $premiumSessionAllowed,
+        );
 
         return array_merge(parent::share($request), [
             'auth' => [
-                'user' => $request->user(),
-                'hasPremium' => fn () => $hasPremiumAccess($scope),
+                'user' => $user,
+                'hasPremium' => fn () => $hasCurrentPremium,
                 'hasPremiumSeiho' => fn () => $hasPremiumAccess('seiho'),
                 'hasPremiumDaigaku' => fn () => $hasPremiumAccess('daigaku'),
                 'hasPremiumIppan' => fn () => $hasPremiumAccess('ippan'),
                 'hasPremiumSenmon' => fn () => $hasPremiumAccess('senmon'),
                 'hasPremiumOuyou' => fn () => $hasPremiumAccess('ouyou'),
                 'hasPremiumBasic' => fn () => $hasPremiumAccess('basic'),
-                'premiumSessionLimitExceeded' => fn () => (
-                    $request->user()?->hasAnyPremiumAccess() ?? false
-                ) && !$premiumSessionLimiter->allows($request),
-                'isAdmin' => fn () => $request->user()?->is_admin ?? false,
+                'premiumSessionLimitExceeded' => fn () => $hasAnyPremium && !$premiumSessionAllowed,
+                'isAdmin' => fn () => $user?->is_admin ?? false,
             ],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use App\Support\PremiumSessionLimiter;
+use App\Support\UserActivityLogger;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -79,6 +80,7 @@ class GoogleAuthController extends Controller
 
         Auth::login($user, true);
         $request->session()->regenerate();
+        app(UserActivityLogger::class)->logLogin($request, $user, 'google');
 
         if (!app(PremiumSessionLimiter::class)->allows($request)) {
             Auth::guard('web')->logout();

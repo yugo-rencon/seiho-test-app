@@ -32,6 +32,7 @@ const props = defineProps({
 
 const purchaseScope = ref(props.filters?.purchase_scope ?? "all");
 const purchaseState = ref(props.filters?.purchase_state ?? "all");
+const userSearch = ref(props.filters?.user_search ?? "");
 const activeTab = ref("dashboard");
 const salesTab = ref("overview");
 const salesScopeFilter = ref("all");
@@ -311,6 +312,7 @@ const submitSearch = () => {
         {
             purchase_scope: purchaseScope.value,
             purchase_state: purchaseState.value,
+            user_search: userSearch.value.trim(),
         },
         { preserveState: true, replace: true },
     );
@@ -319,6 +321,7 @@ const submitSearch = () => {
 const resetSearch = () => {
     purchaseScope.value = "all";
     purchaseState.value = "all";
+    userSearch.value = "";
     submitSearch();
 };
 
@@ -1626,8 +1629,14 @@ const peakHour2h = computed(() => {
             <template v-if="activeTab === 'users'">
             <form
                 @submit.prevent="submitSearch"
-                class="mb-4 grid gap-2 md:grid-cols-[1.2fr_1fr_auto]"
+                class="mb-4 grid gap-2 md:grid-cols-[1.4fr_1fr_1fr_auto_auto]"
             >
+                <input
+                    v-model="userSearch"
+                    type="search"
+                    placeholder="メールアドレスで検索"
+                    class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
+                />
                 <select
                     v-model="purchaseScope"
                     @change="submitSearch"
@@ -1650,6 +1659,12 @@ const peakHour2h = computed(() => {
                     <option value="purchased">購入あり</option>
                     <option value="unpurchased">未購入</option>
                 </select>
+                <button
+                    type="submit"
+                    class="whitespace-nowrap rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700"
+                >
+                    検索
+                </button>
                 <button
                     type="button"
                     class="whitespace-nowrap rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50"

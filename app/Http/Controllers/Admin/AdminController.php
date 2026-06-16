@@ -19,6 +19,7 @@ class AdminController extends Controller
     {
         $purchaseScope = (string) $request->query('purchase_scope', 'all');
         $purchaseState = (string) $request->query('purchase_state', 'all');
+        $userSearch = trim((string) $request->query('user_search', ''));
 
         $allowedScopes = ['all', 'seiho', 'daigaku', 'ouyou', 'senmon', 'ippan', 'basic'];
         if (!in_array($purchaseScope, $allowedScopes, true)) {
@@ -69,6 +70,10 @@ class AdminController extends Controller
             )
             ->where('users.is_admin', 0)
             ->whereNotIn('users.id', self::INTERNAL_USER_IDS)
+            ->when($userSearch !== '', function ($query) use ($userSearch) {
+                $escapedSearch = str_replace(['\\', '%', '_'], ['\\\\', '\\%', '\\_'], $userSearch);
+                $query->where('users.email', 'like', "%{$escapedSearch}%");
+            })
             ->when($purchaseState === 'purchased', function ($query) {
                 $query->whereRaw('COALESCE(purchase_summary.paid_count, 0) > 0');
             })
@@ -563,6 +568,7 @@ class AdminController extends Controller
             'filters' => [
                 'purchase_scope' => $purchaseScope,
                 'purchase_state' => $purchaseState,
+                'user_search' => $userSearch,
             ],
             'releasedKeys' => $releasedKeys,
         ]);

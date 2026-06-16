@@ -301,6 +301,18 @@ class AdminController extends Controller
         $pageViewsSince = Carbon::now()->subDays(30)->startOfDay();
         $topPageViews = collect();
         $dailyPageViews = collect();
+        $premiumUsageToday = [
+            'summary' => [
+                'views' => 0,
+                'users' => 0,
+                'sessions' => 0,
+                'premiumViews' => 0,
+                'blockedViews' => 0,
+            ],
+            'users' => collect(),
+            'pages' => collect(),
+            'recent' => collect(),
+        ];
         $pageViewSummary = [
             'today' => ['views' => 0, 'uniqueSessions' => 0],
             'yesterday' => ['views' => 0, 'uniqueSessions' => 0],
@@ -366,6 +378,60 @@ class AdminController extends Controller
                 ->get();
         }
 
+        if (Schema::hasTable('premium_access_logs')) {
+            $premiumLogsBaseQuery = function () {
+                return DB::table('premium_access_logs')
+                    ->where('path', 'not like', '/admin%')
+                    ->where('path', 'not like', '/daigaku/admin%');
+            };
+
+            $summaryRow = $premiumLogsBaseQuery()
+                ->whereBetween('checked_at', [$todayStart, $todayEnd])
+                ->selectRaw('COUNT(*) as views')
+                ->selectRaw('COUNT(DISTINCT user_id) as users')
+                ->selectRaw('COUNT(DISTINCT session_id) as sessions')
+                ->selectRaw('SUM(CASE WHEN has_premium = 1 THEN 1 ELSE 0 END) as premium_views')
+                ->selectRaw('SUM(CASE WHEN premium_session_allowed = 0 THEN 1 ELSE 0 END) as blocked_views')
+                ->first();
+
+            $premiumUsageToday = [
+                'summary' => [
+                    'views' => (int) ($summaryRow->views ?? 0),
+                    'users' => (int) ($summaryRow->users ?? 0),
+                    'sessions' => (int) ($summaryRow->sessions ?? 0),
+                    'premiumViews' => (int) ($summaryRow->premium_views ?? 0),
+                    'blockedViews' => (int) ($summaryRow->blocked_views ?? 0),
+                ],
+                'users' => $premiumLogsBaseQuery()
+                    ->join('users', 'users.id', '=', 'premium_access_logs.user_id')
+                    ->whereBetween('premium_access_logs.checked_at', [$todayStart, $todayEnd])
+                    ->select('premium_access_logs.user_id', 'users.email')
+                    ->selectRaw('COUNT(*) as views')
+                    ->selectRaw('COUNT(DISTINCT premium_access_logs.path) as unique_paths')
+                    ->selectRaw('MAX(premium_access_logs.checked_at) as last_seen_at')
+                    ->groupBy('premium_access_logs.user_id', 'users.email')
+                    ->orderByDesc('views')
+                    ->limit(10)
+                    ->get(),
+                'pages' => $premiumLogsBaseQuery()
+                    ->whereBetween('checked_at', [$todayStart, $todayEnd])
+                    ->select('path')
+                    ->selectRaw('COUNT(*) as views')
+                    ->selectRaw('COUNT(DISTINCT user_id) as users')
+                    ->groupBy('path')
+                    ->orderByDesc('views')
+                    ->limit(10)
+                    ->get(),
+                'recent' => $premiumLogsBaseQuery()
+                    ->leftJoin('users', 'users.id', '=', 'premium_access_logs.user_id')
+                    ->whereBetween('premium_access_logs.checked_at', [$todayStart, $todayEnd])
+                    ->select('premium_access_logs.user_id', 'users.email', 'premium_access_logs.path', 'premium_access_logs.scope', 'premium_access_logs.has_premium', 'premium_access_logs.premium_session_allowed', 'premium_access_logs.blocked_reason', 'premium_access_logs.checked_at')
+                    ->orderByDesc('premium_access_logs.checked_at')
+                    ->limit(10)
+                    ->get(),
+            ];
+        }
+
         $stats['salesInsights'] = [
             'fromDate' => $salesSince->toDateString(),
             'salesCount' => (int) ($salesSummary->sales_count ?? 0),
@@ -419,6 +485,37 @@ class AdminController extends Controller
                     'uniqueSessions' => (int) $row->unique_sessions,
                 ];
             })->values(),
+            'premiumUsageToday' => [
+                'summary' => $premiumUsageToday['summary'],
+                'users' => $premiumUsageToday['users']->map(function ($row) {
+                    return [
+                        'userId' => (int) $row->user_id,
+                        'email' => (string) $row->email,
+                        'views' => (int) $row->views,
+                        'uniquePaths' => (int) $row->unique_paths,
+                        'lastSeenAt' => (string) $row->last_seen_at,
+                    ];
+                })->values(),
+                'pages' => $premiumUsageToday['pages']->map(function ($row) {
+                    return [
+                        'path' => (string) $row->path,
+                        'views' => (int) $row->views,
+                        'users' => (int) $row->users,
+                    ];
+                })->values(),
+                'recent' => $premiumUsageToday['recent']->map(function ($row) {
+                    return [
+                        'userId' => $row->user_id !== null ? (int) $row->user_id : null,
+                        'email' => (string) ($row->email ?? ''),
+                        'path' => (string) $row->path,
+                        'scope' => (string) $row->scope,
+                        'hasPremium' => (bool) $row->has_premium,
+                        'premiumSessionAllowed' => (bool) $row->premium_session_allowed,
+                        'blockedReason' => $row->blocked_reason !== null ? (string) $row->blocked_reason : null,
+                        'checkedAt' => (string) $row->checked_at,
+                    ];
+                })->values(),
+            ],
             'weekdaySales' => $weekdaySales,
             'hourlySales' => $hourlySales,
         ];

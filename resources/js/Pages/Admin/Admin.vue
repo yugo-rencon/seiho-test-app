@@ -441,9 +441,23 @@ const pageViewSummary = computed(() => salesInsights.value?.pageViewSummary ?? {
 const dailyPageViews = computed(() => salesInsights.value?.dailyPageViews ?? []);
 const premiumUsageToday = computed(() => salesInsights.value?.premiumUsageToday ?? {});
 const premiumUsageSummary = computed(() => premiumUsageToday.value?.summary ?? {});
+const premiumUsageScopeSummary = computed(() => premiumUsageToday.value?.scopeSummary ?? []);
 const premiumUsageUsers = computed(() => premiumUsageToday.value?.users ?? []);
 const premiumUsagePages = computed(() => premiumUsageToday.value?.pages ?? []);
 const premiumUsageRecent = computed(() => premiumUsageToday.value?.recent ?? []);
+
+const premiumUsageForScope = (scope) => {
+    const row = premiumUsageScopeSummary.value.find((item) => item?.scope === scope);
+
+    return row ?? {
+        scope,
+        views: 0,
+        users: 0,
+        sessions: 0,
+        premiumViews: 0,
+        blockedViews: 0,
+    };
+};
 
 const salesScopeOptions = [
     { value: "all", label: "全試験" },
@@ -1085,6 +1099,58 @@ const peakHour2h = computed(() => {
                             <p class="text-[11px] text-emerald-700">
                                 制限表示 {{ formatNumber(premiumUsageSummary?.blockedViews) }}件
                             </p>
+                        </div>
+
+                        <div class="mt-3 grid gap-3 md:grid-cols-2">
+                            <div class="rounded-lg border border-violet-100 bg-white p-4">
+                                <div class="flex items-center justify-between gap-3">
+                                    <p class="text-sm font-bold text-violet-800">生保講座</p>
+                                    <span class="rounded-full bg-violet-50 px-2 py-0.5 text-[11px] font-semibold text-violet-700">seiho</span>
+                                </div>
+                                <div class="mt-3 grid grid-cols-2 gap-3">
+                                    <div>
+                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">利用ユーザー</p>
+                                        <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').users) }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">PV</p>
+                                        <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').views) }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">セッション</p>
+                                        <p class="mt-1 text-lg font-bold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').sessions) }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">制限表示</p>
+                                        <p class="mt-1 text-lg font-bold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').blockedViews) }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rounded-lg border border-blue-100 bg-white p-4">
+                                <div class="flex items-center justify-between gap-3">
+                                    <p class="text-sm font-bold text-blue-800">生保大学</p>
+                                    <span class="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-blue-700">daigaku</span>
+                                </div>
+                                <div class="mt-3 grid grid-cols-2 gap-3">
+                                    <div>
+                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">利用ユーザー</p>
+                                        <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').users) }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">PV</p>
+                                        <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').views) }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">セッション</p>
+                                        <p class="mt-1 text-lg font-bold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').sessions) }}</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">制限表示</p>
+                                        <p class="mt-1 text-lg font-bold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').blockedViews) }}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

@@ -309,6 +309,7 @@ class AdminController extends Controller
                 'premiumViews' => 0,
                 'blockedViews' => 0,
             ],
+            'scopeSummary' => collect(),
             'users' => collect(),
             'pages' => collect(),
             'recent' => collect(),
@@ -394,6 +395,19 @@ class AdminController extends Controller
                 ->selectRaw('SUM(CASE WHEN premium_session_allowed = 0 THEN 1 ELSE 0 END) as blocked_views')
                 ->first();
 
+            $scopeSummary = $premiumLogsBaseQuery()
+                ->whereBetween('checked_at', [$todayStart, $todayEnd])
+                ->whereIn('scope', ['seiho', 'daigaku'])
+                ->select('scope')
+                ->selectRaw('COUNT(*) as views')
+                ->selectRaw('COUNT(DISTINCT user_id) as users')
+                ->selectRaw('COUNT(DISTINCT session_id) as sessions')
+                ->selectRaw('SUM(CASE WHEN has_premium = 1 THEN 1 ELSE 0 END) as premium_views')
+                ->selectRaw('SUM(CASE WHEN premium_session_allowed = 0 THEN 1 ELSE 0 END) as blocked_views')
+                ->groupBy('scope')
+                ->get()
+                ->keyBy('scope');
+
             $premiumUsageToday = [
                 'summary' => [
                     'views' => (int) ($summaryRow->views ?? 0),
@@ -402,6 +416,18 @@ class AdminController extends Controller
                     'premiumViews' => (int) ($summaryRow->premium_views ?? 0),
                     'blockedViews' => (int) ($summaryRow->blocked_views ?? 0),
                 ],
+                'scopeSummary' => collect(['seiho', 'daigaku'])->map(function ($scope) use ($scopeSummary) {
+                    $row = $scopeSummary->get($scope);
+
+                    return [
+                        'scope' => $scope,
+                        'views' => (int) ($row->views ?? 0),
+                        'users' => (int) ($row->users ?? 0),
+                        'sessions' => (int) ($row->sessions ?? 0),
+                        'premiumViews' => (int) ($row->premium_views ?? 0),
+                        'blockedViews' => (int) ($row->blocked_views ?? 0),
+                    ];
+                })->values(),
                 'users' => $premiumLogsBaseQuery()
                     ->join('users', 'users.id', '=', 'premium_access_logs.user_id')
                     ->whereBetween('premium_access_logs.checked_at', [$todayStart, $todayEnd])
@@ -487,6 +513,7 @@ class AdminController extends Controller
             })->values(),
             'premiumUsageToday' => [
                 'summary' => $premiumUsageToday['summary'],
+                'scopeSummary' => $premiumUsageToday['scopeSummary'],
                 'users' => $premiumUsageToday['users']->map(function ($row) {
                     return [
                         'userId' => (int) $row->user_id,

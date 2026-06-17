@@ -330,10 +330,11 @@ const isDraft = true;
                     questionTitle="法人向け保険商品の課税関係"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-18 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '定期保険に加入した場合は、その保険料は期間の経過に応じて[[必要経費に算入される]]。', //p236
                     ]"
                 />
                 <QuestionTemp3

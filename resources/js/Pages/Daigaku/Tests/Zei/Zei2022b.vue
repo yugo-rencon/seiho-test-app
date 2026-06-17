@@ -291,10 +291,11 @@ const isDraft = true;
                     questionTitle="こども保険に関する税務"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-18 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一時所得 → 雑所得', //p166
                     ]"
                 />
                 <QuestionTemp1

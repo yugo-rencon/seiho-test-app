@@ -99,7 +99,7 @@ const scopeTheme = computed(() => {
 const scopePlan = computed(() => {
     if (currentScope.value === "ippan") {
         return {
-            price: "¥480",
+            price: "¥980",
             description: "生命保険一般課程の対象年度・対象フォームの解説一式を解放できます。",
             features: [
                 "生命保険一般課程 全50解説を閲覧可能",
@@ -113,7 +113,7 @@ const scopePlan = computed(() => {
 
     if (currentScope.value === "senmon") {
         return {
-            price: "¥480",
+            price: "¥980",
             description: "生命保険専門課程の対象年度・対象フォームの解説一式を解放できます。",
             features: [
                 "生命保険専門課程 全30解説を閲覧可能",
@@ -127,7 +127,7 @@ const scopePlan = computed(() => {
 
     if (currentScope.value === "ouyou") {
         return {
-            price: "¥480",
+            price: "¥980",
             description: "生命保険応用課程の対象年度・対象フォームの解説一式を解放できます。",
             features: [
                 "生命保険応用課程 全30解説を閲覧可能",
@@ -182,14 +182,14 @@ const plans = computed(() => [
         ? {
               key: "basic_bundle",
               name: "一般・専門・応用セット（買い切り）",
-              price: "¥980",
+              price: "¥1,980",
               note: "セット販売",
               description: "一般課程・専門課程・応用課程の解説一式をまとめて解放できます。",
               features: [
                   "一般課程 全50解説を閲覧可能",
                   "専門課程 全30解説を閲覧可能",
                   "応用課程 全30解説を閲覧可能",
-                  "個別購入より460円お得",
+                  "個別購入より960円お得",
               ],
               cta: "一般・専門・応用セットで始める",
               href: "billing.checkout",
@@ -292,6 +292,7 @@ const plans = computed(() => [
                             v-if="plan.key === 'premium' || plan.key === 'basic_bundle'"
                             class="mt-5 rounded-lg bg-gray-50 px-3 py-2 text-xs font-medium text-gray-600"
                         >
+                            利用期間：期限なし<br />
                             お支払い方法：クレジットカード / Apple Pay / Google Pay / Link
                         </p>
                         <p

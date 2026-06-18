@@ -108,6 +108,7 @@ const plans = [
                             v-if="plan.key === 'premium'"
                             class="mt-5 rounded-lg bg-gray-50 px-3 py-2 text-xs font-medium text-gray-600"
                         >
+                            利用期間：期限なし<br />
                             お支払い方法：クレジットカード / Apple Pay / Google Pay / Link
                         </p>
                     </div>

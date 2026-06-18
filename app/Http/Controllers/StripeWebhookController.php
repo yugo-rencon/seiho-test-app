@@ -200,8 +200,9 @@ class StripeWebhookController extends Controller
     {
         return match ($scope) {
             'daigaku' => 1480,
-            'ippan', 'senmon', 'ouyou' => 480,
-            'basic' => 980,
+            'ippan' => 980,
+            'senmon', 'ouyou' => 980,
+            'basic' => 1980,
             default => 1980,
         };
     }

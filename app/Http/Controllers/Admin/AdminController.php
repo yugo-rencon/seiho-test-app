@@ -175,10 +175,10 @@ class AdminController extends Controller
                 WHEN purchases.paid_at < "'.$daigakuPriceSwitchAt.'" THEN 980
                 ELSE 1480
             END
-            WHEN "ouyou" THEN 480
-            WHEN "senmon" THEN 480
-            WHEN "ippan" THEN 480
-            WHEN "basic" THEN 980
+            WHEN "ouyou" THEN 980
+            WHEN "senmon" THEN 980
+            WHEN "ippan" THEN 980
+            WHEN "basic" THEN 1980
             ELSE 1980
         END';
 
@@ -725,8 +725,9 @@ class AdminController extends Controller
             },
             'price' => match ($scope) {
                 'daigaku' => 1480,
-                'ippan', 'senmon', 'ouyou' => 480,
-                'basic' => 980,
+                'ippan' => 980,
+                'senmon', 'ouyou' => 980,
+                'basic' => 1980,
                 default => 1980,
             },
             'currency' => 'jpy',

@@ -24,7 +24,7 @@ const pricingHref = computed(() => {
 const sessionLimitExceeded = computed(() => page.props?.auth?.premiumSessionLimitExceeded === true);
 const priceNumberText = computed(() =>
     ["ippan", "senmon", "ouyou"].includes(scope.value)
-        ? "480"
+        ? "980"
         : scope.value === "daigaku"
           ? "1,480"
           : "1,980",

@@ -168,6 +168,8 @@ class AdminController extends Controller
         $salesSince = Carbon::create(2026, 4, 1)->startOfDay();
 
         $daigakuPriceSwitchAt = '2026-05-30 17:34:32';
+        $basicExamPriceSwitchAt = '2026-06-18 00:00:00';
+        $basicBundlePriceSwitchAt = '2026-06-18 00:00:00';
 
         $scopePriceCaseSql = 'CASE COALESCE(purchases.scope, "seiho")
             WHEN "seiho" THEN 1980
@@ -175,10 +177,22 @@ class AdminController extends Controller
                 WHEN purchases.paid_at < "'.$daigakuPriceSwitchAt.'" THEN 980
                 ELSE 1480
             END
-            WHEN "ouyou" THEN 980
-            WHEN "senmon" THEN 980
-            WHEN "ippan" THEN 980
-            WHEN "basic" THEN 1980
+            WHEN "ouyou" THEN CASE
+                WHEN purchases.paid_at < "'.$basicExamPriceSwitchAt.'" THEN 480
+                ELSE 980
+            END
+            WHEN "senmon" THEN CASE
+                WHEN purchases.paid_at < "'.$basicExamPriceSwitchAt.'" THEN 480
+                ELSE 980
+            END
+            WHEN "ippan" THEN CASE
+                WHEN purchases.paid_at < "'.$basicExamPriceSwitchAt.'" THEN 480
+                ELSE 980
+            END
+            WHEN "basic" THEN CASE
+                WHEN purchases.paid_at < "'.$basicBundlePriceSwitchAt.'" THEN 980
+                ELSE 1980
+            END
             ELSE 1980
         END';
 

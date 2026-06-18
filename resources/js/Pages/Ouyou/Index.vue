@@ -73,7 +73,7 @@ const getFormLabel = (year, periodId, form) => {
                             生命保険応用課程の過去問解説ページです。
                         </span>
                         <span class="mt-0.5 block text-[11px] font-medium text-amber-700/90">
-                            2025年の試験はすべて無料でお試しいただけます。
+                            2025年4月〜7月実施フォームAを無料でお試しいただけます。
                             <Link
                                 :href="pricingHref"
                                 class="ml-1 hidden font-semibold text-amber-700 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-800 md:inline"
@@ -131,7 +131,7 @@ const getFormLabel = (year, periodId, form) => {
                                     v-if="Number(year) === 2025 && !hasPremium"
                                     class="inline-flex items-center rounded-full border border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700"
                                 >
-                                    2025年 全フォーム無料
+                                    2025年4月〜7月 フォームA無料
                                 </span>
                             </div>
                             <p

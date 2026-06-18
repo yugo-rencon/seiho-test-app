@@ -73,7 +73,7 @@ const contactHref = computed(() => {
                         <dd class="text-gray-700">
                             生保講座：最新年度フォームAなど一部コンテンツ<br />
                             生命保険大学課程：最新年度フォームAなど一部コンテンツ<br />
-                            生命保険一般課程・専門課程・応用課程：2025年の試験全フォーム
+                            生命保険一般課程・専門課程・応用課程：2025年前半実施フォームA
                         </dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">

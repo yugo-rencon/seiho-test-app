@@ -24,14 +24,25 @@ const parseSeihoSubjectKeyFromPath = (): string => {
     return String(matched?.[1] ?? "").toLowerCase();
 };
 
+const isBasicScopeFreeRoute = (): boolean => {
+    if (typeof window === "undefined") return false;
+
+    const path = window.location.pathname.replace(/\/$/, "");
+    return (
+        path === "/ippan/2025-1-6-a" ||
+        path === "/senmon/2025-h1-a" ||
+        path === "/ouyou/2025-h1-a"
+    );
+};
+
 export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     const year = Number(String(subject ?? "").slice(0, 4));
     const formCode = parseFormCode(subject);
     const scope = currentExamScope();
 
     if (scope === "ippan" || scope === "senmon" || scope === "ouyou") {
-        // 一般・専門・応用課程: 2025年の試験は全フォーム無料
-        return year !== 2025;
+        // 一般・専門・応用課程: 2025年の前半フォームAのみ無料
+        return !isBasicScopeFreeRoute();
     }
 
     if (isDaigakuPath()) {

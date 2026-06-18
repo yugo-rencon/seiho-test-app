@@ -306,9 +306,10 @@ const isDraft = true;
                     questionTitle="生命保険を活用した相続対策"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-06-18 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '3割 → 2割', //p189
                         '正しい',
                     ]"
                 />

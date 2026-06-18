@@ -157,6 +157,12 @@ const freeRouteName = computed(() => {
     if (currentScope.value === "ouyou") return "ouyou.index";
     return "tests.index";
 });
+const tokushoRouteName = computed(() => {
+    if (currentScope.value === "ippan") return "ippan.tokusho";
+    if (currentScope.value === "senmon") return "senmon.tokusho";
+    if (currentScope.value === "ouyou") return "ouyou.tokusho";
+    return "tokusho";
+});
 
 const plans = computed(() => [
     {
@@ -351,9 +357,19 @@ const plans = computed(() => [
                 <ul class="mt-3 list-disc list-inside space-y-2">
                     <li>問題文は掲載していません。解説のみを提供します。</li>
                     <li>内容は随時更新される場合があります。</li>
-                    <li>追加課金なしの買い切りプランです。</li>
+                    <li>月額ではなく、追加課金なしの買い切りプランです。</li>
+                    <li>購入後すぐに対象の解説を閲覧できます。</li>
+                    <li>プレミアムの同時利用は2端末までです。</li>
                     <li>決済はStripeを利用しています。クレジットカード、Apple Pay、Google Pay、Linkに対応しています。</li>
                 </ul>
+                <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+                    <Link :href="route(tokushoRouteName)" class="text-gray-700 underline underline-offset-4 hover:text-gray-900">
+                        特商法に基づく表記
+                    </Link>
+                    <Link :href="route('contact.index')" class="text-gray-700 underline underline-offset-4 hover:text-gray-900">
+                        お問い合わせ
+                    </Link>
+                </div>
             </section>
         </div>
     </SeihoTestLayout>

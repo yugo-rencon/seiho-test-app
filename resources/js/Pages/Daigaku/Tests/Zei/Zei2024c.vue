@@ -25,7 +25,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="退職所得金額の計算"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c1']"
                     :contents="[
                         '正しい',
                         '', //p
@@ -38,7 +38,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定申告"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c2']"
                     :contents="[
                         '', //p
                         '正しい',
@@ -51,7 +51,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="給与所得者の税金の基礎"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c3']"
                     :contents="[
                         '', //p
                         '', //p
@@ -64,7 +64,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="医療費控除"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c4']"
                     :contents="[
                         '', //p
                         '', //p
@@ -77,7 +77,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続の承認と放棄"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a5', '2024b5', '2024c5']"
                     :contents="[
                         '', //p
                         '', //p
@@ -90,7 +90,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の計算"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a17', '2024b19', '2024c6']"
                     :contents="[
                         '', //p
                         '', //p
@@ -103,7 +103,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="遺贈と遺言"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a7', '2024b7', '2024c7']"
                     :contents="[
                         '', //p
                         '', //p
@@ -116,7 +116,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続時精算課税制度"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a8', '2024b8', '2024c8']"
                     :contents="[
                         '', //p
                         '', //p
@@ -129,7 +129,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="こども保険に関する税務"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a9', '2024b9', '2024c9']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
                         '一時所得の金額は、[[満期保険金（または祝金）－（既払込保険料合計額－既受取祝金の合計額）－50万円（特別控除額）]]で計算する。本問の場合、100万円 －（200万円 －（30万円 ＋ 70万円））－50万円 ＝ －50万円となり、[[一時所得は発生しない]]。', //p165
@@ -143,7 +143,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="個人が受け取る保険金・給付金等に対する税金の知識"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c10']"
                     :contents="[
                         '', //p
                         '正しい',
@@ -156,7 +156,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="契約内容の変更に関する税務"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c11']"
                     :contents="[
                         '', //p
                         '', //p
@@ -169,7 +169,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="法人住民税と法人事業税"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c12']"
                     :contents="[
                         // rev: 2026-06-13 確認済み
                         '地域割と均等割 → 法人税割と均等割', //p217
@@ -183,7 +183,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="雑所得"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c13']"
                     :contents="[
                         // rev: 2026-06-09 確認済み
                         '正しい',
@@ -197,7 +197,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="個人住民税"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a14', '2024b14', '2024c14']"
                     :contents="[
                         '正しい',
                         '', //p
@@ -210,7 +210,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="青色申告制度"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a3', '2024c15']"
                     :contents="[
                         '', //p
                         '正しい',
@@ -223,7 +223,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="退職金・企業年金についての税金の知識"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a16', '2024b16', '2024c16']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -236,7 +236,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定申告の訂正と税務調査・処分"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024b17', '2024c17']"
                     :contents="[
                         '', //p
                         '正しい',
@@ -249,7 +249,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続人"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c18']"
                     :contents="[
                         // rev: 2026-06-14 確認済み
                         '正しい',
@@ -263,7 +263,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続財産の評価"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024b4', '2024c19']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -276,7 +276,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の契約内容の変更等に関する税務（個人契約）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c20']"
                     :contents="[
                         '', //p
                         '正しい',
@@ -289,7 +289,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="入院給付金等に関する税務"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a21', '2024b21', '2024c21']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -302,7 +302,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税、法人税額の計算等"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c22']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -315,10 +315,11 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税の損金についての特別規定"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a23', '2024b23', '2024c23']"
                     :contents="[
+                        // rev: 2026-06-18 確認済み
                         '正しい',
-                        '', //p
+                        '寄附金は、法人の事業に直接関係のない支出であり、[[損金算入には一定の制限が設けられている]]。', //p209
                         '正しい',
                         '正しい',
                     ]"
@@ -328,7 +329,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="養老保険を活用した「福利厚生プラン」"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024c24']"
                     :contents="[
                         '正しい',
                         '', //p
@@ -342,7 +343,7 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="住宅借入金等特別控除（住宅ローン控除）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a2', '2024b42', '2024c25']"
                     :contents="[
                         '',
                         '',
@@ -364,7 +365,7 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="公的年金等についての税金の知識"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024a30', '2024b30', '2024c30']"
                     :contents="[
                         // rev: 2026-06-13 確認済み
                         '遺族',
@@ -387,7 +388,7 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="法人税"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2024b35', '2024c35']"
                     :contents="[
                         '',
                         '',
@@ -411,54 +412,54 @@ const isDraft = true;
                         // 問40〜49
                         {
                             questionTitle: '各種所得の損益の通算',
-                            relatedProblems: [],
+                            relatedProblems: ['2024c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-06-13 確認済み
                             questionTitle: '個人事業税の知識',
-                            relatedProblems: [],
+                            relatedProblems: ['2024c41'],
                             content: '正しい',
                         }, //41
                         {
                             questionTitle: '相続放棄',
-                            relatedProblems: [],
+                            relatedProblems: ['2024a43', '2024c42'],
                             content: '',
                         }, //42
                         {
                             questionTitle: '法定相続分',
-                            relatedProblems: [],
+                            relatedProblems: ['2024c43'],
                             content: '',
                         }, //43
                         {
                             questionTitle: '相続税の非課税財産',
-                            relatedProblems: [],
+                            relatedProblems: ['2024a44', '2024b44', '2024c44'],
                             content: '',
                         }, //44
                         {
                             questionTitle: '保証期間付終身年金の課税',
-                            relatedProblems: [],
+                            relatedProblems: ['2024c45'],
                             content: '',
                         }, //45
                         {
                             // rev: 2026-06-15 確認済み
                             questionTitle: '暦年課税の贈与税額計算の仕組み',
-                            relatedProblems: [],
+                            relatedProblems: ['2024a46', '2024b46', '2024c46'],
                             content: '正しい',
                         }, //46
                         {
                             questionTitle: '生命保険信託',
-                            relatedProblems: [],
+                            relatedProblems: ['2024a48', '2024c47'],
                             content: '正しい',
                         }, //47
                         {
                             questionTitle: '同族会社の判定',
-                            relatedProblems: [],
+                            relatedProblems: ['2024c48'],
                             content: '',
                         }, //48
                         {
                             questionTitle: '法人が受け取る保険金・給付金等',
-                            relatedProblems: [],
+                            relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             content: '正しい',
                         }, //49
                     ]"

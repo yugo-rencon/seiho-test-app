@@ -1489,13 +1489,19 @@ const peakHour2h = computed(() => {
                             <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
                         </div>
                         <div>
-                            <table class="min-w-full text-xs">
+                            <table class="w-full table-fixed text-[11px] sm:text-xs">
+                                <colgroup>
+                                    <col class="w-[24%]" />
+                                    <col class="w-[12%]" />
+                                    <col class="w-[25%]" />
+                                    <col class="w-[39%]" />
+                                </colgroup>
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
-                                        <th class="px-3 py-2">月</th>
-                                        <th class="px-3 py-2">件数</th>
-                                        <th class="px-3 py-2">売上</th>
-                                        <th class="px-3 py-2">内訳</th>
+                                        <th class="px-2 py-2 sm:px-3">月</th>
+                                        <th class="px-2 py-2 sm:px-3">件数</th>
+                                        <th class="px-2 py-2 sm:px-3">売上</th>
+                                        <th class="px-2 py-2 sm:px-3">内訳</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -1504,20 +1510,19 @@ const peakHour2h = computed(() => {
                                         :key="`month-${row.month}`"
                                         class="border-t border-gray-100"
                                     >
-                                        <td class="whitespace-nowrap px-3 py-2 text-gray-700">{{ row.month }}</td>
-                                        <td class="whitespace-nowrap px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
-                                        <td class="whitespace-nowrap px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
-                                        <td class="px-3 py-2">
-                                            <div class="max-w-[420px] text-[11px] leading-5 text-gray-600">
+                                        <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ row.month }}</td>
+                                        <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ row.salesCount }}</td>
+                                        <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ formatYen(row.totalAmount) }}</td>
+                                        <td class="px-2 py-2 sm:px-3">
+                                            <div class="text-[11px] leading-5 text-gray-600">
                                                 <template
-                                                    v-for="(item, index) in row.breakdown"
+                                                    v-for="item in row.breakdown"
                                                     :key="`month-${row.month}-${item.scope}`"
                                                 >
-                                                    <span class="whitespace-nowrap">
+                                                    <span class="block whitespace-nowrap">
                                                         <span class="font-semibold text-gray-700">{{ scopeShortLabel(item.scope) }}</span>
                                                         {{ formatNumber(item.salesCount) }}件 {{ formatYen(item.totalAmount) }}
                                                     </span>
-                                                    <span v-if="index < row.breakdown.length - 1" class="mx-1 text-gray-300">/</span>
                                                 </template>
                                                 <span v-if="row.breakdown.length === 0" class="text-gray-400">-</span>
                                             </div>

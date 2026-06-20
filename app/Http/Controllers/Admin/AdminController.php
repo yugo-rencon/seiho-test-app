@@ -165,7 +165,7 @@ class AdminController extends Controller
                 ->count(),
         ];
 
-        $salesSince = Carbon::create(2026, 4, 1)->startOfDay();
+        $salesSince = Carbon::create(2026, 1, 1)->startOfDay();
 
         $daigakuPriceSwitchAt = '2026-05-30 17:34:32';
         $basicExamPriceSwitchAt = '2026-06-18 00:00:00';

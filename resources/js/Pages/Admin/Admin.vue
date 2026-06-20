@@ -407,6 +407,16 @@ const formatAxisYenJa = (value) => {
     return `${Math.round(amount).toLocaleString("ja-JP")}円`;
 };
 
+const formatCalendarAmount = (value) => {
+    const amount = Number(value ?? 0);
+    if (!Number.isFinite(amount) || amount <= 0) return "0";
+    if (amount >= 10000) {
+        const man = Math.round((amount / 10000) * 10) / 10;
+        return `${man}万`;
+    }
+    return Math.round(amount).toLocaleString("ja-JP");
+};
+
 const scopeLabel = (scope) => {
     if (scope === "seiho") return "生保講座";
     if (scope === "daigaku") return "生保大学";
@@ -1174,7 +1184,35 @@ const peakHour2h = computed(() => {
 
                         <div class="mt-3 rounded-lg border border-emerald-100 bg-white">
                             <div class="border-b border-emerald-50 px-3 py-2 text-xs font-semibold text-gray-700">利用ユーザー</div>
-                            <table class="min-w-full text-xs">
+                            <div class="divide-y divide-emerald-50 md:hidden">
+                                <div
+                                    v-for="row in premiumUsageUsers"
+                                    :key="`premium-user-card-${row.userId}`"
+                                    class="p-3"
+                                >
+                                    <div class="flex items-start justify-between gap-2">
+                                        <div class="min-w-0">
+                                            <p class="font-mono text-[11px] text-gray-500">ID {{ row.userId }}</p>
+                                            <p class="mt-1 break-all text-xs font-semibold text-gray-800">{{ row.email }}</p>
+                                        </div>
+                                        <p class="shrink-0 font-mono text-[10px] text-gray-500">{{ row.lastSeenAt }}</p>
+                                    </div>
+                                    <div class="mt-2 flex flex-wrap gap-1">
+                                        <span
+                                            v-for="scope in row.scopes"
+                                            :key="`premium-user-card-${row.userId}-${scope}`"
+                                            class="inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold"
+                                            :class="scopeClass(scope)"
+                                        >
+                                            {{ scopeLabel(scope) }}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div v-if="premiumUsageUsers.length === 0" class="px-3 py-5 text-center text-xs text-gray-500">
+                                    データがありません。
+                                </div>
+                            </div>
+                            <table class="hidden min-w-full text-xs md:table">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
                                         <th class="px-3 py-2">ID</th>
@@ -1310,7 +1348,7 @@ const peakHour2h = computed(() => {
                 <div v-if="salesTab === 'daily'" class="mt-2 rounded-lg border border-gray-100 p-3">
                     <div class="rounded-lg border border-gray-100 p-3">
                         <div class="mb-3 flex items-center justify-between text-xs">
-                            <span class="font-semibold text-gray-700">日次売上（横軸: 日付 / 縦軸: 売上）</span>
+                            <span class="font-semibold text-gray-700">日次売上</span>
                             <span class="text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</span>
                         </div>
                         <div class="mb-3 flex flex-wrap gap-2">
@@ -1395,10 +1433,10 @@ const peakHour2h = computed(() => {
                                             {{ cell.day }}
                                         </div>
                                         <div
-                                            class="mt-0.5 whitespace-nowrap text-[9px] leading-4"
+                                            class="mt-0.5 whitespace-nowrap text-[10px] leading-4"
                                             :class="cell.level >= 3 ? 'text-white/90' : 'text-gray-600'"
                                         >
-                                            {{ formatAxisYenJa(cell.amount) }}
+                                            {{ formatCalendarAmount(cell.amount) }}
                                         </div>
                                     </template>
                                 </div>

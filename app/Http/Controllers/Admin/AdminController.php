@@ -237,6 +237,15 @@ class AdminController extends Controller
             ->groupBy('scope')
             ->get();
 
+        $yearlySalesByScope = (clone $allTimeSalesBaseQuery)
+            ->selectRaw('YEAR(purchases.paid_at) as year')
+            ->selectRaw('COALESCE(purchases.scope, "seiho") as scope')
+            ->selectRaw('COUNT(*) as sales_count')
+            ->selectRaw("COALESCE(SUM({$scopePriceCaseSql}), 0) as total_amount")
+            ->groupBy('year', 'scope')
+            ->orderByDesc('year')
+            ->get();
+
         $monthlySales = (clone $salesBaseQuery)
             ->selectRaw('DATE_FORMAT(purchases.paid_at, "%Y-%m") as month')
             ->selectRaw('COUNT(*) as sales_count')
@@ -584,6 +593,14 @@ class AdminController extends Controller
                 ];
             })->sortBy(function ($row) use ($scopeOrderMap) {
                 return $scopeOrderMap[$row['scope']] ?? 999;
+            })->values(),
+            'yearlySalesByScope' => $yearlySalesByScope->map(function ($row) {
+                return [
+                    'year' => (int) $row->year,
+                    'scope' => (string) $row->scope,
+                    'salesCount' => (int) $row->sales_count,
+                    'totalAmount' => (int) $row->total_amount,
+                ];
             })->values(),
             'monthlySales' => $monthlySales->map(function ($row) {
                 return [

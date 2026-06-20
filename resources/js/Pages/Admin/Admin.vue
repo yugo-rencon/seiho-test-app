@@ -36,6 +36,7 @@ const userSearch = ref(props.filters?.user_search ?? "");
 const activeTab = ref("dashboard");
 const salesTab = ref("overview");
 const salesScopeFilter = ref("all");
+const overviewPeriodFilter = ref(String(new Date().getFullYear()));
 const dailyViewMode = ref("calendar");
 const dailyCalendarMonthKey = ref("");
 const adminPurchaseSaving = ref({});
@@ -584,19 +585,34 @@ const monthlySalesWithBreakdown = computed(() => {
         .sort((a, b) => a.month.localeCompare(b.month));
 });
 
-const filteredOverviewTotal = computed(() => {
-    const rows = filteredScopeBreakdown.value;
-    return rows.reduce(
-        (acc, row) => ({
-            salesCount: acc.salesCount + Number(row?.salesCount ?? 0),
-            totalAmount: acc.totalAmount + Number(row?.totalAmount ?? 0),
-        }),
-        { salesCount: 0, totalAmount: 0 },
+const overviewPeriodOptions = computed(() => {
+    const years = new Set(
+        (salesInsights.value?.yearlySalesByScope ?? [])
+            .map((row) => Number(row?.year))
+            .filter((year) => Number.isFinite(year)),
     );
+    const currentYear = new Date().getFullYear();
+    years.add(currentYear);
+
+    return [
+        ...Array.from(years)
+            .sort((a, b) => b - a)
+            .map((year) => ({ value: String(year), label: `${year}年` })),
+        { value: "all", label: "全期間" },
+    ];
 });
 
-const filteredOverviewAllTimeTotal = computed(() => {
-    const rows = salesInsights.value?.allTimeScopeBreakdown ?? [];
+const overviewPeriodScopeRows = computed(() => {
+    if (overviewPeriodFilter.value === "all") {
+        return salesInsights.value?.allTimeScopeBreakdown ?? [];
+    }
+
+    const year = Number(overviewPeriodFilter.value);
+    return (salesInsights.value?.yearlySalesByScope ?? []).filter((row) => Number(row?.year) === year);
+});
+
+const filteredOverviewTotal = computed(() => {
+    const rows = overviewPeriodScopeRows.value;
     const targetRows = salesScopeFilter.value === "all"
         ? rows
         : rows.filter((row) => row.scope === salesScopeFilter.value);
@@ -611,28 +627,24 @@ const filteredOverviewAllTimeTotal = computed(() => {
 });
 
 const overviewPeriodLabel = computed(() => {
-    const year = String(salesInsights.value?.fromDate ?? "").slice(0, 4);
-    return year ? `${year}年` : "対象期間";
+    if (overviewPeriodFilter.value === "all") return "全期間";
+    return `${overviewPeriodFilter.value}年`;
 });
 
-const filteredOverviewAdsenseAmount = computed(() => (
-    salesScopeFilter.value === "all"
-        ? Number(adsenseRevenueSummary.value?.yearAmount ?? 0)
-        : 0
-));
+const filteredOverviewAdsenseAmount = computed(() => {
+    if (salesScopeFilter.value !== "all") return 0;
+    if (overviewPeriodFilter.value === "all") return Number(adsenseRevenueSummary.value?.totalAmount ?? 0);
+
+    const yearPrefix = `${overviewPeriodFilter.value}-`;
+    return adsenseRevenueMonthly.value.reduce((sum, row) => {
+        const month = String(row?.month ?? "");
+        if (!month.startsWith(yearPrefix)) return sum;
+        return sum + Number(row?.totalAmount ?? 0);
+    }, 0);
+});
 
 const filteredOverviewCombinedAmount = computed(() => (
     Number(filteredOverviewTotal.value?.totalAmount ?? 0) + filteredOverviewAdsenseAmount.value
-));
-
-const filteredOverviewAllTimeAdsenseAmount = computed(() => (
-    salesScopeFilter.value === "all"
-        ? Number(adsenseRevenueSummary.value?.totalAmount ?? 0)
-        : 0
-));
-
-const filteredOverviewAllTimeCombinedAmount = computed(() => (
-    Number(filteredOverviewAllTimeTotal.value?.totalAmount ?? 0) + filteredOverviewAllTimeAdsenseAmount.value
 ));
 
 const filteredRecentSales = computed(() => {
@@ -1148,7 +1160,7 @@ const peakHour2h = computed(() => {
                     </button>
                 </div>
 
-                <div v-if="salesTab === 'overview' || salesTab === 'daily'" class="mb-4 flex items-center gap-2">
+                <div v-if="salesTab === 'overview' || salesTab === 'daily'" class="mb-4 flex flex-wrap items-center gap-2">
                     <label for="sales-scope-filter" class="text-xs font-semibold text-gray-600">試験フィルター</label>
                     <select
                         id="sales-scope-filter"
@@ -1163,10 +1175,26 @@ const peakHour2h = computed(() => {
                             {{ option.label }}
                         </option>
                     </select>
+                    <template v-if="salesTab === 'overview'">
+                        <label for="overview-period-filter" class="ml-0 text-xs font-semibold text-gray-600 sm:ml-2">期間</label>
+                        <select
+                            id="overview-period-filter"
+                            v-model="overviewPeriodFilter"
+                            class="rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs text-gray-700"
+                        >
+                            <option
+                                v-for="option in overviewPeriodOptions"
+                                :key="`overview-period-${option.value}`"
+                                :value="option.value"
+                            >
+                                {{ option.label }}
+                            </option>
+                        </select>
+                    </template>
                 </div>
 
                 <div v-if="salesTab === 'overview'" class="space-y-3">
-                    <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                    <div class="grid gap-3 md:grid-cols-3">
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">{{ overviewPeriodLabel }} 売上件数</p>
                             <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ filteredOverviewTotal.salesCount }}</p>
@@ -1179,16 +1207,6 @@ const peakHour2h = computed(() => {
                             <p class="text-[11px] font-semibold tracking-wide text-amber-700">{{ overviewPeriodLabel }} サイト＋広告</p>
                             <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewCombinedAmount) }}</p>
                             <p class="mt-1 text-[11px] text-amber-700">広告 {{ formatYen(filteredOverviewAdsenseAmount) }} を含む</p>
-                        </div>
-                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">累計サイト売上</p>
-                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewAllTimeTotal.totalAmount) }}</p>
-                            <p class="mt-1 text-[11px] text-slate-500">{{ filteredOverviewAllTimeTotal.salesCount }}件</p>
-                        </div>
-                        <div v-if="salesScopeFilter === 'all'" class="rounded-xl border border-amber-100 bg-amber-50/60 p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-amber-700">累計サイト＋広告</p>
-                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewAllTimeCombinedAmount) }}</p>
-                            <p class="mt-1 text-[11px] text-amber-700">広告 {{ formatYen(filteredOverviewAllTimeAdsenseAmount) }} を含む</p>
                         </div>
                     </div>
 

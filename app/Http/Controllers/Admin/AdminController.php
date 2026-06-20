@@ -272,19 +272,6 @@ class AdminController extends Controller
             ->orderBy('day')
             ->get();
 
-        $weekdaySalesRaw = (clone $salesBaseQuery)
-            ->selectRaw('DAYOFWEEK(purchases.paid_at) as weekday_mysql')
-            ->selectRaw('COUNT(*) as sales_count')
-            ->groupBy('weekday_mysql')
-            ->get();
-
-        $hourlySalesRaw = (clone $salesBaseQuery)
-            ->selectRaw('HOUR(purchases.paid_at) as hour_of_day')
-            ->selectRaw('COUNT(*) as sales_count')
-            ->groupBy('hour_of_day')
-            ->orderBy('hour_of_day')
-            ->get();
-
         $scopeOrderMap = array_flip($scopeOrder);
         $scopeStatsMap = [];
         foreach ($salesByScope as $row) {
@@ -306,30 +293,8 @@ class AdminController extends Controller
             ];
         }
 
-        $weekdayMap = [1 => '日', 2 => '月', 3 => '火', 4 => '水', 5 => '木', 6 => '金', 7 => '土'];
-        $weekdayCountMap = [];
-        foreach ($weekdaySalesRaw as $row) {
-            $weekdayCountMap[(int) $row->weekday_mysql] = (int) $row->sales_count;
-        }
-
-        $weekdaySales = collect([1, 2, 3, 4, 5, 6, 7])->map(function ($d) use ($weekdayMap, $weekdayCountMap) {
-            return [
-                'day' => $weekdayMap[$d],
-                'salesCount' => $weekdayCountMap[$d] ?? 0,
-            ];
-        })->values();
-
-        $hourCountMap = [];
-        foreach ($hourlySalesRaw as $row) {
-            $hourCountMap[(int) $row->hour_of_day] = (int) $row->sales_count;
-        }
-
-        $hourlySales = collect(range(0, 23))->map(function ($h) use ($hourCountMap) {
-            return [
-                'hour' => sprintf('%02d', $h),
-                'salesCount' => $hourCountMap[$h] ?? 0,
-            ];
-        })->values();
+        $weekdaySales = collect();
+        $hourlySales = collect();
 
         $todayStart = Carbon::today();
         $todayEnd = Carbon::today()->endOfDay();

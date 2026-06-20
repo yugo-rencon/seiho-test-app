@@ -1144,8 +1144,6 @@ const peakHour2h = computed(() => {
                             { key: 'scope', label: '商品別' },
                             { key: 'daily', label: '日次' },
                             { key: 'monthly', label: '月次' },
-                            { key: 'weekday', label: '曜日' },
-                            { key: 'hourly', label: '時間帯' },
                         ]"
                         :key="`sales-${tab.key}`"
                         type="button"

@@ -431,6 +431,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-21 確認済み
                             questionTitle: '特別の損失または支出に対する配慮に基づく所得控除に関する知識',
                             relatedProblems: ['2025a42', '2025b42'],
                             content: '正しい',

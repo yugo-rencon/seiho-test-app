@@ -584,38 +584,6 @@ const monthlySalesWithBreakdown = computed(() => {
         .sort((a, b) => a.month.localeCompare(b.month));
 });
 
-const monthlySalesWithAdsense = computed(() => {
-    const adsenseMap = new Map(
-        adsenseRevenueMonthly.value.map((row) => [
-            String(row?.month ?? ""),
-            Number(row?.totalAmount ?? 0),
-        ]),
-    );
-    const monthSet = new Set([
-        ...monthlySalesWithBreakdown.value.map((row) => String(row.month)),
-        ...adsenseRevenueMonthly.value.map((row) => String(row.month)),
-    ]);
-
-    return Array.from(monthSet)
-        .filter(Boolean)
-        .sort()
-        .map((month) => {
-            const siteRow = monthlySalesWithBreakdown.value.find((row) => row.month === month) ?? {
-                month,
-                salesCount: 0,
-                totalAmount: 0,
-                breakdown: [],
-            };
-            const adsenseAmount = adsenseMap.get(month) ?? 0;
-
-            return {
-                ...siteRow,
-                adsenseAmount,
-                combinedAmount: Number(siteRow.totalAmount ?? 0) + adsenseAmount,
-            };
-        });
-});
-
 const filteredOverviewTotal = computed(() => {
     const rows = filteredScopeBreakdown.value;
     return rows.reduce(
@@ -1213,8 +1181,8 @@ const peakHour2h = computed(() => {
                 <div v-if="salesTab === 'adsense'" class="space-y-3">
                     <div class="grid gap-3 sm:grid-cols-2">
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">今月の広告売上</p>
-                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatYen(adsenseRevenueSummary?.monthAmount) }}</p>
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">今年の広告売上</p>
+                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatYen(adsenseRevenueSummary?.yearAmount) }}</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">広告売上合計</p>
@@ -1682,30 +1650,40 @@ const peakHour2h = computed(() => {
                             <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
                         </div>
                         <div class="overflow-x-auto">
-                            <table class="min-w-[34rem] text-[11px] sm:min-w-full sm:text-xs">
+                            <table class="min-w-[30rem] text-[11px] sm:min-w-full sm:text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
                                         <th class="whitespace-nowrap px-2 py-2 sm:px-3">月</th>
                                         <th class="whitespace-nowrap px-2 py-2 sm:px-3">件数</th>
-                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">サイト売上</th>
-                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">広告売上</th>
-                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">合計</th>
+                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">売上</th>
+                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">内訳</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr
-                                        v-for="row in monthlySalesWithAdsense"
+                                        v-for="row in monthlySalesWithBreakdown"
                                         :key="`month-${row.month}`"
                                         class="border-t border-gray-100"
                                     >
                                         <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ row.month }}</td>
                                         <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ row.salesCount }}</td>
                                         <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ formatYen(row.totalAmount) }}</td>
-                                        <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ formatYen(row.adsenseAmount) }}</td>
-                                        <td class="whitespace-nowrap px-2 py-2 font-semibold text-gray-900 sm:px-3">{{ formatYen(row.combinedAmount) }}</td>
+                                        <td class="px-2 py-2 text-gray-700 sm:px-3">
+                                            <div class="flex flex-wrap gap-x-2 gap-y-1">
+                                                <span
+                                                    v-for="item in row.breakdown"
+                                                    :key="`month-${row.month}-${item.scope}`"
+                                                    class="whitespace-nowrap"
+                                                >
+                                                    <span class="font-semibold text-gray-800">{{ scopeLabel(item.scope) }}</span>
+                                                    {{ item.salesCount }}件 {{ formatYen(item.totalAmount) }}
+                                                </span>
+                                                <span v-if="row.breakdown.length === 0" class="text-gray-400">-</span>
+                                            </div>
+                                        </td>
                                     </tr>
-                                    <tr v-if="monthlySalesWithAdsense.length === 0">
-                                        <td colspan="5" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                    <tr v-if="monthlySalesWithBreakdown.length === 0">
+                                        <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
                                     </tr>
                                 </tbody>
                             </table>

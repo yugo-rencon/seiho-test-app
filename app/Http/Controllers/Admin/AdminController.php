@@ -120,6 +120,8 @@ class AdminController extends Controller
 
         $startOfMonth = Carbon::now()->startOfMonth();
         $endOfMonth = Carbon::now()->endOfMonth();
+        $startOfYear = Carbon::now()->startOfYear();
+        $endOfYear = Carbon::now()->endOfYear();
 
         $stats = [
             'totalUsers' => DB::table('users')
@@ -318,12 +320,13 @@ class AdminController extends Controller
         ];
 
         $adsenseRevenue = [
-            'summary' => [
-                'totalAmount' => 0,
-                'monthAmount' => 0,
-                'todayAmount' => 0,
-                'entriesCount' => 0,
-            ],
+                'summary' => [
+                    'totalAmount' => 0,
+                    'monthAmount' => 0,
+                    'yearAmount' => 0,
+                    'todayAmount' => 0,
+                    'entriesCount' => 0,
+                ],
             'monthly' => collect(),
             'daily' => collect(),
         ];
@@ -340,6 +343,10 @@ class AdminController extends Controller
                 ->whereBetween('revenue_date', [$startOfMonth->toDateString(), $endOfMonth->toDateString()])
                 ->sum('amount_yen');
 
+            $adsenseYearAmount = (clone $adsenseBaseQuery)
+                ->whereBetween('revenue_date', [$startOfYear->toDateString(), $endOfYear->toDateString()])
+                ->sum('amount_yen');
+
             $adsenseTodayAmount = (clone $adsenseBaseQuery)
                 ->where('revenue_date', $todayStart->toDateString())
                 ->sum('amount_yen');
@@ -348,6 +355,7 @@ class AdminController extends Controller
                 'summary' => [
                     'totalAmount' => (int) ($adsenseSummary->total_amount ?? 0),
                     'monthAmount' => (int) $adsenseMonthAmount,
+                    'yearAmount' => (int) $adsenseYearAmount,
                     'todayAmount' => (int) $adsenseTodayAmount,
                     'entriesCount' => (int) ($adsenseSummary->entries_count ?? 0),
                 ],

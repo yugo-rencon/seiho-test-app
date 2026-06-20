@@ -413,8 +413,8 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-20 確認済み
                             questionTitle: '各種所得と損益通算',
                             relatedProblems: ['2023a40', '2023b40', '2023c40'],
                             content: '正しい',

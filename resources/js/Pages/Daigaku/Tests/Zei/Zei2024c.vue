@@ -239,7 +239,8 @@ const isDraft = true;
                     questionTitle="確定申告の訂正と税務調査・処分"
                     :relatedProblems="['2024b17', '2024c17']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-20 確認済み
+                        '訂正申告 → 更正の請求', //p61
                         '正しい',
                         '正しい',
                         '正しい',

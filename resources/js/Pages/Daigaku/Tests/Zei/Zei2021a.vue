@@ -219,9 +219,8 @@ const isDraft = true;
                     questionTitle="住民税の主な所得控除"
                     :relatedProblems="['2021a15']"
                     :contents="[
-                        // rev: 2026-06-20 確認済み
                         '正しい',
-                        '70歳以上の親族を扶養の場合、扶養控除額は、同居の場合[[45万円]]、非同居の場合[[38万円]]である。', //p44
+                        '', //p
                         '正しい',
                         '正しい',
                     ]"
@@ -233,7 +232,8 @@ const isDraft = true;
                     questionTitle="確定申告の訂正と税務調査・処分"
                     :relatedProblems="['2021a16']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-20 確認済み
+                        '7年 → 5年', //p61
                         '正しい',
                         '正しい',
                         '正しい',

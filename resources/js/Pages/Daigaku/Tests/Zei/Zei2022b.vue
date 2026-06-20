@@ -229,7 +229,8 @@ const isDraft = true;
                     questionTitle="確定申告の訂正と税務調査・処分"
                     :relatedProblems="['2022b16']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-20 確認済み
+                        '7年 → 5年', //p61
                         '正しい',
                         '正しい',
                         '正しい',

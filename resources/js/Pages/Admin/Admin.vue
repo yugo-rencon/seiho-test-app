@@ -42,6 +42,22 @@ const adminPurchaseSaving = ref({});
 const adminPurchaseDrafts = ref({});
 const page = usePage();
 
+const currentYmd = () => {
+    const today = new Date();
+    const y = today.getFullYear();
+    const m = `${today.getMonth() + 1}`.padStart(2, "0");
+    const d = `${today.getDate()}`.padStart(2, "0");
+    return `${y}-${m}-${d}`;
+};
+
+const currentYm = () => currentYmd().slice(0, 7);
+
+const adsenseForm = ref({
+    revenue_month: currentYm(),
+    amount_yen: "",
+});
+const adsenseSaving = ref(false);
+
 const purchaseScopeOptions = [
     { value: "all", label: "全科目" },
     { value: "seiho", label: "生保講座" },
@@ -232,6 +248,14 @@ const adminPurchaseRoute = computed(() =>
     isDaigakuAdmin.value
         ? "daigaku.admin.admins.purchaseScopes.update"
         : "admin.admins.purchaseScopes.update",
+);
+
+const adsenseStoreRoute = computed(() =>
+    isDaigakuAdmin.value ? "daigaku.admin.adsenseRevenues.store" : "admin.adsenseRevenues.store",
+);
+
+const adsenseDeleteRoute = computed(() =>
+    isDaigakuAdmin.value ? "daigaku.admin.adsenseRevenues.delete" : "admin.adsenseRevenues.delete",
 );
 
 const adminScopeKeys = ["seiho", "daigaku", "ouyou", "senmon", "ippan", "basic"];
@@ -454,6 +478,10 @@ const premiumUsageToday = computed(() => salesInsights.value?.premiumUsageToday 
 const premiumUsageSummary = computed(() => premiumUsageToday.value?.summary ?? {});
 const premiumUsageScopeSummary = computed(() => premiumUsageToday.value?.scopeSummary ?? []);
 const premiumUsageUsers = computed(() => premiumUsageToday.value?.users ?? []);
+const adsenseRevenue = computed(() => salesInsights.value?.adsenseRevenue ?? {});
+const adsenseRevenueSummary = computed(() => adsenseRevenue.value?.summary ?? {});
+const adsenseRevenueMonthly = computed(() => adsenseRevenue.value?.monthly ?? []);
+const adsenseRevenueDaily = computed(() => adsenseRevenue.value?.daily ?? []);
 
 const premiumUsageForScope = (scope) => {
     const row = premiumUsageScopeSummary.value.find((item) => item?.scope === scope);
@@ -556,6 +584,38 @@ const monthlySalesWithBreakdown = computed(() => {
         .sort((a, b) => a.month.localeCompare(b.month));
 });
 
+const monthlySalesWithAdsense = computed(() => {
+    const adsenseMap = new Map(
+        adsenseRevenueMonthly.value.map((row) => [
+            String(row?.month ?? ""),
+            Number(row?.totalAmount ?? 0),
+        ]),
+    );
+    const monthSet = new Set([
+        ...monthlySalesWithBreakdown.value.map((row) => String(row.month)),
+        ...adsenseRevenueMonthly.value.map((row) => String(row.month)),
+    ]);
+
+    return Array.from(monthSet)
+        .filter(Boolean)
+        .sort()
+        .map((month) => {
+            const siteRow = monthlySalesWithBreakdown.value.find((row) => row.month === month) ?? {
+                month,
+                salesCount: 0,
+                totalAmount: 0,
+                breakdown: [],
+            };
+            const adsenseAmount = adsenseMap.get(month) ?? 0;
+
+            return {
+                ...siteRow,
+                adsenseAmount,
+                combinedAmount: Number(siteRow.totalAmount ?? 0) + adsenseAmount,
+            };
+        });
+});
+
 const filteredOverviewTotal = computed(() => {
     const rows = filteredScopeBreakdown.value;
     return rows.reduce(
@@ -615,13 +675,35 @@ const parseYmd = (value) => {
     return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
 };
 
-const todayYmd = computed(() => {
-    const today = new Date();
-    const y = today.getFullYear();
-    const m = `${today.getMonth() + 1}`.padStart(2, "0");
-    const d = `${today.getDate()}`.padStart(2, "0");
-    return `${y}-${m}-${d}`;
-});
+const todayYmd = computed(() => currentYmd());
+
+const submitAdsenseRevenue = () => {
+    adsenseSaving.value = true;
+    router.post(
+        route(adsenseStoreRoute.value),
+        {
+            revenue_date: `${adsenseForm.value.revenue_month}-01`,
+            amount_yen: Number(adsenseForm.value.amount_yen || 0),
+            memo: "月次登録",
+        },
+        {
+            preserveScroll: true,
+            onFinish: () => {
+                adsenseSaving.value = false;
+            },
+            onSuccess: () => {
+                adsenseForm.value.amount_yen = "";
+            },
+        },
+    );
+};
+
+const deleteAdsenseRevenue = (row) => {
+    if (!window.confirm(`${String(row.date).slice(0, 7)} のAdSense売上を削除しますか？`)) return;
+    router.delete(route(adsenseDeleteRoute.value, row.id), {
+        preserveScroll: true,
+    });
+};
 
 const dailyAvailableMonths = computed(() => {
     const rows = filteredDailySales.value ?? [];
@@ -1037,6 +1119,7 @@ const peakHour2h = computed(() => {
                     <button
                         v-for="tab in [
                             { key: 'overview', label: '概要' },
+                            { key: 'adsense', label: '広告' },
                             { key: 'pv', label: 'PV' },
                             { key: 'premium', label: '有料利用' },
                             { key: 'scope', label: '商品別' },
@@ -1110,6 +1193,94 @@ const peakHour2h = computed(() => {
                         </div>
                     </div>
 
+                </div>
+
+                <div v-if="salesTab === 'adsense'" class="space-y-3">
+                    <div class="grid gap-3 sm:grid-cols-2">
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">今月の広告売上</p>
+                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatYen(adsenseRevenueSummary?.monthAmount) }}</p>
+                        </div>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">広告売上合計</p>
+                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatYen(adsenseRevenueSummary?.totalAmount) }}</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-xl border border-amber-100 bg-amber-50/40 p-4">
+                        <div class="mb-3">
+                            <p class="text-xs font-semibold text-amber-900">Google AdSense 売上登録</p>
+                            <p class="text-[11px] text-amber-700">年月と金額だけ登録します。同じ年月は上書きされます。</p>
+                        </div>
+                        <form class="grid gap-3 md:grid-cols-[10rem_10rem_auto]" @submit.prevent="submitAdsenseRevenue">
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-600">年月</label>
+                                <input
+                                    v-model="adsenseForm.revenue_month"
+                                    type="month"
+                                    class="mt-1 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-600">金額（円）</label>
+                                <input
+                                    v-model="adsenseForm.amount_yen"
+                                    type="number"
+                                    min="0"
+                                    inputmode="numeric"
+                                    class="mt-1 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700"
+                                    required
+                                />
+                            </div>
+                            <div class="flex items-end">
+                                <button
+                                    type="submit"
+                                    class="w-full rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-600 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto"
+                                    :disabled="adsenseSaving"
+                                >
+                                    {{ adsenseSaving ? '保存中' : '保存' }}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="rounded-lg border border-gray-100">
+                        <div class="border-b border-gray-100 px-3 py-2 text-xs font-semibold text-gray-700">月別広告売上</div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-xs">
+                                <thead class="bg-gray-50 text-left text-gray-500">
+                                    <tr>
+                                        <th class="px-3 py-2">年月</th>
+                                        <th class="px-3 py-2">広告売上</th>
+                                        <th class="px-3 py-2"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        v-for="row in adsenseRevenueDaily"
+                                        :key="`adsense-month-${row.id}`"
+                                        class="border-t border-gray-100"
+                                    >
+                                        <td class="whitespace-nowrap px-3 py-2 font-mono text-[11px] text-gray-700">{{ String(row.date).slice(0, 7) }}</td>
+                                        <td class="whitespace-nowrap px-3 py-2 text-gray-700">{{ formatYen(row.amountYen) }}</td>
+                                        <td class="whitespace-nowrap px-3 py-2 text-right">
+                                            <button
+                                                type="button"
+                                                class="text-[11px] font-semibold text-rose-600 hover:text-rose-700"
+                                                @click="deleteAdsenseRevenue(row)"
+                                            >
+                                                削除
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr v-if="adsenseRevenueDaily.length === 0">
+                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
                 <div v-if="salesTab === 'pv'" class="space-y-3">
@@ -1495,48 +1666,31 @@ const peakHour2h = computed(() => {
                             <p class="text-xs font-semibold text-gray-700">月次売上</p>
                             <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
                         </div>
-                        <div>
-                            <table class="w-full table-fixed text-[11px] sm:text-xs">
-                                <colgroup>
-                                    <col class="w-[24%]" />
-                                    <col class="w-[15%]" />
-                                    <col class="w-[25%]" />
-                                    <col class="w-[36%]" />
-                                </colgroup>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-[34rem] text-[11px] sm:min-w-full sm:text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
                                         <th class="whitespace-nowrap px-2 py-2 sm:px-3">月</th>
                                         <th class="whitespace-nowrap px-2 py-2 sm:px-3">件数</th>
-                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">売上</th>
-                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">内訳</th>
+                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">サイト売上</th>
+                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">広告売上</th>
+                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">合計</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr
-                                        v-for="row in monthlySalesWithBreakdown"
+                                        v-for="row in monthlySalesWithAdsense"
                                         :key="`month-${row.month}`"
                                         class="border-t border-gray-100"
                                     >
                                         <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ row.month }}</td>
                                         <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ row.salesCount }}</td>
                                         <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ formatYen(row.totalAmount) }}</td>
-                                        <td class="px-2 py-2 sm:px-3">
-                                            <div class="text-[11px] leading-5 text-gray-600">
-                                                <template
-                                                    v-for="item in row.breakdown"
-                                                    :key="`month-${row.month}-${item.scope}`"
-                                                >
-                                                    <span class="block whitespace-nowrap">
-                                                        <span class="font-semibold text-gray-700">{{ scopeShortLabel(item.scope) }}</span>
-                                                        {{ formatNumber(item.salesCount) }}件 {{ formatYen(item.totalAmount) }}
-                                                    </span>
-                                                </template>
-                                                <span v-if="row.breakdown.length === 0" class="text-gray-400">-</span>
-                                            </div>
-                                        </td>
+                                        <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ formatYen(row.adsenseAmount) }}</td>
+                                        <td class="whitespace-nowrap px-2 py-2 font-semibold text-gray-900 sm:px-3">{{ formatYen(row.combinedAmount) }}</td>
                                     </tr>
-                                    <tr v-if="monthlySalesWithBreakdown.length === 0">
-                                        <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                    <tr v-if="monthlySalesWithAdsense.length === 0">
+                                        <td colspan="5" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
                                     </tr>
                                 </tbody>
                             </table>

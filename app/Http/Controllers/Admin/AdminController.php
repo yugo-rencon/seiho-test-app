@@ -317,6 +317,74 @@ class AdminController extends Controller
             'last7days' => $buildPeriodSummary($last7daysStart, $todayEnd),
         ];
 
+        $adsenseRevenue = [
+            'summary' => [
+                'totalAmount' => 0,
+                'monthAmount' => 0,
+                'todayAmount' => 0,
+                'entriesCount' => 0,
+            ],
+            'monthly' => collect(),
+            'daily' => collect(),
+        ];
+
+        if (Schema::hasTable('adsense_revenues')) {
+            $adsenseBaseQuery = DB::table('adsense_revenues')
+                ->where('revenue_date', '>=', $salesSince->toDateString());
+
+            $adsenseSummary = (clone $adsenseBaseQuery)
+                ->selectRaw('COALESCE(SUM(amount_yen), 0) as total_amount')
+                ->selectRaw('COUNT(*) as entries_count')
+                ->first();
+
+            $adsenseMonthAmount = (clone $adsenseBaseQuery)
+                ->whereBetween('revenue_date', [$startOfMonth->toDateString(), $endOfMonth->toDateString()])
+                ->sum('amount_yen');
+
+            $adsenseTodayAmount = (clone $adsenseBaseQuery)
+                ->where('revenue_date', $todayStart->toDateString())
+                ->sum('amount_yen');
+
+            $adsenseRevenue = [
+                'summary' => [
+                    'totalAmount' => (int) ($adsenseSummary->total_amount ?? 0),
+                    'monthAmount' => (int) $adsenseMonthAmount,
+                    'todayAmount' => (int) $adsenseTodayAmount,
+                    'entriesCount' => (int) ($adsenseSummary->entries_count ?? 0),
+                ],
+                'monthly' => (clone $adsenseBaseQuery)
+                    ->selectRaw('DATE_FORMAT(revenue_date, "%Y-%m") as month')
+                    ->selectRaw('COALESCE(SUM(amount_yen), 0) as total_amount')
+                    ->selectRaw('COUNT(*) as entries_count')
+                    ->groupBy('month')
+                    ->orderByDesc('month')
+                    ->get()
+                    ->map(function ($row) {
+                        return [
+                            'month' => (string) $row->month,
+                            'totalAmount' => (int) $row->total_amount,
+                            'entriesCount' => (int) $row->entries_count,
+                        ];
+                    })
+                    ->values(),
+                'daily' => (clone $adsenseBaseQuery)
+                    ->select('id', 'revenue_date', 'amount_yen', 'memo', 'updated_at')
+                    ->orderByDesc('revenue_date')
+                    ->limit(60)
+                    ->get()
+                    ->map(function ($row) {
+                        return [
+                            'id' => (int) $row->id,
+                            'date' => (string) $row->revenue_date,
+                            'amountYen' => (int) $row->amount_yen,
+                            'memo' => (string) ($row->memo ?? ''),
+                            'updatedAt' => (string) $row->updated_at,
+                        ];
+                    })
+                    ->values(),
+            ];
+        }
+
         $pageViewsSince = Carbon::now()->subDays(30)->startOfDay();
         $topPageViews = collect();
         $dailyPageViews = collect();
@@ -495,6 +563,7 @@ class AdminController extends Controller
                 ];
             })->values(),
             'recentSales' => $recentSales,
+            'adsenseRevenue' => $adsenseRevenue,
             'pageViewsSince' => $pageViewsSince->toDateString(),
             'topPageViews' => $topPageViews->map(function ($row) {
                 return [
@@ -676,6 +745,39 @@ class AdminController extends Controller
         });
 
         return back()->with('status', '管理者ユーザーの購入状態を更新しました。');
+    }
+
+    public function storeAdsenseRevenue(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'revenue_date' => ['required', 'date'],
+            'amount_yen' => ['required', 'integer', 'min:0', 'max:10000000'],
+            'memo' => ['nullable', 'string', 'max:255'],
+        ]);
+
+        DB::table('adsense_revenues')->upsert(
+            [
+                'revenue_date' => Carbon::parse($validated['revenue_date'])->toDateString(),
+                'amount_yen' => (int) $validated['amount_yen'],
+                'memo' => $validated['memo'] ?? null,
+                'created_by' => $request->user()?->id,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            ['revenue_date'],
+            ['amount_yen', 'memo', 'updated_at'],
+        );
+
+        return back()->with('status', 'AdSense売上を登録しました。');
+    }
+
+    public function deleteAdsenseRevenue(int $adsenseRevenueId): RedirectResponse
+    {
+        DB::table('adsense_revenues')
+            ->where('id', $adsenseRevenueId)
+            ->delete();
+
+        return back()->with('status', 'AdSense売上を削除しました。');
     }
 
     private function ensureScopeProduct(string $scope): int

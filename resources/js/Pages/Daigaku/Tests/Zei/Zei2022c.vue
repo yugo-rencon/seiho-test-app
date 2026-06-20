@@ -323,10 +323,11 @@ const isDraft = true;
                     questionTitle="法人税"
                     :relatedProblems="['2022c23']"
                     :contents="[
+                        // rev: 2026-06-20 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '50% → 95%', //p202
                     ]"
                 />
                 <QuestionTemp1

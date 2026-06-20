@@ -318,9 +318,10 @@ const isDraft = true;
                     questionTitle="法人税"
                     :relatedProblems="['2021a22', '2021b11', '2021c23']"
                     :contents="[
+                        // rev: 2026-06-20 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '法人税調整 → 税務調整', //p202
                         '正しい',
                     ]"
                 />

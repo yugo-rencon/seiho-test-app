@@ -1065,6 +1065,8 @@ const peakHour2h = computed(() => {
                     <button
                         v-for="tab in [
                             { key: 'overview', label: '概要' },
+                            { key: 'pv', label: 'PV' },
+                            { key: 'premium', label: '有料利用' },
                             { key: 'scope', label: '商品別' },
                             { key: 'daily', label: '日次' },
                             { key: 'monthly', label: '月次' },
@@ -1136,6 +1138,9 @@ const peakHour2h = computed(() => {
                         </div>
                     </div>
 
+                </div>
+
+                <div v-if="salesTab === 'pv'" class="space-y-3">
                     <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">今日のPV</p>
@@ -1159,90 +1164,12 @@ const peakHour2h = computed(() => {
                         </div>
                     </div>
 
-                    <div class="rounded-xl border border-emerald-100 bg-emerald-50/40 p-4">
-                        <div class="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-                            <div>
-                                <p class="text-xs font-semibold text-emerald-800">今日の有料会員利用</p>
-                                <p class="text-[11px] text-emerald-700">今日アクセスした有料ユーザーだけを表示します。</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-3 grid gap-3 sm:grid-cols-3">
-                            <div class="rounded-lg border border-emerald-100 bg-white p-3">
-                                <p class="text-[11px] font-semibold tracking-wide text-slate-500">全体</p>
-                                <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageSummary?.users) }}</p>
-                            </div>
-                            <div class="rounded-lg border border-violet-100 bg-white p-3">
-                                <p class="text-[11px] font-semibold tracking-wide text-violet-700">生保講座</p>
-                                <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').users) }}</p>
-                            </div>
-                            <div class="rounded-lg border border-blue-100 bg-white p-3">
-                                <p class="text-[11px] font-semibold tracking-wide text-blue-700">生保大学</p>
-                                <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').users) }}</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-3 rounded-lg border border-emerald-100 bg-white">
-                            <div class="border-b border-emerald-50 px-3 py-2 text-xs font-semibold text-gray-700">利用ユーザー</div>
-                            <div class="divide-y divide-emerald-50 md:hidden">
-                                <div v-for="row in premiumUsageUsers" :key="`premium-user-card-${row.userId}`" class="p-3">
-                                    <p class="font-mono text-[11px] text-gray-500">ID {{ row.userId }}</p>
-                                    <p class="mt-1 break-all text-xs font-semibold leading-5 text-gray-800">{{ row.email }}</p>
-                                    <div class="mt-2 flex flex-wrap gap-1">
-                                        <span
-                                            v-for="scope in row.scopes"
-                                            :key="`premium-user-card-${row.userId}-${scope}`"
-                                            class="inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold"
-                                            :class="scopeClass(scope)"
-                                        >
-                                            {{ scopeLabel(scope) }}
-                                        </span>
-                                    </div>
-                                    <p class="mt-2 font-mono text-[10px] text-gray-500">最終利用 {{ row.lastSeenAt }}</p>
-                                </div>
-                                <div v-if="premiumUsageUsers.length === 0" class="px-3 py-5 text-center text-xs text-gray-500">
-                                    データがありません。
-                                </div>
-                            </div>
-                            <table class="hidden min-w-full text-xs md:table">
-                                <thead class="bg-gray-50 text-left text-gray-500">
-                                    <tr>
-                                        <th class="px-3 py-2">ID</th>
-                                        <th class="px-3 py-2">メール</th>
-                                        <th class="px-3 py-2">利用範囲</th>
-                                        <th class="px-3 py-2">最終利用</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr v-for="row in premiumUsageUsers" :key="`premium-user-${row.userId}`" class="border-t border-gray-100">
-                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.userId }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ row.email }}</td>
-                                        <td class="px-3 py-2">
-                                            <span
-                                                v-for="scope in row.scopes"
-                                                :key="`premium-user-${row.userId}-${scope}`"
-                                                class="mr-1 inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold"
-                                                :class="scopeClass(scope)"
-                                            >
-                                                {{ scopeLabel(scope) }}
-                                            </span>
-                                        </td>
-                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.lastSeenAt }}</td>
-                                    </tr>
-                                    <tr v-if="premiumUsageUsers.length === 0">
-                                        <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
                     <div class="rounded-lg border border-gray-100">
                         <div class="flex items-center justify-between border-b border-gray-100 px-3 py-2">
                             <p class="text-xs font-semibold text-gray-700">人気ページ Top20</p>
                             <p class="text-[11px] text-gray-500">対象: {{ stats.salesInsights?.pageViewsSince }} 以降</p>
                         </div>
-                        <div>
+                        <div class="overflow-x-auto">
                             <table class="min-w-full text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
@@ -1274,7 +1201,7 @@ const peakHour2h = computed(() => {
                             <p class="text-xs font-semibold text-gray-700">日別PV（直近30日）</p>
                             <p class="text-[11px] text-gray-500">対象: {{ stats.salesInsights?.pageViewsSince }} 以降</p>
                         </div>
-                        <div>
+                        <div class="overflow-x-auto">
                             <table class="min-w-full text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
@@ -1299,6 +1226,84 @@ const peakHour2h = computed(() => {
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+
+                <div v-if="salesTab === 'premium'" class="rounded-xl border border-emerald-100 bg-emerald-50/40 p-4">
+                    <div class="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+                        <div>
+                            <p class="text-xs font-semibold text-emerald-800">今日の有料会員利用</p>
+                            <p class="text-[11px] text-emerald-700">今日アクセスした有料ユーザーだけを表示します。</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 grid gap-3 sm:grid-cols-3">
+                        <div class="rounded-lg border border-emerald-100 bg-white p-3">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">全体</p>
+                            <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageSummary?.users) }}</p>
+                        </div>
+                        <div class="rounded-lg border border-violet-100 bg-white p-3">
+                            <p class="text-[11px] font-semibold tracking-wide text-violet-700">生保講座</p>
+                            <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').users) }}</p>
+                        </div>
+                        <div class="rounded-lg border border-blue-100 bg-white p-3">
+                            <p class="text-[11px] font-semibold tracking-wide text-blue-700">生保大学</p>
+                            <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').users) }}</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 rounded-lg border border-emerald-100 bg-white">
+                        <div class="border-b border-emerald-50 px-3 py-2 text-xs font-semibold text-gray-700">利用ユーザー</div>
+                        <div class="divide-y divide-emerald-50 md:hidden">
+                            <div v-for="row in premiumUsageUsers" :key="`premium-user-card-${row.userId}`" class="p-3">
+                                <p class="font-mono text-[11px] text-gray-500">ID {{ row.userId }}</p>
+                                <p class="mt-1 break-all text-xs font-semibold leading-5 text-gray-800">{{ row.email }}</p>
+                                <div class="mt-2 flex flex-wrap gap-1">
+                                    <span
+                                        v-for="scope in row.scopes"
+                                        :key="`premium-user-card-${row.userId}-${scope}`"
+                                        class="inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold"
+                                        :class="scopeClass(scope)"
+                                    >
+                                        {{ scopeLabel(scope) }}
+                                    </span>
+                                </div>
+                                <p class="mt-2 font-mono text-[10px] text-gray-500">最終利用 {{ row.lastSeenAt }}</p>
+                            </div>
+                            <div v-if="premiumUsageUsers.length === 0" class="px-3 py-5 text-center text-xs text-gray-500">
+                                データがありません。
+                            </div>
+                        </div>
+                        <table class="hidden min-w-full text-xs md:table">
+                            <thead class="bg-gray-50 text-left text-gray-500">
+                                <tr>
+                                    <th class="px-3 py-2">ID</th>
+                                    <th class="px-3 py-2">メール</th>
+                                    <th class="px-3 py-2">利用範囲</th>
+                                    <th class="px-3 py-2">最終利用</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="row in premiumUsageUsers" :key="`premium-user-${row.userId}`" class="border-t border-gray-100">
+                                    <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.userId }}</td>
+                                    <td class="px-3 py-2 text-gray-700">{{ row.email }}</td>
+                                    <td class="px-3 py-2">
+                                        <span
+                                            v-for="scope in row.scopes"
+                                            :key="`premium-user-${row.userId}-${scope}`"
+                                            class="mr-1 inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold"
+                                            :class="scopeClass(scope)"
+                                        >
+                                            {{ scopeLabel(scope) }}
+                                        </span>
+                                    </td>
+                                    <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.lastSeenAt }}</td>
+                                </tr>
+                                <tr v-if="premiumUsageUsers.length === 0">
+                                    <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 

@@ -414,8 +414,8 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-21 確認済み
                             questionTitle: '配当所得に対する課税の特例',
                             relatedProblems: ['2024b40'],
                             content: '正しい',

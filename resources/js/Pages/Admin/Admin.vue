@@ -1336,12 +1336,12 @@ const peakHour2h = computed(() => {
                             </button>
                         </div>
                         <div v-if="dailyViewMode === 'calendar' && dailyCalendar" class="mb-4 rounded-lg border border-gray-100 p-3">
-                            <div class="mb-2 flex items-center justify-between gap-2">
-                                <div class="text-xs font-semibold text-gray-700">{{ dailyCalendar.year }}年{{ dailyCalendar.month }}月 カレンダー</div>
-                                <div class="flex items-center gap-1.5">
+                            <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                                <div class="shrink-0 whitespace-nowrap text-xs font-semibold text-gray-700">{{ dailyCalendar.year }}年{{ dailyCalendar.month }}月</div>
+                                <div class="flex min-w-0 items-center gap-1.5">
                                     <button
                                         type="button"
-                                        class="rounded border border-gray-200 bg-white px-2 py-1 text-[10px] text-gray-600 hover:bg-gray-50"
+                                        class="min-w-[3rem] whitespace-nowrap rounded border border-gray-200 bg-white px-2 py-1 text-[10px] text-gray-600 hover:bg-gray-50"
                                         :disabled="dailyAvailableMonths.indexOf(activeDailyMonthKey) <= 0"
                                         @click="dailyCalendarMonthKey = dailyAvailableMonths[Math.max(0, dailyAvailableMonths.indexOf(activeDailyMonthKey) - 1)]"
                                     >
@@ -1349,7 +1349,7 @@ const peakHour2h = computed(() => {
                                     </button>
                                     <select
                                         v-model="dailyCalendarMonthKey"
-                                        class="rounded border border-gray-200 bg-white px-2 py-1 text-[10px] text-gray-700"
+                                        class="w-[6.75rem] rounded border border-gray-200 bg-white py-1 pl-2 pr-8 text-[10px] text-gray-700"
                                     >
                                         <option
                                             v-for="m in dailyAvailableMonths"
@@ -1361,7 +1361,7 @@ const peakHour2h = computed(() => {
                                     </select>
                                     <button
                                         type="button"
-                                        class="rounded border border-gray-200 bg-white px-2 py-1 text-[10px] text-gray-600 hover:bg-gray-50"
+                                        class="min-w-[3rem] whitespace-nowrap rounded border border-gray-200 bg-white px-2 py-1 text-[10px] text-gray-600 hover:bg-gray-50"
                                         :disabled="dailyAvailableMonths.indexOf(activeDailyMonthKey) === -1 || dailyAvailableMonths.indexOf(activeDailyMonthKey) >= dailyAvailableMonths.length - 1"
                                         @click="dailyCalendarMonthKey = dailyAvailableMonths[Math.min(dailyAvailableMonths.length - 1, dailyAvailableMonths.indexOf(activeDailyMonthKey) + 1)]"
                                     >
@@ -1377,7 +1377,7 @@ const peakHour2h = computed(() => {
                                     v-for="(cell, idx) in dailyCalendar.cells"
                                     :key="`cal-${idx}`"
                                     class="relative min-h-[44px] rounded border p-1"
-                                    :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-indigo-600 ring-2 ring-indigo-200' : 'border-gray-100'"
+                                    :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-2 border-blue-700 ring-2 ring-blue-200' : 'border-gray-100'"
                                     :style="!cell.empty ? {
                                         backgroundColor:
                                             cell.level === 4 ? '#7c3aed'
@@ -1395,7 +1395,7 @@ const peakHour2h = computed(() => {
                                             {{ cell.day }}
                                         </div>
                                         <div
-                                            class="mt-0.5 text-[9px]"
+                                            class="mt-0.5 whitespace-nowrap text-[9px] leading-4"
                                             :class="cell.level >= 3 ? 'text-white/90' : 'text-gray-600'"
                                         >
                                             {{ formatAxisYenJa(cell.amount) }}
@@ -1492,16 +1492,16 @@ const peakHour2h = computed(() => {
                             <table class="w-full table-fixed text-[11px] sm:text-xs">
                                 <colgroup>
                                     <col class="w-[24%]" />
-                                    <col class="w-[12%]" />
+                                    <col class="w-[15%]" />
                                     <col class="w-[25%]" />
-                                    <col class="w-[39%]" />
+                                    <col class="w-[36%]" />
                                 </colgroup>
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
-                                        <th class="px-2 py-2 sm:px-3">月</th>
-                                        <th class="px-2 py-2 sm:px-3">件数</th>
-                                        <th class="px-2 py-2 sm:px-3">売上</th>
-                                        <th class="px-2 py-2 sm:px-3">内訳</th>
+                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">月</th>
+                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">件数</th>
+                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">売上</th>
+                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">内訳</th>
                                     </tr>
                                 </thead>
                                 <tbody>

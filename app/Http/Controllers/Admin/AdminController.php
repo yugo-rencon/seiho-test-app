@@ -223,13 +223,6 @@ class AdminController extends Controller
             ->selectRaw('COUNT(DISTINCT purchases.user_id) as buyers_count')
             ->first();
 
-        $salesByScope = (clone $salesBaseQuery)
-            ->selectRaw('COALESCE(purchases.scope, "seiho") as scope')
-            ->selectRaw('COUNT(*) as sales_count')
-            ->selectRaw("COALESCE(SUM({$scopePriceCaseSql}), 0) as total_amount")
-            ->groupBy('scope')
-            ->get();
-
         $allTimeSalesByScope = (clone $allTimeSalesBaseQuery)
             ->selectRaw('COALESCE(purchases.scope, "seiho") as scope')
             ->selectRaw('COUNT(*) as sales_count')
@@ -274,14 +267,6 @@ class AdminController extends Controller
 
         $scopeOrderMap = array_flip($scopeOrder);
         $scopeStatsMap = [];
-        foreach ($salesByScope as $row) {
-            $scopeKey = (string) $row->scope;
-            $scopeStatsMap[$scopeKey] = [
-                'scope' => $scopeKey,
-                'salesCount' => (int) $row->sales_count,
-                'totalAmount' => (int) $row->total_amount,
-            ];
-        }
 
         $allTimeScopeStatsMap = [];
         foreach ($allTimeSalesByScope as $row) {
@@ -300,7 +285,6 @@ class AdminController extends Controller
         $todayEnd = Carbon::today()->endOfDay();
         $yesterdayStart = Carbon::yesterday()->startOfDay();
         $yesterdayEnd = Carbon::yesterday()->endOfDay();
-        $last7daysStart = Carbon::today()->subDays(6)->startOfDay();
 
         $buildPeriodSummary = function ($from, $to) use ($salesBaseQuery, $scopePriceCaseSql) {
             $row = (clone $salesBaseQuery)
@@ -318,7 +302,6 @@ class AdminController extends Controller
         $recentSales = [
             'today' => $buildPeriodSummary($todayStart, $todayEnd),
             'yesterday' => $buildPeriodSummary($yesterdayStart, $yesterdayEnd),
-            'last7days' => $buildPeriodSummary($last7daysStart, $todayEnd),
         ];
 
         $adsenseRevenue = [
@@ -448,7 +431,6 @@ class AdminController extends Controller
             $pageViewSummary = [
                 'today' => $buildPageViewSummary($todayStart, $todayEnd),
                 'yesterday' => $buildPageViewSummary($yesterdayStart, $yesterdayEnd),
-                'last7days' => $buildPageViewSummary($last7daysStart, $todayEnd),
                 'last30days' => $buildPageViewSummary($pageViewsSince, $todayEnd),
                 'total' => $buildPageViewSummary(),
             ];

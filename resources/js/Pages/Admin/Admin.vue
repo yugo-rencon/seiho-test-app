@@ -675,17 +675,9 @@ const filteredRecentSales = computed(() => {
     yesterday.setDate(yesterday.getDate() - 1);
     const yesterdayKey = asYmd(yesterday);
 
-    const last7Keys = [];
-    for (let i = 0; i < 7; i += 1) {
-        const d = new Date(today);
-        d.setDate(today.getDate() - i);
-        last7Keys.push(asYmd(d));
-    }
-
     return {
         today: sumDays([todayKey]),
         yesterday: sumDays([yesterdayKey]),
-        last7days: sumDays(last7Keys),
     };
 });
 
@@ -1141,7 +1133,6 @@ const peakHour2h = computed(() => {
                             { key: 'overview', label: '概要' },
                             { key: 'adsense', label: '広告' },
                             { key: 'premium', label: '有料利用' },
-                            { key: 'scope', label: '商品別' },
                             { key: 'daily', label: '日次' },
                             { key: 'monthly', label: '月次' },
                         ]"
@@ -1191,7 +1182,7 @@ const peakHour2h = computed(() => {
                 </div>
 
                 <div v-if="salesTab === 'overview'" class="space-y-3">
-                    <div class="grid gap-3 md:grid-cols-3">
+                    <div class="grid gap-3 md:grid-cols-2">
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">{{ overviewPeriodLabel }} 売上件数</p>
                             <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ filteredOverviewTotal.salesCount }}</p>
@@ -1220,13 +1211,6 @@ const peakHour2h = computed(() => {
                             <div class="mt-2 flex items-end justify-between">
                                 <p class="text-lg font-bold text-slate-900">{{ formatYen(filteredRecentSales?.yesterday?.totalAmount) }}</p>
                                 <p class="text-xs font-semibold text-slate-500">{{ filteredRecentSales?.yesterday?.salesCount ?? 0 }}件</p>
-                            </div>
-                        </div>
-                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">直近7日</p>
-                            <div class="mt-2 flex items-end justify-between">
-                                <p class="text-lg font-bold text-slate-900">{{ formatYen(filteredRecentSales?.last7days?.totalAmount) }}</p>
-                                <p class="text-xs font-semibold text-slate-500">{{ filteredRecentSales?.last7days?.salesCount ?? 0 }}件</p>
                             </div>
                         </div>
                     </div>

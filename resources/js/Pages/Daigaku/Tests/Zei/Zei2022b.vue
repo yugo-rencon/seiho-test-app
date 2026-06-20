@@ -256,9 +256,10 @@ const isDraft = true;
                     questionTitle="相続税の申告と納税"
                     :relatedProblems="['2022b18']"
                     :contents="[
+                        // rev: 2026-06-20 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '12ヶ月 → 10ヶ月', //p135
                         '正しい',
                     ]"
                 />

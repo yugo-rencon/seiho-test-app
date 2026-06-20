@@ -1177,6 +1177,7 @@ const peakHour2h = computed(() => {
                             <table class="min-w-full text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
+                                        <th class="px-3 py-2">ID</th>
                                         <th class="px-3 py-2">メール</th>
                                         <th class="px-3 py-2">利用範囲</th>
                                         <th class="px-3 py-2">最終利用</th>
@@ -1184,6 +1185,7 @@ const peakHour2h = computed(() => {
                                 </thead>
                                 <tbody>
                                     <tr v-for="row in premiumUsageUsers" :key="`premium-user-${row.userId}`" class="border-t border-gray-100">
+                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.userId }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ row.email }}</td>
                                         <td class="px-3 py-2">
                                             <span
@@ -1198,7 +1200,7 @@ const peakHour2h = computed(() => {
                                         <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.lastSeenAt }}</td>
                                     </tr>
                                     <tr v-if="premiumUsageUsers.length === 0">
-                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                        <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1375,7 +1377,7 @@ const peakHour2h = computed(() => {
                                     v-for="(cell, idx) in dailyCalendar.cells"
                                     :key="`cal-${idx}`"
                                     class="relative min-h-[44px] rounded border p-1"
-                                    :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-indigo-500 ring-2 ring-indigo-200' : 'border-gray-100'"
+                                    :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-indigo-600 ring-2 ring-indigo-200' : 'border-gray-100'"
                                     :style="!cell.empty ? {
                                         backgroundColor:
                                             cell.level === 4 ? '#7c3aed'
@@ -1391,13 +1393,6 @@ const peakHour2h = computed(() => {
                                             :class="cell.level >= 3 ? 'text-white' : 'text-gray-700'"
                                         >
                                             {{ cell.day }}
-                                        </div>
-                                        <div
-                                            v-if="cell.isToday"
-                                            class="absolute right-1 top-1 rounded-full px-1.5 py-0.5 text-[9px] font-bold"
-                                            :class="cell.level >= 3 ? 'bg-white/90 text-indigo-700' : 'bg-indigo-600 text-white'"
-                                        >
-                                            今日
                                         </div>
                                         <div
                                             class="mt-0.5 text-[9px]"
@@ -1509,9 +1504,9 @@ const peakHour2h = computed(() => {
                                         :key="`month-${row.month}`"
                                         class="border-t border-gray-100"
                                     >
-                                        <td class="px-3 py-2 text-gray-700">{{ row.month }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
+                                        <td class="whitespace-nowrap px-3 py-2 text-gray-700">{{ row.month }}</td>
+                                        <td class="whitespace-nowrap px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
+                                        <td class="whitespace-nowrap px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
                                         <td class="px-3 py-2">
                                             <div class="max-w-[420px] text-[11px] leading-5 text-gray-600">
                                                 <template

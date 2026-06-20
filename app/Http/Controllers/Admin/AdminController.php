@@ -330,8 +330,6 @@ class AdminController extends Controller
             ],
             'scopeSummary' => collect(),
             'users' => collect(),
-            'pages' => collect(),
-            'recent' => collect(),
         ];
         $pageViewSummary = [
             'today' => ['views' => 0, 'uniqueSessions' => 0],
@@ -451,28 +449,11 @@ class AdminController extends Controller
                     ->join('users', 'users.id', '=', 'premium_access_logs.user_id')
                     ->whereBetween('premium_access_logs.checked_at', [$todayStart, $todayEnd])
                     ->select('premium_access_logs.user_id', 'users.email')
-                    ->selectRaw('COUNT(*) as views')
-                    ->selectRaw('COUNT(DISTINCT premium_access_logs.path) as unique_paths')
+                    ->selectRaw('GROUP_CONCAT(DISTINCT premium_access_logs.scope ORDER BY premium_access_logs.scope SEPARATOR ",") as scopes')
                     ->selectRaw('MAX(premium_access_logs.checked_at) as last_seen_at')
                     ->groupBy('premium_access_logs.user_id', 'users.email')
-                    ->orderByDesc('views')
-                    ->limit(10)
-                    ->get(),
-                'pages' => $premiumLogsBaseQuery()
-                    ->whereBetween('checked_at', [$todayStart, $todayEnd])
-                    ->select('path')
-                    ->selectRaw('COUNT(*) as views')
-                    ->selectRaw('COUNT(DISTINCT user_id) as users')
-                    ->groupBy('path')
-                    ->orderByDesc('views')
-                    ->limit(10)
-                    ->get(),
-                'recent' => $premiumLogsBaseQuery()
-                    ->leftJoin('users', 'users.id', '=', 'premium_access_logs.user_id')
-                    ->whereBetween('premium_access_logs.checked_at', [$todayStart, $todayEnd])
-                    ->select('premium_access_logs.user_id', 'users.email', 'premium_access_logs.path', 'premium_access_logs.scope', 'premium_access_logs.has_premium', 'premium_access_logs.premium_session_allowed', 'premium_access_logs.blocked_reason', 'premium_access_logs.checked_at')
-                    ->orderByDesc('premium_access_logs.checked_at')
-                    ->limit(10)
+                    ->orderByDesc('last_seen_at')
+                    ->limit(50)
                     ->get(),
             ];
         }
@@ -537,28 +518,8 @@ class AdminController extends Controller
                     return [
                         'userId' => (int) $row->user_id,
                         'email' => (string) $row->email,
-                        'views' => (int) $row->views,
-                        'uniquePaths' => (int) $row->unique_paths,
+                        'scopes' => collect(explode(',', (string) ($row->scopes ?? '')))->filter()->values()->all(),
                         'lastSeenAt' => (string) $row->last_seen_at,
-                    ];
-                })->values(),
-                'pages' => $premiumUsageToday['pages']->map(function ($row) {
-                    return [
-                        'path' => (string) $row->path,
-                        'views' => (int) $row->views,
-                        'users' => (int) $row->users,
-                    ];
-                })->values(),
-                'recent' => $premiumUsageToday['recent']->map(function ($row) {
-                    return [
-                        'userId' => $row->user_id !== null ? (int) $row->user_id : null,
-                        'email' => (string) ($row->email ?? ''),
-                        'path' => (string) $row->path,
-                        'scope' => (string) $row->scope,
-                        'hasPremium' => (bool) $row->has_premium,
-                        'premiumSessionAllowed' => (bool) $row->premium_session_allowed,
-                        'blockedReason' => $row->blocked_reason !== null ? (string) $row->blocked_reason : null,
-                        'checkedAt' => (string) $row->checked_at,
                     ];
                 })->values(),
             ],

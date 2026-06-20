@@ -427,18 +427,6 @@ const scopeClass = (scope) => {
     return "bg-gray-100 text-gray-600";
 };
 
-const premiumStatusLabel = (row) => {
-    if (row?.premiumSessionAllowed === false) return "制限";
-    if (row?.hasPremium === true) return "有効";
-    return "無効";
-};
-
-const premiumStatusClass = (row) => {
-    if (row?.premiumSessionAllowed === false) return "bg-red-50 text-red-700";
-    if (row?.hasPremium === true) return "bg-emerald-50 text-emerald-700";
-    return "bg-slate-100 text-slate-600";
-};
-
 const salesInsights = computed(() => props.stats?.salesInsights ?? {});
 const pageViewSummary = computed(() => salesInsights.value?.pageViewSummary ?? {});
 const dailyPageViews = computed(() => salesInsights.value?.dailyPageViews ?? []);
@@ -446,8 +434,6 @@ const premiumUsageToday = computed(() => salesInsights.value?.premiumUsageToday 
 const premiumUsageSummary = computed(() => premiumUsageToday.value?.summary ?? {});
 const premiumUsageScopeSummary = computed(() => premiumUsageToday.value?.scopeSummary ?? []);
 const premiumUsageUsers = computed(() => premiumUsageToday.value?.users ?? []);
-const premiumUsagePages = computed(() => premiumUsageToday.value?.pages ?? []);
-const premiumUsageRecent = computed(() => premiumUsageToday.value?.recent ?? []);
 
 const premiumUsageForScope = (scope) => {
     const row = premiumUsageScopeSummary.value.find((item) => item?.scope === scope);
@@ -497,6 +483,53 @@ const filteredDailySales = computed(() => {
         ? rows
         : rows.filter((row) => row.scope === salesScopeFilter.value);
     return groupSalesRows(targetRows, "day");
+});
+
+const monthlySalesWithBreakdown = computed(() => {
+    const rows = salesInsights.value?.monthlySalesByScope ?? [];
+    const targetRows = salesScopeFilter.value === "all"
+        ? rows
+        : rows.filter((row) => row.scope === salesScopeFilter.value);
+    const scopeOrder = new Map(salesScopeOptions.map((option, index) => [option.value, index]));
+    const map = new Map();
+
+    for (const row of targetRows) {
+        const month = String(row?.month ?? "");
+        const scope = String(row?.scope ?? "");
+        if (!month || !scope) continue;
+
+        const entry = map.get(month) ?? {
+            month,
+            salesCount: 0,
+            totalAmount: 0,
+            breakdown: [],
+        };
+
+        const salesCount = Number(row?.salesCount ?? 0);
+        const totalAmount = Number(row?.totalAmount ?? 0);
+
+        entry.salesCount += Number.isFinite(salesCount) ? salesCount : 0;
+        entry.totalAmount += Number.isFinite(totalAmount) ? totalAmount : 0;
+        entry.breakdown.push({
+            scope,
+            salesCount: Number.isFinite(salesCount) ? salesCount : 0,
+            totalAmount: Number.isFinite(totalAmount) ? totalAmount : 0,
+        });
+
+        map.set(month, entry);
+    }
+
+    return Array.from(map.values())
+        .map((row) => ({
+            ...row,
+            breakdown: row.breakdown.sort((a, b) => {
+                const aOrder = scopeOrder.get(a.scope) ?? 999;
+                const bOrder = scopeOrder.get(b.scope) ?? 999;
+                if (aOrder !== bOrder) return aOrder - bOrder;
+                return a.scope.localeCompare(b.scope);
+            }),
+        }))
+        .sort((a, b) => a.month.localeCompare(b.month));
 });
 
 const filteredOverviewTotal = computed(() => {
@@ -1097,164 +1130,52 @@ const peakHour2h = computed(() => {
                         <div class="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
                             <div>
                                 <p class="text-xs font-semibold text-emerald-800">今日の有料会員利用</p>
-                                <p class="text-[11px] text-emerald-700">有料判定ログから集計。実装後のアクセスが対象です。</p>
-                            </div>
-                            <p class="text-[11px] text-emerald-700">
-                                制限表示 {{ formatNumber(premiumUsageSummary?.blockedViews) }}件
-                            </p>
-                        </div>
-
-                        <div class="mt-3 grid gap-3 md:grid-cols-2">
-                            <div class="rounded-lg border border-violet-100 bg-white p-4">
-                                <div class="flex items-center justify-between gap-3">
-                                    <p class="text-sm font-bold text-violet-800">生保講座</p>
-                                    <span class="rounded-full bg-violet-50 px-2 py-0.5 text-[11px] font-semibold text-violet-700">seiho</span>
-                                </div>
-                                <div class="mt-3 grid grid-cols-2 gap-3">
-                                    <div>
-                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">利用ユーザー</p>
-                                        <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').users) }}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">PV</p>
-                                        <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').views) }}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">セッション</p>
-                                        <p class="mt-1 text-lg font-bold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').sessions) }}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">制限表示</p>
-                                        <p class="mt-1 text-lg font-bold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').blockedViews) }}</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="rounded-lg border border-blue-100 bg-white p-4">
-                                <div class="flex items-center justify-between gap-3">
-                                    <p class="text-sm font-bold text-blue-800">生保大学</p>
-                                    <span class="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-blue-700">daigaku</span>
-                                </div>
-                                <div class="mt-3 grid grid-cols-2 gap-3">
-                                    <div>
-                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">利用ユーザー</p>
-                                        <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').users) }}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">PV</p>
-                                        <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').views) }}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">セッション</p>
-                                        <p class="mt-1 text-lg font-bold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').sessions) }}</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-[11px] font-semibold tracking-wide text-slate-500">制限表示</p>
-                                        <p class="mt-1 text-lg font-bold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').blockedViews) }}</p>
-                                    </div>
-                                </div>
+                                <p class="text-[11px] text-emerald-700">今日アクセスした有料ユーザーだけを表示します。</p>
                             </div>
                         </div>
 
-                        <div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                        <div class="mt-3 grid gap-3 sm:grid-cols-3">
                             <div class="rounded-lg border border-emerald-100 bg-white p-3">
-                                <p class="text-[11px] font-semibold tracking-wide text-slate-500">有料PV</p>
-                                <p class="mt-1 text-xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageSummary?.views) }}</p>
+                                <p class="text-[11px] font-semibold tracking-wide text-slate-500">全体</p>
+                                <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageSummary?.users) }}</p>
                             </div>
-                            <div class="rounded-lg border border-emerald-100 bg-white p-3">
-                                <p class="text-[11px] font-semibold tracking-wide text-slate-500">利用ユーザー</p>
-                                <p class="mt-1 text-xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageSummary?.users) }}</p>
+                            <div class="rounded-lg border border-violet-100 bg-white p-3">
+                                <p class="text-[11px] font-semibold tracking-wide text-violet-700">生保講座</p>
+                                <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').users) }}</p>
                             </div>
-                            <div class="rounded-lg border border-emerald-100 bg-white p-3">
-                                <p class="text-[11px] font-semibold tracking-wide text-slate-500">セッション</p>
-                                <p class="mt-1 text-xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageSummary?.sessions) }}</p>
-                            </div>
-                            <div class="rounded-lg border border-emerald-100 bg-white p-3">
-                                <p class="text-[11px] font-semibold tracking-wide text-slate-500">有効判定PV</p>
-                                <p class="mt-1 text-xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageSummary?.premiumViews) }}</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-3 grid gap-3 lg:grid-cols-2">
-                            <div class="rounded-lg border border-emerald-100 bg-white">
-                                <div class="border-b border-emerald-50 px-3 py-2 text-xs font-semibold text-gray-700">ユーザー別 Top10</div>
-                                <table class="min-w-full text-xs">
-                                    <thead class="bg-gray-50 text-left text-gray-500">
-                                        <tr>
-                                            <th class="px-3 py-2">メール</th>
-                                            <th class="px-3 py-2">PV</th>
-                                            <th class="px-3 py-2">ページ</th>
-                                            <th class="px-3 py-2">最終</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="row in premiumUsageUsers" :key="`premium-user-${row.userId}`" class="border-t border-gray-100">
-                                            <td class="px-3 py-2 text-gray-700">{{ row.email }}</td>
-                                            <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.views) }}</td>
-                                            <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.uniquePaths) }}</td>
-                                            <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.lastSeenAt }}</td>
-                                        </tr>
-                                        <tr v-if="premiumUsageUsers.length === 0">
-                                            <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div class="rounded-lg border border-emerald-100 bg-white">
-                                <div class="border-b border-emerald-50 px-3 py-2 text-xs font-semibold text-gray-700">ページ別 Top10</div>
-                                <table class="min-w-full text-xs">
-                                    <thead class="bg-gray-50 text-left text-gray-500">
-                                        <tr>
-                                            <th class="px-3 py-2">ページ</th>
-                                            <th class="px-3 py-2">PV</th>
-                                            <th class="px-3 py-2">人数</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="row in premiumUsagePages" :key="`premium-page-${row.path}`" class="border-t border-gray-100">
-                                            <td class="px-3 py-2 font-mono text-[11px] text-gray-700">{{ row.path }}</td>
-                                            <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.views) }}</td>
-                                            <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.users) }}</td>
-                                        </tr>
-                                        <tr v-if="premiumUsagePages.length === 0">
-                                            <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="rounded-lg border border-blue-100 bg-white p-3">
+                                <p class="text-[11px] font-semibold tracking-wide text-blue-700">生保大学</p>
+                                <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').users) }}</p>
                             </div>
                         </div>
 
                         <div class="mt-3 rounded-lg border border-emerald-100 bg-white">
-                            <div class="border-b border-emerald-50 px-3 py-2 text-xs font-semibold text-gray-700">直近アクセス</div>
+                            <div class="border-b border-emerald-50 px-3 py-2 text-xs font-semibold text-gray-700">利用ユーザー</div>
                             <table class="min-w-full text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
                                     <tr>
-                                        <th class="px-3 py-2">時刻</th>
                                         <th class="px-3 py-2">メール</th>
-                                        <th class="px-3 py-2">ページ</th>
-                                        <th class="px-3 py-2">範囲</th>
-                                        <th class="px-3 py-2">判定</th>
+                                        <th class="px-3 py-2">利用範囲</th>
+                                        <th class="px-3 py-2">最終利用</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="row in premiumUsageRecent" :key="`premium-recent-${row.checkedAt}-${row.userId}-${row.path}`" class="border-t border-gray-100">
-                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.checkedAt }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ row.email || '-' }}</td>
-                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-700">{{ row.path }}</td>
+                                    <tr v-for="row in premiumUsageUsers" :key="`premium-user-${row.userId}`" class="border-t border-gray-100">
+                                        <td class="px-3 py-2 text-gray-700">{{ row.email }}</td>
                                         <td class="px-3 py-2">
-                                            <span class="rounded-full px-2 py-0.5 text-[11px] font-semibold" :class="scopeClass(row.scope)">
-                                                {{ scopeLabel(row.scope) }}
+                                            <span
+                                                v-for="scope in row.scopes"
+                                                :key="`premium-user-${row.userId}-${scope}`"
+                                                class="mr-1 inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold"
+                                                :class="scopeClass(scope)"
+                                            >
+                                                {{ scopeLabel(scope) }}
                                             </span>
                                         </td>
-                                        <td class="px-3 py-2">
-                                            <span class="rounded-full px-2 py-0.5 text-[11px] font-semibold" :class="premiumStatusClass(row)">
-                                                {{ premiumStatusLabel(row) }}
-                                            </span>
-                                        </td>
+                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.lastSeenAt }}</td>
                                     </tr>
-                                    <tr v-if="premiumUsageRecent.length === 0">
-                                        <td colspan="5" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                    <tr v-if="premiumUsageUsers.length === 0">
+                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1538,7 +1459,10 @@ const peakHour2h = computed(() => {
 
                 <div v-if="salesTab === 'monthly'" class="mt-2 rounded-lg border border-gray-100">
                     <div class="rounded-lg border border-gray-100">
-                        <div class="border-b border-gray-100 px-3 py-2 text-xs font-semibold text-gray-700">月次売上</div>
+                        <div class="flex items-center justify-between gap-2 border-b border-gray-100 px-3 py-2">
+                            <p class="text-xs font-semibold text-gray-700">月次売上</p>
+                            <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
+                        </div>
                         <div>
                             <table class="min-w-full text-xs">
                                 <thead class="bg-gray-50 text-left text-gray-500">
@@ -1546,20 +1470,35 @@ const peakHour2h = computed(() => {
                                         <th class="px-3 py-2">月</th>
                                         <th class="px-3 py-2">件数</th>
                                         <th class="px-3 py-2">売上</th>
+                                        <th class="px-3 py-2">内訳</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr
-                                        v-for="row in stats.salesInsights?.monthlySales ?? []"
+                                        v-for="row in monthlySalesWithBreakdown"
                                         :key="`month-${row.month}`"
                                         class="border-t border-gray-100"
                                     >
                                         <td class="px-3 py-2 text-gray-700">{{ row.month }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
+                                        <td class="px-3 py-2">
+                                            <div class="flex flex-wrap gap-1.5">
+                                                <span
+                                                    v-for="item in row.breakdown"
+                                                    :key="`month-${row.month}-${item.scope}`"
+                                                    class="inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-semibold"
+                                                    :class="scopeClass(item.scope)"
+                                                >
+                                                    <span>{{ scopeLabel(item.scope) }}</span>
+                                                    <span>{{ formatNumber(item.salesCount) }}件</span>
+                                                    <span>{{ formatYen(item.totalAmount) }}</span>
+                                                </span>
+                                            </div>
+                                        </td>
                                     </tr>
-                                    <tr v-if="(stats.salesInsights?.monthlySales ?? []).length === 0">
-                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
+                                    <tr v-if="monthlySalesWithBreakdown.length === 0">
+                                        <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -417,6 +417,16 @@ const scopeLabel = (scope) => {
     return scope || "-";
 };
 
+const scopeShortLabel = (scope) => {
+    if (scope === "seiho") return "講座";
+    if (scope === "daigaku") return "大学";
+    if (scope === "ippan") return "一般";
+    if (scope === "senmon") return "専門";
+    if (scope === "ouyou") return "応用";
+    if (scope === "basic") return "セット";
+    return scope || "-";
+};
+
 const scopeClass = (scope) => {
     if (scope === "seiho") return "bg-violet-50 text-violet-700";
     if (scope === "daigaku") return "bg-blue-50 text-blue-700";
@@ -485,6 +495,8 @@ const filteredDailySales = computed(() => {
     return groupSalesRows(targetRows, "day");
 });
 
+const monthlyBreakdownScopes = new Set(["seiho", "daigaku"]);
+
 const monthlySalesWithBreakdown = computed(() => {
     const rows = salesInsights.value?.monthlySalesByScope ?? [];
     const targetRows = salesScopeFilter.value === "all"
@@ -510,11 +522,13 @@ const monthlySalesWithBreakdown = computed(() => {
 
         entry.salesCount += Number.isFinite(salesCount) ? salesCount : 0;
         entry.totalAmount += Number.isFinite(totalAmount) ? totalAmount : 0;
-        entry.breakdown.push({
-            scope,
-            salesCount: Number.isFinite(salesCount) ? salesCount : 0,
-            totalAmount: Number.isFinite(totalAmount) ? totalAmount : 0,
-        });
+        if (monthlyBreakdownScopes.has(scope)) {
+            entry.breakdown.push({
+                scope,
+                salesCount: Number.isFinite(salesCount) ? salesCount : 0,
+                totalAmount: Number.isFinite(totalAmount) ? totalAmount : 0,
+            });
+        }
 
         map.set(month, entry);
     }
@@ -591,6 +605,14 @@ const parseYmd = (value) => {
     return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
 };
 
+const todayYmd = computed(() => {
+    const today = new Date();
+    const y = today.getFullYear();
+    const m = `${today.getMonth() + 1}`.padStart(2, "0");
+    const d = `${today.getDate()}`.padStart(2, "0");
+    return `${y}-${m}-${d}`;
+});
+
 const dailyAvailableMonths = computed(() => {
     const rows = filteredDailySales.value ?? [];
     const set = new Set(
@@ -652,6 +674,7 @@ const dailyCalendar = computed(() => {
             amount,
             intensity,
             level,
+            isToday: ymd === todayYmd.value,
         });
     }
 
@@ -1351,8 +1374,8 @@ const peakHour2h = computed(() => {
                                 <div
                                     v-for="(cell, idx) in dailyCalendar.cells"
                                     :key="`cal-${idx}`"
-                                    class="min-h-[44px] rounded border p-1"
-                                    :class="cell.empty ? 'border-transparent bg-transparent' : 'border-gray-100'"
+                                    class="relative min-h-[44px] rounded border p-1"
+                                    :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-indigo-500 ring-2 ring-indigo-200' : 'border-gray-100'"
                                     :style="!cell.empty ? {
                                         backgroundColor:
                                             cell.level === 4 ? '#7c3aed'
@@ -1368,6 +1391,13 @@ const peakHour2h = computed(() => {
                                             :class="cell.level >= 3 ? 'text-white' : 'text-gray-700'"
                                         >
                                             {{ cell.day }}
+                                        </div>
+                                        <div
+                                            v-if="cell.isToday"
+                                            class="absolute right-1 top-1 rounded-full px-1.5 py-0.5 text-[9px] font-bold"
+                                            :class="cell.level >= 3 ? 'bg-white/90 text-indigo-700' : 'bg-indigo-600 text-white'"
+                                        >
+                                            今日
                                         </div>
                                         <div
                                             class="mt-0.5 text-[9px]"
@@ -1483,17 +1513,18 @@ const peakHour2h = computed(() => {
                                         <td class="px-3 py-2 text-gray-700">{{ row.salesCount }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ formatYen(row.totalAmount) }}</td>
                                         <td class="px-3 py-2">
-                                            <div class="flex flex-wrap gap-1.5">
-                                                <span
-                                                    v-for="item in row.breakdown"
+                                            <div class="max-w-[420px] text-[11px] leading-5 text-gray-600">
+                                                <template
+                                                    v-for="(item, index) in row.breakdown"
                                                     :key="`month-${row.month}-${item.scope}`"
-                                                    class="inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-semibold"
-                                                    :class="scopeClass(item.scope)"
                                                 >
-                                                    <span>{{ scopeLabel(item.scope) }}</span>
-                                                    <span>{{ formatNumber(item.salesCount) }}件</span>
-                                                    <span>{{ formatYen(item.totalAmount) }}</span>
-                                                </span>
+                                                    <span class="whitespace-nowrap">
+                                                        <span class="font-semibold text-gray-700">{{ scopeShortLabel(item.scope) }}</span>
+                                                        {{ formatNumber(item.salesCount) }}件 {{ formatYen(item.totalAmount) }}
+                                                    </span>
+                                                    <span v-if="index < row.breakdown.length - 1" class="mx-1 text-gray-300">/</span>
+                                                </template>
+                                                <span v-if="row.breakdown.length === 0" class="text-gray-400">-</span>
                                             </div>
                                         </td>
                                     </tr>

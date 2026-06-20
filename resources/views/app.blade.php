@@ -102,8 +102,10 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="{{ $seo['title'] }}">
         <meta name="twitter:description" content="{{ $seo['description'] }}">
-        <link rel="icon" href="/favicon.ico">
-        <link rel="shortcut icon" href="/favicon.ico">
+        @if ($siteKey === 'seiho')
+            <link rel="icon" href="/favicon.ico">
+            <link rel="shortcut icon" href="/favicon.ico">
+        @endif
         <link rel="icon" type="image/png" sizes="48x48" href="{{ $currentSiteAssets['icon48'] }}">
         <link rel="icon" type="image/png" sizes="192x192" href="{{ $currentSiteAssets['icon192'] }}">
         <link rel="icon" type="image/svg+xml" href="{{ $currentSiteAssets['icon'] }}">

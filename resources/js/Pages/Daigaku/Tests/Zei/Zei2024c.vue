@@ -329,10 +329,11 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="養老保険を活用した「福利厚生プラン」"
-                    :relatedProblems="['2024c24']"
+                    :relatedProblems="['2024b24', '2024c24']"
                     :contents="[
+                        // rev: 2026-06-20 確認済み
                         '正しい',
-                        '', //p
+                        '中小企業退職金共済制度（中退共）等の他の退職金制度がある場合には、これらの制度と福利厚生プランとの合計額が退職慰労金規程の[[範囲内]]であるように設定する。', //p255
                         '正しい',
                         '正しい',
                     ]"

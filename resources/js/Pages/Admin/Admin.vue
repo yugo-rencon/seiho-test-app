@@ -1140,7 +1140,6 @@ const peakHour2h = computed(() => {
                         v-for="tab in [
                             { key: 'overview', label: '概要' },
                             { key: 'adsense', label: '広告' },
-                            { key: 'pv', label: 'PV' },
                             { key: 'premium', label: '有料利用' },
                             { key: 'scope', label: '商品別' },
                             { key: 'daily', label: '日次' },

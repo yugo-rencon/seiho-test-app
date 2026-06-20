@@ -450,8 +450,9 @@ class AdminController extends Controller
             'last30days' => ['views' => 0, 'uniqueSessions' => 0],
             'total' => ['views' => 0, 'uniqueSessions' => 0],
         ];
+        $shouldLoadPageViewStats = false;
 
-        if (Schema::hasTable('page_views')) {
+        if ($shouldLoadPageViewStats && Schema::hasTable('page_views')) {
             $pageViewsBaseQuery = function () {
                 return DB::table('page_views')
                     ->where('path', 'not like', '/admin%')

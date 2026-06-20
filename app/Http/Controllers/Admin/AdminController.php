@@ -329,8 +329,7 @@ class AdminController extends Controller
         ];
 
         if (Schema::hasTable('adsense_revenues')) {
-            $adsenseBaseQuery = DB::table('adsense_revenues')
-                ->where('revenue_date', '>=', $salesSince->toDateString());
+            $adsenseBaseQuery = DB::table('adsense_revenues');
 
             $adsenseSummary = (clone $adsenseBaseQuery)
                 ->selectRaw('COALESCE(SUM(amount_yen), 0) as total_amount')

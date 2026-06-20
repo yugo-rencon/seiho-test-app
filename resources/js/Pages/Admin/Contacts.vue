@@ -100,12 +100,12 @@ const statusTabs = [
 </script>
 
 <template>
-    <AdminLayout title="問い合わせ管理">
+    <AdminLayout title="問い合わせ">
 
         <div class="container mx-auto max-w-6xl px-5 py-8">
             <div class="mb-6 flex items-center justify-between gap-3">
                 <div>
-                    <h1 class="text-2xl font-bold text-gray-900">問い合わせ管理</h1>
+                    <h1 class="text-2xl font-bold text-gray-900">問い合わせ</h1>
                     <p class="mt-1 text-sm text-gray-500">問い合わせの確認・対応状況・管理メモを更新できます。</p>
                 </div>
                 <Link

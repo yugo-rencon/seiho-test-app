@@ -887,21 +887,11 @@ const peakHour2h = computed(() => {
                 >
                     リリース管理
                 </button>
-                <button
-                    type="button"
-                    class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
-                    :class="isActiveMenu('adminPurchases')
-                        ? 'border-purple-200 bg-purple-50 text-purple-700'
-                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                    @click="activeTab = 'adminPurchases'"
-                >
-                    管理者購入管理
-                </button>
                 <Link
                     :href="route(adminContactsRoute)"
                     class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
                 >
-                    問い合わせ管理
+                    問い合わせ
                     <span
                         v-if="newContactCount > 0"
                         class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
@@ -971,67 +961,48 @@ const peakHour2h = computed(() => {
                 v-if="activeTab === 'dashboard'"
                 class="rounded-xl border border-gray-100 bg-white p-4"
             >
-                <h2 class="text-sm font-semibold text-gray-900">管理者ユーザー</h2>
-                <div v-if="admins.length" class="mt-3 space-y-2">
+                <div class="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                        <h2 class="text-sm font-semibold text-gray-900">管理者ユーザー</h2>
+                        <p class="mt-1 text-xs text-gray-500">管理者ユーザーの購入状態もここで変更できます。</p>
+                    </div>
+                </div>
+                <div v-if="admins.length" class="mt-3 space-y-3">
                     <div
                         v-for="admin in admins"
                         :key="`admin-${admin.id}`"
-                        class="flex items-center justify-between rounded-lg border border-amber-100 bg-amber-50/40 px-3 py-2"
+                        class="rounded-lg border border-amber-100 bg-amber-50/40 p-3"
                     >
-                        <div class="min-w-0">
-                            <p class="truncate text-sm font-semibold text-gray-900">
-                                {{ admin.email }}
-                            </p>
-                            <p class="text-xs text-gray-500">ID: {{ admin.id }}</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span
-                                class="rounded-full px-2 py-1 text-xs font-semibold"
-                                :class="
-                                    admin.is_premium
-                                        ? 'bg-emerald-50 text-emerald-700'
-                                        : 'bg-gray-100 text-gray-600'
-                                "
-                            >
-                                {{ admin.is_premium ? "プレミアム有効" : "プレミアム無効" }}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <p v-else class="mt-2 text-sm text-gray-500">
-                    管理者ユーザーは登録されていません。
-                </p>
-            </div>
-
-            <div
-                v-if="activeTab === 'adminPurchases'"
-                class="rounded-xl border border-gray-100 bg-white p-4"
-            >
-                <h2 class="text-sm font-semibold text-gray-900">管理者ユーザーの購入状態</h2>
-                <p class="mt-1 text-xs text-gray-500">管理者ユーザーのみ変更できます。一般ユーザーは変更対象外です。</p>
-
-                <div v-if="admins.length" class="mt-4 space-y-3">
-                    <div
-                        v-for="admin in admins"
-                        :key="`admin-purchase-${admin.id}`"
-                        class="rounded-lg border border-gray-100 bg-gray-50/50 p-3"
-                    >
-                        <div class="mb-2 flex items-center justify-between gap-2">
-                            <div>
-                                <p class="text-sm font-semibold text-gray-900">{{ admin.email }}</p>
+                        <div class="flex flex-wrap items-start justify-between gap-2">
+                            <div class="min-w-0">
+                                <p class="break-all text-sm font-semibold text-gray-900">
+                                    {{ admin.email }}
+                                </p>
                                 <p class="text-xs text-gray-500">ID: {{ admin.id }}</p>
                             </div>
-                            <button
-                                type="button"
-                                class="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-xs font-semibold text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
-                                :disabled="!!adminPurchaseSaving[String(admin.id)]"
-                                @click="saveAdminScopes(admin)"
-                            >
-                                {{ adminPurchaseSaving[String(admin.id)] ? '保存中...' : '保存' }}
-                            </button>
+                            <div class="flex shrink-0 items-center gap-2">
+                                <span
+                                    class="rounded-full px-2 py-1 text-xs font-semibold"
+                                    :class="
+                                        admin.is_premium
+                                            ? 'bg-emerald-50 text-emerald-700'
+                                            : 'bg-gray-100 text-gray-600'
+                                    "
+                                >
+                                    {{ admin.is_premium ? "プレミアム有効" : "プレミアム無効" }}
+                                </span>
+                                <button
+                                    type="button"
+                                    class="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-xs font-semibold text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
+                                    :disabled="!!adminPurchaseSaving[String(admin.id)]"
+                                    @click="saveAdminScopes(admin)"
+                                >
+                                    {{ adminPurchaseSaving[String(admin.id)] ? '保存中...' : '保存' }}
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+                        <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
                             <label
                                 v-for="scope in adminScopeOptions"
                                 :key="`${admin.id}-${scope.key}`"
@@ -1048,8 +1019,9 @@ const peakHour2h = computed(() => {
                         </div>
                     </div>
                 </div>
-
-                <p v-else class="mt-3 text-sm text-gray-500">管理者ユーザーは登録されていません。</p>
+                <p v-else class="mt-2 text-sm text-gray-500">
+                    管理者ユーザーは登録されていません。
+                </p>
             </div>
 
             <div

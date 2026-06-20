@@ -627,6 +627,16 @@ const filteredOverviewTotal = computed(() => {
     );
 });
 
+const filteredOverviewAdsenseAmount = computed(() => (
+    salesScopeFilter.value === "all"
+        ? Number(adsenseRevenueSummary.value?.totalAmount ?? 0)
+        : 0
+));
+
+const filteredOverviewCombinedAmount = computed(() => (
+    Number(filteredOverviewTotal.value?.totalAmount ?? 0) + filteredOverviewAdsenseAmount.value
+));
+
 const filteredRecentSales = computed(() => {
     if (salesScopeFilter.value === "all") return salesInsights.value?.recentSales ?? {};
 
@@ -1158,14 +1168,19 @@ const peakHour2h = computed(() => {
                 </div>
 
                 <div v-if="salesTab === 'overview'" class="space-y-3">
-                    <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="grid gap-3 md:grid-cols-3">
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">売上件数</p>
                             <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ filteredOverviewTotal.salesCount }}</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">売上合計</p>
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">サイト売上合計</p>
                             <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewTotal.totalAmount) }}</p>
+                        </div>
+                        <div v-if="salesScopeFilter === 'all'" class="rounded-xl border border-amber-100 bg-amber-50/60 p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-amber-700">サイト＋広告 合計</p>
+                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewCombinedAmount) }}</p>
+                            <p class="mt-1 text-[11px] text-amber-700">広告 {{ formatYen(filteredOverviewAdsenseAmount) }} を含む</p>
                         </div>
                     </div>
 

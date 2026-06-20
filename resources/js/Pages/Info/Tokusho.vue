@@ -48,7 +48,7 @@ const contactHref = computed(() => {
                 <dl class="divide-y divide-gray-100 text-sm leading-relaxed">
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
                         <dt class="font-medium text-gray-800">運営者（販売業者）</dt>
-                        <dd class="text-gray-700">seiho-test 運営事務局</dd>
+                        <dd class="text-gray-700">生保試験過去問解説 運営事務局</dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
                         <dt class="font-medium text-gray-800">サービス名</dt>

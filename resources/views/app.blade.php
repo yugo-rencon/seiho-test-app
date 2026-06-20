@@ -11,37 +11,32 @@
                         : (str_starts_with($path, 'ippan') ? 'ippan' : 'seiho')));
             $siteAssets = [
                 'seiho' => [
-                    'icon' => '/images/rencon-favicon.svg?v=seiho',
-                    'icon48' => '/images/favicons/rencon-favicon-seiho-48.png?v=20260516',
-                    'icon192' => '/images/favicons/rencon-favicon-seiho-192.png?v=20260516',
+                    'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
+                    'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
                     'manifest' => '/site-seiho.webmanifest',
                     'theme' => '#7c3aed',
                 ],
                 'daigaku' => [
-                    'icon' => '/images/rencon-favicon-daigaku.svg?v=daigaku',
-                    'icon48' => '/images/favicons/rencon-favicon-daigaku-48.png?v=20260516',
-                    'icon192' => '/images/favicons/rencon-favicon-daigaku-192.png?v=20260516',
+                    'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
+                    'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
                     'manifest' => '/site-daigaku.webmanifest',
                     'theme' => '#0284c7',
                 ],
                 'senmon' => [
-                    'icon' => '/images/rencon-favicon-senmon.svg?v=senmon',
-                    'icon48' => '/images/favicons/rencon-favicon-senmon-48.png?v=20260516',
-                    'icon192' => '/images/favicons/rencon-favicon-senmon-192.png?v=20260516',
+                    'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
+                    'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
                     'manifest' => '/site-senmon.webmanifest',
                     'theme' => '#16a34a',
                 ],
                 'ouyou' => [
-                    'icon' => '/images/rencon-favicon-ouyou.svg?v=ouyou',
-                    'icon48' => '/images/favicons/rencon-favicon-ouyou-48.png?v=20260516',
-                    'icon192' => '/images/favicons/rencon-favicon-ouyou-192.png?v=20260516',
+                    'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
+                    'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
                     'manifest' => '/site-ouyou.webmanifest',
                     'theme' => '#d97706',
                 ],
                 'ippan' => [
-                    'icon' => '/images/rencon-favicon-ippan.svg?v=ippan',
-                    'icon48' => '/images/favicons/rencon-favicon-ippan-48.png?v=20260516',
-                    'icon192' => '/images/favicons/rencon-favicon-ippan-192.png?v=20260516',
+                    'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
+                    'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
                     'manifest' => '/site-ippan.webmanifest',
                     'theme' => '#d946ef',
                 ],
@@ -102,13 +97,10 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="{{ $seo['title'] }}">
         <meta name="twitter:description" content="{{ $seo['description'] }}">
-        @if ($siteKey === 'seiho')
-            <link rel="icon" href="/favicon.ico">
-            <link rel="shortcut icon" href="/favicon.ico">
-        @endif
+        <link rel="icon" href="/favicon.ico?v=20260620">
+        <link rel="shortcut icon" href="/favicon.ico?v=20260620">
         <link rel="icon" type="image/png" sizes="48x48" href="{{ $currentSiteAssets['icon48'] }}">
         <link rel="icon" type="image/png" sizes="192x192" href="{{ $currentSiteAssets['icon192'] }}">
-        <link rel="icon" type="image/svg+xml" href="{{ $currentSiteAssets['icon'] }}">
         <link rel="apple-touch-icon" sizes="192x192" href="{{ $currentSiteAssets['icon192'] }}">
         <link rel="manifest" href="{{ $currentSiteAssets['manifest'] }}">
 

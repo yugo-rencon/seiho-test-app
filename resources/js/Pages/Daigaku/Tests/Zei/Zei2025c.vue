@@ -440,6 +440,7 @@ const isDraft = true;
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-06-21 確認済み
                             questionTitle: '相続税の納税',
                             relatedProblems: ['2025a44', '2025b44', '2025c44'],
                             content: '正しい',

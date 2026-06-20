@@ -595,14 +595,44 @@ const filteredOverviewTotal = computed(() => {
     );
 });
 
+const filteredOverviewAllTimeTotal = computed(() => {
+    const rows = salesInsights.value?.allTimeScopeBreakdown ?? [];
+    const targetRows = salesScopeFilter.value === "all"
+        ? rows
+        : rows.filter((row) => row.scope === salesScopeFilter.value);
+
+    return targetRows.reduce(
+        (acc, row) => ({
+            salesCount: acc.salesCount + Number(row?.salesCount ?? 0),
+            totalAmount: acc.totalAmount + Number(row?.totalAmount ?? 0),
+        }),
+        { salesCount: 0, totalAmount: 0 },
+    );
+});
+
+const overviewPeriodLabel = computed(() => {
+    const year = String(salesInsights.value?.fromDate ?? "").slice(0, 4);
+    return year ? `${year}年` : "対象期間";
+});
+
 const filteredOverviewAdsenseAmount = computed(() => (
     salesScopeFilter.value === "all"
-        ? Number(adsenseRevenueSummary.value?.totalAmount ?? 0)
+        ? Number(adsenseRevenueSummary.value?.yearAmount ?? 0)
         : 0
 ));
 
 const filteredOverviewCombinedAmount = computed(() => (
     Number(filteredOverviewTotal.value?.totalAmount ?? 0) + filteredOverviewAdsenseAmount.value
+));
+
+const filteredOverviewAllTimeAdsenseAmount = computed(() => (
+    salesScopeFilter.value === "all"
+        ? Number(adsenseRevenueSummary.value?.totalAmount ?? 0)
+        : 0
+));
+
+const filteredOverviewAllTimeCombinedAmount = computed(() => (
+    Number(filteredOverviewAllTimeTotal.value?.totalAmount ?? 0) + filteredOverviewAllTimeAdsenseAmount.value
 ));
 
 const filteredRecentSales = computed(() => {
@@ -1136,19 +1166,29 @@ const peakHour2h = computed(() => {
                 </div>
 
                 <div v-if="salesTab === 'overview'" class="space-y-3">
-                    <div class="grid gap-3 md:grid-cols-3">
+                    <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">売上件数</p>
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">{{ overviewPeriodLabel }} 売上件数</p>
                             <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ filteredOverviewTotal.salesCount }}</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">サイト売上合計</p>
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">{{ overviewPeriodLabel }} サイト売上</p>
                             <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewTotal.totalAmount) }}</p>
                         </div>
                         <div v-if="salesScopeFilter === 'all'" class="rounded-xl border border-amber-100 bg-amber-50/60 p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-amber-700">サイト＋広告 合計</p>
+                            <p class="text-[11px] font-semibold tracking-wide text-amber-700">{{ overviewPeriodLabel }} サイト＋広告</p>
                             <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewCombinedAmount) }}</p>
                             <p class="mt-1 text-[11px] text-amber-700">広告 {{ formatYen(filteredOverviewAdsenseAmount) }} を含む</p>
+                        </div>
+                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">累計サイト売上</p>
+                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewAllTimeTotal.totalAmount) }}</p>
+                            <p class="mt-1 text-[11px] text-slate-500">{{ filteredOverviewAllTimeTotal.salesCount }}件</p>
+                        </div>
+                        <div v-if="salesScopeFilter === 'all'" class="rounded-xl border border-amber-100 bg-amber-50/60 p-4 shadow-sm">
+                            <p class="text-[11px] font-semibold tracking-wide text-amber-700">累計サイト＋広告</p>
+                            <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ formatYen(filteredOverviewAllTimeCombinedAmount) }}</p>
+                            <p class="mt-1 text-[11px] text-amber-700">広告 {{ formatYen(filteredOverviewAllTimeAdsenseAmount) }} を含む</p>
                         </div>
                     </div>
 

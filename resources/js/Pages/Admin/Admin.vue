@@ -1182,7 +1182,7 @@ const peakHour2h = computed(() => {
                 </div>
 
                 <div v-if="salesTab === 'overview'" class="space-y-3">
-                    <div class="grid gap-3 md:grid-cols-2">
+                    <div class="grid gap-3 md:grid-cols-3">
                         <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">{{ overviewPeriodLabel }} 売上件数</p>
                             <p class="mt-2 text-3xl font-extrabold text-slate-900">{{ filteredOverviewTotal.salesCount }}</p>

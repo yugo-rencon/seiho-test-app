@@ -414,7 +414,7 @@ const formatCalendarAmount = (value) => {
         const man = Math.round((amount / 10000) * 10) / 10;
         return `${man}万`;
     }
-    return Math.round(amount).toLocaleString("ja-JP");
+    return String(Math.round(amount));
 };
 
 const scopeLabel = (scope) => {
@@ -1185,18 +1185,9 @@ const peakHour2h = computed(() => {
                         <div class="mt-3 rounded-lg border border-emerald-100 bg-white">
                             <div class="border-b border-emerald-50 px-3 py-2 text-xs font-semibold text-gray-700">利用ユーザー</div>
                             <div class="divide-y divide-emerald-50 md:hidden">
-                                <div
-                                    v-for="row in premiumUsageUsers"
-                                    :key="`premium-user-card-${row.userId}`"
-                                    class="p-3"
-                                >
-                                    <div class="flex items-start justify-between gap-2">
-                                        <div class="min-w-0">
-                                            <p class="font-mono text-[11px] text-gray-500">ID {{ row.userId }}</p>
-                                            <p class="mt-1 break-all text-xs font-semibold text-gray-800">{{ row.email }}</p>
-                                        </div>
-                                        <p class="shrink-0 font-mono text-[10px] text-gray-500">{{ row.lastSeenAt }}</p>
-                                    </div>
+                                <div v-for="row in premiumUsageUsers" :key="`premium-user-card-${row.userId}`" class="p-3">
+                                    <p class="font-mono text-[11px] text-gray-500">ID {{ row.userId }}</p>
+                                    <p class="mt-1 break-all text-xs font-semibold leading-5 text-gray-800">{{ row.email }}</p>
                                     <div class="mt-2 flex flex-wrap gap-1">
                                         <span
                                             v-for="scope in row.scopes"
@@ -1207,6 +1198,7 @@ const peakHour2h = computed(() => {
                                             {{ scopeLabel(scope) }}
                                         </span>
                                     </div>
+                                    <p class="mt-2 font-mono text-[10px] text-gray-500">最終利用 {{ row.lastSeenAt }}</p>
                                 </div>
                                 <div v-if="premiumUsageUsers.length === 0" class="px-3 py-5 text-center text-xs text-gray-500">
                                     データがありません。
@@ -1414,7 +1406,7 @@ const peakHour2h = computed(() => {
                                 <div
                                     v-for="(cell, idx) in dailyCalendar.cells"
                                     :key="`cal-${idx}`"
-                                    class="relative min-h-[44px] rounded border p-1"
+                                    class="relative min-h-[44px] overflow-hidden rounded border p-1"
                                     :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-2 border-blue-700 ring-2 ring-blue-200' : 'border-gray-100'"
                                     :style="!cell.empty ? {
                                         backgroundColor:
@@ -1433,7 +1425,7 @@ const peakHour2h = computed(() => {
                                             {{ cell.day }}
                                         </div>
                                         <div
-                                            class="mt-0.5 whitespace-nowrap text-[10px] leading-4"
+                                            class="mt-0.5 whitespace-nowrap text-[9px] leading-4"
                                             :class="cell.level >= 3 ? 'text-white/90' : 'text-gray-600'"
                                         >
                                             {{ formatCalendarAmount(cell.amount) }}

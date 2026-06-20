@@ -111,6 +111,34 @@ body {
     @apply inline;
 }
 
+.answer-quote {
+    @apply my-1 block max-w-full overflow-x-auto rounded-md border-l-4 border-gray-300 bg-gray-50 px-2.5 py-1 text-[0.95em] leading-relaxed text-gray-700;
+}
+
+.answer-quote-line {
+    @apply block w-max min-w-full whitespace-nowrap;
+}
+
+.is-daigaku .answer-quote {
+    @apply border-blue-300 bg-blue-50/60;
+}
+
+.is-senmon .answer-quote {
+    @apply border-emerald-300 bg-emerald-50/60;
+}
+
+.is-ouyou .answer-quote {
+    @apply border-amber-300 bg-amber-50/60;
+}
+
+.is-ippan .answer-quote {
+    @apply border-fuchsia-300 bg-fuchsia-50/60;
+}
+
+.is-seiho .answer-quote {
+    @apply border-violet-300 bg-violet-50/60;
+}
+
 .answer-arrow {
     @apply mx-0.5 inline text-[0.9em] font-medium text-violet-600;
 }

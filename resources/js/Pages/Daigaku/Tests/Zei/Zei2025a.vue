@@ -279,10 +279,11 @@ const isDraft = true;
                     questionTitle="みなし相続財産"
                     :relatedProblems="['2025a19', '2025c6']"
                     :contents="[
+                        // rev: 2026-06-20 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '既払込保険料総額 → 解約返戻金相当額', //p118
                     ]"
                 />
                 <QuestionTemp1

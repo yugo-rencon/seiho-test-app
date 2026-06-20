@@ -37,10 +37,10 @@
             <div
                 v-for="(content, index) in props.contents"
                 :key="index"
-                class="grid grid-cols-[2.6em_1fr] items-start gap-2 border-b border-gray-100 pb-1.5 text-sm leading-6 text-gray-800 select-none md:text-[15px]"
+                class="grid grid-cols-[2.6em_minmax(0,1fr)] items-start gap-2 border-b border-gray-100 pb-1.5 text-sm leading-6 text-gray-800 select-none md:text-[15px]"
             >
                 <span class="pt-[1px] font-semibold text-gray-900">{{ getLabel(index) }}：</span>
-                <p class="jp-kagi-tight" v-html="formatContentHtml(content)"></p>
+                <div class="jp-kagi-tight min-w-0" v-html="formatContentHtml(content)"></div>
             </div>
         </div>
         <RelatedProblems :items="props.relatedProblems" :is-daigaku="isDaigaku" :context-title="props.title" :current-question-number="props.questionNumber" />

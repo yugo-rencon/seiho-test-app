@@ -45,7 +45,7 @@
                         class="grid gap-2 text-sm leading-6 text-gray-800 select-none md:text-[15px] grid-cols-[2em_1fr]"
                     >
                         <span class="font-semibold">{{ item.label }}：</span>
-                        <p class="jp-kagi-tight" v-html="formatContent(item)"></p>
+                        <div class="jp-kagi-tight min-w-0" v-html="formatContent(item)"></div>
                     </div>
                 </div>
                 <RelatedProblems

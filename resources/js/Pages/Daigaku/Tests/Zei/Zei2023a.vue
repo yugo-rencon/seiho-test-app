@@ -446,9 +446,10 @@ const isDraft = true;
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-06-21 確認済み
                             questionTitle: '保証期間付終身年金の課税',
                             relatedProblems: ['2023a45', '2023c45'],
-                            content: '',
+                            content: '一時所得 → 雑所得', //p174
                         }, //45
                         {
                             questionTitle: '納税猶予制度',

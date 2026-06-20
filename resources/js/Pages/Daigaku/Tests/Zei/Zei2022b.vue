@@ -445,6 +445,7 @@ const isDraft = true;
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-06-21 確認済み
                             questionTitle: '保証期間付終身年金の課税',
                             relatedProblems: ['2022b45', '2022c45'],
                             content: '正しい',

@@ -426,6 +426,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-21 確認済み
                             questionTitle: '住宅借入金等特別控除（住宅ローン控除）',
                             relatedProblems: ['2024a2', '2024b42', '2024c25'],
                             content: '正しい',

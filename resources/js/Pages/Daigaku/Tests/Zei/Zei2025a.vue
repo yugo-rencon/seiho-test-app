@@ -430,8 +430,8 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-21 確認済み
                             questionTitle: '住宅借入金等特別控除（住宅ローン控除）',
                             relatedProblems: ['2025a40', '2025b40', '2025c40'],
                             content: '正しい',

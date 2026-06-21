@@ -480,6 +480,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-22 確認済み
                             questionTitle: '譲渡所得',
                             relatedProblems: ['2025b41'],
                             content: '正しい',

@@ -433,9 +433,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-22 確認済み
                             questionTitle: '譲渡所得',
                             relatedProblems: ['2022b41', '2022c41'],
-                            content: '',
+                            content: '資産の譲渡でも[[譲渡所得に該当しない所得がある]]。', //p20
                         }, //41
                         {
                             // rev: 2026-06-13 確認済み

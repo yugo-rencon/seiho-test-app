@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -434,9 +435,10 @@ const isDraft = true;
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-06-21 確認済み
                             questionTitle: '法定相続分',
                             relatedProblems: ['2024c43'],
-                            content: '',
+                            content: '非嫡出子であっても相続分は嫡出子と[[同じ]]である。', //p96
                         }, //43
                         {
                             questionTitle: '相続税の非課税財産',

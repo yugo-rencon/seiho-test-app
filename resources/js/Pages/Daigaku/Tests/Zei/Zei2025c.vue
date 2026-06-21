@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -60,17 +61,60 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
                     questionTitle="法定相続分"
-                    :relatedProblems="['2025b4', '2025c4']"
+                    :relatedProblems="[['2025b4', '2025c4']]"
+                    :labels="['ア']"
                     :contents="[
-                        '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-06-21 確認済み
+                            answer: '妻：1,500万円、子A：500万円、子B：500万円、孫D：250万円、孫E：250万円',
+                            explanation: [
+                                {
+                                    type: 'text',
+                                    value: '被相続人の遺産は3,000万円であり、法定相続人は妻、子A、子B、死亡した子Cの代襲相続人である孫D・Eである。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: 'まず、妻と子で相続分を分ける。',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['妻：3,000万円 × 1/2 ＝ 1,500万円', '子全体：3,000万円 × 1/2 ＝ 1,500万円'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '次に、子全体の相続分をA・B・Cの3人で分ける。',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['子A：1,500万円 × 1/3 ＝ 500万円', '子B：1,500万円 × 1/3 ＝ 500万円', '子C：1,500万円 × 1/3 ＝ 500万円（代襲相続）'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: 'さらに、子Cの相続分500万円を孫D・Eで等分する。',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['孫D：500万円 × 1/2 ＝ 250万円', '孫E：500万円 × 1/2 ＝ 250万円'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: 'したがって、各人の法定相続分は次のとおりである。',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['妻：1,500万円', '子A：500万円', '子B：500万円', '孫D：250万円', '孫E：250万円'],
+                                },
+                                {
+                                    type: 'note',
+                                    value: '以上より、[[ア]]が正しい。',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp1

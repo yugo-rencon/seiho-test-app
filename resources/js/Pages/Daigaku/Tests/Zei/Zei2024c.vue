@@ -202,8 +202,9 @@ const isDraft = true;
                     questionTitle="個人住民税"
                     :relatedProblems="['2024a14', '2024b14', '2024c14']"
                     :contents="[
+                        // rev: 2026-06-22 確認済み
                         '正しい',
-                        '', //p
+                        '150万円 → 135万円', //p42
                         '正しい',
                         '正しい',
                     ]"

@@ -1153,7 +1153,7 @@ const peakHour2h = computed(() => {
                     <select
                         id="sales-scope-filter"
                         v-model="salesScopeFilter"
-                        class="rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs text-gray-700"
+                        class="min-w-[8.5rem] rounded-lg border border-gray-200 bg-white py-1.5 pl-2.5 pr-9 text-xs text-gray-700"
                     >
                         <option
                             v-for="option in salesScopeOptions"
@@ -1168,7 +1168,7 @@ const peakHour2h = computed(() => {
                         <select
                             id="overview-period-filter"
                             v-model="overviewPeriodFilter"
-                            class="rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs text-gray-700"
+                            class="min-w-[7rem] rounded-lg border border-gray-200 bg-white py-1.5 pl-2.5 pr-9 text-xs text-gray-700"
                         >
                             <option
                                 v-for="option in overviewPeriodOptions"

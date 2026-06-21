@@ -461,9 +461,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-22 確認済み
                             questionTitle: '使途秘匿金に対する追加課税',
                             relatedProblems: ['2022a47', '2022c46'],
-                            content: '',
+                            content: '60% → 40%', //p223
                         }, //46
                         {
                             questionTitle: '棚卸資産の評価',

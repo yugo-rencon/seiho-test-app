@@ -466,6 +466,7 @@ const isDraft = true;
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-06-22 確認済み
                             questionTitle: '使途秘匿金に対する追加課税',
                             relatedProblems: ['2023a48', '2023b48', '2023c48'],
                             content: '正しい',

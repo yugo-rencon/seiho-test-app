@@ -492,6 +492,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-22 確認済み
                             questionTitle: '遺贈',
                             relatedProblems: ['2025b43'],
                             content: '正しい',
@@ -509,9 +510,10 @@ const isDraft = true;
                             content: '受贈者は贈与者ごとに[[異なる課税方法を選択することができる]]。', //p146
                         }, //45
                         {
+                            // rev: 2026-06-22 確認済み
                             questionTitle: '個人年金受取時の課税',
                             relatedProblems: ['2025b46'],
-                            content: '',
+                            content: '個人年金保険契約で受け取る年金については源泉徴収が行われ、[[この段階で課税関係が完結することにはならないため、確定申告で納税額を調整する必要がある]]。', //p173
                         }, //46
                         {
                             // rev: 2026-06-21 確認済み
@@ -520,6 +522,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-22 確認済み
                             questionTitle: '使途秘匿金に対する追加課税',
                             relatedProblems: ['2025b48'],
                             content: '正しい',

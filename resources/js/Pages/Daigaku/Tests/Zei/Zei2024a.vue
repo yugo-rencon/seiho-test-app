@@ -458,9 +458,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-22 確認済み
                             questionTitle: '個人年金受取時の課税',
                             relatedProblems: ['2024a47'],
-                            content: '',
+                            content: '個人年金保険契約で受け取る年金については源泉徴収が行われ、[[この段階で課税関係が完結することにはならないため、確定申告で納税額を調整する必要がある]]。', //p173
                         }, //47
                         {
                             questionTitle: '生命保険信託',

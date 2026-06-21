@@ -176,7 +176,7 @@ const daigakuSubjects = [
         },
     },
     {
-        key: "tax-sozoku",
+        key: "zei",
         name: "生命保険と税・相続",
         tests: {
             "2025年度": ["a", "b", "c"],
@@ -187,7 +187,7 @@ const daigakuSubjects = [
         },
     },
     {
-        key: "sisan-unyou",
+        key: "sisan",
         name: "資産運用知識",
         tests: {
             "2025年度": ["a", "b", "c"],
@@ -198,7 +198,7 @@ const daigakuSubjects = [
         },
     },
     {
-        key: "houjin-consulting",
+        key: "kigyo",
         name: "企業向け保険商品",
         tests: {
             "2025年度": ["a", "b", "c"],
@@ -209,7 +209,7 @@ const daigakuSubjects = [
         },
     },
     {
-        key: "social-security",
+        key: "syakai",
         name: "社会保障制度",
         tests: {
             "2025年度": ["a", "b", "c"],

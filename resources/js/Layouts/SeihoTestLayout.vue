@@ -1,6 +1,6 @@
 <script setup>
 import { Head, usePage } from "@inertiajs/vue3";
-import { computed, onBeforeUnmount, ref, watch } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import LayoutFooter from "@/Layouts/Partials/LayoutFooter.vue";
 import LayoutHeader from "@/Layouts/Partials/LayoutHeader.vue";
 import LayoutToast from "@/Layouts/Partials/LayoutToast.vue";
@@ -77,6 +77,7 @@ const currentLogoSrc = computed(() =>
 const isMenuOpen = ref(false);
 const showToast = ref(false);
 let toastTimer = null;
+let premiumAdReloadTimer = null;
 
 // Inertia shared props から認証情報を取得
 const user = computed(() => page.props?.auth?.user ?? null);
@@ -84,6 +85,70 @@ const isAuthenticated = computed(() => !!user.value);
 const isAdmin = computed(() => page.props?.auth?.isAdmin === true);
 const hasPremium = computed(() => page.props?.auth?.hasPremium === true);
 const flashStatus = computed(() => page.props?.flash?.status ?? "");
+
+const checkoutParams = computed(() => {
+    const currentUrl = String(page.url ?? "");
+    const query = currentUrl.includes("?") ? currentUrl.split("?")[1] : "";
+    const params = new URLSearchParams(query);
+
+    return {
+        checkout: params.get("checkout") ?? "",
+        sessionId: params.get("session_id") ?? "",
+    };
+});
+
+const hasResidualAdSense = () => {
+    if (typeof document === "undefined") return false;
+
+    return !!document.querySelector(
+        [
+            'script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]',
+            "ins.adsbygoogle",
+            ".adsbygoogle",
+            ".google-auto-placed",
+            '[id^="google_ads_iframe"]',
+            'iframe[src*="googlesyndication.com"]',
+        ].join(","),
+    );
+};
+
+const scheduleReload = (key, delay = 0) => {
+    if (typeof window === "undefined") return;
+    if (window.sessionStorage.getItem(key) === "1") return;
+
+    window.sessionStorage.setItem(key, "1");
+    if (premiumAdReloadTimer) {
+        clearTimeout(premiumAdReloadTimer);
+    }
+
+    premiumAdReloadTimer = setTimeout(() => {
+        window.location.reload();
+    }, delay);
+};
+
+const refreshIfPremiumAdsRemain = () => {
+    if (!hasPremium.value || !hasResidualAdSense()) return;
+    scheduleReload(`premium-ad-reload:${resolvedSiteScope.value}`, 0);
+};
+
+const refreshAfterCheckoutIfPending = () => {
+    const { checkout, sessionId } = checkoutParams.value;
+    if (checkout !== "success" || hasPremium.value) return;
+    if (typeof window === "undefined") return;
+
+    const key = `premium-checkout-refresh:${sessionId || resolvedSiteScope.value}`;
+    const count = Number(window.sessionStorage.getItem(key) ?? 0);
+    if (count >= 2) return;
+
+    window.sessionStorage.setItem(key, String(count + 1));
+    if (premiumAdReloadTimer) {
+        clearTimeout(premiumAdReloadTimer);
+    }
+
+    premiumAdReloadTimer = setTimeout(() => {
+        window.location.reload();
+    }, 1500);
+};
 
 // モバイルメニューの科目データ（constants から共通利用）
 const subjects = MOBILE_MENU_SUBJECTS;
@@ -240,10 +305,7 @@ const menuSubjects = computed(() =>
 
 // URLクエリ（checkout=success/cancel）を優先してトースト文言を決定
 const checkoutToastMessage = computed(() => {
-    const currentUrl = String(page.url ?? "");
-    const query = currentUrl.includes("?") ? currentUrl.split("?")[1] : "";
-    const params = new URLSearchParams(query);
-    const checkout = params.get("checkout");
+    const checkout = checkoutParams.value.checkout;
 
     if (checkout === "success") return "購入しました。";
     if (checkout === "cancel") return "決済をキャンセルしました。";
@@ -252,10 +314,7 @@ const checkoutToastMessage = computed(() => {
 
 // トーストの見た目タイプを判定
 const toastType = computed(() => {
-    const currentUrl = String(page.url ?? "");
-    const query = currentUrl.includes("?") ? currentUrl.split("?")[1] : "";
-    const params = new URLSearchParams(query);
-    const checkout = params.get("checkout");
+    const checkout = checkoutParams.value.checkout;
 
     if (checkout === "success") return "success";
     if (checkout === "cancel") return "cancel";
@@ -298,11 +357,35 @@ watch(
     { immediate: true },
 );
 
+onMounted(() => {
+    refreshIfPremiumAdsRemain();
+    refreshAfterCheckoutIfPending();
+});
+
+watch(
+    () => [
+        hasPremium.value,
+        checkoutParams.value.checkout,
+        checkoutParams.value.sessionId,
+        resolvedSiteScope.value,
+    ],
+    () => {
+        refreshIfPremiumAdsRemain();
+        refreshAfterCheckoutIfPending();
+    },
+);
+
 // レイアウト破棄時のタイマー掃除
 onBeforeUnmount(() => {
-    if (!toastTimer) return;
-    clearTimeout(toastTimer);
-    toastTimer = null;
+    if (toastTimer) {
+        clearTimeout(toastTimer);
+        toastTimer = null;
+    }
+
+    if (premiumAdReloadTimer) {
+        clearTimeout(premiumAdReloadTimer);
+        premiumAdReloadTimer = null;
+    }
 });
 
 </script>

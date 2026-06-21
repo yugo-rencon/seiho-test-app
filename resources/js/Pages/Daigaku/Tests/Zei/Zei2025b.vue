@@ -266,9 +266,10 @@ const isDraft = true;
                     questionTitle="退職金に対する税金の知識"
                     :relatedProblems="['2025b15']"
                     :contents="[
+                        // rev: 2026-06-22 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '住民税は、通常前年の所得に対して課税される「前年所得課税（翌年に課税）」であるが、退職金に課税される個人住民税に関しては、[[「現年課税（収入のあった年に課税）」]]であり、他の所得とは別に分離課税として住民税を計算する。', //p84
                         '正しい',
                     ]"
                 />
@@ -276,11 +277,12 @@ const isDraft = true;
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
-                    questionTitle="公的年金等に関する税金の知識"
-                    :relatedProblems="['2025b16']"
+                    questionTitle="公的年金等についての税金の知識"
+                    :relatedProblems="['2025a4', '2025b16', '2025c16']"
                     :contents="[
+                        // rev: 2026-06-22 確認済み
                         '正しい',
-                        '', //p
+                        '公的年金等の受給者全員が[[源泉徴収の対象となるわけではない]]。', //p86
                         '正しい',
                         '正しい',
                     ]"

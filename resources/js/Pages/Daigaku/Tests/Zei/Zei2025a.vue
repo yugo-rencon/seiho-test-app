@@ -68,7 +68,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金等についての税金の知識"
-                    :relatedProblems="['2025a4', '2025c16']"
+                    :relatedProblems="['2025a4', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-06-13 確認済み
                         '公的年金の中には、厚生年金制度・国民年金制度における遺族年金等のように[[非課税所得とみなされ、課税されないものがある]]。', //p86

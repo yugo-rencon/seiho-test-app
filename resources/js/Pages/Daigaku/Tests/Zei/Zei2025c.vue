@@ -275,7 +275,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金等についての税金の知識"
-                    :relatedProblems="['2025a4', '2025c16']"
+                    :relatedProblems="['2025a4', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-06-13 確認済み
                         '正しい',

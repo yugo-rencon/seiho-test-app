@@ -73,7 +73,7 @@ const isDraft = true;
                     :contents="[
                         {
                             // rev: 2026-06-21 確認済み
-                            answer: '妻：1,500万円、子A：500万円、子B：500万円、孫D：250万円、孫E：250万円',
+                            // answer: '妻：1,500万円、子A：500万円、子B：500万円、孫D：250万円、孫E：250万円',
                             explanation: [
                                 {
                                     type: 'text',

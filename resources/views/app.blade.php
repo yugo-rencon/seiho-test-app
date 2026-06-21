@@ -2,13 +2,13 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @php
-            $shouldLoadAds = !auth()->check() || !auth()->user()?->hasPremiumAccess();
             $path = request()->path();
             $normalizedPath = '/'.ltrim($path, '/');
             $siteKey = str_starts_with($path, 'daigaku') ? 'daigaku'
                 : (str_starts_with($path, 'senmon') ? 'senmon'
                     : (str_starts_with($path, 'ouyou') ? 'ouyou'
                         : (str_starts_with($path, 'ippan') ? 'ippan' : 'seiho')));
+            $shouldLoadAds = !auth()->check() || !auth()->user()?->hasPremiumAccess($siteKey);
             $siteAssets = [
                 'seiho' => [
                     'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',

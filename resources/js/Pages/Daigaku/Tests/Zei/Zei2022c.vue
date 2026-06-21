@@ -262,9 +262,10 @@ const isDraft = true;
                     questionTitle="相続財産の評価"
                     :relatedProblems="['2022c18']"
                     :contents="[
+                        // rev: 2026-06-22 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '最も高い価額 → 最も低い価額', //p114
                         '正しい',
                     ]"
                 />

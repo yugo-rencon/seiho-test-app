@@ -259,10 +259,11 @@ const isDraft = true;
                     questionTitle="相続税の計算"
                     :relatedProblems="['2022a18', '2022c5']"
                     :contents="[
+                        // rev: 2026-06-22 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '30% → 20%', //p127
                     ]"
                 />
                 <QuestionTemp1

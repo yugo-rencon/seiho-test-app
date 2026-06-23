@@ -59,7 +59,6 @@ class ContactController extends Controller
             Mail::raw($this->buildMailBody($contact), function ($message) use ($contact, $to) {
                 $message
                     ->to($to)
-                    ->replyTo($contact->email, $contact->name ?: null)
                     ->subject('【お問い合わせ】' . $this->categoryLabel($contact->category));
             });
         } catch (\Throwable $e) {
@@ -128,18 +127,25 @@ class ContactController extends Controller
         return implode("\n", [
             'お問い合わせを受信しました。',
             '',
+            '返信先メール: ' . $contact->email,
+            '名前: ' . ($contact->name ?: '-'),
+            '',
+            '※この通知メールにそのまま返信すると、管理用情報が引用される場合があります。',
+            '※返信する場合は、新規メール作成で上記の「返信先メール」宛に送信してください。',
+            '',
+            '本文:',
+            $contact->message,
+            '',
+            '--- 管理用情報（利用者へ返信しない） ---',
             'ID: ' . $contact->id,
             '種別: ' . $this->categoryLabel($contact->category),
-            '名前: ' . ($contact->name ?: '-'),
             'メール: ' . $contact->email,
             'ユーザーID: ' . ($contact->user_id ?: '-'),
             '利用端末: ' . $this->deviceLabel($contact->device),
             '発生日時: ' . ($contact->occurred_at?->format('Y-m-d') ?: '-'),
             '対象ページ: ' . ($contact->page_url ?: '-'),
             'IP: ' . ($contact->ip_address ?: '-'),
-            '',
-            '本文:',
-            $contact->message,
+            'User-Agent: ' . ($contact->user_agent ?: '-'),
         ]);
     }
 }

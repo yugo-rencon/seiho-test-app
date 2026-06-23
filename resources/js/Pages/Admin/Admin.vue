@@ -37,7 +37,6 @@ const activeTab = ref("dashboard");
 const salesTab = ref("overview");
 const salesScopeFilter = ref("all");
 const overviewPeriodFilter = ref(String(new Date().getFullYear()));
-const dailyViewMode = ref("calendar");
 const dailyCalendarMonthKey = ref("");
 const adminPurchaseSaving = ref({});
 const adminPurchaseDrafts = ref({});
@@ -422,16 +421,6 @@ const formatNumber = (value) => {
     return new Intl.NumberFormat("ja-JP").format(Number.isFinite(amount) ? amount : 0);
 };
 
-const formatAxisYenJa = (value) => {
-    const amount = Number(value ?? 0);
-    if (!Number.isFinite(amount) || amount <= 0) return "0円";
-    if (amount >= 10000) {
-        const man = Math.round((amount / 10000) * 10) / 10;
-        return `${man}万円`;
-    }
-    return `${Math.round(amount).toLocaleString("ja-JP")}円`;
-};
-
 const formatCalendarAmount = (value) => {
     const amount = Number(value ?? 0);
     if (!Number.isFinite(amount) || amount <= 0) return "0";
@@ -793,54 +782,6 @@ const dailyCalendar = computed(() => {
         monthKey,
     };
 });
-const maxDailyTotalAmount = computed(() =>
-    (filteredDailySales.value ?? []).reduce((max, row) => Math.max(max, Number(row?.totalAmount ?? 0)), 0),
-);
-const dailyChart = computed(() => {
-    const rows = filteredDailySales.value ?? [];
-    const width = 760;
-    const height = 260;
-    const padLeft = 48;
-    const padRight = 16;
-    const padTop = 16;
-    const padBottom = 34;
-    const plotWidth = width - padLeft - padRight;
-    const plotHeight = height - padTop - padBottom;
-    const maxY = Math.max(1, maxDailyTotalAmount.value);
-    const stepX = rows.length <= 1 ? 0 : plotWidth / (rows.length - 1);
-
-    const points = rows.map((row, idx) => {
-        const x = padLeft + (stepX * idx);
-        const y = padTop + plotHeight - ((Number(row?.totalAmount ?? 0) / maxY) * plotHeight);
-        return {
-            x,
-            y,
-            day: String(row?.day ?? ""),
-            totalAmount: Number(row?.totalAmount ?? 0),
-        };
-    });
-
-    const polyline = points.map((p) => `${p.x},${p.y}`).join(" ");
-    const ticks = [0, 0.25, 0.5, 0.75, 1].map((ratio) => ({
-        y: padTop + plotHeight - (plotHeight * ratio),
-        value: Math.round(maxY * ratio),
-    }));
-
-    return {
-        width,
-        height,
-        padLeft,
-        padRight,
-        padTop,
-        padBottom,
-        plotWidth,
-        plotHeight,
-        points,
-        polyline,
-        ticks,
-    };
-});
-
 const releaseTheme = {
     seiho: {
         activeButton: "border-violet-500 bg-gradient-to-br from-violet-500 to-indigo-500 text-white shadow-md ring-1 ring-violet-300/60",
@@ -1513,29 +1454,7 @@ const peakHour2h = computed(() => {
                             <span class="font-semibold text-gray-700">日次売上</span>
                             <span class="text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</span>
                         </div>
-                        <div class="mb-3 flex flex-wrap gap-2">
-                            <button
-                                type="button"
-                                class="rounded-lg border px-3 py-1.5 text-xs font-semibold transition"
-                                :class="dailyViewMode === 'calendar'
-                                    ? 'border-purple-200 bg-purple-50 text-purple-700'
-                                    : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                                @click="dailyViewMode = 'calendar'"
-                            >
-                                カレンダー
-                            </button>
-                            <button
-                                type="button"
-                                class="rounded-lg border px-3 py-1.5 text-xs font-semibold transition"
-                                :class="dailyViewMode === 'graph'
-                                    ? 'border-purple-200 bg-purple-50 text-purple-700'
-                                    : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                                @click="dailyViewMode = 'graph'"
-                            >
-                                グラフ
-                            </button>
-                        </div>
-                        <div v-if="dailyViewMode === 'calendar' && dailyCalendar" class="mb-4 rounded-lg border border-gray-100 p-3">
+                        <div v-if="dailyCalendar" class="mb-4 rounded-lg border border-gray-100 p-3">
                             <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
                                 <div class="shrink-0 whitespace-nowrap text-xs font-semibold text-gray-700">{{ dailyCalendar.year }}年{{ dailyCalendar.month }}月</div>
                                 <div class="flex min-w-0 items-center gap-1.5">
@@ -1604,81 +1523,7 @@ const peakHour2h = computed(() => {
                                 </div>
                             </div>
                         </div>
-                        <div v-if="dailyViewMode === 'graph' && filteredDailySales.length > 0" class="overflow-x-auto">
-                            <svg
-                                :width="dailyChart.width"
-                                :height="dailyChart.height"
-                                :viewBox="`0 0 ${dailyChart.width} ${dailyChart.height}`"
-                                class="min-w-[760px]"
-                                role="img"
-                                aria-label="日次売上グラフ"
-                            >
-                                <g>
-                                    <line
-                                        v-for="tick in dailyChart.ticks"
-                                        :key="`daily-tick-${tick.value}`"
-                                        :x1="dailyChart.padLeft"
-                                        :x2="dailyChart.width - dailyChart.padRight"
-                                        :y1="tick.y"
-                                        :y2="tick.y"
-                                        stroke="#e5e7eb"
-                                        stroke-width="1"
-                                    />
-                                    <text
-                                        v-for="tick in dailyChart.ticks"
-                                        :key="`daily-tick-label-${tick.value}`"
-                                        :x="dailyChart.padLeft - 8"
-                                        :y="tick.y + 4"
-                                        text-anchor="end"
-                                        font-size="10"
-                                        fill="#6b7280"
-                                    >
-                                        {{ formatAxisYenJa(tick.value) }}
-                                    </text>
-                                </g>
-
-                                <line
-                                    :x1="dailyChart.padLeft"
-                                    :x2="dailyChart.width - dailyChart.padRight"
-                                    :y1="dailyChart.height - dailyChart.padBottom"
-                                    :y2="dailyChart.height - dailyChart.padBottom"
-                                    stroke="#9ca3af"
-                                    stroke-width="1"
-                                />
-
-                                <polyline
-                                    :points="dailyChart.polyline"
-                                    fill="none"
-                                    stroke="#7c3aed"
-                                    stroke-width="2.5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-
-                                <g v-for="point in dailyChart.points" :key="`daily-point-${point.day}`">
-                                    <circle :cx="point.x" :cy="point.y" r="3" fill="#7c3aed" />
-                                    <title>{{ point.day }}: {{ formatYen(point.totalAmount) }}</title>
-                                </g>
-
-                                <g v-for="(point, idx) in dailyChart.points" :key="`daily-label-${point.day}`">
-                                    <text
-                                        v-if="idx === 0 || idx === dailyChart.points.length - 1 || idx % Math.ceil(Math.max(1, dailyChart.points.length / 8)) === 0"
-                                        :x="point.x"
-                                        :y="dailyChart.height - 10"
-                                        text-anchor="middle"
-                                        font-size="10"
-                                        fill="#6b7280"
-                                    >
-                                        {{ point.day.slice(5) }}
-                                    </text>
-                                </g>
-                            </svg>
-                            <div class="mt-2 flex justify-end text-[11px] text-gray-500">
-                                ピーク売上: {{ formatYen(maxDailyTotalAmount) }}
-                            </div>
-                        </div>
-                        <p v-if="dailyViewMode === 'calendar' && !dailyCalendar" class="py-5 text-center text-xs text-gray-500">データがありません。</p>
-                        <p v-if="dailyViewMode === 'graph' && filteredDailySales.length === 0" class="py-5 text-center text-xs text-gray-500">データがありません。</p>
+                        <p v-if="!dailyCalendar" class="py-5 text-center text-xs text-gray-500">データがありません。</p>
                     </div>
                 </div>
 

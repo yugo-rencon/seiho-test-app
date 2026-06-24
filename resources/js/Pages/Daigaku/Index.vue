@@ -63,6 +63,9 @@ const pricingHref = computed(() =>
     route("daigaku.pricing", { return_to: String(page.url ?? "/daigaku") }),
 );
 
+const isPreparingYear = (section, year) =>
+    !section?.published && !(section?.id === "tax-sozoku" && Number(year) === 2025);
+
 const getDaigakuRoute = (sectionId, year, form) => {
     const sectionRoutePrefix = {
         "shikumi-kojin": "shikumi-kojin",
@@ -231,7 +234,7 @@ const getDaigakuRoute = (sectionId, year, form) => {
                                         最新年度フォームA・無料
                                     </span>
                                     <span
-                                        v-if="!activeSection.published"
+                                        v-if="isPreparingYear(activeSection, year)"
                                         class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600"
                                     >
                                         準備中

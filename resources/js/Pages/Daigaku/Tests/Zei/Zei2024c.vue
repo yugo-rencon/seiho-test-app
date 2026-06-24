@@ -41,6 +41,7 @@ const isDraft = true;
                     questionTitle="確定申告"
                     :relatedProblems="['2024c2']"
                     :contents="[
+                        // rev: 2026-06-24 確認済み
                         '1月16日から2月15日 → 2月16日から3月15日', //p37
                         '正しい',
                         '確定申告をする必要がある。', //p38

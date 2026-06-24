@@ -480,6 +480,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-24 確認済み
                             questionTitle: '所得税の計算',
                             relatedProblems: ['2025c41'],
                             content: '正しい',

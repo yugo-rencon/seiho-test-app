@@ -248,10 +248,11 @@ const isDraft = true;
                     questionTitle="相続分"
                     :relatedProblems="['2023b17']"
                     :contents="[
+                        // rev: 2026-06-24 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '特例分 → 寄与分', //p102
                     ]"
                 />
                 <QuestionTemp1

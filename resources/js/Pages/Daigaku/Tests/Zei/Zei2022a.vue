@@ -164,9 +164,10 @@ const isDraft = true;
                     questionTitle="法人税の申告・納付・処分"
                     :relatedProblems="['2022a11']"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-24 確認済み
+                        '3ヶ月 → 2ヶ月', //p222
+                        '3ヶ月 → 2ヶ月', //p222
+                        '法人税の申告書を提出した法人は、[[申告書の提出期限まで]]に申告書に記載した金額を納付しなければならない。', //p222
                         '正しい',
                     ]"
                 />
@@ -247,10 +248,11 @@ const isDraft = true;
                     questionTitle="相続分"
                     :relatedProblems="['2022a17']"
                     :contents="[
+                        // rev: 2026-06-24 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '特例分 → 寄与分', //p102
                     ]"
                 />
                 <QuestionTemp1

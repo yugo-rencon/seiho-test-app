@@ -449,9 +449,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-24 確認済み
                             questionTitle: '遺言の効力',
                             relatedProblems: ['2021c43'],
-                            content: '',
+                            content: '遺言の効力は、[[遺言者の死亡のときから生ずる]]。したがって、遺言書作成時に遺言は成立するが、遺言者が生存中は権利義務は生じない。', //p105
                         }, //43
                         {
                             questionTitle: '相続税の物納',

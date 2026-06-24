@@ -443,6 +443,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-24 確認済み
                             questionTitle: '賦課課税',
                             relatedProblems: ['2021c42'],
                             content: '正しい',

@@ -221,7 +221,8 @@ const isDraft = true;
                     questionTitle="相続制度"
                     :relatedProblems="['2024a15', '2024b15']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-25 確認済み
+                        '廃除は[[遺言でも行うことができる]]。', //p94
                         '正しい',
                         '正しい',
                         '正しい',

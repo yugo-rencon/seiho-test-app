@@ -460,6 +460,7 @@ const isDraft = true;
                             content: '[[投資目的]]で所有していたものは[[課税される]]。', //p118
                         }, //45
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '生命保険信託',
                             relatedProblems: ['2023b46'],
                             content: '正しい',

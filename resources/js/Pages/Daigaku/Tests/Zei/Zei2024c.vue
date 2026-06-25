@@ -467,6 +467,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '生命保険信託',
                             relatedProblems: ['2024a48', '2024c47'],
                             content: '正しい',

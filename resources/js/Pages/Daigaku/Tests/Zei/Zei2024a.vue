@@ -486,6 +486,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '法人が受け取る保険金・給付金等',
                             relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             content: '正しい',

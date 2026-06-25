@@ -424,10 +424,6 @@ const formatNumber = (value) => {
 const formatCalendarAmount = (value) => {
     const amount = Number(value ?? 0);
     if (!Number.isFinite(amount) || amount <= 0) return "0";
-    if (amount >= 10000) {
-        const man = Math.round((amount / 10000) * 10) / 10;
-        return `${man}万`;
-    }
     return String(Math.round(amount));
 };
 
@@ -1449,12 +1445,12 @@ const peakHour2h = computed(() => {
                 </div>
 
                 <div v-if="salesTab === 'daily'" class="mt-2 rounded-lg border border-gray-100 p-3">
-                    <div class="rounded-lg border border-gray-100 p-3">
+                    <div>
                         <div class="mb-3 flex items-center justify-between text-xs">
                             <span class="font-semibold text-gray-700">日次売上</span>
                             <span class="text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</span>
                         </div>
-                        <div v-if="dailyCalendar" class="mb-4 rounded-lg border border-gray-100 p-3">
+                        <div v-if="dailyCalendar" class="rounded-lg border border-gray-100 p-2 sm:p-3">
                             <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
                                 <div class="shrink-0 whitespace-nowrap text-xs font-semibold text-gray-700">{{ dailyCalendar.year }}年{{ dailyCalendar.month }}月</div>
                                 <div class="flex min-w-0 items-center gap-1.5">
@@ -1495,7 +1491,7 @@ const peakHour2h = computed(() => {
                                 <div
                                     v-for="(cell, idx) in dailyCalendar.cells"
                                     :key="`cal-${idx}`"
-                                    class="relative min-h-[44px] overflow-hidden rounded border p-1"
+                                    class="relative min-h-[46px] overflow-hidden rounded border p-1"
                                     :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-2 border-blue-700 ring-2 ring-blue-200' : 'border-gray-100'"
                                     :style="!cell.empty ? {
                                         backgroundColor:
@@ -1514,7 +1510,7 @@ const peakHour2h = computed(() => {
                                             {{ cell.day }}
                                         </div>
                                         <div
-                                            class="mt-0.5 whitespace-nowrap text-[9px] leading-4"
+                                            class="mt-0.5 whitespace-nowrap text-[9px] leading-4 sm:text-[10px]"
                                             :class="cell.level >= 3 ? 'text-white/90' : 'text-gray-600'"
                                         >
                                             {{ formatCalendarAmount(cell.amount) }}

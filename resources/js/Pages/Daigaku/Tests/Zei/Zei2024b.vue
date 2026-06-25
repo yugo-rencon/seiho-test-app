@@ -450,6 +450,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '退職後、再就職しなかった場合の確定申告',
                             relatedProblems: ['2024b43'],
                             content: '正しい',

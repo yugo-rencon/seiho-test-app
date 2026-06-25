@@ -196,9 +196,10 @@ const isDraft = true;
                     questionTitle="利子所得・配当所得"
                     :relatedProblems="['2024a13']"
                     :contents="[
+                        // rev: 2026-06-25 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険相互会社の基金に対する利息は、[[配当所得に該当する]]。', //p17
                         '正しい',
                     ]"
                 />

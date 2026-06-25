@@ -431,26 +431,29 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '非課税所得',
                             relatedProblems: ['2024a40'],
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '老人扶養控除額',
                             relatedProblems: ['2024a41'],
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '社会保険料控除',
                             relatedProblems: ['2024a42'],
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '相続放棄',
                             relatedProblems: ['2024a43', '2024c42'],
-                            content: '',
+                            content: '10ヶ月 → 3ヶ月', //p95
                         }, //43
                         {
                             questionTitle: '相続税の非課税財産',

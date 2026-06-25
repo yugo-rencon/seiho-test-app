@@ -452,9 +452,10 @@ const isDraft = true;
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '相続放棄',
                             relatedProblems: ['2022a44'],
-                            content: '',
+                            content: '相続放棄は限定承認と異なり、[[共同相続人が全員で申述する必要はなく、１人でもできる]]。', //p95
                         }, //44
                         {
                             questionTitle: '相続税額の計算',

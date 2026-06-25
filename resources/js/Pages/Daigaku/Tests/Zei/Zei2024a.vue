@@ -456,9 +456,10 @@ const isDraft = true;
                             content: '10ヶ月 → 3ヶ月', //p95
                         }, //43
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '相続税の非課税財産',
                             relatedProblems: ['2024a44', '2024b44', '2024c44'],
-                            content: '',
+                            content: '非課税財産に[[該当する]]。', //p118
                         }, //44
                         {
                             questionTitle: '相続税の物納',

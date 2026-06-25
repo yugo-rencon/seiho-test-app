@@ -454,9 +454,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '相続税の非課税財産',
                             relatedProblems: ['2023b45'],
-                            content: '',
+                            content: '[[投資目的]]で所有していたものは[[課税される]]。', //p118
                         }, //45
                         {
                             questionTitle: '生命保険信託',

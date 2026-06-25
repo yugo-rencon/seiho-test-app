@@ -66,6 +66,9 @@ const pricingHref = computed(() =>
 const isPreparingYear = (section, year) =>
     !section?.published && !(section?.id === "tax-sozoku" && Number(year) === 2025);
 
+const isFreeTrialYear = (section, year) =>
+    Number(year) === 2025 && (section?.published || section?.id === "tax-sozoku");
+
 const getDaigakuRoute = (sectionId, year, form) => {
     const sectionRoutePrefix = {
         "shikumi-kojin": "shikumi-kojin",
@@ -228,7 +231,7 @@ const getDaigakuRoute = (sectionId, year, form) => {
                                 <div class="flex items-center gap-2">
                                     <div class="text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
                                     <span
-                                        v-if="!hasPremium && Number(year) === 2025 && activeSection.published"
+                                        v-if="!hasPremium && isFreeTrialYear(activeSection, year)"
                                         class="inline-flex items-center rounded-full border border-blue-300 bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700"
                                     >
                                         最新年度フォームA・無料

@@ -480,9 +480,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '棚卸資産の評価',
                             relatedProblems: ['2024b48'],
-                            content: '',
+                            content: '棚卸資産の期末評価の方法には、[[原価法と低価法]]がある。', //p203
                         }, //48
                         {
                             // rev: 2026-06-26 確認済み

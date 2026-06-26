@@ -462,9 +462,10 @@ const isDraft = true;
                             content: '非課税財産に[[該当する]]。', //p118
                         }, //44
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: '遺留分の放棄',
                             relatedProblems: ['2024b45'],
-                            content: '',
+                            content: '遺留分権利者は、[[被相続人の生前]]に、遺留分を主張しないという意思表示を行うことができる。これを「遺留分の放棄」という。', //p107
                         }, //45
                         {
                             // rev: 2026-06-15 確認済み
@@ -473,6 +474,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-26 確認済み
                             questionTitle: 'リビング・ニーズ特約',
                             relatedProblems: ['2024b47'],
                             content: '正しい',

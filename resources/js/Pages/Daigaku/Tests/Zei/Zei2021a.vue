@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険と税・相続";
 const subject = "2021年度 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -224,8 +224,9 @@ const isDraft = true;
                     questionTitle="住民税の主な所得控除"
                     :relatedProblems="['2021a15']"
                     :contents="[
+                        // rev: 2026-06-27 確認済み
                         '正しい',
-                        '', //p
+                        '70歳以上の親族を扶養の場合、扶養控除額は、同居の場合[[45万円]]、非同居の場合[[38万円]]である。', //p44
                         '正しい',
                         '正しい',
                     ]"
@@ -335,7 +336,8 @@ const isDraft = true;
                     questionTitle="法人税の申告と納付"
                     :relatedProblems="['2021a23']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-27 確認済み
+                        '3ヶ月 → 2ヶ月', //p222
                         '正しい',
                         '正しい',
                         '正しい',

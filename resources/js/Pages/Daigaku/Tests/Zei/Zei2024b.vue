@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険と税・相続";
 const subject = "2024年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>

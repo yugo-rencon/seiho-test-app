@@ -334,7 +334,8 @@ const isDraft = true;
                     questionTitle="法人税の申告と納付"
                     :relatedProblems="['2022b23']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-27 確認済み
+                        '3ヶ月 → 2ヶ月', //p222
                         '正しい',
                         '正しい',
                         '正しい',

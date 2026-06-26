@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険と税・相続";
 const subject = "2021年度 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -70,9 +70,10 @@ const isDraft = true;
                     questionTitle="所得税の配偶者控除と配偶者特別控除、扶養控除"
                     :relatedProblems="['2021c4']"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-27 確認済み
+                        '納税者の合計所得金額に応じて[[控除額が異なる]]。', //p24
+                        '28万円 → 62万円', //p24
+                        '1,100万円 → 1,000万円', //p24
                         '正しい',
                     ]"
                 />

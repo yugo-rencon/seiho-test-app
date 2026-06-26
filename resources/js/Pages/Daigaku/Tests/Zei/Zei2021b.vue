@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険と税・相続";
 const subject = "2021年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -480,6 +480,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '損失の繰越控除',
                             relatedProblems: ['2021b41'],
                             content: '正しい',

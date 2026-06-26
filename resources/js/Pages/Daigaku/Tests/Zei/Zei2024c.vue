@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険と税・相続";
 const subject = "2024年度 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -190,13 +190,14 @@ const isDraft = true;
                     :questionNumber="11"
                     :title="title"
                     :subject="subject"
-                    questionTitle="契約内容の変更に関する税務"
+                    questionTitle="契約内容等の変更に関する税務"
                     :relatedProblems="['2024c11']"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-27 確認済み
+                        '契約に関する権利について、[[課税関係は生じない]]。', //p180
+                        '収入を得るために支出した金額 ＝ [[転換前契約の実払保険料 ＋ 転換後契約の実払保険料]]', //p181
                         '正しい',
-                        '', //p
+                        '雑所得 → 一時所得', //p181
                     ]"
                 />
                 <QuestionTemp1
@@ -318,7 +319,8 @@ const isDraft = true;
                     questionTitle="生命保険の契約内容の変更等に関する税務（個人契約）"
                     :relatedProblems="['2024c20']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-27 確認済み
+                        '契約者の名義を父親から長男に変更した場合、父親が有していた契約に関する権利は長男に移転することになるが、[[父親の生存中に契約者変更をしても、この段階では課税関係は生じない]]。', //p178
                         '正しい',
                         '正しい',
                         '正しい',
@@ -345,10 +347,11 @@ const isDraft = true;
                     questionTitle="法人税、法人税額の計算等"
                     :relatedProblems="['2024c22']"
                     :contents="[
+                        // rev: 2026-06-27 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        'ここでいう中小法人等とは、資本金1億円以下、または資本もしくは出資を有しない普通法人（相互会社を除く）、[[公益法人等、協同組合等、人格のない社団等]]である。', //p217
                     ]"
                 />
                 <QuestionTemp1
@@ -453,8 +456,8 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '各種所得の損益の通算',
                             relatedProblems: ['2024c40'],
                             content: '正しい',

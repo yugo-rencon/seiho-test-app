@@ -21,17 +21,43 @@ const isDraft = true;
             <DraftNotice v-if="isDraft" />
 
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
                     questionTitle="退職所得金額の計算"
-                    :relatedProblems="['2023a1', '2023b1', '2023c1']"
+                    :relatedProblems="[['2023a1', '2023b1', '2023c1']]"
+                    :labels="['ウ']"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '正しい',
-                        '', //p
+                        {
+                            // rev: 2026-06-27 確認済み
+                            explanation: [
+                                {
+                                    type: 'text',
+                                    value: '退職所得の金額は、[[（収入金額－退職所得控除額）×1/2]]で計算する。',
+                                },
+                                {
+                                    type: 'text',
+                                    value: 'また、[[勤続年数が20年以下の場合]]の退職所得控除額は、[[40万円×勤続年数（最低80万円）]]である。',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '本問では勤続年数が15年であるため、退職所得控除額は[[40万円×15年]]となる。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: 'したがって、退職所得の金額を求める計算式は次のとおりである。',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['[[（1,000万円－40万円×15年）×1/2]]'],
+                                },
+                                {
+                                    type: 'note',
+                                    value: '以上より、[[ウ]]が正しい。',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp1

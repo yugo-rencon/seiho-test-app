@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -20,17 +21,57 @@ const isDraft = true;
             <DraftNotice v-if="isDraft" />
 
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現値と終値（6つの係数）"
-                    :relatedProblems="[]"
+                    questionTitle="現価と終価（6つの係数）（現価係数）"
+                    :relatedProblems="[[]]"
+                    :labels="['ア']"
                     :contents="[
-                        '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-06-27 作成
+                            answer: '1,486,000円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来の金額から現在必要な元本金額を求める場合は、現価係数を用いる。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現在必要な元本金額 ＝ 将来受け取る金額 × 現価係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: [
+                                        '将来受け取る金額：200万円',
+                                        '年利率：2％',
+                                        '運用期間：15年',
+                                        '現価係数：0.7430',
+                                    ],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現在必要な元本金額', '＝ 200万円 × 0.7430', '＝ 1,486,000円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：1,486,000円',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp1

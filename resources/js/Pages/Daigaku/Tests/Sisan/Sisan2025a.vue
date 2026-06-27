@@ -25,7 +25,7 @@ const isDraft = true;
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（6つの係数）"
+                    questionTitle="現価と終価（6つの係数）（現価係数）"
                     :relatedProblems="[[]]"
                     :labels="['ア']"
                     :contents="[
@@ -39,7 +39,7 @@ const isDraft = true;
                                 },
                                 {
                                     type: 'text',
-                                    value: '将来の金額から現在必要な元本を求める場合は、現価係数を用いる。',
+                                    value: '将来の金額から現在必要な元本金額を求める場合は、現価係数を用いる。',
                                 },
                                 {
                                     type: 'blockTitle',
@@ -47,7 +47,7 @@ const isDraft = true;
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: ['現在必要な元本 ＝ 将来受け取る金額 × 現価係数'],
+                                    value: ['現在必要な元本金額 ＝ 将来受け取る金額 × 現価係数'],
                                 },
                                 {
                                     type: 'blockTitle',
@@ -64,7 +64,7 @@ const isDraft = true;
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: ['現在必要な元本', '＝ 300万円 × 0.7430', '＝ 2,229,000円'],
+                                    value: ['現在必要な元本金額', '＝ 300万円 × 0.7430', '＝ 2,229,000円'],
                                 },
                                 {
                                     type: 'result',

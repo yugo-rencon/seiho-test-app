@@ -481,6 +481,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '相続税額の計算',
                             relatedProblems: ['2022a45', '2022c44'],
                             content: '正しい',
@@ -504,6 +505,7 @@ const isDraft = true;
                             content: '棚卸資産の期末評価の方法には、[[原価法と低価法]]がある。', //p203
                         }, //47
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '年払・半年払の保険料の経理',
                             relatedProblems: ['2022a48', '2022b48', '2022c48'],
                             content: '正しい',

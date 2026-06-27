@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険と税・相続";
 const subject = "2023年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -469,6 +469,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '子の養育費',
                             relatedProblems: ['2023b42'],
                             content: '正しい',
@@ -480,6 +481,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '相続税額の計算',
                             relatedProblems: ['2023b44'],
                             content: '正しい',

@@ -469,9 +469,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '扶養控除',
                             relatedProblems: ['2022a42'],
-                            content: '',
+                            content: '親元を離れて大学に通っている子や郷里の両親に仕送りをしている場合も[[「生計を一にしている」ということになる]]。',//p67
                         }, //42
                         {
                             // rev: 2026-06-27 確認済み
@@ -486,6 +487,7 @@ const isDraft = true;
                             content: '相続放棄は限定承認と異なり、[[共同相続人が全員で申述する必要はなく、１人でもできる]]。', //p95
                         }, //44
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '相続税額の計算',
                             relatedProblems: ['2022a45', '2022c44'],
                             content: '正しい',
@@ -503,6 +505,7 @@ const isDraft = true;
                             content: '60% → 40%', //p223
                         }, //47
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '年払・半年払の保険料の経理',
                             relatedProblems: ['2022a48', '2022b48', '2022c48'],
                             content: '正しい',

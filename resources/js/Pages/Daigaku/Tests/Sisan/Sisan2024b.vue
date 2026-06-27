@@ -117,17 +117,57 @@ const isDraft = true;
                         },
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（6つの係数）"
-                    :relatedProblems="[]"
+                    questionTitle="現価と終価（6つの係数）（減債基金係数）"
+                    :relatedProblems="[[]]"
+                    :labels="['エ']"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '正しい',
+                        {
+                            // rev: 2026-06-28 作成
+                            answer: '365,320円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来の目標額を貯めるために必要な毎年の積立額は、減債基金係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の積立額 ＝ 将来の目標額 × 減債基金係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: [
+                                        '将来の目標額：400万円',
+                                        '年利率：2％',
+                                        '運用期間：10年',
+                                        '減債基金係数：0.09133',
+                                    ],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の積立額', '＝ 400万円 × 0.09133', '＝ 365,320円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：365,320円',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp4

@@ -180,17 +180,52 @@ const isDraft = true;
                         },
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（6つの係数）"
-                    :relatedProblems="[]"
+                    questionTitle="現価と終価（6つの係数）（年金現価係数）"
+                    :relatedProblems="[[]]"
+                    :labels="['イ']"
                     :contents="[
-                        '', //p
-                        '正しい',
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-06-28 作成
+                            answer: '32,702,000円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '毎年一定額の年金を受け取るために必要な年金原資は、年金現価係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['年金原資 ＝ 毎年の年金額 × 年金現価係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の年金額：200万円', '年利率：2％', '受取期間：20年', '年金現価係数：16.351'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['年金原資', '＝ 200万円 × 16.351', '＝ 32,702,000円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：32,702,000円',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp1

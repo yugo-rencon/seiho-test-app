@@ -137,10 +137,11 @@ const isDraft = true;
                     questionTitle="相続税の延納"
                     :relatedProblems="['2023a7']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-27 確認済み
+                        '国税庁長官 → 税務署長', //p136
                         '正しい',
-                        '', //p
-                        '', //p
+                        '100万円 → 10万円', //p136
+                        '[[担保が必要な場合もある]]（延納税額が100万円以下で、かつ延納期間が3年以下の場合は不要）。', //p136
                     ]"
                 />
                 <QuestionTemp1
@@ -276,9 +277,10 @@ const isDraft = true;
                     questionTitle="ひとり親控除"
                     :relatedProblems="['2023a17', '2023c15']"
                     :contents="[
+                        // rev: 2026-06-27 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '600万円 → 500万円', //p25
                         '正しい',
                     ]"
                 />
@@ -289,9 +291,10 @@ const isDraft = true;
                     questionTitle="相続税の課税価格の計算"
                     :relatedProblems="['2023a18', '2023b18']"
                     :contents="[
+                        // rev: 2026-06-27 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '香典返礼費用は、[[葬式費用に含めない]]。', //p123
                         '正しい',
                     ]"
                 />
@@ -472,9 +475,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '医療費控除',
                             relatedProblems: ['2023a43'],
-                            content: '',
+                            content: '人間ドックの費用や治療を受けるために直接必要としない近視、遠視等の眼鏡や補聴器等の購入費は医療費控除の対象となる[[医療費として認められない]]。', //p79
                         }, //43
                         {
                             questionTitle: '相続時の物納',

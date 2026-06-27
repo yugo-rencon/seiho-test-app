@@ -249,9 +249,10 @@ const isDraft = true;
                     questionTitle="ひとり親控除"
                     :relatedProblems="['2023a17', '2023c15']"
                     :contents="[
+                        // rev: 2026-06-27 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '600万円 → 500万円', //p25
                         '正しい',
                     ]"
                 />

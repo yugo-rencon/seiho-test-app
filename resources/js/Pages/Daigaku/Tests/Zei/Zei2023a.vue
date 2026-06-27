@@ -481,9 +481,10 @@ const isDraft = true;
                             content: '人間ドックの費用や治療を受けるために直接必要としない近視、遠視等の眼鏡や補聴器等の購入費は医療費控除の対象となる[[医療費として認められない]]。', //p79
                         }, //43
                         {
-                            questionTitle: '相続時の物納',
+                            // rev: 2026-06-27 確認済み
+                            questionTitle: '相続税の物納',
                             relatedProblems: ['2023a44'],
-                            content: '',
+                            content: '物納にあてることができる財産の種類と順位は、①国債、地方債、上場株式等、不動産、船舶、②上場株式および不動産のうち物納劣後財産に該当するもの、③非上場株式等となっている。', //p136
                         }, //44
                         {
                             // rev: 2026-06-21 確認済み
@@ -492,9 +493,10 @@ const isDraft = true;
                             content: '一時所得 → 雑所得', //p174
                         }, //45
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '納税猶予制度',
                             relatedProblems: ['2023a46'],
-                            content: '',
+                            content: '贈与税の半分 → 贈与税の全額', //p151
                         }, //46
                         {
                             // rev: 2026-06-27 確認済み
@@ -509,6 +511,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '支払調書',
                             relatedProblems: ['2023a49', '2023b49', '2023c49'],
                             content: '正しい',

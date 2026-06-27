@@ -508,6 +508,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-27 確認済み
                             questionTitle: '支払調書',
                             relatedProblems: ['2022a49', '2022b49', '2022c49'],
                             content: '正しい',

@@ -26,7 +26,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="現価と終価（6つの係数）（現価係数）"
-                    :relatedProblems="[[]]"
+                    :relatedProblems="[['2023a1', '2023b1', '2023c1']]"
                     :labels="['ア']"
                     :contents="[
                         {
@@ -74,7 +74,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="現価と終価（6つの係数）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a2', '2023b2', '2023c2']"
                     :contents="[
                         '', //p
                         '', //p
@@ -87,7 +87,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="現価と終価（6つの係数）（年金終価係数）"
-                    :relatedProblems="[[]]"
+                    :relatedProblems="[['2023a3', '2023b3', '2023c3']]"
                     :labels="['イ']"
                     :contents="[
                         {
@@ -135,7 +135,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="現価と終価（6つの係数）（資本回収係数）"
-                    :relatedProblems="[[]]"
+                    :relatedProblems="[['2023a4', '2023b4', '2023c4']]"
                     :labels="['イ']"
                     :contents="[
                         {
@@ -183,7 +183,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="財形年金貯蓄の利用上の注意点"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a5']"
                     :contents="[
                         '', //p
                         '', //p
@@ -196,7 +196,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="債券の売買"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a6', '2023b18', '2023c18']"
                     :contents="[
                         '', //p
                         '正しい',
@@ -209,7 +209,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="債券の所有形態別利回り区分"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a7']"
                     :contents="[
                         '', //p
                         '', //p
@@ -222,7 +222,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="株式の基礎"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a8', '2023c45']"
                     :contents="[
                         '正しい',
                         '', //p
@@ -235,7 +235,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="その他の金融商品"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a9', '2023c10']"
                     :contents="[
                         '', //p
                         '正しい',
@@ -248,7 +248,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="外国投資信託"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a10', '2023b11']"
                     :contents="[
                         '', //p
                         '', //p
@@ -261,7 +261,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="外国債券"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a11', '2023c24']"
                     :contents="[
                         '', //p
                         '', //p
@@ -274,7 +274,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="預金保険制度"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a12']"
                     :contents="[
                         '正しい',
                         '', //p
@@ -287,7 +287,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品と税金"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a13']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -300,7 +300,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="景気・経済の動向"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a14']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -313,7 +313,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="財形制度"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a15', '2023b15', '2023c15']"
                     :contents="[
                         '正しい',
                         '', //p
@@ -326,7 +326,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="債券の特徴"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -339,7 +339,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="債券の発行条件"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a17', '2023b6', '2023c17']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -352,7 +352,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="債券の流通市場"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a18']"
                     :contents="[
                         '正しい',
                         '', //p
@@ -365,7 +365,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="国債"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a19', '2023b19', '2023c19']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -378,7 +378,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="分散投資"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a20', '2023c8']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -391,7 +391,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="単元未満株投資（株式ミニ投資）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a21', '2023b45']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -404,7 +404,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金の運用選択としての投資信託"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a22', '2023c9']"
                     :contents="[
                         '正しい',
                         '', //p
@@ -417,7 +417,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="転換社債型新株予約権付社債（転換社債）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a23', '2023b23', '2023c23']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -430,7 +430,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="ラップ口座（ラップ・アカウント）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a24', '2023b10']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -444,7 +444,7 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="金融政策の手段"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a25']"
                     :contents="[
                         '',
                         '',
@@ -466,7 +466,7 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="株式相場指標"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a30']"
                     :contents="[
                         '',
                         '',
@@ -488,7 +488,7 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="居住用財産の譲渡所得の特別控除"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2023a35', '2023b35', '2023c35']"
                     :contents="[
                         '',
                         '',
@@ -511,52 +511,52 @@ const isDraft = true;
                     :items="[
                         {
                             questionTitle: '障害者等の非課税貯蓄制度',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a40'],
                             content: '正しい',
                         }, //40
                         {
                             questionTitle: '金融商品の三分類',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a41', '2023b41', '2023c41'],
                             content: '', //p
                         }, //41
                         {
                             questionTitle: '債券格付けの意義',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a42', '2023c6'],
                             content: '正しい',
                         }, //42
                         {
                             questionTitle: '金利変動リスク',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a43', '2023b43', '2023c43'],
                             content: '', //p
                         }, //43
                         {
                             questionTitle: '上場株式等の売却損の繰越し',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a44', '2023b44', '2023c44'],
                             content: '', //p
                         }, //44
                         {
                             questionTitle: '配当金に対する課税',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a45'],
                             content: '', //p
                         }, //45
                         {
                             questionTitle: '不動産投資信託',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a46', '2023c25'],
                             content: '', //p
                         }, //46
                         {
                             questionTitle: '投資信託の基準価額',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a47', '2023b47', '2023c47'],
                             content: '正しい',
                         }, //47
                         {
                             questionTitle: '外貨預金',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a48', '2023b24'],
                             content: '', //p
                         }, //48
                         {
                             questionTitle: '日本投資者保護基金',
-                            relatedProblems: [],
+                            relatedProblems: ['2023a49', '2023c49'],
                             content: '正しい',
                         }, //49
                     ]"

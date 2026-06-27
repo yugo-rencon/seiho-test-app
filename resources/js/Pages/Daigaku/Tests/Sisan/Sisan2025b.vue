@@ -127,17 +127,57 @@ const isDraft = true;
                         },
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（6つの係数）"
-                    :relatedProblems="[]"
+                    questionTitle="現価と終価（6つの係数）（資本回収係数）"
+                    :relatedProblems="[[]]"
+                    :labels="['ア']"
                     :contents="[
-                        '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-06-27 作成
+                            answer: '778,300円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '借入金を毎年一定額で返済する場合の年間返済額は、資本回収係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の返済額 ＝ 借入金額 × 資本回収係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: [
+                                        '借入金額：1,000万円',
+                                        '年利率：2％',
+                                        '返済期間：15年',
+                                        '資本回収係数：0.07783',
+                                    ],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の返済額', '＝ 1,000万円 × 0.07783', '＝ 778,300円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：778,300円',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp1

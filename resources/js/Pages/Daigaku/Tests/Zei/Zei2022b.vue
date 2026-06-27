@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "生命保険と税・相続";
 const subject = "2022年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -413,11 +413,12 @@ const isDraft = true;
                     questionTitle="相続財産"
                     :relatedProblems="['2022b30']"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        // rev: 2026-06-27 確認済み
+                        '経済的価値',
+                        '地目',
+                        '固定資産税評価額',
+                        '低い',
+                        '合計額', // 問30〜34
                     ]"
                     :labels="[
                         'キ', //30

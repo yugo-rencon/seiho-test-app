@@ -28,7 +28,7 @@ const DAIGAKU_SECTIONS = [
         title: "生命保険と税・相続",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。（試験実施: 9〜10月）",
         years: DAIGAKU_VISIBLE_YEARS,
-        published: false,
+        published: true,
     },
     {
         id: "sisan-unyou",
@@ -64,10 +64,10 @@ const pricingHref = computed(() =>
 );
 
 const isPreparingYear = (section, year) =>
-    !section?.published && !(section?.id === "tax-sozoku" && Number(year) === 2025);
+    !section?.published;
 
 const isFreeTrialYear = (section, year) =>
-    Number(year) === 2025 && (section?.published || section?.id === "tax-sozoku");
+    Number(year) === 2025 && section?.published;
 
 const getDaigakuRoute = (sectionId, year, form) => {
     const sectionRoutePrefix = {

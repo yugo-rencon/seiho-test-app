@@ -55,12 +55,7 @@ const isDraft = true;
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: [
-                                        '将来受け取る金額：300万円',
-                                        '年利率：2％',
-                                        '運用期間：15年',
-                                        '現価係数：0.7430',
-                                    ],
+                                    value: ['将来受け取る金額：300万円', '年利率：2％', '運用期間：15年', '現価係数：0.7430'],
                                 },
                                 {
                                     type: 'formulaBlock',
@@ -74,17 +69,52 @@ const isDraft = true;
                         },
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（6つの係数）"
-                    :relatedProblems="[]"
+                    questionTitle="現価と終価（6つの係数）（年金終価係数）"
+                    :relatedProblems="[[]]"
+                    :labels="['イ']"
                     :contents="[
-                        '', //p
-                        '正しい',
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-06-27 作成
+                            answer: '4,859,400円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '毎年一定額を積み立てた場合の将来の元利合計金額は、年金終価係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計金額 ＝ 毎年の積立額 × 年金終価係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の積立額：20万円', '年利率：2％', '積立期間：20年', '年金終価係数：24.297'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計金額', '＝ 20万円 × 24.297', '＝ 4,859,400円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：4,859,400円',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp1

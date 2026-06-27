@@ -21,17 +21,52 @@ const isDraft = true;
             <DraftNotice v-if="isDraft" />
 
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（6つの係数）"
-                    :relatedProblems="[]"
+                    questionTitle="現価と終価（6つの係数）（終価係数）"
+                    :relatedProblems="[[]]"
+                    :labels="['エ']"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '正しい',
+                        {
+                            // rev: 2026-06-28 作成
+                            answer: '1,219,000円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '現在の金額を一定期間複利運用したときの将来の元利合計金額は、終価係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計金額 ＝ 現在の金額 × 終価係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現在の金額：100万円', '年利率：2％', '運用期間：10年', '終価係数：1.219'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計金額', '＝ 100万円 × 1.219', '＝ 1,219,000円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：1,219,000円',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp4

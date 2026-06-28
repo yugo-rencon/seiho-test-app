@@ -350,9 +350,10 @@ const isDraft = true;
                     questionTitle="債券の発行条件"
                     :relatedProblems="['2023a17', '2023b6', '2023c17']"
                     :contents="[
+                        // rev: 2026-06-29 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '1,000円 → 100円', //p38
                         '正しい',
                     ]"
                 />

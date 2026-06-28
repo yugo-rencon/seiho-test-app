@@ -567,6 +567,7 @@ const isDraft = true;
                             content: '流動性商品 → 利殖性商品', //p26
                         }, //41
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '債券の発行条件',
                             relatedProblems: ['2022a42', '2022b17', '2022c6'],
                             content: '正しい',

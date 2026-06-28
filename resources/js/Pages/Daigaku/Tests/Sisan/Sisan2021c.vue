@@ -566,6 +566,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '債券の発行条件',
                             relatedProblems: ['2021b6', '2021c42'],
                             content: '正しい',

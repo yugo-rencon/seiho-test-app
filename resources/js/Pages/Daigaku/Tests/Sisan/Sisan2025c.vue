@@ -360,7 +360,8 @@ const isDraft = true;
                     questionTitle="債券の発行条件"
                     :relatedProblems="['2025a42', '2025c15']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-29 確認済み
+                        '1,000円 → 100円', //p38
                         '正しい',
                         '正しい',
                         '正しい',

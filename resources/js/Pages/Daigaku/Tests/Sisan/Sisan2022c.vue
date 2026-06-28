@@ -390,10 +390,11 @@ const isDraft = true;
                     questionTitle="債券の税金関係"
                     :relatedProblems="['2022a7', '2022b7', '2022c18']"
                     :contents="[
+                        // rev: 2026-06-28 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '５年間 → ３年間', //p45
                     ]"
                 />
                 <QuestionTemp1

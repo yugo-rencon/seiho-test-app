@@ -413,9 +413,10 @@ const isDraft = true;
                     questionTitle="株式の基礎"
                     :relatedProblems="['2024a43', '2024b19', '2024c6']"
                     :contents="[
+                        // rev: 2026-06-29 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '７営業日目 → ３営業日目', //p55
                         '正しい',
                     ]"
                 />

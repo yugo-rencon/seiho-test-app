@@ -576,6 +576,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '株式の基礎',
                             relatedProblems: ['2024a43', '2024b19', '2024c6'],
                             content: '正しい',

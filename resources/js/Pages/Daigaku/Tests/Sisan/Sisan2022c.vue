@@ -600,6 +600,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '外貨預金',
                             relatedProblems: ['2022b24', '2022c48'],
                             content: '正しい',

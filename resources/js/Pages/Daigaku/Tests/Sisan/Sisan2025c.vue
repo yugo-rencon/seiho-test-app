@@ -457,8 +457,9 @@ const isDraft = true;
                     questionTitle="外貨預金"
                     :relatedProblems="['2025a46', '2025c22']"
                     :contents="[
+                        // rev: 2026-06-29 確認済み
                         '正しい',
-                        '', //p
+                        '円安 → 円高', //p113
                         '正しい',
                         '正しい',
                     ]"

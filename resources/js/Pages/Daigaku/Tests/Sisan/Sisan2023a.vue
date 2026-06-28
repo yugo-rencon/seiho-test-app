@@ -562,9 +562,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '外貨預金',
                             relatedProblems: ['2023a48', '2023b24'],
-                            content: '', //p
+                            content: '種類は、[[普通預金、当座預金、通知預金、定期預金]]などがあり、円で行う預金と基本的な仕組みは変わらない。', //p112
                         }, //48
                         {
                             questionTitle: '日本投資者保護基金',

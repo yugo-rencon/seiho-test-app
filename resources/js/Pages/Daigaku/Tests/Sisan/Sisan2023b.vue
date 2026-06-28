@@ -559,9 +559,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-28 確認済み
                             questionTitle: '外貨建て金融商品の注意事項',
                             relatedProblems: ['2023b48', '2023c11'],
-                            content: '', //p
+                            content: '預けたお金を外貨のまま現金（キャッシュ）で引き出すことは可能だが、[[手数料がかかる]]（手数料は金融機関により異なる）。', //p111
                         }, //48
                         {
                             questionTitle: '金融機関のリスクヘッジ',

@@ -579,6 +579,7 @@ const isDraft = true;
                             content: '', //p
                         }, //45
                         {
+                            // rev: 2026-06-28 確認済み
                             questionTitle: '外貨建て金融商品の注意事項',
                             relatedProblems: ['2024a46', '2024b10'],
                             content: '正しい',

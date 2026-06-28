@@ -352,9 +352,10 @@ const isDraft = true;
                     questionTitle="預貯金の特徴"
                     :relatedProblems="['2025a14', '2025b14', '2025c14']"
                     :contents="[
+                        // rev: 2026-06-28 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '振替口座 → 総合口座', //p25
                         '正しい',
                     ]"
                 />

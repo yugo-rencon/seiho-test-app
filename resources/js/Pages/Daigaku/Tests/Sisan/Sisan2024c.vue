@@ -394,7 +394,8 @@ const isDraft = true;
                     questionTitle="債券の売買"
                     :relatedProblems="['2024a5', '2024c18']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-28 確認済み
+                        '長期利付国債の額面金額は[[５万円]]である。', //p42
                         '正しい',
                         '正しい',
                         '正しい',

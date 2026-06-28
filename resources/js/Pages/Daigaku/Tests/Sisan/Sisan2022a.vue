@@ -394,9 +394,10 @@ const isDraft = true;
                     questionTitle="債券の売買"
                     :relatedProblems="['2022a18', '2022b6']"
                     :contents="[
+                        // rev: 2026-06-28 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '手数料を支払わないので[[消費税も課されない]]。', //p42
                         '正しい',
                     ]"
                 />

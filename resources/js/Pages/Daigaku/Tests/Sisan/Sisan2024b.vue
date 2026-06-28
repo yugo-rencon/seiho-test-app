@@ -590,6 +590,7 @@ const isDraft = true;
                             content: '', //p
                         }, //46
                         {
+                            // rev: 2026-06-28 確認済み
                             questionTitle: '預金保険制度',
                             relatedProblems: ['2024b47', '2024c12'],
                             content: '正しい',

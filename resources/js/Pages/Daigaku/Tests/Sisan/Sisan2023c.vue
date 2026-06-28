@@ -529,9 +529,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '金融商品の三分類',
                             relatedProblems: ['2023a41', '2023b41', '2023c41'],
-                            content: '', //p
+                            content: '流動性商品 → 利殖性商品', //p26
                         }, //41
                         {
                             // rev: 2026-06-28 確認済み

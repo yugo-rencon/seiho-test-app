@@ -564,7 +564,7 @@ const isDraft = true;
                         {
                             questionTitle: '金融商品の三分類',
                             relatedProblems: ['2022a41', '2022b41', '2022c41'],
-                            content: '', //p
+                            content: '流動性商品 → 利殖性商品', //p26
                         }, //41
                         {
                             questionTitle: '債券の発行条件',

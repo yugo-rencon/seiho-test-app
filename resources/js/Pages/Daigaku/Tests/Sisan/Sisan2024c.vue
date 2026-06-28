@@ -434,10 +434,11 @@ const isDraft = true;
                     questionTitle="株式の評価（投資指標）"
                     :relatedProblems="['2024a8', '2024b6', '2024c21']"
                     :contents="[
+                        // rev: 2026-06-28 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '税引前利益 → 税引後利益', //p60
                     ]"
                 />
                 <QuestionTemp1

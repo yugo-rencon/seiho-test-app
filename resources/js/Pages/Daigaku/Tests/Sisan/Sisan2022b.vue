@@ -587,6 +587,7 @@ const isDraft = true;
                             content: '', //p
                         }, //44
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '投資信託の積立購入サービス',
                             relatedProblems: ['2022b45'],
                             content: '正しい',

@@ -592,11 +592,13 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '投資信託の積立購入サービス',
                             relatedProblems: ['2025a44'],
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '投資信託のリスク',
                             relatedProblems: ['2025a45'],
                             content: '正しい',

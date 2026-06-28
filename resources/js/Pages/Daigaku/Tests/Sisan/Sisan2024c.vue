@@ -581,6 +581,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '投資信託のリスク',
                             relatedProblems: ['2024c44'],
                             content: '正しい',

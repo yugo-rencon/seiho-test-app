@@ -234,10 +234,11 @@ const isDraft = true;
                     questionTitle="債券の所有形態別利回り区分"
                     :relatedProblems="['2024a6', '2024c5']"
                     :contents="[
+                        // rev: 2026-06-29 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '最終利回り → 応募者利回り', //p46
+                        '応募者利回り → 最終利回り', //p46
+                        '最終利回り → 所有期間利回り', //p46
                     ]"
                 />
                 <QuestionTemp1

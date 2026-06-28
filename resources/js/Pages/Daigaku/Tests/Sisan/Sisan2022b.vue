@@ -404,9 +404,10 @@ const isDraft = true;
                     questionTitle="債券の所有形態別利回り区分"
                     :relatedProblems="['2022b18', '2022c7']"
                     :contents="[
+                        // rev: 2026-06-29 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '直接利回り → 最終利回り', //p46
                         '正しい',
                     ]"
                 />

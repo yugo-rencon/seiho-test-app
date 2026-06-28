@@ -579,6 +579,7 @@ const isDraft = true;
                             content: '', //p
                         }, //44
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '単元未満株投資（株式ミニ投資）',
                             relatedProblems: ['2022a21', '2022c45'],
                             content: '正しい',

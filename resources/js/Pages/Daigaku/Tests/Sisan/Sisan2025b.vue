@@ -571,9 +571,10 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '物価指標',
                             relatedProblems: ['2025a40', '2025b40', '2025c40'],
-                            content: '', //p
+                            content: '企業物価指数は、為替や原油価格の動向が直接影響を与えるので、消費者物価指数に比べて短期的な変動が[[大きい]]。', //p17
                         }, //40
                         {
                             questionTitle: '金融商品の三分類',

@@ -560,6 +560,7 @@ const isDraft = true;
                             content: '', //p
                         }, //40
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '物価指標',
                             relatedProblems: ['2021c41'],
                             content: '正しい',

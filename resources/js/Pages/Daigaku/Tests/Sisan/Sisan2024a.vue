@@ -558,6 +558,7 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '物価指標',
                             relatedProblems: ['2024a40'],
                             content: '正しい',

@@ -301,10 +301,11 @@ const isDraft = true;
                     questionTitle="外国債券"
                     :relatedProblems="['2021a11', '2021b22']"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-28 確認済み
+                        'ショーグン債 → サムライ債', //p122
+                        'サムライ債 → ショーグン債', //p122w
                         '正しい',
-                        '', //p
+                        '源泉分離課税 → 申告分離課税', //p123
                     ]"
                 />
                 <QuestionTemp1

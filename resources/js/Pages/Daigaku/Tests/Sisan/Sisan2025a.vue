@@ -360,10 +360,11 @@ const isDraft = true;
                     questionTitle="債券の種類"
                     :relatedProblems="['2025a15', '2025b42']"
                     :contents="[
+                        // rev: 2026-06-28 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '縁故債 ↔︎ 公募債', //p37
                     ]"
                 />
                 <QuestionTemp1

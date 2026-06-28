@@ -350,7 +350,8 @@ const isDraft = true;
                     questionTitle="債券の種類"
                     :relatedProblems="['2023b17', '2023c42']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-28 確認済み
+                        '事業債 → 民間債', //p35
                         '正しい',
                         '正しい',
                         '正しい',

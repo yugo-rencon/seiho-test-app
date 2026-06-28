@@ -531,6 +531,7 @@ const isDraft = true;
                             content: '', //p
                         }, //41
                         {
+                            // rev: 2026-06-28 確認済み
                             questionTitle: '債券の種類',
                             relatedProblems: ['2023b17', '2023c42'],
                             content: '正しい',

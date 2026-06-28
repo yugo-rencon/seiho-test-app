@@ -602,9 +602,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '不動産活用・土地信託方式',
                             relatedProblems: ['2024a49', '2024b49', '2024c49'],
-                            content: '', //p
+                            content: '土地信託方式 → 等価交換方式', //p135
                         }, //49
                     ]"
                 />

@@ -287,10 +287,11 @@ const isDraft = true;
                     questionTitle="ラップ口座（ラップ・アカウント）"
                     :relatedProblems="['2021a23', '2021c10']"
                     :contents="[
+                        // rev: 2026-06-29 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '投信型 → 投資顧問型', //p102
+                        '投資顧問型 → 投信型', //p102
+                        '長期運用 → 短期売買', //p103
                     ]"
                 />
                 <QuestionTemp1

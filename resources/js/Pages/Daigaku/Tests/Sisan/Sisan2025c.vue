@@ -607,6 +607,7 @@ const isDraft = true;
                             content: '', //p
                         }, //48
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '不動産活用・等価交換方式',
                             relatedProblems: ['2025a49', '2025b49', '2025c49'],
                             content: '正しい',

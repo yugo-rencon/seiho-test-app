@@ -604,6 +604,7 @@ const isDraft = true;
                             content: '', //p
                         }, //48
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '不動産活用・土地信託方式',
                             relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             content: '正しい',

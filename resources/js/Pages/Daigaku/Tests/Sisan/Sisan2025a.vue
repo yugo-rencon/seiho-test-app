@@ -472,7 +472,8 @@ const isDraft = true;
                     questionTitle="ラップ口座（ラップ・アカウント）"
                     :relatedProblems="['2025a23', '2025b21']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-29 確認済み
+                        'ラップ口座は、一般的な有価証券の売買のように、[[そのつど売買委託手数料等がかかるのではなく]]、資産の残高に応じて一定割合の手数料を定期的に支払う。', //p102
                         '正しい',
                         '正しい',
                         '正しい',
@@ -485,7 +486,8 @@ const isDraft = true;
                     questionTitle="不動産活用"
                     :relatedProblems="['2025a24', '2025b12']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-06-29 確認済み
+                        '不動産所得 ＝ [[総収入金額 − 必要経費]]', //p133
                         '正しい',
                         '正しい',
                         '正しい',
@@ -608,6 +610,7 @@ const isDraft = true;
                             content: '', //p
                         }, //48
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '不動産活用・等価交換方式',
                             relatedProblems: ['2025a49', '2025b49', '2025c49'],
                             content: '正しい',

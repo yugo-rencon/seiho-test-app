@@ -185,10 +185,11 @@ const isDraft = true;
                     questionTitle="財形年金貯蓄の利用上の注意点"
                     :relatedProblems="['2023a5']"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-29 確認済み
+                        '貯蓄型 → 保険型', //p29
+                        '保険型 → 貯蓄型', //p29
                         '正しい',
-                        '', //p
+                        '550万円 → 385万円', //p30
                     ]"
                 />
                 <QuestionTemp1

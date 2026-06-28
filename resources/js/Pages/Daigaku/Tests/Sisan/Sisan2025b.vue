@@ -616,9 +616,10 @@ const isDraft = true;
                             content: '', //p
                         }, //47
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '日本投資者保護基金',
                             relatedProblems: ['2025a48', '2025b48', '2025c48'],
-                            content: '', //p
+                            content: '2,000万円 → 1,000万円', //p129
                         }, //48
                         {
                             // rev: 2026-06-29 確認済み

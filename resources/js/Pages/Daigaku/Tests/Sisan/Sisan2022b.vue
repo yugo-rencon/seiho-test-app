@@ -610,6 +610,7 @@ const isDraft = true;
                             content: '預けたお金を外貨のまま現金（キャッシュ）で引き出すことは可能だが、[[手数料がかかる]]（手数料は金融機関により異なる）。', //p111
                         }, //48
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '日本投資者保護基金',
                             relatedProblems: ['2022b49'],
                             content: '正しい',

@@ -573,6 +573,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '日本投資者保護基金',
                             relatedProblems: ['2023a49', '2023c49'],
                             content: '正しい',

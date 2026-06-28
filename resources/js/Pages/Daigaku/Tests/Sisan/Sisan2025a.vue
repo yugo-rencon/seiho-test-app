@@ -456,11 +456,12 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="転換社債型新株予約権付社債（転換社債）"
-                    :relatedProblems="['2025a22', '2025c21']"
+                    :relatedProblems="['2025a22', '2025b10', '2025c21']"
                     :contents="[
+                        // rev: 2026-06-29 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '現在は[[無担保債]]が主流である。', //p96
                         '正しい',
                     ]"
                 />

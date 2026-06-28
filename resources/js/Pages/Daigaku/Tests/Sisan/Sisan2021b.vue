@@ -283,12 +283,13 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="転換社債型新株予約権付社債（転換社債）の諸条件"
-                    :relatedProblems="['2021b10']"
+                    :relatedProblems="['2021a22', '2021b10']"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-29 確認済み
+                        '新発債購入時および償還時に[[手数料はかからない]]。', //p96
+                        '現在は[[無担保債]]が主流である。', //p96
                         '正しい',
-                        '', //p
+                        '発行日の１〜２カ月後から満期償還日の[[前日]]までとなっている。', //p98
                     ]"
                 />
                 <QuestionTemp1

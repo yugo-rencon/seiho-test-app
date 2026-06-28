@@ -593,9 +593,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '外国投資信託の仕組み',
                             relatedProblems: ['2021c47'],
-                            content: '', //p
+                            content: '日本で販売される外国投資信託は、投資対象や運用制限において、[[ほぼ国内の投資信託と差異はない]]。', //p119
                         }, //47
                         {
                             questionTitle: '金融機関のリスクヘッジ',

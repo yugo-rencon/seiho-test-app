@@ -310,10 +310,11 @@ const isDraft = true;
                     questionTitle="景気・経済の動向"
                     :relatedProblems="['2023a14']"
                     :contents="[
+                        // rev: 2026-06-30 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '名目値とは、物価水準による[[調整を行わず]]、その時々の時価で評価した数値であり、実質値は、物価水準による[[調整を行った]]数値である。', //p18
                     ]"
                 />
                 <QuestionTemp1
@@ -555,9 +556,10 @@ const isDraft = true;
                             content: '', //p
                         }, //44
                         {
+                            // rev: 2026-06-30 確認済み
                             questionTitle: '配当金に対する課税',
                             relatedProblems: ['2023a45'],
-                            content: '', //p
+                            content: '上場株式等の配当金に対する源泉徴収税率は、[[20％（所得税15％、住民税5％）]]である。', //p61
                         }, //45
                         {
                             questionTitle: '不動産投資信託',

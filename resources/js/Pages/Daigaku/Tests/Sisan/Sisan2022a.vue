@@ -590,9 +590,10 @@ const isDraft = true;
                             content: '', //p
                         }, //44
                         {
+                            // rev: 2026-06-30 確認済み
                             questionTitle: '配当金に対する課税',
                             relatedProblems: ['2022a45'],
-                            content: '', //p
+                            content: '上場株式等の配当金に対する源泉徴収税率は、[[20％（所得税15％、住民税5％）]]である。', //p61
                         }, //45
                         {
                             questionTitle: '投資信託の信用リスク',

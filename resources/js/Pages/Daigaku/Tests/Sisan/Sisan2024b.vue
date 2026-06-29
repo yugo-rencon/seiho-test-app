@@ -400,8 +400,9 @@ const isDraft = true;
                     questionTitle="債券の格付け"
                     :relatedProblems="['2024b18']"
                     :contents="[
+                        // rev: 2026-06-29 確認済み
                         '正しい',
-                        '', //p
+                        '勝手格付けとよばれる[[発行会社からの依頼に基づかないものもある]]。', //p39
                         '正しい',
                         '正しい',
                     ]"

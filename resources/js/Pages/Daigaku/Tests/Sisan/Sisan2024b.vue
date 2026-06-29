@@ -583,6 +583,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '投資信託の信託報酬',
                             relatedProblems: ['2024b44'],
                             content: '正しい',

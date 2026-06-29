@@ -599,6 +599,7 @@ const isDraft = true;
                             content: 'アクティブ運用 → パッシブ運用', //p82
                         }, //44
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '投資信託の信託報酬',
                             relatedProblems: ['2025b46', '2025c45'],
                             content: '正しい',

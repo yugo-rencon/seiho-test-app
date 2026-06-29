@@ -593,9 +593,10 @@ const isDraft = true;
                             content: 'アクティブ運用 → パッシブ運用', //p82
                         }, //44
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '円高・円安',
                             relatedProblems: ['2024a45', '2024b45', '2024c45'],
-                            content: '', //p
+                            content: '円安（ドル高） ↔︎ 円高（ドル安）', //p108
                         }, //45
                         {
                             // rev: 2026-06-28 確認済み

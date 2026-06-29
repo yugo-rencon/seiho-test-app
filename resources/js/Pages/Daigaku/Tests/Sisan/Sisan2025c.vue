@@ -605,10 +605,11 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '円高・円安',
                             relatedProblems: ['2025b47', '2025c46'],
-                            content: '', //p
-                        }, //46
+                            content: '円安（ドル高） ↔︎ 円高（ドル安）', //p108
+                        }, //47
                         {
                             // rev: 2026-06-29 確認済み
                             questionTitle: '外国投資信託の仕組み',

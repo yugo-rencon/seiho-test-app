@@ -569,6 +569,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '円高・円安',
                             relatedProblems: ['2023c48'],
                             content: '正しい',

@@ -597,9 +597,10 @@ const isDraft = true;
                             content: '円安（ドル高） ↔︎ 円高（ドル安）', //p108
                         }, //45
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '不動産投資信託（J-REIT「リート」）',
                             relatedProblems: ['2024b46'],
-                            content: '', //p
+                            content: '投資先が倒産するなどの「信用リスク」と「価格変動リスク」が[[ある]]。', //p91
                         }, //46
                         {
                             // rev: 2026-06-28 確認済み

@@ -585,6 +585,7 @@ const isDraft = true;
                             content: '流動性商品 → 利殖性商品', //p26
                         }, //41
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '債券の店頭市場',
                             relatedProblems: ['2025c42'],
                             content: '正しい',

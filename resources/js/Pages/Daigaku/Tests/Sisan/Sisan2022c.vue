@@ -596,9 +596,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '投資信託の運用スタイル',
                             relatedProblems: ['2022c46'],
-                            content: '', //p
+                            content: 'アクティブ運用 → パッシブ運用', //p82
                         }, //46
                         {
                             questionTitle: '投資信託の基準価額',

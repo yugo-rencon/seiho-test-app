@@ -585,9 +585,10 @@ const isDraft = true;
                             content: '', //p
                         }, //44
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '投資信託の運用スタイル',
                             relatedProblems: ['2021a45'],
-                            content: '', //p
+                            content: 'アクティブ運用 → パッシブ運用', //p82
                         }, //45
                         {
                             questionTitle: '上場投資信託',

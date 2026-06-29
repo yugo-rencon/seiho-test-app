@@ -392,9 +392,10 @@ const isDraft = true;
                     questionTitle="相場指標"
                     :relatedProblems="['2023b20']"
                     :contents="[
+                        // rev: 2026-06-29 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '減少傾向 → 増加傾向', //p57
                         '正しい',
                     ]"
                 />

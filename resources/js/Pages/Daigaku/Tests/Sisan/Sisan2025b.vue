@@ -601,9 +601,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '配当性向',
                             relatedProblems: ['2025b43'],
-                            content: '', //p
+                            content: '配当性向 → 配当利回り', //p58
                         }, //43
                         {
                             // rev: 2026-06-29 確認済み

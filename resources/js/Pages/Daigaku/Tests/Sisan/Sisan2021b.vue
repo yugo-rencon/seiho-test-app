@@ -584,9 +584,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-06-29 確認済み
                             questionTitle: '配当性向',
                             relatedProblems: ['2021b44'],
-                            content: '', //p
+                            content: '配当性向 → 配当利回り', //p58
                         }, //44
                         {
                             questionTitle: '投資信託の信用リスク',

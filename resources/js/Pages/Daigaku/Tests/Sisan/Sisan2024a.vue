@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "資産運用知識";
 const subject = "2024年度 フォームA";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -616,6 +616,7 @@ const isDraft = true;
                             content: '種類は、[[普通預金、当座預金、通知預金、定期預金]]などがあり、円で行う預金と基本的な仕組みは変わらない。', //p112
                         }, //47
                         {
+                            // rev: 2026-06-30 確認済み
                             questionTitle: '預金保護の範囲',
                             relatedProblems: ['2024a48'],
                             content: '正しい',

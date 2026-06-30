@@ -589,6 +589,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-06-30 確認済み
                             questionTitle: '投資信託の基準価額',
                             relatedProblems: ['2021c45'],
                             content: '正しい',

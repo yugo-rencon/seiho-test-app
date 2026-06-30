@@ -604,6 +604,7 @@ const isDraft = true;
                             content: '円安（ドル高） ↔︎ 円高（ドル安）', //p108
                         }, //45
                         {
+                            // rev: 2026-06-30 確認済み
                             questionTitle: '投資信託の基準価額',
                             relatedProblems: ['2024c46'],
                             content: '正しい',

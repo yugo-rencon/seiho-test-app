@@ -568,29 +568,34 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '金融市場',
                             relatedProblems: ['2021a40', '2021b40', '2021c40'],
-                            content: '', //p
+                            content: '銀行の窓口で預金したり、ローンを組んだりする相対取引は、[[金融市場には含まれない]]。', //p22
                         }, //40
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '財形持家融資',
                             relatedProblems: ['2021a41'],
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '債券の中途売却',
                             relatedProblems: ['2021a42'],
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '株式ミニ投資（ミニ株）',
                             relatedProblems: ['2021a43', '2021b43', '2021c43'],
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '銘柄分散',
                             relatedProblems: ['2021a44'],
-                            content: '', //p
+                            content: '投資予定金額を複数回に分けて投資することは、[[時間分散]]の方法。', //p68
                         }, //44
                         {
                             // rev: 2026-06-29 確認済み
@@ -599,14 +604,16 @@ const isDraft = true;
                             content: 'アクティブ運用 → パッシブ運用', //p82
                         }, //45
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '上場投資信託',
                             relatedProblems: ['2021a46', '2021b46', '2021c46'],
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '生命保険契約者保護機構',
                             relatedProblems: ['2021a47'],
-                            content: '', //p
+                            content: '破綻保険会社の保険契約を引き継ぐ生命保険会社（受け皿会社）が現れた場合、生命保険契約者保護機構が[[救済する側の生命保険会社]]に資金援助を行い、破綻保険会社の保険契約を健全な生命保険会社へ円滑に移転する。', //p129
                         }, //47
                         {
                             // rev: 2026-06-29 確認済み
@@ -615,6 +622,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: 'リバースモーゲージ制度',
                             relatedProblems: ['2021a49', '2021b49', '2021c49'],
                             content: '正しい',

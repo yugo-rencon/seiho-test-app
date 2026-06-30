@@ -574,6 +574,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '金融商品の三分類',
                             relatedProblems: ['2022a41', '2022b41', '2022c41'],
                             content: '流動性商品 → 利殖性商品', //p26
@@ -585,6 +586,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '金利変動リスク',
                             relatedProblems: ['2022a43', '2022b43', '2022c43'],
                             content: '市場金利と債券価格の間には、「金利が上昇すれば債券価格は[[下落]]する」「金利が下降すれば債券価格は[[上昇]]する」という関係がある。', //p75

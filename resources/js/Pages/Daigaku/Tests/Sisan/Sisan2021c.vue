@@ -566,9 +566,10 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '金融市場',
                             relatedProblems: ['2021a40', '2021b40', '2021c40'],
-                            content: '', //p
+                            content: '銀行の窓口で預金したり、ローンを組んだりする相対取引は、[[金融市場には含まれない]]。', //p22
                         }, //40
                         {
                             // rev: 2026-06-29 確認済み
@@ -583,6 +584,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '株式ミニ投資（ミニ株）',
                             relatedProblems: ['2021a43', '2021b43', '2021c43'],
                             content: '正しい',
@@ -599,6 +601,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '上場投資信託',
                             relatedProblems: ['2021a46', '2021b46', '2021c46'],
                             content: '正しい',
@@ -616,6 +619,7 @@ const isDraft = true;
                             content: 'ペイオフ → ワンストップショッピング', //p130
                         }, //48
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: 'リバースモーゲージ制度',
                             relatedProblems: ['2021a49', '2021b49', '2021c49'],
                             content: '正しい',

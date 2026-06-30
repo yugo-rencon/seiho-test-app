@@ -346,10 +346,11 @@ const isDraft = true;
                     questionTitle="預貯金の仕組み"
                     :relatedProblems="['2023c14']"
                     :contents="[
+                        // rev: 2026-07-01 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '直接的 → 間接的', //p26
                     ]"
                 />
                 <QuestionTemp1

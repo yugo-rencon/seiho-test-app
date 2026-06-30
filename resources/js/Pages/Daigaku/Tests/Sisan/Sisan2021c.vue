@@ -346,9 +346,10 @@ const isDraft = true;
                     questionTitle="預貯金の仕組み"
                     :relatedProblems="['2021c14']"
                     :contents="[
+                        // rev: 2026-07-01 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '直接金融 → 間接金融', //p26
                         '正しい',
                     ]"
                 />

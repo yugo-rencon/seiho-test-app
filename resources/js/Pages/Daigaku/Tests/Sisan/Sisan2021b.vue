@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "資産運用知識";
 const subject = "2021年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -318,10 +318,11 @@ const isDraft = true;
                     questionTitle="住宅ローン、住宅取得等資金に関する税法等"
                     :relatedProblems="['2021b12']"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-07-01 確認済み
+                        'フラット35とは、独立行政法人住宅金融支援機構と民間金融機関が提携して行っている[[全期間長期固定金利型]]の住宅ローンである。', //p142
+                        '住宅ローン控除とは、国内で居住用住宅を借入金等により取得した場合、各年末の借入金等残高に一定の率を乗じた金額を[[所得税額から控除]]することができる制度である。', //p142
                         '正しい',
-                        '', //p
+                        '2,500万円 → 2,000万円', //p143
                     ]"
                 />
                 <QuestionTemp1

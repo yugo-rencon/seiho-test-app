@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "資産運用知識";
 const subject = "2021年度 フォームC";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>
@@ -430,7 +430,8 @@ const isDraft = true;
                     questionTitle="転換社債のパリティ（理論価格）"
                     :relatedProblems="['2021c20']"
                     :contents="[
-                        '', //p
+                        // rev: 2026-07-01 確認済み
+                        'パリティ（円） = （[[株価／転換価格]]） × 100 ', //p99
                         '正しい',
                         '正しい',
                         '正しい',
@@ -485,8 +486,9 @@ const isDraft = true;
                     questionTitle="住宅取得資金に関する税法等"
                     :relatedProblems="['2021c24']"
                     :contents="[
+                        // rev: 2026-07-01 確認済み
                         '正しい',
-                        '', //p
+                        'この非課税限度額は、「暦年課税」か「相続時精算課税」のどちらかと[[併用することができる]]。', //p143
                         '正しい',
                         '正しい',
                     ]"
@@ -590,6 +592,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '株式の損益通算',
                             relatedProblems: ['2021c44'],
                             content: '正しい',

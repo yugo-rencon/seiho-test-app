@@ -35,7 +35,7 @@ const DAIGAKU_SECTIONS = [
         title: "資産運用知識",
         description: "大学課程試験の解説を年度・フォーム別に順次公開します。（試験実施: 9〜10月）",
         years: DAIGAKU_VISIBLE_YEARS,
-        published: false,
+        published: true,
     },
     {
         id: "houjin-consulting",

@@ -10,7 +10,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const title = "資産運用知識";
 const subject = "2023年度 フォームB";
-const isDraft = true;
+const isDraft = false;
 </script>
 
 <template>

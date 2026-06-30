@@ -604,6 +604,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '投資信託の信用リスク',
                             relatedProblems: ['2023b46'],
                             content: '正しい',

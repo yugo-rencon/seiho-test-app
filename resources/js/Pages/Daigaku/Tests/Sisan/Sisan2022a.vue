@@ -501,11 +501,12 @@ const isDraft = true;
                     questionTitle="利払型商品と満期一括受取型商品"
                     :relatedProblems="['2022a25', '2022b25', '2022c25']"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        // rev: 2026-07-01 確認済み
+                        '半年',
+                        '1年',
+                        '期日指定定期預金',
+                        '複利',
+                        '個人', // 問25〜29
                     ]"
                     :labels="[
                         'オ', //25
@@ -573,6 +574,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '金融商品の三分類',
                             relatedProblems: ['2022a41', '2022b41', '2022c41'],
                             content: '流動性商品 → 利殖性商品', //p26
@@ -584,6 +586,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '金利変動リスク',
                             relatedProblems: ['2022a43', '2022b43', '2022c43'],
                             content: '市場金利と債券価格の間には、「金利が上昇すれば債券価格は[[下落]]する」「金利が下降すれば債券価格は[[上昇]]する」という関係がある。', //p75
@@ -601,6 +604,7 @@ const isDraft = true;
                             content: '上場株式等の配当金に対する源泉徴収税率は、[[20％（所得税15％、住民税5％）]]である。', //p61
                         }, //45
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '投資信託の信用リスク',
                             relatedProblems: ['2022a46'],
                             content: '正しい',
@@ -618,9 +622,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '預金保護の範囲',
                             relatedProblems: ['2022a49'],
-                            content: '', //p
+                            content: '2,000万円 → 1,000万円', //p127
                         }, //49
                     ]"
                 />

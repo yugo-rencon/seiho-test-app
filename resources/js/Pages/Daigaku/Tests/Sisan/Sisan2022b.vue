@@ -597,9 +597,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '不動産投資信託',
                             relatedProblems: ['2022b46'],
-                            content: '', //p
+                            content: '日本では「投資法人（会社）型」が主流となっている。', //p91
                         }, //46
                         {
                             // rev: 2026-06-30 確認済み

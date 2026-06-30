@@ -564,6 +564,7 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-06-30 確認済み
                             questionTitle: '障害者等の非課税貯蓄制度',
                             relatedProblems: ['2022b40'],
                             content: '正しい',
@@ -581,7 +582,7 @@ const isDraft = true;
                         {
                             questionTitle: '金利変動リスク',
                             relatedProblems: ['2022a43', '2022b43', '2022c43'],
-                            content: '', //p
+                            content: '市場金利と債券価格の間には、「金利が上昇すれば債券価格は[[下落]]する」「金利が下降すれば債券価格は[[上昇]]する」という関係がある。', //p75
                         }, //43
                         {
                             questionTitle: '上場株式等の売却損の繰越し',

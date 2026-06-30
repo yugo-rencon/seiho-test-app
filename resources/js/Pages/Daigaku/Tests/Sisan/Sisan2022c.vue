@@ -618,6 +618,7 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '金融機関のリスクヘッジ',
                             relatedProblems: ['2022c49'],
                             content: '正しい',

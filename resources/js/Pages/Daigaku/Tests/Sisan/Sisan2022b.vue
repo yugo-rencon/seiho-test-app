@@ -576,6 +576,7 @@ const isDraft = true;
                             content: '流動性商品 → 利殖性商品', //p26
                         }, //41
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '国債の種類',
                             relatedProblems: ['2022b42'],
                             content: '正しい',

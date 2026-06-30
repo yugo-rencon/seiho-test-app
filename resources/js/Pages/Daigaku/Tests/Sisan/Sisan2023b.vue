@@ -580,6 +580,7 @@ const isDraft = true;
                             content: '流動性商品 → 利殖性商品', //p26
                         }, //41
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '国債の種類',
                             relatedProblems: ['2023b42'],
                             content: '正しい',
@@ -620,6 +621,7 @@ const isDraft = true;
                             content: '預けたお金を外貨のまま現金（キャッシュ）で引き出すことは可能だが、[[手数料がかかる]]（手数料は金融機関により異なる）。', //p111
                         }, //48
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '金融機関のリスクヘッジ',
                             relatedProblems: ['2023b49'],
                             content: '正しい',

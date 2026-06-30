@@ -607,9 +607,10 @@ const isDraft = true;
                             content: '日本で販売される外国投資信託は、投資対象や運用制限において、[[ほぼ国内の投資信託と差異はない]]。', //p119
                         }, //47
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '金融機関のリスクヘッジ',
                             relatedProblems: ['2021c48'],
-                            content: '', //p
+                            content: 'ペイオフ → ワンストップショッピング', //p130
                         }, //48
                         {
                             questionTitle: 'リバースモーゲージ制度',

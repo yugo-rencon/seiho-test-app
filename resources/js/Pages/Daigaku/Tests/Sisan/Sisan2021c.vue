@@ -415,10 +415,11 @@ const isDraft = true;
                     questionTitle="少額投資非課税制度（NISA）の概要"
                     :relatedProblems="['2021a19', '2021b19', '2021c19']"
                     :contents="[
+                        // rev: 2026-07-01 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '50万円 → 40万円', //なし（制度無くなった）
                     ]"
                 />
                 <QuestionTemp1

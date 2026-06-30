@@ -567,6 +567,7 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '景気動向指数',
                             relatedProblems: ['2022c40'],
                             content: '正しい',

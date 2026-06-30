@@ -444,10 +444,11 @@ const isDraft = true;
                     questionTitle="株式累積投資（るいとう）"
                     :relatedProblems="['2023c21']"
                     :contents="[
+                        // rev: 2026-07-01 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '配当金は持っている株数に合わせて自動的に再投資される。また、[[単元株数に達しないと株主優待はない]]。', //p68
                     ]"
                 />
                 <QuestionTemp1
@@ -567,6 +568,7 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-07-01 確認済み
                             questionTitle: '景気動向指数',
                             relatedProblems: ['2023c40'],
                             content: '正しい',

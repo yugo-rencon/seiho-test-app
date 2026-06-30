@@ -388,10 +388,11 @@ const isDraft = true;
                     questionTitle="株式累積投資（るいとう）"
                     :relatedProblems="['2021c17']"
                     :contents="[
+                        // rev: 2026-07-01 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '配当金は持っている株数に合わせて自動的に再投資される。また、[[単元株数に達しないと株主優待はない]]。', //p68
                     ]"
                 />
                 <QuestionTemp1

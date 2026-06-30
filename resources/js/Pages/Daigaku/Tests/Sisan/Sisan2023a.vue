@@ -69,17 +69,52 @@ const isDraft = true;
                         },
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（6つの係数）"
-                    :relatedProblems="['2023a2', '2023b2', '2023c2']"
+                    questionTitle="現価と終価（6つの係数）（減債基金係数）"
+                    :relatedProblems="[['2023a2', '2023b2', '2023c2']]"
+                    :labels="['エ']"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '正しい',
+                        {
+                            // rev: 2026-06-28 作成
+                            answer: '547,980円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来の目標額を貯めるために必要な毎年の積立額は、減債基金係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の積立額 ＝ 将来の目標額 × 減債基金係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来の目標額：600万円', '年利率：2％', '運用期間：10年', '減債基金係数：0.09133'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の積立額', '＝ 600万円 × 0.09133', '＝ 547,980円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：547,980円',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp4
@@ -297,9 +332,10 @@ const isDraft = true;
                     questionTitle="金融商品と税金"
                     :relatedProblems="['2023a13']"
                     :contents="[
+                        // rev: 2026-06-30 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '公社債等（割引金融債、割引国債などを含む）の償還差益は、[[20％申告分離課税]]であるが、所定の条件を満たした場合は償還時に20％源泉徴収される。', //p8
                         '正しい',
                     ]"
                 />
@@ -366,8 +402,9 @@ const isDraft = true;
                     questionTitle="債券の流通市場"
                     :relatedProblems="['2023a18']"
                     :contents="[
+                        // rev: 2026-06-30 確認済み
                         '正しい',
-                        '', //p
+                        '上場される債券は、２年・５年の中期国債、10年の長期国債、[[20年・30年・40年の超長期国債]]で、発行日に上場されて取引所で売買できるようになる。', //p41
                         '正しい',
                         '正しい',
                     ]"
@@ -393,9 +430,10 @@ const isDraft = true;
                     questionTitle="分散投資"
                     :relatedProblems="['2023a20', '2023c8']"
                     :contents="[
+                        // rev: 2026-06-30 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '[[ハイリスク・ハイリターン]]の商品を継続的に購入する場合、その効果はより高まる。', //p71
                         '正しい',
                     ]"
                 />

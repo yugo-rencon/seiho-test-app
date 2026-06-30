@@ -69,17 +69,52 @@ const isDraft = true;
                         },
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（6つの係数）"
-                    :relatedProblems="['2023a2', '2023b2', '2023c2']"
+                    questionTitle="現価と終価（6つの係数）（減債基金係数）"
+                    :relatedProblems="[['2023a2', '2023b2', '2023c2']]"
+                    :labels="['エ']"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '正しい',
+                        {
+                            // rev: 2026-06-28 作成
+                            answer: '547,980円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来の目標額を貯めるために必要な毎年の積立額は、減債基金係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の積立額 ＝ 将来の目標額 × 減債基金係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来の目標額：600万円', '年利率：2％', '運用期間：10年', '減債基金係数：0.09133'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の積立額', '＝ 600万円 × 0.09133', '＝ 547,980円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：547,980円',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp4
@@ -227,10 +262,11 @@ const isDraft = true;
                     questionTitle="分散投資"
                     :relatedProblems="['2023a20', '2023c8']"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-06-30 確認済み
+                        '株価が上がり続ける状態で複数回に分けて買った場合の平均購入単価は、一度に買った場合より[[高く]]なるので注意が必要である。', //p70
+                        '毎月[[一定金額]]で購入するため、価格が安いときには多く、価格が高いときには少なく買う投資手法である。', //p70-71
                         '正しい',
-                        '', //p
+                        '「るいとう」などで投資した企業が将来倒産した場合は、一般の株式投資で企業倒産があった場合と[[同様]]に、[[それまでに投資した資金は回収できなくなる]]おそれがある。', //p71
                     ]"
                 />
                 <QuestionTemp1

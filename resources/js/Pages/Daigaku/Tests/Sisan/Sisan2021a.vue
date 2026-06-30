@@ -428,8 +428,9 @@ const isDraft = true;
                     questionTitle="追加型（オープン型）株式投資信託"
                     :relatedProblems="['2021a20']"
                     :contents="[
+                        // rev: 2026-06-30 確認済み
                         '正しい',
-                        '', //p
+                        'バランス型投資信託 → インデックス型投資信託', //p89
                         '正しい',
                         '正しい',
                     ]"

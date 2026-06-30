@@ -458,10 +458,11 @@ const isDraft = true;
                     questionTitle="追加型（オープン型）株式投資信託"
                     :relatedProblems="['2024c22']"
                     :contents="[
+                        // rev: 2026-06-30 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        'インデックス型投資信託 → ファンド・オブ・ファンズ', //p90
                     ]"
                 />
                 <QuestionTemp1

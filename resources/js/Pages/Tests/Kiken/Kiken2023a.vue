@@ -229,27 +229,118 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '生命表', relatedProblems: ['2023a31', '2023c41'], content: '経験生命表 → 国民生命表<br>簡易生命表 → 経験生命表' }, //31 p5
-                        { questionTitle: '保険体の範囲の拡大', relatedProblems: ['2023a32', '2023b32', '2023c32'], content: '正しい' }, //32
-                        { questionTitle: '体格', relatedProblems: ['2023a33', '2023b33', '2023c33'], content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗' }, //33  //p63
-                        { questionTitle: '医学的査定', relatedProblems: ['2023a34', '2023c47'], content: '正しい' }, //34
-                        { questionTitle: '機微（センシティブ）情報', relatedProblems: ['2023a35'], content: '正しい' }, //35
-                        { questionTitle: '契約内容登録制度', relatedProblems: ['2023a36'], content: '金融庁 → 生命保険協会' }, //36 p139
-                        { questionTitle: '傷害特約', relatedProblems: ['2023a37'], content: '正しい' }, //37
-                        { questionTitle: '復活', relatedProblems: ['2023a38', '2023b38', '2023c38'], content: '逆選択混入の危険が少なく → 多く<br>経験死亡率が低い → 高い' }, //38 p173-174
-                        { questionTitle: '最高保険金額と保有限度額', relatedProblems: ['2023a39'], content: '保険金受取人 → 被保険者' }, //39 p181
-                        { questionTitle: '死亡状況の分析', relatedProblems: ['2023a40'], content: '正しい' }, //40
+                        {
+                            questionTitle: '生命表',
+                            relatedProblems: ['2023a31', '2023c41'],
+                            content: '経験生命表 → 国民生命表<br>簡易生命表 → 経験生命表',
+                        }, //31 p5
+                        {
+                            questionTitle: '保険体の範囲の拡大',
+                            relatedProblems: ['2023a32', '2023b32', '2023c32'],
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '体格',
+                            relatedProblems: ['2023a33', '2023b33', '2023c33'],
+                            content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗',
+                        }, //33  //p63
+                        {
+                            questionTitle: '医学的査定',
+                            relatedProblems: ['2023a34', '2023c47'],
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '機微（センシティブ）情報',
+                            relatedProblems: ['2023a35'],
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '契約内容登録制度',
+                            relatedProblems: ['2023a36'],
+                            content: '金融庁 → 生命保険協会',
+                        }, //36 p139
+                        {
+                            questionTitle: '傷害特約',
+                            relatedProblems: ['2023a37'],
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '復活',
+                            relatedProblems: ['2023a38', '2023b38', '2023c38'],
+                            content: '逆選択混入の危険が少なく → 多く<br>経験死亡率が低い → 高い',
+                        }, //38 p173-174
+                        {
+                            questionTitle: '最高保険金額と保有限度額',
+                            relatedProblems: ['2023a39'],
+                            content: '保険金受取人 → 被保険者',
+                        }, //39 p181
+                        {
+                            questionTitle: '死亡状況の分析',
+                            relatedProblems: ['2023a40'],
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
-                        { questionTitle: '死亡率', relatedProblems: ['2023a41'], label: 'エ', content: '金額死亡率' }, //41
-                        { questionTitle: '解除権の消滅', relatedProblems: ['2023a42', '2023b42', '2023c42'], label: 'オ', content: '' }, //42
-                        { questionTitle: '保険料の仕組みと危険選択', relatedProblems: ['2023a43'], label: 'ウ', content: '収支相当の原則' }, //43
-                        { questionTitle: '販売政策と選択政策', relatedProblems: ['2023a44'], label: 'ア', content: '加入申込者群' }, //44
-                        { questionTitle: '職業危険', relatedProblems: ['2023a45', '2023b23', '2023c28'], label: 'イ', content: '入院率' }, //45
-                        { questionTitle: '人間ドック扱', relatedProblems: ['2023a46', '2023b46', '2023c46'], label: 'イ', content: '告知書' }, //46
-                        { questionTitle: '査定・決定の種類', relatedProblems: ['2023a47', '2023c35'], label: 'エ', content: '再診' }, //47
-                        { questionTitle: '契約確認後の処理', relatedProblems: ['2023a48', '2023b48', '2023c48'], label: 'ウ', content: '不実の告知' }, //48
-                        { questionTitle: '入院・手術保障における料率', relatedProblems: ['2023a49', '2023c37'], label: 'オ', content: '' }, //49
-                        { questionTitle: '団体保険の契約内容の変更', relatedProblems: ['2023a50'], label: 'ア', content: '1年間' }, //50
+                        {
+                            questionTitle: '死亡率',
+                            relatedProblems: ['2023a41'],
+                            label: 'エ',
+                            content: '金額死亡率',
+                        }, //41
+                        {
+                            questionTitle: '解除権の消滅',
+                            relatedProblems: ['2023a42', '2023b42', '2023c42'],
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '保険料の仕組みと危険選択',
+                            relatedProblems: ['2023a43'],
+                            label: 'ウ',
+                            content: '収支相当の原則',
+                        }, //43
+                        {
+                            questionTitle: '販売政策と選択政策',
+                            relatedProblems: ['2023a44'],
+                            label: 'ア',
+                            content: '加入申込者群',
+                        }, //44
+                        {
+                            // rev: 2026-07-02 確認済み
+                            questionTitle: '職業危険',
+                            relatedProblems: ['2023a45', '2023b23', '2023c28'],
+                            label: 'イ',
+                            content: '入院率',
+                        }, //45
+                        {
+                            questionTitle: '人間ドック扱',
+                            relatedProblems: ['2023a46', '2023b46', '2023c46'],
+                            label: 'イ',
+                            content: '告知書',
+                        }, //46
+                        {
+                            questionTitle: '査定・決定の種類',
+                            relatedProblems: ['2023a47', '2023c35'],
+                            label: 'エ',
+                            content: '再診',
+                        }, //47
+                        {
+                            questionTitle: '契約確認後の処理',
+                            relatedProblems: ['2023a48', '2023b48', '2023c48'],
+                            label: 'ウ',
+                            content: '不実の告知',
+                        }, //48
+                        {
+                            questionTitle: '入院・手術保障における料率',
+                            relatedProblems: ['2023a49', '2023c37'],
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '団体保険の契約内容の変更',
+                            relatedProblems: ['2023a50'],
+                            label: 'ア',
+                            content: '1年間',
+                        }, //50
                     ]"
                 />
             </div>

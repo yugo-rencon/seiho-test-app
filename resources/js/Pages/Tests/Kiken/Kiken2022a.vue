@@ -233,27 +233,118 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '危険の公平性', relatedProblems: ['2022a31'], content: '正しい' }, //31
-                        { questionTitle: '死差益の計算方法', relatedProblems: ['2022a32', '2022b32', '2022c32'], content: '純収支計算方式で表せば → 統計的方式で表せば' }, //32 p27
-                        { questionTitle: '保険体の範囲の拡大', relatedProblems: ['2022a33', '2022b33', '2022c33'], content: '正しい' }, //33
-                        { questionTitle: '職業危険', relatedProblems: ['2022a34', '2022b23', '2022c43'], content: 'アルコール中毒や不摂生生活のような職業に随伴する危険は含まれない → 含まれる' }, //34 p69
-                        { questionTitle: '条件体契約', relatedProblems: ['2022a35'], content: '体重別・性別 → 年齢別' }, //35 p72
-                        { questionTitle: '社医と嘱託医', relatedProblems: ['2022a36', '2022c34'], content: '社医と嘱託医で違いは設けられていない → 違いを設けている' }, //36 p99
-                        { questionTitle: '契約確認', relatedProblems: ['2022a37'], content: '正しい' }, //37
-                        { questionTitle: '個人データの安全管理措置', relatedProblems: ['2022a38'], content: '組織的安全管理措置 → 人的安全管理措置' }, //38 p137
-                        { questionTitle: '団体定期保険における更新時の選択', relatedProblems: ['2022a39'], content: '正しい' }, //39
-                        { questionTitle: '死因別死亡率', relatedProblems: ['2022a40', '2022b40', '2022c40'], content: '正しい' }, //40
+                        {
+                            questionTitle: '危険の公平性',
+                            relatedProblems: ['2022a31'],
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '死差益の計算方法',
+                            relatedProblems: ['2022a32', '2022b32', '2022c32'],
+                            content: '純収支計算方式で表せば → 統計的方式で表せば',
+                        }, //32 p27
+                        {
+                            questionTitle: '保険体の範囲の拡大',
+                            relatedProblems: ['2022a33', '2022b33', '2022c33'],
+                            content: '正しい',
+                        }, //33
+                        {
+                            // rev: 2026-07-02 確認済み
+                            questionTitle: '職業危険',
+                            relatedProblems: ['2022a34', '2022b23', '2022c43'],
+                            content: '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」さらには[[「アルコール中毒や不摂生生活のような職業に随伴する危険」]]がある。', //p69
+                        }, //34
+                        {
+                            questionTitle: '条件体契約',
+                            relatedProblems: ['2022a35'],
+                            content: '体重別・性別 → 年齢別',
+                        }, //35 p72
+                        {
+                            questionTitle: '社医と嘱託医',
+                            relatedProblems: ['2022a36', '2022c34'],
+                            content: '社医と嘱託医で違いは設けられていない → 違いを設けている',
+                        }, //36 p99
+                        {
+                            questionTitle: '契約確認',
+                            relatedProblems: ['2022a37'],
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '個人データの安全管理措置',
+                            relatedProblems: ['2022a38'],
+                            content: '組織的安全管理措置 → 人的安全管理措置',
+                        }, //38 p137
+                        {
+                            questionTitle: '団体定期保険における更新時の選択',
+                            relatedProblems: ['2022a39'],
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '死因別死亡率',
+                            relatedProblems: ['2022a40', '2022b40', '2022c40'],
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
-                        { questionTitle: '死亡率', relatedProblems: ['2022a41', '2022b41'], label: 'エ', content: '金額死亡率' }, //41
-                        { questionTitle: '契約の解除', relatedProblems: ['2022a42'], label: 'ア', content: '保険法' }, //42
-                        { questionTitle: '経験保険料と危険保険金', relatedProblems: ['2022a43'], label: 'オ', content: '' }, //43
-                        { questionTitle: '被保険者集団の具備すべき条件', relatedProblems: ['2022a44'], label: 'ウ', content: '大数の法則' }, //44
-                        { questionTitle: '体格', relatedProblems: ['2022a45', '2022b45', '2022c45'], label: 'ウ', content: '22' }, //45
-                        { questionTitle: '保険契約の制限', relatedProblems: ['2022a46'], label: 'イ', content: '他人' }, //46
-                        { questionTitle: '人間ドック扱', relatedProblems: ['2022a47'], label: 'ウ', content: '医師による診査' }, //47
-                        { questionTitle: '査定・決定の種類', relatedProblems: ['2022a48'], label: 'エ', content: '再診' }, //48
-                        { questionTitle: '災害関係特約', relatedProblems: ['2022a49', '2022b49', '2022c49'], label: 'オ', content: '' }, //49
-                        { questionTitle: '団体保険の個別選択', relatedProblems: ['2022a50', '2022b50', '2022c50'], label: 'エ', content: '正常勤務' }, //50
+                        {
+                            questionTitle: '死亡率',
+                            relatedProblems: ['2022a41', '2022b41'],
+                            label: 'エ',
+                            content: '金額死亡率',
+                        }, //41
+                        {
+                            questionTitle: '契約の解除',
+                            relatedProblems: ['2022a42'],
+                            label: 'ア',
+                            content: '保険法',
+                        }, //42
+                        {
+                            questionTitle: '経験保険料と危険保険金',
+                            relatedProblems: ['2022a43'],
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '被保険者集団の具備すべき条件',
+                            relatedProblems: ['2022a44'],
+                            label: 'ウ',
+                            content: '大数の法則',
+                        }, //44
+                        {
+                            questionTitle: '体格',
+                            relatedProblems: ['2022a45', '2022b45', '2022c45'],
+                            label: 'ウ',
+                            content: '22',
+                        }, //45
+                        {
+                            questionTitle: '保険契約の制限',
+                            relatedProblems: ['2022a46'],
+                            label: 'イ',
+                            content: '他人',
+                        }, //46
+                        {
+                            questionTitle: '人間ドック扱',
+                            relatedProblems: ['2022a47'],
+                            label: 'ウ',
+                            content: '医師による診査',
+                        }, //47
+                        {
+                            questionTitle: '査定・決定の種類',
+                            relatedProblems: ['2022a48'],
+                            label: 'エ',
+                            content: '再診',
+                        }, //48
+                        {
+                            questionTitle: '災害関係特約',
+                            relatedProblems: ['2022a49', '2022b49', '2022c49'],
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '団体保険の個別選択',
+                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
+                            label: 'エ',
+                            content: '正常勤務',
+                        }, //50
                     ]"
                 />
             </div>

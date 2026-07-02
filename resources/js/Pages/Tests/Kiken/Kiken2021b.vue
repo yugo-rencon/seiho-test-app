@@ -319,6 +319,7 @@ const subject = "2021年度 フォームB";
                             content: '入院率',
                         }, //46
                         {
+                            // rev: 2026-07-02 確認済み
                             questionTitle: '査定・決定の種類',
                             relatedProblems: ['2021b47'],
                             label: 'エ',

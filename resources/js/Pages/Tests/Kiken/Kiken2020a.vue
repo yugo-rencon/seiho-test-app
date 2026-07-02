@@ -281,16 +281,67 @@ const subject = "2020年度 フォームA";
                             content: '正しい',
                         }, //40
                         // 問41〜50
-                        { questionTitle: '被保険者の危険', relatedProblems: ['2020a41', '2020b41', '2020c41'], label: 'イ', content: '実体的危険' }, //41
-                        { questionTitle: '告知義務者', relatedProblems: ['2020a42'], label: 'ア', content: '保険法' }, //42
-                        { questionTitle: '死差益の計算方法', relatedProblems: ['2020a43'], label: 'エ', content: '危険保険料' }, //43
-                        { questionTitle: '医学的選択上の制約条件', relatedProblems: ['2020a44'], label: 'オ', content: '' }, //44
-                        { questionTitle: 'エイズ', relatedProblems: ['2020a45', '2020b45', '2020c45'], label: 'ウ', content: 'リンパ球' }, //45
-                        { questionTitle: '重大事由による解除', relatedProblems: ['2020a46'], label: 'ウ', content: '不当な所得' }, //46
-                        { questionTitle: '保険金確認・給付金確認', relatedProblems: ['2020a47', '2020b39'], label: 'オ', content: '' }, //47
-                        { questionTitle: '団体の選択', relatedProblems: ['2020a48'], label: 'イ', content: '被用者団体' }, //48
-                        { questionTitle: '復活', relatedProblems: ['2020a49', '2020b49', '2020c49'], label: 'ウ', content: '長い' }, //49
-                        { questionTitle: '出再方式', relatedProblems: ['2020a50'], label: 'ア', content: '個別再保険' }, //50
+                        {
+                            questionTitle: '被保険者の危険',
+                            relatedProblems: ['2020a41', '2020b41', '2020c41'],
+                            label: 'イ',
+                            content: '実体的危険',
+                        }, //41
+                        {
+                            questionTitle: '告知義務者',
+                            relatedProblems: ['2020a42'],
+                            label: 'ア',
+                            content: '保険法',
+                        }, //42
+                        {
+                            questionTitle: '死差益の計算方法',
+                            relatedProblems: ['2020a43'],
+                            label: 'エ',
+                            content: '危険保険料',
+                        }, //43
+                        {
+                            // rev: 2026-07-02 確認済み
+                            questionTitle: '医学的選択上の制約条件',
+                            relatedProblems: ['2020a44'],
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: 'エイズ',
+                            relatedProblems: ['2020a45', '2020b45', '2020c45'],
+                            label: 'ウ',
+                            content: 'リンパ球',
+                        }, //45
+                        {
+                            questionTitle: '重大事由による解除',
+                            relatedProblems: ['2020a46'],
+                            label: 'ウ',
+                            content: '不当な所得',
+                        }, //46
+                        {
+                            questionTitle: '保険金確認・給付金確認',
+                            relatedProblems: ['2020a47', '2020b39'],
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '団体の選択',
+                            relatedProblems: ['2020a48'],
+                            label: 'イ',
+                            content: '被用者団体',
+                        }, //48
+                        {
+                            questionTitle: '復活',
+                            relatedProblems: ['2020a49', '2020b49', '2020c49'],
+                            label: 'ウ',
+                            content: '長い',
+                        }, //49
+                        {
+                            questionTitle: '出再方式',
+                            relatedProblems: ['2020a50'],
+                            label: 'ア',
+                            content: '個別再保険',
+                        }, //50
                     ]"
                 />
             </div>

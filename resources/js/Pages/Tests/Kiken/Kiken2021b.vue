@@ -230,27 +230,118 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '死亡率', relatedProblems: ['2021b31'], content: '比較することができる → 比較することはできない' }, //31 p7
-                        { questionTitle: '環境選択', relatedProblems: ['2021a32', '2021b32', '2021c32'], content: '正しい' }, //32
-                        { questionTitle: '告知義務', relatedProblems: ['2021b33'], content: '質問応答義務から自発的応答義務 → 自発的応答義務から質問応答義務' }, //33 p13
-                        { questionTitle: '販売政策と選択政策', relatedProblems: ['2021b34'], content: '正しい' }, //34
-                        { questionTitle: '血圧', relatedProblems: ['2021b35', '2021c35'], content: '低血圧 ↔︎ 高血圧' }, //35 p64
-                        { questionTitle: '診査実施上の制限', relatedProblems: ['2021b36'], content: '正しい' }, //36
-                        { questionTitle: '診査医の職責', relatedProblems: ['2021b37'], content: '知らなかったとして対抗できる → 対抗できない' }, //37 p96
-                        { questionTitle: '個人情報の定義', relatedProblems: ['2021a38', '2021b38', '2021c38'], content: '生存するまたは死亡した個人に関する情報 → 生存する個人に関する情報（死亡は対象外）' }, //38 p125
-                        { questionTitle: '団体定期保険における更新時の選択', relatedProblems: ['2021b39'], content: '正しい' }, //39
-                        { questionTitle: '死亡状況の分析', relatedProblems: ['2021a40', '2021b40', '2021c40'], content: '正しい' }, //40
+                        {
+                            questionTitle: '死亡率',
+                            relatedProblems: ['2021b31'],
+                            content: '比較することができる → 比較することはできない',
+                        }, //31 p7
+                        {
+                            questionTitle: '環境選択',
+                            relatedProblems: ['2021a32', '2021b32', '2021c32'],
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '告知義務',
+                            relatedProblems: ['2021b33'],
+                            content: '質問応答義務から自発的応答義務 → 自発的応答義務から質問応答義務',
+                        }, //33 p13
+                        {
+                            questionTitle: '販売政策と選択政策',
+                            relatedProblems: ['2021b34'],
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '血圧',
+                            relatedProblems: ['2021b35', '2021c35'],
+                            content: '低血圧 ↔︎ 高血圧',
+                        }, //35 p64
+                        {
+                            questionTitle: '診査実施上の制限',
+                            relatedProblems: ['2021b36'],
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '診査医の職責',
+                            relatedProblems: ['2021b37'],
+                            content: '知らなかったとして対抗できる → 対抗できない',
+                        }, //37 p96
+                        {
+                            questionTitle: '個人情報の定義',
+                            relatedProblems: ['2021a38', '2021b38', '2021c38'],
+                            content: '生存するまたは死亡した個人に関する情報 → 生存する個人に関する情報（死亡は対象外）',
+                        }, //38 p125
+                        {
+                            questionTitle: '団体定期保険における更新時の選択',
+                            relatedProblems: ['2021b39'],
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '死亡状況の分析',
+                            relatedProblems: ['2021a40', '2021b40', '2021c40'],
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
-                        { questionTitle: '生命表', relatedProblems: ['2021a41', '2021b41', '2021c41'], label: 'オ', content: '' }, //41
-                        { questionTitle: '被保険者集団の具備すべき条件', relatedProblems: ['2021b42'], label: 'エ', content: '継続性' }, //42
-                        { questionTitle: '保険料の仕組みと危険選択', relatedProblems: ['2021a43', '2021b43', '2021c43'], label: 'ウ', content: '収支相当の原則' }, //43
-                        { questionTitle: '医学的選択上の制約条件', relatedProblems: ['2021b44', '2021c22'], label: 'オ', content: '' }, //44
-                        { questionTitle: '心疾患', relatedProblems: ['2021b45'], label: 'ア', content: '先天性' }, //45
-                        { questionTitle: '職業危険', relatedProblems: ['2021a22', '2021b46'], label: 'イ', content: '入院率' }, //46
-                        { questionTitle: '査定・決定の種類', relatedProblems: ['2021b47'], label: 'エ', content: '5年' }, //47
-                        { questionTitle: '契約確認後の処理', relatedProblems: ['2021a48', '2021b48', '2021c48'], label: 'ウ', content: '不実の告知' }, //48
-                        { questionTitle: '再保険の方式', relatedProblems: ['2021b49'], label: 'ア', content: '共同保険' }, //49
-                        { questionTitle: '期待死亡率', relatedProblems: ['2021b50'], label: 'エ', content: '狭くなる' }, //50
+                        {
+                            questionTitle: '生命表',
+                            relatedProblems: ['2021a41', '2021b41', '2021c41'],
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '被保険者集団の具備すべき条件',
+                            relatedProblems: ['2021b42'],
+                            label: 'エ',
+                            content: '継続性',
+                        }, //42
+                        {
+                            questionTitle: '保険料の仕組みと危険選択',
+                            relatedProblems: ['2021a43', '2021b43', '2021c43'],
+                            label: 'ウ',
+                            content: '収支相当の原則',
+                        }, //43
+                        {
+                            // rev: 2026-07-02 確認済み
+                            questionTitle: '医学的選択上の制約条件',
+                            relatedProblems: ['2021b44', '2021c22'],
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '心疾患',
+                            relatedProblems: ['2021b45'],
+                            label: 'ア',
+                            content: '先天性',
+                        }, //45
+                        {
+                            questionTitle: '職業危険',
+                            relatedProblems: ['2021a22', '2021b46'],
+                            label: 'イ',
+                            content: '入院率',
+                        }, //46
+                        {
+                            questionTitle: '査定・決定の種類',
+                            relatedProblems: ['2021b47'],
+                            label: 'エ',
+                            content: '5年',
+                        }, //47
+                        {
+                            questionTitle: '契約確認後の処理',
+                            relatedProblems: ['2021a48', '2021b48', '2021c48'],
+                            label: 'ウ',
+                            content: '不実の告知',
+                        }, //48
+                        {
+                            questionTitle: '再保険の方式',
+                            relatedProblems: ['2021b49'],
+                            label: 'ア',
+                            content: '共同保険',
+                        }, //49
+                        {
+                            questionTitle: '期待死亡率',
+                            relatedProblems: ['2021b50'],
+                            label: 'エ',
+                            content: '狭くなる',
+                        }, //50
                     ]"
                 />
             </div>

@@ -185,6 +185,7 @@ const subject = "2022年度 フォームC";
                     questionTitle="医学的選択上の制約条件"
                     :relatedProblems="['2022c27']"
                     :contents="[
+                        // rev: 2026-07-02 確認済み
                         '純保険料の範囲内 → 付加保険料の範囲内', //p40
                         '正しい',
                         '正しい',

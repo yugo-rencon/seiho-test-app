@@ -319,6 +319,7 @@ const subject = "2020年度 フォームA";
                             content: '不当な所得',
                         }, //46
                         {
+                            // rev: 2026-07-02 確認済み
                             questionTitle: '保険金確認・給付金確認',
                             relatedProblems: ['2020a47', '2020b39'],
                             label: 'オ',

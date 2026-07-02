@@ -326,6 +326,7 @@ const subject = "2024年度 フォームA";
                             content: '尿異常',
                         }, //47
                         {
+                            // rev: 2026-07-02 確認済み
                             questionTitle: '保険金確認・給付金確認',
                             relatedProblems: ['2024a48', '2024b37'],
                             label: 'オ',

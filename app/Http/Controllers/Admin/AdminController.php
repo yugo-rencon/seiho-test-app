@@ -20,6 +20,8 @@ class AdminController extends Controller
         $purchaseScope = (string) $request->query('purchase_scope', 'all');
         $purchaseState = (string) $request->query('purchase_state', 'all');
         $userSearch = trim((string) $request->query('user_search', ''));
+        $purchaseDateFrom = $this->parseDateFilter(trim((string) $request->query('purchase_date_from', '')));
+        $purchaseDateTo = $this->parseDateFilter(trim((string) $request->query('purchase_date_to', '')));
 
         $allowedScopes = ['all', 'seiho', 'daigaku', 'ouyou', 'senmon', 'ippan', 'basic'];
         if (!in_array($purchaseScope, $allowedScopes, true)) {
@@ -93,6 +95,12 @@ class AdminController extends Controller
                 if ($column) {
                     $query->whereRaw("COALESCE(purchase_summary.{$column}, 0) > 0");
                 }
+            })
+            ->when($purchaseDateFrom, function ($query) use ($purchaseDateFrom) {
+                $query->where('purchase_summary.last_paid_at', '>=', $purchaseDateFrom->copy()->startOfDay());
+            })
+            ->when($purchaseDateTo, function ($query) use ($purchaseDateTo) {
+                $query->where('purchase_summary.last_paid_at', '<=', $purchaseDateTo->copy()->endOfDay());
             })
             ->orderByDesc('users.id')
             ->paginate(30)
@@ -624,6 +632,8 @@ class AdminController extends Controller
                 'purchase_scope' => $purchaseScope,
                 'purchase_state' => $purchaseState,
                 'user_search' => $userSearch,
+                'purchase_date_from' => $purchaseDateFrom?->toDateString() ?? '',
+                'purchase_date_to' => $purchaseDateTo?->toDateString() ?? '',
             ],
             'releasedKeys' => $releasedKeys,
         ]);
@@ -826,5 +836,18 @@ class AdminController extends Controller
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+    }
+
+    private function parseDateFilter(string $value): ?Carbon
+    {
+        if ($value === '') {
+            return null;
+        }
+
+        try {
+            return Carbon::createFromFormat('Y-m-d', $value)->startOfDay();
+        } catch (\Throwable) {
+            return null;
+        }
     }
 }

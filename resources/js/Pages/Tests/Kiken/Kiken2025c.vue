@@ -247,6 +247,7 @@ const subject = "2025年度 フォームC";
                             content: '第1段階ではなく第2段階の説明', //p37
                         }, //33
                         {
+                            // rev: 2026-07-02 確認済み
                             questionTitle: '職業危険',
                             relatedProblems: ['2025a23', '2025b45', '2025c34'],
                             content: '正しい',

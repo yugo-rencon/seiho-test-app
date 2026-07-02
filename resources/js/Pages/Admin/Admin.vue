@@ -33,6 +33,8 @@ const props = defineProps({
 const purchaseScope = ref(props.filters?.purchase_scope ?? "all");
 const purchaseState = ref(props.filters?.purchase_state ?? "all");
 const userSearch = ref(props.filters?.user_search ?? "");
+const purchaseDateFrom = ref(props.filters?.purchase_date_from ?? "");
+const purchaseDateTo = ref(props.filters?.purchase_date_to ?? "");
 const activeTab = ref("dashboard");
 const salesTab = ref("overview");
 const salesScopeFilter = ref("all");
@@ -337,6 +339,8 @@ const submitSearch = () => {
             purchase_scope: purchaseScope.value,
             purchase_state: purchaseState.value,
             user_search: userSearch.value.trim(),
+            purchase_date_from: purchaseDateFrom.value,
+            purchase_date_to: purchaseDateTo.value,
         },
         { preserveState: true, replace: true },
     );
@@ -346,6 +350,8 @@ const resetSearch = () => {
     purchaseScope.value = "all";
     purchaseState.value = "all";
     userSearch.value = "";
+    purchaseDateFrom.value = "";
+    purchaseDateTo.value = "";
     submitSearch();
 };
 
@@ -1633,7 +1639,7 @@ const peakHour2h = computed(() => {
             <template v-if="activeTab === 'users'">
             <form
                 @submit.prevent="submitSearch"
-                class="mb-4 grid gap-2 md:grid-cols-[1.4fr_1fr_1fr_auto_auto]"
+                class="mb-4 grid gap-2 md:grid-cols-[1.4fr_1fr_1fr_0.95fr_0.95fr_auto_auto]"
             >
                 <input
                     v-model="userSearch"
@@ -1663,6 +1669,22 @@ const peakHour2h = computed(() => {
                     <option value="purchased">購入あり</option>
                     <option value="unpurchased">未購入</option>
                 </select>
+                <label class="flex min-w-0 flex-col gap-1 text-xs font-semibold text-gray-500">
+                    購入日From
+                    <input
+                        v-model="purchaseDateFrom"
+                        type="date"
+                        class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm font-normal text-gray-800 focus:border-purple-300 focus:outline-none"
+                    />
+                </label>
+                <label class="flex min-w-0 flex-col gap-1 text-xs font-semibold text-gray-500">
+                    購入日To
+                    <input
+                        v-model="purchaseDateTo"
+                        type="date"
+                        class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm font-normal text-gray-800 focus:border-purple-300 focus:outline-none"
+                    />
+                </label>
                 <button
                     type="submit"
                     class="whitespace-nowrap rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700"

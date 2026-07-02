@@ -231,27 +231,118 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '生命表', relatedProblems: ['2024a31', '2024c41'], content: '経験生命表 → 国民生命表<br>標準生命表 → 経験生命表' }, //31 p5
-                        { questionTitle: '生命保険会社における経験死亡率', relatedProblems: ['2024a32', '2024b32', '2024c32'], content: '件数死亡率 ↔︎ 金額死亡率' }, //32 p9
-                        { questionTitle: '選択効果', relatedProblems: ['2024a33', '2024c22'], content: '正しい' }, //33
-                        { questionTitle: '職業危険', relatedProblems: ['2024a34', '2024b44', '2024c34'], content: 'アルコール中毒や不摂生生活のような職業に随伴する危険は該当しない → 該当する' }, //34 p69
-                        { questionTitle: '道徳的危険の発見と排除', relatedProblems: ['2024a35'], content: '正しい' }, //35
-                        { questionTitle: '社医と嘱託医', relatedProblems: ['2024a36'], content: '社医と嘱託医で違いは設けられていない → 違いを設けている' }, //36 p99
-                        { questionTitle: '機微（センシティブ）情報', relatedProblems: ['2024a37', '2024c35'], content: '正しい' }, //37
-                        { questionTitle: '復活', relatedProblems: ['2024a38', '2024b25', '2024c30'], content: '失効後の期間の短い → 長い' }, //38 p173
-                        { questionTitle: '最高保険金額', relatedProblems: ['2024a39', '2024b39', '2024c39'], content: '正しい' }, //39
-                        { questionTitle: '実際死亡状況の分析', relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'], content: '正しい' }, //40
+                        {
+                            questionTitle: '生命表',
+                            relatedProblems: ['2024a31', '2024c41'],
+                            content: '経験生命表 → 国民生命表<br>標準生命表 → 経験生命表',
+                        }, //31 p5
+                        {
+                            questionTitle: '生命保険会社における経験死亡率',
+                            relatedProblems: ['2024a32', '2024b32', '2024c32'],
+                            content: '件数死亡率 ↔︎ 金額死亡率',
+                        }, //32 p9
+                        {
+                            questionTitle: '選択効果',
+                            relatedProblems: ['2024a33', '2024c22'],
+                            content: '正しい',
+                        }, //33
+                        {
+                            // rev: 2026-07-02 確認済み
+                            questionTitle: '職業危険',
+                            relatedProblems: ['2024a34', '2024b44', '2024c34'],
+                            content: '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」さらには[[「アルコール中毒や不摂生生活のような職業に随伴する危険」]]がある。', //p69
+                        }, //34
+                        {
+                            questionTitle: '道徳的危険の発見と排除',
+                            relatedProblems: ['2024a35'],
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '社医と嘱託医',
+                            relatedProblems: ['2024a36'],
+                            content: '社医と嘱託医で違いは設けられていない → 違いを設けている',
+                        }, //36 p99
+                        {
+                            questionTitle: '機微（センシティブ）情報',
+                            relatedProblems: ['2024a37', '2024c35'],
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '復活',
+                            relatedProblems: ['2024a38', '2024b25', '2024c30'],
+                            content: '失効後の期間の短い → 長い',
+                        }, //38 p173
+                        {
+                            questionTitle: '最高保険金額',
+                            relatedProblems: ['2024a39', '2024b39', '2024c39'],
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '実際死亡状況の分析',
+                            relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'],
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
-                        { questionTitle: '告知義務者', relatedProblems: ['2024a41', '2024b41'], label: 'ウ', content: '告知を受領する権限のある者' }, //41
-                        { questionTitle: '保険料の仕組みと危険選択', relatedProblems: ['2024a42', '2024b42', '2024c42'], label: 'イ', content: '純保険料' }, //42
-                        { questionTitle: '被保険者集団の具備すべき条件', relatedProblems: ['2024a43', '2024b43', '2024c43'], label: 'イ', content: '倫理' }, //43
-                        { questionTitle: '高血圧', relatedProblems: ['2024a44'], label: 'エ', content: '本態性高血圧' }, //44
-                        { questionTitle: '重大事由による解除', relatedProblems: ['2024a45'], label: 'ア', content: '信頼関係' }, //45
-                        { questionTitle: '第1次選択', relatedProblems: ['2024a46'], label: 'オ', content: '' }, //46
-                        { questionTitle: '医学的査定', relatedProblems: ['2024a47'], label: 'ウ', content: '尿異常' }, //47
-                        { questionTitle: '保険金確認・給付金確認', relatedProblems: ['2024a48', '2024b37'], label: 'オ', content: '' }, //48
-                        { questionTitle: '高度障害状態', relatedProblems: ['2024a49', '2024b49', '2024c49'], label: 'エ', content: '両眼の視力' }, //49
-                        { questionTitle: '団体保険の契約内容の変更', relatedProblems: ['2024a50'], label: 'ア', content: '1年間' }, //50
+                        {
+                            questionTitle: '告知義務者',
+                            relatedProblems: ['2024a41', '2024b41'],
+                            label: 'ウ',
+                            content: '告知を受領する権限のある者',
+                        }, //41
+                        {
+                            questionTitle: '保険料の仕組みと危険選択',
+                            relatedProblems: ['2024a42', '2024b42', '2024c42'],
+                            label: 'イ',
+                            content: '純保険料',
+                        }, //42
+                        {
+                            questionTitle: '被保険者集団の具備すべき条件',
+                            relatedProblems: ['2024a43', '2024b43', '2024c43'],
+                            label: 'イ',
+                            content: '倫理',
+                        }, //43
+                        {
+                            questionTitle: '高血圧',
+                            relatedProblems: ['2024a44'],
+                            label: 'エ',
+                            content: '本態性高血圧',
+                        }, //44
+                        {
+                            questionTitle: '重大事由による解除',
+                            relatedProblems: ['2024a45'],
+                            label: 'ア',
+                            content: '信頼関係',
+                        }, //45
+                        {
+                            questionTitle: '第1次選択',
+                            relatedProblems: ['2024a46'],
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '医学的査定',
+                            relatedProblems: ['2024a47'],
+                            label: 'ウ',
+                            content: '尿異常',
+                        }, //47
+                        {
+                            questionTitle: '保険金確認・給付金確認',
+                            relatedProblems: ['2024a48', '2024b37'],
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '高度障害状態',
+                            relatedProblems: ['2024a49', '2024b49', '2024c49'],
+                            label: 'エ',
+                            content: '両眼の視力',
+                        }, //49
+                        {
+                            questionTitle: '団体保険の契約内容の変更',
+                            relatedProblems: ['2024a50'],
+                            label: 'ア',
+                            content: '1年間',
+                        }, //50
                     ]"
                 />
             </div>

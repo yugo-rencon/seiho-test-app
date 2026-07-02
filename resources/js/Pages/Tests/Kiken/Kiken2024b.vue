@@ -230,27 +230,118 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '危険選択', relatedProblems: ['2024b31'], content: '正しい' }, //31
-                        { questionTitle: '生命保険会社における経験死亡率', relatedProblems: ['2024a32', '2024b32', '2024c32'], content: '件数死亡率 ↔︎ 金額死亡率' }, //32 p9
-                        { questionTitle: '死差益の計算方法', relatedProblems: ['2024b33'], content: '純収支計算方式で表せば → 統計的方式で表せば' }, //33
-                        { questionTitle: '保険体の範囲の拡大', relatedProblems: ['2024b34'], content: '正しい' }, //34
-                        { questionTitle: '体格', relatedProblems: ['2024a28', '2024b35', '2024c45'], content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗' }, //35 //p63
-                        { questionTitle: '重大事由による解除権', relatedProblems: ['2024b36'], content: '正しい' }, //36
-                        { questionTitle: '保険金確認・給付金確認', relatedProblems: ['2024a48', '2024b37'], content: '確認の対象や目的は契約確認と変わらない → 確認の対象は契約確認と若干異なる' }, //37 p120
-                        { questionTitle: '傷害特約', relatedProblems: ['2024b38'], content: '正しい' }, //38
-                        { questionTitle: '最高保険金額', relatedProblems: ['2024a39', '2024b39', '2024c39'], content: '正しい' }, //39
-                        { questionTitle: '実際死亡状況の分析', relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'], content: '正しい' }, //40
+                        {
+                            questionTitle: '危険選択',
+                            relatedProblems: ['2024b31'],
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '生命保険会社における経験死亡率',
+                            relatedProblems: ['2024a32', '2024b32', '2024c32'],
+                            content: '件数死亡率 ↔︎ 金額死亡率',
+                        }, //32 p9
+                        {
+                            questionTitle: '死差益の計算方法',
+                            relatedProblems: ['2024b33'],
+                            content: '純収支計算方式で表せば → 統計的方式で表せば',
+                        }, //33
+                        {
+                            questionTitle: '保険体の範囲の拡大',
+                            relatedProblems: ['2024b34'],
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '体格',
+                            relatedProblems: ['2024a28', '2024b35', '2024c45'],
+                            content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗',
+                        }, //35 //p63
+                        {
+                            questionTitle: '重大事由による解除権',
+                            relatedProblems: ['2024b36'],
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '保険金確認・給付金確認',
+                            relatedProblems: ['2024a48', '2024b37'],
+                            content: '確認の対象や目的は契約確認と変わらない → 確認の対象は契約確認と若干異なる',
+                        }, //37 p120
+                        {
+                            questionTitle: '傷害特約',
+                            relatedProblems: ['2024b38'],
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '最高保険金額',
+                            relatedProblems: ['2024a39', '2024b39', '2024c39'],
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '実際死亡状況の分析',
+                            relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'],
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
-                        { questionTitle: '告知義務者', relatedProblems: ['2024a41', '2024b41'], label: 'エ', content: '質問応答義務' }, //41
-                        { questionTitle: '保険料の仕組みと危険選択', relatedProblems: ['2024a42', '2024b42', '2024c42'], label: 'イ', content: '純保険料' }, //42
-                        { questionTitle: '被保険者集団の具備すべき条件', relatedProblems: ['2024a43', '2024b43', '2024c43'], label: 'イ', content: '倫理' }, //43
-                        { questionTitle: '職業危険', relatedProblems: ['2024a34', '2024b44', '2024c34'], label: 'ア', content: '入院率' }, //44
-                        { questionTitle: '道徳的危険排除のためのポイント', relatedProblems: ['2024b45', '2024c28'], label: 'ウ', content: '被保険利益' }, //45
-                        { questionTitle: '人間ドック扱', relatedProblems: ['2024b46'], label: 'ウ', content: '医師による診査' }, //46
-                        { questionTitle: '査定法', relatedProblems: ['2024b47'], label: 'オ', content: '' }, //47
-                        { questionTitle: '個人データの安全管理措置', relatedProblems: ['2024b48'], label: 'ア', content: 'き損' }, //48
-                        { questionTitle: '高度障害状態', relatedProblems: ['2024a49', '2024b49', '2024c49'], label: 'エ', content: '両眼の視力' }, //49
-                        { questionTitle: '期待死亡率との比較', relatedProblems: ['2024b50'], label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '告知義務者',
+                            relatedProblems: ['2024a41', '2024b41'],
+                            label: 'エ',
+                            content: '質問応答義務',
+                        }, //41
+                        {
+                            questionTitle: '保険料の仕組みと危険選択',
+                            relatedProblems: ['2024a42', '2024b42', '2024c42'],
+                            label: 'イ',
+                            content: '純保険料',
+                        }, //42
+                        {
+                            questionTitle: '被保険者集団の具備すべき条件',
+                            relatedProblems: ['2024a43', '2024b43', '2024c43'],
+                            label: 'イ',
+                            content: '倫理',
+                        }, //43
+                        {
+                            // rev: 2026-07-02 確認済み
+                            questionTitle: '職業危険',
+                            relatedProblems: ['2024a34', '2024b44', '2024c34'],
+                            label: 'ア',
+                            content: '入院率',
+                        }, //44
+                        {
+                            questionTitle: '道徳的危険排除のためのポイント',
+                            relatedProblems: ['2024b45', '2024c28'],
+                            label: 'ウ',
+                            content: '被保険利益',
+                        }, //45
+                        {
+                            questionTitle: '人間ドック扱',
+                            relatedProblems: ['2024b46'],
+                            label: 'ウ',
+                            content: '医師による診査',
+                        }, //46
+                        {
+                            questionTitle: '査定法',
+                            relatedProblems: ['2024b47'],
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '個人データの安全管理措置',
+                            relatedProblems: ['2024b48'],
+                            label: 'ア',
+                            content: 'き損',
+                        }, //48
+                        {
+                            questionTitle: '高度障害状態',
+                            relatedProblems: ['2024a49', '2024b49', '2024c49'],
+                            label: 'エ',
+                            content: '両眼の視力',
+                        }, //49
+                        {
+                            questionTitle: '期待死亡率との比較',
+                            relatedProblems: ['2024b50'],
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

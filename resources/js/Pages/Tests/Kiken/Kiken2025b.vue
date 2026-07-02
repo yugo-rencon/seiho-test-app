@@ -282,16 +282,67 @@ const subject = "2025年度 フォームB";
                             relatedProblems: ['2025a40', '2025b40', '2025c40'],
                             content: '正しい',
                         }, //40
-                        { questionTitle: '被保険者の危険', relatedProblems: ['2025b41'], label: 'ウ', content: '環境的危険' }, //41
-                        { questionTitle: '解除', relatedProblems: ['2025a42', '2025b42', '2025c42'], label: 'ウ', content: '解約返戻金' }, //42
-                        { questionTitle: '保険料の仕組みと危険選択', relatedProblems: ['2025a43', '2025b43', '2025c43'], label: 'オ', content: '' }, //43
-                        { questionTitle: '販売政策と選択政策', relatedProblems: ['2025b44'], label: 'ア', content: '加入申込者群' }, //44
-                        { questionTitle: '職業危険', relatedProblems: ['2025a23', '2025b45', '2025c34'], label: 'エ', content: '最高保険金額' }, //45
-                        { questionTitle: '人間ドック扱', relatedProblems: ['2025a45', '2025b46'], label: 'イ', content: '告知書' }, //46
-                        { questionTitle: '査定法', relatedProblems: ['2025b47'], label: 'オ', content: '' }, //47
-                        { questionTitle: '保険金確認・給付金確認', relatedProblems: ['2025a24', '2025b48'], label: 'ア', content: '発生後' }, //48
-                        { questionTitle: '個人データの安全管理措置', relatedProblems: ['2025a49', '2025b49', '2025c49'], label: 'イ', content: 'き損' }, //49
-                        { questionTitle: '再保険', relatedProblems: ['2025b50', '2025c25'], label: 'エ', content: 'より低く' }, //50
+                        {
+                            questionTitle: '被保険者の危険',
+                            relatedProblems: ['2025b41'],
+                            label: 'ウ',
+                            content: '環境的危険',
+                        }, //41
+                        {
+                            questionTitle: '解除',
+                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
+                            label: 'ウ',
+                            content: '解約返戻金',
+                        }, //42
+                        {
+                            questionTitle: '保険料の仕組みと危険選択',
+                            relatedProblems: ['2025a43', '2025b43', '2025c43'],
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '販売政策と選択政策',
+                            relatedProblems: ['2025b44'],
+                            label: 'ア',
+                            content: '加入申込者群',
+                        }, //44
+                        {
+                            // rev: 2026-07-02 確認済み
+                            questionTitle: '職業危険',
+                            relatedProblems: ['2025a23', '2025b45', '2025c34'],
+                            label: 'エ',
+                            content: '最高保険金額',
+                        }, //45
+                        {
+                            questionTitle: '人間ドック扱',
+                            relatedProblems: ['2025a45', '2025b46'],
+                            label: 'イ',
+                            content: '告知書',
+                        }, //46
+                        {
+                            questionTitle: '査定法',
+                            relatedProblems: ['2025b47'],
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '保険金確認・給付金確認',
+                            relatedProblems: ['2025a24', '2025b48'],
+                            label: 'ア',
+                            content: '発生後',
+                        }, //48
+                        {
+                            questionTitle: '個人データの安全管理措置',
+                            relatedProblems: ['2025a49', '2025b49', '2025c49'],
+                            label: 'イ',
+                            content: 'き損',
+                        }, //49
+                        {
+                            questionTitle: '再保険',
+                            relatedProblems: ['2025b50', '2025c25'],
+                            label: 'エ',
+                            content: 'より低く',
+                        }, //50
                     ]"
                 />
             </div>

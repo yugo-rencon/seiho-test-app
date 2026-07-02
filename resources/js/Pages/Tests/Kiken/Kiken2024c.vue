@@ -24,6 +24,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反と契約解除-①"
+                    :relatedProblems="['2024a1', '2024b1', '2024c1']"
                     :contents="[
                         '故意',
                         '民法',
@@ -44,6 +45,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反と契約解除-②"
+                    :relatedProblems="['2024a6', '2024b6', '2024c6']"
                     :contents="[
                         'しない',
                         '因果関係',
@@ -64,6 +66,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="現病歴・既往歴-①"
+                    :relatedProblems="['2024c11']"
                     :contents="[
                         '収縮期',
                         '拡張期',
@@ -84,6 +87,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="現病歴・既往歴-②"
+                    :relatedProblems="['2024c16']"
                     :contents="[
                         '赤血球',
                         '肝硬変',
@@ -104,6 +108,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険で対象としている危険"
+                    :relatedProblems="['2024a21', '2024b21', '2024c21']"
                     :contents="[
                         '経済的危険 → 身体的危険', //p4
                         '保険を利用して、不当な利益を得ようとする心理状態等 → 被保険者の職業・仕事の内容による危険', //p4
@@ -115,6 +120,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果"
+                    :relatedProblems="['2024a33', '2024c22']"
                     :contents="[
                         '国民生命表との比較でも3〜5年 → 国民生命表との比較ではかなり長期に及ぶ', //p32
                         '正しい',
@@ -126,6 +132,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約制限"
+                    :relatedProblems="['2024a23', '2024b28', '2024c23']"
                     :contents="[
                         '制限を加えることはしていない → 制限を加えている', //p72
                         '推奨されている → 推奨されていない', //p76
@@ -137,6 +144,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="報状扱契約における選択手段"
+                    :relatedProblems="['2024c24']"
                     :contents="[
                         '欧米では嘱託医制度はなく、一般に社医だけである → 欧米では社医制度はなく、一般に嘱託医だけである。', //p95
                         '正しい',
@@ -148,6 +156,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険"
+                    :relatedProblems="['2024c25']"
                     :contents="[
                         '正しい',
                         '共同保険式再保険 → 危険保険料式再保険', //p178
@@ -159,6 +168,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険保険料と危険保険金"
+                    :relatedProblems="['2024a22', '2024c26']"
                     :contents="[
                         '正しい',
                         '養老保険 → 定期保険', //p24
@@ -170,6 +180,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="医学的選択上の課題"
+                    :relatedProblems="['2024a27', '2024b27', '2024c27']"
                     :contents="[
                         '手術給付率 ↔︎ 入院給付率', //p52
                         '正しい',
@@ -181,6 +192,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="道徳的危険排除のためのポイント"
+                    :relatedProblems="['2024b45', '2024c28']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -192,6 +204,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険における団体の選択"
+                    :relatedProblems="['2024a29', '2024b29', '2024c29']"
                     :contents="[
                         '保険加入のみを目的とした団体を設立すること → 保険加入のみを目的として設立された団体でないこと', //p169
                         '正しい',
@@ -203,6 +216,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="復活"
+                    :relatedProblems="['2024a38', '2024b25', '2024c30']"
                     :contents="[
                         '待ち期間 → 猶予期間', //p172
                         '正しい',
@@ -217,55 +231,65 @@ const subject = "2024年度 フォームC";
                         // 問31〜40
                         {
                             questionTitle: '死亡率',
+                            relatedProblems: ['2024c31'],
                             content: '比較することができる → 比較することはできない',
                         }, //31 p7
                         {
                             questionTitle: '生命保険会社における経験死亡率',
+                            relatedProblems: ['2024a32', '2024b32', '2024c32'],
                             content: '件数死亡率 ↔︎ 金額死亡率',
                         }, //32 p9
                         {
                             questionTitle: '販売政策と選択政策',
+                            relatedProblems: ['2024c33'],
                             content: '正しい',
                         }, //33
                         {
                             questionTitle: '職業危険',
+                            relatedProblems: ['2024a34', '2024b44', '2024c34'],
                             content: '正しい',
                         }, //34
                         {
                             questionTitle: '機微（センシティブ）情報',
+                            relatedProblems: ['2024a37', '2024c35'],
                             content: '正しい',
                         }, //35
                         {
                             questionTitle: '契約確認',
+                            relatedProblems: ['2024c36'],
                             content: '大部分の契約 ↔︎ 一部の契約', //p113-114
                         }, //36 p114
                         {
                             questionTitle: '給付金確認',
+                            relatedProblems: ['2024c37'],
                             content: '正しい',
                         }, //37
                         {
                             questionTitle: '団体定期保険における更新時の選択',
+                            relatedProblems: ['2024c38'],
                             content: '正しい',
                         }, //38
                         {
                             questionTitle: '最高保険金額',
+                            relatedProblems: ['2024a39', '2024b39', '2024c39'],
                             content: '正しい',
                         }, //39
                         {
                             questionTitle: '実際死亡状況の分析',
+                            relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'],
                             content: '正しい',
                         }, //40
                         // 問41〜50
-                        { questionTitle: '生命表', label: 'ア', content: '選択表' }, //41
-                        { questionTitle: '保険料の仕組みと危険選択', label: 'イ', content: '純保険料' }, //42
-                        { questionTitle: '被保険者集団の具備すべき条件', label: 'イ', content: '倫理' }, //43
-                        { questionTitle: '医学的選択上の制約条件', label: 'オ', content: '' }, //44
-                        { questionTitle: '体格', label: 'ウ', content: '22' }, //45
-                        { questionTitle: '査定・決定の種類', label: 'エ', content: '再診' }, //46
-                        { questionTitle: '契約確認後の処理', label: 'ウ', content: '不実の告知' }, //47
-                        { questionTitle: '入院・手術保障における料率', label: 'ア', content: '平均給付日数' }, //48
-                        { questionTitle: '高度障害状態', label: 'エ', content: '両眼の視力' }, //49
-                        { questionTitle: '実際死亡状況の分析', label: 'オ', content: '' }, //50
+                        { questionTitle: '生命表', relatedProblems: ['2024a31', '2024c41'], label: 'ア', content: '選択表' }, //41
+                        { questionTitle: '保険料の仕組みと危険選択', relatedProblems: ['2024a42', '2024b42', '2024c42'], label: 'イ', content: '純保険料' }, //42
+                        { questionTitle: '被保険者集団の具備すべき条件', relatedProblems: ['2024a43', '2024b43', '2024c43'], label: 'イ', content: '倫理' }, //43
+                        { questionTitle: '医学的選択上の制約条件', relatedProblems: ['2024c44'], label: 'オ', content: '' }, //44
+                        { questionTitle: '体格', relatedProblems: ['2024a28', '2024b35', '2024c45'], label: 'ウ', content: '22' }, //45
+                        { questionTitle: '査定・決定の種類', relatedProblems: ['2024c46'], label: 'エ', content: '再診' }, //46
+                        { questionTitle: '契約確認後の処理', relatedProblems: ['2024c47'], label: 'ウ', content: '不実の告知' }, //47
+                        { questionTitle: '入院・手術保障における料率', relatedProblems: ['2024c48'], label: 'ア', content: '平均給付日数' }, //48
+                        { questionTitle: '高度障害状態', relatedProblems: ['2024a49', '2024b49', '2024c49'], label: 'エ', content: '両眼の視力' }, //49
+                        { questionTitle: '実際死亡状況の分析', relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'], label: 'オ', content: '' }, //50
                     ]"
                 />
             </div>

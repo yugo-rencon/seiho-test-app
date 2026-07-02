@@ -24,6 +24,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="死差益と危険選択-①"
+                    :relatedProblems="['2023b1']"
                     :contents="[
                         '経営効率',
                         '剰余金',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="死差益と危険選択-②"
+                    :relatedProblems="['2023b6']"
                     :contents="[
                         '低い',
                         '統計的方式',
@@ -64,6 +66,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択-①"
+                    :relatedProblems="['2023a11', '2023b11', '2023c11']"
                     :contents="[
                         '被用者団体',
                         '団体性',
@@ -84,6 +87,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択-②"
+                    :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
                         '総合福祉団体定期保険',
                         '団体の弔慰金・死亡退職金規程',
@@ -104,6 +108,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率と死亡指数"
+                    :relatedProblems="['2023b21']"
                     :contents="[
                         '経験生命表 → 国民生命表<br>簡易生命表 → 経験生命表', //p5
                         '正しい',
@@ -115,6 +120,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="疾病入院保険（特約）"
+                    :relatedProblems="['2023a22', '2023b22', '2023c22']"
                     :contents="[
                         '国民の平均入院日数よりも短期 → 長期', //p51
                         '生活習慣病特約での糖尿病入院発生率が著しく低い → 著しく高い', //52
@@ -126,6 +132,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="職業危険"
+                    :relatedProblems="['2023a45', '2023b23', '2023c28']"
                     :contents="[
                         'アルコール中毒や不摂生生活のような職業に随伴する危険は含まれない → 含まれる', //p69
                         '正しい',
@@ -137,6 +144,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の段階"
+                    :relatedProblems="['2023b24', '2023c45']"
                     :contents="[
                         '正しい',
                         '金融庁 → 生命保険協会', //p86
@@ -148,6 +156,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険"
+                    :relatedProblems="['2023a25', '2023b25', '2023c25']"
                     :contents="[
                         '正しい',
                         '責任準備金部分まで再保険料を支払う必要がない → 支払わなければならない', //p179
@@ -159,6 +168,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知"
+                    :relatedProblems="['2023a21', '2023b26']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -170,6 +180,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果"
+                    :relatedProblems="['2023b27']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -181,6 +192,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="逆選択の傾向と態様"
+                    :relatedProblems="['2023a24', '2023b28']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -192,6 +204,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="報状扱契約における選択手段"
+                    :relatedProblems="['2023a29', '2023b29', '2023c29']"
                     :contents="[
                         '正しい',
                         '健康の異常や症状に対する明確な診断が必要 → 必ずしも必要ではない', //p96
@@ -203,6 +216,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険における元受会社の最高保険金額と保有限度額"
+                    :relatedProblems="['2023b30']"
                     :contents="[
                         '1保険金受取人 → 1被保険者', //p181
                         '正しい',
@@ -215,27 +229,27 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '危険の公平性', content: '正しい' }, //31
-                        { questionTitle: '保険体の範囲の拡大', content: '正しい' }, //32
-                        { questionTitle: '体格', content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗' }, //33  //p63
-                        { questionTitle: '保険種類・保険期間の制限', content: '短期 ↔︎ 長期' }, //34 p73
-                        { questionTitle: '保険金確認・給付金確認', content: '正しい' }, //35
-                        { questionTitle: '個人情報の取得', content: '利用目的は明示しなければならない → 必ずしも利用目的の明示は要しない' }, //36 p135
-                        { questionTitle: '特定部位不担保法', content: '正しい' }, //37
-                        { questionTitle: '復活', content: '逆選択混入の危険が少なく → 多く<br>経験死亡率が低い → 高い' }, //38 p173-174
-                        { questionTitle: '再保険の意義', content: '正しい' }, //39
-                        { questionTitle: '金額別死亡率', content: '正しい' }, //40
+                        { questionTitle: '危険の公平性', relatedProblems: ['2023b31'], content: '正しい' }, //31
+                        { questionTitle: '保険体の範囲の拡大', relatedProblems: ['2023a32', '2023b32', '2023c32'], content: '正しい' }, //32
+                        { questionTitle: '体格', relatedProblems: ['2023a33', '2023b33', '2023c33'], content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗' }, //33  //p63
+                        { questionTitle: '保険種類・保険期間の制限', relatedProblems: ['2023b34'], content: '短期 ↔︎ 長期' }, //34 p73
+                        { questionTitle: '保険金確認・給付金確認', relatedProblems: ['2023b35'], content: '正しい' }, //35
+                        { questionTitle: '個人情報の取得', relatedProblems: ['2023b36'], content: '利用目的は明示しなければならない → 必ずしも利用目的の明示は要しない' }, //36 p135
+                        { questionTitle: '特定部位不担保法', relatedProblems: ['2023b37'], content: '正しい' }, //37
+                        { questionTitle: '復活', relatedProblems: ['2023a38', '2023b38', '2023c38'], content: '逆選択混入の危険が少なく → 多く<br>経験死亡率が低い → 高い' }, //38 p173-174
+                        { questionTitle: '再保険の意義', relatedProblems: ['2023b39'], content: '正しい' }, //39
+                        { questionTitle: '金額別死亡率', relatedProblems: ['2023b40'], content: '正しい' }, //40
                         // 問41〜50
-                        { questionTitle: '被保険者の危険', label: 'イ', content: '実体的危険' }, //41
-                        { questionTitle: '解除権の消滅', label: 'オ', content: '' }, //42
-                        { questionTitle: '危険保険料と危険保険金', label: 'オ', content: '' }, //43
-                        { questionTitle: '被保険者集団の具備すべき条件', label: 'エ', content: '大数の法則' }, //44
-                        { questionTitle: '高血圧', label: 'ア', content: '二次性高血圧' }, //45
-                        { questionTitle: '人間ドック扱', label: 'イ', content: '告知書' }, //46
-                        { questionTitle: '査定法', label: 'ア', content: '数字査定法' }, //47
-                        { questionTitle: '契約確認後の処理', label: 'ウ', content: '不実の告知' }, //48
-                        { questionTitle: '災害保障', label: 'ウ', content: '感染症法' }, //49
-                        { questionTitle: '期待死亡率との比較', label: 'エ', content: '保険体' }, //50
+                        { questionTitle: '被保険者の危険', relatedProblems: ['2023b41'], label: 'イ', content: '実体的危険' }, //41
+                        { questionTitle: '解除権の消滅', relatedProblems: ['2023a42', '2023b42', '2023c42'], label: 'オ', content: '' }, //42
+                        { questionTitle: '危険保険料と危険保険金', relatedProblems: ['2023a27', '2023b43'], label: 'オ', content: '' }, //43
+                        { questionTitle: '被保険者集団の具備すべき条件', relatedProblems: ['2023b44'], label: 'エ', content: '大数の法則' }, //44
+                        { questionTitle: '高血圧', relatedProblems: ['2023b45'], label: 'ア', content: '二次性高血圧' }, //45
+                        { questionTitle: '人間ドック扱', relatedProblems: ['2023a46', '2023b46', '2023c46'], label: 'イ', content: '告知書' }, //46
+                        { questionTitle: '査定法', relatedProblems: ['2023b47'], label: 'ア', content: '数字査定法' }, //47
+                        { questionTitle: '契約確認後の処理', relatedProblems: ['2023a48', '2023b48', '2023c48'], label: 'ウ', content: '不実の告知' }, //48
+                        { questionTitle: '災害保障', relatedProblems: ['2023b49'], label: 'ウ', content: '感染症法' }, //49
+                        { questionTitle: '期待死亡率との比較', relatedProblems: ['2023b50'], label: 'エ', content: '保険体' }, //50
                     ]"
                 />
             </div>

@@ -24,7 +24,9 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の必要性-①"
+                    :relatedProblems="['2022b1']"
                     :contents="[
+                        // rev: 2026-07-02 確認済み
                         '安定性',
                         '標準的',
                         '延期体',
@@ -44,7 +46,9 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の必要性-②"
+                    :relatedProblems="['2022b6']"
                     :contents="[
+                        // rev: 2026-07-02 確認済み
                         '大数の法則',
                         '実際死亡率',
                         '医学的',
@@ -64,7 +68,9 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-①"
+                    :relatedProblems="['2022a11', '2022b11', '2022c11']"
                     :contents="[
+                        // rev: 2026-07-02 確認済み
                         '出再会社',
                         '自動',
                         '任意',
@@ -84,7 +90,9 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-②"
+                    :relatedProblems="['2022a16', '2022b16', '2022c16']"
                     :contents="[
+                        // rev: 2026-07-02 確認済み
                         '個別',
                         '定期保険',
                         '減少',
@@ -104,6 +112,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果"
+                    :relatedProblems="['2022b21']"
                     :contents="[
                         '国民生命表との比較でも3〜5年 → 国民生命表との比較ではかなり長期に及ぶ', //p32
                         '正しい',
@@ -115,6 +124,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知"
+                    :relatedProblems="['2022a22', '2022b22', '2022c22']"
                     :contents="[
                         '正しい',
                         '告知事項の存在を知らないまま告知しなかった場合にも告知義務違反は成立する → 告知義務違反は成立しない', //p16
@@ -126,6 +136,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="職業危険"
+                    :relatedProblems="['2022a34', '2022b23', '2022c43']"
                     :contents="[
                         'アルコール中毒や不摂生生活のような職業に随伴する危険は含まれない → 含まれる', //p69
                         '選択上考慮されない → 職業制限と呼ばれる選択基準を設けている', //p69-70
@@ -137,6 +148,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="報状扱契約における選択手段"
+                    :relatedProblems="['2022b24']"
                     :contents="[
                         '正しい',
                         '生命保険支払専門士 → 生命保険面接士', //p99
@@ -148,6 +160,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院・手術保障における「選択」"
+                    :relatedProblems="['2022a25', '2022b25', '2022c25']"
                     :contents="[
                         '正しい',
                         'ほとんど差がない → 全く異なるため、従来とは異なった診査観点が必要', //p150
@@ -159,6 +172,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡指数"
+                    :relatedProblems="['2022b26']"
                     :contents="[
                         '正しい',
                         '死差益に対する貢献度は同じ → 貢献度は異なる', //p12
@@ -170,6 +184,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険保険料と危険保険金"
+                    :relatedProblems="['2022b27']"
                     :contents="[
                         '正しい',
                         '養老保険 → 定期保険', //p24
@@ -181,6 +196,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険業における個人情報保護のための取扱指針"
+                    :relatedProblems="['2022a28', '2022b28', '2022c28']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -192,6 +208,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約内容登録制度"
+                    :relatedProblems="['2022b29']"
                     :contents="[
                         '金融庁 → 生命保険協会', //p139
                         '正しい',
@@ -203,6 +220,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="復活"
+                    :relatedProblems="['2022b30']"
                     :contents="[
                         '待ち期間 → 猶予期間', //p172
                         '正しい',
@@ -215,27 +233,27 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '告知義務', content: '正しい' }, //31
-                        { questionTitle: '死差益の計算方法', content: '純収支計算方式で表せば → 統計的方式で表せば' }, //32 p27
-                        { questionTitle: '保険体の範囲の拡大', content: '正しい' }, //33
-                        { questionTitle: '医学的選択', content: '第1段階の内容 → 第2段階の内容' }, //34 //p37
-                        { questionTitle: '糖尿病', content: 'ネフローゼ → インシュリン' }, //35 p66
-                        { questionTitle: '保険種類・保険期間の制限', content: '短期 ↔︎ 長期' }, //36 p73
-                        { questionTitle: '保険金確認', content: '正しい' }, //37
-                        { questionTitle: '機微（センシティブ）情報', content: '正しい' }, //38
-                        { questionTitle: '団体の選択', content: '保険加入のみを目的とした団体を設立すること → 保険加入のみを目的として設立された団体でないこと' }, //39 p169
-                        { questionTitle: '死因別死亡率', content: '正しい' }, //40
+                        { questionTitle: '告知義務', relatedProblems: ['2022b31'], content: '正しい' }, //31
+                        { questionTitle: '死差益の計算方法', relatedProblems: ['2022a32', '2022b32', '2022c32'], content: '純収支計算方式で表せば → 統計的方式で表せば' }, //32 p27
+                        { questionTitle: '保険体の範囲の拡大', relatedProblems: ['2022a33', '2022b33', '2022c33'], content: '正しい' }, //33
+                        { questionTitle: '医学的選択', relatedProblems: ['2022b34'], content: '第1段階の内容 → 第2段階の内容' }, //34 //p37
+                        { questionTitle: '糖尿病', relatedProblems: ['2022b35'], content: 'ネフローゼ → インシュリン' }, //35 p66
+                        { questionTitle: '保険種類・保険期間の制限', relatedProblems: ['2022b36'], content: '短期 ↔︎ 長期' }, //36 p73
+                        { questionTitle: '保険金確認', relatedProblems: ['2022b37'], content: '正しい' }, //37
+                        { questionTitle: '機微（センシティブ）情報', relatedProblems: ['2022b38'], content: '正しい' }, //38
+                        { questionTitle: '団体の選択', relatedProblems: ['2022b39'], content: '保険加入のみを目的とした団体を設立すること → 保険加入のみを目的として設立された団体でないこと' }, //39 p169
+                        { questionTitle: '死因別死亡率', relatedProblems: ['2022a40', '2022b40', '2022c40'], content: '正しい' }, //40
                         // 問41〜50
-                        { questionTitle: '死亡率', label: 'ウ', content: '標準化死亡率' }, //41
-                        { questionTitle: '高血圧', label: 'イ', content: '二次性高血圧' }, //42
-                        { questionTitle: '重大事由による解除', label: 'ア', content: '信頼関係' }, //43
-                        { questionTitle: '第1次選択', label: 'オ', content: '' }, //44
-                        { questionTitle: '体格', label: 'ウ', content: '22' }, //45
-                        { questionTitle: '査定法', label: 'オ', content: '' }, //46
-                        { questionTitle: '入院・手術保障における料率', label: 'ア', content: '平均' }, //47
-                        { questionTitle: '再保険', label: 'エ', content: 'より低く' }, //48
-                        { questionTitle: '災害関係特約', label: 'オ', content: '' }, //49
-                        { questionTitle: '団体保険の個別選択', label: 'エ', content: '正常勤務' }, //50
+                        { questionTitle: '死亡率', relatedProblems: ['2022a41', '2022b41'], label: 'ウ', content: '標準化死亡率' }, //41
+                        { questionTitle: '高血圧', relatedProblems: ['2022b42'], label: 'イ', content: '二次性高血圧' }, //42
+                        { questionTitle: '重大事由による解除', relatedProblems: ['2022b43'], label: 'ア', content: '信頼関係' }, //43
+                        { questionTitle: '第1次選択', relatedProblems: ['2022b44'], label: 'オ', content: '' }, //44
+                        { questionTitle: '体格', relatedProblems: ['2022a45', '2022b45', '2022c45'], label: 'ウ', content: '22' }, //45
+                        { questionTitle: '査定法', relatedProblems: ['2022b46'], label: 'オ', content: '' }, //46
+                        { questionTitle: '入院・手術保障における料率', relatedProblems: ['2022b47'], label: 'ア', content: '平均' }, //47
+                        { questionTitle: '再保険', relatedProblems: ['2022b48'], label: 'エ', content: 'より低く' }, //48
+                        { questionTitle: '災害関係特約', relatedProblems: ['2022a49', '2022b49', '2022c49'], label: 'オ', content: '' }, //49
+                        { questionTitle: '団体保険の個別選択', relatedProblems: ['2022a50', '2022b50', '2022c50'], label: 'エ', content: '正常勤務' }, //50
                     ]"
                 />
             </div>

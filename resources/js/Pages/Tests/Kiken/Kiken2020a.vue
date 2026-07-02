@@ -24,6 +24,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反と契約解除-①"
+                    :relatedProblems="['2020a1']"
                     :contents="[
                         '故意',
                         'しない',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反と契約解除-②"
+                    :relatedProblems="['2020a6']"
                     :contents="[
                         'しない',
                         '因果関係',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院・手術保障における「選択」-①"
+                    :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
                         '心理',
                         '抵抗力',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院・手術保障における「選択」-②"
+                    :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
                         '生活習慣病',
                         '限局',
@@ -104,6 +108,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率と死亡指数"
+                    :relatedProblems="['2020a21', '2020b21', '2020c21']"
                     :contents="[
                         '経験生命表 → 国民生命表<br>簡易生命表 → 経験生命表', //p5
                         '正しい',
@@ -115,6 +120,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果"
+                    :relatedProblems="['2020a22']"
                     :contents="[
                         '国民生命表との比較では3〜5年 → 国民生命表との比較ではかなり長期に及ぶ', //p32
                         '正しい',
@@ -126,6 +132,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="現病歴・既往歴"
+                    :relatedProblems="['2020a23']"
                     :contents="[
                         '若年層：高血圧性、虚血性が多い → 先天性のものが多い<br>中年および高年齢：先天性のものが多い → 高血圧性、虚血性が多い', //p65
                         '正しい',
@@ -137,6 +144,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択"
+                    :relatedProblems="['2020a24', '2020b24', '2020c24']"
                     :contents="[
                         '団体定期保険も一括告知 → 団体定期保険は各被保険者の告知を求める', //p171
                         '職業上の危険選択は行わない → 職業上の危険選択行っている', //p171
@@ -148,6 +156,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険における元受会社の最高保険金額と保有限度額"
+                    :relatedProblems="['2020a25']"
                     :contents="[
                         '正しい',
                         '1保険金受取人 → 1被保険者', //p182
@@ -159,6 +168,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険保険料と危険保険金"
+                    :relatedProblems="['2020a26', '2020b26', '2020c26']"
                     :contents="[
                         '正しい',
                         '養老保険 → 定期保険', //p24
@@ -170,6 +180,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="道徳的危険排除のためのポイント"
+                    :relatedProblems="['2020a27']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -181,6 +192,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="報状扱契約における選択手段"
+                    :relatedProblems="['2020a28', '2020b23']"
                     :contents="[
                         '正しい',
                         '健康の異常や症状に対する明確な診断が必要 → 必ずしも必要ではない', //p96
@@ -192,6 +204,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人情報の取扱指針"
+                    :relatedProblems="['2020a29']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -203,6 +216,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率比較"
+                    :relatedProblems="['2020a30']"
                     :contents="[
                         '両方の目的に適している → 経営効率を見る目的にのみ適する', //p184
                         '正しい',
@@ -217,55 +231,65 @@ const subject = "2020年度 フォームA";
                         // 問31〜40
                         {
                             questionTitle: '保険事故発生率',
+                            relatedProblems: ['2020a31'],
                             content: '危険一律性の原則 → 危険均一性の原則',
                         }, //31 p18
                         {
                             questionTitle: '危険選択の厳格度',
+                            relatedProblems: ['2020a32'],
                             content: '期待死亡率についての目標値（実際死亡率） → 実際死亡率についての目標値（期待死亡率）', //p35
                         }, //32
                         {
                             questionTitle: '体格',
+                            relatedProblems: ['2020a33', '2020b33', '2020c33'],
                             content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗',
                         }, //33 p63
                         {
                             questionTitle: '診査実施上の制限',
+                            relatedProblems: ['2020a34'],
                             content: '区分を設けている生命保険会社は少ない → 区分を設けている生命保険会社が多い',
                         }, //34 p74
                         {
                             questionTitle: '第1次選択で行う事柄',
+                            relatedProblems: ['2020a35'],
                             content: '正しい',
                         }, //35
                         {
                             questionTitle: '医学的査定',
+                            relatedProblems: ['2020a36', '2020c48'],
                             content: '正しい',
                         }, //36
                         {
                             questionTitle: '契約内容の相互照会',
+                            relatedProblems: ['2020a37', '2020b37', '2020c37'],
                             content: '厚生労働省ならびに農林水産省 → 全国共済農業協同組合連合会<br>生命共済 → 全国共済農業協同組合連合会',
                         }, //37
                         {
                             questionTitle: '傷害特約',
+                            relatedProblems: ['2020a38'],
                             content: '正しい',
                         }, //38
                         {
                             questionTitle: '再保険の意義',
+                            relatedProblems: ['2020a39'],
                             content: '正しい',
                         }, //39
                         {
                             questionTitle: '金額別死亡率',
+                            relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '正しい',
                         }, //40
                         // 問41〜50
-                        { questionTitle: '被保険者の危険', label: 'イ', content: '実体的危険' }, //41
-                        { questionTitle: '告知義務者', label: 'ア', content: '保険法' }, //42
-                        { questionTitle: '死差益の計算方法', label: 'エ', content: '危険保険料' }, //43
-                        { questionTitle: '医学的選択上の制約条件', label: 'オ', content: '' }, //44
-                        { questionTitle: 'エイズ', label: 'ウ', content: 'リンパ球' }, //45
-                        { questionTitle: '重大事由による解除', label: 'ウ', content: '不当な所得' }, //46
-                        { questionTitle: '保険金確認・給付金確認', label: 'オ', content: '' }, //47
-                        { questionTitle: '団体の選択', label: 'イ', content: '被用者団体' }, //48
-                        { questionTitle: '復活', label: 'ウ', content: '長い' }, //49
-                        { questionTitle: '出再方式', label: 'ア', content: '個別再保険' }, //50
+                        { questionTitle: '被保険者の危険', relatedProblems: ['2020a41', '2020b41', '2020c41'], label: 'イ', content: '実体的危険' }, //41
+                        { questionTitle: '告知義務者', relatedProblems: ['2020a42'], label: 'ア', content: '保険法' }, //42
+                        { questionTitle: '死差益の計算方法', relatedProblems: ['2020a43'], label: 'エ', content: '危険保険料' }, //43
+                        { questionTitle: '医学的選択上の制約条件', relatedProblems: ['2020a44'], label: 'オ', content: '' }, //44
+                        { questionTitle: 'エイズ', relatedProblems: ['2020a45', '2020b45', '2020c45'], label: 'ウ', content: 'リンパ球' }, //45
+                        { questionTitle: '重大事由による解除', relatedProblems: ['2020a46'], label: 'ウ', content: '不当な所得' }, //46
+                        { questionTitle: '保険金確認・給付金確認', relatedProblems: ['2020a47', '2020b39'], label: 'オ', content: '' }, //47
+                        { questionTitle: '団体の選択', relatedProblems: ['2020a48'], label: 'イ', content: '被用者団体' }, //48
+                        { questionTitle: '復活', relatedProblems: ['2020a49', '2020b49', '2020c49'], label: 'ウ', content: '長い' }, //49
+                        { questionTitle: '出再方式', relatedProblems: ['2020a50'], label: 'ア', content: '個別再保険' }, //50
                     ]"
                 />
             </div>

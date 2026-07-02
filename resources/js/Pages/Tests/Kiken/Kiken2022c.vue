@@ -24,6 +24,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="現病歴・既往歴-①"
+                    :relatedProblems="['2022c1']"
                     :contents="[
                         '収縮期',
                         '拡張期',
@@ -44,6 +45,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="現病歴・既往歴-②"
+                    :relatedProblems="['2022c6']"
                     :contents="[
                         '赤血球',
                         '肝硬変',
@@ -64,7 +66,9 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-①"
+                    :relatedProblems="['2022a11', '2022b11', '2022c11']"
                     :contents="[
+                        // rev: 2026-07-02 確認済み
                         '出再会社',
                         '自動',
                         '任意',
@@ -84,7 +88,9 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-②"
+                    :relatedProblems="['2022a16', '2022b16', '2022c16']"
                     :contents="[
+                        // rev: 2026-07-02 確認済み
                         '個別',
                         '定期保険',
                         '減少',
@@ -104,6 +110,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="環境選択"
+                    :relatedProblems="['2022c21']"
                     :contents="[
                         '標準体と判定される → 環境が良好でないれば標準体と判定されない場合がある', //p58
                         '過度の飲酒は問題とならない → 過度の飲酒の習慣も問題となる', //p59
@@ -115,6 +122,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知"
+                    :relatedProblems="['2022a22', '2022b22', '2022c22']"
                     :contents="[
                         '正しい',
                         '告知事項の存在を知らないまま告知しなかった場合にも告知義務違反は成立する → 告知義務違反は成立しない', //p16
@@ -126,6 +134,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約制限"
+                    :relatedProblems="['2022c23']"
                     :contents="[
                         '短期定期保険または短期払込定期保険 → 短期養老保険または短期払込養老保険<br>養老保険では逆転 → 定期保険では逆転', //p73
                         '正しい',
@@ -137,6 +146,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="査定・決定"
+                    :relatedProblems="['2022c24']"
                     :contents="[
                         '金融庁 → 生命保険協会', //p86
                         '査定 ↔︎ 決定', //p86-87
@@ -148,6 +158,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院・手術保障における「選択」"
+                    :relatedProblems="['2022a25', '2022b25', '2022c25']"
                     :contents="[
                         '正しい',
                         'ほとんど差がない → 全く異なるため、従来とは異なった診査観点が必要', //p150
@@ -159,6 +170,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率と死亡指数"
+                    :relatedProblems="['2022c26']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -170,6 +182,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="医学的選択上の制約条件"
+                    :relatedProblems="['2022c27']"
                     :contents="[
                         '純保険料の範囲内 → 付加保険料の範囲内', //p40
                         '正しい',
@@ -181,6 +194,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険業における個人情報保護のための取扱指針"
+                    :relatedProblems="['2022a28', '2022b28', '2022c28']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -192,6 +206,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約確認の時期と方法"
+                    :relatedProblems="['2022c29']"
                     :contents="[
                         '一部 ↔︎ 大部分', //p114
                         '正しい',
@@ -203,6 +218,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択"
+                    :relatedProblems="['2022c30']"
                     :contents="[
                         '正しい',
                         '職業上の危険選択は行わない → 職業上の危険選択行っている', //p171
@@ -215,27 +231,27 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '生命表', content: '経験生命表 → 国民生命表<br>簡易生命表 → 経験生命表' }, //31 p5
-                        { questionTitle: '死差益の計算方法', content: '純収支計算方式で表せば → 統計的方式で表せば' }, //32 p27
-                        { questionTitle: '保険体の範囲の拡大', content: '正しい' }, //33
-                        { questionTitle: '社医と嘱託医', content: '正しい' }, //34
-                        { questionTitle: '診査実施上の制限', content: '区分を設けている生命保険会社は少ない → 区分を設けている生命保険会社が多い' }, //35　p74
-                        { questionTitle: '公序良俗に反する行為', content: '重大事由による免責権 → 重大事由による解除権' }, //36 p79-80
-                        { questionTitle: '保険診査', content: '正しい' }, //37
-                        { questionTitle: '個人情報の取得', content: '正しい' }, //38
-                        { questionTitle: '最高保険金額', content: '正しい' }, //39
-                        { questionTitle: '死因別死亡率', content: '正しい' }, //40
+                        { questionTitle: '生命表', relatedProblems: ['2022c31'], content: '経験生命表 → 国民生命表<br>簡易生命表 → 経験生命表' }, //31 p5
+                        { questionTitle: '死差益の計算方法', relatedProblems: ['2022a32', '2022b32', '2022c32'], content: '純収支計算方式で表せば → 統計的方式で表せば' }, //32 p27
+                        { questionTitle: '保険体の範囲の拡大', relatedProblems: ['2022a33', '2022b33', '2022c33'], content: '正しい' }, //33
+                        { questionTitle: '社医と嘱託医', relatedProblems: ['2022a36', '2022c34'], content: '正しい' }, //34
+                        { questionTitle: '診査実施上の制限', relatedProblems: ['2022c35'], content: '区分を設けている生命保険会社は少ない → 区分を設けている生命保険会社が多い' }, //35　p74
+                        { questionTitle: '公序良俗に反する行為', relatedProblems: ['2022c36'], content: '重大事由による免責権 → 重大事由による解除権' }, //36 p79-80
+                        { questionTitle: '保険診査', relatedProblems: ['2022c37'], content: '正しい' }, //37
+                        { questionTitle: '個人情報の取得', relatedProblems: ['2022c38'], content: '正しい' }, //38
+                        { questionTitle: '最高保険金額', relatedProblems: ['2022c39'], content: '正しい' }, //39
+                        { questionTitle: '死因別死亡率', relatedProblems: ['2022a40', '2022b40', '2022c40'], content: '正しい' }, //40
                         // 問41〜50
-                        { questionTitle: '被保険者の危険', label: 'ウ', content: '環境的危険' }, //41
-                        { questionTitle: '解除権の消滅', label: 'ア', content: '1ヶ月' }, //42
-                        { questionTitle: '職業危険', label: 'ア', content: '入院率' }, //43
-                        { questionTitle: '生命保険面接士', label: 'エ', content: '診査報状' }, //44
-                        { questionTitle: '体格', label: 'ウ', content: '22' }, //45
-                        { questionTitle: '医学的査定', label: 'エ', content: '特別保険料領収法' }, //46
-                        { questionTitle: '保険金確認・給付金確認', label: 'イ', content: '発生後' }, //47
-                        { questionTitle: '期待死亡率との比較', label: 'オ', content: '' }, //48
-                        { questionTitle: '災害関係特約', label: 'オ', content: '' }, //49
-                        { questionTitle: '団体保険の個別選択', label: 'エ', content: '正常勤務' }, //50
+                        { questionTitle: '被保険者の危険', relatedProblems: ['2022c41'], label: 'ウ', content: '環境的危険' }, //41
+                        { questionTitle: '解除権の消滅', relatedProblems: ['2022c42'], label: 'ア', content: '1ヶ月' }, //42
+                        { questionTitle: '職業危険', relatedProblems: ['2022a34', '2022b23', '2022c43'], label: 'ア', content: '入院率' }, //43
+                        { questionTitle: '生命保険面接士', relatedProblems: ['2022c44'], label: 'エ', content: '診査報状' }, //44
+                        { questionTitle: '体格', relatedProblems: ['2022a45', '2022b45', '2022c45'], label: 'ウ', content: '22' }, //45
+                        { questionTitle: '医学的査定', relatedProblems: ['2022c46'], label: 'エ', content: '特別保険料領収法' }, //46
+                        { questionTitle: '保険金確認・給付金確認', relatedProblems: ['2022a24', '2022c47'], label: 'イ', content: '発生後' }, //47
+                        { questionTitle: '期待死亡率との比較', relatedProblems: ['2022c48'], label: 'オ', content: '' }, //48
+                        { questionTitle: '災害関係特約', relatedProblems: ['2022a49', '2022b49', '2022c49'], label: 'オ', content: '' }, //49
+                        { questionTitle: '団体保険の個別選択', relatedProblems: ['2022a50', '2022b50', '2022c50'], label: 'エ', content: '正常勤務' }, //50
                     ]"
                 />
             </div>

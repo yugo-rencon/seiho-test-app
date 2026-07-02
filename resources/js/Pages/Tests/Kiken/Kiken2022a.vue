@@ -26,6 +26,7 @@ const subject = "2022年度 フォームA";
                     questionTitle="死亡率と死亡指数-①"
                     :relatedProblems="['2022a1']"
                     :contents="[
+                        // rev: 2026-07-02 確認済み
                         '選択効果',
                         '実際死亡率',
                         '簡易生命表',
@@ -47,6 +48,7 @@ const subject = "2022年度 フォームA";
                     questionTitle="死亡率と死亡指数-②"
                     :relatedProblems="['2022a6']"
                     :contents="[
+                        // rev: 2026-07-02 確認済み
                         '経営効率',
                         '災害死亡',
                         '困難',

@@ -26,6 +26,7 @@ const subject = "2020年度 フォームB";
                     questionTitle="被保険者集団の具備すべき条件-①"
                     :relatedProblems="['2020b1']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '保護',
                         '公平性',
                         '減殺',
@@ -47,6 +48,7 @@ const subject = "2020年度 フォームB";
                     questionTitle="被保険者集団の具備すべき条件-②"
                     :relatedProblems="['2020b6']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '継続',
                         '低い',
                         '大数の法則',
@@ -68,6 +70,7 @@ const subject = "2020年度 フォームB";
                     questionTitle="入院・手術保障における「選択」-①"
                     :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '心理',
                         '抵抗力',
                         '触診',
@@ -89,6 +92,7 @@ const subject = "2020年度 フォームB";
                     questionTitle="入院・手術保障における「選択」-②"
                     :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '生活習慣病',
                         '限局',
                         '高い',

@@ -70,6 +70,7 @@ const subject = "2025年度 フォームC";
                     questionTitle="報状扱契約における選択手段-①"
                     :relatedProblems="['2025c11']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '医師による診査',
                         '職員',
                         '社医',
@@ -91,6 +92,7 @@ const subject = "2025年度 フォームC";
                     questionTitle="報状扱契約における選択手段-②"
                     :relatedProblems="['2025c16']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '定期健康診断',
                         '衛生管理者',
                         '20名',

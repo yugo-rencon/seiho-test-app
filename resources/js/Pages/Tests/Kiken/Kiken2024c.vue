@@ -26,6 +26,7 @@ const subject = "2024年度 フォームC";
                     questionTitle="告知義務違反と契約解除-①"
                     :relatedProblems="['2024a1', '2024b1', '2024c1']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '故意',
                         '民法',
                         '必要はない',
@@ -47,6 +48,7 @@ const subject = "2024年度 フォームC";
                     questionTitle="告知義務違反と契約解除-②"
                     :relatedProblems="['2024a6', '2024b6', '2024c6']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         'しない',
                         '因果関係',
                         '5年',
@@ -68,6 +70,7 @@ const subject = "2024年度 フォームC";
                     questionTitle="現病歴・既往歴-①"
                     :relatedProblems="['2024c11']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '収縮期',
                         '拡張期',
                         '本態性高血圧',
@@ -89,6 +92,7 @@ const subject = "2024年度 フォームC";
                     questionTitle="現病歴・既往歴-②"
                     :relatedProblems="['2024c16']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '赤血球',
                         '肝硬変',
                         '肝臓がん',

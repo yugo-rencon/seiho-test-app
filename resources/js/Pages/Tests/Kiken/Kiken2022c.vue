@@ -26,6 +26,7 @@ const subject = "2022年度 フォームC";
                     questionTitle="現病歴・既往歴-①"
                     :relatedProblems="['2022c1']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '収縮期',
                         '拡張期',
                         '本態性高血圧',
@@ -47,6 +48,7 @@ const subject = "2022年度 フォームC";
                     questionTitle="現病歴・既往歴-②"
                     :relatedProblems="['2022c6']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '赤血球',
                         '肝硬変',
                         '肝臓がん',

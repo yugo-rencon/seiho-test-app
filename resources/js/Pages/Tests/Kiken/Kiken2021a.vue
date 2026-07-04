@@ -26,6 +26,7 @@ const subject = "2021年度 フォームA";
                     questionTitle="死差益と危険選択-①"
                     :relatedProblems="['2021a1']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '経営効率',
                         '剰余金',
                         '配当',
@@ -47,6 +48,7 @@ const subject = "2021年度 フォームA";
                     questionTitle="死差益と危険選択-②"
                     :relatedProblems="['2021a6']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '低い',
                         '統計的方式',
                         '逓減',
@@ -68,10 +70,11 @@ const subject = "2021年度 フォームA";
                     questionTitle="団体保険の危険選択-①"
                     :relatedProblems="['2021a11', '2021b11', '2021c11']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '被用者団体',
                         '団体性',
                         '相似する',
-                        '保険加入者のみ',
+                        '保険加入のみ',
                         '加入率', //問11〜15
                     ]"
                     :labels="[
@@ -89,7 +92,8 @@ const subject = "2021年度 フォームA";
                     questionTitle="団体保険の危険選択-②"
                     :relatedProblems="['2021a16', '2021b16', '2021c16']"
                     :contents="[
-                        '総合福祉団体的保険',
+                        // rev: 2026-07-04 確認済み
+                        '総合福祉団体定期保険',
                         '権利',
                         '保険契約者',
                         '一括告知',

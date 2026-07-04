@@ -70,6 +70,7 @@ const subject = "2025年度 フォームB";
                     questionTitle="団体保険の危険選択-①"
                     :relatedProblems="['2025b11']"
                     :contents="[
+                        // rev: 2026-07-03 確認済み
                         '被用者団体',
                         '団体性',
                         '相似する',
@@ -91,6 +92,7 @@ const subject = "2025年度 フォームB";
                     questionTitle="団体保険の危険選択-②"
                     :relatedProblems="['2025b16']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '総合福祉団体的保険',
                         '権利',
                         '保険契約者による',

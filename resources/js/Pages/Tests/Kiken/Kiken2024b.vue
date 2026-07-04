@@ -26,6 +26,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="告知義務違反と契約解除-①"
                     :relatedProblems="['2024a1', '2024b1', '2024c1']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '故意',
                         '民法',
                         '必要はない',
@@ -47,6 +48,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="告知義務違反と契約解除-②"
                     :relatedProblems="['2024a6', '2024b6', '2024c6']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         'しない',
                         '因果関係',
                         '5年',
@@ -68,6 +70,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="入院・手術保障における「選択」-①"
                     :relatedProblems="['2024b11']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '心理',
                         '抵抗力',
                         '触診',
@@ -89,6 +92,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="入院・手術保障における「選択」-②"
                     :relatedProblems="['2024b16']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '生活習慣病',
                         '限局',
                         '高い',

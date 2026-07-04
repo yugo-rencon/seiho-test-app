@@ -26,6 +26,7 @@ const subject = "2023年度 フォームA";
                     questionTitle="被保険者集団の具備すべき条件-①"
                     :relatedProblems="['2023a1']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '保護',
                         '公平性',
                         '減殺',
@@ -47,6 +48,7 @@ const subject = "2023年度 フォームA";
                     questionTitle="被保険者集団の具備すべき条件-②"
                     :relatedProblems="['2023a6']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '継続',
                         '低い',
                         '大数の法則',
@@ -68,6 +70,7 @@ const subject = "2023年度 フォームA";
                     questionTitle="団体保険の危険選択-①"
                     :relatedProblems="['2023a11', '2023b11', '2023c11']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '被用者団体',
                         '団体性',
                         '相似する',
@@ -89,6 +92,7 @@ const subject = "2023年度 フォームA";
                     questionTitle="団体保険の危険選択-②"
                     :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '総合福祉団体定期保険',
                         '団体の弔慰金・死亡退職金規程',
                         '保険契約者',

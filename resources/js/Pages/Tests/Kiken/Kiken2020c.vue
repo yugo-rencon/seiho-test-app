@@ -26,6 +26,7 @@ const subject = "2020年度 フォームC";
                     questionTitle="報状扱契約における選択手段-①"
                     :relatedProblems="['2020c1']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '医師による診査',
                         '簡便性',
                         '職員',
@@ -47,6 +48,7 @@ const subject = "2020年度 フォームC";
                     questionTitle="報状扱契約における選択手段-②"
                     :relatedProblems="['2020c6']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '定期健康診断',
                         '衛生管理者',
                         '20名',
@@ -68,6 +70,7 @@ const subject = "2020年度 フォームC";
                     questionTitle="入院・手術保障における「選択」-①"
                     :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '心理',
                         '抵抗力',
                         '触診',
@@ -89,6 +92,7 @@ const subject = "2020年度 フォームC";
                     questionTitle="入院・手術保障における「選択」-②"
                     :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '生活習慣病',
                         '限局',
                         '高い',

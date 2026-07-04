@@ -191,6 +191,7 @@ const subject = "2020年度 フォームA";
                     questionTitle="道徳的危険排除のためのポイント"
                     :relatedProblems="['2020a27']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         '正しい',
                         '過小 → 過大', //p79

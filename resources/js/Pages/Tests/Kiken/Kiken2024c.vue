@@ -205,6 +205,7 @@ const subject = "2024年度 フォームC";
                     questionTitle="道徳的危険排除のためのポイント"
                     :relatedProblems="['2024b45', '2024c28']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         '正しい',
                         '過小 → 過大', //p79
@@ -241,12 +242,12 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '死亡率',
                             relatedProblems: ['2024c31'],
-                            content: '比較することができる → 比較することはできない',
-                        }, //31 p7
+                            content: '死亡率だけで死亡の状況を[[比較することはできない]]。', //p7
+                        }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険会社における経験死亡率',

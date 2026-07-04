@@ -242,10 +242,11 @@ const subject = "2021年度 フォームB";
                     :items="[
                         // 問31〜40
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '死亡率',
                             relatedProblems: ['2021b31'],
-                            content: '比較することができる → 比較することはできない',
-                        }, //31 p7
+                            content: '死亡率だけで死亡の状況を[[比較することはできない]]。', //p7
+                        }, //31
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '環境選択',

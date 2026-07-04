@@ -224,6 +224,7 @@ const subject = "2022年度 フォームB";
                     questionTitle="復活"
                     :relatedProblems="['2022b30']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '待ち期間 → 猶予期間', //p172
                         '正しい',
                         '正しい',

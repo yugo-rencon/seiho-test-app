@@ -254,10 +254,11 @@ const subject = "2023年度 フォームB";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '体格',
                             relatedProblems: ['2023a33', '2023b33', '2023c33'],
-                            content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗',
-                        }, //33  //p63
+                            content: 'BMIは[[体重（kg） ÷ 〔身長（m）〕<sup>2</sup>]]で表される指数で標準値を22前後としている。', //p63
+                        }, //33
                         {
                             questionTitle: '保険種類・保険期間の制限',
                             relatedProblems: ['2023b34'],

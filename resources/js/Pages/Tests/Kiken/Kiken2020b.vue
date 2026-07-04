@@ -252,8 +252,8 @@ const subject = "2020年度 フォームB";
                         {
                             questionTitle: '体格',
                             relatedProblems: ['2020a33', '2020b33', '2020c33'],
-                            content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗',
-                        }, //33 p63
+                            content: 'BMIは[[体重（kg） ÷ 〔身長（m）〕<sup>2</sup>]]で表される指数で標準値を22前後としている。', //p63
+                        }, //33
                         {
                             questionTitle: '血圧',
                             relatedProblems: ['2020b34'],

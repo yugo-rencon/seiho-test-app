@@ -192,9 +192,10 @@ const subject = "2021年度 フォームC";
                     questionTitle="体格"
                     :relatedProblems="['2021c27']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         '正しい',
-                        '体重 × 身長の二乗 → 体重 ÷ 身長の二乗', //p63
+                        'BMIは[[体重（kg） ÷ 〔身長（m）〕<sup>2</sup>]]で表される指数で標準値を22前後としている。', //p63
                     ]"
                 />
                 <QuestionTemp1

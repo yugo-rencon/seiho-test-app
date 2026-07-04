@@ -187,6 +187,7 @@ const subject = "2023年度 フォームC";
                     questionTitle="現病歴・既往歴"
                     :relatedProblems="['2023a23', '2023c27']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         'ネフローゼ → インシュリン', //p66
                         '正しい',

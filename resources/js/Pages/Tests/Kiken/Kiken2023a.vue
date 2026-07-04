@@ -223,9 +223,10 @@ const subject = "2023年度 フォームA";
                     questionTitle="死亡率比較"
                     :relatedProblems="['2023a30']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '正しい',
                         '正しい',
-                        '保険体の範囲が広くなる → 狭くなる', //p186
+                        '保険体の範囲が広くなる → 保険体の範囲が狭くなる', //p186
                     ]"
                 />
                 <QuestionTemp2

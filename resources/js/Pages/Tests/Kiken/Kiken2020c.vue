@@ -228,6 +228,7 @@ const subject = "2020年度 フォームC";
                     questionTitle="再保険の契約形態"
                     :relatedProblems="['2020c30']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         '正しい',
                         '任意再保険 → 自動再保険', //p178

@@ -152,6 +152,7 @@ const subject = "2022年度 フォームC";
                     questionTitle="査定・決定"
                     :relatedProblems="['2022c24']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '金融庁 → 生命保険協会', //p86
                         '査定 ↔︎ 決定', //p86-87
                         '正しい',

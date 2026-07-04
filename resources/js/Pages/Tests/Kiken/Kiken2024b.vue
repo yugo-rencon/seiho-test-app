@@ -153,6 +153,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="査定・決定"
                     :relatedProblems="['2024b24']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '金融庁 → 生命保険協会', //p86
                         '査定 ↔︎ 決定', //p86-87
                         '正しい',
@@ -230,6 +231,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="再保険の契約形態"
                     :relatedProblems="['2024b30']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '代申会社 → 出再会社', //p177
                         '正しい',
                         '正しい',

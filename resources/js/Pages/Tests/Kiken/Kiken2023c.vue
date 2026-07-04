@@ -293,7 +293,6 @@ const subject = "2023年度 フォームC";
                             relatedProblems: ['2023c40'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',

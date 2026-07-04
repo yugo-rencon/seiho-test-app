@@ -202,6 +202,7 @@ const subject = "2023年度 フォームB";
                     questionTitle="逆選択の傾向と態様"
                     :relatedProblems="['2023a24', '2023b28']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         '正しい',
                         '保険業法 → 保険法', //p80

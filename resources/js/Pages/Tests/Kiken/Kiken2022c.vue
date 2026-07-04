@@ -246,11 +246,13 @@ const subject = "2022年度 フォームC";
                             content: '純収支計算方式で表せば → 統計的方式で表せば',
                         }, //32 p27
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
                             relatedProblems: ['2022a33', '2022b33', '2022c33'],
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '社医と嘱託医',
                             relatedProblems: ['2022a36', '2022c34'],
                             content: '正しい',
@@ -266,21 +268,25 @@ const subject = "2022年度 フォームC";
                             content: '重大事由による免責権 → 重大事由による解除権',
                         }, //36 p79-80
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険診査',
                             relatedProblems: ['2022c37'],
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '個人情報の取得',
                             relatedProblems: ['2022c38'],
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '最高保険金額',
                             relatedProblems: ['2022c39'],
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
                             relatedProblems: ['2022a40', '2022b40', '2022c40'],
                             content: '正しい',

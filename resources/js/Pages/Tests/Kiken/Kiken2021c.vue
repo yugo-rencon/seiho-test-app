@@ -238,11 +238,13 @@ const subject = "2021年度 フォームC";
                     :items="[
                         // 問31〜40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '件数死亡率、金額死亡率',
                             relatedProblems: ['2021c31'],
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '環境選択',
                             relatedProblems: ['2021a32', '2021b32', '2021c32'],
                             content: '正しい',
@@ -264,11 +266,13 @@ const subject = "2021年度 フォームC";
                             content: '最小血圧 ↔︎ 最大血圧',
                         }, //35 p64
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険金額の制限',
                             relatedProblems: ['2021c36'],
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の保険金額の決定による選択',
                             relatedProblems: ['2021c37'],
                             content: '正しい',
@@ -284,6 +288,7 @@ const subject = "2021年度 フォームC";
                             content: '1保険金受取人 → 1被保険者',
                         }, //39 p182
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死亡状況の分析',
                             relatedProblems: ['2021a40', '2021b40', '2021c40'],
                             content: '正しい',

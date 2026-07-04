@@ -237,11 +237,13 @@ const subject = "2023年度 フォームC";
                     :items="[
                         // 問31〜40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務',
                             relatedProblems: ['2023c31'],
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
                             relatedProblems: ['2023a32', '2023b32', '2023c32'],
                             content: '正しい',
@@ -252,6 +254,7 @@ const subject = "2023年度 フォームC";
                             content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗',
                         }, //33  //p63
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険金額の制限',
                             relatedProblems: ['2023c34'],
                             content: '正しい',
@@ -262,11 +265,13 @@ const subject = "2023年度 フォームC";
                             content: 'リスク細分化保険では広くなる → 狭くなる',
                         }, //35 p107
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '個人情報の定義',
                             relatedProblems: ['2023c36'],
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '入院・手術保障における料率',
                             relatedProblems: ['2023a49', '2023c37'],
                             content: '正しい',
@@ -283,6 +288,7 @@ const subject = "2023年度 フォームC";
                             content: '群団再保険 → 個別再保険',
                         }, //39 p180
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
                             relatedProblems: ['2023c40'],
                             content: '正しい',

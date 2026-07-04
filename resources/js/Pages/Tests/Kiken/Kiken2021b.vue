@@ -242,6 +242,7 @@ const subject = "2021年度 フォームB";
                             content: '比較することができる → 比較することはできない',
                         }, //31 p7
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '環境選択',
                             relatedProblems: ['2021a32', '2021b32', '2021c32'],
                             content: '正しい',
@@ -252,6 +253,7 @@ const subject = "2021年度 フォームB";
                             content: '質問応答義務から自発的応答義務 → 自発的応答義務から質問応答義務',
                         }, //33 p13
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '販売政策と選択政策',
                             relatedProblems: ['2021b34'],
                             content: '正しい',
@@ -262,6 +264,7 @@ const subject = "2021年度 フォームB";
                             content: '低血圧 ↔︎ 高血圧',
                         }, //35 p64
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '診査実施上の制限',
                             relatedProblems: ['2021b36'],
                             content: '正しい',
@@ -277,11 +280,13 @@ const subject = "2021年度 フォームB";
                             content: '生存するまたは死亡した個人に関する情報 → 生存する個人に関する情報（死亡は対象外）',
                         }, //38 p125
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体定期保険における更新時の選択',
                             relatedProblems: ['2021b39'],
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死亡状況の分析',
                             relatedProblems: ['2021a40', '2021b40', '2021c40'],
                             content: '正しい',

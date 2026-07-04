@@ -258,11 +258,13 @@ const subject = "2020年度 フォームA";
                             content: '区分を設けている生命保険会社は少ない → 区分を設けている生命保険会社が多い',
                         }, //34 p74
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択で行う事柄',
                             relatedProblems: ['2020a35'],
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
                             relatedProblems: ['2020a36', '2020c48'],
                             content: '正しい',
@@ -273,16 +275,19 @@ const subject = "2020年度 フォームA";
                             content: '厚生労働省ならびに農林水産省 → 全国共済農業協同組合連合会<br>生命共済 → 全国共済農業協同組合連合会',
                         }, //37
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '傷害特約',
                             relatedProblems: ['2020a38'],
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '再保険の意義',
                             relatedProblems: ['2020a39'],
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '金額別死亡率',
                             relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '正しい',

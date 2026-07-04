@@ -248,16 +248,19 @@ const subject = "2025年度 フォームB";
                             content: '期待死亡率についての目標値（実際死亡率） → 実際死亡率についての目標値（期待死亡率）', //p35
                         }, //32
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '体格',
                             relatedProblems: ['2025b33', '2025c26'],
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険診査',
                             relatedProblems: ['2025b34'],
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認制度の運用',
                             relatedProblems: ['2025b35'],
                             content: '正しい',
@@ -278,11 +281,13 @@ const subject = "2025年度 フォームB";
                             content: '群団再保険 → 個別再保険', //p180
                         }, //38
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '金額別死亡率',
                             relatedProblems: ['2025b39'],
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
                             relatedProblems: ['2025a40', '2025b40', '2025c40'],
                             content: '正しい',

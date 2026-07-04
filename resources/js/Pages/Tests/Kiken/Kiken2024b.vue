@@ -237,6 +237,7 @@ const subject = "2024年度 フォームB";
                     :items="[
                         // 問31〜40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '危険選択',
                             relatedProblems: ['2024b31'],
                             content: '正しい',
@@ -252,6 +253,7 @@ const subject = "2024年度 フォームB";
                             content: '純収支計算方式で表せば → 統計的方式で表せば',
                         }, //33
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
                             relatedProblems: ['2024b34'],
                             content: '正しい',
@@ -262,6 +264,7 @@ const subject = "2024年度 フォームB";
                             content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗',
                         }, //35 //p63
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '重大事由による解除権',
                             relatedProblems: ['2024b36'],
                             content: '正しい',
@@ -273,16 +276,19 @@ const subject = "2024年度 フォームB";
                             content: '保険金確認・給付金確認は、[[確認の対象は保険事故発生前の契約確認と若干異なる]]。一方、[[告知義務違反やモラルリスクを排除し、生命保険の公平性の原則を達成しようとする目的は契約確認と変わらない]]。', //p120
                         }, //37
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '傷害特約',
                             relatedProblems: ['2024b38'],
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '最高保険金額',
                             relatedProblems: ['2024a39', '2024b39', '2024c39'],
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '実際死亡状況の分析',
                             relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'],
                             content: '正しい',

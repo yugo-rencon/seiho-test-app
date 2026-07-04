@@ -247,17 +247,19 @@ const subject = "2024年度 フォームC";
                             content: '件数死亡率 ↔︎ 金額死亡率',
                         }, //32 p9
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '販売政策と選択政策',
                             relatedProblems: ['2024c33'],
                             content: '正しい',
                         }, //33
                         {
-                            // rev: 2026-07-02 確認済み
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '職業危険',
                             relatedProblems: ['2024a34', '2024b44', '2024c34'],
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '機微（センシティブ）情報',
                             relatedProblems: ['2024a37', '2024c35'],
                             content: '正しい',
@@ -268,21 +270,25 @@ const subject = "2024年度 フォームC";
                             content: '大部分の契約 ↔︎ 一部の契約', //p113-114
                         }, //36 p114
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '給付金確認',
                             relatedProblems: ['2024c37'],
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体定期保険における更新時の選択',
                             relatedProblems: ['2024c38'],
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '最高保険金額',
                             relatedProblems: ['2024a39', '2024b39', '2024c39'],
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '実際死亡状況の分析',
                             relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'],
                             content: '正しい',

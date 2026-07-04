@@ -252,12 +252,13 @@ const subject = "2025年度 フォームC";
                             content: '第1段階ではなく第2段階の説明', //p37
                         }, //33
                         {
-                            // rev: 2026-07-02 確認済み
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '職業危険',
                             relatedProblems: ['2025a23', '2025b45', '2025c34'],
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '診査実施上の制限',
                             relatedProblems: ['2025c35'],
                             content: '正しい',
@@ -273,6 +274,7 @@ const subject = "2025年度 フォームC";
                             content: '50%の超過死亡 → 50%の改善', //p112
                         }, //37
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '入院・手術保障における選択',
                             relatedProblems: ['2025c38'],
                             content: '正しい',
@@ -283,6 +285,7 @@ const subject = "2025年度 フォームC";
                             content: '年齢・職業・既往歴に関わらず一定 → 年齢・職業・既往歴などによって異なる', //p181
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
                             relatedProblems: ['2025a40', '2025b40', '2025c40'],
                             content: '正しい',

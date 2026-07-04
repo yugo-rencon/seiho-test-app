@@ -237,6 +237,7 @@ const subject = "2022年度 フォームA";
                     :items="[
                         // 問31〜40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '危険の公平性',
                             relatedProblems: ['2022a31'],
                             content: '正しい',
@@ -247,6 +248,7 @@ const subject = "2022年度 フォームA";
                             content: '純収支計算方式で表せば → 統計的方式で表せば',
                         }, //32 p27
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
                             relatedProblems: ['2022a33', '2022b33', '2022c33'],
                             content: '正しい',
@@ -268,6 +270,7 @@ const subject = "2022年度 フォームA";
                             content: '社医と嘱託医で違いは設けられていない → 違いを設けている',
                         }, //36 p99
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認',
                             relatedProblems: ['2022a37'],
                             content: '正しい',
@@ -278,11 +281,13 @@ const subject = "2022年度 フォームA";
                             content: '組織的安全管理措置 → 人的安全管理措置',
                         }, //38 p137
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体定期保険における更新時の選択',
                             relatedProblems: ['2022a39'],
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
                             relatedProblems: ['2022a40', '2022b40', '2022c40'],
                             content: '正しい',

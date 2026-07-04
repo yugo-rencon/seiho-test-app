@@ -235,11 +235,13 @@ const subject = "2020年度 フォームB";
                     :items="[
                         // 問31〜40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: 'ずさんな選択',
                             relatedProblems: ['2020b31'],
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
                             relatedProblems: ['2020b32'],
                             content: '正しい',
@@ -255,11 +257,13 @@ const subject = "2020年度 フォームB";
                             content: '高血圧 → 最大血圧<br>低血圧 → 最小血圧',
                         }, //34 //p64
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '重大事由による解除権',
                             relatedProblems: ['2020b35'],
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択の重要性',
                             relatedProblems: ['2020b36'],
                             content: '正しい',
@@ -270,6 +274,7 @@ const subject = "2020年度 フォームB";
                             content: '厚生労働省ならびに農林水産省 → 全国共済農業協同組合連合会<br>生命共済 → 全国共済農業協同組合連合会',
                         }, //37
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '査定標準',
                             relatedProblems: ['2020b38'],
                             content: '正しい',
@@ -281,6 +286,7 @@ const subject = "2020年度 フォームB";
                             content: '保険金確認・給付金確認は、[[確認の対象は保険事故発生前の契約確認と若干異なる]]。一方、[[告知義務違反やモラルリスクを排除し、生命保険の公平性の原則を達成しようとする目的は契約確認と変わらない]]。', //p120
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '金額別死亡率',
                             relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '正しい',

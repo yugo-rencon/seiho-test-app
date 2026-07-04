@@ -241,6 +241,7 @@ const subject = "2023年度 フォームA";
                             content: '経験生命表 → 国民生命表<br>簡易生命表 → 経験生命表',
                         }, //31 p5
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
                             relatedProblems: ['2023a32', '2023b32', '2023c32'],
                             content: '正しい',
@@ -251,11 +252,13 @@ const subject = "2023年度 フォームA";
                             content: '体重 × 身長の二乗 → 体重 ÷ 身長の二乗',
                         }, //33  //p63
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
                             relatedProblems: ['2023a34', '2023c47'],
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '機微（センシティブ）情報',
                             relatedProblems: ['2023a35'],
                             content: '正しい',
@@ -266,6 +269,7 @@ const subject = "2023年度 フォームA";
                             content: '金融庁 → 生命保険協会',
                         }, //36 p139
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '傷害特約',
                             relatedProblems: ['2023a37'],
                             content: '正しい',
@@ -282,6 +286,7 @@ const subject = "2023年度 フォームA";
                             content: '保険金受取人 → 被保険者',
                         }, //39 p181
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死亡状況の分析',
                             relatedProblems: ['2023a40'],
                             content: '正しい',

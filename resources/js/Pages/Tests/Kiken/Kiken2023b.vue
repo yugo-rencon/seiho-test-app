@@ -238,11 +238,13 @@ const subject = "2023年度 フォームB";
                     :items="[
                         // 問31〜40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '危険の公平性',
                             relatedProblems: ['2023b31'],
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
                             relatedProblems: ['2023a32', '2023b32', '2023c32'],
                             content: '正しい',
@@ -258,7 +260,7 @@ const subject = "2023年度 フォームB";
                             content: '短期 ↔︎ 長期',
                         }, //34 p73
                         {
-                            // rev: 2026-07-02 確認済み
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険金確認・給付金確認',
                             relatedProblems: ['2023b35'],
                             content: '正しい',
@@ -269,6 +271,7 @@ const subject = "2023年度 フォームB";
                             content: '利用目的は明示しなければならない → 必ずしも利用目的の明示は要しない',
                         }, //36 p135
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '特定部位不担保法',
                             relatedProblems: ['2023b37'],
                             content: '正しい',
@@ -280,11 +283,13 @@ const subject = "2023年度 フォームB";
                             content: '失効後の期間の長いものほど逆選択混入の危険が[[多く]]、また診査による場合に比べ告知のみによる場合のほうが経験死亡率が[[高い]]とされている。', //p173-174
                         }, //38
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '再保険の意義',
                             relatedProblems: ['2023b39'],
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '金額別死亡率',
                             relatedProblems: ['2023b40'],
                             content: '正しい',

@@ -237,11 +237,13 @@ const subject = "2020年度 フォームC";
                     :items="[
                         // 問31〜40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '危険選択',
                             relatedProblems: ['2020c31'],
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高血圧',
                             relatedProblems: ['2020c32'],
                             content: '正しい',
@@ -262,6 +264,7 @@ const subject = "2020年度 フォームC";
                             content: '50％の超過死亡 → 50％改善',
                         }, //35 p111-112
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認制度の運用',
                             relatedProblems: ['2020c36'],
                             content: '正しい',
@@ -272,6 +275,7 @@ const subject = "2020年度 フォームC";
                             content: '厚生労働省ならびに農林水産省 → 全国共済農業協同組合連合会<br>生命共済 → 全国共済農業協同組合連合会',
                         }, //37
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '入院保障における料率',
                             relatedProblems: ['2020c38'],
                             content: '正しい',
@@ -282,6 +286,7 @@ const subject = "2020年度 フォームC";
                             content: '超過限度額 → 保有限度額',
                         }, //39 p181-182
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '金額別死亡率',
                             relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '正しい',

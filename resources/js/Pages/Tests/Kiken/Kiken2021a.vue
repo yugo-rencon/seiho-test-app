@@ -243,21 +243,25 @@ const subject = "2021年度 フォームA";
                             content: '経済的危険 → 実体的危険',
                         }, //31 p4
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '環境選択',
                             relatedProblems: ['2021a32', '2021b32', '2021c32'],
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '胃・十二指腸潰瘍',
                             relatedProblems: ['2021a33'],
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '道徳的危険排除のためのポイント',
                             relatedProblems: ['2021a34'],
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '健康管理証明書扱（団体）',
                             relatedProblems: ['2021a35'],
                             content: '正しい',
@@ -268,6 +272,7 @@ const subject = "2021年度 フォームA";
                             content: '生活習慣や嗜好といった因子については示されていない → 示されている',
                         }, //36 p111
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険金確認',
                             relatedProblems: ['2021a37'],
                             content: '正しい',
@@ -284,6 +289,7 @@ const subject = "2021年度 フォームA";
                             content: '失効後の期間の長いものほど逆選択混入の危険が[[多く]]、また診査による場合に比べ告知のみによる場合のほうが経験死亡率が[[高い]]とされている。', //p173-174
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死亡状況の分析',
                             relatedProblems: ['2021a40', '2021b40', '2021c40'],
                             content: '正しい',

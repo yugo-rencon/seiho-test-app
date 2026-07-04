@@ -237,6 +237,7 @@ const subject = "2022年度 フォームB";
                     :items="[
                         // 問31〜40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務',
                             relatedProblems: ['2022b31'],
                             content: '正しい',
@@ -247,6 +248,7 @@ const subject = "2022年度 フォームB";
                             content: '純収支計算方式で表せば → 統計的方式で表せば',
                         }, //32 p27
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
                             relatedProblems: ['2022a33', '2022b33', '2022c33'],
                             content: '正しい',
@@ -267,11 +269,13 @@ const subject = "2022年度 フォームB";
                             content: '短期 ↔︎ 長期',
                         }, //36 p73
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険金確認',
                             relatedProblems: ['2022b37'],
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '機微（センシティブ）情報',
                             relatedProblems: ['2022b38'],
                             content: '正しい',
@@ -282,6 +286,7 @@ const subject = "2022年度 フォームB";
                             content: '保険加入のみを目的とした団体を設立すること → 保険加入のみを目的として設立された団体でないこと',
                         }, //39 p169
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
                             relatedProblems: ['2022a40', '2022b40', '2022c40'],
                             content: '正しい',

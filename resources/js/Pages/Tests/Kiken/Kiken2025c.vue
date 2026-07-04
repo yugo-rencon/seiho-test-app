@@ -279,6 +279,7 @@ const subject = "2025年度 フォームC";
                             content: '査定 ↔︎ 決定', //p86-87
                         }, //36
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '数字査定法',
                             relatedProblems: ['2025c37'],
                             content: '50%の超過死亡 → 50%の改善', //p112

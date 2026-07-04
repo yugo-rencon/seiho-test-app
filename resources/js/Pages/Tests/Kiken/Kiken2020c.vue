@@ -261,10 +261,11 @@ const subject = "2020年度 フォームC";
                             content: '体重別・性別 → 年齢別',
                         }, //34 p72
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '数字査定法',
                             relatedProblems: ['2020c35'],
-                            content: '50％の超過死亡 → 50％改善',
-                        }, //35 p111-112
+                            content: '50%の超過死亡 → 50%の改善', //p112
+                        }, //35
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認制度の運用',

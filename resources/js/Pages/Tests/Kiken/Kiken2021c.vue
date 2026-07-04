@@ -217,6 +217,7 @@ const subject = "2021年度 フォームC";
                     questionTitle="数字査定法"
                     :relatedProblems="['2021c29']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         '標準体の125％ → 標準体の75％', //p111-112
                         '正しい',

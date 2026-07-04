@@ -285,16 +285,66 @@ const subject = "2025年度 フォームC";
                             relatedProblems: ['2025a40', '2025b40', '2025c40'],
                             content: '正しい',
                         }, //40
-                        { questionTitle: '告知義務', relatedProblems: ['2025c41'], label: 'エ', content: '質問応答義務' }, //41
-                        { questionTitle: '解除', relatedProblems: ['2025a42', '2025b42', '2025c42'], label: 'ウ', content: '解約返戻金' }, //42
-                        { questionTitle: '保険料の仕組みと危険選択', relatedProblems: ['2025a43', '2025b43', '2025c43'], label: 'オ', content: '' }, //43
-                        { questionTitle: '選択の有効期間', relatedProblems: ['2025c44'], label: 'オ', content: '' }, //44
-                        { questionTitle: '心疾患', relatedProblems: ['2025c45'], label: 'ア', content: '先天性' }, //45
-                        { questionTitle: '道徳的危険排除のためのポイント', relatedProblems: ['2025c46'], label: 'ウ', content: '被保険者利益' }, //46
-                        { questionTitle: '査定・決定の種類', relatedProblems: ['2025c47'], label: 'エ', content: '再診' }, //47
-                        { questionTitle: '第1次選択', relatedProblems: ['2025a47', '2025c48'], label: 'オ', content: '' }, //48
-                        { questionTitle: '個人データの安全管理措置', relatedProblems: ['2025a49', '2025b49', '2025c49'], label: 'イ', content: 'き損' }, //49
-                        { questionTitle: '高度障害状態', relatedProblems: ['2025c50'], label: 'ア', content: '第1級' }, //50
+                        {
+                            questionTitle: '告知義務',
+                            relatedProblems: ['2025c41'],
+                            label: 'エ',
+                            content: '質問応答義務',
+                        }, //41
+                        {
+                            questionTitle: '解除',
+                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
+                            label: 'ウ',
+                            content: '解約返戻金',
+                        }, //42
+                        {
+                            questionTitle: '保険料の仕組みと危険選択',
+                            relatedProblems: ['2025a43', '2025b43', '2025c43'],
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '選択の有効期間',
+                            relatedProblems: ['2025c44'],
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '心疾患',
+                            relatedProblems: ['2025c45'],
+                            label: 'ア',
+                            content: '先天性',
+                        }, //45
+                        {
+                            questionTitle: '道徳的危険排除のためのポイント',
+                            relatedProblems: ['2025c46'],
+                            label: 'ウ',
+                            content: '被保険者利益',
+                        }, //46
+                        {
+                            questionTitle: '査定・決定の種類',
+                            relatedProblems: ['2025c47'],
+                            label: 'エ',
+                            content: '再診',
+                        }, //47
+                        {
+                            questionTitle: '第1次選択',
+                            relatedProblems: ['2025a47', '2025c48'],
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '個人データの安全管理措置',
+                            relatedProblems: ['2025a49', '2025b49', '2025c49'],
+                            label: 'イ',
+                            content: 'き損',
+                        }, //49
+                        {
+                            questionTitle: '高度障害状態',
+                            relatedProblems: ['2025c50'],
+                            label: 'ア',
+                            content: '第1級',
+                        }, //50
                     ]"
                 />
             </div>

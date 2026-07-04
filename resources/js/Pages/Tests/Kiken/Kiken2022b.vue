@@ -234,27 +234,117 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '告知義務', relatedProblems: ['2022b31'], content: '正しい' }, //31
-                        { questionTitle: '死差益の計算方法', relatedProblems: ['2022a32', '2022b32', '2022c32'], content: '純収支計算方式で表せば → 統計的方式で表せば' }, //32 p27
-                        { questionTitle: '保険体の範囲の拡大', relatedProblems: ['2022a33', '2022b33', '2022c33'], content: '正しい' }, //33
-                        { questionTitle: '医学的選択', relatedProblems: ['2022b34'], content: '第1段階の内容 → 第2段階の内容' }, //34 //p37
-                        { questionTitle: '糖尿病', relatedProblems: ['2022b35'], content: 'ネフローゼ → インシュリン' }, //35 p66
-                        { questionTitle: '保険種類・保険期間の制限', relatedProblems: ['2022b36'], content: '短期 ↔︎ 長期' }, //36 p73
-                        { questionTitle: '保険金確認', relatedProblems: ['2022b37'], content: '正しい' }, //37
-                        { questionTitle: '機微（センシティブ）情報', relatedProblems: ['2022b38'], content: '正しい' }, //38
-                        { questionTitle: '団体の選択', relatedProblems: ['2022b39'], content: '保険加入のみを目的とした団体を設立すること → 保険加入のみを目的として設立された団体でないこと' }, //39 p169
-                        { questionTitle: '死因別死亡率', relatedProblems: ['2022a40', '2022b40', '2022c40'], content: '正しい' }, //40
+                        {
+                            questionTitle: '告知義務',
+                            relatedProblems: ['2022b31'],
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '死差益の計算方法',
+                            relatedProblems: ['2022a32', '2022b32', '2022c32'],
+                            content: '純収支計算方式で表せば → 統計的方式で表せば',
+                        }, //32 p27
+                        {
+                            questionTitle: '保険体の範囲の拡大',
+                            relatedProblems: ['2022a33', '2022b33', '2022c33'],
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '医学的選択',
+                            relatedProblems: ['2022b34'],
+                            content: '第1段階の内容 → 第2段階の内容',
+                        }, //34 //p37
+                        {
+                            questionTitle: '糖尿病',
+                            relatedProblems: ['2022b35'],
+                            content: 'ネフローゼ → インシュリン',
+                        }, //35 p66
+                        {
+                            questionTitle: '保険種類・保険期間の制限',
+                            relatedProblems: ['2022b36'],
+                            content: '短期 ↔︎ 長期',
+                        }, //36 p73
+                        {
+                            questionTitle: '保険金確認',
+                            relatedProblems: ['2022b37'],
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '機微（センシティブ）情報',
+                            relatedProblems: ['2022b38'],
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '団体の選択',
+                            relatedProblems: ['2022b39'],
+                            content: '保険加入のみを目的とした団体を設立すること → 保険加入のみを目的として設立された団体でないこと',
+                        }, //39 p169
+                        {
+                            questionTitle: '死因別死亡率',
+                            relatedProblems: ['2022a40', '2022b40', '2022c40'],
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
-                        { questionTitle: '死亡率', relatedProblems: ['2022a41', '2022b41'], label: 'ウ', content: '標準化死亡率' }, //41
-                        { questionTitle: '高血圧', relatedProblems: ['2022b42'], label: 'イ', content: '二次性高血圧' }, //42
-                        { questionTitle: '重大事由による解除', relatedProblems: ['2022b43'], label: 'ア', content: '信頼関係' }, //43
-                        { questionTitle: '第1次選択', relatedProblems: ['2022b44'], label: 'オ', content: '' }, //44
-                        { questionTitle: '体格', relatedProblems: ['2022a45', '2022b45', '2022c45'], label: 'ウ', content: '22' }, //45
-                        { questionTitle: '査定法', relatedProblems: ['2022b46'], label: 'オ', content: '' }, //46
-                        { questionTitle: '入院・手術保障における料率', relatedProblems: ['2022b47'], label: 'ア', content: '平均' }, //47
-                        { questionTitle: '再保険', relatedProblems: ['2022b48'], label: 'エ', content: 'より低く' }, //48
-                        { questionTitle: '災害関係特約', relatedProblems: ['2022a49', '2022b49', '2022c49'], label: 'オ', content: '' }, //49
-                        { questionTitle: '団体保険の個別選択', relatedProblems: ['2022a50', '2022b50', '2022c50'], label: 'エ', content: '正常勤務' }, //50
+                        {
+                            questionTitle: '死亡率',
+                            relatedProblems: ['2022a41', '2022b41'],
+                            label: 'ウ',
+                            content: '標準化死亡率',
+                        }, //41
+                        {
+                            questionTitle: '高血圧',
+                            relatedProblems: ['2022b42'],
+                            label: 'イ',
+                            content: '二次性高血圧',
+                        }, //42
+                        {
+                            questionTitle: '重大事由による解除',
+                            relatedProblems: ['2022b43'],
+                            label: 'ア',
+                            content: '信頼関係',
+                        }, //43
+                        {
+                            questionTitle: '第1次選択',
+                            relatedProblems: ['2022b44'],
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '体格',
+                            relatedProblems: ['2022a45', '2022b45', '2022c45'],
+                            label: 'ウ',
+                            content: '22',
+                        }, //45
+                        {
+                            questionTitle: '査定法',
+                            relatedProblems: ['2022b46'],
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '入院・手術保障における料率',
+                            relatedProblems: ['2022b47'],
+                            label: 'ア',
+                            content: '平均',
+                        }, //47
+                        {
+                            questionTitle: '再保険',
+                            relatedProblems: ['2022b48'],
+                            label: 'エ',
+                            content: 'より低く',
+                        }, //48
+                        {
+                            questionTitle: '災害関係特約',
+                            relatedProblems: ['2022a49', '2022b49', '2022c49'],
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '団体保険の個別選択',
+                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
+                            label: 'エ',
+                            content: '正常勤務',
+                        }, //50
                     ]"
                 />
             </div>

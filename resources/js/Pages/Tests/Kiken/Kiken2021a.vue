@@ -235,27 +235,117 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '被保険者の危険', relatedProblems: ['2021a31'], content: '経済的危険 → 実体的危険' }, //31 p4
-                        { questionTitle: '環境選択', relatedProblems: ['2021a32', '2021b32', '2021c32'], content: '正しい' }, //32
-                        { questionTitle: '胃・十二指腸潰瘍', relatedProblems: ['2021a33'], content: '正しい' }, //33
-                        { questionTitle: '道徳的危険排除のためのポイント', relatedProblems: ['2021a34'], content: '正しい' }, //34
-                        { questionTitle: '健康管理証明書扱（団体）', relatedProblems: ['2021a35'], content: '正しい' }, //35
-                        { questionTitle: '査定標準（基準）', relatedProblems: ['2021a36'], content: '生活習慣や嗜好といった因子については示されていない → 示されている' }, //36 p111
-                        { questionTitle: '保険金確認', relatedProblems: ['2021a37'], content: '正しい' }, //37
-                        { questionTitle: '個人情報の定義', relatedProblems: ['2021a38', '2021b38', '2021c38'], content: '生存するまたは死亡した個人に関する情報 → 生存する個人に関する情報（死亡は対象外）' }, //38 p125
-                        { questionTitle: '復活', relatedProblems: ['2021a39', '2021c49'], content: '逆選択混入の危険が少なく → 多く<br>経験死亡率が低い → 高い' }, //39 p173-174
-                        { questionTitle: '死亡状況の分析', relatedProblems: ['2021a40', '2021b40', '2021c40'], content: '正しい' }, //40
+                        {
+                            questionTitle: '被保険者の危険',
+                            relatedProblems: ['2021a31'],
+                            content: '経済的危険 → 実体的危険',
+                        }, //31 p4
+                        {
+                            questionTitle: '環境選択',
+                            relatedProblems: ['2021a32', '2021b32', '2021c32'],
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '胃・十二指腸潰瘍',
+                            relatedProblems: ['2021a33'],
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '道徳的危険排除のためのポイント',
+                            relatedProblems: ['2021a34'],
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '健康管理証明書扱（団体）',
+                            relatedProblems: ['2021a35'],
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '査定標準（基準）',
+                            relatedProblems: ['2021a36'],
+                            content: '生活習慣や嗜好といった因子については示されていない → 示されている',
+                        }, //36 p111
+                        {
+                            questionTitle: '保険金確認',
+                            relatedProblems: ['2021a37'],
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '個人情報の定義',
+                            relatedProblems: ['2021a38', '2021b38', '2021c38'],
+                            content: '生存するまたは死亡した個人に関する情報 → 生存する個人に関する情報（死亡は対象外）',
+                        }, //38 p125
+                        {
+                            questionTitle: '復活',
+                            relatedProblems: ['2021a39', '2021c49'],
+                            content: '逆選択混入の危険が少なく → 多く<br>経験死亡率が低い → 高い',
+                        }, //39 p173-174
+                        {
+                            questionTitle: '死亡状況の分析',
+                            relatedProblems: ['2021a40', '2021b40', '2021c40'],
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
-                        { questionTitle: '生命表', relatedProblems: ['2021a41', '2021b41', '2021c41'], label: 'オ', content: '' }, //41
-                        { questionTitle: '解除権の消滅', relatedProblems: ['2021a42'], label: 'エ', content: '5年' }, //42
-                        { questionTitle: '保険料の仕組みと危険選択', relatedProblems: ['2021a43', '2021b43', '2021c43'], label: 'ウ', content: '収支相当の原則' }, //43
-                        { questionTitle: '医学的選択上の課題', relatedProblems: ['2021a44', '2021b26'], label: 'イ', content: '入院給付率' }, //44
-                        { questionTitle: '死亡・入院率の高い重要欠陥', relatedProblems: ['2021a45'], label: 'エ', content: '二次性' }, //45
-                        { questionTitle: '契約の制限', relatedProblems: ['2021a46'], label: 'イ', content: '他人' }, //46
-                        { questionTitle: '診査医が行う診査', relatedProblems: ['2021a47'], label: 'ア', content: '問診' }, //47
-                        { questionTitle: '契約確認後の処理', relatedProblems: ['2021a48', '2021b48', '2021c48'], label: 'ウ', content: '不実の告知' }, //48
-                        { questionTitle: '災害割増特約', relatedProblems: ['2021a49'], label: 'オ', content: '' }, //49
-                        { questionTitle: '最高保険金額', relatedProblems: ['2021a50'], label: 'ア', content: '被保険者' }, //50
+                        {
+                            questionTitle: '生命表',
+                            relatedProblems: ['2021a41', '2021b41', '2021c41'],
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '解除権の消滅',
+                            relatedProblems: ['2021a42'],
+                            label: 'エ',
+                            content: '5年',
+                        }, //42
+                        {
+                            questionTitle: '保険料の仕組みと危険選択',
+                            relatedProblems: ['2021a43', '2021b43', '2021c43'],
+                            label: 'ウ',
+                            content: '収支相当の原則',
+                        }, //43
+                        {
+                            questionTitle: '医学的選択上の課題',
+                            relatedProblems: ['2021a44', '2021b26'],
+                            label: 'イ',
+                            content: '入院給付率',
+                        }, //44
+                        {
+                            questionTitle: '死亡・入院率の高い重要欠陥',
+                            relatedProblems: ['2021a45'],
+                            label: 'エ',
+                            content: '二次性',
+                        }, //45
+                        {
+                            questionTitle: '契約の制限',
+                            relatedProblems: ['2021a46'],
+                            label: 'イ',
+                            content: '他人',
+                        }, //46
+                        {
+                            questionTitle: '診査医が行う診査',
+                            relatedProblems: ['2021a47'],
+                            label: 'ア',
+                            content: '問診',
+                        }, //47
+                        {
+                            questionTitle: '契約確認後の処理',
+                            relatedProblems: ['2021a48', '2021b48', '2021c48'],
+                            label: 'ウ',
+                            content: '不実の告知',
+                        }, //48
+                        {
+                            questionTitle: '災害割増特約',
+                            relatedProblems: ['2021a49'],
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '最高保険金額',
+                            relatedProblems: ['2021a50'],
+                            label: 'ア',
+                            content: '被保険者',
+                        }, //50
                     ]"
                 />
             </div>

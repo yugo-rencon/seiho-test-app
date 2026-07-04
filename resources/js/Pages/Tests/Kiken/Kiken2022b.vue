@@ -284,62 +284,71 @@ const subject = "2022年度 フォームB";
                             relatedProblems: ['2022a40', '2022b40', '2022c40'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死亡率',
                             relatedProblems: ['2022a41', '2022b41'],
                             label: 'ウ',
                             content: '標準化死亡率',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高血圧',
                             relatedProblems: ['2022b42'],
                             label: 'イ',
                             content: '二次性高血圧',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '重大事由による解除',
                             relatedProblems: ['2022b43'],
                             label: 'ア',
                             content: '信頼関係',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択',
                             relatedProblems: ['2022b44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '体格',
                             relatedProblems: ['2022a45', '2022b45', '2022c45'],
                             label: 'ウ',
                             content: '22',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '査定法',
                             relatedProblems: ['2022b46'],
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '入院・手術保障における料率',
                             relatedProblems: ['2022b47'],
                             label: 'ア',
                             content: '平均',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '再保険',
                             relatedProblems: ['2022b48'],
                             label: 'エ',
                             content: 'より低く',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '災害関係特約',
                             relatedProblems: ['2022a49', '2022b49', '2022c49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の個別選択',
                             relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'エ',

@@ -287,18 +287,21 @@ const subject = "2024年度 フォームB";
                         }, //40
                         // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務者',
                             relatedProblems: ['2024a41', '2024b41'],
                             label: 'エ',
                             content: '質問応答義務',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2024a42', '2024b42', '2024c42'],
                             label: 'イ',
                             content: '純保険料',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者集団の具備すべき条件',
                             relatedProblems: ['2024a43', '2024b43', '2024c43'],
                             label: 'イ',
@@ -312,36 +315,42 @@ const subject = "2024年度 フォームB";
                             content: '入院率',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '道徳的危険排除のためのポイント',
                             relatedProblems: ['2024b45', '2024c28'],
                             label: 'ウ',
                             content: '被保険利益',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '人間ドック扱',
                             relatedProblems: ['2024b46'],
                             label: 'ウ',
                             content: '医師による診査',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '査定法',
                             relatedProblems: ['2024b47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '個人データの安全管理措置',
                             relatedProblems: ['2024b48'],
                             label: 'ア',
                             content: 'き損',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高度障害状態',
                             relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             label: 'エ',
                             content: '両眼の視力',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '期待死亡率との比較',
                             relatedProblems: ['2024b50'],
                             label: 'オ',

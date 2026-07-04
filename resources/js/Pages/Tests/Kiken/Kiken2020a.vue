@@ -284,64 +284,71 @@ const subject = "2020年度 フォームA";
                             relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者の危険',
                             relatedProblems: ['2020a41', '2020b41', '2020c41'],
                             label: 'イ',
                             content: '実体的危険',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務者',
                             relatedProblems: ['2020a42'],
                             label: 'ア',
                             content: '保険法',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死差益の計算方法',
                             relatedProblems: ['2020a43'],
                             label: 'エ',
                             content: '危険保険料',
                         }, //43
                         {
-                            // rev: 2026-07-02 確認済み
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '医学的選択上の制約条件',
                             relatedProblems: ['2020a44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: 'エイズ',
                             relatedProblems: ['2020a45', '2020b45', '2020c45'],
                             label: 'ウ',
                             content: 'リンパ球',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '重大事由による解除',
                             relatedProblems: ['2020a46'],
                             label: 'ウ',
                             content: '不当な所得',
                         }, //46
                         {
-                            // rev: 2026-07-02 確認済み
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険金確認・給付金確認',
                             relatedProblems: ['2020a47', '2020b39'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体の選択',
                             relatedProblems: ['2020a48'],
                             label: 'イ',
                             content: '被用者団体',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '復活',
                             relatedProblems: ['2020a49', '2020b49', '2020c49'],
                             label: 'ウ',
                             content: '長い',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '出再方式',
                             relatedProblems: ['2020a50'],
                             label: 'ア',

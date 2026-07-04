@@ -287,60 +287,70 @@ const subject = "2022年度 フォームA";
                         }, //40
                         // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死亡率',
                             relatedProblems: ['2022a41', '2022b41'],
                             label: 'エ',
                             content: '金額死亡率',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約の解除',
                             relatedProblems: ['2022a42'],
                             label: 'ア',
                             content: '保険法',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '経験保険料と危険保険金',
                             relatedProblems: ['2022a43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者集団の具備すべき条件',
                             relatedProblems: ['2022a44'],
                             label: 'ウ',
                             content: '大数の法則',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '体格',
                             relatedProblems: ['2022a45', '2022b45', '2022c45'],
                             label: 'ウ',
                             content: '22',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険契約の制限',
                             relatedProblems: ['2022a46'],
                             label: 'イ',
                             content: '他人',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '人間ドック扱',
                             relatedProblems: ['2022a47'],
                             label: 'ウ',
                             content: '医師による診査',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '査定・決定の種類',
                             relatedProblems: ['2022a48'],
                             label: 'エ',
                             content: '再診',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '災害関係特約',
                             relatedProblems: ['2022a49', '2022b49', '2022c49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の個別選択',
                             relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'エ',

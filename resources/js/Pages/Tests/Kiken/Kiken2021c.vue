@@ -286,62 +286,71 @@ const subject = "2021年度 フォームC";
                             relatedProblems: ['2021a40', '2021b40', '2021c40'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
                             relatedProblems: ['2021a41', '2021b41', '2021c41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死差益',
                             relatedProblems: ['2021c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2021a43', '2021b43', '2021c43'],
                             label: 'ウ',
-                            content: '収支相当の原則',
+                            content: '収支相等の原則',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '糖尿病と胃炎',
                             relatedProblems: ['2021c44'],
                             label: 'ア',
                             content: 'インシュリン',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '健康管理証明書扱（個人）',
                             relatedProblems: ['2021c45'],
                             label: 'ア',
                             content: '20名〜30名',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '疾病保険の特別条件付決定',
                             relatedProblems: ['2021b29', '2021c46'],
                             label: 'イ',
                             content: '特別保険料領収法',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の契約内容の変更',
                             relatedProblems: ['2021c47'],
                             label: 'エ',
                             content: '契約者',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
                             relatedProblems: ['2021a48', '2021b48', '2021c48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '復活',
                             relatedProblems: ['2021a39', '2021c49'],
                             label: 'ア',
                             content: '契約金額',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '元受保有額と出再額',
                             relatedProblems: ['2021c50'],
                             label: 'エ',

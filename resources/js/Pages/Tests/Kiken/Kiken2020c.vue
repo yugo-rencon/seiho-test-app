@@ -288,60 +288,70 @@ const subject = "2020年度 フォームC";
                         }, //40
                         // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者の危険',
                             relatedProblems: ['2020a41', '2020b41', '2020c41'],
                             label: 'イ',
                             content: '実体的危険',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '解除権の消滅',
                             relatedProblems: ['2020c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者集団の具備すべき条件',
                             relatedProblems: ['2020c43'],
                             label: 'イ',
                             content: '倫理',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '習慣による選択',
                             relatedProblems: ['2020c44'],
                             label: 'ウ',
                             content: '死亡率',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: 'エイズ',
                             relatedProblems: ['2020a45', '2020b45', '2020c45'],
                             label: 'ウ',
                             content: 'リンパ球',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約の制限',
                             relatedProblems: ['2020c46'],
                             label: 'エ',
                             content: '加入保険金額',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択',
                             relatedProblems: ['2020c47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
                             relatedProblems: ['2020a36', '2020c48'],
                             label: 'ア',
                             content: '恒常性危険',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '復活',
                             relatedProblems: ['2020a49', '2020b49', '2020c49'],
                             label: 'ウ',
                             content: '長い',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
                             relatedProblems: ['2020c50'],
                             label: 'エ',

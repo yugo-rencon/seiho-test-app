@@ -285,24 +285,28 @@ const subject = "2025年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者の危険',
                             relatedProblems: ['2025b41'],
                             label: 'ウ',
                             content: '環境的危険',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '解除',
                             relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'ウ',
                             content: '解約返戻金',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2025a43', '2025b43', '2025c43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '販売政策と選択政策',
                             relatedProblems: ['2025b44'],
                             label: 'ア',
@@ -316,12 +320,14 @@ const subject = "2025年度 フォームB";
                             content: '最高保険金額',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '人間ドック扱',
                             relatedProblems: ['2025a45', '2025b46'],
                             label: 'イ',
                             content: '告知書',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '査定法',
                             relatedProblems: ['2025b47'],
                             label: 'オ',
@@ -335,12 +341,14 @@ const subject = "2025年度 フォームB";
                             content: '発生後',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '個人データの安全管理措置',
                             relatedProblems: ['2025a49', '2025b49', '2025c49'],
                             label: 'イ',
                             content: 'き損',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '再保険',
                             relatedProblems: ['2025b50', '2025c25'],
                             label: 'エ',

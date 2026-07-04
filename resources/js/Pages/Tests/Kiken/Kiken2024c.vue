@@ -286,18 +286,21 @@ const subject = "2024年度 フォームC";
                         }, //40
                         // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
                             relatedProblems: ['2024a31', '2024c41'],
                             label: 'ア',
                             content: '選択表',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2024a42', '2024b42', '2024c42'],
                             label: 'イ',
                             content: '純保険料',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者集団の具備すべき条件',
                             relatedProblems: ['2024a43', '2024b43', '2024c43'],
                             label: 'イ',
@@ -311,36 +314,42 @@ const subject = "2024年度 フォームC";
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '体格',
                             relatedProblems: ['2024a28', '2024b35', '2024c45'],
                             label: 'ウ',
                             content: '22',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '査定・決定の種類',
                             relatedProblems: ['2024c46'],
                             label: 'エ',
                             content: '再診',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
                             relatedProblems: ['2024c47'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '入院・手術保障における料率',
                             relatedProblems: ['2024c48'],
                             label: 'ア',
                             content: '平均給付日数',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高度障害状態',
                             relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             label: 'エ',
                             content: '両眼の視力',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '実際死亡状況の分析',
                             relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'],
                             label: 'オ',

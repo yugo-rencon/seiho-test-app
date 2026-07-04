@@ -286,60 +286,70 @@ const subject = "2025年度 フォームC";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務',
                             relatedProblems: ['2025c41'],
                             label: 'エ',
                             content: '質問応答義務',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '解除',
                             relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'ウ',
                             content: '解約返戻金',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2025a43', '2025b43', '2025c43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '選択の有効期間',
                             relatedProblems: ['2025c44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '心疾患',
                             relatedProblems: ['2025c45'],
                             label: 'ア',
                             content: '先天性',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '道徳的危険排除のためのポイント',
                             relatedProblems: ['2025c46'],
                             label: 'ウ',
-                            content: '被保険者利益',
+                            content: '被保険利益',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '査定・決定の種類',
                             relatedProblems: ['2025c47'],
                             label: 'エ',
                             content: '再診',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択',
                             relatedProblems: ['2025a47', '2025c48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '個人データの安全管理措置',
                             relatedProblems: ['2025a49', '2025b49', '2025c49'],
                             label: 'イ',
                             content: 'き損',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高度障害状態',
                             relatedProblems: ['2025c50'],
                             label: 'ア',

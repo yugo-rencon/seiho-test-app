@@ -287,60 +287,70 @@ const subject = "2025年度 フォームA";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死亡率',
                             relatedProblems: ['2025a41'],
                             label: 'ウ',
                             content: '標準化',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '解除',
                             relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'ウ',
                             content: '解約返戻金',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2025a43', '2025b43', '2025c43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '資産・収入状態による選択',
                             relatedProblems: ['2025a44'],
                             label: 'エ',
                             content: '災害疾病入院特約',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '人間ドック扱',
                             relatedProblems: ['2025a45', '2025b46'],
                             label: 'イ',
                             content: '告知書',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約の制限',
                             relatedProblems: ['2025a46'],
                             label: 'イ',
-                            content: '告知書',
+                            content: '他人',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択',
                             relatedProblems: ['2025a47', '2025c48'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
                             relatedProblems: ['2025a48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '個人データの安全管理措置',
                             relatedProblems: ['2025a49', '2025b49', '2025c49'],
                             label: 'イ',
                             content: 'き損',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の個別選択',
                             relatedProblems: ['2025a50'],
                             label: 'ア',

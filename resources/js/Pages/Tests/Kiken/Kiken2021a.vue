@@ -285,62 +285,71 @@ const subject = "2021年度 フォームA";
                             relatedProblems: ['2021a40', '2021b40', '2021c40'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
                             relatedProblems: ['2021a41', '2021b41', '2021c41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '解除権の消滅',
                             relatedProblems: ['2021a42'],
                             label: 'エ',
                             content: '5年',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2021a43', '2021b43', '2021c43'],
                             label: 'ウ',
-                            content: '収支相当の原則',
+                            content: '収支相等の原則',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '医学的選択上の課題',
                             relatedProblems: ['2021a44', '2021b26'],
                             label: 'イ',
                             content: '入院給付率',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死亡・入院率の高い重要欠陥',
                             relatedProblems: ['2021a45'],
                             label: 'エ',
                             content: '二次性',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約の制限',
                             relatedProblems: ['2021a46'],
                             label: 'イ',
                             content: '他人',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '診査医が行う診査',
                             relatedProblems: ['2021a47'],
                             label: 'ア',
                             content: '問診',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
                             relatedProblems: ['2021a48', '2021b48', '2021c48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '災害割増特約',
                             relatedProblems: ['2021a49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '最高保険金額',
                             relatedProblems: ['2021a50'],
                             label: 'ア',

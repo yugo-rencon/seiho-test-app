@@ -285,62 +285,71 @@ const subject = "2020年度 フォームB";
                             relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者の危険',
                             relatedProblems: ['2020a41', '2020b41', '2020c41'],
                             label: 'イ',
                             content: '実体的危険',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '解除',
                             relatedProblems: ['2020b42'],
                             label: 'ウ',
                             content: '解約返戻金',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '選択の有効期間',
                             relatedProblems: ['2020b43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '人間ドック扱',
                             relatedProblems: ['2020b44'],
                             label: 'イ',
                             content: '告知書',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: 'エイズ',
                             relatedProblems: ['2020a45', '2020b45', '2020c45'],
                             label: 'ウ',
                             content: 'リンパ球',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '安全管理措置',
                             relatedProblems: ['2020b46'],
                             label: 'エ',
                             content: '技術的',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高度障害',
                             relatedProblems: ['2020b47'],
                             label: 'ア',
                             content: '第1級',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '再保険',
                             relatedProblems: ['2020b25', '2020b48'],
                             label: 'ア',
                             content: '保有限度額',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '復活',
                             relatedProblems: ['2020a49', '2020b49', '2020c49'],
                             label: 'ウ',
                             content: '長い',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '期待死亡率との比較',
                             relatedProblems: ['2020b50'],
                             label: 'オ',

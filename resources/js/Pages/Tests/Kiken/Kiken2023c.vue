@@ -286,60 +286,70 @@ const subject = "2023年度 フォームC";
                         }, //40
                         // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
                             relatedProblems: ['2023a31', '2023c41'],
                             label: 'ア',
                             content: '選択表',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '解除権の消滅',
                             relatedProblems: ['2023a42', '2023b42', '2023c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死差益の計算方法',
                             relatedProblems: ['2023c43'],
                             label: 'エ',
                             content: '危険保険料',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '選択の有効期間',
                             relatedProblems: ['2023c44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '危険選択の段階',
                             relatedProblems: ['2023b24', '2023c45'],
                             label: 'ア',
                             content: '生命保険協会',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '人間ドック扱',
                             relatedProblems: ['2023a46', '2023b46', '2023c46'],
                             label: 'イ',
                             content: '告知書',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
                             relatedProblems: ['2023a34', '2023c47'],
                             label: 'エ',
                             content: '特別保険料領収法',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
                             relatedProblems: ['2023a48', '2023b48', '2023c48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '個人データの安全管理措置',
                             relatedProblems: ['2023c49'],
                             label: 'イ',
                             content: 'き損',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高度障害状態',
                             relatedProblems: ['2023c50'],
                             label: 'ウ',

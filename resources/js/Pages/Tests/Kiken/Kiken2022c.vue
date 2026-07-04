@@ -285,63 +285,71 @@ const subject = "2022年度 フォームC";
                             relatedProblems: ['2022a40', '2022b40', '2022c40'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者の危険',
                             relatedProblems: ['2022c41'],
                             label: 'ウ',
                             content: '環境的危険',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '解除権の消滅',
                             relatedProblems: ['2022c42'],
                             label: 'ア',
                             content: '1ヶ月',
                         }, //42
                         {
-                            // rev: 2026-07-02 確認済み
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '職業危険',
                             relatedProblems: ['2022a34', '2022b23', '2022c43'],
                             label: 'ア',
                             content: '入院率',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '生命保険面接士',
                             relatedProblems: ['2022c44'],
                             label: 'エ',
                             content: '診査報状',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '体格',
                             relatedProblems: ['2022a45', '2022b45', '2022c45'],
                             label: 'ウ',
                             content: '22',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
                             relatedProblems: ['2022c46'],
                             label: 'エ',
                             content: '特別保険料領収法',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険金確認・給付金確認',
                             relatedProblems: ['2022a24', '2022c47'],
                             label: 'イ',
                             content: '発生後',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '期待死亡率との比較',
                             relatedProblems: ['2022c48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '災害関係特約',
                             relatedProblems: ['2022a49', '2022b49', '2022c49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の個別選択',
                             relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'エ',

@@ -286,42 +286,49 @@ const subject = "2024年度 フォームA";
                         }, //40
                         // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務者',
                             relatedProblems: ['2024a41', '2024b41'],
                             label: 'ウ',
                             content: '告知を受領する権限のある者',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2024a42', '2024b42', '2024c42'],
                             label: 'イ',
                             content: '純保険料',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者集団の具備すべき条件',
                             relatedProblems: ['2024a43', '2024b43', '2024c43'],
                             label: 'イ',
                             content: '倫理',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高血圧',
                             relatedProblems: ['2024a44'],
                             label: 'エ',
                             content: '本態性高血圧',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '重大事由による解除',
                             relatedProblems: ['2024a45'],
                             label: 'ア',
                             content: '信頼関係',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択',
                             relatedProblems: ['2024a46'],
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
                             relatedProblems: ['2024a47'],
                             label: 'ウ',
@@ -335,12 +342,14 @@ const subject = "2024年度 フォームA";
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高度障害状態',
                             relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             label: 'エ',
                             content: '両眼の視力',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の契約内容の変更',
                             relatedProblems: ['2024a50'],
                             label: 'ア',

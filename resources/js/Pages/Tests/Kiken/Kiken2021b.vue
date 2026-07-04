@@ -284,64 +284,71 @@ const subject = "2021年度 フォームB";
                             relatedProblems: ['2021a40', '2021b40', '2021c40'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
                             relatedProblems: ['2021a41', '2021b41', '2021c41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者集団の具備すべき条件',
                             relatedProblems: ['2021b42'],
                             label: 'エ',
                             content: '継続性',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2021a43', '2021b43', '2021c43'],
                             label: 'ウ',
-                            content: '収支相当の原則',
+                            content: '収支相等の原則',
                         }, //43
                         {
-                            // rev: 2026-07-02 確認済み
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '医学的選択上の制約条件',
                             relatedProblems: ['2021b44', '2021c22'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '心疾患',
                             relatedProblems: ['2021b45'],
                             label: 'ア',
                             content: '先天性',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '職業危険',
                             relatedProblems: ['2021a22', '2021b46'],
                             label: 'イ',
                             content: '入院率',
                         }, //46
                         {
-                            // rev: 2026-07-02 確認済み
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '査定・決定の種類',
                             relatedProblems: ['2021b47'],
                             label: 'エ',
                             content: '5年',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
                             relatedProblems: ['2021a48', '2021b48', '2021c48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '再保険の方式',
                             relatedProblems: ['2021b49'],
                             label: 'ア',
                             content: '共同保険',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '期待死亡率',
                             relatedProblems: ['2021b50'],
                             label: 'エ',

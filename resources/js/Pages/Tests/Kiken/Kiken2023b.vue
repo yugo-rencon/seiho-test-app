@@ -288,61 +288,71 @@ const subject = "2023年度 フォームB";
                         }, //40
                         // 問41〜50
                         {
-                            uestionTitle: '被保険者の危険',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '被保険者の危険',
                             relatedProblems: ['2023b41'],
                             label: 'イ',
                             content: '実体的危険',
                         }, //41
                         {
-                            uestionTitle: '解除権の消滅',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '解除権の消滅',
                             relatedProblems: ['2023a42', '2023b42', '2023c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
-                            uestionTitle: '危険保険料と危険保険金',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '危険保険料と危険保険金',
                             relatedProblems: ['2023a27', '2023b43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
-                            uestionTitle: '被保険者集団の具備すべき条件',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '被保険者集団の具備すべき条件',
                             relatedProblems: ['2023b44'],
                             label: 'エ',
                             content: '大数の法則',
                         }, //44
                         {
-                            uestionTitle: '高血圧',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '高血圧',
                             relatedProblems: ['2023b45'],
                             label: 'ア',
                             content: '二次性高血圧',
                         }, //45
                         {
-                            uestionTitle: '人間ドック扱',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '人間ドック扱',
                             relatedProblems: ['2023a46', '2023b46', '2023c46'],
                             label: 'イ',
                             content: '告知書',
                         }, //46
                         {
-                            uestionTitle: '査定法',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '査定法',
                             relatedProblems: ['2023b47'],
                             label: 'ア',
                             content: '数字査定法',
                         }, //47
                         {
-                            uestionTitle: '契約確認後の処理',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '契約確認後の処理',
                             relatedProblems: ['2023a48', '2023b48', '2023c48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
-                            uestionTitle: '災害保障',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '災害保障',
                             relatedProblems: ['2023b49'],
                             label: 'ウ',
                             content: '感染症法',
                         }, //49
                         {
-                            uestionTitle: '期待死亡率との比較',
+                            // rev: 2026-07-04 確認済み
+                            questionTitle: '期待死亡率との比較',
                             relatedProblems: ['2023b50'],
                             label: 'エ',
                             content: '保険体',

@@ -285,24 +285,28 @@ const subject = "2023年度 フォームA";
                         }, //40
                         // 問41〜50
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死亡率',
                             relatedProblems: ['2023a41'],
                             label: 'エ',
                             content: '金額死亡率',
                         }, //41
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '解除権の消滅',
                             relatedProblems: ['2023a42', '2023b42', '2023c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
                             relatedProblems: ['2023a43'],
                             label: 'ウ',
-                            content: '収支相当の原則',
+                            content: '収支相等の原則',
                         }, //43
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '販売政策と選択政策',
                             relatedProblems: ['2023a44'],
                             label: 'ア',
@@ -316,30 +320,35 @@ const subject = "2023年度 フォームA";
                             content: '入院率',
                         }, //45
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '人間ドック扱',
                             relatedProblems: ['2023a46', '2023b46', '2023c46'],
                             label: 'イ',
                             content: '告知書',
                         }, //46
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '査定・決定の種類',
                             relatedProblems: ['2023a47', '2023c35'],
                             label: 'エ',
                             content: '再診',
                         }, //47
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
                             relatedProblems: ['2023a48', '2023b48', '2023c48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '入院・手術保障における料率',
-                            relatedProblems: ['2023a49', '2023c37'],
+                            relatedProblems: ['2023a49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の契約内容の変更',
                             relatedProblems: ['2023a50'],
                             label: 'ア',

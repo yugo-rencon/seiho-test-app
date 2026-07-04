@@ -285,6 +285,7 @@ const subject = "2025年度 フォームA";
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '傷害特約',
                             relatedProblems: ['2025a38'],
                             content: '障害給付金 → 災害保険金', //p158

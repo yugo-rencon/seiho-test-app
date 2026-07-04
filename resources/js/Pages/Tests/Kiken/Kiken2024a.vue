@@ -127,6 +127,7 @@ const subject = "2024年度 フォームA";
                     questionTitle="危険保険料と危険保険金"
                     :relatedProblems="['2024a22', '2024c26']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '付加保険料 → 貯蓄保険料', //p23
                         '養老保険 → 定期保険', //p24
                         '正しい',
@@ -237,7 +238,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',

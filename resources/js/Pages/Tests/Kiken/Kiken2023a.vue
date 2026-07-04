@@ -192,6 +192,7 @@ const subject = "2023年度 フォームA";
                     questionTitle="危険保険料と危険保険金"
                     :relatedProblems="['2023a27', '2023b43']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         '養老保険 → 定期保険', //p24
                         '正しい',

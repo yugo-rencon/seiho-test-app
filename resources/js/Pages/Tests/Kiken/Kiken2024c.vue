@@ -178,6 +178,7 @@ const subject = "2024年度 フォームC";
                     questionTitle="危険保険料と危険保険金"
                     :relatedProblems="['2024a22', '2024c26']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         '養老保険 → 定期保険', //p24
                         '正しい',

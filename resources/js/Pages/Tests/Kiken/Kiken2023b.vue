@@ -153,6 +153,7 @@ const subject = "2023年度 フォームB";
                     questionTitle="危険選択の段階"
                     :relatedProblems="['2023b24', '2023c45']"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '正しい',
                         '金融庁 → 生命保険協会', //p86
                         '査定 ↔︎ 決定', //p86-87

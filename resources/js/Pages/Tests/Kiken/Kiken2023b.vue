@@ -188,6 +188,7 @@ const subject = "2023年度 フォームB";
                     questionTitle="選択効果"
                     :relatedProblems="['2023b27']"
                     :contents="[
+                        // rev: 2026-07-04 確認済み
                         '正しい',
                         '正しい',
                         '若年齢層 ↔︎ 高年齢層', //p32-33

@@ -245,6 +245,7 @@ const subject = "2024年度 フォームA";
                             content: '件数死亡率 ↔︎ 金額死亡率',
                         }, //32 p9
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '選択効果',
                             relatedProblems: ['2024a33', '2024c22'],
                             content: '正しい',

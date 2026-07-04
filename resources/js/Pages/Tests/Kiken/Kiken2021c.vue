@@ -250,9 +250,10 @@ const subject = "2021年度 フォームC";
                         {
                             questionTitle: '告知義務者',
                             relatedProblems: ['2021c33'],
-                            content: '責任は1人が負うことになる → 責任は全員が負うことになる',
-                        }, //33 p13
+                            content: '責任は1人が負うことになる → 責任は全員が負うことになる', //p13
+                        }, //33
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '選択効果',
                             relatedProblems: ['2021a27', '2021c34'],
                             content: '正しい',

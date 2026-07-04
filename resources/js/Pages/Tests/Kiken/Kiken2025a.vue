@@ -192,7 +192,8 @@ const subject = "2025年度 フォームA";
                     questionTitle="選択効果"
                     :relatedProblems="['2025a27', '2025b22']"
                     :contents="[
-                        '経験生命表との比較 → 国民生命表との比較', //p32
+                        // rev: 2026-07-04 確認済み
+                        '経験生命表 → 国民生命表', //p32
                         '正しい',
                         '正しい',
                     ]"
@@ -249,6 +250,7 @@ const subject = "2025年度 フォームA";
                             content: '期待死亡率についての目標値（実際死亡率） → 実際死亡率についての目標値（期待死亡率）', //p35
                         }, //32
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '高血圧',
                             relatedProblems: ['2025a33'],
                             content: '正しい',
@@ -264,11 +266,13 @@ const subject = "2025年度 フォームA";
                             content: '大部分の契約 ↔︎ 一部の契約', //p113-114
                         }, //35
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '個人情報の定義',
                             relatedProblems: ['2025a36'],
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '契約内容登録制度',
                             relatedProblems: ['2025a37'],
                             content: '正しい',
@@ -279,11 +283,13 @@ const subject = "2025年度 フォームA";
                             content: '障害給付金 → 災害保険金', //p158
                         }, //38
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の保険金額の決定による選択',
                             relatedProblems: ['2025a39'],
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
                             relatedProblems: ['2025a40', '2025b40', '2025c40'],
                             content: '正しい',

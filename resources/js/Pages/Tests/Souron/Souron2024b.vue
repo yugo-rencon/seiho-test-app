@@ -9,7 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2024年度 フォームB";
-
 </script>
 
 <template>
@@ -225,28 +224,101 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '危険対策と保険', content: '正しい' }, //31
-                        { questionTitle: '保険料', content: '正しい' }, //32
-                        { questionTitle: 'アメリカの保険事業規制', content: '連邦政府 → 州政府' }, //33 p65
-                        { questionTitle: '日本における生命保険の発展', content: '日本の保険はこれらの類似制度から発展したものではない' }, //34 p72
-                        { questionTitle: '保有契約高と国民所得', content: '正しい' }, //35
-                        { questionTitle: '生命保険会社の資金の性格', content: '純資産の大部分 → 負債の大部分' }, //36 p108
-                        { questionTitle: '形式的監督主義', content: '形式的監督主義 → 実体的監督主義' }, //37 p148
-                        { questionTitle: '簡易保険の歴史', content: '保証は全て撤廃 → 保証は継続' }, //38 p172
-                        { questionTitle: '社会構造の変化', content: '正しい' }, //39
-                        { questionTitle: '販売体制', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '保険の始期', label: 'エ', content: 'いずれかの遅い日' }, //41
-                        { questionTitle: '死亡表', label: 'ウ', content: '終局表' }, //42
-                        { questionTitle: '養老保険', label: 'エ', content: '逓減定期保険' }, //43
-                        { questionTitle: 'イギリスの共済的な保険組合', label: 'イ', content: '友愛組合' }, //44
-                        { questionTitle: 'エリザ・ライト', label: 'ア', content: '法定責任準備金法' }, //45
-                        { questionTitle: '国民経済における生命保険', label: 'イ', content: '経済的保障' }, //46
-                        { questionTitle: '社会保障と生命保険', label: 'オ', content: '' }, //47
-                        { questionTitle: '保険業を行う会社の性質', label: 'オ', content: '' }, //48
-                        { questionTitle: '労働者共済', label: 'ア', content: 'こくみん共済coop<全労済>' }, //49
-                        { questionTitle: '年金型商品の開発', label: 'ウ', content: '変額年金' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '危険対策と保険',
+                            content: '正しい',
+                        }, //31
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険料',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: 'アメリカの保険事業規制',
+                            content: '連邦政府 → 州政府',
+                        }, //33 p65
+                        {
+                            questionTitle: '日本における生命保険の発展',
+                            content: '日本の保険はこれらの類似制度から発展したものではない',
+                        }, //34 p72
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保有契約高と国民所得',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '生命保険会社の資金の性格',
+                            content: '純資産の大部分 → 負債の大部分',
+                        }, //36 p108
+                        {
+                            questionTitle: '形式的監督主義',
+                            content: '形式的監督主義 → 実体的監督主義',
+                        }, //37 p148
+                        {
+                            questionTitle: '簡易保険の歴史',
+                            content: '保証は全て撤廃 → 保証は継続',
+                        }, //38 p172
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '社会構造の変化',
+                            content: '正しい',
+                        }, //39
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '販売体制',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '保険の始期',
+                            label: 'エ',
+                            content: 'いずれかの遅い日',
+                        }, //41
+                        {
+                            questionTitle: '死亡表',
+                            label: 'ウ',
+                            content: '終局表',
+                        }, //42
+                        {
+                            questionTitle: '養老保険',
+                            label: 'エ',
+                            content: '逓減定期保険',
+                        }, //43
+                        {
+                            questionTitle: 'イギリスの共済的な保険組合',
+                            label: 'イ',
+                            content: '友愛組合',
+                        }, //44
+                        {
+                            questionTitle: 'エリザ・ライト',
+                            label: 'ア',
+                            content: '法定責任準備金法',
+                        }, //45
+                        {
+                            questionTitle: '国民経済における生命保険',
+                            label: 'イ',
+                            content: '経済的保障',
+                        }, //46
+                        {
+                            questionTitle: '社会保障と生命保険',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '保険業を行う会社の性質',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '労働者共済',
+                            label: 'ア',
+                            content: 'こくみん共済coop<全労済>',
+                        }, //49
+                        {
+                            questionTitle: '年金型商品の開発',
+                            label: 'ウ',
+                            content: '変額年金',
+                        }, //50
                     ]"
                 />
             </div>

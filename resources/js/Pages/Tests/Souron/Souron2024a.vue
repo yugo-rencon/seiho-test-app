@@ -9,7 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2024年度 フォームA";
-
 </script>
 
 <template>
@@ -226,27 +225,101 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '生命保険契約の特殊性', content: '民法、商法、保険法の順 → 保険法、民法の順' }, //31 p9
-                        { questionTitle: '保険料', content: '正しい' }, //32
-                        { questionTitle: 'イギリスにおける科学的な生命保険会社', content: '賦課式 → 平準保険料方式' }, //33 p57
-                        { questionTitle: 'アメリカにおける生命保険事業の発展', content: '無制限とする → 制限する<br>撤廃する → 制定する' }, //34 p63-64
-                        { questionTitle: '保険金・給付金の支払い', content: '正しい' }, //35
-                        { questionTitle: '公的介護保険性の被保険者', content: '65歳以上 → 第1号<br>40歳～65歳未満 → 第2号' }, //36 p140
-                        { questionTitle: '形式的監督主義', content: '形式的監督主義 → 実体的監督主義' }, //37 p148
-                        { questionTitle: '各都道府県民共済', content: '正しい' }, //38
-                        { questionTitle: '生保業界のネットワークシステム', content: '正しい' }, //39
-                        { questionTitle: '販売体制', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '契約の法的性質', label: 'ウ', content: '諾成契約' }, //41
-                        { questionTitle: '保険金額', label: 'オ', content: '' }, //42
-                        { questionTitle: '養老保険', label: 'エ', content: '逓減定期保険' }, //43
-                        { questionTitle: '日本における生命保険の発展', label: 'ア', content: 'スペインかぜの大流行' }, //44
-                        { questionTitle: '生命保険契約者保護機構', label: 'イ', content: '90%' }, //45
-                        { questionTitle: '国民経済における生命保険', label: 'ア', content: '家計可処分所得' }, //46
-                        { questionTitle: '生活保障としての生命保険', label: 'イ', content: '緊急出費保証' }, //47
-                        { questionTitle: '保険業を行う会社の性質', label: 'オ', content: '' }, //48
-                        { questionTitle: '生命共済事業', label: 'エ', content: '相互扶助' }, //49
-                        { questionTitle: '年金型商品の開発', label: 'ウ', content: '変額年金' }, //50
+                        {
+                            questionTitle: '生命保険契約の特殊性',
+                            content: '民法、商法、保険法の順 → 保険法、民法の順',
+                        }, //31 p9
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険料',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: 'イギリスにおける科学的な生命保険会社',
+                            content: '賦課式 → 平準保険料方式',
+                        }, //33 p57
+                        {
+                            questionTitle: 'アメリカにおける生命保険事業の発展',
+                            content: '無制限とする → 制限する<br>撤廃する → 制定する',
+                        }, //34 p63-64
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険金・給付金の支払い',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '公的介護保険性の被保険者',
+                            content: '65歳以上 → 第1号<br>40歳～65歳未満 → 第2号',
+                        }, //36 p140
+                        {
+                            questionTitle: '形式的監督主義',
+                            content: '形式的監督主義 → 実体的監督主義',
+                        }, //37 p148
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '各都道府県民共済',
+                            content: '正しい',
+                        }, //38
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生保業界のネットワークシステム',
+                            content: '正しい',
+                        }, //39
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '販売体制',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '契約の法的性質',
+                            label: 'ウ',
+                            content: '諾成契約',
+                        }, //41
+                        {
+                            questionTitle: '保険金額',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '養老保険',
+                            label: 'エ',
+                            content: '逓減定期保険',
+                        }, //43
+                        {
+                            questionTitle: '日本における生命保険の発展',
+                            label: 'ア',
+                            content: 'スペインかぜの大流行',
+                        }, //44
+                        {
+                            questionTitle: '生命保険契約者保護機構',
+                            label: 'イ',
+                            content: '90%',
+                        }, //45
+                        {
+                            questionTitle: '国民経済における生命保険',
+                            label: 'ア',
+                            content: '家計可処分所得',
+                        }, //46
+                        {
+                            questionTitle: '生活保障としての生命保険',
+                            label: 'イ',
+                            content: '緊急出費保証',
+                        }, //47
+                        {
+                            questionTitle: '保険業を行う会社の性質',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '生命共済事業',
+                            label: 'エ',
+                            content: '相互扶助',
+                        }, //49
+                        {
+                            questionTitle: '年金型商品の開発',
+                            label: 'ウ',
+                            content: '変額年金',
+                        }, //50
                     ]"
                 />
             </div>

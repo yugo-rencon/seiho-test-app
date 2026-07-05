@@ -218,15 +218,35 @@ const subject = "2023年度 フォームA";
                     :items="[
                         // 問31〜40
                         { questionTitle: '保険金受取人', content: '保険金受取人の資格についての制限はない' }, //31
-                        { questionTitle: '生命保険契約の特殊性', content: '正しい' }, //32
-                        { questionTitle: 'イギリスにおける科学的な生命保険会社', content: '正しい' }, //33
-                        { questionTitle: '生命保険事業の革新', content: '正しい' }, //34
-                        { questionTitle: '生命保険会社の資金の性格', content: '正しい' }, //35
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険契約の特殊性',
+                            content: '正しい',
+                        }, //32
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: 'イギリスにおける科学的な生命保険会社',
+                            content: '正しい',
+                        }, //33
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険事業の革新',
+                            content: '正しい',
+                        }, //34
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険会社の資金の性格',
+                            content: '正しい',
+                        }, //35
                         { questionTitle: '公的介護保険の保険料', content: '国 → 各市町村' }, //36
                         { questionTitle: '組織変更', content: '100株未満 → 1株未満' }, //37
                         { questionTitle: 'JA共済事業', content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
                         { questionTitle: '生保業界のネットワークシステム', content: '生保ANSERシステム → LINC（Life Insurance Network Center）' }, //39
-                        { questionTitle: '国際化の方向', content: '正しい' }, //40
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '国際化の方向',
+                            content: '正しい',
+                        }, //40
                         // 問41〜50
                         { questionTitle: '危険の種類', label: 'オ', content: '' }, //41
                         { questionTitle: '責任準備金', label: 'ア', content: '負債' }, //42

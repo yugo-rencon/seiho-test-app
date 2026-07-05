@@ -9,7 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2024年度 フォームC";
-
 </script>
 
 <template>
@@ -225,28 +224,101 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '生命保険契約の要素', content: '正しい' }, //31
-                        { questionTitle: '保険料', content: '正しい' }, //32
-                        { questionTitle: '保険の歴史的発展', content: '正しい' }, //33
-                        { questionTitle: '日本における生命保険の発展', content: 'ペストの大流行とスペインかぜの大流行 → スペインかぜの大流行と関東大震災' }, //34 p76
-                        { questionTitle: '流動性の原則', content: '重要性は非常に高い → 低い' }, //35 p109
-                        { questionTitle: '社会保障制度', content: '社会扶助制度 → 公的扶助制度' }, //36 p123
-                        { questionTitle: '形式的監督主義', content: '形式的監督主義 → 実体的監督主義' }, //37 p148
-                        { questionTitle: 'JA共済（全国共済農業協同組合連合会）', content: '正しい' }, //38
-                        { questionTitle: '医療・介護ニーズへの対応', content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている' }, //39 p193
-                        { questionTitle: '販売体制', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '危険の種類', label: 'ア', content: '縮小' }, //41
-                        { questionTitle: '剰余金の分配方法', label: 'ウ', content: '20%' }, //42
-                        { questionTitle: '養老保険', label: 'エ', content: '逓減定期保険' }, //43
-                        { questionTitle: '賦課式保険', label: 'イ', content: '生命保険' }, //44
-                        { questionTitle: '近代的生命保険の導入', label: 'オ', content: '' }, //45
-                        { questionTitle: '生命保険会社の資金の性格', label: 'エ', content: '責任準備金' }, //46
-                        { questionTitle: '公的医療保険', label: 'イ', content: '国民皆保険' }, //47
-                        { questionTitle: '保険業を行う会社の性質', label: 'オ', content: '' }, //48
-                        { questionTitle: '損害保険', label: 'ア', content: '保険者' }, //49
-                        { questionTitle: '年金型商品の開発', label: 'ウ', content: '変額年金' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険契約の要素',
+                            content: '正しい',
+                        }, //31
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険料',
+                            content: '正しい',
+                        }, //32
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険の歴史的発展',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '日本における生命保険の発展',
+                            content: 'ペストの大流行とスペインかぜの大流行 → スペインかぜの大流行と関東大震災',
+                        }, //34 p76
+                        {
+                            questionTitle: '流動性の原則',
+                            content: '重要性は非常に高い → 低い',
+                        }, //35 p109
+                        {
+                            questionTitle: '社会保障制度',
+                            content: '社会扶助制度 → 公的扶助制度',
+                        }, //36 p123
+                        {
+                            questionTitle: '形式的監督主義',
+                            content: '形式的監督主義 → 実体的監督主義',
+                        }, //37 p148
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: 'JA共済（全国共済農業協同組合連合会）',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '医療・介護ニーズへの対応',
+                            content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている',
+                        }, //39 p193
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '販売体制',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '危険の種類',
+                            label: 'ア',
+                            content: '縮小',
+                        }, //41
+                        {
+                            questionTitle: '剰余金の分配方法',
+                            label: 'ウ',
+                            content: '20%',
+                        }, //42
+                        {
+                            questionTitle: '養老保険',
+                            label: 'エ',
+                            content: '逓減定期保険',
+                        }, //43
+                        {
+                            questionTitle: '賦課式保険',
+                            label: 'イ',
+                            content: '生命保険',
+                        }, //44
+                        {
+                            questionTitle: '近代的生命保険の導入',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '生命保険会社の資金の性格',
+                            label: 'エ',
+                            content: '責任準備金',
+                        }, //46
+                        {
+                            questionTitle: '公的医療保険',
+                            label: 'イ',
+                            content: '国民皆保険',
+                        }, //47
+                        {
+                            questionTitle: '保険業を行う会社の性質',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '損害保険',
+                            label: 'ア',
+                            content: '保険者',
+                        }, //49
+                        {
+                            questionTitle: '年金型商品の開発',
+                            label: 'ウ',
+                            content: '変額年金',
+                        }, //50
                     ]"
                 />
             </div>

@@ -273,10 +273,11 @@ const subject = "2023年度 フォームA";
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '契約内容登録制度',
                             relatedProblems: ['2023a36'],
-                            content: '金融庁 → 生命保険協会',
-                        }, //36 p139
+                            content: '金融庁 → 生命保険協会', //p139
+                        }, //36
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '傷害特約',

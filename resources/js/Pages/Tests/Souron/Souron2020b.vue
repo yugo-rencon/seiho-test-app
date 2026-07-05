@@ -9,7 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2020年度 フォームB";
-
 </script>
 
 <template>
@@ -215,28 +214,102 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40（解）
-                        { questionTitle: '生命保険契約の特殊性', content: '正しい' }, //31
-                        { questionTitle: '死亡表', content: '国民生命表 → 経験生命表' }, //32 p15
-                        { questionTitle: '責任準備金', content: '正しい' }, //33
-                        { questionTitle: '生命保険事業の革新', content: '正しい' }, //34
-                        { questionTitle: '長期計画への役割', content: '正しい' }, //35
-                        { questionTitle: '戦後混乱期から再建への足どり', content: '相互会社から株式会社 → 株式会社から相互会社' }, //36 p78
-                        { questionTitle: '公的医療保険', content: '正しい' }, //37
-                        { questionTitle: '保険業法における保険募集', content: '保険エージェント（保険代理人）制度 → 保険ブローカー（保険仲立人）制度' }, //38
-                        { questionTitle: '日本の金融制度', content: '今日 → 戦後' }, //39 //p174
-                        { questionTitle: '営業職員以外の販売チャネル', content: '正しい' }, //40
-                        // 問41〜50（ア〜オ）
-                        { questionTitle: '保険金額', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険者', label: 'ア', content: '10' }, //42
-                        { questionTitle: '事業費', label: 'エ', content: '維持費' }, //43
-                        { questionTitle: '大正時代', label: 'ウ', content: '関東大震災' }, //44
-                        { questionTitle: '保険組合の誕生', label: 'エ', content: '賦課式' }, //45
-                        { questionTitle: '介護保険制度の概要', label: 'ウ', content: '第2号被保険者' }, //46
-                        { questionTitle: '生命保険業の監督の方法', label: 'イ', content: '実体的監督主義' }, //47
-                        { questionTitle: '消費者保護', label: 'イ', content: '消費者契約法' }, //48
-                        { questionTitle: '共済', label: 'エ', content: '消費生活協同組合法(生協法)' }, //49
-                        { questionTitle: '生保業界共通のシステム', label: 'ア', content: '団体定期保険' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険契約の特殊性',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '死亡表',
+                            content: '国民生命表 → 経験生命表',
+                        }, //32 p15
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '責任準備金',
+                            content: '正しい',
+                        }, //33
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険事業の革新',
+                            content: '正しい',
+                        }, //34
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '長期計画への役割',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '戦後混乱期から再建への足どり',
+                            content: '相互会社から株式会社 → 株式会社から相互会社',
+                        }, //36 p78
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '公的医療保険',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '保険業法における保険募集',
+                            content: '保険エージェント（保険代理人）制度 → 保険ブローカー（保険仲立人）制度',
+                        }, //38
+                        {
+                            questionTitle: '日本の金融制度',
+                            content: '今日 → 戦後',
+                        }, //39 //p174
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '営業職員以外の販売チャネル',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '保険金額',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '保険者',
+                            label: 'ア',
+                            content: '10',
+                        }, //42
+                        {
+                            questionTitle: '事業費',
+                            label: 'エ',
+                            content: '維持費',
+                        }, //43
+                        {
+                            questionTitle: '大正時代',
+                            label: 'ウ',
+                            content: '関東大震災',
+                        }, //44
+                        {
+                            questionTitle: '保険組合の誕生',
+                            label: 'エ',
+                            content: '賦課式',
+                        }, //45
+                        {
+                            questionTitle: '介護保険制度の概要',
+                            label: 'ウ',
+                            content: '第2号被保険者',
+                        }, //46
+                        {
+                            questionTitle: '生命保険業の監督の方法',
+                            label: 'イ',
+                            content: '実体的監督主義',
+                        }, //47
+                        {
+                            questionTitle: '消費者保護',
+                            label: 'イ',
+                            content: '消費者契約法',
+                        }, //48
+                        {
+                            questionTitle: '共済',
+                            label: 'エ',
+                            content: '消費生活協同組合法(生協法)',
+                        }, //49
+                        {
+                            questionTitle: '生保業界共通のシステム',
+                            label: 'ア',
+                            content: '団体定期保険',
+                        }, //50
                     ]"
                 />
             </div>

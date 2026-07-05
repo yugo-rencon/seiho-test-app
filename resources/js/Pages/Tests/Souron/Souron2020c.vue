@@ -9,7 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2020年度 フォームC";
-
 </script>
 
 <template>
@@ -227,28 +226,101 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40（解）
-                        { questionTitle: '生命保険契約の特殊性', content: '正しい' }, //31
-                        { questionTitle: '死亡表', content: '国民生命表 → 経験生命表' }, //32 p15
-                        { questionTitle: '国民年金基金保険', content: '正しい' }, //33
-                        { questionTitle: 'アメリカの保険事業規制', content: '連邦政府 → 州政府' }, //34 p65
-                        { questionTitle: '国際比較', content: '正しい' }, //35
-                        { questionTitle: '戦後混乱期から再建への足どり', content: '相互会社から株式会社 → 株式会社から相互会社' }, //36 p78
-                        { questionTitle: '介護保険制度', content: '国 → 各市町村' }, //37 p141
-                        { questionTitle: '外国保険業者', content: '責任準備金 → 供託金' }, //38 p159
-                        { questionTitle: '各都道府県民共済', content: '正しい' }, //39
-                        { questionTitle: '社会構造の変化', content: '正しい' }, //40
-                        // 問41〜50（ア〜オ）
-                        { questionTitle: '契約の法的性質', label: 'ア', content: '付合契約' }, //41
-                        { questionTitle: '保険者', label: 'ア', content: '10' }, //42
-                        { questionTitle: '責任準備金', label: 'オ', content: '' }, //43
-                        { questionTitle: 'エリザ・ライト', label: 'オ', content: '' }, //44
-                        { questionTitle: '保険組合の誕生', label: 'エ', content: '賦課式' }, //45
-                        { questionTitle: '契約条件変更', label: 'ウ', content: '既契約' }, //46
-                        { questionTitle: '社会保障と生命保険', label: 'オ', content: '' }, //47
-                        { questionTitle: '消費者保護', label: 'イ', content: '消費者契約法' }, //48
-                        { questionTitle: '生命共済事業', label: 'イ', content: '組合員' }, //49
-                        { questionTitle: '損害保険', label: 'ウ', content: '保険金額' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険契約の特殊性',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '死亡表',
+                            content: '国民生命表 → 経験生命表',
+                        }, //32 p15
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '国民年金基金保険',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: 'アメリカの保険事業規制',
+                            content: '連邦政府 → 州政府',
+                        }, //34 p65
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '国際比較',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '戦後混乱期から再建への足どり',
+                            content: '相互会社から株式会社 → 株式会社から相互会社',
+                        }, //36 p78
+                        {
+                            questionTitle: '介護保険制度',
+                            content: '国 → 各市町村',
+                        }, //37 p141
+                        {
+                            questionTitle: '外国保険業者',
+                            content: '責任準備金 → 供託金',
+                        }, //38 p159
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '各都道府県民共済',
+                            content: '正しい',
+                        }, //39
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '社会構造の変化',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '契約の法的性質',
+                            label: 'ア',
+                            content: '付合契約',
+                        }, //41
+                        {
+                            questionTitle: '保険者',
+                            label: 'ア',
+                            content: '10',
+                        }, //42
+                        {
+                            questionTitle: '責任準備金',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: 'エリザ・ライト',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '保険組合の誕生',
+                            label: 'エ',
+                            content: '賦課式',
+                        }, //45
+                        {
+                            questionTitle: '契約条件変更',
+                            label: 'ウ',
+                            content: '既契約',
+                        }, //46
+                        {
+                            questionTitle: '社会保障と生命保険',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '消費者保護',
+                            label: 'イ',
+                            content: '消費者契約法',
+                        }, //48
+                        {
+                            questionTitle: '生命共済事業',
+                            label: 'イ',
+                            content: '組合員',
+                        }, //49
+                        {
+                            questionTitle: '損害保険',
+                            label: 'ウ',
+                            content: '保険金額',
+                        }, //50
                     ]"
                 />
             </div>

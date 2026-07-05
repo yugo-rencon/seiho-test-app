@@ -9,8 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2021年度 フォームA";
-
-
 </script>
 
 <template>
@@ -216,28 +214,101 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '危険対策と保険', content: '正しい' }, //31
-                        { questionTitle: '責任準備金', content: '自然保険料方式 ↔︎ 平準保険料方式' }, //32
-                        { questionTitle: '保険の生成・発展', content: '正しい' }, //33
-                        { questionTitle: 'アームストロング調査', content: '合衆国統一の取締法 → ニューヨーク州の取締法' }, //34 p63
-                        { questionTitle: '保有契約高と国民所得', content: '正しい' }, //35
-                        { questionTitle: '生命保険会社の資金の性格', content: '純資産の大部分 → 負債の大部分' }, //36
-                        { questionTitle: '公的介護保険性の被保険者', content: '65歳以上 → 第1号<br>40歳～65歳未満 → 第2号' }, //37
-                        { questionTitle: 'ソルベンシー・マージン比率', content: '分子の1/2が誤り（1/2は分母側）' }, //38
-                        { questionTitle: '簡易保険の歴史', content: '正しい' }, //39
-                        { questionTitle: '生命保険業界の国際化', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '契約の法的性質', label: 'ウ', content: '諾成方式' }, //41
-                        { questionTitle: '保険事故の発生', label: 'ア', content: '保険金' }, //42
-                        { questionTitle: '養老保険', label: 'エ', content: '逓減定期保険' }, //43
-                        { questionTitle: '賦課式保険', label: 'エ', content: '同額の分担金で' }, //44
-                        { questionTitle: '近代的生命保険の導入', label: 'オ', content: '' }, //45
-                        { questionTitle: '国民経済における生命保険', label: 'オ', content: '' }, //46
-                        { questionTitle: '公的医療保険', label: 'イ', content: '国民皆保険' }, //47
-                        { questionTitle: '保険に関する法律', label: 'ア', content: '金融商品取引法' }, //48
-                        { questionTitle: '銀行・証券業界', label: 'ウ', content: '個人年金' }, //49
-                        { questionTitle: '共同ネットワークシステム', label: 'イ', content: 'LINC（Life Insurance Network Center）' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '危険対策と保険',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '責任準備金',
+                            content: '自然保険料方式 ↔︎ 平準保険料方式',
+                        }, //32
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険の生成・発展',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: 'アームストロング調査',
+                            content: '合衆国統一の取締法 → ニューヨーク州の取締法',
+                        }, //34 p63
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保有契約高と国民所得',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '生命保険会社の資金の性格',
+                            content: '純資産の大部分 → 負債の大部分',
+                        }, //36
+                        {
+                            questionTitle: '公的介護保険性の被保険者',
+                            content: '65歳以上 → 第1号<br>40歳～65歳未満 → 第2号',
+                        }, //37
+                        {
+                            questionTitle: 'ソルベンシー・マージン比率',
+                            content: '分子の1/2が誤り（1/2は分母側）',
+                        }, //38
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '簡易保険の歴史',
+                            content: '正しい',
+                        }, //39
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険業界の国際化',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '契約の法的性質',
+                            label: 'ウ',
+                            content: '諾成方式',
+                        }, //41
+                        {
+                            questionTitle: '保険事故の発生',
+                            label: 'ア',
+                            content: '保険金',
+                        }, //42
+                        {
+                            questionTitle: '養老保険',
+                            label: 'エ',
+                            content: '逓減定期保険',
+                        }, //43
+                        {
+                            questionTitle: '賦課式保険',
+                            label: 'エ',
+                            content: '同額の分担金で',
+                        }, //44
+                        {
+                            questionTitle: '近代的生命保険の導入',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '国民経済における生命保険',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '公的医療保険',
+                            label: 'イ',
+                            content: '国民皆保険',
+                        }, //47
+                        {
+                            questionTitle: '保険に関する法律',
+                            label: 'ア',
+                            content: '金融商品取引法',
+                        }, //48
+                        {
+                            questionTitle: '銀行・証券業界',
+                            label: 'ウ',
+                            content: '個人年金',
+                        }, //49
+                        {
+                            questionTitle: '共同ネットワークシステム',
+                            label: 'イ',
+                            content: 'LINC（Life Insurance Network Center）',
+                        }, //50
                     ]"
                 />
             </div>

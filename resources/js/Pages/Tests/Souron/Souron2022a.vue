@@ -9,8 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2022年度 フォームA";
-
-
 </script>
 
 <template>
@@ -27,6 +25,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険契約の特殊性-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '契約自由',
                         '債権債務',
                         '経済的',
@@ -47,6 +46,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険契約の特殊性-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '拘束',
                         '法規範説',
                         '定型的取引',
@@ -67,6 +67,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="社会構造の変化-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '平均寿命',
                         '7',
                         '速い',
@@ -87,6 +88,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="社会構造の変化-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '年金',
                         '70',
                         '合計特殊出生率',
@@ -216,28 +218,112 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '責任準備金', content: '正しい' }, //31
-                        { questionTitle: '生死混合保険', content: '正しい' }, //32
-                        { questionTitle: '科学的な生命保険会社', content: 'ロイヤル・エクスチェンジ → エクイタブル' }, //33
-                        { questionTitle: '1970〜80年代のアメリカのニューウェーブ商品の開発', content: '決済機能を持ち → 決済機能は持たない' }, //34
-                        { questionTitle: '世帯加入状況', content: '正しい' }, //35
-                        { questionTitle: '資産運用体制の構築', content: '正しい' }, //36
-                        { questionTitle: '組織変更', content: '正しい' }, //37
-                        { questionTitle: 'JA共済（全国共済農業協同組合連合会）', content: '正しい' }, //38
-                        { questionTitle: '損害保険', content: '損害保険 → 生命保険' }, //39
-                        { questionTitle: '消費者の購入態度の変化', content: '従来〜 ↔︎ 今日〜' }, //40
-                        // 問41〜50
-                        { questionTitle: '保険契約の当事者', label: 'ウ', content: '保険料' }, //41
-                        { questionTitle: '死亡表', label: 'オ', content: '' }, //42
-                        { questionTitle: '利差配当', label: 'イ', content: '経過年数' }, //43
-                        { questionTitle: 'イギリスの共済的な保険組合', label: 'イ', content: '友愛組合' }, //44
-                        { questionTitle: '生命表の改定', label: 'エ', content: '低く' }, //45
-                        { questionTitle: '生命保険会社の資金の性格', label: 'ア', content: '負債' }, //46
-                        { questionTitle: '社会保障制度', label: 'ア', content: '保険料の拠出' }, //47
-                        { questionTitle: '生命保険業の監督の方法', label: 'エ', content: '財務大臣' }, //48
-                        { questionTitle: '労働者共済', label: 'オ', content: '' }, //49
-                        { questionTitle: '生保業界共通のシステム', label: 'ア', content: '団体定期保険' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '責任準備金',
+                            content: '正しい',
+                        }, //31
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生死混合保険',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '科学的な生命保険会社',
+                            content: 'ロイヤル・エクスチェンジ → エクイタブル',
+                        }, //33
+                        {
+                            questionTitle: '1970〜80年代のアメリカのニューウェーブ商品の開発',
+                            content: '決済機能を持ち → 決済機能は持たない',
+                        }, //34
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '世帯加入状況',
+                            content: '正しい',
+                        }, //35
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '資産運用体制の構築',
+                            content: '正しい',
+                        }, //36
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '組織変更',
+                            content: '正しい',
+                        }, //37
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: 'JA共済（全国共済農業協同組合連合会）',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '損害保険',
+                            content: '損害保険 → 生命保険',
+                        }, //39
+                        {
+                            questionTitle: '消費者の購入態度の変化',
+                            content: '従来〜 ↔︎ 今日〜',
+                        }, //40
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '保険契約の当事者',
+                            label: 'ウ',
+                            content: '保険料',
+                        }, //41
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '死亡表',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '利差配当',
+                            label: 'イ',
+                            content: '経過年数',
+                        }, //43
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: 'イギリスの共済的な保険組合',
+                            label: 'イ',
+                            content: '友愛組合',
+                        }, //44
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '生命表の改定',
+                            label: 'エ',
+                            content: '低く',
+                        }, //45
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '生命保険会社の資金の性格',
+                            label: 'ア',
+                            content: '負債',
+                        }, //46
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '社会保障制度',
+                            label: 'ア',
+                            content: '保険料の拠出',
+                        }, //47
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '生命保険業の監督の方法',
+                            label: 'エ',
+                            content: '財務大臣',
+                        }, //48
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '労働者共済',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '生保業界共通のシステム',
+                            label: 'ア',
+                            content: '団体定期保険',
+                        }, //50
                     ]"
                 />
             </div>

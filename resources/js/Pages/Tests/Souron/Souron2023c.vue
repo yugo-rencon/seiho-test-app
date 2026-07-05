@@ -9,8 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2023年度 フォームC";
-
-
 </script>
 
 <template>
@@ -27,6 +25,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="保険募集と監督法-①"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '内閣総理大臣',
                         '委託',
                         '禁止行為',
@@ -47,6 +46,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="保険募集と監督法-②"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '意向把握義務',
                         '勧誘方針',
                         '消費者契約法',
@@ -67,6 +67,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="保険の歴史的発展-①"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '保障制度',
                         '自給自足',
                         '経済単位',
@@ -87,6 +88,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="保険の歴史的発展-②"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '海上保険',
                         '冒険貸借',
                         '統計学',
@@ -216,28 +218,112 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '生命保険契約の法的性質', content: '片務契約でない（保険金支払債務と保険料支払債務とが対価関係になる双務契約）' }, //31
-                        { questionTitle: '危険選択の意義', content: '正しい' }, //32
-                        { questionTitle: 'イギリスにおける科学的な生命保険会社', content: '正しい' }, //33
-                        { questionTitle: '死亡保険', content: '正しい' }, //34
-                        { questionTitle: '資産運用の自由化', content: '正しい' }, //35
-                        { questionTitle: '実体的監督主義', content: '正しい' }, //36
-                        { questionTitle: '組織変更', content: '100株未満 → 1株未満' }, //37 p162
-                        { questionTitle: 'JA共済事業', content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
-                        { questionTitle: '消費者ニーズの変化', content: '正しい' }, //39
-                        { questionTitle: '医療保障商品', content: '倍額 → 同額' }, //40
-                        // 問41〜50
-                        { questionTitle: '保険の始期', label: 'エ', content: 'いずれか遅い日' }, //41
-                        { questionTitle: '責任準備金', label: 'ア', content: '負債' }, //42
-                        { questionTitle: '事業費', label: 'エ', content: '維持費' }, //43
-                        { questionTitle: '団体年金保険', label: 'オ', content: '' }, //44
-                        { questionTitle: '保険業法の一部改正', label: 'イ', content: '更生手続' }, //45
-                        { questionTitle: '国民経済における生命保険', label: 'ア', content: '家計可処分所得' }, //46
-                        { questionTitle: '保険の有用性', label: 'オ', content: '' }, //47
-                        { questionTitle: '生保資産運用の基本原則', label: 'イ', content: '安全性' }, //48
-                        { questionTitle: '公的介護保険制度の概要', label: 'ウ', content: '第2号被保険者' }, //49
-                        { questionTitle: '損害保険', label: 'ウ', content: '保険金額' }, //50
+                        {
+                            questionTitle: '生命保険契約の法的性質',
+                            content: '片務契約でない（保険金支払債務と保険料支払債務とが対価関係になる双務契約）',
+                        }, //31
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '危険選択の意義',
+                            content: '正しい',
+                        }, //32
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: 'イギリスにおける科学的な生命保険会社',
+                            content: '正しい',
+                        }, //33
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '死亡保険',
+                            content: '正しい',
+                        }, //34
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '資産運用の自由化',
+                            content: '正しい',
+                        }, //35
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '実体的監督主義',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '組織変更',
+                            content: '100株未満 → 1株未満',
+                        }, //37 p162
+                        {
+                            questionTitle: 'JA共済事業',
+                            content: '3段階 → 2段階（JA（単位農協）、JA共済連）',
+                        }, //38
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '消費者ニーズの変化',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '医療保障商品',
+                            content: '倍額 → 同額',
+                        }, //40
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '保険の始期',
+                            label: 'エ',
+                            content: 'いずれか遅い日',
+                        }, //41
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '責任準備金',
+                            label: 'ア',
+                            content: '負債',
+                        }, //42
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '事業費',
+                            label: 'エ',
+                            content: '維持費',
+                        }, //43
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '団体年金保険',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '保険業法の一部改正',
+                            label: 'イ',
+                            content: '更生手続',
+                        }, //45
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '国民経済における生命保険',
+                            label: 'ア',
+                            content: '家計可処分所得',
+                        }, //46
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '保険の有用性',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '生保資産運用の基本原則',
+                            label: 'イ',
+                            content: '安全性',
+                        }, //48
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '公的介護保険制度の概要',
+                            label: 'ウ',
+                            content: '第2号被保険者',
+                        }, //49
+                        {
+                            // rev: 2026-07-06 確認済み
+                            questionTitle: '損害保険',
+                            label: 'ウ',
+                            content: '保険金額',
+                        }, //50
                     ]"
                 />
             </div>

@@ -9,8 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2023年度 フォームA";
-
-
 </script>
 
 <template>
@@ -27,6 +25,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="危険の選択-①"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '危険均一性',
                         '高額',
                         '健康',
@@ -47,6 +46,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="危険の選択-②"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '契約確認',
                         '公平性',
                         '評価',
@@ -67,6 +67,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="保険の歴史的発展-①"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '保障制度',
                         '自給自足',
                         '経済単位',
@@ -87,6 +88,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="保険の歴史的発展-②"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '海上保険',
                         '冒険貸借',
                         '統計学',
@@ -217,7 +219,10 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     :items="[
                         // 問31〜40
-                        { questionTitle: '保険金受取人', content: '保険金受取人の資格についての制限はない' }, //31
+                        {
+                            questionTitle: '保険金受取人',
+                            content: '保険金受取人の資格についての制限はない',
+                        }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険契約の特殊性',
@@ -238,26 +243,87 @@ const subject = "2023年度 フォームA";
                             questionTitle: '生命保険会社の資金の性格',
                             content: '正しい',
                         }, //35
-                        { questionTitle: '公的介護保険の保険料', content: '国 → 各市町村' }, //36
-                        { questionTitle: '組織変更', content: '100株未満 → 1株未満' }, //37
-                        { questionTitle: 'JA共済事業', content: '3段階 → 2段階（JA（単位農協）、JA共済連）' }, //38
-                        { questionTitle: '生保業界のネットワークシステム', content: '生保ANSERシステム → LINC（Life Insurance Network Center）' }, //39
+                        {
+                            questionTitle: '公的介護保険の保険料',
+                            content: '国 → 各市町村',
+                        }, //36
+                        {
+                            questionTitle: '組織変更',
+                            content: '100株未満 → 1株未満',
+                        }, //37
+                        {
+                            questionTitle: 'JA共済事業',
+                            content: '3段階 → 2段階（JA（単位農協）、JA共済連）',
+                        }, //38
+                        {
+                            questionTitle: '生保業界のネットワークシステム',
+                            content: '生保ANSERシステム → LINC（Life Insurance Network Center）',
+                        }, //39
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '国際化の方向',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '危険の種類', label: 'オ', content: '' }, //41
-                        { questionTitle: '責任準備金', label: 'ア', content: '負債' }, //42
-                        { questionTitle: '生命保険商品の基本型', label: 'ウ', content: '養老保険' }, //43
-                        { questionTitle: 'エリザ・ライト', label: 'エ', content: '不没収法' }, //44
-                        { questionTitle: '保険業法の一部改正', label: 'イ', content: '更生手続' }, //45
-                        { questionTitle: '国民経済における生命保険', label: 'ア', content: '家計可処分所得' }, //46
-                        { questionTitle: '公的医療保険', label: 'エ', content: '各種共済組合' }, //47
-                        { questionTitle: '消費者保護', label: 'イ', content: '消費者契約法' }, //48
-                        { questionTitle: '生命共済事業', label: 'イ', content: '組合員' }, //49
-                        { questionTitle: '社会構造の変化', label: 'オ', content: '' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '危険の種類',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '責任準備金',
+                            label: 'ア',
+                            content: '負債',
+                        }, //42
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険商品の基本型',
+                            label: 'ウ',
+                            content: '養老保険',
+                        }, //43
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: 'エリザ・ライト',
+                            label: 'エ',
+                            content: '不没収法',
+                        }, //44
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険業法の一部改正',
+                            label: 'イ',
+                            content: '更生手続',
+                        }, //45
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '国民経済における生命保険',
+                            label: 'ア',
+                            content: '家計可処分所得',
+                        }, //46
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '公的医療保険',
+                            label: 'エ',
+                            content: '各種共済組合',
+                        }, //47
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '消費者保護',
+                            label: 'イ',
+                            content: '消費者契約法',
+                        }, //48
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命共済事業',
+                            label: 'イ',
+                            content: '組合員',
+                        }, //49
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '社会構造の変化',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

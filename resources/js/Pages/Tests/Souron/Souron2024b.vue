@@ -25,6 +25,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="契約者配当-①"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '負債',
                         '定款',
                         '20%',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="契約者配当-②"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '利源分析',
                         '増加',
                         '上回る',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="資産運用-①"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '予定利率',
                         '逆ざや',
                         'ALM（資産負債統合管理）',
@@ -85,6 +88,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="資産運用-②"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '法定他業',
                         '規制緩和',
                         '金融システム改革法',
@@ -270,51 +274,61 @@ const subject = "2024年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '保険の始期',
                             label: 'エ',
-                            content: 'いずれかの遅い日',
+                            content: 'いずれか遅い日',
                         }, //41
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '死亡表',
                             label: 'ウ',
                             content: '終局表',
                         }, //42
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '養老保険',
                             label: 'エ',
                             content: '逓減定期保険',
                         }, //43
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: 'イギリスの共済的な保険組合',
                             label: 'イ',
                             content: '友愛組合',
                         }, //44
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: 'エリザ・ライト',
                             label: 'ア',
                             content: '法定責任準備金法',
                         }, //45
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '国民経済における生命保険',
                             label: 'イ',
                             content: '経済的保障',
                         }, //46
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '社会保障と生命保険',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '保険業を行う会社の性質',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '労働者共済',
                             label: 'ア',
-                            content: 'こくみん共済coop<全労済>',
+                            content: 'こくみん共済 coop（全労済）',
                         }, //49
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '年金型商品の開発',
                             label: 'ウ',
                             content: '変額年金',

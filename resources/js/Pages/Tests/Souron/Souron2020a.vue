@@ -9,7 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2020年度 フォームA";
-
 </script>
 
 <template>
@@ -226,28 +225,100 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40（解）
-                        { questionTitle: '生命保険契約の特殊性', content: '正しい' }, //31
-                        { questionTitle: '死亡表', content: '国民生命表 → 経験生命表' }, //32 p15
-                        { questionTitle: '保険料', content: '純保険料 → 営業保険料' }, //33 p23
-                        { questionTitle: '死亡保険', content: '養老 → 終身' }, //34 p31
-                        { questionTitle: '日本の保険', content: '日本の保険はこれらの類似制度から発展したものではない' }, //35 p72
-                        { questionTitle: '戦後混乱期から再建への足どり', content: '相互会社から株式会社 → 株式会社から相互会社' }, //36 p78
-                        { questionTitle: '保険料支出性向', content: '正しい' }, //37
-                        { questionTitle: '介護保険の保険料', content: '正しい' }, //38
-                        { questionTitle: '形式的監督主義', content: '正しい' }, //39
-                        { questionTitle: '少額短期保険業', content: '死亡保険金500万円 → 300万円<br>損害保険金500万円 → 1000万円' }, //40 p176
-                        // 問41〜50（ア〜オ）
-                        { questionTitle: '危険の種類', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険者', label: 'ア', content: '10' }, //42
-                        { questionTitle: '保険の始期', label: 'エ', content: 'いずれかの遅い日' }, //43
-                        { questionTitle: '団体年金保険', label: 'イ', content: '確定拠出年金保険' }, //44
-                        { questionTitle: '保険組合の誕生', label: 'エ', content: '賦課式' }, //45
-                        { questionTitle: '保険業法の一部改正', label: 'ウ', content: '会社更生法' }, //46
-                        { questionTitle: '社会保険の保険料', label: 'ア', content: '保険料の負担能力' }, //47
-                        { questionTitle: '消費者保護', label: 'イ', content: '消費者契約法' }, //48
-                        { questionTitle: 'JA共済', label: 'オ', content: '' }, //49
-                        { questionTitle: '社会構造の変化', label: 'イ', content: '平均寿命' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険契約の特殊性',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '死亡表',
+                            content: '国民生命表 → 経験生命表',
+                        }, //32 p15
+                        {
+                            questionTitle: '保険料',
+                            content: '純保険料 → 営業保険料',
+                        }, //33 p23
+                        {
+                            questionTitle: '死亡保険',
+                            content: '養老 → 終身',
+                        }, //34 p31
+                        {
+                            questionTitle: '日本の保険',
+                            content: '日本の保険はこれらの類似制度から発展したものではない',
+                        }, //35 p72
+                        {
+                            questionTitle: '戦後混乱期から再建への足どり',
+                            content: '相互会社から株式会社 → 株式会社から相互会社',
+                        }, //36 p78
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険料支出性向',
+                            content: '正しい',
+                        }, //37
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '介護保険の保険料',
+                            content: '正しい',
+                        }, //38
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '形式的監督主義',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '少額短期保険業',
+                            content: '死亡保険金500万円 → 300万円<br>損害保険金500万円 → 1000万円',
+                        }, //40 p176
+                        {
+                            questionTitle: '危険の種類',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '保険者',
+                            label: 'ア',
+                            content: '10',
+                        }, //42
+                        {
+                            questionTitle: '保険の始期',
+                            label: 'エ',
+                            content: 'いずれかの遅い日',
+                        }, //43
+                        {
+                            questionTitle: '団体年金保険',
+                            label: 'イ',
+                            content: '確定拠出年金保険',
+                        }, //44
+                        {
+                            questionTitle: '保険組合の誕生',
+                            label: 'エ',
+                            content: '賦課式',
+                        }, //45
+                        {
+                            questionTitle: '保険業法の一部改正',
+                            label: 'ウ',
+                            content: '会社更生法',
+                        }, //46
+                        {
+                            questionTitle: '社会保険の保険料',
+                            label: 'ア',
+                            content: '保険料の負担能力',
+                        }, //47
+                        {
+                            questionTitle: '消費者保護',
+                            label: 'イ',
+                            content: '消費者契約法',
+                        }, //48
+                        {
+                            questionTitle: 'JA共済',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '社会構造の変化',
+                            label: 'イ',
+                            content: '平均寿命',
+                        }, //50
                     ]"
                 />
             </div>

@@ -25,6 +25,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険の技術的基礎-①"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '経験生命表',
                         '低い',
                         '総合表',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険の技術的基礎-②"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '診査医',
                         '生命保険面接士',
                         '告知義務',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="資産運用-①"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '予定利率',
                         '逆ざや',
                         'ALM（資産負債統合管理）',
@@ -85,6 +88,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="資産運用-②"
                     :contents="[
+                        // rev: 2026-07-05 確認済み
                         '法定他業',
                         '規制緩和',
                         '金融システム改革法',
@@ -271,51 +275,61 @@ const subject = "2024年度 フォームA";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '契約の法的性質',
                             label: 'ウ',
                             content: '諾成契約',
                         }, //41
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '保険金額',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '養老保険',
                             label: 'エ',
                             content: '逓減定期保険',
                         }, //43
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '日本における生命保険の発展',
                             label: 'ア',
                             content: 'スペインかぜの大流行',
                         }, //44
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険契約者保護機構',
                             label: 'イ',
                             content: '90%',
                         }, //45
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '国民経済における生命保険',
                             label: 'ア',
                             content: '家計可処分所得',
                         }, //46
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '生活保障としての生命保険',
                             label: 'イ',
-                            content: '緊急出費保証',
+                            content: '緊急出費保障',
                         }, //47
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '保険業を行う会社の性質',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '生命共済事業',
                             label: 'エ',
                             content: '相互扶助',
                         }, //49
                         {
+                            // rev: 2026-07-05 確認済み
                             questionTitle: '年金型商品の開発',
                             label: 'ウ',
                             content: '変額年金',

@@ -9,8 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2022年度 フォームC";
-
-
 </script>
 
 <template>
@@ -27,6 +25,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="狭義の社会保障制度-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '保険料の拠出',
                         '全国健康保険協会管掌保険',
                         '国家公務員',
@@ -47,6 +46,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="狭義の社会保障制度-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '共済年金',
                         '国民年金',
                         '労働者災害補償保険',
@@ -67,6 +67,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="社会構造の変化-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '平均寿命',
                         '7',
                         '速い',
@@ -87,6 +88,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="社会構造の変化-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '年金',
                         '70',
                         '合計特殊出生率',
@@ -216,28 +218,101 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '責任準備金', content: '正しい' }, //31
-                        { questionTitle: '生命保険契約の特殊性', content: '任意規定 → 強行規定' }, //32
-                        { questionTitle: '科学的な生命保険会社', content: 'ロイヤル・エクスチェンジ → エクイタブル' }, //33
-                        { questionTitle: '保険の始期', content: '正しい' }, //34
-                        { questionTitle: '日本における生命保険の発展', content: '日本の保険はこれらの類似制度から発展したものではない' }, //35 p72
-                        { questionTitle: '生活設計', content: '正しい' }, //36
-                        { questionTitle: '組織変更', content: '正しい' }, //37
-                        { questionTitle: '消費者契約法', content: '消費者契約法 → 金融商品の販売等に関する法律（現在、金融サービス提供法に改称）' }, //38
-                        { questionTitle: '各都道府県民共済', content: '正しい' }, //39
-                        { questionTitle: '簡易保険の歴史', content: '保証は全て撤廃 → 保証は継続' }, //40
-                        // 問41〜50
-                        { questionTitle: '契約の法的性質', label: 'ウ', content: '不要式契約' }, //41
-                        { questionTitle: '死亡表', label: 'オ', content: '' }, //42
-                        { questionTitle: '保険者', label: 'ア', content: '10' }, //43
-                        { questionTitle: '財形保険', label: 'イ', content: '財形住宅貯蓄積立保険' }, //44
-                        { questionTitle: 'エリザ・ライト', label: 'オ', content: '' }, //45
-                        { questionTitle: '生命保険契約者保護機構', label: 'エ', content: '生命保険会社各社の拠出' }, //46
-                        { questionTitle: '早期是正措置制度', label: 'イ', content: '200%' }, //47
-                        { questionTitle: '生命保険業の監督の方法', label: 'エ', content: '財務大臣' }, //48
-                        { questionTitle: '損害保険', label: 'ウ', content: '保険金額' }, //49
-                        { questionTitle: '生保業界共通のシステム', label: 'ア', content: '団体定期保険' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '責任準備金',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '生命保険契約の特殊性',
+                            content: '任意規定 → 強行規定',
+                        }, //32
+                        {
+                            questionTitle: '科学的な生命保険会社',
+                            content: 'ロイヤル・エクスチェンジ → エクイタブル',
+                        }, //33
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険の始期',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '日本における生命保険の発展',
+                            content: '日本の保険はこれらの類似制度から発展したものではない',
+                        }, //35 p72
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生活設計',
+                            content: '正しい',
+                        }, //36
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '組織変更',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '消費者契約法',
+                            content: '消費者契約法 → 金融商品の販売等に関する法律（現在、金融サービス提供法に改称）',
+                        }, //38
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '各都道府県民共済',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '簡易保険の歴史',
+                            content: '保証は全て撤廃 → 保証は継続',
+                        }, //40
+                        {
+                            questionTitle: '契約の法的性質',
+                            label: 'ウ',
+                            content: '不要式契約',
+                        }, //41
+                        {
+                            questionTitle: '死亡表',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '保険者',
+                            label: 'ア',
+                            content: '10',
+                        }, //43
+                        {
+                            questionTitle: '財形保険',
+                            label: 'イ',
+                            content: '財形住宅貯蓄積立保険',
+                        }, //44
+                        {
+                            questionTitle: 'エリザ・ライト',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '生命保険契約者保護機構',
+                            label: 'エ',
+                            content: '生命保険会社各社の拠出',
+                        }, //46
+                        {
+                            questionTitle: '早期是正措置制度',
+                            label: 'イ',
+                            content: '200%',
+                        }, //47
+                        {
+                            questionTitle: '生命保険業の監督の方法',
+                            label: 'エ',
+                            content: '財務大臣',
+                        }, //48
+                        {
+                            questionTitle: '損害保険',
+                            label: 'ウ',
+                            content: '保険金額',
+                        }, //49
+                        {
+                            questionTitle: '生保業界共通のシステム',
+                            label: 'ア',
+                            content: '団体定期保険',
+                        }, //50
                     ]"
                 />
             </div>

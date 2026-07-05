@@ -9,8 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2022年度 フォームB";
-
-
 </script>
 
 <template>
@@ -27,6 +25,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="金融機関としての生命保険会社-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '保険契約準備金',
                         '責任準備金',
                         '安全',
@@ -47,6 +46,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="金融機関としての生命保険会社-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '長期',
                         '貯蓄性',
                         '公共',
@@ -67,6 +67,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="社会構造の変化-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '平均寿命',
                         '7',
                         '速い',
@@ -87,6 +88,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="社会構造の変化-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '年金',
                         '70',
                         '合計特殊出生率',
@@ -216,28 +218,101 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '責任準備金', content: '正しい' }, //31
-                        { questionTitle: '保険料', content: '正しい' }, //32
-                        { questionTitle: '科学的な生命保険会社', content: 'ロイヤル・エクスチェンジ → エクイタブル' }, //33
-                        { questionTitle: '生命保険に関する情報提供', content: '契約成立後 → 契約申込時' }, //34
-                        { questionTitle: '保険金・給付金の支払い', content: '正しい' }, //35
-                        { questionTitle: '社会保障制度', content: '社会扶助制度 → 公的扶助制度' }, //36
-                        { questionTitle: '組織変更', content: '正しい' }, //37
-                        { questionTitle: 'ソルベンシー・マージン比率', content: '分母と分子が逆' }, //38
-                        { questionTitle: 'こくみん共済coop（全労災）', content: '正しい' }, //39
-                        { questionTitle: '医療・介護ニーズへの対応', content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている' }, //40
-                        // 問41〜50
-                        { questionTitle: '危険評価軸', label: 'オ', content: '' }, //41
-                        { questionTitle: '死亡表', label: 'オ', content: '' }, //42
-                        { questionTitle: '保険金額', label: 'エ', content: 'あらかじめ定められた' }, //43
-                        { questionTitle: '自主的な団結と相互扶助', label: 'オ', content: '' }, //44
-                        { questionTitle: 'ユニバーサル保険', label: 'イ', content: '自由' }, //45
-                        { questionTitle: '国民経済における生命保険', label: 'イ', content: '経済的保障' }, //46
-                        { questionTitle: '生命共済事業', label: 'ウ', content: '損害共済' }, //47
-                        { questionTitle: '生命保険業の監督の方法', label: 'エ', content: '財務大臣' }, //48
-                        { questionTitle: '銀行による保険販売', label: 'ウ', content: '個人年金' }, //49
-                        { questionTitle: '生保業界共通のシステム', label: 'ア', content: '団体定期保険' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '責任準備金',
+                            content: '正しい',
+                        }, //31
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険料',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '科学的な生命保険会社',
+                            content: 'ロイヤル・エクスチェンジ → エクイタブル',
+                        }, //33
+                        {
+                            questionTitle: '生命保険に関する情報提供',
+                            content: '契約成立後 → 契約申込時',
+                        }, //34
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険金・給付金の支払い',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '社会保障制度',
+                            content: '社会扶助制度 → 公的扶助制度',
+                        }, //36
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '組織変更',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: 'ソルベンシー・マージン比率',
+                            content: '分母と分子が逆',
+                        }, //38
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: 'こくみん共済coop（全労災）',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '医療・介護ニーズへの対応',
+                            content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている',
+                        }, //40
+                        {
+                            questionTitle: '危険評価軸',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '死亡表',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '保険金額',
+                            label: 'エ',
+                            content: 'あらかじめ定められた',
+                        }, //43
+                        {
+                            questionTitle: '自主的な団結と相互扶助',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: 'ユニバーサル保険',
+                            label: 'イ',
+                            content: '自由',
+                        }, //45
+                        {
+                            questionTitle: '国民経済における生命保険',
+                            label: 'イ',
+                            content: '経済的保障',
+                        }, //46
+                        {
+                            questionTitle: '生命共済事業',
+                            label: 'ウ',
+                            content: '損害共済',
+                        }, //47
+                        {
+                            questionTitle: '生命保険業の監督の方法',
+                            label: 'エ',
+                            content: '財務大臣',
+                        }, //48
+                        {
+                            questionTitle: '銀行による保険販売',
+                            label: 'ウ',
+                            content: '個人年金',
+                        }, //49
+                        {
+                            questionTitle: '生保業界共通のシステム',
+                            label: 'ア',
+                            content: '団体定期保険',
+                        }, //50
                     ]"
                 />
             </div>

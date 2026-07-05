@@ -9,8 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2021年度 フォームC";
-
-
 </script>
 
 <template>
@@ -216,28 +214,101 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '保険金受取人', content: '正しい' }, //31
-                        { questionTitle: '死亡表', content: '死亡率は同年齢の合計死亡率より通常は高い → 低い' }, //32
-                        { questionTitle: '生存保険', content: '正しい' }, //33
-                        { questionTitle: 'アームストロング調査', content: '合衆国統一の取締法 → ニューヨーク州の取締法' }, //34 p63
-                        { questionTitle: '日本における生命保険の発展', content: '正しい' }, //35
-                        { questionTitle: '生命保険会社の資金の性格', content: '純資産の大部分 → 負債の大部分' }, //36
-                        { questionTitle: '生活設計の必要性', content: '正しい' }, //37
-                        { questionTitle: '社会構造の変化', content: '医療 ↔︎ 年金' }, //38
-                        { questionTitle: '簡易保険の歴史', content: '正しい' }, //39
-                        { questionTitle: '生保業界におけるシステム動向', content: '団体保険分野 → 個人保険分野' }, //40 p197-198
-                        // 問41〜50
-                        { questionTitle: '危険評価額', label: 'ア', content: '保険金額' }, //41
-                        { questionTitle: '事業費', label: 'ウ', content: '維持費' }, //42
-                        { questionTitle: '保険の歴史的発展', label: 'ア', content: 'ギルド' }, //43
-                        { questionTitle: '賦課式保険', label: 'エ', content: '同額の分担金で' }, //44
-                        { questionTitle: '資産運用の原則', label: 'エ', content: '公共性' }, //45
-                        { questionTitle: '国民経済における生命保険', label: 'オ', content: '' }, //46
-                        { questionTitle: '保険業を行う会社の性質', label: 'オ', content: '' }, //47
-                        { questionTitle: '生損保の相互参入', label: 'イ', content: '保険業法' }, //48
-                        { questionTitle: '年金型商品の開発', label: 'ウ', content: '変額年金' }, //49
-                        { questionTitle: '共同ネットワークシステム', label: 'イ', content: 'LINC（Life Insurance Network Center）' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '保険金受取人',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '死亡表',
+                            content: '死亡率は同年齢の合計死亡率より通常は高い → 低い',
+                        }, //32
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生存保険',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: 'アームストロング調査',
+                            content: '合衆国統一の取締法 → ニューヨーク州の取締法',
+                        }, //34 p63
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '日本における生命保険の発展',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '生命保険会社の資金の性格',
+                            content: '純資産の大部分 → 負債の大部分',
+                        }, //36
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生活設計の必要性',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '社会構造の変化',
+                            content: '医療 ↔︎ 年金',
+                        }, //38
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '簡易保険の歴史',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '生保業界におけるシステム動向',
+                            content: '団体保険分野 → 個人保険分野',
+                        }, //40 p197-198
+                        {
+                            questionTitle: '危険評価額',
+                            label: 'ア',
+                            content: '保険金額',
+                        }, //41
+                        {
+                            questionTitle: '事業費',
+                            label: 'ウ',
+                            content: '維持費',
+                        }, //42
+                        {
+                            questionTitle: '保険の歴史的発展',
+                            label: 'ア',
+                            content: 'ギルド',
+                        }, //43
+                        {
+                            questionTitle: '賦課式保険',
+                            label: 'エ',
+                            content: '同額の分担金で',
+                        }, //44
+                        {
+                            questionTitle: '資産運用の原則',
+                            label: 'エ',
+                            content: '公共性',
+                        }, //45
+                        {
+                            questionTitle: '国民経済における生命保険',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '保険業を行う会社の性質',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '生損保の相互参入',
+                            label: 'イ',
+                            content: '保険業法',
+                        }, //48
+                        {
+                            questionTitle: '年金型商品の開発',
+                            label: 'ウ',
+                            content: '変額年金',
+                        }, //49
+                        {
+                            questionTitle: '共同ネットワークシステム',
+                            label: 'イ',
+                            content: 'LINC（Life Insurance Network Center）',
+                        }, //50
                     ]"
                 />
             </div>

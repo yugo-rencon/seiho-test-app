@@ -9,8 +9,6 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 
 const title = "生命保険総論";
 const subject = "2021年度 フォームB";
-
-
 </script>
 
 <template>
@@ -216,28 +214,101 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '生命保険契約の法的性質', content: '正しい' }, //31
-                        { questionTitle: '生命保険契約の要素', content: '正しい' }, //32
-                        { questionTitle: '危険選択の意義', content: '危険同一性の原則 → 危険均一性の原則' }, //33
-                        { questionTitle: 'アームストロング調査', content: '合衆国統一の取締法 → ニューヨーク州の取締法' }, //34 p63
-                        { questionTitle: '保険の有用性', content: 'ペストの大流行とスペインかぜ → 関東大震災とスペインかぜ' }, //35
-                        { questionTitle: '生命保険会社の資金の性格', content: '純資産の大部分 → 負債の大部分' }, //36
-                        { questionTitle: '日本の公的年金制度', content: '正しい' }, //37
-                        { questionTitle: 'こくみん共済coop（全労災）', content: '各都道府県民共済 → こくみん共済' }, //38
-                        { questionTitle: '簡易保険の歴史', content: '正しい' }, //39
-                        { questionTitle: '医療・介護ニーズへの対応', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '死亡表', label: 'ア', content: '国民生命表' }, //41
-                        { questionTitle: '生命保険商品の基本型', label: 'イ', content: '生存保険' }, //42
-                        { questionTitle: 'ユニバーサル保険', label: 'オ', content: '' }, //43
-                        { questionTitle: '賦課式保険', label: 'エ', content: '同額の分担金で' }, //44
-                        { questionTitle: '昭和50年保険審議会答申に沿う措置', label: 'オ', content: '' }, //45
-                        { questionTitle: '国民経済における生命保険', label: 'オ', content: '' }, //46
-                        { questionTitle: '生活保障としての生命保険', label: 'ア', content: '緊急出費保障' }, //47
-                        { questionTitle: '生命保険業の監督の方法', label: 'ウ', content: '財務大臣' }, //48
-                        { questionTitle: 'JA共済（全国共済農業協同組合連合会）', label: 'エ', content: 'こども共済' }, //49
-                        { questionTitle: '共同ネットワークシステム', label: 'イ', content: 'LINC（Life Insurance Network Center）' }, //50
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険契約の法的性質',
+                            content: '正しい',
+                        }, //31
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '生命保険契約の要素',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '危険選択の意義',
+                            content: '危険同一性の原則 → 危険均一性の原則',
+                        }, //33
+                        {
+                            questionTitle: 'アームストロング調査',
+                            content: '合衆国統一の取締法 → ニューヨーク州の取締法',
+                        }, //34 p63
+                        {
+                            questionTitle: '保険の有用性',
+                            content: 'ペストの大流行とスペインかぜ → 関東大震災とスペインかぜ',
+                        }, //35
+                        {
+                            questionTitle: '生命保険会社の資金の性格',
+                            content: '純資産の大部分 → 負債の大部分',
+                        }, //36
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '日本の公的年金制度',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: 'こくみん共済coop（全労災）',
+                            content: '各都道府県民共済 → こくみん共済',
+                        }, //38
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '簡易保険の歴史',
+                            content: '正しい',
+                        }, //39
+                        {
+                            // rev: 2026-07-05 確認済み
+                            questionTitle: '医療・介護ニーズへの対応',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '死亡表',
+                            label: 'ア',
+                            content: '国民生命表',
+                        }, //41
+                        {
+                            questionTitle: '生命保険商品の基本型',
+                            label: 'イ',
+                            content: '生存保険',
+                        }, //42
+                        {
+                            questionTitle: 'ユニバーサル保険',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '賦課式保険',
+                            label: 'エ',
+                            content: '同額の分担金で',
+                        }, //44
+                        {
+                            questionTitle: '昭和50年保険審議会答申に沿う措置',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '国民経済における生命保険',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '生活保障としての生命保険',
+                            label: 'ア',
+                            content: '緊急出費保障',
+                        }, //47
+                        {
+                            questionTitle: '生命保険業の監督の方法',
+                            label: 'ウ',
+                            content: '財務大臣',
+                        }, //48
+                        {
+                            questionTitle: 'JA共済（全国共済農業協同組合連合会）',
+                            label: 'エ',
+                            content: 'こども共済',
+                        }, //49
+                        {
+                            questionTitle: '共同ネットワークシステム',
+                            label: 'イ',
+                            content: 'LINC（Life Insurance Network Center）',
+                        }, //50
                     ]"
                 />
             </div>

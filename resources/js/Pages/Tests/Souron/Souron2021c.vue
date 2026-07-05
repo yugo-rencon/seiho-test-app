@@ -25,6 +25,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="契約者配当-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '負債',
                         '定款',
                         '20%',
@@ -45,6 +46,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="契約者配当-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '利源分析',
                         '増加',
                         '上回る',
@@ -65,7 +67,8 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="少額短期保険業-①"
                     :contents="[
-                        'こくみん共済 coop<全労災>',
+                        // rev: 2026-07-06 確認済み
+                        'こくみん共済 coop（全労済）',
                         '無認可',
                         '保険業法',
                         '不特定',
@@ -85,6 +88,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="少額短期保険業-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '2年',
                         '80万円',
                         '資本金',
@@ -260,51 +264,61 @@ const subject = "2021年度 フォームC";
                             content: '団体保険分野 → 個人保険分野',
                         }, //40 p197-198
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '危険評価額',
                             label: 'ア',
                             content: '保険金額',
                         }, //41
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '事業費',
                             label: 'ウ',
                             content: '維持費',
                         }, //42
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険の歴史的発展',
                             label: 'ア',
                             content: 'ギルド',
                         }, //43
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '賦課式保険',
                             label: 'エ',
                             content: '同額の分担金で',
                         }, //44
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '資産運用の原則',
                             label: 'エ',
                             content: '公共性',
                         }, //45
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '国民経済における生命保険',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険業を行う会社の性質',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生損保の相互参入',
                             label: 'イ',
                             content: '保険業法',
                         }, //48
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '年金型商品の開発',
                             label: 'ウ',
                             content: '変額年金',
                         }, //49
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '共同ネットワークシステム',
                             label: 'イ',
                             content: 'LINC（Life Insurance Network Center）',

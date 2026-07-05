@@ -23,6 +23,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="団体保険の主な保険種類-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '無診査', //1
                         '1年', //2
                         '損金', //3
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="団体保険の主な保険種類-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '減少', //6
                         '退職後', //7
                         '一時払い', //8
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="資産運用-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '予定利率', //11
                         '逆ざや', //12
                         'ALM（資産負債統合管理）', //13
@@ -86,6 +89,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="資産運用-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '法定他業', //16
                         '規制緩和', //17
                         '金融システム改革法', //18
@@ -272,51 +276,61 @@ const subject = "2020年度 フォームC";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '契約の法的性質',
                             label: 'ア',
                             content: '付合契約',
                         }, //41
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険者',
                             label: 'ア',
                             content: '10',
                         }, //42
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '責任準備金',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: 'エリザ・ライト',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険組合の誕生',
                             label: 'エ',
                             content: '賦課式',
                         }, //45
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '契約条件変更',
                             label: 'ウ',
                             content: '既契約',
                         }, //46
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '社会保障と生命保険',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '消費者保護',
                             label: 'イ',
                             content: '消費者契約法',
                         }, //48
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生命共済事業',
                             label: 'イ',
                             content: '組合員',
                         }, //49
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '損害保険',
                             label: 'ウ',
                             content: '保険金額',

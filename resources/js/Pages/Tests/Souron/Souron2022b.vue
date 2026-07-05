@@ -264,51 +264,61 @@ const subject = "2022年度 フォームB";
                             content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている',
                         }, //40
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '危険評価軸',
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '死亡表',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険金額',
                             label: 'エ',
                             content: 'あらかじめ定められた',
                         }, //43
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '自主的な団結と相互扶助',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: 'ユニバーサル保険',
                             label: 'イ',
                             content: '自由',
                         }, //45
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '国民経済における生命保険',
                             label: 'イ',
                             content: '経済的保障',
                         }, //46
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生命共済事業',
                             label: 'ウ',
                             content: '損害共済',
                         }, //47
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
                             label: 'エ',
                             content: '財務大臣',
                         }, //48
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '銀行による保険販売',
                             label: 'ウ',
                             content: '個人年金',
                         }, //49
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生保業界共通のシステム',
                             label: 'ア',
                             content: '団体定期保険',

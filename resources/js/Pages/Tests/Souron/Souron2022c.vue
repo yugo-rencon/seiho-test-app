@@ -264,51 +264,61 @@ const subject = "2022年度 フォームC";
                             content: '保証は全て撤廃 → 保証は継続',
                         }, //40
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '契約の法的性質',
                             label: 'ウ',
                             content: '不要式契約',
                         }, //41
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '死亡表',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険者',
                             label: 'ア',
                             content: '10',
                         }, //43
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '財形保険',
                             label: 'イ',
                             content: '財形住宅貯蓄積立保険',
                         }, //44
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: 'エリザ・ライト',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険契約者保護機構',
                             label: 'エ',
                             content: '生命保険会社各社の拠出',
                         }, //46
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '早期是正措置制度',
                             label: 'イ',
                             content: '200%',
                         }, //47
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
                             label: 'エ',
                             content: '財務大臣',
                         }, //48
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '損害保険',
                             label: 'ウ',
                             content: '保険金額',
                         }, //49
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生保業界共通のシステム',
                             label: 'ア',
                             content: '団体定期保険',

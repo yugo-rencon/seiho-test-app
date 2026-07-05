@@ -25,6 +25,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="契約者配当-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '負債',
                         '定款',
                         '20%',
@@ -45,6 +46,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="契約者配当-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '利源分析',
                         '増加',
                         '上回る',
@@ -65,6 +67,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="銀行・信託・証券業界-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '長短分離',
                         '専門金融機関',
                         '直接金融',
@@ -85,6 +88,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="銀行・信託・証券業界-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '販売チャネル',
                         '信用生命保険',
                         '個人年金',
@@ -260,51 +264,61 @@ const subject = "2021年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '死亡表',
                             label: 'ア',
                             content: '国民生命表',
                         }, //41
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険商品の基本型',
                             label: 'イ',
                             content: '生存保険',
                         }, //42
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: 'ユニバーサル保険',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '賦課式保険',
                             label: 'エ',
                             content: '同額の分担金で',
                         }, //44
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '昭和50年保険審議会答申に沿う措置',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '国民経済における生命保険',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生活保障としての生命保険',
                             label: 'ア',
                             content: '緊急出費保障',
                         }, //47
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
                             label: 'ウ',
                             content: '財務大臣',
                         }, //48
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: 'JA共済（全国共済農業協同組合連合会）',
                             label: 'エ',
                             content: 'こども共済',
                         }, //49
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '共同ネットワークシステム',
                             label: 'イ',
                             content: 'LINC（Life Insurance Network Center）',

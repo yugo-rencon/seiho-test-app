@@ -23,6 +23,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険の対象となる危険とその特色-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '経済的', //1
                         '損害額', //2
                         '主観的', //3
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険の対象となる危険とその特色-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '傷害疾病定額保険契約', //6
                         '潜在的', //7
                         '平準保険料', //8
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="資産運用-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '予定利率', //11
                         '逆ざや', //12
                         'ALM（資産負債統合管理）', //13
@@ -86,6 +89,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="資産運用-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '法定他業', //16
                         '規制緩和', //17
                         '金融システム改革法', //18
@@ -270,51 +274,61 @@ const subject = "2020年度 フォームA";
                             content: '死亡保険金500万円 → 300万円<br>損害保険金500万円 → 1000万円',
                         }, //40 p176
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '危険の種類',
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険者',
                             label: 'ア',
                             content: '10',
                         }, //42
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険の始期',
                             label: 'エ',
                             content: 'いずれかの遅い日',
                         }, //43
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '団体年金保険',
                             label: 'イ',
                             content: '確定拠出年金保険',
                         }, //44
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険組合の誕生',
                             label: 'エ',
                             content: '賦課式',
                         }, //45
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険業法の一部改正',
                             label: 'ウ',
                             content: '会社更生法',
                         }, //46
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '社会保険の保険料',
                             label: 'ア',
                             content: '保険料の負担能力',
                         }, //47
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '消費者保護',
                             label: 'イ',
                             content: '消費者契約法',
                         }, //48
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: 'JA共済',
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '社会構造の変化',
                             label: 'イ',
                             content: '平均寿命',

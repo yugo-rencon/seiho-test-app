@@ -25,6 +25,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="契約者配当-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '負債',
                         '定款',
                         '20%',
@@ -45,6 +46,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="契約者配当-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '利源分析',
                         '増加',
                         '上回る',
@@ -65,6 +67,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="共済と保険-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '損害共済',
                         '給付・反対給付均等',
                         '相互扶助',
@@ -85,6 +88,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="共済と保険-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '軽い',
                         'JA共済',
                         '構成員外',
@@ -260,51 +264,61 @@ const subject = "2021年度 フォームA";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '契約の法的性質',
                             label: 'ウ',
-                            content: '諾成方式',
+                            content: '諾成契約',
                         }, //41
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険事故の発生',
                             label: 'ア',
                             content: '保険金',
                         }, //42
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '養老保険',
                             label: 'エ',
                             content: '逓減定期保険',
                         }, //43
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '賦課式保険',
                             label: 'エ',
                             content: '同額の分担金で',
                         }, //44
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '近代的生命保険の導入',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '国民経済における生命保険',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '公的医療保険',
                             label: 'イ',
                             content: '国民皆保険',
                         }, //47
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険に関する法律',
                             label: 'ア',
                             content: '金融商品取引法',
                         }, //48
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '銀行・証券業界',
                             label: 'ウ',
                             content: '個人年金',
                         }, //49
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '共同ネットワークシステム',
                             label: 'イ',
                             content: 'LINC（Life Insurance Network Center）',

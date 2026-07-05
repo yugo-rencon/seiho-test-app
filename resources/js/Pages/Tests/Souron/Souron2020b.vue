@@ -25,6 +25,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="危険の選択-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '危険均一性', //1
                         '高額', //2
                         '健康', //3
@@ -45,6 +46,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="危険の選択-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '契約確認', //6
                         '公平性', //7
                         '評価', //8
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="資産運用-①"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '予定利率', //11
                         '逆ざや', //12
                         'ALM（資産負債統合管理）', //13
@@ -85,6 +88,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="資産運用-②"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '法定他業', //16
                         '規制緩和', //17
                         '金融システム改革法', //18
@@ -261,51 +265,61 @@ const subject = "2020年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険金額',
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険者',
                             label: 'ア',
                             content: '10',
                         }, //42
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '事業費',
                             label: 'エ',
                             content: '維持費',
                         }, //43
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '大正時代',
                             label: 'ウ',
                             content: '関東大震災',
                         }, //44
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '保険組合の誕生',
                             label: 'エ',
                             content: '賦課式',
                         }, //45
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '介護保険制度の概要',
                             label: 'ウ',
                             content: '第2号被保険者',
                         }, //46
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
                             label: 'イ',
                             content: '実体的監督主義',
                         }, //47
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '消費者保護',
                             label: 'イ',
                             content: '消費者契約法',
                         }, //48
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '共済',
                             label: 'エ',
                             content: '消費生活協同組合法(生協法)',
                         }, //49
                         {
+                            // rev: 2026-07-06 確認済み
                             questionTitle: '生保業界共通のシステム',
                             label: 'ア',
                             content: '団体定期保険',

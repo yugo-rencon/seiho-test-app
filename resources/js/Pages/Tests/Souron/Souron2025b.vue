@@ -27,7 +27,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="狭義の社会保障制度-①"
-                    :relatedProblems="['2025a23', '2025b1', '2025c28']"
+                    :relatedProblems="['2025b1']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '保険料の拠出',
@@ -49,6 +49,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="狭義の社会保障制度-②"
+                    :relatedProblems="['2025b6']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '共済年金',
@@ -92,6 +93,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="社会構造の変化-②"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '年金',
@@ -139,7 +141,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="介護保険制度"
-                    :relatedProblems="['2025a28', '2025b23']"
+                    :relatedProblems="['2025b23']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '介護保険制度の被保険者は、[[65歳以上]]を第1号被保険者とし、[[40歳〜65歳未満]]の医療保険加入者を第2号被保険者とする。', //p141

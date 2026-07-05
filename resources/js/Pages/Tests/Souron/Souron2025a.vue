@@ -28,7 +28,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の特殊性-①"
-                    :relatedProblems="['2025a1', '2025c31']"
+                    :relatedProblems="['2025a1']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '契約自由',
@@ -50,6 +50,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の特殊性-②"
+                    :relatedProblems="['2025a6']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '拘束',
@@ -93,6 +94,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="社会構造の変化-②"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '年金',
@@ -140,7 +142,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="狭義の社会保障制度"
-                    :relatedProblems="['2025a23', '2025b1', '2025c28']"
+                    :relatedProblems="['2025a23', '2025c28']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -205,7 +207,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要"
-                    :relatedProblems="['2025a28', '2025b23']"
+                    :relatedProblems="['2025a28']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',

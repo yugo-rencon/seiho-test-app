@@ -22,6 +22,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の対象となる危険とその特色-①"
+                    :relatedProblems="['2020a1']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '経済的', //1
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の対象となる危険とその特色-②"
+                    :relatedProblems="['2020a6']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '傷害疾病定額保険契約', //6
@@ -66,6 +68,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産運用-①"
+                    :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '予定利率', //11
@@ -88,6 +91,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産運用-②"
+                    :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '法定他業', //16
@@ -110,6 +114,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当"
+                    :relatedProblems="['2020a21', '2020c26']"
                     :contents="[
                         '80%以上 → 20%以上', //21-ア p27
                         '正しい', //21-イ
@@ -121,6 +126,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ギルド"
+                    :relatedProblems="['2020a22', '2020b22', '2020c22']"
                     :contents="[
                         '救済してくれた → 救済はなく、自らが補塡', //22-ア p53
                         '正しい', //22-イ
@@ -133,6 +139,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社の資産運用の原則"
+                    :relatedProblems="['2020a23']"
                     :contents="[
                         '収益確保は安全性より優先される → 安全性が優先される', //23-ア p109
                         '正しい', //23-イ
@@ -145,6 +152,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相互会社と株式会社"
+                    :relatedProblems="['2020a24', '2020b24', '2020c24']"
                     :contents="[
                         '財団法人 → 社団法人', //24-ア p160
                         '資本金 → 資金', //24-イ p160
@@ -157,6 +165,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費構造の変化"
+                    :relatedProblems="['2020a25']"
                     :contents="[
                         '正しい', //25-ア
                         '従来であれば「自分の好み〜」、今日では「周りに人が〜」 → 従来であれば「周りの人が〜」、今日では「自分の好み〜」', //p184
@@ -169,6 +178,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の要素"
+                    :relatedProblems="['2020a26', '2020c23']"
                     :contents="[
                         '保険金受取人の資格について制限はない（行為能力者である必要もない）', //26-ア p14
                         '正しい', //26-イ
@@ -181,6 +191,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="アメリカにおけるニューウェーブ商品の開発"
+                    :relatedProblems="['2020a27']"
                     :contents="[
                         '正しい', //27-ア
                         '長期金利 → 短期金利<br>決済機能を持つ → 決済機能を持たない', //27-イ p69
@@ -193,6 +204,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="狭義の社会保障制度"
+                    :relatedProblems="['2020a28', '2020b28', '2020c28']"
                     :contents="[
                         '正しい', //28-ア
                         '正しい', //28-イ
@@ -205,6 +217,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
+                    :relatedProblems="['2020a29', '2020c50']"
                     :contents="[
                         '損害保険 → 生命保険', //29-ア p173
                         '正しい', //29-イ
@@ -217,6 +230,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生保業界におけるシステム動向"
+                    :relatedProblems="['2020a30']"
                     :contents="[
                         '団体保険分野 → 個人保険分野', //30-ア p197-198
                         '正しい', //30-イ
@@ -233,105 +247,125 @@ const subject = "2020年度 フォームA";
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険契約の特殊性',
                             content: '正しい',
+                            relatedProblems: ['2020a31', '2020b31', '2020c31'],
                         }, //31
                         {
                             questionTitle: '死亡表',
                             content: '国民生命表 → 経験生命表',
+                            relatedProblems: ['2020a32', '2020b32', '2020c32'],
                         }, //32 p15
                         {
                             questionTitle: '保険料',
                             content: '純保険料 → 営業保険料',
+                            relatedProblems: ['2020a33'],
                         }, //33 p23
                         {
                             questionTitle: '死亡保険',
                             content: '養老 → 終身',
+                            relatedProblems: ['2020a34'],
                         }, //34 p31
                         {
                             questionTitle: '日本の保険',
                             content: '日本の保険はこれらの類似制度から発展したものではない',
+                            relatedProblems: ['2020a35'],
                         }, //35 p72
                         {
                             questionTitle: '戦後混乱期から再建への足どり',
                             content: '相互会社から株式会社 → 株式会社から相互会社',
+                            relatedProblems: ['2020a36', '2020b36', '2020c36'],
                         }, //36 p78
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険料支出性向',
                             content: '正しい',
+                            relatedProblems: ['2020a37'],
                         }, //37
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '介護保険の保険料',
                             content: '正しい',
+                            relatedProblems: ['2020a38'],
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '形式的監督主義',
                             content: '正しい',
+                            relatedProblems: ['2020a39'],
                         }, //39
                         {
                             questionTitle: '少額短期保険業',
                             content: '死亡保険金500万円 → 300万円<br>損害保険金500万円 → 1000万円',
+                            relatedProblems: ['2020a40', '2020c29'],
                         }, //40 p176
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '危険の種類',
                             label: 'オ',
                             content: '',
+                            relatedProblems: ['2020a41'],
                         }, //41
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険者',
                             label: 'ア',
                             content: '10',
+                            relatedProblems: ['2020a42', '2020b42', '2020c42'],
                         }, //42
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険の始期',
                             label: 'エ',
                             content: 'いずれかの遅い日',
+                            relatedProblems: ['2020a43'],
                         }, //43
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '団体年金保険',
                             label: 'イ',
                             content: '確定拠出年金保険',
+                            relatedProblems: ['2020a44'],
                         }, //44
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険組合の誕生',
                             label: 'エ',
                             content: '賦課式',
+                            relatedProblems: ['2020a45', '2020b45', '2020c45'],
                         }, //45
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険業法の一部改正',
                             label: 'ウ',
                             content: '会社更生法',
+                            relatedProblems: ['2020a46'],
                         }, //46
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '社会保険の保険料',
                             label: 'ア',
                             content: '保険料の負担能力',
+                            relatedProblems: ['2020a47'],
                         }, //47
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '消費者保護',
                             label: 'イ',
                             content: '消費者契約法',
+                            relatedProblems: ['2020a48', '2020b48', '2020c48'],
                         }, //48
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'JA共済',
                             label: 'オ',
                             content: '',
+                            relatedProblems: ['2020a49'],
                         }, //49
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '社会構造の変化',
                             label: 'イ',
                             content: '平均寿命',
+                            relatedProblems: ['2020a50', '2020b25', '2020c40'],
                         }, //50
                     ]"
                 />

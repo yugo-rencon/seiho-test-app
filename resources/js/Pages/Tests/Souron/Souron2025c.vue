@@ -49,6 +49,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の主な保険種類-②"
+                    :relatedProblems="['2025c6']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '減少',
@@ -92,6 +93,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="社会構造の変化-②"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         '年金',
@@ -204,7 +206,7 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="狭義の社会保障制度"
-                    :relatedProblems="['2025a23', '2025b1', '2025c28']"
+                    :relatedProblems="['2025a23', '2025c28']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -247,7 +249,7 @@ const isDraft = false;
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生命保険契約の特殊性',
                             content: '正しい',
-                            relatedProblems: ['2025a1', '2025c31'],
+                            relatedProblems: ['2025c31'],
                         }, //31
                         {
                             // rev: 2026-05-26 確認済み

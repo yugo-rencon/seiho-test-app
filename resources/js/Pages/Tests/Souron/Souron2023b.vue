@@ -24,6 +24,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険および団体年金保険の主な保険種類-①"
+                    :relatedProblems="['2023b1']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '1年',
@@ -45,6 +46,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険および団体年金保険の主な保険種類-②"
+                    :relatedProblems="['2023b6']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '受給権',
@@ -66,6 +68,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険の歴史的発展-①"
+                    :relatedProblems="['2023a11', '2023b11', '2023c11']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '保障制度',
@@ -87,6 +90,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険の歴史的発展-②"
+                    :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '海上保険',
@@ -108,6 +112,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険の選択"
+                    :relatedProblems="['2023b21']"
                     :contents="[
                         '正しい',
                         '保険加入希望が弱く、低額の保険を選ぶ → 保険加入希望が強く、高額な保険を選ぶ', //p17
@@ -119,6 +124,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要"
+                    :relatedProblems="['2023b22', '2023c49']"
                     :contents="[
                         '70歳以上 → 65歳以上<br>40歳～70歳未満 → 40歳～65歳未満', //p140
                         '第1号被保険者および第2号被保険者ともに → 第1号被保険者のみ', //p140
@@ -130,7 +136,9 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="アメリカにおける金融革命の進展と生命保険事業"
+                    :relatedProblems="['2023a23', '2023b23', '2023c23']"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         'デリバティブ商品 → ニューウェーブ商品', //p69
                         '正しい',
                         '金融規制改革法（ドッド・フランク法） → グラム・リーチ・ブライリー法', //p71
@@ -141,6 +149,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="少額短期保険業"
+                    :relatedProblems="['2023b24']"
                     :contents="[
                         '正しい',
                         '死亡保険金500万円 → 300万円<br>損害保険金500万円 → 1000万円', //p176
@@ -152,6 +161,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="社会構造の変化"
+                    :relatedProblems="['2023a50', '2023b25']"
                     :contents="[
                         '5% → 7%', //p180
                         '正しい',
@@ -163,6 +173,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の要素"
+                    :relatedProblems="['2023a26', '2023b26', '2023c26']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -174,6 +185,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険約款"
+                    :relatedProblems="['2023b27']"
                     :contents="[
                         '保険約款の効力は生じない → 保険約款には拘束力がある', //p8
                         '正しい',
@@ -185,6 +197,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="社会保険の特質"
+                    :relatedProblems="['2023a28', '2023b28', '2023c28']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -196,6 +209,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険事業の革新"
+                    :relatedProblems="['2023a34', '2023b29']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -207,6 +221,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法の概要"
+                    :relatedProblems="['2023b30']"
                     :contents="[
                         '正しい',
                         '登録制 → 免許制', //p150
@@ -221,108 +236,128 @@ const subject = "2023年度 フォームB";
                         {
                             questionTitle: '傷害・疾病危険',
                             content: '保険業法 → 保険法',
+                            relatedProblems: ['2023b31'],
                         }, //31
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険契約者',
                             content: '正しい',
+                            relatedProblems: ['2023b32'],
                         }, //32
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'イギリスにおける科学的な生命保険会社',
                             content: '正しい',
+                            relatedProblems: ['2023a33', '2023b33', '2023c33'],
                         }, //33
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'アメリカの保険事業規制',
                             content: '正しい',
+                            relatedProblems: ['2023b34'],
                         }, //34
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '国際比較',
                             content: '正しい',
+                            relatedProblems: ['2023b35'],
                         }, //35
                         {
                             questionTitle: '流動性の原則',
                             content: '重要性は非常に高い → 低い',
+                            relatedProblems: ['2023b36'],
                         }, //36
                         {
                             questionTitle: '組織変更',
                             content: '100株未満 → 1株未満',
+                            relatedProblems: ['2023a37', '2023b37', '2023c37'],
                         }, //37
                         {
                             questionTitle: 'JA共済事業',
                             content: '3段階 → 2段階（JA（単位農協）、JA共済連）',
+                            relatedProblems: ['2023a38', '2023b38', '2023c38'],
                         }, //38
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '日本の公的年金制度',
                             content: '正しい',
+                            relatedProblems: ['2023b39'],
                         }, //39
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '高齢者への貢献',
                             content: '正しい',
+                            relatedProblems: ['2023b40'],
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '契約の法的性質',
                             label: 'ア',
                             content: '付合契約',
+                            relatedProblems: ['2023b41'],
                         }, //41
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '責任準備金',
                             label: 'ア',
                             content: '負債',
+                            relatedProblems: ['2023a42', '2023b42', '2023c42'],
                         }, //42
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '剰余金の分配方法',
                             label: 'ウ',
                             content: '20%',
+                            relatedProblems: ['2023b43'],
                         }, //43
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '賦課式保険',
                             label: 'エ',
                             content: '同額の分担金で',
+                            relatedProblems: ['2023b44'],
                         }, //44
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険業法の一部改正',
                             label: 'イ',
                             content: '更生手続',
+                            relatedProblems: ['2023a45', '2023b45', '2023c45'],
                         }, //45
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '国民経済における生命保険',
                             label: 'ア',
                             content: '家計可処分所得',
+                            relatedProblems: ['2023a46', '2023b46', '2023c46'],
                         }, //46
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生活保障としての生命保険',
                             label: 'オ',
                             content: '',
+                            relatedProblems: ['2023b47'],
                         }, //47
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
                             label: 'オ',
                             content: '',
+                            relatedProblems: ['2023b48'],
                         }, //48
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '銀行による保険販売',
                             label: 'イ',
                             content: '長期火災保険',
+                            relatedProblems: ['2023b49', '2023c25'],
                         }, //49
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '年金型商品の開発',
                             label: 'ウ',
                             content: '変額年金',
+                            relatedProblems: ['2023b50'],
                         }, //50
                     ]"
                 />

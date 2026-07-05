@@ -175,6 +175,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="危険と保険"
                     :contents="[
+                        // rev: 2026-07-06 確認済み
                         '正しい',
                         '正しい',
                         '商法 → 保険法', //p5

@@ -109,10 +109,10 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="危険と保険"
                     :contents="[
-                        //p4-5
+                        // rev: 2026-07-06 確認済み
                         '正しい',
-                        '変動幅は大きくなる → 小さくなる',
-                        '商法 → 保険法',
+                        '確率論における大数の法則に基づき、危険を被る対象物（母数）が多いほど危険の発生頻度の変動幅は[[小さく]]なる。', //p4
+                        '商法 → 保険法', //p5
                     ]"
                 />
                 <QuestionTemp1
@@ -228,7 +228,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '生命保険契約の特殊性',
                             content: '民法、商法、保険法の順 → 保険法、民法の順',

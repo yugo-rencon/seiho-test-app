@@ -188,6 +188,7 @@ const subject = "2023年度 フォームA";
                     questionTitle="日本における生命保険の発展"
                     :relatedProblems="['2023a27']"
                     :contents="[
+                        // rev: 2026-05-26 確認済み
                         '正しい',
                         '正しい',
                         '第一次世界大戦 → スペインかぜ', //p76

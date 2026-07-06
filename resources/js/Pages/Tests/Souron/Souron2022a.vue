@@ -213,6 +213,7 @@ const subject = "2022年度 フォームA";
                     questionTitle="日本における生命保険の発展"
                     :relatedProblems="['2022a29', '2022c35']"
                     :contents="[
+                        // rev: 2026-07-07 確認済み
                         'ドイツ → 英米', //p72
                         '正しい',
                         '正しい',

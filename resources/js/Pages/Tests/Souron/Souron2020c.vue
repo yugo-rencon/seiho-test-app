@@ -265,10 +265,11 @@ const subject = "2020年度 フォームC";
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: 'アメリカの保険事業規制',
                             relatedProblems: ['2020c34'],
-                            content: '連邦政府 → 州政府',
-                        }, //34 p65
+                            content: '連邦政府 → 州政府', //p65
+                        }, //34
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '国際比較',

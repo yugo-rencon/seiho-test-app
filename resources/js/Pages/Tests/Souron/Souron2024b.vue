@@ -276,10 +276,11 @@ const subject = "2024年度 フォームB";
                             content: '純資産の大部分 → 負債の大部分',
                         }, //36 p108
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '形式的監督主義',
                             relatedProblems: ['2024a37', '2024b37', '2024c37'],
-                            content: '形式的監督主義 → 実体的監督主義',
-                        }, //37 p148
+                            content: '日本では[[実体的監督主義]]の方式が採られている。', //p148
+                        }, //37
                         {
                             questionTitle: '簡易保険の歴史',
                             relatedProblems: ['2024b38'],

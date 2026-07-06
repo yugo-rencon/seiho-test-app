@@ -192,9 +192,9 @@ const subject = "2024年度 フォームA";
                     questionTitle="封建社会の都市経済と相互扶助組織"
                     :relatedProblems="['2024a27']"
                     :contents="[
-                        //p53
+                        // rev: 2026-07-06 確認済み
                         '正しい',
-                        '友愛組合 → ギルド',
+                        '友愛組合 → ギルド', //p53
                         '正しい',
                     ]"
                 />
@@ -205,10 +205,10 @@ const subject = "2024年度 フォームA";
                     questionTitle="狭義の社会保障制度"
                     :relatedProblems="['2024a28']"
                     :contents="[
-                        //p123
+                        // rev: 2026-07-06 確認済み
                         '正しい',
                         '正しい',
-                        '社会扶助制度 → 公的扶助制度',
+                        '社会扶助制度 → 公的扶助制度', //p123
                     ]"
                 />
                 <QuestionTemp1

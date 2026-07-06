@@ -284,7 +284,7 @@ const subject = "2024年度 フォームC";
                             // rev: 2026-07-05 確認済み
                             questionTitle: 'JA共済（全国共済農業協同組合連合会）',
                             content: '正しい',
-                            relatedProblems: ['2024c38'],
+                            relatedProblems: ['2024a25', '2024b29', '2024c38'],
                         }, //38
                         {
                             questionTitle: '医療・介護ニーズへの対応',

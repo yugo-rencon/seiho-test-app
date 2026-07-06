@@ -237,128 +237,128 @@ const subject = "2022年度 フォームA";
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '責任準備金',
-                            content: '正しい',
                             relatedProblems: ['2022a31', '2022b31', '2022c31'],
+                            content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生死混合保険',
-                            content: '正しい',
                             relatedProblems: ['2022a32'],
+                            content: '正しい',
                         }, //32
                         {
                             questionTitle: '科学的な生命保険会社',
-                            content: 'ロイヤル・エクスチェンジ → エクイタブル',
                             relatedProblems: ['2022a33', '2022b33', '2022c33'],
+                            content: 'ロイヤル・エクスチェンジ → エクイタブル',
                         }, //33
                         {
                             questionTitle: '1970〜80年代のアメリカのニューウェーブ商品の開発',
-                            content: '決済機能を持ち → 決済機能は持たない',
                             relatedProblems: ['2022a34', '2022c24'],
+                            content: '決済機能を持ち → 決済機能は持たない',
                         }, //34
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '世帯加入状況',
-                            content: '正しい',
                             relatedProblems: ['2022a35'],
+                            content: '正しい',
                         }, //35
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '資産運用体制の構築',
-                            content: '正しい',
                             relatedProblems: ['2022a36'],
+                            content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '組織変更',
-                            content: '正しい',
                             relatedProblems: ['2022a37', '2022b37', '2022c37'],
+                            content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: 'JA共済（全国共済農業協同組合連合会）',
-                            content: '正しい',
                             relatedProblems: ['2022a38'],
+                            content: '正しい',
                         }, //38
                         {
                             questionTitle: '損害保険',
-                            content: '損害保険 → 生命保険', //p173
                             relatedProblems: ['2022a39', '2022b25', '2022c49'],
+                            content: '損害保険 → 生命保険', //p173
                         }, //39
                         {
                             questionTitle: '消費者の購入態度の変化',
-                            content: '従来〜 ↔︎ 今日〜',
                             relatedProblems: ['2022a40'],
+                            content: '従来〜 ↔︎ 今日〜',
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険契約の当事者',
+                            relatedProblems: ['2022a41'],
                             label: 'ウ',
                             content: '保険料',
-                            relatedProblems: ['2022a41'],
                         }, //41
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '死亡表',
+                            relatedProblems: ['2022a42', '2022b42', '2022c42'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2022a42', '2022b42', '2022c42'],
                         }, //42
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '利差配当',
+                            relatedProblems: ['2022a43'],
                             label: 'イ',
                             content: '経過年数',
-                            relatedProblems: ['2022a43'],
                         }, //43
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'イギリスの共済的な保険組合',
+                            relatedProblems: ['2022a44'],
                             label: 'イ',
                             content: '友愛組合',
-                            relatedProblems: ['2022a44'],
                         }, //44
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命表の改定',
+                            relatedProblems: ['2022a45'],
                             label: 'エ',
                             content: '低く',
-                            relatedProblems: ['2022a45'],
                         }, //45
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険会社の資金の性格',
+                            relatedProblems: ['2022a46'],
                             label: 'ア',
                             content: '負債',
-                            relatedProblems: ['2022a46'],
                         }, //46
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '社会保障制度',
+                            relatedProblems: ['2022a47', '2022b36'],
                             label: 'ア',
                             content: '保険料の拠出',
-                            relatedProblems: ['2022a47', '2022b36'],
                         }, //47
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
+                            relatedProblems: ['2022a48', '2022b48', '2022c48'],
                             label: 'エ',
                             content: '財務大臣',
-                            relatedProblems: ['2022a48', '2022b48', '2022c48'],
                         }, //48
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '労働者共済',
+                            relatedProblems: ['2022a49'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2022a49'],
                         }, //49
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生保業界共通のシステム',
+                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'ア',
                             content: '団体定期保険',
-                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                         }, //50
                     ]"
                 />

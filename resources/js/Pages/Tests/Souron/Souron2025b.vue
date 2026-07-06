@@ -249,132 +249,132 @@ const isDraft = false;
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生命保険契約の法的性質',
-                            content: '正しい',
                             relatedProblems: ['2025b31', '2025c41'],
+                            content: '正しい',
                         }, //31
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '危険選択の意義',
-                            content: '収支相当の原則 → 危険均一性の原則', //p16
                             relatedProblems: ['2025a32', '2025b32', '2025c32'],
+                            content: '収支相当の原則 → 危険均一性の原則', //p16
                         }, //32
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '確定拠出年金保険',
-                            content: '正しい',
                             relatedProblems: ['2025b33'],
+                            content: '正しい',
                         }, //33
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: 'イギリスにおける生命保険の発展',
-                            content: '正しい',
                             relatedProblems: ['2025b34'],
+                            content: '正しい',
                         }, //34
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '生命保険会社の資金の性格',
-                            content: '純資産の大部分 → 負債の大部分', //p108
                             relatedProblems: ['2025b35'],
+                            content: '純資産の大部分 → 負債の大部分', //p108
                         }, //35
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '組織変更',
-                            content: '100株未満 → 1株未満', //p163
                             relatedProblems: ['2025a36', '2025b36', '2025c36'],
+                            content: '100株未満 → 1株未満', //p163
                         }, //36
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '共済と保険',
-                            content: '適合性の原則 → 給付・反対給付均等の原則', //p165
                             relatedProblems: ['2025a37', '2025b37', '2025c37'],
+                            content: '適合性の原則 → 給付・反対給付均等の原則', //p165
                         }, //37
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '日本の金融制度',
-                            content: '今日の日本の金融制度 → 戦後の日本の金融制度', //p174
                             relatedProblems: ['2025b38'],
+                            content: '今日の日本の金融制度 → 戦後の日本の金融制度', //p174
                         }, //38
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '生命保険会社の資産運用の今後のあり方',
-                            content: '特別勘定の導入 → 区分経理の導入', //p200
                             relatedProblems: ['2025b39'],
+                            content: '特別勘定の導入 → 区分経理の導入', //p200
                         }, //39
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '医療・介護ニーズへの対応',
-                            content: '正しい',
                             relatedProblems: ['2025b40'],
+                            content: '正しい',
                         }, //40
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '保険契約の当事者',
+                            relatedProblems: ['2025b41'],
                             label: 'ア',
                             content: '保険契約者',
-                            relatedProblems: ['2025b41'],
                         }, //41
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '死亡表',
+                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
                         }, //42
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生命保険商品の基本型',
+                            relatedProblems: ['2025a26', '2025b43'],
                             label: 'イ',
                             content: '生存保険',
-                            relatedProblems: ['2025a26', '2025b43'],
                         }, //43
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '賦課式保険',
+                            relatedProblems: ['2025b44'],
                             label: 'エ',
                             content: '同額の分担金で',
-                            relatedProblems: ['2025b44'],
                         }, //44
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: 'ユニバーサル保険',
+                            relatedProblems: ['2025b45'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2025b45'],
                         }, //45
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生保資産運用の基本原則',
+                            relatedProblems: ['2025a46', '2025b46', '2025c46'],
                             label: 'ウ',
                             content: '公共性',
-                            relatedProblems: ['2025a46', '2025b46', '2025c46'],
                         }, //46
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生命保険業の監督の方法',
+                            relatedProblems: ['2025b47'],
                             label: 'エ',
                             content: '財務大臣',
-                            relatedProblems: ['2025b47'],
                         }, //47
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '労働者共済',
+                            relatedProblems: ['2025b48'],
                             label: 'イ',
                             content: 'こくみん共済coop <全労災>',
-                            relatedProblems: ['2025b48'],
                         }, //48
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '損害保険',
+                            relatedProblems: ['2025b49'],
                             label: 'ア',
                             content: '保険者',
-                            relatedProblems: ['2025b49'],
                         }, //49
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '年金型商品の開発',
+                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                             label: 'ウ',
                             content: '変額年金',
-                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                         }, //50
                     ]"
                 />

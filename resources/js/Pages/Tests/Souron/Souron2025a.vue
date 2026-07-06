@@ -249,132 +249,132 @@ const isDraft = false;
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '保険の始期',
-                            content: '正しい',
                             relatedProblems: ['2025a31'],
+                            content: '正しい',
                         }, //31
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '危険選択の意義',
-                            content: '収支相当の原則 → 危険均一性の原則', //p16
                             relatedProblems: ['2025a32', '2025b32', '2025c32'],
+                            content: '収支相当の原則 → 危険均一性の原則', //p16
                         }, //32
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '1970〜1980年代のアメリカのニューウェーブ商品の開発',
-                            content: '[[決済機能こそ持たない]]ものの、死亡保障額に影響を与えることなくいつでもキャッシュ・バリューの引き出しが可能。', //p69
                             relatedProblems: ['2025a33'],
+                            content: '[[決済機能こそ持たない]]ものの、死亡保障額に影響を与えることなくいつでもキャッシュ・バリューの引き出しが可能。', //p69
                         }, //33
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '世帯加入状況',
-                            content: '正しい',
                             relatedProblems: ['2025a34'],
+                            content: '正しい',
                         }, //34
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '資産運用の自由化',
-                            content: '正しい',
                             relatedProblems: ['2025a35'],
+                            content: '正しい',
                         }, //35
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '組織変更',
-                            content: '100株未満 → 1株未満', //p163
                             relatedProblems: ['2025a36', '2025b36', '2025c36'],
+                            content: '100株未満 → 1株未満', //p163
                         }, //36
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '共済と保険',
-                            content: '適合性の原則 → 給付・反対給付均等の原則', //p165
                             relatedProblems: ['2025a37', '2025b37', '2025c37'],
+                            content: '適合性の原則 → 給付・反対給付均等の原則', //p165
                         }, //37
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '少額短期保険業',
-                            content: '「少額短期保険業」は、短期（生保・医療保険で1年以内、損害保険で2年以内）かつ少額保険金額（疾病による死亡保険金[[300万円]]以内、疾病・傷害による入院給付金等80万円以内、損害保険金[[1,000万円]]以内等）の保険のみを引き受ける保険業である。', //p177z
                             relatedProblems: ['2025a38', '2025b24'],
+                            content: '「少額短期保険業」は、短期（生保・医療保険で1年以内、損害保険で2年以内）かつ少額保険金額（疾病による死亡保険金[[300万円]]以内、疾病・傷害による入院給付金等80万円以内、損害保険金[[1,000万円]]以内等）の保険のみを引き受ける保険業である。', //p177z
                         }, //38
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '営業職員以外の販売チャネル',
-                            content: '正しい',
                             relatedProblems: ['2025a39'],
+                            content: '正しい',
                         }, //39
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '国際化の方向',
-                            content: '正しい',
                             relatedProblems: ['2025a40'],
+                            content: '正しい',
                         }, //40
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '保険事故の発生',
+                            relatedProblems: ['2025a41'],
                             label: 'ア',
                             content: '保険金',
-                            relatedProblems: ['2025a41'],
                         }, //41
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '死亡表',
+                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
                         }, //42
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '事業費',
+                            relatedProblems: ['2025a43'],
                             label: 'エ',
                             content: '維持費',
-                            relatedProblems: ['2025a43'],
                         }, //43
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '保険の歴史的発展',
+                            relatedProblems: ['2025a44'],
                             label: 'イ',
                             content: 'ギルド',
-                            relatedProblems: ['2025a44'],
                         }, //44
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: 'アメリカにおけるアームストロング調査',
+                            relatedProblems: ['2025a45'],
                             label: 'ア',
                             content: '新契約費',
-                            relatedProblems: ['2025a45'],
                         }, //45
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生保資産運用の基本原則',
+                            relatedProblems: ['2025a46', '2025b46', '2025c46'],
                             label: 'ウ',
                             content: '公共性',
-                            relatedProblems: ['2025a46', '2025b46', '2025c46'],
                         }, //46
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '公的医療保険',
+                            relatedProblems: ['2025a47'],
                             label: 'エ',
                             content: '各種共済組合',
-                            relatedProblems: ['2025a47'],
                         }, //47
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: 'JA共済',
+                            relatedProblems: ['2025a48', '2025c24'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2025a48', '2025c24'],
                         }, //48
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '共同ネットワークシステム',
+                            relatedProblems: ['2025a49'],
                             label: 'イ',
                             content: 'LINC（Life Insurance Network Center）',
-                            relatedProblems: ['2025a49'],
                         }, //49
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '年金型商品の開発',
+                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                             label: 'ウ',
                             content: '変額年金',
-                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                         }, //50
                     ]"
                 />

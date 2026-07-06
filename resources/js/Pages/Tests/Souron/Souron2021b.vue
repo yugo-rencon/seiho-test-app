@@ -236,127 +236,127 @@ const subject = "2021年度 フォームB";
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険契約の法的性質',
-                            content: '正しい',
                             relatedProblems: ['2021b31'],
+                            content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険契約の要素',
-                            content: '正しい',
                             relatedProblems: ['2021a26', '2021b26', '2021b32', '2021c26'],
+                            content: '正しい',
                         }, //32
                         {
                             questionTitle: '危険選択の意義',
-                            content: '危険同一性の原則 → 危険均一性の原則',
                             relatedProblems: ['2021b33'],
+                            content: '危険同一性の原則 → 危険均一性の原則',
                         }, //33
                         {
                             questionTitle: 'アームストロング調査',
-                            content: '合衆国統一の取締法 → ニューヨーク州の取締法',
                             relatedProblems: ['2021a34', '2021b34', '2021c34'],
+                            content: '合衆国統一の取締法 → ニューヨーク州の取締法',
                         }, //34 p63
                         {
                             questionTitle: '保険の有用性',
-                            content: 'ペストの大流行とスペインかぜ → 関東大震災とスペインかぜ',
                             relatedProblems: ['2021b35'],
+                            content: 'ペストの大流行とスペインかぜ → 関東大震災とスペインかぜ',
                         }, //35
                         {
                             questionTitle: '生命保険会社の資金の性格',
-                            content: '純資産の大部分 → 負債の大部分',
                             relatedProblems: ['2021a36', '2021b36', '2021c36'],
+                            content: '純資産の大部分 → 負債の大部分',
                         }, //36
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '日本の公的年金制度',
-                            content: '正しい',
                             relatedProblems: ['2021b37'],
+                            content: '正しい',
                         }, //37
                         {
                             questionTitle: 'こくみん共済coop（全労災）',
-                            content: '各都道府県民共済 → こくみん共済',
                             relatedProblems: ['2021b38'],
+                            content: '各都道府県民共済 → こくみん共済',
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '簡易保険の歴史',
-                            content: '正しい',
                             relatedProblems: ['2021a39', '2021b39', '2021c39'],
+                            content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '医療・介護ニーズへの対応',
-                            content: '正しい',
                             relatedProblems: ['2021b40'],
+                            content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '死亡表',
+                            relatedProblems: ['2021b41', '2021c32'],
                             label: 'ア',
                             content: '国民生命表',
-                            relatedProblems: ['2021b41', '2021c32'],
                         }, //41
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険商品の基本型',
+                            relatedProblems: ['2021b42'],
                             label: 'イ',
                             content: '生存保険',
-                            relatedProblems: ['2021b42'],
                         }, //42
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'ユニバーサル保険',
+                            relatedProblems: ['2021b43'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2021b43'],
                         }, //43
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '賦課式保険',
+                            relatedProblems: ['2021a44', '2021b44', '2021c44'],
                             label: 'エ',
                             content: '同額の分担金で',
-                            relatedProblems: ['2021a44', '2021b44', '2021c44'],
                         }, //44
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '昭和50年保険審議会答申に沿う措置',
+                            relatedProblems: ['2021b45'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2021b45'],
                         }, //45
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '国民経済における生命保険',
+                            relatedProblems: ['2021a46', '2021b46', '2021c46'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2021a46', '2021b46', '2021c46'],
                         }, //46
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生活保障としての生命保険',
+                            relatedProblems: ['2021b47'],
                             label: 'ア',
                             content: '緊急出費保障',
-                            relatedProblems: ['2021b47'],
                         }, //47
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
+                            relatedProblems: ['2021b48'],
                             label: 'ウ',
                             content: '財務大臣',
-                            relatedProblems: ['2021b48'],
                         }, //48
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'JA共済（全国共済農業協同組合連合会）',
+                            relatedProblems: ['2021b49'],
                             label: 'エ',
                             content: 'こども共済',
-                            relatedProblems: ['2021b49'],
                         }, //49
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '共同ネットワークシステム',
+                            relatedProblems: ['2021a50', '2021b50', '2021c50'],
                             label: 'イ',
                             content: 'LINC（Life Insurance Network Center）',
-                            relatedProblems: ['2021a50', '2021b50', '2021c50'],
                         }, //50
                     ]"
                 />

@@ -245,127 +245,127 @@ const subject = "2024年度 フォームC";
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険契約の要素',
-                            content: '正しい',
                             relatedProblems: ['2024a26', '2024b26', '2024c26', '2024c31'],
+                            content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険料',
-                            content: '正しい',
                             relatedProblems: ['2024a32', '2024b32', '2024c32'],
+                            content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険の歴史的発展',
-                            content: '正しい',
                             relatedProblems: ['2024c33'],
+                            content: '正しい',
                         }, //33
                         {
                             questionTitle: '日本における生命保険の発展',
-                            content: 'ペストの大流行とスペインかぜの大流行 → スペインかぜの大流行と関東大震災',
                             relatedProblems: ['2024a44', '2024b34', '2024c34'],
+                            content: 'ペストの大流行とスペインかぜの大流行 → スペインかぜの大流行と関東大震災',
                         }, //34 p76
                         {
                             questionTitle: '流動性の原則',
-                            content: '重要性は非常に高い → 低い',
                             relatedProblems: ['2024c35'],
+                            content: '重要性は非常に高い → 低い',
                         }, //35 p109
                         {
                             questionTitle: '社会保障制度',
-                            content: '社会扶助制度 → 公的扶助制度',
                             relatedProblems: ['2024c36'],
+                            content: '社会扶助制度 → 公的扶助制度',
                         }, //36 p123
                         {
                             questionTitle: '形式的監督主義',
-                            content: '形式的監督主義 → 実体的監督主義',
                             relatedProblems: ['2024a37', '2024b37', '2024c37'],
+                            content: '形式的監督主義 → 実体的監督主義',
                         }, //37 p148
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: 'JA共済（全国共済農業協同組合連合会）',
-                            content: '正しい',
                             relatedProblems: ['2024a25', '2024b29', '2024c38'],
+                            content: '正しい',
                         }, //38
                         {
                             questionTitle: '医療・介護ニーズへの対応',
-                            content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている',
                             relatedProblems: ['2024c39'],
+                            content: '人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている',
                         }, //39 p193
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '販売体制',
-                            content: '正しい',
                             relatedProblems: ['2024a40', '2024b40', '2024c40'],
+                            content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '危険の種類',
+                            relatedProblems: ['2024c41'],
                             label: 'ア',
                             content: '縮小',
-                            relatedProblems: ['2024c41'],
                         }, //41
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '剰余金の分配方法',
+                            relatedProblems: ['2024c42'],
                             label: 'ウ',
                             content: '20%',
-                            relatedProblems: ['2024c42'],
                         }, //42
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '養老保険',
+                            relatedProblems: ['2024a43', '2024b43', '2024c43'],
                             label: 'エ',
                             content: '逓減定期保険',
-                            relatedProblems: ['2024a43', '2024b43', '2024c43'],
                         }, //43
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '賦課式保険',
+                            relatedProblems: ['2024b27', '2024c44'],
                             label: 'イ',
                             content: '生命保険',
-                            relatedProblems: ['2024b27', '2024c44'],
                         }, //44
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '近代的生命保険の導入',
+                            relatedProblems: ['2024c45'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2024c45'],
                         }, //45
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険会社の資金の性格',
+                            relatedProblems: ['2024b36', '2024c46'],
                             label: 'エ',
                             content: '責任準備金',
-                            relatedProblems: ['2024b36', '2024c46'],
                         }, //46
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '公的医療保険',
+                            relatedProblems: ['2024c47'],
                             label: 'イ',
                             content: '国民皆保険',
-                            relatedProblems: ['2024c47'],
                         }, //47
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険業を行う会社の性質',
+                            relatedProblems: ['2024a48', '2024b48', '2024c48'],
                             label: 'オ',
                             content: '',
-                            relatedProblems: ['2024a48', '2024b48', '2024c48'],
                         }, //48
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '損害保険',
+                            relatedProblems: ['2024a29', '2024b25', '2024c49'],
                             label: 'ア',
                             content: '保険者',
-                            relatedProblems: ['2024a29', '2024b25', '2024c49'],
                         }, //49
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '年金型商品の開発',
+                            relatedProblems: ['2024a50', '2024b50', '2024c50'],
                             label: 'ウ',
                             content: '変額年金',
-                            relatedProblems: ['2024a50', '2024b50', '2024c50'],
                         }, //50
                     ]"
                 />

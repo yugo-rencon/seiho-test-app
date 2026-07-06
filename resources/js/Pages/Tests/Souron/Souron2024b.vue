@@ -273,10 +273,11 @@ const subject = "2024年度 フォームB";
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '生命保険会社の資金の性格',
                             relatedProblems: ['2024b36', '2024c46'],
-                            content: '純資産の大部分 → 負債の大部分',
-                        }, //36 p108
+                            content: '純資産の大部分 → 負債の大部分', //p108
+                        }, //36
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '形式的監督主義',

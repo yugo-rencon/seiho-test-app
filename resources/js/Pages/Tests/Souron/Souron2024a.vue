@@ -243,10 +243,11 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '生命保険契約の特殊性',
                             relatedProblems: ['2024a31', '2024b21'],
-                            content: '民法、商法、保険法の順 → 保険法、民法の順',
-                        }, //31 p9
+                            content: '保険約款に規定のない事項については、おおむね[[保険法、民法の順]]に適用される。', //p9
+                        }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険料',

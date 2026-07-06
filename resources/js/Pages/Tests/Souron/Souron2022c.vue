@@ -242,6 +242,7 @@ const subject = "2022年度 フォームC";
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '生命保険契約の特殊性',
                             relatedProblems: ['2022b22', '2022c32'],
                             content: '任意規定 → 強行規定',

@@ -127,6 +127,7 @@ const subject = "2022年度 フォームB";
                     questionTitle="生命保険契約の特殊性"
                     :relatedProblems="['2022b22', '2022c32']"
                     :contents="[
+                        // rev: 2026-07-07 確認済み
                         '保険業法 → 保険法', //p7
                         '正しい',
                         '保険法 → 保険約款', //p9

@@ -200,9 +200,10 @@ const subject = "2023年度 フォームC";
                     questionTitle="社会保険の特質"
                     :relatedProblems="['2023a28', '2023b28', '2023c28']"
                     :contents="[
+                        // rev: 2026-07-07 確認済み
                         '正しい',
                         '正しい',
-                        '収支相当の原則 → 大数の法則', //p126
+                        '収支相等の原則 → 大数の法則', //p126
                     ]"
                 />
                 <QuestionTemp1

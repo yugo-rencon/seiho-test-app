@@ -1,0 +1,33 @@
+{
+    "name": "seiho-pdf-paste",
+    "displayName": "Seiho PDF Paste",
+    "description": "Paste PDF-copied Japanese text with full-width comma and period normalized.",
+    "version": "0.0.1",
+    "publisher": "local",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:seihoPdfPaste.pasteNormalized"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "seihoPdfPaste.pasteNormalized",
+                "title": "Seiho: Paste PDF Text"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "seihoPdfPaste.pasteNormalized",
+                "key": "cmd+shift+v",
+                "mac": "cmd+shift+v",
+                "when": "editorTextFocus && !editorReadonly"
+            }
+        ]
+    }
+}

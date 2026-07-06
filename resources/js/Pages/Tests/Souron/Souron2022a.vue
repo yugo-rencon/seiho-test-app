@@ -281,6 +281,7 @@ const subject = "2022年度 フォームA";
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '損害保険',
                             relatedProblems: ['2022a39', '2022b25', '2022c49'],
                             content: '損害保険 → 生命保険', //p173

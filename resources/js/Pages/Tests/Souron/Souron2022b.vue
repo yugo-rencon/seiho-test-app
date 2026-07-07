@@ -252,9 +252,10 @@ const subject = "2022年度 フォームB";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-07-08 確認済み
                             questionTitle: '科学的な生命保険会社',
                             relatedProblems: ['2022a33', '2022b33', '2022c33'],
-                            content: 'ロイヤル・エクスチェンジ → エクイタブル',
+                            content: 'ロイヤル・エクスチェンジ → エクイタブル', //p57
                         }, //33
                         {
                             questionTitle: '生命保険に関する情報提供',

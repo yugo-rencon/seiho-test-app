@@ -267,9 +267,10 @@ const subject = "2022年度 フォームB";
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '社会保障制度',
                             relatedProblems: ['2022a47', '2022b36'],
-                            content: '社会扶助制度 → 公的扶助制度',
+                            content: '社会扶助制度 → 公的扶助制度', //p123
                         }, //36
                         {
                             // rev: 2026-07-05 確認済み

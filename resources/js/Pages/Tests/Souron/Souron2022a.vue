@@ -127,6 +127,7 @@ const subject = "2022年度 フォームA";
                     questionTitle="アメリカにおけるアームストロング調査"
                     :relatedProblems="['2022a22']"
                     :contents="[
+                        // rev: 2026-07-07 確認済み
                         '予定利率 → 新契約費', //p63
                         '会社の株主 → 会社の役員', //p64
                         '正しい',

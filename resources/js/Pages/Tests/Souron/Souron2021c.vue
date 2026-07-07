@@ -229,9 +229,10 @@ const subject = "2021年度 フォームC";
                     questionTitle="生命保険会社の資産運用の今後のあり方"
                     :relatedProblems="['2021c30']"
                     :contents="[
+                        // rev: 2026-07-08 確認済み
                         '正しい',
                         '正しい',
-                        '特別勘定 → 区分経理', //p200
+                        '特別勘定 → 区分経理', //p201
                     ]"
                 />
                 <QuestionTemp2

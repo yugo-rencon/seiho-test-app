@@ -201,6 +201,7 @@ const subject = "2021年度 フォームA";
                     questionTitle="資産運用の現状"
                     :relatedProblems="['2021a28']"
                     :contents="[
+                        // rev: 2026-07-07 確認済み
                         '貸付金 ↔︎ 有価証券', //p111-113
                         '正しい',
                         '正しい',

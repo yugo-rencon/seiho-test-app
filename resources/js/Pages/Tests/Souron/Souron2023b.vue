@@ -243,9 +243,10 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '傷害・疾病危険',
                             relatedProblems: ['2023b31'],
-                            content: '保険業法 → 保険法',
+                            content: '保険業法 → 保険法', //p5
                         }, //31
                         {
                             // rev: 2026-07-06 確認済み
@@ -272,6 +273,7 @@ const subject = "2023年度 フォームB";
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '流動性の原則',
                             relatedProblems: ['2023b36'],
                             content: '生保資金の長期的性格と安定的性格から、銀行などに比べればその[[重要性は低い]]。', //p109

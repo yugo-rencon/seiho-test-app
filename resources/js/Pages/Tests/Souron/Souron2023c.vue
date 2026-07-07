@@ -297,9 +297,10 @@ const subject = "2023年度 フォームC";
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-08 確認済み
                             questionTitle: '医療保障商品',
                             relatedProblems: ['2023c40'],
-                            content: '倍額 → 同額',
+                            content: '倍額 → 同額', //p192
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み

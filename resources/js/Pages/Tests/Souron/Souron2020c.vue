@@ -288,10 +288,11 @@ const subject = "2020年度 フォームC";
                             content: '相互会社から株式会社 → 株式会社から相互会社',
                         }, //36 p78
                         {
+                            // rev: 2026-07-08 確認済み
                             questionTitle: '介護保険制度',
                             relatedProblems: ['2020c37'],
-                            content: '国 → 各市町村',
-                        }, //37 p141
+                            content: '国 → 各市町村', //p141
+                        }, //37
                         {
                             questionTitle: '外国保険業者',
                             relatedProblems: ['2020c38'],

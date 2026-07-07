@@ -267,15 +267,15 @@ const subject = "2023年度 フォームB";
                             content: '正しい',
                         }, //35
                         {
-                            // rev: 2026-07-07 確認済み
                             questionTitle: '流動性の原則',
                             relatedProblems: ['2023b36'],
                             content: '生保資金の長期的性格と安定的性格から、銀行などに比べればその[[重要性は低い]]。', //p109
                         }, //36
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '組織変更',
                             relatedProblems: ['2023a37', '2023b37', '2023c37'],
-                            content: '100株未満 → 1株未満',
+                            content: '100株未満 → 1株未満', //p163
                         }, //37
                         {
                             // rev: 2026-07-06 確認済み

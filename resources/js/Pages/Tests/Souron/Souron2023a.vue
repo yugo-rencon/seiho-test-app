@@ -291,6 +291,7 @@ const subject = "2023年度 フォームA";
                             content: 'JA共済事業は、農協系統組織の一環であり、農業協同組合の行う信用・購入・販売など、他の事業と同様、[[JA（単位農協）、JA共済連という２段階]]による組織機構により運営されている。', //p167
                         }, //38
                         {
+                            // rev: 2026-07-07 確認済み
                             questionTitle: '生保業界のネットワークシステム',
                             relatedProblems: ['2023a39'],
                             content: '生保ANSERシステム → LINC（Life Insurance Network Center）',

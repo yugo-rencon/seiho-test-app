@@ -218,6 +218,7 @@ const subject = "2023年度 フォームB";
                     questionTitle="生命保険事業の革新"
                     :relatedProblems="['2023a34', '2023b29']"
                     :contents="[
+                        // rev: 2026-07-07 確認済み
                         '正しい',
                         '正しい',
                         '裁定審査会 ↔︎ 生命保険相談所', //p83

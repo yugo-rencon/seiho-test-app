@@ -126,6 +126,7 @@ const subject = "2021年度 フォームA";
                     questionTitle="危険の選択"
                     :relatedProblems="['2021a22']"
                     :contents="[
+                        // rev: 2026-07-07 確認済み
                         '選択医 → 診査医', //p17
                         '生命保険支払専門士 → 生命保険面接士', //p17
                         '正しい',

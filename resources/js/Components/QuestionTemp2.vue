@@ -42,7 +42,7 @@
 
                 <div class="grid gap-2">
                     <div
-                        class="grid gap-2 text-sm leading-6 text-gray-800 select-none md:text-[15px] grid-cols-[2em_1fr]"
+                        class="grid grid-cols-[2em_minmax(0,1fr)] gap-1 text-sm leading-6 text-gray-800 select-none md:text-[15px]"
                     >
                         <span class="font-semibold">{{ item.label }}：</span>
                         <div class="jp-kagi-tight min-w-0" v-html="formatContent(item)"></div>

@@ -37,7 +37,7 @@
             <div
                 v-for="(content, index) in props.contents"
                 :key="index"
-                class="grid grid-cols-[2.6em_minmax(0,1fr)] items-start gap-2 border-b border-gray-100 pb-1.5 text-sm leading-6 text-gray-800 select-none md:text-[15px]"
+                class="grid grid-cols-[2em_minmax(0,1fr)] items-start gap-1 border-b border-gray-100 pb-1.5 text-sm leading-6 text-gray-800 select-none md:text-[15px]"
             >
                 <span class="pt-[1px] font-semibold text-gray-900">{{ getLabel(index) }}：</span>
                 <div class="jp-kagi-tight min-w-0" v-html="formatContentHtml(content)"></div>

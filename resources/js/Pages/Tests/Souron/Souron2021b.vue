@@ -201,6 +201,7 @@ const subject = "2021年度 フォームB";
                     questionTitle="都市経済と相互扶助組織"
                     :relatedProblems="['2021b28']"
                     :contents="[
+                        // rev: 2026-07-08 確認済み
                         '正しい',
                         '友愛組合 → ギルド', //p53
                         '正しい',

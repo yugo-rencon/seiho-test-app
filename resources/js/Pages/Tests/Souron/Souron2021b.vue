@@ -231,9 +231,10 @@ const subject = "2021年度 フォームB";
                     questionTitle="保険業法"
                     :relatedProblems="['2021b30']"
                     :contents="[
+                        // rev: 2026-07-08 確認済み
                         '正しい',
                         '正しい',
-                        '保険者 → 保険契約者等', //p150
+                        '保険者の保護 → 保険契約者等の保護', //p150
                     ]"
                 />
                 <QuestionTemp2
@@ -254,6 +255,7 @@ const subject = "2021年度 フォームB";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-07-08 確認済み
                             questionTitle: '危険選択の意義',
                             relatedProblems: ['2021b33'],
                             content: '危険同一性の原則 → 危険均一性の原則',
@@ -265,9 +267,10 @@ const subject = "2021年度 フォームB";
                             content: '合衆国統一の取締法 → ニューヨーク州の取締法', //p63
                         }, //34
                         {
+                            // rev: 2026-07-08 確認済み
                             questionTitle: '保険の有用性',
                             relatedProblems: ['2021b35'],
-                            content: 'ペストの大流行とスペインかぜ → 関東大震災とスペインかぜ',
+                            content: 'ペストの大流行とスペインかぜ → 関東大震災とスペインかぜ', //p76
                         }, //35
                         {
                             // rev: 2026-07-07 確認済み
@@ -282,6 +285,7 @@ const subject = "2021年度 フォームB";
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-07-08 確認済み
                             questionTitle: 'こくみん共済coop（全労災）',
                             relatedProblems: ['2021b38'],
                             content: '各都道府県民共済 → こくみん共済',

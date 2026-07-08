@@ -261,10 +261,11 @@ const subject = "2020年度 フォームC";
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '死亡表',
                             relatedProblems: ['2020a32', '2020b32', '2020c32'],
-                            content: '国民生命表 → 経験生命表',
-                        }, //32 p15
+                            content: '国民生命表 → 経験生命表', //p15
+                        }, //32
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '国民年金基金保険',

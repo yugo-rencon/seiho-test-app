@@ -297,10 +297,11 @@ const subject = "2020年度 フォームC";
                             content: '国 → 各市町村', //p141
                         }, //37
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '外国保険業者',
                             relatedProblems: ['2020c38'],
-                            content: '責任準備金 → 供託金',
-                        }, //38 p159
+                            content: '責任準備金 → 供託金', //p160
+                        }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '各都道府県民共済',

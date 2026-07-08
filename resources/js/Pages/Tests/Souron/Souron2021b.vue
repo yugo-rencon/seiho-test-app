@@ -257,10 +257,11 @@ const subject = "2021年度 フォームB";
                             content: '危険同一性の原則 → 危険均一性の原則',
                         }, //33
                         {
+                            // rev: 2026-07-08 確認済み
                             questionTitle: 'アームストロング調査',
                             relatedProblems: ['2021a34', '2021b34', '2021c34'],
-                            content: '合衆国統一の取締法 → ニューヨーク州の取締法',
-                        }, //34 p63
+                            content: '合衆国統一の取締法 → ニューヨーク州の取締法', //p63
+                        }, //34
                         {
                             questionTitle: '保険の有用性',
                             relatedProblems: ['2021b35'],

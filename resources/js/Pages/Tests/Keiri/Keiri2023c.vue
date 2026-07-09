@@ -742,7 +742,7 @@ const subject = "2023年度 フォームC";
                                 },
                                 {
                                     type: 'text',
-                                    value: '年払営業保険料 P は、収支相当の原則（収入現価=支出現価）で求める。',
+                                    value: '年払営業保険料 P は、収支相等の原則（収入現価=支出現価）で求める。',
                                 },
                                 {
                                     type: 'text',
@@ -759,7 +759,7 @@ const subject = "2023年度 フォームC";
                                 {
                                     type: 'formulaBlock',
                                     value: [
-                                        '収支相当の原則：収入現価 = 支出現価',
+                                        '収支相等の原則：収入現価 = 支出現価',
                                         '各年齢の収入現価（期始払） = 生存数 × P × 期始払現価率',
                                         '支出現価 = 死亡保険金現価 + 満期保険金現価 + 予定事業費現価',
                                     ],
@@ -800,7 +800,7 @@ const subject = "2023年度 フォームC";
                                 },
                                 {
                                     type: 'text',
-                                    value: '③ 収支相当の原則より P を求める',
+                                    value: '③ 収支相等の原則より P を求める',
                                 },
                                 {
                                     type: 'formulaBlock',
@@ -913,7 +913,7 @@ const subject = "2023年度 フォームC";
                         { questionTitle: '運用リスクの帰属', content: '定額保険、変額保険ともに生命保険会社 → 定額保険は生命保険会社、変額保険は契約者' }, //40
                         // 問41〜50
                         { questionTitle: '死亡率', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険計理の基礎', label: 'ウ', content: '収支相当' }, //42
+                        { questionTitle: '保険計理の基礎', label: 'ウ', content: '収支相等' }, //42
                         { questionTitle: '純保険料の変化', label: 'エ', content: '高くなる' }, //43
                         { questionTitle: '責任準備金の積立', label: 'ウ', content: '平準保険料' }, //44
                         { questionTitle: '養老保険の積立金', label: 'ア', content: '危険保険金' }, //45

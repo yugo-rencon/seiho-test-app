@@ -55,7 +55,7 @@ const isDraft = false;
                     questionRange="6"
                     questionTitle="保険料の仕組み-①"
                     :contents="[
-                        '収支相当の原則', // 問6
+                        '収支相等の原則', // 問6
                     ]"
                     :labels="[
                         'イ', //6

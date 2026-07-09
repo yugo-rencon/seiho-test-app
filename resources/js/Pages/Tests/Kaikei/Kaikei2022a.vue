@@ -221,7 +221,7 @@ const subject = "2022年度 フォームA";
                         { questionTitle: 'デリバティブ', content: '正しい' }, //35
                         { questionTitle: '減価償却', content: '有形固定資産の種類にかかわらず方法を選定できる → 種類ごとに選定できる償却の方法が定められている' }, //36 p116
                         { questionTitle: '提供していない役務に対する対価', content: '預り金 → 前受収益' }, //37 p129
-                        { questionTitle: '損益の算定', content: '収支相当の原則 → 費用収益対応の原則' }, //38 p143
+                        { questionTitle: '損益の算定', content: '収支相等の原則 → 費用収益対応の原則' }, //38 p143
                         { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
                         { questionTitle: '監査', content: '正しい' }, //40
                         // 問41〜50

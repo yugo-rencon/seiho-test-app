@@ -712,7 +712,7 @@ const subject = "2022年度 フォームB";
                                 },
                                 {
                                     type: 'text',
-                                    value: '年払営業保険料 P は、収支相当の原則（収入現価=支出現価）で求める。',
+                                    value: '年払営業保険料 P は、収支相等の原則（収入現価=支出現価）で求める。',
                                 },
                                 {
                                     type: 'text',
@@ -729,7 +729,7 @@ const subject = "2022年度 フォームB";
                                 {
                                     type: 'formulaBlock',
                                     value: [
-                                        '収支相当の原則：収入現価 = 支出現価',
+                                        '収支相等の原則：収入現価 = 支出現価',
                                         '各年齢の収入現価（期始払） = 生存数 × P × 期始払現価率',
                                         '支出現価 = 死亡保険金現価 + 満期保険金現価 + 予定事業費現価',
                                     ],
@@ -770,7 +770,7 @@ const subject = "2022年度 フォームB";
                                 },
                                 {
                                     type: 'text',
-                                    value: '③ 収支相当の原則より P を求める',
+                                    value: '③ 収支相等の原則より P を求める',
                                 },
                                 {
                                     type: 'formulaBlock',
@@ -880,7 +880,7 @@ const subject = "2022年度 フォームB";
                         // 問41〜50
                         { questionTitle: '死亡表の種類', label: 'ウ', content: '毎年' }, //41
                         { questionTitle: '資産の平均利回り', label: 'イ', content: '年平残方式' }, //42
-                        { questionTitle: '収支相当の原則', label: 'ア', content: '現価' }, //43
+                        { questionTitle: '収支相等の原則', label: 'ア', content: '現価' }, //43
                         { questionTitle: '純保険料の変化', label: 'ウ', content: '低くなる' }, //44
                         { questionTitle: '解約返戻金', label: 'エ', content: '契約者貸付' }, //45
                         { questionTitle: '加入年齢方式による転換', label: 'オ', content: '' }, //46

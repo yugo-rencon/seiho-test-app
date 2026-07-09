@@ -318,7 +318,7 @@ const isDraft = false;
                         }, //47
                         {
                             questionTitle: '保険料の仕組み',
-                            content: '公平性の原則 → 収支相当の原則', //p23
+                            content: '公平性の原則 → 収支相等の原則', //p23
                         }, //48
                         {
                             questionTitle: '保険料の仕組み',

@@ -326,7 +326,7 @@ const isDraft = false;
                         }, //49
                         {
                             questionTitle: '生命保険の仕組み',
-                            content: '収支相当の法則 → 大数の法則', //p14
+                            content: '収支相等の法則 → 大数の法則', //p14
                         }, //50
                         {
                             questionTitle: '生命保険の仕組み',

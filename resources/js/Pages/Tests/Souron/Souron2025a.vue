@@ -256,7 +256,7 @@ const isDraft = false;
                             // rev: 2026-05-26 確認済み
                             questionTitle: '危険選択の意義',
                             relatedProblems: ['2025a32', '2025b32', '2025c32'],
-                            content: '収支相当の原則 → 危険均一性の原則', //p16
+                            content: '収支相等の原則 → 危険均一性の原則', //p16
                         }, //32
                         {
                             // rev: 2026-05-26 確認済み

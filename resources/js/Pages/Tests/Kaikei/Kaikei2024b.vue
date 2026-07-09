@@ -221,7 +221,7 @@ const subject = "2024年度 フォームB";
                         { questionTitle: '保険金等支払金の計上', content: '正しい' }, //34
                         { questionTitle: '決算書類', content: '正しい' }, //35
                         { questionTitle: '減価償却', content: '有形固定資産の種類にかかわらず方法を選定できる → 種類ごとに選定できる償却の方法が定められている' }, //36 p116
-                        { questionTitle: '損益の算定', content: '収支相当の原則 → 費用収益対応の原則' }, //37 p143
+                        { questionTitle: '損益の算定', content: '収支相等の原則 → 費用収益対応の原則' }, //37 p143
                         { questionTitle: '法人税及び住民税', content: '他の税金と合算 → 他の税金と区別' }, //38 p164
                         { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
                         { questionTitle: '税務調査', content: '正しい' }, //40

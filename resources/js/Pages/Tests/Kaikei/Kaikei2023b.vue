@@ -221,7 +221,7 @@ const subject = "2023年度 フォームB";
                         { questionTitle: '会計に関する事項の標準的な取扱い', content: '金融庁 → 生命保険協会経理委員会' }, //34 p95
                         { questionTitle: '外貨預金の換算', content: '正しい' }, //35
                         { questionTitle: '負債勘定', content: '一般の企業と同様 → 一般の企業と異なる（契約者に対する保険契約準備金が大部分を占めるため）' }, //36 p125
-                        { questionTitle: '損益の算定', content: '収支相当の原則 → 費用収益対応の原則' }, //37 p143
+                        { questionTitle: '損益の算定', content: '収支相等の原則 → 費用収益対応の原則' }, //37 p143
                         { questionTitle: '利源分析に関する課題', content: '正しい' }, //38
                         { questionTitle: '区分経理', content: '正しい' }, //39
                         { questionTitle: '監査役による監査', content: '社内監査役 → 社外監査役' }, //40 p206

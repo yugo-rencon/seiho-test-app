@@ -207,7 +207,7 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険料の仕組み"
                     :contents="[
-                        '公平性の原則 → 収支相当の原則', //p23
+                        '公平性の原則 → 収支相等の原則', //p23
                         '正しい',
                         '正しい',
                         '予定利率 → 予定事業費率', //p24

@@ -525,7 +525,7 @@ const subject = "2021年度 フォームC";
                                 },
                                 {
                                     type: 'text',
-                                    value: '年払営業保険料 P は、収支相当の原則（収入現価=支出現価）で求める。',
+                                    value: '年払営業保険料 P は、収支相等の原則（収入現価=支出現価）で求める。',
                                 },
                                 {
                                     type: 'text',
@@ -542,7 +542,7 @@ const subject = "2021年度 フォームC";
                                 {
                                     type: 'formulaBlock',
                                     value: [
-                                        '収支相当の原則：収入現価 = 支出現価',
+                                        '収支相等の原則：収入現価 = 支出現価',
                                         '各年齢の収入現価（期始払） = 生存数 × P × 期始払現価率',
                                         '支出現価 = 死亡保険金現価 + 満期保険金現価 + 予定事業費現価',
                                     ],
@@ -583,7 +583,7 @@ const subject = "2021年度 フォームC";
                                 },
                                 {
                                     type: 'text',
-                                    value: '③ 収支相当の原則より P を求める',
+                                    value: '③ 収支相等の原則より P を求める',
                                 },
                                 {
                                     type: 'formulaBlock',
@@ -707,7 +707,7 @@ const subject = "2021年度 フォームC";
                         { questionTitle: '契約年齢', content: '正しい' }, //31
                         { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //32 p27
                         { questionTitle: '予定利率', content: '保険金額 → 商品の特性' }, //33 p38
-                        { questionTitle: '収支相当の原則', content: '正しい' }, //34
+                        { questionTitle: '収支相等の原則', content: '正しい' }, //34
                         { questionTitle: '責任準備金積立根拠', content: '平準保険料方式と同様 → 平準保険料方式と異なり' }, //35 p68
                         { questionTitle: '解約返戻金の算式', content: '正しい' }, //36
                         { questionTitle: '契約変更', content: 'いずれの方法でも支払われない → 保険金額の減額では支払われることがある' }, //37 p111~

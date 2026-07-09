@@ -27,6 +27,7 @@ const subject = "2025年度 フォームC";
                     :contents="[
                         // 問１
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '0.97791',
                             questionTitle: '生存率',
                             explanation: [
@@ -62,6 +63,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問２
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '96,488',
                             questionTitle: '生存数',
                             explanation: [
@@ -101,6 +103,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問３
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '0.93',
                             questionTitle: '平均余命',
                             explanation: [
@@ -164,6 +167,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問４
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '835,831',
                             questionTitle: '保険金総額の現価',
                             explanation: [
@@ -215,6 +219,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問５
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '8,500',
                             questionTitle: '純保険料',
                             explanation: [
@@ -264,6 +269,7 @@ const subject = "2025年度 フォームC";
                     :contents="[
                         // 問６
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '6,015',
                             questionTitle: '複利計算',
                             explanation: [
@@ -315,6 +321,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問７
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1,061,646',
                             questionTitle: '複利計算（半年複利）',
                             explanation: [
@@ -354,6 +361,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問８
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1.51',
                             questionTitle: '実利率',
                             explanation: [
@@ -405,6 +413,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問９
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1.33',
                             questionTitle: '年平均利回り',
                             explanation: [
@@ -456,6 +465,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問10
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1,941,035',
                             questionTitle: '現在必要資金の計算',
                             explanation: [
@@ -508,6 +518,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="死亡表の種類"
                     :contents="[
+                        // rev: 2026-07-09 確認済み
                         '経験生命表',
                         '完全生命表',
                         '総合表',
@@ -528,6 +539,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="変額保険の仕組み・運用（定額保険との比較）"
                     :contents="[
+                        // rev: 2026-07-09 確認済み
                         '毎月1回',
                         '保証はない',
                         '変動保険金額',
@@ -549,6 +561,7 @@ const subject = "2025年度 フォームC";
                     :contents="[
                         // 問21
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1,331,821千円',
                             questionTitle: '死亡保険金の現価',
                             explanation: [
@@ -606,6 +619,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問22
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '187,097,040千円',
                             questionTitle: '満期保険金の現価',
                             explanation: [
@@ -645,6 +659,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問23
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '4,901,350千円',
                             questionTitle: '予定事業費の現価',
                             explanation: [
@@ -696,6 +711,7 @@ const subject = "2025年度 フォームC";
                         },
                         // 問24
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '501,640円',
                             questionTitle: '養老保険の年払営業保険料',
                             explanation: [
@@ -850,12 +866,12 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '生命保険契約と年齢',
                             content: 'すべての生命保険会社は、「保険年齢方式」を適用している → 「保険年齢方式」を適用している会社と「満年齢方式」を適用している会社がある', //p15
                         }, //31
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '単利',
                             content: '正しい',
                         }, //32
@@ -864,14 +880,17 @@ const subject = "2025年度 フォームC";
                             content: '自然保険料 → 平準保険料', //p36
                         }, //33
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '現価',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '高額割引制度',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '責任準備金',
                             content: '正しい',
                         }, //36
@@ -880,28 +899,80 @@ const subject = "2025年度 フォームC";
                             content: '資産十分性テスト → 負債十分性テスト', //p101
                         }, //37
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '剰余金の発生源',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '変額保険の仕組み',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '特別勘定の位置付け',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '資産の平均利回り', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険計理の基礎', label: 'イ', content: '大数' }, //42
-                        { questionTitle: '純保険料の変化', label: 'ア', content: '定期保険と養老保険' }, //43
-                        { questionTitle: 'チルメル式保険料積立金', label: 'イ', content: '純保険料（貯蓄保険料）' }, //44
-                        { questionTitle: '危険保険料の計算', label: 'ア', content: '危険保険金' }, //45
-                        { questionTitle: '解約返戻金', label: 'エ', content: '契約者貸付' }, //46
-                        { questionTitle: '払済保険', label: 'ア', content: '差し引いた後' }, //47
-                        { questionTitle: '加入年齢方式による転換', label: 'ウ', content: '一時払か分割払（割賦払）' }, //48
-                        { questionTitle: 'アセット・シェア方式', label: 'オ', content: '' }, //49
-                        { questionTitle: '団体定期保険の保険料', label: 'エ', content: '特別の保険料率' }, //50
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '資産の平均利回り',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '保険計理の基礎',
+                            label: 'イ',
+                            content: '大数',
+                        }, //42
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '純保険料の変化',
+                            label: 'ア',
+                            content: '定期保険と養老保険',
+                        }, //43
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: 'チルメル式保険料積立金',
+                            label: 'イ',
+                            content: '純保険料（貯蓄保険料）',
+                        }, //44
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '危険保険料の計算',
+                            label: 'ア',
+                            content: '危険保険金',
+                        }, //45
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '解約返戻金',
+                            label: 'エ',
+                            content: '契約者貸付',
+                        }, //46
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '払済保険',
+                            label: 'ア',
+                            content: '差し引いた後',
+                        }, //47
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '加入年齢方式による転換',
+                            label: 'ウ',
+                            content: '一時払か分割払（割賦払）',
+                        }, //48
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: 'アセット・シェア方式',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '団体定期保険の保険料',
+                            label: 'エ',
+                            content: '特別の保険料率',
+                        }, //50
                     ]"
                 />
             </div>

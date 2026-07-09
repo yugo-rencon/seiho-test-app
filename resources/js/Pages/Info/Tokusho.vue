@@ -79,7 +79,7 @@ const contactHref = computed(() => {
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
                         <dt class="font-medium text-gray-800">氏名・住所・電話番号</dt>
                         <dd class="text-gray-700">
-                            個人情報保護および防犯の観点から、Webサイト上での常時公開は控えております。上記の記載事項について開示をご希望される場合は、下記のお問い合わせフォームよりご請求ください。特商法に基づき、遅滞なく電子メール等の書面にて開示いたします。
+                            消費者庁のガイドラインに基づき、当方の氏名・住所・電話番号については、売買契約が成立したお客様（ご購入者様）から開示の請求があった場合にのみ、遅滞なく電子メール等の方法により提供いたします。
                         </dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
@@ -132,7 +132,7 @@ const contactHref = computed(() => {
             </section>
 
             <div class="mt-6 text-xs text-gray-500 border-t border-gray-100 pt-4">
-                最終更新日：2026年6月13日
+                最終更新日：2026年7月9日
             </div>
         </div>
     </SeihoTestLayout>

@@ -27,6 +27,7 @@ const subject = "2025年度 フォームA";
                     :contents="[
                         // 問１
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '4,517',
                             questionTitle: '複利計算',
                             explanation: [
@@ -78,6 +79,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問２
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '526,600',
                             questionTitle: '複利計算（半年複利）',
                             explanation: [
@@ -117,6 +119,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問３
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1.21',
                             questionTitle: '実利率',
                             explanation: [
@@ -168,6 +171,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問４ p39
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1.73',
                             questionTitle: '年平均利回り',
                             explanation: [
@@ -219,6 +223,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問５ p39
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1,467,712円',
                             questionTitle: '必要資金（現在価値）',
                             explanation: [
@@ -296,6 +301,7 @@ const subject = "2025年度 フォームA";
                     :contents="[
                         // 問６
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '0.99247',
                             questionTitle: '生存率',
                             explanation: [
@@ -331,6 +337,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問７
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '96,488',
                             questionTitle: '生存数',
                             explanation: [
@@ -370,6 +377,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問８
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1.02',
                             questionTitle: '平均余命',
                             explanation: [
@@ -433,6 +441,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問９
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '1,716,439',
                             questionTitle: '保険金総額の現価',
                             explanation: [
@@ -484,6 +493,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問10
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '18,070',
                             questionTitle: '純保険料',
                             explanation: [
@@ -532,6 +542,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="死亡表の種類"
                     :contents="[
+                        // rev: 2026-07-09 確認済み
                         '経験生命表',
                         '完全生命表',
                         '総合表',
@@ -552,6 +563,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="変額保険の仕組み・運用（定額保険との比較）"
                     :contents="[
+                        // rev: 2026-07-09 確認済み
                         '毎月1回',
                         '保証はない',
                         '変動保険金額',
@@ -573,6 +585,7 @@ const subject = "2025年度 フォームA";
                     :contents="[
                         // 問21
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '714,734千円',
                             questionTitle: '死亡保険金の現価',
                             explanation: [
@@ -631,6 +644,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問22
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '140,263,691千円',
                             questionTitle: '満期保険金の現価',
                             explanation: [
@@ -670,6 +684,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問23
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '3,703,800千円',
                             questionTitle: '予定事業費の現価',
                             explanation: [
@@ -721,6 +736,7 @@ const subject = "2025年度 フォームA";
                         },
                         // 問24
                         {
+                            // rev: 2026-07-09 確認済み
                             answer: '299,380円',
                             questionTitle: '養老保険の年払営業保険料',
                             explanation: [
@@ -876,7 +892,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '生命保険契約と年齢',
                             content: 'すべての生命保険会社は、「保険年齢方式」を適用している → 「保険年齢方式」を適用している会社と「満年齢方式」を適用している会社がある', //p15
@@ -898,6 +913,7 @@ const subject = "2025年度 フォームA";
                             content: '年払保険料が分割払営業保険料の年間払込額を上回る → 分割払業保険料が年払保険料の年間払込額を上回る', //p62
                         }, //35
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '責任準備金積立根拠',
                             content: '正しい',
                         }, //36
@@ -906,28 +922,80 @@ const subject = "2025年度 フォームA";
                             content: '保険期間は変わらない → 保険期間は短くなる<br>満期を迎えても生存保険金の支払対象とならない → 満期まで残額があれば生存保険金が支払われる', //p112-113
                         }, //37
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '決算による剰余金算定',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '契約者配当の意義と性格',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-07-09 確認済み
                             questionTitle: '特別勘定の位置付け',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '死亡率', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険計理の基礎', label: 'イ', content: '大数' }, //42
-                        { questionTitle: '純保険料の変化', label: 'ア', content: '定期保険と養老保険' }, //43
-                        { questionTitle: '養老保険の積立金', label: 'オ', content: '' }, //44
-                        { questionTitle: '責任準備金', label: 'エ', content: '予定利率' }, //45
-                        { questionTitle: '解約返戻金', label: 'ア', content: '契約者貸付' }, //46
-                        { questionTitle: '払済保険', label: 'ア', content: '差し引いた後' }, //47
-                        { questionTitle: '配当割当方法', label: 'オ', content: '' }, //48
-                        { questionTitle: '配当金の計算方法', label: 'エ', content: '保険金' }, //49
-                        { questionTitle: '団体年金の保険料計算', label: 'オ', content: '' }, //50
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '死亡率',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '保険計理の基礎',
+                            label: 'イ',
+                            content: '大数',
+                        }, //42
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '純保険料の変化',
+                            label: 'ア',
+                            content: '定期保険と養老保険',
+                        }, //43
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '養老保険の積立金',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '責任準備金',
+                            label: 'エ',
+                            content: '予定利率',
+                        }, //45
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '解約返戻金',
+                            label: 'ア',
+                            content: '契約者貸付',
+                        }, //46
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '払済保険',
+                            label: 'ア',
+                            content: '差し引いた後',
+                        }, //47
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '配当割当方法',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '配当金の計算方法',
+                            label: 'エ',
+                            content: '保険金',
+                        }, //49
+                        {
+                            // rev: 2026-07-09 確認済み
+                            questionTitle: '団体年金の保険料計算',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

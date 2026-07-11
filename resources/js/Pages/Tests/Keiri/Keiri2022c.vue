@@ -27,6 +27,7 @@ const subject = "2022年度 フォームC";
                     :contents="[
                         // 問１
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '0.96114',
                             questionTitle: '生存率',
                             explanation: [
@@ -62,6 +63,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問２
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '98,233',
                             questionTitle: '生存数',
                             explanation: [
@@ -101,6 +103,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問３
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1.26',
                             questionTitle: '平均余命',
                             explanation: [
@@ -164,6 +167,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問４
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1,194,044',
                             questionTitle: '保険金総額の現価',
                             explanation: [
@@ -215,6 +219,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問５
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '12,610',
                             questionTitle: '純保険料',
                             explanation: [
@@ -264,6 +269,7 @@ const subject = "2022年度 フォームC";
                     :contents="[
                         // 問６
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '24,120',
                             questionTitle: '複利計算',
                             explanation: [
@@ -315,6 +321,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問７
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '2,123,292',
                             questionTitle: '複利計算（半年複利）',
                             explanation: [
@@ -354,6 +361,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問８
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1.51',
                             questionTitle: '実利率',
                             explanation: [
@@ -405,6 +413,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問９
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1.33',
                             questionTitle: '年平均利回り',
                             explanation: [
@@ -456,6 +465,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問10
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1,902,931',
                             questionTitle: '現在必要資金の計算',
                             explanation: [
@@ -508,6 +518,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-07-11 確認済み
                         '将来法',
                         '過去法',
                         '一致する',
@@ -528,6 +539,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-07-11 確認済み
                         '貯蓄',
                         '歩合',
                         '新契約',
@@ -549,6 +561,7 @@ const subject = "2022年度 フォームC";
                     :contents="[
                         // 問21
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '3,002,390千円',
                             questionTitle: '死亡保険金の現価',
                             explanation: [
@@ -600,6 +613,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問22
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '416,881,974千円',
                             questionTitle: '満期保険金の現価',
                             explanation: [
@@ -639,6 +653,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問23
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '11,030,850千円',
                             questionTitle: '予定事業費の現価',
                             explanation: [
@@ -690,6 +705,7 @@ const subject = "2022年度 フォームC";
                         },
                         // 問24
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '898,820円',
                             questionTitle: '養老保険の年払営業保険料',
                             explanation: [
@@ -889,51 +905,61 @@ const subject = "2022年度 フォームC";
                             content: '企業等の財政負担力に依存しない → 企業等の財政負担力に依存している',
                         }, //40
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '死亡表の種類',
                             label: 'イ',
                             content: '国民生命表',
                         }, //41
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '保険料の計算基礎',
                             label: 'ウ',
                             content: '保険金に比例させる',
                         }, //42
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '準備金の積立根拠',
                             label: 'エ',
                             content: '責任準備金',
                         }, //43
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '危険保険料の計算',
                             label: 'イ',
                             content: '年始生存者数',
                         }, //44
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '解約返戻金',
                             label: 'エ',
                             content: '契約者貸付',
                         }, //45
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '加入年齢方式による転換',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '積立に関する法的規制',
                             label: 'ア',
                             content: '第三分野保険',
                         }, //47
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '利源の分類',
                             label: 'ア',
                             content: '危険保険金額',
                         }, //48
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '特別勘定の位置付け',
                             label: 'ア',
                             content: '運用実績連動型',
                         }, //49
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '団体年金の保険料計算',
                             label: 'ウ',
                             content: '通常保険料',

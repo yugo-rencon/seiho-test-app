@@ -27,6 +27,7 @@ const subject = "2020年度 フォームB";
                     :contents="[
                         // 問１
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1.12',
                             questionTitle: '平均余命',
                             explanation: [
@@ -90,6 +91,7 @@ const subject = "2020年度 フォームB";
                         },
                         // 問２
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '203,011',
                             questionTitle: '複利計算（半年複利）',
                             explanation: [
@@ -129,6 +131,7 @@ const subject = "2020年度 フォームB";
                         },
                         // 問３
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '2.52',
                             questionTitle: '実利率',
                             explanation: [
@@ -180,6 +183,7 @@ const subject = "2020年度 フォームB";
                         },
                         // 問４
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1.21',
                             questionTitle: '年平均利回り',
                             explanation: [
@@ -231,6 +235,7 @@ const subject = "2020年度 フォームB";
                         },
                         // 問５
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1,459,148円',
                             questionTitle: '必要資金（現在価値）',
                             explanation: [
@@ -301,6 +306,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-07-11 確認済み
                         '貯蓄',
                         '歩合（割合）',
                         '新契約',
@@ -321,6 +327,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="保険料の構成と計算基礎"
                     :contents="[
+                        // rev: 2026-07-11 確認済み
                         '付加保険料',
                         '営業保険料',
                         '保険金',
@@ -341,6 +348,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="責任準備金の積立に関する法的規制"
                     :contents="[
+                        // rev: 2026-07-11 確認済み
                         '平準純保険料式',
                         'ソルベンシー・マージン',
                         '健全性',
@@ -362,6 +370,7 @@ const subject = "2020年度 フォームB";
                     :contents="[
                         // 問21
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1,292,902千円',
                             questionTitle: '死亡保険金の現価',
                             explanation: [
@@ -413,6 +422,7 @@ const subject = "2020年度 フォームB";
                         },
                         // 問22
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '138,639,538千円',
                             questionTitle: '満期保険金の現価',
                             explanation: [
@@ -452,6 +462,7 @@ const subject = "2020年度 フォームB";
                         },
                         // 問23
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '3,676,013千円',
                             questionTitle: '予定事業費の現価',
                             explanation: [
@@ -503,6 +514,7 @@ const subject = "2020年度 フォームB";
                         },
                         // 問24
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '299,840円',
                             questionTitle: '養老保険の年払営業保険料',
                             explanation: [
@@ -698,51 +710,61 @@ const subject = "2020年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '死亡表の種類',
                             label: 'ウ',
                             content: '完全生命表',
                         }, //41
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '資産の平均利回り',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '純保険料の変化',
                             label: 'エ',
                             content: '高くなる',
                         }, //43
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '危険保険料の計算',
                             label: 'イ',
                             content: '年始生存者数',
                         }, //44
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '解約返戻金',
                             label: 'イ',
                             content: '失効',
                         }, //45
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: 'アセット・シェア方式',
                             label: 'ウ',
                             content: '利源別配当',
                         }, //46
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '加入年齢方式による転換',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '配当金の計算方法',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '変額保険の仕組み',
                             label: 'ア',
                             content: '毎月',
                         }, //49
                         {
+                            // rev: 2026-07-11 確認済み
                             questionTitle: '団体年金の財政方式',
                             label: 'ウ',
                             content: '総合保険料',

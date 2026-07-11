@@ -134,14 +134,7 @@ const subject = "2020年度 フォームA";
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: [
-                                        '108歳：58.951 × 0.5 = 29.4755 → 29.48',
-                                        '109歳：25.888 × 1.5 = 38.832 → 38.83',
-                                        '110歳：10.1008 × 2.5 = 25.252 → 25.25',
-                                        '111歳：3.4515 × 3.5 = 12.08025 → 12.08',
-                                        '112歳：1.0162 × 4.5 = 4.5729 → 4.57',
-                                        '113歳：0.3155 × 5.5 = 1.73525 → 1.74',
-                                    ],
+                                    value: ['108歳：58.951 × 0.5 = 29.4755 → 29.48', '109歳：25.888 × 1.5 = 38.832 → 38.83', '110歳：10.1008 × 2.5 = 25.252 → 25.25', '111歳：3.4515 × 3.5 = 12.08025 → 12.08', '112歳：1.0162 × 4.5 = 4.5729 → 4.57', '113歳：0.3155 × 5.5 = 1.73525 → 1.74'],
                                 },
                                 {
                                     type: 'text',
@@ -589,11 +582,7 @@ const subject = "2020年度 フォームA";
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: [
-                                        '40歳：3,000千円 × 87 × 0.995037 = 259,705千円',
-                                        '41歳：3,000千円 × 92 × 0.985185 = 271,911千円',
-                                        '42歳：3,000千円 × 98 × 0.975431 = 286,777千円',
-                                    ],
+                                    value: ['40歳：3,000千円 × 87 × 0.995037 = 259,705千円', '41歳：3,000千円 × 92 × 0.985185 = 271,911千円', '42歳：3,000千円 × 98 × 0.975431 = 286,777千円'],
                                 },
                                 {
                                     type: 'text',
@@ -726,11 +715,7 @@ const subject = "2020年度 フォームA";
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: [
-                                        '収支相等の原則：収入現価 = 支出現価',
-                                        '各年齢の収入現価（期始払） = 生存数 × P × 期始払現価率',
-                                        '支出現価 = 死亡保険金現価 + 満期保険金現価 + 予定事業費現価',
-                                    ],
+                                    value: ['収支相等の原則：収入現価 = 支出現価', '各年齢の収入現価（期始払） = 生存数 × P × 期始払現価率', '支出現価 = 死亡保険金現価 + 満期保険金現価 + 予定事業費現価'],
                                 },
                                 {
                                     type: 'blockTitle',
@@ -853,28 +838,102 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '平均余命', content: '正しい' }, //31
-                        { questionTitle: '契約と年齢', content: '正しい' }, //32
-                        { questionTitle: '現価', content: '期始払現価 → 期末払現価' }, //33 p27
-                        { questionTitle: '保険料の計算原理', content: '自然保険料 → 平準保険料' }, //34 p35-36
-                        { questionTitle: '分割払営業保険料', content: '営業保険料を下回る → 上回る' }, //35 p62
-                        { questionTitle: '契約転換制度', content: '正しい' }, //36
-                        { questionTitle: '決算による剰余金算定', content: '正しい' }, //37
-                        { questionTitle: '契約者配当の意義と割当', content: '正しい' }, //38
-                        { questionTitle: '最低保証機能', content: '3つのタイプ → 4つのタイプ（最低解約保証タイプを含む）' }, //39 /146
-                        { questionTitle: 'リスクヘッジ', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '死亡表の種類', label: 'ウ', content: '完全生命表' }, //41
-                        { questionTitle: '収支相等の原則', label: 'ア', content: '現価' }, //42
-                        { questionTitle: '純保険料の変化', label: 'エ', content: '高くなる' }, //43
-                        { questionTitle: '責任準備金の積立', label: 'ウ', content: '平準保険料' }, //44
-                        { questionTitle: 'チルメル式保険料積立金', label: 'イ', content: '純保険料（貯蓄保険料）' }, //45
-                        { questionTitle: '解約返戻金の算式', label: 'イ', content: '純保険料式保険料積立金' }, //46
-                        { questionTitle: '加入年齢方式による転換', label: 'オ', content: '' }, //47
-                        { questionTitle: '配当金割当方法', label: 'ア', content: '実用' }, //48
-                        { questionTitle: '特別勘定の位置付け', label: 'ア', content: '運用実績連動型' }, //49
-                        { questionTitle: '団体定期保険の保険料', label: 'オ', content: '' }, //50
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '平均余命',
+                            content: '正しい',
+                        }, //31
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '契約と年齢',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '現価',
+                            content: '期始払現価 → 期末払現価',
+                        }, //33 p27
+                        {
+                            questionTitle: '保険料の計算原理',
+                            content: '自然保険料 → 平準保険料',
+                        }, //34 p35-36
+                        {
+                            questionTitle: '分割払営業保険料',
+                            content: '営業保険料を下回る → 上回る',
+                        }, //35 p62
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '契約転換制度',
+                            content: '正しい',
+                        }, //36
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '決算による剰余金算定',
+                            content: '正しい',
+                        }, //37
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '契約者配当の意義と割当',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '最低保証機能',
+                            content: '3つのタイプ → 4つのタイプ（最低解約保証タイプを含む）',
+                        }, //39 /146
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: 'リスクヘッジ',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '死亡表の種類',
+                            label: 'ウ',
+                            content: '完全生命表',
+                        }, //41
+                        {
+                            questionTitle: '収支相等の原則',
+                            label: 'ア',
+                            content: '現価',
+                        }, //42
+                        {
+                            questionTitle: '純保険料の変化',
+                            label: 'エ',
+                            content: '高くなる',
+                        }, //43
+                        {
+                            questionTitle: '責任準備金の積立',
+                            label: 'ウ',
+                            content: '平準保険料',
+                        }, //44
+                        {
+                            questionTitle: 'チルメル式保険料積立金',
+                            label: 'イ',
+                            content: '純保険料（貯蓄保険料）',
+                        }, //45
+                        {
+                            questionTitle: '解約返戻金の算式',
+                            label: 'イ',
+                            content: '純保険料式保険料積立金',
+                        }, //46
+                        {
+                            questionTitle: '加入年齢方式による転換',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '配当金割当方法',
+                            label: 'ア',
+                            content: '実用',
+                        }, //48
+                        {
+                            questionTitle: '特別勘定の位置付け',
+                            label: 'ア',
+                            content: '運用実績連動型',
+                        }, //49
+                        {
+                            questionTitle: '団体定期保険の保険料',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

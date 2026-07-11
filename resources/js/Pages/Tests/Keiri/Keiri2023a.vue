@@ -27,6 +27,7 @@ const subject = "2023年度 フォームA";
                     :contents="[
                         // 問１
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '5,425',
                             questionTitle: '複利計算',
                             explanation: [
@@ -78,6 +79,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問２
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '522,926',
                             questionTitle: '複利計算（半年複利）',
                             explanation: [
@@ -117,6 +119,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問３
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1.51',
                             questionTitle: '実利率',
                             explanation: [
@@ -168,6 +171,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問４
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1.23',
                             questionTitle: '年平均利回り',
                             explanation: [
@@ -219,6 +223,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問５
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '2,710,245円',
                             questionTitle: '必要資金（現在価値）',
                             explanation: [
@@ -292,6 +297,7 @@ const subject = "2023年度 フォームA";
                     :contents="[
                         // 問６
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '0.98530',
                             questionTitle: '生存率',
                             explanation: [
@@ -327,6 +333,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問７
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '98,455',
                             questionTitle: '生存数',
                             explanation: [
@@ -366,6 +373,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問８
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1.02',
                             questionTitle: '平均余命',
                             explanation: [
@@ -399,13 +407,7 @@ const subject = "2023年度 フォームA";
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: [
-                                        '109歳：25.888 × 0.5 = 12.94',
-                                        '110歳：10.1008 × 1.5 = 15.15',
-                                        '111歳：3.4515 × 2.5 = 8.63',
-                                        '112歳：1.0162 × 3.5 = 3.56',
-                                        '113歳：0.3155 × 4.5 = 1.42',
-                                    ],
+                                    value: ['109歳：25.888 × 0.5 = 12.94', '110歳：10.1008 × 1.5 = 15.15', '111歳：3.4515 × 2.5 = 8.63', '112歳：1.0162 × 3.5 = 3.56', '113歳：0.3155 × 4.5 = 1.42'],
                                 },
                                 {
                                     type: 'text',
@@ -435,6 +437,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問９
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '955,236',
                             questionTitle: '保険金総額の現価',
                             explanation: [
@@ -486,6 +489,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問10
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '9,790',
                             questionTitle: '純保険料',
                             explanation: [
@@ -534,6 +538,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-07-11 確認済み
                         '経験生命表',
                         '完全生命表',
                         '総合表',
@@ -554,6 +559,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-07-11 確認済み
                         '解約返戻金',
                         '残存',
                         'そのときの被保険者の到達年齢',
@@ -575,6 +581,7 @@ const subject = "2023年度 フォームA";
                     :contents="[
                         // 問21
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '3,335,427千円',
                             questionTitle: '死亡保険金の現価',
                             explanation: [
@@ -608,13 +615,7 @@ const subject = "2023年度 フォームA";
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: [
-                                        '40歳：7,000千円 × 87 × 0.995037 = 605,978千円',
-                                        '41歳：7,000千円 × 92 × 0.985185 = 634,459千円',
-                                        '42歳：7,000千円 × 98 × 0.975431 = 669,146千円',
-                                        '43歳：7,000千円 × 102 × 0.965773 = 689,562千円',
-                                        '44歳：7,000千円 × 110 × 0.956211 = 736,282千円',
-                                    ],
+                                    value: ['40歳：7,000千円 × 87 × 0.995037 = 605,978千円', '41歳：7,000千円 × 92 × 0.985185 = 634,459千円', '42歳：7,000千円 × 98 × 0.975431 = 669,146千円', '43歳：7,000千円 × 102 × 0.965773 = 689,562千円', '44歳：7,000千円 × 110 × 0.956211 = 736,282千円'],
                                 },
                                 {
                                     type: 'text',
@@ -632,6 +633,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問22
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '654,563,889千円',
                             questionTitle: '満期保険金の現価',
                             explanation: [
@@ -671,6 +673,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問23
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '17,284,400千円',
                             questionTitle: '予定事業費の現価',
                             explanation: [
@@ -722,6 +725,7 @@ const subject = "2023年度 フォームA";
                         },
                         // 問24
                         {
+                            // rev: 2026-07-11 確認済み
                             answer: '1,397,130円',
                             questionTitle: '養老保険の年払営業保険料',
                             explanation: [
@@ -747,11 +751,7 @@ const subject = "2023年度 フォームA";
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: [
-                                        '収支相等の原則：収入現価 = 支出現価',
-                                        '各年齢の収入現価（期始払） = 生存数 × P × 期始払現価率',
-                                        '支出現価 = 死亡保険金現価 + 満期保険金現価 + 予定事業費現価',
-                                    ],
+                                    value: ['収支相等の原則：収入現価 = 支出現価', '各年齢の収入現価（期始払） = 生存数 × P × 期始払現価率', '支出現価 = 死亡保険金現価 + 満期保険金現価 + 予定事業費現価'],
                                 },
                                 {
                                     type: 'blockTitle',
@@ -763,13 +763,7 @@ const subject = "2023年度 フォームA";
                                 },
                                 {
                                     type: 'formulaBlock',
-                                    value: [
-                                        '40歳：P × 98,768 × 1.000000 = 98,768P',
-                                        '41歳：P × 98,681 × 0.990099 = 97,704P',
-                                        '42歳：P × 98,590 × 0.980296 = 96,647P',
-                                        '43歳：P × 98,492 × 0.970590 = 95,595P',
-                                        '44歳：P × 98,390 × 0.960980 = 94,551P',
-                                    ],
+                                    value: ['40歳：P × 98,768 × 1.000000 = 98,768P', '41歳：P × 98,681 × 0.990099 = 97,704P', '42歳：P × 98,590 × 0.980296 = 96,647P', '43歳：P × 98,492 × 0.970590 = 95,595P', '44歳：P × 98,390 × 0.960980 = 94,551P'],
                                 },
                                 {
                                     type: 'formulaBlock',
@@ -886,28 +880,112 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '契約年齢', content: '正しい' }, //31
-                        { questionTitle: '単利', content: '正しい' }, //32
-                        { questionTitle: '予定利率', content: '保険金額 → 商品の特性' }, //33 p38
-                        { questionTitle: '終価', content: '正しい' }, //34
-                        { questionTitle: '保険料の計算原理', content: '自然保険料 → 平準保険料' }, //35
-                        { questionTitle: '1年定期保険の純保険料', content: '正しい' }, //36
-                        { questionTitle: '責任準備金', content: '正しい' }, //37
-                        { questionTitle: '決算による剰余金算定', content: '正しい' }, //38
-                        { questionTitle: '変額保険の仕組み', content: '3つ → 2つ（死差益と費差益）' }, //39
-                        { questionTitle: '団体定期保険の数理', content: '被保険者ごとに積み上げる → 団体単位で計算<br>死差損団体にも支払われる → 支払われない' }, //40 p154
-                        // 問41〜50
-                        { questionTitle: '死亡率', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険計理の基礎', label: 'イ', content: '大数' }, //42
-                        { questionTitle: '純保険料の変化', label: 'エ', content: '高くなる' }, //43
-                        { questionTitle: '責任準備金の積立', label: 'ウ', content: '平準保険料' }, //44
-                        { questionTitle: '積立に関する法的規制', label: 'イ', content: '危険準備金' }, //45
-                        { questionTitle: '延長保険', label: 'ア', content: '定期保険' }, //46
-                        { questionTitle: '配当準備金繰入', label: 'オ', content: '' }, //47
-                        { questionTitle: '剰余金の発生源', label: 'エ', content: '価格変動' }, //48
-                        { questionTitle: '変額保険の仕組み', label: 'ア', content: '死亡保険金額' }, //49
-                        { questionTitle: '団体年金制度の財政方式', label: 'ア', content: '事前積立' }, //50
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '契約年齢',
+                            content: '正しい',
+                        }, //31
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '単利',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '予定利率',
+                            content: '保険金額 → 商品の特性',
+                        }, //33 p38
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '終価',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '保険料の計算原理',
+                            content: '自然保険料 → 平準保険料',
+                        }, //35
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '1年定期保険の純保険料',
+                            content: '正しい',
+                        }, //36
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '責任準備金',
+                            content: '正しい',
+                        }, //37
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '決算による剰余金算定',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '変額保険の仕組み',
+                            content: '3つ → 2つ（死差益と費差益）',
+                        }, //39
+                        {
+                            questionTitle: '団体定期保険の数理',
+                            content: '被保険者ごとに積み上げる → 団体単位で計算<br>死差損団体にも支払われる → 支払われない',
+                        }, //40 p154
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '死亡率',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '保険計理の基礎',
+                            label: 'イ',
+                            content: '大数',
+                        }, //42
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '純保険料の変化',
+                            label: 'エ',
+                            content: '高くなる',
+                        }, //43
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '責任準備金の積立',
+                            label: 'ウ',
+                            content: '平準保険料',
+                        }, //44
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '積立に関する法的規制',
+                            label: 'イ',
+                            content: '危険準備金',
+                        }, //45
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '延長保険',
+                            label: 'ア',
+                            content: '定期保険',
+                        }, //46
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '配当準備金繰入',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '剰余金の発生源',
+                            label: 'エ',
+                            content: '価格変動',
+                        }, //48
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '変額保険の仕組み',
+                            label: 'ア',
+                            content: '死亡保険金額',
+                        }, //49
+                        {
+                            // rev: 2026-07-11 確認済み
+                            questionTitle: '団体年金制度の財政方式',
+                            label: 'ア',
+                            content: '事前積立',
+                        }, //50
                     ]"
                 />
             </div>

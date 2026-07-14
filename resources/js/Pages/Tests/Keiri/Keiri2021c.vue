@@ -677,9 +677,10 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-07-14 確認済み
                         '正しい',
                         '正しい',
-                        '繰越利益剰余金 → 当期未処分剰余金', //p124
+                        '繰越利益剰余金 → 当期未処分剰余金', //p125
                     ]"
                 />
                 <QuestionTemp1

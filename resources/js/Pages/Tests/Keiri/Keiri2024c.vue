@@ -911,10 +911,11 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-07-16 確認済み
                             relatedProblems: ['2024c31'],
                             questionTitle: '死亡率',
-                            content: '基本死亡率 → 粗死亡率<br>応用死亡率 → 補整後死亡率',
-                        }, //31 p7
+                            content: '実際の人口統計に基づく死亡率を[[粗死亡率]]と呼ぶのに対し数学的な技術を使って滑らかな傾向曲線にして求められた死亡率を[[補整後死亡率]]と呼んで区別している。', //p7
+                        }, //31
                         {
                             relatedProblems: ['2024a32', '2024b32', '2024c32'],
                             questionTitle: '現価',

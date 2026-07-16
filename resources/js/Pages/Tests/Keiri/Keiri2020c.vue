@@ -897,10 +897,11 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-07-16 確認済み
                             relatedProblems: ['2020c31'],
                             questionTitle: '死亡率',
-                            content: '地域別 → 年齢別',
-                        }, //31 p5
+                            content: '地域別 → 年齢別', //p5
+                        }, //31
                         {
                             // rev: 2026-07-14 確認済み
                             relatedProblems: ['2020c32'],

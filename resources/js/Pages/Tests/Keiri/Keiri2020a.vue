@@ -894,10 +894,11 @@ const subject = "2020年度 フォームA";
                             content: '期始払現価 → 期末払現価',
                         }, //33 p27
                         {
+                            // rev: 2026-07-16 確認済み
                             relatedProblems: ['2020a34', '2020b34', '2020c34'],
                             questionTitle: '保険料の計算原理',
-                            content: '自然保険料 → 平準保険料',
-                        }, //34 p35-36
+                            content: '自然保険料 → 平準保険料', //p35-36
+                        }, //34
                         {
                             relatedProblems: ['2020a35', '2020b35', '2020c35'],
                             questionTitle: '分割払営業保険料',

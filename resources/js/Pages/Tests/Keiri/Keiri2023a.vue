@@ -926,9 +926,10 @@ const subject = "2023年度 フォームA";
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-07-16 確認済み
                             relatedProblems: ['2023a35', '2023b35'],
                             questionTitle: '保険料の計算原理',
-                            content: '自然保険料 → 平準保険料',
+                            content: '自然保険料 → 平準保険料', //p35-36
                         }, //35
                         {
                             // rev: 2026-07-11 確認済み

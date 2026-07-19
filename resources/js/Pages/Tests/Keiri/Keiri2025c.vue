@@ -931,6 +931,7 @@ const subject = "2025年度 フォームC";
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-07-19 確認済み
                             relatedProblems: ['2025a28', '2025b46', '2025c37'],
                             questionTitle: '積立に関する法的規制',
                             content: '資産十分性テスト → 負債十分性テスト', //p101

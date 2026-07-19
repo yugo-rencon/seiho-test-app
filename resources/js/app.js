@@ -12,6 +12,10 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 const appName =
   window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+});
+
 // ===== Scroll control =====
 const scrollToTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' });

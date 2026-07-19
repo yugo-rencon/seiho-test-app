@@ -13,31 +13,26 @@
                 'seiho' => [
                     'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
                     'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
-                    'manifest' => '/site-seiho-manifest.json',
                     'theme' => '#7c3aed',
                 ],
                 'daigaku' => [
                     'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
                     'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
-                    'manifest' => '/site-daigaku-manifest.json',
                     'theme' => '#0284c7',
                 ],
                 'senmon' => [
                     'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
                     'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
-                    'manifest' => '/site-senmon-manifest.json',
                     'theme' => '#16a34a',
                 ],
                 'ouyou' => [
                     'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
                     'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
-                    'manifest' => '/site-ouyou-manifest.json',
                     'theme' => '#d97706',
                 ],
                 'ippan' => [
                     'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
                     'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
-                    'manifest' => '/site-ippan-manifest.json',
                     'theme' => '#d946ef',
                 ],
             ];
@@ -102,7 +97,6 @@
         <link rel="icon" type="image/png" sizes="48x48" href="{{ $currentSiteAssets['icon48'] }}">
         <link rel="icon" type="image/png" sizes="192x192" href="{{ $currentSiteAssets['icon192'] }}">
         <link rel="apple-touch-icon" sizes="192x192" href="{{ $currentSiteAssets['icon192'] }}">
-        <link rel="manifest" type="application/manifest+json" href="{{ $currentSiteAssets['manifest'] }}">
 
         <title inertia>{{ $seo['title'] }}</title>
 

@@ -950,9 +950,10 @@ const subject = "2023年度 フォームA";
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-07-20 確認済み
                             relatedProblems: ['2023a39', '2023a49', '2023b49'],
                             questionTitle: '変額保険の仕組み',
-                            content: '3つ → 2つ（死差益と費差益）',
+                            content: '剰余金の利源は[[死差益と費差益に限られる]]。', //p150
                         }, //39
                         {
                             relatedProblems: ['2023a40'],

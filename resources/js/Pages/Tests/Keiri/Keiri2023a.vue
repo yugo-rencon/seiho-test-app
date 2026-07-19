@@ -865,10 +865,10 @@ const subject = "2023年度 フォームA";
                     questionTitle="事業年度末責任準備金"
                     :relatedProblems="['2023a28', '2023c28']"
                     :contents="[
-                        //p102
+                        // rev: 2026-07-19 確認済み
                         '正しい',
                         '正しい',
-                        '社員総代会や株主総会 → 取締役会',
+                        '社員総代会や株主総会 → 取締役会', //p103
                     ]"
                 />
                 <QuestionTemp1

@@ -169,7 +169,7 @@ const plans = computed(() => [
         key: "premium",
         name: "プレミアムプラン（買い切り）",
         price: scopePlan.value.price,
-        note: "有料",
+        note: "買い切り・追加費用なし",
         description: scopePlan.value.description,
         features: scopePlan.value.features,
         cta: "プレミアムプランを始める",
@@ -183,7 +183,7 @@ const plans = computed(() => [
               key: "basic_bundle",
               name: "一般・専門・応用セット（買い切り）",
               price: "¥1,980",
-              note: "セット販売",
+              note: "買い切り・追加費用なし",
               description: "一般課程・専門課程・応用課程の解説一式をまとめて解放できます。",
               features: [
                   "一般課程 全50解説を閲覧可能",
@@ -248,8 +248,17 @@ const plans = computed(() => [
 
                     <div class="flex-1">
                         <div
-                            class="text-sm font-semibold"
-                            :class="plan.key === 'basic_bundle' ? 'text-cyan-700' : scopeTheme.accentText"
+                            class="font-semibold"
+                            :class="
+                                plan.key === 'premium' || plan.key === 'basic_bundle'
+                                    ? [
+                                          'inline-flex rounded-full border px-3 py-1 text-sm font-bold',
+                                          plan.key === 'basic_bundle'
+                                              ? 'border-cyan-200 bg-cyan-50 text-cyan-700'
+                                              : scopeTheme.badge,
+                                      ]
+                                    : ['text-sm', scopeTheme.accentText]
+                            "
                         >
                             {{ plan.note }}
                         </div>
@@ -271,7 +280,11 @@ const plans = computed(() => [
                                 {{ plan.price }}
                             </div>
                             <div class="pb-1 text-xs text-gray-500">
-                                {{ plan.note }}
+                                {{
+                                    plan.key === "premium" || plan.key === "basic_bundle"
+                                        ? "一括払い"
+                                        : plan.note
+                                }}
                             </div>
                         </div>
 

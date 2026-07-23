@@ -18,7 +18,7 @@ const plans = [
         key: "premium",
         name: "プレミアム（買い切り）",
         price: "¥1,480",
-        note: "有料",
+        note: "買い切り・追加費用なし",
         description: "全科目・全年度・全フォームの解説を一括で解放できます。",
         features: [
             "全科目・全年度・全フォームを閲覧可能",
@@ -72,7 +72,14 @@ const plans = [
                     </div>
 
                     <div class="flex-1">
-                        <div class="text-sm font-semibold text-blue-700">
+                        <div
+                            class="font-semibold"
+                            :class="
+                                plan.key === 'premium'
+                                    ? 'inline-flex rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-bold text-blue-700'
+                                    : 'text-sm text-blue-700'
+                            "
+                        >
                             {{ plan.note }}
                         </div>
                         <h2
@@ -90,7 +97,7 @@ const plans = [
                                 {{ plan.price }}
                             </div>
                             <div class="pb-1 text-xs text-gray-500">
-                                {{ plan.note }}
+                                {{ plan.key === "premium" ? "一括払い" : plan.note }}
                             </div>
                         </div>
 

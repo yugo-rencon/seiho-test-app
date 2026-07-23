@@ -151,7 +151,13 @@ export default {
                 <p class="text-base font-semibold tracking-tight sm:text-lg" :class="tone.title">ここから先は</p>
                 <span class="h-px flex-1 border-t border-dashed" :class="tone.dash"></span>
             </div>
-            <p v-if="!sessionLimitExceeded" class="mt-2 text-xs" :class="tone.priceSub">買い切り</p>
+            <p
+                v-if="!sessionLimitExceeded"
+                class="mx-auto mt-2 w-fit rounded-full border bg-white px-3 py-1 text-sm font-bold"
+                :class="[tone.dash, tone.countAccent]"
+            >
+                買い切り
+            </p>
             <p v-if="!sessionLimitExceeded" class="mt-1 text-2xl font-semibold leading-none sm:text-3xl" :class="tone.title">
                 ￥{{ priceNumberText }}
             </p>

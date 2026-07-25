@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContactAdminController;
+use App\Http\Controllers\Admin\PersonalAdminController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StripeWebhookController;
@@ -204,6 +205,8 @@ Route::controller(ContactController::class)->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('personal', [PersonalAdminController::class, 'index'])->name('admin.personal.index');
+    Route::post('personal/study-logs', [PersonalAdminController::class, 'storeStudyLog'])->name('admin.personal.studyLogs.store');
     Route::post('admins/{userId}/purchase-scopes', [AdminController::class, 'updateAdminPurchaseScopes'])->name('admin.admins.purchaseScopes.update');
     Route::post('adsense-revenues', [AdminController::class, 'storeAdsenseRevenue'])->name('admin.adsenseRevenues.store');
     Route::delete('adsense-revenues/{adsenseRevenueId}', [AdminController::class, 'deleteAdsenseRevenue'])->name('admin.adsenseRevenues.delete');

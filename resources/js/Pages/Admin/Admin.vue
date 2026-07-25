@@ -243,6 +243,7 @@ const adminIndexRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.in
 const adminContactsRoute = computed(() =>
     isDaigakuAdmin.value ? "daigaku.admin.contacts.index" : "admin.contacts.index",
 );
+const adminPersonalRoute = computed(() => "admin.personal.index");
 
 const isActiveMenu = (key) => activeTab.value === key;
 
@@ -935,6 +936,12 @@ const peakHour2h = computed(() => {
                     >
                         {{ newContactCount }}
                     </span>
+                </Link>
+                <Link
+                    :href="route(adminPersonalRoute)"
+                    class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
+                >
+                    個人管理
                 </Link>
             </div>
 

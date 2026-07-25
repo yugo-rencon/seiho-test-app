@@ -893,10 +893,11 @@ const subject = "2020年度 フォームA";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-07-25 確認済み
                             relatedProblems: ['2020a33'],
                             questionTitle: '現価',
-                            content: '期始払現価 → 期末払現価',
-                        }, //33 p27
+                            content: '通常、単に現価という場合には[[期末払現価]]を指す。', //p27
+                        }, //33
                         {
                             // rev: 2026-07-16 確認済み
                             relatedProblems: ['2020a34', '2020b34', '2020c34'],

@@ -721,10 +721,11 @@ const subject = "2021年度 フォームC";
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-07-25 確認済み
                             relatedProblems: ['2021c32'],
                             questionTitle: '現価',
-                            content: '期始払現価 → 期末払現価',
-                        }, //32 p27
+                            content: '通常、単に現価という場合には[[期末払現価]]を指す。', //p27
+                        }, //32
                         {
                             relatedProblems: ['2021a33', '2021b33', '2021c33'],
                             questionTitle: '予定利率',

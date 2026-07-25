@@ -901,10 +901,11 @@ const subject = "2022年度 フォームB";
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-07-25 確認済み
                             relatedProblems: ['2022b34'],
                             questionTitle: '現価',
-                            content: '期始払現価 → 期末払現価',
-                        }, //34 p27
+                            content: '通常、単に現価という場合には[[期末払現価]]を指す。', //p27
+                        }, //34
                         {
                             // rev: 2026-07-11 確認済み
                             relatedProblems: ['2022b35'],

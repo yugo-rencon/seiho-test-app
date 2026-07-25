@@ -16,6 +16,10 @@ const props = defineProps({
         type: Array,
         default: () => [],
     },
+    studyLogsByDay: {
+        type: Object,
+        default: () => ({}),
+    },
 });
 
 const activeTab = ref("study");
@@ -43,11 +47,13 @@ const formatLocalDate = (date) => {
 
 const today = formatLocalDate(new Date());
 const selectedCalendarMonth = ref(props.monthlySummaries[0]?.month || today.slice(0, 7));
+const selectedCalendarDay = ref(today);
 const studyLogForm = useForm({
     studied_on: today,
     category: "英語",
     set_count: 1,
 });
+const deleteStudyLogForm = useForm({});
 
 const setStudySetCount = (count) => {
     studyLogForm.set_count = Math.min(96, Math.max(1, Number(count) || 1));
@@ -61,6 +67,14 @@ const dailySummaryByDay = computed(() => {
     return Object.fromEntries(props.dailySummaries.map((summary) => [summary.day, summary]));
 });
 
+const selectedDayLogs = computed(() => {
+    return props.studyLogsByDay[selectedCalendarDay.value] || [];
+});
+
+const selectedDayLabel = computed(() => {
+    return selectedCalendarDay.value.replaceAll("-", "/");
+});
+
 const calendarMonthOptions = computed(() => {
     return props.monthlySummaries.map((summary) => ({
         value: summary.month,
@@ -72,6 +86,13 @@ const selectedCalendarMonthIndex = computed(() => {
     return calendarMonthOptions.value.findIndex((month) => month.value === selectedCalendarMonth.value);
 });
 
+const setCalendarMonth = (month) => {
+    selectedCalendarMonth.value = month;
+
+    const firstDayInMonth = props.dailySummaries.find((summary) => summary.day.startsWith(month));
+    selectedCalendarDay.value = firstDayInMonth?.day || `${month}-01`;
+};
+
 const moveCalendarMonth = (amount) => {
     const nextIndex = selectedCalendarMonthIndex.value + amount;
 
@@ -79,7 +100,7 @@ const moveCalendarMonth = (amount) => {
         return;
     }
 
-    selectedCalendarMonth.value = calendarMonthOptions.value[nextIndex].value;
+    setCalendarMonth(calendarMonthOptions.value[nextIndex].value);
 };
 
 const calendarCells = computed(() => {
@@ -96,6 +117,7 @@ const calendarCells = computed(() => {
         const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
         cells.push({
             key: date,
+            date,
             day,
             summary: dailySummaryByDay.value[date],
         });
@@ -115,6 +137,20 @@ const submitStudyLog = () => {
             });
             studyLogForm.reset("set_count");
         },
+    });
+};
+
+const selectCalendarDay = (date) => {
+    selectedCalendarDay.value = date;
+};
+
+const deleteStudyLog = (log) => {
+    if (!window.confirm(`${selectedDayLabel.value}の${log.category} ${log.set_count}セットを削除しますか？`)) {
+        return;
+    }
+
+    deleteStudyLogForm.delete(route("admin.personal.studyLogs.delete", log.id), {
+        preserveScroll: true,
     });
 };
 </script>
@@ -243,8 +279,9 @@ const submitStudyLog = () => {
                                 前
                             </button>
                             <select
-                                v-model="selectedCalendarMonth"
+                                :value="selectedCalendarMonth"
                                 class="border-0 py-2 text-center text-sm font-bold text-gray-900 shadow-none focus:border-0 focus:ring-0"
+                                @change="setCalendarMonth($event.target.value)"
                             >
                                 <option v-for="month in calendarMonthOptions" :key="month.value" :value="month.value">
                                     {{ month.label }}
@@ -274,7 +311,13 @@ const submitStudyLog = () => {
                                 class="min-h-[4.25rem] p-1 sm:min-h-[5.25rem] sm:p-2"
                                 :class="cell.empty ? 'bg-gray-50/60' : 'bg-white'"
                             >
-                                <template v-if="!cell.empty">
+                                <button
+                                    v-if="!cell.empty"
+                                    type="button"
+                                    class="block h-full w-full rounded text-left transition hover:bg-gray-50"
+                                    :class="selectedCalendarDay === cell.date ? 'ring-2 ring-gray-900' : ''"
+                                    @click="selectCalendarDay(cell.date)"
+                                >
                                     <div class="text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
                                     <div v-if="cell.summary" class="mt-1 space-y-1">
                                         <div v-if="cell.summary.english_sets > 0" class="rounded bg-orange-50 px-1 py-0.5 text-right font-semibold text-orange-900">
@@ -284,9 +327,42 @@ const submitStudyLog = () => {
                                             学 {{ cell.summary.learning_sets }}
                                         </div>
                                     </div>
-                                </template>
+                                </button>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="mt-4 rounded-lg border border-gray-100 bg-gray-50 p-3">
+                        <div class="flex items-center justify-between gap-3">
+                            <h3 class="text-sm font-bold text-gray-900">{{ selectedDayLabel }}</h3>
+                            <p class="text-xs font-semibold text-gray-500">{{ selectedDayLogs.length }}件</p>
+                        </div>
+                        <div v-if="selectedDayLogs.length > 0" class="mt-3 space-y-2">
+                            <div
+                                v-for="log in selectedDayLogs"
+                                :key="log.id"
+                                class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2"
+                            >
+                                <div>
+                                    <p
+                                        class="text-sm font-bold"
+                                        :class="log.category === '英語' ? 'text-orange-900' : 'text-sky-900'"
+                                    >
+                                        {{ log.category }} {{ log.set_count }}セット
+                                    </p>
+                                    <p class="mt-0.5 text-xs text-gray-500">{{ log.duration }}</p>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="rounded-md border border-rose-200 bg-white px-3 py-1.5 text-xs font-bold text-rose-600 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-60"
+                                    :disabled="deleteStudyLogForm.processing"
+                                    @click="deleteStudyLog(log)"
+                                >
+                                    削除
+                                </button>
+                            </div>
+                        </div>
+                        <p v-else class="mt-3 text-sm text-gray-500">この日の記録はありません。</p>
                     </div>
                 </section>
 

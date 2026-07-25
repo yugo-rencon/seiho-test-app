@@ -14,7 +14,7 @@ class PersonalAdminController extends Controller
     public function index(): Response
     {
         $logs = PersonalStudyLog::query()
-            ->select(['studied_on', 'category', 'set_count', 'minutes'])
+            ->select(['id', 'studied_on', 'category', 'set_count', 'minutes'])
             ->orderByDesc('studied_on')
             ->get();
 
@@ -53,6 +53,20 @@ class PersonalAdminController extends Controller
             })
             ->values();
 
+        $studyLogsByDay = $logs
+            ->groupBy(fn (PersonalStudyLog $log) => $log->studied_on->format('Y-m-d'))
+            ->map(function ($dayLogs) {
+                return $dayLogs
+                    ->sortByDesc('id')
+                    ->map(fn (PersonalStudyLog $log) => [
+                        'id' => $log->id,
+                        'category' => $log->category,
+                        'set_count' => $log->set_count,
+                        'duration' => $this->formatDuration($log->minutes),
+                    ])
+                    ->values();
+            });
+
         return Inertia::render('Admin/Personal', [
             'stats' => [
                 'english_duration' => $this->formatDuration($englishMinutes),
@@ -60,6 +74,7 @@ class PersonalAdminController extends Controller
             ],
             'monthlySummaries' => $monthlySummaries,
             'dailySummaries' => $dailySummaries,
+            'studyLogsByDay' => $studyLogsByDay,
         ]);
     }
 
@@ -87,6 +102,13 @@ class PersonalAdminController extends Controller
                 'input' => 'manual',
             ],
         ]);
+
+        return back();
+    }
+
+    public function deleteStudyLog(PersonalStudyLog $studyLog): RedirectResponse
+    {
+        $studyLog->delete();
 
         return back();
     }

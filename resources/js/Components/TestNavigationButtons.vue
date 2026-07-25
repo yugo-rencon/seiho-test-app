@@ -1,5 +1,5 @@
 <script setup>
-import { usePage } from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
 import { computed } from "vue";
 
 const props = defineProps({
@@ -134,12 +134,12 @@ const homeLink = computed(() => props.homeHref || (props.homeRoute ? route(props
     <div class="flex flex-col items-center mt-10 gap-6">
         <!-- 前の試験・次の試験ボタン -->
         <div v-if="previousLink || nextLink" class="flex flex-wrap justify-center gap-3">
-            <a v-if="previousLink" :href="previousLink" :class="buttonClass"> 前の試験へ </a>
+            <Link v-if="previousLink" :href="previousLink" :class="buttonClass"> 前の試験へ </Link>
 
-            <a v-if="nextLink" :href="nextLink" :class="buttonClass"> 次の試験へ </a>
+            <Link v-if="nextLink" :href="nextLink" :class="buttonClass"> 次の試験へ </Link>
         </div>
 
         <!-- 一覧画面に戻るボタン -->
-        <a :href="homeLink" :class="buttonClass"> 一覧画面に戻る </a>
+        <Link :href="homeLink" :class="buttonClass"> 一覧画面に戻る </Link>
     </div>
 </template>

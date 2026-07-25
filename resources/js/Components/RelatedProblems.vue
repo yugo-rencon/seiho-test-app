@@ -3,14 +3,14 @@
     <p class="text-[10px] font-semibold" :class="titleClass">【{{ displayTitle }}】</p>
     <div v-if="displayItems.length" class="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
       <template v-for="(item, index) in visibleDisplayItems" :key="index">
-        <a
+        <Link
           v-if="item.href"
           :href="item.href"
           class="inline-flex items-center rounded-full border bg-white px-1.5 py-0.5 text-[10px] font-medium text-gray-600 transition hover:text-gray-800"
           :class="linkTagClass"
         >
           {{ item.label }}
-        </a>
+        </Link>
         <span
           v-else
           class="inline-flex items-center rounded-full border border-gray-200 bg-white px-1.5 py-0.5 text-[10px] font-medium text-gray-500"
@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
-import { usePage } from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
 
 type RelatedProblem = {

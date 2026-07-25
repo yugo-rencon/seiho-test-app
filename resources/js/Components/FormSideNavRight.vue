@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
-import { usePage } from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
 
 type LinkItem = { label: string; href: string; active: boolean };
 type Group = { heading: string; links: LinkItem[] };
@@ -179,7 +179,7 @@ watch(block, () => {
             >
                 <p class="mb-1 px-1 text-center text-[10px] font-bold text-gray-500">{{ group.heading }}</p>
                 <div class="grid gap-1" :class="navColsClass(group.links.length)">
-                    <a
+                    <Link
                         v-for="item in group.links"
                         :key="item.href"
                         :href="item.href"
@@ -187,7 +187,7 @@ watch(block, () => {
                         :class="item.active ? activeButtonClass : 'bg-white text-gray-600 ring-1 ring-gray-200 hover:bg-gray-100'"
                     >
                         {{ compactLabel(item.label) }}
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

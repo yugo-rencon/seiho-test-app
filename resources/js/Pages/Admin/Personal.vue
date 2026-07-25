@@ -33,7 +33,15 @@ const studyTabs = [
     { key: "monthly", label: "月別" },
 ];
 
-const today = new Date().toISOString().slice(0, 10);
+const formatLocalDate = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+};
+
+const today = formatLocalDate(new Date());
 const selectedCalendarMonth = ref(props.monthlySummaries[0]?.month || today.slice(0, 7));
 const studyLogForm = useForm({
     studied_on: today,
@@ -59,6 +67,20 @@ const calendarMonthOptions = computed(() => {
         label: summary.month_label,
     }));
 });
+
+const selectedCalendarMonthIndex = computed(() => {
+    return calendarMonthOptions.value.findIndex((month) => month.value === selectedCalendarMonth.value);
+});
+
+const moveCalendarMonth = (amount) => {
+    const nextIndex = selectedCalendarMonthIndex.value + amount;
+
+    if (nextIndex < 0 || nextIndex >= calendarMonthOptions.value.length) {
+        return;
+    }
+
+    selectedCalendarMonth.value = calendarMonthOptions.value[nextIndex].value;
+};
 
 const calendarCells = computed(() => {
     const [year, month] = selectedCalendarMonth.value.split("-").map(Number);
@@ -209,16 +231,34 @@ const submitStudyLog = () => {
                 </div>
 
                 <section v-if="activeStudyTab === 'daily'" class="mb-6 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-5">
-                    <div class="flex items-center justify-between gap-3">
+                    <div class="space-y-3 sm:flex sm:items-center sm:justify-between sm:gap-3 sm:space-y-0">
                         <h2 class="text-base font-bold text-gray-900">日別詳細</h2>
-                        <select
-                            v-model="selectedCalendarMonth"
-                            class="rounded-lg border-gray-200 py-1.5 pl-3 pr-8 text-xs font-semibold text-gray-700 shadow-sm focus:border-gray-400 focus:ring-gray-400 sm:text-sm"
-                        >
-                            <option v-for="month in calendarMonthOptions" :key="month.value" :value="month.value">
-                                {{ month.label }}
-                            </option>
-                        </select>
+                        <div class="grid grid-cols-[2.75rem_1fr_2.75rem] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm sm:w-[22rem]">
+                            <button
+                                type="button"
+                                class="border-r border-gray-200 bg-gray-50 px-2 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
+                                :disabled="selectedCalendarMonthIndex >= calendarMonthOptions.length - 1"
+                                @click="moveCalendarMonth(1)"
+                            >
+                                前
+                            </button>
+                            <select
+                                v-model="selectedCalendarMonth"
+                                class="border-0 py-2 text-center text-sm font-bold text-gray-900 shadow-none focus:border-0 focus:ring-0"
+                            >
+                                <option v-for="month in calendarMonthOptions" :key="month.value" :value="month.value">
+                                    {{ month.label }}
+                                </option>
+                            </select>
+                            <button
+                                type="button"
+                                class="border-l border-gray-200 bg-gray-50 px-2 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
+                                :disabled="selectedCalendarMonthIndex <= 0"
+                                @click="moveCalendarMonth(-1)"
+                            >
+                                次
+                            </button>
+                        </div>
                     </div>
 
                     <div class="mt-3 overflow-hidden rounded-lg border border-gray-100">
@@ -237,10 +277,10 @@ const submitStudyLog = () => {
                                 <template v-if="!cell.empty">
                                     <div class="text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
                                     <div v-if="cell.summary" class="mt-1 space-y-1">
-                                        <div class="rounded bg-orange-50 px-1 py-0.5 text-right font-semibold text-orange-900">
+                                        <div v-if="cell.summary.english_sets > 0" class="rounded bg-orange-50 px-1 py-0.5 text-right font-semibold text-orange-900">
                                             英 {{ cell.summary.english_sets }}
                                         </div>
-                                        <div class="rounded bg-sky-50 px-1 py-0.5 text-right font-semibold text-sky-900">
+                                        <div v-if="cell.summary.learning_sets > 0" class="rounded bg-sky-50 px-1 py-0.5 text-right font-semibold text-sky-900">
                                             学 {{ cell.summary.learning_sets }}
                                         </div>
                                     </div>

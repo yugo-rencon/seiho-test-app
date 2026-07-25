@@ -37,6 +37,11 @@ const studyTabs = [
     { key: "monthly", label: "月別" },
 ];
 
+const studyCategories = [
+    { value: "英語", label: "英語", accent: "bg-orange-400" },
+    { value: "学び", label: "学び", accent: "bg-sky-400" },
+];
+
 const formatLocalDate = (date) => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -55,6 +60,50 @@ const studyLogForm = useForm({
 });
 const deleteStudyLogForm = useForm({});
 const pendingDeleteLog = ref(null);
+const datePickerOpen = ref(false);
+const recordCalendarMonth = ref(today.slice(0, 7));
+
+const formatDateLabel = (date) => {
+    return String(date || today).replaceAll("-", "/");
+};
+
+const addDays = (date, amount) => {
+    const [year, month, day] = String(date || today).split("-").map(Number);
+    const nextDate = new Date(year, month - 1, day);
+    nextDate.setDate(nextDate.getDate() + amount);
+
+    return formatLocalDate(nextDate);
+};
+
+const moveMonth = (monthValue, amount) => {
+    const [year, month] = monthValue.split("-").map(Number);
+    const nextDate = new Date(year, month - 1 + amount, 1);
+
+    return `${nextDate.getFullYear()}-${String(nextDate.getMonth() + 1).padStart(2, "0")}`;
+};
+
+const setStudyDate = (date) => {
+    studyLogForm.studied_on = date || today;
+    recordCalendarMonth.value = studyLogForm.studied_on.slice(0, 7);
+    datePickerOpen.value = false;
+};
+
+const openDatePicker = () => {
+    recordCalendarMonth.value = String(studyLogForm.studied_on || today).slice(0, 7);
+    datePickerOpen.value = !datePickerOpen.value;
+};
+
+const adjustStudyDate = (amount) => {
+    setStudyDate(addDays(studyLogForm.studied_on, amount));
+};
+
+const moveRecordCalendarMonth = (amount) => {
+    recordCalendarMonth.value = moveMonth(recordCalendarMonth.value, amount);
+};
+
+const studyDateLabel = computed(() => {
+    return formatDateLabel(studyLogForm.studied_on || today);
+});
 
 const setStudySetCount = (count) => {
     studyLogForm.set_count = Math.min(96, Math.max(1, Number(count) || 1));
@@ -129,6 +178,28 @@ const calendarCells = computed(() => {
             date,
             day,
             summary: dailySummaryByDay.value[date],
+        });
+    }
+
+    return cells;
+});
+
+const recordCalendarCells = computed(() => {
+    const [year, month] = recordCalendarMonth.value.split("-").map(Number);
+    const firstDate = new Date(year, month - 1, 1);
+    const lastDate = new Date(year, month, 0);
+    const cells = [];
+
+    for (let i = 0; i < firstDate.getDay(); i += 1) {
+        cells.push({ key: `record-empty-${i}`, empty: true });
+    }
+
+    for (let day = 1; day <= lastDate.getDate(); day += 1) {
+        const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        cells.push({
+            key: `record-${date}`,
+            date,
+            day,
         });
     }
 
@@ -226,22 +297,122 @@ const deleteStudyLog = () => {
                     <form class="grid gap-4 md:grid-cols-[1fr_1fr_1fr_auto]" @submit.prevent="submitStudyLog">
                         <label class="block">
                             <span class="text-xs font-semibold text-gray-500">日付</span>
-                            <input v-model="studyLogForm.studied_on" type="date" class="mt-1 w-full rounded-lg border-gray-200 text-sm shadow-sm focus:border-gray-400 focus:ring-gray-400" />
+                            <div class="mt-1">
+                                <div class="grid grid-cols-[2.75rem_1fr_2.75rem] overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+                                    <button
+                                        type="button"
+                                        class="border-r border-gray-200 bg-gray-50 text-lg font-bold text-gray-500 transition hover:bg-gray-100"
+                                        @click="adjustStudyDate(-1)"
+                                    >
+                                        -
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="px-3 py-2.5 text-center text-sm font-bold text-gray-900 transition hover:bg-gray-50"
+                                        @click="openDatePicker"
+                                    >
+                                        {{ studyDateLabel }}
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="border-l border-gray-200 bg-gray-50 text-lg font-bold text-gray-500 transition hover:bg-gray-100"
+                                        @click="adjustStudyDate(1)"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+
+                                <div
+                                    v-if="datePickerOpen"
+                                    class="mt-2 rounded-2xl border border-gray-100 bg-white p-3 shadow-lg"
+                                >
+                                    <div class="flex items-center justify-between gap-2">
+                                        <button
+                                            type="button"
+                                            class="h-9 w-9 rounded-lg border border-gray-200 bg-white text-sm font-bold text-gray-600 transition hover:bg-gray-50"
+                                            @click="moveRecordCalendarMonth(-1)"
+                                        >
+                                            -
+                                        </button>
+                                        <p class="text-sm font-bold text-gray-900">{{ recordCalendarMonth.replace("-", "/") }}</p>
+                                        <button
+                                            type="button"
+                                            class="h-9 w-9 rounded-lg border border-gray-200 bg-white text-sm font-bold text-gray-600 transition hover:bg-gray-50"
+                                            @click="moveRecordCalendarMonth(1)"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+
+                                    <div class="mt-3 grid grid-cols-7 text-center text-[10px] font-bold text-gray-400">
+                                        <div v-for="dayName in ['日', '月', '火', '水', '木', '金', '土']" :key="`record-${dayName}`" class="py-1">
+                                            {{ dayName }}
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-7 gap-1 text-center text-xs">
+                                        <div v-for="cell in recordCalendarCells" :key="cell.key">
+                                            <button
+                                                v-if="!cell.empty"
+                                                type="button"
+                                                class="h-8 w-full rounded-lg font-bold transition"
+                                                :class="[
+                                                    studyLogForm.studied_on === cell.date
+                                                        ? 'bg-gray-900 text-white shadow-sm'
+                                                        : cell.date === today
+                                                            ? 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                                                            : 'text-gray-600 hover:bg-gray-50',
+                                                ]"
+                                                @click="setStudyDate(cell.date)"
+                                            >
+                                                {{ cell.day }}
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-3 grid grid-cols-2 gap-2">
+                                        <button
+                                            type="button"
+                                            class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50"
+                                            @click="datePickerOpen = false"
+                                        >
+                                            閉じる
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="rounded-lg bg-gray-900 px-3 py-2 text-xs font-bold text-white transition hover:bg-gray-700"
+                                            @click="setStudyDate(today)"
+                                        >
+                                            今日
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                             <span v-if="studyLogForm.errors.studied_on" class="mt-1 block text-xs text-rose-600">
                                 {{ studyLogForm.errors.studied_on }}
                             </span>
                         </label>
 
-                        <label class="block">
+                        <div class="block">
                             <span class="text-xs font-semibold text-gray-500">カテゴリー</span>
-                            <select v-model="studyLogForm.category" class="mt-1 w-full rounded-lg border-gray-200 text-sm shadow-sm focus:border-gray-400 focus:ring-gray-400">
-                                <option value="英語">英語</option>
-                                <option value="学び">学び</option>
-                            </select>
+                            <div class="mt-1 grid grid-cols-2 gap-2 rounded-xl border border-gray-200 bg-gray-50 p-1 shadow-sm">
+                                <button
+                                    v-for="category in studyCategories"
+                                    :key="category.value"
+                                    type="button"
+                                    class="flex items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-sm font-bold transition"
+                                    :class="studyLogForm.category === category.value
+                                        ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
+                                        : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
+                                    @click="studyLogForm.category = category.value"
+                                >
+                                    <span class="h-2.5 w-2.5 rounded-full" :class="category.accent"></span>
+                                    {{ category.label }}
+                                </button>
+                            </div>
                             <span v-if="studyLogForm.errors.category" class="mt-1 block text-xs text-rose-600">
                                 {{ studyLogForm.errors.category }}
                             </span>
-                        </label>
+                        </div>
 
                         <label class="block">
                             <span class="text-xs font-semibold text-gray-500">セット数</span>
@@ -331,7 +502,7 @@ const deleteStudyLog = () => {
                             <div
                                 v-for="cell in calendarCells"
                                 :key="cell.key"
-                                class="min-h-[3.75rem] p-0.5 sm:min-h-[4.5rem] sm:p-1.5"
+                                class="h-[3.75rem] p-0.5 sm:h-[4.5rem] sm:p-1.5"
                                 :class="[
                                     cell.empty ? 'bg-gray-50/60' : 'bg-white',
                                     selectedCalendarDay === cell.date ? 'bg-gray-100 shadow-[inset_0_0_0_1px_rgba(107,114,128,0.28)]' : '',
@@ -340,15 +511,15 @@ const deleteStudyLog = () => {
                                 <button
                                     v-if="!cell.empty"
                                     type="button"
-                                    class="block h-full w-full rounded text-left transition hover:bg-gray-50"
+                                    class="flex h-full w-full flex-col items-start justify-start overflow-hidden rounded text-left transition hover:bg-gray-50"
                                     @click="selectCalendarDay(cell.date)"
                                 >
-                                    <div class="text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
-                                    <div v-if="cell.summary" class="mt-1 space-y-1">
-                                        <div v-if="cell.summary.english_sets > 0" class="rounded bg-orange-50 px-1 py-0.5 text-right font-semibold text-orange-900">
+                                    <div class="w-full text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
+                                    <div v-if="cell.summary" class="mt-0.5 w-full space-y-0.5">
+                                        <div v-if="cell.summary.english_sets > 0" class="whitespace-nowrap rounded bg-orange-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-orange-900 sm:text-xs">
                                             英語 {{ cell.summary.english_sets }}
                                         </div>
-                                        <div v-if="cell.summary.learning_sets > 0" class="rounded bg-sky-50 px-1 py-0.5 text-right font-semibold text-sky-900">
+                                        <div v-if="cell.summary.learning_sets > 0" class="whitespace-nowrap rounded bg-sky-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-sky-900 sm:text-xs">
                                             学び {{ cell.summary.learning_sets }}
                                         </div>
                                     </div>

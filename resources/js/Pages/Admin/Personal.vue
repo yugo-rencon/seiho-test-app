@@ -42,6 +42,11 @@ const studyCategories = [
     { value: "学び", label: "学び", accent: "bg-sky-400" },
 ];
 
+const learningSubcategories = [
+    { value: "DS検定", label: "DS検定" },
+    { value: "E資格", label: "E資格" },
+];
+
 const formatLocalDate = (date) => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -56,6 +61,7 @@ const selectedCalendarDay = ref(today);
 const studyLogForm = useForm({
     studied_on: today,
     category: "英語",
+    subcategory: "DS検定",
     set_count: 1,
 });
 const deleteStudyLogForm = useForm({});
@@ -135,17 +141,26 @@ const selectedStudyDateSummary = computed(() => {
 
             if (log.category === "学び") {
                 summary.learning += Number(log.set_count) || 0;
+
+                if (log.subcategory === "DS検定") {
+                    summary.ds += Number(log.set_count) || 0;
+                }
+
+                if (log.subcategory === "E資格") {
+                    summary.e += Number(log.set_count) || 0;
+                }
             }
 
             return summary;
         },
-        { english: 0, learning: 0 },
+        { english: 0, learning: 0, ds: 0, e: 0 },
     );
 });
 
 const selectedStudyCategorySetCount = computed(() => {
     return selectedStudyDateLogs.value
         .filter((log) => log.category === studyLogForm.category)
+        .filter((log) => studyLogForm.category !== "学び" || log.subcategory === studyLogForm.subcategory)
         .reduce((total, log) => total + (Number(log.set_count) || 0), 0);
 });
 
@@ -158,7 +173,11 @@ const pendingDeleteMessage = computed(() => {
         return "";
     }
 
-    return `${pendingDeleteDateLabel.value || selectedDayLabel.value}の${pendingDeleteLog.value.category} ${pendingDeleteLog.value.set_count}セット`;
+    const categoryLabel = pendingDeleteLog.value.subcategory
+        ? `${pendingDeleteLog.value.category} ${pendingDeleteLog.value.subcategory}`
+        : pendingDeleteLog.value.category;
+
+    return `${pendingDeleteDateLabel.value || selectedDayLabel.value}の${categoryLabel} ${pendingDeleteLog.value.set_count}セット`;
 });
 
 const calendarMonthOptions = computed(() => {
@@ -241,6 +260,7 @@ const submitStudyLog = () => {
             studyLogForm.defaults({
                 studied_on: studyLogForm.studied_on,
                 category: studyLogForm.category,
+                subcategory: studyLogForm.subcategory,
                 set_count: studyLogForm.set_count,
             });
         },
@@ -248,8 +268,12 @@ const submitStudyLog = () => {
 };
 
 watch(
-    [() => studyLogForm.studied_on, () => studyLogForm.category],
+    [() => studyLogForm.studied_on, () => studyLogForm.category, () => studyLogForm.subcategory],
     () => {
+        if (studyLogForm.category === "学び" && !studyLogForm.subcategory) {
+            studyLogForm.subcategory = "DS検定";
+        }
+
         setStudySetCount(selectedStudyCategorySetCount.value || 1);
     },
     { immediate: true },
@@ -328,11 +352,11 @@ const deleteStudyLog = () => {
                     </button>
                 </div>
 
-                <section v-if="activeStudyTab === 'record'" class="mb-6 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
-                    <div class="mb-4">
+                <section v-if="activeStudyTab === 'record'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
+                    <div class="mb-3">
                         <h2 class="text-base font-bold text-gray-900">学習記録を編集</h2>
                     </div>
-                    <form class="grid gap-4 md:grid-cols-[1fr_1fr_1fr_auto]" @submit.prevent="submitStudyLog">
+                    <form class="grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto]" @submit.prevent="submitStudyLog">
                         <label class="block">
                             <span class="text-xs font-semibold text-gray-500">日付</span>
                             <div class="mt-1">
@@ -452,8 +476,29 @@ const deleteStudyLog = () => {
                             </span>
                         </div>
 
+                        <div v-if="studyLogForm.category === '学び'" class="block">
+                            <span class="text-xs font-semibold text-gray-500">分類</span>
+                            <div class="mt-1 grid grid-cols-2 gap-2 rounded-xl border border-sky-100 bg-sky-50/80 p-1 shadow-sm">
+                                <button
+                                    v-for="subcategory in learningSubcategories"
+                                    :key="subcategory.value"
+                                    type="button"
+                                    class="rounded-lg px-3 py-2.5 text-sm font-bold transition"
+                                    :class="studyLogForm.subcategory === subcategory.value
+                                        ? 'bg-white text-sky-950 shadow-sm ring-1 ring-sky-100'
+                                        : 'text-sky-700 hover:bg-white/70'"
+                                    @click="studyLogForm.subcategory = subcategory.value"
+                                >
+                                    {{ subcategory.label }}
+                                </button>
+                            </div>
+                            <span v-if="studyLogForm.errors.subcategory" class="mt-1 block text-xs text-rose-600">
+                                {{ studyLogForm.errors.subcategory }}
+                            </span>
+                        </div>
+
                         <label class="block">
-                            <span class="text-xs font-semibold text-gray-500">セット数（この日の合計）</span>
+                            <span class="text-xs font-semibold text-gray-500">セット数</span>
                             <div class="mt-1 flex overflow-hidden rounded-lg border border-gray-200 shadow-sm">
                                 <button type="button" class="w-11 border-r border-gray-200 bg-gray-50 text-lg font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="studyLogForm.set_count <= 1" @click="adjustStudySetCount(-1)">
                                     -
@@ -482,57 +527,20 @@ const deleteStudyLog = () => {
 
                         <div class="flex items-end">
                             <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto" :disabled="studyLogForm.processing">
-                                {{ studyLogForm.processing ? "保存中" : "上書き保存" }}
+                                {{ studyLogForm.processing ? "保存中" : "保存" }}
                             </button>
                         </div>
                     </form>
 
-                    <div class="mt-5 rounded-xl border border-gray-100 bg-gray-50 p-3">
-                        <div class="flex items-center justify-between gap-3">
-                            <div>
-                                <p class="text-xs font-semibold text-gray-500">この日の記録</p>
-                                <p class="mt-0.5 text-sm font-bold text-gray-900">{{ studyDateLabel }}</p>
-                            </div>
-                            <p class="text-xs font-semibold text-gray-500">{{ selectedStudyDateLogs.length }}件</p>
-                        </div>
-
-                        <div class="mt-3 grid grid-cols-2 gap-2">
-                            <div class="rounded-lg border border-orange-100 bg-orange-50 px-3 py-2">
+                    <div class="mt-3 grid grid-cols-2 gap-2">
+                            <div class="rounded-lg border border-orange-100 bg-orange-50/80 px-3 py-2">
                                 <p class="text-[11px] font-bold text-orange-700">英語</p>
                                 <p class="mt-0.5 text-lg font-bold text-orange-950">{{ selectedStudyDateSummary.english }}セット</p>
                             </div>
-                            <div class="rounded-lg border border-sky-100 bg-sky-50 px-3 py-2">
+                            <div class="rounded-lg border border-sky-100 bg-sky-50/90 px-3 py-2">
                                 <p class="text-[11px] font-bold text-sky-700">学び</p>
                                 <p class="mt-0.5 text-lg font-bold text-sky-950">{{ selectedStudyDateSummary.learning }}セット</p>
                             </div>
-                        </div>
-
-                        <div v-if="selectedStudyDateLogs.length > 0" class="mt-3 space-y-2">
-                            <div
-                                v-for="log in selectedStudyDateLogs"
-                                :key="`record-log-${log.id}`"
-                                class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2"
-                            >
-                                <div>
-                                    <p
-                                        class="text-sm font-bold"
-                                        :class="log.category === '英語' ? 'text-orange-900' : 'text-sky-900'"
-                                    >
-                                        {{ log.category }} {{ log.set_count }}セット
-                                    </p>
-                                    <p class="mt-0.5 text-xs text-gray-500">{{ log.duration }}</p>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="rounded-md border border-rose-200 bg-white px-3 py-1.5 text-xs font-bold text-rose-600 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-60"
-                                    :disabled="deleteStudyLogForm.processing"
-                                    @click="openDeleteStudyLogModal(log, studyDateLabel)"
-                                >
-                                    削除
-                                </button>
-                            </div>
-                        </div>
-                        <p v-else class="mt-3 text-sm text-gray-500">この日の記録はまだありません。セット数を入力して保存すると作成されます。</p>
                     </div>
                 </section>
 
@@ -544,6 +552,16 @@ const deleteStudyLog = () => {
                     <div class="rounded-xl border border-sky-100 bg-sky-50/80 p-4 shadow-sm">
                         <p class="text-xs font-semibold text-sky-700">学び 累計</p>
                         <p class="mt-1 text-2xl font-bold text-sky-950">{{ stats.learning_duration }}</p>
+                        <div class="mt-3 grid grid-cols-2 gap-2">
+                            <div
+                                v-for="breakdown in stats.learning_breakdown"
+                                :key="breakdown.label"
+                                class="rounded-lg border border-sky-100 bg-white/70 px-3 py-2"
+                            >
+                                <p class="text-[11px] font-bold text-sky-600">{{ breakdown.label }}</p>
+                                <p class="mt-0.5 text-sm font-bold text-sky-950">{{ breakdown.duration }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -630,7 +648,7 @@ const deleteStudyLog = () => {
                                         class="text-sm font-bold"
                                         :class="log.category === '英語' ? 'text-orange-900' : 'text-sky-900'"
                                     >
-                                        {{ log.category }} {{ log.set_count }}セット
+                                        {{ log.category }}<span v-if="log.subcategory"> {{ log.subcategory }}</span> {{ log.set_count }}セット
                                     </p>
                                     <p class="mt-0.5 text-xs text-gray-500">{{ log.duration }}</p>
                                 </div>

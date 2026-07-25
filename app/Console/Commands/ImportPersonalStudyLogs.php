@@ -74,6 +74,7 @@ class ImportPersonalStudyLogs extends Command
                 $groupedLogs[$groupKey] = [
                     'studied_on' => $studiedOn,
                     'category' => $category,
+                    'subcategory' => '',
                     'set_count' => 0,
                     'source_rows' => [],
                 ];
@@ -92,6 +93,7 @@ class ImportPersonalStudyLogs extends Command
                     [
                         'studied_on' => $log['studied_on'],
                         'category' => $log['category'],
+                        'subcategory' => $log['subcategory'],
                     ],
                     [
                         'set_count' => $setCount,
@@ -103,6 +105,7 @@ class ImportPersonalStudyLogs extends Command
                         'raw_payload' => [
                             'input' => 'csv',
                             'mode' => 'grouped_by_day_category',
+                            'subcategory' => $log['subcategory'],
                             'source_rows' => $log['source_rows'],
                         ],
                     ],

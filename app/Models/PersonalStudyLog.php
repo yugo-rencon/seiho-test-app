@@ -12,6 +12,7 @@ class PersonalStudyLog extends Model
     protected $fillable = [
         'studied_on',
         'category',
+        'subcategory',
         'set_count',
         'minutes',
         'hours',

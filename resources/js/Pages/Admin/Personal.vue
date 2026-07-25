@@ -54,6 +54,7 @@ const studyLogForm = useForm({
     set_count: 1,
 });
 const deleteStudyLogForm = useForm({});
+const pendingDeleteLog = ref(null);
 
 const setStudySetCount = (count) => {
     studyLogForm.set_count = Math.min(96, Math.max(1, Number(count) || 1));
@@ -73,6 +74,14 @@ const selectedDayLogs = computed(() => {
 
 const selectedDayLabel = computed(() => {
     return selectedCalendarDay.value.replaceAll("-", "/");
+});
+
+const pendingDeleteMessage = computed(() => {
+    if (!pendingDeleteLog.value) {
+        return "";
+    }
+
+    return `${selectedDayLabel.value}の${pendingDeleteLog.value.category} ${pendingDeleteLog.value.set_count}セット`;
 });
 
 const calendarMonthOptions = computed(() => {
@@ -144,13 +153,28 @@ const selectCalendarDay = (date) => {
     selectedCalendarDay.value = date;
 };
 
-const deleteStudyLog = (log) => {
-    if (!window.confirm(`${selectedDayLabel.value}の${log.category} ${log.set_count}セットを削除しますか？`)) {
+const openDeleteStudyLogModal = (log) => {
+    pendingDeleteLog.value = log;
+};
+
+const closeDeleteStudyLogModal = () => {
+    if (deleteStudyLogForm.processing) {
         return;
     }
 
-    deleteStudyLogForm.delete(route("admin.personal.studyLogs.delete", log.id), {
+    pendingDeleteLog.value = null;
+};
+
+const deleteStudyLog = () => {
+    if (!pendingDeleteLog.value) {
+        return;
+    }
+
+    deleteStudyLogForm.delete(route("admin.personal.studyLogs.delete", pendingDeleteLog.value.id), {
         preserveScroll: true,
+        onSuccess: () => {
+            pendingDeleteLog.value = null;
+        },
     });
 };
 </script>
@@ -358,7 +382,7 @@ const deleteStudyLog = (log) => {
                                     type="button"
                                     class="rounded-md border border-rose-200 bg-white px-3 py-1.5 text-xs font-bold text-rose-600 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-60"
                                     :disabled="deleteStudyLogForm.processing"
-                                    @click="deleteStudyLog(log)"
+                                    @click="openDeleteStudyLogModal(log)"
                                 >
                                     削除
                                 </button>
@@ -404,6 +428,45 @@ const deleteStudyLog = (log) => {
                     <p class="mt-2 leading-6">返済先、返済予定日、返済額、残高、ステータス、メモなどをDBで管理できます。</p>
                 </div>
             </section>
+        </div>
+
+        <div
+            v-if="pendingDeleteLog"
+            class="fixed inset-0 z-50 flex items-end justify-center bg-gray-950/35 px-4 py-5 sm:items-center"
+            @click.self="closeDeleteStudyLogModal"
+        >
+            <div class="w-full max-w-sm rounded-2xl border border-gray-100 bg-white p-5 shadow-2xl">
+                <div class="flex items-start gap-3">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-50 text-sm font-bold text-rose-600">
+                        削
+                    </div>
+                    <div class="min-w-0">
+                        <h2 class="text-base font-bold text-gray-900">学習記録を削除</h2>
+                        <p class="mt-1 text-sm leading-6 text-gray-600">
+                            {{ pendingDeleteMessage }}を削除します。この操作は元に戻せません。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-5 grid grid-cols-2 gap-2">
+                    <button
+                        type="button"
+                        class="rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-bold text-gray-700 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
+                        :disabled="deleteStudyLogForm.processing"
+                        @click="closeDeleteStudyLogModal"
+                    >
+                        キャンセル
+                    </button>
+                    <button
+                        type="button"
+                        class="rounded-lg bg-rose-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-rose-500 disabled:cursor-not-allowed disabled:opacity-60"
+                        :disabled="deleteStudyLogForm.processing"
+                        @click="deleteStudyLog"
+                    >
+                        {{ deleteStudyLogForm.processing ? "削除中" : "削除する" }}
+                    </button>
+                </div>
+            </div>
         </div>
     </AdminLayout>
 </template>

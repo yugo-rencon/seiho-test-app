@@ -1,6 +1,6 @@
 <script setup>
 import { Link, useForm } from "@inertiajs/vue3";
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 
 const props = defineProps({
@@ -143,6 +143,12 @@ const selectedStudyDateSummary = computed(() => {
     );
 });
 
+const selectedStudyCategorySetCount = computed(() => {
+    return selectedStudyDateLogs.value
+        .filter((log) => log.category === studyLogForm.category)
+        .reduce((total, log) => total + (Number(log.set_count) || 0), 0);
+});
+
 const selectedDayLabel = computed(() => {
     return selectedCalendarDay.value.replaceAll("-", "/");
 });
@@ -233,14 +239,21 @@ const submitStudyLog = () => {
         preserveScroll: true,
         onSuccess: () => {
             studyLogForm.defaults({
-                studied_on: today,
+                studied_on: studyLogForm.studied_on,
                 category: studyLogForm.category,
-                set_count: 1,
+                set_count: studyLogForm.set_count,
             });
-            studyLogForm.reset("set_count");
         },
     });
 };
+
+watch(
+    [() => studyLogForm.studied_on, () => studyLogForm.category],
+    () => {
+        setStudySetCount(selectedStudyCategorySetCount.value || 1);
+    },
+    { immediate: true },
+);
 
 const selectCalendarDay = (date) => {
     selectedCalendarDay.value = date;
@@ -317,7 +330,7 @@ const deleteStudyLog = () => {
 
                 <section v-if="activeStudyTab === 'record'" class="mb-6 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
                     <div class="mb-4">
-                        <h2 class="text-base font-bold text-gray-900">学習記録を追加</h2>
+                        <h2 class="text-base font-bold text-gray-900">学習記録を編集</h2>
                     </div>
                     <form class="grid gap-4 md:grid-cols-[1fr_1fr_1fr_auto]" @submit.prevent="submitStudyLog">
                         <label class="block">
@@ -440,7 +453,7 @@ const deleteStudyLog = () => {
                         </div>
 
                         <label class="block">
-                            <span class="text-xs font-semibold text-gray-500">セット数</span>
+                            <span class="text-xs font-semibold text-gray-500">セット数（この日の合計）</span>
                             <div class="mt-1 flex overflow-hidden rounded-lg border border-gray-200 shadow-sm">
                                 <button type="button" class="w-11 border-r border-gray-200 bg-gray-50 text-lg font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="studyLogForm.set_count <= 1" @click="adjustStudySetCount(-1)">
                                     -
@@ -469,7 +482,7 @@ const deleteStudyLog = () => {
 
                         <div class="flex items-end">
                             <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto" :disabled="studyLogForm.processing">
-                                {{ studyLogForm.processing ? "保存中" : "保存" }}
+                                {{ studyLogForm.processing ? "保存中" : "上書き保存" }}
                             </button>
                         </div>
                     </form>
@@ -519,7 +532,7 @@ const deleteStudyLog = () => {
                                 </button>
                             </div>
                         </div>
-                        <p v-else class="mt-3 text-sm text-gray-500">この日の記録はまだありません。</p>
+                        <p v-else class="mt-3 text-sm text-gray-500">この日の記録はまだありません。セット数を入力して保存すると作成されます。</p>
                     </div>
                 </section>
 

@@ -29,45 +29,82 @@ class ImportPersonalStudyLogs extends Command
 
         $headers = null;
         $imported = 0;
+        $processed = 0;
         $skipped = 0;
         $sourceFile = str_replace(base_path() . DIRECTORY_SEPARATOR, '', $path);
+        $groupedLogs = [];
 
-        DB::transaction(function () use ($file, &$headers, &$imported, &$skipped, $sourceFile) {
-            foreach ($file as $index => $row) {
-                if (! is_array($row) || $row === [null]) {
-                    continue;
-                }
+        foreach ($file as $index => $row) {
+            if (! is_array($row) || $row === [null]) {
+                continue;
+            }
 
-                $row = array_map(fn ($value) => is_string($value) ? trim($value) : $value, $row);
+            $row = array_map(fn ($value) => is_string($value) ? trim($value) : $value, $row);
 
-                if ($headers === null) {
-                    $headers = $row;
-                    continue;
-                }
+            if ($headers === null) {
+                $headers = $row;
+                continue;
+            }
 
-                $data = array_combine($headers, array_pad($row, count($headers), null));
+            $data = array_combine($headers, array_pad($row, count($headers), null));
 
-                if (! $data || empty($data['日付']) || empty($data['カテゴリー'])) {
-                    $skipped++;
-                    continue;
-                }
+            if (! $data || empty($data['日付']) || empty($data['カテゴリー'])) {
+                $skipped++;
+                continue;
+            }
 
-                $setCount = (int) ($data['セット数'] ?? 0);
-                $studiedOn = Carbon::createFromFormat('Y/m/d', (string) $data['日付'])->toDateString();
+            $category = (string) $data['カテゴリー'];
 
+            if (! in_array($category, ['英語', '学び'], true)) {
+                $skipped++;
+                continue;
+            }
+
+            $setCount = (int) ($data['セット数'] ?? 0);
+
+            if ($setCount < 1) {
+                $skipped++;
+                continue;
+            }
+
+            $studiedOn = Carbon::createFromFormat('Y/m/d', (string) $data['日付'])->toDateString();
+            $groupKey = "{$studiedOn}|{$category}";
+
+            if (! isset($groupedLogs[$groupKey])) {
+                $groupedLogs[$groupKey] = [
+                    'studied_on' => $studiedOn,
+                    'category' => $category,
+                    'set_count' => 0,
+                    'source_rows' => [],
+                ];
+            }
+
+            $groupedLogs[$groupKey]['set_count'] += $setCount;
+            $groupedLogs[$groupKey]['source_rows'][] = $index + 1;
+            $processed++;
+        }
+
+        DB::transaction(function () use ($groupedLogs, &$imported, $sourceFile) {
+            foreach ($groupedLogs as $log) {
+                $setCount = (int) $log['set_count'];
+                $minutes = $setCount * 15;
                 PersonalStudyLog::updateOrCreate(
                     [
-                        'source_file' => $sourceFile,
-                        'source_row_number' => $index + 1,
+                        'studied_on' => $log['studied_on'],
+                        'category' => $log['category'],
                     ],
                     [
-                        'studied_on' => $studiedOn,
-                        'category' => (string) $data['カテゴリー'],
                         'set_count' => $setCount,
-                        'minutes' => $setCount * 15,
-                        'hours' => (float) ($data['学習時間（h)'] ?? 0),
-                        'set_label' => $row[0] ?? null,
-                        'raw_payload' => $data,
+                        'minutes' => $minutes,
+                        'hours' => round($minutes / 60, 2),
+                        'set_label' => "{$setCount}セット",
+                        'source_file' => $sourceFile,
+                        'source_row_number' => null,
+                        'raw_payload' => [
+                            'input' => 'csv',
+                            'mode' => 'grouped_by_day_category',
+                            'source_rows' => $log['source_rows'],
+                        ],
                     ],
                 );
 
@@ -75,7 +112,7 @@ class ImportPersonalStudyLogs extends Command
             }
         });
 
-        $this->info("Imported {$imported} study logs. Skipped {$skipped} rows.");
+        $this->info("Imported {$imported} grouped study logs from {$processed} rows. Skipped {$skipped} rows.");
 
         return self::SUCCESS;
     }

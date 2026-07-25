@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\PersonalStudyLog;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -89,19 +90,47 @@ class PersonalAdminController extends Controller
         $setCount = (int) $validated['set_count'];
         $minutes = $setCount * 15;
 
-        PersonalStudyLog::create([
-            'studied_on' => $validated['studied_on'],
-            'category' => $validated['category'],
-            'set_count' => $setCount,
-            'minutes' => $minutes,
-            'hours' => round($minutes / 60, 2),
-            'set_label' => "{$setCount}セット",
-            'source_file' => 'manual',
-            'source_row_number' => null,
-            'raw_payload' => [
-                'input' => 'manual',
-            ],
-        ]);
+        DB::transaction(function () use ($validated, $setCount, $minutes) {
+            $existingLogs = PersonalStudyLog::query()
+                ->where('studied_on', $validated['studied_on'])
+                ->where('category', $validated['category'])
+                ->orderBy('id')
+                ->get();
+
+            $payload = [
+                'studied_on' => $validated['studied_on'],
+                'category' => $validated['category'],
+                'set_count' => $setCount,
+                'minutes' => $minutes,
+                'hours' => round($minutes / 60, 2),
+                'set_label' => "{$setCount}セット",
+                'source_file' => 'manual',
+                'source_row_number' => null,
+                'raw_payload' => [
+                    'input' => 'manual',
+                    'mode' => 'overwrite',
+                ],
+            ];
+
+            if ($existingLogs->isEmpty()) {
+                PersonalStudyLog::create($payload);
+
+                return;
+            }
+
+            $keeper = $existingLogs->first();
+            $keeper->update($payload);
+
+            $duplicateIds = $existingLogs
+                ->skip(1)
+                ->pluck('id');
+
+            if ($duplicateIds->isNotEmpty()) {
+                PersonalStudyLog::query()
+                    ->whereIn('id', $duplicateIds)
+                    ->delete();
+            }
+        });
 
         return back();
     }

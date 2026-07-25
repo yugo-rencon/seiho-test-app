@@ -109,5 +109,27 @@
     <body class="font-sans antialiased bg-gray-50">
     {{-- <body class="font-poppins bg-body text-white"> --}}
         @inertia
+        <div
+            id="adsense-html-fallback"
+            style="max-width: 960px; margin: 48px auto; padding: 32px 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #111827;"
+        >
+            <header style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px;">
+                <img src="{{ $currentSiteAssets['icon48'] }}" alt="" width="48" height="48" style="width: 48px; height: 48px;">
+                <div>
+                    <p style="margin: 0 0 4px; font-size: 13px; font-weight: 700; color: #6b7280;">seiho-test.com</p>
+                    <h1 style="margin: 0; font-size: 32px; line-height: 1.25; font-weight: 800;">{{ $seo['title'] }}</h1>
+                </div>
+            </header>
+            <p style="margin: 0 0 24px; max-width: 720px; font-size: 16px; line-height: 1.8; color: #4b5563;">
+                {{ $seo['description'] }}
+            </p>
+            <nav aria-label="主要ページ" style="display: flex; flex-wrap: wrap; gap: 12px;">
+                <a href="/" style="display: inline-block; border: 1px solid #e5e7eb; border-radius: 999px; padding: 10px 16px; color: #111827; text-decoration: none; font-weight: 700;">生保講座</a>
+                <a href="/daigaku" style="display: inline-block; border: 1px solid #e5e7eb; border-radius: 999px; padding: 10px 16px; color: #111827; text-decoration: none; font-weight: 700;">生命保険大学課程</a>
+                <a href="/ippan" style="display: inline-block; border: 1px solid #e5e7eb; border-radius: 999px; padding: 10px 16px; color: #111827; text-decoration: none; font-weight: 700;">生命保険一般課程</a>
+                <a href="/senmon" style="display: inline-block; border: 1px solid #e5e7eb; border-radius: 999px; padding: 10px 16px; color: #111827; text-decoration: none; font-weight: 700;">生命保険専門課程</a>
+                <a href="/ouyou" style="display: inline-block; border: 1px solid #e5e7eb; border-radius: 999px; padding: 10px 16px; color: #111827; text-decoration: none; font-weight: 700;">生命保険応用課程</a>
+            </nav>
+        </div>
     </body>
 </html>

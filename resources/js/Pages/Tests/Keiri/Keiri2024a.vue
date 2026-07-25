@@ -841,7 +841,19 @@ const subject = "2024年度 フォームA";
                         'ア', //25
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="26" :title="title" :subject="subject" questionTitle="計算基礎の変化と純保険料の変化" :relatedProblems="['2024a26', '2024c35']" :contents="['純保険料は低くなる → 純保険料は高くなる', '正しい', '正しい']" />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="計算基礎の変化と純保険料の変化"
+                    :relatedProblems="['2024a26', '2024c35']"
+                    :contents="[
+                        // rev: 2026-07-25 確認済み
+                        '予定死亡率と予定利率を低くすると、生存保険の純保険料は[[高くなる]]。', //p53
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="27"
                     :title="title"

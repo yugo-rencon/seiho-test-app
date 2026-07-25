@@ -353,31 +353,28 @@ const deleteStudyLog = () => {
                 </div>
 
                 <section v-if="activeStudyTab === 'record'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
-                    <div class="mb-3">
-                        <h2 class="text-base font-bold text-gray-900">学習記録を編集</h2>
-                    </div>
-                    <form class="grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto]" @submit.prevent="submitStudyLog">
+                    <form class="grid gap-2.5 md:grid-cols-[1fr_1fr_1fr_auto]" @submit.prevent="submitStudyLog">
                         <label class="block">
-                            <span class="text-xs font-semibold text-gray-500">日付</span>
+                            <span class="text-[11px] font-bold text-gray-500">日付</span>
                             <div class="mt-1">
-                                <div class="grid grid-cols-[2.75rem_1fr_2.75rem] overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+                                <div class="grid grid-cols-[2.25rem_1fr_2.25rem] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
                                     <button
                                         type="button"
-                                        class="border-r border-gray-200 bg-gray-50 text-lg font-bold text-gray-500 transition hover:bg-gray-100"
+                                        class="border-r border-gray-200 bg-gray-50 text-base font-bold text-gray-500 transition hover:bg-gray-100"
                                         @click="adjustStudyDate(-1)"
                                     >
                                         -
                                     </button>
                                     <button
                                         type="button"
-                                        class="px-3 py-2.5 text-center text-sm font-bold text-gray-900 transition hover:bg-gray-50"
+                                        class="px-3 py-2 text-center text-sm font-bold text-gray-900 transition hover:bg-gray-50"
                                         @click="openDatePicker"
                                     >
                                         {{ studyDateLabel }}
                                     </button>
                                     <button
                                         type="button"
-                                        class="border-l border-gray-200 bg-gray-50 text-lg font-bold text-gray-500 transition hover:bg-gray-100"
+                                        class="border-l border-gray-200 bg-gray-50 text-base font-bold text-gray-500 transition hover:bg-gray-100"
                                         @click="adjustStudyDate(1)"
                                     >
                                         +
@@ -455,13 +452,13 @@ const deleteStudyLog = () => {
                         </label>
 
                         <div class="block">
-                            <span class="text-xs font-semibold text-gray-500">カテゴリー</span>
-                            <div class="mt-1 grid grid-cols-2 gap-2 rounded-xl border border-gray-200 bg-gray-50 p-1 shadow-sm">
+                            <span class="text-[11px] font-bold text-gray-500">カテゴリー</span>
+                            <div class="mt-1 grid grid-cols-2 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
                                 <button
                                     v-for="category in studyCategories"
                                     :key="category.value"
                                     type="button"
-                                    class="flex items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-sm font-bold transition"
+                                    class="flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-bold transition"
                                     :class="studyLogForm.category === category.value
                                         ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
                                         : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
@@ -477,13 +474,13 @@ const deleteStudyLog = () => {
                         </div>
 
                         <div v-if="studyLogForm.category === '学び'" class="block">
-                            <span class="text-xs font-semibold text-gray-500">分類</span>
-                            <div class="mt-1 grid grid-cols-2 gap-2 rounded-xl border border-sky-100 bg-sky-50/80 p-1 shadow-sm">
+                            <span class="text-[11px] font-bold text-gray-500">分類</span>
+                            <div class="mt-1 grid grid-cols-2 gap-1 rounded-lg border border-sky-100 bg-sky-50/80 p-1 shadow-sm">
                                 <button
                                     v-for="subcategory in learningSubcategories"
                                     :key="subcategory.value"
                                     type="button"
-                                    class="rounded-lg px-3 py-2.5 text-sm font-bold transition"
+                                    class="rounded-md px-3 py-2 text-sm font-bold transition"
                                     :class="studyLogForm.subcategory === subcategory.value
                                         ? 'bg-white text-sky-950 shadow-sm ring-1 ring-sky-100'
                                         : 'text-sky-700 hover:bg-white/70'"
@@ -498,22 +495,22 @@ const deleteStudyLog = () => {
                         </div>
 
                         <label class="block">
-                            <span class="text-xs font-semibold text-gray-500">セット数</span>
+                            <span class="text-[11px] font-bold text-gray-500">セット数</span>
                             <div class="mt-1 flex overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-                                <button type="button" class="w-11 border-r border-gray-200 bg-gray-50 text-lg font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="studyLogForm.set_count <= 1" @click="adjustStudySetCount(-1)">
+                                <button type="button" class="w-9 border-r border-gray-200 bg-gray-50 text-base font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="studyLogForm.set_count <= 1" @click="adjustStudySetCount(-1)">
                                     -
                                 </button>
-                                <input v-model.number="studyLogForm.set_count" type="number" min="1" max="96" step="1" class="w-full border-0 text-center text-sm font-semibold shadow-none focus:border-0 focus:ring-0" @blur="setStudySetCount(studyLogForm.set_count)" />
-                                <button type="button" class="w-11 border-l border-gray-200 bg-gray-50 text-lg font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="studyLogForm.set_count >= 96" @click="adjustStudySetCount(1)">
+                                <input v-model.number="studyLogForm.set_count" type="number" min="1" max="96" step="1" class="w-full border-0 py-1.5 text-center text-sm font-semibold shadow-none focus:border-0 focus:ring-0" @blur="setStudySetCount(studyLogForm.set_count)" />
+                                <button type="button" class="w-9 border-l border-gray-200 bg-gray-50 text-base font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="studyLogForm.set_count >= 96" @click="adjustStudySetCount(1)">
                                     +
                                 </button>
                             </div>
-                            <div class="mt-2 grid grid-cols-5 gap-1.5">
+                            <div class="mt-1.5 grid grid-cols-5 gap-1.5">
                                 <button
                                     v-for="count in [2, 4, 6, 8, 10]"
                                     :key="count"
                                     type="button"
-                                    class="rounded-md border px-2 py-1 text-xs font-semibold transition"
+                                    class="rounded-md border px-2 py-1.5 text-xs font-semibold transition"
                                     :class="studyLogForm.set_count === count ? 'border-gray-900 bg-gray-900 text-white' : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
                                     @click="setStudySetCount(count)"
                                 >
@@ -526,21 +523,21 @@ const deleteStudyLog = () => {
                         </label>
 
                         <div class="flex items-end">
-                            <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto" :disabled="studyLogForm.processing">
+                            <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto" :disabled="studyLogForm.processing">
                                 {{ studyLogForm.processing ? "保存中" : "保存" }}
                             </button>
                         </div>
                     </form>
 
                     <div class="mt-3 grid grid-cols-2 gap-2">
-                            <div class="rounded-lg border border-orange-100 bg-orange-50/80 px-3 py-2">
-                                <p class="text-[11px] font-bold text-orange-700">英語</p>
-                                <p class="mt-0.5 text-lg font-bold text-orange-950">{{ selectedStudyDateSummary.english }}セット</p>
-                            </div>
-                            <div class="rounded-lg border border-sky-100 bg-sky-50/90 px-3 py-2">
-                                <p class="text-[11px] font-bold text-sky-700">学び</p>
-                                <p class="mt-0.5 text-lg font-bold text-sky-950">{{ selectedStudyDateSummary.learning }}セット</p>
-                            </div>
+                        <div class="flex items-center justify-between rounded-lg border border-orange-100 bg-orange-50/70 px-3 py-2">
+                            <p class="text-[11px] font-bold text-orange-700">英語</p>
+                            <p class="text-sm font-bold text-orange-950">{{ selectedStudyDateSummary.english }}セット</p>
+                        </div>
+                        <div class="flex items-center justify-between rounded-lg border border-sky-100 bg-sky-50/80 px-3 py-2">
+                            <p class="text-[11px] font-bold text-sky-700">学び</p>
+                            <p class="text-sm font-bold text-sky-950">{{ selectedStudyDateSummary.learning }}セット</p>
+                        </div>
                     </div>
                 </section>
 

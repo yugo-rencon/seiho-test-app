@@ -291,8 +291,7 @@ const deleteStudyLog = () => {
                 </div>
 
                 <section v-if="activeStudyTab === 'daily'" class="mb-6 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-5">
-                    <div class="space-y-3 sm:flex sm:items-center sm:justify-between sm:gap-3 sm:space-y-0">
-                        <h2 class="text-base font-bold text-gray-900">日別詳細</h2>
+                    <div class="sm:flex sm:justify-end">
                         <div class="grid grid-cols-[2.75rem_1fr_2.75rem] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm sm:w-[22rem]">
                             <button
                                 type="button"
@@ -332,7 +331,7 @@ const deleteStudyLog = () => {
                             <div
                                 v-for="cell in calendarCells"
                                 :key="cell.key"
-                                class="min-h-[4.25rem] p-1 sm:min-h-[5.25rem] sm:p-2"
+                                class="min-h-[3.75rem] p-0.5 sm:min-h-[4.5rem] sm:p-1.5"
                                 :class="[
                                     cell.empty ? 'bg-gray-50/60' : 'bg-white',
                                     selectedCalendarDay === cell.date ? 'bg-gray-100 shadow-[inset_0_0_0_1px_rgba(107,114,128,0.28)]' : '',

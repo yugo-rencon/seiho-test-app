@@ -182,12 +182,12 @@ const deleteStudyLog = () => {
 <template>
     <AdminLayout title="個人管理">
         <div class="mx-auto max-w-7xl px-3 py-6 sm:px-5 sm:py-8">
-            <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div class="mb-6 flex items-end justify-between gap-3">
                 <div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">Personal Admin</p>
                     <h1 class="mt-1 text-2xl font-bold text-gray-900">個人管理</h1>
                 </div>
-                <Link :href="route('admin.index')" class="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"> 管理画面に戻る </Link>
+                <Link :href="route('admin.index')" class="inline-flex shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-semibold text-gray-600 transition hover:bg-gray-50 sm:px-4 sm:text-sm"> 管理画面に戻る </Link>
             </div>
 
             <div class="mb-6 flex flex-wrap gap-2 border-b border-gray-200">

@@ -62,7 +62,7 @@ const studyLogForm = useForm({
     studied_on: today,
     category: "英語",
     subcategory: "DS検定",
-    set_count: 1,
+    set_count: 2,
 });
 const deleteStudyLogForm = useForm({});
 const pendingDeleteLog = ref(null);
@@ -274,7 +274,7 @@ watch(
             studyLogForm.subcategory = "DS検定";
         }
 
-        setStudySetCount(selectedStudyCategorySetCount.value || 1);
+        setStudySetCount(selectedStudyCategorySetCount.value || 2);
     },
     { immediate: true },
 );
@@ -508,9 +508,9 @@ const deleteStudyLog = () => {
                                     +
                                 </button>
                             </div>
-                            <div class="mt-2 grid grid-cols-4 gap-1.5">
+                            <div class="mt-2 grid grid-cols-5 gap-1.5">
                                 <button
-                                    v-for="count in [1, 2, 4, 8]"
+                                    v-for="count in [2, 4, 6, 8, 10]"
                                     :key="count"
                                     type="button"
                                     class="rounded-md border px-2 py-1 text-xs font-semibold transition"

@@ -60,6 +60,7 @@ const studyLogForm = useForm({
 });
 const deleteStudyLogForm = useForm({});
 const pendingDeleteLog = ref(null);
+const pendingDeleteDateLabel = ref("");
 const datePickerOpen = ref(false);
 const recordCalendarMonth = ref(today.slice(0, 7));
 
@@ -121,6 +122,27 @@ const selectedDayLogs = computed(() => {
     return props.studyLogsByDay[selectedCalendarDay.value] || [];
 });
 
+const selectedStudyDateLogs = computed(() => {
+    return props.studyLogsByDay[studyLogForm.studied_on || today] || [];
+});
+
+const selectedStudyDateSummary = computed(() => {
+    return selectedStudyDateLogs.value.reduce(
+        (summary, log) => {
+            if (log.category === "英語") {
+                summary.english += Number(log.set_count) || 0;
+            }
+
+            if (log.category === "学び") {
+                summary.learning += Number(log.set_count) || 0;
+            }
+
+            return summary;
+        },
+        { english: 0, learning: 0 },
+    );
+});
+
 const selectedDayLabel = computed(() => {
     return selectedCalendarDay.value.replaceAll("-", "/");
 });
@@ -130,7 +152,7 @@ const pendingDeleteMessage = computed(() => {
         return "";
     }
 
-    return `${selectedDayLabel.value}の${pendingDeleteLog.value.category} ${pendingDeleteLog.value.set_count}セット`;
+    return `${pendingDeleteDateLabel.value || selectedDayLabel.value}の${pendingDeleteLog.value.category} ${pendingDeleteLog.value.set_count}セット`;
 });
 
 const calendarMonthOptions = computed(() => {
@@ -224,8 +246,9 @@ const selectCalendarDay = (date) => {
     selectedCalendarDay.value = date;
 };
 
-const openDeleteStudyLogModal = (log) => {
+const openDeleteStudyLogModal = (log, dateLabel = selectedDayLabel.value) => {
     pendingDeleteLog.value = log;
+    pendingDeleteDateLabel.value = dateLabel;
 };
 
 const closeDeleteStudyLogModal = () => {
@@ -234,6 +257,7 @@ const closeDeleteStudyLogModal = () => {
     }
 
     pendingDeleteLog.value = null;
+    pendingDeleteDateLabel.value = "";
 };
 
 const deleteStudyLog = () => {
@@ -245,6 +269,7 @@ const deleteStudyLog = () => {
         preserveScroll: true,
         onSuccess: () => {
             pendingDeleteLog.value = null;
+            pendingDeleteDateLabel.value = "";
         },
     });
 };
@@ -448,6 +473,54 @@ const deleteStudyLog = () => {
                             </button>
                         </div>
                     </form>
+
+                    <div class="mt-5 rounded-xl border border-gray-100 bg-gray-50 p-3">
+                        <div class="flex items-center justify-between gap-3">
+                            <div>
+                                <p class="text-xs font-semibold text-gray-500">この日の記録</p>
+                                <p class="mt-0.5 text-sm font-bold text-gray-900">{{ studyDateLabel }}</p>
+                            </div>
+                            <p class="text-xs font-semibold text-gray-500">{{ selectedStudyDateLogs.length }}件</p>
+                        </div>
+
+                        <div class="mt-3 grid grid-cols-2 gap-2">
+                            <div class="rounded-lg border border-orange-100 bg-orange-50 px-3 py-2">
+                                <p class="text-[11px] font-bold text-orange-700">英語</p>
+                                <p class="mt-0.5 text-lg font-bold text-orange-950">{{ selectedStudyDateSummary.english }}セット</p>
+                            </div>
+                            <div class="rounded-lg border border-sky-100 bg-sky-50 px-3 py-2">
+                                <p class="text-[11px] font-bold text-sky-700">学び</p>
+                                <p class="mt-0.5 text-lg font-bold text-sky-950">{{ selectedStudyDateSummary.learning }}セット</p>
+                            </div>
+                        </div>
+
+                        <div v-if="selectedStudyDateLogs.length > 0" class="mt-3 space-y-2">
+                            <div
+                                v-for="log in selectedStudyDateLogs"
+                                :key="`record-log-${log.id}`"
+                                class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2"
+                            >
+                                <div>
+                                    <p
+                                        class="text-sm font-bold"
+                                        :class="log.category === '英語' ? 'text-orange-900' : 'text-sky-900'"
+                                    >
+                                        {{ log.category }} {{ log.set_count }}セット
+                                    </p>
+                                    <p class="mt-0.5 text-xs text-gray-500">{{ log.duration }}</p>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="rounded-md border border-rose-200 bg-white px-3 py-1.5 text-xs font-bold text-rose-600 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-60"
+                                    :disabled="deleteStudyLogForm.processing"
+                                    @click="openDeleteStudyLogModal(log, studyDateLabel)"
+                                >
+                                    削除
+                                </button>
+                            </div>
+                        </div>
+                        <p v-else class="mt-3 text-sm text-gray-500">この日の記録はまだありません。</p>
+                    </div>
                 </section>
 
                 <div v-if="activeStudyTab === 'summary'" class="mb-6 grid gap-3 sm:grid-cols-2">

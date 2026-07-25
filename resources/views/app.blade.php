@@ -99,6 +99,11 @@
         <link rel="apple-touch-icon" sizes="192x192" href="{{ $currentSiteAssets['icon192'] }}">
 
         <title inertia>{{ $seo['title'] }}</title>
+        <style>
+            #app:not(:empty) + #adsense-html-fallback {
+                display: none;
+            }
+        </style>
 
         <!-- Scripts -->
         @routes

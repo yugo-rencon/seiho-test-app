@@ -90,9 +90,6 @@ createInertiaApp({
     ),
 
   setup({ el, App, props, plugin }) {
-    const fallback = document.getElementById('adsense-html-fallback');
-    fallback?.remove();
-
     return createApp({ render: () => h(App, props) })
       .use(plugin)
       .use(ZiggyVue, Ziggy)

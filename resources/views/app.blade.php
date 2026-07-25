@@ -8,7 +8,6 @@
                 : (str_starts_with($path, 'senmon') ? 'senmon'
                     : (str_starts_with($path, 'ouyou') ? 'ouyou'
                         : (str_starts_with($path, 'ippan') ? 'ippan' : 'seiho')));
-            $shouldLoadAds = !auth()->check() || !auth()->user()?->hasPremiumAccess($siteKey);
             $siteAssets = [
                 'seiho' => [
                     'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
@@ -64,11 +63,6 @@
         @endphp
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TB0WW8SWW"></script>
-        @if ($shouldLoadAds)
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5875099458010785"
-                crossorigin="anonymous">
-            </script>
-        @endif
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -100,7 +94,7 @@
 
         <title inertia>{{ $seo['title'] }}</title>
         <style>
-            #app:not(:empty) + #adsense-html-fallback {
+            #app:not(:empty) + #app-html-fallback {
                 display: none;
             }
         </style>
@@ -115,7 +109,7 @@
     {{-- <body class="font-poppins bg-body text-white"> --}}
         @inertia
         <div
-            id="adsense-html-fallback"
+            id="app-html-fallback"
             style="max-width: 960px; margin: 48px auto; padding: 32px 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #111827;"
         >
             <header style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px;">

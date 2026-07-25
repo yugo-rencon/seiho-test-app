@@ -77,8 +77,7 @@ const currentLogoSrc = computed(() =>
 const isMenuOpen = ref(false);
 const showToast = ref(false);
 let toastTimer = null;
-let premiumAdReloadTimer = null;
-let premiumAdObserver = null;
+let checkoutRefreshTimer = null;
 
 // Inertia shared props から認証情報を取得
 const user = computed(() => page.props?.auth?.user ?? null);
@@ -98,114 +97,6 @@ const checkoutParams = computed(() => {
     };
 });
 
-const hasResidualAdSense = () => {
-    if (typeof document === "undefined") return false;
-
-    return !!document.querySelector(
-        [
-            'script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]',
-            "ins.adsbygoogle",
-            ".adsbygoogle",
-            ".google-auto-placed",
-            ".google-auto-placed-ap_container",
-            '[id^="google_auto_placed"]',
-            '[id^="aswift_"]',
-            '[id^="google_esf"]',
-            '[id^="google_ads_iframe"]',
-            'iframe[src*="googlesyndication.com"]',
-            'iframe[name^="google_ads_iframe"]',
-            'iframe[id^="aswift_"]',
-        ].join(","),
-    );
-};
-
-const purgeResidualAdSense = () => {
-    if (typeof document === "undefined") return;
-
-    const selectors = [
-        'script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]',
-        "ins.adsbygoogle",
-        ".adsbygoogle",
-        ".google-auto-placed",
-        ".google-auto-placed-ap_container",
-        '[id^="google_auto_placed"]',
-        '[id^="aswift_"]',
-        '[id^="google_esf"]',
-        '[id^="google_ads_iframe"]',
-        'iframe[src*="googlesyndication.com"]',
-        'iframe[name^="google_ads_iframe"]',
-        'iframe[id^="aswift_"]',
-    ];
-
-    document.querySelectorAll(selectors.join(",")).forEach((node) => {
-        const removable = node.closest(".google-auto-placed, .google-auto-placed-ap_container")
-            ?? node.parentElement;
-
-        if (removable && removable !== document.head && removable !== document.body) {
-            removable.remove();
-            return;
-        }
-
-        node.remove();
-    });
-
-    delete window.adsbygoogle;
-};
-
-const stopPremiumAdObserver = () => {
-    if (!premiumAdObserver) return;
-    premiumAdObserver.disconnect();
-    premiumAdObserver = null;
-};
-
-const watchPremiumAdSense = () => {
-    if (typeof document === "undefined" || typeof MutationObserver === "undefined") return;
-
-    if (!hasPremium.value) {
-        stopPremiumAdObserver();
-        return;
-    }
-
-    purgeResidualAdSense();
-    if (premiumAdObserver) return;
-
-    premiumAdObserver = new MutationObserver(() => {
-        if (!hasPremium.value) {
-            stopPremiumAdObserver();
-            return;
-        }
-
-        if (hasResidualAdSense()) {
-            purgeResidualAdSense();
-        }
-    });
-
-    premiumAdObserver.observe(document.documentElement, {
-        childList: true,
-        subtree: true,
-    });
-};
-
-const scheduleReload = (key, delay = 0) => {
-    if (typeof window === "undefined") return;
-    if (window.sessionStorage.getItem(key) === "1") return;
-
-    window.sessionStorage.setItem(key, "1");
-    if (premiumAdReloadTimer) {
-        clearTimeout(premiumAdReloadTimer);
-    }
-
-    premiumAdReloadTimer = setTimeout(() => {
-        window.location.reload();
-    }, delay);
-};
-
-const refreshIfPremiumAdsRemain = () => {
-    if (!hasPremium.value || !hasResidualAdSense()) return;
-    purgeResidualAdSense();
-    scheduleReload(`premium-ad-reload:${resolvedSiteScope.value}`, 0);
-};
-
 const refreshAfterCheckoutIfPending = () => {
     const { checkout, sessionId } = checkoutParams.value;
     if (checkout !== "success" || hasPremium.value) return;
@@ -216,11 +107,11 @@ const refreshAfterCheckoutIfPending = () => {
     if (count >= 2) return;
 
     window.sessionStorage.setItem(key, String(count + 1));
-    if (premiumAdReloadTimer) {
-        clearTimeout(premiumAdReloadTimer);
+    if (checkoutRefreshTimer) {
+        clearTimeout(checkoutRefreshTimer);
     }
 
-    premiumAdReloadTimer = setTimeout(() => {
+    checkoutRefreshTimer = setTimeout(() => {
         window.location.reload();
     }, 1500);
 };
@@ -433,8 +324,6 @@ watch(
 );
 
 onMounted(() => {
-    watchPremiumAdSense();
-    refreshIfPremiumAdsRemain();
     refreshAfterCheckoutIfPending();
 });
 
@@ -443,11 +332,8 @@ watch(
         hasPremium.value,
         checkoutParams.value.checkout,
         checkoutParams.value.sessionId,
-        resolvedSiteScope.value,
     ],
     () => {
-        watchPremiumAdSense();
-        refreshIfPremiumAdsRemain();
         refreshAfterCheckoutIfPending();
     },
 );
@@ -458,13 +344,10 @@ onBeforeUnmount(() => {
         clearTimeout(toastTimer);
         toastTimer = null;
     }
-
-    if (premiumAdReloadTimer) {
-        clearTimeout(premiumAdReloadTimer);
-        premiumAdReloadTimer = null;
+    if (checkoutRefreshTimer) {
+        clearTimeout(checkoutRefreshTimer);
+        checkoutRefreshTimer = null;
     }
-
-    stopPremiumAdObserver();
 });
 
 </script>

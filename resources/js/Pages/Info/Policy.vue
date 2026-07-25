@@ -64,7 +64,6 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                     </p>
                     <ul class="mt-2 list-disc list-inside space-y-1">
                         <li>Google Analytics（アクセス解析）</li>
-                        <li>Google AdSense（広告配信）</li>
                         <li>Stripe（決済処理）</li>
                         <li>Google OAuth（Googleログイン）</li>
                     </ul>

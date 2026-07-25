@@ -309,22 +309,24 @@ const deleteStudyLog = (log) => {
                                 v-for="cell in calendarCells"
                                 :key="cell.key"
                                 class="min-h-[4.25rem] p-1 sm:min-h-[5.25rem] sm:p-2"
-                                :class="cell.empty ? 'bg-gray-50/60' : 'bg-white'"
+                                :class="[
+                                    cell.empty ? 'bg-gray-50/60' : 'bg-white',
+                                    selectedCalendarDay === cell.date ? 'bg-gray-100 shadow-[inset_0_0_0_1px_rgba(107,114,128,0.28)]' : '',
+                                ]"
                             >
                                 <button
                                     v-if="!cell.empty"
                                     type="button"
                                     class="block h-full w-full rounded text-left transition hover:bg-gray-50"
-                                    :class="selectedCalendarDay === cell.date ? 'ring-2 ring-gray-900' : ''"
                                     @click="selectCalendarDay(cell.date)"
                                 >
                                     <div class="text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
                                     <div v-if="cell.summary" class="mt-1 space-y-1">
                                         <div v-if="cell.summary.english_sets > 0" class="rounded bg-orange-50 px-1 py-0.5 text-right font-semibold text-orange-900">
-                                            英 {{ cell.summary.english_sets }}
+                                            英語 {{ cell.summary.english_sets }}
                                         </div>
                                         <div v-if="cell.summary.learning_sets > 0" class="rounded bg-sky-50 px-1 py-0.5 text-right font-semibold text-sky-900">
-                                            学 {{ cell.summary.learning_sets }}
+                                            学び {{ cell.summary.learning_sets }}
                                         </div>
                                     </div>
                                 </button>

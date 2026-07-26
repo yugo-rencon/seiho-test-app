@@ -72,10 +72,11 @@ const learningSubcategories = [
 ];
 
 const exerciseActivities = [
-    { value: "ウォーキング", label: "ウォーキング", shortLabel: "walk", badgeClass: "bg-amber-50 text-amber-800", cardClass: "border-amber-100 bg-amber-50/80 text-amber-950" },
-    { value: "ランニング", label: "ランニング", shortLabel: "run", badgeClass: "bg-yellow-100 text-yellow-900", cardClass: "border-yellow-200 bg-yellow-50/90 text-yellow-950" },
-    { value: "筋トレ", label: "筋トレ", shortLabel: "筋トレ", badgeClass: "bg-orange-50 text-orange-800", cardClass: "border-orange-100 bg-orange-50/80 text-orange-950" },
+    { value: "ウォーキング", label: "ウォーキング", shortLabel: "walk", accent: "bg-emerald-400", activeClass: "bg-white text-emerald-950 shadow-sm ring-1 ring-emerald-100", inactiveClass: "text-emerald-700 hover:bg-white/70 hover:text-emerald-900", badgeClass: "bg-emerald-50 text-emerald-800", cardClass: "border-emerald-100 bg-emerald-50/75 text-emerald-950" },
+    { value: "ランニング", label: "ランニング", shortLabel: "run", accent: "bg-sky-400", activeClass: "bg-white text-sky-950 shadow-sm ring-1 ring-sky-100", inactiveClass: "text-sky-700 hover:bg-white/70 hover:text-sky-900", badgeClass: "bg-sky-50 text-sky-800", cardClass: "border-sky-100 bg-sky-50/75 text-sky-950" },
+    { value: "筋トレ", label: "筋トレ", shortLabel: "筋トレ", accent: "bg-rose-400", activeClass: "bg-white text-rose-950 shadow-sm ring-1 ring-rose-100", inactiveClass: "text-rose-700 hover:bg-white/70 hover:text-rose-900", badgeClass: "bg-rose-50 text-rose-800", cardClass: "border-rose-100 bg-rose-50/75 text-rose-950" },
 ];
+const exerciseStartedOnLabel = "2026/07/21";
 
 const formatLocalDate = (date) => {
     const year = date.getFullYear();
@@ -1003,17 +1004,18 @@ const deleteStudyLog = () => {
 
                         <div class="block">
                             <span class="text-[11px] font-bold text-gray-500">種目</span>
-                            <div class="mt-1 grid grid-cols-3 gap-1 rounded-lg border border-amber-100 bg-amber-50/70 p-1 shadow-sm">
+                            <div class="mt-1 grid grid-cols-3 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
                                 <button
                                     v-for="activity in exerciseActivities"
                                     :key="activity.value"
                                     type="button"
-                                    class="rounded-md px-0.5 py-2 text-[10px] font-bold leading-tight transition focus:outline-none focus:ring-2 focus:ring-amber-300 sm:px-3 sm:text-sm"
+                                    class="flex items-center justify-center gap-1.5 rounded-md px-0.5 py-2 text-[10px] font-bold leading-tight transition focus:outline-none focus:ring-2 focus:ring-gray-300 sm:px-3 sm:text-sm"
                                     :class="exerciseLogForm.activity === activity.value
-                                        ? 'bg-white text-amber-950 shadow-sm ring-1 ring-amber-100'
-                                        : 'text-amber-700 hover:bg-white/70 hover:text-amber-900'"
+                                        ? activity.activeClass
+                                        : activity.inactiveClass"
                                     @click="exerciseLogForm.activity = activity.value"
                                 >
+                                    <span class="hidden h-2 w-2 rounded-full min-[390px]:inline-block" :class="activity.accent"></span>
                                     {{ activity.label }}
                                 </button>
                             </div>
@@ -1031,6 +1033,10 @@ const deleteStudyLog = () => {
                 </section>
 
                 <section v-if="activeExerciseTab === 'summary'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
+                    <div class="mb-3 flex items-center justify-between rounded-lg border border-gray-100 bg-gray-50 px-3 py-2 text-gray-900">
+                        <p class="text-[11px] font-bold text-gray-500">開始日</p>
+                        <p class="text-sm font-bold">{{ exerciseStartedOnLabel }}</p>
+                    </div>
                     <div class="grid gap-2 sm:grid-cols-3">
                         <div class="flex items-center justify-between rounded-lg border px-3 py-2" :class="exerciseActivities[0].cardClass">
                             <p class="text-[11px] font-bold">ウォーキング</p>

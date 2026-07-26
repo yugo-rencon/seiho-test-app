@@ -14,7 +14,7 @@ class PersonalExerciseLog extends Model
     ];
 
     protected $casts = [
-        'exercised_on' => 'date',
+        'exercised_on' => 'date:Y-m-d',
         'completed' => 'boolean',
     ];
 }

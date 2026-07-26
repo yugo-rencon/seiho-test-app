@@ -7,6 +7,7 @@ use App\Models\PersonalExerciseLog;
 use App\Models\PersonalStudyLog;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -147,28 +148,29 @@ class PersonalAdminController extends Controller
     public function storeStudyLog(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'studied_on' => ['required', 'date'],
+            'studied_on' => ['required', 'date_format:Y-m-d'],
             'category' => ['required', 'string', 'in:英語,学び'],
             'subcategory' => ['nullable', 'string', 'required_if:category,学び', 'in:DS検定,E資格'],
             'set_count' => ['required', 'integer', 'min:1', 'max:96'],
         ]);
 
+        $studiedOn = Carbon::createFromFormat('!Y-m-d', $validated['studied_on'])->toDateString();
         $setCount = (int) $validated['set_count'];
         $minutes = $setCount * 15;
         $subcategory = $validated['category'] === '学び'
             ? (string) $validated['subcategory']
             : '';
 
-        DB::transaction(function () use ($validated, $setCount, $minutes, $subcategory) {
+        DB::transaction(function () use ($validated, $studiedOn, $setCount, $minutes, $subcategory) {
             $existingLogs = PersonalStudyLog::query()
-                ->where('studied_on', $validated['studied_on'])
+                ->where('studied_on', $studiedOn)
                 ->where('category', $validated['category'])
                 ->where('subcategory', $subcategory)
                 ->orderBy('id')
                 ->get();
 
             $payload = [
-                'studied_on' => $validated['studied_on'],
+                'studied_on' => $studiedOn,
                 'category' => $validated['category'],
                 'subcategory' => $subcategory,
                 'set_count' => $setCount,
@@ -217,14 +219,16 @@ class PersonalAdminController extends Controller
     public function storeExerciseLog(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'exercised_on' => ['required', 'date'],
+            'exercised_on' => ['required', 'date_format:Y-m-d'],
             'activity' => ['required', 'string', 'in:ウォーキング,ランニング,筋トレ'],
             'memo' => ['nullable', 'string', 'max:1000'],
         ]);
 
+        $exercisedOn = Carbon::createFromFormat('!Y-m-d', $validated['exercised_on'])->toDateString();
+
         PersonalExerciseLog::updateOrCreate(
             [
-                'exercised_on' => $validated['exercised_on'],
+                'exercised_on' => $exercisedOn,
                 'activity' => $validated['activity'],
             ],
             [

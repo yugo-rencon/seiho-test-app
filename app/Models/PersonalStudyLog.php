@@ -23,7 +23,7 @@ class PersonalStudyLog extends Model
     ];
 
     protected $casts = [
-        'studied_on' => 'date',
+        'studied_on' => 'date:Y-m-d',
         'hours' => 'decimal:2',
         'raw_payload' => 'array',
     ];

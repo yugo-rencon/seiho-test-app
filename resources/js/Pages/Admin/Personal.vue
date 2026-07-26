@@ -564,7 +564,7 @@ const deleteStudyLog = () => {
                                     <button
                                         type="button"
                                         class="px-3 py-2 text-center text-sm font-bold text-gray-900 transition hover:bg-gray-50"
-                                        @click="openDatePicker"
+                                        @click.stop="openDatePicker"
                                     >
                                         {{ studyDateLabel }}
                                     </button>
@@ -617,7 +617,7 @@ const deleteStudyLog = () => {
                                                             ? 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                                                             : 'text-gray-600 hover:bg-gray-50',
                                                 ]"
-                                                @click="setStudyDate(cell.date)"
+                                                @click.stop="setStudyDate(cell.date)"
                                             >
                                                 {{ cell.day }}
                                             </button>
@@ -628,14 +628,14 @@ const deleteStudyLog = () => {
                                         <button
                                             type="button"
                                             class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50"
-                                            @click="datePickerOpen = false"
+                                            @click.stop="datePickerOpen = false"
                                         >
                                             閉じる
                                         </button>
                                         <button
                                             type="button"
                                             class="rounded-lg bg-gray-900 px-3 py-2 text-xs font-bold text-white transition hover:bg-gray-700"
-                                            @click="setStudyDate(today)"
+                                            @click.stop="setStudyDate(today)"
                                         >
                                             今日
                                         </button>
@@ -919,7 +919,7 @@ const deleteStudyLog = () => {
                                     <button
                                         type="button"
                                         class="px-3 py-2 text-center text-sm font-bold text-gray-900 transition hover:bg-gray-50"
-                                        @click="openExerciseDatePicker"
+                                        @click.stop="openExerciseDatePicker"
                                     >
                                         {{ formatDateLabel(exerciseLogForm.exercised_on) }}
                                     </button>
@@ -972,7 +972,7 @@ const deleteStudyLog = () => {
                                                             ? 'bg-amber-50 text-amber-950 hover:bg-amber-100'
                                                             : 'text-gray-600 hover:bg-gray-50',
                                                 ]"
-                                                @click="setExerciseDate(cell.date)"
+                                                @click.stop="setExerciseDate(cell.date)"
                                             >
                                                 {{ cell.day }}
                                             </button>
@@ -983,14 +983,14 @@ const deleteStudyLog = () => {
                                         <button
                                             type="button"
                                             class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50"
-                                            @click="exerciseDatePickerOpen = false"
+                                            @click.stop="exerciseDatePickerOpen = false"
                                         >
                                             閉じる
                                         </button>
                                         <button
                                             type="button"
                                             class="rounded-lg bg-gray-900 px-3 py-2 text-xs font-bold text-white transition hover:bg-gray-700"
-                                            @click="setExerciseDate(today)"
+                                            @click.stop="setExerciseDate(today)"
                                         >
                                             今日
                                         </button>

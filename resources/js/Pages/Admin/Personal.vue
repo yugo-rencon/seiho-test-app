@@ -62,7 +62,7 @@ const studyLogForm = useForm({
     studied_on: today,
     category: "英語",
     subcategory: "DS検定",
-    set_count: 2,
+    set_count: 1,
 });
 const deleteStudyLogForm = useForm({});
 const pendingDeleteLog = ref(null);
@@ -274,7 +274,7 @@ watch(
             studyLogForm.subcategory = "DS検定";
         }
 
-        setStudySetCount(selectedStudyCategorySetCount.value || 2);
+        setStudySetCount(selectedStudyCategorySetCount.value || 1);
     },
     { immediate: true },
 );

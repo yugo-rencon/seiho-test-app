@@ -85,6 +85,16 @@ const formatLocalDate = (date) => {
     return `${year}-${month}-${day}`;
 };
 
+const formatDateParts = (year, month, day) => {
+    return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+};
+
+const parseDateParts = (date) => {
+    const [year, month, day] = String(date || today).split("-").map(Number);
+
+    return { year, month, day };
+};
+
 const today = formatLocalDate(new Date());
 const selectedCalendarMonth = ref(props.monthlySummaries[0]?.month || today.slice(0, 7));
 const selectedCalendarDay = ref(today);
@@ -115,18 +125,17 @@ const formatDateLabel = (date) => {
 };
 
 const addDays = (date, amount) => {
-    const [year, month, day] = String(date || today).split("-").map(Number);
-    const nextDate = new Date(year, month - 1, day);
-    nextDate.setDate(nextDate.getDate() + amount);
+    const { year, month, day } = parseDateParts(date);
+    const nextDate = new Date(Date.UTC(year, month - 1, day + amount));
 
-    return formatLocalDate(nextDate);
+    return formatDateParts(nextDate.getUTCFullYear(), nextDate.getUTCMonth() + 1, nextDate.getUTCDate());
 };
 
 const moveMonth = (monthValue, amount) => {
     const [year, month] = monthValue.split("-").map(Number);
-    const nextDate = new Date(year, month - 1 + amount, 1);
+    const nextDate = new Date(Date.UTC(year, month - 1 + amount, 1));
 
-    return `${nextDate.getFullYear()}-${String(nextDate.getMonth() + 1).padStart(2, "0")}`;
+    return formatDateParts(nextDate.getUTCFullYear(), nextDate.getUTCMonth() + 1, 1).slice(0, 7);
 };
 
 const setStudyDate = (date) => {
@@ -324,16 +333,16 @@ const moveExerciseMonth = (amount) => {
 
 const calendarCells = computed(() => {
     const [year, month] = selectedCalendarMonth.value.split("-").map(Number);
-    const firstDate = new Date(year, month - 1, 1);
-    const lastDate = new Date(year, month, 0);
+    const firstDate = new Date(Date.UTC(year, month - 1, 1));
+    const lastDate = new Date(Date.UTC(year, month, 0));
     const cells = [];
 
-    for (let i = 0; i < firstDate.getDay(); i += 1) {
+    for (let i = 0; i < firstDate.getUTCDay(); i += 1) {
         cells.push({ key: `empty-${i}`, empty: true });
     }
 
-    for (let day = 1; day <= lastDate.getDate(); day += 1) {
-        const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    for (let day = 1; day <= lastDate.getUTCDate(); day += 1) {
+        const date = formatDateParts(year, month, day);
         cells.push({
             key: date,
             date,
@@ -347,16 +356,16 @@ const calendarCells = computed(() => {
 
 const exerciseCalendarCells = computed(() => {
     const [year, month] = selectedExerciseMonth.value.split("-").map(Number);
-    const firstDate = new Date(year, month - 1, 1);
-    const lastDate = new Date(year, month, 0);
+    const firstDate = new Date(Date.UTC(year, month - 1, 1));
+    const lastDate = new Date(Date.UTC(year, month, 0));
     const cells = [];
 
-    for (let i = 0; i < firstDate.getDay(); i += 1) {
+    for (let i = 0; i < firstDate.getUTCDay(); i += 1) {
         cells.push({ key: `exercise-empty-${i}`, empty: true });
     }
 
-    for (let day = 1; day <= lastDate.getDate(); day += 1) {
-        const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    for (let day = 1; day <= lastDate.getUTCDate(); day += 1) {
+        const date = formatDateParts(year, month, day);
         cells.push({
             key: `exercise-${date}`,
             date,
@@ -370,16 +379,16 @@ const exerciseCalendarCells = computed(() => {
 
 const recordCalendarCells = computed(() => {
     const [year, month] = recordCalendarMonth.value.split("-").map(Number);
-    const firstDate = new Date(year, month - 1, 1);
-    const lastDate = new Date(year, month, 0);
+    const firstDate = new Date(Date.UTC(year, month - 1, 1));
+    const lastDate = new Date(Date.UTC(year, month, 0));
     const cells = [];
 
-    for (let i = 0; i < firstDate.getDay(); i += 1) {
+    for (let i = 0; i < firstDate.getUTCDay(); i += 1) {
         cells.push({ key: `record-empty-${i}`, empty: true });
     }
 
-    for (let day = 1; day <= lastDate.getDate(); day += 1) {
-        const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    for (let day = 1; day <= lastDate.getUTCDate(); day += 1) {
+        const date = formatDateParts(year, month, day);
         cells.push({
             key: `record-${date}`,
             date,
@@ -392,16 +401,16 @@ const recordCalendarCells = computed(() => {
 
 const exerciseRecordCalendarCells = computed(() => {
     const [year, month] = exerciseRecordCalendarMonth.value.split("-").map(Number);
-    const firstDate = new Date(year, month - 1, 1);
-    const lastDate = new Date(year, month, 0);
+    const firstDate = new Date(Date.UTC(year, month - 1, 1));
+    const lastDate = new Date(Date.UTC(year, month, 0));
     const cells = [];
 
-    for (let i = 0; i < firstDate.getDay(); i += 1) {
+    for (let i = 0; i < firstDate.getUTCDay(); i += 1) {
         cells.push({ key: `exercise-record-empty-${i}`, empty: true });
     }
 
-    for (let day = 1; day <= lastDate.getDate(); day += 1) {
-        const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    for (let day = 1; day <= lastDate.getUTCDate(); day += 1) {
+        const date = formatDateParts(year, month, day);
         cells.push({
             key: `exercise-record-${date}`,
             date,

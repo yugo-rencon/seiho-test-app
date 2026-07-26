@@ -40,6 +40,7 @@ const props = defineProps({
 
 const activeTab = ref("study");
 const activeStudyTab = ref("record");
+const activeExerciseTab = ref("record");
 
 const tabs = [
     { key: "study", label: "学習" },
@@ -52,6 +53,12 @@ const studyTabs = [
     { key: "summary", label: "累計" },
     { key: "daily", label: "日別" },
     { key: "monthly", label: "月別" },
+];
+
+const exerciseTabs = [
+    { key: "record", label: "記録" },
+    { key: "summary", label: "累計" },
+    { key: "daily", label: "日別" },
 ];
 
 const studyCategories = [
@@ -98,6 +105,8 @@ const pendingDeleteLog = ref(null);
 const pendingDeleteDateLabel = ref("");
 const datePickerOpen = ref(false);
 const recordCalendarMonth = ref(today.slice(0, 7));
+const exerciseDatePickerOpen = ref(false);
+const exerciseRecordCalendarMonth = ref(today.slice(0, 7));
 const selectedExerciseMonth = ref(props.exerciseMonthlySummaries[0]?.month || today.slice(0, 7));
 const selectedExerciseDay = ref(today);
 
@@ -137,6 +146,27 @@ const adjustStudyDate = (amount) => {
 
 const moveRecordCalendarMonth = (amount) => {
     recordCalendarMonth.value = moveMonth(recordCalendarMonth.value, amount);
+};
+
+const setExerciseDate = (date) => {
+    exerciseLogForm.exercised_on = date || today;
+    selectedExerciseDay.value = exerciseLogForm.exercised_on;
+    selectedExerciseMonth.value = exerciseLogForm.exercised_on.slice(0, 7);
+    exerciseRecordCalendarMonth.value = exerciseLogForm.exercised_on.slice(0, 7);
+    exerciseDatePickerOpen.value = false;
+};
+
+const openExerciseDatePicker = () => {
+    exerciseRecordCalendarMonth.value = String(exerciseLogForm.exercised_on || today).slice(0, 7);
+    exerciseDatePickerOpen.value = !exerciseDatePickerOpen.value;
+};
+
+const adjustExerciseDate = (amount) => {
+    setExerciseDate(addDays(exerciseLogForm.exercised_on, amount));
+};
+
+const moveExerciseRecordCalendarMonth = (amount) => {
+    exerciseRecordCalendarMonth.value = moveMonth(exerciseRecordCalendarMonth.value, amount);
 };
 
 const studyDateLabel = computed(() => {
@@ -352,6 +382,28 @@ const recordCalendarCells = computed(() => {
         const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
         cells.push({
             key: `record-${date}`,
+            date,
+            day,
+        });
+    }
+
+    return cells;
+});
+
+const exerciseRecordCalendarCells = computed(() => {
+    const [year, month] = exerciseRecordCalendarMonth.value.split("-").map(Number);
+    const firstDate = new Date(year, month - 1, 1);
+    const lastDate = new Date(year, month, 0);
+    const cells = [];
+
+    for (let i = 0; i < firstDate.getDay(); i += 1) {
+        cells.push({ key: `exercise-record-empty-${i}`, empty: true });
+    }
+
+    for (let day = 1; day <= lastDate.getDate(); day += 1) {
+        const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        cells.push({
+            key: `exercise-record-${date}`,
             date,
             day,
         });
@@ -587,15 +639,15 @@ const deleteStudyLog = () => {
 
                         <div class="block">
                             <span class="text-[11px] font-bold text-gray-500">カテゴリー</span>
-                            <div class="mt-1 grid grid-cols-3 gap-1 rounded-lg border border-amber-100 bg-amber-50/70 p-1 shadow-sm">
+                            <div class="mt-1 grid grid-cols-2 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
                                 <button
                                     v-for="category in studyCategories"
                                     :key="category.value"
                                     type="button"
                                     class="flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-bold transition"
                                     :class="studyLogForm.category === category.value
-                                        ? 'bg-white text-amber-950 shadow-sm ring-1 ring-amber-100'
-                                        : 'text-amber-700 hover:bg-white/70 hover:text-amber-900'"
+                                        ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
+                                        : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
                                     @click="studyLogForm.category = category.value"
                                 >
                                     <span class="h-2.5 w-2.5 rounded-full" :class="category.accent"></span>
@@ -826,15 +878,115 @@ const deleteStudyLog = () => {
             </div>
 
             <div v-if="activeTab === 'exercise'">
-                <section class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
+                <div class="mb-4 grid grid-cols-3 overflow-hidden rounded-lg border border-gray-200 bg-white text-xs font-semibold shadow-sm sm:flex sm:w-fit">
+                    <button
+                        v-for="tab in exerciseTabs"
+                        :key="tab.key"
+                        type="button"
+                        class="border-r border-gray-200 px-2 py-2 transition last:border-r-0 sm:px-5"
+                        :class="activeExerciseTab === tab.key
+                            ? 'bg-gray-900 text-white'
+                            : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'"
+                        @click="activeExerciseTab = tab.key"
+                    >
+                        {{ tab.label }}
+                    </button>
+                </div>
+
+                <section v-if="activeExerciseTab === 'record'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
                     <form class="grid gap-2.5 md:grid-cols-[16rem_minmax(20rem,30rem)_auto] md:items-end" @submit.prevent="submitExerciseLog">
                         <label class="block">
                             <span class="text-[11px] font-bold text-gray-500">日付</span>
-                            <input
-                                v-model="exerciseLogForm.exercised_on"
-                                type="date"
-                                class="mt-1 w-full rounded-lg border-gray-200 py-2 text-sm font-bold shadow-sm focus:border-gray-400 focus:ring-gray-400"
-                            />
+                            <div class="mt-1">
+                                <div class="grid grid-cols-[2.25rem_1fr_2.25rem] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+                                    <button
+                                        type="button"
+                                        class="border-r border-gray-200 bg-gray-50 text-base font-bold text-gray-500 transition hover:bg-gray-100"
+                                        @click="adjustExerciseDate(-1)"
+                                    >
+                                        -
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="px-3 py-2 text-center text-sm font-bold text-gray-900 transition hover:bg-gray-50"
+                                        @click="openExerciseDatePicker"
+                                    >
+                                        {{ formatDateLabel(exerciseLogForm.exercised_on) }}
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="border-l border-gray-200 bg-gray-50 text-base font-bold text-gray-500 transition hover:bg-gray-100"
+                                        @click="adjustExerciseDate(1)"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+
+                                <div
+                                    v-if="exerciseDatePickerOpen"
+                                    class="mt-2 rounded-2xl border border-gray-100 bg-white p-3 shadow-lg"
+                                >
+                                    <div class="flex items-center justify-between gap-2">
+                                        <button
+                                            type="button"
+                                            class="h-9 w-9 rounded-lg border border-gray-200 bg-white text-sm font-bold text-gray-600 transition hover:bg-gray-50"
+                                            @click="moveExerciseRecordCalendarMonth(-1)"
+                                        >
+                                            -
+                                        </button>
+                                        <p class="text-sm font-bold text-gray-900">{{ exerciseRecordCalendarMonth.replace("-", "/") }}</p>
+                                        <button
+                                            type="button"
+                                            class="h-9 w-9 rounded-lg border border-gray-200 bg-white text-sm font-bold text-gray-600 transition hover:bg-gray-50"
+                                            @click="moveExerciseRecordCalendarMonth(1)"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+
+                                    <div class="mt-3 grid grid-cols-7 text-center text-[10px] font-bold text-gray-400">
+                                        <div v-for="dayName in ['日', '月', '火', '水', '木', '金', '土']" :key="`exercise-record-${dayName}`" class="py-1">
+                                            {{ dayName }}
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-7 gap-1 text-center text-xs">
+                                        <div v-for="cell in exerciseRecordCalendarCells" :key="cell.key">
+                                            <button
+                                                v-if="!cell.empty"
+                                                type="button"
+                                                class="h-8 w-full rounded-lg font-bold transition"
+                                                :class="[
+                                                    exerciseLogForm.exercised_on === cell.date
+                                                        ? 'bg-gray-900 text-white shadow-sm'
+                                                        : cell.date === today
+                                                            ? 'bg-amber-50 text-amber-950 hover:bg-amber-100'
+                                                            : 'text-gray-600 hover:bg-gray-50',
+                                                ]"
+                                                @click="setExerciseDate(cell.date)"
+                                            >
+                                                {{ cell.day }}
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-3 grid grid-cols-2 gap-2">
+                                        <button
+                                            type="button"
+                                            class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50"
+                                            @click="exerciseDatePickerOpen = false"
+                                        >
+                                            閉じる
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="rounded-lg bg-gray-900 px-3 py-2 text-xs font-bold text-white transition hover:bg-gray-700"
+                                            @click="setExerciseDate(today)"
+                                        >
+                                            今日
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                             <span v-if="exerciseLogForm.errors.exercised_on" class="mt-1 block text-xs text-rose-600">
                                 {{ exerciseLogForm.errors.exercised_on }}
                             </span>
@@ -867,8 +1019,10 @@ const deleteStudyLog = () => {
                             </button>
                         </div>
                     </form>
+                </section>
 
-                    <div class="mt-3 grid gap-2 sm:grid-cols-3">
+                <section v-if="activeExerciseTab === 'summary'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
+                    <div class="grid gap-2 sm:grid-cols-3">
                         <div class="flex items-center justify-between rounded-lg border px-3 py-2" :class="exerciseActivities[0].cardClass">
                             <p class="text-[11px] font-bold">ウォーキング</p>
                             <p class="text-sm font-bold">{{ exerciseStats.walking_count }}日</p>
@@ -884,7 +1038,7 @@ const deleteStudyLog = () => {
                     </div>
                 </section>
 
-                <section class="mb-6 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-5">
+                <section v-if="activeExerciseTab === 'daily'" class="mb-6 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-5">
                     <div class="sm:flex sm:justify-end">
                         <div class="grid grid-cols-[2.75rem_1fr_2.75rem] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm sm:w-[22rem]">
                             <button

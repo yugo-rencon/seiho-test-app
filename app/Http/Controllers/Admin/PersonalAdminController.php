@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\PersonalExerciseLog;
 use App\Models\PersonalStudyLog;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -77,6 +78,44 @@ class PersonalAdminController extends Controller
                     ->values();
             });
 
+        $exerciseLogs = PersonalExerciseLog::query()
+            ->select(['id', 'exercised_on', 'activity', 'completed', 'memo'])
+            ->orderByDesc('exercised_on')
+            ->get();
+
+        $exerciseLogsByDay = $exerciseLogs
+            ->groupBy(fn (PersonalExerciseLog $log) => $log->exercised_on->format('Y-m-d'))
+            ->map(function ($dayLogs) {
+                return $dayLogs
+                    ->sortBy('activity')
+                    ->map(fn (PersonalExerciseLog $log) => [
+                        'id' => $log->id,
+                        'activity' => $log->activity,
+                        'completed' => $log->completed,
+                        'memo' => $log->memo,
+                    ])
+                    ->values();
+            });
+
+        $exerciseMonthlySummaries = $exerciseLogs
+            ->groupBy(fn (PersonalExerciseLog $log) => $log->exercised_on->format('Y-m'))
+            ->sortKeysDesc()
+            ->map(function ($monthLogs, string $month) {
+                $walkingCount = $monthLogs->where('activity', 'ウォーキング')->where('completed', true)->count();
+                $runningCount = $monthLogs->where('activity', 'ランニング')->where('completed', true)->count();
+                $strengthTrainingCount = $monthLogs->where('activity', '筋トレ')->where('completed', true)->count();
+
+                return [
+                    'month' => $month,
+                    'month_label' => $monthLogs->first()->exercised_on->format('Y/m'),
+                    'walking_count' => $walkingCount,
+                    'running_count' => $runningCount,
+                    'strength_training_count' => $strengthTrainingCount,
+                    'total_count' => $walkingCount + $runningCount + $strengthTrainingCount,
+                ];
+            })
+            ->values();
+
         return Inertia::render('Admin/Personal', [
             'stats' => [
                 'english_duration' => $this->formatDuration($englishMinutes),
@@ -95,6 +134,13 @@ class PersonalAdminController extends Controller
             'monthlySummaries' => $monthlySummaries,
             'dailySummaries' => $dailySummaries,
             'studyLogsByDay' => $studyLogsByDay,
+            'exerciseStats' => [
+                'walking_count' => $exerciseLogs->where('activity', 'ウォーキング')->where('completed', true)->count(),
+                'running_count' => $exerciseLogs->where('activity', 'ランニング')->where('completed', true)->count(),
+                'strength_training_count' => $exerciseLogs->where('activity', '筋トレ')->where('completed', true)->count(),
+            ],
+            'exerciseMonthlySummaries' => $exerciseMonthlySummaries,
+            'exerciseLogsByDay' => $exerciseLogsByDay,
         ]);
     }
 
@@ -164,6 +210,35 @@ class PersonalAdminController extends Controller
     public function deleteStudyLog(PersonalStudyLog $studyLog): RedirectResponse
     {
         $studyLog->delete();
+
+        return back();
+    }
+
+    public function storeExerciseLog(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'exercised_on' => ['required', 'date'],
+            'activity' => ['required', 'string', 'in:ウォーキング,ランニング,筋トレ'],
+            'memo' => ['nullable', 'string', 'max:1000'],
+        ]);
+
+        PersonalExerciseLog::updateOrCreate(
+            [
+                'exercised_on' => $validated['exercised_on'],
+                'activity' => $validated['activity'],
+            ],
+            [
+                'completed' => true,
+                'memo' => $validated['memo'] ?? null,
+            ],
+        );
+
+        return back();
+    }
+
+    public function deleteExerciseLog(PersonalExerciseLog $exerciseLog): RedirectResponse
+    {
+        $exerciseLog->delete();
 
         return back();
     }

@@ -20,6 +20,22 @@ const props = defineProps({
         type: Object,
         default: () => ({}),
     },
+    exerciseStats: {
+        type: Object,
+        default: () => ({
+            walking_count: 0,
+            running_count: 0,
+            strength_training_count: 0,
+        }),
+    },
+    exerciseMonthlySummaries: {
+        type: Array,
+        default: () => [],
+    },
+    exerciseLogsByDay: {
+        type: Object,
+        default: () => ({}),
+    },
 });
 
 const activeTab = ref("study");
@@ -27,6 +43,7 @@ const activeStudyTab = ref("record");
 
 const tabs = [
     { key: "study", label: "学習" },
+    { key: "exercise", label: "運動" },
     { key: "repayment", label: "返済" },
 ];
 
@@ -47,6 +64,12 @@ const learningSubcategories = [
     { value: "E資格", label: "E資格" },
 ];
 
+const exerciseActivities = [
+    { value: "ウォーキング", label: "ウォーキング", shortLabel: "walk", badgeClass: "bg-amber-50 text-amber-800", cardClass: "border-amber-100 bg-amber-50/80 text-amber-950" },
+    { value: "ランニング", label: "ランニング", shortLabel: "run", badgeClass: "bg-yellow-100 text-yellow-900", cardClass: "border-yellow-200 bg-yellow-50/90 text-yellow-950" },
+    { value: "筋トレ", label: "筋トレ", shortLabel: "筋トレ", badgeClass: "bg-orange-50 text-orange-800", cardClass: "border-orange-100 bg-orange-50/80 text-orange-950" },
+];
+
 const formatLocalDate = (date) => {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -65,10 +88,18 @@ const studyLogForm = useForm({
     set_count: 1,
 });
 const deleteStudyLogForm = useForm({});
+const exerciseLogForm = useForm({
+    exercised_on: today,
+    activity: "ウォーキング",
+    memo: "",
+});
+const deleteExerciseLogForm = useForm({});
 const pendingDeleteLog = ref(null);
 const pendingDeleteDateLabel = ref("");
 const datePickerOpen = ref(false);
 const recordCalendarMonth = ref(today.slice(0, 7));
+const selectedExerciseMonth = ref(props.exerciseMonthlySummaries[0]?.month || today.slice(0, 7));
+const selectedExerciseDay = ref(today);
 
 const formatDateLabel = (date) => {
     return String(date || today).replaceAll("-", "/");
@@ -124,8 +155,22 @@ const dailySummaryByDay = computed(() => {
     return Object.fromEntries(props.dailySummaries.map((summary) => [summary.day, summary]));
 });
 
+const exerciseSummaryByDay = computed(() => {
+    return Object.fromEntries(
+        Object.entries(props.exerciseLogsByDay).map(([day, logs]) => [day, logs.filter((log) => log.completed)]),
+    );
+});
+
+const exerciseActivityByValue = computed(() => {
+    return Object.fromEntries(exerciseActivities.map((activity) => [activity.value, activity]));
+});
+
 const selectedDayLogs = computed(() => {
     return props.studyLogsByDay[selectedCalendarDay.value] || [];
+});
+
+const selectedExerciseDayLogs = computed(() => {
+    return props.exerciseLogsByDay[selectedExerciseDay.value] || [];
 });
 
 const selectedStudyDateLogs = computed(() => {
@@ -187,8 +232,28 @@ const calendarMonthOptions = computed(() => {
     }));
 });
 
+const exerciseMonthOptions = computed(() => {
+    const months = props.exerciseMonthlySummaries.map((summary) => ({
+        value: summary.month,
+        label: summary.month_label,
+    }));
+
+    if (!months.some((month) => month.value === today.slice(0, 7))) {
+        months.unshift({
+            value: today.slice(0, 7),
+            label: today.slice(0, 7).replace("-", "/"),
+        });
+    }
+
+    return months;
+});
+
 const selectedCalendarMonthIndex = computed(() => {
     return calendarMonthOptions.value.findIndex((month) => month.value === selectedCalendarMonth.value);
+});
+
+const selectedExerciseMonthIndex = computed(() => {
+    return exerciseMonthOptions.value.findIndex((month) => month.value === selectedExerciseMonth.value);
 });
 
 const setCalendarMonth = (month) => {
@@ -208,6 +273,25 @@ const moveCalendarMonth = (amount) => {
     setCalendarMonth(calendarMonthOptions.value[nextIndex].value);
 };
 
+const setExerciseMonth = (month) => {
+    selectedExerciseMonth.value = month;
+
+    const firstDayInMonth = Object.keys(props.exerciseLogsByDay)
+        .sort()
+        .find((day) => day.startsWith(month));
+    selectedExerciseDay.value = firstDayInMonth || `${month}-01`;
+};
+
+const moveExerciseMonth = (amount) => {
+    const nextIndex = selectedExerciseMonthIndex.value + amount;
+
+    if (nextIndex < 0 || nextIndex >= exerciseMonthOptions.value.length) {
+        return;
+    }
+
+    setExerciseMonth(exerciseMonthOptions.value[nextIndex].value);
+};
+
 const calendarCells = computed(() => {
     const [year, month] = selectedCalendarMonth.value.split("-").map(Number);
     const firstDate = new Date(year, month - 1, 1);
@@ -225,6 +309,29 @@ const calendarCells = computed(() => {
             date,
             day,
             summary: dailySummaryByDay.value[date],
+        });
+    }
+
+    return cells;
+});
+
+const exerciseCalendarCells = computed(() => {
+    const [year, month] = selectedExerciseMonth.value.split("-").map(Number);
+    const firstDate = new Date(year, month - 1, 1);
+    const lastDate = new Date(year, month, 0);
+    const cells = [];
+
+    for (let i = 0; i < firstDate.getDay(); i += 1) {
+        cells.push({ key: `exercise-empty-${i}`, empty: true });
+    }
+
+    for (let day = 1; day <= lastDate.getDate(); day += 1) {
+        const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        cells.push({
+            key: `exercise-${date}`,
+            date,
+            day,
+            logs: exerciseSummaryByDay.value[date] || [],
         });
     }
 
@@ -267,6 +374,22 @@ const submitStudyLog = () => {
     });
 };
 
+const submitExerciseLog = () => {
+    exerciseLogForm.post(route("admin.personal.exerciseLogs.store"), {
+        preserveScroll: true,
+        onSuccess: () => {
+            selectedExerciseDay.value = exerciseLogForm.exercised_on;
+            selectedExerciseMonth.value = exerciseLogForm.exercised_on.slice(0, 7);
+            exerciseLogForm.defaults({
+                exercised_on: exerciseLogForm.exercised_on,
+                activity: exerciseLogForm.activity,
+                memo: "",
+            });
+            exerciseLogForm.memo = "";
+        },
+    });
+};
+
 watch(
     [() => studyLogForm.studied_on, () => studyLogForm.category, () => studyLogForm.subcategory],
     () => {
@@ -281,6 +404,17 @@ watch(
 
 const selectCalendarDay = (date) => {
     selectedCalendarDay.value = date;
+};
+
+const selectExerciseDay = (date) => {
+    selectedExerciseDay.value = date;
+    exerciseLogForm.exercised_on = date;
+};
+
+const deleteExerciseLog = (log) => {
+    deleteExerciseLogForm.delete(route("admin.personal.exerciseLogs.delete", log.id), {
+        preserveScroll: true,
+    });
 };
 
 const openDeleteStudyLogModal = (log, dateLabel = selectedDayLabel.value) => {
@@ -453,15 +587,15 @@ const deleteStudyLog = () => {
 
                         <div class="block">
                             <span class="text-[11px] font-bold text-gray-500">カテゴリー</span>
-                            <div class="mt-1 grid grid-cols-2 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
+                            <div class="mt-1 grid grid-cols-3 gap-1 rounded-lg border border-amber-100 bg-amber-50/70 p-1 shadow-sm">
                                 <button
                                     v-for="category in studyCategories"
                                     :key="category.value"
                                     type="button"
                                     class="flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-bold transition"
                                     :class="studyLogForm.category === category.value
-                                        ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
-                                        : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
+                                        ? 'bg-white text-amber-950 shadow-sm ring-1 ring-amber-100'
+                                        : 'text-amber-700 hover:bg-white/70 hover:text-amber-900'"
                                     @click="studyLogForm.category = category.value"
                                 >
                                     <span class="h-2.5 w-2.5 rounded-full" :class="category.accent"></span>
@@ -687,6 +821,161 @@ const deleteStudyLog = () => {
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </section>
+            </div>
+
+            <div v-if="activeTab === 'exercise'">
+                <section class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
+                    <form class="grid gap-2.5 md:grid-cols-[16rem_minmax(20rem,30rem)_auto] md:items-end" @submit.prevent="submitExerciseLog">
+                        <label class="block">
+                            <span class="text-[11px] font-bold text-gray-500">日付</span>
+                            <input
+                                v-model="exerciseLogForm.exercised_on"
+                                type="date"
+                                class="mt-1 w-full rounded-lg border-gray-200 py-2 text-sm font-bold shadow-sm focus:border-gray-400 focus:ring-gray-400"
+                            />
+                            <span v-if="exerciseLogForm.errors.exercised_on" class="mt-1 block text-xs text-rose-600">
+                                {{ exerciseLogForm.errors.exercised_on }}
+                            </span>
+                        </label>
+
+                        <div class="block">
+                            <span class="text-[11px] font-bold text-gray-500">種目</span>
+                            <div class="mt-1 grid grid-cols-3 gap-1 rounded-lg border border-amber-100 bg-amber-50/70 p-1 shadow-sm">
+                                <button
+                                    v-for="activity in exerciseActivities"
+                                    :key="activity.value"
+                                    type="button"
+                                    class="rounded-md px-0.5 py-2 text-[10px] font-bold leading-tight transition focus:outline-none focus:ring-2 focus:ring-amber-300 sm:px-3 sm:text-sm"
+                                    :class="exerciseLogForm.activity === activity.value
+                                        ? 'bg-white text-amber-950 shadow-sm ring-1 ring-amber-100'
+                                        : 'text-amber-700 hover:bg-white/70 hover:text-amber-900'"
+                                    @click="exerciseLogForm.activity = activity.value"
+                                >
+                                    {{ activity.label }}
+                                </button>
+                            </div>
+                            <span v-if="exerciseLogForm.errors.activity" class="mt-1 block text-xs text-rose-600">
+                                {{ exerciseLogForm.errors.activity }}
+                            </span>
+                        </div>
+
+                        <div class="flex items-end">
+                            <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto md:whitespace-nowrap" :disabled="exerciseLogForm.processing">
+                                {{ exerciseLogForm.processing ? "保存中" : "実施で保存" }}
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="mt-3 grid gap-2 sm:grid-cols-3">
+                        <div class="flex items-center justify-between rounded-lg border px-3 py-2" :class="exerciseActivities[0].cardClass">
+                            <p class="text-[11px] font-bold">ウォーキング</p>
+                            <p class="text-sm font-bold">{{ exerciseStats.walking_count }}日</p>
+                        </div>
+                        <div class="flex items-center justify-between rounded-lg border px-3 py-2" :class="exerciseActivities[1].cardClass">
+                            <p class="text-[11px] font-bold">ランニング</p>
+                            <p class="text-sm font-bold">{{ exerciseStats.running_count }}日</p>
+                        </div>
+                        <div class="flex items-center justify-between rounded-lg border px-3 py-2" :class="exerciseActivities[2].cardClass">
+                            <p class="text-[11px] font-bold">筋トレ</p>
+                            <p class="text-sm font-bold">{{ exerciseStats.strength_training_count }}日</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-6 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-5">
+                    <div class="sm:flex sm:justify-end">
+                        <div class="grid grid-cols-[2.75rem_1fr_2.75rem] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm sm:w-[22rem]">
+                            <button
+                                type="button"
+                                class="border-r border-gray-200 bg-gray-50 px-2 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
+                                :disabled="selectedExerciseMonthIndex >= exerciseMonthOptions.length - 1"
+                                @click="moveExerciseMonth(1)"
+                            >
+                                前
+                            </button>
+                            <select
+                                :value="selectedExerciseMonth"
+                                class="border-0 py-2 text-center text-sm font-bold text-gray-900 shadow-none focus:border-0 focus:ring-0"
+                                @change="setExerciseMonth($event.target.value)"
+                            >
+                                <option v-for="month in exerciseMonthOptions" :key="month.value" :value="month.value">
+                                    {{ month.label }}
+                                </option>
+                            </select>
+                            <button
+                                type="button"
+                                class="border-l border-gray-200 bg-gray-50 px-2 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
+                                :disabled="selectedExerciseMonthIndex <= 0"
+                                @click="moveExerciseMonth(-1)"
+                            >
+                                次
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 overflow-hidden rounded-lg border border-gray-100">
+                        <div class="grid grid-cols-7 bg-gray-50 text-center text-[10px] font-semibold text-gray-500 sm:text-xs">
+                            <div v-for="dayName in ['日', '月', '火', '水', '木', '金', '土']" :key="`exercise-${dayName}`" class="py-2">
+                                {{ dayName }}
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-7 divide-x divide-y divide-gray-100 bg-white text-[10px] sm:text-xs">
+                            <div
+                                v-for="cell in exerciseCalendarCells"
+                                :key="cell.key"
+                                class="h-[3.75rem] p-0.5 sm:h-[4.5rem] sm:p-1.5"
+                                :class="[
+                                    cell.empty ? 'bg-gray-50/60' : 'bg-white',
+                                    selectedExerciseDay === cell.date ? 'bg-gray-100 shadow-[inset_0_0_0_1px_rgba(107,114,128,0.28)]' : '',
+                                ]"
+                            >
+                                <button
+                                    v-if="!cell.empty"
+                                    type="button"
+                                    class="flex h-full w-full flex-col items-start justify-start overflow-hidden rounded text-left transition hover:bg-gray-50"
+                                    @click="selectExerciseDay(cell.date)"
+                                >
+                                    <div class="w-full text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
+                                    <div v-if="cell.logs.length > 0" class="mt-0.5 w-full space-y-0.5">
+                                        <div
+                                            v-for="log in cell.logs"
+                                            :key="`exercise-cell-${log.id}`"
+                                            class="w-full truncate rounded px-0.5 py-0 text-left text-[7px] font-semibold leading-4 sm:px-1 sm:text-xs"
+                                            :class="exerciseActivityByValue[log.activity]?.badgeClass || 'bg-gray-50 text-gray-700'"
+                                        >
+                                            {{ log.activity }}
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 rounded-lg border border-gray-100 bg-gray-50 p-3">
+                        <div class="flex items-center justify-between gap-3">
+                            <h3 class="text-sm font-bold text-gray-900">{{ selectedExerciseDay.replaceAll("-", "/") }}</h3>
+                            <p class="text-xs font-semibold text-gray-500">{{ selectedExerciseDayLogs.length }}件</p>
+                        </div>
+                        <div v-if="selectedExerciseDayLogs.length > 0" class="mt-3 space-y-2">
+                            <div
+                                v-for="log in selectedExerciseDayLogs"
+                                :key="`exercise-log-${log.id}`"
+                                class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2"
+                            >
+                                <p class="text-sm font-bold text-gray-900">{{ log.activity }}</p>
+                                <button
+                                    type="button"
+                                    class="rounded-md border border-rose-200 bg-white px-3 py-1.5 text-xs font-bold text-rose-600 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-60"
+                                    :disabled="deleteExerciseLogForm.processing"
+                                    @click="deleteExerciseLog(log)"
+                                >
+                                    削除
+                                </button>
+                            </div>
+                        </div>
+                        <p v-else class="mt-3 text-sm text-gray-500">この日の運動記録はありません。</p>
                     </div>
                 </section>
             </div>

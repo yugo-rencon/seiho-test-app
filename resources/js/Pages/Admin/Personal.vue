@@ -550,7 +550,7 @@ const deleteStudyLog = () => {
 
                 <section v-if="activeStudyTab === 'record'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
                     <form class="grid gap-2.5 md:grid-cols-[1fr_1fr_1fr_auto]" @submit.prevent="submitStudyLog">
-                        <label class="block">
+                        <div class="block">
                             <span class="text-[11px] font-bold text-gray-500">日付</span>
                             <div class="mt-1">
                                 <div class="grid grid-cols-[2.25rem_1fr_2.25rem] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
@@ -564,7 +564,7 @@ const deleteStudyLog = () => {
                                     <button
                                         type="button"
                                         class="px-3 py-2 text-center text-sm font-bold text-gray-900 transition hover:bg-gray-50"
-                                        @click.stop="openDatePicker"
+                                        @click.prevent.stop="openDatePicker"
                                     >
                                         {{ studyDateLabel }}
                                     </button>
@@ -605,19 +605,17 @@ const deleteStudyLog = () => {
                                         </div>
                                     </div>
                                     <div class="grid grid-cols-7 gap-1 text-center text-xs">
-                                        <div v-for="cell in recordCalendarCells" :key="cell.key">
+                                        <div v-for="cell in recordCalendarCells" :key="cell.key" class="h-10">
                                             <button
                                                 v-if="!cell.empty"
                                                 type="button"
-                                                class="h-8 w-full rounded-lg font-bold transition"
+                                                class="h-10 w-full rounded-lg font-bold transition"
                                                 :class="[
                                                     studyLogForm.studied_on === cell.date
                                                         ? 'bg-gray-900 text-white shadow-sm'
-                                                        : cell.date === today
-                                                            ? 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                                                            : 'text-gray-600 hover:bg-gray-50',
+                                                        : 'text-gray-600 hover:bg-gray-50',
                                                 ]"
-                                                @click.stop="setStudyDate(cell.date)"
+                                                @click.prevent.stop="setStudyDate(cell.date)"
                                             >
                                                 {{ cell.day }}
                                             </button>
@@ -628,14 +626,14 @@ const deleteStudyLog = () => {
                                         <button
                                             type="button"
                                             class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50"
-                                            @click.stop="datePickerOpen = false"
+                                            @click.prevent.stop="datePickerOpen = false"
                                         >
                                             閉じる
                                         </button>
                                         <button
                                             type="button"
                                             class="rounded-lg bg-gray-900 px-3 py-2 text-xs font-bold text-white transition hover:bg-gray-700"
-                                            @click.stop="setStudyDate(today)"
+                                            @click.prevent.stop="setStudyDate(today)"
                                         >
                                             今日
                                         </button>
@@ -645,7 +643,7 @@ const deleteStudyLog = () => {
                             <span v-if="studyLogForm.errors.studied_on" class="mt-1 block text-xs text-rose-600">
                                 {{ studyLogForm.errors.studied_on }}
                             </span>
-                        </label>
+                        </div>
 
                         <div class="block">
                             <span class="text-[11px] font-bold text-gray-500">カテゴリー</span>
@@ -690,7 +688,7 @@ const deleteStudyLog = () => {
                             </span>
                         </div>
 
-                        <label class="block">
+                        <div class="block">
                             <span class="text-[11px] font-bold text-gray-500">セット数</span>
                             <div class="mt-1 flex overflow-hidden rounded-lg border border-gray-200 shadow-sm">
                                 <button type="button" class="w-9 border-r border-gray-200 bg-gray-50 text-base font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="studyLogForm.set_count <= 1" @click="adjustStudySetCount(-1)">
@@ -716,7 +714,7 @@ const deleteStudyLog = () => {
                             <span v-if="studyLogForm.errors.set_count" class="mt-1 block text-xs text-rose-600">
                                 {{ studyLogForm.errors.set_count }}
                             </span>
-                        </label>
+                        </div>
 
                         <div class="flex items-end">
                             <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto" :disabled="studyLogForm.processing">
@@ -905,7 +903,7 @@ const deleteStudyLog = () => {
 
                 <section v-if="activeExerciseTab === 'record'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
                     <form class="grid gap-2.5 md:grid-cols-[16rem_minmax(20rem,30rem)_auto] md:items-end" @submit.prevent="submitExerciseLog">
-                        <label class="block">
+                        <div class="block">
                             <span class="text-[11px] font-bold text-gray-500">日付</span>
                             <div class="mt-1">
                                 <div class="grid grid-cols-[2.25rem_1fr_2.25rem] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
@@ -919,7 +917,7 @@ const deleteStudyLog = () => {
                                     <button
                                         type="button"
                                         class="px-3 py-2 text-center text-sm font-bold text-gray-900 transition hover:bg-gray-50"
-                                        @click.stop="openExerciseDatePicker"
+                                        @click.prevent.stop="openExerciseDatePicker"
                                     >
                                         {{ formatDateLabel(exerciseLogForm.exercised_on) }}
                                     </button>
@@ -960,19 +958,17 @@ const deleteStudyLog = () => {
                                         </div>
                                     </div>
                                     <div class="grid grid-cols-7 gap-1 text-center text-xs">
-                                        <div v-for="cell in exerciseRecordCalendarCells" :key="cell.key">
+                                        <div v-for="cell in exerciseRecordCalendarCells" :key="cell.key" class="h-10">
                                             <button
                                                 v-if="!cell.empty"
                                                 type="button"
-                                                class="h-8 w-full rounded-lg font-bold transition"
+                                                class="h-10 w-full rounded-lg font-bold transition"
                                                 :class="[
                                                     exerciseLogForm.exercised_on === cell.date
                                                         ? 'bg-gray-900 text-white shadow-sm'
-                                                        : cell.date === today
-                                                            ? 'bg-amber-50 text-amber-950 hover:bg-amber-100'
-                                                            : 'text-gray-600 hover:bg-gray-50',
+                                                        : 'text-gray-600 hover:bg-gray-50',
                                                 ]"
-                                                @click.stop="setExerciseDate(cell.date)"
+                                                @click.prevent.stop="setExerciseDate(cell.date)"
                                             >
                                                 {{ cell.day }}
                                             </button>
@@ -983,14 +979,14 @@ const deleteStudyLog = () => {
                                         <button
                                             type="button"
                                             class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50"
-                                            @click.stop="exerciseDatePickerOpen = false"
+                                            @click.prevent.stop="exerciseDatePickerOpen = false"
                                         >
                                             閉じる
                                         </button>
                                         <button
                                             type="button"
                                             class="rounded-lg bg-gray-900 px-3 py-2 text-xs font-bold text-white transition hover:bg-gray-700"
-                                            @click.stop="setExerciseDate(today)"
+                                            @click.prevent.stop="setExerciseDate(today)"
                                         >
                                             今日
                                         </button>
@@ -1000,7 +996,7 @@ const deleteStudyLog = () => {
                             <span v-if="exerciseLogForm.errors.exercised_on" class="mt-1 block text-xs text-rose-600">
                                 {{ exerciseLogForm.errors.exercised_on }}
                             </span>
-                        </label>
+                        </div>
 
                         <div class="block">
                             <span class="text-[11px] font-bold text-gray-500">種目</span>

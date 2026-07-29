@@ -141,7 +141,7 @@ const scopePlan = computed(() => {
 
     return {
         price: "¥1,980",
-        description: "全科目・全年度・全フォームの解説を一括で解放できます。",
+        description: "全科目・全年度・全フォームの解説を一括で解放",
         features: [
             "全科目・全年度・全フォームの解説を閲覧可能",
             "購入後すぐ利用可能",

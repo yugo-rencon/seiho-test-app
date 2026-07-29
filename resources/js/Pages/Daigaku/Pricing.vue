@@ -43,13 +43,6 @@ const plans = [
                 </h1>
             </section>
 
-            <section class="mx-auto mt-6 max-w-3xl rounded-xl border border-gray-200 bg-slate-100 px-4 py-4 text-sm font-medium leading-relaxed text-gray-700 shadow-sm">
-                <p class="font-bold text-gray-900">安心してお支払いできます</p>
-                <p class="mt-1">
-                    決済は多くのサービスで利用されているStripeを通じて行われ、カード情報は当サイトでは保存・管理しません。
-                </p>
-            </section>
-
             <section class="mx-auto mt-10 grid max-w-3xl gap-6">
                 <div
                     v-for="plan in plans"
@@ -146,6 +139,13 @@ const plans = [
                         </button>
                     </div>
                 </div>
+            </section>
+
+            <section class="mx-auto mt-5 max-w-3xl rounded-xl border border-gray-200 bg-slate-100 px-4 py-4 text-sm font-medium leading-relaxed text-gray-700 shadow-sm">
+                <p class="font-bold text-gray-900">安心してお支払いできます</p>
+                <p class="mt-1">
+                    決済は多くのサービスで利用されているStripeを通じて行われ、カード情報は当サイトでは保存・管理しません。
+                </p>
             </section>
 
             <div class="mt-5 text-center text-sm text-gray-600">

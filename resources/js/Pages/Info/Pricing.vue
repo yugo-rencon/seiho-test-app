@@ -211,13 +211,6 @@ const plans = computed(() => [
                 </h1>
             </section>
 
-            <section class="mx-auto mt-6 max-w-3xl rounded-xl border border-gray-200 bg-slate-100 px-4 py-4 text-sm font-medium leading-relaxed text-gray-700 shadow-sm">
-                <p class="font-bold text-gray-900">安心してお支払いいただけます</p>
-                <p class="mt-1">
-                    決済は多くのサービスで利用されているStripeを通じて行われ、カード情報は当サイトでは保存・管理をいたしません。
-                </p>
-            </section>
-
             <section
                 class="mt-10 grid gap-6"
                 :class="plans.length === 1 ? 'mx-auto max-w-3xl' : 'md:grid-cols-2'"
@@ -357,6 +350,13 @@ const plans = computed(() => [
                         </button>
                     </div>
                 </div>
+            </section>
+
+            <section class="mx-auto mt-5 max-w-3xl rounded-xl border border-gray-200 bg-slate-100 px-4 py-4 text-sm font-medium leading-relaxed text-gray-700 shadow-sm">
+                <p class="font-bold text-gray-900">安心してお支払いいただけます</p>
+                <p class="mt-1">
+                    決済は多くのサービスで利用されているStripeを通じて行われ、カード情報は当サイトでは保存・管理をいたしません。
+                </p>
             </section>
 
             <div class="mt-5 text-center text-sm text-gray-600">

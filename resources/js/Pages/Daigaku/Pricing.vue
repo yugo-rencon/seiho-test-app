@@ -30,16 +30,6 @@ const plans = [
         highlighted: true,
         badge: "おすすめ",
     },
-    {
-        key: "free",
-        name: "フリープラン（一部無料）",
-        price: "¥0",
-        note: "無料",
-        description: "全6科目の最新年度フォームAを無料公開しています。",
-        features: ["全6科目 最新年度 フォームA"],
-        cta: "無料で見る",
-        href: "daigaku.index",
-    },
 ];
 </script>
 
@@ -60,7 +50,7 @@ const plans = [
                 </p>
             </section>
 
-            <section class="mt-10 grid gap-6 md:grid-cols-2">
+            <section class="mx-auto mt-10 grid max-w-3xl gap-6">
                 <div
                     v-for="plan in plans"
                     :key="plan.key"
@@ -154,24 +144,25 @@ const plans = [
                         >
                             購入済み
                         </button>
-                        <Link
-                            v-else
-                            :href="route(plan.href)"
-                            class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-blue-200 bg-white px-5 py-3 text-base font-semibold text-blue-700 transition hover:bg-blue-50"
-                        >
-                            {{ plan.cta }}
-                        </Link>
                     </div>
                 </div>
             </section>
 
-            <section class="mt-10 border-t border-gray-100 pt-8 text-base text-gray-600">
+            <div class="mt-5 text-center text-sm text-gray-600">
+                一部無料で確認できます。
+                <Link
+                    :href="route('daigaku.index')"
+                    class="font-semibold text-blue-700 underline underline-offset-4"
+                >
+                    無料で見る
+                </Link>
+            </div>
+
+            <section class="mx-auto mt-10 max-w-3xl border-t border-gray-100 pt-8 text-base text-gray-600">
                 <h2 class="text-lg font-bold text-gray-900">ご注意</h2>
                 <ul class="mt-3 list-disc list-inside space-y-2">
-                    <li>問題文は掲載していません。解説のみを提供します。</li>
+                    <li>問題文は掲載しておらず、解説のみを提供します。</li>
                     <li>内容は随時更新される場合があります。</li>
-                    <li>月額ではなく、追加課金なしの買い切りプランです。</li>
-                    <li>購入後すぐに対象の解説を閲覧できます。</li>
                     <li>プレミアムの同時利用は2端末までです。</li>
                     <li>決済はStripeを利用しています。カード情報はStripeが安全に管理し、当サイト運営者が確認することはありません。</li>
                 </ul>

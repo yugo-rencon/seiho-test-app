@@ -212,9 +212,9 @@ const plans = computed(() => [
             </section>
 
             <section class="mx-auto mt-6 max-w-3xl rounded-xl border border-gray-200 bg-slate-100 px-4 py-4 text-sm font-medium leading-relaxed text-gray-700 shadow-sm">
-                <p class="font-bold text-gray-900">安心してお支払いできます</p>
+                <p class="font-bold text-gray-900">安心してお支払いいただけます</p>
                 <p class="mt-1">
-                    決済は多くのサービスで利用されているStripeを通じて行われ、カード情報は当サイトでは保存・管理しません。
+                    決済は多くのサービスで利用されているStripeを通じて行われ、カード情報は当サイトでは保存・管理をいたしません。
                 </p>
             </section>
 
@@ -360,7 +360,7 @@ const plans = computed(() => [
             </section>
 
             <div class="mt-5 text-center text-sm text-gray-600">
-                一部無料で確認できます。
+                一部無料でご利用いただけます。
                 <Link
                     :href="route(freeRouteName)"
                     class="font-semibold underline underline-offset-4"
@@ -373,10 +373,10 @@ const plans = computed(() => [
             <section class="mx-auto mt-10 max-w-3xl border-t border-gray-100 pt-8 text-base text-gray-600">
                 <h2 class="text-lg font-bold text-gray-900">ご注意</h2>
                 <ul class="mt-3 list-disc list-inside space-y-2">
-                    <li>問題文は掲載しておらず、解説のみを提供します。</li>
+                    <li>問題文は掲載しておりません。</li>
                     <li>内容は随時更新される場合があります。</li>
                     <li>プレミアムの同時利用は2端末までです。</li>
-                    <li>決済はStripeを利用しています。カード情報はStripeが安全に管理し、当サイト運営者が確認することはありません。</li>
+                    <li>決済はStripeを利用しています。カード情報はStripeが安全に管理し、当サイト運営者が確認することはできません。</li>
                 </ul>
                 <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
                     <Link :href="route(tokushoRouteName)" class="text-gray-700 underline underline-offset-4 hover:text-gray-900">

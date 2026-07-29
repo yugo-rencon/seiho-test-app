@@ -18,12 +18,12 @@ const plans = [
         key: "premium",
         name: "プレミアム（買い切り）",
         price: "¥1,480",
-        note: "買い切り・追加費用なし",
+        note: "買い切り・追加料金なし",
         description: "全科目・全年度・全フォームの解説を一括で解放できます。",
         features: [
-            "全科目・全年度・全フォームを閲覧可能",
-            "広告なしで学習に集中",
-            "今後追加されるコンテンツも閲覧可",
+            "全科目・全年度・全フォームの解説を閲覧可能",
+            "購入後すぐ利用可能",
+            "今後追加される解説も追加料金なしで閲覧可能",
         ],
         cta: "プレミアムプランを始める",
         href: "billing.checkout",
@@ -95,9 +95,10 @@ const plans = [
                         <div class="mt-5 flex items-end gap-2">
                             <div class="text-4xl font-bold tracking-tight text-gray-900">
                                 {{ plan.price }}
+                                <span v-if="plan.key === 'premium'" class="text-sm font-bold text-gray-500">（税込）</span>
                             </div>
                             <div class="pb-1 text-xs text-gray-500">
-                                {{ plan.key === "premium" ? "一括払い" : plan.note }}
+                                {{ plan.note }}
                             </div>
                         </div>
 
@@ -113,10 +114,13 @@ const plans = [
                         </ul>
                         <p
                             v-if="plan.key === 'premium'"
-                            class="mt-5 rounded-lg bg-gray-50 px-3 py-2 text-xs font-medium text-gray-600"
+                            class="mt-5 rounded-lg bg-gray-50 px-3 py-3 text-xs font-medium leading-relaxed text-gray-600"
                         >
-                            利用期間：期限なし<br />
-                            お支払い方法：クレジットカード / Apple Pay / Google Pay / Link
+                            <span class="block font-bold text-gray-900">安心してお支払いできます</span>
+                            <span class="mt-1 block">
+                                決済は、世界中の多くのWebサービスやオンラインショップで利用されているStripeを通じて行われます。カード情報はStripe側で安全に処理され、当サイトでは一切保存・管理しません。
+                            </span>
+                            <span class="mt-1 block">クレジットカード / Apple Pay / Google Pay / Linkに対応しています。</span>
                         </p>
                     </div>
 
@@ -160,7 +164,7 @@ const plans = [
                     <li>月額ではなく、追加課金なしの買い切りプランです。</li>
                     <li>購入後すぐに対象の解説を閲覧できます。</li>
                     <li>プレミアムの同時利用は2端末までです。</li>
-                    <li>決済はStripeを利用しています。クレジットカード、Apple Pay、Google Pay、Linkに対応しています。</li>
+                    <li>決済はStripeを利用しています。カード情報はStripeが安全に管理し、当サイト運営者が確認することはありません。</li>
                 </ul>
                 <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
                     <Link :href="route('daigaku.tokusho')" class="text-gray-700 underline underline-offset-4 hover:text-gray-900">

@@ -78,7 +78,7 @@ import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
                 <div>
                     <h2 class="text-base font-bold text-gray-900">6. Cookieの使用について</h2>
                     <p class="mt-2">
-                        当サイトは、ログイン状態の維持、アクセス解析、広告配信の最適化のためCookieを利用します。Cookieはブラウザ設定で無効化できますが、一部機能が利用できなくなる場合があります。
+                        当サイトは、ログイン状態の維持、アクセス解析のためCookieを利用します。Cookieはブラウザ設定で無効化できますが、一部機能が利用できなくなる場合があります。
                     </p>
                 </div>
 

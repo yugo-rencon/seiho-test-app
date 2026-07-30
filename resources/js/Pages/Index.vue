@@ -53,8 +53,8 @@ const pricingHref = computed(() =>
                         <p class="text-[13px] font-bold tracking-wide sm:text-sm">
                             生命保険講座の過去問解説サイト
                         </p>
-                        <div class="mt-1 flex items-center justify-center gap-2 sm:gap-3">
-                            <span class="whitespace-nowrap text-[10px] font-semibold text-purple-700/90 sm:text-xs">
+                        <div class="mt-1 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
+                            <span class="min-w-0 text-center text-[10px] font-semibold text-purple-700/90 sm:text-xs">
                                 プレミアムプランは累計700名以上が利用！
                             </span>
                             <Link

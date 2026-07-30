@@ -48,26 +48,22 @@ const pricingHref = computed(() =>
                     <h1 class="sr-only">生命保険講座過去問解説</h1>
                     <div
                         v-if="!hasPremium"
-                        class="mb-5 rounded-2xl border border-purple-100 bg-purple-50/70 px-3 py-2 text-left text-[12px] leading-5 text-purple-800 sm:px-4 sm:py-2.5 sm:text-center"
+                        class="mb-4 rounded-2xl border border-purple-100 bg-purple-50/70 px-3 py-2 text-center text-purple-800 sm:mb-5 sm:px-4 sm:py-3"
                     >
-                        <span class="block font-semibold tracking-wide">
-                            生命保険講座の過去問解説サイトです。
-                        </span>
-                        <span class="mt-0.5 block text-[11px] font-medium text-purple-700/90">
-                            最新年度フォームAからお試しください。
+                        <p class="text-[13px] font-bold tracking-wide sm:text-sm">
+                            生命保険講座の過去問解説サイト
+                        </p>
+                        <div class="mt-1 flex items-center justify-center gap-2 sm:gap-3">
+                            <span class="whitespace-nowrap text-[10px] font-semibold text-purple-700/90 sm:text-xs">
+                                プレミアムプランは累計700名以上が利用！
+                            </span>
                             <Link
                                 :href="pricingHref"
-                                class="ml-1 hidden font-semibold text-purple-600 underline decoration-purple-300 underline-offset-2 transition hover:text-purple-700 md:inline"
+                                class="inline-flex shrink-0 items-center gap-1 rounded-full border border-purple-200 bg-white px-2.5 py-1 text-[11px] font-bold text-purple-700 shadow-sm transition hover:border-purple-300 hover:bg-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-1 sm:px-3 sm:text-xs"
                             >
-                                ▶ すべての解説をまとめて閲覧
+                                すべての解説を見る <span aria-hidden="true">▶</span>
                             </Link>
-                        </span>
-                        <Link
-                            :href="pricingHref"
-                            class="mt-1 inline-block text-xs font-semibold text-purple-600 underline decoration-purple-300 underline-offset-2 transition hover:text-purple-700 md:hidden"
-                        >
-                            ▶ すべての解説をまとめて閲覧
-                        </Link>
+                        </div>
                     </div>
 
                     <!-- プレミアム会員向けの状態表示 -->
@@ -97,9 +93,7 @@ const pricingHref = computed(() =>
                             :mypage-input-href="mypageInputHref"
                         />
 
-                        <div
-                            class="mt-6 divide-y divide-gray-100 border border-gray-100 rounded-2xl bg-white"
-                        >
+                        <div class="mt-6 divide-y divide-gray-100 border border-gray-100 rounded-2xl bg-white">
                             <!-- 年度ブロック（2024/2023/2022/2021） -->
                             <YearBlock
                                 v-for="year in activeSection.years"

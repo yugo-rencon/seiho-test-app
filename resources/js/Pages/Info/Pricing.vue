@@ -286,7 +286,7 @@ const plans = computed(() => [
                             v-if="plan.key === 'premium' || plan.key === 'basic_bundle'"
                             class="mt-3 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-700"
                         >
-                            <span aria-hidden="true" class="mr-1">✓</span>累計700名以上にご利用いただいています
+                            <span aria-hidden="true" class="mr-1">✓</span>累計700名以上の方にご利用いただいています
                         </p>
                         <div
                             v-if="plan.key === 'premium' || plan.key === 'basic_bundle'"

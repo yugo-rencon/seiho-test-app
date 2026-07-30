@@ -16,13 +16,13 @@ const hasPremium = computed(() => page.props.auth?.hasPremiumDaigaku === true);
 const plans = [
     {
         key: "premium",
-        name: "プレミアム（買い切り）",
+        name: "プレミアムプラン",
         price: "¥1,480",
         note: "買い切り・追加料金なし",
-        description: "全科目・全年度・全フォームの解説を一括で解放できます。",
+        description: "生命保険大学課程の対象年度・対象フォームの解説一式を解放できます。",
         features: [
             "全科目・全年度・全フォームの解説を閲覧可能",
-            "購入後すぐ利用可能",
+            "購入後すぐ、利用期限なしで見放題",
             "今後追加される解説も追加料金なしで閲覧可能",
         ],
         cta: "プレミアムプランを始める",
@@ -87,28 +87,27 @@ const plans = [
                                 {{ plan.price }}
                                 <span v-if="plan.key === 'premium'" class="text-sm font-bold text-gray-500">（税込）</span>
                             </div>
-                            <div class="pb-1 text-xs text-gray-500">
-                                {{ plan.note }}
-                            </div>
                         </div>
                         <p
                             v-if="plan.key === 'premium'"
                             class="mt-3 inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-700"
                         >
-                            <span aria-hidden="true" class="mr-1">✓</span>累計700名以上の方にご利用いただいています
+                            <span aria-hidden="true" class="mr-1">✓</span>多くの受験者にご利用いただいています！
                         </p>
                         <div
                             v-if="plan.key === 'premium'"
-                            class="mt-3 flex flex-wrap items-center gap-1.5 rounded-lg bg-gray-50 px-3 py-2 text-xs font-semibold text-gray-600"
+                            class="relative mt-4 rounded-lg border border-slate-100 bg-slate-50/80 px-3 pb-2.5 pt-5"
                         >
-                            <span class="mr-1 text-gray-500">対応決済</span>
-                            <span class="rounded border border-blue-200 bg-white px-1.5 py-0.5 text-[10px] font-extrabold italic tracking-wide text-blue-700">VISA</span>
-                            <span class="rounded border border-red-200 bg-white px-1.5 py-0.5 text-[10px] font-extrabold tracking-tight text-red-600">Mastercard</span>
-                            <span class="rounded border border-sky-200 bg-white px-1.5 py-0.5 text-[10px] font-extrabold tracking-tight text-sky-700">AMEX</span>
-                            <span class="rounded border border-emerald-200 bg-white px-1.5 py-0.5 text-[10px] font-extrabold tracking-wide text-emerald-700">JCB</span>
-                            <span class="rounded border border-gray-200 bg-white px-1.5 py-0.5 text-[10px] font-bold text-gray-800">Apple Pay</span>
-                            <span class="rounded border border-gray-200 bg-white px-1.5 py-0.5 text-[10px] font-bold text-gray-700">G Pay</span>
-                            <span class="rounded border border-violet-200 bg-white px-1.5 py-0.5 text-[10px] font-bold text-violet-700">Link</span>
+                            <span class="absolute -top-2.5 left-3 rounded-full border border-slate-200 bg-white px-2 py-0.5 text-[10px] font-bold text-slate-500">対応決済</span>
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span class="rounded border border-blue-100 bg-blue-50 px-1.5 py-0.5 text-[10px] font-extrabold italic tracking-wide text-blue-700">VISA</span>
+                                <span class="rounded border border-red-100 bg-red-50 px-1.5 py-0.5 text-[10px] font-extrabold tracking-tight text-red-600">Mastercard</span>
+                                <span class="rounded border border-sky-100 bg-sky-50 px-1.5 py-0.5 text-[10px] font-extrabold tracking-tight text-sky-700">AMEX</span>
+                                <span class="rounded border border-emerald-100 bg-emerald-50 px-1.5 py-0.5 text-[10px] font-extrabold tracking-wide text-emerald-700">JCB</span>
+                                <span class="rounded border border-slate-200 bg-white px-1.5 py-0.5 text-[10px] font-bold text-slate-800">Apple Pay</span>
+                                <span class="rounded border border-slate-200 bg-white px-1.5 py-0.5 text-[10px] font-bold text-slate-700">G Pay</span>
+                                <span class="rounded border border-violet-100 bg-violet-50 px-1.5 py-0.5 text-[10px] font-bold text-violet-700">Link</span>
+                            </div>
                         </div>
 
                         <ul class="mt-5 space-y-3 text-sm text-gray-600">

@@ -67,26 +67,22 @@ const getFormLabel = (year, periodId, form) => {
                     <h1 class="sr-only">生命保険応用課程 過去問解説</h1>
                     <div
                         v-if="!hasPremium"
-                        class="mb-5 rounded-xl border border-amber-200 bg-amber-50/80 px-3 py-2 text-left text-[12px] leading-5 text-amber-800 sm:px-4 sm:py-2.5 sm:text-center"
+                        class="mb-4 rounded-xl border border-amber-200 bg-amber-50/80 px-3 py-2 text-center text-amber-800 sm:mb-5 sm:px-4 sm:py-3"
                     >
-                        <span class="block font-semibold tracking-wide">
-                            生命保険応用課程の過去問解説ページです。
-                        </span>
-                        <span class="mt-0.5 block text-[11px] font-medium text-amber-700/90">
-                            2025年4月〜7月実施フォームAを無料でお試しいただけます。
+                        <p class="text-[13px] font-bold tracking-wide sm:text-sm">
+                            生命保険応用課程の過去問解説サイト
+                        </p>
+                        <div class="mt-1 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
+                            <span class="min-w-0 text-center text-[10px] font-semibold text-amber-700/90 sm:text-xs">
+                                プレミアムプランは累計700名以上が利用！
+                            </span>
                             <Link
                                 :href="pricingHref"
-                                class="ml-1 hidden font-semibold text-amber-700 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-800 md:inline"
+                                class="inline-flex shrink-0 items-center gap-1 rounded-full border border-amber-200 bg-white px-2.5 py-1 text-[11px] font-bold text-amber-700 shadow-sm transition hover:border-amber-300 hover:bg-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-1 sm:px-3 sm:text-xs"
                             >
-                                ▶ すべての解説をまとめて閲覧
+                                すべての解説を見る <span aria-hidden="true">▶</span>
                             </Link>
-                        </span>
-                        <Link
-                            :href="pricingHref"
-                            class="mt-1 inline-block text-xs font-semibold text-amber-700 underline decoration-amber-300 underline-offset-2 transition hover:text-amber-800 md:hidden"
-                        >
-                            ▶ すべての解説をまとめて閲覧
-                        </Link>
+                        </div>
                     </div>
 
                     <div

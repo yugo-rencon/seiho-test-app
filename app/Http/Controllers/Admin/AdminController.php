@@ -539,6 +539,7 @@ class AdminController extends Controller
         ];
 
         if (Schema::hasTable('user_exam_results')) {
+            $examDateColumnExists = Schema::hasColumn('user_exam_results', 'exam_date');
             $examResultsBaseQuery = function () {
                 return DB::table('user_exam_results')
                     ->join('users', 'users.id', '=', 'user_exam_results.user_id')
@@ -601,20 +602,20 @@ class AdminController extends Controller
                     })
                     ->values(),
                 'recentEntries' => $examResultsBaseQuery()
-                    ->select(
+                    ->select(array_filter([
                         'user_exam_results.id',
                         'user_exam_results.user_id',
                         'users.email',
                         'user_exam_results.scope',
                         'user_exam_results.subject_key',
                         'user_exam_results.score',
-                        'user_exam_results.exam_date',
+                        $examDateColumnExists ? 'user_exam_results.exam_date' : null,
                         'user_exam_results.updated_at'
-                    )
+                    ]))
                     ->orderByDesc('user_exam_results.updated_at')
                     ->limit(20)
                     ->get()
-                    ->map(function ($row) {
+                    ->map(function ($row) use ($examDateColumnExists) {
                         return [
                             'id' => (int) $row->id,
                             'userId' => (int) $row->user_id,
@@ -622,7 +623,7 @@ class AdminController extends Controller
                             'scope' => (string) ($row->scope ?? 'seiho'),
                             'subjectKey' => (string) $row->subject_key,
                             'score' => (int) $row->score,
-                            'examDate' => $row->exam_date ? (string) $row->exam_date : null,
+                            'examDate' => $examDateColumnExists && $row->exam_date ? (string) $row->exam_date : null,
                             'updatedAt' => (string) $row->updated_at,
                         ];
                     })

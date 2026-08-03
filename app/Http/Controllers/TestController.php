@@ -7,6 +7,7 @@ use App\Models\UserExamResult;
 use App\Support\PremiumSessionLimiter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Inertia\Inertia;
 
 class TestController extends Controller
@@ -15,17 +16,18 @@ class TestController extends Controller
     public function index(Request $request)
     {
         $scoreResults = [];
+        $examDateColumnExists = Schema::hasColumn('user_exam_results', 'exam_date');
 
         if ($request->user()) {
             $scoreResults = $request->user()
                 ->examResults()
                 ->where('scope', 'seiho')
-                ->get(['subject_key', 'score', 'exam_date'])
+                ->get($examDateColumnExists ? ['subject_key', 'score', 'exam_date'] : ['subject_key', 'score'])
                 ->keyBy('subject_key')
-                ->map(function ($result) {
+                ->map(function ($result) use ($examDateColumnExists) {
                     return [
                         'score' => $result->score,
-                        'exam_date' => $result->exam_date?->format('Y-m-d'),
+                        'exam_date' => $examDateColumnExists ? $result->exam_date?->format('Y-m-d') : null,
                     ];
                 });
         }
@@ -577,15 +579,16 @@ class TestController extends Controller
             default => 'seiho',
         };
         $subjects = $this->subjectsByScope($scope);
+        $examDateColumnExists = Schema::hasColumn('user_exam_results', 'exam_date');
 
         $results = $user->examResults()
             ->where('scope', $scope)
-            ->get(['subject_key', 'score', 'exam_date'])
+            ->get($examDateColumnExists ? ['subject_key', 'score', 'exam_date'] : ['subject_key', 'score'])
             ->keyBy('subject_key')
-            ->map(function ($result) {
+            ->map(function ($result) use ($examDateColumnExists) {
                 return [
                     'score' => $result->score,
-                    'exam_date' => $result->exam_date?->format('Y-m-d'),
+                    'exam_date' => $examDateColumnExists ? $result->exam_date?->format('Y-m-d') : null,
                 ];
             });
         $paidBasicScopes = DB::table('purchases')
@@ -654,6 +657,7 @@ class TestController extends Controller
             'score' => ['nullable', 'integer', 'min:0', 'max:100'],
             'exam_date' => ['nullable', 'date_format:Y-m-d'],
         ]);
+        $examDateColumnExists = Schema::hasColumn('user_exam_results', 'exam_date');
 
         if (!isset($data['score'])) {
             UserExamResult::where('user_id', $request->user()->id)
@@ -673,16 +677,20 @@ class TestController extends Controller
             return back();
         }
 
+        $updateValues = [
+            'score' => $data['score'],
+        ];
+        if ($examDateColumnExists) {
+            $updateValues['exam_date'] = $data['exam_date'] ?? null;
+        }
+
         UserExamResult::updateOrCreate(
             [
                 'user_id' => $request->user()->id,
                 'scope' => $scope,
                 'subject_key' => $data['subject_key'],
             ],
-            [
-                'score' => $data['score'],
-                'exam_date' => $data['exam_date'] ?? null,
-            ],
+            $updateValues,
         );
 
         if ($request->expectsJson()) {
@@ -690,7 +698,7 @@ class TestController extends Controller
                 'message' => '点数を更新しました。',
                 'subject_key' => $data['subject_key'],
                 'score' => $data['score'],
-                'exam_date' => $data['exam_date'] ?? null,
+                'exam_date' => $examDateColumnExists ? ($data['exam_date'] ?? null) : null,
             ]);
         }
 

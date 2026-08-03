@@ -776,7 +776,7 @@ const excellent = computed(
 
           <div>
             <label class="block text-sm font-semibold text-gray-700">
-              受験日
+              受験日（任意）
             </label>
             <div class="relative mt-1">
               <button

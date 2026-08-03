@@ -1096,7 +1096,7 @@ const peakHour2h = computed(() => {
                     <div class="flex flex-wrap items-end justify-between gap-2">
                         <div>
                             <h2 class="text-sm font-semibold text-gray-900">点数入力状況</h2>
-                            <p class="mt-1 text-xs text-gray-500">ユーザーが記録した本番試験の点数を確認できます。</p>
+                            <p class="mt-1 text-xs text-gray-500">生保講座の本番試験点数の入力状況を確認できます。</p>
                         </div>
                     </div>
 
@@ -1122,29 +1122,7 @@ const peakHour2h = computed(() => {
                     </div>
                 </div>
 
-                <div class="grid gap-4 lg:grid-cols-2">
-                    <div class="rounded-xl border border-gray-100 bg-white p-4">
-                        <h3 class="text-sm font-semibold text-gray-900">試験別</h3>
-                        <div class="mt-3 space-y-2">
-                            <div
-                                v-for="row in examResultScopeSummary"
-                                :key="`exam-scope-${row.scope}`"
-                                class="flex items-center justify-between rounded-lg border border-gray-100 px-3 py-2"
-                            >
-                                <div>
-                                    <span class="rounded-full px-2 py-1 text-xs font-semibold" :class="scopeClass(row.scope)">
-                                        {{ scopeLabel(row.scope) }}
-                                    </span>
-                                </div>
-                                <div class="text-right text-xs text-gray-500">
-                                    <p><span class="font-bold text-gray-900">{{ formatNumber(row.users) }}</span>人 / {{ formatNumber(row.entries) }}件</p>
-                                    <p>平均 {{ row.averageScore ?? '-' }}点</p>
-                                </div>
-                            </div>
-                            <p v-if="!examResultScopeSummary.length" class="text-sm text-gray-500">まだ入力はありません。</p>
-                        </div>
-                    </div>
-
+                <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]">
                     <div class="rounded-xl border border-gray-100 bg-white p-4">
                         <h3 class="text-sm font-semibold text-gray-900">最近の入力</h3>
                         <div class="mt-3 space-y-2">
@@ -1164,22 +1142,18 @@ const peakHour2h = computed(() => {
                                     </div>
                                 </div>
                                 <div class="mt-1 flex flex-wrap items-center gap-2 text-[11px] text-gray-500">
-                                    <span class="rounded-full px-2 py-0.5 font-semibold" :class="scopeClass(entry.scope)">{{ scopeShortLabel(entry.scope) }}</span>
                                     <span v-if="entry.examDate">受験日 {{ entry.examDate }}</span>
                                 </div>
                             </div>
                             <p v-if="!examResultRecentEntries.length" class="text-sm text-gray-500">まだ入力はありません。</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <div class="rounded-xl border border-gray-100 bg-white p-4">
                     <h3 class="text-sm font-semibold text-gray-900">科目別</h3>
                     <div class="mt-3 overflow-x-auto">
                         <table class="min-w-full divide-y divide-gray-100 text-left text-sm">
                             <thead>
                                 <tr class="text-xs text-gray-500">
-                                    <th class="whitespace-nowrap py-2 pr-4 font-semibold">試験</th>
                                     <th class="whitespace-nowrap py-2 pr-4 font-semibold">科目</th>
                                     <th class="whitespace-nowrap py-2 pr-4 text-right font-semibold">人数</th>
                                     <th class="whitespace-nowrap py-2 pr-4 text-right font-semibold">件数</th>
@@ -1192,11 +1166,6 @@ const peakHour2h = computed(() => {
                                     :key="`exam-subject-${row.scope}-${row.subjectKey}`"
                                     class="text-gray-700"
                                 >
-                                    <td class="whitespace-nowrap py-2 pr-4">
-                                        <span class="rounded-full px-2 py-1 text-xs font-semibold" :class="scopeClass(row.scope)">
-                                            {{ scopeShortLabel(row.scope) }}
-                                        </span>
-                                    </td>
                                     <td class="whitespace-nowrap py-2 pr-4 font-semibold text-gray-900">{{ subjectLabel(row.scope, row.subjectKey) }}</td>
                                     <td class="whitespace-nowrap py-2 pr-4 text-right">{{ formatNumber(row.users) }}</td>
                                     <td class="whitespace-nowrap py-2 pr-4 text-right">{{ formatNumber(row.entries) }}</td>
@@ -1205,6 +1174,7 @@ const peakHour2h = computed(() => {
                             </tbody>
                         </table>
                         <p v-if="!examResultSubjectSummary.length" class="py-4 text-sm text-gray-500">まだ入力はありません。</p>
+                    </div>
                     </div>
                 </div>
             </div>

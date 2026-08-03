@@ -544,7 +544,8 @@ class AdminController extends Controller
                 return DB::table('user_exam_results')
                     ->join('users', 'users.id', '=', 'user_exam_results.user_id')
                     ->where('users.is_admin', 0)
-                    ->whereNotIn('users.id', self::INTERNAL_USER_IDS);
+                    ->whereNotIn('users.id', self::INTERNAL_USER_IDS)
+                    ->whereRaw('COALESCE(user_exam_results.scope, "seiho") = "seiho"');
             };
 
             $examSummaryRow = $examResultsBaseQuery()
@@ -564,36 +565,18 @@ class AdminController extends Controller
                         ? round((float) $examSummaryRow->average_score, 1)
                         : null,
                 ],
-                'scopeSummary' => $examResultsBaseQuery()
-                    ->selectRaw('COALESCE(user_exam_results.scope, "seiho") as scope')
-                    ->selectRaw('COUNT(DISTINCT user_exam_results.user_id) as users')
-                    ->selectRaw('COUNT(*) as entries')
-                    ->selectRaw('AVG(user_exam_results.score) as average_score')
-                    ->groupBy('scope')
-                    ->orderBy('scope')
-                    ->get()
-                    ->map(function ($row) {
-                        return [
-                            'scope' => (string) $row->scope,
-                            'users' => (int) $row->users,
-                            'entries' => (int) $row->entries,
-                            'averageScore' => $row->average_score !== null ? round((float) $row->average_score, 1) : null,
-                        ];
-                    })
-                    ->values(),
+                'scopeSummary' => collect(),
                 'subjectSummary' => $examResultsBaseQuery()
-                    ->selectRaw('COALESCE(user_exam_results.scope, "seiho") as scope')
-                    ->addSelect('user_exam_results.subject_key')
+                    ->select('user_exam_results.subject_key')
                     ->selectRaw('COUNT(DISTINCT user_exam_results.user_id) as users')
                     ->selectRaw('COUNT(*) as entries')
                     ->selectRaw('AVG(user_exam_results.score) as average_score')
-                    ->groupBy('scope', 'user_exam_results.subject_key')
-                    ->orderBy('scope')
+                    ->groupBy('user_exam_results.subject_key')
                     ->orderByDesc('entries')
                     ->get()
                     ->map(function ($row) {
                         return [
-                            'scope' => (string) $row->scope,
+                            'scope' => 'seiho',
                             'subjectKey' => (string) $row->subject_key,
                             'users' => (int) $row->users,
                             'entries' => (int) $row->entries,
@@ -606,7 +589,6 @@ class AdminController extends Controller
                         'user_exam_results.id',
                         'user_exam_results.user_id',
                         'users.email',
-                        'user_exam_results.scope',
                         'user_exam_results.subject_key',
                         'user_exam_results.score',
                         $examDateColumnExists ? 'user_exam_results.exam_date' : null,
@@ -620,7 +602,7 @@ class AdminController extends Controller
                             'id' => (int) $row->id,
                             'userId' => (int) $row->user_id,
                             'email' => (string) $row->email,
-                            'scope' => (string) ($row->scope ?? 'seiho'),
+                            'scope' => 'seiho',
                             'subjectKey' => (string) $row->subject_key,
                             'score' => (int) $row->score,
                             'examDate' => $examDateColumnExists && $row->exam_date ? (string) $row->exam_date : null,

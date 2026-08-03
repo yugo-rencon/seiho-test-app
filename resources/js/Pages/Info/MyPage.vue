@@ -1,7 +1,7 @@
 <script setup>
 import axios from 'axios';
 import { Head, Link, usePage } from '@inertiajs/vue3';
-import { computed, ref, watch } from 'vue';
+import { computed, onUnmounted, ref, watch } from 'vue';
 import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
 
 const page = usePage();
@@ -272,6 +272,17 @@ watch(
     passScoreInput.value = nextPassScore ?? '';
   },
 );
+watch(
+  () => isModalOpen.value || isPassScoreModalOpen.value,
+  (isOpen) => {
+    if (typeof document === 'undefined') return;
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  },
+);
+onUnmounted(() => {
+  if (typeof document === 'undefined') return;
+  document.body.style.overflow = '';
+});
 
 const openPassScoreModal = () => {
   passScoreInput.value = localPassScore.value ?? '';
@@ -746,7 +757,7 @@ const excellent = computed(
 
     <div
       v-if="props.scoreOnly && supportsScoreTracking && isModalOpen"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 px-4"
+      class="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto overscroll-contain bg-black/30 px-4 py-6 sm:items-center"
       @click.self="closeModal"
     >
       <div class="w-full max-w-md rounded-lg bg-white p-6 shadow-xl">
@@ -793,7 +804,7 @@ const excellent = computed(
 
               <div
                 v-if="isExamCalendarOpen"
-                class="absolute left-0 right-0 z-10 mt-2 rounded-2xl border border-purple-100 bg-white p-3 shadow-xl"
+                class="relative left-0 right-0 z-10 mt-2 rounded-2xl border border-purple-100 bg-white p-3 shadow-xl sm:absolute"
               >
                 <div class="mb-3 flex items-center justify-between">
                   <button

@@ -583,7 +583,7 @@ class AdminController extends Controller
                     ->values(),
                 'subjectSummary' => $examResultsBaseQuery()
                     ->selectRaw('COALESCE(user_exam_results.scope, "seiho") as scope')
-                    ->select('user_exam_results.subject_key')
+                    ->addSelect('user_exam_results.subject_key')
                     ->selectRaw('COUNT(DISTINCT user_exam_results.user_id) as users')
                     ->selectRaw('COUNT(*) as entries')
                     ->selectRaw('AVG(user_exam_results.score) as average_score')

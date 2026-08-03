@@ -526,6 +526,110 @@ class AdminController extends Controller
             ];
         }
 
+        $examResultStats = [
+            'summary' => [
+                'users' => 0,
+                'entries' => 0,
+                'todayEntries' => 0,
+                'averageScore' => null,
+            ],
+            'scopeSummary' => collect(),
+            'subjectSummary' => collect(),
+            'recentEntries' => collect(),
+        ];
+
+        if (Schema::hasTable('user_exam_results')) {
+            $examResultsBaseQuery = function () {
+                return DB::table('user_exam_results')
+                    ->join('users', 'users.id', '=', 'user_exam_results.user_id')
+                    ->where('users.is_admin', 0)
+                    ->whereNotIn('users.id', self::INTERNAL_USER_IDS);
+            };
+
+            $examSummaryRow = $examResultsBaseQuery()
+                ->selectRaw('COUNT(DISTINCT user_exam_results.user_id) as users')
+                ->selectRaw('COUNT(*) as entries')
+                ->selectRaw('AVG(user_exam_results.score) as average_score')
+                ->first();
+
+            $examResultStats = [
+                'summary' => [
+                    'users' => (int) ($examSummaryRow->users ?? 0),
+                    'entries' => (int) ($examSummaryRow->entries ?? 0),
+                    'todayEntries' => (int) $examResultsBaseQuery()
+                        ->whereBetween('user_exam_results.updated_at', [$todayStart, $todayEnd])
+                        ->count(),
+                    'averageScore' => $examSummaryRow?->average_score !== null
+                        ? round((float) $examSummaryRow->average_score, 1)
+                        : null,
+                ],
+                'scopeSummary' => $examResultsBaseQuery()
+                    ->selectRaw('COALESCE(user_exam_results.scope, "seiho") as scope')
+                    ->selectRaw('COUNT(DISTINCT user_exam_results.user_id) as users')
+                    ->selectRaw('COUNT(*) as entries')
+                    ->selectRaw('AVG(user_exam_results.score) as average_score')
+                    ->groupBy('scope')
+                    ->orderBy('scope')
+                    ->get()
+                    ->map(function ($row) {
+                        return [
+                            'scope' => (string) $row->scope,
+                            'users' => (int) $row->users,
+                            'entries' => (int) $row->entries,
+                            'averageScore' => $row->average_score !== null ? round((float) $row->average_score, 1) : null,
+                        ];
+                    })
+                    ->values(),
+                'subjectSummary' => $examResultsBaseQuery()
+                    ->selectRaw('COALESCE(user_exam_results.scope, "seiho") as scope')
+                    ->select('user_exam_results.subject_key')
+                    ->selectRaw('COUNT(DISTINCT user_exam_results.user_id) as users')
+                    ->selectRaw('COUNT(*) as entries')
+                    ->selectRaw('AVG(user_exam_results.score) as average_score')
+                    ->groupBy('scope', 'user_exam_results.subject_key')
+                    ->orderBy('scope')
+                    ->orderByDesc('entries')
+                    ->get()
+                    ->map(function ($row) {
+                        return [
+                            'scope' => (string) $row->scope,
+                            'subjectKey' => (string) $row->subject_key,
+                            'users' => (int) $row->users,
+                            'entries' => (int) $row->entries,
+                            'averageScore' => $row->average_score !== null ? round((float) $row->average_score, 1) : null,
+                        ];
+                    })
+                    ->values(),
+                'recentEntries' => $examResultsBaseQuery()
+                    ->select(
+                        'user_exam_results.id',
+                        'user_exam_results.user_id',
+                        'users.email',
+                        'user_exam_results.scope',
+                        'user_exam_results.subject_key',
+                        'user_exam_results.score',
+                        'user_exam_results.exam_date',
+                        'user_exam_results.updated_at'
+                    )
+                    ->orderByDesc('user_exam_results.updated_at')
+                    ->limit(20)
+                    ->get()
+                    ->map(function ($row) {
+                        return [
+                            'id' => (int) $row->id,
+                            'userId' => (int) $row->user_id,
+                            'email' => (string) $row->email,
+                            'scope' => (string) ($row->scope ?? 'seiho'),
+                            'subjectKey' => (string) $row->subject_key,
+                            'score' => (int) $row->score,
+                            'examDate' => $row->exam_date ? (string) $row->exam_date : null,
+                            'updatedAt' => (string) $row->updated_at,
+                        ];
+                    })
+                    ->values(),
+            ];
+        }
+
         $stats['salesInsights'] = [
             'fromDate' => $salesSince->toDateString(),
             'salesCount' => (int) ($salesSummary->sales_count ?? 0),
@@ -610,6 +714,12 @@ class AdminController extends Controller
                         'lastSeenAt' => (string) $row->last_seen_at,
                     ];
                 })->values(),
+            ],
+            'examResultStats' => [
+                'summary' => $examResultStats['summary'],
+                'scopeSummary' => $examResultStats['scopeSummary'],
+                'subjectSummary' => $examResultStats['subjectSummary'],
+                'recentEntries' => $examResultStats['recentEntries'],
             ],
             'weekdaySales' => $weekdaySales,
             'hourlySales' => $hourlySales,

@@ -465,6 +465,11 @@ const scopeClass = (scope) => {
 };
 
 const salesInsights = computed(() => props.stats?.salesInsights ?? {});
+const examResultStats = computed(() => salesInsights.value?.examResultStats ?? {});
+const examResultSummary = computed(() => examResultStats.value?.summary ?? {});
+const examResultScopeSummary = computed(() => examResultStats.value?.scopeSummary ?? []);
+const examResultSubjectSummary = computed(() => examResultStats.value?.subjectSummary ?? []);
+const examResultRecentEntries = computed(() => examResultStats.value?.recentEntries ?? []);
 const pageViewSummary = computed(() => salesInsights.value?.pageViewSummary ?? {});
 const dailyPageViews = computed(() => salesInsights.value?.dailyPageViews ?? []);
 const premiumUsageToday = computed(() => salesInsights.value?.premiumUsageToday ?? {});
@@ -487,6 +492,11 @@ const premiumUsageForScope = (scope) => {
         premiumViews: 0,
         blockedViews: 0,
     };
+};
+
+const subjectLabel = (scope, subjectKey) => {
+    const source = scope === "daigaku" ? DAIGAKU_SUBJECTS : SEIHO_SUBJECTS;
+    return source.find((subject) => subject.key === subjectKey)?.label ?? subjectKey;
 };
 
 const salesScopeOptions = [
@@ -918,6 +928,16 @@ const peakHour2h = computed(() => {
                 <button
                     type="button"
                     class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
+                    :class="isActiveMenu('exam-results')
+                        ? 'border-purple-200 bg-purple-50 text-purple-700'
+                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
+                    @click="activeTab = 'exam-results'"
+                >
+                    点数入力
+                </button>
+                <button
+                    type="button"
+                    class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
                     :class="isActiveMenu('releases')
                         ? 'border-purple-200 bg-purple-50 text-purple-700'
                         : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
@@ -1066,6 +1086,127 @@ const peakHour2h = computed(() => {
                 <p v-else class="mt-2 text-sm text-gray-500">
                     管理者ユーザーは登録されていません。
                 </p>
+            </div>
+
+            <div
+                v-if="activeTab === 'exam-results'"
+                class="mt-6 space-y-4"
+            >
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <div class="flex flex-wrap items-end justify-between gap-2">
+                        <div>
+                            <h2 class="text-sm font-semibold text-gray-900">点数入力状況</h2>
+                            <p class="mt-1 text-xs text-gray-500">ユーザーが記録した本番試験の点数を確認できます。</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+                        <div class="rounded-xl bg-purple-50 p-4">
+                            <p class="text-xs font-semibold text-purple-700">入力ユーザー</p>
+                            <p class="mt-1 text-2xl font-bold text-gray-900">{{ formatNumber(examResultSummary.users) }}</p>
+                        </div>
+                        <div class="rounded-xl bg-gray-50 p-4">
+                            <p class="text-xs font-semibold text-gray-500">入力件数</p>
+                            <p class="mt-1 text-2xl font-bold text-gray-900">{{ formatNumber(examResultSummary.entries) }}</p>
+                        </div>
+                        <div class="rounded-xl bg-rose-50 p-4">
+                            <p class="text-xs font-semibold text-rose-700">今日の入力</p>
+                            <p class="mt-1 text-2xl font-bold text-gray-900">{{ formatNumber(examResultSummary.todayEntries) }}</p>
+                        </div>
+                        <div class="rounded-xl bg-blue-50 p-4">
+                            <p class="text-xs font-semibold text-blue-700">平均点</p>
+                            <p class="mt-1 text-2xl font-bold text-gray-900">
+                                {{ examResultSummary.averageScore ?? '-' }}<span v-if="examResultSummary.averageScore !== null" class="ml-0.5 text-sm text-gray-500">点</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid gap-4 lg:grid-cols-2">
+                    <div class="rounded-xl border border-gray-100 bg-white p-4">
+                        <h3 class="text-sm font-semibold text-gray-900">試験別</h3>
+                        <div class="mt-3 space-y-2">
+                            <div
+                                v-for="row in examResultScopeSummary"
+                                :key="`exam-scope-${row.scope}`"
+                                class="flex items-center justify-between rounded-lg border border-gray-100 px-3 py-2"
+                            >
+                                <div>
+                                    <span class="rounded-full px-2 py-1 text-xs font-semibold" :class="scopeClass(row.scope)">
+                                        {{ scopeLabel(row.scope) }}
+                                    </span>
+                                </div>
+                                <div class="text-right text-xs text-gray-500">
+                                    <p><span class="font-bold text-gray-900">{{ formatNumber(row.users) }}</span>人 / {{ formatNumber(row.entries) }}件</p>
+                                    <p>平均 {{ row.averageScore ?? '-' }}点</p>
+                                </div>
+                            </div>
+                            <p v-if="!examResultScopeSummary.length" class="text-sm text-gray-500">まだ入力はありません。</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-xl border border-gray-100 bg-white p-4">
+                        <h3 class="text-sm font-semibold text-gray-900">最近の入力</h3>
+                        <div class="mt-3 space-y-2">
+                            <div
+                                v-for="entry in examResultRecentEntries"
+                                :key="`exam-entry-${entry.id}`"
+                                class="rounded-lg border border-gray-100 px-3 py-2"
+                            >
+                                <div class="flex items-start justify-between gap-3">
+                                    <div class="min-w-0">
+                                        <p class="truncate text-sm font-semibold text-gray-900">{{ subjectLabel(entry.scope, entry.subjectKey) }}</p>
+                                        <p class="break-all text-xs text-gray-500">{{ entry.email }}</p>
+                                    </div>
+                                    <div class="shrink-0 text-right">
+                                        <p class="text-sm font-bold text-rose-600">{{ entry.score }}点</p>
+                                        <p class="text-[11px] text-gray-400">{{ formatDateTime(entry.updatedAt) }}</p>
+                                    </div>
+                                </div>
+                                <div class="mt-1 flex flex-wrap items-center gap-2 text-[11px] text-gray-500">
+                                    <span class="rounded-full px-2 py-0.5 font-semibold" :class="scopeClass(entry.scope)">{{ scopeShortLabel(entry.scope) }}</span>
+                                    <span v-if="entry.examDate">受験日 {{ entry.examDate }}</span>
+                                </div>
+                            </div>
+                            <p v-if="!examResultRecentEntries.length" class="text-sm text-gray-500">まだ入力はありません。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <h3 class="text-sm font-semibold text-gray-900">科目別</h3>
+                    <div class="mt-3 overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-100 text-left text-sm">
+                            <thead>
+                                <tr class="text-xs text-gray-500">
+                                    <th class="whitespace-nowrap py-2 pr-4 font-semibold">試験</th>
+                                    <th class="whitespace-nowrap py-2 pr-4 font-semibold">科目</th>
+                                    <th class="whitespace-nowrap py-2 pr-4 text-right font-semibold">人数</th>
+                                    <th class="whitespace-nowrap py-2 pr-4 text-right font-semibold">件数</th>
+                                    <th class="whitespace-nowrap py-2 text-right font-semibold">平均点</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-50">
+                                <tr
+                                    v-for="row in examResultSubjectSummary"
+                                    :key="`exam-subject-${row.scope}-${row.subjectKey}`"
+                                    class="text-gray-700"
+                                >
+                                    <td class="whitespace-nowrap py-2 pr-4">
+                                        <span class="rounded-full px-2 py-1 text-xs font-semibold" :class="scopeClass(row.scope)">
+                                            {{ scopeShortLabel(row.scope) }}
+                                        </span>
+                                    </td>
+                                    <td class="whitespace-nowrap py-2 pr-4 font-semibold text-gray-900">{{ subjectLabel(row.scope, row.subjectKey) }}</td>
+                                    <td class="whitespace-nowrap py-2 pr-4 text-right">{{ formatNumber(row.users) }}</td>
+                                    <td class="whitespace-nowrap py-2 pr-4 text-right">{{ formatNumber(row.entries) }}</td>
+                                    <td class="whitespace-nowrap py-2 text-right">{{ row.averageScore ?? '-' }}点</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p v-if="!examResultSubjectSummary.length" class="py-4 text-sm text-gray-500">まだ入力はありません。</p>
+                    </div>
+                </div>
             </div>
 
             <div

@@ -12,9 +12,27 @@ use Inertia\Inertia;
 class TestController extends Controller
 {
     // ホーム
-    public function index()
+    public function index(Request $request)
     {
-        return Inertia::render('Index');
+        $scoreResults = [];
+
+        if ($request->user()) {
+            $scoreResults = $request->user()
+                ->examResults()
+                ->where('scope', 'seiho')
+                ->get(['subject_key', 'score', 'exam_date'])
+                ->keyBy('subject_key')
+                ->map(function ($result) {
+                    return [
+                        'score' => $result->score,
+                        'exam_date' => $result->exam_date?->format('Y-m-d'),
+                    ];
+                });
+        }
+
+        return Inertia::render('Index', [
+            'scoreResults' => $scoreResults,
+        ]);
     }
 
     // 大学課程トップ
@@ -562,11 +580,12 @@ class TestController extends Controller
 
         $results = $user->examResults()
             ->where('scope', $scope)
-            ->get(['subject_key', 'score'])
+            ->get(['subject_key', 'score', 'exam_date'])
             ->keyBy('subject_key')
             ->map(function ($result) {
                 return [
                     'score' => $result->score,
+                    'exam_date' => $result->exam_date?->format('Y-m-d'),
                 ];
             });
         $paidBasicScopes = DB::table('purchases')
@@ -582,6 +601,7 @@ class TestController extends Controller
 
         return Inertia::render('Info/MyPage', [
             'scope' => $scope,
+            'scoreOnly' => $request->routeIs('results'),
             'passScore' => $scope === 'daigaku' ? 60 : $user->pass_score,
             'subjects' => $subjects,
             'results' => $results,
@@ -632,6 +652,7 @@ class TestController extends Controller
         $data = $request->validate([
             'subject_key' => ['required', 'string', 'in:' . implode(',', $subjectKeys)],
             'score' => ['nullable', 'integer', 'min:0', 'max:100'],
+            'exam_date' => ['nullable', 'date_format:Y-m-d'],
         ]);
 
         if (!isset($data['score'])) {
@@ -645,6 +666,7 @@ class TestController extends Controller
                     'message' => '点数をクリアしました。',
                     'subject_key' => $data['subject_key'],
                     'score' => null,
+                    'exam_date' => null,
                 ]);
             }
 
@@ -659,6 +681,7 @@ class TestController extends Controller
             ],
             [
                 'score' => $data['score'],
+                'exam_date' => $data['exam_date'] ?? null,
             ],
         );
 
@@ -667,6 +690,7 @@ class TestController extends Controller
                 'message' => '点数を更新しました。',
                 'subject_key' => $data['subject_key'],
                 'score' => $data['score'],
+                'exam_date' => $data['exam_date'] ?? null,
             ]);
         }
 

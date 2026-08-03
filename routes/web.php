@@ -178,6 +178,7 @@ Route::controller(TestController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('results', [TestController::class, 'mypage'])->name('results');
     Route::get('mypage', [TestController::class, 'mypage'])->name('mypage');
     Route::get('daigaku/mypage', [TestController::class, 'mypage'])->name('daigaku.mypage');
     Route::get('ippan/mypage', [TestController::class, 'mypage'])->name('ippan.mypage');

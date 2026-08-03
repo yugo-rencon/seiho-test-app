@@ -407,6 +407,7 @@ onBeforeUnmount(() => {
             :is-senmon="isSenmonPage"
             :is-ouyou="isOuyouPage"
             :is-ippan="isIppanPage"
+            :has-premium="hasPremium"
             @open-menu="isMenuOpen = true"
         />
 

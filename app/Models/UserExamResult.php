@@ -14,6 +14,11 @@ class UserExamResult extends Model
         'scope',
         'subject_key',
         'score',
+        'exam_date',
+    ];
+
+    protected $casts = [
+        'exam_date' => 'date:Y-m-d',
     ];
 
     public function user()

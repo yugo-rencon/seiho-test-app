@@ -21,11 +21,13 @@ const activeSection = computed(() =>
 const page = usePage();
 const hasPremium = computed(() => page.props.auth?.hasPremium === true);
 const isLoggedIn = computed(() => !!page.props.auth?.user);
+const scoreResults = computed(() => page.props.scoreResults ?? {});
+const activeScore = computed(() => scoreResults.value?.[activeSectionId.value]?.score ?? null);
 
 // 「本番の点数を記録」リンク先:
 // 該当セクション（#score-input）へ遷移
 const mypageInputHref = computed(() => {
-    return `${route("mypage")}#score-input`;
+    return route("results");
 });
 const pricingHref = computed(() =>
     route("pricing", { scope: "seiho", return_to: String(page.url ?? "/") }),
@@ -55,7 +57,7 @@ const pricingHref = computed(() =>
                         </p>
                         <div class="mt-1 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
                             <span class="min-w-0 text-center text-[10px] font-semibold text-purple-700/90 sm:text-xs">
-                                ユーザー登録者数1000名突破！
+                                ユーザー登録者数1100名突破！
                             </span>
                             <Link
                                 :href="pricingHref"
@@ -67,15 +69,35 @@ const pricingHref = computed(() =>
                     </div>
 
                     <!-- プレミアム会員向けの状態表示 -->
-                    <div
-                        v-if="hasPremium"
-                        class="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-purple-300 bg-gradient-to-r from-purple-50 to-indigo-50 px-4 py-2 text-xs font-semibold text-purple-800 shadow-sm max-sm:gap-1.5 max-sm:px-3 max-sm:py-1.5"
-                    >
-                        <img src="/images/bolt.svg" alt="" class="h-3.5 w-3.5" />
-                        <span>プレミアムユーザー</span>
-                        <span class="rounded-full bg-purple-200/70 px-2 py-0.5 text-[10px] font-bold text-purple-900 max-sm:px-1.5 max-sm:text-[9px]">
-                            ALL ACCESS
-                        </span>
+                    <div v-if="hasPremium" class="mb-5">
+                        <div
+                            class="inline-flex w-fit items-center gap-2 rounded-full border border-purple-300 bg-gradient-to-r from-purple-50 to-indigo-50 px-4 py-2 text-xs font-semibold text-purple-800 shadow-sm max-sm:gap-1.5 max-sm:px-3 max-sm:py-1.5"
+                        >
+                            <img src="/images/bolt.svg" alt="" class="h-3.5 w-3.5" />
+                            <span>プレミアムユーザー</span>
+                            <span class="rounded-full bg-purple-200/70 px-2 py-0.5 text-[10px] font-bold text-purple-900 max-sm:px-1.5 max-sm:text-[9px]">
+                                ALL ACCESS
+                            </span>
+                        </div>
+
+                        <div
+                            class="mt-3 rounded-xl border border-purple-100/80 bg-gradient-to-br from-white via-purple-50/30 to-indigo-50/50 p-3 shadow-sm"
+                        >
+                            <div class="flex items-center gap-2.5">
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-[13px] font-bold text-gray-900">試験を受けた方へ</p>
+                                    <p class="mt-0.5 text-xs leading-relaxed text-gray-500">
+                                        本番の点数を記録できます。
+                                    </p>
+                                </div>
+                                <Link
+                                    :href="mypageInputHref"
+                                    class="inline-flex shrink-0 items-center justify-center gap-1 rounded-full border border-purple-200 bg-white px-3 py-1.5 text-xs font-bold text-purple-700 shadow-sm transition hover:border-purple-300 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2"
+                                >
+                                    記録する <span aria-hidden="true">→</span>
+                                </Link>
+                            </div>
+                        </div>
                     </div>
 
                     <SisterSiteLinks current-site="seiho" class="mb-4" />
@@ -83,7 +105,10 @@ const pricingHref = computed(() =>
                         科目を選択してください
                     </p>
                     <!-- 科目タブ（共通化コンポーネント） -->
-                    <SubjectTabs v-model="activeSectionId" :sections="sections" />
+                    <SubjectTabs
+                        v-model="activeSectionId"
+                        :sections="sections"
+                    />
 
                     <div v-if="activeSection" class="mt-8">
                         <!-- 科目タイトル・実施時期・マイページ入力導線 -->
@@ -91,6 +116,8 @@ const pricingHref = computed(() =>
                             :section="activeSection"
                             :is-logged-in="isLoggedIn"
                             :mypage-input-href="mypageInputHref"
+                            :score="activeScore"
+                            :show-score-status="hasPremium"
                         />
 
                         <div class="mt-6 divide-y divide-gray-100 border border-gray-100 rounded-2xl bg-white">

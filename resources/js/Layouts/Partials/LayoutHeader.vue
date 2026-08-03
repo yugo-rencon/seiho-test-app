@@ -13,6 +13,7 @@ const props = defineProps({
     isSenmon: { type: Boolean, default: false },
     isOuyou: { type: Boolean, default: false },
     isIppan: { type: Boolean, default: false },
+    hasPremium: { type: Boolean, default: false },
     hideAuthUi: { type: Boolean, default: false },
 });
 
@@ -96,6 +97,19 @@ const isActive = (name) => route().current(name);
                         管理
                     </Link>
                     <template v-if="isAuthenticated">
+                        <Link
+                            v-if="hasPremium && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
+                            :href="route('results')"
+                            class="py-1 transition-colors"
+                            :class="
+                                isActive('results')
+                                    ? 'pointer-events-none text-purple-700'
+                                    : 'text-gray-700 hover:text-purple-700'
+                            "
+                            :aria-current="isActive('results') ? 'page' : null"
+                        >
+                            点数記録
+                        </Link>
                         <Link
                             :href="route(mypageRouteName)"
                             class="py-1 transition-colors"

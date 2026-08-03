@@ -11,7 +11,6 @@ const DAIGAKU_SECTIONS = [
     {
         id: "shikumi-kojin",
         title: "生命保険のしくみと個人保険商品",
-        description: "大学課程試験の解説を年度・フォーム別に順次公開します。（試験実施: 5〜6月）",
         years: SHIKUMI_VISIBLE_YEARS,
         published: true,
     },
@@ -19,35 +18,30 @@ const DAIGAKU_SECTIONS = [
         id: "fp",
         title: "ファイナンシャルプランニングとコンプライアンス",
         buttonTitle: "ファイナンシャルプランニング",
-        description: "大学課程試験の解説を年度・フォーム別に順次公開します。（試験実施: 5〜6月）",
         years: DAIGAKU_VISIBLE_YEARS,
         published: true,
     },
     {
         id: "tax-sozoku",
         title: "生命保険と税・相続",
-        description: "大学課程試験の解説を年度・フォーム別に順次公開します。（試験実施: 9〜10月）",
         years: DAIGAKU_VISIBLE_YEARS,
         published: true,
     },
     {
         id: "sisan-unyou",
         title: "資産運用知識",
-        description: "大学課程試験の解説を年度・フォーム別に順次公開します。（試験実施: 9〜10月）",
         years: DAIGAKU_VISIBLE_YEARS,
         published: true,
     },
     {
         id: "houjin-consulting",
         title: "企業向け保険商品とコンサルティング",
-        description: "大学課程試験の解説を年度・フォーム別に順次公開します。（試験実施: 1〜2月）",
         years: DAIGAKU_VISIBLE_YEARS,
         published: false,
     },
     {
         id: "social-security",
         title: "社会保障制度",
-        description: "大学課程試験の解説を年度・フォーム別に順次公開します。（試験実施: 1〜2月）",
         years: DAIGAKU_VISIBLE_YEARS,
         published: false,
     },
@@ -165,7 +159,7 @@ const getDaigakuRoute = (sectionId, year, form) => {
                         </p>
                         <div class="mt-1 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
                             <span class="min-w-0 text-center text-[10px] font-semibold text-indigo-700/90 sm:text-xs">
-                                ユーザー登録者数1000名突破！
+                                ユーザー登録者数1100名突破！
                             </span>
                             <Link
                                 :href="pricingHref"

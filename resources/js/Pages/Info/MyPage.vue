@@ -74,6 +74,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  purchaseDates: {
+    type: Object,
+    default: () => ({}),
+  },
 });
 
 const isDaigaku = computed(() => props.scope === 'daigaku');
@@ -91,6 +95,13 @@ const mypageResultsRouteName = computed(() =>
 const mypagePassScoreRouteName = computed(() =>
   isDaigaku.value ? 'daigaku.mypage.passScore' : 'mypage.passScore',
 );
+const contactRouteName = computed(() => {
+  if (props.scope === 'daigaku') return 'daigaku.contact.index';
+  if (props.scope === 'ippan') return 'ippan.contact.index';
+  if (props.scope === 'senmon') return 'senmon.contact.index';
+  if (props.scope === 'ouyou') return 'ouyou.contact.index';
+  return 'contact.index';
+});
 const pricingHref = computed(() =>
   isDaigaku.value
     ? route('daigaku.pricing')
@@ -108,6 +119,7 @@ const purchaseStatuses = computed(() => [
     badgeClass: 'bg-purple-100 text-purple-700',
     statusText: 'プレミアム購入済み',
     badgeText: '有効',
+    purchaseDate: props.purchaseDates?.seiho ?? null,
   },
   {
     key: 'daigaku',
@@ -117,6 +129,7 @@ const purchaseStatuses = computed(() => [
     badgeClass: 'bg-blue-100 text-blue-700',
     statusText: 'プレミアム購入済み',
     badgeText: '有効',
+    purchaseDate: props.purchaseDates?.daigaku ?? null,
   },
   {
     key: 'ippan',
@@ -126,6 +139,7 @@ const purchaseStatuses = computed(() => [
     badgeClass: 'bg-pink-100 text-fuchsia-700',
     statusText: 'プレミアム購入済み',
     badgeText: '有効',
+    purchaseDate: props.purchaseDates?.ippan ?? null,
   },
   {
     key: 'senmon',
@@ -135,6 +149,7 @@ const purchaseStatuses = computed(() => [
     badgeClass: 'bg-emerald-100 text-emerald-700',
     statusText: 'プレミアム購入済み',
     badgeText: '有効',
+    purchaseDate: props.purchaseDates?.senmon ?? null,
   },
   {
     key: 'ouyou',
@@ -144,6 +159,7 @@ const purchaseStatuses = computed(() => [
     badgeClass: 'bg-amber-100 text-amber-700',
     statusText: 'プレミアム購入済み',
     badgeText: '有効',
+    purchaseDate: props.purchaseDates?.ouyou ?? null,
   },
   {
     key: 'basic',
@@ -153,6 +169,7 @@ const purchaseStatuses = computed(() => [
     badgeClass: 'bg-cyan-100 text-cyan-700',
     statusText: 'プレミアム購入済み',
     badgeText: '有効',
+    purchaseDate: props.purchaseDates?.basic ?? null,
   },
 ]);
 const activePurchaseStatuses = computed(() =>
@@ -165,6 +182,12 @@ const pricingButtonClass = computed(() => {
   if (props.scope === 'ouyou') return 'bg-amber-600 hover:bg-amber-700';
   return 'bg-purple-600 hover:bg-purple-700';
 });
+const formatDateLabel = (value) => {
+  if (!value) return null;
+  const [year, month, day] = String(value).split('-');
+  if (!year || !month || !day) return value;
+  return `${Number(year)}年${Number(month)}月${Number(day)}日`;
+};
 
 const localResults = ref({ ...props.results });
 const localPassScore = ref(props.passScore);
@@ -473,38 +496,113 @@ const excellent = computed(
         </p>
       </div>
 
-      <div v-if="!props.scoreOnly" class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-        <div class="flex items-center gap-2">
-          <div class="text-sm text-gray-500">ログイン中のユーザー</div>
-          <span class="inline-flex items-center rounded-full border border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50 px-2 py-0.5 text-[11px] font-semibold text-purple-600">全試験共通</span>
-        </div>
-        <div class="no-data-detectors mt-1 text-lg font-semibold text-gray-800">
-          {{ user?.email || '未ログイン' }}
+      <div v-if="!props.scoreOnly" class="space-y-4">
+        <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div class="flex items-center gap-2">
+                <div class="text-sm font-semibold text-gray-500">アカウント</div>
+                <span class="inline-flex items-center rounded-full border border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50 px-2 py-0.5 text-[11px] font-semibold text-purple-600">全試験共通</span>
+              </div>
+              <div class="no-data-detectors mt-1 break-all text-lg font-semibold text-gray-900">
+                {{ user?.email || '未ログイン' }}
+              </div>
+            </div>
+            <Link
+              :href="route('logout')"
+              method="post"
+              as="button"
+              class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-semibold text-gray-600 transition hover:bg-gray-50"
+            >
+              ログアウト
+            </Link>
+          </div>
         </div>
 
-        <div class="mt-6 border-t border-gray-100 pt-4">
-          <div class="mb-3 text-sm text-gray-500">購入状況</div>
+        <div
+          class="rounded-2xl border border-purple-100 bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-6 shadow-sm"
+        >
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-purple-500">Current Plan</p>
+              <h2 class="mt-1 text-xl font-bold text-gray-900">
+                {{ props.hasPremium ? 'プレミアムプラン利用中' : '無料プラン' }}
+              </h2>
+              <p class="mt-2 text-sm leading-relaxed text-gray-600">
+                {{ props.hasPremium ? '購入済みの試験の解説を、利用期限なしで閲覧できます。' : '無料公開中の解説を閲覧できます。' }}
+              </p>
+            </div>
+            <span
+              class="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold"
+              :class="props.hasPremium ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-600'"
+            >
+              {{ props.hasPremium ? '有効' : '無料' }}
+            </span>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+          <h2 class="text-sm font-bold text-gray-900">よく使うメニュー</h2>
+          <div class="mt-4 grid gap-3 sm:grid-cols-2">
+            <Link
+              :href="route('tests.index')"
+              class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 transition hover:border-purple-100 hover:bg-purple-50"
+            >
+              <div class="text-sm font-bold text-gray-900">解説一覧を見る</div>
+              <div class="mt-1 text-xs text-gray-500">科目・年度・フォームから解説を探せます。</div>
+            </Link>
+            <Link
+              :href="route('results')"
+              class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 transition hover:border-purple-100 hover:bg-purple-50"
+            >
+              <div class="text-sm font-bold text-gray-900">試験結果を記録</div>
+              <div class="mt-1 text-xs text-gray-500">点数・受験日を記録して合格状況を確認できます。</div>
+            </Link>
+            <Link
+              :href="route(contactRouteName)"
+              class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 transition hover:border-purple-100 hover:bg-purple-50"
+            >
+              <div class="text-sm font-bold text-gray-900">お問い合わせ</div>
+              <div class="mt-1 text-xs text-gray-500">誤記や不明点があればご連絡ください。</div>
+            </Link>
+            <Link
+              :href="pricingHref"
+              class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 transition hover:border-purple-100 hover:bg-purple-50"
+            >
+              <div class="text-sm font-bold text-gray-900">料金プラン</div>
+              <div class="mt-1 text-xs text-gray-500">購入済みプランや閲覧範囲を確認できます。</div>
+            </Link>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div class="mb-3 text-sm font-bold text-gray-900">購入状況</div>
           <div v-if="activePurchaseStatuses.length" class="grid gap-2 sm:grid-cols-2">
             <div
               v-for="status in activePurchaseStatuses"
               :key="status.key"
-              class="flex items-center justify-between rounded-lg border border-gray-100 bg-gray-50 px-4 py-3"
+              class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3"
             >
-              <div>
-                <div class="text-xs font-semibold text-gray-500">{{ status.label }}</div>
-                <div
-                  class="mt-0.5 text-sm font-semibold"
-                  :class="status.activeClass"
-                >
-                  {{ status.statusText }}
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <div class="text-xs font-semibold text-gray-500">{{ status.label }}</div>
+                  <div
+                    class="mt-0.5 text-sm font-semibold"
+                    :class="status.activeClass"
+                  >
+                    {{ status.statusText }}
+                  </div>
                 </div>
+                <span
+                  class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold"
+                  :class="status.badgeClass"
+                >
+                  {{ status.badgeText }}
+                </span>
               </div>
-              <span
-                class="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold"
-                :class="status.badgeClass"
-              >
-                {{ status.badgeText }}
-              </span>
+              <div v-if="status.purchaseDate" class="mt-2 text-xs text-gray-500">
+                購入日：{{ formatDateLabel(status.purchaseDate) }}
+              </div>
             </div>
           </div>
           <div v-else class="rounded-lg border border-gray-100 bg-gray-50 px-4 py-3 text-sm font-semibold text-gray-500">
@@ -743,7 +841,7 @@ const excellent = computed(
         </div>
       </div>
 
-      <div class="mt-8 flex justify-center">
+      <div v-if="!props.scoreOnly" class="mt-8 flex justify-center">
         <Link
           :href="route('logout')"
           method="post"

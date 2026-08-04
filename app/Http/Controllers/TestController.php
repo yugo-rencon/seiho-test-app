@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\UserExamResult;
 use App\Support\PremiumSessionLimiter;
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -13,28 +14,9 @@ use Inertia\Inertia;
 class TestController extends Controller
 {
     // ホーム
-    public function index(Request $request)
+    public function index()
     {
-        $scoreResults = [];
-        $examDateColumnExists = Schema::hasColumn('user_exam_results', 'exam_date');
-
-        if ($request->user()) {
-            $scoreResults = $request->user()
-                ->examResults()
-                ->where('scope', 'seiho')
-                ->get($examDateColumnExists ? ['subject_key', 'score', 'exam_date'] : ['subject_key', 'score'])
-                ->keyBy('subject_key')
-                ->map(function ($result) use ($examDateColumnExists) {
-                    return [
-                        'score' => $result->score,
-                        'exam_date' => $examDateColumnExists ? $result->exam_date?->format('Y-m-d') : null,
-                    ];
-                });
-        }
-
-        return Inertia::render('Index', [
-            'scoreResults' => $scoreResults,
-        ]);
+        return Inertia::render('Index');
     }
 
     // 大学課程トップ
@@ -597,6 +579,22 @@ class TestController extends Controller
             ->whereIn('scope', ['ippan', 'senmon', 'ouyou', 'basic'])
             ->pluck('scope')
             ->all();
+        $purchaseDates = DB::table('purchases')
+            ->where('user_id', $user->id)
+            ->where('status', 'paid')
+            ->whereNotNull('paid_at')
+            ->selectRaw('COALESCE(scope, "seiho") as scope')
+            ->selectRaw('MAX(paid_at) as purchased_at')
+            ->groupBy('scope')
+            ->get()
+            ->mapWithKeys(function ($row) {
+                return [
+                    (string) $row->scope => $row->purchased_at
+                        ? Carbon::parse($row->purchased_at)->toDateString()
+                        : null,
+                ];
+            })
+            ->all();
         $hasPurchasedIppan = in_array('ippan', $paidBasicScopes, true);
         $hasPurchasedSenmon = in_array('senmon', $paidBasicScopes, true);
         $hasPurchasedOuyou = in_array('ouyou', $paidBasicScopes, true);
@@ -620,6 +618,7 @@ class TestController extends Controller
             'hasPurchasedSenmon' => $hasPurchasedSenmon,
             'hasPurchasedOuyou' => $hasPurchasedOuyou,
             'hasPurchasedBasic' => $hasPurchasedBasic,
+            'purchaseDates' => $purchaseDates,
         ]);
     }
 

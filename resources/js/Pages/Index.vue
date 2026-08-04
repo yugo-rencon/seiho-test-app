@@ -20,9 +20,6 @@ const activeSection = computed(() =>
 );
 const page = usePage();
 const hasPremium = computed(() => page.props.auth?.hasPremium === true);
-const isLoggedIn = computed(() => !!page.props.auth?.user);
-const scoreResults = computed(() => page.props.scoreResults ?? {});
-const activeScore = computed(() => scoreResults.value?.[activeSectionId.value]?.score ?? null);
 
 // 「本番の点数を記録」リンク先:
 // 該当セクション（#score-input）へ遷移
@@ -114,10 +111,6 @@ const pricingHref = computed(() =>
                         <!-- 科目タイトル・実施時期・マイページ入力導線 -->
                         <SectionHeader
                             :section="activeSection"
-                            :is-logged-in="isLoggedIn"
-                            :mypage-input-href="mypageInputHref"
-                            :score="activeScore"
-                            :show-score-status="hasPremium"
                         />
 
                         <div class="mt-6 divide-y divide-gray-100 border border-gray-100 rounded-2xl bg-white">

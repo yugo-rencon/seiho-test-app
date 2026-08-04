@@ -508,14 +508,6 @@ const excellent = computed(
                 {{ user?.email || '未ログイン' }}
               </div>
             </div>
-            <Link
-              :href="route('logout')"
-              method="post"
-              as="button"
-              class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-semibold text-gray-600 transition hover:bg-gray-50"
-            >
-              ログアウト
-            </Link>
           </div>
         </div>
 
@@ -841,16 +833,6 @@ const excellent = computed(
         </div>
       </div>
 
-      <div v-if="!props.scoreOnly" class="mt-8 flex justify-center">
-        <Link
-          :href="route('logout')"
-          method="post"
-          as="button"
-          class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition"
-        >
-          ログアウト
-        </Link>
-      </div>
     </div>
 
     <div

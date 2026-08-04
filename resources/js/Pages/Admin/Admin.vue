@@ -535,6 +535,16 @@ const filteredDailySales = computed(() => {
         : rows.filter((row) => row.scope === salesScopeFilter.value);
     return groupSalesRows(targetRows, "day");
 });
+const topDailySales = computed(() =>
+    [...filteredDailySales.value]
+        .filter((row) => Number(row?.totalAmount ?? 0) > 0)
+        .sort((a, b) => {
+            const amountDiff = Number(b?.totalAmount ?? 0) - Number(a?.totalAmount ?? 0);
+            if (amountDiff !== 0) return amountDiff;
+            return String(b?.day ?? "").localeCompare(String(a?.day ?? ""));
+        })
+        .slice(0, 10),
+);
 
 const monthlyBreakdownScopes = new Set(["seiho", "daigaku"]);
 
@@ -1644,6 +1654,43 @@ const peakHour2h = computed(() => {
                             </div>
                         </div>
                         <p v-if="!dailyCalendar" class="py-5 text-center text-xs text-gray-500">データがありません。</p>
+                    </div>
+
+                    <div class="mt-4 rounded-lg border border-gray-100 bg-white p-3">
+                        <div class="mb-3 flex items-center justify-between gap-2">
+                            <p class="text-xs font-semibold text-gray-700">売上ランキング TOP10</p>
+                            <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
+                        </div>
+                        <div v-if="topDailySales.length" class="space-y-2">
+                            <div
+                                v-for="(row, index) in topDailySales"
+                                :key="`top-daily-${row.day}`"
+                                class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-gray-50 px-3 py-2"
+                            >
+                                <div class="flex min-w-0 items-center gap-3">
+                                    <span
+                                        class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                                        :class="index === 0
+                                            ? 'bg-amber-100 text-amber-700'
+                                            : index === 1
+                                              ? 'bg-slate-200 text-slate-700'
+                                              : index === 2
+                                                ? 'bg-orange-100 text-orange-700'
+                                                : 'bg-purple-50 text-purple-700'"
+                                    >
+                                        {{ index + 1 }}
+                                    </span>
+                                    <div class="min-w-0">
+                                        <p class="whitespace-nowrap text-sm font-semibold text-gray-900">{{ row.day }}</p>
+                                        <p class="text-xs text-gray-500">{{ formatNumber(row.salesCount) }}件</p>
+                                    </div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <p class="text-sm font-bold text-gray-900">{{ formatYen(row.totalAmount) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p v-else class="py-4 text-center text-xs text-gray-500">ランキング対象のデータがありません。</p>
                     </div>
                 </div>
 

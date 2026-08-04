@@ -431,7 +431,7 @@ const formatNumber = (value) => {
 const formatCalendarAmount = (value) => {
     const amount = Number(value ?? 0);
     if (!Number.isFinite(amount) || amount <= 0) return "0";
-    return String(Math.round(amount));
+    return formatNumber(Math.round(amount));
 };
 
 const scopeLabel = (scope) => {
@@ -1608,38 +1608,42 @@ const peakHour2h = computed(() => {
                                     </button>
                                 </div>
                             </div>
-                            <div class="mb-1 grid grid-cols-7 gap-1 text-center text-[10px] text-gray-500">
-                                <div>日</div><div>月</div><div>火</div><div>水</div><div>木</div><div>金</div><div>土</div>
-                            </div>
-                            <div class="grid grid-cols-7 gap-1">
-                                <div
-                                    v-for="(cell, idx) in dailyCalendar.cells"
-                                    :key="`cal-${idx}`"
-                                    class="relative min-h-[46px] overflow-hidden rounded border p-1"
-                                    :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-2 border-blue-700 ring-2 ring-blue-200' : 'border-gray-100'"
-                                    :style="!cell.empty ? {
-                                        backgroundColor:
-                                            cell.level === 4 ? '#7c3aed'
-                                            : cell.level === 3 ? '#a78bfa'
-                                            : cell.level === 2 ? '#ddd6fe'
-                                            : cell.level === 1 ? '#f3f0ff'
-                                            : '#ffffff',
-                                    } : {}"
-                                >
-                                    <template v-if="!cell.empty">
+                            <div class="overflow-x-auto pb-1">
+                                <div class="min-w-[31rem]">
+                                    <div class="mb-1 grid grid-cols-7 gap-1 text-center text-[10px] text-gray-500">
+                                        <div>日</div><div>月</div><div>火</div><div>水</div><div>木</div><div>金</div><div>土</div>
+                                    </div>
+                                    <div class="grid grid-cols-7 gap-1">
                                         <div
-                                            class="text-[10px] font-semibold"
-                                            :class="cell.level >= 3 ? 'text-white' : 'text-gray-700'"
+                                            v-for="(cell, idx) in dailyCalendar.cells"
+                                            :key="`cal-${idx}`"
+                                            class="relative min-h-[48px] overflow-hidden rounded border p-1"
+                                            :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-2 border-blue-700 ring-2 ring-blue-200' : 'border-gray-100'"
+                                            :style="!cell.empty ? {
+                                                backgroundColor:
+                                                    cell.level === 4 ? '#7c3aed'
+                                                    : cell.level === 3 ? '#a78bfa'
+                                                    : cell.level === 2 ? '#ddd6fe'
+                                                    : cell.level === 1 ? '#f3f0ff'
+                                                    : '#ffffff',
+                                            } : {}"
                                         >
-                                            {{ cell.day }}
+                                            <template v-if="!cell.empty">
+                                                <div
+                                                    class="text-[10px] font-semibold"
+                                                    :class="cell.level >= 3 ? 'text-white' : 'text-gray-700'"
+                                                >
+                                                    {{ cell.day }}
+                                                </div>
+                                                <div
+                                                    class="mt-0.5 whitespace-nowrap text-center text-[10px] font-semibold leading-4 tracking-tight"
+                                                    :class="cell.level >= 3 ? 'text-white/90' : 'text-gray-600'"
+                                                >
+                                                    {{ formatCalendarAmount(cell.amount) }}
+                                                </div>
+                                            </template>
                                         </div>
-                                        <div
-                                            class="mt-0.5 whitespace-nowrap text-[9px] leading-4 sm:text-[10px]"
-                                            :class="cell.level >= 3 ? 'text-white/90' : 'text-gray-600'"
-                                        >
-                                            {{ formatCalendarAmount(cell.amount) }}
-                                        </div>
-                                    </template>
+                                    </div>
                                 </div>
                             </div>
                         </div>

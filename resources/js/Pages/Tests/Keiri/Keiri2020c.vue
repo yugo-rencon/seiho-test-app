@@ -947,10 +947,11 @@ const subject = "2020年度 フォームC";
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-05 確認済み
                             relatedProblems: ['2020c39'],
                             questionTitle: '利差配当付保険',
-                            content: '経過年数にかかわらず → 一定年数経過している場合に',
-                        }, //39 p113
+                            content: '直前の５年ごとの契約応当日から[[一定年数経過している場合]]、配当が割り当てられる。', //p135
+                        }, //39
                         {
                             relatedProblems: ['2020c40'],
                             questionTitle: '変額保険の用語',

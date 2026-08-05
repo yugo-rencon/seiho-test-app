@@ -1730,42 +1730,34 @@ const peakHour2h = computed(() => {
                         <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
                     </div>
 
-                    <div v-if="monthlySalesWithBreakdown.length" class="grid gap-2 md:grid-cols-2">
+                    <div v-if="monthlySalesWithBreakdown.length" class="grid gap-2 lg:grid-cols-2">
                         <div
                             v-for="row in monthlySalesNewestFirst"
                             :key="`month-card-${row.month}`"
-                            class="rounded-xl border border-gray-100 bg-white px-3 py-3 shadow-sm"
+                            class="rounded-xl border border-gray-100 bg-white px-3 py-2.5 shadow-sm"
                         >
-                            <div class="flex items-center justify-between gap-3">
-                                <div>
-                                    <p class="text-[11px] font-semibold text-gray-500">対象月</p>
-                                    <p class="text-base font-bold text-gray-900">{{ row.month }}</p>
+                            <div class="flex items-start justify-between gap-3">
+                                <div class="min-w-0">
+                                    <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                                        <p class="text-base font-bold text-gray-900">{{ row.month }}</p>
+                                        <p class="text-[11px] font-semibold text-gray-400">{{ formatNumber(row.salesCount) }}件</p>
+                                    </div>
+                                    <div v-if="row.breakdown.length" class="mt-1.5 flex flex-wrap gap-1">
+                                        <span
+                                            v-for="item in row.breakdown"
+                                            :key="`month-card-${row.month}-${item.scope}`"
+                                            class="inline-flex items-center gap-1 rounded-full bg-gray-50 px-1.5 py-0.5 text-[10px] font-semibold text-gray-600"
+                                        >
+                                            <span class="text-gray-900">{{ scopeShortLabel(item.scope) }}</span>
+                                            <span>{{ formatYen(item.totalAmount) }}</span>
+                                            <span class="text-gray-400">{{ formatNumber(item.salesCount) }}件</span>
+                                        </span>
+                                    </div>
+                                    <p v-else class="mt-1 text-[11px] text-gray-400">内訳なし</p>
                                 </div>
-                                <div class="text-right">
-                                    <p class="text-[11px] font-semibold text-gray-500">売上</p>
-                                    <p class="text-lg font-black text-purple-700">{{ formatYen(row.totalAmount) }}</p>
+                                <div class="shrink-0 text-right">
+                                    <p class="text-base font-black text-purple-700 sm:text-lg">{{ formatYen(row.totalAmount) }}</p>
                                 </div>
-                            </div>
-
-                            <div class="mt-2 flex items-center justify-between rounded-lg bg-gray-50 px-2.5 py-1.5">
-                                <p class="text-[11px] font-semibold text-gray-500">件数</p>
-                                <p class="text-sm font-bold text-gray-900">{{ formatNumber(row.salesCount) }}件</p>
-                            </div>
-
-                            <div class="mt-2 border-t border-gray-100 pt-2">
-                                <p class="text-[11px] font-semibold text-gray-500">内訳</p>
-                                <div v-if="row.breakdown.length" class="mt-1.5 flex flex-wrap gap-1.5">
-                                    <span
-                                        v-for="item in row.breakdown"
-                                        :key="`month-card-${row.month}-${item.scope}`"
-                                        class="inline-flex items-center gap-1 rounded-full bg-gray-50 px-2 py-0.5 text-[10px] font-semibold text-gray-600"
-                                    >
-                                        <span class="text-gray-900">{{ scopeShortLabel(item.scope) }}</span>
-                                        <span>{{ formatNumber(item.salesCount) }}件</span>
-                                        <span>{{ formatYen(item.totalAmount) }}</span>
-                                    </span>
-                                </div>
-                                <p v-else class="mt-2 text-xs text-gray-400">内訳なし</p>
                             </div>
                         </div>
                     </div>

@@ -544,7 +544,7 @@ const topDailySales = computed(() =>
             if (amountDiff !== 0) return amountDiff;
             return String(b?.day ?? "").localeCompare(String(a?.day ?? ""));
         })
-        .slice(0, 10),
+        .slice(0, 20),
 );
 
 const monthlyBreakdownScopes = new Set(["seiho", "daigaku"]);
@@ -1688,7 +1688,7 @@ const peakHour2h = computed(() => {
 
                     <div class="mt-4 rounded-lg border border-gray-100 bg-white p-3">
                         <div class="mb-3 flex items-center justify-between gap-2">
-                            <p class="text-xs font-semibold text-gray-700">売上ランキング TOP10</p>
+                            <p class="text-xs font-semibold text-gray-700">売上ランキング TOP20</p>
                             <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
                         </div>
                         <div v-if="topDailySales.length" class="space-y-2">

@@ -923,10 +923,11 @@ const subject = "2021年度 フォームA";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-05 確認済み
                             relatedProblems: ['2021a33', '2021b33', '2021c33'],
                             questionTitle: '予定利率',
-                            content: '保険金額 → 商品の特性',
-                        }, //33 p38
+                            content: '保険金額に応じて → 商品の特性に応じて', //p38
+                        }, //33
                         {
                             // rev: 2026-07-11 確認済み
                             relatedProblems: ['2021a34', '2021b34'],

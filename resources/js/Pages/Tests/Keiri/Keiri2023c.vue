@@ -915,10 +915,11 @@ const subject = "2023年度 フォームC";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-05 確認済み
                             relatedProblems: ['2023a33', '2023c33'],
                             questionTitle: '予定利率',
-                            content: '保険金額 → 商品の特性',
-                        }, //33 p38
+                            content: '保険金額に応じて → 商品の特性に応じて', //p38
+                        }, //33
                         {
                             // rev: 2026-07-11 確認済み
                             relatedProblems: ['2023a34', '2023b34', '2023c34'],

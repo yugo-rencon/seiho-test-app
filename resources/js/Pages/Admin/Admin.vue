@@ -596,6 +596,9 @@ const monthlySalesWithBreakdown = computed(() => {
         }))
         .sort((a, b) => a.month.localeCompare(b.month));
 });
+const monthlySalesNewestFirst = computed(() =>
+    [...monthlySalesWithBreakdown.value].reverse(),
+);
 
 const overviewPeriodOptions = computed(() => {
     const years = new Set(
@@ -1202,10 +1205,10 @@ const peakHour2h = computed(() => {
                     <button
                         v-for="tab in [
                             { key: 'overview', label: '概要' },
-                            { key: 'adsense', label: '広告' },
-                            { key: 'premium', label: '有料利用' },
                             { key: 'daily', label: '日次' },
                             { key: 'monthly', label: '月次' },
+                            { key: 'premium', label: '有料利用' },
+                            { key: 'adsense', label: '広告' },
                         ]"
                         :key="`sales-${tab.key}`"
                         type="button"
@@ -1219,7 +1222,7 @@ const peakHour2h = computed(() => {
                     </button>
                 </div>
 
-                <div v-if="salesTab === 'overview' || salesTab === 'daily'" class="mb-4 flex flex-wrap items-center gap-2">
+                <div v-if="salesTab === 'overview' || salesTab === 'daily' || salesTab === 'monthly'" class="mb-4 flex flex-wrap items-center gap-2">
                     <label for="sales-scope-filter" class="text-xs font-semibold text-gray-600">試験フィルター</label>
                     <select
                         id="sales-scope-filter"
@@ -1694,52 +1697,60 @@ const peakHour2h = computed(() => {
                     </div>
                 </div>
 
-                <div v-if="salesTab === 'monthly'" class="mt-2 rounded-lg border border-gray-100">
-                    <div class="rounded-lg border border-gray-100">
-                        <div class="flex items-center justify-between gap-2 border-b border-gray-100 px-3 py-2">
-                            <p class="text-xs font-semibold text-gray-700">月次売上</p>
-                            <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="min-w-[30rem] text-[11px] sm:min-w-full sm:text-xs">
-                                <thead class="bg-gray-50 text-left text-gray-500">
-                                    <tr>
-                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">月</th>
-                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">件数</th>
-                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">売上</th>
-                                        <th class="whitespace-nowrap px-2 py-2 sm:px-3">内訳</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr
-                                        v-for="row in monthlySalesWithBreakdown"
-                                        :key="`month-${row.month}`"
-                                        class="border-t border-gray-100"
+                <div v-if="salesTab === 'monthly'" class="mt-2 rounded-xl border border-gray-100 bg-gray-50/40 p-3">
+                    <div class="mb-3 flex items-center justify-between gap-2">
+                        <p class="text-sm font-semibold text-gray-900">月次売上</p>
+                        <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
+                    </div>
+
+                    <div v-if="monthlySalesWithBreakdown.length" class="grid gap-3 md:grid-cols-2">
+                        <div
+                            v-for="row in monthlySalesNewestFirst"
+                            :key="`month-card-${row.month}`"
+                            class="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm"
+                        >
+                            <div class="flex items-start justify-between gap-3">
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-500">対象月</p>
+                                    <p class="mt-0.5 text-lg font-bold text-gray-900">{{ row.month }}</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs font-semibold text-gray-500">売上</p>
+                                    <p class="mt-0.5 text-xl font-black text-purple-700">{{ formatYen(row.totalAmount) }}</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 grid grid-cols-2 gap-2">
+                                <div class="rounded-xl bg-gray-50 px-3 py-2">
+                                    <p class="text-[11px] font-semibold text-gray-500">件数</p>
+                                    <p class="mt-0.5 text-base font-bold text-gray-900">{{ formatNumber(row.salesCount) }}件</p>
+                                </div>
+                                <div class="rounded-xl bg-purple-50 px-3 py-2">
+                                    <p class="text-[11px] font-semibold text-purple-600">平均単価</p>
+                                    <p class="mt-0.5 text-base font-bold text-gray-900">
+                                        {{ row.salesCount > 0 ? formatYen(Math.round(row.totalAmount / row.salesCount)) : '-' }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 border-t border-gray-100 pt-3">
+                                <p class="text-[11px] font-semibold text-gray-500">内訳</p>
+                                <div v-if="row.breakdown.length" class="mt-2 flex flex-wrap gap-2">
+                                    <span
+                                        v-for="item in row.breakdown"
+                                        :key="`month-card-${row.month}-${item.scope}`"
+                                        class="inline-flex items-center gap-1 rounded-full bg-gray-50 px-2.5 py-1 text-[11px] font-semibold text-gray-600"
                                     >
-                                        <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ row.month }}</td>
-                                        <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ row.salesCount }}</td>
-                                        <td class="whitespace-nowrap px-2 py-2 text-gray-700 sm:px-3">{{ formatYen(row.totalAmount) }}</td>
-                                        <td class="px-2 py-2 text-gray-700 sm:px-3">
-                                            <div class="flex flex-wrap gap-x-2 gap-y-1">
-                                                <span
-                                                    v-for="item in row.breakdown"
-                                                    :key="`month-${row.month}-${item.scope}`"
-                                                    class="whitespace-nowrap"
-                                                >
-                                                    <span class="font-semibold text-gray-800">{{ scopeLabel(item.scope) }}</span>
-                                                    {{ item.salesCount }}件 {{ formatYen(item.totalAmount) }}
-                                                </span>
-                                                <span v-if="row.breakdown.length === 0" class="text-gray-400">-</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr v-if="monthlySalesWithBreakdown.length === 0">
-                                        <td colspan="4" class="px-3 py-5 text-center text-gray-500">データがありません。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        <span class="text-gray-900">{{ scopeShortLabel(item.scope) }}</span>
+                                        <span>{{ formatNumber(item.salesCount) }}件</span>
+                                        <span>{{ formatYen(item.totalAmount) }}</span>
+                                    </span>
+                                </div>
+                                <p v-else class="mt-2 text-xs text-gray-400">内訳なし</p>
+                            </div>
                         </div>
                     </div>
+                    <p v-else class="rounded-xl bg-white py-8 text-center text-sm text-gray-500">データがありません。</p>
                 </div>
 
                 <div v-if="salesTab === 'weekday'" class="mt-2 rounded-lg border border-gray-100 p-3">

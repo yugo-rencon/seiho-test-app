@@ -547,8 +547,6 @@ const topDailySales = computed(() =>
         .slice(0, 20),
 );
 
-const monthlyBreakdownScopes = new Set(["seiho", "daigaku"]);
-
 const monthlySalesWithBreakdown = computed(() => {
     const rows = salesInsights.value?.monthlySalesByScope ?? [];
     const targetRows = salesScopeFilter.value === "all"
@@ -574,13 +572,11 @@ const monthlySalesWithBreakdown = computed(() => {
 
         entry.salesCount += Number.isFinite(salesCount) ? salesCount : 0;
         entry.totalAmount += Number.isFinite(totalAmount) ? totalAmount : 0;
-        if (monthlyBreakdownScopes.has(scope)) {
-            entry.breakdown.push({
-                scope,
-                salesCount: Number.isFinite(salesCount) ? salesCount : 0,
-                totalAmount: Number.isFinite(totalAmount) ? totalAmount : 0,
-            });
-        }
+        entry.breakdown.push({
+            scope,
+            salesCount: Number.isFinite(salesCount) ? salesCount : 0,
+            totalAmount: Number.isFinite(totalAmount) ? totalAmount : 0,
+        });
 
         map.set(month, entry);
     }

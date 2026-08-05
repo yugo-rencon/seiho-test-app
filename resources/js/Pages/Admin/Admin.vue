@@ -36,6 +36,7 @@ const userSearch = ref(props.filters?.user_search ?? "");
 const purchaseDateFrom = ref(props.filters?.purchase_date_from ?? "");
 const purchaseDateTo = ref(props.filters?.purchase_date_to ?? "");
 const activeTab = ref("dashboard");
+const operationsTab = ref("exam-results");
 const salesTab = ref("overview");
 const salesScopeFilter = ref("all");
 const overviewPeriodFilter = ref(String(new Date().getFullYear()));
@@ -916,7 +917,7 @@ const peakHour2h = computed(() => {
                         : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
                     @click="activeTab = 'dashboard'"
                 >
-                    ダッシュボード
+                    概要
                 </button>
                 <button
                     type="button"
@@ -941,35 +942,13 @@ const peakHour2h = computed(() => {
                 <button
                     type="button"
                     class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
-                    :class="isActiveMenu('exam-results')
+                    :class="isActiveMenu('operations')
                         ? 'border-purple-200 bg-purple-50 text-purple-700'
                         : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                    @click="activeTab = 'exam-results'"
+                    @click="activeTab = 'operations'"
                 >
-                    点数入力
+                    運営管理
                 </button>
-                <button
-                    type="button"
-                    class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
-                    :class="isActiveMenu('releases')
-                        ? 'border-purple-200 bg-purple-50 text-purple-700'
-                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                    @click="activeTab = 'releases'"
-                >
-                    リリース管理
-                </button>
-                <Link
-                    :href="route(adminContactsRoute)"
-                    class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
-                >
-                    問い合わせ
-                    <span
-                        v-if="newContactCount > 0"
-                        class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
-                    >
-                        {{ newContactCount }}
-                    </span>
-                </Link>
                 <Link
                     :href="route(adminPersonalRoute)"
                     class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
@@ -1102,9 +1081,71 @@ const peakHour2h = computed(() => {
             </div>
 
             <div
-                v-if="activeTab === 'exam-results'"
+                v-if="activeTab === 'operations'"
                 class="mt-6 space-y-4"
             >
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                        <div>
+                            <h2 class="text-sm font-semibold text-gray-900">運営管理</h2>
+                            <p class="mt-1 text-xs text-gray-500">点数入力状況・リリース管理・問い合わせ対応をまとめて確認できます。</p>
+                        </div>
+                        <Link
+                            :href="route(adminContactsRoute)"
+                            class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-semibold text-gray-600 transition hover:bg-gray-50"
+                        >
+                            問い合わせ一覧
+                            <span
+                                v-if="newContactCount > 0"
+                                class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
+                            >
+                                {{ newContactCount }}
+                            </span>
+                        </Link>
+                    </div>
+
+                    <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                        <button
+                            type="button"
+                            class="rounded-xl border px-4 py-3 text-left transition"
+                            :class="operationsTab === 'exam-results'
+                                ? 'border-purple-200 bg-purple-50 text-purple-700'
+                                : 'border-gray-100 bg-gray-50 text-gray-600 hover:bg-gray-100'"
+                            @click="operationsTab = 'exam-results'"
+                        >
+                            <div class="text-sm font-bold">点数入力状況</div>
+                            <div class="mt-1 text-xs opacity-75">入力数・科目別・最近の入力</div>
+                        </button>
+                        <button
+                            type="button"
+                            class="rounded-xl border px-4 py-3 text-left transition"
+                            :class="operationsTab === 'releases'
+                                ? 'border-purple-200 bg-purple-50 text-purple-700'
+                                : 'border-gray-100 bg-gray-50 text-gray-600 hover:bg-gray-100'"
+                            @click="operationsTab = 'releases'"
+                        >
+                            <div class="text-sm font-bold">リリース管理</div>
+                            <div class="mt-1 text-xs opacity-75">公開・非公開を切り替え</div>
+                        </button>
+                        <Link
+                            :href="route(adminContactsRoute)"
+                            class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-left text-gray-600 transition hover:bg-gray-100"
+                        >
+                            <div class="flex items-center gap-2 text-sm font-bold">
+                                問い合わせ
+                                <span
+                                    v-if="newContactCount > 0"
+                                    class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
+                                >
+                                    {{ newContactCount }}
+                                </span>
+                            </div>
+                            <div class="mt-1 text-xs opacity-75">問い合わせ一覧へ移動</div>
+                        </Link>
+                    </div>
+                </div>
+
+                <template v-if="operationsTab === 'exam-results'">
                 <div class="rounded-xl border border-gray-100 bg-white p-4">
                     <div class="flex flex-wrap items-end justify-between gap-2">
                         <div>
@@ -1190,6 +1231,7 @@ const peakHour2h = computed(() => {
                     </div>
                     </div>
                 </div>
+                </template>
             </div>
 
             <div
@@ -2026,7 +2068,7 @@ const peakHour2h = computed(() => {
             </template>
 
             <!-- リリース管理タブ -->
-            <template v-if="activeTab === 'releases'">
+            <template v-if="activeTab === 'operations' && operationsTab === 'releases'">
                 <!-- 全体進捗 -->
                 <div class="mb-4 rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-slate-50/60 px-5 py-4 shadow-sm">
                     <div class="mb-2 flex flex-wrap items-center justify-between gap-2">

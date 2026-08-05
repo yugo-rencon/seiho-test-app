@@ -950,6 +950,18 @@ const peakHour2h = computed(() => {
                     運営管理
                 </button>
                 <Link
+                    :href="route(adminContactsRoute)"
+                    class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
+                >
+                    問い合わせ
+                    <span
+                        v-if="newContactCount > 0"
+                        class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
+                    >
+                        {{ newContactCount }}
+                    </span>
+                </Link>
+                <Link
                     :href="route(adminPersonalRoute)"
                     class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
                 >
@@ -1088,23 +1100,11 @@ const peakHour2h = computed(() => {
                     <div class="flex flex-wrap items-start justify-between gap-3">
                         <div>
                             <h2 class="text-sm font-semibold text-gray-900">運営管理</h2>
-                            <p class="mt-1 text-xs text-gray-500">点数入力状況・リリース管理・問い合わせ対応をまとめて確認できます。</p>
+                            <p class="mt-1 text-xs text-gray-500">点数入力状況とリリース管理を確認できます。</p>
                         </div>
-                        <Link
-                            :href="route(adminContactsRoute)"
-                            class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-semibold text-gray-600 transition hover:bg-gray-50"
-                        >
-                            問い合わせ一覧
-                            <span
-                                v-if="newContactCount > 0"
-                                class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
-                            >
-                                {{ newContactCount }}
-                            </span>
-                        </Link>
                     </div>
 
-                    <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                    <div class="mt-4 grid gap-3 sm:grid-cols-2">
                         <button
                             type="button"
                             class="rounded-xl border px-4 py-3 text-left transition"
@@ -1127,21 +1127,6 @@ const peakHour2h = computed(() => {
                             <div class="text-sm font-bold">リリース管理</div>
                             <div class="mt-1 text-xs opacity-75">公開・非公開を切り替え</div>
                         </button>
-                        <Link
-                            :href="route(adminContactsRoute)"
-                            class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-left text-gray-600 transition hover:bg-gray-100"
-                        >
-                            <div class="flex items-center gap-2 text-sm font-bold">
-                                問い合わせ
-                                <span
-                                    v-if="newContactCount > 0"
-                                    class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
-                                >
-                                    {{ newContactCount }}
-                                </span>
-                            </div>
-                            <div class="mt-1 text-xs opacity-75">問い合わせ一覧へ移動</div>
-                        </Link>
                     </div>
                 </div>
 
@@ -1745,43 +1730,35 @@ const peakHour2h = computed(() => {
                         <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
                     </div>
 
-                    <div v-if="monthlySalesWithBreakdown.length" class="grid gap-3 md:grid-cols-2">
+                    <div v-if="monthlySalesWithBreakdown.length" class="grid gap-2 md:grid-cols-2">
                         <div
                             v-for="row in monthlySalesNewestFirst"
                             :key="`month-card-${row.month}`"
-                            class="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm"
+                            class="rounded-xl border border-gray-100 bg-white px-3 py-3 shadow-sm"
                         >
-                            <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-center justify-between gap-3">
                                 <div>
-                                    <p class="text-xs font-semibold text-gray-500">対象月</p>
-                                    <p class="mt-0.5 text-lg font-bold text-gray-900">{{ row.month }}</p>
+                                    <p class="text-[11px] font-semibold text-gray-500">対象月</p>
+                                    <p class="text-base font-bold text-gray-900">{{ row.month }}</p>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-xs font-semibold text-gray-500">売上</p>
-                                    <p class="mt-0.5 text-xl font-black text-purple-700">{{ formatYen(row.totalAmount) }}</p>
+                                    <p class="text-[11px] font-semibold text-gray-500">売上</p>
+                                    <p class="text-lg font-black text-purple-700">{{ formatYen(row.totalAmount) }}</p>
                                 </div>
                             </div>
 
-                            <div class="mt-4 grid grid-cols-2 gap-2">
-                                <div class="rounded-xl bg-gray-50 px-3 py-2">
-                                    <p class="text-[11px] font-semibold text-gray-500">件数</p>
-                                    <p class="mt-0.5 text-base font-bold text-gray-900">{{ formatNumber(row.salesCount) }}件</p>
-                                </div>
-                                <div class="rounded-xl bg-purple-50 px-3 py-2">
-                                    <p class="text-[11px] font-semibold text-purple-600">平均単価</p>
-                                    <p class="mt-0.5 text-base font-bold text-gray-900">
-                                        {{ row.salesCount > 0 ? formatYen(Math.round(row.totalAmount / row.salesCount)) : '-' }}
-                                    </p>
-                                </div>
+                            <div class="mt-2 flex items-center justify-between rounded-lg bg-gray-50 px-2.5 py-1.5">
+                                <p class="text-[11px] font-semibold text-gray-500">件数</p>
+                                <p class="text-sm font-bold text-gray-900">{{ formatNumber(row.salesCount) }}件</p>
                             </div>
 
-                            <div class="mt-4 border-t border-gray-100 pt-3">
+                            <div class="mt-2 border-t border-gray-100 pt-2">
                                 <p class="text-[11px] font-semibold text-gray-500">内訳</p>
-                                <div v-if="row.breakdown.length" class="mt-2 flex flex-wrap gap-2">
+                                <div v-if="row.breakdown.length" class="mt-1.5 flex flex-wrap gap-1.5">
                                     <span
                                         v-for="item in row.breakdown"
                                         :key="`month-card-${row.month}-${item.scope}`"
-                                        class="inline-flex items-center gap-1 rounded-full bg-gray-50 px-2.5 py-1 text-[11px] font-semibold text-gray-600"
+                                        class="inline-flex items-center gap-1 rounded-full bg-gray-50 px-2 py-0.5 text-[10px] font-semibold text-gray-600"
                                     >
                                         <span class="text-gray-900">{{ scopeShortLabel(item.scope) }}</span>
                                         <span>{{ formatNumber(item.salesCount) }}件</span>

@@ -159,7 +159,7 @@ const getDaigakuRoute = (sectionId, year, form) => {
                         </p>
                         <div class="mt-1 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
                             <span class="min-w-0 text-center text-[10px] font-semibold text-indigo-700/90 sm:text-xs">
-                                ユーザー登録者数1100名突破！
+                                ユーザー登録者数1200名突破！
                             </span>
                             <Link
                                 :href="pricingHref"

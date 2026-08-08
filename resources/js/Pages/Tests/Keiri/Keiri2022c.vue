@@ -832,8 +832,8 @@ const subject = "2022年度 フォームC";
                     questionTitle="契約者配当の割当対象契約"
                     :relatedProblems="['2022c27']"
                     :contents="[
-                        //p132
-                        '半年 → 1年',
+                        // rev: 2026-08-08 確認済み
+                        '半年 → 1年', //p133
                         '正しい',
                         '正しい',
                     ]"
@@ -925,9 +925,10 @@ const subject = "2022年度 フォームC";
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-08 確認済み
                             relatedProblems: ['2022c38'],
                             questionTitle: '変額保険金額の計算',
-                            content: '月始 → 月末',
+                            content: '月始 → 月末', //p145
                         }, //38
                         {
                             // rev: 2026-08-08 確認済み

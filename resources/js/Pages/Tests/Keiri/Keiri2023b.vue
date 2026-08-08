@@ -931,10 +931,11 @@ const subject = "2023年度 フォームB";
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-08 確認済み
                             relatedProblems: ['2023b39'],
                             questionTitle: '変額保険の用語',
-                            content: '月始 → 月末',
-                        }, //39 p144
+                            content: '月始 → 月末', //p145
+                        }, //39
                         {
                             // rev: 2026-07-11 確認済み
                             relatedProblems: ['2023b40', '2023c50'],

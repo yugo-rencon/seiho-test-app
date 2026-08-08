@@ -931,9 +931,10 @@ const subject = "2022年度 フォームA";
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-08 確認済み
                             relatedProblems: ['2022a39', '2022b39', '2022c39'],
                             questionTitle: '変額保険の運用リスク',
-                            content: '生命保険会社 → 契約者',
+                            content: '生命保険会社 → 契約者', //p151
                         }, //39
                         {
                             // rev: 2026-07-11 確認済み

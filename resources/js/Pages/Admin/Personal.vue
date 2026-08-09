@@ -26,6 +26,8 @@ const props = defineProps({
             walking_count: 0,
             running_count: 0,
             strength_training_count: 0,
+            streak_count: 0,
+            streak_until: null,
         }),
     },
     exerciseMonthlySummaries: {
@@ -40,7 +42,7 @@ const props = defineProps({
 
 const activeTab = ref("study");
 const activeStudyTab = ref("record");
-const activeExerciseTab = ref("record");
+const activeExerciseTab = ref("daily");
 
 const tabs = [
     { key: "study", label: "学習" },
@@ -50,15 +52,13 @@ const tabs = [
 
 const studyTabs = [
     { key: "record", label: "記録" },
-    { key: "summary", label: "累計" },
     { key: "daily", label: "日別" },
     { key: "monthly", label: "月別" },
 ];
 
 const exerciseTabs = [
-    { key: "record", label: "記録" },
-    { key: "summary", label: "累計" },
     { key: "daily", label: "日別" },
+    { key: "summary", label: "記録" },
 ];
 
 const studyCategories = [
@@ -320,6 +320,7 @@ const setExerciseMonth = (month) => {
         .sort()
         .find((day) => day.startsWith(month));
     selectedExerciseDay.value = firstDayInMonth || `${month}-01`;
+    exerciseLogForm.exercised_on = selectedExerciseDay.value;
 };
 
 const moveExerciseMonth = (amount) => {
@@ -533,7 +534,7 @@ const deleteStudyLog = () => {
             </div>
 
             <div v-if="activeTab === 'study'">
-                <div class="mb-4 grid grid-cols-4 overflow-hidden rounded-lg border border-gray-200 bg-white text-xs font-semibold shadow-sm sm:flex sm:w-fit">
+                <div class="mb-4 grid grid-cols-3 overflow-hidden rounded-lg border border-gray-200 bg-white text-xs font-semibold shadow-sm sm:flex sm:w-fit">
                     <button
                         v-for="tab in studyTabs"
                         :key="tab.key"
@@ -733,28 +734,30 @@ const deleteStudyLog = () => {
                             <p class="text-sm font-bold text-sky-950">{{ selectedStudyDateSummary.learning }}セット</p>
                         </div>
                     </div>
-                </section>
 
-                <div v-if="activeStudyTab === 'summary'" class="mb-6 grid gap-3 sm:grid-cols-2">
-                    <div class="rounded-xl border border-orange-100 bg-orange-50/70 p-4 shadow-sm">
-                        <p class="text-xs font-semibold text-orange-700">英語 累計</p>
-                        <p class="mt-1 text-2xl font-bold text-orange-950">{{ stats.english_duration }}</p>
-                    </div>
-                    <div class="rounded-xl border border-sky-100 bg-sky-50/80 p-4 shadow-sm">
-                        <p class="text-xs font-semibold text-sky-700">学び 累計</p>
-                        <p class="mt-1 text-2xl font-bold text-sky-950">{{ stats.learning_duration }}</p>
-                        <div class="mt-3 grid grid-cols-2 gap-2">
-                            <div
-                                v-for="breakdown in stats.learning_breakdown"
-                                :key="breakdown.label"
-                                class="rounded-lg border border-sky-100 bg-white/70 px-3 py-2"
-                            >
-                                <p class="text-[11px] font-bold text-sky-600">{{ breakdown.label }}</p>
-                                <p class="mt-0.5 text-sm font-bold text-sky-950">{{ breakdown.duration }}</p>
+                    <div class="mt-4 grid gap-2 sm:grid-cols-2">
+                        <div class="rounded-xl border border-orange-100 bg-orange-50/70 p-3">
+                            <p class="text-[11px] font-bold text-orange-700">英語 累計</p>
+                            <p class="mt-1 text-xl font-bold text-orange-950">{{ stats.english_duration }}</p>
+                        </div>
+                        <div class="rounded-xl border border-sky-100 bg-sky-50/80 p-3">
+                            <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                <p class="text-[11px] font-bold text-sky-700">学び 累計</p>
+                                <p class="text-xl font-bold text-sky-950">{{ stats.learning_duration }}</p>
+                            </div>
+                            <div class="mt-2 flex flex-wrap gap-1.5">
+                                <span
+                                    v-for="breakdown in stats.learning_breakdown"
+                                    :key="breakdown.label"
+                                    class="inline-flex items-center gap-1 rounded-full bg-white/75 px-2 py-1 text-[11px] font-bold text-sky-800 ring-1 ring-sky-100"
+                                >
+                                    <span>{{ breakdown.label }}</span>
+                                    <span class="text-sky-950">{{ breakdown.duration }}</span>
+                                </span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <section v-if="activeStudyTab === 'daily'" class="mb-6 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-5">
                     <div class="sm:flex sm:justify-end">
@@ -886,7 +889,7 @@ const deleteStudyLog = () => {
             </div>
 
             <div v-if="activeTab === 'exercise'">
-                <div class="mb-4 grid grid-cols-3 overflow-hidden rounded-lg border border-gray-200 bg-white text-xs font-semibold shadow-sm sm:flex sm:w-fit">
+                <div class="mb-4 grid grid-cols-2 overflow-hidden rounded-lg border border-gray-200 bg-white text-xs font-semibold shadow-sm sm:flex sm:w-fit">
                     <button
                         v-for="tab in exerciseTabs"
                         :key="tab.key"
@@ -901,137 +904,21 @@ const deleteStudyLog = () => {
                     </button>
                 </div>
 
-                <section v-if="activeExerciseTab === 'record'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
-                    <form class="grid gap-2.5 md:grid-cols-[16rem_minmax(20rem,30rem)_auto] md:items-end" @submit.prevent="submitExerciseLog">
-                        <div class="block">
-                            <span class="text-[11px] font-bold text-gray-500">日付</span>
-                            <div class="mt-1">
-                                <div class="grid grid-cols-[2.25rem_1fr_2.25rem] overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
-                                    <button
-                                        type="button"
-                                        class="border-r border-gray-200 bg-gray-50 text-base font-bold text-gray-500 transition hover:bg-gray-100"
-                                        @click="adjustExerciseDate(-1)"
-                                    >
-                                        -
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="px-3 py-2 text-center text-sm font-bold text-gray-900 transition hover:bg-gray-50"
-                                        @click.prevent.stop="openExerciseDatePicker"
-                                    >
-                                        {{ formatDateLabel(exerciseLogForm.exercised_on) }}
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="border-l border-gray-200 bg-gray-50 text-base font-bold text-gray-500 transition hover:bg-gray-100"
-                                        @click="adjustExerciseDate(1)"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-
-                                <div
-                                    v-if="exerciseDatePickerOpen"
-                                    class="mt-2 rounded-2xl border border-gray-100 bg-white p-3 shadow-lg"
-                                >
-                                    <div class="flex items-center justify-between gap-2">
-                                        <button
-                                            type="button"
-                                            class="h-9 w-9 rounded-lg border border-gray-200 bg-white text-sm font-bold text-gray-600 transition hover:bg-gray-50"
-                                            @click="moveExerciseRecordCalendarMonth(-1)"
-                                        >
-                                            -
-                                        </button>
-                                        <p class="text-sm font-bold text-gray-900">{{ exerciseRecordCalendarMonth.replace("-", "/") }}</p>
-                                        <button
-                                            type="button"
-                                            class="h-9 w-9 rounded-lg border border-gray-200 bg-white text-sm font-bold text-gray-600 transition hover:bg-gray-50"
-                                            @click="moveExerciseRecordCalendarMonth(1)"
-                                        >
-                                            +
-                                        </button>
-                                    </div>
-
-                                    <div class="mt-3 grid grid-cols-7 text-center text-[10px] font-bold text-gray-400">
-                                        <div v-for="dayName in ['日', '月', '火', '水', '木', '金', '土']" :key="`exercise-record-${dayName}`" class="py-1">
-                                            {{ dayName }}
-                                        </div>
-                                    </div>
-                                    <div class="grid grid-cols-7 gap-1 text-center text-xs">
-                                        <div v-for="cell in exerciseRecordCalendarCells" :key="cell.key" class="h-10">
-                                            <button
-                                                v-if="!cell.empty"
-                                                type="button"
-                                                class="h-10 w-full rounded-lg font-bold transition"
-                                                :class="[
-                                                    exerciseLogForm.exercised_on === cell.date
-                                                        ? 'bg-gray-900 text-white shadow-sm'
-                                                        : 'text-gray-600 hover:bg-gray-50',
-                                                ]"
-                                                @click.prevent.stop="setExerciseDate(cell.date)"
-                                            >
-                                                {{ cell.day }}
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-3 grid grid-cols-2 gap-2">
-                                        <button
-                                            type="button"
-                                            class="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50"
-                                            @click.prevent.stop="exerciseDatePickerOpen = false"
-                                        >
-                                            閉じる
-                                        </button>
-                                        <button
-                                            type="button"
-                                            class="rounded-lg bg-gray-900 px-3 py-2 text-xs font-bold text-white transition hover:bg-gray-700"
-                                            @click.prevent.stop="setExerciseDate(today)"
-                                        >
-                                            今日
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <span v-if="exerciseLogForm.errors.exercised_on" class="mt-1 block text-xs text-rose-600">
-                                {{ exerciseLogForm.errors.exercised_on }}
-                            </span>
-                        </div>
-
-                        <div class="block">
-                            <span class="text-[11px] font-bold text-gray-500">種目</span>
-                            <div class="mt-1 grid grid-cols-3 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
-                                <button
-                                    v-for="activity in exerciseActivities"
-                                    :key="activity.value"
-                                    type="button"
-                                    class="flex items-center justify-center gap-1.5 rounded-md px-0.5 py-2 text-[10px] font-bold leading-tight transition focus:outline-none focus:ring-2 focus:ring-gray-300 sm:px-3 sm:text-sm"
-                                    :class="exerciseLogForm.activity === activity.value
-                                        ? activity.activeClass
-                                        : activity.inactiveClass"
-                                    @click="exerciseLogForm.activity = activity.value"
-                                >
-                                    <span class="hidden h-2 w-2 rounded-full min-[390px]:inline-block" :class="activity.accent"></span>
-                                    {{ activity.label }}
-                                </button>
-                            </div>
-                            <span v-if="exerciseLogForm.errors.activity" class="mt-1 block text-xs text-rose-600">
-                                {{ exerciseLogForm.errors.activity }}
-                            </span>
-                        </div>
-
-                        <div class="flex items-end">
-                            <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto md:whitespace-nowrap" :disabled="exerciseLogForm.processing">
-                                {{ exerciseLogForm.processing ? "保存中" : "実施で保存" }}
-                            </button>
-                        </div>
-                    </form>
-                </section>
-
                 <section v-if="activeExerciseTab === 'summary'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
                     <div class="mb-3 flex items-center justify-between rounded-lg border border-gray-100 bg-gray-50 px-3 py-2 text-gray-900">
                         <p class="text-[11px] font-bold text-gray-500">開始日</p>
                         <p class="text-sm font-bold">{{ exerciseStartedOnLabel }}</p>
+                    </div>
+                    <div class="mb-3 rounded-xl border border-violet-100 bg-violet-50/80 px-3 py-3">
+                        <div class="flex items-end justify-between gap-3">
+                            <div>
+                                <p class="text-[11px] font-bold text-violet-700">連続記録</p>
+                                <p class="mt-1 text-2xl font-black text-violet-950">{{ exerciseStats.streak_count }}日</p>
+                            </div>
+                            <p v-if="exerciseStats.streak_until" class="pb-1 text-[11px] font-semibold text-violet-500">
+                                {{ String(exerciseStats.streak_until).replaceAll("-", "/") }} まで
+                            </p>
+                        </div>
                     </div>
                     <div class="grid gap-2 sm:grid-cols-3">
                         <div class="flex items-center justify-between rounded-lg border px-3 py-2" :class="exerciseActivities[0].cardClass">
@@ -1123,6 +1010,38 @@ const deleteStudyLog = () => {
                             <h3 class="text-sm font-bold text-gray-900">{{ selectedExerciseDay.replaceAll("-", "/") }}</h3>
                             <p class="text-xs font-semibold text-gray-500">{{ selectedExerciseDayLogs.length }}件</p>
                         </div>
+
+                        <form class="mt-3 rounded-lg border border-gray-100 bg-white p-3" @submit.prevent="submitExerciseLog">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <p class="text-xs font-bold text-gray-500">この日に記録</p>
+                                <p class="text-xs font-semibold text-gray-400">{{ selectedExerciseDay.replaceAll("-", "/") }}</p>
+                            </div>
+                            <div class="mt-2 grid grid-cols-3 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
+                                <button
+                                    v-for="activity in exerciseActivities"
+                                    :key="activity.value"
+                                    type="button"
+                                    class="flex items-center justify-center gap-1.5 rounded-md px-0.5 py-2 text-[10px] font-bold leading-tight transition focus:outline-none focus:ring-2 focus:ring-gray-300 sm:px-3 sm:text-sm"
+                                    :class="exerciseLogForm.activity === activity.value
+                                        ? activity.activeClass
+                                        : activity.inactiveClass"
+                                    @click="exerciseLogForm.activity = activity.value"
+                                >
+                                    <span class="hidden h-2 w-2 rounded-full min-[390px]:inline-block" :class="activity.accent"></span>
+                                    {{ activity.label }}
+                                </button>
+                            </div>
+                            <span v-if="exerciseLogForm.errors.activity" class="mt-1 block text-xs text-rose-600">
+                                {{ exerciseLogForm.errors.activity }}
+                            </span>
+                            <span v-if="exerciseLogForm.errors.exercised_on" class="mt-1 block text-xs text-rose-600">
+                                {{ exerciseLogForm.errors.exercised_on }}
+                            </span>
+                            <button type="submit" class="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto" :disabled="exerciseLogForm.processing">
+                                {{ exerciseLogForm.processing ? "保存中" : "実施で保存" }}
+                            </button>
+                        </form>
+
                         <div v-if="selectedExerciseDayLogs.length > 0" class="mt-3 space-y-2">
                             <div
                                 v-for="log in selectedExerciseDayLogs"

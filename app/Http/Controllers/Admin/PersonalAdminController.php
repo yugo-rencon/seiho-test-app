@@ -116,6 +116,13 @@ class PersonalAdminController extends Controller
                 ];
             })
             ->values();
+        $completedExerciseDates = $exerciseLogs
+            ->where('completed', true)
+            ->pluck('exercised_on')
+            ->map(fn (Carbon $date) => $date->format('Y-m-d'))
+            ->unique()
+            ->values();
+        $exerciseStreak = $this->calculateDateStreak($completedExerciseDates->all());
 
         return Inertia::render('Admin/Personal', [
             'stats' => [
@@ -139,10 +146,41 @@ class PersonalAdminController extends Controller
                 'walking_count' => $exerciseLogs->where('activity', 'ウォーキング')->where('completed', true)->count(),
                 'running_count' => $exerciseLogs->where('activity', 'ランニング')->where('completed', true)->count(),
                 'strength_training_count' => $exerciseLogs->where('activity', '筋トレ')->where('completed', true)->count(),
+                'streak_count' => $exerciseStreak['count'],
+                'streak_until' => $exerciseStreak['until'],
             ],
             'exerciseMonthlySummaries' => $exerciseMonthlySummaries,
             'exerciseLogsByDay' => $exerciseLogsByDay,
         ]);
+    }
+
+    private function calculateDateStreak(array $dates): array
+    {
+        $dateSet = collect($dates)
+            ->filter()
+            ->unique()
+            ->values();
+
+        if ($dateSet->isEmpty()) {
+            return [
+                'count' => 0,
+                'until' => null,
+            ];
+        }
+
+        $current = Carbon::createFromFormat('!Y-m-d', (string) $dateSet->max());
+        $until = $current->toDateString();
+        $count = 0;
+
+        while ($dateSet->contains($current->toDateString())) {
+            $count += 1;
+            $current->subDay();
+        }
+
+        return [
+            'count' => $count,
+            'until' => $until,
+        ];
     }
 
     public function storeStudyLog(Request $request): RedirectResponse

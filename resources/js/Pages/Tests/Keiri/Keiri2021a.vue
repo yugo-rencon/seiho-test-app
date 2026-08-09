@@ -912,9 +912,10 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-08 確認済み
                             relatedProblems: ['2021a31', '2021c31'],
                             questionTitle: '契約年齢',
-                            content: '保険料が高くなる → 変わらない',
+                            content: '保険料が高くなる → 変わらない', //p15
                         }, //31
                         {
                             // rev: 2026-07-11 確認済み

@@ -40,13 +40,14 @@ const props = defineProps({
     },
 });
 
-const activeTab = ref("study");
+const activeTab = ref("english");
 const activeStudyTab = ref("daily");
 const activeExerciseTab = ref("daily");
 
 const tabs = [
-    { key: "study", label: "学習" },
+    { key: "english", label: "英語" },
     { key: "exercise", label: "運動" },
+    { key: "learning", label: "学び" },
     { key: "repayment", label: "返済" },
 ];
 
@@ -58,11 +59,6 @@ const studyTabs = [
 const exerciseTabs = [
     { key: "daily", label: "日別" },
     { key: "summary", label: "記録" },
-];
-
-const studyCategories = [
-    { value: "英語", label: "英語", accent: "bg-orange-400" },
-    { value: "学び", label: "学び", accent: "bg-sky-400" },
 ];
 
 const learningSubcategories = [
@@ -222,6 +218,36 @@ const selectedDayLogs = computed(() => {
     return props.studyLogsByDay[selectedCalendarDay.value] || [];
 });
 
+const currentStudyCategory = computed(() => {
+    return activeTab.value === "learning" ? "学び" : "英語";
+});
+
+const currentStudyTheme = computed(() => {
+    if (currentStudyCategory.value === "学び") {
+        return {
+            label: "学び",
+            totalLabel: "学び 累計",
+            duration: props.stats.learning_duration,
+            colorClass: "border-sky-100 bg-sky-50/80 text-sky-950",
+            labelClass: "text-sky-700",
+            cellClass: "bg-sky-50 text-sky-900",
+        };
+    }
+
+    return {
+        label: "英語",
+        totalLabel: "英語 累計",
+        duration: props.stats.english_duration,
+        colorClass: "border-orange-100 bg-orange-50/70 text-orange-950",
+        labelClass: "text-orange-700",
+        cellClass: "bg-orange-50 text-orange-900",
+    };
+});
+
+const selectedCurrentStudyDayLogs = computed(() => {
+    return selectedDayLogs.value.filter((log) => log.category === currentStudyCategory.value);
+});
+
 const selectedExerciseDayLogs = computed(() => {
     return props.exerciseLogsByDay[selectedExerciseDay.value] || [];
 });
@@ -253,6 +279,12 @@ const selectedStudyDateSummary = computed(() => {
         },
         { english: 0, learning: 0, ds: 0, e: 0 },
     );
+});
+
+const selectedCurrentStudyDateSetCount = computed(() => {
+    return currentStudyCategory.value === "学び"
+        ? selectedStudyDateSummary.value.learning
+        : selectedStudyDateSummary.value.english;
 });
 
 const selectedStudyCategorySetCount = computed(() => {
@@ -468,8 +500,10 @@ const submitExerciseLog = () => {
 };
 
 watch(
-    [() => studyLogForm.studied_on, () => studyLogForm.category, () => studyLogForm.subcategory],
+    [() => studyLogForm.studied_on, () => studyLogForm.category, () => studyLogForm.subcategory, () => activeTab.value],
     () => {
+        studyLogForm.category = currentStudyCategory.value;
+
         if (studyLogForm.category === "学び" && !studyLogForm.subcategory) {
             studyLogForm.subcategory = "DS検定";
         }
@@ -548,7 +582,7 @@ const deleteStudyLog = () => {
                 </button>
             </div>
 
-            <div v-if="activeTab === 'study'">
+            <div v-if="activeTab === 'english' || activeTab === 'learning'">
                 <div class="mb-4 grid grid-cols-2 overflow-hidden rounded-lg border border-gray-200 bg-white text-xs font-semibold shadow-sm sm:flex sm:w-fit">
                     <button
                         v-for="tab in studyTabs"
@@ -565,50 +599,43 @@ const deleteStudyLog = () => {
                 </div>
 
                 <section v-if="activeStudyTab === 'record'" class="mb-5 rounded-xl border border-gray-100 bg-white p-3 shadow-sm sm:p-4">
-                    <div class="grid gap-2 sm:grid-cols-2">
-                        <div class="rounded-xl border border-orange-100 bg-orange-50/70 p-3">
-                            <p class="text-[11px] font-bold text-orange-700">英語 累計</p>
-                            <p class="mt-1 text-xl font-bold text-orange-950">{{ stats.english_duration }}</p>
+                    <div class="rounded-xl border p-3" :class="currentStudyTheme.colorClass">
+                        <div class="flex flex-wrap items-baseline justify-between gap-2">
+                            <p class="text-[11px] font-bold" :class="currentStudyTheme.labelClass">{{ currentStudyTheme.totalLabel }}</p>
+                            <p class="text-xl font-bold">{{ currentStudyTheme.duration }}</p>
                         </div>
-                        <div class="rounded-xl border border-sky-100 bg-sky-50/80 p-3">
-                            <div class="flex flex-wrap items-baseline justify-between gap-2">
-                                <p class="text-[11px] font-bold text-sky-700">学び 累計</p>
-                                <p class="text-xl font-bold text-sky-950">{{ stats.learning_duration }}</p>
-                            </div>
-                            <div class="mt-2 flex flex-wrap gap-1.5">
-                                <span
-                                    v-for="breakdown in stats.learning_breakdown"
-                                    :key="breakdown.label"
-                                    class="inline-flex items-center gap-1 rounded-full bg-white/75 px-2 py-1 text-[11px] font-bold text-sky-800 ring-1 ring-sky-100"
-                                >
-                                    <span>{{ breakdown.label }}</span>
-                                    <span class="text-sky-950">{{ breakdown.duration }}</span>
-                                </span>
-                            </div>
+                        <div v-if="currentStudyCategory === '学び'" class="mt-2 flex flex-wrap gap-1.5">
+                            <span
+                                v-for="breakdown in stats.learning_breakdown"
+                                :key="breakdown.label"
+                                class="inline-flex items-center gap-1 rounded-full bg-white/75 px-2 py-1 text-[11px] font-bold text-sky-800 ring-1 ring-sky-100"
+                            >
+                                <span>{{ breakdown.label }}</span>
+                                <span class="text-sky-950">{{ breakdown.duration }}</span>
+                            </span>
                         </div>
                     </div>
 
                     <div class="mt-4">
-                        <h2 class="text-sm font-bold text-gray-900">月別学習時間</h2>
+                        <h2 class="text-sm font-bold text-gray-900">月別{{ currentStudyTheme.label }}時間</h2>
                         <div class="mt-2 overflow-auto rounded-lg border border-gray-100">
                             <table class="w-full table-fixed divide-y divide-gray-100 text-[10px] sm:text-sm">
                                 <colgroup>
-                                    <col class="w-[26%] sm:w-auto" />
-                                    <col class="w-[37%] sm:w-auto" />
-                                    <col class="w-[37%] sm:w-auto" />
+                                    <col class="w-[34%] sm:w-auto" />
+                                    <col class="w-[66%] sm:w-auto" />
                                 </colgroup>
                                 <thead class="bg-gray-50 text-left text-xs font-semibold text-gray-500">
                                     <tr>
                                         <th class="whitespace-nowrap px-1.5 py-2 sm:px-4 sm:py-3">月</th>
-                                        <th class="whitespace-nowrap bg-orange-50/80 px-1 py-2 text-right text-orange-700 sm:px-4 sm:py-3">英語</th>
-                                        <th class="whitespace-nowrap bg-sky-50/80 px-1 py-2 text-right text-sky-700 sm:px-4 sm:py-3">学び</th>
+                                        <th class="whitespace-nowrap px-1 py-2 text-right sm:px-4 sm:py-3" :class="currentStudyTheme.labelClass">{{ currentStudyTheme.label }}</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100 bg-white">
                                     <tr v-for="summary in monthlySummaries" :key="summary.month">
                                         <td class="whitespace-nowrap px-1.5 py-2 font-semibold text-gray-900 sm:px-4 sm:py-3">{{ summary.month_label }}</td>
-                                        <td class="whitespace-nowrap bg-orange-50/40 px-1 py-2 text-right font-semibold text-orange-900 sm:px-4 sm:py-3">{{ summary.english_duration }}</td>
-                                        <td class="whitespace-nowrap bg-sky-50/50 px-1 py-2 text-right font-semibold text-sky-900 sm:px-4 sm:py-3">{{ summary.learning_duration }}</td>
+                                        <td class="whitespace-nowrap px-1 py-2 text-right font-semibold sm:px-4 sm:py-3" :class="currentStudyTheme.labelClass">
+                                            {{ currentStudyCategory === '学び' ? summary.learning_duration : summary.english_duration }}
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -671,10 +698,10 @@ const deleteStudyLog = () => {
                                 >
                                     <div class="w-full text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
                                     <div v-if="cell.summary" class="mt-0.5 w-full space-y-0.5">
-                                        <div v-if="cell.summary.english_sets > 0" class="whitespace-nowrap rounded bg-orange-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-orange-900 sm:text-xs">
+                                        <div v-if="currentStudyCategory === '英語' && cell.summary.english_sets > 0" class="whitespace-nowrap rounded bg-orange-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-orange-900 sm:text-xs">
                                             英語 {{ cell.summary.english_sets }}
                                         </div>
-                                        <div v-if="cell.summary.learning_sets > 0" class="whitespace-nowrap rounded bg-sky-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-sky-900 sm:text-xs">
+                                        <div v-if="currentStudyCategory === '学び' && cell.summary.learning_sets > 0" class="whitespace-nowrap rounded bg-sky-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-sky-900 sm:text-xs">
                                             学び {{ cell.summary.learning_sets }}
                                         </div>
                                     </div>
@@ -686,39 +713,17 @@ const deleteStudyLog = () => {
                     <div class="mt-4 rounded-lg border border-gray-100 bg-gray-50 p-3">
                         <div class="flex items-center justify-between gap-3">
                             <h3 class="text-sm font-bold text-gray-900">{{ selectedDayLabel }}</h3>
-                            <p class="text-xs font-semibold text-gray-500">{{ selectedDayLogs.length }}件</p>
+                            <p class="text-xs font-semibold text-gray-500">{{ selectedCurrentStudyDayLogs.length }}件</p>
                         </div>
 
                         <form class="mt-3 rounded-lg border border-gray-100 bg-white p-3" @submit.prevent="submitStudyLog">
                             <div class="flex flex-wrap items-center justify-between gap-2">
-                                <p class="text-xs font-bold text-gray-500">この日に記録</p>
+                                <p class="text-xs font-bold text-gray-500">この日に{{ currentStudyTheme.label }}を記録</p>
                                 <p class="text-xs font-semibold text-gray-400">{{ selectedDayLabel }}</p>
                             </div>
 
-                            <div class="mt-2 grid gap-2 md:grid-cols-[1fr_1fr_1fr_auto] md:items-end">
-                                <div class="block">
-                                    <span class="text-[11px] font-bold text-gray-500">カテゴリー</span>
-                                    <div class="mt-1 grid grid-cols-2 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
-                                        <button
-                                            v-for="category in studyCategories"
-                                            :key="category.value"
-                                            type="button"
-                                            class="flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-bold transition"
-                                            :class="studyLogForm.category === category.value
-                                                ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
-                                                : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
-                                            @click="studyLogForm.category = category.value"
-                                        >
-                                            <span class="h-2.5 w-2.5 rounded-full" :class="category.accent"></span>
-                                            {{ category.label }}
-                                        </button>
-                                    </div>
-                                    <span v-if="studyLogForm.errors.category" class="mt-1 block text-xs text-rose-600">
-                                        {{ studyLogForm.errors.category }}
-                                    </span>
-                                </div>
-
-                                <div v-if="studyLogForm.category === '学び'" class="block">
+                            <div class="mt-2 grid gap-2 md:grid-cols-[1fr_1fr_auto] md:items-end">
+                                <div v-if="currentStudyCategory === '学び'" class="block">
                                     <span class="text-[11px] font-bold text-gray-500">分類</span>
                                     <div class="mt-1 grid grid-cols-2 gap-1 rounded-lg border border-sky-100 bg-sky-50/80 p-1 shadow-sm">
                                         <button
@@ -777,21 +782,15 @@ const deleteStudyLog = () => {
                                 </div>
                             </div>
 
-                            <div class="mt-3 grid grid-cols-2 gap-2">
-                                <div class="flex items-center justify-between rounded-lg border border-orange-100 bg-orange-50/70 px-3 py-2">
-                                    <p class="text-[11px] font-bold text-orange-700">英語</p>
-                                    <p class="text-sm font-bold text-orange-950">{{ selectedStudyDateSummary.english }}セット</p>
-                                </div>
-                                <div class="flex items-center justify-between rounded-lg border border-sky-100 bg-sky-50/80 px-3 py-2">
-                                    <p class="text-[11px] font-bold text-sky-700">学び</p>
-                                    <p class="text-sm font-bold text-sky-950">{{ selectedStudyDateSummary.learning }}セット</p>
-                                </div>
+                            <div class="mt-3 flex items-center justify-between rounded-lg border px-3 py-2" :class="currentStudyTheme.colorClass">
+                                <p class="text-[11px] font-bold" :class="currentStudyTheme.labelClass">{{ currentStudyTheme.label }}</p>
+                                <p class="text-sm font-bold">{{ selectedCurrentStudyDateSetCount }}セット</p>
                             </div>
                         </form>
 
-                        <div v-if="selectedDayLogs.length > 0" class="mt-3 space-y-2">
+                        <div v-if="selectedCurrentStudyDayLogs.length > 0" class="mt-3 space-y-2">
                             <div
-                                v-for="log in selectedDayLogs"
+                                v-for="log in selectedCurrentStudyDayLogs"
                                 :key="log.id"
                                 class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2"
                             >

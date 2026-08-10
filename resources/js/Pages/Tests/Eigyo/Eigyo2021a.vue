@@ -213,7 +213,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '公的介護保険制度の運営主体', content: '運営主体は各都道府県 → 各市区町村' }, //31 p29
                         { questionTitle: '第三分野市場', content: '損害保険 ↔︎ 生命保険' }, //32 p34
                         { questionTitle: '個人情報の保護に関する法律', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームA";
                         { questionTitle: '一時払退職後終身保険', content: '正しい' }, //38
                         { questionTitle: '法人顧客システム', content: '正しい' }, //39
                         { questionTitle: '営業職員の給与体系', content: '地域別最低賃金が適用されない → 適用される' }, //40 p136
-                        // 問41〜50
                         { questionTitle: '厚生年金保険の保険料', label: 'オ', content: '' }, //41
                         { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
                         { questionTitle: '個人保険商品', label: 'ウ', content: '利差配当' }, //43

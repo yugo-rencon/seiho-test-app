@@ -212,7 +212,6 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '公的介護保険制度の運営主体', content: '国、都道府県、医療保険者、年金保険者 → 国、都道府県、被保険者' }, //31 p29
                         { questionTitle: '代理・代行', content: '保険募集の代理を含まないこと → 含むこと<br>販売することはできなくなった → 販売可能になった' }, //32 p35
                         { questionTitle: '継続教育制度', content: '正しい' }, //33
@@ -223,7 +222,6 @@ const subject = "2022年度 フォームA";
                         { questionTitle: '通信販売', content: '正しい' }, //38
                         { questionTitle: '機関の機能', content: '正しい' }, //39
                         { questionTitle: '代理店', content: '乗合型 → 兼業型' }, //40 p145
-                        // 問41〜50
                         { questionTitle: '価値観の変化', label: 'ア', content: '年齢' }, //41
                         { questionTitle: '年金改革・分割', label: 'イ', content: '第3号' }, //42
                         { questionTitle: '金融サービス提供法', label: 'オ', content: '' }, //43

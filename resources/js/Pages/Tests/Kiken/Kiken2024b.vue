@@ -242,7 +242,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '危険選択',
@@ -303,7 +302,6 @@ const subject = "2024年度 フォームB";
                             relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務者',

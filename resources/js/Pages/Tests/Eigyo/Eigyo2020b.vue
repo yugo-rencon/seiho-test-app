@@ -213,7 +213,6 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '公的年金の老齢給付', content: '正しい' }, //31
                         { questionTitle: '加入後の自在性', content: '移行制度 → 転換制度' }, //32 p72-74
                         { questionTitle: '福利厚生費', content: '法定福利費 ↔︎ 法定外福利費' }, //33 p33
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームB";
                         { questionTitle: '団体就業不能保障保険', content: '正しい' }, //38
                         { questionTitle: '心身障害者扶養者生命保険', content: '正しい' }, //39
                         { questionTitle: '支社の配置', content: 'これまで〜の説明 ↔ 近年では〜の説明' }, //40 p140
-                        // 問41〜50
                         { questionTitle: '年金改革', label: 'イ', content: 'マクロ経済スライド' }, //41
                         { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
                         { questionTitle: '保険料の払込に関する特約', label: 'ウ', content: '団体扱特約' }, //43

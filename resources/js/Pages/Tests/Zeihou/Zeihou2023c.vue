@@ -248,7 +248,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '租税の種類', content: '正しい' }, //31
                         { questionTitle: '相続人', content: '代理相続 → 代襲相続' }, //32 p67
                         { questionTitle: '確定申告', content: '正しい' }, //33
@@ -259,7 +258,6 @@ const subject = "2023年度 フォームC";
                         { questionTitle: '転換時の税務上の取扱', content: '正しい' }, //38
                         { questionTitle: '確定拠出年金の老齢給付金', content: '一時所得 → 雑所得' }, //39 p221
                         { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '一時所得', label: 'イ', content: '営利' }, //41
                         { questionTitle: '所得税の課税標準', label: 'ウ', content: '租税特別措置法' }, //42
                         { questionTitle: '配偶者控除', label: 'オ', content: '' }, //43

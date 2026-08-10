@@ -213,7 +213,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: '保険会社向けの総合的な監督指針', content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている' }, //32 p28
                         { questionTitle: '生保の運用機構', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2024年度 フォームB";
                         { questionTitle: '金融システム改革', content: '正しい' }, //38
                         { questionTitle: '運用規制ルールの変更等', content: '表面利率 → 応募者利回り' }, //39 p211
                         { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //41
                         { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //42
                         { questionTitle: '企業貸付', label: 'ウ', content: '短期' }, //43

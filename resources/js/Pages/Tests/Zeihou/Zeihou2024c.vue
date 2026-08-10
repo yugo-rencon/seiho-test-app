@@ -248,7 +248,6 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '租税の種類', content: '外国税 → 内国税' }, //31 p3
                         { questionTitle: '源泉徴収制度', content: '支払った日の属する年の翌年1月10日 → 支払った日の属する月の翌月10日' }, //32 p59
                         { questionTitle: '相続税と贈与税', content: '相続税は相続税法、贈与税は贈与税法により規定 → いずれも相続税法により規定 ' }, //33 p64
@@ -259,7 +258,6 @@ const subject = "2024年度 フォームC";
                         { questionTitle: '不動産取得税', content: '形式的な所有権の移転でも課税対象 → 課税されない' }, //38 p160
                         { questionTitle: '特定退職金共済', content: '正しい' }, //39
                         { questionTitle: '最低課税方式', content: '14% → 7%' }, //40 p225
-                        // 問41〜50
                         { questionTitle: '給与所得', label: 'エ', content: '確定申告' }, //41
                         { questionTitle: '所得税の課税標準', label: 'オ', content: '' }, //42
                         { questionTitle: '所得税の税額控除', label: 'ウ', content: '住宅借入金（取得）等特別控除' }, //43

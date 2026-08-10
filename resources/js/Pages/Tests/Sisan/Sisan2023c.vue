@@ -213,7 +213,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: '運用規制', content: '正しい' }, //32
                         { questionTitle: '融資審査', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2023年度 フォームC";
                         { questionTitle: 'バブル崩壊後の資産運用', content: '正しい' }, //38
                         { questionTitle: '金融システム改革', content: '正しい' }, //39
                         { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
-                        // 問41〜50
                         { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
                         { questionTitle: '有価証券の定義', label: 'ア', content: '金融商品取引法' }, //42
                         { questionTitle: '株式投資の尺度', label: 'エ', content: '当期純利益' }, //43

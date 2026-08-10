@@ -214,7 +214,6 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '生命保険契約等に対する法の適用',
                             content: '営利保険 → 相互保険', //p5
@@ -255,17 +254,56 @@ const subject = "2025年度 フォームB";
                             questionTitle: '指定紛争解決機関',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '契約者保護', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険金額', label: 'イ', content: '被保険利益' }, //42
-                        { questionTitle: '生命保険契約等の効力', label: 'オ', content: '' }, //43
-                        { questionTitle: '生命保険契約等の解除の効力等', label: 'ア', content: '保険者' }, //44
-                        { questionTitle: '保険契約の取消し', label: 'ア', content: '保険金受取人' }, //45
-                        { questionTitle: '保険契約者の変更', label: 'ア', content: '承継人' }, //46
-                        { questionTitle: '配当金', label: 'ウ', content: '衡平' }, //47
-                        { questionTitle: '保険業の監督の方法', label: 'イ', content: '実体的監督' }, //48
-                        { questionTitle: '外国保険業者の規制', label: 'ウ', content: '財産目録' }, //49
-                        { questionTitle: '保険募集の制限', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '契約者保護',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '保険金額',
+                            label: 'イ',
+                            content: '被保険利益',
+                        }, //42
+                        {
+                            questionTitle: '生命保険契約等の効力',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '生命保険契約等の解除の効力等',
+                            label: 'ア',
+                            content: '保険者',
+                        }, //44
+                        {
+                            questionTitle: '保険契約の取消し',
+                            label: 'ア',
+                            content: '保険金受取人',
+                        }, //45
+                        {
+                            questionTitle: '保険契約者の変更',
+                            label: 'ア',
+                            content: '承継人',
+                        }, //46
+                        {
+                            questionTitle: '配当金',
+                            label: 'ウ',
+                            content: '衡平',
+                        }, //47
+                        {
+                            questionTitle: '保険業の監督の方法',
+                            label: 'イ',
+                            content: '実体的監督',
+                        }, //48
+                        {
+                            questionTitle: '外国保険業者の規制',
+                            label: 'ウ',
+                            content: '財産目録',
+                        }, //49
+                        {
+                            questionTitle: '保険募集の制限',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

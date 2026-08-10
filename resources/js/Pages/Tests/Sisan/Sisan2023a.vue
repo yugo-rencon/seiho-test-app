@@ -213,7 +213,6 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: '生保資金の構成', content: '自己資本 → 他人資本' }, //32 p11
                         { questionTitle: '融資審査', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2023年度 フォームA";
                         { questionTitle: '資産運用の多様化', content: '正しい' }, //38
                         { questionTitle: '金融システム改革法の施行（1998年（平成10年）12月）', content: '取引所集中の義務化、店頭登録市場の廃止、私設取引システムの撤廃 → 取引所集中義務の撤廃、店頭登録市場の機能強化、私設取引システムの導入' }, //39 p209
                         { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
-                        // 問41〜50
                         { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
                         { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //42
                         { questionTitle: '融資審査における財務諸表分析', label: 'オ', content: '' }, //43

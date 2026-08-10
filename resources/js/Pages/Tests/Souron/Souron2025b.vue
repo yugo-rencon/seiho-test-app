@@ -245,7 +245,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生命保険契約の法的性質',

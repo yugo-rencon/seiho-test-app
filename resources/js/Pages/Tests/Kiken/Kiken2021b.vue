@@ -242,7 +242,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '死亡率',

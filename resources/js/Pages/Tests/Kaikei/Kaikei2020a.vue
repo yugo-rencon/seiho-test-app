@@ -213,7 +213,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '簿記', content: '正しい' }, //31
                         { questionTitle: '開示書類', content: '四半期報告書は開示が求められていない → 開示が求められている' }, //32 p30
                         { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //33 p42-43
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームA";
                         { questionTitle: '保険金', content: '正しい' }, //38
                         { questionTitle: '利源分析', content: '危険準備金損益、為替損益 → 責任準備金関係損益、価格変動損益' }, //39 p178
                         { questionTitle: '区分経理への反映', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '帳簿の種類', label: 'エ', content: '売掛金元帳' }, //41
                         { questionTitle: '企業会計原則の一般原則', label: 'ア', content: '明瞭性' }, //42
                         { questionTitle: '勘定間取引', label: 'イ', content: '純保険料' }, //43

@@ -213,7 +213,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '簿記', content: '正しい' }, //31
                         { questionTitle: '株主資本等変動計算書', content: '正しい' }, //32
                         { questionTitle: '税務会計', content: '会計情報の開示という機能が含まれているという点で同様 → 含まれていないという点で異なる' }, //33 p32
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームC";
                         { questionTitle: '損益の認識基準', content: '現金主義 → 実現主義' }, //38 p142
                         { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
                         { questionTitle: '監査役による監査', content: '社内監査役 → 社外監査役' }, //40 p206
-                        // 問41〜50
                         { label: 'オ', questionTitle: '取引の仕訳', content: '' }, //41
                         { label: 'エ', questionTitle: '企業会計の領域', content: '管理会計' }, //42
                         { label: 'オ', questionTitle: '決算スケジュール', content: '' }, //43

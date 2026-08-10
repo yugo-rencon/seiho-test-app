@@ -213,7 +213,6 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '金融市場', content: '3年 → 1年' }, //31 p3
                         { questionTitle: '保険会社向けの総合的な監督指針', content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている' }, //32 p28
                         { questionTitle: '生保の運用機構', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2024年度 フォームC";
                         { questionTitle: 'バブル崩壊後の資産運用', content: '正しい' }, //38
                         { questionTitle: '改正保険業法の施行（1998年（平成10年））', content: '固有業務 → 付随業務' }, //39 p210
                         { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //41
                         { questionTitle: '有価証券の定義', label: 'ア', content: '金融商品取引法' }, //42
                         { questionTitle: '株式投資の尺度', label: 'エ', content: '当期純利益' }, //43

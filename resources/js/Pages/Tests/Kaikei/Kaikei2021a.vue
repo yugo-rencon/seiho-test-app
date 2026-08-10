@@ -213,7 +213,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '会計公準', content: '正しい' }, //31
                         { questionTitle: '帳簿の種類', content: '補助元帳 ↔︎ 補助記入帳' }, //32 p14
                         { questionTitle: '特別勘定の決算', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームA";
                         { questionTitle: '利息及び配当金等収入', content: '売買目的有価証券及び商品有価証券に係るものを含む → 除く' }, //38 p145
                         { questionTitle: '保険金据置支払金', content: '支払利息に計上 → 本科目（保険金据置支払金）に計上' }, //39 p158
                         { questionTitle: '区分経理', content: '正しい' }, //40
-                        // 問41〜50
                         { label: 'エ', questionTitle: '会計上の取引', content: '仕訳' }, //41
                         { label: 'オ', questionTitle: '開示書類', content: '' }, //42
                         { label: 'イ', questionTitle: '勘定間取引', content: '事業方法書' }, //43

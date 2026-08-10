@@ -214,28 +214,96 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '生命保険契約等の要素', content: '正しい' }, //31
-                        { questionTitle: '団体（集団）扱特約', content: '給与から団体に引き落とされた時 → 団体から生命保険会社に払い込まれた時' }, //32 p92
-                        { questionTitle: '死亡保険金の免責', content: '正しい' }, //33
-                        { questionTitle: '書面交付義務', content: '成立要件となっている → 成立要件ではない' }, //34 p54
-                        { questionTitle: '復活の法的性格', content: '新契約説 → 特別契約説' }, //35 p105
-                        { questionTitle: '保険契約者の変更', content: '保険受取人の同意 → 被保険者の同意' }, //36 p149
-                        { questionTitle: '監督の方法', content: '正しい' }, //37
-                        { questionTitle: '組織変更', content: '正しい' }, //38
-                        { questionTitle: 'ソルベンシー・マージン比率', content: '土地の含み益も計算の要素としている' }, //39 p248
-                        { questionTitle: '外国保険業者', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '金融サービスの提供に関する法律', label: 'ウ', content: '元本欠損' }, //41
-                        { questionTitle: '生命保険契約等の性質', label: 'エ', content: '善意' }, //42
-                        { questionTitle: '消費者契約法', label: 'ア', content: '困惑' }, //43
-                        { questionTitle: '生命保険契約等の効力', label: 'オ', content: '' }, //44
-                        { questionTitle: '生死不明の場合の取扱', label: 'イ', content: '生命保険会社' }, //45
-                        { questionTitle: '解除権', label: 'ア', content: '1ヶ月' }, //46
-                        { questionTitle: '給付金の免責事由', label: 'オ', content: '' }, //47
-                        { questionTitle: '保険契約準備金', label: 'エ', content: '責任準備金' }, //48
-                        { questionTitle: '保険計理人', label: 'ウ', content: '7年' }, //49
-                        { questionTitle: '保険募集の制限', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '生命保険契約等の要素',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '団体（集団）扱特約',
+                            content: '給与から団体に引き落とされた時 → 団体から生命保険会社に払い込まれた時',
+                        }, //32 p92
+                        {
+                            questionTitle: '死亡保険金の免責',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '書面交付義務',
+                            content: '成立要件となっている → 成立要件ではない',
+                        }, //34 p54
+                        {
+                            questionTitle: '復活の法的性格',
+                            content: '新契約説 → 特別契約説',
+                        }, //35 p105
+                        {
+                            questionTitle: '保険契約者の変更',
+                            content: '保険受取人の同意 → 被保険者の同意',
+                        }, //36 p149
+                        {
+                            questionTitle: '監督の方法',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '組織変更',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: 'ソルベンシー・マージン比率',
+                            content: '土地の含み益も計算の要素としている',
+                        }, //39 p248
+                        {
+                            questionTitle: '外国保険業者',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '金融サービスの提供に関する法律',
+                            label: 'ウ',
+                            content: '元本欠損',
+                        }, //41
+                        {
+                            questionTitle: '生命保険契約等の性質',
+                            label: 'エ',
+                            content: '善意',
+                        }, //42
+                        {
+                            questionTitle: '消費者契約法',
+                            label: 'ア',
+                            content: '困惑',
+                        }, //43
+                        {
+                            questionTitle: '生命保険契約等の効力',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '生死不明の場合の取扱',
+                            label: 'イ',
+                            content: '生命保険会社',
+                        }, //45
+                        {
+                            questionTitle: '解除権',
+                            label: 'ア',
+                            content: '1ヶ月',
+                        }, //46
+                        {
+                            questionTitle: '給付金の免責事由',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '保険契約準備金',
+                            label: 'エ',
+                            content: '責任準備金',
+                        }, //48
+                        {
+                            questionTitle: '保険計理人',
+                            label: 'ウ',
+                            content: '7年',
+                        }, //49
+                        {
+                            questionTitle: '保険募集の制限',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

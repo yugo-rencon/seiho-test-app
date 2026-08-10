@@ -213,7 +213,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '会計上の取引', content: '契約締結の時点で取引と認識 → 電力供給を受けた時点で取引と認識' }, //31 p9-10
                         { questionTitle: '損益計算書', content: '正しい' }, //32
                         { questionTitle: '資本取引・損益取引区分の原則', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームC";
                         { questionTitle: '繰延税金負債', content: '正しい' }, //38
                         { questionTitle: '保険金据置支払金', content: '支払利息に計上 → 本科目（保険金据置支払金）に計上' }, //39 p158
                         { questionTitle: '金融検査', content: '正しい' }, //40
-                        // 問41〜50
                         { label: 'ウ', questionTitle: '帳簿の種類', content: '買掛金元帳' }, //41
                         { label: 'ウ', questionTitle: '企業会計原則', content: '処理原則' }, //42
                         { label: 'オ', questionTitle: '連結決算日', content: '' }, //43

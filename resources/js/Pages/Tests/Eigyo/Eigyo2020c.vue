@@ -213,7 +213,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: 'ライフ・プランニング', content: '正しい' }, //31
                         { questionTitle: '公的介護保険制度の運営主体', content: '運営主体は国 → 各市区町村' }, //32 p29
                         { questionTitle: '福利厚生費', content: '法定福利費 ↔︎ 法定外福利費' }, //33 p33
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームC";
                         { questionTitle: '一時払退職後終身保険', content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内' }, //38 p97
                         { questionTitle: '法人顧客システム', content: '正しい' }, //39
                         { questionTitle: '機関組織構成', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '年金改革', label: 'イ', content: '第3号' }, //41
                         { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
                         { questionTitle: '保険料率の改定', label: 'イ', content: '平均寿命' }, //43

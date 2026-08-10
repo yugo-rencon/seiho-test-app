@@ -213,7 +213,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '取引の認識', content: '正しい' }, //31
                         { questionTitle: '開示書類', content: '四半期報告書は開示が求められていない → 開示が求められている' }, //32 p30
                         { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //33 p42-43
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームC";
                         { questionTitle: '保険金', content: '正しい' }, //38
                         { questionTitle: '負債勘定', content: '正しい' }, //39
                         { questionTitle: '計算書類の公告', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '企業会計の領域', label: 'イ', content: '財務会計' }, //41
                         { questionTitle: '財務諸表', label: 'オ', content: '' }, //42
                         { questionTitle: '株主配当', label: 'エ', content: 'いつでも' }, //43

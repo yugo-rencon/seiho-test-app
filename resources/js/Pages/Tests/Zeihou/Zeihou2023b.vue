@@ -213,7 +213,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '流通税', content: '印紙税・消費税等 → 印紙税・不動産取得税等' }, //31 p4
                         { questionTitle: '生命保険と相続対策', content: '正しい' }, //32
                         { questionTitle: '確定申告', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2023年度 フォームB";
                         { questionTitle: '最低課税方式', content: '13% → 7%' }, //38 p225
                         { questionTitle: '営業職員報酬の必要経費', content: '正しい' }, //39
                         { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '退職所得控除額', label: 'ウ', content: '40万円' }, //41
                         { questionTitle: '医療費控除（セルフメディケーション）', label: 'ア', content: 'との選択により' }, //42
                         { questionTitle: '相続税の非課税財産', label: 'エ', content: '心身障害者扶養共済制度' }, //43

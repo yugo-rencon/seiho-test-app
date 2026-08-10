@@ -213,7 +213,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '租税の種類', content: '正しい' }, //31
                         { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
                         { questionTitle: '租税特別措置法の課税標準', content: '2つ → 3つ（総所得金額・退職所得金額・山林所得金額）' }, //33 p36
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームA";
                         { questionTitle: '居住用超高層建築物の不動産取得税', content: '正しい' }, //38
                         { questionTitle: '定期付養老保険の保険料', content: '正しい' }, //39
                         { questionTitle: '財形住宅貯蓄積立保険', content: '雑所得として課税 → 源泉分離課税（20%）' }, //40 p213
-                        // 問41〜50
                         { questionTitle: '租税の種類', label: 'エ', content: '目的税' }, //41
                         { questionTitle: '給与所得', label: 'ウ', content: '特定支出' }, //42
                         { questionTitle: '退職所得控除額', label: 'イ', content: '20年' }, //43

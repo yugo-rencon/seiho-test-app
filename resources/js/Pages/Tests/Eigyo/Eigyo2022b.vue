@@ -213,7 +213,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '公的介護保険の保険料', content: '保険料75%、公費25% → 保険料50%、公費50%' }, //31 p30
                         { questionTitle: '消費者契約法', content: '正しい' }, //32
                         { questionTitle: '保険料変更の自在性', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームB";
                         { questionTitle: '窓販の弊害防止措置', content: '正しい' }, //38
                         { questionTitle: '保険仲立人', content: '諸外国ではあまり例がない → 諸外国で一般的' }, //39 p103
                         { questionTitle: '募集人登録', content: '生命保険協会 → 内閣総理大臣（金融庁長官に委任）' }, //40 p118
-                        // 問41〜50
                         { questionTitle: '女性の社会進出', label: 'イ', content: '男女雇用機会均等法' }, //41
                         { questionTitle: '消費者保護とコンプライアンス', label: 'オ', content: '' }, //42
                         { questionTitle: 'リビング・ニーズ特約', label: 'イ', content: '6ヶ月' }, //43

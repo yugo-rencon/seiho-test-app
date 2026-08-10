@@ -214,7 +214,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '法律と保険約款',
                             content: '保険約款に規定のない事項については、おおむね、[[保険法、民法]]の順に適用される', //p13
@@ -255,17 +254,56 @@ const subject = "2021年度 フォームB";
                             questionTitle: '定款以外の基礎書類の変更',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '消費者契約法', label: 'ウ', content: '契約を取り消し得る' }, //41
-                        { questionTitle: '保険契約上の保障責任', label: 'オ', content: '' }, //42
-                        { questionTitle: '住所変更', label: 'ウ', content: '通信先' }, //43
-                        { questionTitle: '保険金の支払', label: 'ア', content: '10月18日' }, //44
-                        { questionTitle: '保険金の支払の時期', label: 'ウ', content: '5営業日' }, //45
-                        { questionTitle: '災害入院給付金の免責', label: 'オ', content: '' }, //46
-                        { questionTitle: '年齢の誤りの処理', label: 'ウ', content: '取り消すことができる' }, //47
-                        { questionTitle: '株主の権利行使の基準日', label: 'イ', content: '3ヶ月' }, //48
-                        { questionTitle: '保険計理人', label: 'エ', content: '取締役会' }, //49
-                        { questionTitle: '保険契約の締結または保険募集に関する禁止行為', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '消費者契約法',
+                            label: 'ウ',
+                            content: '契約を取り消し得る',
+                        }, //41
+                        {
+                            questionTitle: '保険契約上の保障責任',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '住所変更',
+                            label: 'ウ',
+                            content: '通信先',
+                        }, //43
+                        {
+                            questionTitle: '保険金の支払',
+                            label: 'ア',
+                            content: '10月18日',
+                        }, //44
+                        {
+                            questionTitle: '保険金の支払の時期',
+                            label: 'ウ',
+                            content: '5営業日',
+                        }, //45
+                        {
+                            questionTitle: '災害入院給付金の免責',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '年齢の誤りの処理',
+                            label: 'ウ',
+                            content: '取り消すことができる',
+                        }, //47
+                        {
+                            questionTitle: '株主の権利行使の基準日',
+                            label: 'イ',
+                            content: '3ヶ月',
+                        }, //48
+                        {
+                            questionTitle: '保険計理人',
+                            label: 'エ',
+                            content: '取締役会',
+                        }, //49
+                        {
+                            questionTitle: '保険契約の締結または保険募集に関する禁止行為',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

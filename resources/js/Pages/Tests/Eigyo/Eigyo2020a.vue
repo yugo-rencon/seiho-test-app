@@ -213,7 +213,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '生活の仕方の変化', content: '正しい' }, //31
                         { questionTitle: '国民年金のしくみ', content: '正しい' }, //32
                         { questionTitle: '福利厚生費', content: '法定福利費 ↔︎ 法定外福利費' }, //33 p33
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームA";
                         { questionTitle: '財形保険', content: '個人保険と同様、変更されることはない → 個人保険と異なり、変更されることがある' }, //38 p96
                         { questionTitle: '適格性要素', content: '正しい' }, //39
                         { questionTitle: '代理店営業組織', content: 'スーパーバイザー → ホールセラー。' }, //40 p146
-                        // 問41〜50
                         { questionTitle: 'シルバー市場', label: 'ア', content: '65歳' }, //41
                         { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
                         { questionTitle: '保険法', label: 'ウ', content: '遺言' }, //43

@@ -213,7 +213,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: '株式保有', content: '20% → 10%' }, //32 p30
                         { questionTitle: '証券調査', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームA";
                         { questionTitle: '公共投資', content: '正しい' }, //38
                         { questionTitle: '金融システム改革', content: '正しい' }, //39
                         { questionTitle: '有価証券の評価方法', content: '時価 → 取得価額' }, //40 p213
-                        // 問41〜50
                         { questionTitle: 'リスク管理の組織的対応', label: 'エ', content: 'リスク管理委員会' }, //41
                         { questionTitle: '投融資決定機構', label: 'ア', content: '単独制' }, //42
                         { questionTitle: '融資審査', label: 'オ', content: '' }, //43

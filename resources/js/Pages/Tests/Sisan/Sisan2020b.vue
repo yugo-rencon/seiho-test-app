@@ -213,7 +213,6 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: '投資リスク回避策', content: '積極的回避 → 消極的回避' }, //32 見つからない
                         { questionTitle: '貸付形態別分類', content: '手形貸付が主流 → 証書貸付が主流' }, //33 p52
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームB";
                         { questionTitle: '公共投資', content: '正しい' }, //38
                         { questionTitle: 'バブル崩壊後の外国証券投資', content: '正しい' }, //39
                         { questionTitle: '金融審議会報告書', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '資産運用機能の充実', label: 'ウ', content: 'ALM（Asset Liability Management）' }, //41
                         { questionTitle: '資産運用の専門化の進展', label: 'イ', content: 'ファンド・マネージャー' }, //42
                         { questionTitle: '融資審査', label: 'オ', content: '' }, //43

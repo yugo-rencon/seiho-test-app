@@ -213,7 +213,6 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '生保資金の構成', content: '正しい' }, //31
                         { questionTitle: '投融資決定機構', content: '機動性を得る → 機動性を犠牲にする' }, //32 p47
                         { questionTitle: '運用の実務', content: '融資審査部門 → マクロ調査部門' }, //33 p51
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームA";
                         { questionTitle: '中堅・中小企業貸付対応', content: '正しい' }, //38
                         { questionTitle: '金融関係5審議会による検討', content: '金融サービス市場法→ 金融システム改革' }, //39 207
                         { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '運用原則', label: 'エ', content: '利差' }, //41
                         { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //42
                         { questionTitle: '融資審査', label: 'ウ', content: '自己資本' }, //43

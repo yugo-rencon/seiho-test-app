@@ -213,7 +213,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '代理・代行', content: '正しい' }, //31
                         { questionTitle: 'マイナンバー法', content: '未成年者を除くすべての人 → 住民票を有するすべての人' }, //32 p40
                         { questionTitle: '生命年金', content: '被保険者の生死を問わず → 被保険者の生存中に限り' }, //33 p47
@@ -224,7 +223,6 @@ const subject = "2023年度 フォームB";
                         { questionTitle: '変額保険販売資格制度', content: '日本証券業協会 → 生命保険協会' }, //38 p126
                         { questionTitle: '支社の配置', content: 'これまで〜の説明 ↔ 近年では〜の説明' }, //39 p140
                         { questionTitle: '機関組織構成', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '人の一生', label: 'エ', content: 'ライフサイクル' }, //41
                         { questionTitle: '遺族年金', label: 'ア', content: '３分の１' }, //42
                         { questionTitle: '金融商品取引法', label: 'エ', content: '適合性の原則' }, //43

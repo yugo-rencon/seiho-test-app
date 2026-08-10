@@ -213,7 +213,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '公的介護保険制度の運営主体', content: '国、都道府県、医療保険者、年金保険者 → 国、都道府県、被保険者' }, //31 p29
                         { questionTitle: '企業の福利厚生費', content: '法定外複利費については → 法定福利費については' }, //32 p33
                         { questionTitle: 'マイナンバー法', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2024年度 フォームB";
                         { questionTitle: '契約者カード', content: '正しい' }, //38
                         { questionTitle: '募集人登録', content: '生命保険協会 → 内閣総理大臣（金融庁長官に委任）' }, //39 p118
                         { questionTitle: '機関の機能', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '厚生年金保険の保険料', label: 'イ', content: '標準報酬月額と標準賞与額それぞれ' }, //41
                         { questionTitle: '年金改革', label: 'ウ', content: '10年' }, //42
                         { questionTitle: '消費者保護とコンプライアンス', label: 'エ', content: '保険金受取人' }, //43

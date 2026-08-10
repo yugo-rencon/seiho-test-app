@@ -213,7 +213,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '生保資金の構成', content: '正しい' }, //31
                         { questionTitle: '金融関連業務', content: '付随業務 → 法定他業' }, //32 見つからない
                         { questionTitle: '融資審査', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームB";
                         { questionTitle: '昭和初期の生命保険業界', content: '景気が回復することはなかった → 景気は回復した' }, //38 /167
                         { questionTitle: '住宅金融対応', content: '正しい' }, //39
                         { questionTitle: '国際会計基準導入の動向', content: '日本版スチュワードシップ・コード → IFRSへの対応の在り方に関する当面の方針' }, //40 p214
-                        // 問41〜50
                         { questionTitle: '生保資金の運用規制', label: 'イ', content: '独占禁止法' }, //41
                         { questionTitle: '資産運用機能の充実', label: 'オ', content: '' }, //42
                         { questionTitle: '貸付の特徴', label: 'ウ', content: '流動' }, //43

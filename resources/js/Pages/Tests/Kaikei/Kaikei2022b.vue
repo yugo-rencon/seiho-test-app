@@ -213,7 +213,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '会計の意義', content: '正しい' }, //31
                         { questionTitle: '株主資本等変動計算書', content: '正しい' }, //32
                         { questionTitle: '単一性の原則', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームB";
                         { questionTitle: '代理店借', content: '債権額 → 債務額' }, //38 p126
                         { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
                         { questionTitle: '利源分析に関する課題', content: '正しい' }, //40
-                        // 問41〜50
                         { label: 'オ', questionTitle: '取引の仕訳', content: '' }, //41
                         { label: 'イ', questionTitle: '帳簿の種類', content: '補助記入帳' }, //42
                         { label: 'エ', questionTitle: '連結決算', content: 'のれん（連結調整勘定）' }, //43

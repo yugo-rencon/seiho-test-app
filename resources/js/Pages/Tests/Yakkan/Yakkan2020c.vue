@@ -214,7 +214,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '約款と特約',
                             content: '正しい',
@@ -255,7 +254,6 @@ const subject = "2020年度 フォームC";
                             questionTitle: '外国保険業者の廃止',
                             content: '本国において解放、保険業の廃止の時も金融庁長官の認可が必要 → 金融庁長官に届け出るだけで良い',
                         }, //40 //p257
-                        // 問41〜50
                         { questionTitle: '契約者保護', label: 'オ', content: '' }, //41
                         { questionTitle: '生命保険契約等の性質', label: 'オ', content: '' }, //42
                         { questionTitle: 'クーリング・オフ制度', label: 'ウ', content: '8日' }, //43

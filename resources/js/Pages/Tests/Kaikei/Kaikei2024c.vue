@@ -214,7 +214,6 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '会計の意義', content: '管理会計の説明 ↔︎ 財務会計の説明（財務会計：現在または過去、管理会計：未来）' }, //31 p4
                         { questionTitle: '損益計算書', content: '正しい' }, //32
                         { questionTitle: '金融商品取引法上の開示書類', content: '有価証券報告書、半期報告書、四半期報告書、臨時報告書（有価証券届出書、目論見書は発行市場における開示書類）' }, //33 p30
@@ -225,7 +224,6 @@ const subject = "2024年度 フォームC";
                         { questionTitle: '法人税及び住民税', content: '他の税金と合算 → 他の税金と区別' }, //38 p164
                         { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
                         { questionTitle: '監査', content: '正しい' }, //40
-                        // 問41〜50
                         { label: 'ウ', questionTitle: '帳簿の種類', content: '買掛金元帳' }, //41
                         { label: 'オ', questionTitle: '株主資本等変動計算書', content: '' }, //42
                         { label: 'ア', questionTitle: '消費税', content: '負債' }, //43

@@ -213,7 +213,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '企業福祉制度', content: '自己責任原則の下、従業員の自助努力・自立を側面から支援する ↔︎ 総合的・恩恵的福祉' }, //31 p33
                         { questionTitle: '第三分野市場', content: '損害保険 ↔︎ 生命保険' }, //32 p34
                         { questionTitle: '生命年金', content: '被保険者の生死を問わず → 被保険者の生存中に限り' }, //33 p47
@@ -224,7 +223,6 @@ const subject = "2023年度 フォームC";
                         { questionTitle: '財形貯蓄制度と税制', content: '保険料控除の対象 → 対象とならない' }, //38 p96
                         { questionTitle: '営業職員の給与体系', content: '正しい' }, //39
                         { questionTitle: '代理店', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '代理・代行', label: 'ア', content: '保険業法' }, //41
                         { questionTitle: '遺族年金', label: 'ア', content: '３分の１' }, //42
                         { questionTitle: '近年の商品対応（保険料率）', label: 'オ', content: '' }, //43

@@ -214,7 +214,6 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '生命保険契約等に対する法の適用',
                             content: '正しい',
@@ -255,17 +254,56 @@ const subject = "2023年度 フォームA";
                             questionTitle: '指定紛争解決機関',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '金融サービスの提供に関する法律', label: 'ア', content: '重要事項' }, //41
-                        { questionTitle: '生命保険契約等の性質', label: 'オ', content: '' }, //42
-                        { questionTitle: '生命保険契約等の効力', label: 'イ', content: '保険金受取人' }, //43
-                        { questionTitle: '責任開始期', label: 'エ', content: '保険料前払主義' }, //44
-                        { questionTitle: '解除権', label: 'ウ', content: '除斥期間' }, //45
-                        { questionTitle: '保険契約と詐欺', label: 'ウ', content: '取消し' }, //46
-                        { questionTitle: '配当金', label: 'ウ', content: '衡平' }, //47
-                        { questionTitle: '災害入院給付金の免責事由', label: 'オ', content: '' }, //48
-                        { questionTitle: '保険業の監督の方法', label: 'イ', content: '実体的監督' }, //49
-                        { questionTitle: '保険契約の締結または保険募集に関する禁止行為', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '金融サービスの提供に関する法律',
+                            label: 'ア',
+                            content: '重要事項',
+                        }, //41
+                        {
+                            questionTitle: '生命保険契約等の性質',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '生命保険契約等の効力',
+                            label: 'イ',
+                            content: '保険金受取人',
+                        }, //43
+                        {
+                            questionTitle: '責任開始期',
+                            label: 'エ',
+                            content: '保険料前払主義',
+                        }, //44
+                        {
+                            questionTitle: '解除権',
+                            label: 'ウ',
+                            content: '除斥期間',
+                        }, //45
+                        {
+                            questionTitle: '保険契約と詐欺',
+                            label: 'ウ',
+                            content: '取消し',
+                        }, //46
+                        {
+                            questionTitle: '配当金',
+                            label: 'ウ',
+                            content: '衡平',
+                        }, //47
+                        {
+                            questionTitle: '災害入院給付金の免責事由',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '保険業の監督の方法',
+                            label: 'イ',
+                            content: '実体的監督',
+                        }, //49
+                        {
+                            questionTitle: '保険契約の締結または保険募集に関する禁止行為',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

@@ -214,7 +214,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '保険期間',
                             content: '[[生存保険契約]]にあってはその始期は実際上問題とならず、[[終身保険契約]]にあっては保険期間の終期は不定である', //p40
@@ -228,6 +227,7 @@ const subject = "2025年度 フォームA";
                             content: '保険契約者 → 相続人の全員', //p58
                         }, //33
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '保険給付の履行期',
                             content: '正しい',
                         }, //34
@@ -236,6 +236,7 @@ const subject = "2025年度 フォームA";
                             content: '発信した時点 → 到達した時点', //p132
                         }, //35
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '特約の消滅',
                             content: '正しい',
                         }, //36
@@ -248,24 +249,65 @@ const subject = "2025年度 フォームA";
                             content: '株主総会または総代会の決議は、[[金融庁長官の認可を受けなければ、その効力を生じない]]', //p222
                         }, //38
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '責任準備金',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '外国保険会社',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '金融サービスの提供及び利用環境の整備等に関する法律（金融サービス提供法）', label: 'エ', content: '民法' }, //41
-                        { questionTitle: '生命保険募集人', label: 'ウ', content: '代理' }, //42
-                        { questionTitle: '生命保険契約等の効力', label: 'オ', content: '' }, //43
-                        { questionTitle: '保険契約上の保障責任', label: 'オ', content: '' }, //44
-                        { questionTitle: '保険金の支払の時期', label: 'ウ', content: '５営業日' }, //45
-                        { questionTitle: '保険契約者の変更', label: 'ア', content: '承継人' }, //46
-                        { questionTitle: '疾病入院特約の給付', label: 'イ', content: '責任開始の日' }, //47
-                        { questionTitle: '保険業の監督の方法', label: 'イ', content: '実体的監督' }, //48
-                        { questionTitle: '委員会等設置会社', label: 'オ', content: '' }, //49
-                        { questionTitle: '保険計理人', label: 'ウ', content: '7年' }, //50
+                        {
+                            questionTitle: '金融サービスの提供及び利用環境の整備等に関する法律（金融サービス提供法）',
+                            label: 'エ',
+                            content: '民法',
+                        }, //41
+                        {
+                            questionTitle: '生命保険募集人',
+                            label: 'ウ',
+                            content: '代理',
+                        }, //42
+                        {
+                            questionTitle: '生命保険契約等の効力',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '保険契約上の保障責任',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '保険金の支払の時期',
+                            label: 'ウ',
+                            content: '５営業日',
+                        }, //45
+                        {
+                            questionTitle: '保険契約者の変更',
+                            label: 'ア',
+                            content: '承継人',
+                        }, //46
+                        {
+                            questionTitle: '疾病入院特約の給付',
+                            label: 'イ',
+                            content: '責任開始の日',
+                        }, //47
+                        {
+                            questionTitle: '保険業の監督の方法',
+                            label: 'イ',
+                            content: '実体的監督',
+                        }, //48
+                        {
+                            questionTitle: '委員会等設置会社',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '保険計理人',
+                            label: 'ウ',
+                            content: '7年',
+                        }, //50
                     ]"
                 />
             </div>

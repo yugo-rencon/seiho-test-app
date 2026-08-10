@@ -213,7 +213,6 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '豊かな老後生活への備え', content: '正しい' }, //31
                         { questionTitle: '企業の福利厚生費', content: '法定外複利費については → 法定福利費については' }, //32 p33
                         { questionTitle: 'マイナンバー法', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2024年度 フォームC";
                         { questionTitle: '名寄せ', content: '正しい' }, //38
                         { questionTitle: '変額保険販売資格制度', content: '正しい' }, //39
                         { questionTitle: '企業保険の営業', content: '企業規模が小さくなれば → 企業が大企業なれば' }, //40 p144
-                        // 問41〜50
                         { questionTitle: '厚生年金保険の保険料', label: 'イ', content: '標準報酬月額と標準賞与額それぞれ' }, //41
                         { questionTitle: '金融サービス提供法', label: 'ウ', content: '勧誘方針' }, //42
                         { questionTitle: '個人保険商品', label: 'ウ', content: '利差配当' }, //43

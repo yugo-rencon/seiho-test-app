@@ -213,7 +213,6 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '租税の機能', content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者' }, //31 p4
                         { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
                         { questionTitle: '所得税の課税標準', content: '所得税基本通達 → 租税特別措置法' }, //33 p36
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームA";
                         { questionTitle: '不動産取得税', content: '正しい' }, //38
                         { questionTitle: '確定拠出年金のポータビリティ', content: '正しい' }, //39
                         { questionTitle: '責任準備金繰入額', content: '計算した額の9割を限度 → 計算した額を限度' }, //40 p223
-                        // 問41〜50
                         { questionTitle: '譲渡所得', label: 'ア', content: '5年' }, //41
                         { questionTitle: '退職所得控除額', label: 'イ', content: '20年以下' }, //42
                         { questionTitle: '所得税の税率', label: 'イ', content: '超過累進税率' }, //43

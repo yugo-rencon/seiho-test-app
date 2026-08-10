@@ -213,7 +213,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '金融仲介機能', content: '正しい' }, //31
                         { questionTitle: '専門家の必要性の高まり', content: '正しい' }, //32
                         { questionTitle: '運用の実務', content: '融資審査部門 → マクロ調査部門' }, //33 p51
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームB";
                         { questionTitle: '経済安定成長期の有価証券投資', content: '正しい' }, //38
                         { questionTitle: '改正保険業法の施行', content: '固有業務 → 付随業務' }, //39 p210
                         { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: 'リスク意識の高まり', label: 'エ', content: '自己資本比率規制' }, //41
                         { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //42
                         { questionTitle: '融資審査', label: 'ウ', content: '自己資本' }, //43

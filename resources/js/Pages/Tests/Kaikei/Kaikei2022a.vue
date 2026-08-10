@@ -213,7 +213,6 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '会計の役割', content: '正しい' }, //31
                         { questionTitle: '株主資本等変動計算書', content: '正しい' }, //32
                         { questionTitle: '金融商品取引法上の開示書類', content: '有価証券報告書、半期報告書、四半期報告書、臨時報告書（有価証券届出書、目論見書は発行市場における開示書類）' }, //33 p30
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームA";
                         { questionTitle: '損益の算定', content: '収支相等の原則 → 費用収益対応の原則' }, //38 p143
                         { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
                         { questionTitle: '監査', content: '正しい' }, //40
-                        // 問41〜50
                         { label: 'オ', questionTitle: '取引の仕訳', content: '' }, //41
                         { label: 'イ', questionTitle: '財務諸表', content: '損益計算書' }, //42
                         { label: 'ウ', questionTitle: '企業会計の一般原則', content: '保守主義' }, //43

@@ -213,7 +213,6 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '租税の種類', content: '財産税 → 流通税' }, //31 p4
                         { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
                         { questionTitle: '担税者', content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者' }, //33 p4
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームB";
                         { questionTitle: '総合福祉団体定期保険の保険料', content: '正しい' }, //38
                         { questionTitle: '定期付養老保険の保険料', content: '正しい' }, //39
                         { questionTitle: '財形住宅貯蓄積立保険', content: '雑所得として課税 → 源泉分離課税（20%）' }, //40 p213
-                        // 問41〜50
                         { questionTitle: '租税の種類', label: 'エ', content: '目的税' }, //41
                         { questionTitle: '所得税額の計算', label: 'イ', content: '二重課税' }, //42
                         { questionTitle: '寄付金控除', label: 'オ', content: '' }, //43

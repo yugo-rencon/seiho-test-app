@@ -214,7 +214,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '貸借対照表', content: '正しい' }, //31
                         { questionTitle: '保険料の計上', content: '現金主義 ↔︎ 実現主義' }, //32 p42
                         { questionTitle: '退職給付引当金', content: '正しい' }, //33
@@ -225,7 +224,6 @@ const subject = "2023年度 フォームB";
                         { questionTitle: '利源分析に関する課題', content: '正しい' }, //38
                         { questionTitle: '区分経理', content: '正しい' }, //39
                         { questionTitle: '監査役による監査', content: '社内監査役 → 社外監査役' }, //40 p206
-                        // 問41〜50
                         { label: 'イ', questionTitle: '企業会計の領域', content: '財務会計' }, //41
                         { label: 'ア', questionTitle: '試算表の作成', content: '仕訳帳' }, //42
                         { label: 'エ', questionTitle: '決算', content: '財政状態' }, //43

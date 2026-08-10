@@ -214,28 +214,96 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '生命保険契約等の定義', content: '傷害疾病定額保険契約 → 傷害疾病損害保険契約' }, //31 p33
-                        { questionTitle: '保険料不可分の原則', content: '保険料不可分の原則を前提としている → 前提としていない（未経過保険料は返還）' }, //32 p44
-                        { questionTitle: '責任開始期', content: '正しい' }, //33
-                        { questionTitle: '保険契約者に対する貸付の法的性質', content: '保険証券担保貸付説 → 相殺予約付消費賃借契約説' }, //34 p155
-                        { questionTitle: '遺言による保険金受取人の変更', content: '正しい' }, //35
-                        { questionTitle: '特約の消滅', content: '主契約の解約返戻金によって → 主契約と特約の解約返戻金を合算して' }, //36 p176
-                        { questionTitle: '契約内容の登録', content: '満期保険金登録制度 → 死亡保険金登録制度' }, //37 p168
-                        { questionTitle: '帳簿閲覧権', content: '正しい' }, //38
-                        { questionTitle: '意向把握義務', content: '設計書 → 意向確認書面' }, //39 p263
-                        { questionTitle: '外国保険会社等の保険業の廃止', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '金融サービスの提供に関する法律', label: 'ア', content: '重要事項' }, //41
-                        { questionTitle: '生命保険契約等の要素', label: 'オ', content: '' }, //42
-                        { questionTitle: '保険金の支払', label: 'ア', content: '10月18日' }, //43
-                        { questionTitle: '保険契約の解除', label: 'イ', content: '保険法' }, //44
-                        { questionTitle: '保険会社の業務の範囲', label: 'ア', content: '法定他業' }, //45
-                        { questionTitle: '保険持株会社', label: 'エ', content: '総資産' }, //46
-                        { questionTitle: '株主の権利行使の基準日', label: 'イ', content: '3ヶ月' }, //47
-                        { questionTitle: '災害入院給付金の免責事由', label: 'オ', content: '' }, //48
-                        { questionTitle: '供託', label: 'ウ', content: '供託所' }, //49
-                        { questionTitle: '保険契約の締結または保険募集に関する禁止行為', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '生命保険契約等の定義',
+                            content: '傷害疾病定額保険契約 → 傷害疾病損害保険契約',
+                        }, //31 p33
+                        {
+                            questionTitle: '保険料不可分の原則',
+                            content: '保険料不可分の原則を前提としている → 前提としていない（未経過保険料は返還）',
+                        }, //32 p44
+                        {
+                            questionTitle: '責任開始期',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '保険契約者に対する貸付の法的性質',
+                            content: '保険証券担保貸付説 → 相殺予約付消費賃借契約説',
+                        }, //34 p155
+                        {
+                            questionTitle: '遺言による保険金受取人の変更',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '特約の消滅',
+                            content: '主契約の解約返戻金によって → 主契約と特約の解約返戻金を合算して',
+                        }, //36 p176
+                        {
+                            questionTitle: '契約内容の登録',
+                            content: '満期保険金登録制度 → 死亡保険金登録制度',
+                        }, //37 p168
+                        {
+                            questionTitle: '帳簿閲覧権',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '意向把握義務',
+                            content: '設計書 → 意向確認書面',
+                        }, //39 p263
+                        {
+                            questionTitle: '外国保険会社等の保険業の廃止',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '金融サービスの提供に関する法律',
+                            label: 'ア',
+                            content: '重要事項',
+                        }, //41
+                        {
+                            questionTitle: '生命保険契約等の要素',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '保険金の支払',
+                            label: 'ア',
+                            content: '10月18日',
+                        }, //43
+                        {
+                            questionTitle: '保険契約の解除',
+                            label: 'イ',
+                            content: '保険法',
+                        }, //44
+                        {
+                            questionTitle: '保険会社の業務の範囲',
+                            label: 'ア',
+                            content: '法定他業',
+                        }, //45
+                        {
+                            questionTitle: '保険持株会社',
+                            label: 'エ',
+                            content: '総資産',
+                        }, //46
+                        {
+                            questionTitle: '株主の権利行使の基準日',
+                            label: 'イ',
+                            content: '3ヶ月',
+                        }, //47
+                        {
+                            questionTitle: '災害入院給付金の免責事由',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '供託',
+                            label: 'ウ',
+                            content: '供託所',
+                        }, //49
+                        {
+                            questionTitle: '保険契約の締結または保険募集に関する禁止行為',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

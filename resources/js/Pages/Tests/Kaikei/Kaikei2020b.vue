@@ -213,7 +213,6 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '試算表', content: '正しい' }, //31
                         { questionTitle: '開示書類', content: '四半期報告書は開示が求められていない → 開示が求められている' }, //32 p30
                         { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //33 p42-43
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームB";
                         { questionTitle: '保険金', content: '正しい' }, //38
                         { questionTitle: '投資に係る税金', content: '正しい' }, //39
                         { questionTitle: '事業費の分類', content: '減価償却費 → 集金費' }, //40 p170
-                        // 問41〜50
                         { questionTitle: '会計公準', label: 'ウ', content: '貨幣的評価' }, //41
                         { questionTitle: '決算', label: 'エ', content: '財政状態' }, //42
                         { questionTitle: '連結決算', label: 'オ', content: '' }, //43

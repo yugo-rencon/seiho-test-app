@@ -213,7 +213,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: 'リスク管理', content: '正しい' }, //32
                         { questionTitle: '融資審査', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2023年度 フォームB";
                         { questionTitle: '海外投融資', content: '漸増傾向 → 減少傾向' }, //38 p104
                         { questionTitle: '有価証券の評価方法', content: '責任準備金対応債券は時価で評価 → 取得価額で評価' }, //39 p213
                         { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
-                        // 問41〜50
                         { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
                         { questionTitle: '投融資決定機構', label: 'ア', content: '単独制' }, //42
                         { questionTitle: '公社債の発行方法の相違による分類', label: 'エ', content: '公募債' }, //43

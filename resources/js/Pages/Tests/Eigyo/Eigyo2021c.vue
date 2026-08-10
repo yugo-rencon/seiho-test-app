@@ -213,7 +213,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '豊かな老後生活への備え', content: '正しい' }, //31
                         { questionTitle: '第三分野市場', content: '損害保険 ↔︎ 生命保険' }, //32 p34
                         { questionTitle: '消費者契約法', content: '契約を無効とすることができる → 契約を取り消すことができる' }, //33 p37
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームC";
                         { questionTitle: '一時払退職後終身保険', content: '正しい' }, //38
                         { questionTitle: '営業職員の育成体系', content: '正しい' }, //39
                         { questionTitle: '生命保険大学課程', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '種類別貯蓄高', label: 'ウ', content: '通貨性預貯金' }, //41
                         { questionTitle: '医療保障', label: 'イ', content: '三大疾病' }, //42
                         { questionTitle: '個人保険商品', label: 'ウ', content: '利差配当' }, //43

@@ -971,7 +971,6 @@ const subject = "2024年度 フォームB";
                             questionTitle: '契約者配当の意義と性格',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
                             // rev: 2026-07-10 確認済み
                             relatedProblems: ['2024a11', '2024b41', '2024c26'],

@@ -213,7 +213,6 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '雑所得', content: '正しい' }, //31
                         { questionTitle: '租税特別措置法の規定による課税標準', content: '2つ → 3つ（総所得金額・退職所得金額・山林所得金額）' }, //32 p36
                         { questionTitle: '確定申告', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2023年度 フォームA";
                         { questionTitle: '個人年金保険料控除', content: '一時払契約であること → 一時払契約は不可' }, //38 p165
                         { questionTitle: '非課税給付金', content: '正しい' }, //39
                         { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '租税の種類', label: 'イ', content: '普通税' }, //41
                         { questionTitle: '医療費控除', label: 'イ', content: '10万円' }, //42
                         { questionTitle: '遺留分', label: 'ウ', content: '3分の1' }, //43

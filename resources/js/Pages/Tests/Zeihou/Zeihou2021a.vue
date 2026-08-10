@@ -213,7 +213,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '制限税率', content: '正しい' }, //31
                         { questionTitle: '雑所得', content: '正しい' }, //32
                         { questionTitle: '確定申告定', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームA";
                         { questionTitle: '財形住宅貯蓄積立保険', content: '財形貯蓄積立保険 → 財形年金' }, //38 p213
                         { questionTitle: '確定拠出年金のポータビリティ', content: '勤労者退職金共済機構 → 国民年金基金連合会' }, //39 p219
                         { questionTitle: '機関経営費', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '所得税の所得控除', label: 'イ', content: '15種類' }, //41
                         { questionTitle: '医療費控除（セルフメディケーション）', label: 'オ', content: '' }, //42
                         { questionTitle: '所得税の配偶者控除', label: 'ウ', content: '48万円' }, //43

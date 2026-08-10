@@ -213,7 +213,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '所得税の算出税額', content: '比例税率 → 超過累進税率' }, //31 p11
                         { questionTitle: '雑所得', content: '正しい' }, //32
                         { questionTitle: '年末調整', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2024年度 フォームA";
                         { questionTitle: '不動産取得税', content: '形式的な所有権の移転でも課税対象 → 課税されない' }, //38 p160
                         { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //39
                         { questionTitle: '最低課税方式', content: '14% → 7%' }, //40 p225
-                        // 問41〜50
                         { questionTitle: '所得税額の計算', label: 'ウ', content: '課税所得金額' }, //41
                         { questionTitle: '所得税の課税標準', label: 'オ', content: '' }, //42
                         { questionTitle: '所得税の税額控除', label: 'ウ', content: '住宅借入金（取得）等特別控除' }, //43

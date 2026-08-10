@@ -214,7 +214,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '近代法における契約の原則',
                             content: '正しい',
@@ -255,17 +254,56 @@ const subject = "2020年度 フォームA";
                             questionTitle: '乗合の禁止',
                             content: '認められている → 制限されている',
                         }, //40 //p261
-                        // 問41〜50
-                        { questionTitle: '保険金額', label: 'イ', content: '被保険利益' }, //41
-                        { questionTitle: '生命保険契約等の性質', label: 'オ', content: '' }, //42
-                        { questionTitle: '生命保険契約等の効力', label: 'イ', content: '保険金受取人' }, //43
-                        { questionTitle: '保険料の未払込による失効', label: 'ア', content: '元利金' }, //44
-                        { questionTitle: '保険契約の解除', label: 'イ', content: '保険法' }, //45
-                        { questionTitle: '配当金', label: 'ウ', content: '衡平' }, //46
-                        { questionTitle: '傷害特約の給付', label: 'エ', content: '感染症' }, //47
-                        { questionTitle: '保険持株会社', label: 'エ', content: '総資産' }, //48
-                        { questionTitle: '保険会社に特有な準備金', label: 'ア', content: '毎決算期' }, //49
-                        { questionTitle: '保険募集の制限', label: 'ウ', content: '媒介' }, //50
+                        {
+                            questionTitle: '保険金額',
+                            label: 'イ',
+                            content: '被保険利益',
+                        }, //41
+                        {
+                            questionTitle: '生命保険契約等の性質',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '生命保険契約等の効力',
+                            label: 'イ',
+                            content: '保険金受取人',
+                        }, //43
+                        {
+                            questionTitle: '保険料の未払込による失効',
+                            label: 'ア',
+                            content: '元利金',
+                        }, //44
+                        {
+                            questionTitle: '保険契約の解除',
+                            label: 'イ',
+                            content: '保険法',
+                        }, //45
+                        {
+                            questionTitle: '配当金',
+                            label: 'ウ',
+                            content: '衡平',
+                        }, //46
+                        {
+                            questionTitle: '傷害特約の給付',
+                            label: 'エ',
+                            content: '感染症',
+                        }, //47
+                        {
+                            questionTitle: '保険持株会社',
+                            label: 'エ',
+                            content: '総資産',
+                        }, //48
+                        {
+                            questionTitle: '保険会社に特有な準備金',
+                            label: 'ア',
+                            content: '毎決算期',
+                        }, //49
+                        {
+                            questionTitle: '保険募集の制限',
+                            label: 'ウ',
+                            content: '媒介',
+                        }, //50
                     ]"
                 />
             </div>

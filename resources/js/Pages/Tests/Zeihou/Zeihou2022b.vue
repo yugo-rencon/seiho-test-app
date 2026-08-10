@@ -213,7 +213,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '雑所得', content: '著述家や作家が受ける原稿料や印税 → 著述家や作家<b><u>以外</u></b>が受ける原稿料や印税' }, //31 p28
                         { questionTitle: '確定申告', content: '正しい' }, //32
                         { questionTitle: '相続税と贈与税', content: '異なった基準 → 同じ基準' }, //33 p64
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームB";
                         { questionTitle: '居住用超高層建築物の不動産取得税', content: '正しい' }, //38
                         { questionTitle: '確定拠出年金のポータビリティ', content: '正しい' }, //39
                         { questionTitle: '財形給付金制度', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '医療費控除', label: 'イ', content: '10万円' }, //41
                         { questionTitle: '死亡保険金の相続税課税', label: 'オ', content: '' }, //42
                         { questionTitle: '相続税の税額軽減', label: 'エ', content: '1億6,000万円' }, //43

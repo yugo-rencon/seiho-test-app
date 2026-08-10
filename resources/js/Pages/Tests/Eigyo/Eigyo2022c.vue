@@ -213,7 +213,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '企業の福利厚生費', content: '正しい' }, //31
                         { questionTitle: '個人情報保護法', content: '親族からの開示請求 → 本人からの開示請求' }, //32 p40
                         { questionTitle: '転換制度', content: '特別配当の権利は転換後の契約に引き継がれる。' }, //33
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームC";
                         { questionTitle: '営業職員チャネル', content: '生命保険商品に特化した → 生命保険商品の枠を超えた' }, //38 p101
                         { questionTitle: '個人顧客システム', content: '正しい' }, //39
                         { questionTitle: '生命保険大学課程', content: 'ファイナンシャル・ライフ・コンサルタント（FLC） → トータル・ライフ・コンサルタント（TLC）' }, //40 p125
-                        // 問41〜50
                         { questionTitle: 'シルバー市場', label: 'ア', content: '65歳' }, //41
                         { questionTitle: '公的介護保険制度の概要', label: 'ウ', content: '所得段階別' }, //42
                         { questionTitle: '保険料の払込に関する特約', label: 'ウ', content: '団体扱特約' }, //43

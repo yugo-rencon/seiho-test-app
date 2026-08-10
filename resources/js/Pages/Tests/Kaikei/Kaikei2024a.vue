@@ -214,7 +214,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '会計の意義', content: '管理会計の説明 ↔︎ 財務会計の説明（財務会計：現在または過去、管理会計：未来）' }, //31 p4
                         { questionTitle: '貸借対照表', content: '正しい' }, //32
                         { questionTitle: '企業会計原則（一般原則）', content: '明瞭性の原則 → 資本取引・損益取引区分の原則' }, //33 p25
@@ -225,7 +224,6 @@ const subject = "2024年度 フォームA";
                         { questionTitle: '法人税及び住民税', content: '他の税金と合算 → 他の税金と区別' }, //38 p164
                         { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
                         { questionTitle: '会計監査人による監査', content: '期中監査の説明 ↔︎ 決算監査の説明' }, //40 p208
-                        // 問41〜50
                         { label: 'ウ', questionTitle: '帳簿の種類', content: '買掛金元帳' }, //41
                         { label: 'エ', questionTitle: '財務諸表', content: '経営成績' }, //42
                         { label: 'ア', questionTitle: '法人税法', content: '課税の公平性' }, //43

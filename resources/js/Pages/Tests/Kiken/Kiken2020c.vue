@@ -242,7 +242,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '危険選択',
@@ -303,7 +302,6 @@ const subject = "2020年度 フォームC";
                             relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '正しい',
                         }, //40
-                        // 問41〜50
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者の危険',

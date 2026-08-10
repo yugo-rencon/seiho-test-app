@@ -214,7 +214,6 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '法律と保険約款',
                             content: '保険約款に規定のない事項については、おおむね、[[保険法、民法]]の順に適用される', //p13
@@ -255,17 +254,56 @@ const subject = "2025年度 フォームC";
                             questionTitle: '乗合の禁止',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '生命保険契約等の性質', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険料の返還', label: 'オ', content: '' }, //42
-                        { questionTitle: '生命保険契約等の効力', label: 'オ', content: '' }, //43
-                        { questionTitle: '生死不明の場合の取扱', label: 'イ', content: '生命保険会社' }, //44
-                        { questionTitle: '保険契約の解除', label: 'ウ', content: '重大事由' }, //45
-                        { questionTitle: '保険契約者の変更', label: 'ア', content: '承継人' }, //46
-                        { questionTitle: '保険会社の業務の範囲', label: 'ア', content: '法定他業' }, //47
-                        { questionTitle: '保険業の監督の方法', label: 'イ', content: '実体的監督' }, //48
-                        { questionTitle: '株主の権利行使の基準日', label: 'イ', content: '3ヶ月' }, //49
-                        { questionTitle: '供託', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '生命保険契約等の性質',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '保険料の返還',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '生命保険契約等の効力',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '生死不明の場合の取扱',
+                            label: 'イ',
+                            content: '生命保険会社',
+                        }, //44
+                        {
+                            questionTitle: '保険契約の解除',
+                            label: 'ウ',
+                            content: '重大事由',
+                        }, //45
+                        {
+                            questionTitle: '保険契約者の変更',
+                            label: 'ア',
+                            content: '承継人',
+                        }, //46
+                        {
+                            questionTitle: '保険会社の業務の範囲',
+                            label: 'ア',
+                            content: '法定他業',
+                        }, //47
+                        {
+                            questionTitle: '保険業の監督の方法',
+                            label: 'イ',
+                            content: '実体的監督',
+                        }, //48
+                        {
+                            questionTitle: '株主の権利行使の基準日',
+                            label: 'イ',
+                            content: '3ヶ月',
+                        }, //49
+                        {
+                            questionTitle: '供託',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

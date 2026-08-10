@@ -213,7 +213,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '所得税額の計算', content: '順次低い税率 → 順次高い税率' }, //31 p51
                         { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
                         { questionTitle: '所得金額調整控除', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームC";
                         { questionTitle: '生命保険代理店の登録免許税', content: '正しい' }, //38
                         { questionTitle: '定期付養老保険の保険料', content: '正しい' }, //39
                         { questionTitle: '財形住宅貯蓄積立保険', content: '雑所得として課税 → 源泉分離課税（20%）' }, //40 p213
-                        // 問41〜50
                         { questionTitle: '租税の種類', label: 'エ', content: '目的税' }, //41
                         { questionTitle: '譲渡所得', label: 'イ', content: '5年' }, //42
                         { questionTitle: '所得税の課税標準', label: 'オ', content: '' }, //43

@@ -213,7 +213,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '会計公準', content: '株主実体の公準 → 企業実体の公準' }, //31 p6-7
                         { questionTitle: '帳簿の種類', content: '正しい' }, //32
                         { questionTitle: '退職給付引当金', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2023年度 フォームC";
                         { questionTitle: '計算書類の公告', content: '会社法施行規則 → 保険業法施行規則' }, //38 p181
                         { questionTitle: '区分経理', content: '正しい' }, //39
                         { questionTitle: '会計監査人による監査', content: '取締役会により選任 → 株主総会（相互会社では総代会）により選任<br>結果を取締役会に報告 → 結果を取締役および監査役に報告' }, //40 p208
-                        // 問41〜50
                         { label: 'イ', questionTitle: '企業会計の領域', content: '財務会計' }, //41
                         { label: 'オ', questionTitle: '開示書類', content: '' }, //42
                         { label: 'エ', questionTitle: '保険会社向けの総合的な監督指針', content: '事務ガイドライン' }, //43

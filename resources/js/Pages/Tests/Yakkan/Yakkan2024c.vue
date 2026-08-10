@@ -214,28 +214,96 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '生命保険契約等に対する法の適用', content: 'どちらも営業的商行為である → 営利保険のみ営業的商行為' }, //31 p5-6
-                        { questionTitle: '保険料の返還', content: '正しい' }, //32
-                        { questionTitle: '個人情報取扱事業者の義務', content: '正しい' }, //33
-                        { questionTitle: '保険給付請求権の譲渡等', content: '保険契約者の同意 → 被保険者の同意' }, //34 p58
-                        { questionTitle: '保険金受取人の変更', content: '被保険者の同意は不要 → 被保険者の同意が必要' }, //35 p57
-                        { questionTitle: '被保険者による解除請求', content: '正しい' }, //36
-                        { questionTitle: '災害入院特約と疾病入院特約', content: '4日不担保等の免責規定が適用される → 適用されない' }, //37 p178
-                        { questionTitle: '保険契約者への貸付', content: '翌日からオーバーローンによる失効 → 通知額を期限までに払わないとき失効' }, //38 p157
-                        { questionTitle: '監督の方法', content: '正しい' }, //39
-                        { questionTitle: '外国保険業者', content: '法人であることが条件 → 法人でなくてもよく、個人でもよい' }, //40 p256
-                        // 問41〜50
-                        { questionTitle: '生命保険契約等の性質', label: 'ア', content: '射倖' }, //41
-                        { questionTitle: '契約上の保障責任', label: 'エ', content: '契約日' }, //42
-                        { questionTitle: '生命保険契約等の解除の効力等', label: 'オ', content: '' }, //43
-                        { questionTitle: '保険料払込免除', label: 'オ', content: '' }, //44
-                        { questionTitle: '生死不明の場合の取扱', label: 'イ', content: '生命保険会社' }, //45
-                        { questionTitle: '保険金受取人の死亡', label: 'エ', content: '当該保険金受取人の相続人全員' }, //46
-                        { questionTitle: '年齢の計算、誤りの処理', label: 'オ', content: '' }, //47
-                        { questionTitle: '基礎書類', label: 'エ', content: '定款' }, //48
-                        { questionTitle: '株主の権利行使の基準日', label: 'ウ', content: '4ヶ月' }, //49
-                        { questionTitle: '保険募集の制限', label: 'ウ', content: '媒介' }, //50
+                        {
+                            questionTitle: '生命保険契約等に対する法の適用',
+                            content: 'どちらも営業的商行為である → 営利保険のみ営業的商行為',
+                        }, //31 p5-6
+                        {
+                            questionTitle: '保険料の返還',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '個人情報取扱事業者の義務',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '保険給付請求権の譲渡等',
+                            content: '保険契約者の同意 → 被保険者の同意',
+                        }, //34 p58
+                        {
+                            questionTitle: '保険金受取人の変更',
+                            content: '被保険者の同意は不要 → 被保険者の同意が必要',
+                        }, //35 p57
+                        {
+                            questionTitle: '被保険者による解除請求',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '災害入院特約と疾病入院特約',
+                            content: '4日不担保等の免責規定が適用される → 適用されない',
+                        }, //37 p178
+                        {
+                            questionTitle: '保険契約者への貸付',
+                            content: '翌日からオーバーローンによる失効 → 通知額を期限までに払わないとき失効',
+                        }, //38 p157
+                        {
+                            questionTitle: '監督の方法',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '外国保険業者',
+                            content: '法人であることが条件 → 法人でなくてもよく、個人でもよい',
+                        }, //40 p256
+                        {
+                            questionTitle: '生命保険契約等の性質',
+                            label: 'ア',
+                            content: '射倖',
+                        }, //41
+                        {
+                            questionTitle: '契約上の保障責任',
+                            label: 'エ',
+                            content: '契約日',
+                        }, //42
+                        {
+                            questionTitle: '生命保険契約等の解除の効力等',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '保険料払込免除',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '生死不明の場合の取扱',
+                            label: 'イ',
+                            content: '生命保険会社',
+                        }, //45
+                        {
+                            questionTitle: '保険金受取人の死亡',
+                            label: 'エ',
+                            content: '当該保険金受取人の相続人全員',
+                        }, //46
+                        {
+                            questionTitle: '年齢の計算、誤りの処理',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '基礎書類',
+                            label: 'エ',
+                            content: '定款',
+                        }, //48
+                        {
+                            questionTitle: '株主の権利行使の基準日',
+                            label: 'ウ',
+                            content: '4ヶ月',
+                        }, //49
+                        {
+                            questionTitle: '保険募集の制限',
+                            label: 'ウ',
+                            content: '媒介',
+                        }, //50
                     ]"
                 />
             </div>

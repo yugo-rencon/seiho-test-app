@@ -214,28 +214,96 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '拘束力', content: '正しい' }, //31
-                        { questionTitle: '生命保険契約等の性質', content: '片務契約 → 双務契約（保険者も保険給付を行う債務を負担）' }, //32 p34
-                        { questionTitle: 'クーリング・オフ制度', content: '正しい' }, //33
-                        { questionTitle: '書面交付義務', content: '成立要件となっている → 成立要件ではない' }, //34 p54
-                        { questionTitle: '復活の法的性格', content: '新契約説 → 特別契約説' }, //35 p105
-                        { questionTitle: '特約の消滅', content: '正しい' }, //36
-                        { questionTitle: '保険業の兼営', content: '正しい' }, //37
-                        { questionTitle: '定款の変更', content: '認可は必要ない → 認可は必要' }, //38 p222
-                        { questionTitle: '合併', content: '正しい' }, //39
-                        { questionTitle: '外国保険業者', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '金融サービスの提供に関する法律', label: 'ウ', content: '元本欠損' }, //41
-                        { questionTitle: '生命保険契約等の性質', label: 'エ', content: '善意' }, //42
-                        { questionTitle: '遅延利息', label: 'ア', content: '保険約款' }, //43
-                        { questionTitle: '保険契約の解除', label: 'ウ', content: '重大事由' }, //44
-                        { questionTitle: '保険契約者の変更', label: 'イ', content: '承継人' }, //45
-                        { questionTitle: '主務大臣への協議', label: 'ア', content: '保険契約者保護機構' }, //46
-                        { questionTitle: '保険会社の業務の範囲', label: 'オ', content: '' }, //47
-                        { questionTitle: '相互会社の社員', label: 'オ', content: '' }, //48
-                        { questionTitle: '外国保険業者の規制', label: 'ウ', content: '財産目録' }, //49
-                        { questionTitle: '保険募集の制限', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '拘束力',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '生命保険契約等の性質',
+                            content: '片務契約 → 双務契約（保険者も保険給付を行う債務を負担）',
+                        }, //32 p34
+                        {
+                            questionTitle: 'クーリング・オフ制度',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '書面交付義務',
+                            content: '成立要件となっている → 成立要件ではない',
+                        }, //34 p54
+                        {
+                            questionTitle: '復活の法的性格',
+                            content: '新契約説 → 特別契約説',
+                        }, //35 p105
+                        {
+                            questionTitle: '特約の消滅',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '保険業の兼営',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '定款の変更',
+                            content: '認可は必要ない → 認可は必要',
+                        }, //38 p222
+                        {
+                            questionTitle: '合併',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '外国保険業者',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '金融サービスの提供に関する法律',
+                            label: 'ウ',
+                            content: '元本欠損',
+                        }, //41
+                        {
+                            questionTitle: '生命保険契約等の性質',
+                            label: 'エ',
+                            content: '善意',
+                        }, //42
+                        {
+                            questionTitle: '遅延利息',
+                            label: 'ア',
+                            content: '保険約款',
+                        }, //43
+                        {
+                            questionTitle: '保険契約の解除',
+                            label: 'ウ',
+                            content: '重大事由',
+                        }, //44
+                        {
+                            questionTitle: '保険契約者の変更',
+                            label: 'イ',
+                            content: '承継人',
+                        }, //45
+                        {
+                            questionTitle: '主務大臣への協議',
+                            label: 'ア',
+                            content: '保険契約者保護機構',
+                        }, //46
+                        {
+                            questionTitle: '保険会社の業務の範囲',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '相互会社の社員',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '外国保険業者の規制',
+                            label: 'ウ',
+                            content: '財産目録',
+                        }, //49
+                        {
+                            questionTitle: '保険募集の制限',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

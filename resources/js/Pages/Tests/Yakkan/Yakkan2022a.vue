@@ -214,28 +214,96 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '生命保険契約等に対する法の適用', content: '営利保険 → 相互保険' }, //31 p5
-                        { questionTitle: '契約者保護のための法律', content: '正しい' }, //32
-                        { questionTitle: '個人情報取扱事業者の義務', content: '倫理委員会 → 個人情報保護委員会' }, //33 p27
-                        { questionTitle: '書面交付義務', content: '成立要件となっている → 成立要件ではない' }, //34 p54
-                        { questionTitle: '復活の法的性格', content: '新契約説 → 特別契約説' }, //35 p105
-                        { questionTitle: '災害入院特約と疾病入院特約', content: '正しい' }, //36
-                        { questionTitle: '再保険', content: '正しい' }, //37
-                        { questionTitle: '株式会社と相互会社の比較', content: '一般社団法人 → 中間法人' }, //38 p225
-                        { questionTitle: '免許取消', content: '金融庁長官 → 内閣総理大臣' }, //39 p201
-                        { questionTitle: '外国保険業者', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '金融サービスの提供に関する法律', label: 'ウ', content: '元本欠損' }, //41
-                        { questionTitle: '生命保険契約等の性質', label: 'エ', content: '善意' }, //42
-                        { questionTitle: 'クーリング・オフ制度', label: 'イ', content: '申込日' }, //43
-                        { questionTitle: '高度障害保険金', label: 'ア', content: '両眼の視力' }, //44
-                        { questionTitle: '保険金の支払場所', label: 'エ', content: '取立債務' }, //45
-                        { questionTitle: '保険契約の取消し', label: 'ア', content: '保険金受取人' }, //46
-                        { questionTitle: '保険業法の目的', label: 'オ', content: '' }, //47
-                        { questionTitle: '基礎書類', label: 'ウ', content: '定款' }, //48
-                        { questionTitle: '相互会社の剰余金', label: 'イ', content: '1,000' }, //49
-                        { questionTitle: '保険募集の制限', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '生命保険契約等に対する法の適用',
+                            content: '営利保険 → 相互保険',
+                        }, //31 p5
+                        {
+                            questionTitle: '契約者保護のための法律',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '個人情報取扱事業者の義務',
+                            content: '倫理委員会 → 個人情報保護委員会',
+                        }, //33 p27
+                        {
+                            questionTitle: '書面交付義務',
+                            content: '成立要件となっている → 成立要件ではない',
+                        }, //34 p54
+                        {
+                            questionTitle: '復活の法的性格',
+                            content: '新契約説 → 特別契約説',
+                        }, //35 p105
+                        {
+                            questionTitle: '災害入院特約と疾病入院特約',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '再保険',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '株式会社と相互会社の比較',
+                            content: '一般社団法人 → 中間法人',
+                        }, //38 p225
+                        {
+                            questionTitle: '免許取消',
+                            content: '金融庁長官 → 内閣総理大臣',
+                        }, //39 p201
+                        {
+                            questionTitle: '外国保険業者',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '金融サービスの提供に関する法律',
+                            label: 'ウ',
+                            content: '元本欠損',
+                        }, //41
+                        {
+                            questionTitle: '生命保険契約等の性質',
+                            label: 'エ',
+                            content: '善意',
+                        }, //42
+                        {
+                            questionTitle: 'クーリング・オフ制度',
+                            label: 'イ',
+                            content: '申込日',
+                        }, //43
+                        {
+                            questionTitle: '高度障害保険金',
+                            label: 'ア',
+                            content: '両眼の視力',
+                        }, //44
+                        {
+                            questionTitle: '保険金の支払場所',
+                            label: 'エ',
+                            content: '取立債務',
+                        }, //45
+                        {
+                            questionTitle: '保険契約の取消し',
+                            label: 'ア',
+                            content: '保険金受取人',
+                        }, //46
+                        {
+                            questionTitle: '保険業法の目的',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '基礎書類',
+                            label: 'ウ',
+                            content: '定款',
+                        }, //48
+                        {
+                            questionTitle: '相互会社の剰余金',
+                            label: 'イ',
+                            content: '1,000',
+                        }, //49
+                        {
+                            questionTitle: '保険募集の制限',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

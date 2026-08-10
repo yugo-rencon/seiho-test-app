@@ -214,28 +214,96 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '監督', content: '一切無効 → その内容が強行規定や公益に反するものでない限り有効' }, //31 p11
-                        { questionTitle: '法律と保険約款', content: '正しい' }, //32
-                        { questionTitle: '団体扱特約', content: '正しい' }, //33
-                        { questionTitle: '復旧（復帰・復元）', content: '正しい' }, //34
-                        { questionTitle: '遺言による保険金受取人の変更', content: '正しい' }, //35
-                        { questionTitle: '配当金', content: '利益分配金 → 契約者配当金' }, //36 //p158
-                        { questionTitle: '契約内容の登録', content: '満期保険金登録制度 → 死亡保険金登録制度' }, //37 p168
-                        { questionTitle: '定款', content: '相互会社 ↔︎ 株式会社' }, //38 p218
-                        { questionTitle: '意向把握義務', content: '設計書 → 意向確認書面' }, //39 p263
-                        { questionTitle: '事業年度', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '金融サービスの提供に関する法律', label: 'ア', content: '重要事項' }, //41
-                        { questionTitle: '保険金額', label: 'イ', content: '被保険者利益' }, //42
-                        { questionTitle: '生命保険募集人', label: 'ウ', content: '代理' }, //43
-                        { questionTitle: '生命保険契約等の解除の効力等', label: 'ウ', content: '1ヶ月' }, //44
-                        { questionTitle: '時効', label: 'ア', content: '責任準備金' }, //45
-                        { questionTitle: '給付金の支払', label: 'オ', content: '' }, //46
-                        { questionTitle: '監督体制', label: 'エ', content: '財務大臣' }, //47
-                        { questionTitle: '災害入院給付金の免責事由', label: 'オ', content: '' }, //48
-                        { questionTitle: '保険計理人', label: 'エ', content: '取締役会' }, //49
-                        { questionTitle: '保険契約の締結または保険募集に関する禁止行為', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '監督',
+                            content: '一切無効 → その内容が強行規定や公益に反するものでない限り有効',
+                        }, //31 p11
+                        {
+                            questionTitle: '法律と保険約款',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '団体扱特約',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '復旧（復帰・復元）',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '遺言による保険金受取人の変更',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '配当金',
+                            content: '利益分配金 → 契約者配当金',
+                        }, //36 //p158
+                        {
+                            questionTitle: '契約内容の登録',
+                            content: '満期保険金登録制度 → 死亡保険金登録制度',
+                        }, //37 p168
+                        {
+                            questionTitle: '定款',
+                            content: '相互会社 ↔︎ 株式会社',
+                        }, //38 p218
+                        {
+                            questionTitle: '意向把握義務',
+                            content: '設計書 → 意向確認書面',
+                        }, //39 p263
+                        {
+                            questionTitle: '事業年度',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '金融サービスの提供に関する法律',
+                            label: 'ア',
+                            content: '重要事項',
+                        }, //41
+                        {
+                            questionTitle: '保険金額',
+                            label: 'イ',
+                            content: '被保険者利益',
+                        }, //42
+                        {
+                            questionTitle: '生命保険募集人',
+                            label: 'ウ',
+                            content: '代理',
+                        }, //43
+                        {
+                            questionTitle: '生命保険契約等の解除の効力等',
+                            label: 'ウ',
+                            content: '1ヶ月',
+                        }, //44
+                        {
+                            questionTitle: '時効',
+                            label: 'ア',
+                            content: '責任準備金',
+                        }, //45
+                        {
+                            questionTitle: '給付金の支払',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '監督体制',
+                            label: 'エ',
+                            content: '財務大臣',
+                        }, //47
+                        {
+                            questionTitle: '災害入院給付金の免責事由',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '保険計理人',
+                            label: 'エ',
+                            content: '取締役会',
+                        }, //49
+                        {
+                            questionTitle: '保険契約の締結または保険募集に関する禁止行為',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

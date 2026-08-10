@@ -213,7 +213,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '公的年金の障害給付', content: '2分の1以上 → 3分の1以上' }, //31 p26
                         { questionTitle: '企業の福利厚生費', content: '法定外複利費については → 法定福利費については' }, //32 p33
                         { questionTitle: 'マイナンバー法', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2024年度 フォームA";
                         { questionTitle: '法人顧客システム', content: '正しい' }, //38
                         { questionTitle: '営業職員の給与体系', content: '地域別最低賃金が適用されない → 適用される' }, //39 p136
                         { questionTitle: '代理店営業組織', content: 'スーパーバイザー → ホールセラー。' }, //40 p146
-                        // 問41〜50
                         { questionTitle: '厚生年金保険の保険料', label: 'イ', content: '標準報酬月額と標準賞与額それぞれ' }, //41
                         { questionTitle: '公的介護保険制度のしくみ', label: 'ウ', content: '65歳' }, //42
                         { questionTitle: '保険料率の改定', label: 'オ', content: '' }, //43

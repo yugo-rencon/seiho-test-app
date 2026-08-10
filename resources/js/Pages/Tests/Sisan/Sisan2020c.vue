@@ -213,7 +213,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '日本の金融制度', content: '正しい' }, //31
                         { questionTitle: '投融資決定機構', content: '正しい' }, //32
                         { questionTitle: '手形貸付', content: '金額に上乗せ → 金額から差し引いて' }, //33 p54
@@ -224,7 +223,6 @@ const subject = "2020年度 フォームC";
                         { questionTitle: '公共投資', content: '正しい' }, //38
                         { questionTitle: '資産運用の多様化', content: '正しい' }, //39
                         { questionTitle: '国際会計基準導入の動向', content: '日本版スチュワードシップ・コード → IFRSへの対応の在り方に関する当面の方針' }, //40 p214
-                        // 問41〜50
                         { questionTitle: '生保資金の構成', label: 'イ', content: '基金' }, //41
                         { questionTitle: '公社債の発行主体別分類', label: 'ア', content: '歳入債' }, //42
                         { questionTitle: '融資審査', label: 'オ', content: '' }, //43

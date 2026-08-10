@@ -213,7 +213,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '日本の金融制度における生命保険会社の地位', content: '正しい' }, //31
                         { questionTitle: '金融関連業務', content: '付随業務 → 法定他業' }, //32 見つからない
                         { questionTitle: '融資審査', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームA";
                         { questionTitle: '長期金融機関としての役割', content: '正しい' }, //38
                         { questionTitle: '海外投融資', content: '0%に近い → 近くない' }, //39 p109
                         { questionTitle: '改正保険業法', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '生保資金の運用規制', label: 'イ', content: '独占禁止法' }, //41
                         { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //42
                         { questionTitle: '有価証券の定義', label: 'ア', content: '金融商品取引法' }, //43

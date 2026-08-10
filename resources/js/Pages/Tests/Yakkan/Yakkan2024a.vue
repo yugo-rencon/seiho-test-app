@@ -214,28 +214,96 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '生命保険契約等の定義', content: '正しい' }, //31
-                        { questionTitle: '保険料の返還', content: '正しい' }, //32
-                        { questionTitle: '保険契約者の保険料支払', content: '片面的強行規定 → 商法または民法の一般原則' }, //33 p54
-                        { questionTitle: '保険給付請求権の譲渡等', content: '保険契約者の同意 → 被保険者の同意' }, //34 p58
-                        { questionTitle: '給付事由発生の通知等', content: ' 保険者は保険給付の責任を免れる → 責任を免れることはない' }, //35 p60
-                        { questionTitle: '保険契約者の住所変更', content: '一般原則を適用する性質を有する → 性質を有するものではない' }, //36 p109
-                        { questionTitle: '災害入院特約と疾病入院特約', content: '4日不担保等の免責規定が適用される → 適用されない' }, //37 p178
-                        { questionTitle: '株式会社と相互会社の比較', content: '一般社団法人 → 中間法人' }, //38 p225
-                        { questionTitle: '保険計理人', content: '正しい' }, //39
-                        { questionTitle: '乗合の禁止', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '金融サービスの提供及び利用環境の整備等に関する法律', label: 'ア', content: '重要事項' }, //41
-                        { questionTitle: '保険法に規定する同意', label: 'ウ', content: '成立要件' }, //42
-                        { questionTitle: '生命保険契約等の解除の効力等', label: 'オ', content: '' }, //43
-                        { questionTitle: '保険料の未払込による保険契約の失効', label: 'イ', content: '猶予期間' }, //44
-                        { questionTitle: '告知義務違反に対する解除権の行使', label: 'イ', content: '5年' }, //45
-                        { questionTitle: '延長保険', label: 'ウ', content: '定期保険' }, //46
-                        { questionTitle: '年齢の計算、誤りの処理', label: 'オ', content: '' }, //47
-                        { questionTitle: '保険業法の目的', label: 'オ', content: '' }, //48
-                        { questionTitle: '保険会社の業務の範囲', label: 'イ', content: '法定他業' }, //49
-                        { questionTitle: '保険募集の制限', label: 'ウ', content: '媒介' }, //50
+                        {
+                            questionTitle: '生命保険契約等の定義',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '保険料の返還',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '保険契約者の保険料支払',
+                            content: '片面的強行規定 → 商法または民法の一般原則',
+                        }, //33 p54
+                        {
+                            questionTitle: '保険給付請求権の譲渡等',
+                            content: '保険契約者の同意 → 被保険者の同意',
+                        }, //34 p58
+                        {
+                            questionTitle: '給付事由発生の通知等',
+                            content: ' 保険者は保険給付の責任を免れる → 責任を免れることはない',
+                        }, //35 p60
+                        {
+                            questionTitle: '保険契約者の住所変更',
+                            content: '一般原則を適用する性質を有する → 性質を有するものではない',
+                        }, //36 p109
+                        {
+                            questionTitle: '災害入院特約と疾病入院特約',
+                            content: '4日不担保等の免責規定が適用される → 適用されない',
+                        }, //37 p178
+                        {
+                            questionTitle: '株式会社と相互会社の比較',
+                            content: '一般社団法人 → 中間法人',
+                        }, //38 p225
+                        {
+                            questionTitle: '保険計理人',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '乗合の禁止',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '金融サービスの提供及び利用環境の整備等に関する法律',
+                            label: 'ア',
+                            content: '重要事項',
+                        }, //41
+                        {
+                            questionTitle: '保険法に規定する同意',
+                            label: 'ウ',
+                            content: '成立要件',
+                        }, //42
+                        {
+                            questionTitle: '生命保険契約等の解除の効力等',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '保険料の未払込による保険契約の失効',
+                            label: 'イ',
+                            content: '猶予期間',
+                        }, //44
+                        {
+                            questionTitle: '告知義務違反に対する解除権の行使',
+                            label: 'イ',
+                            content: '5年',
+                        }, //45
+                        {
+                            questionTitle: '延長保険',
+                            label: 'ウ',
+                            content: '定期保険',
+                        }, //46
+                        {
+                            questionTitle: '年齢の計算、誤りの処理',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '保険業法の目的',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '保険会社の業務の範囲',
+                            label: 'イ',
+                            content: '法定他業',
+                        }, //49
+                        {
+                            questionTitle: '保険募集の制限',
+                            label: 'ウ',
+                            content: '媒介',
+                        }, //50
                     ]"
                 />
             </div>

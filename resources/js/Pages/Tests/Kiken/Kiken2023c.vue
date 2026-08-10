@@ -242,7 +242,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務',

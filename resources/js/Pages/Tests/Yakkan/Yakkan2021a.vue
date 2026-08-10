@@ -214,28 +214,96 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '契約者保護のための法律', content: '消費者契約法 → 金融サービス提供法' }, //31 p15
-                        { questionTitle: '生命保険契約等の定義', content: '正しい' }, //32
-                        { questionTitle: '生命保険募集人', content: '保険契約の締結の代理 ↔︎ 保険契約の締結の媒介' }, //33　p47
-                        { questionTitle: '書面交付義務', content: '正しい' }, //34
-                        { questionTitle: '保険契約の復活の法的性格', content: '正しい' }, //35
-                        { questionTitle: '高度障害保険金', content: '再度、高度障害保険金が支払われる → 支払われることはない' }, //36 p116-117
-                        { questionTitle: '告知義務違反による解除権', content: '正しい' }, //37
-                        { questionTitle: '保険契約の解約', content: '解約の意思表示が到達し、解約返戻金が口座に着金したとき → 解約の意思表示が到達したとき' }, //38 p137
-                        { questionTitle: '保険業の兼営', content: '同一の者が受けることが可能 → 同一の者が受けることはできない' }, //39 p205
-                        { questionTitle: '定款以外の基礎書類の変更', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '生命保険契約等の要素', label: 'オ', content: '' }, //41
-                        { questionTitle: '保険法に規定する同意', label: 'ウ', content: '成立要件' }, //42
-                        { questionTitle: '保険料払込の猶予期間', label: 'ウ', content: '2021年（令和3年）12月31日' }, //43
-                        { questionTitle: '保険金の支払', label: 'ア', content: '10月18日' }, //44
-                        { questionTitle: '保険金等の遅延利息の支払', label: 'エ', content: '法定利率' }, //45
-                        { questionTitle: '告知義務違反に対する解除権の行使', label: 'ア', content: '不可争期間' }, //46
-                        { questionTitle: '年齢の誤りの処理', label: 'ウ', content: '取り消すことができる' }, //47
-                        { questionTitle: '保険業の監督の方法', label: 'イ', content: '実体的監督' }, //48
-                        { questionTitle: '総代会', label: 'エ', content: '特別決議' }, //49
-                        { questionTitle: '保険契約の締結または保険募集に関する禁止行為', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '契約者保護のための法律',
+                            content: '消費者契約法 → 金融サービス提供法',
+                        }, //31 p15
+                        {
+                            questionTitle: '生命保険契約等の定義',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '生命保険募集人',
+                            content: '保険契約の締結の代理 ↔︎ 保険契約の締結の媒介', //p47
+                        }, //33
+                        {
+                            questionTitle: '書面交付義務',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '保険契約の復活の法的性格',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '高度障害保険金',
+                            content: '再度、高度障害保険金が支払われる → 支払われることはない',
+                        }, //36 p116-117
+                        {
+                            questionTitle: '告知義務違反による解除権',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '保険契約の解約',
+                            content: '解約の意思表示が到達し、解約返戻金が口座に着金したとき → 解約の意思表示が到達したとき',
+                        }, //38 p137
+                        {
+                            questionTitle: '保険業の兼営',
+                            content: '同一の者が受けることが可能 → 同一の者が受けることはできない',
+                        }, //39 p205
+                        {
+                            questionTitle: '定款以外の基礎書類の変更',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '生命保険契約等の要素',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '保険法に規定する同意',
+                            label: 'ウ',
+                            content: '成立要件',
+                        }, //42
+                        {
+                            questionTitle: '保険料払込の猶予期間',
+                            label: 'ウ',
+                            content: '2021年（令和3年）12月31日',
+                        }, //43
+                        {
+                            questionTitle: '保険金の支払',
+                            label: 'ア',
+                            content: '10月18日',
+                        }, //44
+                        {
+                            questionTitle: '保険金等の遅延利息の支払',
+                            label: 'エ',
+                            content: '法定利率',
+                        }, //45
+                        {
+                            questionTitle: '告知義務違反に対する解除権の行使',
+                            label: 'ア',
+                            content: '不可争期間',
+                        }, //46
+                        {
+                            questionTitle: '年齢の誤りの処理',
+                            label: 'ウ',
+                            content: '取り消すことができる',
+                        }, //47
+                        {
+                            questionTitle: '保険業の監督の方法',
+                            label: 'イ',
+                            content: '実体的監督',
+                        }, //48
+                        {
+                            questionTitle: '総代会',
+                            label: 'エ',
+                            content: '特別決議',
+                        }, //49
+                        {
+                            questionTitle: '保険契約の締結または保険募集に関する禁止行為',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

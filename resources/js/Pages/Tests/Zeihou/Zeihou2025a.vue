@@ -146,7 +146,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { content: '比例税率ではなく、超過累進税率。' }, //31
                         { content: '正しい' }, //32
                         { content: '正しい' }, //33
@@ -157,7 +156,6 @@ const subject = "2025年度 フォームA";
                         { content: '相続による取得や法人の合併による取得など形式的な所有権の移転については課税されない。' }, //38
                         { content: '正しい' }, //39
                         { content: '14%ではなく、7%。' }, //40
-                        // 問41〜50
                         { label: 'ウ', content: '課税所得金額' }, //41
                         { label: 'オ', content: '' }, //42
                         { label: 'ウ', content: '住宅借入金（取得）等特別控除' }, //43

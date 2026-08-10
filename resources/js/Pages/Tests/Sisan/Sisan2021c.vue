@@ -213,7 +213,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '資産運用の専門家', content: 'エコノミスト → アナリスト' }, //31 p48
                         { questionTitle: '金融関連業務', content: '付随業務 → 法定他業' }, //32 見つからない
                         { questionTitle: '融資審査', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームC";
                         { questionTitle: 'バブル崩壊後の資産運用', content: '正しい' }, //38
                         { questionTitle: '金融システム改革', content: 'フリー・クリア・ワイド → フリー・フェアー・グローバル' }, //39 p207
                         { questionTitle: '会計基準の整備', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '生保資金の運用規制', label: 'イ', content: '独占禁止法' }, //41
                         { questionTitle: '生保資金と運用原則', label: 'エ', content: '安全性' }, //42
                         { questionTitle: '企業貸付', label: 'ウ', content: '短期' }, //43

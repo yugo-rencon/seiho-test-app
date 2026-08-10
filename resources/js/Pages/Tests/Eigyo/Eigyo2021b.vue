@@ -213,7 +213,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '介護保険の保険料', content: '正しい' }, //31
                         { questionTitle: '第三分野市場', content: '損害保険 ↔︎ 生命保険' }, //32 p34
                         { questionTitle: '個人保険商品の構造', content: '遺族に年金が支払われる → 年金の支払われない' }, //33 p47
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームB";
                         { questionTitle: '一時払退職後終身保険', content: '正しい' }, //38
                         { questionTitle: '機関長のタイプ', content: '正しい' }, //39
                         { questionTitle: '企業保険の営業', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '代理・代行', label: 'ア', content: '保険業法' }, //41
                         { questionTitle: '保険料率の改定', label: 'エ', content: '引き下げ' }, //42
                         { questionTitle: '個人保険商品', label: 'ウ', content: '利差配当' }, //43

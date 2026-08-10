@@ -213,7 +213,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '一時所得', content: '80万円程度 → 50万円程度' }, //31 p27
                         { questionTitle: '住宅借入金（取得）等特別控除', content: '所得控除 → 税額控除' }, //32 p55
                         { questionTitle: '確定申告定', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームC";
                         { questionTitle: '財形住宅貯蓄積立保険', content: '財形貯蓄積立保険 → 財形年金' }, //38 p213
                         { questionTitle: '確定拠出年金の税務', content: '正しい' }, //39
                         { questionTitle: '受取配当益金不算入', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '所得税の所得控除', label: 'イ', content: '15種類' }, //41
                         { questionTitle: '医療費控除（セルフメディケーション）', label: 'オ', content: '' }, //42
                         { questionTitle: '譲渡所得', label: 'エ', content: '2分の1' }, //43

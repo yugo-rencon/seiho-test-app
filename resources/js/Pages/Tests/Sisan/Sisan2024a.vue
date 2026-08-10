@@ -213,7 +213,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: 'ヘッジ取引', content: '買いヘッジ → 売りヘッジ' }, //31 見つからない・・・
                         { questionTitle: '保険会社向けの総合的な監督指針', content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている' }, //32 p28
                         { questionTitle: '生保の運用機構', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2024年度 フォームA";
                         { questionTitle: '安定成長期の有価証券投資', content: '正しい' }, //38
                         { questionTitle: 'バブル崩壊後の外国証券投資', content: '減少 ↔︎ 増加' }, //39 p199
                         { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //41
                         { questionTitle: '貸付の特徴', label: 'ウ', content: '流動' }, //42
                         { questionTitle: '融資審査', label: 'オ', content: '' }, //43

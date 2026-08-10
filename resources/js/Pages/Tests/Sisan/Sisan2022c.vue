@@ -213,7 +213,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '運用原則', content: '正しい' }, //31
                         { questionTitle: '貸付形態別分類', content: '正しい' }, //32
                         { questionTitle: '運用の実務', content: '融資審査部門 → マクロ調査部門' }, //33 p51
@@ -224,7 +223,6 @@ const subject = "2022年度 フォームC";
                         { questionTitle: '特金運用の活用', content: 'インカム・ゲインの累積化 → キャピタル・ゲインのインカム化<br>簿価通算 → 簿価分離 ' }, //38 p194
                         { questionTitle: '海外投融資', content: '漸増傾向 → 減少傾向' }, //39 p104
                         { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '生保資金の構成', label: 'オ', content: '' }, //41
                         { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //42
                         { questionTitle: '融資審査', label: 'ウ', content: '自己資本' }, //43

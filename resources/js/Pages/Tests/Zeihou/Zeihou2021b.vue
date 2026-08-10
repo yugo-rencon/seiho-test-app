@@ -213,7 +213,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '譲渡所得', content: '10年以内 → 5年以内' }, //31 p22
                         { questionTitle: '租税特別措置法の規定による課税標準', content: '正しい' }, //32
                         { questionTitle: '確定申告定', content: '正しい' }, //33
@@ -224,7 +223,6 @@ const subject = "2021年度 フォームB";
                         { questionTitle: '財形住宅貯蓄積立保険', content: '財形貯蓄積立保険 → 財形年金' }, //38 p213
                         { questionTitle: '転換時の税務', content: '正しい' }, //39
                         { questionTitle: '営業職員報酬', content: 'すべて事業所得 → 固定給部分は給与所得、それ以外は事業所得' }, //40 p227
-                        // 問41〜50
                         { questionTitle: '所得税の所得控除', label: 'イ', content: '15種類' }, //41
                         { questionTitle: '医療費控除（セルフメディケーション）', label: 'オ', content: '' }, //42
                         { questionTitle: '雑所得', label: 'ウ', content: '必要経費' }, //43

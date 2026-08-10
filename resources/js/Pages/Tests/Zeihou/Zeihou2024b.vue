@@ -213,7 +213,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '担税者', content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者' }, //31 p4
                         { questionTitle: '特定支出控除', content: '正しい' }, //32
                         { questionTitle: '特定扶養親族', content: '16歳以上23歳未満で控除額は83万円 → 19歳以上23歳未満で控除額は63万円' }, //33 p49
@@ -224,7 +223,6 @@ const subject = "2024年度 フォームB";
                         { questionTitle: '不動産取得税', content: '形式的な所有権の移転でも課税対象 → 課税されない' }, //38 p160
                         { questionTitle: '総合福祉団体定期保険の保険料', content: '正しい' }, //39
                         { questionTitle: '最低課税方式', content: '14% → 7%' }, //40 p225
-                        // 問41〜50
                         { questionTitle: '所得税の税額控除額', label: 'ウ', content: '租税特別措置法' }, //41
                         { questionTitle: '所得税の課税標準', label: 'オ', content: '' }, //42
                         { questionTitle: '雑所得', label: 'エ', content: '必要経費' }, //43

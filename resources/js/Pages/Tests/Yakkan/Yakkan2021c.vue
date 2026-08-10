@@ -214,7 +214,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '約款と特約',
                             content: '普通保険約款 ↔︎ 特約',
@@ -255,17 +254,56 @@ const subject = "2021年度 フォームC";
                             questionTitle: '定款以外の基礎書類の変更',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '金融商品取引法', label: 'ウ', content: '適合性の原則' }, //41
-                        { questionTitle: '保険料の返還', label: 'オ', content: '' }, //42
-                        { questionTitle: '保険金の請求', label: 'イ', content: '3年間' }, //43
-                        { questionTitle: '保険金の支払', label: 'ア', content: '10月18日' }, //44
-                        { questionTitle: '告知義務違反による解除の通知', label: 'ウ', content: '1ヶ月以内に届くように' }, //45
-                        { questionTitle: '保険契約の消滅', label: 'ウ', content: '取消し' }, //46
-                        { questionTitle: '年齢の誤りの処理', label: 'ウ', content: '取り消すことができる' }, //47
-                        { questionTitle: '保険金受取人の死亡', label: 'エ', content: '当該保険金受取人の相続人全員' }, //48
-                        { questionTitle: '主務大臣への協議', label: 'エ', content: '財務大臣' }, //49
-                        { questionTitle: '保険契約の締結または保険募集に関する禁止行為', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '金融商品取引法',
+                            label: 'ウ',
+                            content: '適合性の原則',
+                        }, //41
+                        {
+                            questionTitle: '保険料の返還',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '保険金の請求',
+                            label: 'イ',
+                            content: '3年間',
+                        }, //43
+                        {
+                            questionTitle: '保険金の支払',
+                            label: 'ア',
+                            content: '10月18日',
+                        }, //44
+                        {
+                            questionTitle: '告知義務違反による解除の通知',
+                            label: 'ウ',
+                            content: '1ヶ月以内に届くように',
+                        }, //45
+                        {
+                            questionTitle: '保険契約の消滅',
+                            label: 'ウ',
+                            content: '取消し',
+                        }, //46
+                        {
+                            questionTitle: '年齢の誤りの処理',
+                            label: 'ウ',
+                            content: '取り消すことができる',
+                        }, //47
+                        {
+                            questionTitle: '保険金受取人の死亡',
+                            label: 'エ',
+                            content: '当該保険金受取人の相続人全員',
+                        }, //48
+                        {
+                            questionTitle: '主務大臣への協議',
+                            label: 'エ',
+                            content: '財務大臣',
+                        }, //49
+                        {
+                            questionTitle: '保険契約の締結または保険募集に関する禁止行為',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

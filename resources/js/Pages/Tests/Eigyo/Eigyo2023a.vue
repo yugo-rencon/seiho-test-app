@@ -213,7 +213,6 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '人の一生', content: 'ライフスタイル → ライフステージ<br>ライフ・プランニング → ライフサイクル' }, //31 p20
                         { questionTitle: '第三分野市場', content: '保険監督者会議 → 日米保険協議<br>生損保本体 ↔︎ 子会社' }, //32 p35
                         { questionTitle: '生命年金', content: '被保険者の生死を問わず → 被保険者の生存中に限り' }, //33 p47
@@ -224,7 +223,6 @@ const subject = "2023年度 フォームA";
                         { questionTitle: 'インターネット通販', content: '生保会社の出現に至ってない → 契約の成立まで完了できる生保会社もある' }, //38 p104
                         { questionTitle: '営業職員の育成体系', content: '正しい' }, //39
                         { questionTitle: '企業保険の営業', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '種類別貯蓄高', label: 'ウ', content: '通貨性預貯金' }, //41
                         { questionTitle: '遺族年金', label: 'ア', content: '３分の１' }, //42
                         { questionTitle: '公的介護保険制度の概要', label: 'ウ', content: '介護認定審査会' }, //43

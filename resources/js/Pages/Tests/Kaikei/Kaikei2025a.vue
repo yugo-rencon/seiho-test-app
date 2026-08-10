@@ -214,7 +214,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '', content: '' }, //31
                         { questionTitle: '', content: '' }, //32
                         { questionTitle: '', content: '' }, //33
@@ -225,7 +224,6 @@ const subject = "2025年度 フォームA";
                         { questionTitle: '', content: '' }, //38
                         { questionTitle: '', content: '' }, //39
                         { questionTitle: '', content: '' }, //40
-                        // 問41〜50
                         { questionTitle: '', label: '', content: '' }, //41
                         { questionTitle: '', label: '', content: '' }, //42
                         { questionTitle: '', label: '', content: '' }, //43

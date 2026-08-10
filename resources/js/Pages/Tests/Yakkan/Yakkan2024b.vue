@@ -214,28 +214,96 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
-                        { questionTitle: '監督', content: '正しい' }, //31
-                        { questionTitle: '保険料の返還', content: '正しい' }, //32
-                        { questionTitle: '保険者の免責', content: 'すべての保険金受取人 → 故意に死亡させた保険金受取人' }, //33 p60
-                        { questionTitle: '保険給付請求権の譲渡等', content: '保険契約者の同意 → 被保険者の同意' }, //34 p58
-                        { questionTitle: '告知義務違反による解除', content: '6ヶ月以内 → 1ヶ月以内' }, //35 p62
-                        { questionTitle: '受取人の変更', content: '正しい' }, //36
-                        { questionTitle: '災害入院特約と疾病入院特約', content: '4日不担保等の免責規定が適用される → 適用されない' }, //37 p178
-                        { questionTitle: '定款の変更', content: '認可は不要 → 認可は必要' }, //38 p222
-                        { questionTitle: '免許取消', content: '金融庁長官 → 内閣総理大臣' }, //39 p201
-                        { questionTitle: '意向把握義務', content: '正しい' }, //40
-                        // 問41〜50
-                        { questionTitle: '契約の取り消し', label: 'ア', content: '民法' }, //41
-                        { questionTitle: '保険料払込の猶予期間', label: 'ウ', content: '2024年（令和6年）12月31日' }, //42
-                        { questionTitle: '生命保険契約等の解除の効力等', label: 'オ', content: '' }, //43
-                        { questionTitle: '解除・免責時の支払', label: 'オ', content: '' }, //44
-                        { questionTitle: '解除の通知', label: 'イ', content: '解除の原因を知った時' }, //45
-                        { questionTitle: '傷害特約の給付', label: 'エ', content: '感染症' }, //46
-                        { questionTitle: '年齢の計算、誤りの処理', label: 'オ', content: '' }, //47
-                        { questionTitle: '監督体制', label: 'ア', content: '保険契約者保護機構' }, //48
-                        { questionTitle: '保険会社に特有な準備金', label: 'ア', content: '毎決算期' }, //49
-                        { questionTitle: '保険募集の制限', label: 'ウ', content: '媒介' }, //50
+                        {
+                            questionTitle: '監督',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '保険料の返還',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '保険者の免責',
+                            content: 'すべての保険金受取人 → 故意に死亡させた保険金受取人',
+                        }, //33 p60
+                        {
+                            questionTitle: '保険給付請求権の譲渡等',
+                            content: '保険契約者の同意 → 被保険者の同意',
+                        }, //34 p58
+                        {
+                            questionTitle: '告知義務違反による解除',
+                            content: '6ヶ月以内 → 1ヶ月以内',
+                        }, //35 p62
+                        {
+                            questionTitle: '受取人の変更',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '災害入院特約と疾病入院特約',
+                            content: '4日不担保等の免責規定が適用される → 適用されない',
+                        }, //37 p178
+                        {
+                            questionTitle: '定款の変更',
+                            content: '認可は不要 → 認可は必要',
+                        }, //38 p222
+                        {
+                            questionTitle: '免許取消',
+                            content: '金融庁長官 → 内閣総理大臣',
+                        }, //39 p201
+                        {
+                            questionTitle: '意向把握義務',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '契約の取り消し',
+                            label: 'ア',
+                            content: '民法',
+                        }, //41
+                        {
+                            questionTitle: '保険料払込の猶予期間',
+                            label: 'ウ',
+                            content: '2024年（令和6年）12月31日',
+                        }, //42
+                        {
+                            questionTitle: '生命保険契約等の解除の効力等',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '解除・免責時の支払',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '解除の通知',
+                            label: 'イ',
+                            content: '解除の原因を知った時',
+                        }, //45
+                        {
+                            questionTitle: '傷害特約の給付',
+                            label: 'エ',
+                            content: '感染症',
+                        }, //46
+                        {
+                            questionTitle: '年齢の計算、誤りの処理',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '監督体制',
+                            label: 'ア',
+                            content: '保険契約者保護機構',
+                        }, //48
+                        {
+                            questionTitle: '保険会社に特有な準備金',
+                            label: 'ア',
+                            content: '毎決算期',
+                        }, //49
+                        {
+                            questionTitle: '保険募集の制限',
+                            label: 'ウ',
+                            content: '媒介',
+                        }, //50
                     ]"
                 />
             </div>

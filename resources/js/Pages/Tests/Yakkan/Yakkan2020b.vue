@@ -214,7 +214,6 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         {
                             questionTitle: '生命保険契約等に対する法の適用',
                             content: 'どちらも営業的商行為である → 営利保険のみ営業的商行為',
@@ -255,17 +254,56 @@ const subject = "2020年度 フォームB";
                             questionTitle: '指定紛争解決機関',
                             content: '正しい',
                         }, //40
-                        // 問41〜50
-                        { questionTitle: '金融商品の販売等に関する法律', label: 'ウ', content: '勧誘' }, //41
-                        { questionTitle: '生命保険契約等の性質', label: 'オ', content: '' }, //42
-                        { questionTitle: '生命保険募集人', label: 'ウ', content: '代理' }, //43
-                        { questionTitle: '遅延利息の支払', label: 'オ', content: '' }, //44
-                        { questionTitle: '保険契約の解除', label: 'イ', content: '保険法' }, //45
-                        { questionTitle: '解除の通知', label: 'イ', content: '解除の原因を知った時' }, //46
-                        { questionTitle: '保険会社の業務の範囲', label: 'ア', content: '法定他業' }, //47
-                        { questionTitle: '基礎書類', label: 'エ', content: '定款' }, //48
-                        { questionTitle: '保険会社に特有な準備金', label: 'ア', content: '毎決算期' }, //49
-                        { questionTitle: '株主の権利行使に関する基準日の特例', label: 'イ', content: '3ヶ月' }, //50
+                        {
+                            questionTitle: '金融商品の販売等に関する法律',
+                            label: 'ウ',
+                            content: '勧誘',
+                        }, //41
+                        {
+                            questionTitle: '生命保険契約等の性質',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '生命保険募集人',
+                            label: 'ウ',
+                            content: '代理',
+                        }, //43
+                        {
+                            questionTitle: '遅延利息の支払',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '保険契約の解除',
+                            label: 'イ',
+                            content: '保険法',
+                        }, //45
+                        {
+                            questionTitle: '解除の通知',
+                            label: 'イ',
+                            content: '解除の原因を知った時',
+                        }, //46
+                        {
+                            questionTitle: '保険会社の業務の範囲',
+                            label: 'ア',
+                            content: '法定他業',
+                        }, //47
+                        {
+                            questionTitle: '基礎書類',
+                            label: 'エ',
+                            content: '定款',
+                        }, //48
+                        {
+                            questionTitle: '保険会社に特有な準備金',
+                            label: 'ア',
+                            content: '毎決算期',
+                        }, //49
+                        {
+                            questionTitle: '株主の権利行使に関する基準日の特例',
+                            label: 'イ',
+                            content: '3ヶ月',
+                        }, //50
                     ]"
                 />
             </div>

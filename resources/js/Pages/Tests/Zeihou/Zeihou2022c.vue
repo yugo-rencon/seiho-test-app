@@ -248,7 +248,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '標準税率', content: '正しい' }, //31
                         { questionTitle: '特定支出控除', content: '年末調整 → 確定申告' }, //32
                         { questionTitle: '相続の放棄', content: '代襲相続の権利を有する → 代襲相続の権利がない' }, //33 p73
@@ -259,7 +258,6 @@ const subject = "2022年度 フォームC";
                         { questionTitle: '固定資産税の課税標準', content: '5年ごと → 3年ごと' }, //38 p158
                         { questionTitle: '確定拠出年金のポータビリティ', content: '正しい' }, //39
                         { questionTitle: '営業職員報酬の必要経費', content: '正しい' }, //40
-                        // 問41〜50
                         { questionTitle: '居住用財産譲渡の特例', label: 'ア', content: '自己' }, //41
                         { questionTitle: '雑損控除', label: 'ウ', content: '5万円' }, //42
                         { questionTitle: '遺留分', label: 'ウ', content: '3分の1' }, //43

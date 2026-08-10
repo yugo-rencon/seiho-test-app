@@ -214,7 +214,6 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問31〜40
                         { questionTitle: '損益計算書', content: '正しい' }, //31
                         { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //32 p42-43
                         { questionTitle: '退職給付引当金', content: '正しい' }, //33
@@ -225,7 +224,6 @@ const subject = "2023年度 フォームA";
                         { questionTitle: '法人税及び住民税', content: '他の税金と合算 → 他の税金と区別' }, //38 p164
                         { questionTitle: '区分経理', content: '正しい' }, //39
                         { questionTitle: '監査', content: '正しい' }, //40
-                        // 問41〜50
                         { label: 'イ', questionTitle: '企業会計の領域', content: '財務会計' }, //41
                         { label: 'エ', questionTitle: '帳簿の種類', content: '売掛金元帳' }, //42
                         { label: 'オ', questionTitle: '株主配当', content: '' }, //43

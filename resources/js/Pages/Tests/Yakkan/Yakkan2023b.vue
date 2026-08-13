@@ -219,18 +219,22 @@ const subject = "2023年度 フォームB";
                             content: '一切無効 → その内容が強行規定や公益に反するものでない限り有効',
                         }, //31 p11
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '法律と保険約款',
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '団体扱特約',
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '復旧（復帰・復元）',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '遺言による保険金受取人の変更',
                             content: '正しい',
                         }, //35
@@ -251,6 +255,7 @@ const subject = "2023年度 フォームB";
                             content: '設計書 → 意向確認書面',
                         }, //39 p263
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '事業年度',
                             content: '正しい',
                         }, //40

@@ -215,10 +215,12 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '約款と特約',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '遺言による保険金受取人の変更',
                             content: '正しい',
                         }, //32
@@ -247,6 +249,7 @@ const subject = "2020年度 フォームC";
                             content: '1月1日から12月31日 → 4月1日から翌年3月31日',
                         }, //38 p238
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: 'ソルベンシー・マージン比率',
                             content: '正しい',
                         }, //39

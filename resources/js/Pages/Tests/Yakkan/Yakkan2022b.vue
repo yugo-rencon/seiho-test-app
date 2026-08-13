@@ -215,6 +215,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '生命保険契約等の要素',
                             content: '正しい',
                         }, //31
@@ -223,6 +224,7 @@ const subject = "2022年度 フォームB";
                             content: '給与から団体に引き落とされた時 → 団体から生命保険会社に払い込まれた時',
                         }, //32 p92
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '死亡保険金の免責',
                             content: '正しい',
                         }, //33
@@ -239,10 +241,12 @@ const subject = "2022年度 フォームB";
                             content: '保険受取人の同意 → 被保険者の同意',
                         }, //36 p149
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '監督の方法',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '組織変更',
                             content: '正しい',
                         }, //38
@@ -251,6 +255,7 @@ const subject = "2022年度 フォームB";
                             content: '土地の含み益も計算の要素としている',
                         }, //39 p248
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '外国保険業者',
                             content: '正しい',
                         }, //40

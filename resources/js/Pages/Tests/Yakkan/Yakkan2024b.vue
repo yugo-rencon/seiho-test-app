@@ -215,10 +215,12 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '監督',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '保険料の返還',
                             content: '正しい',
                         }, //32
@@ -235,6 +237,7 @@ const subject = "2024年度 フォームB";
                             content: '6ヶ月以内 → 1ヶ月以内',
                         }, //35 p62
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '受取人の変更',
                             content: '正しい',
                         }, //36
@@ -251,6 +254,7 @@ const subject = "2024年度 フォームB";
                             content: '金融庁長官 → 内閣総理大臣',
                         }, //39 p201
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '意向把握義務',
                             content: '正しい',
                         }, //40

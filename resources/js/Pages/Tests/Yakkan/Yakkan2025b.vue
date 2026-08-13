@@ -25,6 +25,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-①"
                     :contents="[
+                        // rev: 2026-08-12 確認済み
                         '猶予期間',
                         'オーバーローン',
                         '契約者貸付金',
@@ -45,6 +46,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-②"
                     :contents="[
+                        // rev: 2026-08-12 確認済み
                         '解約返戻金',
                         '復活',
                         '3年',
@@ -65,6 +67,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-①"
                     :contents="[
+                        // rev: 2026-08-12 確認済み
                         '承諾',
                         '商事特別法',
                         '申込日',
@@ -85,6 +88,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-②"
                     :contents="[
+                        // rev: 2026-08-12 確認済み
                         '1年',
                         '保険業者',
                         '医師の診査',
@@ -219,6 +223,7 @@ const subject = "2025年度 フォームB";
                             content: '営利保険 → 相互保険', //p5
                         }, //31
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '契約者保護のための法律',
                             content: '正しい',
                         }, //32
@@ -227,14 +232,17 @@ const subject = "2025年度 フォームB";
                             content: '保険契約者 → 相続人の全員', //p58
                         }, //33
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '保険給付の履行期',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '書面交付義務',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '特約の消滅',
                             content: '正しい',
                         }, //36
@@ -243,6 +251,7 @@ const subject = "2025年度 フォームB";
                             content: '生命保険契約等の保険証券記載事項として「解約返戻金額」は[[掲げられていない]]', //p154
                         }, //37
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '帳簿閲覧権',
                             content: '正しい',
                         }, //38
@@ -251,55 +260,66 @@ const subject = "2025年度 フォームB";
                             content: '設計書 → 意向確認書面', //p263
                         }, //39
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '指定紛争解決機関',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '契約者保護',
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険金額',
                             label: 'イ',
                             content: '被保険利益',
                         }, //42
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '生命保険契約等の効力',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '生命保険契約等の解除の効力等',
                             label: 'ア',
                             content: '保険者',
                         }, //44
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険契約の取消し',
                             label: 'ア',
                             content: '保険金受取人',
                         }, //45
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険契約者の変更',
                             label: 'ア',
                             content: '承継人',
                         }, //46
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '配当金',
                             label: 'ウ',
                             content: '衡平',
                         }, //47
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険業の監督の方法',
                             label: 'イ',
                             content: '実体的監督',
                         }, //48
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '外国保険業者の規制',
                             label: 'ウ',
                             content: '財産目録',
                         }, //49
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険募集の制限',
                             label: 'オ',
                             content: '',

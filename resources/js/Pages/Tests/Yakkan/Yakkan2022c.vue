@@ -215,6 +215,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '拘束力',
                             content: '正しい',
                         }, //31
@@ -223,6 +224,7 @@ const subject = "2022年度 フォームC";
                             content: '片務契約 → 双務契約（保険者も保険給付を行う債務を負担）',
                         }, //32 p34
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: 'クーリング・オフ制度',
                             content: '正しい',
                         }, //33
@@ -235,10 +237,12 @@ const subject = "2022年度 フォームC";
                             content: '新契約説 → 特別契約説',
                         }, //35 p105
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '特約の消滅',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '保険業の兼営',
                             content: '正しい',
                         }, //37
@@ -247,10 +251,12 @@ const subject = "2022年度 フォームC";
                             content: '認可は必要ない → 認可は必要',
                         }, //38 p222
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '合併',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '外国保険業者',
                             content: '正しい',
                         }, //40

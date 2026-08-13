@@ -219,6 +219,7 @@ const subject = "2020年度 フォームB";
                             content: 'どちらも営業的商行為である → 営利保険のみ営業的商行為',
                         }, //31 p5-6
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険期間',
                             content: '正しい',
                         }, //32
@@ -235,6 +236,7 @@ const subject = "2020年度 フォームB";
                             content: '一般原則を適用する性質を有する → 性質を有するものではない',
                         }, //35 p109
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '契約者貸付',
                             content: '正しい',
                         }, //36
@@ -243,14 +245,17 @@ const subject = "2020年度 フォームB";
                             content: '相互会社 ↔︎ 株式会社',
                         }, //37 p218
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険計理人',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: 'ソルベンシー・マージン比率',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '指定紛争解決機関',
                             content: '正しい',
                         }, //40

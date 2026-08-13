@@ -219,6 +219,7 @@ const subject = "2022年度 フォームA";
                             content: '営利保険 → 相互保険',
                         }, //31 p5
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '契約者保護のための法律',
                             content: '正しい',
                         }, //32
@@ -235,10 +236,12 @@ const subject = "2022年度 フォームA";
                             content: '新契約説 → 特別契約説',
                         }, //35 p105
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '災害入院特約と疾病入院特約',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '再保険',
                             content: '正しい',
                         }, //37
@@ -251,6 +254,7 @@ const subject = "2022年度 フォームA";
                             content: '金融庁長官 → 内閣総理大臣',
                         }, //39 p201
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '外国保険業者',
                             content: '正しい',
                         }, //40

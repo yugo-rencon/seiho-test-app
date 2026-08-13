@@ -25,6 +25,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-①"
                     :contents="[
+                        // rev: 2026-08-11 確認済み
                         '猶予期間',
                         'オーバーローン',
                         '契約者貸付金',
@@ -45,6 +46,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-②"
                     :contents="[
+                        // rev: 2026-08-11 確認済み
                         '解約返戻金',
                         '復活',
                         '3年',
@@ -65,6 +67,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="第三分野の保険-①"
                     :contents="[
+                        // rev: 2026-08-11 確認済み
                         '一定額',
                         'てん補',
                         '傷害',
@@ -85,6 +88,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="第三分野の保険-②"
                     :contents="[
+                        // rev: 2026-08-11 確認済み
                         '不妊治療',
                         '老衰',
                         '介護',
@@ -259,51 +263,61 @@ const subject = "2025年度 フォームA";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '金融サービスの提供及び利用環境の整備等に関する法律（金融サービス提供法）',
                             label: 'エ',
                             content: '民法',
                         }, //41
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '生命保険募集人',
                             label: 'ウ',
                             content: '代理',
                         }, //42
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '生命保険契約等の効力',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '保険契約上の保障責任',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '保険金の支払の時期',
                             label: 'ウ',
-                            content: '５営業日',
+                            content: '5営業日',
                         }, //45
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '保険契約者の変更',
                             label: 'ア',
                             content: '承継人',
                         }, //46
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '疾病入院特約の給付',
                             label: 'イ',
                             content: '責任開始の日',
                         }, //47
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '保険業の監督の方法',
                             label: 'イ',
                             content: '実体的監督',
                         }, //48
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '委員会等設置会社',
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-11 確認済み
                             questionTitle: '保険計理人',
                             label: 'ウ',
                             content: '7年',

@@ -25,6 +25,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-①"
                     :contents="[
+                        // rev: 2026-08-12 確認済み
                         '猶予期間',
                         'オーバーローン',
                         '契約者貸付金',
@@ -45,6 +46,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-②"
                     :contents="[
+                        // rev: 2026-08-12 確認済み
                         '解約返戻金',
                         '復活',
                         '3年',
@@ -65,6 +67,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-①"
                     :contents="[
+                        // rev: 2026-08-12 確認済み
                         '事業方法書',
                         '停止',
                         '財産の供託',
@@ -85,6 +88,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-②"
                     :contents="[
+                        // rev: 2026-08-12 確認済み
                         '基金',
                         '通常の予測',
                         '最低保証リスク',
@@ -227,6 +231,7 @@ const subject = "2025年度 フォームC";
                             content: '保険契約者 → 相続人の全員', //p58
                         }, //33
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '保険給付の履行期',
                             content: '正しい',
                         }, //34
@@ -235,6 +240,7 @@ const subject = "2025年度 フォームC";
                             content: '「保険契約の締結の[[媒介]]」とは保険契約の成立に尽力する事実行為であるのに対し、「保険契約の締結の[[代理]]」とは保険契約の締結そのものと考えて良い', //p47
                         }, //35
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '特約の消滅',
                             content: '正しい',
                         }, //36
@@ -243,6 +249,7 @@ const subject = "2025年度 フォームC";
                             content: '契約日とは、契約の成立日（承諾日）[[を意味するものではなく]]、保険期間の起算日を明確にするために、責任開始の日を契約日と呼称しているにすぎない', //p83
                         }, //37
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '疾病入院特約',
                             content: '正しい',
                         }, //38
@@ -251,55 +258,66 @@ const subject = "2025年度 フォームC";
                             content: '外国保険業者の場合は、株式会社や相互会社[[でなくてもよく]]、個人でも良い', //p256
                         }, //39
                         {
+                            // rev: 2026-08-10 確認済み
                             questionTitle: '乗合の禁止',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '生命保険契約等の性質',
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険料の返還',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '生命保険契約等の効力',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '生死不明の場合の取扱',
                             label: 'イ',
                             content: '生命保険会社',
                         }, //44
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険契約の解除',
                             label: 'ウ',
                             content: '重大事由',
                         }, //45
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険契約者の変更',
                             label: 'ア',
                             content: '承継人',
                         }, //46
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険会社の業務の範囲',
                             label: 'ア',
                             content: '法定他業',
                         }, //47
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '保険業の監督の方法',
                             label: 'イ',
                             content: '実体的監督',
                         }, //48
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '株主の権利行使の基準日',
                             label: 'イ',
                             content: '3ヶ月',
                         }, //49
                         {
+                            // rev: 2026-08-12 確認済み
                             questionTitle: '供託',
                             label: 'オ',
                             content: '',

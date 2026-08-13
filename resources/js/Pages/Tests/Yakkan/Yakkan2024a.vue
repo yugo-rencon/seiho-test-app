@@ -215,10 +215,12 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '生命保険契約等の定義',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '保険料の返還',
                             content: '正しい',
                         }, //32
@@ -247,10 +249,12 @@ const subject = "2024年度 フォームA";
                             content: '一般社団法人 → 中間法人',
                         }, //38 p225
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '保険計理人',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-13 確認済み
                             questionTitle: '乗合の禁止',
                             content: '正しい',
                         }, //40

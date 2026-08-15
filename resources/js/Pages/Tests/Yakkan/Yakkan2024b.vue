@@ -25,6 +25,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-①"
                     :contents="[
+                        // rev: 2026-08-14 確認済み
                         '承諾',
                         '商事特別法',
                         '申込日',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-②"
                     :contents="[
+                        // rev: 2026-08-14 確認済み
                         '1年',
                         '申込者等が自ら指定した',
                         '医師の診査',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="株式会社と相互会社-①"
                     :contents="[
+                        // rev: 2026-08-14 確認済み
                         '含む',
                         '10億円',
                         '中間法人',
@@ -85,10 +88,11 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="株式会社と相互会社-②"
                     :contents="[
+                        // rev: 2026-08-14 確認済み
                         '責任準備金',
                         '4ヶ月',
                         '100',
-                        '1000分の3',
+                        '1,000分の3',
                         '損失てん補準備金', // 問16〜20
                     ]"
                     :labels="[
@@ -259,51 +263,61 @@ const subject = "2024年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '契約の取り消し',
                             label: 'ア',
                             content: '民法',
                         }, //41
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険料払込の猶予期間',
                             label: 'ウ',
                             content: '2024年（令和6年）12月31日',
                         }, //42
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '生命保険契約等の解除の効力等',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '解除・免責時の支払',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '解除の通知',
                             label: 'イ',
                             content: '解除の原因を知った時',
                         }, //45
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '傷害特約の給付',
                             label: 'エ',
                             content: '感染症',
                         }, //46
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '年齢の計算、誤りの処理',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '監督体制',
                             label: 'ア',
                             content: '保険契約者保護機構',
                         }, //48
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険会社に特有な準備金',
                             label: 'ア',
                             content: '毎決算期',
                         }, //49
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険募集の制限',
                             label: 'ウ',
                             content: '媒介',

@@ -25,6 +25,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-①"
                     :contents="[
+                        // rev: 2026-08-14 確認済み
                         '承諾',
                         '商事特別法',
                         '申込日',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-②"
                     :contents="[
+                        // rev: 2026-08-14 確認済み
                         '1年',
                         '申込者等が自ら指定した',
                         '医師の診査',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="死亡保険金の免責事由-①"
                     :contents="[
+                        // rev: 2026-08-14 確認済み
                         '射倖',
                         '善意',
                         '保険契約者',
@@ -85,6 +88,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="死亡保険金の免責事由-②"
                     :contents="[
+                        // rev: 2026-08-14 確認済み
                         '緩和',
                         '残額',
                         '自殺',
@@ -259,51 +263,61 @@ const subject = "2024年度 フォームA";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '金融サービスの提供及び利用環境の整備等に関する法律',
                             label: 'ア',
                             content: '重要事項',
                         }, //41
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険法に規定する同意',
                             label: 'ウ',
                             content: '成立要件',
                         }, //42
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '生命保険契約等の解除の効力等',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険料の未払込による保険契約の失効',
                             label: 'イ',
                             content: '猶予期間',
                         }, //44
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '告知義務違反に対する解除権の行使',
                             label: 'イ',
                             content: '5年',
                         }, //45
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '延長保険',
                             label: 'ウ',
                             content: '定期保険',
                         }, //46
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '年齢の計算、誤りの処理',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険業法の目的',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険会社の業務の範囲',
                             label: 'イ',
                             content: '法定他業',
                         }, //49
                         {
+                            // rev: 2026-08-14 確認済み
                             questionTitle: '保険募集の制限',
                             label: 'ウ',
                             content: '媒介',

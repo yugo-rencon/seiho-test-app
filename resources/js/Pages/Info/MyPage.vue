@@ -1,12 +1,15 @@
 <script setup>
 import axios from 'axios';
-import { Head, Link, usePage } from '@inertiajs/vue3';
+import { Head, Link, router, usePage } from '@inertiajs/vue3';
 import { computed, onUnmounted, ref, watch } from 'vue';
 import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
 
 const page = usePage();
 const user = page.props?.auth?.user || null;
 const flashStatus = computed(() => page.props?.flash?.status ?? null);
+const logout = () => {
+  router.post(route('logout'));
+};
 const props = defineProps({
   scope: {
     type: String,
@@ -564,6 +567,15 @@ const excellent = computed(
               <div class="text-sm font-bold text-gray-900">料金プラン</div>
               <div class="mt-1 text-xs text-gray-500">購入済みプランや閲覧範囲を確認できます。</div>
             </Link>
+          </div>
+          <div class="mt-5 border-t border-gray-100 pt-4">
+            <button
+              type="button"
+              class="text-sm font-semibold text-gray-400 transition hover:text-gray-600"
+              @click="logout"
+            >
+              ログアウト
+            </button>
           </div>
         </div>
 

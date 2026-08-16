@@ -43,7 +43,21 @@ class EnglishBookAdminController extends Controller
         $data['cover_path'] = $this->storeCover($request);
         EnglishBook::create($data);
 
-        return back();
+        return redirect()->route('admin.englishBooks.index');
+    }
+
+    public function create(): Response
+    {
+        return Inertia::render('Admin/EnglishBookForm');
+    }
+
+    public function edit(EnglishBook $englishBook): Response
+    {
+        $englishBook->setAttribute('cover_image_url', $englishBook->cover_path
+            ? route('admin.englishBooks.cover', $englishBook)
+            : $englishBook->cover_url);
+
+        return Inertia::render('Admin/EnglishBookForm', ['book' => $englishBook]);
     }
 
     public function update(Request $request, EnglishBook $englishBook): RedirectResponse
@@ -60,7 +74,7 @@ class EnglishBookAdminController extends Controller
 
         $englishBook->update($data);
 
-        return back();
+        return redirect()->route('admin.englishBooks.index');
     }
 
     public function destroy(EnglishBook $englishBook): RedirectResponse

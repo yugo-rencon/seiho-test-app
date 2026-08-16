@@ -209,7 +209,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('personal', [PersonalAdminController::class, 'index'])->name('admin.personal.index');
     Route::get('english-books', [EnglishBookAdminController::class, 'index'])->name('admin.englishBooks.index');
+    Route::get('english-books/create', [EnglishBookAdminController::class, 'create'])->name('admin.englishBooks.create');
     Route::get('english-books/{englishBook}/cover', [EnglishBookAdminController::class, 'cover'])->name('admin.englishBooks.cover');
+    Route::get('english-books/{englishBook}/edit', [EnglishBookAdminController::class, 'edit'])->name('admin.englishBooks.edit');
     Route::post('english-books', [EnglishBookAdminController::class, 'store'])->name('admin.englishBooks.store');
     Route::post('english-books/{englishBook}', [EnglishBookAdminController::class, 'update'])->name('admin.englishBooks.update');
     Route::delete('english-books/{englishBook}', [EnglishBookAdminController::class, 'destroy'])->name('admin.englishBooks.delete');

@@ -211,10 +211,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('english-books', [EnglishBookAdminController::class, 'index'])->name('admin.englishBooks.index');
     Route::get('english-books/create', [EnglishBookAdminController::class, 'create'])->name('admin.englishBooks.create');
     Route::get('english-books/{englishBook}/cover', [EnglishBookAdminController::class, 'cover'])->name('admin.englishBooks.cover');
-    Route::get('english-books/{englishBook}/edit', [EnglishBookAdminController::class, 'edit'])->name('admin.englishBooks.edit');
+    Route::get('english-books/{englishBookShelf}/edit', [EnglishBookAdminController::class, 'edit'])->name('admin.englishBooks.edit');
+    Route::get('english-books/{englishBookShelf}', [EnglishBookAdminController::class, 'show'])->name('admin.englishBooks.show');
     Route::post('english-books', [EnglishBookAdminController::class, 'store'])->name('admin.englishBooks.store');
-    Route::post('english-books/{englishBook}', [EnglishBookAdminController::class, 'update'])->name('admin.englishBooks.update');
-    Route::delete('english-books/{englishBook}', [EnglishBookAdminController::class, 'destroy'])->name('admin.englishBooks.delete');
+    Route::post('english-books/{englishBookShelf}', [EnglishBookAdminController::class, 'update'])->name('admin.englishBooks.update');
+    Route::delete('english-books/{englishBookShelf}', [EnglishBookAdminController::class, 'destroy'])->name('admin.englishBooks.delete');
     Route::post('personal/study-logs', [PersonalAdminController::class, 'storeStudyLog'])->name('admin.personal.studyLogs.store');
     Route::delete('personal/study-logs/{studyLog}', [PersonalAdminController::class, 'deleteStudyLog'])->name('admin.personal.studyLogs.delete');
     Route::post('personal/exercise-logs', [PersonalAdminController::class, 'storeExerciseLog'])->name('admin.personal.exerciseLogs.store');

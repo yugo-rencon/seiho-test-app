@@ -137,3 +137,9 @@ source ~/.zshrc
 （途中で失敗したらその時点で停止する）
 
 ssh -i ~/.ssh/xs599734.key xs599734@sv16219.xserver.jp -p 10022
+
+DBにマイグレーション含む
+git pull origin main
+php artisan migrate --force
+php artisan optimize:clear
+php artisan config:cache

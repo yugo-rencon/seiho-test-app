@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\EnglishBook;
+use App\Models\EnglishBookShelf;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -13,37 +15,25 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class EnglishBookAdminController extends Controller
 {
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        $books = EnglishBook::query()
+        $shelves = EnglishBookShelf::query()
+            ->with('book')
+            ->where('user_id', $request->user()->id)
             ->orderByRaw("case status when 'reading' then 0 when 'want' then 1 else 2 end")
             ->orderByDesc('finished_on')
             ->orderByDesc('id')
-            ->get()
-            ->each(function (EnglishBook $book) {
-                $book->setAttribute('cover_image_url', $book->cover_path
-                    ? route('admin.englishBooks.cover', $book)
-                    : $book->cover_url);
-            });
+            ->get();
 
         return Inertia::render('Admin/EnglishBooks', [
-            'books' => $books,
+            'books' => $shelves->map(fn (EnglishBookShelf $shelf) => $this->payload($shelf)),
             'stats' => [
-                'finished_count' => $books->where('status', 'finished')->count(),
-                'reading_count' => $books->where('status', 'reading')->count(),
-                'want_count' => $books->where('status', 'want')->count(),
-                'total_words' => (int) $books->where('status', 'finished')->sum('word_count'),
+                'finished_count' => $shelves->where('status', 'finished')->count(),
+                'reading_count' => $shelves->where('status', 'reading')->count(),
+                'want_count' => $shelves->where('status', 'want')->count(),
+                'total_words' => (int) $shelves->where('status', 'finished')->sum(fn ($shelf) => $shelf->book->word_count ?? 0),
             ],
         ]);
-    }
-
-    public function store(Request $request): RedirectResponse
-    {
-        $data = $this->validated($request);
-        $data['cover_path'] = $this->storeCover($request);
-        EnglishBook::create($data);
-
-        return redirect()->route('admin.englishBooks.index');
     }
 
     public function create(): Response
@@ -51,38 +41,49 @@ class EnglishBookAdminController extends Controller
         return Inertia::render('Admin/EnglishBookForm');
     }
 
-    public function edit(EnglishBook $englishBook): Response
-    {
-        $englishBook->setAttribute('cover_image_url', $englishBook->cover_path
-            ? route('admin.englishBooks.cover', $englishBook)
-            : $englishBook->cover_url);
-
-        return Inertia::render('Admin/EnglishBookForm', ['book' => $englishBook]);
-    }
-
-    public function update(Request $request, EnglishBook $englishBook): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
         $data = $this->validated($request);
-        $newCoverPath = $this->storeCover($request);
-
-        if ($newCoverPath) {
-            if ($englishBook->cover_path) {
-                Storage::disk('public')->delete($englishBook->cover_path);
-            }
-            $data['cover_path'] = $newCoverPath;
-        }
-
-        $englishBook->update($data);
+        $book = EnglishBook::create(array_merge($this->bookData($data), ['cover_path' => $this->storeCover($request)]));
+        EnglishBookShelf::create(array_merge($this->shelfData($data), [
+            'user_id' => $request->user()->id,
+            'english_book_id' => $book->id,
+        ]));
 
         return redirect()->route('admin.englishBooks.index');
     }
 
-    public function destroy(EnglishBook $englishBook): RedirectResponse
+    public function show(Request $request, EnglishBookShelf $englishBookShelf): Response
     {
-        if ($englishBook->cover_path) {
-            Storage::disk('public')->delete($englishBook->cover_path);
+        return Inertia::render('Admin/EnglishBookDetail', ['book' => $this->payload($this->ownedShelf($request, $englishBookShelf))]);
+    }
+
+    public function edit(Request $request, EnglishBookShelf $englishBookShelf): Response
+    {
+        return Inertia::render('Admin/EnglishBookForm', ['book' => $this->payload($this->ownedShelf($request, $englishBookShelf))]);
+    }
+
+    public function update(Request $request, EnglishBookShelf $englishBookShelf): RedirectResponse
+    {
+        $shelf = $this->ownedShelf($request, $englishBookShelf);
+        $data = $this->validated($request);
+        $bookData = $this->bookData($data);
+        $newCoverPath = $this->storeCover($request);
+
+        if ($newCoverPath) {
+            if ($shelf->book->cover_path) Storage::disk('public')->delete($shelf->book->cover_path);
+            $bookData['cover_path'] = $newCoverPath;
         }
-        $englishBook->delete();
+
+        $shelf->book->update($bookData);
+        $shelf->update($this->shelfData($data));
+
+        return redirect()->route('admin.englishBooks.index');
+    }
+
+    public function destroy(Request $request, EnglishBookShelf $englishBookShelf): RedirectResponse
+    {
+        $this->ownedShelf($request, $englishBookShelf)->delete();
 
         return back();
     }
@@ -94,34 +95,40 @@ class EnglishBookAdminController extends Controller
         return Storage::disk('public')->response($englishBook->cover_path);
     }
 
+    private function ownedShelf(Request $request, EnglishBookShelf $shelf): EnglishBookShelf
+    {
+        abort_unless($shelf->user_id === $request->user()->id, 404);
+
+        return $shelf->load('book');
+    }
+
+    private function payload(EnglishBookShelf $shelf): array
+    {
+        $book = $shelf->book;
+
+        return array_merge($book->only(['title', 'author', 'cover_url', 'cover_path', 'difficulty', 'word_count', 'page_count']), $shelf->only(['status', 'started_on', 'finished_on', 'rating', 'memo']), [
+            'id' => $shelf->id,
+            'english_book_id' => $book->id,
+            'cover_image_url' => $book->cover_path ? route('admin.englishBooks.cover', $book) : $book->cover_url,
+        ]);
+    }
+
     private function validated(Request $request): array
     {
         $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'author' => ['nullable', 'string', 'max:255'],
-            'cover_url' => ['nullable', 'url', 'max:2048'],
-            'cover_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
-            'status' => ['required', 'in:want,reading,finished'],
-            'difficulty' => ['nullable', 'integer', 'between:1,5'],
-            'word_count' => ['nullable', 'integer', 'min:0', 'max:9999999'],
-            'page_count' => ['nullable', 'integer', 'min:1', 'max:9999'],
-            'started_on' => ['nullable', 'date_format:Y-m-d'],
-            'finished_on' => ['nullable', 'date_format:Y-m-d'],
-            'rating' => ['nullable', 'integer', 'between:1,5'],
-            'memo' => ['nullable', 'string', 'max:5000'],
+            'title' => ['required', 'string', 'max:255'], 'author' => ['nullable', 'string', 'max:255'],
+            'cover_url' => ['nullable', 'url', 'max:2048'], 'cover_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
+            'difficulty' => ['nullable', 'integer', 'between:1,5'], 'word_count' => ['nullable', 'integer', 'min:0', 'max:9999999'],
+            'page_count' => ['nullable', 'integer', 'min:1', 'max:9999'], 'status' => ['required', 'in:want,reading,finished'],
+            'started_on' => ['nullable', 'date_format:Y-m-d'], 'finished_on' => ['nullable', 'date_format:Y-m-d'],
+            'rating' => ['nullable', 'integer', 'between:1,5'], 'memo' => ['nullable', 'string', 'max:5000'],
         ]);
-
         unset($validated['cover_image']);
 
         return $validated;
     }
 
-    private function storeCover(Request $request): ?string
-    {
-        if (! $request->hasFile('cover_image')) {
-            return null;
-        }
-
-        return $request->file('cover_image')->store('english-books', 'public');
-    }
+    private function bookData(array $data): array { return Arr::only($data, ['title', 'author', 'cover_url', 'difficulty', 'word_count', 'page_count']); }
+    private function shelfData(array $data): array { return Arr::only($data, ['status', 'started_on', 'finished_on', 'rating', 'memo']); }
+    private function storeCover(Request $request): ?string { return $request->hasFile('cover_image') ? $request->file('cover_image')->store('english-books', 'public') : null; }
 }

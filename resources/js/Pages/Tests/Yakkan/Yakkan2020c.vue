@@ -25,6 +25,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="株式会社と相互会社-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '10億円',
                         '中間法人',
                         '基金拠出者',
@@ -45,9 +46,10 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="株式会社と相互会社-②"
                     :contents="[
-                        '3ヶ月',
+                        // rev: 2026-08-16 確認済み
+                        '3カ月',
                         '責任準備金',
-                        '4ヶ月',
+                        '4カ月',
                         '100',
                         '1,000分の3', // 問6〜10
                     ]"
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="保険業法の目的と監督の必要性・方法-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '保険監督法',
                         '保険会社法',
                         '公共性',
@@ -85,6 +88,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="保険業法の目的と監督の必要性・方法-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '保険約款',
                         '保険金支払能力',
                         '金融政策',
@@ -257,16 +261,66 @@ const subject = "2020年度 フォームC";
                             questionTitle: '外国保険業者の廃止',
                             content: '本国において解放、保険業の廃止の時も金融庁長官の認可が必要 → 金融庁長官に届け出るだけで良い',
                         }, //40 //p257
-                        { questionTitle: '契約者保護', label: 'オ', content: '' }, //41
-                        { questionTitle: '生命保険契約等の性質', label: 'オ', content: '' }, //42
-                        { questionTitle: 'クーリング・オフ制度', label: 'ウ', content: '8日' }, //43
-                        { questionTitle: '保険料払込免除', label: 'ウ', content: '1眼の視力' }, //44
-                        { questionTitle: '保険契約の解除', label: 'イ', content: '保険法' }, //45
-                        { questionTitle: '保険金の支払', label: 'エ', content: '時効' }, //46
-                        { questionTitle: '疾病入院特約の給付', label: 'イ', content: '責任開始の日' }, //47
-                        { questionTitle: '委員会等設置会社', label: 'エ', content: '会計監査人' }, //48
-                        { questionTitle: '保険会社に特有な準備金', label: 'ア', content: '毎決算期' }, //49
-                        { questionTitle: '供託', label: 'オ', content: '' }, //50
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: '契約者保護',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: '生命保険契約等の性質',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: 'クーリング・オフ制度',
+                            label: 'ウ',
+                            content: '8日',
+                        }, //43
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: '保険料払込免除',
+                            label: 'ウ',
+                            content: '1眼の視力',
+                        }, //44
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: '保険契約の解除',
+                            label: 'イ',
+                            content: '保険法',
+                        }, //45
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: '保険金の支払',
+                            label: 'エ',
+                            content: '時効',
+                        }, //46
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: '疾病入院特約の給付',
+                            label: 'イ',
+                            content: '責任開始の日',
+                        }, //47
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: '委員会等設置会社',
+                            label: 'エ',
+                            content: '会計監査人',
+                        }, //48
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: '保険会社に特有な準備金',
+                            label: 'ア',
+                            content: '毎決算期',
+                        }, //49
+                        {
+                            // rev: 2026-08-16 確認済み
+                            questionTitle: '供託',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

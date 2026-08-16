@@ -25,6 +25,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '猶予期間',
                         'オーバーローン',
                         '契約者貸付金',
@@ -45,6 +46,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '解約返戻金',
                         '復活',
                         '3年',
@@ -65,6 +67,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="保険会社の経理-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '会社法',
                         '財産',
                         '公衆の縦覧',
@@ -85,6 +88,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="保険会社の経理-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '債務',
                         '標準責任準備金',
                         '平準純保険料式',
@@ -260,51 +264,61 @@ const subject = "2021年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '消費者契約法',
                             label: 'ウ',
                             content: '契約を取り消し得る',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約上の保障責任',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '住所変更',
                             label: 'ウ',
                             content: '通信先',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金の支払',
                             label: 'ア',
                             content: '10月18日',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金の支払の時期',
                             label: 'ウ',
                             content: '5営業日',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '災害入院給付金の免責',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '年齢の誤りの処理',
                             label: 'ウ',
                             content: '取り消すことができる',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '株主の権利行使の基準日',
                             label: 'イ',
-                            content: '3ヶ月',
+                            content: '3カ月',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険計理人',
                             label: 'エ',
                             content: '取締役会',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の締結または保険募集に関する禁止行為',
                             label: 'オ',
                             content: '',

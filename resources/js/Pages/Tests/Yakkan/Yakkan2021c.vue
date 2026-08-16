@@ -25,6 +25,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="生損保兼営の禁止と子会社による生損保兼営-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '免許',
                         '確実性',
                         '負担する危険',
@@ -45,6 +46,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="生損保兼営の禁止と子会社による生損保兼営-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '比較的長期（20年、30年）',
                         '比較的短期（1年）',
                         '議決権',
@@ -65,6 +67,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="保険会社の経理-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '会社法',
                         '財産',
                         '公衆の縦覧',
@@ -85,6 +88,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="保険会社の経理-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '債務',
                         '標準責任準備金',
                         '平準純保険料式',
@@ -261,51 +265,61 @@ const subject = "2021年度 フォームC";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '金融商品取引法',
                             label: 'ウ',
                             content: '適合性の原則',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険料の返還',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金の請求',
                             label: 'イ',
                             content: '3年間',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金の支払',
                             label: 'ア',
                             content: '10月18日',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '告知義務違反による解除の通知',
                             label: 'ウ',
-                            content: '1ヶ月以内に届くように',
+                            content: '1カ月以内に届くように',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の消滅',
                             label: 'ウ',
                             content: '取消し',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '年齢の誤りの処理',
                             label: 'ウ',
                             content: '取り消すことができる',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金受取人の死亡',
                             label: 'エ',
                             content: '当該保険金受取人の相続人全員',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '主務大臣への協議',
                             label: 'エ',
                             content: '財務大臣',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の締結または保険募集に関する禁止行為',
                             label: 'オ',
                             content: '',

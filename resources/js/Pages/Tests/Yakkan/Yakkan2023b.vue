@@ -25,6 +25,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約の失効等-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '払込猶予期間',
                         'オーバーローン',
                         '解約返戻金',
@@ -45,6 +46,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約の失効等-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '3年',
                         '復活',
                         '延滞保険料',
@@ -65,6 +67,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="生命保険契約等の性質・効力"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '諾成契約',
                         '必要としない不要式契約',
                         '自己の名',
@@ -85,6 +88,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="被保険者の同意"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '賭博的行為',
                         '死亡保険契約',
                         '傷害疾病定額保険契約',
@@ -260,51 +264,61 @@ const subject = "2023年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '金融サービスの提供に関する法律',
                             label: 'ア',
                             content: '重要事項',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金額',
                             label: 'イ',
-                            content: '被保険者利益',
+                            content: '被保険利益',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険募集人',
                             label: 'ウ',
                             content: '代理',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の解除の効力等',
                             label: 'ウ',
-                            content: '1ヶ月',
+                            content: '1カ月',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '時効',
                             label: 'ア',
                             content: '責任準備金',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '給付金の支払',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '監督体制',
                             label: 'エ',
                             content: '財務大臣',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '災害入院給付金の免責事由',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険計理人',
                             label: 'エ',
                             content: '取締役会',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の締結または保険募集に関する禁止行為',
                             label: 'オ',
                             content: '',

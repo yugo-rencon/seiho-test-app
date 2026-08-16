@@ -25,6 +25,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '承諾',
                         '商事特別法',
                         '申込日',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '1年',
                         '申込者等が自ら指定した',
                         '医師の診査',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="生損保兼営の禁止と子会社による生損保兼営-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '免許',
                         '確実性',
                         '負担する危険',
@@ -85,6 +88,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="生損保兼営の禁止と子会社による生損保兼営-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '議決権',
                         '50%',
                         '認可',
@@ -259,51 +263,61 @@ const subject = "2024年度 フォームC";
                             content: '法人であることが条件 → 法人でなくてもよく、個人でもよい',
                         }, //40 p256
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の性質',
                             label: 'ア',
                             content: '射倖',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '契約上の保障責任',
                             label: 'エ',
                             content: '契約日',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の解除の効力等',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険料払込免除',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生死不明の場合の取扱',
                             label: 'イ',
                             content: '生命保険会社',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金受取人の死亡',
                             label: 'エ',
                             content: '当該保険金受取人の相続人全員',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '年齢の計算、誤りの処理',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '基礎書類',
                             label: 'エ',
                             content: '定款',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '株主の権利行使の基準日',
                             label: 'ウ',
                             content: '4ヶ月',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険募集の制限',
                             label: 'ウ',
                             content: '媒介',

@@ -25,6 +25,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="第三者のためにする生命保険契約等"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '自己',
                         '民法',
                         '受益の意思表示',
@@ -45,6 +46,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="被保険者の同意"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '賭博的行為',
                         '死亡保険契約',
                         '傷害疾病定額保険契約',
@@ -65,6 +67,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="第三分野の保険-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '一定額',
                         'てん補',
                         '傷害',
@@ -85,6 +88,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="第三分野の保険-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '不妊治療',
                         '老衰',
                         '介護',
@@ -259,51 +263,61 @@ const subject = "2022年度 フォームA";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '金融サービスの提供に関する法律',
                             label: 'ウ',
                             content: '元本欠損',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の性質',
                             label: 'エ',
                             content: '善意',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: 'クーリング・オフ制度',
                             label: 'イ',
                             content: '申込日',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '高度障害保険金',
                             label: 'ア',
                             content: '両眼の視力',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金の支払場所',
                             label: 'エ',
                             content: '取立債務',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の取消し',
                             label: 'ア',
                             content: '保険金受取人',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険業法の目的',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '基礎書類',
                             label: 'ウ',
                             content: '定款',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '相互会社の剰余金',
                             label: 'イ',
                             content: '1,000',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険募集の制限',
                             label: 'オ',
                             content: '',

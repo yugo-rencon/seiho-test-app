@@ -25,6 +25,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="死亡保険金の免責事由-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '射倖',
                         '信義誠実の原則',
                         '保険契約者',
@@ -45,6 +46,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="死亡保険金の免責事由-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '緩和',
                         '残額',
                         '自殺',
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="保険業法の目的と監督の必要性・方法-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '保険監督法',
                         '保険会社法',
                         '公共性',
@@ -85,6 +88,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="保険業法の目的と監督の必要性・方法-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '保険約款',
                         '保険金支払能力',
                         '金融政策',
@@ -259,51 +263,61 @@ const subject = "2020年度 フォームA";
                             content: '認められている → 制限されている',
                         }, //40 //p261
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金額',
                             label: 'イ',
                             content: '被保険利益',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の性質',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の効力',
                             label: 'イ',
                             content: '保険金受取人',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険料の未払込による失効',
                             label: 'ア',
                             content: '元利金',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の解除',
                             label: 'イ',
                             content: '保険法',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '配当金',
                             label: 'ウ',
                             content: '衡平',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '傷害特約の給付',
                             label: 'エ',
                             content: '感染症',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険持株会社',
                             label: 'エ',
                             content: '総資産',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険会社に特有な準備金',
                             label: 'ア',
                             content: '毎決算期',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険募集の制限',
                             label: 'ウ',
                             content: '媒介',

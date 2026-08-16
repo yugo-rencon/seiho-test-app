@@ -25,6 +25,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="法律と約款の関係"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '片面的強行規定',
                         '無効',
                         '強行規定',
@@ -45,6 +46,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険契約等の効力"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '自己の名',
                         '代理人',
                         '移転',
@@ -65,6 +67,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="保険会社の経理-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '会社法',
                         '財産',
                         '公衆の縦覧',
@@ -85,6 +88,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="保険会社の経理-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '債務',
                         '標準責任準備金',
                         '平準純保険料式',
@@ -260,51 +264,61 @@ const subject = "2021年度 フォームA";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の要素',
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険法に規定する同意',
                             label: 'ウ',
                             content: '成立要件',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険料払込の猶予期間',
                             label: 'ウ',
                             content: '2021年（令和3年）12月31日',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金の支払',
                             label: 'ア',
                             content: '10月18日',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金等の遅延利息の支払',
                             label: 'エ',
                             content: '法定利率',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '告知義務違反に対する解除権の行使',
                             label: 'ア',
                             content: '不可争期間',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '年齢の誤りの処理',
                             label: 'ウ',
                             content: '取り消すことができる',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険業の監督の方法',
                             label: 'イ',
                             content: '実体的監督',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '総代会',
                             label: 'エ',
                             content: '特別決議',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の締結または保険募集に関する禁止行為',
                             label: 'オ',
                             content: '',

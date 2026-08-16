@@ -25,6 +25,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="株式会社と相互会社-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '基金',
                         '基金償却積立金',
                         '10億',
@@ -45,9 +46,10 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="株式会社と相互会社-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '会社法',
                         '基準日',
-                        '4ヶ月',
+                        '4カ月',
                         '社団',
                         '共益権', //問６〜10
                     ]"
@@ -65,6 +67,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="第三分野の保険-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '一定額',
                         'てん補',
                         '傷害',
@@ -85,6 +88,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="第三分野の保険-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '不妊治療',
                         '老衰',
                         '介護',
@@ -260,51 +264,61 @@ const subject = "2022年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '金融サービスの提供に関する法律',
                             label: 'ウ',
                             content: '元本欠損',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の性質',
                             label: 'エ',
                             content: '善意',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '消費者契約法',
                             label: 'ア',
                             content: '困惑',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の効力',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生死不明の場合の取扱',
                             label: 'イ',
                             content: '生命保険会社',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '解除権',
                             label: 'ア',
-                            content: '1ヶ月',
+                            content: '1カ月',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '給付金の免責事由',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約準備金',
                             label: 'エ',
                             content: '責任準備金',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険計理人',
                             label: 'ウ',
                             content: '7年',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険募集の制限',
                             label: 'オ',
                             content: '',

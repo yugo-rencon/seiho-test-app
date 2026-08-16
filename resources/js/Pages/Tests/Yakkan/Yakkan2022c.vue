@@ -25,6 +25,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '事業方法書',
                         '停止',
                         '財産の供託',
@@ -45,10 +46,11 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '基金',
                         '通常の予測',
                         '最低保証リスク',
-                        '200％',
+                        '200%',
                         '早期是正措置', //問６〜10
                     ]"
                     :labels="[
@@ -65,6 +67,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="第三分野の保険-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '一定額',
                         'てん補',
                         '傷害',
@@ -85,6 +88,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="第三分野の保険-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '不妊治療',
                         '老衰',
                         '介護',
@@ -261,51 +265,61 @@ const subject = "2022年度 フォームC";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '金融サービスの提供に関する法律',
                             label: 'ウ',
                             content: '元本欠損',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の性質',
                             label: 'エ',
                             content: '善意',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '遅延利息',
                             label: 'ア',
                             content: '保険約款',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の解除',
                             label: 'ウ',
                             content: '重大事由',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約者の変更',
                             label: 'イ',
                             content: '承継人',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '主務大臣への協議',
                             label: 'ア',
                             content: '保険契約者保護機構',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険会社の業務の範囲',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '相互会社の社員',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '外国保険業者の規制',
                             label: 'ウ',
                             content: '財産目録',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険募集の制限',
                             label: 'オ',
                             content: '',

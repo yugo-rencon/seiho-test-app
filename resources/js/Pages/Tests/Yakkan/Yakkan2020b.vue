@@ -25,6 +25,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '承諾',
                         '商事特別法',
                         '申込日',
@@ -45,6 +46,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '1年',
                         '申込者等が自ら指定した',
                         '医師の診査',
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="保険業法の目的と監督の必要性・方法-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '保険監督法',
                         '保険会社法',
                         '公共性',
@@ -85,6 +88,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="保険業法の目的と監督の必要性・方法-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '保険約款',
                         '保険金支払能力',
                         '金融政策',
@@ -260,54 +264,64 @@ const subject = "2020年度 フォームB";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '金融商品の販売等に関する法律',
                             label: 'ウ',
                             content: '勧誘',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の性質',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険募集人',
                             label: 'ウ',
                             content: '代理',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '遅延利息の支払',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の解除',
                             label: 'イ',
                             content: '保険法',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '解除の通知',
                             label: 'イ',
                             content: '解除の原因を知った時',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険会社の業務の範囲',
                             label: 'ア',
                             content: '法定他業',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '基礎書類',
                             label: 'エ',
                             content: '定款',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険会社に特有な準備金',
                             label: 'ア',
                             content: '毎決算期',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '株主の権利行使に関する基準日の特例',
                             label: 'イ',
-                            content: '3ヶ月',
+                            content: '3カ月',
                         }, //50
                     ]"
                 />

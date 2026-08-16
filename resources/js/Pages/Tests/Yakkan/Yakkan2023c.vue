@@ -25,6 +25,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="保険契約の失効等-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '払込猶予期間',
                         'オーバーローン',
                         '解約返戻金',
@@ -45,6 +46,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="保険契約の失効等-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '3年',
                         '復活',
                         '延滞保険料',
@@ -65,6 +67,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-①"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '事業方法書',
                         '停止',
                         '期限',
@@ -85,10 +88,11 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-②"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         'ソルベンシー・マージン',
                         '基金',
                         '超える',
-                        '200％',
+                        '200%',
                         '小さな', //問16〜20
                     ]"
                     :labels="[
@@ -259,51 +263,61 @@ const subject = "2023年度 フォームC";
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '金融サービスの提供に関する法律',
                             label: 'ア',
                             content: '重要事項',
                         }, //41
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の要素',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険金の支払',
                             label: 'ア',
                             content: '10月18日',
                         }, //43
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の解除',
                             label: 'イ',
                             content: '保険法',
                         }, //44
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険会社の業務の範囲',
                             label: 'ア',
                             content: '法定他業',
                         }, //45
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険持株会社',
                             label: 'エ',
                             content: '総資産',
                         }, //46
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '株主の権利行使の基準日',
                             label: 'イ',
-                            content: '3ヶ月',
+                            content: '3カ月',
                         }, //47
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '災害入院給付金の免責事由',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '供託',
                             label: 'ウ',
                             content: '供託所',
                         }, //49
                         {
+                            // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の締結または保険募集に関する禁止行為',
                             label: 'オ',
                             content: '',

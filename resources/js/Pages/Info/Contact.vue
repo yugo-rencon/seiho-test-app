@@ -74,8 +74,11 @@ const submit = () => {
             <section class="rounded-2xl border border-gray-100 bg-white p-6 sm:p-8 shadow-sm">
                 <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">お問い合わせ</h1>
                 <p class="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
-                    不具合の報告、改善要望、ご意見・感想を受け付けています。内容確認のため、メールアドレスの入力をお願いします。
+                    不具合の報告、改善要望、ご意見・感想を受け付けています。内容確認のため、返信先メールアドレスの入力をお願いします。
                 </p>
+                <div class="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-800">
+                    メールアドレスに誤りがあると返信できません。受信できるメールアドレスかどうか、送信前にご確認ください。
+                </div>
 
                 <form class="mt-8 space-y-5" @submit.prevent="submit">
                     <div>
@@ -110,14 +113,23 @@ const submit = () => {
 
                         <div>
                             <label class="block text-sm font-semibold text-gray-800 mb-2">
-                                メールアドレス <span class="text-red-500">*</span>
+                                返信先メールアドレス <span class="text-red-500">*</span>
                             </label>
                             <input
                                 v-model="form.email"
                                 type="email"
+                                placeholder="example@example.com"
                                 class="w-full rounded-lg border border-gray-200 px-3 py-2.5 text-sm"
                                 :class="focusClass"
                             />
+                            <p class="mt-1 text-xs text-gray-500">
+                                <template v-if="defaultEmail">
+                                    ログイン中の方は登録メールアドレスが自動入力されています。誤りがある場合は修正してください。
+                                </template>
+                                <template v-else>
+                                    返信を受け取れるメールアドレスを入力してください。
+                                </template>
+                            </p>
                             <p v-if="form.errors.email" class="mt-1 text-sm text-red-600">{{ form.errors.email }}</p>
                         </div>
                     </div>

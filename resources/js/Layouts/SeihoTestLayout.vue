@@ -61,6 +61,13 @@ const currentHomeRouteName = computed(() => {
     if (isIppanPage.value) return "ippan.index";
     return "tests.index";
 });
+const currentContactPath = computed(() => {
+    if (isDaigakuPage.value) return "/daigaku/contact";
+    if (isSenmonPage.value) return "/senmon/contact";
+    if (isOuyouPage.value) return "/ouyou/contact";
+    if (isIppanPage.value) return "/ippan/contact";
+    return "/contact";
+});
 const currentLogoSrc = computed(() =>
     isDaigakuPage.value
         ? "/images/rencon-favicon-daigaku.svg?v=daigaku"
@@ -85,6 +92,16 @@ const isAuthenticated = computed(() => !!user.value);
 const isAdmin = computed(() => page.props?.auth?.isAdmin === true);
 const hasPremium = computed(() => page.props?.auth?.hasPremium === true);
 const flashStatus = computed(() => page.props?.flash?.status ?? "");
+const isContactPage = computed(() => String(page.url ?? "").split("?")[0] === currentContactPath.value);
+const shouldShowReplyFailedNotice = computed(() => {
+    const currentUser = user.value;
+
+    return !isContactPage.value && (
+        currentUser?.id === 1189 ||
+        currentUser?.email === "mai19991128@gmail.com" ||
+        currentUser?.email === "seihokoza.test@gmail.com"
+    );
+});
 
 const checkoutParams = computed(() => {
     const currentUrl = String(page.url ?? "");
@@ -410,6 +427,22 @@ onBeforeUnmount(() => {
             :has-premium="hasPremium"
             @open-menu="isMenuOpen = true"
         />
+
+        <div v-if="shouldShowReplyFailedNotice" class="mx-auto max-w-5xl px-5 pt-5 sm:px-6">
+            <div class="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm leading-relaxed text-amber-900 shadow-sm sm:px-5">
+                <p class="font-semibold text-amber-950">お問い合わせへの返信ができませんでした</p>
+                <p class="mt-1">
+                    ご登録のメールアドレス宛に返信しましたが、メールをお届けできませんでした。
+                    メールアドレスに誤りがある可能性があります。お手数ですが、受信できるメールアドレスを入力して、再度お問い合わせください。
+                </p>
+                <a
+                    :href="currentContactPath"
+                    class="mt-3 inline-flex items-center rounded-full border border-amber-300 bg-white px-4 py-2 text-xs font-semibold text-amber-900 transition hover:bg-amber-100"
+                >
+                    お問い合わせページへ
+                </a>
+            </div>
+        </div>
 
         <main class="overflow-x-hidden">
             <slot />

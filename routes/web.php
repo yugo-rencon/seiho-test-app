@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContactAdminController;
 use App\Http\Controllers\Admin\PersonalAdminController;
+use App\Http\Controllers\Admin\EnglishBookAdminController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StripeWebhookController;
@@ -207,6 +208,11 @@ Route::controller(ContactController::class)->group(function () {
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('personal', [PersonalAdminController::class, 'index'])->name('admin.personal.index');
+    Route::get('english-books', [EnglishBookAdminController::class, 'index'])->name('admin.englishBooks.index');
+    Route::get('english-books/{englishBook}/cover', [EnglishBookAdminController::class, 'cover'])->name('admin.englishBooks.cover');
+    Route::post('english-books', [EnglishBookAdminController::class, 'store'])->name('admin.englishBooks.store');
+    Route::post('english-books/{englishBook}', [EnglishBookAdminController::class, 'update'])->name('admin.englishBooks.update');
+    Route::delete('english-books/{englishBook}', [EnglishBookAdminController::class, 'destroy'])->name('admin.englishBooks.delete');
     Route::post('personal/study-logs', [PersonalAdminController::class, 'storeStudyLog'])->name('admin.personal.studyLogs.store');
     Route::delete('personal/study-logs/{studyLog}', [PersonalAdminController::class, 'deleteStudyLog'])->name('admin.personal.studyLogs.delete');
     Route::post('personal/exercise-logs', [PersonalAdminController::class, 'storeExerciseLog'])->name('admin.personal.exerciseLogs.store');

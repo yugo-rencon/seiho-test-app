@@ -245,6 +245,7 @@ const adminContactsRoute = computed(() =>
     isDaigakuAdmin.value ? "daigaku.admin.contacts.index" : "admin.contacts.index",
 );
 const adminPersonalRoute = computed(() => "admin.personal.index");
+const adminEnglishBooksRoute = computed(() => "admin.englishBooks.index");
 
 const isActiveMenu = (key) => activeTab.value === key;
 
@@ -962,6 +963,12 @@ const peakHour2h = computed(() => {
                     class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
                 >
                     個人管理
+                </Link>
+                <Link
+                    :href="route(adminEnglishBooksRoute)"
+                    class="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-100"
+                >
+                    洋書管理
                 </Link>
             </div>
 

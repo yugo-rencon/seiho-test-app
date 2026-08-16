@@ -109,9 +109,10 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="保険の区分"
                     :contents="[
+                        // rev: 2026-08-16 確認済み
                         '正しい',
                         '非営利保険 → 相互保険', //p5
-                        '保険契約者に帰属 → 保険者に帰属', //p5
+                        '保険業による収支の差額は[[保険者]]に帰属する。', //p5
                     ]"
                 />
                 <QuestionTemp1

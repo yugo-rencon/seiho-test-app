@@ -1,0 +1,19 @@
+export const repaymentPlan = {
+    totalAmount: 820000,
+    items: [
+        { date: "2024-08-21", amount: 20000 },
+        { date: "2024-09-21", amount: 20000 },
+        { date: "2024-10-21", amount: 20000 },
+        { date: "2024-11-21", amount: 20000 },
+        { date: "2024-12-20", amount: 240000 },
+        { date: "2025-01-21", amount: 20000 },
+        { date: "2025-02-21", amount: 60000 },
+        { date: "2026-01-21", amount: 20000 },
+        { date: "2026-02-28", amount: 10000 },
+        { date: "2026-03-30", amount: 10000 },
+        { date: "2026-04-29", amount: 10000 },
+        { date: "2026-06-04", amount: 10000 },
+        { date: "2026-06-22", amount: 20000 },
+        { date: "2026-07-22", amount: 20000 },
+    ],
+};

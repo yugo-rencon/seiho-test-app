@@ -2,6 +2,7 @@
 import { Link, useForm } from "@inertiajs/vue3";
 import { computed, ref, watch } from "vue";
 import AdminLayout from "@/Layouts/AdminLayout.vue";
+import { repaymentPlan } from "@/data/personalRepayments";
 
 const props = defineProps({
     stats: {
@@ -119,6 +120,25 @@ const selectedExerciseDay = ref(today);
 const formatDateLabel = (date) => {
     return String(date || today).replaceAll("-", "/");
 };
+
+const formatYen = (amount) => {
+    return new Intl.NumberFormat("ja-JP", {
+        style: "currency",
+        currency: "JPY",
+        maximumFractionDigits: 0,
+    }).format(amount || 0);
+};
+
+const repaymentItems = repaymentPlan.items;
+const repaymentRegisteredTotal = computed(() => repaymentItems.reduce((total, item) => total + item.amount, 0));
+const repaymentRemaining = computed(() => Math.max(repaymentPlan.totalAmount - repaymentRegisteredTotal.value, 0));
+const repaymentProgressRate = computed(() => {
+    if (!repaymentPlan.totalAmount) {
+        return 0;
+    }
+
+    return Math.min(100, Math.round((repaymentRegisteredTotal.value / repaymentPlan.totalAmount) * 100));
+});
 
 const addDays = (date, amount) => {
     const { year, month, day } = parseDateParts(date);
@@ -995,12 +1015,68 @@ const deleteStudyLog = () => {
                 </section>
             </div>
 
-            <section v-if="activeTab === 'repayment'" class="rounded-xl border border-gray-100 bg-white p-8 text-center shadow-sm">
-                <h2 class="text-lg font-bold text-gray-900">返済</h2>
-                <p class="mt-2 text-sm text-gray-500">返済管理のデータと表示項目は未設定です。</p>
-                <div class="mx-auto mt-5 max-w-md rounded-lg border border-dashed border-gray-200 bg-gray-50 p-4 text-left text-sm text-gray-500">
-                    <p class="font-semibold text-gray-700">今後追加する候補</p>
-                    <p class="mt-2 leading-6">返済先、返済予定日、返済額、残高、ステータス、メモなどをDBで管理できます。</p>
+            <section v-if="activeTab === 'repayment'" class="space-y-5">
+                <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-6">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-gray-400">Repayment</p>
+                            <h2 class="mt-2 text-2xl font-black text-gray-950">返済管理</h2>
+                            <p class="mt-2 text-sm leading-6 text-gray-500">返済日と金額を静的データで管理しています。</p>
+                        </div>
+                        <div class="inline-flex w-fit items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-bold text-gray-500">
+                            {{ repaymentItems.length }}件返済
+                        </div>
+                    </div>
+
+                    <div class="mt-5 grid gap-3 sm:grid-cols-3">
+                        <div class="rounded-2xl bg-violet-50/80 p-4">
+                            <p class="text-xs font-bold text-violet-500">返済済み合計</p>
+                            <p class="mt-2 text-2xl font-black text-violet-950">{{ formatYen(repaymentRegisteredTotal) }}</p>
+                        </div>
+                        <div class="rounded-2xl bg-gray-50 p-4">
+                            <p class="text-xs font-bold text-gray-500">返済総額</p>
+                            <p class="mt-2 text-2xl font-black text-gray-950">{{ formatYen(repaymentPlan.totalAmount) }}</p>
+                        </div>
+                        <div class="rounded-2xl bg-amber-50/80 p-4">
+                            <p class="text-xs font-bold text-amber-600">差額</p>
+                            <p class="mt-2 text-2xl font-black text-amber-950">{{ formatYen(repaymentRemaining) }}</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <div class="flex items-center justify-between text-xs font-bold text-gray-500">
+                            <span>返済済み / 返済総額</span>
+                            <span>{{ repaymentProgressRate }}%</span>
+                        </div>
+                        <div class="mt-2 h-2 overflow-hidden rounded-full bg-gray-100">
+                            <div class="h-full rounded-full bg-gradient-to-r from-violet-500 to-purple-500" :style="{ width: `${repaymentProgressRate}%` }"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-6">
+                    <div class="flex items-center justify-between gap-3">
+                        <div>
+                            <h3 class="text-lg font-black text-gray-950">返済データ</h3>
+                            <p class="mt-1 text-sm text-gray-500">画像の内容を元に返済履歴を管理しています。</p>
+                        </div>
+                        <p class="text-sm font-bold text-gray-400">合計 {{ formatYen(repaymentRegisteredTotal) }}</p>
+                    </div>
+
+                    <div class="mt-4 overflow-hidden rounded-2xl border border-gray-100">
+                        <div
+                            v-for="(item, index) in repaymentItems"
+                            :key="`${item.date}-${item.amount}`"
+                            class="grid grid-cols-[1fr_auto] items-center gap-4 border-b border-gray-100 bg-white px-4 py-3 last:border-b-0"
+                            :class="index % 2 === 1 ? 'bg-gray-50/60' : ''"
+                        >
+                            <div>
+                                <p class="text-sm font-black text-gray-900">{{ formatDateLabel(item.date) }}</p>
+                                <p class="mt-0.5 text-xs font-semibold text-gray-400">返済日</p>
+                            </div>
+                            <p class="text-right text-base font-black text-gray-950">{{ formatYen(item.amount) }}</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

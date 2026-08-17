@@ -24,6 +24,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-①"
+                    :relatedProblems="['2025a1', '2025b1', '2025c1']"
                     :contents="[
                         // rev: 2026-08-12 確認済み
                         '猶予期間',
@@ -45,6 +46,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-②"
+                    :relatedProblems="['2025a6', '2025b6', '2025c6']"
                     :contents="[
                         // rev: 2026-08-12 確認済み
                         '解約返戻金',
@@ -66,6 +68,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-①"
+                    :relatedProblems="['2025c11']"
                     :contents="[
                         // rev: 2026-08-12 確認済み
                         '事業方法書',
@@ -87,6 +90,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-②"
+                    :relatedProblems="['2025c16']"
                     :contents="[
                         // rev: 2026-08-12 確認済み
                         '基金',
@@ -108,6 +112,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払"
+                    :relatedProblems="['2025c21']"
                     :contents="[
                         '正しい',
                         '保険約款で、契約者配当金を保険契約者に支払う旨[[規定する]]のが一般的になっている', //p159-160
@@ -119,10 +124,12 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険約款の必要性と拘束力・監督"
+                    :relatedProblems="['2025a22', '2025b22', '2025c22']"
                     :contents="[
+                        // rev: 2026-08-17 確認済み
                         '正しい',
-                        '保険契約のすべてについて申込人の理解や納得のない場合でも、保険約款は[[拘束力あり]]とされている', //p7
-                        '認可を受けない保険約款もその内容が強行規定や公益に反するものでない限り、保険契約者との間では[[有効である]]とするのが判例、通説である', //p11
+                        '保険契約のすべてについて申込人の理解や納得のない場合でも、保険約款は[[拘束力あり]]とされている。', //p7
+                        '認可を受けない保険約款もその内容が強行規定や公益に反するものでない限り、保険契約者との間では[[有効である]]とするのが判例、通説である。', //p11
                     ]"
                 />
                 <QuestionTemp1
@@ -130,6 +137,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業免許の定義"
+                    :relatedProblems="['2025c23']"
                     :contents="[
                         'それぞれの保険に係る再保険の[[引受ができる]]', //p203
                         '正しい',
@@ -141,6 +149,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社の経理"
+                    :relatedProblems="['2025c24']"
                     :contents="[
                         '生命保険会社においては責任準備金などの計算に比較的長期間を要するため[[年2回以上の決算を行うことは難しい]]', //p238
                         '財務局 → 金融庁長官', //p238
@@ -152,6 +161,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険仲立人"
+                    :relatedProblems="['2025c25']"
                     :contents="[
                         '当該契約の保険金の額に応じて[[供託しないことができる]]', //p270
                         '40% → 50%', //p270
@@ -163,6 +173,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約等の当事者、その他の関係者"
+                    :relatedProblems="['2025a26', '2025b26', '2025c26']"
                     :contents="[
                         '民法では、未成年者、成年被後見人、成年被保佐人、および成年被補助人の場合、[[所定の手続きを経ずに締結された契約については、後で取り消されることがある]]', //p37
                         '正しい',
@@ -174,6 +185,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法"
+                    :relatedProblems="['2025c27']"
                     :contents="[
                         '「消費者」とは生命保険商品を購入（加入）する[[個人]]のこと', //p19
                         '正しい',
@@ -185,6 +197,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="クーリング・オフ制度の取扱の制限"
+                    :relatedProblems="['2025c28']"
                     :contents="[
                         '正しい',
                         '2年以下 → 1年以下', //p46
@@ -196,6 +209,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解約"
+                    :relatedProblems="['2025c29']"
                     :contents="[
                         '正しい',
                         '解約の効力発生時期は、保険契約者の解約の意思表示が[[生命保険会社に到達した時]]', //p137
@@ -207,6 +221,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の締結または保険募集に関する禁止行為"
+                    :relatedProblems="['2025a30', '2025b30', '2025c30']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -220,105 +235,125 @@ const subject = "2025年度 フォームC";
                     :items="[
                         {
                             questionTitle: '法律と保険約款',
+                            relatedProblems: ['2025c31'],
                             content: '保険約款に規定のない事項については、おおむね、[[保険法、民法]]の順に適用される', //p13
                         }, //31
                         {
                             questionTitle: '保険料不可分の原則',
+                            relatedProblems: ['2025c32'],
                             content: '保険法は、保険料不可分の原則を前提とした規定が[[設けられていない]]ことから、未経過期間に対応した保険料を[[返還する必要がある]]', //p44
                         }, //32
                         {
                             questionTitle: '保険金受取人の死亡',
+                            relatedProblems: ['2025a33', '2025b33', '2025c33'],
                             content: '保険契約者 → 相続人の全員', //p58
                         }, //33
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '保険給付の履行期',
+                            relatedProblems: ['2025a34', '2025b34', '2025c34'],
                             content: '正しい',
                         }, //34
                         {
                             questionTitle: '生命保険募集人',
+                            relatedProblems: ['2025a42', '2025c35'],
                             content: '「保険契約の締結の[[媒介]]」とは保険契約の成立に尽力する事実行為であるのに対し、「保険契約の締結の[[代理]]」とは保険契約の締結そのものと考えて良い', //p47
                         }, //35
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '特約の消滅',
+                            relatedProblems: ['2025a36', '2025b36', '2025c36'],
                             content: '正しい',
                         }, //36
                         {
                             questionTitle: '責任開始期',
+                            relatedProblems: ['2025b28', '2025c37'],
                             content: '契約日とは、契約の成立日（承諾日）[[を意味するものではなく]]、保険期間の起算日を明確にするために、責任開始の日を契約日と呼称しているにすぎない', //p83
                         }, //37
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '疾病入院特約',
+                            relatedProblems: ['2025c38'],
                             content: '正しい',
                         }, //38
                         {
                             questionTitle: '外国保険業者',
+                            relatedProblems: ['2025c39'],
                             content: '外国保険業者の場合は、株式会社や相互会社[[でなくてもよく]]、個人でも良い', //p256
                         }, //39
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '乗合の禁止',
+                            relatedProblems: ['2025a25', '2025c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '生命保険契約等の性質',
+                            relatedProblems: ['2025b27', '2025c41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険料の返還',
+                            relatedProblems: ['2025c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '生命保険契約等の効力',
+                            relatedProblems: ['2025a43', '2025b43', '2025c43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '生死不明の場合の取扱',
+                            relatedProblems: ['2025c44'],
                             label: 'イ',
                             content: '生命保険会社',
                         }, //44
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険契約の解除',
+                            relatedProblems: ['2025c45'],
                             label: 'ウ',
                             content: '重大事由',
                         }, //45
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険契約者の変更',
+                            relatedProblems: ['2025a46', '2025b46', '2025c46'],
                             label: 'ア',
                             content: '承継人',
                         }, //46
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険会社の業務の範囲',
+                            relatedProblems: ['2025c47'],
                             label: 'ア',
                             content: '法定他業',
                         }, //47
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険業の監督の方法',
+                            relatedProblems: ['2025a48', '2025b48', '2025c48'],
                             label: 'イ',
                             content: '実体的監督',
                         }, //48
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '株主の権利行使の基準日',
+                            relatedProblems: ['2025c49'],
                             label: 'イ',
                             content: '3ヶ月',
                         }, //49
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '供託',
+                            relatedProblems: ['2025c50'],
                             label: 'オ',
                             content: '',
                         }, //50

@@ -24,6 +24,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-①"
+                    :relatedProblems="['2025a1', '2025b1', '2025c1']"
                     :contents="[
                         // rev: 2026-08-12 確認済み
                         '猶予期間',
@@ -45,6 +46,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効および自動振替貸付の取扱い-②"
+                    :relatedProblems="['2025a6', '2025b6', '2025c6']"
                     :contents="[
                         // rev: 2026-08-12 確認済み
                         '解約返戻金',
@@ -66,6 +68,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-①"
+                    :relatedProblems="['2025b11']"
                     :contents="[
                         // rev: 2026-08-12 確認済み
                         '承諾',
@@ -87,6 +90,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-②"
+                    :relatedProblems="['2025b16']"
                     :contents="[
                         // rev: 2026-08-12 確認済み
                         '1年',
@@ -108,6 +112,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反による解除"
+                    :relatedProblems="['2025b21']"
                     :contents="[
                         '正しい',
                         '相手方へ発信 → 相手方へ到達', //p132 不明
@@ -119,10 +124,12 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険約款の必要性と拘束力・監督"
+                    :relatedProblems="['2025a22', '2025b22', '2025c22']"
                     :contents="[
+                        // rev: 2026-08-17 確認済み
                         '正しい',
-                        '保険契約のすべてについて申込人の理解や納得のない場合でも、保険約款は[[拘束力あり]]とされている', //p7
-                        '認可を受けない保険約款もその内容が強行規定や公益に反するものでない限り、保険契約者との間では[[有効である]]とするのが判例、通説である', //p11
+                        '保険契約のすべてについて申込人の理解や納得のない場合でも、保険約款は[[拘束力あり]]とされている。', //p7
+                        '認可を受けない保険約款もその内容が強行規定や公益に反するものでない限り、保険契約者との間では[[有効である]]とするのが判例、通説である。', //p11
                     ]"
                 />
                 <QuestionTemp1
@@ -130,6 +137,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="基礎書類"
+                    :relatedProblems="['2025b23']"
                     :contents="[
                         '財産利用方法書 → 保険料及び責任準備金の算出方法書', //p217
                         '正しい',
@@ -141,6 +149,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険会社の合併"
+                    :relatedProblems="['2025b24']"
                     :contents="[
                         '相互会社は、他の相互会社または[[保険株式会社]]と[[合併をすることができる]]', //p251
                         '正しい',
@@ -152,6 +161,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険募集人の登録"
+                    :relatedProblems="['2025b25']"
                     :contents="[
                         '労働基準監督署 → 財務局・福岡財務支局', //p259
                         '正しい',
@@ -163,6 +173,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約等の当事者、その他の関係者"
+                    :relatedProblems="['2025a26', '2025b26', '2025c26']"
                     :contents="[
                         '民法では、未成年者、成年被後見人、成年被保佐人、および成年被補助人の場合、[[所定の手続きを経ずに締結された契約については、後で取り消されることがある]]', //p37
                         '正しい',
@@ -174,6 +185,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約等の性質"
+                    :relatedProblems="['2025b27', '2025c41']"
                     :contents="[
                         '正しい',
                         '生命保険契約等は、保険法上一定の方式を要するとはしていないので[[不要式契約である]]', //p35
@@ -185,6 +197,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任開始期"
+                    :relatedProblems="['2025b28', '2025c37']"
                     :contents="[
                         '正しい',
                         '第1回保険料相当額の払込および告知の完了後に保険事故が発生し、保険事故等が発生していなければ承諾していたと考えられる場合は、[[生命保険会社は申込を承諾し、責任を負うのが通常である]]', //p82
@@ -196,6 +209,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="疾病入院特約の手術給付金の支払"
+                    :relatedProblems="['2025b29']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -207,6 +221,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の締結または保険募集に関する禁止行為"
+                    :relatedProblems="['2025a30', '2025b30', '2025c30']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -220,107 +235,127 @@ const subject = "2025年度 フォームB";
                     :items="[
                         {
                             questionTitle: '生命保険契約等に対する法の適用',
+                            relatedProblems: ['2025b31'],
                             content: '営利保険 → 相互保険', //p5
                         }, //31
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '契約者保護のための法律',
+                            relatedProblems: ['2025b32'],
                             content: '正しい',
                         }, //32
                         {
                             questionTitle: '保険金受取人の死亡',
+                            relatedProblems: ['2025a33', '2025b33', '2025c33'],
                             content: '保険契約者 → 相続人の全員', //p58
                         }, //33
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '保険給付の履行期',
+                            relatedProblems: ['2025a34', '2025b34', '2025c34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '書面交付義務',
+                            relatedProblems: ['2025b35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '特約の消滅',
+                            relatedProblems: ['2025a36', '2025b36', '2025c36'],
                             content: '正しい',
                         }, //36
                         {
                             questionTitle: '解約返戻金額',
+                            relatedProblems: ['2025b37'],
                             content: '生命保険契約等の保険証券記載事項として「解約返戻金額」は[[掲げられていない]]', //p154
                         }, //37
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '帳簿閲覧権',
+                            relatedProblems: ['2025b38'],
                             content: '正しい',
                         }, //38
                         {
                             questionTitle: '意向把握義務',
+                            relatedProblems: ['2025b39'],
                             content: '設計書 → 意向確認書面', //p263
                         }, //39
                         {
                             // rev: 2026-08-10 確認済み
                             questionTitle: '指定紛争解決機関',
+                            relatedProblems: ['2025b40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '契約者保護',
+                            relatedProblems: ['2025b41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険金額',
+                            relatedProblems: ['2025b42'],
                             label: 'イ',
                             content: '被保険利益',
                         }, //42
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '生命保険契約等の効力',
+                            relatedProblems: ['2025a43', '2025b43', '2025c43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '生命保険契約等の解除の効力等',
+                            relatedProblems: ['2025b44'],
                             label: 'ア',
                             content: '保険者',
                         }, //44
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険契約の取消し',
+                            relatedProblems: ['2025b45'],
                             label: 'ア',
                             content: '保険金受取人',
                         }, //45
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険契約者の変更',
+                            relatedProblems: ['2025a46', '2025b46', '2025c46'],
                             label: 'ア',
                             content: '承継人',
                         }, //46
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '配当金',
+                            relatedProblems: ['2025b47'],
                             label: 'ウ',
                             content: '衡平',
                         }, //47
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険業の監督の方法',
+                            relatedProblems: ['2025a48', '2025b48', '2025c48'],
                             label: 'イ',
                             content: '実体的監督',
                         }, //48
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '外国保険業者の規制',
+                            relatedProblems: ['2025b49'],
                             label: 'ウ',
                             content: '財産目録',
                         }, //49
                         {
                             // rev: 2026-08-12 確認済み
                             questionTitle: '保険募集の制限',
+                            relatedProblems: ['2025b50'],
                             label: 'オ',
                             content: '',
                         }, //50

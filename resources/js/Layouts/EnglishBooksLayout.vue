@@ -11,16 +11,18 @@ const logout = () => router.post(route("logout"));
 
     <div class="min-h-screen bg-[#f6f2ea] text-[#25323a]">
         <header class="border-b border-[#ded7ca] bg-[#fbf9f4]/95 backdrop-blur">
-            <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-                <Link :href="route('admin.englishBooks.index')" class="group flex items-center gap-3">
-                    <span class="flex h-9 w-7 items-center justify-center rounded-sm bg-[#c96b48] text-[10px] font-black tracking-tight text-white shadow-sm transition group-hover:-rotate-3">EN</span>
+            <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 py-3 sm:px-8 sm:py-4">
+                <Link :href="route('admin.englishBooks.index')" class="group flex min-w-0 items-center gap-2.5 sm:gap-3">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-[#b65b3d] text-xs font-black text-white shadow-sm transition group-hover:-rotate-3">洋書</span>
                     <span>
-                        <span class="block font-serif text-lg font-bold leading-none tracking-tight text-[#25323a]">The English Shelf</span>
-                        <span class="mt-1 block text-[10px] font-bold uppercase tracking-[0.18em] text-[#8b7568]">your personal reading room</span>
+                        <span class="block font-serif text-lg font-bold leading-none tracking-tight text-[#25323a]">洋書の本棚</span>
+                        <span class="mt-1 hidden text-[10px] font-bold tracking-[0.14em] text-[#8b7568] sm:block">英語で読む時間を、もっと身近に</span>
                     </span>
                 </Link>
-                <nav class="flex items-center gap-3 text-sm font-semibold">
-                    <Link :href="route('admin.index')" class="hidden text-[#74665e] transition hover:text-[#c96b48] sm:inline">管理画面</Link>
+                <nav class="order-3 flex w-full items-center justify-between border-t border-[#e6dfd3] pt-3 text-xs font-bold sm:order-none sm:w-auto sm:justify-end sm:gap-4 sm:border-0 sm:pt-0 sm:text-sm">
+                    <Link :href="route('admin.englishBooks.index')" class="text-[#74665e] transition hover:text-[#c96b48]">本棚</Link>
+                    <Link :href="route('admin.englishBooks.catalog')" class="text-[#74665e] transition hover:text-[#c96b48]">本を探す</Link>
+                    <Link :href="route('admin.index')" class="text-[#74665e] transition hover:text-[#c96b48]">管理画面</Link>
                     <button type="button" class="text-[#74665e] transition hover:text-[#c96b48]" @click="logout">ログアウト</button>
                 </nav>
             </div>
@@ -29,7 +31,7 @@ const logout = () => router.post(route("logout"));
         <main><slot /></main>
 
         <footer class="border-t border-[#ded7ca] px-5 py-8 text-center text-xs font-medium tracking-wide text-[#8b7568]">
-            THE ENGLISH SHELF — READ MORE, LIVE MORE.
+            洋書の本棚 — あなたの読書の記録
         </footer>
     </div>
 </template>

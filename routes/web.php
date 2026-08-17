@@ -209,10 +209,16 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('personal', [PersonalAdminController::class, 'index'])->name('admin.personal.index');
     Route::get('english-books', [EnglishBookAdminController::class, 'index'])->name('admin.englishBooks.index');
-    Route::get('english-books/create', [EnglishBookAdminController::class, 'create'])->name('admin.englishBooks.create');
+    Route::get('english-books/catalog', [EnglishBookAdminController::class, 'catalog'])->name('admin.englishBooks.catalog');
+    Route::get('english-books/catalog/create', [EnglishBookAdminController::class, 'createBook'])->name('admin.englishBooks.catalog.create');
+    Route::post('english-books/catalog', [EnglishBookAdminController::class, 'storeBook'])->name('admin.englishBooks.catalog.store');
     Route::get('english-books/{englishBook}/cover', [EnglishBookAdminController::class, 'cover'])->name('admin.englishBooks.cover');
+    Route::get('english-books/catalog/{englishBook}/edit', [EnglishBookAdminController::class, 'editBook'])->name('admin.englishBooks.catalog.edit');
+    Route::post('english-books/catalog/{englishBook}', [EnglishBookAdminController::class, 'updateBook'])->name('admin.englishBooks.catalog.update');
+    Route::post('english-books/catalog/{englishBook}/shelf', [EnglishBookAdminController::class, 'addToShelf'])->name('admin.englishBooks.shelf.store');
     Route::get('english-books/{englishBookShelf}/edit', [EnglishBookAdminController::class, 'edit'])->name('admin.englishBooks.edit');
     Route::get('english-books/{englishBookShelf}', [EnglishBookAdminController::class, 'show'])->name('admin.englishBooks.show');
+    Route::get('english-books/{englishBookShelf}/guide', [EnglishBookAdminController::class, 'guide'])->name('admin.englishBooks.guide');
     Route::post('english-books', [EnglishBookAdminController::class, 'store'])->name('admin.englishBooks.store');
     Route::post('english-books/{englishBookShelf}', [EnglishBookAdminController::class, 'update'])->name('admin.englishBooks.update');
     Route::delete('english-books/{englishBookShelf}', [EnglishBookAdminController::class, 'destroy'])->name('admin.englishBooks.delete');

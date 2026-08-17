@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link, router, usePage } from "@inertiajs/vue3";
+import { Head, Link, usePage } from "@inertiajs/vue3";
 import { computed } from "vue";
 
 defineProps({
@@ -9,9 +9,6 @@ defineProps({
 const page = usePage();
 const isDaigakuAdmin = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 
-const logout = () => {
-    router.post(route("logout"));
-};
 </script>
 
 <template>
@@ -32,13 +29,6 @@ const logout = () => {
                     >
                         サイトに戻る
                     </Link>
-                    <button
-                        type="button"
-                        class="text-xs text-gray-400 hover:text-gray-600"
-                        @click="logout"
-                    >
-                        ログアウト
-                    </button>
                 </div>
             </div>
         </header>

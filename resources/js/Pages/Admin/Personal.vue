@@ -50,14 +50,15 @@ const activeStudyTab = ref("daily");
 const activeExerciseTab = ref("daily");
 
 const tabs = [
-    { key: "english", label: "英語" },
-    { key: "exercise", label: "運動" },
-    { key: "learning", label: "学び" },
-    { key: "repayment", label: "返済" },
+    { key: "english", label: "英語", description: "学習と洋書を記録", activeClass: "border-orange-200 bg-orange-50 text-orange-950 ring-orange-100", markerClass: "bg-orange-400" },
+    { key: "exercise", label: "運動", description: "毎日の活動を記録", activeClass: "border-emerald-200 bg-emerald-50 text-emerald-950 ring-emerald-100", markerClass: "bg-emerald-400" },
+    { key: "learning", label: "資格", description: "E資格の学習を記録", activeClass: "border-sky-200 bg-sky-50 text-sky-950 ring-sky-100", markerClass: "bg-sky-400" },
+    { key: "repayment", label: "返済", description: "返済計画を確認", activeClass: "border-violet-200 bg-violet-50 text-violet-950 ring-violet-100", markerClass: "bg-violet-400" },
 ];
 
 const studyTabs = [
     { key: "daily", label: "日別" },
+    { key: "books", label: "洋書" },
     { key: "record", label: "記録" },
 ];
 
@@ -67,7 +68,6 @@ const exerciseTabs = [
 ];
 
 const learningSubcategories = [
-    { value: "DS検定", label: "DS検定" },
     { value: "E資格", label: "E資格" },
 ];
 
@@ -102,7 +102,7 @@ const selectedCalendarDay = ref(today);
 const studyLogForm = useForm({
     studied_on: today,
     category: "英語",
-    subcategory: "DS検定",
+    subcategory: "E資格",
     english_book_id: "",
     set_count: 1,
 });
@@ -136,6 +136,25 @@ const englishBookStatusClass = (status) => {
         finished: "bg-emerald-50 text-emerald-700 ring-emerald-100",
         want: "bg-gray-50 text-gray-500 ring-gray-100",
     }[status] || "bg-gray-50 text-gray-500 ring-gray-100";
+};
+
+const selectEnglishBook = (bookId = "") => {
+    studyLogForm.english_book_id = bookId ? String(bookId) : "";
+    studyLogForm.clearErrors("english_book_id");
+};
+
+const recordWithEnglishBook = (bookId = "") => {
+    activeTab.value = "english";
+    activeStudyTab.value = "daily";
+    selectEnglishBook(bookId);
+};
+
+const selectMainTab = (tabKey) => {
+    activeTab.value = tabKey;
+
+    if (tabKey === "learning" && activeStudyTab.value === "books") {
+        activeStudyTab.value = "daily";
+    }
 };
 
 const displayStudyLogLabel = (log) => {
@@ -315,10 +334,6 @@ const selectedStudyDateSummary = computed(() => {
             if (log.category === "学び") {
                 summary.learning += Number(log.set_count) || 0;
 
-                if (log.subcategory === "DS検定") {
-                    summary.ds += Number(log.set_count) || 0;
-                }
-
                 if (log.subcategory === "E資格") {
                     summary.e += Number(log.set_count) || 0;
                 }
@@ -326,8 +341,12 @@ const selectedStudyDateSummary = computed(() => {
 
             return summary;
         },
-        { english: 0, learning: 0, ds: 0, e: 0 },
+        { english: 0, learning: 0, e: 0 },
     );
+});
+
+const visibleLearningBreakdown = computed(() => {
+    return (props.stats.learning_breakdown || []).filter((breakdown) => breakdown.label !== "DS検定");
 });
 
 const selectedCurrentStudyDateSetCount = computed(() => {
@@ -563,8 +582,8 @@ watch(
     () => {
         studyLogForm.category = currentStudyCategory.value;
 
-        if (studyLogForm.category === "学び" && !studyLogForm.subcategory) {
-            studyLogForm.subcategory = "DS検定";
+        if (studyLogForm.category === "学び" && (!studyLogForm.subcategory || studyLogForm.subcategory === "DS検定")) {
+            studyLogForm.subcategory = "E資格";
         }
 
         if (studyLogForm.category === "学び") {
@@ -624,37 +643,45 @@ const deleteStudyLog = () => {
 <template>
     <AdminLayout title="個人管理">
         <div class="mx-auto max-w-7xl px-3 py-6 sm:px-5 sm:py-8">
-            <div class="mb-6 flex items-end justify-between gap-3">
+            <div class="mb-6 rounded-2xl border border-gray-100 bg-gradient-to-br from-white via-white to-gray-50 px-4 py-4 shadow-sm sm:flex sm:items-end sm:justify-between sm:px-6 sm:py-5">
                 <div>
-                    <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">Personal Admin</p>
-                    <h1 class="mt-1 text-2xl font-bold text-gray-900">個人管理</h1>
+                    <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400">Personal Dashboard</p>
+                    <h1 class="mt-1 text-2xl font-black tracking-tight text-gray-900">個人管理</h1>
+                    <p class="mt-1 text-sm text-gray-500">日々の記録を、ひとつずつ整える。</p>
                 </div>
-                <Link :href="route('admin.index')" class="inline-flex shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-semibold text-gray-600 transition hover:bg-gray-50 sm:px-4 sm:text-sm"> 管理画面に戻る </Link>
+                <Link :href="route('admin.index')" class="mt-4 inline-flex shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:border-gray-300 hover:bg-gray-50 sm:mt-0 sm:px-4 sm:text-sm">管理画面に戻る</Link>
             </div>
 
-            <div class="mb-6 flex flex-wrap gap-2 border-b border-gray-200">
+            <nav class="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4" aria-label="個人管理のカテゴリー">
                 <button
                     v-for="tab in tabs"
                     :key="tab.key"
                     type="button"
-                    class="-mb-px rounded-t-lg border px-4 py-2 text-sm font-semibold transition"
-                    :class="activeTab === tab.key ? 'border-gray-200 border-b-white bg-white text-gray-900' : 'border-transparent text-gray-500 hover:bg-white hover:text-gray-700'"
-                    @click="activeTab = tab.key"
+                    class="group relative overflow-hidden rounded-xl border px-3 py-3 text-left transition sm:px-4"
+                    :class="activeTab === tab.key
+                        ? `${tab.activeClass} shadow-sm ring-1`
+                        : 'border-gray-100 bg-white text-gray-600 shadow-sm hover:-translate-y-0.5 hover:border-gray-200 hover:shadow-md'"
+                    @click="selectMainTab(tab.key)"
                 >
-                    {{ tab.label }}
+                    <span class="flex items-center gap-2 text-sm font-black">
+                        <span class="h-2 w-2 rounded-full" :class="activeTab === tab.key ? tab.markerClass : 'bg-gray-300 group-hover:bg-gray-400'"></span>
+                        {{ tab.label }}
+                    </span>
+                    <span class="mt-1 block text-[11px] font-medium leading-4 opacity-70">{{ tab.description }}</span>
                 </button>
-            </div>
+            </nav>
 
             <div v-if="activeTab === 'english' || activeTab === 'learning'">
-                <div class="mb-4 grid grid-cols-2 overflow-hidden rounded-lg border border-gray-200 bg-white text-xs font-semibold shadow-sm sm:flex sm:w-fit">
+                <div class="mb-5 inline-flex rounded-xl border border-gray-200 bg-gray-100/80 p-1 text-xs font-bold shadow-inner">
                     <button
                         v-for="tab in studyTabs"
                         :key="tab.key"
+                        v-show="activeTab === 'english' || tab.key !== 'books'"
                         type="button"
-                        class="border-r border-gray-200 px-2 py-2 transition last:border-r-0 sm:px-5"
+                        class="rounded-lg px-3 py-2 transition sm:px-5"
                         :class="activeStudyTab === tab.key
-                            ? 'bg-gray-900 text-white'
-                            : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'"
+                            ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
+                            : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
                         @click="activeStudyTab = tab.key"
                     >
                         {{ tab.label }}
@@ -667,9 +694,9 @@ const deleteStudyLog = () => {
                             <p class="text-[11px] font-bold" :class="currentStudyTheme.labelClass">{{ currentStudyTheme.totalLabel }}</p>
                             <p class="text-xl font-bold">{{ currentStudyTheme.duration }}</p>
                         </div>
-                        <div v-if="currentStudyCategory === '学び'" class="mt-2 flex flex-wrap gap-1.5">
+                        <div v-if="currentStudyCategory === '学び' && visibleLearningBreakdown.length" class="mt-2 flex flex-wrap gap-1.5">
                             <span
-                                v-for="breakdown in stats.learning_breakdown"
+                                v-for="breakdown in visibleLearningBreakdown"
                                 :key="breakdown.label"
                                 class="inline-flex items-center gap-1 rounded-full bg-white/75 px-2 py-1 text-[11px] font-bold text-sky-800 ring-1 ring-sky-100"
                             >
@@ -677,49 +704,6 @@ const deleteStudyLog = () => {
                                 <span class="text-sky-950">{{ breakdown.duration }}</span>
                             </span>
                         </div>
-                    </div>
-
-                    <div v-if="currentStudyCategory === '英語'" class="mt-4 rounded-xl border border-gray-100 bg-gray-50/70 p-3">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <div>
-                                <h2 class="text-sm font-bold text-gray-900">洋書別の読書時間</h2>
-                                <p class="mt-1 text-xs text-gray-500">洋書に紐づけた英語ログだけを集計します。</p>
-                            </div>
-                            <Link :href="route('admin.englishBooks.index')" class="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs font-bold text-gray-600 transition hover:bg-gray-50">
-                                本棚を編集
-                            </Link>
-                        </div>
-
-                        <div v-if="englishBooks.length > 0" class="mt-3 grid gap-2 md:grid-cols-2">
-                            <article
-                                v-for="book in englishBooks"
-                                :key="book.english_book_id"
-                                class="rounded-xl border border-gray-100 bg-white p-3 shadow-sm"
-                            >
-                                <div class="flex items-start justify-between gap-2">
-                                    <div class="min-w-0">
-                                        <p class="truncate text-sm font-bold text-gray-900">{{ book.title }}</p>
-                                        <p v-if="book.author" class="mt-0.5 truncate text-xs text-gray-400">{{ book.author }}</p>
-                                    </div>
-                                    <span class="shrink-0 rounded-full px-2 py-1 text-[10px] font-bold ring-1" :class="englishBookStatusClass(book.status)">
-                                        {{ book.status_label }}
-                                    </span>
-                                </div>
-                                <div class="mt-3 flex items-end justify-between gap-3">
-                                    <div>
-                                        <p class="text-[11px] font-bold text-gray-400">読書時間</p>
-                                        <p class="mt-1 text-lg font-black text-orange-950">{{ book.total_duration }}</p>
-                                    </div>
-                                    <p class="text-[11px] font-semibold text-gray-400">{{ book.log_count }}回記録</p>
-                                </div>
-                                <p class="mt-2 text-[11px] leading-5 text-gray-500">
-                                    開始 {{ formatBookDateLabel(book.started_on) }} / 読了 {{ formatBookDateLabel(book.finished_on) }}
-                                </p>
-                            </article>
-                        </div>
-                        <p v-else class="mt-3 rounded-lg border border-dashed border-gray-200 bg-white px-3 py-3 text-sm text-gray-500">
-                            洋書の本棚に登録すると、本ごとの読書時間を集計できます。
-                        </p>
                     </div>
 
                     <div class="mt-4">
@@ -829,22 +813,48 @@ const deleteStudyLog = () => {
                             </div>
 
                             <div class="mt-2 grid gap-2 md:grid-cols-[1fr_1fr_auto] md:items-end">
-                                <label v-if="currentStudyCategory === '英語'" class="block">
-                                    <span class="text-[11px] font-bold text-gray-500">洋書（任意）</span>
-                                    <select
-                                        v-model="studyLogForm.english_book_id"
-                                        class="mt-1 w-full rounded-lg border border-orange-100 bg-orange-50/60 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm focus:border-orange-200 focus:ring-orange-100"
-                                    >
-                                        <option value="">通常の英語学習</option>
-                                        <option v-for="book in englishBooks" :key="book.english_book_id" :value="book.english_book_id">
-                                            {{ book.title }}
-                                        </option>
-                                    </select>
+                                <div v-if="currentStudyCategory === '英語'" class="block md:col-span-2">
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span class="text-[11px] font-bold text-gray-500">洋書（任意）</span>
+                                        <Link :href="route('admin.englishBooks.index')" class="text-[11px] font-bold text-violet-600 transition hover:text-violet-800">
+                                            洋書管理
+                                        </Link>
+                                    </div>
+
+                                    <div class="relative mt-1">
+                                        <select
+                                            v-model="studyLogForm.english_book_id"
+                                            class="w-full appearance-none rounded-xl border border-violet-100 bg-white px-4 py-3 pr-11 text-sm font-bold text-gray-800 shadow-sm outline-none transition focus:border-violet-300 focus:ring-4 focus:ring-violet-100"
+                                        >
+                                            <option value="">通常の英語学習</option>
+                                            <option
+                                                v-for="book in englishBooks"
+                                                :key="book.english_book_id"
+                                                :value="String(book.english_book_id)"
+                                            >
+                                                {{ book.title }}
+                                            </option>
+                                        </select>
+                                        <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-violet-500">
+                                            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    <div v-if="englishBooks.length === 0" class="mt-2 rounded-lg border border-dashed border-violet-100 bg-violet-50/40 p-3 text-xs text-gray-500">
+                                        洋書を本棚に追加すると、本ごとに読書時間を分けて記録できます。
+                                        <Link :href="route('admin.englishBooks.catalog')" class="ml-1 font-bold text-violet-700 hover:text-violet-900">
+                                            本を追加する
+                                        </Link>
+                                    </div>
+                                    <p v-else class="mt-1 text-[11px] font-semibold text-gray-400">
+                                        洋書を選ぶと、その本の読書時間として集計します。
+                                    </p>
                                     <span v-if="studyLogForm.errors.english_book_id" class="mt-1 block text-xs text-rose-600">
                                         {{ studyLogForm.errors.english_book_id }}
                                     </span>
-                                    <p class="mt-1 text-[11px] leading-4 text-gray-400">洋書を選ぶと、その本の読書時間として集計します。</p>
-                                </label>
+                                </div>
 
                                 <div v-if="currentStudyCategory === '学び'" class="block">
                                     <span class="text-[11px] font-bold text-gray-500">分類</span>
@@ -941,6 +951,60 @@ const deleteStudyLog = () => {
                 </section>
 
             </div>
+
+            <section v-if="activeTab === 'english' && activeStudyTab === 'books'" class="mb-6 rounded-xl border border-violet-100 bg-gradient-to-br from-violet-50/80 via-white to-gray-50 p-3 shadow-sm sm:p-5">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-900">洋書の読書時間</h2>
+                        <p class="mt-1 text-sm text-gray-500">洋書ごとの読書記録を確認し、そのまま英語学習を記録できます。</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <Link :href="route('admin.englishBooks.index')" class="inline-flex items-center justify-center rounded-lg border border-violet-100 bg-white px-3 py-2 text-xs font-bold text-violet-700 transition hover:bg-violet-50">
+                            本棚を見る
+                        </Link>
+                        <Link :href="route('admin.englishBooks.catalog')" class="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50">
+                            本を追加
+                        </Link>
+                    </div>
+                </div>
+
+                <div v-if="englishBooks.length > 0" class="mt-4 grid gap-3 md:grid-cols-2">
+                    <article v-for="book in englishBooks" :key="book.english_book_id" class="rounded-xl border border-gray-100 bg-white p-3 shadow-sm">
+                        <div class="flex items-start justify-between gap-2">
+                            <div class="min-w-0">
+                                <p class="truncate text-sm font-bold text-gray-900">{{ book.title }}</p>
+                                <p v-if="book.author" class="mt-0.5 truncate text-xs text-gray-400">{{ book.author }}</p>
+                            </div>
+                            <span class="shrink-0 rounded-full px-2 py-1 text-[10px] font-bold ring-1" :class="englishBookStatusClass(book.status)">
+                                {{ book.status_label }}
+                            </span>
+                        </div>
+                        <div class="mt-3 flex items-end justify-between gap-3">
+                            <div>
+                                <p class="text-[11px] font-bold text-gray-400">読書時間</p>
+                                <p class="mt-1 text-lg font-black text-orange-950">{{ book.total_duration }}</p>
+                            </div>
+                            <p class="text-[11px] font-semibold text-gray-400">{{ book.log_count }}回記録</p>
+                        </div>
+                        <p class="mt-2 text-[11px] leading-5 text-gray-500">
+                            開始 {{ formatBookDateLabel(book.started_on) }} / 読了 {{ formatBookDateLabel(book.finished_on) }}
+                        </p>
+                        <button
+                            type="button"
+                            class="mt-3 inline-flex w-full items-center justify-center rounded-lg border border-violet-100 bg-violet-50 px-3 py-2 text-xs font-bold text-violet-700 transition hover:bg-violet-100"
+                            @click="recordWithEnglishBook(book.english_book_id)"
+                        >
+                            この本で記録
+                        </button>
+                    </article>
+                </div>
+                <div v-else class="mt-4 rounded-lg border border-dashed border-violet-100 bg-white px-3 py-3 text-sm text-gray-500">
+                    洋書の本棚に登録すると、本ごとの読書時間を集計できます。
+                    <Link :href="route('admin.englishBooks.catalog')" class="ml-2 font-bold text-violet-700 hover:text-violet-900">
+                        本を追加する
+                    </Link>
+                </div>
+            </section>
 
             <div v-if="activeTab === 'exercise'">
                 <div class="mb-4 grid grid-cols-2 overflow-hidden rounded-lg border border-gray-200 bg-white text-xs font-semibold shadow-sm sm:flex sm:w-fit">

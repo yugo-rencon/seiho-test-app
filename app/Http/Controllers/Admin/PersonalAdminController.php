@@ -72,10 +72,6 @@ class PersonalAdminController extends Controller
 
         $englishMinutes = (int) $logs->where('category', '英語')->sum('minutes');
         $learningMinutes = (int) $logs->where('category', '学び')->sum('minutes');
-        $dsMinutes = (int) $logs
-            ->where('category', '学び')
-            ->where('subcategory', 'DS検定')
-            ->sum('minutes');
         $eQualificationMinutes = (int) $logs
             ->where('category', '学び')
             ->where('subcategory', 'E資格')
@@ -187,10 +183,6 @@ class PersonalAdminController extends Controller
                 'learning_duration' => $this->formatDuration($learningMinutes),
                 'learning_breakdown' => [
                     [
-                        'label' => 'DS検定',
-                        'duration' => $this->formatDuration($dsMinutes),
-                    ],
-                    [
                         'label' => 'E資格',
                         'duration' => $this->formatDuration($eQualificationMinutes),
                     ],
@@ -246,7 +238,7 @@ class PersonalAdminController extends Controller
         $validated = $request->validate([
             'studied_on' => ['required', 'date_format:Y-m-d'],
             'category' => ['required', 'string', 'in:英語,学び'],
-            'subcategory' => ['nullable', 'string', 'required_if:category,学び', 'in:DS検定,E資格'],
+            'subcategory' => ['nullable', 'string', 'required_if:category,学び', 'in:E資格'],
             'english_book_id' => ['nullable', 'integer', 'exists:english_books,id'],
             'set_count' => ['required', 'integer', 'min:1', 'max:96'],
         ]);

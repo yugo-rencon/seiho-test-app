@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EnglishBook;
+use App\Models\EnglishBookShelf;
 use App\Models\PersonalExerciseLog;
 use App\Models\PersonalStudyLog;
 use Illuminate\Http\RedirectResponse;
@@ -14,12 +16,59 @@ use Inertia\Response;
 
 class PersonalAdminController extends Controller
 {
-    public function index(): Response
+    public function index(Request $request): Response
     {
         $logs = PersonalStudyLog::query()
-            ->select(['id', 'studied_on', 'category', 'subcategory', 'set_count', 'minutes'])
+            ->select(['id', 'studied_on', 'category', 'subcategory', 'set_count', 'minutes', 'raw_payload'])
             ->orderByDesc('studied_on')
             ->get();
+
+        $englishBookShelves = EnglishBookShelf::query()
+            ->with('book:id,title,author')
+            ->where('user_id', $request->user()->id)
+            ->orderByRaw("case status when 'reading' then 0 when 'want' then 1 when 'finished' then 2 else 3 end")
+            ->orderByDesc('finished_on')
+            ->orderBy('id')
+            ->get();
+
+        $englishBookTitleById = $englishBookShelves
+            ->mapWithKeys(fn (EnglishBookShelf $shelf) => [
+                $shelf->english_book_id => $shelf->book?->title,
+            ])
+            ->filter();
+
+        $englishBookMinutesById = [];
+        $englishBookLogCountsById = [];
+        foreach ($logs->where('category', '英語') as $log) {
+            $englishBookId = (int) data_get($log->raw_payload, 'english_book_id');
+
+            if ($englishBookId <= 0) {
+                continue;
+            }
+
+            $englishBookMinutesById[$englishBookId] = ($englishBookMinutesById[$englishBookId] ?? 0) + (int) $log->minutes;
+            $englishBookLogCountsById[$englishBookId] = ($englishBookLogCountsById[$englishBookId] ?? 0) + 1;
+        }
+
+        $englishBooks = $englishBookShelves
+            ->map(function (EnglishBookShelf $shelf) use ($englishBookMinutesById, $englishBookLogCountsById) {
+                $minutes = $englishBookMinutesById[$shelf->english_book_id] ?? 0;
+
+                return [
+                    'id' => $shelf->id,
+                    'english_book_id' => $shelf->english_book_id,
+                    'title' => $shelf->book?->title ?? 'タイトル未設定',
+                    'author' => $shelf->book?->author,
+                    'status' => $shelf->status,
+                    'status_label' => $this->englishBookStatusLabel($shelf->status),
+                    'started_on' => $shelf->started_on?->format('Y-m-d'),
+                    'finished_on' => $shelf->finished_on?->format('Y-m-d'),
+                    'total_minutes' => $minutes,
+                    'total_duration' => $this->formatDuration($minutes),
+                    'log_count' => $englishBookLogCountsById[$shelf->english_book_id] ?? 0,
+                ];
+            })
+            ->values();
 
         $englishMinutes = (int) $logs->where('category', '英語')->sum('minutes');
         $learningMinutes = (int) $logs->where('category', '学び')->sum('minutes');
@@ -66,16 +115,24 @@ class PersonalAdminController extends Controller
 
         $studyLogsByDay = $logs
             ->groupBy(fn (PersonalStudyLog $log) => $log->studied_on->format('Y-m-d'))
-            ->map(function ($dayLogs) {
+            ->map(function ($dayLogs) use ($englishBookTitleById) {
                 return $dayLogs
                     ->sortByDesc('id')
-                    ->map(fn (PersonalStudyLog $log) => [
-                        'id' => $log->id,
-                        'category' => $log->category,
-                        'subcategory' => $log->subcategory,
-                        'set_count' => $log->set_count,
-                        'duration' => $this->formatDuration($log->minutes),
-                    ])
+                    ->map(function (PersonalStudyLog $log) use ($englishBookTitleById) {
+                        $englishBookId = (int) data_get($log->raw_payload, 'english_book_id') ?: null;
+
+                        return [
+                            'id' => $log->id,
+                            'category' => $log->category,
+                            'subcategory' => $log->subcategory,
+                            'set_count' => $log->set_count,
+                            'duration' => $this->formatDuration($log->minutes),
+                            'english_book_id' => $englishBookId,
+                            'english_book_title' => $englishBookId
+                                ? (data_get($log->raw_payload, 'english_book_title') ?: $englishBookTitleById->get($englishBookId))
+                                : null,
+                        ];
+                    })
                     ->values();
             });
 
@@ -142,6 +199,7 @@ class PersonalAdminController extends Controller
             'monthlySummaries' => $monthlySummaries,
             'dailySummaries' => $dailySummaries,
             'studyLogsByDay' => $studyLogsByDay,
+            'englishBooks' => $englishBooks,
             'exerciseStats' => [
                 'walking_count' => $exerciseLogs->where('activity', 'ウォーキング')->where('completed', true)->count(),
                 'running_count' => $exerciseLogs->where('activity', 'ランニング')->where('completed', true)->count(),
@@ -189,17 +247,50 @@ class PersonalAdminController extends Controller
             'studied_on' => ['required', 'date_format:Y-m-d'],
             'category' => ['required', 'string', 'in:英語,学び'],
             'subcategory' => ['nullable', 'string', 'required_if:category,学び', 'in:DS検定,E資格'],
+            'english_book_id' => ['nullable', 'integer', 'exists:english_books,id'],
             'set_count' => ['required', 'integer', 'min:1', 'max:96'],
         ]);
 
         $studiedOn = Carbon::createFromFormat('!Y-m-d', $validated['studied_on'])->toDateString();
         $setCount = (int) $validated['set_count'];
         $minutes = $setCount * 15;
-        $subcategory = $validated['category'] === '学び'
-            ? (string) $validated['subcategory']
-            : '';
+        $englishBook = null;
+        $englishBookId = null;
 
-        DB::transaction(function () use ($validated, $studiedOn, $setCount, $minutes, $subcategory) {
+        if ($validated['category'] === '英語' && !empty($validated['english_book_id'])) {
+            $englishBookId = (int) $validated['english_book_id'];
+            $englishBook = EnglishBook::query()
+                ->select(['id', 'title'])
+                ->findOrFail($englishBookId);
+        }
+
+        $subcategory = match ($validated['category']) {
+            '学び' => (string) $validated['subcategory'],
+            '英語' => $englishBookId ? "洋書:{$englishBookId}" : '',
+        };
+
+        DB::transaction(function () use ($request, $validated, $studiedOn, $setCount, $minutes, $subcategory, $englishBook, $englishBookId) {
+            if ($englishBookId) {
+                $shelf = EnglishBookShelf::query()
+                    ->firstOrCreate(
+                        [
+                            'user_id' => $request->user()->id,
+                            'english_book_id' => $englishBookId,
+                        ],
+                        [
+                            'status' => 'reading',
+                            'started_on' => $studiedOn,
+                        ],
+                    );
+
+                if (!$shelf->wasRecentlyCreated && $shelf->status === 'want') {
+                    $shelf->update([
+                        'status' => 'reading',
+                        'started_on' => $shelf->started_on ?: $studiedOn,
+                    ]);
+                }
+            }
+
             $existingLogs = PersonalStudyLog::query()
                 ->where('studied_on', $studiedOn)
                 ->where('category', $validated['category'])
@@ -221,6 +312,8 @@ class PersonalAdminController extends Controller
                     'input' => 'manual',
                     'mode' => 'overwrite',
                     'subcategory' => $subcategory,
+                    'english_book_id' => $englishBookId,
+                    'english_book_title' => $englishBook?->title,
                 ],
             ];
 
@@ -299,5 +392,15 @@ class PersonalAdminController extends Controller
         }
 
         return "{$remainingMinutes}分";
+    }
+
+    private function englishBookStatusLabel(?string $status): string
+    {
+        return match ($status) {
+            'reading' => '読書中',
+            'finished' => '読了',
+            'want' => '未読',
+            default => '未設定',
+        };
     }
 }

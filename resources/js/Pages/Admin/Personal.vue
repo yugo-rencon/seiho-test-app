@@ -21,6 +21,10 @@ const props = defineProps({
         type: Object,
         default: () => ({}),
     },
+    englishBooks: {
+        type: Array,
+        default: () => [],
+    },
     exerciseStats: {
         type: Object,
         default: () => ({
@@ -99,6 +103,7 @@ const studyLogForm = useForm({
     studied_on: today,
     category: "英語",
     subcategory: "DS検定",
+    english_book_id: "",
     set_count: 1,
 });
 const deleteStudyLogForm = useForm({});
@@ -119,6 +124,30 @@ const selectedExerciseDay = ref(today);
 
 const formatDateLabel = (date) => {
     return String(date || today).replaceAll("-", "/");
+};
+
+const formatBookDateLabel = (date) => {
+    return date ? formatDateLabel(date) : "未設定";
+};
+
+const englishBookStatusClass = (status) => {
+    return {
+        reading: "bg-orange-50 text-orange-700 ring-orange-100",
+        finished: "bg-emerald-50 text-emerald-700 ring-emerald-100",
+        want: "bg-gray-50 text-gray-500 ring-gray-100",
+    }[status] || "bg-gray-50 text-gray-500 ring-gray-100";
+};
+
+const displayStudyLogLabel = (log) => {
+    if (log.category === "英語" && log.english_book_title) {
+        return `英語 洋書：${log.english_book_title}`;
+    }
+
+    if (log.subcategory) {
+        return `${log.category} ${log.subcategory}`;
+    }
+
+    return log.category;
 };
 
 const formatYen = (amount) => {
@@ -310,7 +339,16 @@ const selectedCurrentStudyDateSetCount = computed(() => {
 const selectedStudyCategorySetCount = computed(() => {
     return selectedStudyDateLogs.value
         .filter((log) => log.category === studyLogForm.category)
-        .filter((log) => studyLogForm.category !== "学び" || log.subcategory === studyLogForm.subcategory)
+        .filter((log) => {
+            if (studyLogForm.category === "学び") {
+                return log.subcategory === studyLogForm.subcategory;
+            }
+
+            const formBookId = Number(studyLogForm.english_book_id) || null;
+            const logBookId = Number(log.english_book_id) || null;
+
+            return formBookId ? logBookId === formBookId : !logBookId;
+        })
         .reduce((total, log) => total + (Number(log.set_count) || 0), 0);
 });
 
@@ -497,6 +535,7 @@ const submitStudyLog = () => {
                 studied_on: studyLogForm.studied_on,
                 category: studyLogForm.category,
                 subcategory: studyLogForm.subcategory,
+                english_book_id: studyLogForm.english_book_id,
                 set_count: studyLogForm.set_count,
             });
         },
@@ -520,12 +559,16 @@ const submitExerciseLog = () => {
 };
 
 watch(
-    [() => studyLogForm.studied_on, () => studyLogForm.category, () => studyLogForm.subcategory, () => activeTab.value],
+    [() => studyLogForm.studied_on, () => studyLogForm.category, () => studyLogForm.subcategory, () => studyLogForm.english_book_id, () => activeTab.value],
     () => {
         studyLogForm.category = currentStudyCategory.value;
 
         if (studyLogForm.category === "学び" && !studyLogForm.subcategory) {
             studyLogForm.subcategory = "DS検定";
+        }
+
+        if (studyLogForm.category === "学び") {
+            studyLogForm.english_book_id = "";
         }
 
         setStudySetCount(selectedStudyCategorySetCount.value || 1);
@@ -636,6 +679,49 @@ const deleteStudyLog = () => {
                         </div>
                     </div>
 
+                    <div v-if="currentStudyCategory === '英語'" class="mt-4 rounded-xl border border-gray-100 bg-gray-50/70 p-3">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div>
+                                <h2 class="text-sm font-bold text-gray-900">洋書別の読書時間</h2>
+                                <p class="mt-1 text-xs text-gray-500">洋書に紐づけた英語ログだけを集計します。</p>
+                            </div>
+                            <Link :href="route('admin.englishBooks.index')" class="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs font-bold text-gray-600 transition hover:bg-gray-50">
+                                本棚を編集
+                            </Link>
+                        </div>
+
+                        <div v-if="englishBooks.length > 0" class="mt-3 grid gap-2 md:grid-cols-2">
+                            <article
+                                v-for="book in englishBooks"
+                                :key="book.english_book_id"
+                                class="rounded-xl border border-gray-100 bg-white p-3 shadow-sm"
+                            >
+                                <div class="flex items-start justify-between gap-2">
+                                    <div class="min-w-0">
+                                        <p class="truncate text-sm font-bold text-gray-900">{{ book.title }}</p>
+                                        <p v-if="book.author" class="mt-0.5 truncate text-xs text-gray-400">{{ book.author }}</p>
+                                    </div>
+                                    <span class="shrink-0 rounded-full px-2 py-1 text-[10px] font-bold ring-1" :class="englishBookStatusClass(book.status)">
+                                        {{ book.status_label }}
+                                    </span>
+                                </div>
+                                <div class="mt-3 flex items-end justify-between gap-3">
+                                    <div>
+                                        <p class="text-[11px] font-bold text-gray-400">読書時間</p>
+                                        <p class="mt-1 text-lg font-black text-orange-950">{{ book.total_duration }}</p>
+                                    </div>
+                                    <p class="text-[11px] font-semibold text-gray-400">{{ book.log_count }}回記録</p>
+                                </div>
+                                <p class="mt-2 text-[11px] leading-5 text-gray-500">
+                                    開始 {{ formatBookDateLabel(book.started_on) }} / 読了 {{ formatBookDateLabel(book.finished_on) }}
+                                </p>
+                            </article>
+                        </div>
+                        <p v-else class="mt-3 rounded-lg border border-dashed border-gray-200 bg-white px-3 py-3 text-sm text-gray-500">
+                            洋書の本棚に登録すると、本ごとの読書時間を集計できます。
+                        </p>
+                    </div>
+
                     <div class="mt-4">
                         <h2 class="text-sm font-bold text-gray-900">月別{{ currentStudyTheme.label }}時間</h2>
                         <div class="mt-2 overflow-auto rounded-lg border border-gray-100">
@@ -743,6 +829,23 @@ const deleteStudyLog = () => {
                             </div>
 
                             <div class="mt-2 grid gap-2 md:grid-cols-[1fr_1fr_auto] md:items-end">
+                                <label v-if="currentStudyCategory === '英語'" class="block">
+                                    <span class="text-[11px] font-bold text-gray-500">洋書（任意）</span>
+                                    <select
+                                        v-model="studyLogForm.english_book_id"
+                                        class="mt-1 w-full rounded-lg border border-orange-100 bg-orange-50/60 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm focus:border-orange-200 focus:ring-orange-100"
+                                    >
+                                        <option value="">通常の英語学習</option>
+                                        <option v-for="book in englishBooks" :key="book.english_book_id" :value="book.english_book_id">
+                                            {{ book.title }}
+                                        </option>
+                                    </select>
+                                    <span v-if="studyLogForm.errors.english_book_id" class="mt-1 block text-xs text-rose-600">
+                                        {{ studyLogForm.errors.english_book_id }}
+                                    </span>
+                                    <p class="mt-1 text-[11px] leading-4 text-gray-400">洋書を選ぶと、その本の読書時間として集計します。</p>
+                                </label>
+
                                 <div v-if="currentStudyCategory === '学び'" class="block">
                                     <span class="text-[11px] font-bold text-gray-500">分類</span>
                                     <div class="mt-1 grid grid-cols-2 gap-1 rounded-lg border border-sky-100 bg-sky-50/80 p-1 shadow-sm">
@@ -819,7 +922,7 @@ const deleteStudyLog = () => {
                                         class="text-sm font-bold"
                                         :class="log.category === '英語' ? 'text-orange-900' : 'text-sky-900'"
                                     >
-                                        {{ log.category }}<span v-if="log.subcategory"> {{ log.subcategory }}</span> {{ log.set_count }}セット
+                                        {{ displayStudyLogLabel(log) }} {{ log.set_count }}セット
                                     </p>
                                     <p class="mt-0.5 text-xs text-gray-500">{{ log.duration }}</p>
                                 </div>

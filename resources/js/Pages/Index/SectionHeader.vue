@@ -18,6 +18,9 @@ defineProps({
                         {{ section.title }}
                     </h2>
                 </div>
+                <p v-if="section.releaseNote" class="ml-3 text-sm font-semibold text-gray-500 md:ml-4">
+                    {{ section.releaseNote }}
+                </p>
             </div>
         </div>
     </div>

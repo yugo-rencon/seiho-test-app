@@ -35,24 +35,28 @@ export const SUBJECT_CATALOG = [
         title: "生命保険会計",
         menuTitle: "生命保険会計",
         period: "12月〜1月実施の試験",
+        releaseNote: "2025年度は10月ごろリリース予定",
     },
     {
         key: "eigyo",
         title: "生命保険商品と営業",
         menuTitle: "生命保険商品と営業",
         period: "12月〜1月実施の試験",
+        releaseNote: "2025年度は10月ごろリリース予定",
     },
     {
         key: "zeihou",
         title: "生命保険と税法",
         menuTitle: "生命保険と税法",
         period: "2月〜3月実施の試験",
+        releaseNote: "2025年度は12月ごろリリース予定",
     },
     {
         key: "sisan",
         title: "資産の運用",
         menuTitle: "資産運用",
         period: "2月〜3月実施の試験",
+        releaseNote: "2025年度は12月ごろリリース予定",
     },
 ];
 
@@ -60,6 +64,7 @@ export const INDEX_SECTIONS = SUBJECT_CATALOG.map((subject) => ({
     id: subject.key,
     title: subject.title,
     period: subject.period,
+    releaseNote: subject.releaseNote,
     years:
         subject.key === "souron"
             ? [...SOURON_YEARS]

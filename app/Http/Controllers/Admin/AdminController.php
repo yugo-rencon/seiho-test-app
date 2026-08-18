@@ -397,6 +397,7 @@ class AdminController extends Controller
                 'blockedViews' => 0,
             ],
             'scopeSummary' => collect(),
+            'seihoSubjectSummary' => collect(),
             'users' => collect(),
         ];
         $pageViewSummary = [
@@ -493,6 +494,59 @@ class AdminController extends Controller
                 ->get()
                 ->keyBy('scope');
 
+            $seihoSubjectDefinitions = collect([
+                ['key' => 'souron', 'name' => '生命保険総論'],
+                ['key' => 'keiri', 'name' => '生命保険計理'],
+                ['key' => 'kiken', 'name' => '危険選択'],
+                ['key' => 'yakkan', 'name' => '約款と法律'],
+                ['key' => 'kaikei', 'name' => '生命保険会計'],
+                ['key' => 'eigyo', 'name' => '生命保険商品と営業'],
+                ['key' => 'zeihou', 'name' => '生命保険と税法'],
+                ['key' => 'sisan', 'name' => '資産の運用'],
+            ]);
+
+            $seihoSubjectStats = $seihoSubjectDefinitions
+                ->mapWithKeys(fn ($subject) => [
+                    $subject['key'] => [
+                        'subjectKey' => $subject['key'],
+                        'subjectName' => $subject['name'],
+                        'views' => 0,
+                        'users' => [],
+                        'sessions' => [],
+                    ],
+                ])
+                ->all();
+
+            $premiumLogsBaseQuery()
+                ->whereBetween('checked_at', [$todayStart, $todayEnd])
+                ->where('scope', 'seiho')
+                ->where('has_premium', 1)
+                ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
+                ->select('path', 'user_id', 'session_id')
+                ->orderByDesc('checked_at')
+                ->get()
+                ->each(function ($row) use (&$seihoSubjectStats) {
+                    $path = '/' . ltrim((string) $row->path, '/');
+
+                    foreach (array_keys($seihoSubjectStats) as $subjectKey) {
+                        if (!preg_match('#/' . preg_quote($subjectKey, '#') . '\d{4}[a-c](?:$|[/?#])#i', $path)) {
+                            continue;
+                        }
+
+                        $seihoSubjectStats[$subjectKey]['views']++;
+
+                        if ($row->user_id !== null) {
+                            $seihoSubjectStats[$subjectKey]['users'][(string) $row->user_id] = true;
+                        }
+
+                        if ($row->session_id !== null && $row->session_id !== '') {
+                            $seihoSubjectStats[$subjectKey]['sessions'][(string) $row->session_id] = true;
+                        }
+
+                        break;
+                    }
+                });
+
             $premiumUsageToday = [
                 'summary' => [
                     'views' => (int) ($summaryRow->views ?? 0),
@@ -513,6 +567,18 @@ class AdminController extends Controller
                         'blockedViews' => (int) ($row->blocked_views ?? 0),
                     ];
                 })->values(),
+                'seihoSubjectSummary' => collect($seihoSubjectStats)
+                    ->map(function ($row) {
+                        return [
+                            'subjectKey' => $row['subjectKey'],
+                            'subjectName' => $row['subjectName'],
+                            'views' => (int) $row['views'],
+                            'users' => count($row['users']),
+                            'sessions' => count($row['sessions']),
+                        ];
+                    })
+                    ->sortByDesc('views')
+                    ->values(),
                 'users' => $premiumLogsBaseQuery()
                     ->join('users', 'users.id', '=', 'premium_access_logs.user_id')
                     ->whereBetween('premium_access_logs.checked_at', [$todayStart, $todayEnd])
@@ -689,6 +755,7 @@ class AdminController extends Controller
             'premiumUsageToday' => [
                 'summary' => $premiumUsageToday['summary'],
                 'scopeSummary' => $premiumUsageToday['scopeSummary'],
+                'seihoSubjectSummary' => $premiumUsageToday['seihoSubjectSummary'],
                 'users' => $premiumUsageToday['users']->map(function ($row) {
                     return [
                         'userId' => (int) $row->user_id,

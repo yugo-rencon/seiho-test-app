@@ -7,6 +7,7 @@ defineProps({ title: { type: String, required: true } });
 const page = usePage();
 const isShelfPage = computed(() => /^\/admin\/english-books\/?$/.test(page.url ?? ""));
 const isCatalogPage = computed(() => String(page.url ?? "").startsWith("/admin/english-books/catalog"));
+const isVocabularyPage = computed(() => String(page.url ?? "").startsWith("/admin/english-books/vocabulary"));
 </script>
 
 <template>
@@ -25,6 +26,7 @@ const isCatalogPage = computed(() => String(page.url ?? "").startsWith("/admin/e
                 <nav class="order-3 flex w-full min-w-0 items-center gap-1 border-t border-[#e6dfd3] pt-3 text-xs font-bold sm:order-none sm:w-auto sm:border-0 sm:pt-0 sm:text-sm" aria-label="洋書管理">
                     <Link :href="route('admin.englishBooks.index')" class="rounded-lg px-3 py-2 transition" :class="isShelfPage ? 'bg-[#25323a] text-white shadow-sm' : 'text-[#74665e] hover:bg-[#f3ede3] hover:text-[#c96b48]'">本棚</Link>
                     <Link :href="route('admin.englishBooks.catalog')" class="rounded-lg px-3 py-2 transition" :class="isCatalogPage ? 'bg-[#25323a] text-white shadow-sm' : 'text-[#74665e] hover:bg-[#f3ede3] hover:text-[#c96b48]'">本を追加</Link>
+                    <Link :href="route('admin.englishBooks.vocabulary')" class="rounded-lg px-3 py-2 transition" :class="isVocabularyPage ? 'bg-[#25323a] text-white shadow-sm' : 'text-[#74665e] hover:bg-[#f3ede3] hover:text-[#c96b48]'">単語帳</Link>
                     <Link :href="route('admin.personal.index')" class="rounded-lg px-3 py-2 text-[#b65b3d] transition hover:bg-[#f9ede7]">学習を記録</Link>
                     <Link :href="route('admin.index')" class="ml-auto rounded-lg px-3 py-2 text-[#74665e] transition hover:bg-[#f3ede3] hover:text-[#c96b48]">管理画面</Link>
                 </nav>

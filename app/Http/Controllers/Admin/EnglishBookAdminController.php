@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\EnglishBook;
 use App\Models\EnglishBookShelf;
+use App\Models\EnglishVocabularyEntry;
 use App\Models\PersonalStudyLog;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -89,6 +91,65 @@ class EnglishBookAdminController extends Controller
     {
         EnglishBookShelf::firstOrCreate(['user_id' => $request->user()->id, 'english_book_id' => $englishBook->id], ['status' => 'want']);
         return redirect()->route('admin.englishBooks.index');
+    }
+
+    public function vocabulary(Request $request): Response
+    {
+        $userId = $request->user()->id;
+        $books = EnglishBookShelf::with('book')->where('user_id', $userId)->orderBy('created_at')->get()
+            ->map(fn (EnglishBookShelf $shelf) => ['id' => $shelf->english_book_id, 'title' => $shelf->book->title]);
+        $entries = EnglishVocabularyEntry::with('book')->where('user_id', $userId)->latest()->get()
+            ->map(fn (EnglishVocabularyEntry $entry) => array_merge($entry->only(['id', 'english_book_id', 'word', 'meaning', 'chapter', 'note']), [
+                'book_title' => $entry->book?->title,
+                'created_at' => $entry->created_at->format('Y-m-d'),
+            ]));
+
+        return Inertia::render('Admin/EnglishVocabulary', ['books' => $books, 'entries' => $entries]);
+    }
+
+    public function storeVocabulary(Request $request): RedirectResponse
+    {
+        $data = $request->validate([
+            'english_book_id' => ['nullable', 'integer', 'exists:english_books,id'],
+            'word' => ['required', 'string', 'max:255'],
+            'meaning' => ['required', 'string', 'max:500'],
+            'chapter' => ['nullable', 'string', 'max:100'],
+            'note' => ['nullable', 'string', 'max:3000'],
+        ]);
+        if (! empty($data['english_book_id'])) {
+            abort_unless(EnglishBookShelf::where('user_id', $request->user()->id)->where('english_book_id', $data['english_book_id'])->exists(), 403);
+        }
+        EnglishVocabularyEntry::create(array_merge($data, ['user_id' => $request->user()->id]));
+
+        return back();
+    }
+
+    public function translateVocabulary(Request $request)
+    {
+        $text = $request->validate(['text' => ['required', 'string', 'max:500']])['text'];
+        $authKey = config('services.deepl.auth_key');
+        abort_unless($authKey, 503, '翻訳サービスの設定がありません。');
+
+        $response = Http::withHeaders(['Authorization' => "DeepL-Auth-Key {$authKey}"])
+            ->asForm()->timeout(10)->post('https://api-free.deepl.com/v2/translate', [
+                'text' => $text,
+                'source_lang' => 'EN',
+                'target_lang' => 'JA',
+            ]);
+
+        if ($response->failed()) {
+            return response()->json(['message' => '翻訳を取得できませんでした。時間をおいてもう一度お試しください。'], 422);
+        }
+
+        return response()->json(['translation' => data_get($response->json(), 'translations.0.text')]);
+    }
+
+    public function destroyVocabulary(Request $request, EnglishVocabularyEntry $vocabularyEntry): RedirectResponse
+    {
+        abort_unless($vocabularyEntry->user_id === $request->user()->id, 404);
+        $vocabularyEntry->delete();
+
+        return back();
     }
 
     public function show(Request $request, EnglishBookShelf $englishBookShelf): Response { $shelf = $this->ownedShelf($request, $englishBookShelf); $logs = PersonalStudyLog::query()->where('category', '英語')->get()->filter(fn (PersonalStudyLog $log) => (int) data_get($log->raw_payload, 'english_book_id') === $shelf->english_book_id); return Inertia::render('Admin/EnglishBookDetail', ['book' => array_merge($this->shelfPayload($shelf), ['reading_duration' => $this->formatDuration((int) $logs->sum('minutes')), 'reading_log_count' => $logs->count()])]); }

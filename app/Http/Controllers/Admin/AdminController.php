@@ -537,7 +537,7 @@ class AdminController extends Controller
                         $path = '/' . ltrim((string) $row->path, '/');
 
                         foreach (array_keys($seihoSubjectStats) as $subjectKey) {
-                            if (!preg_match('#/' . preg_quote($subjectKey, '#') . '\d{4}[a-c](?:$|[/?#])#i', $path)) {
+                            if (!preg_match('~/' . preg_quote($subjectKey, '~') . '\d{4}[a-c](?:$|[/?#])~i', $path)) {
                                 continue;
                             }
 

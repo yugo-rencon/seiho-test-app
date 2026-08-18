@@ -8,6 +8,7 @@ use App\Models\EnglishBookShelf;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
@@ -19,6 +20,18 @@ class EnglishBookAdminController extends Controller
 {
     public function index(Request $request): Response
     {
+        if (! Schema::hasTable('english_books') || ! Schema::hasTable('english_book_shelves')) {
+            return Inertia::render('Admin/EnglishBooks', [
+                'books' => collect(),
+                'stats' => [
+                    'finished_count' => 0,
+                    'reading_count' => 0,
+                    'want_count' => 0,
+                    'total_words' => 0,
+                ],
+            ]);
+        }
+
         $shelves = EnglishBookShelf::with('book')->where('user_id', $request->user()->id)
             ->orderByRaw("case status when 'reading' then 0 when 'want' then 1 else 2 end")->orderByDesc('finished_on')->get();
 
@@ -30,7 +43,13 @@ class EnglishBookAdminController extends Controller
 
     public function catalog(Request $request): Response
     {
-        $shelfBookIds = EnglishBookShelf::where('user_id', $request->user()->id)->pluck('english_book_id')->all();
+        if (! Schema::hasTable('english_books')) {
+            return Inertia::render('Admin/EnglishBookCatalog', ['books' => collect()]);
+        }
+
+        $shelfBookIds = Schema::hasTable('english_book_shelves')
+            ? EnglishBookShelf::where('user_id', $request->user()->id)->pluck('english_book_id')->all()
+            : [];
         $books = EnglishBook::orderBy('title')->get()->map(fn ($book) => array_merge($this->bookPayload($book), ['on_shelf' => in_array($book->id, $shelfBookIds, true)]));
 
         return Inertia::render('Admin/EnglishBookCatalog', ['books' => $books]);

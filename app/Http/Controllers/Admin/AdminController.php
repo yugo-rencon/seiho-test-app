@@ -466,10 +466,17 @@ class AdminController extends Controller
         }
 
         if (Schema::hasTable('premium_access_logs')) {
-            $premiumLogsBaseQuery = function () {
-                return DB::table('premium_access_logs')
-                    ->where('path', 'not like', '/admin%')
-                    ->where('path', 'not like', '/daigaku/admin%');
+            $hasPremiumAccessLogPath = Schema::hasColumn('premium_access_logs', 'path');
+            $premiumLogsBaseQuery = function () use ($hasPremiumAccessLogPath) {
+                $query = DB::table('premium_access_logs');
+
+                if ($hasPremiumAccessLogPath) {
+                    $query
+                        ->where('path', 'not like', '/admin%')
+                        ->where('path', 'not like', '/daigaku/admin%');
+                }
+
+                return $query;
             };
 
             $summaryRow = $premiumLogsBaseQuery()
@@ -517,35 +524,37 @@ class AdminController extends Controller
                 ])
                 ->all();
 
-            $premiumLogsBaseQuery()
-                ->whereBetween('checked_at', [$todayStart, $todayEnd])
-                ->where('scope', 'seiho')
-                ->where('has_premium', 1)
-                ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
-                ->select('path', 'user_id', 'session_id')
-                ->orderByDesc('checked_at')
-                ->get()
-                ->each(function ($row) use (&$seihoSubjectStats) {
-                    $path = '/' . ltrim((string) $row->path, '/');
+            if ($hasPremiumAccessLogPath) {
+                $premiumLogsBaseQuery()
+                    ->whereBetween('checked_at', [$todayStart, $todayEnd])
+                    ->where('scope', 'seiho')
+                    ->where('has_premium', 1)
+                    ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
+                    ->select('path', 'user_id', 'session_id')
+                    ->orderByDesc('checked_at')
+                    ->get()
+                    ->each(function ($row) use (&$seihoSubjectStats) {
+                        $path = '/' . ltrim((string) $row->path, '/');
 
-                    foreach (array_keys($seihoSubjectStats) as $subjectKey) {
-                        if (!preg_match('#/' . preg_quote($subjectKey, '#') . '\d{4}[a-c](?:$|[/?#])#i', $path)) {
-                            continue;
+                        foreach (array_keys($seihoSubjectStats) as $subjectKey) {
+                            if (!preg_match('#/' . preg_quote($subjectKey, '#') . '\d{4}[a-c](?:$|[/?#])#i', $path)) {
+                                continue;
+                            }
+
+                            $seihoSubjectStats[$subjectKey]['views']++;
+
+                            if ($row->user_id !== null) {
+                                $seihoSubjectStats[$subjectKey]['users'][(string) $row->user_id] = true;
+                            }
+
+                            if ($row->session_id !== null && $row->session_id !== '') {
+                                $seihoSubjectStats[$subjectKey]['sessions'][(string) $row->session_id] = true;
+                            }
+
+                            break;
                         }
-
-                        $seihoSubjectStats[$subjectKey]['views']++;
-
-                        if ($row->user_id !== null) {
-                            $seihoSubjectStats[$subjectKey]['users'][(string) $row->user_id] = true;
-                        }
-
-                        if ($row->session_id !== null && $row->session_id !== '') {
-                            $seihoSubjectStats[$subjectKey]['sessions'][(string) $row->session_id] = true;
-                        }
-
-                        break;
-                    }
-                });
+                    });
+            }
 
             $premiumUsageToday = [
                 'summary' => [

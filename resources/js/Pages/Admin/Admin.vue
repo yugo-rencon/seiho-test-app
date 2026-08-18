@@ -30,12 +30,14 @@ const props = defineProps({
     },
 });
 
-const purchaseScope = ref(props.filters?.purchase_scope ?? "all");
+const registrationScope = ref(props.filters?.registration_scope ?? "all");
 const purchaseState = ref(props.filters?.purchase_state ?? "all");
 const userSearch = ref(props.filters?.user_search ?? "");
-const purchaseDateFrom = ref(props.filters?.purchase_date_from ?? "");
-const purchaseDateTo = ref(props.filters?.purchase_date_to ?? "");
-const activeTab = ref("dashboard");
+const purchaseDate = ref(props.filters?.purchase_date ?? "");
+const purchaseDatePickerOpen = ref(false);
+const purchaseDateCalendarMonth = ref((props.filters?.purchase_date || currentYmd()).slice(0, 7));
+const activeTab = ref("users");
+const activeMemberTab = ref("summary");
 const operationsTab = ref("exam-results");
 const salesTab = ref("overview");
 const salesScopeFilter = ref("all");
@@ -45,15 +47,52 @@ const adminPurchaseSaving = ref({});
 const adminPurchaseDrafts = ref({});
 const page = usePage();
 
-const currentYmd = () => {
+function currentYmd() {
     const today = new Date();
     const y = today.getFullYear();
     const m = `${today.getMonth() + 1}`.padStart(2, "0");
     const d = `${today.getDate()}`.padStart(2, "0");
     return `${y}-${m}-${d}`;
-};
+}
 
 const currentYm = () => currentYmd().slice(0, 7);
+
+const formatPurchaseDate = (date) => date ? date.replaceAll("-", "/") : "購入日を選択";
+
+const purchaseDateCalendarLabel = computed(() => purchaseDateCalendarMonth.value.replace("-", "年") + "月");
+
+const purchaseDateCalendarCells = computed(() => {
+    const [year, month] = purchaseDateCalendarMonth.value.split("-").map(Number);
+    const firstWeekday = new Date(year, month - 1, 1).getDay();
+    const daysInMonth = new Date(year, month, 0).getDate();
+
+    return Array.from({ length: 42 }, (_, index) => {
+        const day = index - firstWeekday + 1;
+        if (day < 1 || day > daysInMonth) return { key: `empty-${index}`, empty: true };
+
+        return {
+            key: `${year}-${month}-${day}`,
+            day,
+            date: `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`,
+        };
+    });
+});
+
+const togglePurchaseDatePicker = () => {
+    purchaseDateCalendarMonth.value = (purchaseDate.value || currentYmd()).slice(0, 7);
+    purchaseDatePickerOpen.value = !purchaseDatePickerOpen.value;
+};
+
+const movePurchaseDateCalendarMonth = (amount) => {
+    const [year, month] = purchaseDateCalendarMonth.value.split("-").map(Number);
+    const next = new Date(year, month - 1 + amount, 1);
+    purchaseDateCalendarMonth.value = `${next.getFullYear()}-${String(next.getMonth() + 1).padStart(2, "0")}`;
+};
+
+const selectPurchaseDate = (date) => {
+    purchaseDate.value = date;
+    purchaseDatePickerOpen.value = false;
+};
 
 const adsenseForm = ref({
     revenue_month: currentYm(),
@@ -61,14 +100,13 @@ const adsenseForm = ref({
 });
 const adsenseSaving = ref(false);
 
-const purchaseScopeOptions = [
-    { value: "all", label: "全科目" },
+const registrationScopeOptions = [
+    { value: "all", label: "登録経由: すべて" },
     { value: "seiho", label: "生保講座" },
     { value: "daigaku", label: "生保大学" },
     { value: "ouyou", label: "応用課程" },
     { value: "senmon", label: "専門課程" },
     { value: "ippan", label: "一般課程" },
-    { value: "basic", label: "セット" },
 ];
 
 // リリース管理
@@ -319,7 +357,7 @@ const saveAdminScopes = (admin) => {
         {
             preserveScroll: true,
             onSuccess: () => {
-                activeTab.value = 'dashboard';
+                activeTab.value = 'users';
                 router.visit(route(adminIndexRoute.value), {
                     preserveState: false,
                     preserveScroll: true,
@@ -339,22 +377,20 @@ const submitSearch = () => {
     router.get(
         route(adminIndexRoute.value),
         {
-            purchase_scope: purchaseScope.value,
+            registration_scope: registrationScope.value,
             purchase_state: purchaseState.value,
             user_search: userSearch.value.trim(),
-            purchase_date_from: purchaseDateFrom.value,
-            purchase_date_to: purchaseDateTo.value,
+            purchase_date: purchaseDate.value,
         },
         { preserveState: true, replace: true },
     );
 };
 
 const resetSearch = () => {
-    purchaseScope.value = "all";
+    registrationScope.value = "all";
     purchaseState.value = "all";
     userSearch.value = "";
-    purchaseDateFrom.value = "";
-    purchaseDateTo.value = "";
+    purchaseDate.value = "";
     submitSearch();
 };
 
@@ -910,22 +946,12 @@ const peakHour2h = computed(() => {
                 <button
                     type="button"
                     class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
-                    :class="isActiveMenu('dashboard')
-                        ? 'border-purple-200 bg-purple-50 text-purple-700'
-                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                    @click="activeTab = 'dashboard'"
-                >
-                    概要
-                </button>
-                <button
-                    type="button"
-                    class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
                     :class="isActiveMenu('users')
                         ? 'border-purple-200 bg-purple-50 text-purple-700'
                         : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
                     @click="activeTab = 'users'"
                 >
-                    ユーザー管理
+                    会員管理
                 </button>
                 <button
                     type="button"
@@ -939,26 +965,20 @@ const peakHour2h = computed(() => {
                 </button>
                 <button
                     type="button"
-                    class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
+                    class="relative rounded-lg border px-4 py-2 text-sm font-semibold transition"
                     :class="isActiveMenu('operations')
                         ? 'border-purple-200 bg-purple-50 text-purple-700'
                         : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
                     @click="activeTab = 'operations'"
                 >
                     運営管理
-                </button>
-                <Link
-                    :href="route(adminContactsRoute)"
-                    class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
-                >
-                    問い合わせ
                     <span
                         v-if="newContactCount > 0"
-                        class="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
+                        class="absolute -right-2 -top-2 inline-flex min-w-[1.35rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white ring-2 ring-white"
                     >
                         {{ newContactCount }}
                     </span>
-                </Link>
+                </button>
                 <Link
                     :href="route(adminPersonalRoute)"
                     class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
@@ -967,14 +987,34 @@ const peakHour2h = computed(() => {
                 </Link>
                 <Link
                     :href="route(adminEnglishBooksRoute)"
-                    class="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-100"
+                    class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition hover:bg-gray-50"
                 >
                     洋書管理
                 </Link>
             </div>
 
+            <div v-if="activeTab === 'users'" class="mb-5 inline-flex rounded-xl border border-gray-200 bg-gray-100/80 p-1 text-xs font-bold shadow-inner">
+                <button
+                    v-for="tab in [
+                        { key: 'summary', label: '利用状況' },
+                        { key: 'members', label: '会員一覧' },
+                        { key: 'premium', label: '有料利用' },
+                        { key: 'admins', label: '管理者' },
+                    ]"
+                    :key="tab.key"
+                    type="button"
+                    class="rounded-lg px-3 py-2 transition sm:px-5"
+                    :class="activeMemberTab === tab.key
+                        ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
+                        : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
+                    @click="activeMemberTab = tab.key; if (tab.key === 'premium') salesTab = 'premium'"
+                >
+                    {{ tab.label }}
+                </button>
+            </div>
+
             <div
-                v-if="activeTab === 'dashboard'"
+                v-if="activeTab === 'users' && activeMemberTab === 'summary'"
                 class="mb-4 grid grid-cols-2 gap-2.5 sm:mb-6 sm:gap-3 lg:grid-cols-4"
             >
                 <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
@@ -1030,7 +1070,7 @@ const peakHour2h = computed(() => {
                 </div>
             </div>
             <div
-                v-if="activeTab === 'dashboard'"
+                v-if="activeTab === 'users' && activeMemberTab === 'admins'"
                 class="rounded-xl border border-gray-100 bg-white p-4"
             >
                 <div class="flex flex-wrap items-start justify-between gap-2">
@@ -1104,11 +1144,26 @@ const peakHour2h = computed(() => {
                     <div class="flex flex-wrap items-start justify-between gap-3">
                         <div>
                             <h2 class="text-sm font-semibold text-gray-900">運営管理</h2>
-                            <p class="mt-1 text-xs text-gray-500">点数入力状況とリリース管理を確認できます。</p>
+                            <p class="mt-1 text-xs text-gray-500">問い合わせ・点数入力状況・リリース管理を確認できます。</p>
                         </div>
                     </div>
 
-                    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                    <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                        <Link
+                            :href="route(adminContactsRoute)"
+                            class="relative rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-left text-gray-600 transition hover:bg-gray-100"
+                        >
+                            <span
+                                v-if="newContactCount > 0"
+                                class="absolute right-3 top-3 inline-flex min-w-[1.35rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
+                            >
+                                {{ newContactCount }}
+                            </span>
+                            <div class="text-sm font-bold">問い合わせ管理</div>
+                            <div class="mt-1 text-xs opacity-75">
+                                {{ newContactCount > 0 ? `未対応 ${newContactCount}件` : '対応状況とメモを確認' }}
+                            </div>
+                        </Link>
                         <button
                             type="button"
                             class="rounded-xl border px-4 py-3 text-left transition"
@@ -1224,29 +1279,23 @@ const peakHour2h = computed(() => {
             </div>
 
             <div
-                v-if="activeTab === 'sales'"
+                v-if="activeTab === 'sales' || (activeTab === 'users' && activeMemberTab === 'premium')"
                 class="mt-6 rounded-xl border border-gray-100 bg-white p-4"
             >
-                <div class="mb-3 flex flex-wrap items-end justify-between gap-2">
-                    <h2 class="text-sm font-semibold text-gray-900">売上分析</h2>
-                    <p class="text-xs text-gray-500">対象: {{ stats.salesInsights?.fromDate }} 以降</p>
-                </div>
-
-                <div class="mb-4 flex flex-wrap gap-2">
+                <div v-if="activeTab === 'sales'" class="mb-4 inline-flex max-w-full overflow-x-auto rounded-xl border border-gray-200 bg-gray-100/80 p-1 text-xs font-bold shadow-inner">
                     <button
                         v-for="tab in [
                             { key: 'overview', label: '概要' },
                             { key: 'daily', label: '日次' },
                             { key: 'monthly', label: '月次' },
-                            { key: 'premium', label: '有料利用' },
                             { key: 'adsense', label: '広告' },
                         ]"
                         :key="`sales-${tab.key}`"
                         type="button"
-                        class="rounded-lg border px-3 py-1.5 text-xs font-semibold transition"
+                        class="whitespace-nowrap rounded-lg px-3 py-2 transition sm:px-5"
                         :class="salesTab === tab.key
-                            ? 'border-purple-200 bg-purple-50 text-purple-700'
-                            : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
+                            ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
+                            : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
                         @click="salesTab = tab.key"
                     >
                         {{ tab.label }}
@@ -1254,20 +1303,6 @@ const peakHour2h = computed(() => {
                 </div>
 
                 <div v-if="salesTab === 'overview' || salesTab === 'daily' || salesTab === 'monthly'" class="mb-4 flex flex-wrap items-center gap-2">
-                    <label for="sales-scope-filter" class="text-xs font-semibold text-gray-600">試験フィルター</label>
-                    <select
-                        id="sales-scope-filter"
-                        v-model="salesScopeFilter"
-                        class="min-w-[8.5rem] rounded-lg border border-gray-200 bg-white py-1.5 pl-2.5 pr-9 text-xs text-gray-700"
-                    >
-                        <option
-                            v-for="option in salesScopeOptions"
-                            :key="`sales-scope-${option.value}`"
-                            :value="option.value"
-                        >
-                            {{ option.label }}
-                        </option>
-                    </select>
                     <template v-if="salesTab === 'overview'">
                         <label for="overview-period-filter" class="ml-0 text-xs font-semibold text-gray-600 sm:ml-2">期間</label>
                         <select
@@ -1499,7 +1534,7 @@ const peakHour2h = computed(() => {
                     </div>
                 </div>
 
-                <div v-if="salesTab === 'premium'" class="rounded-xl border border-emerald-100 bg-emerald-50/40 p-4">
+                <div v-if="activeTab === 'users' && activeMemberTab === 'premium'" class="rounded-xl border border-emerald-100 bg-emerald-50/40 p-4">
                     <div class="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
                         <div>
                             <p class="text-xs font-semibold text-emerald-800">今日の有料会員利用</p>
@@ -1883,10 +1918,10 @@ const peakHour2h = computed(() => {
                 </div>
             </div>
 
-            <template v-if="activeTab === 'users'">
+            <template v-if="activeTab === 'users' && activeMemberTab === 'members'">
             <form
                 @submit.prevent="submitSearch"
-                class="mb-4 grid gap-2 md:grid-cols-[1.4fr_1fr_1fr_0.95fr_0.95fr_auto_auto]"
+                class="mb-4 grid gap-2 md:grid-cols-[1.4fr_1fr_1fr_0.95fr_auto_auto]"
             >
                 <input
                     v-model="userSearch"
@@ -1895,12 +1930,12 @@ const peakHour2h = computed(() => {
                     class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
                 />
                 <select
-                    v-model="purchaseScope"
+                    v-model="registrationScope"
                     @change="submitSearch"
                     class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
                 >
                     <option
-                        v-for="option in purchaseScopeOptions"
+                        v-for="option in registrationScopeOptions"
                         :key="option.value"
                         :value="option.value"
                     >
@@ -1916,22 +1951,46 @@ const peakHour2h = computed(() => {
                     <option value="purchased">購入あり</option>
                     <option value="unpurchased">未購入</option>
                 </select>
-                <label class="flex min-w-0 flex-col gap-1 text-xs font-semibold text-gray-500">
-                    購入日From
-                    <input
-                        v-model="purchaseDateFrom"
-                        type="date"
-                        class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm font-normal text-gray-800 focus:border-purple-300 focus:outline-none"
-                    />
-                </label>
-                <label class="flex min-w-0 flex-col gap-1 text-xs font-semibold text-gray-500">
-                    購入日To
-                    <input
-                        v-model="purchaseDateTo"
-                        type="date"
-                        class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm font-normal text-gray-800 focus:border-purple-300 focus:outline-none"
-                    />
-                </label>
+                <div class="relative flex min-w-0 flex-col gap-1 text-xs font-semibold text-gray-500">
+                    購入日
+                    <button
+                        type="button"
+                        class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white px-3 py-2 text-left text-sm font-normal text-gray-800 transition hover:border-purple-300 focus:border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                        @click="togglePurchaseDatePicker"
+                    >
+                        <span :class="purchaseDate ? 'text-gray-800' : 'text-gray-400'">{{ formatPurchaseDate(purchaseDate) }}</span>
+                        <svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="13" height="11" rx="1.5" /><path d="M6.5 3v4M13.5 3v4M3.5 8.5h13" /></svg>
+                    </button>
+
+                    <div v-if="purchaseDatePickerOpen" class="absolute left-0 top-full z-30 mt-1 w-72 rounded-xl border border-gray-200 bg-white p-3 text-gray-700 shadow-xl">
+                        <div class="flex items-center justify-between gap-2">
+                            <button type="button" class="rounded-lg p-1.5 transition hover:bg-gray-100" aria-label="前月" @click="movePurchaseDateCalendarMonth(-1)">‹</button>
+                            <p class="text-sm font-black text-gray-900">{{ purchaseDateCalendarLabel }}</p>
+                            <button type="button" class="rounded-lg p-1.5 transition hover:bg-gray-100" aria-label="翌月" @click="movePurchaseDateCalendarMonth(1)">›</button>
+                        </div>
+                        <div class="mt-3 grid grid-cols-7 text-center text-[10px] font-bold text-gray-400">
+                            <span v-for="day in ['日', '月', '火', '水', '木', '金', '土']" :key="day" class="py-1">{{ day }}</span>
+                        </div>
+                        <div class="grid grid-cols-7 gap-y-0.5 text-center text-xs">
+                            <template v-for="cell in purchaseDateCalendarCells" :key="cell.key">
+                                <span v-if="cell.empty" class="h-8"></span>
+                                <button
+                                    v-else
+                                    type="button"
+                                    class="h-8 rounded-lg font-semibold transition hover:bg-purple-50 hover:text-purple-700"
+                                    :class="purchaseDate === cell.date ? 'bg-purple-600 text-white hover:bg-purple-600 hover:text-white' : ''"
+                                    @click="selectPurchaseDate(cell.date)"
+                                >
+                                    {{ cell.day }}
+                                </button>
+                            </template>
+                        </div>
+                        <div class="mt-3 flex items-center justify-between border-t border-gray-100 pt-2 text-xs font-bold">
+                            <button type="button" class="text-purple-600 hover:text-purple-800" @click="selectPurchaseDate(currentYmd())">今日</button>
+                            <button type="button" class="text-gray-400 hover:text-gray-600" @click="purchaseDate = ''; purchaseDatePickerOpen = false">クリア</button>
+                        </div>
+                    </div>
+                </div>
                 <button
                     type="submit"
                     class="whitespace-nowrap rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700"

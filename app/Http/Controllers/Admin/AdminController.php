@@ -17,15 +17,14 @@ class AdminController extends Controller
 
     public function index(Request $request): Response
     {
-        $purchaseScope = (string) $request->query('purchase_scope', 'all');
+        $registrationScope = (string) $request->query('registration_scope', 'all');
         $purchaseState = (string) $request->query('purchase_state', 'all');
         $userSearch = trim((string) $request->query('user_search', ''));
-        $purchaseDateFrom = $this->parseDateFilter(trim((string) $request->query('purchase_date_from', '')));
-        $purchaseDateTo = $this->parseDateFilter(trim((string) $request->query('purchase_date_to', '')));
+        $purchaseDate = $this->parseDateFilter(trim((string) $request->query('purchase_date', '')));
 
-        $allowedScopes = ['all', 'seiho', 'daigaku', 'ouyou', 'senmon', 'ippan', 'basic'];
-        if (!in_array($purchaseScope, $allowedScopes, true)) {
-            $purchaseScope = 'all';
+        $allowedScopes = ['all', 'seiho', 'daigaku', 'ouyou', 'senmon', 'ippan'];
+        if (!in_array($registrationScope, $allowedScopes, true)) {
+            $registrationScope = 'all';
         }
 
         $allowedStates = ['all', 'purchased', 'unpurchased'];
@@ -82,25 +81,14 @@ class AdminController extends Controller
             ->when($purchaseState === 'unpurchased', function ($query) {
                 $query->whereRaw('COALESCE(purchase_summary.paid_count, 0) = 0');
             })
-            ->when($purchaseScope !== 'all', function ($query) use ($purchaseScope) {
-                $columnMap = [
-                    'seiho' => 'seiho_paid_count',
-                    'daigaku' => 'daigaku_paid_count',
-                    'ouyou' => 'ouyou_paid_count',
-                    'senmon' => 'senmon_paid_count',
-                    'ippan' => 'ippan_paid_count',
-                    'basic' => 'basic_paid_count',
-                ];
-                $column = $columnMap[$purchaseScope] ?? null;
-                if ($column) {
-                    $query->whereRaw("COALESCE(purchase_summary.{$column}, 0) > 0");
-                }
+            ->when($registrationScope !== 'all', function ($query) use ($registrationScope) {
+                $query->where('users.registered_scope', $registrationScope);
             })
-            ->when($purchaseDateFrom, function ($query) use ($purchaseDateFrom) {
-                $query->where('purchase_summary.last_paid_at', '>=', $purchaseDateFrom->copy()->startOfDay());
-            })
-            ->when($purchaseDateTo, function ($query) use ($purchaseDateTo) {
-                $query->where('purchase_summary.last_paid_at', '<=', $purchaseDateTo->copy()->endOfDay());
+            ->when($purchaseDate, function ($query) use ($purchaseDate) {
+                $query->whereBetween('purchase_summary.last_paid_at', [
+                    $purchaseDate->copy()->startOfDay(),
+                    $purchaseDate->copy()->endOfDay(),
+                ]);
             })
             ->orderByDesc('users.id')
             ->paginate(30)
@@ -798,11 +786,10 @@ class AdminController extends Controller
             'stats' => $stats,
             'newContactCount' => $newContactCount,
             'filters' => [
-                'purchase_scope' => $purchaseScope,
+                'registration_scope' => $registrationScope,
                 'purchase_state' => $purchaseState,
                 'user_search' => $userSearch,
-                'purchase_date_from' => $purchaseDateFrom?->toDateString() ?? '',
-                'purchase_date_to' => $purchaseDateTo?->toDateString() ?? '',
+                'purchase_date' => $purchaseDate?->toDateString() ?? '',
             ],
             'releasedKeys' => $releasedKeys,
         ]);

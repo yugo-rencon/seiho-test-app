@@ -50,10 +50,10 @@ const activeStudyTab = ref("daily");
 const activeExerciseTab = ref("daily");
 
 const tabs = [
-    { key: "english", label: "英語", activeClass: "border-orange-200 bg-orange-50 text-orange-950 ring-orange-100", markerClass: "bg-orange-400" },
-    { key: "exercise", label: "運動", activeClass: "border-emerald-200 bg-emerald-50 text-emerald-950 ring-emerald-100", markerClass: "bg-emerald-400" },
-    { key: "learning", label: "資格", activeClass: "border-sky-200 bg-sky-50 text-sky-950 ring-sky-100", markerClass: "bg-sky-400" },
-    { key: "repayment", label: "返済", activeClass: "border-violet-200 bg-violet-50 text-violet-950 ring-violet-100", markerClass: "bg-violet-400" },
+    { key: "english", label: "英語" },
+    { key: "exercise", label: "運動" },
+    { key: "learning", label: "資格" },
+    { key: "repayment", label: "返済" },
 ];
 
 const studyTabs = [
@@ -669,30 +669,24 @@ const deleteStudyLog = () => {
 
 <template>
     <AdminLayout title="個人管理">
-        <div class="mx-auto max-w-7xl px-3 py-6 sm:px-5 sm:py-8">
-            <div class="mb-5 rounded-2xl border border-gray-100 bg-gradient-to-br from-white via-white to-gray-50 px-4 py-3 shadow-sm sm:flex sm:items-center sm:justify-between sm:px-6 sm:py-4">
-                <div>
-                    <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400">Personal Dashboard</p>
-                    <h1 class="mt-1 text-2xl font-black tracking-tight text-gray-900">個人管理</h1>
-                </div>
-                <Link :href="route('admin.index')" class="mt-3 inline-flex shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:border-gray-300 hover:bg-gray-50 sm:mt-0 sm:px-4 sm:text-sm">管理画面に戻る</Link>
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
+            <div class="mb-6 flex items-center justify-between gap-4">
+                <h1 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">個人管理</h1>
+                <Link :href="route('admin.index')" class="shrink-0 text-sm font-medium text-gray-500 transition hover:text-gray-900">管理画面へ</Link>
             </div>
 
-            <nav class="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4" aria-label="個人管理のカテゴリー">
+            <nav class="mb-7 grid grid-cols-2 gap-1 rounded-xl bg-gray-100 p-1 sm:grid-cols-4" aria-label="個人管理のカテゴリー">
                 <button
                     v-for="tab in tabs"
                     :key="tab.key"
                     type="button"
-                    class="group relative overflow-hidden rounded-xl border px-3 py-3 text-left transition sm:px-4"
+                    class="rounded-lg px-3 py-2.5 text-center text-sm font-semibold transition"
                     :class="activeTab === tab.key
-                        ? `${tab.activeClass} shadow-sm ring-1`
-                        : 'border-gray-100 bg-white text-gray-600 shadow-sm hover:-translate-y-0.5 hover:border-gray-200 hover:shadow-md'"
+                        ? 'bg-white text-gray-900 shadow-sm'
+                        : 'text-gray-500 hover:text-gray-900'"
                     @click="selectMainTab(tab.key)"
                 >
-                    <span class="flex items-center gap-2 text-sm font-black">
-                        <span class="h-2 w-2 rounded-full" :class="activeTab === tab.key ? tab.markerClass : 'bg-gray-300 group-hover:bg-gray-400'"></span>
-                        {{ tab.label }}
-                    </span>
+                    {{ tab.label }}
                 </button>
             </nav>
 
@@ -836,8 +830,8 @@ const deleteStudyLog = () => {
                             </div>
                         </div>
 
-                        <div v-if="studyLogModalOpen" class="fixed inset-0 z-50 flex items-end justify-center bg-gray-950/45 p-0 sm:items-center sm:p-6" @click.self="closeStudyLogModal">
-                            <form class="max-h-[90vh] w-full overflow-y-auto rounded-t-2xl bg-white p-4 shadow-2xl sm:max-w-2xl sm:rounded-2xl sm:p-6" @submit.prevent="submitStudyLog">
+                        <div v-if="studyLogModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/45 px-4 py-5 sm:p-6" @click.self="closeStudyLogModal">
+                            <form class="max-h-[calc(100dvh-2.5rem)] w-full overflow-y-auto rounded-2xl bg-white p-4 shadow-2xl sm:max-w-2xl sm:p-6" @submit.prevent="submitStudyLog">
                             <div class="flex flex-wrap items-center justify-between gap-2">
                                 <div>
                                     <p class="text-[11px] font-bold uppercase tracking-[0.16em]" :class="currentStudyTheme.labelClass">Study log</p>
@@ -1171,8 +1165,8 @@ const deleteStudyLog = () => {
                             </div>
                         </div>
 
-                        <div v-if="exerciseLogModalOpen" class="fixed inset-0 z-50 flex items-end justify-center bg-gray-950/45 p-0 sm:items-center sm:p-6" @click.self="closeExerciseLogModal">
-                            <form class="w-full rounded-t-2xl bg-white p-4 shadow-2xl sm:max-w-lg sm:rounded-2xl sm:p-6" @submit.prevent="submitExerciseLog">
+                        <div v-if="exerciseLogModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/45 px-4 py-5 sm:p-6" @click.self="closeExerciseLogModal">
+                            <form class="max-h-[calc(100dvh-2.5rem)] w-full overflow-y-auto rounded-2xl bg-white p-4 shadow-2xl sm:max-w-lg sm:p-6" @submit.prevent="submitExerciseLog">
                             <div class="flex flex-wrap items-center justify-between gap-2">
                                 <div>
                                     <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-600">Exercise log</p>

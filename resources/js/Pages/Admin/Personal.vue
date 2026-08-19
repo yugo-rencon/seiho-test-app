@@ -1,7 +1,7 @@
 <script setup>
 import { Link, useForm } from "@inertiajs/vue3";
 import { computed, ref, watch } from "vue";
-import AdminLayout from "@/Layouts/AdminLayout.vue";
+import PersonalToolsLayout from "@/Layouts/PersonalToolsLayout.vue";
 import { repaymentPlan } from "@/data/personalRepayments";
 
 const props = defineProps({
@@ -691,11 +691,10 @@ const deleteStudyLog = () => {
 </script>
 
 <template>
-    <AdminLayout title="個人管理">
+    <PersonalToolsLayout title="個人管理">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
-            <div class="mb-6 flex items-center justify-between gap-4">
+            <div class="mb-6">
                 <h1 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">個人管理</h1>
-                <Link :href="route('admin.index')" class="shrink-0 text-sm font-medium text-gray-500 transition hover:text-gray-900">管理画面へ</Link>
             </div>
 
             <nav class="mb-7 grid grid-cols-4 gap-1 rounded-xl bg-gray-100 p-1" aria-label="個人管理のカテゴリー">
@@ -1228,5 +1227,5 @@ const deleteStudyLog = () => {
                 </div>
             </div>
         </div>
-    </AdminLayout>
+    </PersonalToolsLayout>
 </template>

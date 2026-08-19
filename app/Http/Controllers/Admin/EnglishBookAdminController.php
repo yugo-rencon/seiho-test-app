@@ -99,7 +99,7 @@ class EnglishBookAdminController extends Controller
         $books = EnglishBookShelf::with('book')->where('user_id', $userId)->orderBy('created_at')->get()
             ->map(fn (EnglishBookShelf $shelf) => ['id' => $shelf->english_book_id, 'title' => $shelf->book->title]);
         $entries = EnglishVocabularyEntry::with('book')->where('user_id', $userId)->latest()->get()
-            ->map(fn (EnglishVocabularyEntry $entry) => array_merge($entry->only(['id', 'english_book_id', 'word', 'meaning', 'chapter', 'note']), [
+            ->map(fn (EnglishVocabularyEntry $entry) => array_merge($entry->only(['id', 'english_book_id', 'word', 'meaning', 'note']), [
                 'book_title' => $entry->book?->title,
                 'created_at' => $entry->created_at->format('Y-m-d'),
             ]));
@@ -113,7 +113,6 @@ class EnglishBookAdminController extends Controller
             'english_book_id' => ['nullable', 'integer', 'exists:english_books,id'],
             'word' => ['required', 'string', 'max:255'],
             'meaning' => ['required', 'string', 'max:500'],
-            'chapter' => ['nullable', 'string', 'max:100'],
             'note' => ['nullable', 'string', 'max:3000'],
         ]);
         if (! empty($data['english_book_id'])) {
@@ -152,6 +151,23 @@ class EnglishBookAdminController extends Controller
         return back();
     }
 
+    public function updateVocabulary(Request $request, EnglishVocabularyEntry $vocabularyEntry): RedirectResponse
+    {
+        abort_unless($vocabularyEntry->user_id === $request->user()->id, 404);
+        $data = $request->validate([
+            'english_book_id' => ['nullable', 'integer', 'exists:english_books,id'],
+            'word' => ['required', 'string', 'max:255'],
+            'meaning' => ['required', 'string', 'max:500'],
+            'note' => ['nullable', 'string', 'max:3000'],
+        ]);
+        if (! empty($data['english_book_id'])) {
+            abort_unless(EnglishBookShelf::where('user_id', $request->user()->id)->where('english_book_id', $data['english_book_id'])->exists(), 403);
+        }
+        $vocabularyEntry->update($data);
+
+        return back();
+    }
+
     public function show(Request $request, EnglishBookShelf $englishBookShelf): Response { $shelf = $this->ownedShelf($request, $englishBookShelf); $logs = PersonalStudyLog::query()->where('category', '英語')->get()->filter(fn (PersonalStudyLog $log) => (int) data_get($log->raw_payload, 'english_book_id') === $shelf->english_book_id); return Inertia::render('Admin/EnglishBookDetail', ['book' => array_merge($this->shelfPayload($shelf), ['reading_duration' => $this->formatDuration((int) $logs->sum('minutes')), 'reading_log_count' => $logs->count()])]); }
     public function guide(Request $request, EnglishBookShelf $englishBookShelf): Response
     {
@@ -160,7 +176,18 @@ class EnglishBookAdminController extends Controller
         abort_unless(is_file($path), 404);
         $converter = new CommonMarkConverter(['html_input' => 'strip', 'allow_unsafe_links' => false]);
 
-        return Inertia::render('Admin/EnglishBookGuide', ['book' => $this->shelfPayload($shelf), 'guideHtml' => (string) $converter->convert(file_get_contents($path))]);
+        $vocabularyEntries = EnglishVocabularyEntry::query()
+            ->where('user_id', $request->user()->id)
+            ->where('english_book_id', $shelf->english_book_id)
+            ->latest()
+            ->get()
+            ->map(fn (EnglishVocabularyEntry $entry) => $entry->only(['id', 'word', 'meaning', 'note']));
+
+        return Inertia::render('Admin/EnglishBookGuide', [
+            'book' => $this->shelfPayload($shelf),
+            'guideHtml' => (string) $converter->convert(file_get_contents($path)),
+            'vocabularyEntries' => $vocabularyEntries,
+        ]);
     }
     public function edit(Request $request, EnglishBookShelf $englishBookShelf): Response { return Inertia::render('Admin/EnglishBookForm', ['book' => $this->shelfPayload($this->ownedShelf($request, $englishBookShelf))]); }
 

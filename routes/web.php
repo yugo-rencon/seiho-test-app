@@ -219,6 +219,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('english-books/vocabulary', [EnglishBookAdminController::class, 'vocabulary'])->name('admin.englishBooks.vocabulary');
     Route::post('english-books/vocabulary', [EnglishBookAdminController::class, 'storeVocabulary'])->name('admin.englishBooks.vocabulary.store');
     Route::post('english-books/vocabulary/translate', [EnglishBookAdminController::class, 'translateVocabulary'])->middleware('throttle:30,1')->name('admin.englishBooks.vocabulary.translate');
+    Route::post('english-books/vocabulary/{vocabularyEntry}', [EnglishBookAdminController::class, 'updateVocabulary'])->name('admin.englishBooks.vocabulary.update');
     Route::delete('english-books/vocabulary/{vocabularyEntry}', [EnglishBookAdminController::class, 'destroyVocabulary'])->name('admin.englishBooks.vocabulary.delete');
     Route::get('english-books/{englishBookShelf}/edit', [EnglishBookAdminController::class, 'edit'])->name('admin.englishBooks.edit');
     Route::get('english-books/{englishBookShelf}', [EnglishBookAdminController::class, 'show'])->name('admin.englishBooks.show');

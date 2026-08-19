@@ -67,14 +67,39 @@ const exerciseTabs = [
     { key: "summary", label: "記録" },
 ];
 
-const learningSubcategories = [
-    { value: "E資格", label: "E資格" },
-];
+const learningSubcategories = [{ value: "E資格", label: "E資格" }];
 
 const exerciseActivities = [
-    { value: "ウォーキング", label: "ウォーキング", shortLabel: "walk", accent: "bg-emerald-400", activeClass: "bg-white text-emerald-950 shadow-sm ring-1 ring-emerald-100", inactiveClass: "text-emerald-700 hover:bg-white/70 hover:text-emerald-900", badgeClass: "bg-emerald-50 text-emerald-800", cardClass: "border-emerald-100 bg-emerald-50/75 text-emerald-950" },
-    { value: "ランニング", label: "ランニング", shortLabel: "run", accent: "bg-sky-400", activeClass: "bg-white text-sky-950 shadow-sm ring-1 ring-sky-100", inactiveClass: "text-sky-700 hover:bg-white/70 hover:text-sky-900", badgeClass: "bg-sky-50 text-sky-800", cardClass: "border-sky-100 bg-sky-50/75 text-sky-950" },
-    { value: "筋トレ", label: "筋トレ", shortLabel: "筋トレ", accent: "bg-rose-400", activeClass: "bg-white text-rose-950 shadow-sm ring-1 ring-rose-100", inactiveClass: "text-rose-700 hover:bg-white/70 hover:text-rose-900", badgeClass: "bg-rose-50 text-rose-800", cardClass: "border-rose-100 bg-rose-50/75 text-rose-950" },
+    {
+        value: "ウォーキング",
+        label: "ウォーキング",
+        shortLabel: "walk",
+        accent: "bg-emerald-400",
+        activeClass: "bg-white text-emerald-950 shadow-sm ring-1 ring-emerald-100",
+        inactiveClass: "text-emerald-700 hover:bg-white/70 hover:text-emerald-900",
+        badgeClass: "bg-emerald-50 text-emerald-800",
+        cardClass: "border-emerald-100 bg-emerald-50/75 text-emerald-950",
+    },
+    {
+        value: "ランニング",
+        label: "ランニング",
+        shortLabel: "run",
+        accent: "bg-sky-400",
+        activeClass: "bg-white text-sky-950 shadow-sm ring-1 ring-sky-100",
+        inactiveClass: "text-sky-700 hover:bg-white/70 hover:text-sky-900",
+        badgeClass: "bg-sky-50 text-sky-800",
+        cardClass: "border-sky-100 bg-sky-50/75 text-sky-950",
+    },
+    {
+        value: "筋トレ",
+        label: "筋トレ",
+        shortLabel: "筋トレ",
+        accent: "bg-rose-400",
+        activeClass: "bg-white text-rose-950 shadow-sm ring-1 ring-rose-100",
+        inactiveClass: "text-rose-700 hover:bg-white/70 hover:text-rose-900",
+        badgeClass: "bg-rose-50 text-rose-800",
+        cardClass: "border-rose-100 bg-rose-50/75 text-rose-950",
+    },
 ];
 const exerciseStartedOnLabel = "2026/07/21";
 
@@ -91,7 +116,9 @@ const formatDateParts = (year, month, day) => {
 };
 
 const parseDateParts = (date) => {
-    const [year, month, day] = String(date || today).split("-").map(Number);
+    const [year, month, day] = String(date || today)
+        .split("-")
+        .map(Number);
 
     return { year, month, day };
 };
@@ -133,11 +160,13 @@ const formatBookDateLabel = (date) => {
 };
 
 const englishBookStatusClass = (status) => {
-    return {
-        reading: "bg-orange-50 text-orange-700 ring-orange-100",
-        finished: "bg-emerald-50 text-emerald-700 ring-emerald-100",
-        want: "bg-gray-50 text-gray-500 ring-gray-100",
-    }[status] || "bg-gray-50 text-gray-500 ring-gray-100";
+    return (
+        {
+            reading: "bg-orange-50 text-orange-700 ring-orange-100",
+            finished: "bg-emerald-50 text-emerald-700 ring-emerald-100",
+            want: "bg-gray-50 text-gray-500 ring-gray-100",
+        }[status] || "bg-gray-50 text-gray-500 ring-gray-100"
+    );
 };
 
 const selectEnglishBook = (bookId = "") => {
@@ -276,9 +305,7 @@ const dailySummaryByDay = computed(() => {
 });
 
 const exerciseSummaryByDay = computed(() => {
-    return Object.fromEntries(
-        Object.entries(props.exerciseLogsByDay).map(([day, logs]) => [day, logs.filter((log) => log.completed)]),
-    );
+    return Object.fromEntries(Object.entries(props.exerciseLogsByDay).map(([day, logs]) => [day, logs.filter((log) => log.completed)]));
 });
 
 const exerciseActivityByValue = computed(() => {
@@ -353,9 +380,7 @@ const visibleLearningBreakdown = computed(() => {
 });
 
 const selectedCurrentStudyDateSetCount = computed(() => {
-    return currentStudyCategory.value === "学び"
-        ? selectedStudyDateSummary.value.learning
-        : selectedStudyDateSummary.value.english;
+    return currentStudyCategory.value === "学び" ? selectedStudyDateSummary.value.learning : selectedStudyDateSummary.value.english;
 });
 
 const selectedStudyCategorySetCount = computed(() => {
@@ -383,9 +408,7 @@ const pendingDeleteMessage = computed(() => {
         return "";
     }
 
-    const categoryLabel = pendingDeleteLog.value.subcategory
-        ? `${pendingDeleteLog.value.category} ${pendingDeleteLog.value.subcategory}`
-        : pendingDeleteLog.value.category;
+    const categoryLabel = pendingDeleteLog.value.subcategory ? `${pendingDeleteLog.value.category} ${pendingDeleteLog.value.subcategory}` : pendingDeleteLog.value.category;
 
     return `${pendingDeleteDateLabel.value || selectedDayLabel.value}の${categoryLabel} ${pendingDeleteLog.value.set_count}セット`;
 });
@@ -676,16 +699,7 @@ const deleteStudyLog = () => {
             </div>
 
             <nav class="mb-7 grid grid-cols-2 gap-1 rounded-xl bg-gray-100 p-1 sm:grid-cols-4" aria-label="個人管理のカテゴリー">
-                <button
-                    v-for="tab in tabs"
-                    :key="tab.key"
-                    type="button"
-                    class="rounded-lg px-3 py-2.5 text-center text-sm font-semibold transition"
-                    :class="activeTab === tab.key
-                        ? 'bg-white text-gray-900 shadow-sm'
-                        : 'text-gray-500 hover:text-gray-900'"
-                    @click="selectMainTab(tab.key)"
-                >
+                <button v-for="tab in tabs" :key="tab.key" type="button" class="rounded-lg px-3 py-2.5 text-center text-sm font-semibold transition" :class="activeTab === tab.key ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'" @click="selectMainTab(tab.key)">
                     {{ tab.label }}
                 </button>
             </nav>
@@ -698,9 +712,7 @@ const deleteStudyLog = () => {
                         v-show="activeTab === 'english' || tab.key !== 'books'"
                         type="button"
                         class="rounded-lg px-3 py-2 transition sm:px-5"
-                        :class="activeStudyTab === tab.key
-                            ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
-                            : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
+                        :class="activeStudyTab === tab.key ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200' : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
                         @click="activeStudyTab = tab.key"
                     >
                         {{ tab.label }}
@@ -714,11 +726,7 @@ const deleteStudyLog = () => {
                             <p class="text-xl font-bold">{{ currentStudyTheme.duration }}</p>
                         </div>
                         <div v-if="currentStudyCategory === '学び' && visibleLearningBreakdown.length" class="mt-2 flex flex-wrap gap-1.5">
-                            <span
-                                v-for="breakdown in visibleLearningBreakdown"
-                                :key="breakdown.label"
-                                class="inline-flex items-center gap-1 rounded-full bg-white/75 px-2 py-1 text-[11px] font-bold text-sky-800 ring-1 ring-sky-100"
-                            >
+                            <span v-for="breakdown in visibleLearningBreakdown" :key="breakdown.label" class="inline-flex items-center gap-1 rounded-full bg-white/75 px-2 py-1 text-[11px] font-bold text-sky-800 ring-1 ring-sky-100">
                                 <span>{{ breakdown.label }}</span>
                                 <span class="text-sky-950">{{ breakdown.duration }}</span>
                             </span>
@@ -743,7 +751,7 @@ const deleteStudyLog = () => {
                                     <tr v-for="summary in monthlySummaries" :key="summary.month">
                                         <td class="whitespace-nowrap px-1.5 py-2 font-semibold text-gray-900 sm:px-4 sm:py-3">{{ summary.month_label }}</td>
                                         <td class="whitespace-nowrap px-1 py-2 text-right font-semibold sm:px-4 sm:py-3" :class="currentStudyTheme.labelClass">
-                                            {{ currentStudyCategory === '学び' ? summary.learning_duration : summary.english_duration }}
+                                            {{ currentStudyCategory === "学び" ? summary.learning_duration : summary.english_duration }}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -763,21 +771,12 @@ const deleteStudyLog = () => {
                             >
                                 前
                             </button>
-                            <select
-                                :value="selectedCalendarMonth"
-                                class="border-0 py-2 text-center text-sm font-bold text-gray-900 shadow-none focus:border-0 focus:ring-0"
-                                @change="setCalendarMonth($event.target.value)"
-                            >
+                            <select :value="selectedCalendarMonth" class="border-0 py-2 text-center text-sm font-bold text-gray-900 shadow-none focus:border-0 focus:ring-0" @change="setCalendarMonth($event.target.value)">
                                 <option v-for="month in calendarMonthOptions" :key="month.value" :value="month.value">
                                     {{ month.label }}
                                 </option>
                             </select>
-                            <button
-                                type="button"
-                                class="border-l border-gray-200 bg-gray-50 px-2 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
-                                :disabled="selectedCalendarMonthIndex <= 0"
-                                @click="moveCalendarMonth(-1)"
-                            >
+                            <button type="button" class="border-l border-gray-200 bg-gray-50 px-2 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="selectedCalendarMonthIndex <= 0" @click="moveCalendarMonth(-1)">
                                 次
                             </button>
                         </div>
@@ -790,29 +789,12 @@ const deleteStudyLog = () => {
                             </div>
                         </div>
                         <div class="grid grid-cols-7 divide-x divide-y divide-gray-100 bg-white text-[10px] sm:text-xs">
-                            <div
-                                v-for="cell in calendarCells"
-                                :key="cell.key"
-                                class="h-[3.75rem] p-0.5 sm:h-[4.5rem] sm:p-1.5"
-                                :class="[
-                                    cell.empty ? 'bg-gray-50/60' : 'bg-white',
-                                    selectedCalendarDay === cell.date ? 'bg-gray-100 shadow-[inset_0_0_0_1px_rgba(107,114,128,0.28)]' : '',
-                                ]"
-                            >
-                                <button
-                                    v-if="!cell.empty"
-                                    type="button"
-                                    class="flex h-full w-full flex-col items-start justify-start overflow-hidden rounded text-left transition hover:bg-gray-50"
-                                    @click="openStudyLogModal(cell.date)"
-                                >
+                            <div v-for="cell in calendarCells" :key="cell.key" class="h-[3.75rem] p-0.5 sm:h-[4.5rem] sm:p-1.5" :class="[cell.empty ? 'bg-gray-50/60' : 'bg-white', selectedCalendarDay === cell.date ? 'bg-gray-100 shadow-[inset_0_0_0_1px_rgba(107,114,128,0.28)]' : '']">
+                                <button v-if="!cell.empty" type="button" class="flex h-full w-full flex-col items-start justify-start overflow-hidden rounded text-left transition hover:bg-gray-50" @click="openStudyLogModal(cell.date)">
                                     <div class="w-full text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
                                     <div v-if="cell.summary" class="mt-0.5 w-full space-y-0.5">
-                                        <div v-if="currentStudyCategory === '英語' && cell.summary.english_sets > 0" class="whitespace-nowrap rounded bg-orange-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-orange-900 sm:text-xs">
-                                            英語 {{ cell.summary.english_sets }}
-                                        </div>
-                                        <div v-if="currentStudyCategory === '学び' && cell.summary.learning_sets > 0" class="whitespace-nowrap rounded bg-sky-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-sky-900 sm:text-xs">
-                                            学び {{ cell.summary.learning_sets }}
-                                        </div>
+                                        <div v-if="currentStudyCategory === '英語' && cell.summary.english_sets > 0" class="whitespace-nowrap rounded bg-orange-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-orange-900 sm:text-xs">英語 {{ cell.summary.english_sets }}</div>
+                                        <div v-if="currentStudyCategory === '学び' && cell.summary.learning_sets > 0" class="whitespace-nowrap rounded bg-sky-50 px-1 py-0 text-left text-[9px] font-semibold leading-4 text-sky-900 sm:text-xs">学び {{ cell.summary.learning_sets }}</div>
                                     </div>
                                 </button>
                             </div>
@@ -824,147 +806,138 @@ const deleteStudyLog = () => {
                             <h3 class="text-sm font-bold text-gray-900">{{ selectedDayLabel }}</h3>
                             <div class="flex items-center gap-3">
                                 <p class="text-xs font-semibold text-gray-500">{{ selectedCurrentStudyDayLogs.length }}件</p>
-                                <button type="button" class="rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-bold text-white transition hover:bg-gray-700" @click="openStudyLogModal()">
-                                    記録を追加
-                                </button>
+                                <button type="button" class="rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-bold text-white transition hover:bg-gray-700" @click="openStudyLogModal()">記録を追加</button>
                             </div>
                         </div>
 
                         <div v-if="studyLogModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/45 px-4 py-5 sm:p-6" @click.self="closeStudyLogModal">
                             <form class="max-h-[calc(100dvh-2.5rem)] w-full overflow-y-auto rounded-2xl bg-white p-4 shadow-2xl sm:max-w-2xl sm:p-6" @submit.prevent="submitStudyLog">
-                            <div class="flex flex-wrap items-center justify-between gap-2">
-                                <div>
-                                    <p class="text-[11px] font-bold uppercase tracking-[0.16em]" :class="currentStudyTheme.labelClass">Study log</p>
-                                    <h3 class="mt-1 text-lg font-black text-gray-900">{{ selectedDayLabel }}に{{ currentStudyTheme.label }}を記録</h3>
-                                </div>
-                                <button type="button" class="rounded-lg p-2 text-gray-400 transition hover:bg-gray-100 hover:text-gray-700" aria-label="閉じる" @click="closeStudyLogModal">
-                                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
-                                </button>
-                            </div>
-
-                            <div class="mt-2 grid gap-2 md:grid-cols-[1fr_1fr_auto] md:items-end">
-                                <div v-if="currentStudyCategory === '英語'" class="block md:col-span-2">
-                                    <div class="flex items-center justify-between gap-2">
-                                        <span class="text-[11px] font-bold text-gray-500">洋書（任意）</span>
-                                        <Link :href="route('admin.englishBooks.index')" class="text-[11px] font-bold text-violet-600 transition hover:text-violet-800">
-                                            洋書管理
-                                        </Link>
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <div>
+                                        <p class="text-[11px] font-bold uppercase tracking-[0.16em]" :class="currentStudyTheme.labelClass">Study log</p>
+                                        <h3 class="mt-1 text-lg font-black text-gray-900">{{ selectedDayLabel }}に{{ currentStudyTheme.label }}を記録</h3>
                                     </div>
-
-                                    <div class="relative mt-1">
-                                        <select
-                                            v-model="studyLogForm.english_book_id"
-                                            class="w-full appearance-none rounded-xl border border-violet-100 bg-white px-4 py-3 pr-11 text-sm font-bold text-gray-800 shadow-sm outline-none transition focus:border-violet-300 focus:ring-4 focus:ring-violet-100"
-                                        >
-                                            <option value="">通常の英語学習</option>
-                                            <option
-                                                v-for="book in englishBooks"
-                                                :key="book.english_book_id"
-                                                :value="String(book.english_book_id)"
-                                            >
-                                                {{ book.title }}
-                                            </option>
-                                        </select>
-                                        <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-violet-500">
-                                            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" />
-                                            </svg>
-                                        </div>
-                                    </div>
-
-                                    <div v-if="englishBooks.length === 0" class="mt-2 rounded-lg border border-dashed border-violet-100 bg-violet-50/40 p-3 text-xs text-gray-500">
-                                        洋書を本棚に追加すると、本ごとに読書時間を分けて記録できます。
-                                        <Link :href="route('admin.englishBooks.catalog')" class="ml-1 font-bold text-violet-700 hover:text-violet-900">
-                                            本を追加する
-                                        </Link>
-                                    </div>
-                                    <p v-else class="mt-1 text-[11px] font-semibold text-gray-400">
-                                        洋書を選ぶと、その本の読書時間として集計します。
-                                    </p>
-                                    <span v-if="studyLogForm.errors.english_book_id" class="mt-1 block text-xs text-rose-600">
-                                        {{ studyLogForm.errors.english_book_id }}
-                                    </span>
-                                </div>
-
-                                <div v-if="currentStudyCategory === '学び'" class="block">
-                                    <span class="text-[11px] font-bold text-gray-500">分類</span>
-                                    <div class="mt-1 grid grid-cols-2 gap-1 rounded-lg border border-sky-100 bg-sky-50/80 p-1 shadow-sm">
-                                        <button
-                                            v-for="subcategory in learningSubcategories"
-                                            :key="subcategory.value"
-                                            type="button"
-                                            class="rounded-md px-3 py-2 text-sm font-bold transition"
-                                            :class="studyLogForm.subcategory === subcategory.value
-                                                ? 'bg-white text-sky-950 shadow-sm ring-1 ring-sky-100'
-                                                : 'text-sky-700 hover:bg-white/70'"
-                                            @click="studyLogForm.subcategory = subcategory.value"
-                                        >
-                                            {{ subcategory.label }}
-                                        </button>
-                                    </div>
-                                    <span v-if="studyLogForm.errors.subcategory" class="mt-1 block text-xs text-rose-600">
-                                        {{ studyLogForm.errors.subcategory }}
-                                    </span>
-                                </div>
-
-                                <div class="block">
-                                    <span class="text-[11px] font-bold text-gray-500">セット数</span>
-                                    <div class="mt-1 flex overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-                                        <button type="button" class="w-9 border-r border-gray-200 bg-gray-50 text-base font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="studyLogForm.set_count <= 1" @click="adjustStudySetCount(-1)">
-                                            -
-                                        </button>
-                                        <input v-model.number="studyLogForm.set_count" type="number" min="1" max="96" step="1" class="w-full border-0 py-1.5 text-center text-sm font-semibold shadow-none focus:border-0 focus:ring-0" @blur="setStudySetCount(studyLogForm.set_count)" />
-                                        <button type="button" class="w-9 border-l border-gray-200 bg-gray-50 text-base font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="studyLogForm.set_count >= 96" @click="adjustStudySetCount(1)">
-                                            +
-                                        </button>
-                                    </div>
-                                    <div class="mt-1.5 grid grid-cols-5 gap-1.5">
-                                        <button
-                                            v-for="count in [2, 4, 6, 8, 10]"
-                                            :key="count"
-                                            type="button"
-                                            class="rounded-md border px-2 py-1.5 text-xs font-semibold transition"
-                                            :class="studyLogForm.set_count === count ? 'border-gray-900 bg-gray-900 text-white' : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                                            @click="setStudySetCount(count)"
-                                        >
-                                            {{ count }}
-                                        </button>
-                                    </div>
-                                    <span v-if="studyLogForm.errors.set_count" class="mt-1 block text-xs text-rose-600">
-                                        {{ studyLogForm.errors.set_count }}
-                                    </span>
-                                    <span v-if="studyLogForm.errors.studied_on" class="mt-1 block text-xs text-rose-600">
-                                        {{ studyLogForm.errors.studied_on }}
-                                    </span>
-                                </div>
-
-                                <div class="flex items-end">
-                                    <button type="submit" class="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto" :disabled="studyLogForm.processing">
-                                        {{ studyLogForm.processing ? "保存中" : "保存" }}
+                                    <button type="button" class="rounded-lg p-2 text-gray-400 transition hover:bg-gray-100 hover:text-gray-700" aria-label="閉じる" @click="closeStudyLogModal">
+                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
                                     </button>
                                 </div>
-                            </div>
 
-                            <div class="mt-3 flex items-center justify-between rounded-lg border px-3 py-2" :class="currentStudyTheme.colorClass">
-                                <p class="text-[11px] font-bold" :class="currentStudyTheme.labelClass">{{ currentStudyTheme.label }}</p>
-                                <p class="text-sm font-bold">{{ selectedCurrentStudyDateSetCount }}セット</p>
-                            </div>
+                                <div class="mt-2 grid gap-2 md:grid-cols-[1fr_1fr_auto] md:items-end">
+                                    <div v-if="currentStudyCategory === '英語'" class="block md:col-span-2">
+                                        <div class="flex items-center justify-between gap-2">
+                                            <span class="text-[11px] font-bold text-gray-500">洋書（任意）</span>
+                                            <Link :href="route('admin.englishBooks.index')" class="text-[11px] font-bold text-violet-600 transition hover:text-violet-800"> 洋書管理 </Link>
+                                        </div>
+
+                                        <div class="relative mt-1">
+                                            <select
+                                                v-model="studyLogForm.english_book_id"
+                                                class="w-full appearance-none rounded-xl border border-violet-100 bg-white px-4 py-3 pr-11 text-sm font-bold text-gray-800 shadow-sm outline-none transition focus:border-violet-300 focus:ring-4 focus:ring-violet-100"
+                                            >
+                                                <option value="">通常の英語学習</option>
+                                                <option v-for="book in englishBooks" :key="book.english_book_id" :value="String(book.english_book_id)">
+                                                    {{ book.title }}
+                                                </option>
+                                            </select>
+                                            <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-violet-500">
+                                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <div v-if="englishBooks.length === 0" class="mt-2 rounded-lg border border-dashed border-violet-100 bg-violet-50/40 p-3 text-xs text-gray-500">
+                                            洋書を本棚に追加すると、本ごとに読書時間を分けて記録できます。
+                                            <Link :href="route('admin.englishBooks.catalog')" class="ml-1 font-bold text-violet-700 hover:text-violet-900"> 本を追加する </Link>
+                                        </div>
+                                        <p v-else class="mt-1 text-[11px] font-semibold text-gray-400">洋書を選ぶと、その本の読書時間として集計します。</p>
+                                        <span v-if="studyLogForm.errors.english_book_id" class="mt-1 block text-xs text-rose-600">
+                                            {{ studyLogForm.errors.english_book_id }}
+                                        </span>
+                                    </div>
+
+                                    <div v-if="currentStudyCategory === '学び'" class="block">
+                                        <span class="text-[11px] font-bold text-gray-500">分類</span>
+                                        <div class="mt-1 grid grid-cols-2 gap-1 rounded-lg border border-sky-100 bg-sky-50/80 p-1 shadow-sm">
+                                            <button
+                                                v-for="subcategory in learningSubcategories"
+                                                :key="subcategory.value"
+                                                type="button"
+                                                class="rounded-md px-3 py-2 text-sm font-bold transition"
+                                                :class="studyLogForm.subcategory === subcategory.value ? 'bg-white text-sky-950 shadow-sm ring-1 ring-sky-100' : 'text-sky-700 hover:bg-white/70'"
+                                                @click="studyLogForm.subcategory = subcategory.value"
+                                            >
+                                                {{ subcategory.label }}
+                                            </button>
+                                        </div>
+                                        <span v-if="studyLogForm.errors.subcategory" class="mt-1 block text-xs text-rose-600">
+                                            {{ studyLogForm.errors.subcategory }}
+                                        </span>
+                                    </div>
+
+                                    <div class="block">
+                                        <span class="text-[11px] font-bold text-gray-500">セット数</span>
+                                        <div class="mt-1 flex overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+                                            <button
+                                                type="button"
+                                                class="w-9 border-r border-gray-200 bg-gray-50 text-base font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
+                                                :disabled="studyLogForm.set_count <= 1"
+                                                @click="adjustStudySetCount(-1)"
+                                            >
+                                                -
+                                            </button>
+                                            <input v-model.number="studyLogForm.set_count" type="number" min="1" max="96" step="1" class="w-full border-0 py-1.5 text-center text-sm font-semibold shadow-none focus:border-0 focus:ring-0" @blur="setStudySetCount(studyLogForm.set_count)" />
+                                            <button
+                                                type="button"
+                                                class="w-9 border-l border-gray-200 bg-gray-50 text-base font-semibold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
+                                                :disabled="studyLogForm.set_count >= 96"
+                                                @click="adjustStudySetCount(1)"
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                        <div class="mt-1.5 grid grid-cols-5 gap-1.5">
+                                            <button
+                                                v-for="count in [2, 4, 6, 8, 10]"
+                                                :key="count"
+                                                type="button"
+                                                class="rounded-md border px-2 py-1.5 text-xs font-semibold transition"
+                                                :class="studyLogForm.set_count === count ? 'border-gray-900 bg-gray-900 text-white' : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
+                                                @click="setStudySetCount(count)"
+                                            >
+                                                {{ count }}
+                                            </button>
+                                        </div>
+                                        <span v-if="studyLogForm.errors.set_count" class="mt-1 block text-xs text-rose-600">
+                                            {{ studyLogForm.errors.set_count }}
+                                        </span>
+                                        <span v-if="studyLogForm.errors.studied_on" class="mt-1 block text-xs text-rose-600">
+                                            {{ studyLogForm.errors.studied_on }}
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-end">
+                                        <button
+                                            type="submit"
+                                            class="inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
+                                            :disabled="studyLogForm.processing"
+                                        >
+                                            {{ studyLogForm.processing ? "保存中" : "保存" }}
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3 flex items-center justify-between rounded-lg border px-3 py-2" :class="currentStudyTheme.colorClass">
+                                    <p class="text-[11px] font-bold" :class="currentStudyTheme.labelClass">{{ currentStudyTheme.label }}</p>
+                                    <p class="text-sm font-bold">{{ selectedCurrentStudyDateSetCount }}セット</p>
+                                </div>
                             </form>
                         </div>
 
                         <div v-if="selectedCurrentStudyDayLogs.length > 0" class="mt-3 space-y-2">
-                            <div
-                                v-for="log in selectedCurrentStudyDayLogs"
-                                :key="log.id"
-                                class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2"
-                            >
+                            <div v-for="log in selectedCurrentStudyDayLogs" :key="log.id" class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2">
                                 <div>
-                                    <p
-                                        class="text-sm font-bold"
-                                        :class="log.category === '英語' ? 'text-orange-900' : 'text-sky-900'"
-                                    >
-                                        {{ displayStudyLogLabel(log) }} {{ log.set_count }}セット
-                                    </p>
+                                    <p class="text-sm font-bold" :class="log.category === '英語' ? 'text-orange-900' : 'text-sky-900'">{{ displayStudyLogLabel(log) }} {{ log.set_count }}セット</p>
                                     <p class="mt-0.5 text-xs text-gray-500">{{ log.duration }}</p>
                                 </div>
                                 <button
@@ -980,7 +953,6 @@ const deleteStudyLog = () => {
                         <p v-else class="mt-3 text-sm text-gray-500">この日の記録はありません。</p>
                     </div>
                 </section>
-
             </div>
 
             <section v-if="activeTab === 'english' && activeStudyTab === 'books'" class="mb-6 rounded-xl border border-violet-100 bg-gradient-to-br from-violet-50/80 via-white to-gray-50 p-3 shadow-sm sm:p-5">
@@ -990,12 +962,8 @@ const deleteStudyLog = () => {
                         <p class="mt-1 text-sm text-gray-500">洋書ごとの読書記録を確認し、そのまま英語学習を記録できます。</p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <Link :href="route('admin.englishBooks.index')" class="inline-flex items-center justify-center rounded-lg border border-violet-100 bg-white px-3 py-2 text-xs font-bold text-violet-700 transition hover:bg-violet-50">
-                            本棚を見る
-                        </Link>
-                        <Link :href="route('admin.englishBooks.catalog')" class="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50">
-                            本を追加
-                        </Link>
+                        <Link :href="route('admin.englishBooks.index')" class="inline-flex items-center justify-center rounded-lg border border-violet-100 bg-white px-3 py-2 text-xs font-bold text-violet-700 transition hover:bg-violet-50"> 本棚を見る </Link>
+                        <Link :href="route('admin.englishBooks.catalog')" class="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:bg-gray-50"> 本を追加 </Link>
                     </div>
                 </div>
 
@@ -1017,23 +985,15 @@ const deleteStudyLog = () => {
                             </div>
                             <p class="text-[11px] font-semibold text-gray-400">{{ book.log_count }}回記録</p>
                         </div>
-                        <p class="mt-2 text-[11px] leading-5 text-gray-500">
-                            開始 {{ formatBookDateLabel(book.started_on) }} / 読了 {{ formatBookDateLabel(book.finished_on) }}
-                        </p>
-                        <button
-                            type="button"
-                            class="mt-3 inline-flex w-full items-center justify-center rounded-lg border border-violet-100 bg-violet-50 px-3 py-2 text-xs font-bold text-violet-700 transition hover:bg-violet-100"
-                            @click="recordWithEnglishBook(book.english_book_id)"
-                        >
+                        <p class="mt-2 text-[11px] leading-5 text-gray-500">開始 {{ formatBookDateLabel(book.started_on) }} / 読了 {{ formatBookDateLabel(book.finished_on) }}</p>
+                        <button type="button" class="mt-3 inline-flex w-full items-center justify-center rounded-lg border border-violet-100 bg-violet-50 px-3 py-2 text-xs font-bold text-violet-700 transition hover:bg-violet-100" @click="recordWithEnglishBook(book.english_book_id)">
                             この本で記録
                         </button>
                     </article>
                 </div>
                 <div v-else class="mt-4 rounded-lg border border-dashed border-violet-100 bg-white px-3 py-3 text-sm text-gray-500">
                     洋書の本棚に登録すると、本ごとの読書時間を集計できます。
-                    <Link :href="route('admin.englishBooks.catalog')" class="ml-2 font-bold text-violet-700 hover:text-violet-900">
-                        本を追加する
-                    </Link>
+                    <Link :href="route('admin.englishBooks.catalog')" class="ml-2 font-bold text-violet-700 hover:text-violet-900"> 本を追加する </Link>
                 </div>
             </section>
 
@@ -1044,9 +1004,7 @@ const deleteStudyLog = () => {
                         :key="tab.key"
                         type="button"
                         class="border-r border-gray-200 px-2 py-2 transition last:border-r-0 sm:px-5"
-                        :class="activeExerciseTab === tab.key
-                            ? 'bg-gray-900 text-white'
-                            : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'"
+                        :class="activeExerciseTab === tab.key ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'"
                         @click="activeExerciseTab = tab.key"
                     >
                         {{ tab.label }}
@@ -1064,9 +1022,7 @@ const deleteStudyLog = () => {
                                 <p class="text-[11px] font-bold text-violet-700">連続記録</p>
                                 <p class="mt-1 text-2xl font-black text-violet-950">{{ exerciseStats.streak_count }}日</p>
                             </div>
-                            <p v-if="exerciseStats.streak_until" class="pb-1 text-[11px] font-semibold text-violet-500">
-                                {{ String(exerciseStats.streak_until).replaceAll("-", "/") }} まで
-                            </p>
+                            <p v-if="exerciseStats.streak_until" class="pb-1 text-[11px] font-semibold text-violet-500">{{ String(exerciseStats.streak_until).replaceAll("-", "/") }} まで</p>
                         </div>
                     </div>
                     <div class="grid gap-2 sm:grid-cols-3">
@@ -1096,21 +1052,12 @@ const deleteStudyLog = () => {
                             >
                                 前
                             </button>
-                            <select
-                                :value="selectedExerciseMonth"
-                                class="border-0 py-2 text-center text-sm font-bold text-gray-900 shadow-none focus:border-0 focus:ring-0"
-                                @change="setExerciseMonth($event.target.value)"
-                            >
+                            <select :value="selectedExerciseMonth" class="border-0 py-2 text-center text-sm font-bold text-gray-900 shadow-none focus:border-0 focus:ring-0" @change="setExerciseMonth($event.target.value)">
                                 <option v-for="month in exerciseMonthOptions" :key="month.value" :value="month.value">
                                     {{ month.label }}
                                 </option>
                             </select>
-                            <button
-                                type="button"
-                                class="border-l border-gray-200 bg-gray-50 px-2 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300"
-                                :disabled="selectedExerciseMonthIndex <= 0"
-                                @click="moveExerciseMonth(-1)"
-                            >
+                            <button type="button" class="border-l border-gray-200 bg-gray-50 px-2 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:text-gray-300" :disabled="selectedExerciseMonthIndex <= 0" @click="moveExerciseMonth(-1)">
                                 次
                             </button>
                         </div>
@@ -1123,29 +1070,11 @@ const deleteStudyLog = () => {
                             </div>
                         </div>
                         <div class="grid grid-cols-7 divide-x divide-y divide-gray-100 bg-white text-[10px] sm:text-xs">
-                            <div
-                                v-for="cell in exerciseCalendarCells"
-                                :key="cell.key"
-                                class="h-[3.75rem] p-0.5 sm:h-[4.5rem] sm:p-1.5"
-                                :class="[
-                                    cell.empty ? 'bg-gray-50/60' : 'bg-white',
-                                    selectedExerciseDay === cell.date ? 'bg-gray-100 shadow-[inset_0_0_0_1px_rgba(107,114,128,0.28)]' : '',
-                                ]"
-                            >
-                                <button
-                                    v-if="!cell.empty"
-                                    type="button"
-                                    class="flex h-full w-full flex-col items-start justify-start overflow-hidden rounded text-left transition hover:bg-gray-50"
-                                    @click="openExerciseLogModal(cell.date)"
-                                >
+                            <div v-for="cell in exerciseCalendarCells" :key="cell.key" class="h-[3.75rem] p-0.5 sm:h-[4.5rem] sm:p-1.5" :class="[cell.empty ? 'bg-gray-50/60' : 'bg-white', selectedExerciseDay === cell.date ? 'bg-gray-100 shadow-[inset_0_0_0_1px_rgba(107,114,128,0.28)]' : '']">
+                                <button v-if="!cell.empty" type="button" class="flex h-full w-full flex-col items-start justify-start overflow-hidden rounded text-left transition hover:bg-gray-50" @click="openExerciseLogModal(cell.date)">
                                     <div class="w-full text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
                                     <div v-if="cell.logs.length > 0" class="mt-0.5 w-full space-y-0.5">
-                                        <div
-                                            v-for="log in cell.logs"
-                                            :key="`exercise-cell-${log.id}`"
-                                            class="w-full truncate rounded px-0.5 py-0 text-left text-[7px] font-semibold leading-4 sm:px-1 sm:text-xs"
-                                            :class="exerciseActivityByValue[log.activity]?.badgeClass || 'bg-gray-50 text-gray-700'"
-                                        >
+                                        <div v-for="log in cell.logs" :key="`exercise-cell-${log.id}`" class="w-full truncate rounded px-0.5 py-0 text-left text-[7px] font-semibold leading-4 sm:px-1 sm:text-xs" :class="exerciseActivityByValue[log.activity]?.badgeClass || 'bg-gray-50 text-gray-700'">
                                             {{ log.activity }}
                                         </div>
                                     </div>
@@ -1159,56 +1088,52 @@ const deleteStudyLog = () => {
                             <h3 class="text-sm font-bold text-gray-900">{{ selectedExerciseDay.replaceAll("-", "/") }}</h3>
                             <div class="flex items-center gap-3">
                                 <p class="text-xs font-semibold text-gray-500">{{ selectedExerciseDayLogs.length }}件</p>
-                                <button type="button" class="rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-bold text-white transition hover:bg-gray-700" @click="openExerciseLogModal()">
-                                    記録を追加
-                                </button>
+                                <button type="button" class="rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-bold text-white transition hover:bg-gray-700" @click="openExerciseLogModal()">記録を追加</button>
                             </div>
                         </div>
 
                         <div v-if="exerciseLogModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/45 px-4 py-5 sm:p-6" @click.self="closeExerciseLogModal">
                             <form class="max-h-[calc(100dvh-2.5rem)] w-full overflow-y-auto rounded-2xl bg-white p-4 shadow-2xl sm:max-w-lg sm:p-6" @submit.prevent="submitExerciseLog">
-                            <div class="flex flex-wrap items-center justify-between gap-2">
-                                <div>
-                                    <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-600">Exercise log</p>
-                                    <h3 class="mt-1 text-lg font-black text-gray-900">{{ selectedExerciseDay.replaceAll("-", "/") }}に運動を記録</h3>
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <div>
+                                        <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-600">Exercise log</p>
+                                        <h3 class="mt-1 text-lg font-black text-gray-900">{{ selectedExerciseDay.replaceAll("-", "/") }}に運動を記録</h3>
+                                    </div>
+                                    <button type="button" class="rounded-lg p-2 text-gray-400 transition hover:bg-gray-100 hover:text-gray-700" aria-label="閉じる" @click="closeExerciseLogModal">
+                                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
+                                    </button>
                                 </div>
-                                <button type="button" class="rounded-lg p-2 text-gray-400 transition hover:bg-gray-100 hover:text-gray-700" aria-label="閉じる" @click="closeExerciseLogModal">
-                                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
-                                </button>
-                            </div>
-                            <div class="mt-2 grid grid-cols-3 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
+                                <div class="mt-2 grid grid-cols-3 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
+                                    <button
+                                        v-for="activity in exerciseActivities"
+                                        :key="activity.value"
+                                        type="button"
+                                        class="flex items-center justify-center gap-1.5 rounded-md px-0.5 py-2 text-[10px] font-bold leading-tight transition focus:outline-none focus:ring-2 focus:ring-gray-300 sm:px-3 sm:text-sm"
+                                        :class="exerciseLogForm.activity === activity.value ? activity.activeClass : activity.inactiveClass"
+                                        @click="exerciseLogForm.activity = activity.value"
+                                    >
+                                        <span class="hidden h-2 w-2 rounded-full min-[390px]:inline-block" :class="activity.accent"></span>
+                                        {{ activity.label }}
+                                    </button>
+                                </div>
+                                <span v-if="exerciseLogForm.errors.activity" class="mt-1 block text-xs text-rose-600">
+                                    {{ exerciseLogForm.errors.activity }}
+                                </span>
+                                <span v-if="exerciseLogForm.errors.exercised_on" class="mt-1 block text-xs text-rose-600">
+                                    {{ exerciseLogForm.errors.exercised_on }}
+                                </span>
                                 <button
-                                    v-for="activity in exerciseActivities"
-                                    :key="activity.value"
-                                    type="button"
-                                    class="flex items-center justify-center gap-1.5 rounded-md px-0.5 py-2 text-[10px] font-bold leading-tight transition focus:outline-none focus:ring-2 focus:ring-gray-300 sm:px-3 sm:text-sm"
-                                    :class="exerciseLogForm.activity === activity.value
-                                        ? activity.activeClass
-                                        : activity.inactiveClass"
-                                    @click="exerciseLogForm.activity = activity.value"
+                                    type="submit"
+                                    class="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                                    :disabled="exerciseLogForm.processing"
                                 >
-                                    <span class="hidden h-2 w-2 rounded-full min-[390px]:inline-block" :class="activity.accent"></span>
-                                    {{ activity.label }}
+                                    {{ exerciseLogForm.processing ? "保存中" : "実施で保存" }}
                                 </button>
-                            </div>
-                            <span v-if="exerciseLogForm.errors.activity" class="mt-1 block text-xs text-rose-600">
-                                {{ exerciseLogForm.errors.activity }}
-                            </span>
-                            <span v-if="exerciseLogForm.errors.exercised_on" class="mt-1 block text-xs text-rose-600">
-                                {{ exerciseLogForm.errors.exercised_on }}
-                            </span>
-                            <button type="submit" class="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto" :disabled="exerciseLogForm.processing">
-                                {{ exerciseLogForm.processing ? "保存中" : "実施で保存" }}
-                            </button>
                             </form>
                         </div>
 
                         <div v-if="selectedExerciseDayLogs.length > 0" class="mt-3 space-y-2">
-                            <div
-                                v-for="log in selectedExerciseDayLogs"
-                                :key="`exercise-log-${log.id}`"
-                                class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2"
-                            >
+                            <div v-for="log in selectedExerciseDayLogs" :key="`exercise-log-${log.id}`" class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2">
                                 <p class="text-sm font-bold text-gray-900">{{ log.activity }}</p>
                                 <button
                                     type="button"
@@ -1233,9 +1158,7 @@ const deleteStudyLog = () => {
                             <h2 class="mt-2 text-2xl font-black text-gray-950">返済管理</h2>
                             <p class="mt-2 text-sm leading-6 text-gray-500">返済日と金額を静的データで管理しています。</p>
                         </div>
-                        <div class="inline-flex w-fit items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-bold text-gray-500">
-                            {{ repaymentItems.length }}件返済
-                        </div>
+                        <div class="inline-flex w-fit items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-bold text-gray-500">{{ repaymentItems.length }}件返済</div>
                     </div>
 
                     <div class="mt-5 grid gap-3 sm:grid-cols-3">
@@ -1274,12 +1197,7 @@ const deleteStudyLog = () => {
                     </div>
 
                     <div class="mt-4 overflow-hidden rounded-2xl border border-gray-100">
-                        <div
-                            v-for="(item, index) in repaymentItems"
-                            :key="`${item.date}-${item.amount}`"
-                            class="grid grid-cols-[1fr_auto] items-center gap-4 border-b border-gray-100 bg-white px-4 py-3 last:border-b-0"
-                            :class="index % 2 === 1 ? 'bg-gray-50/60' : ''"
-                        >
+                        <div v-for="(item, index) in repaymentItems" :key="`${item.date}-${item.amount}`" class="grid grid-cols-[1fr_auto] items-center gap-4 border-b border-gray-100 bg-white px-4 py-3 last:border-b-0" :class="index % 2 === 1 ? 'bg-gray-50/60' : ''">
                             <div>
                                 <p class="text-sm font-black text-gray-900">{{ formatDateLabel(item.date) }}</p>
                                 <p class="mt-0.5 text-xs font-semibold text-gray-400">返済日</p>
@@ -1291,39 +1209,21 @@ const deleteStudyLog = () => {
             </section>
         </div>
 
-        <div
-            v-if="pendingDeleteLog"
-            class="fixed inset-0 z-50 flex items-end justify-center bg-gray-950/35 px-4 py-5 sm:items-center"
-            @click.self="closeDeleteStudyLogModal"
-        >
+        <div v-if="pendingDeleteLog" class="fixed inset-0 z-50 flex items-end justify-center bg-gray-950/35 px-4 py-5 sm:items-center" @click.self="closeDeleteStudyLogModal">
             <div class="w-full max-w-sm rounded-2xl border border-gray-100 bg-white p-5 shadow-2xl">
                 <div class="flex items-start gap-3">
-                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-50 text-sm font-bold text-rose-600">
-                        削
-                    </div>
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-50 text-sm font-bold text-rose-600">削</div>
                     <div class="min-w-0">
                         <h2 class="text-base font-bold text-gray-900">学習記録を削除</h2>
-                        <p class="mt-1 text-sm leading-6 text-gray-600">
-                            {{ pendingDeleteMessage }}を削除します。この操作は元に戻せません。
-                        </p>
+                        <p class="mt-1 text-sm leading-6 text-gray-600">{{ pendingDeleteMessage }}を削除します。この操作は元に戻せません。</p>
                     </div>
                 </div>
 
                 <div class="mt-5 grid grid-cols-2 gap-2">
-                    <button
-                        type="button"
-                        class="rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-bold text-gray-700 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
-                        :disabled="deleteStudyLogForm.processing"
-                        @click="closeDeleteStudyLogModal"
-                    >
+                    <button type="button" class="rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-bold text-gray-700 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60" :disabled="deleteStudyLogForm.processing" @click="closeDeleteStudyLogModal">
                         キャンセル
                     </button>
-                    <button
-                        type="button"
-                        class="rounded-lg bg-rose-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-rose-500 disabled:cursor-not-allowed disabled:opacity-60"
-                        :disabled="deleteStudyLogForm.processing"
-                        @click="deleteStudyLog"
-                    >
+                    <button type="button" class="rounded-lg bg-rose-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-rose-500 disabled:cursor-not-allowed disabled:opacity-60" :disabled="deleteStudyLogForm.processing" @click="deleteStudyLog">
                         {{ deleteStudyLogForm.processing ? "削除中" : "削除する" }}
                     </button>
                 </div>

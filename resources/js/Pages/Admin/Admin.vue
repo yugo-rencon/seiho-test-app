@@ -959,7 +959,7 @@ const peakHour2h = computed(() => {
                     :class="isActiveMenu('sales')
                         ? 'border-purple-200 bg-purple-50 text-purple-700'
                         : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                    @click="activeTab = 'sales'"
+                    @click="activeTab = 'sales'; salesTab = 'overview'"
                 >
                     売上分析
                 </button>

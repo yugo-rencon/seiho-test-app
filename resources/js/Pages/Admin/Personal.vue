@@ -50,10 +50,10 @@ const activeStudyTab = ref("daily");
 const activeExerciseTab = ref("daily");
 
 const tabs = [
-    { key: "english", label: "英語", description: "学習と洋書を記録", activeClass: "border-orange-200 bg-orange-50 text-orange-950 ring-orange-100", markerClass: "bg-orange-400" },
-    { key: "exercise", label: "運動", description: "毎日の活動を記録", activeClass: "border-emerald-200 bg-emerald-50 text-emerald-950 ring-emerald-100", markerClass: "bg-emerald-400" },
-    { key: "learning", label: "資格", description: "E資格の学習を記録", activeClass: "border-sky-200 bg-sky-50 text-sky-950 ring-sky-100", markerClass: "bg-sky-400" },
-    { key: "repayment", label: "返済", description: "返済計画を確認", activeClass: "border-violet-200 bg-violet-50 text-violet-950 ring-violet-100", markerClass: "bg-violet-400" },
+    { key: "english", label: "英語", activeClass: "border-orange-200 bg-orange-50 text-orange-950 ring-orange-100", markerClass: "bg-orange-400" },
+    { key: "exercise", label: "運動", activeClass: "border-emerald-200 bg-emerald-50 text-emerald-950 ring-emerald-100", markerClass: "bg-emerald-400" },
+    { key: "learning", label: "資格", activeClass: "border-sky-200 bg-sky-50 text-sky-950 ring-sky-100", markerClass: "bg-sky-400" },
+    { key: "repayment", label: "返済", activeClass: "border-violet-200 bg-violet-50 text-violet-950 ring-violet-100", markerClass: "bg-violet-400" },
 ];
 
 const studyTabs = [
@@ -670,13 +670,12 @@ const deleteStudyLog = () => {
 <template>
     <AdminLayout title="個人管理">
         <div class="mx-auto max-w-7xl px-3 py-6 sm:px-5 sm:py-8">
-            <div class="mb-6 rounded-2xl border border-gray-100 bg-gradient-to-br from-white via-white to-gray-50 px-4 py-4 shadow-sm sm:flex sm:items-end sm:justify-between sm:px-6 sm:py-5">
+            <div class="mb-5 rounded-2xl border border-gray-100 bg-gradient-to-br from-white via-white to-gray-50 px-4 py-3 shadow-sm sm:flex sm:items-center sm:justify-between sm:px-6 sm:py-4">
                 <div>
                     <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400">Personal Dashboard</p>
                     <h1 class="mt-1 text-2xl font-black tracking-tight text-gray-900">個人管理</h1>
-                    <p class="mt-1 text-sm text-gray-500">日々の記録を、ひとつずつ整える。</p>
                 </div>
-                <Link :href="route('admin.index')" class="mt-4 inline-flex shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:border-gray-300 hover:bg-gray-50 sm:mt-0 sm:px-4 sm:text-sm">管理画面に戻る</Link>
+                <Link :href="route('admin.index')" class="mt-3 inline-flex shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-gray-600 transition hover:border-gray-300 hover:bg-gray-50 sm:mt-0 sm:px-4 sm:text-sm">管理画面に戻る</Link>
             </div>
 
             <nav class="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4" aria-label="個人管理のカテゴリー">
@@ -694,7 +693,6 @@ const deleteStudyLog = () => {
                         <span class="h-2 w-2 rounded-full" :class="activeTab === tab.key ? tab.markerClass : 'bg-gray-300 group-hover:bg-gray-400'"></span>
                         {{ tab.label }}
                     </span>
-                    <span class="mt-1 block text-[11px] font-medium leading-4 opacity-70">{{ tab.description }}</span>
                 </button>
             </nav>
 

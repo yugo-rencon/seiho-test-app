@@ -959,7 +959,6 @@ const deleteStudyLog = () => {
                 <div class="flex flex-wrap items-center justify-between gap-3">
                     <div>
                         <h2 class="text-lg font-bold text-gray-900">洋書の読書時間</h2>
-                        <p class="mt-1 text-sm text-gray-500">洋書ごとの読書記録を確認し、そのまま英語学習を記録できます。</p>
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <Link :href="route('admin.englishBooks.index')" class="inline-flex items-center justify-center rounded-lg border border-violet-100 bg-white px-3 py-2 text-xs font-bold text-violet-700 transition hover:bg-violet-50"> 本棚を見る </Link>

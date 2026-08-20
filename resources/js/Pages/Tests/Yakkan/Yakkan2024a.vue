@@ -205,6 +205,7 @@ const subject = "2024年度 フォームA";
                     questionTitle="災害入院給付金の支払"
                     :relatedProblems="['2024a28', '2024b28', '2024c28']"
                     :contents="[
+                        // rev: 2026-08-21 確認済み
                         '正しい',
                         '正しい',
                         '180日 → 120日', //p175

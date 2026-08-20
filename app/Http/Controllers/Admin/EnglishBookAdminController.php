@@ -4,13 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\EnglishBook;
-use App\Models\EnglishBookShelf;
-use App\Models\EnglishVocabularyEntry;
 use App\Models\PersonalStudyLog;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -23,7 +20,7 @@ class EnglishBookAdminController extends Controller
 {
     public function index(Request $request): Response
     {
-        if (! Schema::hasTable('english_books') || ! Schema::hasTable('english_book_shelves')) {
+        if (! Schema::hasTable('english_books')) {
             return Inertia::render('Admin/EnglishBooks', [
                 'books' => collect(),
                 'stats' => [
@@ -35,7 +32,7 @@ class EnglishBookAdminController extends Controller
             ]);
         }
 
-        $shelves = EnglishBookShelf::with('book')->where('user_id', $request->user()->id)
+        $books = EnglishBook::query()
             ->orderByRaw("case status when 'reading' then 0 when 'want' then 1 else 2 end")->orderByDesc('finished_on')->get();
 
         $readingMinutesByBookId = [];
@@ -47,11 +44,11 @@ class EnglishBookAdminController extends Controller
             }
         }
 
-        return Inertia::render('Admin/EnglishBooks', ['books' => $shelves->map(fn ($shelf) => array_merge($this->shelfPayload($shelf), [
-            'reading_duration' => $this->formatDuration($readingMinutesByBookId[$shelf->english_book_id] ?? 0),
+        return Inertia::render('Admin/EnglishBooks', ['books' => $books->map(fn (EnglishBook $book) => array_merge($this->bookPayload($book), [
+            'reading_duration' => $this->formatDuration($readingMinutesByBookId[$book->id] ?? 0),
         ])), 'stats' => [
-            'finished_count' => $shelves->where('status', 'finished')->count(), 'reading_count' => $shelves->where('status', 'reading')->count(),
-            'want_count' => $shelves->where('status', 'want')->count(), 'total_words' => (int) $shelves->where('status', 'finished')->sum(fn ($shelf) => $shelf->book->word_count ?? 0),
+            'finished_count' => $books->where('status', 'finished')->count(), 'reading_count' => $books->where('status', 'reading')->count(),
+            'want_count' => $books->where('status', 'want')->count(), 'total_words' => (int) $books->where('status', 'finished')->sum('word_count'),
         ]]);
     }
 
@@ -61,10 +58,7 @@ class EnglishBookAdminController extends Controller
             return Inertia::render('Admin/EnglishBookCatalog', ['books' => collect()]);
         }
 
-        $shelfBookIds = Schema::hasTable('english_book_shelves')
-            ? EnglishBookShelf::where('user_id', $request->user()->id)->pluck('english_book_id')->all()
-            : [];
-        $books = EnglishBook::orderBy('title')->get()->map(fn ($book) => array_merge($this->bookPayload($book), ['on_shelf' => in_array($book->id, $shelfBookIds, true)]));
+        $books = EnglishBook::orderBy('title')->get()->map(fn (EnglishBook $book) => $this->bookPayload($book));
 
         return Inertia::render('Admin/EnglishBookCatalog', ['books' => $books]);
     }
@@ -87,126 +81,34 @@ class EnglishBookAdminController extends Controller
         return redirect()->route('admin.englishBooks.catalog');
     }
 
-    public function addToShelf(Request $request, EnglishBook $englishBook): RedirectResponse
+    public function show(EnglishBook $englishBook): Response { $logs = PersonalStudyLog::query()->where('category', '英語')->get()->filter(fn (PersonalStudyLog $log) => (int) data_get($log->raw_payload, 'english_book_id') === $englishBook->id); return Inertia::render('Admin/EnglishBookDetail', ['book' => array_merge($this->bookPayload($englishBook), ['reading_duration' => $this->formatDuration((int) $logs->sum('minutes')), 'reading_log_count' => $logs->count()])]); }
+    public function guide(EnglishBook $englishBook): Response
     {
-        EnglishBookShelf::firstOrCreate(['user_id' => $request->user()->id, 'english_book_id' => $englishBook->id], ['status' => 'want']);
-        return redirect()->route('admin.englishBooks.index');
-    }
-
-    public function vocabulary(Request $request): Response
-    {
-        $userId = $request->user()->id;
-        $books = EnglishBookShelf::with('book')->where('user_id', $userId)->orderBy('created_at')->get()
-            ->map(fn (EnglishBookShelf $shelf) => ['id' => $shelf->english_book_id, 'title' => $shelf->book->title]);
-        $entries = EnglishVocabularyEntry::with('book')->where('user_id', $userId)->latest()->get()
-            ->map(fn (EnglishVocabularyEntry $entry) => array_merge($entry->only(['id', 'english_book_id', 'word', 'meaning', 'note']), [
-                'book_title' => $entry->book?->title,
-                'created_at' => $entry->created_at->format('Y-m-d'),
-            ]));
-
-        return Inertia::render('Admin/EnglishVocabulary', ['books' => $books, 'entries' => $entries]);
-    }
-
-    public function storeVocabulary(Request $request): RedirectResponse
-    {
-        $data = $request->validate([
-            'english_book_id' => ['nullable', 'integer', 'exists:english_books,id'],
-            'word' => ['required', 'string', 'max:255'],
-            'meaning' => ['required', 'string', 'max:500'],
-            'note' => ['nullable', 'string', 'max:3000'],
-        ]);
-        if (! empty($data['english_book_id'])) {
-            abort_unless(EnglishBookShelf::where('user_id', $request->user()->id)->where('english_book_id', $data['english_book_id'])->exists(), 403);
-        }
-        EnglishVocabularyEntry::create(array_merge($data, ['user_id' => $request->user()->id]));
-
-        return back();
-    }
-
-    public function translateVocabulary(Request $request)
-    {
-        $text = $request->validate(['text' => ['required', 'string', 'max:500']])['text'];
-        $authKey = config('services.deepl.auth_key');
-        abort_unless($authKey, 503, '翻訳サービスの設定がありません。');
-
-        $response = Http::withHeaders(['Authorization' => "DeepL-Auth-Key {$authKey}"])
-            ->asForm()->timeout(10)->post('https://api-free.deepl.com/v2/translate', [
-                'text' => $text,
-                'source_lang' => 'EN',
-                'target_lang' => 'JA',
-            ]);
-
-        if ($response->failed()) {
-            return response()->json(['message' => '翻訳を取得できませんでした。時間をおいてもう一度お試しください。'], 422);
-        }
-
-        return response()->json(['translation' => data_get($response->json(), 'translations.0.text')]);
-    }
-
-    public function destroyVocabulary(Request $request, EnglishVocabularyEntry $vocabularyEntry): RedirectResponse
-    {
-        abort_unless($vocabularyEntry->user_id === $request->user()->id, 404);
-        $vocabularyEntry->delete();
-
-        return back();
-    }
-
-    public function updateVocabulary(Request $request, EnglishVocabularyEntry $vocabularyEntry): RedirectResponse
-    {
-        abort_unless($vocabularyEntry->user_id === $request->user()->id, 404);
-        $data = $request->validate([
-            'english_book_id' => ['nullable', 'integer', 'exists:english_books,id'],
-            'word' => ['required', 'string', 'max:255'],
-            'meaning' => ['required', 'string', 'max:500'],
-            'note' => ['nullable', 'string', 'max:3000'],
-        ]);
-        if (! empty($data['english_book_id'])) {
-            abort_unless(EnglishBookShelf::where('user_id', $request->user()->id)->where('english_book_id', $data['english_book_id'])->exists(), 403);
-        }
-        $vocabularyEntry->update($data);
-
-        return back();
-    }
-
-    public function show(Request $request, EnglishBookShelf $englishBookShelf): Response { $shelf = $this->ownedShelf($request, $englishBookShelf); $logs = PersonalStudyLog::query()->where('category', '英語')->get()->filter(fn (PersonalStudyLog $log) => (int) data_get($log->raw_payload, 'english_book_id') === $shelf->english_book_id); return Inertia::render('Admin/EnglishBookDetail', ['book' => array_merge($this->shelfPayload($shelf), ['reading_duration' => $this->formatDuration((int) $logs->sum('minutes')), 'reading_log_count' => $logs->count()])]); }
-    public function guide(Request $request, EnglishBookShelf $englishBookShelf): Response
-    {
-        $shelf = $this->ownedShelf($request, $englishBookShelf);
-        $path = base_path("content/books/{$shelf->book->slug}.md");
+        $path = base_path("content/books/{$englishBook->slug}.md");
         abort_unless(is_file($path), 404);
         $converter = new CommonMarkConverter(['html_input' => 'strip', 'allow_unsafe_links' => false]);
 
-        $vocabularyEntries = EnglishVocabularyEntry::query()
-            ->where('user_id', $request->user()->id)
-            ->where('english_book_id', $shelf->english_book_id)
-            ->latest()
-            ->get()
-            ->map(fn (EnglishVocabularyEntry $entry) => $entry->only(['id', 'word', 'meaning', 'note']));
-
         return Inertia::render('Admin/EnglishBookGuide', [
-            'book' => $this->shelfPayload($shelf),
+            'book' => $this->bookPayload($englishBook),
             'guideHtml' => (string) $converter->convert(file_get_contents($path)),
-            'vocabularyEntries' => $vocabularyEntries,
         ]);
     }
-    public function edit(Request $request, EnglishBookShelf $englishBookShelf): Response { return Inertia::render('Admin/EnglishBookForm', ['book' => $this->shelfPayload($this->ownedShelf($request, $englishBookShelf))]); }
+    public function edit(EnglishBook $englishBook): Response { return Inertia::render('Admin/EnglishBookForm', ['book' => $this->bookPayload($englishBook)]); }
 
-    public function update(Request $request, EnglishBookShelf $englishBookShelf): RedirectResponse
+    public function update(Request $request, EnglishBook $englishBook): RedirectResponse
     {
-        $this->ownedShelf($request, $englishBookShelf)->update($this->shelfValidated($request));
+        $englishBook->update($this->recordValidated($request));
         return redirect()->route('admin.englishBooks.index');
     }
 
-    public function destroy(Request $request, EnglishBookShelf $englishBookShelf): RedirectResponse { $this->ownedShelf($request, $englishBookShelf)->delete(); return back(); }
+    public function destroy(EnglishBook $englishBook): RedirectResponse { $englishBook->delete(); return back(); }
     public function cover(EnglishBook $englishBook): StreamedResponse { abort_unless($englishBook->cover_path && Storage::disk('public')->exists($englishBook->cover_path), 404); return Storage::disk('public')->response($englishBook->cover_path); }
 
-    private function ownedShelf(Request $request, EnglishBookShelf $shelf): EnglishBookShelf { abort_unless($shelf->user_id === $request->user()->id, 404); return $shelf->load('book'); }
     private function formatDuration(int $minutes): string { return $minutes >= 60 ? intdiv($minutes, 60) . '時間' . ($minutes % 60 ? ($minutes % 60) . '分' : '') : $minutes . '分'; }
-    private function bookPayload(EnglishBook $book): array { return array_merge($book->only(['id', 'title', 'slug', 'author', 'cover_url', 'amazon_url', 'cover_path', 'difficulty', 'word_count', 'page_count']), ['cover_image_url' => $book->cover_path ? route('admin.englishBooks.cover', $book) : $book->cover_url, 'has_guide' => is_file(base_path("content/books/{$book->slug}.md"))]); }
-    private function shelfPayload(EnglishBookShelf $shelf): array { return array_merge($this->bookPayload($shelf->book), $shelf->only(['status', 'rating', 'memo']), ['id' => $shelf->id, 'english_book_id' => $shelf->book->id, 'started_on' => $shelf->started_on?->format('Y-m-d'), 'finished_on' => $shelf->finished_on?->format('Y-m-d')]); }
+    private function bookPayload(EnglishBook $book): array { return array_merge($book->only(['id', 'title', 'slug', 'author', 'genre', 'cover_url', 'amazon_url', 'cover_path', 'difficulty', 'word_count', 'page_count', 'status', 'interest_rating', 'recommendation_rating', 'book_overview', 'english_difficulty_note', 'memo']), ['started_on' => $book->started_on?->format('Y-m-d'), 'finished_on' => $book->finished_on?->format('Y-m-d'), 'cover_image_url' => $book->cover_path ? route('admin.englishBooks.cover', $book) : $book->cover_url, 'has_guide' => is_file(base_path("content/books/{$book->slug}.md"))]); }
 
-    private function bookValidated(Request $request): array { $data = $request->validate(['title' => ['required', 'string', 'max:255'], 'author' => ['nullable', 'string', 'max:255'], 'cover_url' => ['nullable', 'url', 'max:2048'], 'amazon_url' => ['nullable', 'url', 'max:2048'], 'cover_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'], 'difficulty' => ['nullable', 'integer', 'between:1,5'], 'word_count' => ['nullable', 'integer', 'min:0', 'max:9999999'], 'page_count' => ['nullable', 'integer', 'min:1', 'max:9999']]); unset($data['cover_image']); if (! $request->route('englishBook')) $data['slug'] = $this->uniqueSlug($data['title'], null); return $data; }
+    private function bookValidated(Request $request): array { $data = $request->validate(['title' => ['required', 'string', 'max:255'], 'author' => ['nullable', 'string', 'max:255'], 'genre' => ['nullable', 'string', 'max:50'], 'cover_url' => ['nullable', 'url', 'max:2048'], 'amazon_url' => ['nullable', 'url', 'max:2048'], 'cover_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'], 'word_count' => ['nullable', 'integer', 'min:0', 'max:9999999'], 'page_count' => ['nullable', 'integer', 'min:1', 'max:9999']]); unset($data['cover_image']); if (! $request->route('englishBook')) $data['slug'] = $this->uniqueSlug($data['title'], null); return $data; }
     private function uniqueSlug(string $title, ?EnglishBook $currentBook): string { $base = Str::slug($title) ?: 'book-'.Str::lower(Str::random(8)); $slug = $base; $suffix = 2; while (EnglishBook::where('slug', $slug)->when($currentBook, fn ($query) => $query->whereKeyNot($currentBook->id))->exists()) { $slug = "{$base}-{$suffix}"; $suffix += 1; } return $slug; }
-    private function shelfValidated(Request $request): array { return $request->validate(['status' => ['required', 'in:want,reading,finished'], 'started_on' => ['nullable', 'date_format:Y-m-d'], 'finished_on' => ['nullable', 'date_format:Y-m-d', 'after_or_equal:started_on'], 'rating' => ['nullable', 'integer', 'between:1,5'], 'memo' => ['nullable', 'string', 'max:5000']]); }
+    private function recordValidated(Request $request): array { return $request->validate(['status' => ['required', 'in:want,reading,finished'], 'started_on' => ['nullable', 'date_format:Y-m-d'], 'finished_on' => ['nullable', 'date_format:Y-m-d', 'after_or_equal:started_on'], 'difficulty' => ['nullable', 'numeric', 'between:1,5', 'decimal:1'], 'interest_rating' => ['nullable', 'integer', 'between:1,5'], 'recommendation_rating' => ['nullable', 'integer', 'between:1,5'], 'book_overview' => ['nullable', 'string', 'max:1000'], 'english_difficulty_note' => ['nullable', 'string', 'max:1000'], 'memo' => ['nullable', 'string', 'max:2000']]); }
     private function storeCover(Request $request): ?string { return $request->hasFile('cover_image') ? $request->file('cover_image')->store('english-books', 'public') : null; }
 }

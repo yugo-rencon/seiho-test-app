@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\EnglishBook;
-use App\Models\EnglishBookShelf;
 use App\Models\PersonalExerciseLog;
 use App\Models\PersonalStudyLog;
 use Illuminate\Http\RedirectResponse;
@@ -23,17 +22,15 @@ class PersonalAdminController extends Controller
             ->orderByDesc('studied_on')
             ->get();
 
-        $englishBookShelves = EnglishBookShelf::query()
-            ->with('book:id,title,author')
-            ->where('user_id', $request->user()->id)
+        $englishBookRecords = EnglishBook::query()
             ->orderByRaw("case status when 'reading' then 0 when 'want' then 1 when 'finished' then 2 else 3 end")
             ->orderByDesc('finished_on')
             ->orderBy('id')
             ->get();
 
-        $englishBookTitleById = $englishBookShelves
-            ->mapWithKeys(fn (EnglishBookShelf $shelf) => [
-                $shelf->english_book_id => $shelf->book?->title,
+        $englishBookTitleById = $englishBookRecords
+            ->mapWithKeys(fn (EnglishBook $book) => [
+                $book->id => $book->title,
             ])
             ->filter();
 
@@ -50,22 +47,22 @@ class PersonalAdminController extends Controller
             $englishBookLogCountsById[$englishBookId] = ($englishBookLogCountsById[$englishBookId] ?? 0) + 1;
         }
 
-        $englishBooks = $englishBookShelves
-            ->map(function (EnglishBookShelf $shelf) use ($englishBookMinutesById, $englishBookLogCountsById) {
-                $minutes = $englishBookMinutesById[$shelf->english_book_id] ?? 0;
+        $englishBooks = $englishBookRecords
+            ->map(function (EnglishBook $book) use ($englishBookMinutesById, $englishBookLogCountsById) {
+                $minutes = $englishBookMinutesById[$book->id] ?? 0;
 
                 return [
-                    'id' => $shelf->id,
-                    'english_book_id' => $shelf->english_book_id,
-                    'title' => $shelf->book?->title ?? 'タイトル未設定',
-                    'author' => $shelf->book?->author,
-                    'status' => $shelf->status,
-                    'status_label' => $this->englishBookStatusLabel($shelf->status),
-                    'started_on' => $shelf->started_on?->format('Y-m-d'),
-                    'finished_on' => $shelf->finished_on?->format('Y-m-d'),
+                    'id' => $book->id,
+                    'english_book_id' => $book->id,
+                    'title' => $book->title,
+                    'author' => $book->author,
+                    'status' => $book->status,
+                    'status_label' => $this->englishBookStatusLabel($book->status),
+                    'started_on' => $book->started_on?->format('Y-m-d'),
+                    'finished_on' => $book->finished_on?->format('Y-m-d'),
                     'total_minutes' => $minutes,
                     'total_duration' => $this->formatDuration($minutes),
-                    'log_count' => $englishBookLogCountsById[$shelf->english_book_id] ?? 0,
+                    'log_count' => $englishBookLogCountsById[$book->id] ?? 0,
                 ];
             })
             ->values();
@@ -252,7 +249,7 @@ class PersonalAdminController extends Controller
         if ($validated['category'] === '英語' && !empty($validated['english_book_id'])) {
             $englishBookId = (int) $validated['english_book_id'];
             $englishBook = EnglishBook::query()
-                ->select(['id', 'title'])
+                ->select(['id', 'title', 'status', 'started_on'])
                 ->findOrFail($englishBookId);
         }
 
@@ -261,24 +258,12 @@ class PersonalAdminController extends Controller
             '英語' => $englishBookId ? "洋書:{$englishBookId}" : '',
         };
 
-        DB::transaction(function () use ($request, $validated, $studiedOn, $setCount, $minutes, $subcategory, $englishBook, $englishBookId) {
+        DB::transaction(function () use ($validated, $studiedOn, $setCount, $minutes, $subcategory, $englishBook, $englishBookId) {
             if ($englishBookId) {
-                $shelf = EnglishBookShelf::query()
-                    ->firstOrCreate(
-                        [
-                            'user_id' => $request->user()->id,
-                            'english_book_id' => $englishBookId,
-                        ],
-                        [
-                            'status' => 'reading',
-                            'started_on' => $studiedOn,
-                        ],
-                    );
-
-                if (!$shelf->wasRecentlyCreated && $shelf->status === 'want') {
-                    $shelf->update([
+                if ($englishBook->status === 'want') {
+                    $englishBook->update([
                         'status' => 'reading',
-                        'started_on' => $shelf->started_on ?: $studiedOn,
+                        'started_on' => $englishBook->started_on ?: $studiedOn,
                     ]);
                 }
             }

@@ -243,6 +243,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-20 確認済み
                             questionTitle: '生命保険契約等に対する法の適用',
                             relatedProblems: ['2025b31'],
                             content: '営利保険 → 相互保険', //p5

@@ -237,10 +237,11 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-20 確認済み
                             questionTitle: '生命保険契約等に対する法の適用',
                             relatedProblems: ['2022a31'],
-                            content: '営利保険 → 相互保険',
-                        }, //31 p5
+                            content: '営利保険 → 相互保険', //p5
+                        }, //31
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '契約者保護のための法律',

@@ -271,10 +271,11 @@ const subject = "2024年度 フォームC";
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-20 確認済み
                             questionTitle: '災害入院特約と疾病入院特約',
                             relatedProblems: ['2024a37', '2024b37', '2024c37'],
-                            content: '4日不担保等の免責規定が適用される → 適用されない',
-                        }, //37 p178
+                            content: '４日不担保等の免責規定が[[適用されない]]。', //p179
+                        }, //37
                         {
                             questionTitle: '保険契約者への貸付',
                             relatedProblems: ['2024c38'],

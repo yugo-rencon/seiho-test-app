@@ -264,10 +264,11 @@ const subject = "2020年度 フォームA";
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-20 確認済み
                             questionTitle: '災害入院特約と疾病入院特約',
                             relatedProblems: ['2020a36'],
-                            content: '4日不担保等の免責規定が適用される → 適用されない',
-                        }, //36 p178
+                            content: '４日不担保等の免責規定が[[適用されない]]。', //p179
+                        }, //36
                         {
                             questionTitle: '定款の変更',
                             relatedProblems: ['2020a37'],

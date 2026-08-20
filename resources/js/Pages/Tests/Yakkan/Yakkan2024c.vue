@@ -212,6 +212,7 @@ const subject = "2024年度 フォームC";
                     questionTitle="保険持株会社"
                     :relatedProblems="['2024c29']"
                     :contents="[
+                        // rev: 2026-08-20 確認済み
                         '正しい',
                         '正しい',
                         '金融庁長官の承認を受けなければならない → 承認は不要', //p216

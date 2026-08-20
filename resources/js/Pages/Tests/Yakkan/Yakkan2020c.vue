@@ -212,6 +212,7 @@ const subject = "2020年度 フォームC";
                     questionTitle="保険持株会社"
                     :relatedProblems="['2020a48', '2020c29']"
                     :contents="[
+                        // rev: 2026-08-20 確認済み
                         '正しい',
                         '正しい',
                         '財務大臣に届出しなければならない → 届出は不要', //p216

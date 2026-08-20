@@ -256,10 +256,11 @@ const subject = "2024年度 フォームB";
                             content: '保険契約者の同意 → 被保険者の同意',
                         }, //34 p58
                         {
+                            // rev: 2026-08-20 確認済み
                             questionTitle: '告知義務違反による解除',
                             relatedProblems: ['2024b35'],
-                            content: '6ヶ月以内 → 1ヶ月以内',
-                        }, //35 p62
+                            content: '6ヶ月以内 → 1ヶ月以内', //p62
+                        }, //35
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '受取人の変更',

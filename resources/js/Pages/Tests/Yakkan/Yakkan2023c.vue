@@ -199,8 +199,9 @@ const subject = "2023年度 フォームC";
                     questionTitle="告知義務違反による解除"
                     :relatedProblems="['2023c28']"
                     :contents="[
+                        // rev: 2026-08-20 確認済み
                         '正しい',
-                        '2年 → 5年', //p62
+                        '2年 → 5年', //p131
                         '正しい',
                     ]"
                 />

@@ -273,10 +273,11 @@ const subject = "2024年度 フォームB";
                             content: '４日不担保等の免責規定が[[適用されない]]。', //p179
                         }, //37
                         {
+                            // rev: 2026-08-20 確認済み
                             questionTitle: '定款の変更',
                             relatedProblems: ['2024b38'],
-                            content: '認可は不要 → 認可は必要',
-                        }, //38 p222
+                            content: '認可は不要 → 認可は必要', //p222
+                        }, //38
                         {
                             questionTitle: '免許取消',
                             relatedProblems: ['2024b39'],

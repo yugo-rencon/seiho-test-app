@@ -273,10 +273,11 @@ const subject = "2022年度 フォームC";
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-20 確認済み
                             questionTitle: '定款の変更',
                             relatedProblems: ['2022c38'],
-                            content: '認可は必要ない → 認可は必要',
-                        }, //38 p222
+                            content: '認可は必要ない → 認可は必要', //p222
+                        }, //38
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '合併',

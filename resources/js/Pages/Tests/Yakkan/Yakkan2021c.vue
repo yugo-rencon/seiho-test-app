@@ -188,6 +188,7 @@ const subject = "2021年度 フォームC";
                     questionTitle="告知義務"
                     :relatedProblems="['2021a27', '2021b27', '2021c27']"
                     :contents="[
+                        // rev: 2026-08-20 確認済み
                         '保険業法 → 保険法', //p48
                         '正しい',
                         '正しい',

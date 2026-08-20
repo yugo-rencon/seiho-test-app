@@ -229,7 +229,8 @@ const subject = "2020年度 フォームB";
                     questionTitle="生命保険募集人および保険仲立人"
                     :relatedProblems="['2020b30']"
                     :contents="[
-                        '5年 → 3年', //p260
+                        // rev: 2026-08-20 確認済み
+                        '5年 → 3年', //p261
                         '正しい',
                         '正しい',
                     ]"

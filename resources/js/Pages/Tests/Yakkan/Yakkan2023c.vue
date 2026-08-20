@@ -280,10 +280,11 @@ const subject = "2023年度 フォームC";
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-20 確認済み
                             questionTitle: '意向把握義務',
                             relatedProblems: ['2023a39', '2023b39', '2023c39'],
-                            content: '設計書 → 意向確認書面',
-                        }, //39 p263
+                            content: '設計書 → 意向確認書面', //p265
+                        }, //39
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '外国保険会社等の保険業の廃止',

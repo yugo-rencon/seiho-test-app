@@ -291,9 +291,10 @@ const subject = "2025年度 フォームB";
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-20 確認済み
                             questionTitle: '意向把握義務',
                             relatedProblems: ['2025b39'],
-                            content: '設計書 → 意向確認書面', //p263
+                            content: '設計書 → 意向確認書面', //p265
                         }, //39
                         {
                             // rev: 2026-08-10 確認済み

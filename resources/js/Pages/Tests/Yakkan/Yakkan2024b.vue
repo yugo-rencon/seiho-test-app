@@ -213,6 +213,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="保険契約の解約"
                     :relatedProblems="['2024b29']"
                     :contents="[
+                        // rev: 2026-08-21 確認済み
                         '正しい',
                         '過去に遡って → 将来に向かって', //p136
                         '正しい',

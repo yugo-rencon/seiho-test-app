@@ -260,10 +260,11 @@ const subject = "2024年度 フォームC";
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-21 確認済み
                             questionTitle: '保険給付請求権の譲渡等',
                             relatedProblems: ['2024a34', '2024b34', '2024c34'],
-                            content: '保険契約者の同意 → 被保険者の同意',
-                        }, //34 p58
+                            content: '保険契約者の同意 → 被保険者の同意', //p58
+                        }, //34
                         {
                             questionTitle: '保険金受取人の変更',
                             relatedProblems: ['2024c35'],

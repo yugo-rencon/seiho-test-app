@@ -255,15 +255,17 @@ const subject = "2024年度 フォームA";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-21 確認済み
                             questionTitle: '保険契約者の保険料支払',
                             relatedProblems: ['2024a33'],
-                            content: '片面的強行規定 → 商法または民法の一般原則',
-                        }, //33 p54
+                            content: '保険法の片面的強行規定 → 商法または民法の一般原則', //p54
+                        }, //33
                         {
+                            // rev: 2026-08-21 確認済み
                             questionTitle: '保険給付請求権の譲渡等',
                             relatedProblems: ['2024a34', '2024b34', '2024c34'],
-                            content: '保険契約者の同意 → 被保険者の同意',
-                        }, //34 p58
+                            content: '保険契約者の同意 → 被保険者の同意', //p58
+                        }, //34
                         {
                             questionTitle: '給付事由発生の通知等',
                             relatedProblems: ['2024a35'],

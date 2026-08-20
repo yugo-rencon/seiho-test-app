@@ -177,6 +177,7 @@ const subject = "2024年度 フォームB";
                     questionTitle="保険約款の拘束力の根拠"
                     :relatedProblems="['2024a26', '2024b26', '2024c26']"
                     :contents="[
+                        // rev: 2026-08-21 確認済み
                         '意思推定説 → 法規範説', //p7
                         '正しい',
                         '正しい',

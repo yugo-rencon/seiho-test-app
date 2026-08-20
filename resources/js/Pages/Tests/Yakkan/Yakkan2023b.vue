@@ -176,6 +176,7 @@ const subject = "2023年度 フォームB";
                     questionTitle="保険約款の拘束力の根拠"
                     :relatedProblems="['2023b26']"
                     :contents="[
+                        // rev: 2026-08-21 確認済み
                         '正しい',
                         '正しい',
                         '慣習法説 → 白地慣習法説', //p8

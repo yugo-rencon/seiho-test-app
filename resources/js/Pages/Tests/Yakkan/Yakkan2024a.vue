@@ -192,9 +192,10 @@ const subject = "2024年度 フォームA";
                     questionTitle="保険料の払込"
                     :relatedProblems="['2024a27']"
                     :contents="[
+                        // rev: 2026-08-21 確認済み
                         '正しい',
                         '正しい',
-                        '保険料を差し引かない → 差し引く', //p88
+                        '保険料を差し引くことはない → 保険料を差し引く', //p88
                     ]"
                 />
                 <QuestionTemp1

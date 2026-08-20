@@ -251,6 +251,7 @@ const subject = "2021年度 フォームA";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-21 確認済み
                             questionTitle: '生命保険募集人',
                             relatedProblems: ['2021a33'],
                             content: '保険契約の締結の代理 ↔︎ 保険契約の締結の媒介', //p47

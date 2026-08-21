@@ -506,6 +506,9 @@ class TestController extends Controller
     // このサイトについて
     public function about(){return Inertia::render('Info/About');}
 
+    // よくある質問
+    public function faq(){return Inertia::render('Info/Faq');}
+
     // プライバシーポリシー
     public function policy(){return Inertia::render('Info/Policy');}
 

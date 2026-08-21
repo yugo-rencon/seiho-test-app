@@ -142,6 +142,14 @@ const tokushoRouteName = computed(() => {
                                 </Link>
                             </li>
                             <li>
+                                <Link
+                                    :href="route('faq')"
+                                    class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
+                                >
+                                    よくある質問
+                                </Link>
+                            </li>
+                            <li>
                                 <a
                                     href="https://buymeacoffee.com/rencon"
                                     target="_blank"
@@ -336,6 +344,23 @@ const tokushoRouteName = computed(() => {
                                 "
                             >
                                 お問い合わせ
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                :href="route('faq')"
+                                class="text-gray-600 transition-colors duration-200"
+                                :class="
+                                    isSenmon
+                                        ? 'hover:text-emerald-600'
+                                        : isOuyou
+                                          ? 'hover:text-amber-600'
+                                          : isIppan
+                                            ? 'hover:text-fuchsia-600'
+                                            : 'hover:text-indigo-600'
+                                "
+                            >
+                                よくある質問
                             </Link>
                         </li>
                         <li>

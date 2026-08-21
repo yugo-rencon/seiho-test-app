@@ -366,6 +366,12 @@ const plans = computed(() => [
                 </p>
             </section>
 
+            <div class="mx-auto mt-5 max-w-3xl text-center text-sm text-gray-600">
+                <Link :href="route('faq')" class="font-semibold underline underline-offset-4 hover:text-gray-900">
+                    料金・利用に関するよくある質問
+                </Link>
+            </div>
+
             <div class="mt-5 text-center text-sm text-gray-600">
                 一部無料でご利用いただけます。
                 <Link

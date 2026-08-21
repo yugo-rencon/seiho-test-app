@@ -170,6 +170,7 @@ Route::controller(TestController::class)->group(function () {
 
     // 個別ページ
     Route::get('about', 'about')->name('about');
+    Route::get('faq', 'faq')->name('faq');
     Route::get('pricing', 'pricing')->name('pricing');
     Route::get('policy', 'policy')->name('policy');
     Route::get('terms', 'terms')->name('terms');

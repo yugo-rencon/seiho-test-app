@@ -23,100 +23,104 @@ const subject = "2025年度 フォームA";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="損益勘定①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問１〜５
+                        // rev: 2026-08-22 確認済み
+                        '認識',
+                        '実現主義',
+                        '発生主義',
+                        '費用収益対応',
+                        '前者', // 問１〜５
                     ]"
                     :labels="[
-                        '', //1
-                        '', //2
-                        '', //3
-                        '', //4
-                        '', //5
+                        'カ', //1
+                        'ア', //2
+                        'ク', //3
+                        'ウ', //4
+                        'エ', //5
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="損益勘定②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問6〜10
+                        // rev: 2026-08-22 確認済み
+                        '売上高',
+                        '付加保険料',
+                        '現金主義',
+                        '未収保険料',
+                        '責任準備金', // 問6〜10
                     ]"
                     :labels="[
-                        '', //6
-                        '', //7
-                        '', //8
-                        '', //9
-                        '', //10
+                        'ク', //6
+                        'カ', //7
+                        'イ', //8
+                        'オ', //9
+                        'ウ', //10
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="会計監査人による監査①"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問11〜15
+                        // rev: 2026-08-22 確認済み
+                        '公認会計士',
+                        '監査法人',
+                        '株主総会（相互会社にあっては総代会）',
+                        '会社法',
+                        '取締役', // 問11〜15
                     ]"
                     :labels="[
-                        '', //11
-                        '', //12
-                        '', //13
-                        '', //14
-                        '', //15
+                        'ウ', //11
+                        'ク', //12
+                        'コ', //13
+                        'ア', //14
+                        'エ', //15
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="会計監査人による監査②"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問16〜20
+                        // rev: 2026-08-22 確認済み
+                        '決算',
+                        '取引記録',
+                        '財務諸表',
+                        '支社',
+                        '有価証券', // 問16〜20
                     ]"
                     :labels="[
-                        '', //16
-                        '', //17
-                        '', //18
-                        '', //19
-                        '', //20
+                        'ケ', //16
+                        'ア', //17
+                        'カ', //18
+                        'エ', //19
+                        'ク', //20
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="会計公準"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="決算"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -125,10 +129,10 @@ const subject = "2025年度 フォームA";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="会社法会計"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -136,65 +140,65 @@ const subject = "2025年度 フォームA";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="連結財務諸表の作成手続"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="事業費の分類"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="複式簿記の原理"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="税務会計"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="一般勘定・特別勘定"
                     :contents="[
+                        '正しい',
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="費用に属する科目（解約返戻金）"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -202,11 +206,11 @@ const subject = "2025年度 フォームA";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="生命保険会社のディスクロージャー"
                     :contents="[
                         '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp2
@@ -215,94 +219,104 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
-                            questionTitle: '',
-                            content: '',
+                            questionTitle: '簿記',
+                            content: '正しい',
                         }, //31
                         {
-                            questionTitle: '',
-                            content: '',
+                            questionTitle: '株主資本等変動計算書',
+                            content: '正しい',
                         }, //32
                         {
-                            questionTitle: '',
+                            questionTitle: '企業会計原則（一般原則）',
                             content: '',
                         }, //33
                         {
-                            questionTitle: '',
+                            questionTitle: '決算処理',
                             content: '',
                         }, //34
                         {
-                            questionTitle: '',
-                            content: '',
+                            questionTitle: '保険契約準備金の繰入',
+                            content: '正しい',
                         }, //35
                         {
-                            questionTitle: '',
+                            questionTitle: '有価証券の取得価額',
                             content: '',
                         }, //36
                         {
-                            questionTitle: '',
+                            questionTitle: '代理店借',
                             content: '',
                         }, //37
                         {
-                            questionTitle: '',
-                            content: '',
+                            questionTitle: '繰延税金負債',
+                            content: '正しい',
                         }, //38
                         {
-                            questionTitle: '',
-                            content: '',
+                            questionTitle: '利源分析に関する課題',
+                            content: '正しい',
                         }, //39
                         {
-                            questionTitle: '',
-                            content: '',
+                            questionTitle: '金融検査',
+                            content: '正しい',
                         }, //40
                         {
-                            questionTitle: '',
-                            label: '',
-                            content: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '企業会計の領域',
+                            label: 'エ',
+                            content: '管理会計',
                         }, //41
                         {
-                            questionTitle: '',
-                            label: '',
-                            content: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '財務諸表',
+                            label: 'イ',
+                            content: '損益計算書',
                         }, //42
                         {
-                            questionTitle: '',
-                            label: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '開示書類',
+                            label: 'オ',
                             content: '',
                         }, //43
                         {
-                            questionTitle: '',
-                            label: '',
-                            content: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '危険準備金',
+                            label: 'ア',
+                            content: '収益性',
                         }, //44
                         {
-                            questionTitle: '',
-                            label: '',
-                            content: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '価格変動準備金',
+                            label: 'ウ',
+                            content: '金融庁長官',
                         }, //45
                         {
-                            questionTitle: '',
-                            label: '',
-                            content: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '有価証券の評価方法',
+                            label: 'ア',
+                            content: '売買目的有価証券',
                         }, //46
                         {
-                            questionTitle: '',
-                            label: '',
-                            content: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '引当金',
+                            label: 'エ',
+                            content: '未認識過去勤務費用',
                         }, //47
                         {
-                            questionTitle: '',
-                            label: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '保険業法第112条評価益',
+                            label: 'オ',
                             content: '',
                         }, //48
                         {
-                            questionTitle: '',
-                            label: '',
-                            content: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '事業費',
+                            label: 'ウ',
+                            content: '物件費',
                         }, //49
                         {
-                            questionTitle: '',
-                            label: '',
-                            content: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '運用資産の管理',
+                            label: 'イ',
+                            content: '資産区分',
                         }, //50
                     ]"
                 />

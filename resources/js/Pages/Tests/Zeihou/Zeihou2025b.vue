@@ -22,18 +22,20 @@ const subject = "2025年度 フォームB";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    questionTitle="相続税の申告と納税"
                     :contents="[
-                        '均等割額のみ',
-                        '4%',
-                        '3,000円',
-                        '寡婦またはひとり親',
-                        '43万円', // 問１〜５
+                        // rev: 2026-08-22 確認済み
+                        '遺贈',
+                        '被相続人',
+                        '10カ月',
+                        '担保',
+                        '10万円', // 問１〜５
                     ]"
                     :labels="[
-                        'イ', //1
-                        'カ', //2
-                        'キ', //3
-                        'ア', //4
+                        'ア', //1
+                        'ケ', //2
+                        'オ', //3
+                        'エ', //4
                         'コ', //5
                     ]"
                 />
@@ -41,179 +43,279 @@ const subject = "2025年度 フォームB";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    questionTitle="法人税の申告と納付"
                     :contents="[
-                        '普通徴収',
-                        '市町村',
-                        '5月',
-                        '均等割額のみ',
-                        '従業者数', //問６〜10
+                        // rev: 2026-08-22 確認済み
+                        '6カ月',
+                        '2カ月',
+                        '損益計算書',
+                        '更正',
+                        '決定', // 問6〜10
                     ]"
                     :labels="[
-                        'キ', //6
+                        'ウ', //6
                         'イ', //7
-                        'コ', //8
-                        'ア', //9
-                        'ウ', //10
+                        'ケ', //8
+                        'カ', //9
+                        'オ', //10
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）①"
                     :contents="[
-                        '所得税',
-                        '生活費',
-                        '結婚・子育て',
-                        '配偶者控除額',
-                        '110', //問11〜15
+                        // rev: 2026-08-22 確認済み
+                        '3親等',
+                        '保険金受取人',
+                        '5年',
+                        '身体の傷害',
+                        '配偶者', // 問11〜15
                     ]"
                     :labels="[
-                        'オ', //11
-                        'カ', //12
+                        'ア', //11
+                        'ケ', //12
                         'ウ', //13
-                        'キ', //14
-                        'イ', //15
+                        'カ', //14
+                        'ク', //15
                     ]"
                 />
                 <QuestionTemp3
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）②"
                     :contents="[
-                        '20',
-                        '居住用不動産',
-                        '2,000',
-                        '2月1日から3月15日',
-                        '贈与を受けた人', //問16〜20
+                        // rev: 2026-08-22 確認済み
+                        '10年',
+                        '一時払',
+                        '60歳',
+                        '退職年金',
+                        '1回', // 問16〜20
                     ]"
                     :labels="[
-                        'イ', //16
-                        'ウ', //17
-                        'コ', //18
-                        'キ', //19
-                        'エ', //20
+                        'ウ', //16
+                        'キ', //17
+                        'カ', //18
+                        'ケ', //19
+                        'ア', //20
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    questionTitle="租税の種類"
                     :contents="[
-                        '投資信託（公社債投資信託及び公募公社債等運用投信信託を<b><u>含む</u></b>）及び特定受益証券発行信託の収益の分配は、利子所得になる。',
-                        'アパート、貸間等のように食事を供さない場合の所得は不動産所得となるが、下宿等のように食事を供する場合には事業所得または雑所得となる。',
                         '正しい',
+                        '', //p
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    :contents="['正しい', '山林所得については、長年をかけて得た所得が一時に実現することから、超過累進税率による過重の税負担を避ける意味で、課税山林所得の5分の1に相当する金額に応ずる税額を求め、これを5倍した金額を税額とする「5分5乗方式」が適用される。', '事業用ではなく、居住用。']"
+                    questionTitle="贈与税"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '', //p
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    :contents="['正しい', '公益事業用財産は非課税財産に該当する。', '被相続人の死亡により取得した保険金については、その保険金のうち、死亡時までに払い込まれた保険料合計額に対する被相続人が負担した保険料の金額の割合に相当する部分が、課税財産となる。']"
+                    questionTitle="営業職員報酬"
+                    :contents="[
+                        '', //p
+                        '', //p
+                        '正しい',
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    :contents="['資産の評価について税法は<b><u>取得原価主義</u></b>を原則としており、評価益は益金の額に<b><u>算入しない</u></b>。', '正しい', '法人の支出した寄附金について税法は一定の限度を定め、これを超える部分については損金の額に算入しないものとしている。']"
+                    questionTitle="事業税"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '', //p
+                    ]"
                 />
                 <QuestionTemp1
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    questionTitle="法人税通達による事業保険の取扱い"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '運営管理機関（企業または国民年金基金連合会によって選任）ではなく、資産管理機関（企業による選任）または国民年金基金連合会。',
-                        '年金払いの老齢給付金については、雑所得として公的年金等控除を適用するが、一時払いの老齢給付金については、所得税法上の「退職手当等」とみなす。',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1 :questionNumber="26" :title="title" :subject="subject" :contents="['1,200万円ではなく、2,000万円。', '正しい', '正しい']" />
+                <QuestionTemp1
+                    :questionNumber="26"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="税率"
+                    :contents="[
+                        '', //p
+                        '正しい',
+                        '正しい',
+                    ]"
+                />
                 <QuestionTemp1
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
-                    :contents="['相続税と贈与税は密接な関係にあるため、これら2つの税は、いずれも相続税法という一つの法律の中で規定されている。また、財産の評価についても相続財産の評価と贈与財産の評価は同じ基準にしたがって行われる。', '正しい', '正しい']"
+                    questionTitle="配当所得"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
                 />
-                <QuestionTemp1 :questionNumber="28" :title="title" :subject="subject" :contents="['正しい', '毎年4月1日ではなく、毎年1月1日。', '正しい']" />
-                <QuestionTemp1 :questionNumber="29" :title="title" :subject="subject" :contents="['正しい', '正しい', '当該制度を選択した場合、その選択した年以後は、選択した贈与者からの贈与は、すべて当該制度の対象となり、当該制度を選択した贈与者からの贈与は、暦年課税への変更はできない。']" />
-                <QuestionTemp1 :questionNumber="30" :title="title" :subject="subject" :contents="['責任準備金相当額ではなく、解約返戻金相当額。', '正しい', '正しい']" />
+                <QuestionTemp1
+                    :questionNumber="28"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="相続時精算課税制度"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="29"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="法人税"
+                    :contents="[
+                        '正しい',
+                        '', //p
+                        '正しい',
+                    ]"
+                />
+                <QuestionTemp1
+                    :questionNumber="30"
+                    :title="title"
+                    :subject="subject"
+                    questionTitle="確定給付企業年金"
+                    :contents="[
+                        '正しい',
+                        '正しい',
+                        '', //p
+                    ]"
+                />
                 <QuestionTemp2
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
                     :items="[
                         {
-                            content: '消費税のような間接税では、<b><u>担税者は消費者</u></b>、<b><u>納税義務者は業者</u></b>となり、両者は一致しない。',
+                            questionTitle: '税の基本用語',
+                            content: '',
                         }, //31
                         {
-                            content: '正しい',
+                            questionTitle: '非課税所得',
+                            content: '',
                         }, //32
                         {
-                            content: '特定扶養親族とは、扶養親族のうち<b><u>年齢19歳以上23歳未満</u></b>の者をいい、その者の控除額は一人につき<b><u>63万円</u></b>である。',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '雑所得',
+                            content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '医療費控除',
                             content: '正しい',
                         }, //34
                         {
-                            content: '正しい',
+                            questionTitle: '確定申告',
+                            content: '',
                         }, //35
                         {
-                            content: '事業年度が6カ月を超える普通法人は、事業年度開始の日以後6カ月を経過した日から2カ月以内に、税務署長に対し、仮決算により作成した法人税の中間報告書または前年度の実績による中間報告書いずれかを提出しなければならない。',
+                            questionTitle: '障害者の相続税額軽減',
+                            content: '',
                         }, //36
                         {
-                            content: '正しい',
+                            questionTitle: '外貨建て生命保険の取扱い',
+                            content: '',
                         }, //37
                         {
-                            content: '相続による取得や法人の合併による取得など形式的な所有権の移転については課税されない。',
+                            questionTitle: '法人税の性格',
+                            content: '',
                         }, //38
                         {
-                            content: '正しい',
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '',
                         }, //39
                         {
-                            content: '14%ではなく、7%。',
+                            questionTitle: '中途給付金',
+                            content: '',
                         }, //40
                         {
-                            label: 'ウ',
-                            content: '租税特別措置法',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '所得税の税額控除額',
+                            label: 'イ',
+                            content: '二重課税',
                         }, //41
                         {
-                            label: 'オ',
-                            content: '',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '退職所得控除額',
+                            label: 'ウ',
+                            content: '40万円',
                         }, //42
                         {
-                            label: 'エ',
-                            content: '必要経費',
-                        }, //43
-                        {
-                            label: 'ウ',
-                            content: '3分の1',
-                        }, //44
-                        {
-                            label: 'ア',
-                            content: '申告調整',
-                        }, //45
-                        {
-                            label: 'エ',
-                            content: '10ヶ月',
-                        }, //46
-                        {
-                            label: 'イ',
-                            content: '公共法人',
-                        }, //47
-                        {
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '所得税の課税標準',
                             label: 'オ',
                             content: '',
+                        }, //43
+                        {
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '源泉徴収制度',
+                            label: 'ア',
+                            content: '翌月10日',
+                        }, //44
+                        {
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '法人の種類と課税の範囲',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '定期金に関する権利',
+                            label: 'エ',
+                            content: '解約返戻金額',
+                        }, //46
+                        {
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '資産の評価益の益金不算入',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '固定資産税の課税標準',
+                            label: 'ウ',
+                            content: '3年',
                         }, //48
                         {
-                            label: 'ア',
-                            content: '第3種事業',
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '不動産取得税',
+                            label: 'イ',
+                            content: '道府県税',
                         }, //49
                         {
+                            // rev: 2026-08-22 確認済み
+                            questionTitle: '生命保険代理店の事業免許等に係る税',
                             label: 'オ',
                             content: '',
                         }, //50

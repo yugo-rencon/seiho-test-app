@@ -214,26 +214,96 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '', content: '' }, //31
-                        { questionTitle: '', content: '' }, //32
-                        { questionTitle: '', content: '' }, //33
-                        { questionTitle: '', content: '' }, //34
-                        { questionTitle: '', content: '' }, //35
-                        { questionTitle: '', content: '' }, //36
-                        { questionTitle: '', content: '' }, //37
-                        { questionTitle: '', content: '' }, //38
-                        { questionTitle: '', content: '' }, //39
-                        { questionTitle: '', content: '' }, //40
-                        { questionTitle: '', label: '', content: '' }, //41
-                        { questionTitle: '', label: '', content: '' }, //42
-                        { questionTitle: '', label: '', content: '' }, //43
-                        { questionTitle: '', label: '', content: '' }, //44
-                        { questionTitle: '', label: '', content: '' }, //45
-                        { questionTitle: '', label: '', content: '' }, //46
-                        { questionTitle: '', label: '', content: '' }, //47
-                        { questionTitle: '', label: '', content: '' }, //48
-                        { questionTitle: '', label: '', content: '' }, //49
-                        { questionTitle: '', label: '', content: '' }, //50
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //31
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //32
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //33
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //34
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //35
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //36
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //37
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //38
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //39
+                        {
+                            questionTitle: '',
+                            content: '',
+                        }, //40
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

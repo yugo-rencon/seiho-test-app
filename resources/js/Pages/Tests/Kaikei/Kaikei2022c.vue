@@ -213,26 +213,96 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '簿記', content: '正しい' }, //31
-                        { questionTitle: '株主資本等変動計算書', content: '正しい' }, //32
-                        { questionTitle: '税務会計', content: '会計情報の開示という機能が含まれているという点で同様 → 含まれていないという点で異なる' }, //33 p32
-                        { questionTitle: '期間帰属の差異', content: '正しい' }, //34
-                        { questionTitle: 'デリバティブ', content: '正しい' }, //35
-                        { questionTitle: '未払金', content: '正しい' }, //36
-                        { questionTitle: '価格変動準備金', content: '積立基準や積立限度額は定められていない → 定められている' }, //37 p134
-                        { questionTitle: '損益の認識基準', content: '現金主義 → 実現主義' }, //38 p142
-                        { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
-                        { questionTitle: '監査役による監査', content: '社内監査役 → 社外監査役' }, //40 p206
-                        { label: 'オ', questionTitle: '取引の仕訳', content: '' }, //41
-                        { label: 'エ', questionTitle: '企業会計の領域', content: '管理会計' }, //42
-                        { label: 'オ', questionTitle: '決算スケジュール', content: '' }, //43
-                        { label: 'ア', questionTitle: '消費税', content: '負債' }, //44
-                        { label: 'ウ', questionTitle: '利益準備金', content: '5分の1' }, //45
-                        { label: 'イ', questionTitle: '利息及び配当金等収入', content: '売買目的有価証券' }, //46
-                        { label: 'イ', questionTitle: '保険業法第112条評価益', content: '評価換え' }, //47
-                        { label: 'ア', questionTitle: '退職給付引当金', content: '期末' }, //48
-                        { label: 'エ', questionTitle: '公告', content: '定款' }, //49
-                        { label: 'ウ', questionTitle: '金融検査', content: '自己査定' }, //50
+                        {
+                            questionTitle: '簿記',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '株主資本等変動計算書',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '税務会計',
+                            content: '会計情報の開示という機能が含まれているという点で同様 → 含まれていないという点で異なる',
+                        }, //33 p32
+                        {
+                            questionTitle: '期間帰属の差異',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: 'デリバティブ',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '未払金',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '価格変動準備金',
+                            content: '積立基準や積立限度額は定められていない → 定められている',
+                        }, //37 p134
+                        {
+                            questionTitle: '損益の認識基準',
+                            content: '現金主義 → 実現主義',
+                        }, //38 p142
+                        {
+                            questionTitle: '区分経理における運用資産の管理',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '監査役による監査',
+                            content: '社内監査役 → 社外監査役',
+                        }, //40 p206
+                        {
+                            label: 'オ',
+                            questionTitle: '取引の仕訳',
+                            content: '',
+                        }, //41
+                        {
+                            label: 'エ',
+                            questionTitle: '企業会計の領域',
+                            content: '管理会計',
+                        }, //42
+                        {
+                            label: 'オ',
+                            questionTitle: '決算スケジュール',
+                            content: '',
+                        }, //43
+                        {
+                            label: 'ア',
+                            questionTitle: '消費税',
+                            content: '負債',
+                        }, //44
+                        {
+                            label: 'ウ',
+                            questionTitle: '利益準備金',
+                            content: '5分の1',
+                        }, //45
+                        {
+                            label: 'イ',
+                            questionTitle: '利息及び配当金等収入',
+                            content: '売買目的有価証券',
+                        }, //46
+                        {
+                            label: 'イ',
+                            questionTitle: '保険業法第112条評価益',
+                            content: '評価換え',
+                        }, //47
+                        {
+                            label: 'ア',
+                            questionTitle: '退職給付引当金',
+                            content: '期末',
+                        }, //48
+                        {
+                            label: 'エ',
+                            questionTitle: '公告',
+                            content: '定款',
+                        }, //49
+                        {
+                            label: 'ウ',
+                            questionTitle: '金融検査',
+                            content: '自己査定',
+                        }, //50
                     ]"
                 />
             </div>

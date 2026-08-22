@@ -213,26 +213,96 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '運用原則', content: '正しい' }, //31
-                        { questionTitle: '貸付形態別分類', content: '正しい' }, //32
-                        { questionTitle: '運用の実務', content: '融資審査部門 → マクロ調査部門' }, //33 p51
-                        { questionTitle: '海外現地法人', content: '直接行うことはない → 直接行うこともある' }, //34 p105
-                        { questionTitle: '変額保険の運用', content: '区分経理 → 特別勘定' }, //35 p115
-                        { questionTitle: 'カナダの金融制度', content: '正しい' }, //36
-                        { questionTitle: '第二次大戦時の国債保有の要請', content: '正しい' }, //37
-                        { questionTitle: '特金運用の活用', content: 'インカム・ゲインの累積化 → キャピタル・ゲインのインカム化<br>簿価通算 → 簿価分離 ' }, //38 p194
-                        { questionTitle: '海外投融資', content: '漸増傾向 → 減少傾向' }, //39 p104
-                        { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        { questionTitle: '生保資金の構成', label: 'オ', content: '' }, //41
-                        { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //42
-                        { questionTitle: '融資審査', label: 'ウ', content: '自己資本' }, //43
-                        { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //44
-                        { questionTitle: '株式投資の尺度', label: 'オ', content: '' }, //45
-                        { questionTitle: 'オプション取引', label: 'イ', content: '上昇' }, //46
-                        { questionTitle: 'イギリスの銀行', label: 'ア', content: 'ユニバーサル・バンキング' }, //47
-                        { questionTitle: '資金調達', label: 'イ', content: 'インパクト・ローン' }, //48
-                        { questionTitle: '資産運用手段の多様化', label: 'ウ', content: 'オルタナティブ投資' }, //49
-                        { questionTitle: '金融審議会報告書', label: 'エ', content: '顧客本位の業務運営に関する原則' }, //50
+                        {
+                            questionTitle: '運用原則',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '貸付形態別分類',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '運用の実務',
+                            content: '融資審査部門 → マクロ調査部門',
+                        }, //33 p51
+                        {
+                            questionTitle: '海外現地法人',
+                            content: '直接行うことはない → 直接行うこともある',
+                        }, //34 p105
+                        {
+                            questionTitle: '変額保険の運用',
+                            content: '区分経理 → 特別勘定',
+                        }, //35 p115
+                        {
+                            questionTitle: 'カナダの金融制度',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '第二次大戦時の国債保有の要請',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '特金運用の活用',
+                            content: 'インカム・ゲインの累積化 → キャピタル・ゲインのインカム化<br>簿価通算 → 簿価分離 ',
+                        }, //38 p194
+                        {
+                            questionTitle: '海外投融資',
+                            content: '漸増傾向 → 減少傾向',
+                        }, //39 p104
+                        {
+                            questionTitle: '国際会計基準導入の動向',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '生保資金の構成',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '各国の保険監督方法',
+                            label: 'ア',
+                            content: '準拠主義',
+                        }, //42
+                        {
+                            questionTitle: '融資審査',
+                            label: 'ウ',
+                            content: '自己資本',
+                        }, //43
+                        {
+                            questionTitle: '資産運用の専門化の進展',
+                            label: 'エ',
+                            content: 'アナリスト',
+                        }, //44
+                        {
+                            questionTitle: '株式投資の尺度',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: 'オプション取引',
+                            label: 'イ',
+                            content: '上昇',
+                        }, //46
+                        {
+                            questionTitle: 'イギリスの銀行',
+                            label: 'ア',
+                            content: 'ユニバーサル・バンキング',
+                        }, //47
+                        {
+                            questionTitle: '資金調達',
+                            label: 'イ',
+                            content: 'インパクト・ローン',
+                        }, //48
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'ウ',
+                            content: 'オルタナティブ投資',
+                        }, //49
+                        {
+                            questionTitle: '金融審議会報告書',
+                            label: 'エ',
+                            content: '顧客本位の業務運営に関する原則',
+                        }, //50
                     ]"
                 />
             </div>

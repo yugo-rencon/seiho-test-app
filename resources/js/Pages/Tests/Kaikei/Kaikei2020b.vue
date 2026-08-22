@@ -213,26 +213,96 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '試算表', content: '正しい' }, //31
-                        { questionTitle: '開示書類', content: '四半期報告書は開示が求められていない → 開示が求められている' }, //32 p30
-                        { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //33 p42-43
-                        { questionTitle: '会計に関する事項の標準的な取扱い', content: '正しい' }, //34
-                        { questionTitle: '繰延税金資産', content: '正しい' }, //35
-                        { questionTitle: '提供していない役務に対する対価', content: '借受金 → 前受収益' }, //36 p129
-                        { questionTitle: '費用収益対応の原則', content: '費用に収益を対応させる方法が一般的 → 収益の実現に費用を対応させる方法が一般的' }, //37 p143
-                        { questionTitle: '保険金', content: '正しい' }, //38
-                        { questionTitle: '投資に係る税金', content: '正しい' }, //39
-                        { questionTitle: '事業費の分類', content: '減価償却費 → 集金費' }, //40 p170
-                        { questionTitle: '会計公準', label: 'ウ', content: '貨幣的評価' }, //41
-                        { questionTitle: '決算', label: 'エ', content: '財政状態' }, //42
-                        { questionTitle: '連結決算', label: 'オ', content: '' }, //43
-                        { questionTitle: '会計に関する法律', label: 'オ', content: '' }, //44
-                        { questionTitle: 'ソフトウェア', label: 'ウ', content: '定額法' }, //45
-                        { questionTitle: '退職給付引当金', label: 'エ', content: '未認識過去勤務費用' }, //46
-                        { questionTitle: '損益の認識', label: 'ア', content: '実現主義' }, //47
-                        { questionTitle: '保険料', label: 'イ', content: '未収保険料' }, //48
-                        { questionTitle: '区分経理', label: 'イ', content: '一般勘定' }, //49
-                        { questionTitle: '企業が受ける検査', label: 'ア', content: '税務調査' }, //50
+                        {
+                            questionTitle: '試算表',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '開示書類',
+                            content: '四半期報告書は開示が求められていない → 開示が求められている',
+                        }, //32 p30
+                        {
+                            questionTitle: '保険金等支払金の計上',
+                            content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整',
+                        }, //33 p42-43
+                        {
+                            questionTitle: '会計に関する事項の標準的な取扱い',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '繰延税金資産',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '提供していない役務に対する対価',
+                            content: '借受金 → 前受収益',
+                        }, //36 p129
+                        {
+                            questionTitle: '費用収益対応の原則',
+                            content: '費用に収益を対応させる方法が一般的 → 収益の実現に費用を対応させる方法が一般的',
+                        }, //37 p143
+                        {
+                            questionTitle: '保険金',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '投資に係る税金',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '事業費の分類',
+                            content: '減価償却費 → 集金費',
+                        }, //40 p170
+                        {
+                            questionTitle: '会計公準',
+                            label: 'ウ',
+                            content: '貨幣的評価',
+                        }, //41
+                        {
+                            questionTitle: '決算',
+                            label: 'エ',
+                            content: '財政状態',
+                        }, //42
+                        {
+                            questionTitle: '連結決算',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '会計に関する法律',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: 'ソフトウェア',
+                            label: 'ウ',
+                            content: '定額法',
+                        }, //45
+                        {
+                            questionTitle: '退職給付引当金',
+                            label: 'エ',
+                            content: '未認識過去勤務費用',
+                        }, //46
+                        {
+                            questionTitle: '損益の認識',
+                            label: 'ア',
+                            content: '実現主義',
+                        }, //47
+                        {
+                            questionTitle: '保険料',
+                            label: 'イ',
+                            content: '未収保険料',
+                        }, //48
+                        {
+                            questionTitle: '区分経理',
+                            label: 'イ',
+                            content: '一般勘定',
+                        }, //49
+                        {
+                            questionTitle: '企業が受ける検査',
+                            label: 'ア',
+                            content: '税務調査',
+                        }, //50
                     ]"
                 />
             </div>

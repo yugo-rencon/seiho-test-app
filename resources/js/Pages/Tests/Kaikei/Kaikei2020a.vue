@@ -213,26 +213,96 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '簿記', content: '正しい' }, //31
-                        { questionTitle: '開示書類', content: '四半期報告書は開示が求められていない → 開示が求められている' }, //32 p30
-                        { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //33 p42-43
-                        { questionTitle: '決算書類', content: '正しい' }, //34
-                        { questionTitle: '保険業法第113条繰延資産', content: '10事業年度の事業費を20年以内に償却 → 5事業年度の事業費を10年以内に償却' }, //35 p122
-                        { questionTitle: '価格変動準備金', content: '積立基準や積立限度額は定められていない → 定められている' }, //36 p134
-                        { questionTitle: '自己株式', content: '正しい' }, //37
-                        { questionTitle: '保険金', content: '正しい' }, //38
-                        { questionTitle: '利源分析', content: '危険準備金損益、為替損益 → 責任準備金関係損益、価格変動損益' }, //39 p178
-                        { questionTitle: '区分経理への反映', content: '正しい' }, //40
-                        { questionTitle: '帳簿の種類', label: 'エ', content: '売掛金元帳' }, //41
-                        { questionTitle: '企業会計原則の一般原則', label: 'ア', content: '明瞭性' }, //42
-                        { questionTitle: '勘定間取引', label: 'イ', content: '純保険料' }, //43
-                        { questionTitle: '貸倒引当金の計上', label: 'オ', content: '' }, //44
-                        { questionTitle: 'ソフトウェア', label: 'ウ', content: '定額法' }, //45
-                        { questionTitle: 'その他負債', label: 'ウ', content: '有形' }, //46
-                        { questionTitle: '損失填補準備金', label: 'エ', content: '1,000分の3' }, //47
-                        { questionTitle: '保険料', label: 'イ', content: '未収保険料' }, //48
-                        { questionTitle: '事業費', label: 'オ', content: '' }, //49
-                        { questionTitle: '企業が受ける検査', label: 'ア', content: '税務調査' }, //50
+                        {
+                            questionTitle: '簿記',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '開示書類',
+                            content: '四半期報告書は開示が求められていない → 開示が求められている',
+                        }, //32 p30
+                        {
+                            questionTitle: '保険金等支払金の計上',
+                            content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整',
+                        }, //33 p42-43
+                        {
+                            questionTitle: '決算書類',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '保険業法第113条繰延資産',
+                            content: '10事業年度の事業費を20年以内に償却 → 5事業年度の事業費を10年以内に償却',
+                        }, //35 p122
+                        {
+                            questionTitle: '価格変動準備金',
+                            content: '積立基準や積立限度額は定められていない → 定められている',
+                        }, //36 p134
+                        {
+                            questionTitle: '自己株式',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '保険金',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '利源分析',
+                            content: '危険準備金損益、為替損益 → 責任準備金関係損益、価格変動損益',
+                        }, //39 p178
+                        {
+                            questionTitle: '区分経理への反映',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '帳簿の種類',
+                            label: 'エ',
+                            content: '売掛金元帳',
+                        }, //41
+                        {
+                            questionTitle: '企業会計原則の一般原則',
+                            label: 'ア',
+                            content: '明瞭性',
+                        }, //42
+                        {
+                            questionTitle: '勘定間取引',
+                            label: 'イ',
+                            content: '純保険料',
+                        }, //43
+                        {
+                            questionTitle: '貸倒引当金の計上',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: 'ソフトウェア',
+                            label: 'ウ',
+                            content: '定額法',
+                        }, //45
+                        {
+                            questionTitle: 'その他負債',
+                            label: 'ウ',
+                            content: '有形',
+                        }, //46
+                        {
+                            questionTitle: '損失填補準備金',
+                            label: 'エ',
+                            content: '1,000分の3',
+                        }, //47
+                        {
+                            questionTitle: '保険料',
+                            label: 'イ',
+                            content: '未収保険料',
+                        }, //48
+                        {
+                            questionTitle: '事業費',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '企業が受ける検査',
+                            label: 'ア',
+                            content: '税務調査',
+                        }, //50
                     ]"
                 />
             </div>

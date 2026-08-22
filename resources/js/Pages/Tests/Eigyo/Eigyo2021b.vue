@@ -213,26 +213,96 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '介護保険の保険料', content: '正しい' }, //31
-                        { questionTitle: '第三分野市場', content: '損害保険 ↔︎ 生命保険' }, //32 p34
-                        { questionTitle: '個人保険商品の構造', content: '遺族に年金が支払われる → 年金の支払われない' }, //33 p47
-                        { questionTitle: '危険選択の方法', content: '認定生命保険士 → 生命保険面接士' }, //34 p52
-                        { questionTitle: '契約者単位の通算割引', content: '保険料総額 → 保険金額' }, //35 p78
-                        { questionTitle: '財形制度', content: '正しい' }, //36
-                        { questionTitle: '変額保険販売資格制度', content: '応用課程 → 専門課程' }, //37 p126
-                        { questionTitle: '一時払退職後終身保険', content: '正しい' }, //38
-                        { questionTitle: '機関長のタイプ', content: '正しい' }, //39
-                        { questionTitle: '企業保険の営業', content: '正しい' }, //40
-                        { questionTitle: '代理・代行', label: 'ア', content: '保険業法' }, //41
-                        { questionTitle: '保険料率の改定', label: 'エ', content: '引き下げ' }, //42
-                        { questionTitle: '個人保険商品', label: 'ウ', content: '利差配当' }, //43
-                        { questionTitle: '単独運用特別勘定', label: 'オ', content: '' }, //44
-                        { questionTitle: '生命表', label: 'ア', content: '経験死亡率' }, //45
-                        { questionTitle: '生保財形の特徴', label: 'オ', content: '' }, //46
-                        { questionTitle: '顧客サービスの向上', label: 'オ', content: '' }, //47
-                        { questionTitle: '医療保障保険（団体型）', label: 'エ', content: '自己負担の一部を補填する' }, //48
-                        { questionTitle: '営業職員の給与体系', label: 'イ', content: '地域' }, //49
-                        { questionTitle: '営業職員の教育', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '介護保険の保険料',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '第三分野市場',
+                            content: '損害保険 ↔︎ 生命保険',
+                        }, //32 p34
+                        {
+                            questionTitle: '個人保険商品の構造',
+                            content: '遺族に年金が支払われる → 年金の支払われない',
+                        }, //33 p47
+                        {
+                            questionTitle: '危険選択の方法',
+                            content: '認定生命保険士 → 生命保険面接士',
+                        }, //34 p52
+                        {
+                            questionTitle: '契約者単位の通算割引',
+                            content: '保険料総額 → 保険金額',
+                        }, //35 p78
+                        {
+                            questionTitle: '財形制度',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '変額保険販売資格制度',
+                            content: '応用課程 → 専門課程',
+                        }, //37 p126
+                        {
+                            questionTitle: '一時払退職後終身保険',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '機関長のタイプ',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '企業保険の営業',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '代理・代行',
+                            label: 'ア',
+                            content: '保険業法',
+                        }, //41
+                        {
+                            questionTitle: '保険料率の改定',
+                            label: 'エ',
+                            content: '引き下げ',
+                        }, //42
+                        {
+                            questionTitle: '個人保険商品',
+                            label: 'ウ',
+                            content: '利差配当',
+                        }, //43
+                        {
+                            questionTitle: '単独運用特別勘定',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '生命表',
+                            label: 'ア',
+                            content: '経験死亡率',
+                        }, //45
+                        {
+                            questionTitle: '生保財形の特徴',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '顧客サービスの向上',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '医療保障保険（団体型）',
+                            label: 'エ',
+                            content: '自己負担の一部を補填する',
+                        }, //48
+                        {
+                            questionTitle: '営業職員の給与体系',
+                            label: 'イ',
+                            content: '地域',
+                        }, //49
+                        {
+                            questionTitle: '営業職員の教育',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

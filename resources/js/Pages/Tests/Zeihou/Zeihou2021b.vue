@@ -213,26 +213,96 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '譲渡所得', content: '10年以内 → 5年以内' }, //31 p22
-                        { questionTitle: '租税特別措置法の規定による課税標準', content: '正しい' }, //32
-                        { questionTitle: '確定申告定', content: '正しい' }, //33
-                        { questionTitle: '青色申告制度', content: '正しい' }, //34
-                        { questionTitle: '保険金の非課税額', content: '1000万円 → 500万円' }, //35 p77
-                        { questionTitle: '暦年課税・前年課税', content: '所属税 ↔︎ 住民税' }, //36 p150
-                        { questionTitle: '居住用超高層建築物の不動産取得税', content: '最上階を100として階が1つ減るごとに → 1階を100として階が1つ増すごとに' }, //37 p162
-                        { questionTitle: '財形住宅貯蓄積立保険', content: '財形貯蓄積立保険 → 財形年金' }, //38 p213
-                        { questionTitle: '転換時の税務', content: '正しい' }, //39
-                        { questionTitle: '営業職員報酬', content: 'すべて事業所得 → 固定給部分は給与所得、それ以外は事業所得' }, //40 p227
-                        { questionTitle: '所得税の所得控除', label: 'イ', content: '15種類' }, //41
-                        { questionTitle: '医療費控除（セルフメディケーション）', label: 'オ', content: '' }, //42
-                        { questionTitle: '雑所得', label: 'ウ', content: '必要経費' }, //43
-                        { questionTitle: '税額控除', label: 'エ', content: '配当控除' }, //44
-                        { questionTitle: '未成年者控除', label: 'オ', content: '' }, //45
-                        { questionTitle: '法人税の課税標準', label: 'オ', content: '' }, //46
-                        { questionTitle: '同族会社', label: 'ア', content: '3人' }, //47
-                        { questionTitle: '個人の事業税', label: 'ア', content: '第3種' }, //48
-                        { questionTitle: '確定給付企業年金制度の開始', label: 'ア', content: '年金規約' }, //49
-                        { questionTitle: '団体定期保険の保険料', label: 'ウ', content: '生命保険料控除' }, //50
+                        {
+                            questionTitle: '譲渡所得',
+                            content: '10年以内 → 5年以内',
+                        }, //31 p22
+                        {
+                            questionTitle: '租税特別措置法の規定による課税標準',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '確定申告定',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '青色申告制度',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '保険金の非課税額',
+                            content: '1000万円 → 500万円',
+                        }, //35 p77
+                        {
+                            questionTitle: '暦年課税・前年課税',
+                            content: '所属税 ↔︎ 住民税',
+                        }, //36 p150
+                        {
+                            questionTitle: '居住用超高層建築物の不動産取得税',
+                            content: '最上階を100として階が1つ減るごとに → 1階を100として階が1つ増すごとに',
+                        }, //37 p162
+                        {
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '財形貯蓄積立保険 → 財形年金',
+                        }, //38 p213
+                        {
+                            questionTitle: '転換時の税務',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '営業職員報酬',
+                            content: 'すべて事業所得 → 固定給部分は給与所得、それ以外は事業所得',
+                        }, //40 p227
+                        {
+                            questionTitle: '所得税の所得控除',
+                            label: 'イ',
+                            content: '15種類',
+                        }, //41
+                        {
+                            questionTitle: '医療費控除（セルフメディケーション）',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '雑所得',
+                            label: 'ウ',
+                            content: '必要経費',
+                        }, //43
+                        {
+                            questionTitle: '税額控除',
+                            label: 'エ',
+                            content: '配当控除',
+                        }, //44
+                        {
+                            questionTitle: '未成年者控除',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '法人税の課税標準',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '同族会社',
+                            label: 'ア',
+                            content: '3人',
+                        }, //47
+                        {
+                            questionTitle: '個人の事業税',
+                            label: 'ア',
+                            content: '第3種',
+                        }, //48
+                        {
+                            questionTitle: '確定給付企業年金制度の開始',
+                            label: 'ア',
+                            content: '年金規約',
+                        }, //49
+                        {
+                            questionTitle: '団体定期保険の保険料',
+                            label: 'ウ',
+                            content: '生命保険料控除',
+                        }, //50
                     ]"
                 />
             </div>

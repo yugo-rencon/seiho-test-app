@@ -213,26 +213,96 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '金融仲介機能', content: '正しい' }, //31
-                        { questionTitle: '専門家の必要性の高まり', content: '正しい' }, //32
-                        { questionTitle: '運用の実務', content: '融資審査部門 → マクロ調査部門' }, //33 p51
-                        { questionTitle: '貸付の特徴', content: '事務リスク → 信用リスク<br>流動化が困難でない → 流動化が困難' }, //34 p52
-                        { questionTitle: '現代ポートフォリオ理論', content: 'パッシブ運用の説明 → アクティブ運用の説明' }, //35 見つからない
-                        { questionTitle: 'アメリカの保険会社の周辺業務', content: '正しい' }, //36
-                        { questionTitle: '第二次大戦時の国債保有の要請', content: '正しい' }, //37
-                        { questionTitle: '経済安定成長期の有価証券投資', content: '正しい' }, //38
-                        { questionTitle: '改正保険業法の施行', content: '固有業務 → 付随業務' }, //39 p210
-                        { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        { questionTitle: 'リスク意識の高まり', label: 'エ', content: '自己資本比率規制' }, //41
-                        { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //42
-                        { questionTitle: '融資審査', label: 'ウ', content: '自己資本' }, //43
-                        { questionTitle: '公社債の発行方法の相違による分類', label: 'エ', content: '公募債' }, //44
-                        { questionTitle: '不動産投資手法の多様化', label: 'ア', content: '新借地' }, //45
-                        { questionTitle: '対外貸付実務', label: 'オ', content: '' }, //46
-                        { questionTitle: 'ドイツの金融制度', label: 'オ', content: '' }, //47
-                        { questionTitle: '創業時の生命保険会社の資産運用', label: 'オ', content: '' }, //48
-                        { questionTitle: '資産運用手段の多様化', label: 'ウ', content: 'オルタナティブ投資' }, //49
-                        { questionTitle: 'ソルベンシー確保', label: 'イ', content: '200' }, //50
+                        {
+                            questionTitle: '金融仲介機能',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '専門家の必要性の高まり',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '運用の実務',
+                            content: '融資審査部門 → マクロ調査部門',
+                        }, //33 p51
+                        {
+                            questionTitle: '貸付の特徴',
+                            content: '事務リスク → 信用リスク<br>流動化が困難でない → 流動化が困難',
+                        }, //34 p52
+                        {
+                            questionTitle: '現代ポートフォリオ理論',
+                            content: 'パッシブ運用の説明 → アクティブ運用の説明',
+                        }, //35 見つからない
+                        {
+                            questionTitle: 'アメリカの保険会社の周辺業務',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '第二次大戦時の国債保有の要請',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '経済安定成長期の有価証券投資',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '改正保険業法の施行',
+                            content: '固有業務 → 付随業務',
+                        }, //39 p210
+                        {
+                            questionTitle: '国際会計基準導入の動向',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: 'リスク意識の高まり',
+                            label: 'エ',
+                            content: '自己資本比率規制',
+                        }, //41
+                        {
+                            questionTitle: '各国の保険監督方法',
+                            label: 'ア',
+                            content: '準拠主義',
+                        }, //42
+                        {
+                            questionTitle: '融資審査',
+                            label: 'ウ',
+                            content: '自己資本',
+                        }, //43
+                        {
+                            questionTitle: '公社債の発行方法の相違による分類',
+                            label: 'エ',
+                            content: '公募債',
+                        }, //44
+                        {
+                            questionTitle: '不動産投資手法の多様化',
+                            label: 'ア',
+                            content: '新借地',
+                        }, //45
+                        {
+                            questionTitle: '対外貸付実務',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: 'ドイツの金融制度',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '創業時の生命保険会社の資産運用',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'ウ',
+                            content: 'オルタナティブ投資',
+                        }, //49
+                        {
+                            questionTitle: 'ソルベンシー確保',
+                            label: 'イ',
+                            content: '200',
+                        }, //50
                     ]"
                 />
             </div>

@@ -214,26 +214,96 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '会計の意義', content: '管理会計の説明 ↔︎ 財務会計の説明（財務会計：現在または過去、管理会計：未来）' }, //31 p4
-                        { questionTitle: '貸借対照表', content: '正しい' }, //32
-                        { questionTitle: '企業会計原則（一般原則）', content: '明瞭性の原則 → 資本取引・損益取引区分の原則' }, //33 p25
-                        { questionTitle: '決算の目的', content: ' 実現主義 → 現金主義<br>現金主義 → 発生主義' }, //34 p49
-                        { questionTitle: '保険業法と会社法', content: '正しい' }, //35
-                        { questionTitle: '代理店貸', content: '正しい' }, //36
-                        { questionTitle: '負債勘定', content: '正しい' }, //37
-                        { questionTitle: '法人税及び住民税', content: '他の税金と合算 → 他の税金と区別' }, //38 p164
-                        { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
-                        { questionTitle: '会計監査人による監査', content: '期中監査の説明 ↔︎ 決算監査の説明' }, //40 p208
-                        { label: 'ウ', questionTitle: '帳簿の種類', content: '買掛金元帳' }, //41
-                        { label: 'エ', questionTitle: '財務諸表', content: '経営成績' }, //42
-                        { label: 'ア', questionTitle: '法人税法', content: '課税の公平性' }, //43
-                        { label: 'ア', questionTitle: '決算スケジュール', content: '2週間' }, //44
-                        { label: 'エ', questionTitle: '連結決算', content: 'のれん（連結調整勘定）' }, //45
-                        { label: 'ウ', questionTitle: '外貨預金の為替換算', content: '決算時' }, //46
-                        { label: 'オ', questionTitle: '退職給付引当金', content: '' }, //47
-                        { label: 'イ', questionTitle: '公告', content: '損益計算書' }, //48
-                        { label: 'オ', questionTitle: '区分経理', content: '' }, //49
-                        { label: 'イ', questionTitle: '保険業法第112条評価益', content: '評価替え' }, //50
+                        {
+                            questionTitle: '会計の意義',
+                            content: '管理会計の説明 ↔︎ 財務会計の説明（財務会計：現在または過去、管理会計：未来）',
+                        }, //31 p4
+                        {
+                            questionTitle: '貸借対照表',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '企業会計原則（一般原則）',
+                            content: '明瞭性の原則 → 資本取引・損益取引区分の原則',
+                        }, //33 p25
+                        {
+                            questionTitle: '決算の目的',
+                            content: ' 実現主義 → 現金主義<br>現金主義 → 発生主義',
+                        }, //34 p49
+                        {
+                            questionTitle: '保険業法と会社法',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '代理店貸',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '負債勘定',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '法人税及び住民税',
+                            content: '他の税金と合算 → 他の税金と区別',
+                        }, //38 p164
+                        {
+                            questionTitle: '区分経理における運用資産の管理',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '会計監査人による監査',
+                            content: '期中監査の説明 ↔︎ 決算監査の説明',
+                        }, //40 p208
+                        {
+                            label: 'ウ',
+                            questionTitle: '帳簿の種類',
+                            content: '買掛金元帳',
+                        }, //41
+                        {
+                            label: 'エ',
+                            questionTitle: '財務諸表',
+                            content: '経営成績',
+                        }, //42
+                        {
+                            label: 'ア',
+                            questionTitle: '法人税法',
+                            content: '課税の公平性',
+                        }, //43
+                        {
+                            label: 'ア',
+                            questionTitle: '決算スケジュール',
+                            content: '2週間',
+                        }, //44
+                        {
+                            label: 'エ',
+                            questionTitle: '連結決算',
+                            content: 'のれん（連結調整勘定）',
+                        }, //45
+                        {
+                            label: 'ウ',
+                            questionTitle: '外貨預金の為替換算',
+                            content: '決算時',
+                        }, //46
+                        {
+                            label: 'オ',
+                            questionTitle: '退職給付引当金',
+                            content: '',
+                        }, //47
+                        {
+                            label: 'イ',
+                            questionTitle: '公告',
+                            content: '損益計算書',
+                        }, //48
+                        {
+                            label: 'オ',
+                            questionTitle: '区分経理',
+                            content: '',
+                        }, //49
+                        {
+                            label: 'イ',
+                            questionTitle: '保険業法第112条評価益',
+                            content: '評価替え',
+                        }, //50
                     ]"
                 />
             </div>

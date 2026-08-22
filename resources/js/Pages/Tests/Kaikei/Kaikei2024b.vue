@@ -214,26 +214,96 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '会計の意義', content: '管理会計の説明 ↔︎ 財務会計の説明（財務会計：現在または過去、管理会計：未来）' }, //31 p4
-                        { questionTitle: '簿記', content: '経営者、従業員などの内部利害関係者 → 株主、債権者などの外部利害関係者' }, //32 p9
-                        { questionTitle: '単一性の原則', content: '正しい' }, //33
-                        { questionTitle: '保険金等支払金の計上', content: '正しい' }, //34
-                        { questionTitle: '決算書類', content: '正しい' }, //35
-                        { questionTitle: '減価償却', content: '有形固定資産の種類にかかわらず方法を選定できる → 種類ごとに選定できる償却の方法が定められている' }, //36 p116
-                        { questionTitle: '損益の算定', content: '収支相等の原則 → 費用収益対応の原則' }, //37 p143
-                        { questionTitle: '法人税及び住民税', content: '他の税金と合算 → 他の税金と区別' }, //38 p164
-                        { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
-                        { questionTitle: '税務調査', content: '正しい' }, //40
-                        { label: 'ウ', questionTitle: '帳簿の種類', content: '買掛金元帳' }, //41
-                        { label: 'ア', questionTitle: '企業会計原則（一般原則）', content: '明瞭性' }, //42
-                        { label: 'エ', questionTitle: '株主配当', content: 'いつでも' }, //43
-                        { label: 'エ', questionTitle: '決算', content: '財政状態' }, //44
-                        { label: 'エ', questionTitle: '連結決算', content: 'のれん（連結調整勘定）' }, //45
-                        { label: 'オ', questionTitle: '利益準備金', content: '' }, //46
-                        { label: 'イ', questionTitle: '利息及び配当金等収入', content: '売買目的有価証券' }, //47
-                        { label: 'イ', questionTitle: '公告', content: '損益計算書' }, //48
-                        { label: 'オ', questionTitle: '区分経理', content: '' }, //49
-                        { label: 'ウ', questionTitle: '金融検査', content: '金融庁' }, //50
+                        {
+                            questionTitle: '会計の意義',
+                            content: '管理会計の説明 ↔︎ 財務会計の説明（財務会計：現在または過去、管理会計：未来）',
+                        }, //31 p4
+                        {
+                            questionTitle: '簿記',
+                            content: '経営者、従業員などの内部利害関係者 → 株主、債権者などの外部利害関係者',
+                        }, //32 p9
+                        {
+                            questionTitle: '単一性の原則',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '保険金等支払金の計上',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '決算書類',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '減価償却',
+                            content: '有形固定資産の種類にかかわらず方法を選定できる → 種類ごとに選定できる償却の方法が定められている',
+                        }, //36 p116
+                        {
+                            questionTitle: '損益の算定',
+                            content: '収支相等の原則 → 費用収益対応の原則',
+                        }, //37 p143
+                        {
+                            questionTitle: '法人税及び住民税',
+                            content: '他の税金と合算 → 他の税金と区別',
+                        }, //38 p164
+                        {
+                            questionTitle: '区分経理における運用資産の管理',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '税務調査',
+                            content: '正しい',
+                        }, //40
+                        {
+                            label: 'ウ',
+                            questionTitle: '帳簿の種類',
+                            content: '買掛金元帳',
+                        }, //41
+                        {
+                            label: 'ア',
+                            questionTitle: '企業会計原則（一般原則）',
+                            content: '明瞭性',
+                        }, //42
+                        {
+                            label: 'エ',
+                            questionTitle: '株主配当',
+                            content: 'いつでも',
+                        }, //43
+                        {
+                            label: 'エ',
+                            questionTitle: '決算',
+                            content: '財政状態',
+                        }, //44
+                        {
+                            label: 'エ',
+                            questionTitle: '連結決算',
+                            content: 'のれん（連結調整勘定）',
+                        }, //45
+                        {
+                            label: 'オ',
+                            questionTitle: '利益準備金',
+                            content: '',
+                        }, //46
+                        {
+                            label: 'イ',
+                            questionTitle: '利息及び配当金等収入',
+                            content: '売買目的有価証券',
+                        }, //47
+                        {
+                            label: 'イ',
+                            questionTitle: '公告',
+                            content: '損益計算書',
+                        }, //48
+                        {
+                            label: 'オ',
+                            questionTitle: '区分経理',
+                            content: '',
+                        }, //49
+                        {
+                            label: 'ウ',
+                            questionTitle: '金融検査',
+                            content: '金融庁',
+                        }, //50
                     ]"
                 />
             </div>

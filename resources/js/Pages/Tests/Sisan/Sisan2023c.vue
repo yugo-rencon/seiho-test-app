@@ -213,26 +213,96 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '日本の金融制度', content: '正しい' }, //31
-                        { questionTitle: '運用規制', content: '正しい' }, //32
-                        { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: '貸付の特徴', content: '市場リスク → 信用リスク<br>流動化が容易 → 流動化が困難' }, //34 p52
-                        { questionTitle: '海外現地法人', content: '直接行うことはない → 直接行うこともある' }, //35 p105
-                        { questionTitle: '各国の生保資産運用の傾向', content: '①公共金融機関型 → 産業金融機関・機関投資家型<br>②産業金融機関・機関投資家型 → <br>③住宅金融型 → 公共金融機関型' }, //36 p124
-                        { questionTitle: '創業時の生命保険会社の資産運用', content: '株式投資 → 銀行預金' }, //37 p162-164
-                        { questionTitle: 'バブル崩壊後の資産運用', content: '正しい' }, //38
-                        { questionTitle: '金融システム改革', content: '正しい' }, //39
-                        { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
-                        { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
-                        { questionTitle: '有価証券の定義', label: 'ア', content: '金融商品取引法' }, //42
-                        { questionTitle: '株式投資の尺度', label: 'エ', content: '当期純利益' }, //43
-                        { questionTitle: 'コール・オプション', label: 'ウ', content: '買い付ける ' }, //44
-                        { questionTitle: '短期金融市場の概要', label: 'オ', content: '' }, //45
-                        { questionTitle: '個人変額保険の運用', label: 'イ', content: '収益性' }, //46
-                        { questionTitle: 'ドイツの生命保険会社の資産運用', label: 'オ', content: '' }, //47
-                        { questionTitle: '海外投融資のリスク', label: 'ウ', content: '安全性' }, //48
-                        { questionTitle: '資産運用手段の多様化', label: 'イ', content: 'ヘッジファンド' }, //49
-                        { questionTitle: '金融システム改革法', label: 'エ', content: '保護機構' }, //50
+                        {
+                            questionTitle: '日本の金融制度',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '運用規制',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '融資審査',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '貸付の特徴',
+                            content: '市場リスク → 信用リスク<br>流動化が容易 → 流動化が困難',
+                        }, //34 p52
+                        {
+                            questionTitle: '海外現地法人',
+                            content: '直接行うことはない → 直接行うこともある',
+                        }, //35 p105
+                        {
+                            questionTitle: '各国の生保資産運用の傾向',
+                            content: '①公共金融機関型 → 産業金融機関・機関投資家型<br>②産業金融機関・機関投資家型 → <br>③住宅金融型 → 公共金融機関型',
+                        }, //36 p124
+                        {
+                            questionTitle: '創業時の生命保険会社の資産運用',
+                            content: '株式投資 → 銀行預金',
+                        }, //37 p162-164
+                        {
+                            questionTitle: 'バブル崩壊後の資産運用',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '金融システム改革',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '投資環境の動向',
+                            content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード',
+                        }, //40 p220
+                        {
+                            questionTitle: 'リスク意識の高まり',
+                            label: 'ア',
+                            content: 'BIS（国際決済銀行）',
+                        }, //41
+                        {
+                            questionTitle: '有価証券の定義',
+                            label: 'ア',
+                            content: '金融商品取引法',
+                        }, //42
+                        {
+                            questionTitle: '株式投資の尺度',
+                            label: 'エ',
+                            content: '当期純利益',
+                        }, //43
+                        {
+                            questionTitle: 'コール・オプション',
+                            label: 'ウ',
+                            content: '買い付ける ',
+                        }, //44
+                        {
+                            questionTitle: '短期金融市場の概要',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '個人変額保険の運用',
+                            label: 'イ',
+                            content: '収益性',
+                        }, //46
+                        {
+                            questionTitle: 'ドイツの生命保険会社の資産運用',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '海外投融資のリスク',
+                            label: 'ウ',
+                            content: '安全性',
+                        }, //48
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'イ',
+                            content: 'ヘッジファンド',
+                        }, //49
+                        {
+                            questionTitle: '金融システム改革法',
+                            label: 'エ',
+                            content: '保護機構',
+                        }, //50
                     ]"
                 />
             </div>

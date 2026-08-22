@@ -213,26 +213,96 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '豊かな老後生活への備え', content: '正しい' }, //31
-                        { questionTitle: '第三分野市場', content: '損害保険 ↔︎ 生命保険' }, //32 p34
-                        { questionTitle: '消費者契約法', content: '契約を無効とすることができる → 契約を取り消すことができる' }, //33 p37
-                        { questionTitle: '危険選択の方法', content: '認定生命保険士 → 生命保険面接士' }, //34 p52
-                        { questionTitle: 'リビング・ニーズ特約', content: '贈与税が課税 → 非課税' }, //35 p61-62
-                        { questionTitle: '付帯サービス', content: '正しい' }, //36
-                        { questionTitle: '特別勘定特約', content: '拠出型企業年金保険、団体養老保険 → 新企業年金保険、団体生存保険' }, //37 p91-92
-                        { questionTitle: '一時払退職後終身保険', content: '正しい' }, //38
-                        { questionTitle: '営業職員の育成体系', content: '正しい' }, //39
-                        { questionTitle: '生命保険大学課程', content: '正しい' }, //40
-                        { questionTitle: '種類別貯蓄高', label: 'ウ', content: '通貨性預貯金' }, //41
-                        { questionTitle: '医療保障', label: 'イ', content: '三大疾病' }, //42
-                        { questionTitle: '個人保険商品', label: 'ウ', content: '利差配当' }, //43
-                        { questionTitle: '財形貯蓄制度の種類', label: 'イ', content: '55歳' }, //44
-                        { questionTitle: '生命表', label: 'ア', content: '経験死亡率' }, //45
-                        { questionTitle: '販売チャネル', label: 'オ', content: '' }, //46
-                        { questionTitle: '変額保険販売資格要件', label: 'オ', content: '' }, //47
-                        { questionTitle: '医療保障保険（団体型）', label: 'エ', content: '自己負担の一部を補填する' }, //48
-                        { questionTitle: '営業職員の退職金', label: 'エ', content: '終身' }, //49
-                        { questionTitle: '代理店', label: 'ア', content: '募集代理店' }, //50
+                        {
+                            questionTitle: '豊かな老後生活への備え',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '第三分野市場',
+                            content: '損害保険 ↔︎ 生命保険',
+                        }, //32 p34
+                        {
+                            questionTitle: '消費者契約法',
+                            content: '契約を無効とすることができる → 契約を取り消すことができる',
+                        }, //33 p37
+                        {
+                            questionTitle: '危険選択の方法',
+                            content: '認定生命保険士 → 生命保険面接士',
+                        }, //34 p52
+                        {
+                            questionTitle: 'リビング・ニーズ特約',
+                            content: '贈与税が課税 → 非課税',
+                        }, //35 p61-62
+                        {
+                            questionTitle: '付帯サービス',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '特別勘定特約',
+                            content: '拠出型企業年金保険、団体養老保険 → 新企業年金保険、団体生存保険',
+                        }, //37 p91-92
+                        {
+                            questionTitle: '一時払退職後終身保険',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '営業職員の育成体系',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '生命保険大学課程',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '種類別貯蓄高',
+                            label: 'ウ',
+                            content: '通貨性預貯金',
+                        }, //41
+                        {
+                            questionTitle: '医療保障',
+                            label: 'イ',
+                            content: '三大疾病',
+                        }, //42
+                        {
+                            questionTitle: '個人保険商品',
+                            label: 'ウ',
+                            content: '利差配当',
+                        }, //43
+                        {
+                            questionTitle: '財形貯蓄制度の種類',
+                            label: 'イ',
+                            content: '55歳',
+                        }, //44
+                        {
+                            questionTitle: '生命表',
+                            label: 'ア',
+                            content: '経験死亡率',
+                        }, //45
+                        {
+                            questionTitle: '販売チャネル',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '変額保険販売資格要件',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '医療保障保険（団体型）',
+                            label: 'エ',
+                            content: '自己負担の一部を補填する',
+                        }, //48
+                        {
+                            questionTitle: '営業職員の退職金',
+                            label: 'エ',
+                            content: '終身',
+                        }, //49
+                        {
+                            questionTitle: '代理店',
+                            label: 'ア',
+                            content: '募集代理店',
+                        }, //50
                     ]"
                 />
             </div>

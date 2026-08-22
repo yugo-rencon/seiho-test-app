@@ -213,26 +213,96 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '資産運用の専門家', content: 'エコノミスト → アナリスト' }, //31 p48
-                        { questionTitle: '金融関連業務', content: '付随業務 → 法定他業' }, //32 見つからない
-                        { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: '貸付の特徴', content: '事務リスク → 信用リスク<br>流動化が容易 → 流動化が困難' }, //34 p52
-                        { questionTitle: '預金市場', content: '正しい' }, //35
-                        { questionTitle: '不動産投資の実務', content: '正しい' }, //36
-                        { questionTitle: 'カナダの金融制度', content: '他業態の業務を行うことは禁止 → 子会社形態で可能' }, //37 p139
-                        { questionTitle: 'バブル崩壊後の資産運用', content: '正しい' }, //38
-                        { questionTitle: '金融システム改革', content: 'フリー・クリア・ワイド → フリー・フェアー・グローバル' }, //39 p207
-                        { questionTitle: '会計基準の整備', content: '正しい' }, //40
-                        { questionTitle: '生保資金の運用規制', label: 'イ', content: '独占禁止法' }, //41
-                        { questionTitle: '生保資金と運用原則', label: 'エ', content: '安全性' }, //42
-                        { questionTitle: '企業貸付', label: 'ウ', content: '短期' }, //43
-                        { questionTitle: '株式投資の尺度', label: 'エ', content: '当期純利益' }, //44
-                        { questionTitle: '短期金融市場の概要', label: 'オ', content: '' }, //45
-                        { questionTitle: 'デリバティブ取引', label: 'オ', content: '' }, //46
-                        { questionTitle: '対外貸付実務', label: 'ア', content: 'シンジケート' }, //47
-                        { questionTitle: 'アメリカの生命保険会社の業務範囲', label: 'ア', content: '子会社を通じて' }, //48
-                        { questionTitle: '資産運用手段の多様化', label: 'イ', content: 'ヘッジファンド' }, //49
-                        { questionTitle: '特定金銭信託の活用', label: 'イ', content: 'キャピタル・ゲイン' }, //50
+                        {
+                            questionTitle: '資産運用の専門家',
+                            content: 'エコノミスト → アナリスト',
+                        }, //31 p48
+                        {
+                            questionTitle: '金融関連業務',
+                            content: '付随業務 → 法定他業',
+                        }, //32 見つからない
+                        {
+                            questionTitle: '融資審査',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '貸付の特徴',
+                            content: '事務リスク → 信用リスク<br>流動化が容易 → 流動化が困難',
+                        }, //34 p52
+                        {
+                            questionTitle: '預金市場',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '不動産投資の実務',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: 'カナダの金融制度',
+                            content: '他業態の業務を行うことは禁止 → 子会社形態で可能',
+                        }, //37 p139
+                        {
+                            questionTitle: 'バブル崩壊後の資産運用',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '金融システム改革',
+                            content: 'フリー・クリア・ワイド → フリー・フェアー・グローバル',
+                        }, //39 p207
+                        {
+                            questionTitle: '会計基準の整備',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '生保資金の運用規制',
+                            label: 'イ',
+                            content: '独占禁止法',
+                        }, //41
+                        {
+                            questionTitle: '生保資金と運用原則',
+                            label: 'エ',
+                            content: '安全性',
+                        }, //42
+                        {
+                            questionTitle: '企業貸付',
+                            label: 'ウ',
+                            content: '短期',
+                        }, //43
+                        {
+                            questionTitle: '株式投資の尺度',
+                            label: 'エ',
+                            content: '当期純利益',
+                        }, //44
+                        {
+                            questionTitle: '短期金融市場の概要',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: 'デリバティブ取引',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '対外貸付実務',
+                            label: 'ア',
+                            content: 'シンジケート',
+                        }, //47
+                        {
+                            questionTitle: 'アメリカの生命保険会社の業務範囲',
+                            label: 'ア',
+                            content: '子会社を通じて',
+                        }, //48
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'イ',
+                            content: 'ヘッジファンド',
+                        }, //49
+                        {
+                            questionTitle: '特定金銭信託の活用',
+                            label: 'イ',
+                            content: 'キャピタル・ゲイン',
+                        }, //50
                     ]"
                 />
             </div>

@@ -214,26 +214,96 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '貸借対照表', content: '正しい' }, //31
-                        { questionTitle: '保険料の計上', content: '現金主義 ↔︎ 実現主義' }, //32 p42
-                        { questionTitle: '退職給付引当金', content: '正しい' }, //33
-                        { questionTitle: '会計に関する事項の標準的な取扱い', content: '金融庁 → 生命保険協会経理委員会' }, //34 p95
-                        { questionTitle: '外貨預金の換算', content: '正しい' }, //35
-                        { questionTitle: '負債勘定', content: '一般の企業と同様 → 一般の企業と異なる（契約者に対する保険契約準備金が大部分を占めるため）' }, //36 p125
-                        { questionTitle: '損益の算定', content: '収支相等の原則 → 費用収益対応の原則' }, //37 p143
-                        { questionTitle: '利源分析に関する課題', content: '正しい' }, //38
-                        { questionTitle: '区分経理', content: '正しい' }, //39
-                        { questionTitle: '監査役による監査', content: '社内監査役 → 社外監査役' }, //40 p206
-                        { label: 'イ', questionTitle: '企業会計の領域', content: '財務会計' }, //41
-                        { label: 'ア', questionTitle: '試算表の作成', content: '仕訳帳' }, //42
-                        { label: 'エ', questionTitle: '決算', content: '財政状態' }, //43
-                        { label: 'ア', questionTitle: '決算スケジュール', content: '2週間' }, //44
-                        { label: 'ウ', questionTitle: '無形固定資産', content: '定額法' }, //45
-                        { label: 'オ', questionTitle: '貸倒引当金', content: '' }, //46
-                        { label: 'オ', questionTitle: '年金', content: '' }, //47
-                        { label: 'エ', questionTitle: '法人税及び住民税', content: '税引前当期剰余' }, //48
-                        { label: 'イ', questionTitle: '運用資産の管理', content: '資産区分' }, //49
-                        { label: 'ウ', questionTitle: '金融検査', content: '自己査定' }, //50
+                        {
+                            questionTitle: '貸借対照表',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '保険料の計上',
+                            content: '現金主義 ↔︎ 実現主義',
+                        }, //32 p42
+                        {
+                            questionTitle: '退職給付引当金',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '会計に関する事項の標準的な取扱い',
+                            content: '金融庁 → 生命保険協会経理委員会',
+                        }, //34 p95
+                        {
+                            questionTitle: '外貨預金の換算',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '負債勘定',
+                            content: '一般の企業と同様 → 一般の企業と異なる（契約者に対する保険契約準備金が大部分を占めるため）',
+                        }, //36 p125
+                        {
+                            questionTitle: '損益の算定',
+                            content: '収支相等の原則 → 費用収益対応の原則',
+                        }, //37 p143
+                        {
+                            questionTitle: '利源分析に関する課題',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '区分経理',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '監査役による監査',
+                            content: '社内監査役 → 社外監査役',
+                        }, //40 p206
+                        {
+                            label: 'イ',
+                            questionTitle: '企業会計の領域',
+                            content: '財務会計',
+                        }, //41
+                        {
+                            label: 'ア',
+                            questionTitle: '試算表の作成',
+                            content: '仕訳帳',
+                        }, //42
+                        {
+                            label: 'エ',
+                            questionTitle: '決算',
+                            content: '財政状態',
+                        }, //43
+                        {
+                            label: 'ア',
+                            questionTitle: '決算スケジュール',
+                            content: '2週間',
+                        }, //44
+                        {
+                            label: 'ウ',
+                            questionTitle: '無形固定資産',
+                            content: '定額法',
+                        }, //45
+                        {
+                            label: 'オ',
+                            questionTitle: '貸倒引当金',
+                            content: '',
+                        }, //46
+                        {
+                            label: 'オ',
+                            questionTitle: '年金',
+                            content: '',
+                        }, //47
+                        {
+                            label: 'エ',
+                            questionTitle: '法人税及び住民税',
+                            content: '税引前当期剰余',
+                        }, //48
+                        {
+                            label: 'イ',
+                            questionTitle: '運用資産の管理',
+                            content: '資産区分',
+                        }, //49
+                        {
+                            label: 'ウ',
+                            questionTitle: '金融検査',
+                            content: '自己査定',
+                        }, //50
                     ]"
                 />
             </div>

@@ -213,26 +213,96 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '会計公準', content: '正しい' }, //31
-                        { questionTitle: '帳簿の種類', content: '補助元帳 ↔︎ 補助記入帳' }, //32 p14
-                        { questionTitle: '特別勘定の決算', content: '正しい' }, //33
-                        { questionTitle: '保険業法と会社法', content: '株式会社：保険業法 → 会社法<br>相互会社：会社法 → 保険業法' }, //34 p94
-                        { questionTitle: '代理店貸', content: '正しい' }, //35
-                        { questionTitle: '保険業法第113条繰延資産', content: '正しい' }, //36
-                        { questionTitle: '自己株式', content: '純資産の部に加算 → 純資産の部から控除' }, //37 p141
-                        { questionTitle: '利息及び配当金等収入', content: '売買目的有価証券及び商品有価証券に係るものを含む → 除く' }, //38 p145
-                        { questionTitle: '保険金据置支払金', content: '支払利息に計上 → 本科目（保険金据置支払金）に計上' }, //39 p158
-                        { questionTitle: '区分経理', content: '正しい' }, //40
-                        { label: 'エ', questionTitle: '会計上の取引', content: '仕訳' }, //41
-                        { label: 'オ', questionTitle: '開示書類', content: '' }, //42
-                        { label: 'イ', questionTitle: '勘定間取引', content: '事業方法書' }, //43
-                        { label: 'ウ', questionTitle: '連結財務諸表の作成', content: '持分法' }, //44
-                        { label: 'ア', questionTitle: '商品有価証券の評価方法', content: '経理処理要領' }, //45
-                        { label: 'ア', questionTitle: 'その他負債', content: '資産除去' }, //46
-                        { label: 'ウ', questionTitle: '勘定体系', content: '保険契約準備金' }, //47
-                        { label: 'エ', questionTitle: '解約返戻金', content: '支払備金' }, //48
-                        { label: 'オ', questionTitle: '事業費効率指標', content: '' }, //49
-                        { label: 'イ', questionTitle: '監査役による監査', content: '社外' }, //50
+                        {
+                            questionTitle: '会計公準',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '帳簿の種類',
+                            content: '補助元帳 ↔︎ 補助記入帳',
+                        }, //32 p14
+                        {
+                            questionTitle: '特別勘定の決算',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '保険業法と会社法',
+                            content: '株式会社：保険業法 → 会社法<br>相互会社：会社法 → 保険業法',
+                        }, //34 p94
+                        {
+                            questionTitle: '代理店貸',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '保険業法第113条繰延資産',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '自己株式',
+                            content: '純資産の部に加算 → 純資産の部から控除',
+                        }, //37 p141
+                        {
+                            questionTitle: '利息及び配当金等収入',
+                            content: '売買目的有価証券及び商品有価証券に係るものを含む → 除く',
+                        }, //38 p145
+                        {
+                            questionTitle: '保険金据置支払金',
+                            content: '支払利息に計上 → 本科目（保険金据置支払金）に計上',
+                        }, //39 p158
+                        {
+                            questionTitle: '区分経理',
+                            content: '正しい',
+                        }, //40
+                        {
+                            label: 'エ',
+                            questionTitle: '会計上の取引',
+                            content: '仕訳',
+                        }, //41
+                        {
+                            label: 'オ',
+                            questionTitle: '開示書類',
+                            content: '',
+                        }, //42
+                        {
+                            label: 'イ',
+                            questionTitle: '勘定間取引',
+                            content: '事業方法書',
+                        }, //43
+                        {
+                            label: 'ウ',
+                            questionTitle: '連結財務諸表の作成',
+                            content: '持分法',
+                        }, //44
+                        {
+                            label: 'ア',
+                            questionTitle: '商品有価証券の評価方法',
+                            content: '経理処理要領',
+                        }, //45
+                        {
+                            label: 'ア',
+                            questionTitle: 'その他負債',
+                            content: '資産除去',
+                        }, //46
+                        {
+                            label: 'ウ',
+                            questionTitle: '勘定体系',
+                            content: '保険契約準備金',
+                        }, //47
+                        {
+                            label: 'エ',
+                            questionTitle: '解約返戻金',
+                            content: '支払備金',
+                        }, //48
+                        {
+                            label: 'オ',
+                            questionTitle: '事業費効率指標',
+                            content: '',
+                        }, //49
+                        {
+                            label: 'イ',
+                            questionTitle: '監査役による監査',
+                            content: '社外',
+                        }, //50
                     ]"
                 />
             </div>

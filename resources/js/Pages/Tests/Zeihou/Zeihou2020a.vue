@@ -213,26 +213,96 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '租税の種類', content: '正しい' }, //31
-                        { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
-                        { questionTitle: '租税特別措置法の課税標準', content: '2つ → 3つ（総所得金額・退職所得金額・山林所得金額）' }, //33 p36
-                        { questionTitle: '復興特別所得税', content: '正しい' }, //34
-                        { questionTitle: '相続税の申告と納税', content: '6ヶ月以内 → 10ヶ月以内' }, //35 p94
-                        { questionTitle: '贈与税の配偶者控除', content: '10年以上 → 20年以上<br>2回まで → 一生に1回' }, //36 p101
-                        { questionTitle: '法人の確定申告', content: ' 3ヶ月以内 → 2ヶ月以内' }, //37 p141
-                        { questionTitle: '居住用超高層建築物の不動産取得税', content: '正しい' }, //38
-                        { questionTitle: '定期付養老保険の保険料', content: '正しい' }, //39
-                        { questionTitle: '財形住宅貯蓄積立保険', content: '雑所得として課税 → 源泉分離課税（20%）' }, //40 p213
-                        { questionTitle: '租税の種類', label: 'エ', content: '目的税' }, //41
-                        { questionTitle: '給与所得', label: 'ウ', content: '特定支出' }, //42
-                        { questionTitle: '退職所得控除額', label: 'イ', content: '20年' }, //43
-                        { questionTitle: '所得税の税率', label: 'ウ', content: '山林所得' }, //44
-                        { questionTitle: '第2次相続', label: 'ア', content: '10年' }, //45
-                        { questionTitle: '法人の種類と課税の範囲', label: 'オ', content: '' }, //46
-                        { questionTitle: '同族会社', label: 'ウ', content: '50%' }, //47
-                        { questionTitle: '連結納税制度', label: 'オ', content: '' }, //48
-                        { questionTitle: '個人の事業税', label: 'ア', content: '第3種事業' }, //49
-                        { questionTitle: '固定資産税の課税標準', label: 'ウ', content: '200㎡' }, //50
+                        {
+                            questionTitle: '租税の種類',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '空き家に係る譲渡所得の特別控除の特例',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '租税特別措置法の課税標準',
+                            content: '2つ → 3つ（総所得金額・退職所得金額・山林所得金額）',
+                        }, //33 p36
+                        {
+                            questionTitle: '復興特別所得税',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '相続税の申告と納税',
+                            content: '6ヶ月以内 → 10ヶ月以内',
+                        }, //35 p94
+                        {
+                            questionTitle: '贈与税の配偶者控除',
+                            content: '10年以上 → 20年以上<br>2回まで → 一生に1回',
+                        }, //36 p101
+                        {
+                            questionTitle: '法人の確定申告',
+                            content: ' 3ヶ月以内 → 2ヶ月以内',
+                        }, //37 p141
+                        {
+                            questionTitle: '居住用超高層建築物の不動産取得税',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '定期付養老保険の保険料',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '雑所得として課税 → 源泉分離課税（20%）',
+                        }, //40 p213
+                        {
+                            questionTitle: '租税の種類',
+                            label: 'エ',
+                            content: '目的税',
+                        }, //41
+                        {
+                            questionTitle: '給与所得',
+                            label: 'ウ',
+                            content: '特定支出',
+                        }, //42
+                        {
+                            questionTitle: '退職所得控除額',
+                            label: 'イ',
+                            content: '20年',
+                        }, //43
+                        {
+                            questionTitle: '所得税の税率',
+                            label: 'ウ',
+                            content: '山林所得',
+                        }, //44
+                        {
+                            questionTitle: '第2次相続',
+                            label: 'ア',
+                            content: '10年',
+                        }, //45
+                        {
+                            questionTitle: '法人の種類と課税の範囲',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '同族会社',
+                            label: 'ウ',
+                            content: '50%',
+                        }, //47
+                        {
+                            questionTitle: '連結納税制度',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '個人の事業税',
+                            label: 'ア',
+                            content: '第3種事業',
+                        }, //49
+                        {
+                            questionTitle: '固定資産税の課税標準',
+                            label: 'ウ',
+                            content: '200㎡',
+                        }, //50
                     ]"
                 />
             </div>

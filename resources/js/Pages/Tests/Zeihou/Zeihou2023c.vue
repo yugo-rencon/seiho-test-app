@@ -248,26 +248,96 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '租税の種類', content: '正しい' }, //31
-                        { questionTitle: '相続人', content: '代理相続 → 代襲相続' }, //32 p67
-                        { questionTitle: '確定申告', content: '正しい' }, //33
-                        { questionTitle: '法人税の性格', content: '法人実在説 → 法人擬制説' }, //34 p118
-                        { questionTitle: '法人の確定申告', content: ' 3ヶ月以内 → 2ヶ月以内' }, //35 p141
-                        { questionTitle: '地方税', content: '正しい' }, //36
-                        { questionTitle: '不動産取得税', content: '正しい' }, //37
-                        { questionTitle: '転換時の税務上の取扱', content: '正しい' }, //38
-                        { questionTitle: '確定拠出年金の老齢給付金', content: '一時所得 → 雑所得' }, //39 p221
-                        { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //40
-                        { questionTitle: '一時所得', label: 'イ', content: '営利' }, //41
-                        { questionTitle: '所得税の課税標準', label: 'ウ', content: '租税特別措置法' }, //42
-                        { questionTitle: '配偶者控除', label: 'オ', content: '' }, //43
-                        { questionTitle: '相続時精算課税制度', label: 'オ', content: '' }, //44
-                        { questionTitle: '未成年者控除・障害者控除', label: 'イ', content: '10万円' }, //45
-                        { questionTitle: '法人の種類と課税の範囲', label: 'イ', content: '公共法人' }, //46
-                        { questionTitle: '有価証券の評価', label: 'エ', content: '償却原価' }, //47
-                        { questionTitle: '固定資産税の課税標準', label: 'ウ', content: '3年' }, //48
-                        { questionTitle: '確定給付企業年金', label: 'エ', content: '事業主' }, //49
-                        { questionTitle: '生命保険代理店の事業免許等に係る税', label: 'ア', content: '登録免許税' }, //50
+                        {
+                            questionTitle: '租税の種類',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '相続人',
+                            content: '代理相続 → 代襲相続',
+                        }, //32 p67
+                        {
+                            questionTitle: '確定申告',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '法人税の性格',
+                            content: '法人実在説 → 法人擬制説',
+                        }, //34 p118
+                        {
+                            questionTitle: '法人の確定申告',
+                            content: ' 3ヶ月以内 → 2ヶ月以内',
+                        }, //35 p141
+                        {
+                            questionTitle: '地方税',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '不動産取得税',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '転換時の税務上の取扱',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '確定拠出年金の老齢給付金',
+                            content: '一時所得 → 雑所得',
+                        }, //39 p221
+                        {
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '一時所得',
+                            label: 'イ',
+                            content: '営利',
+                        }, //41
+                        {
+                            questionTitle: '所得税の課税標準',
+                            label: 'ウ',
+                            content: '租税特別措置法',
+                        }, //42
+                        {
+                            questionTitle: '配偶者控除',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '相続時精算課税制度',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '未成年者控除・障害者控除',
+                            label: 'イ',
+                            content: '10万円',
+                        }, //45
+                        {
+                            questionTitle: '法人の種類と課税の範囲',
+                            label: 'イ',
+                            content: '公共法人',
+                        }, //46
+                        {
+                            questionTitle: '有価証券の評価',
+                            label: 'エ',
+                            content: '償却原価',
+                        }, //47
+                        {
+                            questionTitle: '固定資産税の課税標準',
+                            label: 'ウ',
+                            content: '3年',
+                        }, //48
+                        {
+                            questionTitle: '確定給付企業年金',
+                            label: 'エ',
+                            content: '事業主',
+                        }, //49
+                        {
+                            questionTitle: '生命保険代理店の事業免許等に係る税',
+                            label: 'ア',
+                            content: '登録免許税',
+                        }, //50
                     ]"
                 />
             </div>

@@ -213,26 +213,96 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '豊かな老後生活への備え', content: '正しい' }, //31
-                        { questionTitle: '企業の福利厚生費', content: '法定外複利費については → 法定福利費については' }, //32 p33
-                        { questionTitle: 'マイナンバー法', content: '正しい' }, //33
-                        { questionTitle: '転換制度', content: '正しい' }, //34
-                        { questionTitle: '財形貯蓄制度', content: '50歳未満 → 55歳未満<br>10年以上の期間 → 5年以上の期間' }, //35 p94
-                        { questionTitle: '付帯サービス', content: '正しい' }, //36
-                        { questionTitle: '営業職員の適格性要素', content: '正しい' }, //37
-                        { questionTitle: '名寄せ', content: '正しい' }, //38
-                        { questionTitle: '変額保険販売資格制度', content: '正しい' }, //39
-                        { questionTitle: '企業保険の営業', content: '企業規模が小さくなれば → 企業が大企業なれば' }, //40 p144
-                        { questionTitle: '厚生年金保険の保険料', label: 'イ', content: '標準報酬月額と標準賞与額それぞれ' }, //41
-                        { questionTitle: '金融サービス提供法', label: 'ウ', content: '勧誘方針' }, //42
-                        { questionTitle: '個人保険商品', label: 'ウ', content: '利差配当' }, //43
-                        { questionTitle: '変額保険', label: 'ア', content: '特約保険金額' }, //44
-                        { questionTitle: '医療保障保険（団体型）', label: 'ア', content: '公的医療保険' }, //45
-                        { questionTitle: '団体信用生命保険', label: 'イ', content: '賦払償還債務' }, //46
-                        { questionTitle: '心身障害者扶養者生命保険', label: 'オ', content: '' }, //47
-                        { questionTitle: '営業職員の給与体系', label: 'エ', content: '保障額' }, //48
-                        { questionTitle: '営業職員の教育', label: 'イ', content: '個別指導' }, //49
-                        { questionTitle: '代理店', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '豊かな老後生活への備え',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '企業の福利厚生費',
+                            content: '法定外複利費については → 法定福利費については',
+                        }, //32 p33
+                        {
+                            questionTitle: 'マイナンバー法',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '転換制度',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '財形貯蓄制度',
+                            content: '50歳未満 → 55歳未満<br>10年以上の期間 → 5年以上の期間',
+                        }, //35 p94
+                        {
+                            questionTitle: '付帯サービス',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '営業職員の適格性要素',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '名寄せ',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '変額保険販売資格制度',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '企業保険の営業',
+                            content: '企業規模が小さくなれば → 企業が大企業なれば',
+                        }, //40 p144
+                        {
+                            questionTitle: '厚生年金保険の保険料',
+                            label: 'イ',
+                            content: '標準報酬月額と標準賞与額それぞれ',
+                        }, //41
+                        {
+                            questionTitle: '金融サービス提供法',
+                            label: 'ウ',
+                            content: '勧誘方針',
+                        }, //42
+                        {
+                            questionTitle: '個人保険商品',
+                            label: 'ウ',
+                            content: '利差配当',
+                        }, //43
+                        {
+                            questionTitle: '変額保険',
+                            label: 'ア',
+                            content: '特約保険金額',
+                        }, //44
+                        {
+                            questionTitle: '医療保障保険（団体型）',
+                            label: 'ア',
+                            content: '公的医療保険',
+                        }, //45
+                        {
+                            questionTitle: '団体信用生命保険',
+                            label: 'イ',
+                            content: '賦払償還債務',
+                        }, //46
+                        {
+                            questionTitle: '心身障害者扶養者生命保険',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '営業職員の給与体系',
+                            label: 'エ',
+                            content: '保障額',
+                        }, //48
+                        {
+                            questionTitle: '営業職員の教育',
+                            label: 'イ',
+                            content: '個別指導',
+                        }, //49
+                        {
+                            questionTitle: '代理店',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

@@ -213,26 +213,96 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '日本の金融制度', content: '正しい' }, //31
-                        { questionTitle: '生保資金の構成', content: '自己資本 → 他人資本' }, //32 p11
-                        { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: '公社債', content: '変動利付 → 確定利付' }, //34 p69
-                        { questionTitle: '預金市場', content: '正しい' }, //35
-                        { questionTitle: 'イギリスの生命保険会社の資産運用の特徴', content: '正しい' }, //36
-                        { questionTitle: '高度経済成長期の資産運用', content: '直接金融方式 → 間接金融方式<br>借入需要に消極的 → 積極的' }, //37 p178
-                        { questionTitle: '資産運用の多様化', content: '正しい' }, //38
-                        { questionTitle: '金融システム改革法の施行（1998年（平成10年）12月）', content: '取引所集中の義務化、店頭登録市場の廃止、私設取引システムの撤廃 → 取引所集中義務の撤廃、店頭登録市場の機能強化、私設取引システムの導入' }, //39 p209
-                        { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
-                        { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
-                        { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //42
-                        { questionTitle: '融資審査における財務諸表分析', label: 'オ', content: '' }, //43
-                        { questionTitle: 'コール・オプション', label: 'ウ', content: '買い付ける' }, //44
-                        { questionTitle: '海外投融資の内容と特徴', label: 'イ', content: '円建' }, //45
-                        { questionTitle: '個人変額保険における資産の評価方法', label: 'エ', content: '毎日' }, //46
-                        { questionTitle: 'ドイツの金融制度', label: 'オ', content: '' }, //47
-                        { questionTitle: '特定金銭信託の活用', label: 'ア', content: '国債' }, //48
-                        { questionTitle: '資産運用手段の多様化', label: 'イ', content: 'ヘッジファンド' }, //49
-                        { questionTitle: 'ソルベンシー確保', label: 'ウ', content: 'リスク係数' }, //50
+                        {
+                            questionTitle: '日本の金融制度',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '生保資金の構成',
+                            content: '自己資本 → 他人資本',
+                        }, //32 p11
+                        {
+                            questionTitle: '融資審査',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '公社債',
+                            content: '変動利付 → 確定利付',
+                        }, //34 p69
+                        {
+                            questionTitle: '預金市場',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: 'イギリスの生命保険会社の資産運用の特徴',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '高度経済成長期の資産運用',
+                            content: '直接金融方式 → 間接金融方式<br>借入需要に消極的 → 積極的',
+                        }, //37 p178
+                        {
+                            questionTitle: '資産運用の多様化',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '金融システム改革法の施行（1998年（平成10年）12月）',
+                            content: '取引所集中の義務化、店頭登録市場の廃止、私設取引システムの撤廃 → 取引所集中義務の撤廃、店頭登録市場の機能強化、私設取引システムの導入',
+                        }, //39 p209
+                        {
+                            questionTitle: '投資環境の動向',
+                            content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード',
+                        }, //40 p220
+                        {
+                            questionTitle: 'リスク意識の高まり',
+                            label: 'ア',
+                            content: 'BIS（国際決済銀行）',
+                        }, //41
+                        {
+                            questionTitle: '資産運用の専門化の進展',
+                            label: 'エ',
+                            content: 'アナリスト',
+                        }, //42
+                        {
+                            questionTitle: '融資審査における財務諸表分析',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: 'コール・オプション',
+                            label: 'ウ',
+                            content: '買い付ける',
+                        }, //44
+                        {
+                            questionTitle: '海外投融資の内容と特徴',
+                            label: 'イ',
+                            content: '円建',
+                        }, //45
+                        {
+                            questionTitle: '個人変額保険における資産の評価方法',
+                            label: 'エ',
+                            content: '毎日',
+                        }, //46
+                        {
+                            questionTitle: 'ドイツの金融制度',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '特定金銭信託の活用',
+                            label: 'ア',
+                            content: '国債',
+                        }, //48
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'イ',
+                            content: 'ヘッジファンド',
+                        }, //49
+                        {
+                            questionTitle: 'ソルベンシー確保',
+                            label: 'ウ',
+                            content: 'リスク係数',
+                        }, //50
                     ]"
                 />
             </div>

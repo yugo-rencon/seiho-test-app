@@ -213,26 +213,96 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '日本の金融制度', content: '正しい' }, //31
-                        { questionTitle: '投融資決定機構', content: '正しい' }, //32
-                        { questionTitle: '手形貸付', content: '金額に上乗せ → 金額から差し引いて' }, //33 p54
-                        { questionTitle: 'リスク特性', content: '株式：非市場リスクと市場リスクのいずれの影響も高い場合が多い<br>債券：非市場リスクより市場リスクの影響が高い場合が多い' }, //34 見つからない
-                        { questionTitle: 'スワップ取引', content: '通過スワップ → 金利スワップ' }, //35 p94
-                        { questionTitle: '海外投融資', content: '正しい' }, //36
-                        { questionTitle: 'アメリカの資産運用規制', content: '正しい' }, //37
-                        { questionTitle: '公共投資', content: '正しい' }, //38
-                        { questionTitle: '資産運用の多様化', content: '正しい' }, //39
-                        { questionTitle: '国際会計基準導入の動向', content: '日本版スチュワードシップ・コード → IFRSへの対応の在り方に関する当面の方針' }, //40 p214
-                        { questionTitle: '生保資金の構成', label: 'イ', content: '基金' }, //41
-                        { questionTitle: '公社債の発行主体別分類', label: 'ア', content: '歳入債' }, //42
-                        { questionTitle: '融資審査', label: 'オ', content: '' }, //43
-                        { questionTitle: 'コール・オプション', label: 'ウ', content: '買い付ける' }, //44
-                        { questionTitle: '短期資金・現預金等', label: 'イ', content: '出し手' }, //45
-                        { questionTitle: 'イギリスの銀行', label: 'ア', content: 'ユニバーサル・バンキング' }, //46
-                        { questionTitle: 'ドイツの金融制度', label: 'オ', content: '' }, //47
-                        { questionTitle: '資産運用手段の多様化', label: 'エ', content: 'オルタナティブ投資' }, //48
-                        { questionTitle: '貸付業種の多様化', label: 'ウ', content: '劣後ローン' }, //49
-                        { questionTitle: '金融審議会報告', label: 'エ', content: '顧客本意の業務運営に関する原則' }, //50
+                        {
+                            questionTitle: '日本の金融制度',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '投融資決定機構',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '手形貸付',
+                            content: '金額に上乗せ → 金額から差し引いて',
+                        }, //33 p54
+                        {
+                            questionTitle: 'リスク特性',
+                            content: '株式：非市場リスクと市場リスクのいずれの影響も高い場合が多い<br>債券：非市場リスクより市場リスクの影響が高い場合が多い',
+                        }, //34 見つからない
+                        {
+                            questionTitle: 'スワップ取引',
+                            content: '通過スワップ → 金利スワップ',
+                        }, //35 p94
+                        {
+                            questionTitle: '海外投融資',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: 'アメリカの資産運用規制',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '公共投資',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '資産運用の多様化',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '国際会計基準導入の動向',
+                            content: '日本版スチュワードシップ・コード → IFRSへの対応の在り方に関する当面の方針',
+                        }, //40 p214
+                        {
+                            questionTitle: '生保資金の構成',
+                            label: 'イ',
+                            content: '基金',
+                        }, //41
+                        {
+                            questionTitle: '公社債の発行主体別分類',
+                            label: 'ア',
+                            content: '歳入債',
+                        }, //42
+                        {
+                            questionTitle: '融資審査',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: 'コール・オプション',
+                            label: 'ウ',
+                            content: '買い付ける',
+                        }, //44
+                        {
+                            questionTitle: '短期資金・現預金等',
+                            label: 'イ',
+                            content: '出し手',
+                        }, //45
+                        {
+                            questionTitle: 'イギリスの銀行',
+                            label: 'ア',
+                            content: 'ユニバーサル・バンキング',
+                        }, //46
+                        {
+                            questionTitle: 'ドイツの金融制度',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'エ',
+                            content: 'オルタナティブ投資',
+                        }, //48
+                        {
+                            questionTitle: '貸付業種の多様化',
+                            label: 'ウ',
+                            content: '劣後ローン',
+                        }, //49
+                        {
+                            questionTitle: '金融審議会報告',
+                            label: 'エ',
+                            content: '顧客本意の業務運営に関する原則',
+                        }, //50
                     ]"
                 />
             </div>

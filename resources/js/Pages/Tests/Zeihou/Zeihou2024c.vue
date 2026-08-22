@@ -248,26 +248,96 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '租税の種類', content: '外国税 → 内国税' }, //31 p3
-                        { questionTitle: '源泉徴収制度', content: '支払った日の属する年の翌年1月10日 → 支払った日の属する月の翌月10日' }, //32 p59
-                        { questionTitle: '相続税と贈与税', content: '相続税は相続税法、贈与税は贈与税法により規定 → いずれも相続税法により規定 ' }, //33 p64
-                        { questionTitle: '遺産分割の方法', content: '正しい' }, //34
-                        { questionTitle: '年金受給権の評価', content: '正しい' }, //35
-                        { questionTitle: '法人税の中間申告', content: '必ず仮決算の中間報告書を提出 → 前年度実績による中間報告書でも良い' }, //36 p141
-                        { questionTitle: '転換時の税務', content: '正しい' }, //37
-                        { questionTitle: '不動産取得税', content: '形式的な所有権の移転でも課税対象 → 課税されない' }, //38 p160
-                        { questionTitle: '特定退職金共済', content: '正しい' }, //39
-                        { questionTitle: '最低課税方式', content: '14% → 7%' }, //40 p225
-                        { questionTitle: '給与所得', label: 'エ', content: '確定申告' }, //41
-                        { questionTitle: '所得税の課税標準', label: 'オ', content: '' }, //42
-                        { questionTitle: '所得税の税額控除', label: 'ウ', content: '住宅借入金（取得）等特別控除' }, //43
-                        { questionTitle: '寄附金控除', label: 'ア', content: '2,000円' }, //44
-                        { questionTitle: '会社利益と所得金額の調整', label: 'ア', content: '申告調整' }, //45
-                        { questionTitle: '相続税の非課税財産', label: 'イ', content: '公益事業用' }, //46
-                        { questionTitle: '相続時精算課税制度', label: 'オ', content: '' }, //47
-                        { questionTitle: '資産評価益の益金不算入', label: 'ウ', content: '株式' }, //48
-                        { questionTitle: '営業職員報酬', label: 'イ', content: '事業所得' }, //49
-                        { questionTitle: '確定給付企業年金', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '租税の種類',
+                            content: '外国税 → 内国税',
+                        }, //31 p3
+                        {
+                            questionTitle: '源泉徴収制度',
+                            content: '支払った日の属する年の翌年1月10日 → 支払った日の属する月の翌月10日',
+                        }, //32 p59
+                        {
+                            questionTitle: '相続税と贈与税',
+                            content: '相続税は相続税法、贈与税は贈与税法により規定 → いずれも相続税法により規定 ',
+                        }, //33 p64
+                        {
+                            questionTitle: '遺産分割の方法',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '年金受給権の評価',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '法人税の中間申告',
+                            content: '必ず仮決算の中間報告書を提出 → 前年度実績による中間報告書でも良い',
+                        }, //36 p141
+                        {
+                            questionTitle: '転換時の税務',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '不動産取得税',
+                            content: '形式的な所有権の移転でも課税対象 → 課税されない',
+                        }, //38 p160
+                        {
+                            questionTitle: '特定退職金共済',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '最低課税方式',
+                            content: '14% → 7%',
+                        }, //40 p225
+                        {
+                            questionTitle: '給与所得',
+                            label: 'エ',
+                            content: '確定申告',
+                        }, //41
+                        {
+                            questionTitle: '所得税の課税標準',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '所得税の税額控除',
+                            label: 'ウ',
+                            content: '住宅借入金（取得）等特別控除',
+                        }, //43
+                        {
+                            questionTitle: '寄附金控除',
+                            label: 'ア',
+                            content: '2,000円',
+                        }, //44
+                        {
+                            questionTitle: '会社利益と所得金額の調整',
+                            label: 'ア',
+                            content: '申告調整',
+                        }, //45
+                        {
+                            questionTitle: '相続税の非課税財産',
+                            label: 'イ',
+                            content: '公益事業用',
+                        }, //46
+                        {
+                            questionTitle: '相続時精算課税制度',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '資産評価益の益金不算入',
+                            label: 'ウ',
+                            content: '株式',
+                        }, //48
+                        {
+                            questionTitle: '営業職員報酬',
+                            label: 'イ',
+                            content: '事業所得',
+                        }, //49
+                        {
+                            questionTitle: '確定給付企業年金',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

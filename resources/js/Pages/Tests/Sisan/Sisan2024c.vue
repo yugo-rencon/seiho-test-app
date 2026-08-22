@@ -213,26 +213,96 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '金融市場', content: '3年 → 1年' }, //31 p3
-                        { questionTitle: '保険会社向けの総合的な監督指針', content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている' }, //32 p28
-                        { questionTitle: '生保の運用機構', content: '正しい' }, //33
-                        { questionTitle: '貸付の特徴', content: '市場リスク → 信用リスク<br>流動化が容易 → 流動化が困難' }, //34 p52
-                        { questionTitle: 'リスク特性', content: '株式：非市場リスクと市場リスクのいずれの影響も高い場合が多い<br>債券：非市場リスクより市場リスクの影響が高い場合が多い' }, //35 見つからない
-                        { questionTitle: '短期金融市場', content: '正しい' }, //36
-                        { questionTitle: '公共投資', content: '正しい' }, //37
-                        { questionTitle: 'バブル崩壊後の資産運用', content: '正しい' }, //38
-                        { questionTitle: '改正保険業法の施行（1998年（平成10年））', content: '固有業務 → 付随業務' }, //39 p210
-                        { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //41
-                        { questionTitle: '有価証券の定義', label: 'ア', content: '金融商品取引法' }, //42
-                        { questionTitle: '株式投資の尺度', label: 'エ', content: '当期純利益' }, //43
-                        { questionTitle: '預金市場', label: 'オ', content: '' }, //44
-                        { questionTitle: '個人変額保険における資産の評価方法', label: 'エ', content: '毎日' }, //45
-                        { questionTitle: '大正〜昭和初期の生保資産運用', label: 'イ', content: '社債' }, //46
-                        { questionTitle: '高度経済成長期の資産運用', label: 'ウ', content: '機関投資家' }, //47
-                        { questionTitle: '資産運用手段の多様化', label: 'ウ', content: 'オルタナティブ投資' }, //48
-                        { questionTitle: '生命保険会社の資金調達', label: 'オ', content: '' }, //49
-                        { questionTitle: 'ソルベンシー確保', label: 'イ', content: '200' }, //50
+                        {
+                            questionTitle: '金融市場',
+                            content: '3年 → 1年',
+                        }, //31 p3
+                        {
+                            questionTitle: '保険会社向けの総合的な監督指針',
+                            content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている',
+                        }, //32 p28
+                        {
+                            questionTitle: '生保の運用機構',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '貸付の特徴',
+                            content: '市場リスク → 信用リスク<br>流動化が容易 → 流動化が困難',
+                        }, //34 p52
+                        {
+                            questionTitle: 'リスク特性',
+                            content: '株式：非市場リスクと市場リスクのいずれの影響も高い場合が多い<br>債券：非市場リスクより市場リスクの影響が高い場合が多い',
+                        }, //35 見つからない
+                        {
+                            questionTitle: '短期金融市場',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '公共投資',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: 'バブル崩壊後の資産運用',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '改正保険業法の施行（1998年（平成10年））',
+                            content: '固有業務 → 付随業務',
+                        }, //39 p210
+                        {
+                            questionTitle: '国際会計基準導入の動向',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '各国の保険監督方法',
+                            label: 'ア',
+                            content: '準拠主義',
+                        }, //41
+                        {
+                            questionTitle: '有価証券の定義',
+                            label: 'ア',
+                            content: '金融商品取引法',
+                        }, //42
+                        {
+                            questionTitle: '株式投資の尺度',
+                            label: 'エ',
+                            content: '当期純利益',
+                        }, //43
+                        {
+                            questionTitle: '預金市場',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '個人変額保険における資産の評価方法',
+                            label: 'エ',
+                            content: '毎日',
+                        }, //45
+                        {
+                            questionTitle: '大正〜昭和初期の生保資産運用',
+                            label: 'イ',
+                            content: '社債',
+                        }, //46
+                        {
+                            questionTitle: '高度経済成長期の資産運用',
+                            label: 'ウ',
+                            content: '機関投資家',
+                        }, //47
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'ウ',
+                            content: 'オルタナティブ投資',
+                        }, //48
+                        {
+                            questionTitle: '生命保険会社の資金調達',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: 'ソルベンシー確保',
+                            label: 'イ',
+                            content: '200',
+                        }, //50
                     ]"
                 />
             </div>

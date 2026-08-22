@@ -213,26 +213,96 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '会計公準', content: '株主実体の公準 → 企業実体の公準' }, //31 p6-7
-                        { questionTitle: '帳簿の種類', content: '正しい' }, //32
-                        { questionTitle: '退職給付引当金', content: '正しい' }, //33
-                        { questionTitle: '連結決算', content: '正しい' }, //34
-                        { questionTitle: '外貨預金の換算', content: '正しい' }, //35
-                        { questionTitle: '貸倒引当金', content: '損金に算入される → 損金に算入されない' }, //36 p125
-                        { questionTitle: '費用に属する科目', content: 'その他返戻金 → 給付金' }, //37 p150
-                        { questionTitle: '計算書類の公告', content: '会社法施行規則 → 保険業法施行規則' }, //38 p181
-                        { questionTitle: '区分経理', content: '正しい' }, //39
-                        { questionTitle: '会計監査人による監査', content: '取締役会により選任 → 株主総会（相互会社では総代会）により選任<br>結果を取締役会に報告 → 結果を取締役および監査役に報告' }, //40 p208
-                        { label: 'イ', questionTitle: '企業会計の領域', content: '財務会計' }, //41
-                        { label: 'オ', questionTitle: '開示書類', content: '' }, //42
-                        { label: 'エ', questionTitle: '保険会社向けの総合的な監督指針', content: '事務ガイドライン' }, //43
-                        { label: 'ア', questionTitle: '有価証券の評価方法', content: '売買目的有価証券' }, //44
-                        { label: 'ウ', questionTitle: '無形固定資産', content: '定額法' }, //45
-                        { label: 'ア', questionTitle: '生命保険会計における負債勘定', content: '借受金' }, //46
-                        { label: 'オ', questionTitle: '勘定体系', content: '' }, //47
-                        { label: 'イ', questionTitle: '損益の認識', content: '実現主義' }, //48
-                        { label: 'エ', questionTitle: '利息及び配当金等収入', content: '不動産賃貸料' }, //49
-                        { label: 'ウ', questionTitle: '金融検査', content: '自己査定' }, //50
+                        {
+                            questionTitle: '会計公準',
+                            content: '株主実体の公準 → 企業実体の公準',
+                        }, //31 p6-7
+                        {
+                            questionTitle: '帳簿の種類',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '退職給付引当金',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '連結決算',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '外貨預金の換算',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '貸倒引当金',
+                            content: '損金に算入される → 損金に算入されない',
+                        }, //36 p125
+                        {
+                            questionTitle: '費用に属する科目',
+                            content: 'その他返戻金 → 給付金',
+                        }, //37 p150
+                        {
+                            questionTitle: '計算書類の公告',
+                            content: '会社法施行規則 → 保険業法施行規則',
+                        }, //38 p181
+                        {
+                            questionTitle: '区分経理',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '会計監査人による監査',
+                            content: '取締役会により選任 → 株主総会（相互会社では総代会）により選任<br>結果を取締役会に報告 → 結果を取締役および監査役に報告',
+                        }, //40 p208
+                        {
+                            label: 'イ',
+                            questionTitle: '企業会計の領域',
+                            content: '財務会計',
+                        }, //41
+                        {
+                            label: 'オ',
+                            questionTitle: '開示書類',
+                            content: '',
+                        }, //42
+                        {
+                            label: 'エ',
+                            questionTitle: '保険会社向けの総合的な監督指針',
+                            content: '事務ガイドライン',
+                        }, //43
+                        {
+                            label: 'ア',
+                            questionTitle: '有価証券の評価方法',
+                            content: '売買目的有価証券',
+                        }, //44
+                        {
+                            label: 'ウ',
+                            questionTitle: '無形固定資産',
+                            content: '定額法',
+                        }, //45
+                        {
+                            label: 'ア',
+                            questionTitle: '生命保険会計における負債勘定',
+                            content: '借受金',
+                        }, //46
+                        {
+                            label: 'オ',
+                            questionTitle: '勘定体系',
+                            content: '',
+                        }, //47
+                        {
+                            label: 'イ',
+                            questionTitle: '損益の認識',
+                            content: '実現主義',
+                        }, //48
+                        {
+                            label: 'エ',
+                            questionTitle: '利息及び配当金等収入',
+                            content: '不動産賃貸料',
+                        }, //49
+                        {
+                            label: 'ウ',
+                            questionTitle: '金融検査',
+                            content: '自己査定',
+                        }, //50
                     ]"
                 />
             </div>

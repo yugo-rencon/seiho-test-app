@@ -213,26 +213,96 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '担税者', content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者' }, //31 p4
-                        { questionTitle: '特定支出控除', content: '正しい' }, //32
-                        { questionTitle: '特定扶養親族', content: '16歳以上23歳未満で控除額は83万円 → 19歳以上23歳未満で控除額は63万円' }, //33 p49
-                        { questionTitle: '相続人', content: '正しい' }, //34
-                        { questionTitle: '家屋の評価方法', content: '正しい' }, //35
-                        { questionTitle: '法人税の中間申告', content: '必ず仮決算の中間報告書を提出 → 前年度実績による中間報告書でも良い' }, //36 p141
-                        { questionTitle: '障害給付金等', content: '正しい' }, //37
-                        { questionTitle: '不動産取得税', content: '形式的な所有権の移転でも課税対象 → 課税されない' }, //38 p160
-                        { questionTitle: '総合福祉団体定期保険の保険料', content: '正しい' }, //39
-                        { questionTitle: '最低課税方式', content: '14% → 7%' }, //40 p225
-                        { questionTitle: '所得税の税額控除額', label: 'ウ', content: '租税特別措置法' }, //41
-                        { questionTitle: '所得税の課税標準', label: 'オ', content: '' }, //42
-                        { questionTitle: '雑所得', label: 'エ', content: '必要経費' }, //43
-                        { questionTitle: '遺留分', label: 'ウ', content: '3分の1' }, //44
-                        { questionTitle: '会社利益と所得金額の調整', label: 'ア', content: '申告調整' }, //45
-                        { questionTitle: '相続税の申告', label: 'エ', content: '10ヶ月' }, //46
-                        { questionTitle: '法人の種類と課税の範囲', label: 'イ', content: '公共法人' }, //47
-                        { questionTitle: '同族会社', label: 'オ', content: '' }, //48
-                        { questionTitle: '個人の事業税', label: 'ア', content: '第3種事業' }, //49
-                        { questionTitle: '確定給付企業年金', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '担税者',
+                            content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者',
+                        }, //31 p4
+                        {
+                            questionTitle: '特定支出控除',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '特定扶養親族',
+                            content: '16歳以上23歳未満で控除額は83万円 → 19歳以上23歳未満で控除額は63万円',
+                        }, //33 p49
+                        {
+                            questionTitle: '相続人',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '家屋の評価方法',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '法人税の中間申告',
+                            content: '必ず仮決算の中間報告書を提出 → 前年度実績による中間報告書でも良い',
+                        }, //36 p141
+                        {
+                            questionTitle: '障害給付金等',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '不動産取得税',
+                            content: '形式的な所有権の移転でも課税対象 → 課税されない',
+                        }, //38 p160
+                        {
+                            questionTitle: '総合福祉団体定期保険の保険料',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '最低課税方式',
+                            content: '14% → 7%',
+                        }, //40 p225
+                        {
+                            questionTitle: '所得税の税額控除額',
+                            label: 'ウ',
+                            content: '租税特別措置法',
+                        }, //41
+                        {
+                            questionTitle: '所得税の課税標準',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '雑所得',
+                            label: 'エ',
+                            content: '必要経費',
+                        }, //43
+                        {
+                            questionTitle: '遺留分',
+                            label: 'ウ',
+                            content: '3分の1',
+                        }, //44
+                        {
+                            questionTitle: '会社利益と所得金額の調整',
+                            label: 'ア',
+                            content: '申告調整',
+                        }, //45
+                        {
+                            questionTitle: '相続税の申告',
+                            label: 'エ',
+                            content: '10ヶ月',
+                        }, //46
+                        {
+                            questionTitle: '法人の種類と課税の範囲',
+                            label: 'イ',
+                            content: '公共法人',
+                        }, //47
+                        {
+                            questionTitle: '同族会社',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '個人の事業税',
+                            label: 'ア',
+                            content: '第3種事業',
+                        }, //49
+                        {
+                            questionTitle: '確定給付企業年金',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

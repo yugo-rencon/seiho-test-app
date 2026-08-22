@@ -213,26 +213,96 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '制限税率', content: '正しい' }, //31
-                        { questionTitle: '雑所得', content: '正しい' }, //32
-                        { questionTitle: '確定申告定', content: '正しい' }, //33
-                        { questionTitle: '相続', content: '正しい' }, //34
-                        { questionTitle: '法人の種類と法人税の課税の範囲', content: 'すべての所得について課税 → 国立大学法人は非課税' }, //35 p120
-                        { questionTitle: '不動産取得税', content: '贈与による取得は課税対象' }, //36 p160
-                        { questionTitle: '居住用超高層建築物の不動産取得税', content: '最上階を100として階が1つ減るごとに → 1階を100として階が1つ増すごとに' }, //37 p162
-                        { questionTitle: '財形住宅貯蓄積立保険', content: '財形貯蓄積立保険 → 財形年金' }, //38 p213
-                        { questionTitle: '確定拠出年金のポータビリティ', content: '勤労者退職金共済機構 → 国民年金基金連合会' }, //39 p219
-                        { questionTitle: '機関経営費', content: '正しい' }, //40
-                        { questionTitle: '所得税の所得控除', label: 'イ', content: '15種類' }, //41
-                        { questionTitle: '医療費控除（セルフメディケーション）', label: 'オ', content: '' }, //42
-                        { questionTitle: '所得税の配偶者控除', label: 'ウ', content: '48万円' }, //43
-                        { questionTitle: '相続税における配偶者の税額軽減', label: 'オ', content: '' }, //44
-                        { questionTitle: '相続税の納税', label: 'ウ', content: '物納' }, //45
-                        { questionTitle: '寄付金の損金算入限度額', label: 'イ', content: '全額' }, //46
-                        { questionTitle: '生命保険料控除額', label: 'ウ', content: '28,000円' }, //47
-                        { questionTitle: '事業税', label: 'エ', content: '各事業年度の収入金額' }, //48
-                        { questionTitle: '確定給付企業年金制度の開始', label: 'ア', content: '年金規約' }, //49
-                        { questionTitle: '生命保険代理店の事業免許等に係る税', label: 'エ', content: '1万5千円' }, //50
+                        {
+                            questionTitle: '制限税率',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '雑所得',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '確定申告定',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '相続',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '法人の種類と法人税の課税の範囲',
+                            content: 'すべての所得について課税 → 国立大学法人は非課税',
+                        }, //35 p120
+                        {
+                            questionTitle: '不動産取得税',
+                            content: '贈与による取得は課税対象',
+                        }, //36 p160
+                        {
+                            questionTitle: '居住用超高層建築物の不動産取得税',
+                            content: '最上階を100として階が1つ減るごとに → 1階を100として階が1つ増すごとに',
+                        }, //37 p162
+                        {
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '財形貯蓄積立保険 → 財形年金',
+                        }, //38 p213
+                        {
+                            questionTitle: '確定拠出年金のポータビリティ',
+                            content: '勤労者退職金共済機構 → 国民年金基金連合会',
+                        }, //39 p219
+                        {
+                            questionTitle: '機関経営費',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '所得税の所得控除',
+                            label: 'イ',
+                            content: '15種類',
+                        }, //41
+                        {
+                            questionTitle: '医療費控除（セルフメディケーション）',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '所得税の配偶者控除',
+                            label: 'ウ',
+                            content: '48万円',
+                        }, //43
+                        {
+                            questionTitle: '相続税における配偶者の税額軽減',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '相続税の納税',
+                            label: 'ウ',
+                            content: '物納',
+                        }, //45
+                        {
+                            questionTitle: '寄付金の損金算入限度額',
+                            label: 'イ',
+                            content: '全額',
+                        }, //46
+                        {
+                            questionTitle: '生命保険料控除額',
+                            label: 'ウ',
+                            content: '28,000円',
+                        }, //47
+                        {
+                            questionTitle: '事業税',
+                            label: 'エ',
+                            content: '各事業年度の収入金額',
+                        }, //48
+                        {
+                            questionTitle: '確定給付企業年金制度の開始',
+                            label: 'ア',
+                            content: '年金規約',
+                        }, //49
+                        {
+                            questionTitle: '生命保険代理店の事業免許等に係る税',
+                            label: 'エ',
+                            content: '1万5千円',
+                        }, //50
                     ]"
                 />
             </div>

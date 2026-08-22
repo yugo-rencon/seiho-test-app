@@ -213,26 +213,96 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '会計上の取引', content: '契約締結の時点で取引と認識 → 電力供給を受けた時点で取引と認識' }, //31 p9-10
-                        { questionTitle: '損益計算書', content: '正しい' }, //32
-                        { questionTitle: '資本取引・損益取引区分の原則', content: '正しい' }, //33
-                        { questionTitle: '標準責任準備金', content: '正しい' }, //34
-                        { questionTitle: '代理店貸', content: '正しい' }, //35
-                        { questionTitle: '未払費用', content: '借入金、未払法人税等、未払金、未払賞与 → 未払事業費、未払税金、未払賞与' }, //36 p128
-                        { questionTitle: '自己株式', content: '純資産の部に加算 → 純資産の部から控除' }, //37 p141
-                        { questionTitle: '繰延税金負債', content: '正しい' }, //38
-                        { questionTitle: '保険金据置支払金', content: '支払利息に計上 → 本科目（保険金据置支払金）に計上' }, //39 p158
-                        { questionTitle: '金融検査', content: '正しい' }, //40
-                        { label: 'ウ', questionTitle: '帳簿の種類', content: '買掛金元帳' }, //41
-                        { label: 'ウ', questionTitle: '企業会計原則', content: '処理原則' }, //42
-                        { label: 'オ', questionTitle: '連結決算日', content: '' }, //43
-                        { label: 'ア', questionTitle: '無形固定資産', content: '使用目的' }, //44
-                        { label: 'イ', questionTitle: '当期末未処分剰余金（繰越利益剰余金）', content: '総代会' }, //45
-                        { label: 'ア', questionTitle: 'その他負債', content: '資産除去' }, //46
-                        { label: 'エ', questionTitle: '差異の把握', content: '利源分析' }, //47
-                        { label: 'エ', questionTitle: '解約返戻金', content: '支払備金' }, //48
-                        { label: 'オ', questionTitle: '損益の配賦', content: '' }, //49
-                        { label: 'イ', questionTitle: '監査役による監査', content: '社外' }, //50
+                        {
+                            questionTitle: '会計上の取引',
+                            content: '契約締結の時点で取引と認識 → 電力供給を受けた時点で取引と認識',
+                        }, //31 p9-10
+                        {
+                            questionTitle: '損益計算書',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '資本取引・損益取引区分の原則',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '標準責任準備金',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '代理店貸',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '未払費用',
+                            content: '借入金、未払法人税等、未払金、未払賞与 → 未払事業費、未払税金、未払賞与',
+                        }, //36 p128
+                        {
+                            questionTitle: '自己株式',
+                            content: '純資産の部に加算 → 純資産の部から控除',
+                        }, //37 p141
+                        {
+                            questionTitle: '繰延税金負債',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '保険金据置支払金',
+                            content: '支払利息に計上 → 本科目（保険金据置支払金）に計上',
+                        }, //39 p158
+                        {
+                            questionTitle: '金融検査',
+                            content: '正しい',
+                        }, //40
+                        {
+                            label: 'ウ',
+                            questionTitle: '帳簿の種類',
+                            content: '買掛金元帳',
+                        }, //41
+                        {
+                            label: 'ウ',
+                            questionTitle: '企業会計原則',
+                            content: '処理原則',
+                        }, //42
+                        {
+                            label: 'オ',
+                            questionTitle: '連結決算日',
+                            content: '',
+                        }, //43
+                        {
+                            label: 'ア',
+                            questionTitle: '無形固定資産',
+                            content: '使用目的',
+                        }, //44
+                        {
+                            label: 'イ',
+                            questionTitle: '当期末未処分剰余金（繰越利益剰余金）',
+                            content: '総代会',
+                        }, //45
+                        {
+                            label: 'ア',
+                            questionTitle: 'その他負債',
+                            content: '資産除去',
+                        }, //46
+                        {
+                            label: 'エ',
+                            questionTitle: '差異の把握',
+                            content: '利源分析',
+                        }, //47
+                        {
+                            label: 'エ',
+                            questionTitle: '解約返戻金',
+                            content: '支払備金',
+                        }, //48
+                        {
+                            label: 'オ',
+                            questionTitle: '損益の配賦',
+                            content: '',
+                        }, //49
+                        {
+                            label: 'イ',
+                            questionTitle: '監査役による監査',
+                            content: '社外',
+                        }, //50
                     ]"
                 />
             </div>

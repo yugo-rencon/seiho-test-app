@@ -213,26 +213,96 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '流通税', content: '印紙税・消費税等 → 印紙税・不動産取得税等' }, //31 p4
-                        { questionTitle: '生命保険と相続対策', content: '正しい' }, //32
-                        { questionTitle: '確定申告', content: '正しい' }, //33
-                        { questionTitle: '遺産分割の方法', content: '満20歳以上 → 満15歳以上' }, //34 p72
-                        { questionTitle: '税額控除', content: '正しい' }, //35
-                        { questionTitle: '総合福祉団体定期保険の保険料', content: '正しい' }, //36
-                        { questionTitle: '不動産取得税', content: '正しい' }, //37
-                        { questionTitle: '最低課税方式', content: '13% → 7%' }, //38 p225
-                        { questionTitle: '営業職員報酬の必要経費', content: '正しい' }, //39
-                        { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //40
-                        { questionTitle: '退職所得控除額', label: 'ウ', content: '40万円' }, //41
-                        { questionTitle: '医療費控除（セルフメディケーション）', label: 'ア', content: 'との選択により' }, //42
-                        { questionTitle: '相続税の非課税財産', label: 'エ', content: '心身障害者扶養共済制度' }, //43
-                        { questionTitle: '相続時精算課税制度', label: 'オ', content: '' }, //44
-                        { questionTitle: '資産評価益の益金不算入', label: 'オ', content: '' }, //45
-                        { questionTitle: '同族会社', label: 'オ', content: '' }, //46
-                        { questionTitle: '法人の住民税', label: 'イ', content: '均等割額と法人税割額' }, //47
-                        { questionTitle: '生命保険料控除の手続き', label: 'ウ', content: '第1回保険料充当金領収証' }, //48
-                        { questionTitle: '確定給付企業年金', label: 'エ', content: '事業主' }, //49
-                        { questionTitle: '生命保険代理店の事業免許等に係る税', label: 'ア', content: '登録免許税' }, //50
+                        {
+                            questionTitle: '流通税',
+                            content: '印紙税・消費税等 → 印紙税・不動産取得税等',
+                        }, //31 p4
+                        {
+                            questionTitle: '生命保険と相続対策',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '確定申告',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '遺産分割の方法',
+                            content: '満20歳以上 → 満15歳以上',
+                        }, //34 p72
+                        {
+                            questionTitle: '税額控除',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '総合福祉団体定期保険の保険料',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '不動産取得税',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '最低課税方式',
+                            content: '13% → 7%',
+                        }, //38 p225
+                        {
+                            questionTitle: '営業職員報酬の必要経費',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '退職所得控除額',
+                            label: 'ウ',
+                            content: '40万円',
+                        }, //41
+                        {
+                            questionTitle: '医療費控除（セルフメディケーション）',
+                            label: 'ア',
+                            content: 'との選択により',
+                        }, //42
+                        {
+                            questionTitle: '相続税の非課税財産',
+                            label: 'エ',
+                            content: '心身障害者扶養共済制度',
+                        }, //43
+                        {
+                            questionTitle: '相続時精算課税制度',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '資産評価益の益金不算入',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '同族会社',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '法人の住民税',
+                            label: 'イ',
+                            content: '均等割額と法人税割額',
+                        }, //47
+                        {
+                            questionTitle: '生命保険料控除の手続き',
+                            label: 'ウ',
+                            content: '第1回保険料充当金領収証',
+                        }, //48
+                        {
+                            questionTitle: '確定給付企業年金',
+                            label: 'エ',
+                            content: '事業主',
+                        }, //49
+                        {
+                            questionTitle: '生命保険代理店の事業免許等に係る税',
+                            label: 'ア',
+                            content: '登録免許税',
+                        }, //50
                     ]"
                 />
             </div>

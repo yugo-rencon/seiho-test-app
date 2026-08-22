@@ -213,26 +213,96 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '日本の金融制度', content: '正しい' }, //31
-                        { questionTitle: 'リスク管理', content: '正しい' }, //32
-                        { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: '不動産投資の多様化', content: '借家 → 借地' }, //34 p99-100
-                        { questionTitle: '個人変額保険における資産の評価方法', content: '毎月評価 → 毎日評価' }, //35 p117
-                        { questionTitle: 'カナダの生命保険会社の資産運用', content: '正しい' }, //36
-                        { questionTitle: '公共投資', content: '正しい' }, //37
-                        { questionTitle: '海外投融資', content: '漸増傾向 → 減少傾向' }, //38 p104
-                        { questionTitle: '有価証券の評価方法', content: '責任準備金対応債券は時価で評価 → 取得価額で評価' }, //39 p213
-                        { questionTitle: '投資環境の動向', content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード' }, //40 p220
-                        { questionTitle: 'リスク意識の高まり', label: 'ア', content: 'BIS（国際決済銀行）' }, //41
-                        { questionTitle: '投融資決定機構', label: 'ア', content: '単独制' }, //42
-                        { questionTitle: '公社債の発行方法の相違による分類', label: 'エ', content: '公募債' }, //43
-                        { questionTitle: 'コール・オプション', label: 'ウ', content: '買い付ける' }, //44
-                        { questionTitle: '対外貸付実務', label: 'オ', content: '' }, //45
-                        { questionTitle: '短期金融市場', label: 'イ', content: '出し手' }, //46
-                        { questionTitle: 'アメリカの生命保険会社の業務範囲', label: 'エ', content: '銀行' }, //47
-                        { questionTitle: '創業時の生命保険会社の資産運用', label: 'オ', content: '' }, //48
-                        { questionTitle: '資産運用手段の多様化', label: 'イ', content: 'ヘッジファンド' }, //49
-                        { questionTitle: '改正保険業法の施行（1998年（平成10年）12月）（金融システム改革法）', label: 'ウ', content: '付随業務' }, //50
+                        {
+                            questionTitle: '日本の金融制度',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: 'リスク管理',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '融資審査',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '不動産投資の多様化',
+                            content: '借家 → 借地',
+                        }, //34 p99-100
+                        {
+                            questionTitle: '個人変額保険における資産の評価方法',
+                            content: '毎月評価 → 毎日評価',
+                        }, //35 p117
+                        {
+                            questionTitle: 'カナダの生命保険会社の資産運用',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '公共投資',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '海外投融資',
+                            content: '漸増傾向 → 減少傾向',
+                        }, //38 p104
+                        {
+                            questionTitle: '有価証券の評価方法',
+                            content: '責任準備金対応債券は時価で評価 → 取得価額で評価',
+                        }, //39 p213
+                        {
+                            questionTitle: '投資環境の動向',
+                            content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード',
+                        }, //40 p220
+                        {
+                            questionTitle: 'リスク意識の高まり',
+                            label: 'ア',
+                            content: 'BIS（国際決済銀行）',
+                        }, //41
+                        {
+                            questionTitle: '投融資決定機構',
+                            label: 'ア',
+                            content: '単独制',
+                        }, //42
+                        {
+                            questionTitle: '公社債の発行方法の相違による分類',
+                            label: 'エ',
+                            content: '公募債',
+                        }, //43
+                        {
+                            questionTitle: 'コール・オプション',
+                            label: 'ウ',
+                            content: '買い付ける',
+                        }, //44
+                        {
+                            questionTitle: '対外貸付実務',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '短期金融市場',
+                            label: 'イ',
+                            content: '出し手',
+                        }, //46
+                        {
+                            questionTitle: 'アメリカの生命保険会社の業務範囲',
+                            label: 'エ',
+                            content: '銀行',
+                        }, //47
+                        {
+                            questionTitle: '創業時の生命保険会社の資産運用',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'イ',
+                            content: 'ヘッジファンド',
+                        }, //49
+                        {
+                            questionTitle: '改正保険業法の施行（1998年（平成10年）12月）（金融システム改革法）',
+                            label: 'ウ',
+                            content: '付随業務',
+                        }, //50
                     ]"
                 />
             </div>

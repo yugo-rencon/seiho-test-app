@@ -213,26 +213,96 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: 'ライフ・プランニング', content: '正しい' }, //31
-                        { questionTitle: '公的介護保険制度の運営主体', content: '運営主体は国 → 各市区町村' }, //32 p29
-                        { questionTitle: '福利厚生費', content: '法定福利費 ↔︎ 法定外福利費' }, //33 p33
-                        { questionTitle: '保険料払込方法', content: '一時払 → 前納' }, //34 p50
-                        { questionTitle: '金融商品取引法', content: '契約締結の後に書面で交付 → 契約締結の前に書面で交付' }, //35 p41
-                        { questionTitle: '生存保険', content: '正しい' }, //36
-                        { questionTitle: '財形貯蓄制度', content: '58歳未満 → 55歳未満<br>3年以上の期間 → 5年以上の期間' }, //37 p94
-                        { questionTitle: '一時払退職後終身保険', content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内' }, //38 p97
-                        { questionTitle: '法人顧客システム', content: '正しい' }, //39
-                        { questionTitle: '機関組織構成', content: '正しい' }, //40
-                        { questionTitle: '年金改革', label: 'イ', content: '第3号' }, //41
-                        { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
-                        { questionTitle: '保険料率の改定', label: 'イ', content: '平均寿命' }, //43
-                        { questionTitle: '危険選択の方法', label: 'エ', content: '面接' }, //44
-                        { questionTitle: '消費者信用団体生命保険', label: 'ウ', content: '1年' }, //45
-                        { questionTitle: '特化型営業職員制度', label: 'ア', content: '職域や法人' }, //46
-                        { questionTitle: '募集人登録', label: 'ア', content: '保険業法' }, //47
-                        { questionTitle: '営業職員の退職金', label: 'オ', content: '' }, //48
-                        { questionTitle: '企業保険の販売チャネル', label: 'ウ', content: '本社直轄' }, //49
-                        { questionTitle: '代理店', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: 'ライフ・プランニング',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '公的介護保険制度の運営主体',
+                            content: '運営主体は国 → 各市区町村',
+                        }, //32 p29
+                        {
+                            questionTitle: '福利厚生費',
+                            content: '法定福利費 ↔︎ 法定外福利費',
+                        }, //33 p33
+                        {
+                            questionTitle: '保険料払込方法',
+                            content: '一時払 → 前納',
+                        }, //34 p50
+                        {
+                            questionTitle: '金融商品取引法',
+                            content: '契約締結の後に書面で交付 → 契約締結の前に書面で交付',
+                        }, //35 p41
+                        {
+                            questionTitle: '生存保険',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '財形貯蓄制度',
+                            content: '58歳未満 → 55歳未満<br>3年以上の期間 → 5年以上の期間',
+                        }, //37 p94
+                        {
+                            questionTitle: '一時払退職後終身保険',
+                            content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内',
+                        }, //38 p97
+                        {
+                            questionTitle: '法人顧客システム',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '機関組織構成',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '年金改革',
+                            label: 'イ',
+                            content: '第3号',
+                        }, //41
+                        {
+                            questionTitle: '公的介護保険の保険料',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '保険料率の改定',
+                            label: 'イ',
+                            content: '平均寿命',
+                        }, //43
+                        {
+                            questionTitle: '危険選択の方法',
+                            label: 'エ',
+                            content: '面接',
+                        }, //44
+                        {
+                            questionTitle: '消費者信用団体生命保険',
+                            label: 'ウ',
+                            content: '1年',
+                        }, //45
+                        {
+                            questionTitle: '特化型営業職員制度',
+                            label: 'ア',
+                            content: '職域や法人',
+                        }, //46
+                        {
+                            questionTitle: '募集人登録',
+                            label: 'ア',
+                            content: '保険業法',
+                        }, //47
+                        {
+                            questionTitle: '営業職員の退職金',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '企業保険の販売チャネル',
+                            label: 'ウ',
+                            content: '本社直轄',
+                        }, //49
+                        {
+                            questionTitle: '代理店',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

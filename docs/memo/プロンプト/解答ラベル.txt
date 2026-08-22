@@ -1,0 +1,28 @@
+Keiri202Xx を、添付の解答表で確認して。
+
+対象:
+- resources/js/Pages/Tests/Keiri/Keiri202Xx.vue
+- docs/memo/生命保険講座/Keiri-progress.md
+
+確認ルール:
+1. 問1〜30
+   - labels が解答表どおりか確認する
+   - 合っていても rev は入れない
+
+2. 問31〜40
+   - 解答表で「正」の問題だけ確認する
+   - 対応する content が「正しい」なら、Keiri2025a と同じ位置に `// rev: YYYY-MM-DD 確認済み` を入れる
+   - 解答表で「誤」の問題は触らない
+
+3. 問41〜50
+   - label が解答表どおりか確認する
+   - 合っていても rev は入れない
+
+4. 進捗表
+   - 追加した rev 件数を Keiri-progress.md に反映する
+   - 更新日時、全体の完了数/進捗率、対象ファイルの完了数/進捗率、未完了一覧を更新する
+
+注意:
+- rev の位置は Keiri2025a の書き方に合わせる
+- labels や content が解答表と違う場合は修正する
+- 余計な整形や unrelated な変更はしない

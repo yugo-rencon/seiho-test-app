@@ -213,26 +213,96 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '所得税額の計算', content: '順次低い税率 → 順次高い税率' }, //31 p51
-                        { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
-                        { questionTitle: '所得金額調整控除', content: '正しい' }, //33
-                        { questionTitle: '確定申告', content: '1500万円 → 2000万円' }, //34
-                        { questionTitle: '満期保険金等の源泉分離課税', content: '正しい' }, //35
-                        { questionTitle: '特定退職金共済', content: '正しい' }, //36
-                        { questionTitle: '確定拠出年金の老齢給付金', content: '一時所得 → 退職手当等' }, //37 p221
-                        { questionTitle: '生命保険代理店の登録免許税', content: '正しい' }, //38
-                        { questionTitle: '定期付養老保険の保険料', content: '正しい' }, //39
-                        { questionTitle: '財形住宅貯蓄積立保険', content: '雑所得として課税 → 源泉分離課税（20%）' }, //40 p213
-                        { questionTitle: '租税の種類', label: 'エ', content: '目的税' }, //41
-                        { questionTitle: '譲渡所得', label: 'イ', content: '5年' }, //42
-                        { questionTitle: '所得税の課税標準', label: 'オ', content: '' }, //43
-                        { questionTitle: '生命保険料控除', label: 'イ', content: '40000円' }, //44
-                        { questionTitle: '第2次相続', label: 'ア', content: '10年' }, //45
-                        { questionTitle: '法人税法の特別規定', label: 'エ', content: '留保' }, //46
-                        { questionTitle: '法人の確定申告', label: 'ア', content: '2ヶ月' }, //47
-                        { questionTitle: '連結納税制度', label: 'オ', content: '' }, //48
-                        { questionTitle: '税務署長の調査', label: 'イ', content: '更正' }, //49
-                        { questionTitle: '弔慰金の非課税限度額', label: 'ア', content: '3年' }, //50
+                        {
+                            questionTitle: '所得税額の計算',
+                            content: '順次低い税率 → 順次高い税率',
+                        }, //31 p51
+                        {
+                            questionTitle: '空き家に係る譲渡所得の特別控除の特例',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '所得金額調整控除',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '確定申告',
+                            content: '1500万円 → 2000万円',
+                        }, //34
+                        {
+                            questionTitle: '満期保険金等の源泉分離課税',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '特定退職金共済',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '確定拠出年金の老齢給付金',
+                            content: '一時所得 → 退職手当等',
+                        }, //37 p221
+                        {
+                            questionTitle: '生命保険代理店の登録免許税',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '定期付養老保険の保険料',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '雑所得として課税 → 源泉分離課税（20%）',
+                        }, //40 p213
+                        {
+                            questionTitle: '租税の種類',
+                            label: 'エ',
+                            content: '目的税',
+                        }, //41
+                        {
+                            questionTitle: '譲渡所得',
+                            label: 'イ',
+                            content: '5年',
+                        }, //42
+                        {
+                            questionTitle: '所得税の課税標準',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '生命保険料控除',
+                            label: 'イ',
+                            content: '40000円',
+                        }, //44
+                        {
+                            questionTitle: '第2次相続',
+                            label: 'ア',
+                            content: '10年',
+                        }, //45
+                        {
+                            questionTitle: '法人税法の特別規定',
+                            label: 'エ',
+                            content: '留保',
+                        }, //46
+                        {
+                            questionTitle: '法人の確定申告',
+                            label: 'ア',
+                            content: '2ヶ月',
+                        }, //47
+                        {
+                            questionTitle: '連結納税制度',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '税務署長の調査',
+                            label: 'イ',
+                            content: '更正',
+                        }, //49
+                        {
+                            questionTitle: '弔慰金の非課税限度額',
+                            label: 'ア',
+                            content: '3年',
+                        }, //50
                     ]"
                 />
             </div>

@@ -213,26 +213,96 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '勘定の閉鎖', content: '正しい' }, //31
-                        { questionTitle: '保険契約準備金の繰入', content: '正しい' }, //32
-                        { questionTitle: '預貯金', content: '正しい' }, //33
-                        { questionTitle: '退職給付引当金', content: '正しい' }, //34
-                        { questionTitle: '代理店貸', content: '正しい' }, //35
-                        { questionTitle: '法人税及び住民税', content: '他の税金と合算 → 他の税金と区別' }, //36 p164
-                        { questionTitle: '自己株式', content: '純資産の部に加算 → 純資産の部から控除' }, //37 p141
-                        { questionTitle: '利源分析', content: '危険準備金損益、為替損益 → 責任準備金関係損益、価格変動損益' }, //38 p178
-                        { questionTitle: '保険金据置支払金', content: '支払利息に計上 → 本科目（保険金据置支払金）に計上' }, //39 p158
-                        { questionTitle: '会計監査人による監査', content: '期中監査の説明 ↔︎ 決算監査の説明' }, //40 p208
-                        { label: 'オ', questionTitle: '株主資本等変動計算書', content: '' }, //41
-                        { label: 'イ', questionTitle: '危険準備金', content: '利益性' }, //42
-                        { label: 'エ', questionTitle: '決算スケジュール', content: '4ヵ月' }, //43
-                        { label: 'エ', questionTitle: '会計に関する法律', content: '保険業法' }, //44
-                        { label: 'オ', questionTitle: '貸倒引当金', content: '' }, //45
-                        { label: 'ア', questionTitle: 'その他負債', content: '資産除去' }, //46
-                        { label: 'ウ', questionTitle: '損失填補準備金', content: '1000分の3' }, //47
-                        { label: 'エ', questionTitle: '解約返戻金', content: '支払備金' }, //48
-                        { label: 'ウ', questionTitle: '事業費', content: '物件費' }, //49
-                        { label: 'イ', questionTitle: '監査役による監査', content: '社外' }, //50
+                        {
+                            questionTitle: '勘定の閉鎖',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '保険契約準備金の繰入',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '預貯金',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '退職給付引当金',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '代理店貸',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '法人税及び住民税',
+                            content: '他の税金と合算 → 他の税金と区別',
+                        }, //36 p164
+                        {
+                            questionTitle: '自己株式',
+                            content: '純資産の部に加算 → 純資産の部から控除',
+                        }, //37 p141
+                        {
+                            questionTitle: '利源分析',
+                            content: '危険準備金損益、為替損益 → 責任準備金関係損益、価格変動損益',
+                        }, //38 p178
+                        {
+                            questionTitle: '保険金据置支払金',
+                            content: '支払利息に計上 → 本科目（保険金据置支払金）に計上',
+                        }, //39 p158
+                        {
+                            questionTitle: '会計監査人による監査',
+                            content: '期中監査の説明 ↔︎ 決算監査の説明',
+                        }, //40 p208
+                        {
+                            label: 'オ',
+                            questionTitle: '株主資本等変動計算書',
+                            content: '',
+                        }, //41
+                        {
+                            label: 'イ',
+                            questionTitle: '危険準備金',
+                            content: '利益性',
+                        }, //42
+                        {
+                            label: 'エ',
+                            questionTitle: '決算スケジュール',
+                            content: '4ヵ月',
+                        }, //43
+                        {
+                            label: 'エ',
+                            questionTitle: '会計に関する法律',
+                            content: '保険業法',
+                        }, //44
+                        {
+                            label: 'オ',
+                            questionTitle: '貸倒引当金',
+                            content: '',
+                        }, //45
+                        {
+                            label: 'ア',
+                            questionTitle: 'その他負債',
+                            content: '資産除去',
+                        }, //46
+                        {
+                            label: 'ウ',
+                            questionTitle: '損失填補準備金',
+                            content: '1000分の3',
+                        }, //47
+                        {
+                            label: 'エ',
+                            questionTitle: '解約返戻金',
+                            content: '支払備金',
+                        }, //48
+                        {
+                            label: 'ウ',
+                            questionTitle: '事業費',
+                            content: '物件費',
+                        }, //49
+                        {
+                            label: 'イ',
+                            questionTitle: '監査役による監査',
+                            content: '社外',
+                        }, //50
                     ]"
                 />
             </div>

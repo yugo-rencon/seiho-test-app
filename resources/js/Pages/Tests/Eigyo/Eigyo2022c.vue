@@ -213,26 +213,96 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '企業の福利厚生費', content: '正しい' }, //31
-                        { questionTitle: '個人情報保護法', content: '親族からの開示請求 → 本人からの開示請求' }, //32 p40
-                        { questionTitle: '転換制度', content: '特別配当の権利は転換後の契約に引き継がれる。' }, //33
-                        { questionTitle: '外貨建保険', content: '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く' }, //34 p65
-                        { questionTitle: '特別勘定', content: '正しい' }, //35
-                        { questionTitle: '団体就業不能保障保険', content: '治療給付金・入院給付金・死亡保険金を支払う → 就業不能保険金を支払う' }, //36 p97
-                        { questionTitle: '心身障害者扶養者生命保険', content: '正しい' }, //37
-                        { questionTitle: '営業職員チャネル', content: '生命保険商品に特化した → 生命保険商品の枠を超えた' }, //38 p101
-                        { questionTitle: '個人顧客システム', content: '正しい' }, //39
-                        { questionTitle: '生命保険大学課程', content: 'ファイナンシャル・ライフ・コンサルタント（FLC） → トータル・ライフ・コンサルタント（TLC）' }, //40 p125
-                        { questionTitle: 'シルバー市場', label: 'ア', content: '65歳' }, //41
-                        { questionTitle: '公的介護保険制度の概要', label: 'ウ', content: '所得段階別' }, //42
-                        { questionTitle: '保険料の払込に関する特約', label: 'ウ', content: '団体扱特約' }, //43
-                        { questionTitle: '危険選択の方法', label: 'エ', content: '面接' }, //44
-                        { questionTitle: '加入後の自在性', label: 'オ', content: '' }, //45
-                        { questionTitle: '国民年金基金制度', label: 'ア', content: '第1号被保険者' }, //46
-                        { questionTitle: '営業職員の退職金', label: 'イ', content: '傷病' }, //47
-                        { questionTitle: '支社の配置', label: 'ウ', content: '分割' }, //48
-                        { questionTitle: '代理店', label: 'オ', content: '' }, //49
-                        { questionTitle: '営業職員の給与体系', label: 'イ', content: '地域' }, //50
+                        {
+                            questionTitle: '企業の福利厚生費',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '個人情報保護法',
+                            content: '親族からの開示請求 → 本人からの開示請求',
+                        }, //32 p40
+                        {
+                            questionTitle: '転換制度',
+                            content: '特別配当の権利は転換後の契約に引き継がれる。',
+                        }, //33
+                        {
+                            questionTitle: '外貨建保険',
+                            content: '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く',
+                        }, //34 p65
+                        {
+                            questionTitle: '特別勘定',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '団体就業不能保障保険',
+                            content: '治療給付金・入院給付金・死亡保険金を支払う → 就業不能保険金を支払う',
+                        }, //36 p97
+                        {
+                            questionTitle: '心身障害者扶養者生命保険',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '営業職員チャネル',
+                            content: '生命保険商品に特化した → 生命保険商品の枠を超えた',
+                        }, //38 p101
+                        {
+                            questionTitle: '個人顧客システム',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '生命保険大学課程',
+                            content: 'ファイナンシャル・ライフ・コンサルタント（FLC） → トータル・ライフ・コンサルタント（TLC）',
+                        }, //40 p125
+                        {
+                            questionTitle: 'シルバー市場',
+                            label: 'ア',
+                            content: '65歳',
+                        }, //41
+                        {
+                            questionTitle: '公的介護保険制度の概要',
+                            label: 'ウ',
+                            content: '所得段階別',
+                        }, //42
+                        {
+                            questionTitle: '保険料の払込に関する特約',
+                            label: 'ウ',
+                            content: '団体扱特約',
+                        }, //43
+                        {
+                            questionTitle: '危険選択の方法',
+                            label: 'エ',
+                            content: '面接',
+                        }, //44
+                        {
+                            questionTitle: '加入後の自在性',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '国民年金基金制度',
+                            label: 'ア',
+                            content: '第1号被保険者',
+                        }, //46
+                        {
+                            questionTitle: '営業職員の退職金',
+                            label: 'イ',
+                            content: '傷病',
+                        }, //47
+                        {
+                            questionTitle: '支社の配置',
+                            label: 'ウ',
+                            content: '分割',
+                        }, //48
+                        {
+                            questionTitle: '代理店',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '営業職員の給与体系',
+                            label: 'イ',
+                            content: '地域',
+                        }, //50
                     ]"
                 />
             </div>

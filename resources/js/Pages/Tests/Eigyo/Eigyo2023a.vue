@@ -213,26 +213,96 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '人の一生', content: 'ライフスタイル → ライフステージ<br>ライフ・プランニング → ライフサイクル' }, //31 p20
-                        { questionTitle: '第三分野市場', content: '保険監督者会議 → 日米保険協議<br>生損保本体 ↔︎ 子会社' }, //32 p35
-                        { questionTitle: '生命年金', content: '被保険者の生死を問わず → 被保険者の生存中に限り' }, //33 p47
-                        { questionTitle: '危険選択の方法', content: '生命保険支払専門士 → 生命保険面接士' }, //34 p52
-                        { questionTitle: '契約者単位の通算割引', content: '払込保険料を割り引く方式のみ → 給付金として割り戻す方式もある' }, //35 p78
-                        { questionTitle: '特別勘定', content: '正しい' }, //36
-                        { questionTitle: '財形貯蓄制度', content: '勤労者財産形成教育貯蓄契約（財形教育） → 勤労者財産形成住宅貯蓄契約（財形住宅）' }, //37 p94
-                        { questionTitle: 'インターネット通販', content: '生保会社の出現に至ってない → 契約の成立まで完了できる生保会社もある' }, //38 p104
-                        { questionTitle: '営業職員の育成体系', content: '正しい' }, //39
-                        { questionTitle: '企業保険の営業', content: '正しい' }, //40
-                        { questionTitle: '種類別貯蓄高', label: 'ウ', content: '通貨性預貯金' }, //41
-                        { questionTitle: '遺族年金', label: 'ア', content: '３分の１' }, //42
-                        { questionTitle: '公的介護保険制度の概要', label: 'ウ', content: '介護認定審査会' }, //43
-                        { questionTitle: '個人保険商品の配当', label: 'ア', content: '資産運用成果' }, //44
-                        { questionTitle: '月払保険の普及', label: 'オ', content: '' }, //45
-                        { questionTitle: '総合福祉団体定期保険', label: 'イ', content: '企業等' }, //46
-                        { questionTitle: '国民年金基金制度', label: 'イ', content: '厚生労働大臣' }, //47
-                        { questionTitle: '営業職員の登録', label: 'オ', content: '' }, //48
-                        { questionTitle: '営業職員の給与体系', label: 'エ', content: '保障額' }, //49
-                        { questionTitle: '支社の配置', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '人の一生',
+                            content: 'ライフスタイル → ライフステージ<br>ライフ・プランニング → ライフサイクル',
+                        }, //31 p20
+                        {
+                            questionTitle: '第三分野市場',
+                            content: '保険監督者会議 → 日米保険協議<br>生損保本体 ↔︎ 子会社',
+                        }, //32 p35
+                        {
+                            questionTitle: '生命年金',
+                            content: '被保険者の生死を問わず → 被保険者の生存中に限り',
+                        }, //33 p47
+                        {
+                            questionTitle: '危険選択の方法',
+                            content: '生命保険支払専門士 → 生命保険面接士',
+                        }, //34 p52
+                        {
+                            questionTitle: '契約者単位の通算割引',
+                            content: '払込保険料を割り引く方式のみ → 給付金として割り戻す方式もある',
+                        }, //35 p78
+                        {
+                            questionTitle: '特別勘定',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '財形貯蓄制度',
+                            content: '勤労者財産形成教育貯蓄契約（財形教育） → 勤労者財産形成住宅貯蓄契約（財形住宅）',
+                        }, //37 p94
+                        {
+                            questionTitle: 'インターネット通販',
+                            content: '生保会社の出現に至ってない → 契約の成立まで完了できる生保会社もある',
+                        }, //38 p104
+                        {
+                            questionTitle: '営業職員の育成体系',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '企業保険の営業',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '種類別貯蓄高',
+                            label: 'ウ',
+                            content: '通貨性預貯金',
+                        }, //41
+                        {
+                            questionTitle: '遺族年金',
+                            label: 'ア',
+                            content: '３分の１',
+                        }, //42
+                        {
+                            questionTitle: '公的介護保険制度の概要',
+                            label: 'ウ',
+                            content: '介護認定審査会',
+                        }, //43
+                        {
+                            questionTitle: '個人保険商品の配当',
+                            label: 'ア',
+                            content: '資産運用成果',
+                        }, //44
+                        {
+                            questionTitle: '月払保険の普及',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '総合福祉団体定期保険',
+                            label: 'イ',
+                            content: '企業等',
+                        }, //46
+                        {
+                            questionTitle: '国民年金基金制度',
+                            label: 'イ',
+                            content: '厚生労働大臣',
+                        }, //47
+                        {
+                            questionTitle: '営業職員の登録',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '営業職員の給与体系',
+                            label: 'エ',
+                            content: '保障額',
+                        }, //49
+                        {
+                            questionTitle: '支社の配置',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

@@ -213,26 +213,96 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '日本の金融制度', content: '正しい' }, //31
-                        { questionTitle: '投資リスク回避策', content: '積極的回避 → 消極的回避' }, //32 見つからない
-                        { questionTitle: '貸付形態別分類', content: '手形貸付が主流 → 証書貸付が主流' }, //33 p52
-                        { questionTitle: '公社債', content: '変動利付 → 確定利付' }, //34 p69
-                        { questionTitle: 'スワップ取引', content: '通過スワップ → 金利スワップ' }, //35 p94
-                        { questionTitle: '外国為替実務', content: 'TTBレート ↔︎ TTSレート' }, //36 p110
-                        { questionTitle: 'アメリカの資産運用規制', content: '正しい' }, //37
-                        { questionTitle: '公共投資', content: '正しい' }, //38
-                        { questionTitle: 'バブル崩壊後の外国証券投資', content: '正しい' }, //39
-                        { questionTitle: '金融審議会報告書', content: '正しい' }, //40
-                        { questionTitle: '資産運用機能の充実', label: 'ウ', content: 'ALM（Asset Liability Management）' }, //41
-                        { questionTitle: '資産運用の専門化の進展', label: 'イ', content: 'ファンド・マネージャー' }, //42
-                        { questionTitle: '融資審査', label: 'オ', content: '' }, //43
-                        { questionTitle: 'コール・オプション', label: 'ウ', content: '買い付ける' }, //44
-                        { questionTitle: '不動産の投資手法', label: 'ア', content: '新借地' }, //45
-                        { questionTitle: 'イギリスの資産運用', label: 'オ', content: '' }, //46
-                        { questionTitle: '特定金銭信託の活用', label: 'イ', content: 'キャピタル・ゲイン' }, //47
-                        { questionTitle: '資産運用手段の多様化', label: 'エ', content: 'オルタナティブ投資' }, //48
-                        { questionTitle: '金融商品会計に関する実務指針', label: 'ア', content: '日本公認会計士協会' }, //49
-                        { questionTitle: 'リスクの多様化', label: 'エ', content: '先物' }, //50
+                        {
+                            questionTitle: '日本の金融制度',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '投資リスク回避策',
+                            content: '積極的回避 → 消極的回避',
+                        }, //32 見つからない
+                        {
+                            questionTitle: '貸付形態別分類',
+                            content: '手形貸付が主流 → 証書貸付が主流',
+                        }, //33 p52
+                        {
+                            questionTitle: '公社債',
+                            content: '変動利付 → 確定利付',
+                        }, //34 p69
+                        {
+                            questionTitle: 'スワップ取引',
+                            content: '通過スワップ → 金利スワップ',
+                        }, //35 p94
+                        {
+                            questionTitle: '外国為替実務',
+                            content: 'TTBレート ↔︎ TTSレート',
+                        }, //36 p110
+                        {
+                            questionTitle: 'アメリカの資産運用規制',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '公共投資',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: 'バブル崩壊後の外国証券投資',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '金融審議会報告書',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '資産運用機能の充実',
+                            label: 'ウ',
+                            content: 'ALM（Asset Liability Management）',
+                        }, //41
+                        {
+                            questionTitle: '資産運用の専門化の進展',
+                            label: 'イ',
+                            content: 'ファンド・マネージャー',
+                        }, //42
+                        {
+                            questionTitle: '融資審査',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: 'コール・オプション',
+                            label: 'ウ',
+                            content: '買い付ける',
+                        }, //44
+                        {
+                            questionTitle: '不動産の投資手法',
+                            label: 'ア',
+                            content: '新借地',
+                        }, //45
+                        {
+                            questionTitle: 'イギリスの資産運用',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '特定金銭信託の活用',
+                            label: 'イ',
+                            content: 'キャピタル・ゲイン',
+                        }, //47
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'エ',
+                            content: 'オルタナティブ投資',
+                        }, //48
+                        {
+                            questionTitle: '金融商品会計に関する実務指針',
+                            label: 'ア',
+                            content: '日本公認会計士協会',
+                        }, //49
+                        {
+                            questionTitle: 'リスクの多様化',
+                            label: 'エ',
+                            content: '先物',
+                        }, //50
                     ]"
                 />
             </div>

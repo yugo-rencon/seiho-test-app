@@ -248,26 +248,96 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '標準税率', content: '正しい' }, //31
-                        { questionTitle: '特定支出控除', content: '年末調整 → 確定申告' }, //32
-                        { questionTitle: '相続の放棄', content: '代襲相続の権利を有する → 代襲相続の権利がない' }, //33 p73
-                        { questionTitle: '生命保険契約の権利の評価', content: '既払込保険料総額 → 解約返戻金の額' }, //34 p111
-                        { questionTitle: '教育資金一括贈与の非課税措置', content: '3000万円 → 1500万円' }, //35 p97
-                        { questionTitle: '法人税の種類', content: '正しい' }, //36
-                        { questionTitle: '上場株式の評価', content: '最も高い価格 → 最も低い価格' }, //37 p116
-                        { questionTitle: '固定資産税の課税標準', content: '5年ごと → 3年ごと' }, //38 p158
-                        { questionTitle: '確定拠出年金のポータビリティ', content: '正しい' }, //39
-                        { questionTitle: '営業職員報酬の必要経費', content: '正しい' }, //40
-                        { questionTitle: '居住用財産譲渡の特例', label: 'ア', content: '自己' }, //41
-                        { questionTitle: '雑損控除', label: 'ウ', content: '5万円' }, //42
-                        { questionTitle: '遺留分', label: 'ウ', content: '3分の1' }, //43
-                        { questionTitle: '相続税の未成年者控除', label: 'ア', content: '18歳' }, //44
-                        { questionTitle: '相続時精算課税制度', label: 'ウ', content: '18歳' }, //45
-                        { questionTitle: '法人の確定申告', label: 'ア', content: '2ヶ月' }, //46
-                        { questionTitle: '法人の住民税', label: 'ア', content: '法人税制' }, //47
-                        { questionTitle: '不動産取得税', label: 'イ', content: '道府県税' }, //48
-                        { questionTitle: '保険金等受取時の税務', label: 'オ', content: '' }, //49
-                        { questionTitle: '最低課税方式', label: 'エ', content: '契約者配当準備金損金算入額' }, //50
+                        {
+                            questionTitle: '標準税率',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '特定支出控除',
+                            content: '年末調整 → 確定申告',
+                        }, //32
+                        {
+                            questionTitle: '相続の放棄',
+                            content: '代襲相続の権利を有する → 代襲相続の権利がない',
+                        }, //33 p73
+                        {
+                            questionTitle: '生命保険契約の権利の評価',
+                            content: '既払込保険料総額 → 解約返戻金の額',
+                        }, //34 p111
+                        {
+                            questionTitle: '教育資金一括贈与の非課税措置',
+                            content: '3000万円 → 1500万円',
+                        }, //35 p97
+                        {
+                            questionTitle: '法人税の種類',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '上場株式の評価',
+                            content: '最も高い価格 → 最も低い価格',
+                        }, //37 p116
+                        {
+                            questionTitle: '固定資産税の課税標準',
+                            content: '5年ごと → 3年ごと',
+                        }, //38 p158
+                        {
+                            questionTitle: '確定拠出年金のポータビリティ',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '営業職員報酬の必要経費',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '居住用財産譲渡の特例',
+                            label: 'ア',
+                            content: '自己',
+                        }, //41
+                        {
+                            questionTitle: '雑損控除',
+                            label: 'ウ',
+                            content: '5万円',
+                        }, //42
+                        {
+                            questionTitle: '遺留分',
+                            label: 'ウ',
+                            content: '3分の1',
+                        }, //43
+                        {
+                            questionTitle: '相続税の未成年者控除',
+                            label: 'ア',
+                            content: '18歳',
+                        }, //44
+                        {
+                            questionTitle: '相続時精算課税制度',
+                            label: 'ウ',
+                            content: '18歳',
+                        }, //45
+                        {
+                            questionTitle: '法人の確定申告',
+                            label: 'ア',
+                            content: '2ヶ月',
+                        }, //46
+                        {
+                            questionTitle: '法人の住民税',
+                            label: 'ア',
+                            content: '法人税制',
+                        }, //47
+                        {
+                            questionTitle: '不動産取得税',
+                            label: 'イ',
+                            content: '道府県税',
+                        }, //48
+                        {
+                            questionTitle: '保険金等受取時の税務',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '最低課税方式',
+                            label: 'エ',
+                            content: '契約者配当準備金損金算入額',
+                        }, //50
                     ]"
                 />
             </div>

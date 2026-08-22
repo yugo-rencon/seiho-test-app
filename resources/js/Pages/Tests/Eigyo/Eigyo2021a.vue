@@ -213,26 +213,96 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '公的介護保険制度の運営主体', content: '運営主体は各都道府県 → 各市区町村' }, //31 p29
-                        { questionTitle: '第三分野市場', content: '損害保険 ↔︎ 生命保険' }, //32 p34
-                        { questionTitle: '個人情報の保護に関する法律', content: '正しい' }, //33
-                        { questionTitle: '危険選択の方法', content: '認定生命保険士 → 生命保険面接士' }, //34 p52
-                        { questionTitle: '医療保障', content: '正しい' }, //35
-                        { questionTitle: 'ユニバーサル保険', content: '正しい' }, //36
-                        { questionTitle: '生保財形の特徴', content: '払込保険料累計額の3倍 → 5倍' }, //37 p96
-                        { questionTitle: '一時払退職後終身保険', content: '正しい' }, //38
-                        { questionTitle: '法人顧客システム', content: '正しい' }, //39
-                        { questionTitle: '営業職員の給与体系', content: '地域別最低賃金が適用されない → 適用される' }, //40 p136
-                        { questionTitle: '厚生年金保険の保険料', label: 'オ', content: '' }, //41
-                        { questionTitle: '公的介護保険の保険料', label: 'オ', content: '' }, //42
-                        { questionTitle: '個人保険商品', label: 'ウ', content: '利差配当' }, //43
-                        { questionTitle: '変額保険', label: 'エ', content: '保険料' }, //44
-                        { questionTitle: '生命表', label: 'ア', content: '経験死亡率' }, //45
-                        { questionTitle: '総合福祉団体定期保険', label: 'イ', content: '企業等' }, //46
-                        { questionTitle: '団体信用生命保険', label: 'イ', content: '賦払償還債務' }, //47
-                        { questionTitle: '医療保障保険（団体型）', label: 'エ', content: '自己負担の一部を補填する' }, //48
-                        { questionTitle: '営業職員の適格性要素', label: 'オ', content: '' }, //49
-                        { questionTitle: '支社の配置', label: 'ウ', content: '分割' }, //50
+                        {
+                            questionTitle: '公的介護保険制度の運営主体',
+                            content: '運営主体は各都道府県 → 各市区町村',
+                        }, //31 p29
+                        {
+                            questionTitle: '第三分野市場',
+                            content: '損害保険 ↔︎ 生命保険',
+                        }, //32 p34
+                        {
+                            questionTitle: '個人情報の保護に関する法律',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '危険選択の方法',
+                            content: '認定生命保険士 → 生命保険面接士',
+                        }, //34 p52
+                        {
+                            questionTitle: '医療保障',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: 'ユニバーサル保険',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '生保財形の特徴',
+                            content: '払込保険料累計額の3倍 → 5倍',
+                        }, //37 p96
+                        {
+                            questionTitle: '一時払退職後終身保険',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '法人顧客システム',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '営業職員の給与体系',
+                            content: '地域別最低賃金が適用されない → 適用される',
+                        }, //40 p136
+                        {
+                            questionTitle: '厚生年金保険の保険料',
+                            label: 'オ',
+                            content: '',
+                        }, //41
+                        {
+                            questionTitle: '公的介護保険の保険料',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '個人保険商品',
+                            label: 'ウ',
+                            content: '利差配当',
+                        }, //43
+                        {
+                            questionTitle: '変額保険',
+                            label: 'エ',
+                            content: '保険料',
+                        }, //44
+                        {
+                            questionTitle: '生命表',
+                            label: 'ア',
+                            content: '経験死亡率',
+                        }, //45
+                        {
+                            questionTitle: '総合福祉団体定期保険',
+                            label: 'イ',
+                            content: '企業等',
+                        }, //46
+                        {
+                            questionTitle: '団体信用生命保険',
+                            label: 'イ',
+                            content: '賦払償還債務',
+                        }, //47
+                        {
+                            questionTitle: '医療保障保険（団体型）',
+                            label: 'エ',
+                            content: '自己負担の一部を補填する',
+                        }, //48
+                        {
+                            questionTitle: '営業職員の適格性要素',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '支社の配置',
+                            label: 'ウ',
+                            content: '分割',
+                        }, //50
                     ]"
                 />
             </div>

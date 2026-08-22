@@ -213,26 +213,96 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '生保資金の構成', content: '正しい' }, //31
-                        { questionTitle: '金融関連業務', content: '付随業務 → 法定他業' }, //32 見つからない
-                        { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: 'スワップ取引', content: '金利スワップ → 通貨スワップ' }, //34 p94
-                        { questionTitle: '外国不動産投資', content: '本社が直接所有するケースがほとんど → 現地法人を通じて行われるケースがほとんど' }, //35 p109
-                        { questionTitle: '不動産投資の実務', content: '正しい' }, //36
-                        { questionTitle: 'ドイツの資産運用の特徴', content: '正しい' }, //37
-                        { questionTitle: '昭和初期の生命保険業界', content: '景気が回復することはなかった → 景気は回復した' }, //38 /167
-                        { questionTitle: '住宅金融対応', content: '正しい' }, //39
-                        { questionTitle: '国際会計基準導入の動向', content: '日本版スチュワードシップ・コード → IFRSへの対応の在り方に関する当面の方針' }, //40 p214
-                        { questionTitle: '生保資金の運用規制', label: 'イ', content: '独占禁止法' }, //41
-                        { questionTitle: '資産運用機能の充実', label: 'オ', content: '' }, //42
-                        { questionTitle: '貸付の特徴', label: 'ウ', content: '流動' }, //43
-                        { questionTitle: '国債', label: 'エ', content: '歳入債' }, //44
-                        { questionTitle: '短期金融市場の概要', label: 'オ', content: '' }, //45
-                        { questionTitle: '個人変額保険の運用', label: 'ア', content: '収益性' }, //46
-                        { questionTitle: 'ドイツの金融制度', label: 'エ', content: '直接金融' }, //47
-                        { questionTitle: '生命保険会社の資金調達', label: 'ア', content: '社債' }, //48
-                        { questionTitle: '資産運用手段の多様化', label: 'イ', content: 'ヘッジファンド' }, //49
-                        { questionTitle: '金融システム改革法', label: 'ウ', content: '保護機構' }, //50
+                        {
+                            questionTitle: '生保資金の構成',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '金融関連業務',
+                            content: '付随業務 → 法定他業',
+                        }, //32 見つからない
+                        {
+                            questionTitle: '融資審査',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: 'スワップ取引',
+                            content: '金利スワップ → 通貨スワップ',
+                        }, //34 p94
+                        {
+                            questionTitle: '外国不動産投資',
+                            content: '本社が直接所有するケースがほとんど → 現地法人を通じて行われるケースがほとんど',
+                        }, //35 p109
+                        {
+                            questionTitle: '不動産投資の実務',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: 'ドイツの資産運用の特徴',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '昭和初期の生命保険業界',
+                            content: '景気が回復することはなかった → 景気は回復した',
+                        }, //38 /167
+                        {
+                            questionTitle: '住宅金融対応',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '国際会計基準導入の動向',
+                            content: '日本版スチュワードシップ・コード → IFRSへの対応の在り方に関する当面の方針',
+                        }, //40 p214
+                        {
+                            questionTitle: '生保資金の運用規制',
+                            label: 'イ',
+                            content: '独占禁止法',
+                        }, //41
+                        {
+                            questionTitle: '資産運用機能の充実',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '貸付の特徴',
+                            label: 'ウ',
+                            content: '流動',
+                        }, //43
+                        {
+                            questionTitle: '国債',
+                            label: 'エ',
+                            content: '歳入債',
+                        }, //44
+                        {
+                            questionTitle: '短期金融市場の概要',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '個人変額保険の運用',
+                            label: 'ア',
+                            content: '収益性',
+                        }, //46
+                        {
+                            questionTitle: 'ドイツの金融制度',
+                            label: 'エ',
+                            content: '直接金融',
+                        }, //47
+                        {
+                            questionTitle: '生命保険会社の資金調達',
+                            label: 'ア',
+                            content: '社債',
+                        }, //48
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'イ',
+                            content: 'ヘッジファンド',
+                        }, //49
+                        {
+                            questionTitle: '金融システム改革法',
+                            label: 'ウ',
+                            content: '保護機構',
+                        }, //50
                     ]"
                 />
             </div>

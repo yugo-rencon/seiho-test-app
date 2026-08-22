@@ -213,26 +213,96 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '取引の認識', content: '正しい' }, //31
-                        { questionTitle: '開示書類', content: '四半期報告書は開示が求められていない → 開示が求められている' }, //32 p30
-                        { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //33 p42-43
-                        { questionTitle: '企業会計原則（一般原則）', content: '明瞭性の原則 → 資本取引・損益取引区分の原則' }, //34 p25
-                        { questionTitle: '退職給付引当金', content: '正しい' }, //35
-                        { questionTitle: '計算書類', content: '株式会社 → 相互会社（剰余金処分に関する議案を作成）' }, //36 p56-57
-                        { questionTitle: '外貨預金の換算', content: '正しい' }, //37
-                        { questionTitle: '保険金', content: '正しい' }, //38
-                        { questionTitle: '負債勘定', content: '正しい' }, //39
-                        { questionTitle: '計算書類の公告', content: '正しい' }, //40
-                        { questionTitle: '企業会計の領域', label: 'イ', content: '財務会計' }, //41
-                        { questionTitle: '財務諸表', label: 'オ', content: '' }, //42
-                        { questionTitle: '株主配当', label: 'エ', content: 'いつでも' }, //43
-                        { questionTitle: '勘定間取引', label: 'ウ', content: '平準保険料' }, //44
-                        { questionTitle: 'ソフトウェア', label: 'ウ', content: '定額法' }, //45
-                        { questionTitle: '決算スケジュール', label: 'イ', content: '2週間' }, //46
-                        { questionTitle: '利益準備金', label: 'オ', content: '' }, //47
-                        { questionTitle: '保険料', label: 'イ', content: '未収保険料' }, //48
-                        { questionTitle: '区分経理', label: 'オ', content: '' }, //49
-                        { questionTitle: '企業が受ける検査', label: 'ア', content: '税務調査' }, //50
+                        {
+                            questionTitle: '取引の認識',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '開示書類',
+                            content: '四半期報告書は開示が求められていない → 開示が求められている',
+                        }, //32 p30
+                        {
+                            questionTitle: '保険金等支払金の計上',
+                            content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整',
+                        }, //33 p42-43
+                        {
+                            questionTitle: '企業会計原則（一般原則）',
+                            content: '明瞭性の原則 → 資本取引・損益取引区分の原則',
+                        }, //34 p25
+                        {
+                            questionTitle: '退職給付引当金',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '計算書類',
+                            content: '株式会社 → 相互会社（剰余金処分に関する議案を作成）',
+                        }, //36 p56-57
+                        {
+                            questionTitle: '外貨預金の換算',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '保険金',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '負債勘定',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '計算書類の公告',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '企業会計の領域',
+                            label: 'イ',
+                            content: '財務会計',
+                        }, //41
+                        {
+                            questionTitle: '財務諸表',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '株主配当',
+                            label: 'エ',
+                            content: 'いつでも',
+                        }, //43
+                        {
+                            questionTitle: '勘定間取引',
+                            label: 'ウ',
+                            content: '平準保険料',
+                        }, //44
+                        {
+                            questionTitle: 'ソフトウェア',
+                            label: 'ウ',
+                            content: '定額法',
+                        }, //45
+                        {
+                            questionTitle: '決算スケジュール',
+                            label: 'イ',
+                            content: '2週間',
+                        }, //46
+                        {
+                            questionTitle: '利益準備金',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '保険料',
+                            label: 'イ',
+                            content: '未収保険料',
+                        }, //48
+                        {
+                            questionTitle: '区分経理',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '企業が受ける検査',
+                            label: 'ア',
+                            content: '税務調査',
+                        }, //50
                     ]"
                 />
             </div>

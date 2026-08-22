@@ -213,26 +213,96 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '日本の金融制度', content: '正しい' }, //31
-                        { questionTitle: '保険会社向けの総合的な監督指針', content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている' }, //32 p28
-                        { questionTitle: '生保の運用機構', content: '正しい' }, //33
-                        { questionTitle: '運用の実務', content: '融資審査部門 → マクロ調査部門' }, //34 p51
-                        { questionTitle: 'スワップ取引', content: '金利スワップ → 通貨スワップ' }, //35 p94
-                        { questionTitle: '海外現地法人', content: '直接行うことはない → 直接行うこともある' }, //36 p105
-                        { questionTitle: '中堅・中小企業貸付対応', content: '正しい' }, //37
-                        { questionTitle: '金融システム改革', content: '正しい' }, //38
-                        { questionTitle: '運用規制ルールの変更等', content: '表面利率 → 応募者利回り' }, //39 p211
-                        { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //41
-                        { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //42
-                        { questionTitle: '企業貸付', label: 'ウ', content: '短期' }, //43
-                        { questionTitle: '公社債の発行方法の相違による分類', label: 'エ', content: '公募債' }, //44
-                        { questionTitle: '短期金融市場の概要', label: 'オ', content: '' }, //45
-                        { questionTitle: '個人変額保険の運用', label: 'イ', content: '収益性' }, //46
-                        { questionTitle: '特定金銭信託の活用', label: 'オ', content: '' }, //47
-                        { questionTitle: '資産運用手段の多様化', label: 'ウ', content: 'オルタナティブ投資' }, //48
-                        { questionTitle: '有価証券の評価方法', label: 'ア', content: '時価' }, //49
-                        { questionTitle: 'ソルベンシー確保', label: 'イ', content: '200' }, //50
+                        {
+                            questionTitle: '日本の金融制度',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '保険会社向けの総合的な監督指針',
+                            content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている',
+                        }, //32 p28
+                        {
+                            questionTitle: '生保の運用機構',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '運用の実務',
+                            content: '融資審査部門 → マクロ調査部門',
+                        }, //34 p51
+                        {
+                            questionTitle: 'スワップ取引',
+                            content: '金利スワップ → 通貨スワップ',
+                        }, //35 p94
+                        {
+                            questionTitle: '海外現地法人',
+                            content: '直接行うことはない → 直接行うこともある',
+                        }, //36 p105
+                        {
+                            questionTitle: '中堅・中小企業貸付対応',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '金融システム改革',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '運用規制ルールの変更等',
+                            content: '表面利率 → 応募者利回り',
+                        }, //39 p211
+                        {
+                            questionTitle: '国際会計基準導入の動向',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '各国の保険監督方法',
+                            label: 'ア',
+                            content: '準拠主義',
+                        }, //41
+                        {
+                            questionTitle: '資産運用の専門化の進展',
+                            label: 'エ',
+                            content: 'アナリスト',
+                        }, //42
+                        {
+                            questionTitle: '企業貸付',
+                            label: 'ウ',
+                            content: '短期',
+                        }, //43
+                        {
+                            questionTitle: '公社債の発行方法の相違による分類',
+                            label: 'エ',
+                            content: '公募債',
+                        }, //44
+                        {
+                            questionTitle: '短期金融市場の概要',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '個人変額保険の運用',
+                            label: 'イ',
+                            content: '収益性',
+                        }, //46
+                        {
+                            questionTitle: '特定金銭信託の活用',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'ウ',
+                            content: 'オルタナティブ投資',
+                        }, //48
+                        {
+                            questionTitle: '有価証券の評価方法',
+                            label: 'ア',
+                            content: '時価',
+                        }, //49
+                        {
+                            questionTitle: 'ソルベンシー確保',
+                            label: 'イ',
+                            content: '200',
+                        }, //50
                     ]"
                 />
             </div>

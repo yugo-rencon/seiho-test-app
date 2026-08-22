@@ -213,26 +213,96 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '雑所得', content: '正しい' }, //31
-                        { questionTitle: '租税特別措置法の規定による課税標準', content: '2つ → 3つ（総所得金額・退職所得金額・山林所得金額）' }, //32 p36
-                        { questionTitle: '確定申告', content: '正しい' }, //33
-                        { questionTitle: '年末調整', content: '正しい' }, //34
-                        { questionTitle: '年金受給権の評価', content: '正しい' }, //35
-                        { questionTitle: '益金に関する別段の定め', content: 'すべて益金に算入 → 定められた一定額は益金に算入しない ' }, //36 p126
-                        { questionTitle: '不動産取得税', content: '正しい' }, //37
-                        { questionTitle: '個人年金保険料控除', content: '一時払契約であること → 一時払契約は不可' }, //38 p165
-                        { questionTitle: '非課税給付金', content: '正しい' }, //39
-                        { questionTitle: '財形住宅貯蓄積立保険', content: '正しい' }, //40
-                        { questionTitle: '租税の種類', label: 'イ', content: '普通税' }, //41
-                        { questionTitle: '医療費控除', label: 'イ', content: '10万円' }, //42
-                        { questionTitle: '遺留分', label: 'ウ', content: '3分の1' }, //43
-                        { questionTitle: '相続時精算課税制度', label: 'オ', content: '' }, //44
-                        { questionTitle: '会社利益と所得金額の調整', label: 'ア', content: '税務調整' }, //45
-                        { questionTitle: '個人の住民税', label: 'オ', content: '' }, //46
-                        { questionTitle: '個人の事業税', label: 'オ', content: '' }, //47
-                        { questionTitle: '弔慰金の非課税限度額', label: 'ウ', content: '半年' }, //48
-                        { questionTitle: '確定給付企業年金', label: 'エ', content: '事業主' }, //49
-                        { questionTitle: '生命保険代理店の事業免許等に係る税', label: 'ア', content: '登録免許税' }, //50
+                        {
+                            questionTitle: '雑所得',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '租税特別措置法の規定による課税標準',
+                            content: '2つ → 3つ（総所得金額・退職所得金額・山林所得金額）',
+                        }, //32 p36
+                        {
+                            questionTitle: '確定申告',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '年末調整',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: '年金受給権の評価',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '益金に関する別段の定め',
+                            content: 'すべて益金に算入 → 定められた一定額は益金に算入しない ',
+                        }, //36 p126
+                        {
+                            questionTitle: '不動産取得税',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '個人年金保険料控除',
+                            content: '一時払契約であること → 一時払契約は不可',
+                        }, //38 p165
+                        {
+                            questionTitle: '非課税給付金',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '租税の種類',
+                            label: 'イ',
+                            content: '普通税',
+                        }, //41
+                        {
+                            questionTitle: '医療費控除',
+                            label: 'イ',
+                            content: '10万円',
+                        }, //42
+                        {
+                            questionTitle: '遺留分',
+                            label: 'ウ',
+                            content: '3分の1',
+                        }, //43
+                        {
+                            questionTitle: '相続時精算課税制度',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '会社利益と所得金額の調整',
+                            label: 'ア',
+                            content: '税務調整',
+                        }, //45
+                        {
+                            questionTitle: '個人の住民税',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '個人の事業税',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '弔慰金の非課税限度額',
+                            label: 'ウ',
+                            content: '半年',
+                        }, //48
+                        {
+                            questionTitle: '確定給付企業年金',
+                            label: 'エ',
+                            content: '事業主',
+                        }, //49
+                        {
+                            questionTitle: '生命保険代理店の事業免許等に係る税',
+                            label: 'ア',
+                            content: '登録免許税',
+                        }, //50
                     ]"
                 />
             </div>

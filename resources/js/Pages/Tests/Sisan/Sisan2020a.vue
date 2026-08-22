@@ -213,26 +213,96 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '日本の金融制度', content: '正しい' }, //31
-                        { questionTitle: '株式保有', content: '20% → 10%' }, //32 p30
-                        { questionTitle: '証券調査', content: '正しい' }, //33
-                        { questionTitle: '貸付の特徴', content: '流動化が容易 → 流動化が困難' }, //34 p52
-                        { questionTitle: 'スワップ取引', content: '通過スワップ → 金利スワップ' }, //35 p94
-                        { questionTitle: '短期金融市場', content: 'オープン市場 ↔︎ インターバンク市場' }, //36 p
-                        { questionTitle: 'ドイツの資産運用体制', content: '正しい' }, //37
-                        { questionTitle: '公共投資', content: '正しい' }, //38
-                        { questionTitle: '金融システム改革', content: '正しい' }, //39
-                        { questionTitle: '有価証券の評価方法', content: '時価 → 取得価額' }, //40 p213
-                        { questionTitle: 'リスク管理の組織的対応', label: 'エ', content: 'リスク管理委員会' }, //41
-                        { questionTitle: '投融資決定機構', label: 'ア', content: '単独制' }, //42
-                        { questionTitle: '融資審査', label: 'オ', content: '' }, //43
-                        { questionTitle: 'コール・オプション', label: 'ウ', content: '買い付ける' }, //44
-                        { questionTitle: '海外投融資の内容と特徴', label: 'エ', content: '不動産' }, //45
-                        { questionTitle: 'カナダの資産運用', label: 'オ', content: '' }, //46
-                        { questionTitle: '海外投融資のリスク', label: 'イ', content: 'カントリー・リスク' }, //47
-                        { questionTitle: '資産運用手段の多様化', label: 'エ', content: 'オルタナティブ投資' }, //48
-                        { questionTitle: '安定成長への移行と貸付業務の多様化', label: 'ウ', content: '劣後ローン' }, //49
-                        { questionTitle: 'グローバルなリスク管理環境', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '日本の金融制度',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '株式保有',
+                            content: '20% → 10%',
+                        }, //32 p30
+                        {
+                            questionTitle: '証券調査',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '貸付の特徴',
+                            content: '流動化が容易 → 流動化が困難',
+                        }, //34 p52
+                        {
+                            questionTitle: 'スワップ取引',
+                            content: '通過スワップ → 金利スワップ',
+                        }, //35 p94
+                        {
+                            questionTitle: '短期金融市場',
+                            content: 'オープン市場 ↔︎ インターバンク市場',
+                        }, //36 p
+                        {
+                            questionTitle: 'ドイツの資産運用体制',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '公共投資',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '金融システム改革',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '有価証券の評価方法',
+                            content: '時価 → 取得価額',
+                        }, //40 p213
+                        {
+                            questionTitle: 'リスク管理の組織的対応',
+                            label: 'エ',
+                            content: 'リスク管理委員会',
+                        }, //41
+                        {
+                            questionTitle: '投融資決定機構',
+                            label: 'ア',
+                            content: '単独制',
+                        }, //42
+                        {
+                            questionTitle: '融資審査',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: 'コール・オプション',
+                            label: 'ウ',
+                            content: '買い付ける',
+                        }, //44
+                        {
+                            questionTitle: '海外投融資の内容と特徴',
+                            label: 'エ',
+                            content: '不動産',
+                        }, //45
+                        {
+                            questionTitle: 'カナダの資産運用',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '海外投融資のリスク',
+                            label: 'イ',
+                            content: 'カントリー・リスク',
+                        }, //47
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'エ',
+                            content: 'オルタナティブ投資',
+                        }, //48
+                        {
+                            questionTitle: '安定成長への移行と貸付業務の多様化',
+                            label: 'ウ',
+                            content: '劣後ローン',
+                        }, //49
+                        {
+                            questionTitle: 'グローバルなリスク管理環境',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

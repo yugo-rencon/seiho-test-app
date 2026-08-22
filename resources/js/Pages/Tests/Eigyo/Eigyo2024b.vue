@@ -213,26 +213,96 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '公的介護保険制度の運営主体', content: '国、都道府県、医療保険者、年金保険者 → 国、都道府県、被保険者' }, //31 p29
-                        { questionTitle: '企業の福利厚生費', content: '法定外複利費については → 法定福利費については' }, //32 p33
-                        { questionTitle: 'マイナンバー法', content: '正しい' }, //33
-                        { questionTitle: '危険選択の方法', content: '生命保険支払専門士 → 生命保険面接士' }, //34 p52
-                        { questionTitle: '一時払退職後終身保険', content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内' }, //35 p97
-                        { questionTitle: '付帯サービス', content: '正しい' }, //36
-                        { questionTitle: '営業職員チャネル', content: '生命保険商品に特化した → 生命保険商品の枠を超えた' }, //37 p101
-                        { questionTitle: '契約者カード', content: '正しい' }, //38
-                        { questionTitle: '募集人登録', content: '生命保険協会 → 内閣総理大臣（金融庁長官に委任）' }, //39 p118
-                        { questionTitle: '機関の機能', content: '正しい' }, //40
-                        { questionTitle: '厚生年金保険の保険料', label: 'イ', content: '標準報酬月額と標準賞与額それぞれ' }, //41
-                        { questionTitle: '年金改革', label: 'ウ', content: '10年' }, //42
-                        { questionTitle: '消費者保護とコンプライアンス', label: 'エ', content: '保険金受取人' }, //43
-                        { questionTitle: 'リビング・ニーズ特約', label: 'オ', content: '' }, //44
-                        { questionTitle: '医療保障保険（団体型）', label: 'ア', content: '公的医療保険' }, //45
-                        { questionTitle: '特化型営業職員制度', label: 'ア', content: '職域や法人' }, //46
-                        { questionTitle: '生保財形の特徴', label: 'ウ', content: '予定利率' }, //47
-                        { questionTitle: '顧客サービスの向上', label: 'オ', content: '' }, //48
-                        { questionTitle: '支社の配置', label: 'オ', content: '' }, //49
-                        { questionTitle: '代理店', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '公的介護保険制度の運営主体',
+                            content: '国、都道府県、医療保険者、年金保険者 → 国、都道府県、被保険者',
+                        }, //31 p29
+                        {
+                            questionTitle: '企業の福利厚生費',
+                            content: '法定外複利費については → 法定福利費については',
+                        }, //32 p33
+                        {
+                            questionTitle: 'マイナンバー法',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '危険選択の方法',
+                            content: '生命保険支払専門士 → 生命保険面接士',
+                        }, //34 p52
+                        {
+                            questionTitle: '一時払退職後終身保険',
+                            content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内',
+                        }, //35 p97
+                        {
+                            questionTitle: '付帯サービス',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '営業職員チャネル',
+                            content: '生命保険商品に特化した → 生命保険商品の枠を超えた',
+                        }, //37 p101
+                        {
+                            questionTitle: '契約者カード',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '募集人登録',
+                            content: '生命保険協会 → 内閣総理大臣（金融庁長官に委任）',
+                        }, //39 p118
+                        {
+                            questionTitle: '機関の機能',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '厚生年金保険の保険料',
+                            label: 'イ',
+                            content: '標準報酬月額と標準賞与額それぞれ',
+                        }, //41
+                        {
+                            questionTitle: '年金改革',
+                            label: 'ウ',
+                            content: '10年',
+                        }, //42
+                        {
+                            questionTitle: '消費者保護とコンプライアンス',
+                            label: 'エ',
+                            content: '保険金受取人',
+                        }, //43
+                        {
+                            questionTitle: 'リビング・ニーズ特約',
+                            label: 'オ',
+                            content: '',
+                        }, //44
+                        {
+                            questionTitle: '医療保障保険（団体型）',
+                            label: 'ア',
+                            content: '公的医療保険',
+                        }, //45
+                        {
+                            questionTitle: '特化型営業職員制度',
+                            label: 'ア',
+                            content: '職域や法人',
+                        }, //46
+                        {
+                            questionTitle: '生保財形の特徴',
+                            label: 'ウ',
+                            content: '予定利率',
+                        }, //47
+                        {
+                            questionTitle: '顧客サービスの向上',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '支社の配置',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '代理店',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

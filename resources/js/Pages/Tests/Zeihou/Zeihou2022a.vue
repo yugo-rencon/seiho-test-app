@@ -213,26 +213,96 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '租税の機能', content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者' }, //31 p4
-                        { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
-                        { questionTitle: '所得税の課税標準', content: '所得税基本通達 → 租税特別措置法' }, //33 p36
-                        { questionTitle: '遺産分割の方法', content: '相続税法 → 民法' }, //34 p72
-                        { questionTitle: '教育資金一括贈与の非課税措置', content: '3000万円 → 1500万円' }, //35 p97
-                        { questionTitle: '法人税の種類', content: '正しい' }, //36
-                        { questionTitle: '法人課税の範囲', content: '非課税 → 本来の事業は非課税、収益事業に係る所得は課税' }, //37 p120
-                        { questionTitle: '不動産取得税', content: '正しい' }, //38
-                        { questionTitle: '確定拠出年金のポータビリティ', content: '正しい' }, //39
-                        { questionTitle: '責任準備金繰入額', content: '計算した額の9割を限度 → 計算した額を限度' }, //40 p223
-                        { questionTitle: '譲渡所得', label: 'ア', content: '5年' }, //41
-                        { questionTitle: '退職所得控除額', label: 'イ', content: '20年以下' }, //42
-                        { questionTitle: '所得税の税率', label: 'イ', content: '超過累進税率' }, //43
-                        { questionTitle: '源泉徴収制度', label: 'ア', content: '翌月10日' }, //44
-                        { questionTitle: '相続時精算課税制度', label: 'ウ', content: '18歳' }, //45
-                        { questionTitle: '法人の確定申告', label: 'ア', content: '2ヶ月' }, //46
-                        { questionTitle: '税務署長の調査', label: 'イ', content: '更生' }, //47
-                        { questionTitle: '法人の住民税', label: 'エ', content: '従業者数' }, //48
-                        { questionTitle: '生命保険料控除の対象とならない生命保険契約等', label: 'オ', content: '' }, //49
-                        { questionTitle: '最低課税方式', label: 'エ', content: '契約者配当準備金損金算入額' }, //50
+                        {
+                            questionTitle: '租税の機能',
+                            content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者',
+                        }, //31 p4
+                        {
+                            questionTitle: '空き家に係る譲渡所得の特別控除の特例',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '所得税の課税標準',
+                            content: '所得税基本通達 → 租税特別措置法',
+                        }, //33 p36
+                        {
+                            questionTitle: '遺産分割の方法',
+                            content: '相続税法 → 民法',
+                        }, //34 p72
+                        {
+                            questionTitle: '教育資金一括贈与の非課税措置',
+                            content: '3000万円 → 1500万円',
+                        }, //35 p97
+                        {
+                            questionTitle: '法人税の種類',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '法人課税の範囲',
+                            content: '非課税 → 本来の事業は非課税、収益事業に係る所得は課税',
+                        }, //37 p120
+                        {
+                            questionTitle: '不動産取得税',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '確定拠出年金のポータビリティ',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '責任準備金繰入額',
+                            content: '計算した額の9割を限度 → 計算した額を限度',
+                        }, //40 p223
+                        {
+                            questionTitle: '譲渡所得',
+                            label: 'ア',
+                            content: '5年',
+                        }, //41
+                        {
+                            questionTitle: '退職所得控除額',
+                            label: 'イ',
+                            content: '20年以下',
+                        }, //42
+                        {
+                            questionTitle: '所得税の税率',
+                            label: 'イ',
+                            content: '超過累進税率',
+                        }, //43
+                        {
+                            questionTitle: '源泉徴収制度',
+                            label: 'ア',
+                            content: '翌月10日',
+                        }, //44
+                        {
+                            questionTitle: '相続時精算課税制度',
+                            label: 'ウ',
+                            content: '18歳',
+                        }, //45
+                        {
+                            questionTitle: '法人の確定申告',
+                            label: 'ア',
+                            content: '2ヶ月',
+                        }, //46
+                        {
+                            questionTitle: '税務署長の調査',
+                            label: 'イ',
+                            content: '更生',
+                        }, //47
+                        {
+                            questionTitle: '法人の住民税',
+                            label: 'エ',
+                            content: '従業者数',
+                        }, //48
+                        {
+                            questionTitle: '生命保険料控除の対象とならない生命保険契約等',
+                            label: 'オ',
+                            content: '',
+                        }, //49
+                        {
+                            questionTitle: '最低課税方式',
+                            label: 'エ',
+                            content: '契約者配当準備金損金算入額',
+                        }, //50
                     ]"
                 />
             </div>

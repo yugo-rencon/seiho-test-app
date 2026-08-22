@@ -214,26 +214,96 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '損益計算書', content: '正しい' }, //31
-                        { questionTitle: '保険金等支払金の計上', content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整' }, //32 p42-43
-                        { questionTitle: '退職給付引当金', content: '正しい' }, //33
-                        { questionTitle: '保険業法と会社法', content: '株式会社：保険業法 → 会社法<br>相互会社：会社法 → 保険業法' }, //34 p94
-                        { questionTitle: '外貨預金の換算', content: '正しい' }, //35
-                        { questionTitle: '繰延税金資産', content: '税務上繰越利益剰余金等 → 税務上繰越欠損等<br>損益計算書に計上 → 貸借対照表に計上' }, //36 //p123
-                        { questionTitle: '自己株式', content: '純資産の部に加算 → 純資産の部から控除' }, //37 p141
-                        { questionTitle: '法人税及び住民税', content: '他の税金と合算 → 他の税金と区別' }, //38 p164
-                        { questionTitle: '区分経理', content: '正しい' }, //39
-                        { questionTitle: '監査', content: '正しい' }, //40
-                        { label: 'イ', questionTitle: '企業会計の領域', content: '財務会計' }, //41
-                        { label: 'エ', questionTitle: '帳簿の種類', content: '売掛金元帳' }, //42
-                        { label: 'オ', questionTitle: '株主配当', content: '' }, //43
-                        { label: 'ア', questionTitle: '連結子会社及び子法人等の範囲', content: '意思決定期間' }, //44
-                        { label: 'ウ', questionTitle: '無形固定資産', content: '定額法' }, //45
-                        { label: 'イ', questionTitle: '保険業法第112条評価益', content: '評価換え' }, //46
-                        { label: 'オ', questionTitle: '解約返戻金', content: '' }, //47
-                        { label: 'ア', questionTitle: '事業費', content: '販売費及び一般管理費' }, //48
-                        { label: 'イ', questionTitle: '公告', content: '損益計算書' }, //49
-                        { label: 'ウ', questionTitle: '金融検査', content: '自己査定' }, //50
+                        {
+                            questionTitle: '損益計算書',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '保険金等支払金の計上',
+                            content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整',
+                        }, //32 p42-43
+                        {
+                            questionTitle: '退職給付引当金',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '保険業法と会社法',
+                            content: '株式会社：保険業法 → 会社法<br>相互会社：会社法 → 保険業法',
+                        }, //34 p94
+                        {
+                            questionTitle: '外貨預金の換算',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '繰延税金資産',
+                            content: '税務上繰越利益剰余金等 → 税務上繰越欠損等<br>損益計算書に計上 → 貸借対照表に計上',
+                        }, //36 //p123
+                        {
+                            questionTitle: '自己株式',
+                            content: '純資産の部に加算 → 純資産の部から控除',
+                        }, //37 p141
+                        {
+                            questionTitle: '法人税及び住民税',
+                            content: '他の税金と合算 → 他の税金と区別',
+                        }, //38 p164
+                        {
+                            questionTitle: '区分経理',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '監査',
+                            content: '正しい',
+                        }, //40
+                        {
+                            label: 'イ',
+                            questionTitle: '企業会計の領域',
+                            content: '財務会計',
+                        }, //41
+                        {
+                            label: 'エ',
+                            questionTitle: '帳簿の種類',
+                            content: '売掛金元帳',
+                        }, //42
+                        {
+                            label: 'オ',
+                            questionTitle: '株主配当',
+                            content: '',
+                        }, //43
+                        {
+                            label: 'ア',
+                            questionTitle: '連結子会社及び子法人等の範囲',
+                            content: '意思決定期間',
+                        }, //44
+                        {
+                            label: 'ウ',
+                            questionTitle: '無形固定資産',
+                            content: '定額法',
+                        }, //45
+                        {
+                            label: 'イ',
+                            questionTitle: '保険業法第112条評価益',
+                            content: '評価換え',
+                        }, //46
+                        {
+                            label: 'オ',
+                            questionTitle: '解約返戻金',
+                            content: '',
+                        }, //47
+                        {
+                            label: 'ア',
+                            questionTitle: '事業費',
+                            content: '販売費及び一般管理費',
+                        }, //48
+                        {
+                            label: 'イ',
+                            questionTitle: '公告',
+                            content: '損益計算書',
+                        }, //49
+                        {
+                            label: 'ウ',
+                            questionTitle: '金融検査',
+                            content: '自己査定',
+                        }, //50
                     ]"
                 />
             </div>

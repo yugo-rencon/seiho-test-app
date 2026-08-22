@@ -213,26 +213,96 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '租税の種類', content: '財産税 → 流通税' }, //31 p4
-                        { questionTitle: '空き家に係る譲渡所得の特別控除の特例', content: '正しい' }, //32
-                        { questionTitle: '担税者', content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者' }, //33 p4
-                        { questionTitle: '贈与税の課税価格', content: '課税価格に算入される → 課税価格に算入しない' }, //34 p96
-                        { questionTitle: '相続時精算課税制度', content: '翌年から暦年課税へ戻すことができる → 戻すことはできない' }, //35 p104
-                        { questionTitle: '法人税の中間申告', content: '必ず仮決算の中間報告書を提出 → 前年度実績による中間報告書でも良い' }, //36 p141
-                        { questionTitle: '不動産取得税', content: '正しい' }, //37
-                        { questionTitle: '総合福祉団体定期保険の保険料', content: '正しい' }, //38
-                        { questionTitle: '定期付養老保険の保険料', content: '正しい' }, //39
-                        { questionTitle: '財形住宅貯蓄積立保険', content: '雑所得として課税 → 源泉分離課税（20%）' }, //40 p213
-                        { questionTitle: '租税の種類', label: 'エ', content: '目的税' }, //41
-                        { questionTitle: '所得税額の計算', label: 'イ', content: '二重課税' }, //42
-                        { questionTitle: '寄付金控除', label: 'オ', content: '' }, //43
-                        { questionTitle: '法定相続分', label: 'エ', content: '民法' }, //44
-                        { questionTitle: '第2次相続', label: 'ア', content: '10年' }, //45
-                        { questionTitle: '相続税の加算', label: 'ウ', content: '20%' }, //46
-                        { questionTitle: '個人の住民税', label: 'ウ', content: '6%' }, //47
-                        { questionTitle: '連結納税制度', label: 'オ', content: '' }, //48
-                        { questionTitle: '法人の住民税', label: 'ウ', content: '従業者数' }, //49
-                        { questionTitle: '確定給付企業年金', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '租税の種類',
+                            content: '財産税 → 流通税',
+                        }, //31 p4
+                        {
+                            questionTitle: '空き家に係る譲渡所得の特別控除の特例',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '担税者',
+                            content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者',
+                        }, //33 p4
+                        {
+                            questionTitle: '贈与税の課税価格',
+                            content: '課税価格に算入される → 課税価格に算入しない',
+                        }, //34 p96
+                        {
+                            questionTitle: '相続時精算課税制度',
+                            content: '翌年から暦年課税へ戻すことができる → 戻すことはできない',
+                        }, //35 p104
+                        {
+                            questionTitle: '法人税の中間申告',
+                            content: '必ず仮決算の中間報告書を提出 → 前年度実績による中間報告書でも良い',
+                        }, //36 p141
+                        {
+                            questionTitle: '不動産取得税',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '総合福祉団体定期保険の保険料',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '定期付養老保険の保険料',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '雑所得として課税 → 源泉分離課税（20%）',
+                        }, //40 p213
+                        {
+                            questionTitle: '租税の種類',
+                            label: 'エ',
+                            content: '目的税',
+                        }, //41
+                        {
+                            questionTitle: '所得税額の計算',
+                            label: 'イ',
+                            content: '二重課税',
+                        }, //42
+                        {
+                            questionTitle: '寄付金控除',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '法定相続分',
+                            label: 'エ',
+                            content: '民法',
+                        }, //44
+                        {
+                            questionTitle: '第2次相続',
+                            label: 'ア',
+                            content: '10年',
+                        }, //45
+                        {
+                            questionTitle: '相続税の加算',
+                            label: 'ウ',
+                            content: '20%',
+                        }, //46
+                        {
+                            questionTitle: '個人の住民税',
+                            label: 'ウ',
+                            content: '6%',
+                        }, //47
+                        {
+                            questionTitle: '連結納税制度',
+                            label: 'オ',
+                            content: '',
+                        }, //48
+                        {
+                            questionTitle: '法人の住民税',
+                            label: 'ウ',
+                            content: '従業者数',
+                        }, //49
+                        {
+                            questionTitle: '確定給付企業年金',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

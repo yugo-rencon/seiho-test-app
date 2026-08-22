@@ -212,26 +212,96 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '公的介護保険制度の運営主体', content: '国、都道府県、医療保険者、年金保険者 → 国、都道府県、被保険者' }, //31 p29
-                        { questionTitle: '代理・代行', content: '保険募集の代理を含まないこと → 含むこと<br>販売することはできなくなった → 販売可能になった' }, //32 p35
-                        { questionTitle: '継続教育制度', content: '正しい' }, //33
-                        { questionTitle: '外貨建保険', content: '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く' }, //34 p65
-                        { questionTitle: '特別勘定', content: '正しい' }, //35
-                        { questionTitle: '医療保障保険（団体型）', content: '2つから構成 → 3つから構成（死亡保険金を含む）' }, //36 p96
-                        { questionTitle: '心身障害者扶養者生命保険', content: '正しい' }, //37
-                        { questionTitle: '通信販売', content: '正しい' }, //38
-                        { questionTitle: '機関の機能', content: '正しい' }, //39
-                        { questionTitle: '代理店', content: '乗合型 → 兼業型' }, //40 p145
-                        { questionTitle: '価値観の変化', label: 'ア', content: '年齢' }, //41
-                        { questionTitle: '年金改革・分割', label: 'イ', content: '第3号' }, //42
-                        { questionTitle: '金融サービス提供法', label: 'オ', content: '' }, //43
-                        { questionTitle: '危険選択の方法', label: 'エ', content: '面接' }, //44
-                        { questionTitle: '商品政策の変遷（1980年代）', label: 'イ', content: '新種個人年金保険' }, //45
-                        { questionTitle: '国民年金基金制度', label: 'ア', content: '第1号被保険者' }, //46
-                        { questionTitle: '生保財形の特徴', label: 'イ', content: '5倍' }, //47
-                        { questionTitle: '保険仲立人', label: 'エ', content: '媒介' }, //48
-                        { questionTitle: '変額保険販売資格要件', label: 'ア', content: '専門課程' }, //49
-                        { questionTitle: '営業職員の給与体系', label: 'イ', content: '地域' }, //50
+                        {
+                            questionTitle: '公的介護保険制度の運営主体',
+                            content: '国、都道府県、医療保険者、年金保険者 → 国、都道府県、被保険者',
+                        }, //31 p29
+                        {
+                            questionTitle: '代理・代行',
+                            content: '保険募集の代理を含まないこと → 含むこと<br>販売することはできなくなった → 販売可能になった',
+                        }, //32 p35
+                        {
+                            questionTitle: '継続教育制度',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '外貨建保険',
+                            content: '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く',
+                        }, //34 p65
+                        {
+                            questionTitle: '特別勘定',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '医療保障保険（団体型）',
+                            content: '2つから構成 → 3つから構成（死亡保険金を含む）',
+                        }, //36 p96
+                        {
+                            questionTitle: '心身障害者扶養者生命保険',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '通信販売',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '機関の機能',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '代理店',
+                            content: '乗合型 → 兼業型',
+                        }, //40 p145
+                        {
+                            questionTitle: '価値観の変化',
+                            label: 'ア',
+                            content: '年齢',
+                        }, //41
+                        {
+                            questionTitle: '年金改革・分割',
+                            label: 'イ',
+                            content: '第3号',
+                        }, //42
+                        {
+                            questionTitle: '金融サービス提供法',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '危険選択の方法',
+                            label: 'エ',
+                            content: '面接',
+                        }, //44
+                        {
+                            questionTitle: '商品政策の変遷（1980年代）',
+                            label: 'イ',
+                            content: '新種個人年金保険',
+                        }, //45
+                        {
+                            questionTitle: '国民年金基金制度',
+                            label: 'ア',
+                            content: '第1号被保険者',
+                        }, //46
+                        {
+                            questionTitle: '生保財形の特徴',
+                            label: 'イ',
+                            content: '5倍',
+                        }, //47
+                        {
+                            questionTitle: '保険仲立人',
+                            label: 'エ',
+                            content: '媒介',
+                        }, //48
+                        {
+                            questionTitle: '変額保険販売資格要件',
+                            label: 'ア',
+                            content: '専門課程',
+                        }, //49
+                        {
+                            questionTitle: '営業職員の給与体系',
+                            label: 'イ',
+                            content: '地域',
+                        }, //50
                     ]"
                 />
             </div>

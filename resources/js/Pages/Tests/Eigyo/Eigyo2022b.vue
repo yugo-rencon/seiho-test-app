@@ -213,26 +213,96 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '公的介護保険の保険料', content: '保険料75%、公費25% → 保険料50%、公費50%' }, //31 p30
-                        { questionTitle: '消費者契約法', content: '正しい' }, //32
-                        { questionTitle: '保険料変更の自在性', content: '正しい' }, //33
-                        { questionTitle: '外貨建保険', content: '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く' }, //34 p65
-                        { questionTitle: '特別勘定', content: '正しい' }, //35
-                        { questionTitle: '財形貯蓄制度と税制', content: '所得税の公的年金控除の対象 → 非課税' }, //36 p95
-                        { questionTitle: '心身障害者扶養者生命保険', content: '正しい' }, //37
-                        { questionTitle: '窓販の弊害防止措置', content: '正しい' }, //38
-                        { questionTitle: '保険仲立人', content: '諸外国ではあまり例がない → 諸外国で一般的' }, //39 p103
-                        { questionTitle: '募集人登録', content: '生命保険協会 → 内閣総理大臣（金融庁長官に委任）' }, //40 p118
-                        { questionTitle: '女性の社会進出', label: 'イ', content: '男女雇用機会均等法' }, //41
-                        { questionTitle: '消費者保護とコンプライアンス', label: 'オ', content: '' }, //42
-                        { questionTitle: 'リビング・ニーズ特約', label: 'イ', content: '6ヶ月' }, //43
-                        { questionTitle: '危険選択の方法', label: 'エ', content: '面接' }, //44
-                        { questionTitle: '団体保険', label: 'ウ', content: 'ヒューマン・ヴァリュー特約' }, //45
-                        { questionTitle: '国民年金基金制度', label: 'ア', content: '第1号被保険者' }, //46
-                        { questionTitle: '財形貯蓄制度の種類', label: 'イ', content: '55歳' }, //47
-                        { questionTitle: '通信販売', label: 'エ', content: '加入保険金額' }, //48
-                        { questionTitle: '営業職員の教育', label: 'イ', content: '個別指導' }, //49
-                        { questionTitle: '営業職員の給与体系', label: 'イ', content: '地域' }, //50
+                        {
+                            questionTitle: '公的介護保険の保険料',
+                            content: '保険料75%、公費25% → 保険料50%、公費50%',
+                        }, //31 p30
+                        {
+                            questionTitle: '消費者契約法',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '保険料変更の自在性',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '外貨建保険',
+                            content: '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く',
+                        }, //34 p65
+                        {
+                            questionTitle: '特別勘定',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '財形貯蓄制度と税制',
+                            content: '所得税の公的年金控除の対象 → 非課税',
+                        }, //36 p95
+                        {
+                            questionTitle: '心身障害者扶養者生命保険',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '窓販の弊害防止措置',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '保険仲立人',
+                            content: '諸外国ではあまり例がない → 諸外国で一般的',
+                        }, //39 p103
+                        {
+                            questionTitle: '募集人登録',
+                            content: '生命保険協会 → 内閣総理大臣（金融庁長官に委任）',
+                        }, //40 p118
+                        {
+                            questionTitle: '女性の社会進出',
+                            label: 'イ',
+                            content: '男女雇用機会均等法',
+                        }, //41
+                        {
+                            questionTitle: '消費者保護とコンプライアンス',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: 'リビング・ニーズ特約',
+                            label: 'イ',
+                            content: '6ヶ月',
+                        }, //43
+                        {
+                            questionTitle: '危険選択の方法',
+                            label: 'エ',
+                            content: '面接',
+                        }, //44
+                        {
+                            questionTitle: '団体保険',
+                            label: 'ウ',
+                            content: 'ヒューマン・ヴァリュー特約',
+                        }, //45
+                        {
+                            questionTitle: '国民年金基金制度',
+                            label: 'ア',
+                            content: '第1号被保険者',
+                        }, //46
+                        {
+                            questionTitle: '財形貯蓄制度の種類',
+                            label: 'イ',
+                            content: '55歳',
+                        }, //47
+                        {
+                            questionTitle: '通信販売',
+                            label: 'エ',
+                            content: '加入保険金額',
+                        }, //48
+                        {
+                            questionTitle: '営業職員の教育',
+                            label: 'イ',
+                            content: '個別指導',
+                        }, //49
+                        {
+                            questionTitle: '営業職員の給与体系',
+                            label: 'イ',
+                            content: '地域',
+                        }, //50
                     ]"
                 />
             </div>

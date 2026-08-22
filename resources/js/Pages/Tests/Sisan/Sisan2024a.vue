@@ -213,26 +213,96 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: 'ヘッジ取引', content: '買いヘッジ → 売りヘッジ' }, //31 見つからない・・・
-                        { questionTitle: '保険会社向けの総合的な監督指針', content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている' }, //32 p28
-                        { questionTitle: '生保の運用機構', content: '正しい' }, //33
-                        { questionTitle: '公社債', content: '変動利付 → 確定利付' }, //34 p69
-                        { questionTitle: 'スワップ取引', content: '金利スワップ → 通貨スワップ' }, //35 p94
-                        { questionTitle: '不動産投資の実務', content: '正しい' }, //36
-                        { questionTitle: '第二次大戦時の国債保有の要請', content: '正しい' }, //37
-                        { questionTitle: '安定成長期の有価証券投資', content: '正しい' }, //38
-                        { questionTitle: 'バブル崩壊後の外国証券投資', content: '減少 ↔︎ 増加' }, //39 p199
-                        { questionTitle: '国際会計基準導入の動向', content: '正しい' }, //40
-                        { questionTitle: '各国の保険監督方法', label: 'ア', content: '準拠主義' }, //41
-                        { questionTitle: '貸付の特徴', label: 'ウ', content: '流動' }, //42
-                        { questionTitle: '融資審査', label: 'オ', content: '' }, //43
-                        { questionTitle: 'オプション取引', label: 'エ', content: '購入する' }, //44
-                        { questionTitle: '対外貸付実務', label: 'ア', content: 'シンジケート' }, //45
-                        { questionTitle: '創業時の生命保険会社の資産運用', label: 'オ', content: '' }, //46
-                        { questionTitle: '海外投融資のリスク', label: 'イ', content: 'カントリー・リスク' }, //47
-                        { questionTitle: '資産運用手段の多様化', label: 'ウ', content: 'オルタナティブ投資' }, //48
-                        { questionTitle: '改正保険業法の施行（1998年（平成10年））', label: 'エ', content: '付随業務' }, //49
-                        { questionTitle: 'ソルベンシー確保', label: 'イ', content: '200' }, //50
+                        {
+                            questionTitle: 'ヘッジ取引',
+                            content: '買いヘッジ → 売りヘッジ',
+                        }, //31 見つからない・・・
+                        {
+                            questionTitle: '保険会社向けの総合的な監督指針',
+                            content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている',
+                        }, //32 p28
+                        {
+                            questionTitle: '生保の運用機構',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '公社債',
+                            content: '変動利付 → 確定利付',
+                        }, //34 p69
+                        {
+                            questionTitle: 'スワップ取引',
+                            content: '金利スワップ → 通貨スワップ',
+                        }, //35 p94
+                        {
+                            questionTitle: '不動産投資の実務',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '第二次大戦時の国債保有の要請',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '安定成長期の有価証券投資',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: 'バブル崩壊後の外国証券投資',
+                            content: '減少 ↔︎ 増加',
+                        }, //39 p199
+                        {
+                            questionTitle: '国際会計基準導入の動向',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '各国の保険監督方法',
+                            label: 'ア',
+                            content: '準拠主義',
+                        }, //41
+                        {
+                            questionTitle: '貸付の特徴',
+                            label: 'ウ',
+                            content: '流動',
+                        }, //42
+                        {
+                            questionTitle: '融資審査',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: 'オプション取引',
+                            label: 'エ',
+                            content: '購入する',
+                        }, //44
+                        {
+                            questionTitle: '対外貸付実務',
+                            label: 'ア',
+                            content: 'シンジケート',
+                        }, //45
+                        {
+                            questionTitle: '創業時の生命保険会社の資産運用',
+                            label: 'オ',
+                            content: '',
+                        }, //46
+                        {
+                            questionTitle: '海外投融資のリスク',
+                            label: 'イ',
+                            content: 'カントリー・リスク',
+                        }, //47
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'ウ',
+                            content: 'オルタナティブ投資',
+                        }, //48
+                        {
+                            questionTitle: '改正保険業法の施行（1998年（平成10年））',
+                            label: 'エ',
+                            content: '付随業務',
+                        }, //49
+                        {
+                            questionTitle: 'ソルベンシー確保',
+                            label: 'イ',
+                            content: '200',
+                        }, //50
                     ]"
                 />
             </div>

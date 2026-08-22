@@ -213,26 +213,96 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '代理・代行', content: '正しい' }, //31
-                        { questionTitle: 'マイナンバー法', content: '未成年者を除くすべての人 → 住民票を有するすべての人' }, //32 p40
-                        { questionTitle: '生命年金', content: '被保険者の生死を問わず → 被保険者の生存中に限り' }, //33 p47
-                        { questionTitle: '危険選択の方法', content: '生命保険支払専門士 → 生命保険面接士' }, //34 p52
-                        { questionTitle: '医療保障保険（団体型）', content: '正しい' }, //35
-                        { questionTitle: '特別勘定', content: '正しい' }, //36
-                        { questionTitle: '適格性要素', content: '正しい' }, //37
-                        { questionTitle: '変額保険販売資格制度', content: '日本証券業協会 → 生命保険協会' }, //38 p126
-                        { questionTitle: '支社の配置', content: 'これまで〜の説明 ↔ 近年では〜の説明' }, //39 p140
-                        { questionTitle: '機関組織構成', content: '正しい' }, //40
-                        { questionTitle: '人の一生', label: 'エ', content: 'ライフサイクル' }, //41
-                        { questionTitle: '遺族年金', label: 'ア', content: '３分の１' }, //42
-                        { questionTitle: '金融商品取引法', label: 'エ', content: '適合性の原則' }, //43
-                        { questionTitle: 'リビング・ニーズ特約', label: 'イ', content: '6ヶ月' }, //44
-                        { questionTitle: '月払保険の普及', label: 'オ', content: '' }, //45
-                        { questionTitle: '総合福祉団体定期保険', label: 'イ', content: '企業等' }, //46
-                        { questionTitle: '加入後の自在性', label: 'イ', content: '移行' }, //47
-                        { questionTitle: '生命表', label: 'ア', content: '経験死亡率' }, //48
-                        { questionTitle: '生保財形の特徴', label: 'ウ', content: '5倍' }, //49
-                        { questionTitle: '営業職員の教育', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '代理・代行',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: 'マイナンバー法',
+                            content: '未成年者を除くすべての人 → 住民票を有するすべての人',
+                        }, //32 p40
+                        {
+                            questionTitle: '生命年金',
+                            content: '被保険者の生死を問わず → 被保険者の生存中に限り',
+                        }, //33 p47
+                        {
+                            questionTitle: '危険選択の方法',
+                            content: '生命保険支払専門士 → 生命保険面接士',
+                        }, //34 p52
+                        {
+                            questionTitle: '医療保障保険（団体型）',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '特別勘定',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '適格性要素',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '変額保険販売資格制度',
+                            content: '日本証券業協会 → 生命保険協会',
+                        }, //38 p126
+                        {
+                            questionTitle: '支社の配置',
+                            content: 'これまで〜の説明 ↔ 近年では〜の説明',
+                        }, //39 p140
+                        {
+                            questionTitle: '機関組織構成',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '人の一生',
+                            label: 'エ',
+                            content: 'ライフサイクル',
+                        }, //41
+                        {
+                            questionTitle: '遺族年金',
+                            label: 'ア',
+                            content: '３分の１',
+                        }, //42
+                        {
+                            questionTitle: '金融商品取引法',
+                            label: 'エ',
+                            content: '適合性の原則',
+                        }, //43
+                        {
+                            questionTitle: 'リビング・ニーズ特約',
+                            label: 'イ',
+                            content: '6ヶ月',
+                        }, //44
+                        {
+                            questionTitle: '月払保険の普及',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '総合福祉団体定期保険',
+                            label: 'イ',
+                            content: '企業等',
+                        }, //46
+                        {
+                            questionTitle: '加入後の自在性',
+                            label: 'イ',
+                            content: '移行',
+                        }, //47
+                        {
+                            questionTitle: '生命表',
+                            label: 'ア',
+                            content: '経験死亡率',
+                        }, //48
+                        {
+                            questionTitle: '生保財形の特徴',
+                            label: 'ウ',
+                            content: '5倍',
+                        }, //49
+                        {
+                            questionTitle: '営業職員の教育',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

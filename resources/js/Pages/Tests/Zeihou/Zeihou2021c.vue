@@ -213,26 +213,96 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '一時所得', content: '80万円程度 → 50万円程度' }, //31 p27
-                        { questionTitle: '住宅借入金（取得）等特別控除', content: '所得控除 → 税額控除' }, //32 p55
-                        { questionTitle: '確定申告定', content: '正しい' }, //33
-                        { questionTitle: '宅地の評価方法', content: '倍率方式 ↔︎ 路線価方式' }, //34 p111-112
-                        { questionTitle: '事業年度', content: '正しい' }, //35
-                        { questionTitle: '企業保険の種類', content: '特定退職金共済 → 団体信用生命保険' }, //36 p206
-                        { questionTitle: '居住用超高層建築物の不動産取得税', content: '最上階を100として階が1つ減るごとに → 1階を100として階が1つ増すごとに' }, //37 p162
-                        { questionTitle: '財形住宅貯蓄積立保険', content: '財形貯蓄積立保険 → 財形年金' }, //38 p213
-                        { questionTitle: '確定拠出年金の税務', content: '正しい' }, //39
-                        { questionTitle: '受取配当益金不算入', content: '正しい' }, //40
-                        { questionTitle: '所得税の所得控除', label: 'イ', content: '15種類' }, //41
-                        { questionTitle: '医療費控除（セルフメディケーション）', label: 'オ', content: '' }, //42
-                        { questionTitle: '譲渡所得', label: 'エ', content: '2分の1' }, //43
-                        { questionTitle: '雑損控除', label: 'ウ', content: '災害' }, //44
-                        { questionTitle: '源泉徴収制度', label: 'ア', content: '翌月10日' }, //45
-                        { questionTitle: '非課税財産', label: 'エ', content: '心身障害者扶養共済制度' }, //46
-                        { questionTitle: '会社利益と所得金額の調整', label: 'ウ', content: '公平な税負担' }, //47
-                        { questionTitle: '生命保険料控除の手続き', label: 'ア', content: '9,000円' }, //48
-                        { questionTitle: '確定給付企業年金制度の開始', label: 'ア', content: '年金規約' }, //49
-                        { questionTitle: '営業職員報酬', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '一時所得',
+                            content: '80万円程度 → 50万円程度',
+                        }, //31 p27
+                        {
+                            questionTitle: '住宅借入金（取得）等特別控除',
+                            content: '所得控除 → 税額控除',
+                        }, //32 p55
+                        {
+                            questionTitle: '確定申告定',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '宅地の評価方法',
+                            content: '倍率方式 ↔︎ 路線価方式',
+                        }, //34 p111-112
+                        {
+                            questionTitle: '事業年度',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '企業保険の種類',
+                            content: '特定退職金共済 → 団体信用生命保険',
+                        }, //36 p206
+                        {
+                            questionTitle: '居住用超高層建築物の不動産取得税',
+                            content: '最上階を100として階が1つ減るごとに → 1階を100として階が1つ増すごとに',
+                        }, //37 p162
+                        {
+                            questionTitle: '財形住宅貯蓄積立保険',
+                            content: '財形貯蓄積立保険 → 財形年金',
+                        }, //38 p213
+                        {
+                            questionTitle: '確定拠出年金の税務',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '受取配当益金不算入',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '所得税の所得控除',
+                            label: 'イ',
+                            content: '15種類',
+                        }, //41
+                        {
+                            questionTitle: '医療費控除（セルフメディケーション）',
+                            label: 'オ',
+                            content: '',
+                        }, //42
+                        {
+                            questionTitle: '譲渡所得',
+                            label: 'エ',
+                            content: '2分の1',
+                        }, //43
+                        {
+                            questionTitle: '雑損控除',
+                            label: 'ウ',
+                            content: '災害',
+                        }, //44
+                        {
+                            questionTitle: '源泉徴収制度',
+                            label: 'ア',
+                            content: '翌月10日',
+                        }, //45
+                        {
+                            questionTitle: '非課税財産',
+                            label: 'エ',
+                            content: '心身障害者扶養共済制度',
+                        }, //46
+                        {
+                            questionTitle: '会社利益と所得金額の調整',
+                            label: 'ウ',
+                            content: '公平な税負担',
+                        }, //47
+                        {
+                            questionTitle: '生命保険料控除の手続き',
+                            label: 'ア',
+                            content: '9,000円',
+                        }, //48
+                        {
+                            questionTitle: '確定給付企業年金制度の開始',
+                            label: 'ア',
+                            content: '年金規約',
+                        }, //49
+                        {
+                            questionTitle: '営業職員報酬',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

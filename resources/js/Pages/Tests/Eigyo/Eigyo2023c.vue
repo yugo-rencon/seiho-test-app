@@ -213,26 +213,96 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '企業福祉制度', content: '自己責任原則の下、従業員の自助努力・自立を側面から支援する ↔︎ 総合的・恩恵的福祉' }, //31 p33
-                        { questionTitle: '第三分野市場', content: '損害保険 ↔︎ 生命保険' }, //32 p34
-                        { questionTitle: '生命年金', content: '被保険者の生死を問わず → 被保険者の生存中に限り' }, //33 p47
-                        { questionTitle: '危険選択の方法', content: '生命保険支払専門士 → 生命保険面接士' }, //34 p52
-                        { questionTitle: '消費者契約法', content: '正しい' }, //35
-                        { questionTitle: '特別勘定', content: '正しい' }, //36
-                        { questionTitle: '医療保険', content: '所得税の課税対象 → 非課税' }, //37 p59-61
-                        { questionTitle: '財形貯蓄制度と税制', content: '保険料控除の対象 → 対象とならない' }, //38 p96
-                        { questionTitle: '営業職員の給与体系', content: '正しい' }, //39
-                        { questionTitle: '代理店', content: '正しい' }, //40
-                        { questionTitle: '代理・代行', label: 'ア', content: '保険業法' }, //41
-                        { questionTitle: '遺族年金', label: 'ア', content: '３分の１' }, //42
-                        { questionTitle: '近年の商品対応（保険料率）', label: 'オ', content: '' }, //43
-                        { questionTitle: '団体信用生命保険', label: 'イ', content: '賦払償還債務' }, //44
-                        { questionTitle: '月払保険の普及', label: 'オ', content: '' }, //45
-                        { questionTitle: '総合福祉団体定期保険', label: 'イ', content: '企業等' }, //46
-                        { questionTitle: '団体年金保険', label: 'ウ', content: '個人' }, //47
-                        { questionTitle: '医療保障保険（団体型）', label: 'エ', content: '代表者' }, //48
-                        { questionTitle: '保険仲立人', label: 'ウ', content: '媒介' }, //49
-                        { questionTitle: '変額保険販売資格要件', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '企業福祉制度',
+                            content: '自己責任原則の下、従業員の自助努力・自立を側面から支援する ↔︎ 総合的・恩恵的福祉',
+                        }, //31 p33
+                        {
+                            questionTitle: '第三分野市場',
+                            content: '損害保険 ↔︎ 生命保険',
+                        }, //32 p34
+                        {
+                            questionTitle: '生命年金',
+                            content: '被保険者の生死を問わず → 被保険者の生存中に限り',
+                        }, //33 p47
+                        {
+                            questionTitle: '危険選択の方法',
+                            content: '生命保険支払専門士 → 生命保険面接士',
+                        }, //34 p52
+                        {
+                            questionTitle: '消費者契約法',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '特別勘定',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '医療保険',
+                            content: '所得税の課税対象 → 非課税',
+                        }, //37 p59-61
+                        {
+                            questionTitle: '財形貯蓄制度と税制',
+                            content: '保険料控除の対象 → 対象とならない',
+                        }, //38 p96
+                        {
+                            questionTitle: '営業職員の給与体系',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '代理店',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '代理・代行',
+                            label: 'ア',
+                            content: '保険業法',
+                        }, //41
+                        {
+                            questionTitle: '遺族年金',
+                            label: 'ア',
+                            content: '３分の１',
+                        }, //42
+                        {
+                            questionTitle: '近年の商品対応（保険料率）',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '団体信用生命保険',
+                            label: 'イ',
+                            content: '賦払償還債務',
+                        }, //44
+                        {
+                            questionTitle: '月払保険の普及',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '総合福祉団体定期保険',
+                            label: 'イ',
+                            content: '企業等',
+                        }, //46
+                        {
+                            questionTitle: '団体年金保険',
+                            label: 'ウ',
+                            content: '個人',
+                        }, //47
+                        {
+                            questionTitle: '医療保障保険（団体型）',
+                            label: 'エ',
+                            content: '代表者',
+                        }, //48
+                        {
+                            questionTitle: '保険仲立人',
+                            label: 'ウ',
+                            content: '媒介',
+                        }, //49
+                        {
+                            questionTitle: '変額保険販売資格要件',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

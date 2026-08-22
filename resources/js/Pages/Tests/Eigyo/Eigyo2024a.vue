@@ -213,26 +213,96 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '公的年金の障害給付', content: '2分の1以上 → 3分の1以上' }, //31 p26
-                        { questionTitle: '企業の福利厚生費', content: '法定外複利費については → 法定福利費については' }, //32 p33
-                        { questionTitle: 'マイナンバー法', content: '正しい' }, //33
-                        { questionTitle: '特約', content: '一般生命保険料控除として所得控除の対象 → 一般生命保険料とは別枠で所得控除の対象' }, //34 p49
-                        { questionTitle: 'ユニバーサル保険', content: '保険料の払込額の変更はできない → 保険料の払込額を変更できる' }, //35 p80
-                        { questionTitle: '付帯サービス', content: '正しい' }, //36
-                        { questionTitle: '団体就業不能保障保険', content: '正しい' }, //37
-                        { questionTitle: '法人顧客システム', content: '正しい' }, //38
-                        { questionTitle: '営業職員の給与体系', content: '地域別最低賃金が適用されない → 適用される' }, //39 p136
-                        { questionTitle: '代理店営業組織', content: 'スーパーバイザー → ホールセラー。' }, //40 p146
-                        { questionTitle: '厚生年金保険の保険料', label: 'イ', content: '標準報酬月額と標準賞与額それぞれ' }, //41
-                        { questionTitle: '公的介護保険制度のしくみ', label: 'ウ', content: '65歳' }, //42
-                        { questionTitle: '保険料率の改定', label: 'オ', content: '' }, //43
-                        { questionTitle: '確定拠出年金制度', label: 'ウ', content: '個人' }, //44
-                        { questionTitle: '医療保障保険（団体型）', label: 'ア', content: '公的医療保険' }, //45
-                        { questionTitle: '特化型営業職員制度', label: 'ア', content: '職域や法人' }, //46
-                        { questionTitle: '販売チャネル', label: 'オ', content: '' }, //47
-                        { questionTitle: '募集人登録', label: 'イ', content: '保険業法' }, //48
-                        { questionTitle: '企業保険の販売チャネル', label: 'ウ', content: '本社直轄' }, //49
-                        { questionTitle: '代理店', label: 'オ', content: '' }, //50
+                        {
+                            questionTitle: '公的年金の障害給付',
+                            content: '2分の1以上 → 3分の1以上',
+                        }, //31 p26
+                        {
+                            questionTitle: '企業の福利厚生費',
+                            content: '法定外複利費については → 法定福利費については',
+                        }, //32 p33
+                        {
+                            questionTitle: 'マイナンバー法',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '特約',
+                            content: '一般生命保険料控除として所得控除の対象 → 一般生命保険料とは別枠で所得控除の対象',
+                        }, //34 p49
+                        {
+                            questionTitle: 'ユニバーサル保険',
+                            content: '保険料の払込額の変更はできない → 保険料の払込額を変更できる',
+                        }, //35 p80
+                        {
+                            questionTitle: '付帯サービス',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: '団体就業不能保障保険',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '法人顧客システム',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '営業職員の給与体系',
+                            content: '地域別最低賃金が適用されない → 適用される',
+                        }, //39 p136
+                        {
+                            questionTitle: '代理店営業組織',
+                            content: 'スーパーバイザー → ホールセラー。',
+                        }, //40 p146
+                        {
+                            questionTitle: '厚生年金保険の保険料',
+                            label: 'イ',
+                            content: '標準報酬月額と標準賞与額それぞれ',
+                        }, //41
+                        {
+                            questionTitle: '公的介護保険制度のしくみ',
+                            label: 'ウ',
+                            content: '65歳',
+                        }, //42
+                        {
+                            questionTitle: '保険料率の改定',
+                            label: 'オ',
+                            content: '',
+                        }, //43
+                        {
+                            questionTitle: '確定拠出年金制度',
+                            label: 'ウ',
+                            content: '個人',
+                        }, //44
+                        {
+                            questionTitle: '医療保障保険（団体型）',
+                            label: 'ア',
+                            content: '公的医療保険',
+                        }, //45
+                        {
+                            questionTitle: '特化型営業職員制度',
+                            label: 'ア',
+                            content: '職域や法人',
+                        }, //46
+                        {
+                            questionTitle: '販売チャネル',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '募集人登録',
+                            label: 'イ',
+                            content: '保険業法',
+                        }, //48
+                        {
+                            questionTitle: '企業保険の販売チャネル',
+                            label: 'ウ',
+                            content: '本社直轄',
+                        }, //49
+                        {
+                            questionTitle: '代理店',
+                            label: 'オ',
+                            content: '',
+                        }, //50
                     ]"
                 />
             </div>

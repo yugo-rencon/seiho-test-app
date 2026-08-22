@@ -213,26 +213,96 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '日本の金融制度における生命保険会社の地位', content: '正しい' }, //31
-                        { questionTitle: '金融関連業務', content: '付随業務 → 法定他業' }, //32 見つからない
-                        { questionTitle: '融資審査', content: '正しい' }, //33
-                        { questionTitle: '貸付期間別分類', content: '長期資金・中期資金・短期資金に分類 → 長期資金・短期資金に分類<br>1年以内のものを短期、1年超のものを長期' }, //34 p53
-                        { questionTitle: '国債', content: '繰延債 → 歳入債' }, //35 見つからない
-                        { questionTitle: '不動産投資の実務', content: '正しい' }, //36
-                        { questionTitle: 'イギリスの資産運用の特徴', content: '正しい' }, //37
-                        { questionTitle: '長期金融機関としての役割', content: '正しい' }, //38
-                        { questionTitle: '海外投融資', content: '0%に近い → 近くない' }, //39 p109
-                        { questionTitle: '改正保険業法', content: '正しい' }, //40
-                        { questionTitle: '生保資金の運用規制', label: 'イ', content: '独占禁止法' }, //41
-                        { questionTitle: '資産運用の専門化の進展', label: 'エ', content: 'アナリスト' }, //42
-                        { questionTitle: '有価証券の定義', label: 'ア', content: '金融商品取引法' }, //43
-                        { questionTitle: 'コール・オプション', label: 'ア', content: '上昇' }, //44
-                        { questionTitle: '短期金融市場の概要', label: 'オ', content: '' }, //45
-                        { questionTitle: '個人変額保険の特別勘定', label: 'イ', content: '時価主義' }, //46
-                        { questionTitle: 'アメリカの資産運用規制', label: 'オ', content: '' }, //47
-                        { questionTitle: '創業時の生命保険会社の資産運用', label: 'ウ', content: '銀行預金' }, //48
-                        { questionTitle: '資産運用手段の多様化', label: 'イ', content: 'ヘッジファンド' }, //49
-                        { questionTitle: 'ソルベンシー確保', label: 'エ', content: 'リスク係数' }, //50
+                        {
+                            questionTitle: '日本の金融制度における生命保険会社の地位',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '金融関連業務',
+                            content: '付随業務 → 法定他業',
+                        }, //32 見つからない
+                        {
+                            questionTitle: '融資審査',
+                            content: '正しい',
+                        }, //33
+                        {
+                            questionTitle: '貸付期間別分類',
+                            content: '長期資金・中期資金・短期資金に分類 → 長期資金・短期資金に分類<br>1年以内のものを短期、1年超のものを長期',
+                        }, //34 p53
+                        {
+                            questionTitle: '国債',
+                            content: '繰延債 → 歳入債',
+                        }, //35 見つからない
+                        {
+                            questionTitle: '不動産投資の実務',
+                            content: '正しい',
+                        }, //36
+                        {
+                            questionTitle: 'イギリスの資産運用の特徴',
+                            content: '正しい',
+                        }, //37
+                        {
+                            questionTitle: '長期金融機関としての役割',
+                            content: '正しい',
+                        }, //38
+                        {
+                            questionTitle: '海外投融資',
+                            content: '0%に近い → 近くない',
+                        }, //39 p109
+                        {
+                            questionTitle: '改正保険業法',
+                            content: '正しい',
+                        }, //40
+                        {
+                            questionTitle: '生保資金の運用規制',
+                            label: 'イ',
+                            content: '独占禁止法',
+                        }, //41
+                        {
+                            questionTitle: '資産運用の専門化の進展',
+                            label: 'エ',
+                            content: 'アナリスト',
+                        }, //42
+                        {
+                            questionTitle: '有価証券の定義',
+                            label: 'ア',
+                            content: '金融商品取引法',
+                        }, //43
+                        {
+                            questionTitle: 'コール・オプション',
+                            label: 'ア',
+                            content: '上昇',
+                        }, //44
+                        {
+                            questionTitle: '短期金融市場の概要',
+                            label: 'オ',
+                            content: '',
+                        }, //45
+                        {
+                            questionTitle: '個人変額保険の特別勘定',
+                            label: 'イ',
+                            content: '時価主義',
+                        }, //46
+                        {
+                            questionTitle: 'アメリカの資産運用規制',
+                            label: 'オ',
+                            content: '',
+                        }, //47
+                        {
+                            questionTitle: '創業時の生命保険会社の資産運用',
+                            label: 'ウ',
+                            content: '銀行預金',
+                        }, //48
+                        {
+                            questionTitle: '資産運用手段の多様化',
+                            label: 'イ',
+                            content: 'ヘッジファンド',
+                        }, //49
+                        {
+                            questionTitle: 'ソルベンシー確保',
+                            label: 'エ',
+                            content: 'リスク係数',
+                        }, //50
                     ]"
                 />
             </div>

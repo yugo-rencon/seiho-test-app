@@ -213,26 +213,96 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :items="[
-                        { questionTitle: '会計の役割', content: '正しい' }, //31
-                        { questionTitle: '株主資本等変動計算書', content: '正しい' }, //32
-                        { questionTitle: '金融商品取引法上の開示書類', content: '有価証券報告書、半期報告書、四半期報告書、臨時報告書（有価証券届出書、目論見書は発行市場における開示書類）' }, //33 p30
-                        { questionTitle: '事業年度', content: '正しい' }, //34
-                        { questionTitle: 'デリバティブ', content: '正しい' }, //35
-                        { questionTitle: '減価償却', content: '有形固定資産の種類にかかわらず方法を選定できる → 種類ごとに選定できる償却の方法が定められている' }, //36 p116
-                        { questionTitle: '提供していない役務に対する対価', content: '預り金 → 前受収益' }, //37 p129
-                        { questionTitle: '損益の算定', content: '収支相等の原則 → 費用収益対応の原則' }, //38 p143
-                        { questionTitle: '区分経理における運用資産の管理', content: '正しい' }, //39
-                        { questionTitle: '監査', content: '正しい' }, //40
-                        { label: 'オ', questionTitle: '取引の仕訳', content: '' }, //41
-                        { label: 'イ', questionTitle: '財務諸表', content: '損益計算書' }, //42
-                        { label: 'ウ', questionTitle: '企業会計の一般原則', content: '保守主義' }, //43
-                        { label: 'ア', questionTitle: '消費税', content: '負債' }, //44
-                        { label: 'エ', questionTitle: '勘定間取引', content: '純保険料' }, //45
-                        { label: 'ウ', questionTitle: '価格変動準備金', content: '金融庁長官' }, //46
-                        { label: 'オ', questionTitle: 'ソフトウェア', content: '' }, //47
-                        { label: 'ア', questionTitle: '退職給付引当金', content: '期末' }, //48
-                        { label: 'イ', questionTitle: '事業費', content: '販売費及び一般管理費' }, //49
-                        { label: 'エ', questionTitle: '区分経理', content: '配当率' }, //50
+                        {
+                            questionTitle: '会計の役割',
+                            content: '正しい',
+                        }, //31
+                        {
+                            questionTitle: '株主資本等変動計算書',
+                            content: '正しい',
+                        }, //32
+                        {
+                            questionTitle: '金融商品取引法上の開示書類',
+                            content: '有価証券報告書、半期報告書、四半期報告書、臨時報告書（有価証券届出書、目論見書は発行市場における開示書類）',
+                        }, //33 p30
+                        {
+                            questionTitle: '事業年度',
+                            content: '正しい',
+                        }, //34
+                        {
+                            questionTitle: 'デリバティブ',
+                            content: '正しい',
+                        }, //35
+                        {
+                            questionTitle: '減価償却',
+                            content: '有形固定資産の種類にかかわらず方法を選定できる → 種類ごとに選定できる償却の方法が定められている',
+                        }, //36 p116
+                        {
+                            questionTitle: '提供していない役務に対する対価',
+                            content: '預り金 → 前受収益',
+                        }, //37 p129
+                        {
+                            questionTitle: '損益の算定',
+                            content: '収支相等の原則 → 費用収益対応の原則',
+                        }, //38 p143
+                        {
+                            questionTitle: '区分経理における運用資産の管理',
+                            content: '正しい',
+                        }, //39
+                        {
+                            questionTitle: '監査',
+                            content: '正しい',
+                        }, //40
+                        {
+                            label: 'オ',
+                            questionTitle: '取引の仕訳',
+                            content: '',
+                        }, //41
+                        {
+                            label: 'イ',
+                            questionTitle: '財務諸表',
+                            content: '損益計算書',
+                        }, //42
+                        {
+                            label: 'ウ',
+                            questionTitle: '企業会計の一般原則',
+                            content: '保守主義',
+                        }, //43
+                        {
+                            label: 'ア',
+                            questionTitle: '消費税',
+                            content: '負債',
+                        }, //44
+                        {
+                            label: 'エ',
+                            questionTitle: '勘定間取引',
+                            content: '純保険料',
+                        }, //45
+                        {
+                            label: 'ウ',
+                            questionTitle: '価格変動準備金',
+                            content: '金融庁長官',
+                        }, //46
+                        {
+                            label: 'オ',
+                            questionTitle: 'ソフトウェア',
+                            content: '',
+                        }, //47
+                        {
+                            label: 'ア',
+                            questionTitle: '退職給付引当金',
+                            content: '期末',
+                        }, //48
+                        {
+                            label: 'イ',
+                            questionTitle: '事業費',
+                            content: '販売費及び一般管理費',
+                        }, //49
+                        {
+                            label: 'エ',
+                            questionTitle: '区分経理',
+                            content: '配当率',
+                        }, //50
                     ]"
                 />
             </div>

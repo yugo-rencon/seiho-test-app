@@ -243,10 +243,11 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '監督',
                             relatedProblems: ['2023b31'],
-                            content: '一切無効 → その内容が強行規定や公益に反するものでない限り有効',
-                        }, //31 p11
+                            content: '認可を受けない保険約款もその内容が強行規定や公益に反するものでない限り、保険契約者との間では[[有効]]であるとするのが判例、通説である。', //p11
+                        }, //31
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '法律と保険約款',
@@ -272,10 +273,11 @@ const subject = "2023年度 フォームB";
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '配当金',
                             relatedProblems: ['2023a47', '2023b36'],
-                            content: '利益分配金 → 契約者配当金',
-                        }, //36 //p158
+                            content: '利益分配金 → 契約者配当金', //p158
+                        }, //36
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '契約内容の登録',

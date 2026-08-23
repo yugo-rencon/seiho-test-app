@@ -282,10 +282,11 @@ const subject = "2021年度 フォームB";
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '配当金',
                             relatedProblems: ['2021b38'],
-                            content: '利益分配金 → 契約者配当金',
-                        }, //38 p158
+                            content: '利益分配金 → 契約者配当金', //p158
+                        }, //38
                         {
                             // rev: 2026-08-20 確認済み
                             questionTitle: '保険会社の合併',

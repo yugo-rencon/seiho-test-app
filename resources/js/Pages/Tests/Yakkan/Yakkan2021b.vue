@@ -177,6 +177,7 @@ const subject = "2021年度 フォームB";
                     questionTitle="クーリング・オフ制度"
                     :relatedProblems="['2021a23', '2021b26']"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '正しい',
                         '正しい',
                         '5年以下 → 1年以下', //p46

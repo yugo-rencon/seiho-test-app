@@ -287,10 +287,11 @@ const subject = "2022年度 フォームA";
                             content: '一般社団法人 → 中間法人', //p226
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '免許取消',
                             relatedProblems: ['2022a39'],
-                            content: '金融庁長官 → 内閣総理大臣',
-                        }, //39 p201
+                            content: '金融庁長官 → 内閣総理大臣', //p201
+                        }, //39
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '外国保険業者',

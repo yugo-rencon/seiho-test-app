@@ -218,6 +218,7 @@ const subject = "2020年度 フォームA";
                     questionTitle="保険契約の復活"
                     :relatedProblems="['2020a29']"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '正しい',
                         '正しい',
                         'いずれか早い時 → いずれか遅い時', //p106
@@ -248,10 +249,11 @@ const subject = "2020年度 フォームA";
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険約款と保険法との関係',
                             relatedProblems: ['2020a32'],
-                            content: '保険者 → 保険契約者等',
-                        }, //32 p9
+                            content: '保険者を保護 → 保険契約者等を保護', //p9
+                        }, //32
                         {
                             // rev: 2026-08-21 確認済み
                             questionTitle: '保険料不可分の原則',

@@ -24,6 +24,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '国際決済銀行（BIS）',
                         '自己資本',
                         '信用',
@@ -44,6 +45,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'ポートフォリオ',
                         'アセット・ミックス',
                         '投融資執行所管',
@@ -64,6 +66,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '収益',
                         '目標',
                         '利用効率',
@@ -84,6 +87,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '不動産',
                         '資産運用',
                         '非居住者',
@@ -214,6 +218,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '日本の金融制度',
                             content: '正しい',
                         }, //31
@@ -222,6 +227,7 @@ const subject = "2024年度 フォームB";
                             content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている',
                         }, //32 p28
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保の運用機構',
                             content: '正しい',
                         }, //33
@@ -238,10 +244,12 @@ const subject = "2024年度 フォームB";
                             content: '直接行うことはない → 直接行うこともある',
                         }, //36 p105
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '中堅・中小企業貸付対応',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融システム改革',
                             content: '正しい',
                         }, //38
@@ -250,55 +258,66 @@ const subject = "2024年度 フォームB";
                             content: '表面利率 → 応募者利回り',
                         }, //39 p211
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '国際会計基準導入の動向',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '各国の保険監督方法',
                             label: 'ア',
                             content: '準拠主義',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用の専門化の進展',
                             label: 'エ',
                             content: 'アナリスト',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '企業貸付',
                             label: 'ウ',
                             content: '短期',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公社債の発行方法の相違による分類',
                             label: 'エ',
                             content: '公募債',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '短期金融市場の概要',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人変額保険の運用',
                             label: 'イ',
                             content: '収益性',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特定金銭信託の活用',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'ウ',
                             content: 'オルタナティブ投資',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '有価証券の評価方法',
                             label: 'ア',
                             content: '時価',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ソルベンシー確保',
                             label: 'イ',
                             content: '200',

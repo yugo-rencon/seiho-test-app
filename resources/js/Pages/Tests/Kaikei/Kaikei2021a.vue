@@ -24,6 +24,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="企業会計原則-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '客観性',
                         '会計慣習',
                         '注解',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="企業会計原則-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '真実性',
                         '資本取引・損益取引区分',
                         '資本剰余金',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="損益勘定-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '認識',
                         '実現主義',
                         '発生主義',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="損益勘定-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '売上高',
                         '付加保険料',
                         '現金主義',
@@ -214,6 +218,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '会計公準',
                             content: '正しい',
                         }, //31
@@ -222,6 +227,7 @@ const subject = "2021年度 フォームA";
                             content: '補助元帳 ↔︎ 補助記入帳',
                         }, //32 p14
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定の決算',
                             content: '正しい',
                         }, //33
@@ -230,10 +236,12 @@ const subject = "2021年度 フォームA";
                             content: '株式会社：保険業法 → 会社法<br>相互会社：会社法 → 保険業法',
                         }, //34 p94
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店貸',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険業法第113条繰延資産',
                             content: '正しい',
                         }, //36
@@ -250,55 +258,66 @@ const subject = "2021年度 フォームA";
                             content: '支払利息に計上 → 本科目（保険金据置支払金）に計上',
                         }, //39 p158
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '会計上の取引',
                             content: '仕訳',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '開示書類',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '勘定間取引',
                             content: '事業方法書',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '連結財務諸表の作成',
                             content: '持分法',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '商品有価証券の評価方法',
                             content: '経理処理要領',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: 'その他負債',
                             content: '資産除去',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '勘定体系',
                             content: '保険契約準備金',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '解約返戻金',
                             content: '支払備金',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '事業費効率指標',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '監査役による監査',
                             content: '社外',

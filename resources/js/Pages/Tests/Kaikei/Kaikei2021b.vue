@@ -24,6 +24,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="制度会計-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '財務会計',
                         '株主配当',
                         '財務内容',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="制度会計-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '価格形成',
                         '課税の公平性',
                         '別段の定め',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="損益勘定-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '認識',
                         '実現主義',
                         '発生主義',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="損益勘定-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '売上高',
                         '付加保険料',
                         '現金主義',
@@ -214,22 +218,27 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '勘定の閉鎖',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険契約準備金の繰入',
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '預貯金',
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店貸',
                             content: '正しい',
                         }, //35
@@ -254,51 +263,61 @@ const subject = "2021年度 フォームB";
                             content: '期中監査の説明 ↔︎ 決算監査の説明',
                         }, //40 p208
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '株主資本等変動計算書',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '危険準備金',
                             content: '利益性',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '決算スケジュール',
                             content: '4ヵ月',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '会計に関する法律',
                             content: '保険業法',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '貸倒引当金',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: 'その他負債',
                             content: '資産除去',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '損失填補準備金',
                             content: '1000分の3',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '解約返戻金',
                             content: '支払備金',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '事業費',
                             content: '物件費',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '監査役による監査',
                             content: '社外',

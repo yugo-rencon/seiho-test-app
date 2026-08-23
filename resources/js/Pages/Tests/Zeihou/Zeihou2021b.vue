@@ -24,6 +24,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="所属税の生命保険料控除-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '6親等',
                         '4万円',
                         '5年',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="所属税の生命保険料控除-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '被保険者',
                         '10年',
                         '60歳',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="贈与税-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '法人',
                         '選挙の候補者',
                         '110万円',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="贈与税-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '2月1日',
                         '納税地',
                         '利子税',
@@ -218,14 +222,17 @@ const subject = "2021年度 フォームB";
                             content: '10年以内 → 5年以内',
                         }, //31 p22
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '租税特別措置法の規定による課税標準',
                             content: '正しい',
                         }, //32
                         {
-                            questionTitle: '確定申告定',
+                            // rev: 2026-08-23 確認済み
+                            questionTitle: '確定申告',
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '青色申告制度',
                             content: '正しい',
                         }, //34
@@ -246,6 +253,7 @@ const subject = "2021年度 フォームB";
                             content: '財形貯蓄積立保険 → 財形年金',
                         }, //38 p213
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '転換時の税務',
                             content: '正しい',
                         }, //39
@@ -254,51 +262,61 @@ const subject = "2021年度 フォームB";
                             content: 'すべて事業所得 → 固定給部分は給与所得、それ以外は事業所得',
                         }, //40 p227
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の所得控除',
                             label: 'イ',
                             content: '15種類',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療費控除（セルフメディケーション）',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '雑所得',
                             label: 'ウ',
                             content: '必要経費',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '税額控除',
                             label: 'エ',
                             content: '配当控除',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '未成年者控除',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人税の課税標準',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '同族会社',
                             label: 'ア',
                             content: '3人',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人の事業税',
                             label: 'ア',
                             content: '第3種',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金制度の開始',
                             label: 'ア',
                             content: '年金規約',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '団体定期保険の保険料',
                             label: 'ウ',
                             content: '生命保険料控除',

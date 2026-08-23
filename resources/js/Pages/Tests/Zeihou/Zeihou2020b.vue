@@ -24,6 +24,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="相続税・贈与税の財産評価-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '時価',
                         '現況',
                         '相続税財産評価基本通達',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="相続税・贈与税の財産評価-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '路線価',
                         '倍率',
                         '固定資産税評価額',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="所得税の計算-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '1月1日〜12月31日',
                         '経済的利益',
                         '租税特別措置法',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="所得税の計算-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '10',
                         '担税力',
                         '公平性',
@@ -218,6 +222,7 @@ const subject = "2020年度 フォームB";
                             content: '財産税 → 流通税',
                         }, //31 p4
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '空き家に係る譲渡所得の特別控除の特例',
                             content: '正しい',
                         }, //32
@@ -238,14 +243,17 @@ const subject = "2020年度 フォームB";
                             content: '必ず仮決算の中間報告書を提出 → 前年度実績による中間報告書でも良い',
                         }, //36 p141
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '不動産取得税',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '総合福祉団体定期保険の保険料',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '定期付養老保険の保険料',
                             content: '正しい',
                         }, //39
@@ -254,51 +262,61 @@ const subject = "2020年度 フォームB";
                             content: '雑所得として課税 → 源泉分離課税（20%）',
                         }, //40 p213
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '租税の種類',
                             label: 'エ',
                             content: '目的税',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税額の計算',
                             label: 'イ',
                             content: '二重課税',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '寄付金控除',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法定相続分',
                             label: 'エ',
                             content: '民法',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '第2次相続',
                             label: 'ア',
                             content: '10年',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続税の加算',
                             label: 'ウ',
                             content: '20%',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人の住民税',
                             label: 'ウ',
                             content: '6%',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '連結納税制度',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人の住民税',
                             label: 'ウ',
                             content: '従業者数',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
                             label: 'オ',
                             content: '',

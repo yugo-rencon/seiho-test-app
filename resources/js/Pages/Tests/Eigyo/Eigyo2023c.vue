@@ -24,6 +24,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '40歳以上',
                         '65歳以上',
                         '医療費抑制',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '厚生労働省',
                         '介護認定審査会',
                         '予防給付',
@@ -64,6 +66,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="顧客サービスの向上と多様化-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '継続的',
                         'マーケティング',
                         '転換制度',
@@ -84,10 +87,11 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="顧客サービスの向上と多様化-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'face to face',
                         '情報通信機器',
                         '囲い込み',
-                        'CS（customer Satisfaciton）',
+                        'CS（Customer Satisfaction）',
                         '選択', //問16〜20
                     ]"
                     :labels="[
@@ -230,10 +234,12 @@ const subject = "2023年度 フォームC";
                             content: '生命保険支払専門士 → 生命保険面接士',
                         }, //34 p52
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '消費者契約法',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定',
                             content: '正しい',
                         }, //36
@@ -246,59 +252,71 @@ const subject = "2023年度 フォームC";
                             content: '保険料控除の対象 → 対象とならない',
                         }, //38 p96
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理・代行',
                             label: 'ア',
                             content: '保険業法',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '遺族年金',
                             label: 'ア',
                             content: '３分の１',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '近年の商品対応（保険料率）',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '団体信用生命保険',
                             label: 'イ',
                             content: '賦払償還債務',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '月払保険の普及',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '総合福祉団体定期保険',
                             label: 'イ',
                             content: '企業等',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '団体年金保険',
                             label: 'ウ',
                             content: '個人',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             label: 'エ',
                             content: '代表者',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険仲立人',
                             label: 'ウ',
                             content: '媒介',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '変額保険販売資格要件',
                             label: 'オ',
                             content: '',

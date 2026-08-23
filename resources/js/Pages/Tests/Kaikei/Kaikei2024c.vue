@@ -25,6 +25,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="生命保険会計における収益に属する科目-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '現金',
                         '未収保険料',
                         '前納保険料',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="生命保険会計における収益に属する科目-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '売買目的',
                         '発生',
                         '保険金受取人',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="事業費管理-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '付加保険料',
                         '維持費',
                         '募集機関',
@@ -85,6 +88,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="事業費管理-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '死亡率',
                         '利源分析',
                         '6',
@@ -219,6 +223,7 @@ const subject = "2024年度 フォームC";
                             content: '管理会計の説明 ↔︎ 財務会計の説明（財務会計：現在または過去、管理会計：未来）',
                         }, //31 p4
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '損益計算書',
                             content: '正しい',
                         }, //32
@@ -231,10 +236,12 @@ const subject = "2024年度 フォームC";
                             content: '10%以上 → 20%以上',
                         }, //34 p41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '外貨預金の換算',
                             content: '正しい',
                         }, //36
@@ -247,59 +254,71 @@ const subject = "2024年度 フォームC";
                             content: '他の税金と合算 → 他の税金と区別',
                         }, //38 p164
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理における運用資産の管理',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '監査',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '帳簿の種類',
                             content: '買掛金元帳',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '株主資本等変動計算書',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '消費税',
                             content: '負債',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '勘定間取引',
                             content: '純保険料',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '会計に関する法律',
                             content: '保険業法',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '無形固定資産',
                             content: '定額法',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '損益の認識',
                             content: '実現主義',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '公告',
                             content: '損益計算書',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '区分経理',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '企業が受ける検査',
                             content: '税務調査',

@@ -24,6 +24,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約準備金-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '洗替方式',
                         '費用',
                         '標準',
@@ -44,6 +45,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約準備金-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '未経過',
                         '危険',
                         '内部留保',
@@ -64,6 +66,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="生命保険会計における収益に属する科目-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '現金',
                         '未収保険料',
                         '前納保険料',
@@ -84,6 +87,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="生命保険会計における収益に属する科目-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '売買目的',
                         '発生',
                         '保険金受取人',
@@ -214,14 +218,17 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '会計の意義',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '株主資本等変動計算書',
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '単一性の原則',
                             content: '正しい',
                         }, //33
@@ -230,6 +237,7 @@ const subject = "2022年度 フォームB";
                             content: '株式会社 → 相互会社（剰余金処分に関する議案を作成）',
                         }, //34 p56-57
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'デリバティブ',
                             content: '正しい',
                         }, //35
@@ -246,59 +254,71 @@ const subject = "2022年度 フォームB";
                             content: '債権額 → 債務額',
                         }, //38 p126
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理における運用資産の管理',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '利源分析に関する課題',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '取引の仕訳',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '帳簿の種類',
                             content: '補助記入帳',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '連結決算',
                             content: 'のれん（連結調整勘定）',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '消費税',
                             content: '負債',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '外貨預金の為替換算',
                             content: '固定',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '再評価積立金',
                             content: '相互会社だけに',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '年金',
                             content: '団体年金',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '退職給付引当金',
                             content: '期末',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '区分経理',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '企業が受ける検査',
                             content: '国税通則法',

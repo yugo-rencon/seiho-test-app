@@ -24,6 +24,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="生命保険マーケティング-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '継続的',
                         'マーケティング',
                         '転換制度',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="生命保険マーケティング-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'face to face',
                         '情報通信機器',
                         '囲い込み',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="銀行窓販-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '信用生命保険',
                         '競争条件の公平性',
                         '流出防止',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="銀行窓販-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '個人年金保険（定額・変額）',
                         '事前説明義務',
                         '残債務リスク',
@@ -214,6 +218,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '豊かな老後生活への備え',
                             content: '正しい',
                         }, //31
@@ -234,6 +239,7 @@ const subject = "2021年度 フォームC";
                             content: '贈与税が課税 → 非課税',
                         }, //35 p61-62
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '付帯サービス',
                             content: '正しい',
                         }, //36
@@ -242,63 +248,76 @@ const subject = "2021年度 フォームC";
                             content: '拠出型企業年金保険、団体養老保険 → 新企業年金保険、団体生存保険',
                         }, //37 p91-92
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '一時払退職後終身保険',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の育成体系',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険大学課程',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '種類別貯蓄高',
                             label: 'ウ',
                             content: '通貨性預貯金',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障',
                             label: 'イ',
                             content: '三大疾病',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人保険商品',
                             label: 'ウ',
                             content: '利差配当',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '財形貯蓄制度の種類',
                             label: 'イ',
                             content: '55歳',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命表',
                             label: 'ア',
                             content: '経験死亡率',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '販売チャネル',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '変額保険販売資格要件',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             label: 'エ',
                             content: '自己負担の一部を補填する',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の退職金',
                             label: 'エ',
                             content: '終身',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
                             label: 'ア',
                             content: '募集代理店',

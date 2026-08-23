@@ -24,6 +24,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="消費者保護とコンプライアンス-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '規制緩和',
                         '民法',
                         '元本割れリスク',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="消費者保護とコンプライアンス-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '商法',
                         '共済契約',
                         '傷害疾病保険契約',
@@ -64,6 +66,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="顧客サービスの向上と多様化-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '継続的',
                         'マーケティング',
                         '転換制度',
@@ -84,10 +87,11 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="顧客サービスの向上と多様化-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'face to face',
                         '情報通信機器',
                         '囲い込み',
-                        'CS（customer Satisfaciton）',
+                        'CS（Customer Satisfaction）',
                         '選択', //問16〜20
                     ]"
                     :labels="[
@@ -234,6 +238,7 @@ const subject = "2023年度 フォームA";
                             content: '払込保険料を割り引く方式のみ → 給付金として割り戻す方式もある',
                         }, //35 p78
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定',
                             content: '正しい',
                         }, //36
@@ -246,59 +251,71 @@ const subject = "2023年度 フォームA";
                             content: '生保会社の出現に至ってない → 契約の成立まで完了できる生保会社もある',
                         }, //38 p104
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の育成体系',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '企業保険の営業',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '種類別貯蓄高',
                             label: 'ウ',
                             content: '通貨性預貯金',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '遺族年金',
                             label: 'ア',
                             content: '３分の１',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険制度の概要',
                             label: 'ウ',
                             content: '介護認定審査会',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人保険商品の配当',
                             label: 'ア',
                             content: '資産運用成果',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '月払保険の普及',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '総合福祉団体定期保険',
                             label: 'イ',
                             content: '企業等',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '国民年金基金制度',
                             label: 'イ',
                             content: '厚生労働大臣',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の登録',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
                             label: 'エ',
                             content: '保障額',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '支社の配置',
                             label: 'オ',
                             content: '',

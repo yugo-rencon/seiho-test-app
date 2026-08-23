@@ -24,6 +24,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="相続税・贈与税の財産評価-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '時価',
                         '現況',
                         '相続税財産評価基本通達',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="相続税・贈与税の財産評価-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '路線価',
                         '倍率',
                         '固定資産税評価額',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="各事業年度の所得に対する法人税-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '公正妥当な会計処理の基準',
                         '税務調整',
                         '公平な税負担',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="各事業年度の所得に対する法人税-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '取得原価',
                         '会社更生法',
                         '保険業法',
@@ -214,10 +218,12 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '租税の種類',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '空き家に係る譲渡所得の特別控除の特例',
                             content: '正しい',
                         }, //32
@@ -226,6 +232,7 @@ const subject = "2020年度 フォームA";
                             content: '2つ → 3つ（総所得金額・退職所得金額・山林所得金額）',
                         }, //33 p36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '復興特別所得税',
                             content: '正しい',
                         }, //34
@@ -242,10 +249,12 @@ const subject = "2020年度 フォームA";
                             content: ' 3ヶ月以内 → 2ヶ月以内',
                         }, //37 p141
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '居住用超高層建築物の不動産取得税',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '定期付養老保険の保険料',
                             content: '正しい',
                         }, //39
@@ -254,51 +263,61 @@ const subject = "2020年度 フォームA";
                             content: '雑所得として課税 → 源泉分離課税（20%）',
                         }, //40 p213
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '租税の種類',
                             label: 'エ',
                             content: '目的税',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '給与所得',
                             label: 'ウ',
                             content: '特定支出',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '退職所得控除額',
                             label: 'イ',
                             content: '20年',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の税率',
                             label: 'ウ',
                             content: '山林所得',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '第2次相続',
                             label: 'ア',
                             content: '10年',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人の種類と課税の範囲',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '同族会社',
                             label: 'ウ',
                             content: '50%',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '連結納税制度',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人の事業税',
                             label: 'ア',
                             content: '第3種事業',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '固定資産税の課税標準',
                             label: 'ウ',
                             content: '200㎡',

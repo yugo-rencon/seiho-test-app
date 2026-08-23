@@ -24,6 +24,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '国際決済銀行（BIS）',
                         '自己資本',
                         '信用',
@@ -44,6 +45,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'ポートフォリオ',
                         'アセット・ミックス',
                         '投融資執行所管',
@@ -64,6 +66,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '保険業法施行規則',
                         '物価',
                         '流動性',
@@ -84,6 +87,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '借地',
                         '借地人',
                         '新借地',
@@ -222,6 +226,7 @@ const subject = "2024年度 フォームC";
                             content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている',
                         }, //32 p28
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保の運用機構',
                             content: '正しい',
                         }, //33
@@ -234,14 +239,17 @@ const subject = "2024年度 フォームC";
                             content: '株式：非市場リスクと市場リスクのいずれの影響も高い場合が多い<br>債券：非市場リスクより市場リスクの影響が高い場合が多い',
                         }, //35 見つからない
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '短期金融市場',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公共投資',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'バブル崩壊後の資産運用',
                             content: '正しい',
                         }, //38
@@ -250,55 +258,66 @@ const subject = "2024年度 フォームC";
                             content: '固有業務 → 付随業務',
                         }, //39 p210
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '国際会計基準導入の動向',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '各国の保険監督方法',
                             label: 'ア',
                             content: '準拠主義',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '有価証券の定義',
                             label: 'ア',
                             content: '金融商品取引法',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '株式投資の尺度',
                             label: 'エ',
                             content: '当期純利益',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '預金市場',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人変額保険における資産の評価方法',
                             label: 'エ',
                             content: '毎日',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '大正〜昭和初期の生保資産運用',
                             label: 'イ',
                             content: '社債',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '高度経済成長期の資産運用',
                             label: 'ウ',
                             content: '機関投資家',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'ウ',
                             content: 'オルタナティブ投資',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険会社の資金調達',
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ソルベンシー確保',
                             label: 'イ',
                             content: '200',

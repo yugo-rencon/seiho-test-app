@@ -24,6 +24,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="消費者保護とコンプライアンス-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '規制緩和',
                         '民法',
                         '住民票',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="消費者保護とコンプライアンス-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '7年間',
                         '商法',
                         '共済契約',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="銀行窓販-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '信用生命保険',
                         '競争条件の公平性',
                         '流出防止',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="銀行窓販-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '個人年金保険（定額・変額）',
                         '事前説明義務',
                         '残債務リスク',
@@ -214,6 +218,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '介護保険の保険料',
                             content: '正しい',
                         }, //31
@@ -234,6 +239,7 @@ const subject = "2021年度 フォームB";
                             content: '保険料総額 → 保険金額',
                         }, //35 p78
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '財形制度',
                             content: '正しい',
                         }, //36
@@ -242,63 +248,76 @@ const subject = "2021年度 フォームB";
                             content: '応用課程 → 専門課程',
                         }, //37 p126
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '一時払退職後終身保険',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '機関長のタイプ',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '企業保険の営業',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理・代行',
                             label: 'ア',
                             content: '保険業法',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険料率の改定',
                             label: 'エ',
                             content: '引き下げ',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人保険商品',
                             label: 'ウ',
                             content: '利差配当',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '単独運用特別勘定',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命表',
                             label: 'ア',
                             content: '経験死亡率',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保財形の特徴',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '顧客サービスの向上',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             label: 'エ',
                             content: '自己負担の一部を補填する',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
                             label: 'イ',
                             content: '地域',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の教育',
                             label: 'オ',
                             content: '',

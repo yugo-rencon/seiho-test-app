@@ -24,6 +24,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="所得税における所得-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '合同運用信託',
                         '法人',
                         '航空機',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="所得税における所得-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '5',
                         '50',
                         '全額',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="贈与税-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '法人',
                         '選挙の候補者',
                         '110万円',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="贈与税-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '2月1日',
                         '納税地',
                         '利子税',
@@ -214,18 +218,22 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '制限税率',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '雑所得',
                             content: '正しい',
                         }, //32
                         {
-                            questionTitle: '確定申告定',
+                            // rev: 2026-08-23 確認済み
+                            questionTitle: '確定申告',
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続',
                             content: '正しい',
                         }, //34
@@ -250,55 +258,66 @@ const subject = "2021年度 フォームA";
                             content: '勤労者退職金共済機構 → 国民年金基金連合会',
                         }, //39 p219
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '機関経営費',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の所得控除',
                             label: 'イ',
                             content: '15種類',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療費控除（セルフメディケーション）',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の配偶者控除',
                             label: 'ウ',
                             content: '48万円',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続税における配偶者の税額軽減',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続税の納税',
                             label: 'ウ',
                             content: '物納',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '寄付金の損金算入限度額',
                             label: 'イ',
                             content: '全額',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険料控除額',
                             label: 'ウ',
                             content: '28,000円',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '事業税',
                             label: 'エ',
                             content: '各事業年度の収入金額',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金制度の開始',
                             label: 'ア',
                             content: '年金規約',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険代理店の事業免許等に係る税',
                             label: 'エ',
                             content: '1万5千円',

@@ -24,6 +24,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="決算整理手続-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '総勘定元帳',
                         '期末棚卸',
                         '保有目的',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="決算整理手続-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '前払費用',
                         '未払費用',
                         '未収収益',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="連結財務諸表の作成手続-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '50%',
                         '意思決定機関',
                         '3ヶ月',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="連結財務諸表の作成手続-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '外貨建取引等会計処理基準',
                         '収益・費用',
                         '持分法',
@@ -214,6 +218,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '簿記',
                             content: '正しい',
                         }, //31
@@ -226,6 +231,7 @@ const subject = "2020年度 フォームA";
                             content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整',
                         }, //33 p42-43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '決算書類',
                             content: '正しい',
                         }, //34
@@ -238,10 +244,12 @@ const subject = "2020年度 フォームA";
                             content: '積立基準や積立限度額は定められていない → 定められている',
                         }, //36 p134
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '自己株式',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険金',
                             content: '正しい',
                         }, //38
@@ -250,55 +258,66 @@ const subject = "2020年度 フォームA";
                             content: '危険準備金損益、為替損益 → 責任準備金関係損益、価格変動損益',
                         }, //39 p178
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理への反映',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '帳簿の種類',
                             label: 'エ',
                             content: '売掛金元帳',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '企業会計原則の一般原則',
                             label: 'ア',
                             content: '明瞭性',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '勘定間取引',
                             label: 'イ',
                             content: '純保険料',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '貸倒引当金の計上',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ソフトウェア',
                             label: 'ウ',
                             content: '定額法',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'その他負債',
                             label: 'ウ',
                             content: '有形',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '損失填補準備金',
                             label: 'エ',
                             content: '1,000分の3',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険料',
                             label: 'イ',
                             content: '未収保険料',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '事業費',
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '企業が受ける検査',
                             label: 'ア',
                             content: '税務調査',

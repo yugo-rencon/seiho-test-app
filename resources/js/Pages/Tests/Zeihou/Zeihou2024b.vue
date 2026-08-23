@@ -24,6 +24,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="住民税-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '均等割額のみ',
                         '4%',
                         '3,000円',
@@ -44,6 +45,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="住民税-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '普通徴収',
                         '市町村',
                         '5月',
@@ -64,6 +66,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="贈与税-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '所得税',
                         '生活費',
                         '結婚・子育て',
@@ -84,6 +87,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="贈与税-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '20',
                         '居住用不動産',
                         '2,000',
@@ -218,6 +222,7 @@ const subject = "2024年度 フォームB";
                             content: '担税者は業者、納税義務者は消費者 → 担税者は消費者、納税義務者は業者',
                         }, //31 p4
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特定支出控除',
                             content: '正しい',
                         }, //32
@@ -226,10 +231,12 @@ const subject = "2024年度 フォームB";
                             content: '16歳以上23歳未満で控除額は83万円 → 19歳以上23歳未満で控除額は63万円',
                         }, //33 p49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続人',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '家屋の評価方法',
                             content: '正しい',
                         }, //35
@@ -238,6 +245,7 @@ const subject = "2024年度 フォームB";
                             content: '必ず仮決算の中間報告書を提出 → 前年度実績による中間報告書でも良い',
                         }, //36 p141
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '障害給付金等',
                             content: '正しい',
                         }, //37
@@ -246,6 +254,7 @@ const subject = "2024年度 フォームB";
                             content: '形式的な所有権の移転でも課税対象 → 課税されない',
                         }, //38 p160
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '総合福祉団体定期保険の保険料',
                             content: '正しい',
                         }, //39
@@ -254,51 +263,61 @@ const subject = "2024年度 フォームB";
                             content: '14% → 7%',
                         }, //40 p225
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の税額控除額',
                             label: 'ウ',
                             content: '租税特別措置法',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の課税標準',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '雑所得',
                             label: 'エ',
                             content: '必要経費',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '遺留分',
                             label: 'ウ',
                             content: '3分の1',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '会社利益と所得金額の調整',
                             label: 'ア',
                             content: '申告調整',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続税の申告',
                             label: 'エ',
                             content: '10ヶ月',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人の種類と課税の範囲',
                             label: 'イ',
                             content: '公共法人',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '同族会社',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人の事業税',
                             label: 'ア',
                             content: '第3種事業',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
                             label: 'オ',
                             content: '',

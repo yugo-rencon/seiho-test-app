@@ -25,6 +25,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="決算整理手続-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '総勘定元帳',
                         '期末棚卸',
                         '保有目的',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="決算整理手続-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '前払費用',
                         '未払費用',
                         '未収収益',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="事業費管理-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '付加保険料',
                         '維持費',
                         '募集機関',
@@ -85,6 +88,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="事業費管理-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '死亡率',
                         '利源分析',
                         '6',
@@ -219,6 +223,7 @@ const subject = "2024年度 フォームA";
                             content: '管理会計の説明 ↔︎ 財務会計の説明（財務会計：現在または過去、管理会計：未来）',
                         }, //31 p4
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '貸借対照表',
                             content: '正しい',
                         }, //32
@@ -231,14 +236,17 @@ const subject = "2024年度 フォームA";
                             content: ' 実現主義 → 現金主義<br>現金主義 → 発生主義',
                         }, //34 p49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険業法と会社法',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店貸',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '負債勘定',
                             content: '正しい',
                         }, //37
@@ -247,6 +255,7 @@ const subject = "2024年度 フォームA";
                             content: '他の税金と合算 → 他の税金と区別',
                         }, //38 p164
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理における運用資産の管理',
                             content: '正しい',
                         }, //39
@@ -255,51 +264,61 @@ const subject = "2024年度 フォームA";
                             content: '期中監査の説明 ↔︎ 決算監査の説明',
                         }, //40 p208
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '帳簿の種類',
                             content: '買掛金元帳',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '財務諸表',
                             content: '経営成績',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '法人税法',
                             content: '課税の公平性',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '決算スケジュール',
                             content: '2週間',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '連結決算',
                             content: 'のれん（連結調整勘定）',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '外貨預金の為替換算',
                             content: '決算時',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '退職給付引当金',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '公告',
                             content: '損益計算書',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '区分経理',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '保険業法第112条評価益',
                             content: '評価替え',

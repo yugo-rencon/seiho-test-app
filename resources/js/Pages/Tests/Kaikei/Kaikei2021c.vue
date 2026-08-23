@@ -24,6 +24,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="決算整理手続-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '支払備金',
                         '洗替え',
                         '自己査定',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="決算整理手続-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '回収不能',
                         '低価法',
                         '特定海外債権引当勘定',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="損益勘定-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '認識',
                         '実現主義',
                         '発生主義',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="損益勘定-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '売上高',
                         '付加保険料',
                         '現金主義',
@@ -218,18 +222,22 @@ const subject = "2021年度 フォームC";
                             content: '契約締結の時点で取引と認識 → 電力供給を受けた時点で取引と認識',
                         }, //31 p9-10
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '損益計算書',
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資本取引・損益取引区分の原則',
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '標準責任準備金',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店貸',
                             content: '正しい',
                         }, //35
@@ -242,6 +250,7 @@ const subject = "2021年度 フォームC";
                             content: '純資産の部に加算 → 純資産の部から控除',
                         }, //37 p141
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '繰延税金負債',
                             content: '正しい',
                         }, //38
@@ -250,55 +259,66 @@ const subject = "2021年度 フォームC";
                             content: '支払利息に計上 → 本科目（保険金据置支払金）に計上',
                         }, //39 p158
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融検査',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '帳簿の種類',
                             content: '買掛金元帳',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '企業会計原則',
                             content: '処理原則',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '連結決算日',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '無形固定資産',
                             content: '使用目的',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '当期末未処分剰余金（繰越利益剰余金）',
                             content: '総代会',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: 'その他負債',
                             content: '資産除去',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '差異の把握',
                             content: '利源分析',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '解約返戻金',
                             content: '支払備金',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '損益の配賦',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '監査役による監査',
                             content: '社外',

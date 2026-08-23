@@ -24,6 +24,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="個人保険商品の種類-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '老後の生活資金',
                         '生死混合保険',
                         '生存給付金',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="個人保険商品の種類-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '災害',
                         '急性心筋梗塞',
                         '6ヶ月',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="団体年金保険-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '規約型',
                         'GIC（guaranteed interest contract：利率保証契約）',
                         '拠出型企業年金',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="団体年金保険-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '団体生存保険',
                         '公務員',
                         '新企業年金保険',
@@ -214,6 +218,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公的年金の老齢給付',
                             content: '正しい',
                         }, //31
@@ -234,18 +239,22 @@ const subject = "2020年度 フォームB";
                             content: '契約締結の後に書面で交付 → 契約締結の前に書面で交付',
                         }, //35 p41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生存保険',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '団体就業不能保障保険',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '心身障害者扶養者生命保険',
                             content: '正しい',
                         }, //39
@@ -254,51 +263,61 @@ const subject = "2020年度 フォームB";
                             content: 'これまで〜の説明 ↔ 近年では〜の説明',
                         }, //40 p140
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '年金改革',
                             label: 'イ',
                             content: 'マクロ経済スライド',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険の保険料',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険料の払込に関する特約',
                             label: 'ウ',
                             content: '団体扱特約',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '危険選択の方法',
                             label: 'エ',
                             content: '面接',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '団体保険',
                             label: 'ウ',
                             content: 'ヒューマン・ヴァリュー特約',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             label: 'ア',
                             content: '公的医療保険',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '通信販売',
                             label: 'エ',
                             content: '加入保険金額',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '販売成績',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '機関長',
                             label: 'イ',
                             content: '個別',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
                             label: 'オ',
                             content: '',

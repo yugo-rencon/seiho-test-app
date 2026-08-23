@@ -280,10 +280,11 @@ const subject = "2022年度 フォームA";
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '株式会社と相互会社の比較',
                             relatedProblems: ['2022a38'],
-                            content: '一般社団法人 → 中間法人',
-                        }, //38 p225
+                            content: '一般社団法人 → 中間法人', //p226
+                        }, //38
                         {
                             questionTitle: '免許取消',
                             relatedProblems: ['2022a39'],

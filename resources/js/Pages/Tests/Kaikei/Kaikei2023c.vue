@@ -24,6 +24,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="企業会計原則-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '客観性',
                         '会計慣習',
                         '注解',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="企業会計原則-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '真実性',
                         '資本取引・損益取引区分',
                         '資本剰余金',
@@ -64,6 +66,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="事業費管理-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '付加保険料',
                         '維持費',
                         '募集機関',
@@ -84,6 +87,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="事業費管理-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '死亡率',
                         '利源分析',
                         '6',
@@ -218,18 +222,22 @@ const subject = "2023年度 フォームC";
                             content: '株主実体の公準 → 企業実体の公準',
                         }, //31 p6-7
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '帳簿の種類',
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '連結決算',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '外貨預金の換算',
                             content: '正しい',
                         }, //35
@@ -246,6 +254,7 @@ const subject = "2023年度 フォームC";
                             content: '会社法施行規則 → 保険業法施行規則',
                         }, //38 p181
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理',
                             content: '正しい',
                         }, //39
@@ -254,51 +263,61 @@ const subject = "2023年度 フォームC";
                             content: '取締役会により選任 → 株主総会（相互会社では総代会）により選任<br>結果を取締役会に報告 → 結果を取締役および監査役に報告',
                         }, //40 p208
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '企業会計の領域',
                             content: '財務会計',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '開示書類',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '保険会社向けの総合的な監督指針',
                             content: '事務ガイドライン',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '有価証券の評価方法',
                             content: '売買目的有価証券',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '無形固定資産',
                             content: '定額法',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '生命保険会計における負債勘定',
                             content: '借受金',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '勘定体系',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '損益の認識',
                             content: '実現主義',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '利息及び配当金等収入',
                             content: '不動産賃貸料',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '金融検査',
                             content: '自己査定',

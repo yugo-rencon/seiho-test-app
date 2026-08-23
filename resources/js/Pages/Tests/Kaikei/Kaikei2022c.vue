@@ -24,6 +24,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="保険契約準備金-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '洗替方式',
                         '費用',
                         '標準',
@@ -44,6 +45,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="保険契約準備金-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '未経過',
                         '危険',
                         '内部留保',
@@ -64,6 +66,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="生命保険会計における費用に属する科目-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '給付金',
                         '発生',
                         '団体定期保険の年金払特約',
@@ -84,6 +87,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="生命保険会計における費用に属する科目-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '支払遅延利息',
                         '特定取引',
                         '除く',
@@ -214,10 +218,12 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '簿記',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '株主資本等変動計算書',
                             content: '正しい',
                         }, //32
@@ -226,14 +232,17 @@ const subject = "2022年度 フォームC";
                             content: '会計情報の開示という機能が含まれているという点で同様 → 含まれていないという点で異なる',
                         }, //33 p32
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '期間帰属の差異',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'デリバティブ',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '未払金',
                             content: '正しい',
                         }, //36
@@ -246,6 +255,7 @@ const subject = "2022年度 フォームC";
                             content: '現金主義 → 実現主義',
                         }, //38 p142
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理における運用資産の管理',
                             content: '正しい',
                         }, //39
@@ -254,51 +264,61 @@ const subject = "2022年度 フォームC";
                             content: '社内監査役 → 社外監査役',
                         }, //40 p206
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '取引の仕訳',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '企業会計の領域',
                             content: '管理会計',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '決算スケジュール',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '消費税',
                             content: '負債',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '利益準備金',
                             content: '5分の1',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '利息及び配当金等収入',
                             content: '売買目的有価証券',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '保険業法第112条評価益',
                             content: '評価換え',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '退職給付引当金',
                             content: '期末',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '公告',
                             content: '定款',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '金融検査',
                             content: '自己査定',

@@ -25,6 +25,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約準備金-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '洗替方式',
                         '費用',
                         '標準',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="保険契約準備金-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '未経過',
                         '危険',
                         '内部留保',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="事業費管理-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '付加保険料',
                         '維持費',
                         '募集機関',
@@ -85,6 +88,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="事業費管理-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '死亡率',
                         '利源分析',
                         '6',
@@ -223,14 +227,17 @@ const subject = "2024年度 フォームB";
                             content: '経営者、従業員などの内部利害関係者 → 株主、債権者などの外部利害関係者',
                         }, //32 p9
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '単一性の原則',
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険金等支払金の計上',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '決算書類',
                             content: '正しい',
                         }, //35
@@ -247,59 +254,71 @@ const subject = "2024年度 フォームB";
                             content: '他の税金と合算 → 他の税金と区別',
                         }, //38 p164
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理における運用資産の管理',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '税務調査',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '帳簿の種類',
                             content: '買掛金元帳',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '企業会計原則（一般原則）',
                             content: '明瞭性',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '株主配当',
                             content: 'いつでも',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '決算',
                             content: '財政状態',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '連結決算',
                             content: 'のれん（連結調整勘定）',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '利益準備金',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '利息及び配当金等収入',
                             content: '売買目的有価証券',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '公告',
                             content: '損益計算書',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '区分経理',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '金融検査',
                             content: '金融庁',

@@ -24,6 +24,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="近年の商品対応と今後の方向性-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '5年ごと配当',
                         '低解約返戻金',
                         '引受基準緩和',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="近年の商品対応と今後の方向性-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '受領確認',
                         'ユニバーサル保険',
                         '銀行窓販',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="団体年金保険-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '規約型',
                         'GIC（guaranteed interest contract：利率保証契約）',
                         '拠出型企業年金',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="団体年金保険-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '団体生存保険',
                         '公務員',
                         '新企業年金保険',
@@ -214,6 +218,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ライフ・プランニング',
                             content: '正しい',
                         }, //31
@@ -234,6 +239,7 @@ const subject = "2020年度 フォームC";
                             content: '契約締結の後に書面で交付 → 契約締結の前に書面で交付',
                         }, //35 p41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生存保険',
                             content: '正しい',
                         }, //36
@@ -246,59 +252,71 @@ const subject = "2020年度 フォームC";
                             content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内',
                         }, //38 p97
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人顧客システム',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '機関組織構成',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '年金改革',
                             label: 'イ',
                             content: '第3号',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険の保険料',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険料率の改定',
                             label: 'イ',
                             content: '平均寿命',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '危険選択の方法',
                             label: 'エ',
                             content: '面接',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '消費者信用団体生命保険',
                             label: 'ウ',
                             content: '1年',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特化型営業職員制度',
                             label: 'ア',
                             content: '職域や法人',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '募集人登録',
                             label: 'ア',
                             content: '保険業法',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の退職金',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '企業保険の販売チャネル',
                             label: 'ウ',
                             content: '本社直轄',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
                             label: 'オ',
                             content: '',

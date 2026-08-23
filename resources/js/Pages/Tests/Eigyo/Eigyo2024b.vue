@@ -24,6 +24,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="第三分野市場-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '災害保障特約',
                         '所得補償保険',
                         '長期総合保険',
@@ -44,6 +45,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="第三分野市場-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '業務提携',
                         '競合と協調',
                         '外国保険事業者',
@@ -64,6 +66,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="団体年金保険-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '規約型',
                         'GIC（利率保証契約）',
                         '拠出型企業年金',
@@ -84,6 +87,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="団体年金保険-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '団体生存保険',
                         '公務員',
                         '新企業年金保険',
@@ -222,6 +226,7 @@ const subject = "2024年度 フォームB";
                             content: '法定外複利費については → 法定福利費については',
                         }, //32 p33
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'マイナンバー法',
                             content: '正しい',
                         }, //33
@@ -234,6 +239,7 @@ const subject = "2024年度 フォームB";
                             content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内',
                         }, //35 p97
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '付帯サービス',
                             content: '正しい',
                         }, //36
@@ -242,6 +248,7 @@ const subject = "2024年度 フォームB";
                             content: '生命保険商品に特化した → 生命保険商品の枠を超えた',
                         }, //37 p101
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '契約者カード',
                             content: '正しい',
                         }, //38
@@ -250,55 +257,66 @@ const subject = "2024年度 フォームB";
                             content: '生命保険協会 → 内閣総理大臣（金融庁長官に委任）',
                         }, //39 p118
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '機関の機能',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '厚生年金保険の保険料',
                             label: 'イ',
                             content: '標準報酬月額と標準賞与額それぞれ',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '年金改革',
                             label: 'ウ',
                             content: '10年',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '消費者保護とコンプライアンス',
                             label: 'エ',
                             content: '保険金受取人',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'リビング・ニーズ特約',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             label: 'ア',
                             content: '公的医療保険',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特化型営業職員制度',
                             label: 'ア',
                             content: '職域や法人',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保財形の特徴',
                             label: 'ウ',
                             content: '予定利率',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '顧客サービスの向上',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '支社の配置',
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
                             label: 'オ',
                             content: '',

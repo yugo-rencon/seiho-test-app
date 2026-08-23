@@ -25,6 +25,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="個人保険の保険金の税務上の取扱-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '特別控除',
                         '1/2',
                         '20%（所属税15%、地方税5%）',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="個人保険の保険金の税務上の取扱-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '1年',
                         '2年',
                         '3/4',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="贈与税-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '所得税',
                         '生活費',
                         '結婚・子育て',
@@ -85,6 +88,7 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="贈与税-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '20',
                         '居住用不動産',
                         '2,000',
@@ -261,10 +265,12 @@ const subject = "2024年度 フォームC";
                             content: '相続税は相続税法、贈与税は贈与税法により規定 → いずれも相続税法により規定 ',
                         }, //33 p64
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '遺産分割の方法',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '年金受給権の評価',
                             content: '正しい',
                         }, //35
@@ -273,6 +279,7 @@ const subject = "2024年度 フォームC";
                             content: '必ず仮決算の中間報告書を提出 → 前年度実績による中間報告書でも良い',
                         }, //36 p141
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '転換時の税務',
                             content: '正しい',
                         }, //37
@@ -281,6 +288,7 @@ const subject = "2024年度 フォームC";
                             content: '形式的な所有権の移転でも課税対象 → 課税されない',
                         }, //38 p160
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特定退職金共済',
                             content: '正しい',
                         }, //39
@@ -289,51 +297,61 @@ const subject = "2024年度 フォームC";
                             content: '14% → 7%',
                         }, //40 p225
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '給与所得',
                             label: 'エ',
                             content: '確定申告',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の課税標準',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の税額控除',
                             label: 'ウ',
                             content: '住宅借入金（取得）等特別控除',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '寄附金控除',
                             label: 'ア',
                             content: '2,000円',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '会社利益と所得金額の調整',
                             label: 'ア',
                             content: '申告調整',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続税の非課税財産',
                             label: 'イ',
                             content: '公益事業用',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続時精算課税制度',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産評価益の益金不算入',
                             label: 'ウ',
                             content: '株式',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員報酬',
                             label: 'イ',
                             content: '事業所得',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
                             label: 'オ',
                             content: '',

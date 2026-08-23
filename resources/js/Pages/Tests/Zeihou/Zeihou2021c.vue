@@ -24,6 +24,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="個人保険の保険金の税務上の取扱-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '50万円',
                         '1/2',
                         '支払総額',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="個人保険の保険金の税務上の取扱-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '1年',
                         '2年',
                         '確定年金',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="贈与税-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '法人',
                         '選挙の候補者',
                         '110万円',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="贈与税-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '2月1日',
                         '納税地',
                         '利子税',
@@ -222,7 +226,8 @@ const subject = "2021年度 フォームC";
                             content: '所得控除 → 税額控除',
                         }, //32 p55
                         {
-                            questionTitle: '確定申告定',
+                            // rev: 2026-08-23 確認済み
+                            questionTitle: '確定申告',
                             content: '正しい',
                         }, //33
                         {
@@ -230,6 +235,7 @@ const subject = "2021年度 フォームC";
                             content: '倍率方式 ↔︎ 路線価方式',
                         }, //34 p111-112
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '事業年度',
                             content: '正しい',
                         }, //35
@@ -246,59 +252,71 @@ const subject = "2021年度 フォームC";
                             content: '財形貯蓄積立保険 → 財形年金',
                         }, //38 p213
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定拠出年金の税務',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '受取配当益金不算入',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の所得控除',
                             label: 'イ',
                             content: '15種類',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療費控除（セルフメディケーション）',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '譲渡所得',
                             label: 'エ',
                             content: '2分の1',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '雑損控除',
                             label: 'ウ',
                             content: '災害',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '源泉徴収制度',
                             label: 'ア',
                             content: '翌月10日',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '非課税財産',
                             label: 'エ',
                             content: '心身障害者扶養共済制度',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '会社利益と所得金額の調整',
                             label: 'ウ',
                             content: '公平な税負担',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険料控除の手続き',
                             label: 'ア',
                             content: '9,000円',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金制度の開始',
                             label: 'ア',
                             content: '年金規約',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員報酬',
                             label: 'オ',
                             content: '',

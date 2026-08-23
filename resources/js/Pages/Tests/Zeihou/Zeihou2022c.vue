@@ -25,6 +25,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="相続税の税額計算-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '3年',
                         '基礎控除',
                         '法定相続分',
@@ -45,6 +46,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="相続税の税額計算-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '公益',
                         '死亡退職金',
                         'なる',
@@ -65,6 +67,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="法人税-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '直接税',
                         '比例税率',
                         '法人擬制説',
@@ -85,6 +88,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="法人税-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '内国法人',
                         '二重課税',
                         '取得原価',
@@ -249,6 +253,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '標準税率',
                             content: '正しい',
                         }, //31
@@ -269,6 +274,7 @@ const subject = "2022年度 フォームC";
                             content: '3000万円 → 1500万円',
                         }, //35 p97
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人税の種類',
                             content: '正しい',
                         }, //36
@@ -281,59 +287,71 @@ const subject = "2022年度 フォームC";
                             content: '5年ごと → 3年ごと',
                         }, //38 p158
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定拠出年金のポータビリティ',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員報酬の必要経費',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '居住用財産譲渡の特例',
                             label: 'ア',
                             content: '自己',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '雑損控除',
                             label: 'ウ',
                             content: '5万円',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '遺留分',
                             label: 'ウ',
                             content: '3分の1',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続税の未成年者控除',
                             label: 'ア',
                             content: '18歳',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続時精算課税制度',
                             label: 'ウ',
                             content: '18歳',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人の確定申告',
                             label: 'ア',
                             content: '2ヶ月',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人の住民税',
                             label: 'ア',
                             content: '法人税制',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '不動産取得税',
                             label: 'イ',
                             content: '道府県税',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険金等受取時の税務',
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '最低課税方式',
                             label: 'エ',
                             content: '契約者配当準備金損金算入額',

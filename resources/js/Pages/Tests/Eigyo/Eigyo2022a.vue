@@ -23,6 +23,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="公的年金制度の動向-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '60歳',
                         '報酬比例',
                         '定額保険料',
@@ -43,6 +44,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="公的年金制度の動向-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '10年',
                         '1ヶ月',
                         '1級〜3級',
@@ -63,6 +65,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="団体年金保険-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '規約型',
                         'GIC（guaranteed interest contract：利率保証契約）',
                         '拠出型企業年金',
@@ -83,6 +86,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="団体年金保険-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '団体生存保険',
                         '公務員',
                         '新企業年金保険',
@@ -221,6 +225,7 @@ const subject = "2022年度 フォームA";
                             content: '保険募集の代理を含まないこと → 含むこと<br>販売することはできなくなった → 販売可能になった',
                         }, //32 p35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '継続教育制度',
                             content: '正しい',
                         }, //33
@@ -229,6 +234,7 @@ const subject = "2022年度 フォームA";
                             content: '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く',
                         }, //34 p65
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定',
                             content: '正しい',
                         }, //35
@@ -237,14 +243,17 @@ const subject = "2022年度 フォームA";
                             content: '2つから構成 → 3つから構成（死亡保険金を含む）',
                         }, //36 p96
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '心身障害者扶養者生命保険',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '通信販売',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '機関の機能',
                             content: '正しい',
                         }, //39
@@ -253,51 +262,61 @@ const subject = "2022年度 フォームA";
                             content: '乗合型 → 兼業型',
                         }, //40 p145
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '価値観の変化',
                             label: 'ア',
                             content: '年齢',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '年金改革・分割',
                             label: 'イ',
                             content: '第3号',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融サービス提供法',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '危険選択の方法',
                             label: 'エ',
                             content: '面接',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '商品政策の変遷（1980年代）',
                             label: 'イ',
                             content: '新種個人年金保険',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '国民年金基金制度',
                             label: 'ア',
                             content: '第1号被保険者',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保財形の特徴',
                             label: 'イ',
                             content: '5倍',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険仲立人',
                             label: 'エ',
                             content: '媒介',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '変額保険販売資格要件',
                             label: 'ア',
                             content: '専門課程',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
                             label: 'イ',
                             content: '地域',

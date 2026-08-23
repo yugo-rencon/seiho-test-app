@@ -24,6 +24,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="年金改革-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '世代間扶養',
                         '18.30%',
                         '16,900円',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="年金改革-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '2分の1',
                         '5年',
                         '10年',
@@ -64,6 +66,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="顧客サービスの向上と多様化-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '継続的',
                         'マーケティング',
                         '転換制度',
@@ -84,10 +87,11 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="顧客サービスの向上と多様化-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'face to face',
                         '情報通信機器',
                         '囲い込み',
-                        'CS（customer Satisfaciton）',
+                        'CS（Customer Satisfaction）',
                         '選択', //問16〜20
                     ]"
                     :labels="[
@@ -214,6 +218,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理・代行',
                             content: '正しい',
                         }, //31
@@ -230,14 +235,17 @@ const subject = "2023年度 フォームB";
                             content: '生命保険支払専門士 → 生命保険面接士',
                         }, //34 p52
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '適格性要素',
                             content: '正しい',
                         }, //37
@@ -250,55 +258,66 @@ const subject = "2023年度 フォームB";
                             content: 'これまで〜の説明 ↔ 近年では〜の説明',
                         }, //39 p140
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '機関組織構成',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '人の一生',
                             label: 'エ',
                             content: 'ライフサイクル',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '遺族年金',
                             label: 'ア',
                             content: '３分の１',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融商品取引法',
                             label: 'エ',
                             content: '適合性の原則',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'リビング・ニーズ特約',
                             label: 'イ',
                             content: '6ヶ月',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '月払保険の普及',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '総合福祉団体定期保険',
                             label: 'イ',
                             content: '企業等',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '加入後の自在性',
                             label: 'イ',
                             content: '移行',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命表',
                             label: 'ア',
                             content: '経験死亡率',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保財形の特徴',
                             label: 'ウ',
                             content: '5倍',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の教育',
                             label: 'オ',
                             content: '',

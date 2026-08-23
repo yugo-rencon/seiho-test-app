@@ -24,6 +24,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="公的年金制度の動向-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '60歳',
                         '報酬比例',
                         '定額保険料',
@@ -44,6 +45,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="公的年金制度の動向-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '10年',
                         '1ヶ月',
                         '1級〜3級',
@@ -64,6 +66,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="情報活用型マーケティング-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '見込客',
                         '携帯パソコン・端末',
                         '販売活動の効率化',
@@ -84,6 +87,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="情報活用型マーケティング-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '上場コード',
                         '取引',
                         'パスワード',
@@ -218,10 +222,12 @@ const subject = "2022年度 フォームB";
                             content: '保険料75%、公費25% → 保険料50%、公費50%',
                         }, //31 p30
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '消費者契約法',
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険料変更の自在性',
                             content: '正しい',
                         }, //33
@@ -230,6 +236,7 @@ const subject = "2022年度 フォームB";
                             content: '安い為替手数料 → 高い金利<br>予定事業費率を低く → 予定利率を高く',
                         }, //34 p65
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定',
                             content: '正しい',
                         }, //35
@@ -238,10 +245,12 @@ const subject = "2022年度 フォームB";
                             content: '所得税の公的年金控除の対象 → 非課税',
                         }, //36 p95
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '心身障害者扶養者生命保険',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '窓販の弊害防止措置',
                             content: '正しい',
                         }, //38
@@ -254,51 +263,61 @@ const subject = "2022年度 フォームB";
                             content: '生命保険協会 → 内閣総理大臣（金融庁長官に委任）',
                         }, //40 p118
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '女性の社会進出',
                             label: 'イ',
                             content: '男女雇用機会均等法',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '消費者保護とコンプライアンス',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'リビング・ニーズ特約',
                             label: 'イ',
                             content: '6ヶ月',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '危険選択の方法',
                             label: 'エ',
                             content: '面接',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '団体保険',
                             label: 'ウ',
                             content: 'ヒューマン・ヴァリュー特約',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '国民年金基金制度',
                             label: 'ア',
                             content: '第1号被保険者',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '財形貯蓄制度の種類',
                             label: 'イ',
                             content: '55歳',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '通信販売',
                             label: 'エ',
                             content: '加入保険金額',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の教育',
                             label: 'イ',
                             content: '個別指導',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
                             label: 'イ',
                             content: '地域',

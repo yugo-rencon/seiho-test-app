@@ -24,6 +24,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="相続税の申告と納税"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '遺贈',
                         '10ヶ月',
                         '被相続人',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="法人税の申告と納付"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '6ヶ月',
                         '2ヶ月',
                         '仮決算',
@@ -64,6 +66,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="グループ通算制度-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '経済のグローバル化',
                         '連結',
                         '分社化・持株会社化',
@@ -84,6 +87,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="グループ通算制度-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '完全支配関係',
                         '納税申告書',
                         'は除く',
@@ -214,6 +218,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '雑所得',
                             content: '正しい',
                         }, //31
@@ -222,14 +227,17 @@ const subject = "2023年度 フォームA";
                             content: '2つ → 3つ（総所得金額・退職所得金額・山林所得金額）',
                         }, //32 p36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定申告',
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '年末調整',
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '年金受給権の評価',
                             content: '正しい',
                         }, //35
@@ -238,6 +246,7 @@ const subject = "2023年度 フォームA";
                             content: 'すべて益金に算入 → 定められた一定額は益金に算入しない ',
                         }, //36 p126
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '不動産取得税',
                             content: '正しい',
                         }, //37
@@ -246,59 +255,71 @@ const subject = "2023年度 フォームA";
                             content: '一時払契約であること → 一時払契約は不可',
                         }, //38 p165
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '非課税給付金',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '租税の種類',
                             label: 'イ',
                             content: '普通税',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療費控除',
                             label: 'イ',
                             content: '10万円',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '遺留分',
                             label: 'ウ',
                             content: '3分の1',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続時精算課税制度',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '会社利益と所得金額の調整',
                             label: 'ア',
                             content: '税務調整',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人の住民税',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人の事業税',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '弔慰金の非課税限度額',
                             label: 'ウ',
                             content: '半年',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
                             label: 'エ',
                             content: '事業主',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険代理店の事業免許等に係る税',
                             label: 'ア',
                             content: '登録免許税',

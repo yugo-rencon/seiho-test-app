@@ -25,6 +25,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="企業会計原則-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '客観性',
                         '会計慣習',
                         '注解',
@@ -45,6 +46,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="企業会計原則-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '真実性',
                         '資本取引・損益取引区分',
                         '資本剰余金',
@@ -65,6 +67,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="損益勘定-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '認識',
                         '実現主義',
                         '発生主義',
@@ -85,6 +88,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="損益勘定-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '売上高',
                         '付加保険料',
                         '現金主義',
@@ -215,6 +219,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '損益計算書',
                             content: '正しい',
                         }, //31
@@ -223,6 +228,7 @@ const subject = "2023年度 フォームA";
                             content: '各費用勘定で期間修正 → 支払備金・責任準備金で調整',
                         }, //32 p42-43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
                             content: '正しい',
                         }, //33
@@ -231,6 +237,7 @@ const subject = "2023年度 フォームA";
                             content: '株式会社：保険業法 → 会社法<br>相互会社：会社法 → 保険業法',
                         }, //34 p94
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '外貨預金の換算',
                             content: '正しい',
                         }, //35
@@ -247,59 +254,71 @@ const subject = "2023年度 フォームA";
                             content: '他の税金と合算 → 他の税金と区別',
                         }, //38 p164
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '監査',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '企業会計の領域',
                             content: '財務会計',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '帳簿の種類',
                             content: '売掛金元帳',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '株主配当',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '連結子会社及び子法人等の範囲',
                             content: '意思決定期間',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '無形固定資産',
                             content: '定額法',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '保険業法第112条評価益',
                             content: '評価換え',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '解約返戻金',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '事業費',
                             content: '販売費及び一般管理費',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '公告',
                             content: '損益計算書',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '金融検査',
                             content: '自己査定',

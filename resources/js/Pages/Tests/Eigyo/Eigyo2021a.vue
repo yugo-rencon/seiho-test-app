@@ -24,6 +24,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="年金改革-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '世代間扶養',
                         '18.30%',
                         '16,900円',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="年金改革-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '2分の1',
                         '5年',
                         '10年',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="銀行窓販-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '信用生命保険',
                         '競争条件の公平性',
                         '流出防止',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="銀行窓販-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '個人年金保険（定額・変額）',
                         '事前説明義務',
                         '残債務リスク',
@@ -222,6 +226,7 @@ const subject = "2021年度 フォームA";
                             content: '損害保険 ↔︎ 生命保険',
                         }, //32 p34
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人情報の保護に関する法律',
                             content: '正しい',
                         }, //33
@@ -230,10 +235,12 @@ const subject = "2021年度 フォームA";
                             content: '認定生命保険士 → 生命保険面接士',
                         }, //34 p52
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ユニバーサル保険',
                             content: '正しい',
                         }, //36
@@ -242,10 +249,12 @@ const subject = "2021年度 フォームA";
                             content: '払込保険料累計額の3倍 → 5倍',
                         }, //37 p96
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '一時払退職後終身保険',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人顧客システム',
                             content: '正しい',
                         }, //39
@@ -254,51 +263,61 @@ const subject = "2021年度 フォームA";
                             content: '地域別最低賃金が適用されない → 適用される',
                         }, //40 p136
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '厚生年金保険の保険料',
                             label: 'オ',
                             content: '',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険の保険料',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人保険商品',
                             label: 'ウ',
                             content: '利差配当',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '変額保険',
                             label: 'エ',
                             content: '保険料',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命表',
                             label: 'ア',
                             content: '経験死亡率',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '総合福祉団体定期保険',
                             label: 'イ',
                             content: '企業等',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '団体信用生命保険',
                             label: 'イ',
                             content: '賦払償還債務',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             label: 'エ',
                             content: '自己負担の一部を補填する',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の適格性要素',
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '支社の配置',
                             label: 'ウ',
                             content: '分割',

@@ -25,6 +25,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="住民税-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '均等割額のみ',
                         '4%',
                         '6%',
@@ -45,6 +46,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="住民税-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '普通徴収',
                         '市町村',
                         '5月',
@@ -65,6 +67,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="グループ通算制度-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '経済のグローバル化',
                         '連結',
                         '分社化・持株会社化',
@@ -85,6 +88,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="グループ通算制度-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '完全支配関係',
                         '納税申告書',
                         'は除く',
@@ -249,6 +253,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '租税の種類',
                             content: '正しい',
                         }, //31
@@ -257,6 +262,7 @@ const subject = "2023年度 フォームC";
                             content: '代理相続 → 代襲相続',
                         }, //32 p67
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定申告',
                             content: '正しい',
                         }, //33
@@ -269,14 +275,17 @@ const subject = "2023年度 フォームC";
                             content: ' 3ヶ月以内 → 2ヶ月以内',
                         }, //35 p141
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '地方税',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '不動産取得税',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '転換時の税務上の取扱',
                             content: '正しい',
                         }, //38
@@ -285,55 +294,66 @@ const subject = "2023年度 フォームC";
                             content: '一時所得 → 雑所得',
                         }, //39 p221
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '一時所得',
                             label: 'イ',
                             content: '営利',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の課税標準',
                             label: 'ウ',
                             content: '租税特別措置法',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '配偶者控除',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '相続時精算課税制度',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '未成年者控除・障害者控除',
                             label: 'イ',
                             content: '10万円',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '法人の種類と課税の範囲',
                             label: 'イ',
                             content: '公共法人',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '有価証券の評価',
                             label: 'エ',
                             content: '償却原価',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '固定資産税の課税標準',
                             label: 'ウ',
                             content: '3年',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
                             label: 'エ',
                             content: '事業主',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険代理店の事業免許等に係る税',
                             label: 'ア',
                             content: '登録免許税',

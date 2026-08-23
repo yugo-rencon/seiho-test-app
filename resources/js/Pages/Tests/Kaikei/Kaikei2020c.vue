@@ -24,6 +24,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="決算整理手続-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '総勘定元帳',
                         '期末棚卸',
                         '保有目的',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="決算整理手続-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '前払費用',
                         '未払費用',
                         '未収収益',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="事業費管理-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '付加保険料',
                         '維持費',
                         '募集機関',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="事業費管理-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '死亡率',
                         '利源分析',
                         '6',
@@ -214,6 +218,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '取引の認識',
                             content: '正しい',
                         }, //31
@@ -230,6 +235,7 @@ const subject = "2020年度 フォームC";
                             content: '明瞭性の原則 → 資本取引・損益取引区分の原則',
                         }, //34 p25
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
                             content: '正しい',
                         }, //35
@@ -238,67 +244,81 @@ const subject = "2020年度 フォームC";
                             content: '株式会社 → 相互会社（剰余金処分に関する議案を作成）',
                         }, //36 p56-57
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '外貨預金の換算',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険金',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '負債勘定',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '計算書類の公告',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '企業会計の領域',
                             label: 'イ',
                             content: '財務会計',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '財務諸表',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '株主配当',
                             label: 'エ',
                             content: 'いつでも',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '勘定間取引',
                             label: 'ウ',
                             content: '平準保険料',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ソフトウェア',
                             label: 'ウ',
                             content: '定額法',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '決算スケジュール',
                             label: 'イ',
                             content: '2週間',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '利益準備金',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険料',
                             label: 'イ',
                             content: '未収保険料',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理',
                             label: 'オ',
                             content: '',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '企業が受ける検査',
                             label: 'ア',
                             content: '税務調査',

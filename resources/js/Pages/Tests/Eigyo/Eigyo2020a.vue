@@ -24,6 +24,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="第三分野市場-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '災害補償特約',
                         '所得補償保険',
                         '長期総合保険',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="第三分野市場-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '業務提携',
                         '競合と協調',
                         '外国保険事業者',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="団体年金保険-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '規約型',
                         'GIC（guaranteed interest contract：利率保証契約）',
                         '拠出型企業年金',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="団体年金保険-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '団体生存保険',
                         '公務員',
                         '新企業年金保険',
@@ -214,10 +218,12 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生活の仕方の変化',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '国民年金のしくみ',
                             content: '正しい',
                         }, //32
@@ -226,6 +232,7 @@ const subject = "2020年度 フォームA";
                             content: '法定福利費 ↔︎ 法定外福利費',
                         }, //33 p33
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理・代行',
                             content: '正しい',
                         }, //34
@@ -234,6 +241,7 @@ const subject = "2020年度 フォームA";
                             content: '契約締結の後に書面で交付 → 契約締結の前に書面で交付',
                         }, //35 p41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生存保険',
                             content: '正しい',
                         }, //36
@@ -246,6 +254,7 @@ const subject = "2020年度 フォームA";
                             content: '個人保険と同様、変更されることはない → 個人保険と異なり、変更されることがある',
                         }, //38 p96
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '適格性要素',
                             content: '正しい',
                         }, //39
@@ -254,51 +263,61 @@ const subject = "2020年度 フォームA";
                             content: 'スーパーバイザー → ホールセラー。',
                         }, //40 p146
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'シルバー市場',
                             label: 'ア',
                             content: '65歳',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険の保険料',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険法',
                             label: 'ウ',
                             content: '遺言',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '危険選択の方法',
                             label: 'エ',
                             content: '面接',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '確定拠出年金制度',
                             label: 'ウ',
                             content: '国民年金基金連合会',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保財形の特徴',
                             label: 'イ',
                             content: '払込保険料累計額',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '保険仲立人',
                             label: 'ウ',
                             content: '媒介',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '変額保険販売資格要件',
                             label: 'ア',
                             content: '専門課程',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
                             label: 'イ',
                             content: '地域',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
                             label: 'オ',
                             content: '',

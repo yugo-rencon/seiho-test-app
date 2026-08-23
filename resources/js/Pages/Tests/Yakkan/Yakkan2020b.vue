@@ -279,10 +279,11 @@ const subject = "2020年度 フォームB";
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '定款',
                             relatedProblems: ['2020b37'],
-                            content: '相互会社 ↔︎ 株式会社',
-                        }, //37 p218
+                            content: '相互会社 ↔︎ 株式会社', //p218-219
+                        }, //37
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '保険計理人',

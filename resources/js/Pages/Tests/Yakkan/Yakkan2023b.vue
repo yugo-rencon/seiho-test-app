@@ -285,10 +285,11 @@ const subject = "2023年度 フォームB";
                             content: '満期保険金登録制度 → 死亡保険金登録制度', //p168
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '定款',
                             relatedProblems: ['2023b38'],
-                            content: '相互会社 ↔︎ 株式会社',
-                        }, //38 p218
+                            content: '相互会社 ↔︎ 株式会社', //p218-219
+                        }, //38
                         {
                             // rev: 2026-08-20 確認済み
                             questionTitle: '意向把握義務',

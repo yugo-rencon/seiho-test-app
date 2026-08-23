@@ -249,10 +249,11 @@ const subject = "2023年度 フォームA";
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '普通保険約款と特約',
                             relatedProblems: ['2023a32'],
-                            content: '普通保険約款 ↔︎ 特約',
-                        }, //32 p12
+                            content: '普通保険約款と特約の関係では、[[特約]]に規定のある事項については優先的に[[特約]]が適用され、[[特約]]に規定のない事項については、[[普通保険約款]]が適用される。', //p12
+                        }, //32
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '保険期間',
@@ -272,10 +273,11 @@ const subject = "2023年度 フォームA";
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '時効',
                             relatedProblems: ['2023a36', '2023b45'],
-                            content: '2年間 → 3年間',
-                        }, //36 p124
+                            content: '2年間 → 3年間', //p124
+                        }, //36
                         {
                             questionTitle: '契約内容の登録',
                             relatedProblems: ['2023a37', '2023b37', '2023c37'],

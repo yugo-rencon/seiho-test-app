@@ -24,6 +24,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険会社と資産運用機能、金融仲介機能-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '平準保険料',
                         '予定利率',
                         '配当',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険会社と資産運用機能、金融仲介機能-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '保険料',
                         '長期の貸付',
                         '国債',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="特別勘定-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '金利選好',
                         'インフレ・ヘッジ',
                         '投資リスク',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="特別勘定-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '大口信用供与規制',
                         '安全性',
                         '契約者',
@@ -214,6 +218,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '日本の金融制度',
                             content: '正しい',
                         }, //31
@@ -222,6 +227,7 @@ const subject = "2020年度 フォームA";
                             content: '20% → 10%',
                         }, //32 p30
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '証券調査',
                             content: '正しい',
                         }, //33
@@ -238,14 +244,17 @@ const subject = "2020年度 フォームA";
                             content: 'オープン市場 ↔︎ インターバンク市場',
                         }, //36 p
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ドイツの資産運用体制',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公共投資',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融システム改革',
                             content: '正しい',
                         }, //39
@@ -254,51 +263,61 @@ const subject = "2020年度 フォームA";
                             content: '時価 → 取得価額',
                         }, //40 p213
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'リスク管理の組織的対応',
                             label: 'エ',
                             content: 'リスク管理委員会',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '投融資決定機構',
                             label: 'ア',
                             content: '単独制',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'コール・オプション',
                             label: 'ウ',
                             content: '買い付ける',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '海外投融資の内容と特徴',
                             label: 'エ',
                             content: '不動産',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'カナダの資産運用',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '海外投融資のリスク',
                             label: 'イ',
                             content: 'カントリー・リスク',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'エ',
                             content: 'オルタナティブ投資',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '安定成長への移行と貸付業務の多様化',
                             label: 'ウ',
                             content: '劣後ローン',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'グローバルなリスク管理環境',
                             label: 'オ',
                             content: '',

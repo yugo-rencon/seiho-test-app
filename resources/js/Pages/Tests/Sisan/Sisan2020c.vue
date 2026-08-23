@@ -24,6 +24,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="生保資産運用の今後-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '時価',
                         'グローバル化',
                         '日本公認会計士協会',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="生保資産運用の今後-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'ポートフォリオ',
                         '区分経理',
                         'ALM（Asset Liability Management）',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="特別勘定-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '金利選好',
                         'インフレ・ヘッジ',
                         '投資リスク',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="特別勘定-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '大口信用供与規制',
                         '安全性',
                         '契約者',
@@ -214,10 +218,12 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '日本の金融制度',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '投融資決定機構',
                             content: '正しい',
                         }, //32
@@ -234,18 +240,22 @@ const subject = "2020年度 フォームC";
                             content: '通過スワップ → 金利スワップ',
                         }, //35 p94
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '海外投融資',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'アメリカの資産運用規制',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公共投資',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用の多様化',
                             content: '正しい',
                         }, //39
@@ -254,51 +264,61 @@ const subject = "2020年度 フォームC";
                             content: '日本版スチュワードシップ・コード → IFRSへの対応の在り方に関する当面の方針',
                         }, //40 p214
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保資金の構成',
                             label: 'イ',
                             content: '基金',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公社債の発行主体別分類',
                             label: 'ア',
                             content: '歳入債',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'コール・オプション',
                             label: 'ウ',
                             content: '買い付ける',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '短期資金・現預金等',
                             label: 'イ',
                             content: '出し手',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'イギリスの銀行',
                             label: 'ア',
                             content: 'ユニバーサル・バンキング',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ドイツの金融制度',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'エ',
                             content: 'オルタナティブ投資',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '貸付業種の多様化',
                             label: 'ウ',
                             content: '劣後ローン',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融審議会報告',
                             label: 'エ',
                             content: '顧客本意の業務運営に関する原則',

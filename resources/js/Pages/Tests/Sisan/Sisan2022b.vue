@@ -228,7 +228,6 @@ const subject = "2022年度 フォームB";
                             content: '正しい',
                         }, //32
                         {
-                            // rev: 2026-08-23 確認済み
                             questionTitle: '運用の実務',
                             content: '融資審査部門 → マクロ調査部門',
                         }, //33 p51

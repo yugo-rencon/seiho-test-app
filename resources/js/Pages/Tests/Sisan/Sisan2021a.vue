@@ -24,6 +24,7 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '剰余金',
                         '保険契約準備金',
                         '信託財産',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '国際決済銀行',
                         '自己資本',
                         'リスク・ヘッジ',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '財団抵当',
                         '時価',
                         '瑕疵（かし）',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '一括返済',
                         '収益性',
                         'プライム・レート',
@@ -214,6 +218,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '日本の金融制度における生命保険会社の地位',
                             content: '正しい',
                         }, //31
@@ -222,6 +227,7 @@ const subject = "2021年度 フォームA";
                             content: '付随業務 → 法定他業',
                         }, //32 見つからない
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',
                             content: '正しい',
                         }, //33
@@ -234,14 +240,17 @@ const subject = "2021年度 フォームA";
                             content: '繰延債 → 歳入債',
                         }, //35 見つからない
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '不動産投資の実務',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'イギリスの資産運用の特徴',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '長期金融機関としての役割',
                             content: '正しい',
                         }, //38
@@ -250,55 +259,66 @@ const subject = "2021年度 フォームA";
                             content: '0%に近い → 近くない',
                         }, //39 p109
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '改正保険業法',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保資金の運用規制',
                             label: 'イ',
                             content: '独占禁止法',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用の専門化の進展',
                             label: 'エ',
                             content: 'アナリスト',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '有価証券の定義',
                             label: 'ア',
                             content: '金融商品取引法',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'コール・オプション',
                             label: 'ア',
                             content: '上昇',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '短期金融市場の概要',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人変額保険の特別勘定',
                             label: 'イ',
                             content: '時価主義',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'アメリカの資産運用規制',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '創業時の生命保険会社の資産運用',
                             label: 'ウ',
                             content: '銀行預金',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'イ',
                             content: 'ヘッジファンド',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ソルベンシー確保',
                             label: 'エ',
                             content: 'リスク係数',

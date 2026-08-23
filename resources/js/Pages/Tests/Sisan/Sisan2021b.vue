@@ -24,6 +24,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '単独制',
                         '委員会制',
                         '安全',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'ファンド・マネージャー',
                         'アナリスト',
                         'ストラテジスト',
@@ -64,6 +66,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '財団抵当',
                         '時価',
                         '瑕疵（かし）',
@@ -84,6 +87,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '一括返済',
                         '収益性',
                         'プライム・レート',
@@ -214,6 +218,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保資金の構成',
                             content: '正しい',
                         }, //31
@@ -222,6 +227,7 @@ const subject = "2021年度 フォームB";
                             content: '付随業務 → 法定他業',
                         }, //32 見つからない
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',
                             content: '正しい',
                         }, //33
@@ -234,10 +240,12 @@ const subject = "2021年度 フォームB";
                             content: '本社が直接所有するケースがほとんど → 現地法人を通じて行われるケースがほとんど',
                         }, //35 p109
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '不動産投資の実務',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ドイツの資産運用の特徴',
                             content: '正しい',
                         }, //37
@@ -246,6 +254,7 @@ const subject = "2021年度 フォームB";
                             content: '景気が回復することはなかった → 景気は回復した',
                         }, //38 /167
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '住宅金融対応',
                             content: '正しい',
                         }, //39
@@ -254,51 +263,61 @@ const subject = "2021年度 フォームB";
                             content: '日本版スチュワードシップ・コード → IFRSへの対応の在り方に関する当面の方針',
                         }, //40 p214
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保資金の運用規制',
                             label: 'イ',
                             content: '独占禁止法',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用機能の充実',
                             label: 'オ',
                             content: '',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '貸付の特徴',
                             label: 'ウ',
                             content: '流動',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '国債',
                             label: 'エ',
                             content: '歳入債',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '短期金融市場の概要',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人変額保険の運用',
                             label: 'ア',
                             content: '収益性',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ドイツの金融制度',
                             label: 'エ',
                             content: '直接金融',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険会社の資金調達',
                             label: 'ア',
                             content: '社債',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'イ',
                             content: 'ヘッジファンド',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融システム改革法',
                             label: 'ウ',
                             content: '保護機構',

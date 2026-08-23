@@ -24,6 +24,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="生保資金の運用規制-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '固有業務',
                         '自己責任',
                         '通達・事務連絡',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="生保資金の運用規制-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '独占禁止法',
                         '10%',
                         '5%',
@@ -64,6 +66,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="特別勘定-①"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '金利選好',
                         'インフレ・ヘッジ',
                         '投資リスク',
@@ -84,6 +87,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="特別勘定-②"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '大口信用供与規制',
                         '安全性',
                         '契約者',
@@ -214,6 +218,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '日本の金融制度',
                             content: '正しい',
                         }, //31
@@ -238,67 +243,81 @@ const subject = "2020年度 フォームB";
                             content: 'TTBレート ↔︎ TTSレート',
                         }, //36 p110
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'アメリカの資産運用規制',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公共投資',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'バブル崩壊後の外国証券投資',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融審議会報告書',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用機能の充実',
                             label: 'ウ',
                             content: 'ALM（Asset Liability Management）',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用の専門化の進展',
                             label: 'イ',
                             content: 'ファンド・マネージャー',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'コール・オプション',
                             label: 'ウ',
                             content: '買い付ける',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '不動産の投資手法',
                             label: 'ア',
                             content: '新借地',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'イギリスの資産運用',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特定金銭信託の活用',
                             label: 'イ',
                             content: 'キャピタル・ゲイン',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'エ',
                             content: 'オルタナティブ投資',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融商品会計に関する実務指針',
                             label: 'ア',
                             content: '日本公認会計士協会',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'リスクの多様化',
                             label: 'エ',
                             content: '先物',

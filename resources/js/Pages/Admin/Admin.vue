@@ -57,7 +57,7 @@ function currentYmd() {
 
 const currentYm = () => currentYmd().slice(0, 7);
 
-const formatPurchaseDate = (date) => date ? date.replaceAll("-", "/") : "購入日を選択";
+const formatPurchaseDate = (date) => (date ? date.replaceAll("-", "/") : "購入日を選択");
 
 const purchaseDateCalendarLabel = computed(() => purchaseDateCalendarMonth.value.replace("-", "年") + "月");
 
@@ -112,29 +112,40 @@ const registrationScopeOptions = [
 // リリース管理
 // 生保講座 (8科目, 年度×フォームa/b/c)
 const SEIHO_SUBJECTS = [
-    { key: "souron",  label: "生命保険総論" },
-    { key: "keiri",   label: "生命保険計理" },
-    { key: "kiken",   label: "危険選択" },
-    { key: "yakkan",  label: "約款と法律" },
-    { key: "kaikei",  label: "生命保険会計" },
-    { key: "eigyo",   label: "生命保険商品と営業" },
-    { key: "zeihou",  label: "生命保険と税法" },
-    { key: "sisan",   label: "資産の運用" },
+    { key: "souron", label: "生命保険総論" },
+    { key: "keiri", label: "生命保険計理" },
+    { key: "kiken", label: "危険選択" },
+    { key: "yakkan", label: "約款と法律" },
+    { key: "kaikei", label: "生命保険会計" },
+    { key: "eigyo", label: "生命保険商品と営業" },
+    { key: "zeihou", label: "生命保険と税法" },
+    { key: "sisan", label: "資産の運用" },
 ];
-const SEIHO_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
+const SEIHO_YEARS = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
 const SEIHO_FORMS = ["a", "b", "c"];
 
 const RELEASE_GANTT_MONTHS = [
-    { year: "2026", month: "5" }, { year: "", month: "6" }, { year: "", month: "7" }, { year: "", month: "8" }, { year: "", month: "9" }, { year: "", month: "10" }, { year: "", month: "11" }, { year: "", month: "12" },
-    { year: "2027", month: "1" }, { year: "", month: "2" }, { year: "", month: "3" }, { year: "", month: "4" }, { year: "", month: "5" }, { year: "", month: "6" },
+    { year: "2026", month: "5" },
+    { year: "", month: "6" },
+    { year: "", month: "7" },
+    { year: "", month: "8" },
+    { year: "", month: "9" },
+    { year: "", month: "10" },
+    { year: "", month: "11" },
+    { year: "", month: "12" },
+    { year: "2027", month: "1" },
+    { year: "", month: "2" },
+    { year: "", month: "3" },
+    { year: "", month: "4" },
+    { year: "", month: "5" },
+    { year: "", month: "6" },
 ];
 const isCurrentScheduleMonth = (item) => {
     const monthIndex = RELEASE_GANTT_MONTHS.indexOf(item);
     const scheduleMonth = new Date(2026, 4 + monthIndex, 1);
     const today = new Date();
 
-    return scheduleMonth.getFullYear() === today.getFullYear()
-        && scheduleMonth.getMonth() === today.getMonth();
+    return scheduleMonth.getFullYear() === today.getFullYear() && scheduleMonth.getMonth() === today.getMonth();
 };
 const RELEASE_SCHEDULE = [
     {
@@ -192,28 +203,28 @@ const RELEASE_SCHEDULE = [
     },
     {
         course: "生保大学",
-        subject: "FPとコンプライアンス",
+        subject: "ファイナンシャルプランニングとコンプライアンス",
         nextYearExplanationStart: 10,
     },
     {
         course: "生保大学",
-        subject: "生命保険と税法",
+        subject: "生命保険と税・相続",
         nextYearExplanationStart: 10,
     },
     {
         course: "生保大学",
-        subject: "資産の運用",
+        subject: "資産運用知識",
         nextYearExplanationStart: 10,
     },
     {
         course: "生保大学",
-        subject: "企業保険・団体保険",
+        subject: "企業向け保険商品とコンサルティング",
         explanationStart: 6,
         nextYearExplanationStart: 10,
     },
     {
         course: "生保大学",
-        subject: "社会保障と生命保険",
+        subject: "社会保障制度",
         explanationStart: 6,
         nextYearExplanationStart: 10,
     },
@@ -224,41 +235,41 @@ const IPPAN_PERIODS = [
     { key: "h1", label: "1-6月" },
     { key: "h2", label: "7-12月" },
 ];
-const IPPAN_YEARS  = [2025, 2024, 2023, 2022, 2021];
-const IPPAN_FORMS  = ["a", "b", "c", "d", "e"];
+const IPPAN_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
+const IPPAN_FORMS = ["a", "b", "c", "d", "e"];
 
 // 専門課程
 const SENMON_PERIODS = [
-    { key: "h1", label: "4-8月",  forms: ["a", "b"] },
+    { key: "h1", label: "4-8月", forms: ["a", "b"] },
     { key: "h2", label: "9-3月", forms: ["a", "b", "c", "d"] },
 ];
-const SENMON_YEARS = [2025, 2024, 2023, 2022, 2021];
+const SENMON_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 
 // 応用課程
 const OUYOU_PERIODS = [
-    { key: "h1", label: "4-7月",  forms: ["a", "b"] },
+    { key: "h1", label: "4-7月", forms: ["a", "b"] },
     { key: "h2", label: "8-3月", forms: ["a", "b", "c", "d"] },
 ];
-const OUYOU_YEARS = [2025, 2024, 2023, 2022, 2021];
+const OUYOU_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 
 // 生保大学
 const DAIGAKU_SUBJECTS = [
     { key: "shikumi", label: "生命保険のしくみと個人保険商品" },
-    { key: "fp",      label: "FPとコンプライアンス" },
-    { key: "zei",     label: "生命保険と税法" },
-    { key: "sisan",   label: "資産の運用" },
-    { key: "kigyo",   label: "企業保険・団体保険" },
-    { key: "syakai",  label: "社会保障と生命保険" },
+    { key: "fp", label: "ファイナンシャルプランニングとコンプライアンス" },
+    { key: "zei", label: "生命保険と税・相続" },
+    { key: "sisan", label: "資産運用知識" },
+    { key: "kigyo", label: "企業向け保険商品とコンサルティング" },
+    { key: "syakai", label: "社会保障制度" },
 ];
-const DAIGAKU_YEARS = [2025, 2024, 2023, 2022, 2021];
+const DAIGAKU_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const DAIGAKU_FORMS = ["a", "b", "c"];
 
 // タブ状態
-const releaseGroup = ref("seiho");          // "seiho" | "ippan" | "senmon" | "ouyou" | "daigaku"
-const releaseSeihoTab   = ref("souron");
+const releaseGroup = ref("seiho"); // "seiho" | "ippan" | "senmon" | "ouyou" | "daigaku"
+const releaseSeihoTab = ref("souron");
 const releaseDaigakuTab = ref("shikumi");
 
-const activeSeihoSubject   = computed(() => SEIHO_SUBJECTS.find((s) => s.key === releaseSeihoTab.value));
+const activeSeihoSubject = computed(() => SEIHO_SUBJECTS.find((s) => s.key === releaseSeihoTab.value));
 const activeDaigakuSubject = computed(() => DAIGAKU_SUBJECTS.find((s) => s.key === releaseDaigakuTab.value));
 
 // 未保存の変更を溜めるオブジェクト { testKey: newBooleanState }
@@ -299,13 +310,17 @@ const saveReleases = () => {
         { changes: pendingChanges.value },
         {
             preserveScroll: true,
-            onSuccess: () => { pendingChanges.value = {}; },
+            onSuccess: () => {
+                pendingChanges.value = {};
+            },
         },
     );
 };
 
 // 変更を破棄
-const resetReleases = () => { pendingChanges.value = {}; };
+const resetReleases = () => {
+    pendingChanges.value = {};
+};
 
 // コースごとの完成数/合計数
 const groupStats = computed(() => {
@@ -314,27 +329,17 @@ const groupStats = computed(() => {
         released: keys.filter((k) => isReleased(k)).length,
     });
 
-    const seihoKeys = SEIHO_SUBJECTS.flatMap((s) =>
-        SEIHO_YEARS.flatMap((y) => SEIHO_FORMS.map((f) => `seiho-${s.key}-${y}-${f}`)),
-    );
-    const ippanKeys = IPPAN_YEARS.flatMap((y) =>
-        IPPAN_PERIODS.flatMap((p) => IPPAN_FORMS.map((f) => `ippan-${y}-${p.key}-${f}`)),
-    );
-    const senmonKeys = SENMON_YEARS.flatMap((y) =>
-        SENMON_PERIODS.flatMap((p) => p.forms.map((f) => `senmon-${y}-${p.key}-${f}`)),
-    );
-    const ouyouKeys = OUYOU_YEARS.flatMap((y) =>
-        OUYOU_PERIODS.flatMap((p) => p.forms.map((f) => `ouyou-${y}-${p.key}-${f}`)),
-    );
-    const daigakuKeys = DAIGAKU_SUBJECTS.flatMap((s) =>
-        DAIGAKU_YEARS.flatMap((y) => DAIGAKU_FORMS.map((f) => `daigaku-${s.key}-${y}-${f}`)),
-    );
+    const seihoKeys = SEIHO_SUBJECTS.flatMap((s) => SEIHO_YEARS.flatMap((y) => SEIHO_FORMS.map((f) => `seiho-${s.key}-${y}-${f}`)));
+    const ippanKeys = IPPAN_YEARS.flatMap((y) => IPPAN_PERIODS.flatMap((p) => IPPAN_FORMS.map((f) => `ippan-${y}-${p.key}-${f}`)));
+    const senmonKeys = SENMON_YEARS.flatMap((y) => SENMON_PERIODS.flatMap((p) => p.forms.map((f) => `senmon-${y}-${p.key}-${f}`)));
+    const ouyouKeys = OUYOU_YEARS.flatMap((y) => OUYOU_PERIODS.flatMap((p) => p.forms.map((f) => `ouyou-${y}-${p.key}-${f}`)));
+    const daigakuKeys = DAIGAKU_SUBJECTS.flatMap((s) => DAIGAKU_YEARS.flatMap((y) => DAIGAKU_FORMS.map((f) => `daigaku-${s.key}-${y}-${f}`)));
 
     return {
-        seiho:   count(seihoKeys),
-        ippan:   count(ippanKeys),
-        senmon:  count(senmonKeys),
-        ouyou:   count(ouyouKeys),
+        seiho: count(seihoKeys),
+        ippan: count(ippanKeys),
+        senmon: count(senmonKeys),
+        ouyou: count(ouyouKeys),
         daigaku: count(daigakuKeys),
     };
 });
@@ -343,7 +348,7 @@ const groupStats = computed(() => {
 const totalStats = computed(() => {
     const all = Object.values(groupStats.value);
     return {
-        total:    all.reduce((s, g) => s + g.total, 0),
+        total: all.reduce((s, g) => s + g.total, 0),
         released: all.reduce((s, g) => s + g.released, 0),
     };
 });
@@ -351,7 +356,7 @@ const totalStats = computed(() => {
 // トグルボタンのクラス（4状態）
 const btnClass = (testKey) => {
     const released = isReleased(testKey);
-    const pending  = isPending(testKey);
+    const pending = isPending(testKey);
     const releasedByGroup = {
         seiho: "border border-violet-500 bg-gradient-to-br from-violet-400 to-violet-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(139,92,246,0.35)]",
         daigaku: "border border-blue-500 bg-gradient-to-br from-blue-400 to-blue-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(59,130,246,0.35)]",
@@ -367,32 +372,22 @@ const btnClass = (testKey) => {
         ippan: "border border-fuchsia-400 bg-fuchsia-400 text-white shadow-sm",
     };
 
-    if (pending && released)  return pendingReleasedByGroup[releaseGroup.value] ?? pendingReleasedByGroup.seiho;
+    if (pending && released) return pendingReleasedByGroup[releaseGroup.value] ?? pendingReleasedByGroup.seiho;
     if (pending && !released) return "border border-rose-500 bg-rose-500 text-white shadow-sm";
-    if (released)             return releasedByGroup[releaseGroup.value] ?? releasedByGroup.seiho;
+    if (released) return releasedByGroup[releaseGroup.value] ?? releasedByGroup.seiho;
     return "border border-slate-200 bg-slate-100 text-slate-500 hover:bg-slate-200";
 };
 const isDaigakuAdmin = computed(() => String(page.url ?? "").startsWith("/daigaku"));
 const adminIndexRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.index" : "admin.index"));
-const adminContactsRoute = computed(() =>
-    isDaigakuAdmin.value ? "daigaku.admin.contacts.index" : "admin.contacts.index",
-);
+const adminContactsRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.contacts.index" : "admin.contacts.index"));
 
 const isActiveMenu = (key) => activeTab.value === key;
 
-const adminPurchaseRoute = computed(() =>
-    isDaigakuAdmin.value
-        ? "daigaku.admin.admins.purchaseScopes.update"
-        : "admin.admins.purchaseScopes.update",
-);
+const adminPurchaseRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.admins.purchaseScopes.update" : "admin.admins.purchaseScopes.update"));
 
-const adsenseStoreRoute = computed(() =>
-    isDaigakuAdmin.value ? "daigaku.admin.adsenseRevenues.store" : "admin.adsenseRevenues.store",
-);
+const adsenseStoreRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.adsenseRevenues.store" : "admin.adsenseRevenues.store"));
 
-const adsenseDeleteRoute = computed(() =>
-    isDaigakuAdmin.value ? "daigaku.admin.adsenseRevenues.delete" : "admin.adsenseRevenues.delete",
-);
+const adsenseDeleteRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.adsenseRevenues.delete" : "admin.adsenseRevenues.delete"));
 
 const adminScopeKeys = ["seiho", "daigaku", "ouyou", "senmon", "ippan", "basic"];
 
@@ -450,7 +445,7 @@ const saveAdminScopes = (admin) => {
         {
             preserveScroll: true,
             onSuccess: () => {
-                activeTab.value = 'users';
+                activeTab.value = "users";
                 router.visit(route(adminIndexRoute.value), {
                     preserveState: false,
                     preserveScroll: true,
@@ -527,8 +522,7 @@ const purchaseProductOptions = [
     { key: "basic", label: "一般・専門・応用セット", countKey: "basic_paid_count", className: "bg-cyan-100 text-cyan-700" },
 ];
 
-const purchasedProducts = (user) =>
-    purchaseProductOptions.filter((product) => Number(user?.[product.countKey]) > 0);
+const purchasedProducts = (user) => purchaseProductOptions.filter((product) => Number(user?.[product.countKey]) > 0);
 
 const paginationLabel = (label) => {
     const value = String(label);
@@ -616,14 +610,16 @@ const adsenseRevenueDaily = computed(() => adsenseRevenue.value?.daily ?? []);
 const premiumUsageForScope = (scope) => {
     const row = premiumUsageScopeSummary.value.find((item) => item?.scope === scope);
 
-    return row ?? {
-        scope,
-        views: 0,
-        users: 0,
-        sessions: 0,
-        premiumViews: 0,
-        blockedViews: 0,
-    };
+    return (
+        row ?? {
+            scope,
+            views: 0,
+            users: 0,
+            sessions: 0,
+            premiumViews: 0,
+            blockedViews: 0,
+        }
+    );
 };
 
 const subjectLabel = (scope, subjectKey) => {
@@ -662,9 +658,7 @@ const filteredScopeBreakdown = computed(() => {
 
 const filteredDailySales = computed(() => {
     const rows = salesInsights.value?.dailySalesByScope ?? [];
-    const targetRows = salesScopeFilter.value === "all"
-        ? rows
-        : rows.filter((row) => row.scope === salesScopeFilter.value);
+    const targetRows = salesScopeFilter.value === "all" ? rows : rows.filter((row) => row.scope === salesScopeFilter.value);
     return groupSalesRows(targetRows, "day");
 });
 const topDailySales = computed(() =>
@@ -680,9 +674,7 @@ const topDailySales = computed(() =>
 
 const monthlySalesWithBreakdown = computed(() => {
     const rows = salesInsights.value?.monthlySalesByScope ?? [];
-    const targetRows = salesScopeFilter.value === "all"
-        ? rows
-        : rows.filter((row) => row.scope === salesScopeFilter.value);
+    const targetRows = salesScopeFilter.value === "all" ? rows : rows.filter((row) => row.scope === salesScopeFilter.value);
     const scopeOrder = new Map(salesScopeOptions.map((option, index) => [option.value, index]));
     const map = new Map();
 
@@ -724,16 +716,10 @@ const monthlySalesWithBreakdown = computed(() => {
         }))
         .sort((a, b) => a.month.localeCompare(b.month));
 });
-const monthlySalesNewestFirst = computed(() =>
-    [...monthlySalesWithBreakdown.value].reverse(),
-);
+const monthlySalesNewestFirst = computed(() => [...monthlySalesWithBreakdown.value].reverse());
 
 const overviewPeriodOptions = computed(() => {
-    const years = new Set(
-        (salesInsights.value?.yearlySalesByScope ?? [])
-            .map((row) => Number(row?.year))
-            .filter((year) => Number.isFinite(year)),
-    );
+    const years = new Set((salesInsights.value?.yearlySalesByScope ?? []).map((row) => Number(row?.year)).filter((year) => Number.isFinite(year)));
     const currentYear = new Date().getFullYear();
     years.add(currentYear);
 
@@ -756,9 +742,7 @@ const overviewPeriodScopeRows = computed(() => {
 
 const filteredOverviewTotal = computed(() => {
     const rows = overviewPeriodScopeRows.value;
-    const targetRows = salesScopeFilter.value === "all"
-        ? rows
-        : rows.filter((row) => row.scope === salesScopeFilter.value);
+    const targetRows = salesScopeFilter.value === "all" ? rows : rows.filter((row) => row.scope === salesScopeFilter.value);
 
     return targetRows.reduce(
         (acc, row) => ({
@@ -786,9 +770,7 @@ const filteredOverviewAdsenseAmount = computed(() => {
     }, 0);
 });
 
-const filteredOverviewCombinedAmount = computed(() => (
-    Number(filteredOverviewTotal.value?.totalAmount ?? 0) + filteredOverviewAdsenseAmount.value
-));
+const filteredOverviewCombinedAmount = computed(() => Number(filteredOverviewTotal.value?.totalAmount ?? 0) + filteredOverviewAdsenseAmount.value);
 
 const filteredRecentSales = computed(() => {
     if (salesScopeFilter.value === "all") return salesInsights.value?.recentSales ?? {};
@@ -862,11 +844,7 @@ const deleteAdsenseRevenue = (row) => {
 
 const dailyAvailableMonths = computed(() => {
     const rows = filteredDailySales.value ?? [];
-    const set = new Set(
-        rows
-            .map((row) => String(row?.day ?? "").slice(0, 7))
-            .filter((v) => /^\d{4}-\d{2}$/.test(v)),
-    );
+    const set = new Set(rows.map((row) => String(row?.day ?? "").slice(0, 7)).filter((v) => /^\d{4}-\d{2}$/.test(v)));
     return Array.from(set).sort();
 });
 
@@ -891,10 +869,7 @@ const dailyCalendar = computed(() => {
 
     const monthRows = rows.filter((r) => String(r?.day ?? "").startsWith(`${monthKey}-`));
     const amountMap = new Map(monthRows.map((r) => [String(r.day), Number(r.totalAmount ?? 0)]));
-    const maxAmount = Math.max(
-        1,
-        ...Array.from(amountMap.values()).map((v) => Number(v || 0)),
-    );
+    const maxAmount = Math.max(1, ...Array.from(amountMap.values()).map((v) => Number(v || 0)));
 
     const cells = [];
     const startWeekday = first.getDay();
@@ -1020,55 +995,32 @@ const peakHour2h = computed(() => {
 
 <template>
     <AdminLayout title="管理画面">
-
         <div class="container mx-auto max-w-6xl px-5 py-8 pb-24">
             <div class="mb-6">
                 <h1 class="text-2xl font-bold text-gray-900">管理者画面</h1>
-                <p class="mt-1 text-sm text-gray-500">
-                    ユーザーの情報を管理できます。
-                </p>
+                <p class="mt-1 text-sm text-gray-500">ユーザーの情報を管理できます。</p>
             </div>
 
             <div class="mb-2">
-                <p class="text-xs font-semibold tracking-wide text-gray-500">
-                    管理メニュー
-                </p>
+                <p class="text-xs font-semibold tracking-wide text-gray-500">管理メニュー</p>
             </div>
 
             <div class="mb-5 flex flex-wrap items-center gap-2">
+                <button type="button" class="rounded-lg border px-4 py-2 text-sm font-semibold transition" :class="isActiveMenu('users') ? 'border-purple-200 bg-purple-50 text-purple-700' : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'" @click="activeTab = 'users'">会員管理</button>
                 <button
                     type="button"
                     class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
-                    :class="isActiveMenu('users')
-                        ? 'border-purple-200 bg-purple-50 text-purple-700'
-                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                    @click="activeTab = 'users'"
-                >
-                    会員管理
-                </button>
-                <button
-                    type="button"
-                    class="rounded-lg border px-4 py-2 text-sm font-semibold transition"
-                    :class="isActiveMenu('sales')
-                        ? 'border-purple-200 bg-purple-50 text-purple-700'
-                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                    @click="activeTab = 'sales'; salesTab = 'overview'"
+                    :class="isActiveMenu('sales') ? 'border-purple-200 bg-purple-50 text-purple-700' : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
+                    @click="
+                        activeTab = 'sales';
+                        salesTab = 'overview';
+                    "
                 >
                     売上分析
                 </button>
-                <button
-                    type="button"
-                    class="relative rounded-lg border px-4 py-2 text-sm font-semibold transition"
-                    :class="isActiveMenu('operations')
-                        ? 'border-purple-200 bg-purple-50 text-purple-700'
-                        : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'"
-                    @click="activeTab = 'operations'"
-                >
+                <button type="button" class="relative rounded-lg border px-4 py-2 text-sm font-semibold transition" :class="isActiveMenu('operations') ? 'border-purple-200 bg-purple-50 text-purple-700' : 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'" @click="activeTab = 'operations'">
                     運営管理
-                    <span
-                        v-if="newContactCount > 0"
-                        class="absolute -right-2 -top-2 inline-flex min-w-[1.35rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white ring-2 ring-white"
-                    >
+                    <span v-if="newContactCount > 0" class="absolute -right-2 -top-2 inline-flex min-w-[1.35rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white ring-2 ring-white">
                         {{ newContactCount }}
                     </span>
                 </button>
@@ -1085,19 +1037,17 @@ const peakHour2h = computed(() => {
                     :key="tab.key"
                     type="button"
                     class="rounded-lg px-3 py-2 transition sm:px-5"
-                    :class="activeMemberTab === tab.key
-                        ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
-                        : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
-                    @click="activeMemberTab = tab.key; if (tab.key === 'premium') salesTab = 'premium'"
+                    :class="activeMemberTab === tab.key ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200' : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
+                    @click="
+                        activeMemberTab = tab.key;
+                        if (tab.key === 'premium') salesTab = 'premium';
+                    "
                 >
                     {{ tab.label }}
                 </button>
             </div>
 
-            <div
-                v-if="activeTab === 'users' && activeMemberTab === 'summary'"
-                class="mb-4 grid grid-cols-2 gap-2.5 sm:mb-6 sm:gap-3 lg:grid-cols-4"
-            >
+            <div v-if="activeTab === 'users' && activeMemberTab === 'summary'" class="mb-4 grid grid-cols-2 gap-2.5 sm:mb-6 sm:gap-3 lg:grid-cols-4">
                 <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
                     <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">総ユーザー数</p>
                     <p class="mt-1 text-xl font-bold text-gray-900 sm:text-2xl">
@@ -1150,10 +1100,7 @@ const peakHour2h = computed(() => {
                     </p>
                 </div>
             </div>
-            <div
-                v-if="activeTab === 'users' && activeMemberTab === 'admins'"
-                class="rounded-xl border border-gray-100 bg-white p-4"
-            >
+            <div v-if="activeTab === 'users' && activeMemberTab === 'admins'" class="rounded-xl border border-gray-100 bg-white p-4">
                 <div class="flex flex-wrap items-start justify-between gap-2">
                     <div>
                         <h2 class="text-sm font-semibold text-gray-900">管理者ユーザー</h2>
@@ -1161,11 +1108,7 @@ const peakHour2h = computed(() => {
                     </div>
                 </div>
                 <div v-if="admins.length" class="mt-3 space-y-3">
-                    <div
-                        v-for="admin in admins"
-                        :key="`admin-${admin.id}`"
-                        class="rounded-lg border border-amber-100 bg-amber-50/40 p-3"
-                    >
+                    <div v-for="admin in admins" :key="`admin-${admin.id}`" class="rounded-lg border border-amber-100 bg-amber-50/40 p-3">
                         <div class="flex flex-wrap items-start justify-between gap-2">
                             <div class="min-w-0">
                                 <p class="break-all text-sm font-semibold text-gray-900">
@@ -1174,14 +1117,7 @@ const peakHour2h = computed(() => {
                                 <p class="text-xs text-gray-500">ID: {{ admin.id }}</p>
                             </div>
                             <div class="flex shrink-0 items-center gap-2">
-                                <span
-                                    class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="
-                                        admin.is_premium
-                                            ? 'bg-emerald-50 text-emerald-700'
-                                            : 'bg-gray-100 text-gray-600'
-                                    "
-                                >
+                                <span class="rounded-full px-2 py-1 text-xs font-semibold" :class="admin.is_premium ? 'bg-emerald-50 text-emerald-700' : 'bg-gray-100 text-gray-600'">
                                     {{ admin.is_premium ? "プレミアム有効" : "プレミアム無効" }}
                                 </span>
                                 <button
@@ -1190,37 +1126,23 @@ const peakHour2h = computed(() => {
                                     :disabled="!!adminPurchaseSaving[String(admin.id)]"
                                     @click="saveAdminScopes(admin)"
                                 >
-                                    {{ adminPurchaseSaving[String(admin.id)] ? '保存中...' : '保存' }}
+                                    {{ adminPurchaseSaving[String(admin.id)] ? "保存中..." : "保存" }}
                                 </button>
                             </div>
                         </div>
 
                         <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
-                            <label
-                                v-for="scope in adminScopeOptions"
-                                :key="`${admin.id}-${scope.key}`"
-                                class="flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 text-xs"
-                            >
-                                <input
-                                    :checked="isAdminScopeChecked(admin, scope.key)"
-                                    type="checkbox"
-                                    class="h-3.5 w-3.5 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                                    @change="setAdminScopeChecked(admin, scope.key, $event.target.checked)"
-                                />
+                            <label v-for="scope in adminScopeOptions" :key="`${admin.id}-${scope.key}`" class="flex cursor-pointer items-center gap-2 rounded-md border border-gray-200 bg-white px-2 py-1.5 text-xs">
+                                <input :checked="isAdminScopeChecked(admin, scope.key)" type="checkbox" class="h-3.5 w-3.5 rounded border-gray-300 text-purple-600 focus:ring-purple-500" @change="setAdminScopeChecked(admin, scope.key, $event.target.checked)" />
                                 <span class="rounded-full px-1.5 py-0.5 font-semibold" :class="scope.badgeClass">{{ scope.label }}</span>
                             </label>
                         </div>
                     </div>
                 </div>
-                <p v-else class="mt-2 text-sm text-gray-500">
-                    管理者ユーザーは登録されていません。
-                </p>
+                <p v-else class="mt-2 text-sm text-gray-500">管理者ユーザーは登録されていません。</p>
             </div>
 
-            <div
-                v-if="activeTab === 'operations'"
-                class="mt-6 space-y-4"
-            >
+            <div v-if="activeTab === 'operations'" class="mt-6 space-y-4">
                 <div class="rounded-xl border border-gray-100 bg-white p-4">
                     <div class="flex flex-wrap items-start justify-between gap-3">
                         <div>
@@ -1230,51 +1152,24 @@ const peakHour2h = computed(() => {
                     </div>
 
                     <div class="mt-4 grid gap-3 sm:grid-cols-4">
-                        <Link
-                            :href="route(adminContactsRoute)"
-                            class="relative rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-left text-gray-600 transition hover:bg-gray-100"
-                        >
-                            <span
-                                v-if="newContactCount > 0"
-                                class="absolute right-3 top-3 inline-flex min-w-[1.35rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white"
-                            >
+                        <Link :href="route(adminContactsRoute)" class="relative rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-left text-gray-600 transition hover:bg-gray-100">
+                            <span v-if="newContactCount > 0" class="absolute right-3 top-3 inline-flex min-w-[1.35rem] items-center justify-center rounded-full bg-rose-500 px-1.5 py-0.5 text-[11px] font-bold leading-none text-white">
                                 {{ newContactCount }}
                             </span>
                             <div class="text-sm font-bold">問い合わせ管理</div>
                             <div class="mt-1 text-xs opacity-75">
-                                {{ newContactCount > 0 ? `未対応 ${newContactCount}件` : '対応状況とメモを確認' }}
+                                {{ newContactCount > 0 ? `未対応 ${newContactCount}件` : "対応状況とメモを確認" }}
                             </div>
                         </Link>
-                        <button
-                            type="button"
-                            class="rounded-xl border px-4 py-3 text-left transition"
-                            :class="operationsTab === 'exam-results'
-                                ? 'border-purple-200 bg-purple-50 text-purple-700'
-                                : 'border-gray-100 bg-gray-50 text-gray-600 hover:bg-gray-100'"
-                            @click="operationsTab = 'exam-results'"
-                        >
+                        <button type="button" class="rounded-xl border px-4 py-3 text-left transition" :class="operationsTab === 'exam-results' ? 'border-purple-200 bg-purple-50 text-purple-700' : 'border-gray-100 bg-gray-50 text-gray-600 hover:bg-gray-100'" @click="operationsTab = 'exam-results'">
                             <div class="text-sm font-bold">点数入力状況</div>
                             <div class="mt-1 text-xs opacity-75">入力数・科目別・最近の入力</div>
                         </button>
-                        <button
-                            type="button"
-                            class="rounded-xl border px-4 py-3 text-left transition"
-                            :class="operationsTab === 'releases'
-                                ? 'border-purple-200 bg-purple-50 text-purple-700'
-                                : 'border-gray-100 bg-gray-50 text-gray-600 hover:bg-gray-100'"
-                            @click="operationsTab = 'releases'"
-                        >
+                        <button type="button" class="rounded-xl border px-4 py-3 text-left transition" :class="operationsTab === 'releases' ? 'border-purple-200 bg-purple-50 text-purple-700' : 'border-gray-100 bg-gray-50 text-gray-600 hover:bg-gray-100'" @click="operationsTab = 'releases'">
                             <div class="text-sm font-bold">リリース管理</div>
                             <div class="mt-1 text-xs opacity-75">公開・非公開を切り替え</div>
                         </button>
-                        <button
-                            type="button"
-                            class="rounded-xl border px-4 py-3 text-left transition"
-                            :class="operationsTab === 'schedule'
-                                ? 'border-purple-200 bg-purple-50 text-purple-700'
-                                : 'border-gray-100 bg-gray-50 text-gray-600 hover:bg-gray-100'"
-                            @click="operationsTab = 'schedule'"
-                        >
+                        <button type="button" class="rounded-xl border px-4 py-3 text-left transition" :class="operationsTab === 'schedule' ? 'border-purple-200 bg-purple-50 text-purple-700' : 'border-gray-100 bg-gray-50 text-gray-600 hover:bg-gray-100'" @click="operationsTab = 'schedule'">
                             <div class="text-sm font-bold">スケジュール</div>
                             <div class="mt-1 text-xs opacity-75">年度別の解説作成予定</div>
                         </button>
@@ -1282,98 +1177,85 @@ const peakHour2h = computed(() => {
                 </div>
 
                 <template v-if="operationsTab === 'exam-results'">
-                <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <div class="flex flex-wrap items-end justify-between gap-2">
-                        <div>
-                            <h2 class="text-sm font-semibold text-gray-900">点数入力状況</h2>
-                            <p class="mt-1 text-xs text-gray-500">生保講座の本番試験点数の入力状況を確認できます。</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
-                        <div class="rounded-xl bg-purple-50 p-4">
-                            <p class="text-xs font-semibold text-purple-700">入力ユーザー</p>
-                            <p class="mt-1 text-2xl font-bold text-gray-900">{{ formatNumber(examResultSummary.users) }}</p>
-                        </div>
-                        <div class="rounded-xl bg-gray-50 p-4">
-                            <p class="text-xs font-semibold text-gray-500">入力件数</p>
-                            <p class="mt-1 text-2xl font-bold text-gray-900">{{ formatNumber(examResultSummary.entries) }}</p>
-                        </div>
-                        <div class="rounded-xl bg-rose-50 p-4">
-                            <p class="text-xs font-semibold text-rose-700">今日の入力</p>
-                            <p class="mt-1 text-2xl font-bold text-gray-900">{{ formatNumber(examResultSummary.todayEntries) }}</p>
-                        </div>
-                        <div class="rounded-xl bg-blue-50 p-4">
-                            <p class="text-xs font-semibold text-blue-700">平均点</p>
-                            <p class="mt-1 text-2xl font-bold text-gray-900">
-                                {{ examResultSummary.averageScore ?? '-' }}<span v-if="examResultSummary.averageScore !== null" class="ml-0.5 text-sm text-gray-500">点</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]">
                     <div class="rounded-xl border border-gray-100 bg-white p-4">
-                        <h3 class="text-sm font-semibold text-gray-900">最近の入力</h3>
-                        <div class="mt-3 space-y-2">
-                            <div
-                                v-for="entry in examResultRecentEntries"
-                                :key="`exam-entry-${entry.id}`"
-                                class="rounded-lg border border-gray-100 px-3 py-2"
-                            >
-                                <div class="flex items-start justify-between gap-3">
-                                    <div class="min-w-0">
-                                        <p class="truncate text-sm font-semibold text-gray-900">{{ subjectLabel(entry.scope, entry.subjectKey) }}</p>
-                                        <p class="break-all text-xs text-gray-500">{{ entry.email }}</p>
-                                    </div>
-                                    <div class="shrink-0 text-right">
-                                        <p class="text-sm font-bold text-rose-600">{{ entry.score }}点</p>
-                                        <p class="text-[11px] text-gray-400">{{ formatDateTime(entry.updatedAt) }}</p>
-                                    </div>
-                                </div>
-                                <div class="mt-1 flex flex-wrap items-center gap-2 text-[11px] text-gray-500">
-                                    <span v-if="entry.examDate">受験日 {{ entry.examDate }}</span>
-                                </div>
+                        <div class="flex flex-wrap items-end justify-between gap-2">
+                            <div>
+                                <h2 class="text-sm font-semibold text-gray-900">点数入力状況</h2>
+                                <p class="mt-1 text-xs text-gray-500">生保講座の本番試験点数の入力状況を確認できます。</p>
                             </div>
-                            <p v-if="!examResultRecentEntries.length" class="text-sm text-gray-500">まだ入力はありません。</p>
+                        </div>
+
+                        <div class="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+                            <div class="rounded-xl bg-purple-50 p-4">
+                                <p class="text-xs font-semibold text-purple-700">入力ユーザー</p>
+                                <p class="mt-1 text-2xl font-bold text-gray-900">{{ formatNumber(examResultSummary.users) }}</p>
+                            </div>
+                            <div class="rounded-xl bg-gray-50 p-4">
+                                <p class="text-xs font-semibold text-gray-500">入力件数</p>
+                                <p class="mt-1 text-2xl font-bold text-gray-900">{{ formatNumber(examResultSummary.entries) }}</p>
+                            </div>
+                            <div class="rounded-xl bg-rose-50 p-4">
+                                <p class="text-xs font-semibold text-rose-700">今日の入力</p>
+                                <p class="mt-1 text-2xl font-bold text-gray-900">{{ formatNumber(examResultSummary.todayEntries) }}</p>
+                            </div>
+                            <div class="rounded-xl bg-blue-50 p-4">
+                                <p class="text-xs font-semibold text-blue-700">平均点</p>
+                                <p class="mt-1 text-2xl font-bold text-gray-900">{{ examResultSummary.averageScore ?? "-" }}<span v-if="examResultSummary.averageScore !== null" class="ml-0.5 text-sm text-gray-500">点</span></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="rounded-xl border border-gray-100 bg-white p-4">
-                    <h3 class="text-sm font-semibold text-gray-900">科目別</h3>
-                    <div class="mt-3 overflow-x-auto">
-                        <table class="min-w-full divide-y divide-gray-100 text-left text-sm">
-                            <thead>
-                                <tr class="text-xs text-gray-500">
-                                    <th class="whitespace-nowrap py-2 pr-4 font-semibold">科目</th>
-                                    <th class="whitespace-nowrap py-2 pr-4 text-right font-semibold">人数</th>
-                                    <th class="whitespace-nowrap py-2 pr-4 text-right font-semibold">件数</th>
-                                    <th class="whitespace-nowrap py-2 text-right font-semibold">平均点</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-50">
-                                <tr
-                                    v-for="row in examResultSubjectSummary"
-                                    :key="`exam-subject-${row.scope}-${row.subjectKey}`"
-                                    class="text-gray-700"
-                                >
-                                    <td class="whitespace-nowrap py-2 pr-4 font-semibold text-gray-900">{{ subjectLabel(row.scope, row.subjectKey) }}</td>
-                                    <td class="whitespace-nowrap py-2 pr-4 text-right">{{ formatNumber(row.users) }}</td>
-                                    <td class="whitespace-nowrap py-2 pr-4 text-right">{{ formatNumber(row.entries) }}</td>
-                                    <td class="whitespace-nowrap py-2 text-right">{{ row.averageScore ?? '-' }}点</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p v-if="!examResultSubjectSummary.length" class="py-4 text-sm text-gray-500">まだ入力はありません。</p>
+
+                    <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]">
+                        <div class="rounded-xl border border-gray-100 bg-white p-4">
+                            <h3 class="text-sm font-semibold text-gray-900">最近の入力</h3>
+                            <div class="mt-3 space-y-2">
+                                <div v-for="entry in examResultRecentEntries" :key="`exam-entry-${entry.id}`" class="rounded-lg border border-gray-100 px-3 py-2">
+                                    <div class="flex items-start justify-between gap-3">
+                                        <div class="min-w-0">
+                                            <p class="truncate text-sm font-semibold text-gray-900">{{ subjectLabel(entry.scope, entry.subjectKey) }}</p>
+                                            <p class="break-all text-xs text-gray-500">{{ entry.email }}</p>
+                                        </div>
+                                        <div class="shrink-0 text-right">
+                                            <p class="text-sm font-bold text-rose-600">{{ entry.score }}点</p>
+                                            <p class="text-[11px] text-gray-400">{{ formatDateTime(entry.updatedAt) }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-1 flex flex-wrap items-center gap-2 text-[11px] text-gray-500">
+                                        <span v-if="entry.examDate">受験日 {{ entry.examDate }}</span>
+                                    </div>
+                                </div>
+                                <p v-if="!examResultRecentEntries.length" class="text-sm text-gray-500">まだ入力はありません。</p>
+                            </div>
+                        </div>
+                        <div class="rounded-xl border border-gray-100 bg-white p-4">
+                            <h3 class="text-sm font-semibold text-gray-900">科目別</h3>
+                            <div class="mt-3 overflow-x-auto">
+                                <table class="min-w-full divide-y divide-gray-100 text-left text-sm">
+                                    <thead>
+                                        <tr class="text-xs text-gray-500">
+                                            <th class="whitespace-nowrap py-2 pr-4 font-semibold">科目</th>
+                                            <th class="whitespace-nowrap py-2 pr-4 text-right font-semibold">人数</th>
+                                            <th class="whitespace-nowrap py-2 pr-4 text-right font-semibold">件数</th>
+                                            <th class="whitespace-nowrap py-2 text-right font-semibold">平均点</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-50">
+                                        <tr v-for="row in examResultSubjectSummary" :key="`exam-subject-${row.scope}-${row.subjectKey}`" class="text-gray-700">
+                                            <td class="whitespace-nowrap py-2 pr-4 font-semibold text-gray-900">{{ subjectLabel(row.scope, row.subjectKey) }}</td>
+                                            <td class="whitespace-nowrap py-2 pr-4 text-right">{{ formatNumber(row.users) }}</td>
+                                            <td class="whitespace-nowrap py-2 pr-4 text-right">{{ formatNumber(row.entries) }}</td>
+                                            <td class="whitespace-nowrap py-2 text-right">{{ row.averageScore ?? "-" }}点</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p v-if="!examResultSubjectSummary.length" class="py-4 text-sm text-gray-500">まだ入力はありません。</p>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
                 </template>
             </div>
 
-            <div
-                v-if="activeTab === 'sales' || (activeTab === 'users' && activeMemberTab === 'premium')"
-                class="mt-6 rounded-xl border border-gray-100 bg-white p-4"
-            >
+            <div v-if="activeTab === 'sales' || (activeTab === 'users' && activeMemberTab === 'premium')" class="mt-6 rounded-xl border border-gray-100 bg-white p-4">
                 <div v-if="activeTab === 'sales'" class="mb-4 inline-flex max-w-full overflow-x-auto rounded-xl border border-gray-200 bg-gray-100/80 p-1 text-xs font-bold shadow-inner">
                     <button
                         v-for="tab in [
@@ -1385,9 +1267,7 @@ const peakHour2h = computed(() => {
                         :key="`sales-${tab.key}`"
                         type="button"
                         class="whitespace-nowrap rounded-lg px-3 py-2 transition sm:px-5"
-                        :class="salesTab === tab.key
-                            ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200'
-                            : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
+                        :class="salesTab === tab.key ? 'bg-white text-gray-900 shadow-sm ring-1 ring-gray-200' : 'text-gray-500 hover:bg-white/70 hover:text-gray-700'"
                         @click="salesTab = tab.key"
                     >
                         {{ tab.label }}
@@ -1397,16 +1277,8 @@ const peakHour2h = computed(() => {
                 <div v-if="salesTab === 'overview' || salesTab === 'daily' || salesTab === 'monthly'" class="mb-4 flex flex-wrap items-center gap-2">
                     <template v-if="salesTab === 'overview'">
                         <label for="overview-period-filter" class="ml-0 text-xs font-semibold text-gray-600 sm:ml-2">期間</label>
-                        <select
-                            id="overview-period-filter"
-                            v-model="overviewPeriodFilter"
-                            class="min-w-[7rem] rounded-lg border border-gray-200 bg-white py-1.5 pl-2.5 pr-9 text-xs text-gray-700"
-                        >
-                            <option
-                                v-for="option in overviewPeriodOptions"
-                                :key="`overview-period-${option.value}`"
-                                :value="option.value"
-                            >
+                        <select id="overview-period-filter" v-model="overviewPeriodFilter" class="min-w-[7rem] rounded-lg border border-gray-200 bg-white py-1.5 pl-2.5 pr-9 text-xs text-gray-700">
+                            <option v-for="option in overviewPeriodOptions" :key="`overview-period-${option.value}`" :value="option.value">
                                 {{ option.label }}
                             </option>
                         </select>
@@ -1446,7 +1318,6 @@ const peakHour2h = computed(() => {
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div v-if="salesTab === 'adsense'" class="space-y-3">
@@ -1469,31 +1340,15 @@ const peakHour2h = computed(() => {
                         <form class="grid gap-3 md:grid-cols-[10rem_10rem_auto]" @submit.prevent="submitAdsenseRevenue">
                             <div>
                                 <label class="block text-[11px] font-semibold text-gray-600">年月</label>
-                                <input
-                                    v-model="adsenseForm.revenue_month"
-                                    type="month"
-                                    class="mt-1 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700"
-                                    required
-                                />
+                                <input v-model="adsenseForm.revenue_month" type="month" class="mt-1 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700" required />
                             </div>
                             <div>
                                 <label class="block text-[11px] font-semibold text-gray-600">金額（円）</label>
-                                <input
-                                    v-model="adsenseForm.amount_yen"
-                                    type="number"
-                                    min="0"
-                                    inputmode="numeric"
-                                    class="mt-1 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700"
-                                    required
-                                />
+                                <input v-model="adsenseForm.amount_yen" type="number" min="0" inputmode="numeric" class="mt-1 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700" required />
                             </div>
                             <div class="flex items-end">
-                                <button
-                                    type="submit"
-                                    class="w-full rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-600 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto"
-                                    :disabled="adsenseSaving"
-                                >
-                                    {{ adsenseSaving ? '保存中' : '保存' }}
+                                <button type="submit" class="w-full rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-600 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto" :disabled="adsenseSaving">
+                                    {{ adsenseSaving ? "保存中" : "保存" }}
                                 </button>
                             </div>
                         </form>
@@ -1511,21 +1366,11 @@ const peakHour2h = computed(() => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr
-                                        v-for="row in adsenseRevenueDaily"
-                                        :key="`adsense-month-${row.id}`"
-                                        class="border-t border-gray-100"
-                                    >
+                                    <tr v-for="row in adsenseRevenueDaily" :key="`adsense-month-${row.id}`" class="border-t border-gray-100">
                                         <td class="whitespace-nowrap px-3 py-2 font-mono text-[11px] text-gray-700">{{ String(row.date).slice(0, 7) }}</td>
                                         <td class="whitespace-nowrap px-3 py-2 text-gray-700">{{ formatYen(row.amountYen) }}</td>
                                         <td class="whitespace-nowrap px-3 py-2 text-right">
-                                            <button
-                                                type="button"
-                                                class="text-[11px] font-semibold text-rose-600 hover:text-rose-700"
-                                                @click="deleteAdsenseRevenue(row)"
-                                            >
-                                                削除
-                                            </button>
+                                            <button type="button" class="text-[11px] font-semibold text-rose-600 hover:text-rose-700" @click="deleteAdsenseRevenue(row)">削除</button>
                                         </td>
                                     </tr>
                                     <tr v-if="adsenseRevenueDaily.length === 0">
@@ -1576,11 +1421,7 @@ const peakHour2h = computed(() => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr
-                                        v-for="row in stats.salesInsights?.topPageViews ?? []"
-                                        :key="`top-page-${row.path}`"
-                                        class="border-t border-gray-100"
-                                    >
+                                    <tr v-for="row in stats.salesInsights?.topPageViews ?? []" :key="`top-page-${row.path}`" class="border-t border-gray-100">
                                         <td class="px-3 py-2 font-mono text-[11px] text-gray-700">{{ row.path }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ row.views }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ row.uniqueSessions }}</td>
@@ -1608,11 +1449,7 @@ const peakHour2h = computed(() => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr
-                                        v-for="row in dailyPageViews"
-                                        :key="`daily-pv-${row.day}`"
-                                        class="border-t border-gray-100"
-                                    >
+                                    <tr v-for="row in dailyPageViews" :key="`daily-pv-${row.day}`" class="border-t border-gray-100">
                                         <td class="px-3 py-2 font-mono text-[11px] text-gray-700">{{ row.day }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.views) }}</td>
                                         <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.uniqueSessions) }}</td>
@@ -1641,11 +1478,11 @@ const peakHour2h = computed(() => {
                         </div>
                         <div class="rounded-lg border border-violet-100 bg-white p-3">
                             <p class="text-[11px] font-semibold tracking-wide text-violet-700">生保講座</p>
-                            <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('seiho').users) }}</p>
+                            <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope("seiho").users) }}</p>
                         </div>
                         <div class="rounded-lg border border-blue-100 bg-white p-3">
                             <p class="text-[11px] font-semibold tracking-wide text-blue-700">生保大学</p>
-                            <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope('daigaku').users) }}</p>
+                            <p class="mt-1 text-2xl font-extrabold text-slate-900">{{ formatNumber(premiumUsageForScope("daigaku").users) }}</p>
                         </div>
                     </div>
 
@@ -1657,24 +1494,16 @@ const peakHour2h = computed(() => {
                             </div>
                         </div>
                         <div class="divide-y divide-violet-50 md:hidden">
-                            <div
-                                v-for="row in premiumUsageSeihoSubjects"
-                                :key="`premium-subject-card-${row.subjectKey}`"
-                                class="flex items-center justify-between gap-3 p-3"
-                            >
+                            <div v-for="row in premiumUsageSeihoSubjects" :key="`premium-subject-card-${row.subjectKey}`" class="flex items-center justify-between gap-3 p-3">
                                 <div class="min-w-0">
                                     <p class="truncate text-xs font-semibold text-gray-800">
-                                        {{ row.subjectName || subjectLabel('seiho', row.subjectKey) }}
+                                        {{ row.subjectName || subjectLabel("seiho", row.subjectKey) }}
                                     </p>
-                                    <p class="mt-0.5 text-[11px] text-gray-500">
-                                        利用者 {{ formatNumber(row.users) }} / セッション {{ formatNumber(row.sessions) }}
-                                    </p>
+                                    <p class="mt-0.5 text-[11px] text-gray-500">利用者 {{ formatNumber(row.users) }} / セッション {{ formatNumber(row.sessions) }}</p>
                                 </div>
                                 <p class="shrink-0 text-sm font-extrabold text-violet-700">{{ formatNumber(row.views) }} PV</p>
                             </div>
-                            <div v-if="premiumUsageSeihoSubjects.length === 0" class="px-3 py-5 text-center text-xs text-gray-500">
-                                データがありません。
-                            </div>
+                            <div v-if="premiumUsageSeihoSubjects.length === 0" class="px-3 py-5 text-center text-xs text-gray-500">データがありません。</div>
                         </div>
                         <table class="hidden min-w-full text-xs md:table">
                             <thead class="bg-violet-50/60 text-left text-gray-500">
@@ -1686,13 +1515,9 @@ const peakHour2h = computed(() => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr
-                                    v-for="row in premiumUsageSeihoSubjects"
-                                    :key="`premium-subject-${row.subjectKey}`"
-                                    class="border-t border-gray-100"
-                                >
+                                <tr v-for="row in premiumUsageSeihoSubjects" :key="`premium-subject-${row.subjectKey}`" class="border-t border-gray-100">
                                     <td class="px-3 py-2 font-semibold text-gray-700">
-                                        {{ row.subjectName || subjectLabel('seiho', row.subjectKey) }}
+                                        {{ row.subjectName || subjectLabel("seiho", row.subjectKey) }}
                                     </td>
                                     <td class="px-3 py-2 text-right font-bold text-violet-700">{{ formatNumber(row.views) }}</td>
                                     <td class="px-3 py-2 text-right text-gray-700">{{ formatNumber(row.users) }}</td>
@@ -1712,20 +1537,13 @@ const peakHour2h = computed(() => {
                                 <p class="font-mono text-[11px] text-gray-500">ID {{ row.userId }}</p>
                                 <p class="mt-1 break-all text-xs font-semibold leading-5 text-gray-800">{{ row.email }}</p>
                                 <div class="mt-2 flex flex-wrap gap-1">
-                                    <span
-                                        v-for="scope in row.scopes"
-                                        :key="`premium-user-card-${row.userId}-${scope}`"
-                                        class="inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold"
-                                        :class="scopeClass(scope)"
-                                    >
+                                    <span v-for="scope in row.scopes" :key="`premium-user-card-${row.userId}-${scope}`" class="inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold" :class="scopeClass(scope)">
                                         {{ scopeLabel(scope) }}
                                     </span>
                                 </div>
                                 <p class="mt-2 font-mono text-[10px] text-gray-500">最終利用 {{ row.lastSeenAt }}</p>
                             </div>
-                            <div v-if="premiumUsageUsers.length === 0" class="px-3 py-5 text-center text-xs text-gray-500">
-                                データがありません。
-                            </div>
+                            <div v-if="premiumUsageUsers.length === 0" class="px-3 py-5 text-center text-xs text-gray-500">データがありません。</div>
                         </div>
                         <table class="hidden min-w-full text-xs md:table">
                             <thead class="bg-gray-50 text-left text-gray-500">
@@ -1741,12 +1559,7 @@ const peakHour2h = computed(() => {
                                     <td class="px-3 py-2 font-mono text-[11px] text-gray-500">{{ row.userId }}</td>
                                     <td class="px-3 py-2 text-gray-700">{{ row.email }}</td>
                                     <td class="px-3 py-2">
-                                        <span
-                                            v-for="scope in row.scopes"
-                                            :key="`premium-user-${row.userId}-${scope}`"
-                                            class="mr-1 inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold"
-                                            :class="scopeClass(scope)"
-                                        >
+                                        <span v-for="scope in row.scopes" :key="`premium-user-${row.userId}-${scope}`" class="mr-1 inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold" :class="scopeClass(scope)">
                                             {{ scopeLabel(scope) }}
                                         </span>
                                     </td>
@@ -1773,11 +1586,7 @@ const peakHour2h = computed(() => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr
-                                        v-for="row in stats.salesInsights?.scopeBreakdown ?? []"
-                                        :key="`scope-${row.scope}`"
-                                        class="border-t border-gray-100"
-                                    >
+                                    <tr v-for="row in stats.salesInsights?.scopeBreakdown ?? []" :key="`scope-${row.scope}`" class="border-t border-gray-100">
                                         <td class="px-3 py-2 text-gray-700">
                                             <span class="rounded-full px-2 py-1 text-xs font-semibold" :class="scopeClass(row.scope)">
                                                 {{ scopeLabel(row.scope) }}
@@ -1799,7 +1608,7 @@ const peakHour2h = computed(() => {
                     <div>
                         <div class="mb-3 flex items-center justify-between text-xs">
                             <span class="font-semibold text-gray-700">日次売上</span>
-                            <span class="text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</span>
+                            <span class="text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? "全試験" }}</span>
                         </div>
                         <div v-if="dailyCalendar" class="rounded-lg border border-gray-100 p-2 sm:p-3">
                             <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
@@ -1813,15 +1622,8 @@ const peakHour2h = computed(() => {
                                     >
                                         前月
                                     </button>
-                                    <select
-                                        v-model="dailyCalendarMonthKey"
-                                        class="w-[6.75rem] rounded border border-gray-200 bg-white py-1 pl-2 pr-8 text-[10px] text-gray-700"
-                                    >
-                                        <option
-                                            v-for="m in dailyAvailableMonths"
-                                            :key="`month-opt-${m}`"
-                                            :value="m"
-                                        >
+                                    <select v-model="dailyCalendarMonthKey" class="w-[6.75rem] rounded border border-gray-200 bg-white py-1 pl-2 pr-8 text-[10px] text-gray-700">
+                                        <option v-for="m in dailyAvailableMonths" :key="`month-opt-${m}`" :value="m">
                                             {{ m }}
                                         </option>
                                     </select>
@@ -1836,7 +1638,13 @@ const peakHour2h = computed(() => {
                                 </div>
                             </div>
                             <div class="mb-1 grid grid-cols-7 gap-0.5 text-center text-[10px] text-gray-500 sm:gap-1">
-                                <div>日</div><div>月</div><div>火</div><div>水</div><div>木</div><div>金</div><div>土</div>
+                                <div>日</div>
+                                <div>月</div>
+                                <div>火</div>
+                                <div>水</div>
+                                <div>木</div>
+                                <div>金</div>
+                                <div>土</div>
                             </div>
                             <div class="grid grid-cols-7 gap-0.5 sm:gap-1">
                                 <div
@@ -1844,26 +1652,19 @@ const peakHour2h = computed(() => {
                                     :key="`cal-${idx}`"
                                     class="relative min-h-[46px] overflow-hidden rounded border px-0.5 py-1 sm:min-h-[48px] sm:p-1"
                                     :class="cell.empty ? 'border-transparent bg-transparent' : cell.isToday ? 'border-2 border-blue-700 ring-2 ring-blue-200' : 'border-gray-100'"
-                                    :style="!cell.empty ? {
-                                        backgroundColor:
-                                            cell.level === 4 ? '#7c3aed'
-                                            : cell.level === 3 ? '#a78bfa'
-                                            : cell.level === 2 ? '#ddd6fe'
-                                            : cell.level === 1 ? '#f3f0ff'
-                                            : '#ffffff',
-                                    } : {}"
+                                    :style="
+                                        !cell.empty
+                                            ? {
+                                                  backgroundColor: cell.level === 4 ? '#7c3aed' : cell.level === 3 ? '#a78bfa' : cell.level === 2 ? '#ddd6fe' : cell.level === 1 ? '#f3f0ff' : '#ffffff',
+                                              }
+                                            : {}
+                                    "
                                 >
                                     <template v-if="!cell.empty">
-                                        <div
-                                            class="text-[10px] font-semibold leading-3"
-                                            :class="cell.level >= 3 ? 'text-white' : 'text-gray-700'"
-                                        >
+                                        <div class="text-[10px] font-semibold leading-3" :class="cell.level >= 3 ? 'text-white' : 'text-gray-700'">
                                             {{ cell.day }}
                                         </div>
-                                        <div
-                                            class="mt-1 whitespace-nowrap text-center text-[8px] font-bold leading-3 tracking-[-0.08em] sm:text-[10px] sm:tracking-tight"
-                                            :class="cell.level >= 3 ? 'text-white/90' : 'text-gray-600'"
-                                        >
+                                        <div class="mt-1 whitespace-nowrap text-center text-[8px] font-bold leading-3 tracking-[-0.08em] sm:text-[10px] sm:tracking-tight" :class="cell.level >= 3 ? 'text-white/90' : 'text-gray-600'">
                                             {{ formatCalendarAmount(cell.amount) }}
                                         </div>
                                     </template>
@@ -1876,24 +1677,14 @@ const peakHour2h = computed(() => {
                     <div class="mt-4 rounded-lg border border-gray-100 bg-white p-3">
                         <div class="mb-3 flex items-center justify-between gap-2">
                             <p class="text-xs font-semibold text-gray-700">売上ランキング TOP20</p>
-                            <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
+                            <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? "全試験" }}</p>
                         </div>
                         <div v-if="topDailySales.length" class="space-y-2">
-                            <div
-                                v-for="(row, index) in topDailySales"
-                                :key="`top-daily-${row.day}`"
-                                class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-gray-50 px-3 py-2"
-                            >
+                            <div v-for="(row, index) in topDailySales" :key="`top-daily-${row.day}`" class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-gray-50 px-3 py-2">
                                 <div class="flex min-w-0 items-center gap-3">
                                     <span
                                         class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold"
-                                        :class="index === 0
-                                            ? 'bg-amber-100 text-amber-700'
-                                            : index === 1
-                                              ? 'bg-slate-200 text-slate-700'
-                                              : index === 2
-                                                ? 'bg-orange-100 text-orange-700'
-                                                : 'bg-purple-50 text-purple-700'"
+                                        :class="index === 0 ? 'bg-amber-100 text-amber-700' : index === 1 ? 'bg-slate-200 text-slate-700' : index === 2 ? 'bg-orange-100 text-orange-700' : 'bg-purple-50 text-purple-700'"
                                     >
                                         {{ index + 1 }}
                                     </span>
@@ -1914,15 +1705,11 @@ const peakHour2h = computed(() => {
                 <div v-if="salesTab === 'monthly'" class="mt-2 rounded-xl border border-gray-100 bg-gray-50/40 p-3">
                     <div class="mb-3 flex items-center justify-between gap-2">
                         <p class="text-sm font-semibold text-gray-900">月次売上</p>
-                        <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? '全試験' }}</p>
+                        <p class="text-[11px] text-gray-500">表示: {{ salesScopeOptions.find((o) => o.value === salesScopeFilter)?.label ?? "全試験" }}</p>
                     </div>
 
                     <div v-if="monthlySalesWithBreakdown.length" class="grid gap-2 lg:grid-cols-2">
-                        <div
-                            v-for="row in monthlySalesNewestFirst"
-                            :key="`month-card-${row.month}`"
-                            class="rounded-xl border border-gray-100 bg-white px-3 py-2.5 shadow-sm"
-                        >
+                        <div v-for="row in monthlySalesNewestFirst" :key="`month-card-${row.month}`" class="rounded-xl border border-gray-100 bg-white px-3 py-2.5 shadow-sm">
                             <div class="flex items-start justify-between gap-3">
                                 <div class="min-w-0">
                                     <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
@@ -1930,11 +1717,7 @@ const peakHour2h = computed(() => {
                                         <p class="text-[11px] font-semibold text-gray-400">{{ formatNumber(row.salesCount) }}件</p>
                                     </div>
                                     <div v-if="row.breakdown.length" class="mt-1.5 flex flex-wrap gap-1">
-                                        <span
-                                            v-for="item in row.breakdown"
-                                            :key="`month-card-${row.month}-${item.scope}`"
-                                            class="inline-flex items-center gap-1 rounded-full bg-gray-50 px-1.5 py-0.5 text-[10px] font-semibold text-gray-600"
-                                        >
+                                        <span v-for="item in row.breakdown" :key="`month-card-${row.month}-${item.scope}`" class="inline-flex items-center gap-1 rounded-full bg-gray-50 px-1.5 py-0.5 text-[10px] font-semibold text-gray-600">
                                             <span class="text-gray-900">{{ scopeShortLabel(item.scope) }}</span>
                                             <span>{{ formatYen(item.totalAmount) }}</span>
                                             <span class="text-gray-400">{{ formatNumber(item.salesCount) }}件</span>
@@ -1955,22 +1738,13 @@ const peakHour2h = computed(() => {
                     <div class="rounded-lg border border-gray-100 p-3">
                         <div class="mb-2 flex items-center justify-between text-xs">
                             <span class="font-semibold text-gray-700">曜日別売上件数</span>
-                            <span v-if="peakWeekday" class="rounded-full bg-indigo-50 px-2 py-1 font-semibold text-indigo-700">
-                                ピーク: {{ peakWeekday.day }}曜 {{ peakWeekday.salesCount }}件
-                            </span>
+                            <span v-if="peakWeekday" class="rounded-full bg-indigo-50 px-2 py-1 font-semibold text-indigo-700"> ピーク: {{ peakWeekday.day }}曜 {{ peakWeekday.salesCount }}件 </span>
                         </div>
                         <div class="space-y-2">
-                            <div
-                                v-for="row in stats.salesInsights?.weekdaySales ?? []"
-                                :key="`weekday-${row.day}`"
-                                class="grid grid-cols-[2rem_1fr_5rem_3rem] items-center gap-2"
-                            >
+                            <div v-for="row in stats.salesInsights?.weekdaySales ?? []" :key="`weekday-${row.day}`" class="grid grid-cols-[2rem_1fr_5rem_3rem] items-center gap-2">
                                 <div class="text-xs text-gray-600">{{ row.day }}</div>
                                 <div class="h-3 rounded bg-gray-100">
-                                    <div
-                                        class="h-3 rounded bg-indigo-500"
-                                        :style="{ width: `${barWidthPercent(row.salesCount, maxWeekdayCount)}%` }"
-                                    ></div>
+                                    <div class="h-3 rounded bg-indigo-500" :style="{ width: `${barWidthPercent(row.salesCount, maxWeekdayCount)}%` }"></div>
                                 </div>
                                 <div class="text-right text-[11px] text-gray-500">{{ ratioPercent(row.salesCount, totalSalesCount) }}%</div>
                                 <div class="text-right text-xs text-gray-700">{{ row.salesCount }}</div>
@@ -1983,22 +1757,13 @@ const peakHour2h = computed(() => {
                     <div class="rounded-lg border border-gray-100 p-3">
                         <div class="mb-2 flex items-center justify-between text-xs">
                             <span class="font-semibold text-gray-700">時間帯（2h）</span>
-                            <span v-if="peakHour2h" class="rounded-full bg-emerald-50 px-2 py-1 font-semibold text-emerald-700">
-                                {{ peakHour2h.hourRange }}時・{{ peakHour2h.salesCount }}件
-                            </span>
+                            <span v-if="peakHour2h" class="rounded-full bg-emerald-50 px-2 py-1 font-semibold text-emerald-700"> {{ peakHour2h.hourRange }}時・{{ peakHour2h.salesCount }}件 </span>
                         </div>
                         <div class="space-y-1.5">
-                            <div
-                                v-for="row in hourlySalesBy2Hours"
-                                :key="`hour-${row.hourRange}`"
-                                class="grid grid-cols-[4rem_1fr_5rem_3rem] items-center gap-2"
-                            >
+                            <div v-for="row in hourlySalesBy2Hours" :key="`hour-${row.hourRange}`" class="grid grid-cols-[4rem_1fr_5rem_3rem] items-center gap-2">
                                 <div class="text-xs text-gray-600">{{ row.hourRange }}時</div>
                                 <div class="h-3 rounded bg-gray-100">
-                                    <div
-                                        class="flex h-3 items-center justify-end rounded bg-emerald-500 pr-1"
-                                        :style="{ width: `${barWidthPercent(row.salesCount, maxHourly2hCount)}%` }"
-                                    >
+                                    <div class="flex h-3 items-center justify-end rounded bg-emerald-500 pr-1" :style="{ width: `${barWidthPercent(row.salesCount, maxHourly2hCount)}%` }">
                                         <span v-if="row.salesCount > 0" class="text-[9px] font-semibold leading-none text-white">{{ row.salesCount }}</span>
                                     </div>
                                 </div>
@@ -2011,240 +1776,162 @@ const peakHour2h = computed(() => {
             </div>
 
             <template v-if="activeTab === 'users' && activeMemberTab === 'members'">
-            <form
-                @submit.prevent="submitSearch"
-                class="mb-4 grid gap-2 md:grid-cols-[1.4fr_1fr_1fr_0.95fr_auto_auto]"
-            >
-                <input
-                    v-model="userSearch"
-                    type="search"
-                    placeholder="メールアドレスで検索"
-                    class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
-                />
-                <select
-                    v-model="registrationScope"
-                    @change="submitSearch"
-                    class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
-                >
-                    <option
-                        v-for="option in registrationScopeOptions"
-                        :key="option.value"
-                        :value="option.value"
-                    >
-                        {{ option.label }}
-                    </option>
-                </select>
-                <select
-                    v-model="purchaseState"
-                    @change="submitSearch"
-                    class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none"
-                >
-                    <option value="all">購入状況: すべて</option>
-                    <option value="purchased">購入あり</option>
-                    <option value="unpurchased">未購入</option>
-                </select>
-                <div class="relative flex min-w-0 flex-col gap-1 text-xs font-semibold text-gray-500">
-                    購入日
-                    <button
-                        type="button"
-                        class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white px-3 py-2 text-left text-sm font-normal text-gray-800 transition hover:border-purple-300 focus:border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-100"
-                        @click="togglePurchaseDatePicker"
-                    >
-                        <span :class="purchaseDate ? 'text-gray-800' : 'text-gray-400'">{{ formatPurchaseDate(purchaseDate) }}</span>
-                        <svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="13" height="11" rx="1.5" /><path d="M6.5 3v4M13.5 3v4M3.5 8.5h13" /></svg>
-                    </button>
+                <form @submit.prevent="submitSearch" class="mb-4 grid gap-2 md:grid-cols-[1.4fr_1fr_1fr_0.95fr_auto_auto]">
+                    <input v-model="userSearch" type="search" placeholder="メールアドレスで検索" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none" />
+                    <select v-model="registrationScope" @change="submitSearch" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none">
+                        <option v-for="option in registrationScopeOptions" :key="option.value" :value="option.value">
+                            {{ option.label }}
+                        </option>
+                    </select>
+                    <select v-model="purchaseState" @change="submitSearch" class="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:border-purple-300 focus:outline-none">
+                        <option value="all">購入状況: すべて</option>
+                        <option value="purchased">購入あり</option>
+                        <option value="unpurchased">未購入</option>
+                    </select>
+                    <div class="relative flex min-w-0 flex-col gap-1 text-xs font-semibold text-gray-500">
+                        購入日
+                        <button
+                            type="button"
+                            class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white px-3 py-2 text-left text-sm font-normal text-gray-800 transition hover:border-purple-300 focus:border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                            @click="togglePurchaseDatePicker"
+                        >
+                            <span :class="purchaseDate ? 'text-gray-800' : 'text-gray-400'">{{ formatPurchaseDate(purchaseDate) }}</span>
+                            <svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <rect x="3.5" y="5" width="13" height="11" rx="1.5" />
+                                <path d="M6.5 3v4M13.5 3v4M3.5 8.5h13" />
+                            </svg>
+                        </button>
 
-                    <div v-if="purchaseDatePickerOpen" class="absolute left-0 top-full z-30 mt-1 w-72 rounded-xl border border-gray-200 bg-white p-3 text-gray-700 shadow-xl">
-                        <div class="flex items-center justify-between gap-2">
-                            <button type="button" class="rounded-lg p-1.5 transition hover:bg-gray-100" aria-label="前月" @click="movePurchaseDateCalendarMonth(-1)">‹</button>
-                            <p class="text-sm font-black text-gray-900">{{ purchaseDateCalendarLabel }}</p>
-                            <button type="button" class="rounded-lg p-1.5 transition hover:bg-gray-100" aria-label="翌月" @click="movePurchaseDateCalendarMonth(1)">›</button>
-                        </div>
-                        <div class="mt-3 grid grid-cols-7 text-center text-[10px] font-bold text-gray-400">
-                            <span v-for="day in ['日', '月', '火', '水', '木', '金', '土']" :key="day" class="py-1">{{ day }}</span>
-                        </div>
-                        <div class="grid grid-cols-7 gap-y-0.5 text-center text-xs">
-                            <template v-for="cell in purchaseDateCalendarCells" :key="cell.key">
-                                <span v-if="cell.empty" class="h-8"></span>
+                        <div v-if="purchaseDatePickerOpen" class="absolute left-0 top-full z-30 mt-1 w-72 rounded-xl border border-gray-200 bg-white p-3 text-gray-700 shadow-xl">
+                            <div class="flex items-center justify-between gap-2">
+                                <button type="button" class="rounded-lg p-1.5 transition hover:bg-gray-100" aria-label="前月" @click="movePurchaseDateCalendarMonth(-1)">‹</button>
+                                <p class="text-sm font-black text-gray-900">{{ purchaseDateCalendarLabel }}</p>
+                                <button type="button" class="rounded-lg p-1.5 transition hover:bg-gray-100" aria-label="翌月" @click="movePurchaseDateCalendarMonth(1)">›</button>
+                            </div>
+                            <div class="mt-3 grid grid-cols-7 text-center text-[10px] font-bold text-gray-400">
+                                <span v-for="day in ['日', '月', '火', '水', '木', '金', '土']" :key="day" class="py-1">{{ day }}</span>
+                            </div>
+                            <div class="grid grid-cols-7 gap-y-0.5 text-center text-xs">
+                                <template v-for="cell in purchaseDateCalendarCells" :key="cell.key">
+                                    <span v-if="cell.empty" class="h-8"></span>
+                                    <button v-else type="button" class="h-8 rounded-lg font-semibold transition hover:bg-purple-50 hover:text-purple-700" :class="purchaseDate === cell.date ? 'bg-purple-600 text-white hover:bg-purple-600 hover:text-white' : ''" @click="selectPurchaseDate(cell.date)">
+                                        {{ cell.day }}
+                                    </button>
+                                </template>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between border-t border-gray-100 pt-2 text-xs font-bold">
+                                <button type="button" class="text-purple-600 hover:text-purple-800" @click="selectPurchaseDate(currentYmd())">今日</button>
                                 <button
-                                    v-else
                                     type="button"
-                                    class="h-8 rounded-lg font-semibold transition hover:bg-purple-50 hover:text-purple-700"
-                                    :class="purchaseDate === cell.date ? 'bg-purple-600 text-white hover:bg-purple-600 hover:text-white' : ''"
-                                    @click="selectPurchaseDate(cell.date)"
+                                    class="text-gray-400 hover:text-gray-600"
+                                    @click="
+                                        purchaseDate = '';
+                                        purchaseDatePickerOpen = false;
+                                    "
                                 >
-                                    {{ cell.day }}
+                                    クリア
                                 </button>
-                            </template>
-                        </div>
-                        <div class="mt-3 flex items-center justify-between border-t border-gray-100 pt-2 text-xs font-bold">
-                            <button type="button" class="text-purple-600 hover:text-purple-800" @click="selectPurchaseDate(currentYmd())">今日</button>
-                            <button type="button" class="text-gray-400 hover:text-gray-600" @click="purchaseDate = ''; purchaseDatePickerOpen = false">クリア</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <button
-                    type="submit"
-                    class="whitespace-nowrap rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700"
-                >
-                    検索
-                </button>
-                <button
-                    type="button"
-                    class="whitespace-nowrap rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50"
-                    @click="resetSearch"
-                >
-                    リセット
-                </button>
-            </form>
+                    <button type="submit" class="whitespace-nowrap rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-700">検索</button>
+                    <button type="button" class="whitespace-nowrap rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50" @click="resetSearch">リセット</button>
+                </form>
 
-            <div class="overflow-x-auto rounded-xl border border-gray-100 bg-white hidden md:block">
-                <table class="min-w-full text-sm">
-                    <thead class="bg-gray-50 text-left text-gray-600">
-                        <tr>
-                            <th class="px-3 py-2">ID</th>
-                            <th class="px-3 py-2">メール</th>
-                            <th class="px-3 py-2">登録経由</th>
-                            <th class="px-3 py-2">購入商品</th>
-                            <th class="px-3 py-2">登録日</th>
-                            <th class="px-3 py-2">最終購入日時</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr
-                            v-for="user in users.data"
-                            :key="user.id"
-                            class="border-t border-gray-100"
-                        >
-                            <td class="px-3 py-2 text-gray-700">
-                                {{ user.id }}
-                            </td>
-                            <td class="px-3 py-2 text-gray-700">
-                                {{ user.email }}
-                            </td>
-                            <td class="px-3 py-2 text-gray-700">
-                                <span
-                                    class="rounded-full px-2 py-1 text-xs font-semibold"
-                                    :class="registrationSourceClass(user)"
-                                >
+                <div class="overflow-x-auto rounded-xl border border-gray-100 bg-white hidden md:block">
+                    <table class="min-w-full text-sm">
+                        <thead class="bg-gray-50 text-left text-gray-600">
+                            <tr>
+                                <th class="px-3 py-2">ID</th>
+                                <th class="px-3 py-2">メール</th>
+                                <th class="px-3 py-2">登録経由</th>
+                                <th class="px-3 py-2">購入商品</th>
+                                <th class="px-3 py-2">登録日</th>
+                                <th class="px-3 py-2">最終購入日時</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="user in users.data" :key="user.id" class="border-t border-gray-100">
+                                <td class="px-3 py-2 text-gray-700">
+                                    {{ user.id }}
+                                </td>
+                                <td class="px-3 py-2 text-gray-700">
+                                    {{ user.email }}
+                                </td>
+                                <td class="px-3 py-2 text-gray-700">
+                                    <span class="rounded-full px-2 py-1 text-xs font-semibold" :class="registrationSourceClass(user)">
+                                        {{ registrationSourceLabel(user) }}
+                                    </span>
+                                </td>
+                                <td class="px-3 py-2 text-gray-700">
+                                    <div class="flex max-w-[340px] flex-wrap gap-1.5">
+                                        <span v-for="product in purchasedProducts(user)" :key="`${user.id}-${product.key}`" class="rounded-full px-2 py-1 text-xs font-semibold" :class="product.className">
+                                            {{ product.label }}
+                                        </span>
+                                        <span v-if="purchasedProducts(user).length === 0" class="rounded-full bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-600"> 未購入 </span>
+                                    </div>
+                                </td>
+                                <td class="px-3 py-2 text-gray-600">
+                                    {{ formatDateTime(user.created_at) }}
+                                </td>
+                                <td class="px-3 py-2 text-gray-600">
+                                    {{ formatDateTime(user.last_paid_at) }}
+                                </td>
+                            </tr>
+                            <tr v-if="users.data.length === 0">
+                                <td colspan="6" class="px-3 py-8 text-center text-sm text-gray-500">データがありません。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="space-y-3 md:hidden">
+                    <div v-for="user in users.data" :key="`mobile-${user.id}`" class="rounded-xl border border-gray-100 bg-white p-2.5">
+                        <div class="flex items-center justify-between gap-2">
+                            <div class="flex items-center gap-1.5">
+                                <p class="text-xs text-gray-500">ID: {{ user.id }}</p>
+                                <span class="rounded-full px-2 py-0.5 text-[10px] font-semibold" :class="registrationSourceClass(user)">
                                     {{ registrationSourceLabel(user) }}
                                 </span>
-                            </td>
-                            <td class="px-3 py-2 text-gray-700">
-                                <div class="flex max-w-[340px] flex-wrap gap-1.5">
-                                    <span
-                                        v-for="product in purchasedProducts(user)"
-                                        :key="`${user.id}-${product.key}`"
-                                        class="rounded-full px-2 py-1 text-xs font-semibold"
-                                        :class="product.className"
-                                    >
-                                        {{ product.label }}
-                                    </span>
-                                    <span
-                                        v-if="purchasedProducts(user).length === 0"
-                                        class="rounded-full bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-600"
-                                    >
-                                        未購入
-                                    </span>
-                                </div>
-                            </td>
-                            <td class="px-3 py-2 text-gray-600">
-                                {{ formatDateTime(user.created_at) }}
-                            </td>
-                            <td class="px-3 py-2 text-gray-600">
-                                {{ formatDateTime(user.last_paid_at) }}
-                            </td>
-                        </tr>
-                        <tr v-if="users.data.length === 0">
-                            <td
-                                colspan="6"
-                                class="px-3 py-8 text-center text-sm text-gray-500"
-                            >
-                                データがありません。
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="space-y-3 md:hidden">
-                <div
-                    v-for="user in users.data"
-                    :key="`mobile-${user.id}`"
-                    class="rounded-xl border border-gray-100 bg-white p-2.5"
-                >
-                    <div class="flex items-center justify-between gap-2">
-                        <div class="flex items-center gap-1.5">
-                            <p class="text-xs text-gray-500">ID: {{ user.id }}</p>
-                            <span
-                                class="rounded-full px-2 py-0.5 text-[10px] font-semibold"
-                                :class="registrationSourceClass(user)"
-                            >
-                                {{ registrationSourceLabel(user) }}
+                            </div>
+                            <span class="rounded-full px-2 py-0.5 text-[10px] font-semibold" :class="purchasedProducts(user).length > 0 ? 'bg-emerald-50 text-emerald-700' : 'bg-gray-100 text-gray-600'">
+                                {{ purchasedProducts(user).length > 0 ? "購入あり" : "未購入" }}
                             </span>
                         </div>
-                        <span
-                            class="rounded-full px-2 py-0.5 text-[10px] font-semibold"
-                            :class="purchasedProducts(user).length > 0 ? 'bg-emerald-50 text-emerald-700' : 'bg-gray-100 text-gray-600'"
+                        <p class="mt-1 text-sm font-semibold leading-snug text-gray-900 break-all">
+                            {{ user.email }}
+                        </p>
+
+                        <div class="mt-1.5 grid gap-0.5 text-[11px] text-gray-600">
+                            <p>登録日: {{ formatDateTime(user.created_at) }}</p>
+                            <p>最終購入: {{ formatDateTime(user.last_paid_at) }}</p>
+                        </div>
+                        <div v-if="purchasedProducts(user).length > 0" class="mt-1.5 flex flex-wrap gap-1">
+                            <span v-for="product in purchasedProducts(user)" :key="`mobile-${user.id}-${product.key}`" class="rounded-full px-2 py-0.5 text-[11px] font-semibold" :class="product.className">
+                                {{ product.label }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div v-if="users.data.length === 0" class="rounded-xl border border-gray-100 bg-white px-3 py-8 text-center text-sm text-gray-500">データがありません。</div>
+                </div>
+
+                <div v-if="users.links && users.links.length > 3" class="mt-4 flex flex-col gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                    <p class="text-xs text-gray-500">{{ users.from ?? 0 }}〜{{ users.to ?? 0 }}件 / 全{{ users.total ?? 0 }}件</p>
+                    <div class="flex flex-wrap gap-1">
+                        <button
+                            v-for="link in users.links"
+                            :key="`${link.label}-${link.url}`"
+                            type="button"
+                            class="min-w-[2.25rem] rounded-lg border px-3 py-1.5 text-xs font-semibold transition"
+                            :class="[link.active ? 'border-purple-500 bg-purple-600 text-white' : link.url ? 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50' : 'cursor-not-allowed border-gray-100 bg-gray-50 text-gray-300']"
+                            :disabled="!link.url"
+                            @click="goToPage(link.url)"
                         >
-                            {{ purchasedProducts(user).length > 0 ? "購入あり" : "未購入" }}
-                        </span>
-                    </div>
-                    <p class="mt-1 text-sm font-semibold leading-snug text-gray-900 break-all">
-                        {{ user.email }}
-                    </p>
-
-                    <div class="mt-1.5 grid gap-0.5 text-[11px] text-gray-600">
-                        <p>登録日: {{ formatDateTime(user.created_at) }}</p>
-                        <p>最終購入: {{ formatDateTime(user.last_paid_at) }}</p>
-                    </div>
-                    <div v-if="purchasedProducts(user).length > 0" class="mt-1.5 flex flex-wrap gap-1">
-                        <span
-                            v-for="product in purchasedProducts(user)"
-                            :key="`mobile-${user.id}-${product.key}`"
-                            class="rounded-full px-2 py-0.5 text-[11px] font-semibold"
-                            :class="product.className"
-                        >
-                            {{ product.label }}
-                        </span>
+                            {{ paginationLabel(link.label) }}
+                        </button>
                     </div>
                 </div>
-
-                <div
-                    v-if="users.data.length === 0"
-                    class="rounded-xl border border-gray-100 bg-white px-3 py-8 text-center text-sm text-gray-500"
-                >
-                    データがありません。
-                </div>
-            </div>
-
-            <div
-                v-if="users.links && users.links.length > 3"
-                class="mt-4 flex flex-col gap-3 rounded-xl border border-gray-100 bg-white px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
-            >
-                <p class="text-xs text-gray-500">
-                    {{ users.from ?? 0 }}〜{{ users.to ?? 0 }}件 / 全{{ users.total ?? 0 }}件
-                </p>
-                <div class="flex flex-wrap gap-1">
-                    <button
-                        v-for="link in users.links"
-                        :key="`${link.label}-${link.url}`"
-                        type="button"
-                        class="min-w-[2.25rem] rounded-lg border px-3 py-1.5 text-xs font-semibold transition"
-                        :class="[
-                            link.active
-                                ? 'border-purple-500 bg-purple-600 text-white'
-                                : link.url
-                                  ? 'border-gray-200 bg-white text-gray-600 hover:bg-gray-50'
-                                  : 'cursor-not-allowed border-gray-100 bg-gray-50 text-gray-300',
-                        ]"
-                        :disabled="!link.url"
-                        @click="goToPage(link.url)"
-                    >
-                        {{ paginationLabel(link.label) }}
-                    </button>
-                </div>
-            </div>
             </template>
 
             <!-- スケジュールタブ -->
@@ -2260,33 +1947,28 @@ const peakHour2h = computed(() => {
                     </div>
                     <div class="overflow-x-auto p-5">
                         <div class="min-w-[1080px]">
-                            <div class="grid border-b border-violet-200 text-center text-xs font-semibold text-slate-500" style="grid-template-columns: 320px repeat(14, minmax(0, 1fr));">
+                            <div class="grid border-b border-violet-200 text-center text-xs font-semibold text-slate-500" style="grid-template-columns: 320px repeat(14, minmax(0, 1fr))">
                                 <div class="border-r border-violet-100 pb-2 text-left">科目</div>
-                                <div
-                                    v-for="item in RELEASE_GANTT_MONTHS"
-                                    :key="`${item.year}-${item.month}`"
-                                    class="border-r border-violet-100 pb-2 last:border-r-0"
-                                    :class="isCurrentScheduleMonth(item) ? 'bg-violet-100 text-violet-800' : ''"
-                                >
-                                    <span v-if="item.year" class="mr-0.5 text-violet-700">{{ item.year }}</span>{{ item.month }}月
+                                <div v-for="item in RELEASE_GANTT_MONTHS" :key="`${item.year}-${item.month}`" class="border-r border-violet-100 pb-2 last:border-r-0" :class="isCurrentScheduleMonth(item) ? 'bg-violet-100 text-violet-800' : ''">
+                                    <span v-if="item.year" class="mr-0.5 text-violet-700">{{ item.year }}</span
+                                    >{{ item.month }}月
                                 </div>
                             </div>
-                            <div v-for="schedule in RELEASE_SCHEDULE" :key="`${schedule.course}-${schedule.subject}`" class="grid min-h-[52px] border-b border-violet-100 last:border-b-0" style="grid-template-columns: 320px repeat(14, minmax(0, 1fr));">
+                            <div v-for="schedule in RELEASE_SCHEDULE" :key="`${schedule.course}-${schedule.subject}`" class="grid min-h-[52px] border-b border-violet-100 last:border-b-0" style="grid-template-columns: 320px repeat(14, minmax(0, 1fr))">
                                 <div class="flex flex-col justify-center border-r border-violet-100 pr-3 text-left">
                                     <span class="whitespace-nowrap text-sm font-bold text-slate-800">{{ schedule.subject }}</span>
                                     <span class="mt-0.5 text-[11px] text-slate-500">{{ schedule.course }}</span>
                                 </div>
-                                <div class="grid items-center bg-[linear-gradient(to_right,transparent_calc(100%-1px),rgb(237_233_254)_calc(100%-1px))]" style="grid-column: span 14 / span 14; grid-template-columns: repeat(14, minmax(0, 1fr)); background-size: 7.142857% 100%;">
-                                    <span
-                                        v-if="schedule.explanationStart"
-                                        class="relative z-10 mx-1 flex min-h-7 items-center justify-center rounded-md bg-violet-600 px-1 text-center text-[11px] font-bold text-white shadow-sm"
-                                        :style="{ gridColumn: `${schedule.explanationStart} / span 2` }"
-                                    >解説作成</span>
+                                <div class="grid items-center bg-[linear-gradient(to_right,transparent_calc(100%-1px),rgb(237_233_254)_calc(100%-1px))]" style="grid-column: span 14 / span 14; grid-template-columns: repeat(14, minmax(0, 1fr)); background-size: 7.142857% 100%">
+                                    <span v-if="schedule.explanationStart" class="relative z-10 mx-1 flex min-h-7 items-center justify-center rounded-md bg-violet-600 px-1 text-center text-[11px] font-bold text-white shadow-sm" :style="{ gridColumn: `${schedule.explanationStart} / span 2` }"
+                                        >解説作成</span
+                                    >
                                     <span
                                         v-if="schedule.nextYearExplanationStart"
                                         class="relative z-10 mx-1 flex min-h-7 items-center justify-center rounded-md bg-amber-500 px-1 text-center text-[11px] font-bold text-white shadow-sm"
                                         :style="{ gridColumn: `${schedule.nextYearExplanationStart} / span 2` }"
-                                    >解説作成</span>
+                                        >解説作成</span
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -2296,48 +1978,45 @@ const peakHour2h = computed(() => {
                         <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-amber-500" />2026年度</span>
                     </div>
                 </section>
-
             </template>
 
             <!-- リリース管理タブ -->
             <template v-if="activeTab === 'operations' && operationsTab === 'releases'">
-
                 <!-- 全体進捗 -->
                 <div class="mb-4 rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-slate-50/60 px-5 py-4 shadow-sm">
                     <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
                         <span class="text-sm font-semibold text-slate-800">全コース合計</span>
-                        <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">
-                            進捗 {{ totalStats.total === 0 ? 0 : Math.round(totalStats.released / totalStats.total * 100) }}%
-                        </span>
+                        <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700"> 進捗 {{ totalStats.total === 0 ? 0 : Math.round((totalStats.released / totalStats.total) * 100) }}% </span>
                     </div>
                     <div class="mb-2 flex flex-wrap items-center gap-3 text-xs text-slate-600">
-                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">完成 <b class="text-slate-900">{{ totalStats.released }}</b></span>
-                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">全体 <b class="text-slate-900">{{ totalStats.total }}</b></span>
-                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">残り <b class="text-slate-900">{{ totalStats.total - totalStats.released }}</b></span>
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200"
+                            >完成 <b class="text-slate-900">{{ totalStats.released }}</b></span
+                        >
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200"
+                            >全体 <b class="text-slate-900">{{ totalStats.total }}</b></span
+                        >
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200"
+                            >残り <b class="text-slate-900">{{ totalStats.total - totalStats.released }}</b></span
+                        >
                     </div>
                     <div class="h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
-                        <div
-                            class="h-full rounded-full bg-gradient-to-r from-slate-500 to-slate-700 transition-all duration-300"
-                            :style="{ width: `${totalStats.total === 0 ? 0 : Math.round(totalStats.released / totalStats.total * 100)}%` }"
-                        />
+                        <div class="h-full rounded-full bg-gradient-to-r from-slate-500 to-slate-700 transition-all duration-300" :style="{ width: `${totalStats.total === 0 ? 0 : Math.round((totalStats.released / totalStats.total) * 100)}%` }" />
                     </div>
                 </div>
                 <!-- コース選択 -->
                 <div class="mb-3 flex flex-wrap gap-2">
                     <button
-                        v-for="({ key, label }) in [
-                            { key: 'seiho',   label: '生保講座' },
+                        v-for="{ key, label } in [
+                            { key: 'seiho', label: '生保講座' },
                             { key: 'daigaku', label: '生保大学' },
-                            { key: 'ouyou',   label: '応用課程' },
-                            { key: 'senmon',  label: '専門課程' },
-                            { key: 'ippan',   label: '一般課程' },
+                            { key: 'ouyou', label: '応用課程' },
+                            { key: 'senmon', label: '専門課程' },
+                            { key: 'ippan', label: '一般課程' },
                         ]"
                         :key="key"
                         type="button"
                         class="flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold transition"
-                        :class="releaseGroup === key
-                            ? releaseTheme[key].activeButton
-                            : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50'"
+                        :class="releaseGroup === key ? releaseTheme[key].activeButton : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50'"
                         @click="releaseGroup = key"
                     >
                         {{ label }}
@@ -2347,21 +2026,21 @@ const peakHour2h = computed(() => {
                 <!-- 選択中コースの進捗バー -->
                 <div class="mb-4 rounded-xl border border-slate-200 bg-white px-4 py-3">
                     <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
-                        <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">
-                            進捗 {{ groupStats[releaseGroup].total === 0 ? 0 : Math.round(groupStats[releaseGroup].released / groupStats[releaseGroup].total * 100) }}%
-                        </span>
+                        <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700"> 進捗 {{ groupStats[releaseGroup].total === 0 ? 0 : Math.round((groupStats[releaseGroup].released / groupStats[releaseGroup].total) * 100) }}% </span>
                     </div>
                     <div class="mb-2 flex flex-wrap items-center gap-3 text-xs text-slate-600">
-                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">完成 <b class="text-slate-900">{{ groupStats[releaseGroup].released }}</b></span>
-                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">全体 <b class="text-slate-900">{{ groupStats[releaseGroup].total }}</b></span>
-                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">残り <b class="text-slate-900">{{ groupStats[releaseGroup].total - groupStats[releaseGroup].released }}</b></span>
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200"
+                            >完成 <b class="text-slate-900">{{ groupStats[releaseGroup].released }}</b></span
+                        >
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200"
+                            >全体 <b class="text-slate-900">{{ groupStats[releaseGroup].total }}</b></span
+                        >
+                        <span class="rounded-md bg-white px-2 py-1 ring-1 ring-slate-200"
+                            >残り <b class="text-slate-900">{{ groupStats[releaseGroup].total - groupStats[releaseGroup].released }}</b></span
+                        >
                     </div>
                     <div class="h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
-                        <div
-                            class="h-full rounded-full transition-all duration-300"
-                            :class="currentReleaseTheme.progressBar"
-                            :style="{ width: `${groupStats[releaseGroup].total === 0 ? 0 : Math.round(groupStats[releaseGroup].released / groupStats[releaseGroup].total * 100)}%` }"
-                        />
+                        <div class="h-full rounded-full transition-all duration-300" :class="currentReleaseTheme.progressBar" :style="{ width: `${groupStats[releaseGroup].total === 0 ? 0 : Math.round((groupStats[releaseGroup].released / groupStats[releaseGroup].total) * 100)}%` }" />
                     </div>
                 </div>
 
@@ -2369,14 +2048,15 @@ const peakHour2h = computed(() => {
                 <template v-if="releaseGroup === 'seiho'">
                     <div class="mb-3 flex flex-wrap gap-2">
                         <button
-                            v-for="s in SEIHO_SUBJECTS" :key="s.key"
+                            v-for="s in SEIHO_SUBJECTS"
+                            :key="s.key"
                             type="button"
                             class="rounded-xl border px-3 py-1.5 text-sm font-semibold transition"
-                            :class="releaseSeihoTab === s.key
-                                ? currentReleaseTheme.activeTab
-                                : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'"
+                            :class="releaseSeihoTab === s.key ? currentReleaseTheme.activeTab : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'"
                             @click="releaseSeihoTab = s.key"
-                        >{{ s.label }}</button>
+                        >
+                            {{ s.label }}
+                        </button>
                     </div>
                     <div v-if="activeSeihoSubject" class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <div class="overflow-x-auto">
@@ -2391,11 +2071,14 @@ const peakHour2h = computed(() => {
                                     <tr v-for="year in SEIHO_YEARS" :key="year" class="border-t border-slate-100 hover:bg-slate-50/70">
                                         <td class="border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
                                         <td v-for="f in SEIHO_FORMS" :key="f" class="px-4 py-2.5 text-center">
-                                            <button type="button"
+                                            <button
+                                                type="button"
                                                 class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
                                                 :class="btnClass(`seiho-${activeSeihoSubject.key}-${year}-${f}`)"
                                                 @click="toggleRelease(`seiho-${activeSeihoSubject.key}-${year}-${f}`)"
-                                            >{{ isReleased(`seiho-${activeSeihoSubject.key}-${year}-${f}`) ? '✓' : '–' }}</button>
+                                            >
+                                                {{ isReleased(`seiho-${activeSeihoSubject.key}-${year}-${f}`) ? "✓" : "–" }}
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -2422,11 +2105,9 @@ const peakHour2h = computed(() => {
                                             <td v-if="pIdx === 0" :rowspan="IPPAN_PERIODS.length" class="align-middle border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
                                             <td class="whitespace-nowrap border-r border-slate-100 px-4 py-2.5 text-slate-500">{{ period.label }}</td>
                                             <td v-for="f in IPPAN_FORMS" :key="f" class="px-4 py-2.5 text-center">
-                                                <button type="button"
-                                                    class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
-                                                    :class="btnClass(`ippan-${year}-${period.key}-${f}`)"
-                                                    @click="toggleRelease(`ippan-${year}-${period.key}-${f}`)"
-                                                >{{ isReleased(`ippan-${year}-${period.key}-${f}`) ? '✓' : '–' }}</button>
+                                                <button type="button" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition" :class="btnClass(`ippan-${year}-${period.key}-${f}`)" @click="toggleRelease(`ippan-${year}-${period.key}-${f}`)">
+                                                    {{ isReleased(`ippan-${year}-${period.key}-${f}`) ? "✓" : "–" }}
+                                                </button>
                                             </td>
                                         </tr>
                                     </template>
@@ -2445,7 +2126,7 @@ const peakHour2h = computed(() => {
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
                                         <th class="px-4 py-2.5 font-semibold">月</th>
-                                        <th v-for="f in ['a','b','c','d']" :key="f" class="px-4 py-2.5 font-semibold text-center uppercase">{{ f }}</th>
+                                        <th v-for="f in ['a', 'b', 'c', 'd']" :key="f" class="px-4 py-2.5 font-semibold text-center uppercase">{{ f }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -2454,13 +2135,11 @@ const peakHour2h = computed(() => {
                                             <td v-if="pIdx === 0" :rowspan="SENMON_PERIODS.length" class="align-middle border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
                                             <td class="whitespace-nowrap border-r border-slate-100 px-4 py-2.5 text-slate-500">{{ period.label }}</td>
                                             <td v-for="f in period.forms" :key="f" class="px-4 py-2.5 text-center">
-                                                <button type="button"
-                                                    class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
-                                                    :class="btnClass(`senmon-${year}-${period.key}-${f}`)"
-                                                    @click="toggleRelease(`senmon-${year}-${period.key}-${f}`)"
-                                                >{{ isReleased(`senmon-${year}-${period.key}-${f}`) ? '✓' : '–' }}</button>
+                                                <button type="button" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition" :class="btnClass(`senmon-${year}-${period.key}-${f}`)" @click="toggleRelease(`senmon-${year}-${period.key}-${f}`)">
+                                                    {{ isReleased(`senmon-${year}-${period.key}-${f}`) ? "✓" : "–" }}
+                                                </button>
                                             </td>
-                                            <td v-for="_ in (4 - period.forms.length)" :key="_" class="px-4 py-2.5" />
+                                            <td v-for="_ in 4 - period.forms.length" :key="_" class="px-4 py-2.5" />
                                         </tr>
                                     </template>
                                 </tbody>
@@ -2478,7 +2157,7 @@ const peakHour2h = computed(() => {
                                     <tr>
                                         <th class="px-4 py-2.5 font-semibold">年度</th>
                                         <th class="px-4 py-2.5 font-semibold">月</th>
-                                        <th v-for="f in ['a','b','c','d']" :key="f" class="px-4 py-2.5 font-semibold text-center uppercase">{{ f }}</th>
+                                        <th v-for="f in ['a', 'b', 'c', 'd']" :key="f" class="px-4 py-2.5 font-semibold text-center uppercase">{{ f }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -2487,13 +2166,11 @@ const peakHour2h = computed(() => {
                                             <td v-if="pIdx === 0" :rowspan="OUYOU_PERIODS.length" class="align-middle border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
                                             <td class="whitespace-nowrap border-r border-slate-100 px-4 py-2.5 text-slate-500">{{ period.label }}</td>
                                             <td v-for="f in period.forms" :key="f" class="px-4 py-2.5 text-center">
-                                                <button type="button"
-                                                    class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
-                                                    :class="btnClass(`ouyou-${year}-${period.key}-${f}`)"
-                                                    @click="toggleRelease(`ouyou-${year}-${period.key}-${f}`)"
-                                                >{{ isReleased(`ouyou-${year}-${period.key}-${f}`) ? '✓' : '–' }}</button>
+                                                <button type="button" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition" :class="btnClass(`ouyou-${year}-${period.key}-${f}`)" @click="toggleRelease(`ouyou-${year}-${period.key}-${f}`)">
+                                                    {{ isReleased(`ouyou-${year}-${period.key}-${f}`) ? "✓" : "–" }}
+                                                </button>
                                             </td>
-                                            <td v-for="_ in (4 - period.forms.length)" :key="_" class="px-4 py-2.5" />
+                                            <td v-for="_ in 4 - period.forms.length" :key="_" class="px-4 py-2.5" />
                                         </tr>
                                     </template>
                                 </tbody>
@@ -2506,14 +2183,15 @@ const peakHour2h = computed(() => {
                 <template v-if="releaseGroup === 'daigaku'">
                     <div class="mb-3 flex flex-wrap gap-2">
                         <button
-                            v-for="s in DAIGAKU_SUBJECTS" :key="s.key"
+                            v-for="s in DAIGAKU_SUBJECTS"
+                            :key="s.key"
                             type="button"
                             class="rounded-xl border px-3 py-1.5 text-sm font-semibold transition"
-                            :class="releaseDaigakuTab === s.key
-                                ? currentReleaseTheme.activeTab
-                                : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'"
+                            :class="releaseDaigakuTab === s.key ? currentReleaseTheme.activeTab : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'"
                             @click="releaseDaigakuTab = s.key"
-                        >{{ s.label }}</button>
+                        >
+                            {{ s.label }}
+                        </button>
                     </div>
                     <div v-if="activeDaigakuSubject" class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <div class="overflow-x-auto">
@@ -2528,11 +2206,14 @@ const peakHour2h = computed(() => {
                                     <tr v-for="year in DAIGAKU_YEARS" :key="year" class="border-t border-slate-100 hover:bg-slate-50/70">
                                         <td class="border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
                                         <td v-for="f in DAIGAKU_FORMS" :key="f" class="px-4 py-2.5 text-center">
-                                            <button type="button"
+                                            <button
+                                                type="button"
                                                 class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition"
                                                 :class="btnClass(`daigaku-${activeDaigakuSubject.key}-${year}-${f}`)"
                                                 @click="toggleRelease(`daigaku-${activeDaigakuSubject.key}-${year}-${f}`)"
-                                            >{{ isReleased(`daigaku-${activeDaigakuSubject.key}-${year}-${f}`) ? '✓' : '–' }}</button>
+                                            >
+                                                {{ isReleased(`daigaku-${activeDaigakuSubject.key}-${year}-${f}`) ? "✓" : "–" }}
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -2541,29 +2222,14 @@ const peakHour2h = computed(() => {
                     </div>
                 </template>
 
-                <div class="mt-3 px-1 text-sm text-slate-400">
-                    ✓ = 公開中　– = 非公開　クリックで切り替え
-                </div>
+                <div class="mt-3 px-1 text-sm text-slate-400">✓ = 公開中　– = 非公開　クリックで切り替え</div>
 
                 <!-- 保存バー -->
-                <div
-                    v-if="hasPending"
-                    class="mt-4 flex flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
-                >
-                    <span class="text-sm font-medium text-slate-700">
-                        {{ Object.keys(pendingChanges).length }}件の未保存の変更があります
-                    </span>
+                <div v-if="hasPending" class="mt-4 flex flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                    <span class="text-sm font-medium text-slate-700"> {{ Object.keys(pendingChanges).length }}件の未保存の変更があります </span>
                     <div class="flex gap-2">
-                        <button
-                            type="button"
-                            class="flex-1 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-100 sm:flex-none"
-                            @click="resetReleases"
-                        >リセット</button>
-                        <button
-                            type="button"
-                            class="flex-1 rounded-lg bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-slate-800 sm:flex-none"
-                            @click="saveReleases"
-                        >保存する</button>
+                        <button type="button" class="flex-1 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-100 sm:flex-none" @click="resetReleases">リセット</button>
+                        <button type="button" class="flex-1 rounded-lg bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-slate-800 sm:flex-none" @click="saveReleases">保存する</button>
                     </div>
                 </div>
             </template>

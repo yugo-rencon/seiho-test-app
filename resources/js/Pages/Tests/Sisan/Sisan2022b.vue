@@ -24,6 +24,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '1年',
                         '発券',
                         '受信',
@@ -44,6 +45,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '養老',
                         '収入保険料',
                         '低下',
@@ -64,6 +66,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '金融機関',
                         '無担保',
                         '指値',
@@ -84,6 +87,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'CP',
                         '流動性',
                         '上昇',
@@ -214,14 +218,17 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融仲介機能',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '専門家の必要性の高まり',
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '運用の実務',
                             content: '融資審査部門 → マクロ調査部門',
                         }, //33 p51
@@ -234,14 +241,17 @@ const subject = "2022年度 フォームB";
                             content: 'パッシブ運用の説明 → アクティブ運用の説明',
                         }, //35 見つからない
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'アメリカの保険会社の周辺業務',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '第二次大戦時の国債保有の要請',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '経済安定成長期の有価証券投資',
                             content: '正しい',
                         }, //38
@@ -250,55 +260,66 @@ const subject = "2022年度 フォームB";
                             content: '固有業務 → 付随業務',
                         }, //39 p210
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '国際会計基準導入の動向',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'リスク意識の高まり',
                             label: 'エ',
                             content: '自己資本比率規制',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '各国の保険監督方法',
                             label: 'ア',
                             content: '準拠主義',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',
                             label: 'ウ',
                             content: '自己資本',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '公社債の発行方法の相違による分類',
                             label: 'エ',
                             content: '公募債',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '不動産投資手法の多様化',
                             label: 'ア',
                             content: '新借地',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '対外貸付実務',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ドイツの金融制度',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '創業時の生命保険会社の資産運用',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'ウ',
                             content: 'オルタナティブ投資',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ソルベンシー確保',
                             label: 'イ',
                             content: '200',

@@ -24,6 +24,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '平準保険料',
                         '予定利率',
                         '配当',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '保険料',
                         '長期の貸付',
                         '国債',
@@ -64,6 +66,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '保険業法施行規則',
                         '物価',
                         '流動性',
@@ -84,6 +87,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '借地',
                         '借地人',
                         '新借地',
@@ -214,6 +218,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '日本の金融制度',
                             content: '正しい',
                         }, //31
@@ -222,6 +227,7 @@ const subject = "2023年度 フォームA";
                             content: '自己資本 → 他人資本',
                         }, //32 p11
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',
                             content: '正しい',
                         }, //33
@@ -230,10 +236,12 @@ const subject = "2023年度 フォームA";
                             content: '変動利付 → 確定利付',
                         }, //34 p69
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '預金市場',
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'イギリスの生命保険会社の資産運用の特徴',
                             content: '正しい',
                         }, //36
@@ -242,6 +250,7 @@ const subject = "2023年度 フォームA";
                             content: '直接金融方式 → 間接金融方式<br>借入需要に消極的 → 積極的',
                         }, //37 p178
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用の多様化',
                             content: '正しい',
                         }, //38
@@ -254,51 +263,61 @@ const subject = "2023年度 フォームA";
                             content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード',
                         }, //40 p220
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'リスク意識の高まり',
                             label: 'ア',
                             content: 'BIS（国際決済銀行）',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用の専門化の進展',
                             label: 'エ',
                             content: 'アナリスト',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査における財務諸表分析',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'コール・オプション',
                             label: 'ウ',
                             content: '買い付ける',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '海外投融資の内容と特徴',
                             label: 'イ',
                             content: '円建',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人変額保険における資産の評価方法',
                             label: 'エ',
                             content: '毎日',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ドイツの金融制度',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '特定金銭信託の活用',
                             label: 'ア',
                             content: '国債',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'イ',
                             content: 'ヘッジファンド',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ソルベンシー確保',
                             label: 'ウ',
                             content: 'リスク係数',

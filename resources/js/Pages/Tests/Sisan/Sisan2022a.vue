@@ -24,6 +24,7 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '1年',
                         '発券',
                         '受信',
@@ -44,6 +45,7 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '養老',
                         '収入保険料',
                         '低下',
@@ -64,6 +66,7 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '国際決済銀行（BIS）',
                         '自己資本',
                         'カントリー',
@@ -84,6 +87,7 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '事務',
                         'ポートフォリオ',
                         'アセット・ミックス',
@@ -214,6 +218,7 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '生保資金の構成',
                             content: '正しい',
                         }, //31
@@ -234,14 +239,17 @@ const subject = "2022年度 フォームA";
                             content: '借家 → 借地',
                         }, //35 p99-100
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'イギリスの銀行',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '第二次大戦時の国債保有の要請',
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '中堅・中小企業貸付対応',
                             content: '正しい',
                         }, //38
@@ -250,55 +258,66 @@ const subject = "2022年度 フォームA";
                             content: '金融サービス市場法→ 金融システム改革',
                         }, //39 207
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '国際会計基準導入の動向',
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '運用原則',
                             label: 'エ',
                             content: '利差',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '各国の保険監督方法',
                             label: 'ア',
                             content: '準拠主義',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',
                             label: 'ウ',
                             content: '自己資本',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '海外投融資の内容と特徴',
                             label: 'ア',
                             content: '円建',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '短期金融市場',
                             label: 'イ',
                             content: '出し手',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人変額保険における資産の評価方法',
                             label: 'エ',
                             content: '毎日',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'カナダの生命保険会社の資産運用',
                             label: 'イ',
                             content: '抵当貸付',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '昭和初期の金融恐慌期の生保資産運用',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'ウ',
                             content: 'オルタナティブ投資',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'リスクの多様化',
                             label: 'オ',
                             content: '',

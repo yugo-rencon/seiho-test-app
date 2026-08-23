@@ -24,6 +24,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '平準保険料',
                         '予定利率',
                         '配当',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '保険料',
                         '長期の貸付',
                         '国債',
@@ -64,6 +66,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         '単独制',
                         '委員会制',
                         '安全',
@@ -84,6 +87,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-08-23 確認済み
                         'ファンド・マネージャー',
                         'アナリスト',
                         'ストラテジスト',
@@ -214,14 +218,17 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '日本の金融制度',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '運用規制',
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',
                             content: '正しい',
                         }, //33
@@ -242,10 +249,12 @@ const subject = "2023年度 フォームC";
                             content: '株式投資 → 銀行預金',
                         }, //37 p162-164
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'バブル崩壊後の資産運用',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融システム改革',
                             content: '正しい',
                         }, //39
@@ -254,51 +263,61 @@ const subject = "2023年度 フォームC";
                             content: '日本版コーポレートガバナンス・コード → 日本版スチュワードシップ・コード',
                         }, //40 p220
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'リスク意識の高まり',
                             label: 'ア',
                             content: 'BIS（国際決済銀行）',
                         }, //41
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '有価証券の定義',
                             label: 'ア',
                             content: '金融商品取引法',
                         }, //42
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '株式投資の尺度',
                             label: 'エ',
                             content: '当期純利益',
                         }, //43
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'コール・オプション',
                             label: 'ウ',
                             content: '買い付ける ',
                         }, //44
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '短期金融市場の概要',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '個人変額保険の運用',
                             label: 'イ',
                             content: '収益性',
                         }, //46
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: 'ドイツの生命保険会社の資産運用',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '海外投融資のリスク',
                             label: 'ウ',
                             content: '安全性',
                         }, //48
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '資産運用手段の多様化',
                             label: 'イ',
                             content: 'ヘッジファンド',
                         }, //49
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '金融システム改革法',
                             label: 'エ',
                             content: '保護機構',

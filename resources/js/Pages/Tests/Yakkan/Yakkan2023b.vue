@@ -277,10 +277,11 @@ const subject = "2023年度 フォームB";
                             content: '利益分配金 → 契約者配当金',
                         }, //36 //p158
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '契約内容の登録',
                             relatedProblems: ['2023a37', '2023b37', '2023c37'],
-                            content: '満期保険金登録制度 → 死亡保険金登録制度',
-                        }, //37 p168
+                            content: '満期保険金登録制度 → 死亡保険金登録制度', //p168
+                        }, //37
                         {
                             questionTitle: '定款',
                             relatedProblems: ['2023b38'],

@@ -270,10 +270,11 @@ const subject = "2021年度 フォームB";
                             content: '正しい',
                         }, //35
                         {
+                            // rev: 2026-08-23 確認済み
                             questionTitle: '契約内容の登録',
                             relatedProblems: ['2021b36'],
-                            content: '満期保険金登録制度 → 死亡保険金登録制度',
-                        }, //36 p168
+                            content: '満期保険金登録制度 → 死亡保険金登録制度', //p168
+                        }, //36
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '告知義務違反による解除権',

@@ -24,10 +24,10 @@ const isDraft = true;
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="社会保障制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -37,25 +37,25 @@ const isDraft = true;
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="厚生年金保険の適用事業所"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="厚生年金保険の仕組み"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -63,11 +63,11 @@ const isDraft = true;
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="国民年金の老齢給付（受給資格期間）"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -76,11 +76,11 @@ const isDraft = true;
                     :questionNumber="5"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="公的年金制度の遺族給付"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -89,12 +89,12 @@ const isDraft = true;
                     :questionNumber="6"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="医療保険制度の概要"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -102,12 +102,12 @@ const isDraft = true;
                     :questionNumber="7"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="国民健康保険"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -115,12 +115,12 @@ const isDraft = true;
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="介護保険制度の仕組み"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -128,37 +128,37 @@ const isDraft = true;
                     :questionNumber="9"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="介護保険制度の費用負担"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="10"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="雇用保険制度"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="11"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="雇用保険の給付と公的年金との調整等"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -167,10 +167,10 @@ const isDraft = true;
                     :questionNumber="12"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="公的年金の受給手続き"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -180,12 +180,12 @@ const isDraft = true;
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="社会保険制度"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -193,11 +193,11 @@ const isDraft = true;
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="育児休業期間中の厚生年金保険料"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -206,11 +206,11 @@ const isDraft = true;
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="厚生年金保険の老齢給付"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -219,37 +219,37 @@ const isDraft = true;
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="公的年金等の課税関係"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="厚生年金保険の遺族給付"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="高額療養費"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                     ]"
@@ -258,23 +258,23 @@ const isDraft = true;
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="ケアマネジメント"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="後期高齢者医療制度（長寿医療制度）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -284,10 +284,10 @@ const isDraft = true;
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="介護保険制度の要介護（要支援）の認定"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -297,23 +297,23 @@ const isDraft = true;
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="労災保険（労働者災害補償保険）制度"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="介護保険の適用除外者"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        '正しい',
                         '', //p
                         '', //p
                         '', //p
@@ -323,12 +323,12 @@ const isDraft = true;
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
-                    questionTitle=""
+                    questionTitle="マイナンバー"
                     :relatedProblems="[]"
                     :contents="[
                         '', //p
                         '', //p
-                        '', //p
+                        '正しい',
                         '', //p
                     ]"
                 />
@@ -337,21 +337,22 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="25〜29"
-                    questionTitle=""
+                    questionTitle="公的年金制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問25〜29
+                        // rev: 2026-08-23 確認済み
+                        '公平化',
+                        '被保険者区分',
+                        '厚生年金保険',
+                        '賦課方式',
+                        '半数近く',
                     ]"
                     :labels="[
-                        '', //25
-                        '', //26
-                        '', //27
-                        '', //28
-                        '', //29
+                        'カ', //25
+                        'ウ', //26
+                        'ア', //27
+                        'オ', //28
+                        'ケ', //29
                     ]"
                 />
                 <QuestionTemp3
@@ -359,21 +360,22 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="30〜34"
-                    questionTitle=""
+                    questionTitle="公的年金制度の主な改正動向"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問30〜34
+                        // rev: 2026-08-23 確認済み
+                        'マクロ経済スライド',
+                        '高齢',
+                        '回復',
+                        '自助努力',
+                        'セーフティーネット',
                     ]"
                     :labels="[
-                        '', //30
-                        '', //31
-                        '', //32
-                        '', //33
-                        '', //34
+                        'コ', //30
+                        'エ', //31
+                        'ウ', //32
+                        'ク', //33
+                        'ケ', //34
                     ]"
                 />
                 <QuestionTemp3
@@ -381,21 +383,22 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="35〜39"
-                    questionTitle=""
+                    questionTitle="公的年金の支給日と源泉徴収"
                     :relatedProblems="[]"
                     :contents="[
-                        '',
-                        '',
-                        '',
-                        '',
-                        '', // 問35〜39
+                        // rev: 2026-08-23 確認済み
+                        '翌月',
+                        '属する月',
+                        '15日',
+                        '雑所得',
+                        '18万円',
                     ]"
                     :labels="[
-                        '', //35
-                        '', //36
-                        '', //37
-                        '', //38
-                        '', //39
+                        'カ', //35
+                        'イ', //36
+                        'ク', //37
+                        'ケ', //38
+                        'オ', //39
                     ]"
                 />
                 <QuestionTemp2
@@ -404,54 +407,60 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
-                            questionTitle: '',
+                            questionTitle: '公的年金制度',
                             relatedProblems: [],
                             content: '', //p
                         }, //40
                         {
-                            questionTitle: '',
+                            // rev: 2026-08-23 確認済み
+                            questionTitle: '厚生年金保険の任意加入',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '正しい',
                         }, //41
                         {
-                            questionTitle: '',
+                            questionTitle: '標準報酬（月）額と厚生年金保険料',
                             relatedProblems: [],
                             content: '', //p
                         }, //42
                         {
-                            questionTitle: '',
+                            questionTitle: '遺族厚生年金の年金額',
                             relatedProblems: [],
                             content: '', //p
                         }, //43
                         {
-                            questionTitle: '',
+                            questionTitle: '障害厚生年金',
                             relatedProblems: [],
                             content: '', //p
                         }, //44
                         {
-                            questionTitle: '',
+                            // rev: 2026-08-23 確認済み
+                            questionTitle: '自由診療',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '正しい',
                         }, //45
                         {
-                            questionTitle: '',
+                            // rev: 2026-08-23 確認済み
+                            questionTitle: '労災保険の現状と課題',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '正しい',
                         }, //46
                         {
-                            questionTitle: '',
+                            // rev: 2026-08-23 確認済み
+                            questionTitle: '離婚時の厚生年金保険の分割制度',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '正しい',
                         }, //47
                         {
-                            questionTitle: '',
+                            // rev: 2026-08-23 確認済み
+                            questionTitle: '年金請求書の受付',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '正しい',
                         }, //48
                         {
-                            questionTitle: '',
+                            // rev: 2026-08-23 確認済み
+                            questionTitle: '第三者行為による傷害の給付（健康保険）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '正しい',
                         }, //49
                     ]"
                 />

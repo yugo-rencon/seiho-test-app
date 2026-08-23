@@ -404,7 +404,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
                             questionTitle: '',
                             relatedProblems: [],

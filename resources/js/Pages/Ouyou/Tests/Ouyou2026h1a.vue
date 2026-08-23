@@ -407,11 +407,10 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     :items="[
-                        // 問40〜49
                         {
                             questionTitle: '国税と地方税',
                             relatedProblems: [],
-                            content: '',//p
+                            content: '', //p
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
@@ -428,17 +427,17 @@ const isDraft = false;
                         {
                             questionTitle: '医療保障保険（団体型）',
                             relatedProblems: [],
-                            content: '',//p
+                            content: '', //p
                         }, //43
                         {
                             questionTitle: '固定金利商品と変動金利商品',
                             relatedProblems: [],
-                            content: '',//p
+                            content: '', //p
                         }, //44
                         {
                             questionTitle: 'コンプライアンス',
                             relatedProblems: [],
-                            content: '',//p
+                            content: '', //p
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
@@ -455,12 +454,12 @@ const isDraft = false;
                         {
                             questionTitle: '犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）',
                             relatedProblems: [],
-                            content: '',//p
+                            content: '', //p
                         }, //48
                         {
                             questionTitle: '適切な保険金・給付金等の支払い',
                             relatedProblems: [],
-                            content: '',//p
+                            content: '', //p
                         }, //49
                     ]"
                 />

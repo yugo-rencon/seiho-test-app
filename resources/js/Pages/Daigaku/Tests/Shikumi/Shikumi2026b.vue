@@ -250,8 +250,9 @@ const subject = "2026年度 フォームB";
                     questionTitle="告知義務制度のポイント"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-24 確認済み
                         '正しい',
-                        '', //p
+                        '代理権を有さない → 代理権を有する', //p72
                         '正しい',
                         '正しい',
                     ]"

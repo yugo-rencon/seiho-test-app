@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\EnglishBook;
 use App\Models\PersonalExerciseLog;
 use App\Models\PersonalStudyLog;
+use App\Models\PersonalWakeLog;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -174,6 +175,16 @@ class PersonalAdminController extends Controller
             ->values();
         $exerciseStreak = $this->calculateDateStreak($completedExerciseDates->all());
 
+        $wakeLogs = PersonalWakeLog::query()
+            ->orderByDesc('woke_on')
+            ->get()
+            ->map(fn (PersonalWakeLog $log) => [
+                'id' => $log->id,
+                'woke_on' => $log->woke_on->format('Y-m-d'),
+                'woke_at' => substr((string) $log->woke_at, 0, 5),
+            ])
+            ->values();
+
         return Inertia::render('Admin/Personal', [
             'stats' => [
                 'english_duration' => $this->formatDuration($englishMinutes),
@@ -198,6 +209,7 @@ class PersonalAdminController extends Controller
             ],
             'exerciseMonthlySummaries' => $exerciseMonthlySummaries,
             'exerciseLogsByDay' => $exerciseLogsByDay,
+            'wakeLogs' => $wakeLogs,
         ]);
     }
 
@@ -351,6 +363,28 @@ class PersonalAdminController extends Controller
     public function deleteExerciseLog(PersonalExerciseLog $exerciseLog): RedirectResponse
     {
         $exerciseLog->delete();
+
+        return back();
+    }
+
+    public function storeWakeLog(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'woke_on' => ['required', 'date_format:Y-m-d'],
+            'woke_at' => ['required', 'date_format:H:i'],
+        ]);
+
+        PersonalWakeLog::updateOrCreate(
+            ['woke_on' => Carbon::createFromFormat('!Y-m-d', $validated['woke_on'])->toDateString()],
+            ['woke_at' => $validated['woke_at']],
+        );
+
+        return back();
+    }
+
+    public function deleteWakeLog(PersonalWakeLog $wakeLog): RedirectResponse
+    {
+        $wakeLog->delete();
 
         return back();
     }

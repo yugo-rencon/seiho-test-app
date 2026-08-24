@@ -43,6 +43,10 @@ const props = defineProps({
         type: Object,
         default: () => ({}),
     },
+    wakeLogs: {
+        type: Array,
+        default: () => [],
+    },
 });
 
 const activeTab = ref("english");
@@ -53,6 +57,7 @@ const tabs = [
     { key: "english", label: "英語" },
     { key: "exercise", label: "運動" },
     { key: "learning", label: "資格" },
+    { key: "wake", label: "起床" },
     { key: "repayment", label: "返済" },
 ];
 
@@ -101,6 +106,7 @@ const exerciseActivities = [
         cardClass: "border-rose-100 bg-rose-50/75 text-rose-950",
     },
 ];
+const wakeTimePresets = ["05:30", "06:00", "06:30", "07:00", "07:30", "08:00"];
 const exerciseStartedOnLabel = "2026/07/21";
 
 const formatLocalDate = (date) => {
@@ -140,6 +146,14 @@ const exerciseLogForm = useForm({
     memo: "",
 });
 const deleteExerciseLogForm = useForm({});
+const wakeLogForm = useForm({
+    woke_on: today,
+    woke_at: "",
+});
+const deleteWakeLogForm = useForm({});
+const wakeLogModalOpen = ref(false);
+const wakeCalendarMonth = ref(today.slice(0, 7));
+const selectedWakeDay = ref(today);
 const pendingDeleteLog = ref(null);
 const pendingDeleteDateLabel = ref("");
 const studyLogModalOpen = ref(false);
@@ -209,8 +223,8 @@ const formatYen = (amount) => {
     }).format(amount || 0);
 };
 
-const repaymentItems = repaymentPlan.items;
-const repaymentRegisteredTotal = computed(() => repaymentItems.reduce((total, item) => total + item.amount, 0));
+const repaymentItems = computed(() => [...repaymentPlan.items].sort((a, b) => b.date.localeCompare(a.date)));
+const repaymentRegisteredTotal = computed(() => repaymentItems.value.reduce((total, item) => total + item.amount, 0));
 const repaymentRemaining = computed(() => Math.max(repaymentPlan.totalAmount - repaymentRegisteredTotal.value, 0));
 const repaymentProgressRate = computed(() => {
     if (!repaymentPlan.totalAmount) {
@@ -310,6 +324,16 @@ const exerciseSummaryByDay = computed(() => {
 
 const exerciseActivityByValue = computed(() => {
     return Object.fromEntries(exerciseActivities.map((activity) => [activity.value, activity]));
+});
+
+const wakeLogByDay = computed(() => Object.fromEntries(props.wakeLogs.map((log) => [log.woke_on, log])));
+const wakeTimeParts = computed(() => {
+    const [hour, minute] = String(wakeLogForm.woke_at || "07:00").split(":").map(Number);
+
+    return {
+        hour: Number.isInteger(hour) ? hour : 7,
+        minute: Number.isInteger(minute) ? minute : 0,
+    };
 });
 
 const selectedDayLogs = computed(() => {
@@ -528,6 +552,29 @@ const exerciseCalendarCells = computed(() => {
     return fillCalendarTrailingCells(cells, "exercise-calendar");
 });
 
+const wakeCalendarCells = computed(() => {
+    const [year, month] = wakeCalendarMonth.value.split("-").map(Number);
+    const firstDate = new Date(Date.UTC(year, month - 1, 1));
+    const lastDate = new Date(Date.UTC(year, month, 0));
+    const cells = [];
+
+    for (let i = 0; i < firstDate.getUTCDay(); i += 1) {
+        cells.push({ key: `wake-empty-${i}`, empty: true });
+    }
+
+    for (let day = 1; day <= lastDate.getUTCDate(); day += 1) {
+        const date = formatDateParts(year, month, day);
+        cells.push({
+            key: `wake-${date}`,
+            date,
+            day,
+            log: wakeLogByDay.value[date] || null,
+        });
+    }
+
+    return fillCalendarTrailingCells(cells, "wake-calendar");
+});
+
 const recordCalendarCells = computed(() => {
     const [year, month] = recordCalendarMonth.value.split("-").map(Number);
     const firstDate = new Date(Date.UTC(year, month - 1, 1));
@@ -605,6 +652,21 @@ const submitExerciseLog = () => {
     });
 };
 
+const submitWakeLog = () => {
+    wakeLogForm.post(route("admin.personal.wakeLogs.store"), {
+        preserveScroll: true,
+        onSuccess: () => {
+            selectedWakeDay.value = wakeLogForm.woke_on;
+            wakeCalendarMonth.value = wakeLogForm.woke_on.slice(0, 7);
+            wakeLogForm.defaults({
+                woke_on: wakeLogForm.woke_on,
+                woke_at: wakeLogForm.woke_at,
+            });
+            wakeLogModalOpen.value = false;
+        },
+    });
+};
+
 watch(
     [() => studyLogForm.studied_on, () => studyLogForm.category, () => studyLogForm.subcategory, () => studyLogForm.english_book_id, () => activeTab.value],
     () => {
@@ -661,6 +723,47 @@ const deleteExerciseLog = (log) => {
     });
 };
 
+const deleteWakeLog = (log) => {
+    deleteWakeLogForm.delete(route("admin.personal.wakeLogs.delete", log.id), {
+        preserveScroll: true,
+    });
+};
+
+const formatWakeTime = (hour, minute) => `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+
+const adjustWakeTime = (unit, amount) => {
+    const { hour, minute } = wakeTimeParts.value;
+
+    if (unit === "hour") {
+        wakeLogForm.woke_at = formatWakeTime((hour + amount + 24) % 24, minute);
+        return;
+    }
+
+    const totalMinutes = (hour * 60 + minute + amount + 24 * 60) % (24 * 60);
+    wakeLogForm.woke_at = formatWakeTime(Math.floor(totalMinutes / 60), totalMinutes % 60);
+};
+
+const setWakeTime = (time) => {
+    wakeLogForm.woke_at = time;
+};
+
+const openWakeLogModal = (date = selectedWakeDay.value) => {
+    const selectedDate = date || today;
+    const existingLog = wakeLogByDay.value[selectedDate];
+
+    selectedWakeDay.value = selectedDate;
+    wakeLogForm.woke_on = selectedDate;
+    wakeLogForm.woke_at = existingLog?.woke_at || "07:00";
+    wakeLogForm.clearErrors();
+    wakeLogModalOpen.value = true;
+};
+
+const closeWakeLogModal = () => {
+    if (!wakeLogForm.processing) {
+        wakeLogModalOpen.value = false;
+    }
+};
+
 const openDeleteStudyLogModal = (log, dateLabel = selectedDayLabel.value) => {
     pendingDeleteLog.value = log;
     pendingDeleteDateLabel.value = dateLabel;
@@ -697,7 +800,7 @@ const deleteStudyLog = () => {
                 <h1 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">個人管理</h1>
             </div>
 
-            <nav class="mb-7 grid grid-cols-4 gap-1 rounded-xl bg-gray-100 p-1" aria-label="個人管理のカテゴリー">
+            <nav class="mb-7 grid grid-cols-5 gap-1 rounded-xl bg-gray-100 p-1" aria-label="個人管理のカテゴリー">
                 <button v-for="tab in tabs" :key="tab.key" type="button" class="rounded-lg px-1 py-2.5 text-center text-sm font-semibold transition sm:px-3" :class="activeTab === tab.key ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-900'" @click="selectMainTab(tab.key)">
                     {{ tab.label }}
                 </button>
@@ -1147,6 +1250,84 @@ const deleteStudyLog = () => {
                     </div>
                 </section>
             </div>
+
+            <section v-if="activeTab === 'wake'" class="space-y-5">
+                <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-6">
+                    <div class="flex flex-wrap items-start justify-between gap-3">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-gray-400">Wake up</p>
+                            <h2 class="mt-2 text-2xl font-black text-gray-950">起床時間</h2>
+                            <p class="mt-2 text-sm leading-6 text-gray-500">日付を選んで起床時刻を記録できます。同じ日付で保存すると時刻を更新します。</p>
+                        </div>
+                        <button type="button" class="rounded-lg bg-violet-600 px-3 py-2 text-xs font-bold text-white transition hover:bg-violet-500" @click="openWakeLogModal()">記録を追加</button>
+                    </div>
+
+                    <div class="mt-5 flex items-center justify-center gap-2">
+                        <button type="button" class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100" @click="wakeCalendarMonth = moveMonth(wakeCalendarMonth, -1)">前月</button>
+                        <p class="min-w-28 text-center text-sm font-black text-gray-900">{{ wakeCalendarMonth.replace("-", "年") }}月</p>
+                        <button type="button" class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-bold text-gray-600 transition hover:bg-gray-100" @click="wakeCalendarMonth = moveMonth(wakeCalendarMonth, 1)">翌月</button>
+                    </div>
+
+                    <div class="mt-4 overflow-hidden rounded-xl border border-gray-100">
+                        <div class="grid grid-cols-7 bg-gray-50 text-center text-[10px] font-semibold text-gray-500 sm:text-xs">
+                            <div v-for="dayName in ['日', '月', '火', '水', '木', '金', '土']" :key="`wake-${dayName}`" class="py-2">{{ dayName }}</div>
+                        </div>
+                        <div class="grid grid-cols-7 divide-x divide-y divide-gray-100 bg-white text-[10px] sm:text-xs">
+                            <div v-for="cell in wakeCalendarCells" :key="cell.key" class="h-[3.75rem] p-0.5 sm:h-[4.5rem] sm:p-1.5" :class="[cell.empty ? 'bg-gray-50/60' : 'bg-white', selectedWakeDay === cell.date ? 'bg-violet-50 shadow-[inset_0_0_0_1px_rgba(124,58,237,0.3)]' : '']">
+                                <button v-if="!cell.empty" type="button" class="flex h-full w-full flex-col items-start rounded text-left transition hover:bg-violet-50/60" @click="openWakeLogModal(cell.date)">
+                                    <span class="w-full text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</span>
+                                    <span v-if="cell.log" class="mt-1 rounded bg-violet-100 px-1 py-0.5 text-[10px] font-black text-violet-800 sm:text-xs">{{ cell.log.woke_at }}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="wakeLogModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/45 px-4 py-5 sm:p-6" @click.self="closeWakeLogModal">
+                    <form class="w-full max-w-sm rounded-2xl bg-white p-5 shadow-2xl" @submit.prevent="submitWakeLog">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-violet-600">Wake up</p>
+                                <h3 class="mt-1 text-lg font-black text-gray-900">{{ wakeLogForm.woke_on.replaceAll('-', '/') }}の起床時刻</h3>
+                            </div>
+                            <button type="button" class="rounded-lg p-2 text-gray-400 transition hover:bg-gray-100 hover:text-gray-700" aria-label="閉じる" @click="closeWakeLogModal">
+                                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
+                            </button>
+                        </div>
+                        <div class="mt-5 block">
+                            <span class="text-xs font-bold text-gray-600">起床時刻</span>
+                            <div class="mt-2 rounded-2xl border border-violet-100 bg-gradient-to-br from-violet-50 via-white to-fuchsia-50 p-3 shadow-sm">
+                                <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-center">
+                                    <div class="rounded-xl bg-white p-2 shadow-sm ring-1 ring-violet-100">
+                                        <button type="button" class="flex w-full items-center justify-center rounded-lg py-1 text-violet-500 transition hover:bg-violet-50" aria-label="時を1時間戻す" @click="adjustWakeTime('hour', -1)">−</button>
+                                        <p class="py-1 text-4xl font-black tracking-tight text-violet-950 tabular-nums">{{ String(wakeTimeParts.hour).padStart(2, '0') }}</p>
+                                        <button type="button" class="flex w-full items-center justify-center rounded-lg py-1 text-violet-500 transition hover:bg-violet-50" aria-label="時を1時間進める" @click="adjustWakeTime('hour', 1)">＋</button>
+                                        <p class="mt-1 text-[10px] font-bold uppercase tracking-widest text-violet-400">hour</p>
+                                    </div>
+                                    <span class="pb-5 text-3xl font-black text-violet-300">:</span>
+                                    <div class="rounded-xl bg-white p-2 shadow-sm ring-1 ring-violet-100">
+                                        <button type="button" class="flex w-full items-center justify-center rounded-lg py-1 text-violet-500 transition hover:bg-violet-50" aria-label="分を5分戻す" @click="adjustWakeTime('minute', -5)">−</button>
+                                        <p class="py-1 text-4xl font-black tracking-tight text-violet-950 tabular-nums">{{ String(wakeTimeParts.minute).padStart(2, '0') }}</p>
+                                        <button type="button" class="flex w-full items-center justify-center rounded-lg py-1 text-violet-500 transition hover:bg-violet-50" aria-label="分を5分進める" @click="adjustWakeTime('minute', 5)">＋</button>
+                                        <p class="mt-1 text-[10px] font-bold uppercase tracking-widest text-violet-400">minute</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3 grid grid-cols-3 gap-1.5">
+                                    <button v-for="time in wakeTimePresets" :key="time" type="button" class="rounded-lg px-2 py-1.5 text-xs font-bold transition" :class="wakeLogForm.woke_at === time ? 'bg-violet-600 text-white shadow-sm' : 'bg-white text-violet-700 ring-1 ring-violet-100 hover:bg-violet-50'" @click="setWakeTime(time)">{{ time }}</button>
+                                </div>
+                            </div>
+                            <span v-if="wakeLogForm.errors.woke_at" class="mt-1 block text-xs text-rose-600">{{ wakeLogForm.errors.woke_at }}</span>
+                            <span v-if="wakeLogForm.errors.woke_on" class="mt-1 block text-xs text-rose-600">{{ wakeLogForm.errors.woke_on }}</span>
+                        </div>
+                        <div class="mt-5 grid gap-2" :class="wakeLogByDay[wakeLogForm.woke_on] ? 'grid-cols-2' : 'grid-cols-1'">
+                            <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-violet-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-60" :disabled="wakeLogForm.processing">
+                                {{ wakeLogForm.processing ? "保存中" : "保存" }}
+                            </button>
+                            <button v-if="wakeLogByDay[wakeLogForm.woke_on]" type="button" class="rounded-lg border border-rose-200 bg-white px-4 py-2.5 text-sm font-semibold text-rose-600 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-60" :disabled="deleteWakeLogForm.processing" @click="deleteWakeLog(wakeLogByDay[wakeLogForm.woke_on])">削除</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
 
             <section v-if="activeTab === 'repayment'" class="space-y-5">
                 <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-6">

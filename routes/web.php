@@ -226,6 +226,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::delete('personal/study-logs/{studyLog}', [PersonalAdminController::class, 'deleteStudyLog'])->name('admin.personal.studyLogs.delete');
     Route::post('personal/exercise-logs', [PersonalAdminController::class, 'storeExerciseLog'])->name('admin.personal.exerciseLogs.store');
     Route::delete('personal/exercise-logs/{exerciseLog}', [PersonalAdminController::class, 'deleteExerciseLog'])->name('admin.personal.exerciseLogs.delete');
+    Route::post('personal/wake-logs', [PersonalAdminController::class, 'storeWakeLog'])->name('admin.personal.wakeLogs.store');
+    Route::delete('personal/wake-logs/{wakeLog}', [PersonalAdminController::class, 'deleteWakeLog'])->name('admin.personal.wakeLogs.delete');
     Route::post('admins/{userId}/purchase-scopes', [AdminController::class, 'updateAdminPurchaseScopes'])->name('admin.admins.purchaseScopes.update');
     Route::post('adsense-revenues', [AdminController::class, 'storeAdsenseRevenue'])->name('admin.adsenseRevenues.store');
     Route::delete('adsense-revenues/{adsenseRevenueId}', [AdminController::class, 'deleteAdsenseRevenue'])->name('admin.adsenseRevenues.delete');

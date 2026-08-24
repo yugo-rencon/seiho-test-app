@@ -15,5 +15,6 @@ export const repaymentPlan = {
         { date: "2026-06-04", amount: 10000 },
         { date: "2026-06-22", amount: 20000 },
         { date: "2026-07-22", amount: 20000 },
+        { date: "2026-08-24", amount: 20000 },
     ],
 };

@@ -287,6 +287,7 @@ const isDraft = false;
                     questionTitle="（自動）振替貸付と契約者貸付"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-24 確認済み
                         '正しい',
                         '正しい',
                         '保険契約が失効し、復活可能期間内であること → 保険契約が有効であること', //p113

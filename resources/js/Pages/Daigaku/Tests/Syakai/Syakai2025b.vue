@@ -176,160 +176,160 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
                     questionTitle="社会保険制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
                     questionTitle="国民年金（基礎年金）の付加保険料"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
                     questionTitle="国民年金の老齢給付（受給資格期間）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
                     questionTitle="国民年金の遺族基礎年金"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
                     questionTitle="年金受給者の確定申告"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
                     questionTitle="保険診療の仕組み"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
                     questionTitle="後期高齢者医療制度（長寿医療制度）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
                     questionTitle="介護保険制度の最近の主な改正項目"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
                     questionTitle="介護保険制度の費用負担"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
                     questionTitle="労働保険制度の現状と課題"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
                     questionTitle="受給する老齢年金の選択"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
                     questionTitle="雇用保険や在職老齢年金の併給調整等"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3

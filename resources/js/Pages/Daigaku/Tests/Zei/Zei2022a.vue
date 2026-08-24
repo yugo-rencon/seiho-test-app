@@ -213,7 +213,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -221,13 +221,13 @@ const isDraft = false;
                     :relatedProblems="['2022a13', '2022b13', '2022c13']"
                     :contents="[
                         // rev: 2026-06-11 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
-                        '1回に支払われる金額のうち[[100万円以下の部分は10％、100万円を超える部分は20％]]が源泉徴収される。', //p15
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -235,13 +235,13 @@ const isDraft = false;
                     :relatedProblems="['2022a14', '2022c14']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
+                        '', //p
                         '正しい',
-                        '青色申告者が備え付けるべき帳簿書類は、年末に「貸借対照表」と「損益計算書」を作成することができるような正規の複式簿記に基づく帳簿でなければならない。ただし、[[簡易帳簿によって記録することもできる]]。', //p40
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -249,13 +249,13 @@ const isDraft = false;
                     :relatedProblems="['2022a15', '2022b15']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
+                        '', //p
                         '正しい',
-                        '70歳以上の親族を扶養の場合、扶養控除額は、同居の場合[[45万円]]、非同居の場合[[38万円]]である。', //p44
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -263,13 +263,13 @@ const isDraft = false;
                     :relatedProblems="['2022a16', '2022b5']"
                     :contents="[
                         // rev: 2026-06-13 確認済み
+                        '', //p
                         '正しい',
-                        '公的年金等の受給者全員が[[源泉徴収の対象となるわけではない]]。', //p86
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -277,13 +277,13 @@ const isDraft = false;
                     :relatedProblems="['2022a17']"
                     :contents="[
                         // rev: 2026-06-24 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
-                        '特例分 → 寄与分', //p102
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -291,13 +291,13 @@ const isDraft = false;
                     :relatedProblems="['2022a18', '2022c5']"
                     :contents="[
                         // rev: 2026-06-22 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
-                        '30% → 20%', //p127
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -305,13 +305,13 @@ const isDraft = false;
                     :relatedProblems="['2022a19', '2022b7', '2022c35']"
                     :contents="[
                         // rev: 2026-06-14 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
-                        '5年 → 2年', //p145
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -319,13 +319,13 @@ const isDraft = false;
                     :relatedProblems="['2022a20', '2022b20', '2022c20']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '相続時精算課税制度の適用対象となる贈与財産の種類、金額、[[贈与回数に制限はない]]。', //p155
                         '正しい',
+                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -333,13 +333,13 @@ const isDraft = false;
                     :relatedProblems="['2022a21', '2022b21', '2022c21']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
-                        '一時所得 → 雑所得', //p166
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -347,13 +347,13 @@ const isDraft = false;
                     :relatedProblems="['2022a22', '2022b22', '2022c8']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
-                        '医療費控除の確定申告により還付申告をする際には、交通事故等により、医療費控除の対象となる被害者（生計を一にする家族を含む）が受け取った治療費の金額（損害賠償金）も、支払った医療費から[[差し引いて申告しなければならない]]。', //p177
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -361,13 +361,13 @@ const isDraft = false;
                     :relatedProblems="['2022a23']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
+                        '', //p
                         '正しい',
-                        '寄附金は、法人の事業に直接関係のない支出であり、[[損金算入には一定の制限が設けられている]]。', //p209
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
@@ -376,8 +376,8 @@ const isDraft = false;
                     z
                     :contents="[
                         // rev: 2026-06-18 確認済み
+                        '', //p
                         '正しい',
-                        '加入者が役員または部課長、その他特定の使用人のみの場合、保険料が[[給与課税される]]。', //p236
                         '正しい',
                         '正しい',
                     ]"

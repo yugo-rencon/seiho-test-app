@@ -214,7 +214,7 @@ const isDraft = false;
                         '事業年度の所得金額 → 事業年度の収入金額', //p219
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -222,13 +222,13 @@ const isDraft = false;
                     :relatedProblems="['2024c13']"
                     :contents="[
                         // rev: 2026-06-09 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
-                        '1回に支払われる金額のうち[[100万円以下の部分は10％、100万円を超える部分は20％]]が源泉徴収される。', //p15
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -236,13 +236,13 @@ const isDraft = false;
                     :relatedProblems="['2024a14', '2024b14', '2024c14']"
                     :contents="[
                         // rev: 2026-06-22 確認済み
+                        '', //p
                         '正しい',
-                        '150万円 → 135万円', //p42
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -250,13 +250,13 @@ const isDraft = false;
                     :relatedProblems="['2024a3', '2024c15']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '青色申告者が備え付けるべき帳簿書類は、[[7年間（一定のものは5年間）]]保存しなければならない。', //p40
                         '正しい',
+                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -264,13 +264,13 @@ const isDraft = false;
                     :relatedProblems="['2024a16', '2024b16', '2024c16']"
                     :contents="[
                         // rev: 2026-06-25 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
-                        '住民税は、通常前年の所得に対して課税される「前年所得課税（翌年に課税）」であるが、退職所得の住民税に関しては、[[「現年課税（収入のあった年に課税）」]]であり、他の所得とは別に分離課税として住民税を計算する。', //p84
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -278,13 +278,13 @@ const isDraft = false;
                     :relatedProblems="['2024b17', '2024c17']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '訂正申告 → 更正の請求', //p61
                         '正しい',
+                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -292,13 +292,13 @@ const isDraft = false;
                     :relatedProblems="['2024c18']"
                     :contents="[
                         // rev: 2026-06-14 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
-                        '胎児は相続において、すでに生まれたものとみなされて[[相続権が認められる]]（ただし、死産の場合は適用されない）。', //p93
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -306,13 +306,13 @@ const isDraft = false;
                     :relatedProblems="['2024b4', '2024c19']"
                     :contents="[
                         // rev: 2026-06-22 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
-                        '上場株式は、課税時期（相続開始の日）の最終価格（終値）、課税時期の属する月の最終価格の月平均額、[[課税時期の属する月の前月の最終価格の月平均額]]、[[課税時期の属する月の前々月の最終価格の月平均額]]のいずれか[[低い価額]]で評価する。', //p114
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -320,13 +320,13 @@ const isDraft = false;
                     :relatedProblems="['2024c20']"
                     :contents="[
                         // rev: 2026-06-27 確認済み
-                        '契約者の名義を父親から長男に変更した場合、父親が有していた契約に関する権利は長男に移転することになるが、[[父親の生存中に契約者変更をしても、この段階では課税関係は生じない]]。', //p178
                         '正しい',
+                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -334,13 +334,13 @@ const isDraft = false;
                     :relatedProblems="['2024a21', '2024b21', '2024c21']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
-                        '医療費控除の確定申告により還付申告をする際には、交通事故等により、医療費控除の対象となる被害者（生計を一にする家族を含む）が受け取った治療費の金額（損害賠償金）も、支払った医療費から[[差し引いて申告しなければならない]]。', //p177
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -348,13 +348,13 @@ const isDraft = false;
                     :relatedProblems="['2024c22']"
                     :contents="[
                         // rev: 2026-06-27 確認済み
+                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
-                        'ここでいう中小法人等とは、資本金1億円以下、または資本もしくは出資を有しない普通法人（相互会社を除く）、[[公益法人等、協同組合等、人格のない社団等]]である。', //p217
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -362,13 +362,13 @@ const isDraft = false;
                     :relatedProblems="['2024a23', '2024b23', '2024c23']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
+                        '', //p
                         '正しい',
-                        '寄附金は、法人の事業に直接関係のない支出であり、[[損金算入には一定の制限が設けられている]]。', //p209
                         '正しい',
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
@@ -376,8 +376,8 @@ const isDraft = false;
                     :relatedProblems="['2024b24', '2024c24']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
+                        '', //p
                         '正しい',
-                        '中小企業退職金共済制度（中退共）等の他の退職金制度がある場合には、これらの制度と福利厚生プランとの合計額が退職慰労金規程の[[範囲内]]であるように設定する。', //p255
                         '正しい',
                         '正しい',
                     ]"

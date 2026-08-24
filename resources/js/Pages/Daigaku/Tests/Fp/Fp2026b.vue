@@ -179,10 +179,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="金融システムの規制緩和後の資産運用"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -192,10 +192,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="リスクマネジメント"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -205,10 +205,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="ライフステージ別のプランニング（50歳代既婚者）"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -218,10 +218,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="ローン金利の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -231,10 +231,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="独立行政法人住宅金融支援機構（「機構」）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -244,10 +244,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="金融商品のリスクの種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -257,10 +257,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="老後生活設計の考え方"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -270,10 +270,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="生命保険を活用した相続対策"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -283,10 +283,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="2016年（平成28年）５月施行の保険業法の主な改正内容"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -296,10 +296,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="特定保険契約"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -309,10 +309,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="保険法"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -322,10 +322,10 @@ const subject = "2026年度 フォームB";
                     questionTitle="生命保険相談所・裁定審査会"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp3

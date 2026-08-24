@@ -177,160 +177,160 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の所得控除"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の課税財産と非課税財産"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
                     questionTitle="相続対策"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
                     questionTitle="個人の住民税・事業税"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
                     questionTitle="企業市場"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険の税務"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
                     questionTitle="厚生年金保険（被用者年金）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金制度の障害給付と遺族給付の内容"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
-                <QuestionTemp1
+<QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
                     questionTitle="法令上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3

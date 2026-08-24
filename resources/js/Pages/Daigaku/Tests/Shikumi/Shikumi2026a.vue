@@ -66,10 +66,11 @@ const subject = "2026年度 フォームA";
                     questionTitle="保険金の支払い"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-24 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '失踪宣告があると、普通失踪者は[[７年の期間が満了したとき]]に死亡したものとみなされる。', //p23
+                        '[[利害関係人]]の請求を受けて家庭裁判所が宣告するものである。', //p23
+                        '高度障害保険金は支払われない → 高度障害保険金を支払う', //p24
                     ]"
                 />
                 <QuestionTemp1
@@ -183,10 +184,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="告知義務違反による保険契約の解除"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -196,10 +197,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="保険契約の解約・取消し・無効等"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -209,10 +210,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="責任開始の時期"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -222,10 +223,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="身体的危険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -235,10 +236,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="危険選択の原理"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -248,10 +249,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="超過危険の種類"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -261,10 +262,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="被保険者集団"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -274,10 +275,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="配当金の支払方法（毎年配当型）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -287,10 +288,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="契約転換制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -300,10 +301,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="契約内容の変更"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -313,10 +314,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="特定の疾病や損傷の治療に備える特約"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -326,10 +327,10 @@ const subject = "2026年度 フォームA";
                     questionTitle="共済制度の特徴"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp3

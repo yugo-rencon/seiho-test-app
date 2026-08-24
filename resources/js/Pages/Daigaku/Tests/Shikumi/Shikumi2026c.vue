@@ -181,10 +181,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="保険契約の当事者"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -194,10 +194,11 @@ const subject = "2026年度 フォームC";
                     questionTitle="保険料の払込み"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-24 確認済み
+                        '集金担当者等の取扱者による立替入金は「保険業法」で[[禁じられている]]。', //p13
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -207,10 +208,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="責任開始の時期"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -220,10 +221,11 @@ const subject = "2026年度 フォームC";
                     questionTitle="保険金の支払い"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-24 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
+                        '再指定されるまでの間に保険事故が発生した場合、[[死亡した保険金受取人の法定相続人]]が保険金受取人となる。', //p22
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -233,10 +235,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="危険選択の原理"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -246,10 +248,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="危険選択の手段"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -259,10 +261,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="被保険者集団"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -272,10 +274,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="剰余金発生の仕組みと配当金との関係"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -285,10 +287,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="保障見直しに関する諸制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -298,10 +300,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="契約内容の変更"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -311,10 +313,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="主契約の種類"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -324,10 +326,10 @@ const subject = "2026年度 フォームC";
                     questionTitle="共済事業"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp3

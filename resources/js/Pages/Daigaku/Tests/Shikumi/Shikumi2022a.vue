@@ -447,7 +447,7 @@ const isDraft = false;
                         {
                             questionTitle: '変額保険・変額個人年金保険',
                             relatedProblems: [],
-                            content: 'いずれの保険も解約返戻金に最低保証がある → 変額保険の場合、最低保証はない', //p146
+                            content: 'いずれの保険も解約返戻金には[[最低保証はない]]のが一般的である。', //p146
                         }, //48
                         {
                             questionTitle: 'CO・OP共済',

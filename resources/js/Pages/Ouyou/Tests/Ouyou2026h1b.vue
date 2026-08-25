@@ -225,10 +225,11 @@ const isDraft = false;
                     questionTitle="個人の住民税・事業税"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '個人事業主本人を被保険者 → 使用人を被保険者', //p67
                     ]"
                 />
                 <QuestionTemp1

@@ -313,10 +313,11 @@ const isDraft = false;
                     questionTitle="保険業法以外の保険販売等に関する法律"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        'なりすましが疑われたり真偽に疑いがあるお客さま等の場合には、[[再度の取引時確認が必要となる]]。', //p162
                     ]"
                 />
                 <QuestionTemp1

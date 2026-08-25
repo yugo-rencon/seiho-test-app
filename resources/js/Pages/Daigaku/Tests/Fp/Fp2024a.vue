@@ -76,7 +76,7 @@ const subject = "2024年度 フォームA";
                     :questionNumber="5"
                     :title="title"
                     :subject="subject"
-                    questionTitle="資金運用の3要素による金融商品の分類"
+                    questionTitle="資金運用の３要素による金融商品の分類"
                     :relatedProblems="['2024a5', '2024b5', '2024c5']"
                     :contents="[
                         // rev: 2026-05-29 確認済み

@@ -244,7 +244,7 @@ const subject = "2025年度 フォームC";
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
-                    questionTitle="資金運用の3要素による金融商品の分類"
+                    questionTitle="資金運用の３要素による金融商品の分類"
                     :relatedProblems="['2025b6', '2025c17']"
                     :contents="[
                         // rev: 2026-05-29 確認済み

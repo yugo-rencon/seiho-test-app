@@ -89,7 +89,7 @@ const isDraft = false;
                     :questionNumber="6"
                     :title="title"
                     :subject="subject"
-                    questionTitle="資金運用の3要素による金融商品の分類"
+                    questionTitle="資金運用の３要素による金融商品の分類"
                     :relatedProblems="[]"
                     :contents="[
                         '国債は、安全性の高い商品の据置型', //p63

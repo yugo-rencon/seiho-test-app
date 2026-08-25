@@ -189,7 +189,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -197,13 +197,13 @@ const isDraft = false;
                     :relatedProblems="['2021a13', '2021b13', '2021c13']"
                     :contents="[
                         // rev: 2026-06-21 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
+                        '4000万円 → 2000万円', //p28
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -211,13 +211,13 @@ const isDraft = false;
                     :relatedProblems="['2021a14', '2021c14']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '', //p
                         '正しい',
+                        '青色申告者が備え付けるべき帳簿書類は、年末に「貸借対照表」と「損益計算書」を作成することができるような正規の複式簿記に基づく帳簿でなければならない。ただし、[[簡易帳簿によって記録することもできる]]。', //p40
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -225,13 +225,13 @@ const isDraft = false;
                     :relatedProblems="['2021a15']"
                     :contents="[
                         // rev: 2026-06-27 確認済み
-                        '', //p
                         '正しい',
+                        '70歳以上の親族を扶養の場合、扶養控除額は、同居の場合[[45万円]]、非同居の場合[[38万円]]である。', //p44
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -239,13 +239,13 @@ const isDraft = false;
                     :relatedProblems="['2021a16']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
+                        '7年 → 5年', //p61
                         '正しい',
-                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -253,13 +253,13 @@ const isDraft = false;
                     :relatedProblems="['2021a17', '2021b17', '2021c17']"
                     :contents="[
                         // rev: 2026-06-14 確認済み
-                        '', //p
                         '正しい',
+                        '[[他へ養子に行った子]]、嫁に行った娘も[[相続人となる]]（特別養子を除く）。', //p93
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -267,13 +267,13 @@ const isDraft = false;
                     :relatedProblems="['2021a18']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
+                        '相続分には、「指定相続分」と「法定相続分」があり、「[[指定相続分]]」が優先される。', //p95
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -281,13 +281,13 @@ const isDraft = false;
                     :relatedProblems="['2021a19', '2021c6']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
+                        '既払込保険料総額 → 解約返戻金相当額', //p118
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -295,13 +295,13 @@ const isDraft = false;
                     :relatedProblems="['2021a20', '2021b19']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
+                        '12ヶ月 → 10ヶ月', //p135
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -309,13 +309,13 @@ const isDraft = false;
                     :relatedProblems="['2021a21', '2021b21', '2021c21']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
+                        '一時所得 → 雑所得', //p166
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -323,13 +323,13 @@ const isDraft = false;
                     :relatedProblems="['2021a22', '2021b11', '2021c23']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
+                        '法人税調整 → 税務調整', //p202
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -337,13 +337,13 @@ const isDraft = false;
                     :relatedProblems="['2021a23']"
                     :contents="[
                         // rev: 2026-06-27 確認済み
+                        '3ヶ月 → 2ヶ月', //p222
                         '正しい',
-                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
@@ -351,8 +351,8 @@ const isDraft = false;
                     :relatedProblems="['2021a24', '2021b24', '2021c24']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
-                        '', //p
                         '正しい',
+                        '加入者が役員または部課長、その他特定の使用人のみの場合、保険料が[[給与課税される]]。', //p236
                         '正しい',
                         '正しい',
                     ]"
@@ -465,7 +465,7 @@ const isDraft = false;
                             // rev: 2026-06-14 確認済み
                             questionTitle: '結婚・子育て資金の一括贈与に係る贈与税の非課税措置',
                             relatedProblems: ['2021a45'],
-                            content: '結婚・子育て資金にあてるために、父母や祖父母等の直系尊属が金銭を拠出し、信託銀行等の所定の金融機関等に信託等をした場合に、[[信託受益権の価額または拠出された金銭等の額のうち別途定める金額を非課税とする]]。',//p154
+                            content: '結婚・子育て資金にあてるために、父母や祖父母等の直系尊属が金銭を拠出し、信託銀行等の所定の金融機関等に信託等をした場合に、[[信託受益権の価額または拠出された金銭等の額のうち別途定める金額を非課税とする]]。', //p154
                         }, //45
                         {
                             // rev: 2026-06-21 確認済み
@@ -477,7 +477,7 @@ const isDraft = false;
                             // rev: 2026-06-27 確認済み
                             questionTitle: 'リビング・ニーズ特約',
                             relatedProblems: ['2021a47', '2021b47', '2021c47'],
-                            content: 'リビング･ニーズ特約の生前給付金も、[[入院給付金や高度障害保険金と同様に取り扱われ、非課税となる]]。',//p177
+                            content: 'リビング･ニーズ特約の生前給付金も、[[入院給付金や高度障害保険金と同様に取り扱われ、非課税となる]]。', //p177
                         }, //47
                         {
                             // rev: 2026-06-21 確認済み

@@ -70,6 +70,9 @@ Route::get('daigaku/shikumi-kojin2022c', [TestController::class, 'daigakuShikumi
 Route::get('daigaku/shikumi-kojin2021a', [TestController::class, 'daigakuShikumiKojin2021a'])->name('daigaku.shikumi-kojin2021a');
 Route::get('daigaku/shikumi-kojin2021b', [TestController::class, 'daigakuShikumiKojin2021b'])->name('daigaku.shikumi-kojin2021b');
 Route::get('daigaku/shikumi-kojin2021c', [TestController::class, 'daigakuShikumiKojin2021c'])->name('daigaku.shikumi-kojin2021c');
+Route::get('daigaku/fp2026a', [TestController::class, 'daigakuFpCompliance2026a'])->name('daigaku.fp2026a');
+Route::get('daigaku/fp2026b', [TestController::class, 'daigakuFpCompliance2026b'])->name('daigaku.fp2026b');
+Route::get('daigaku/fp2026c', [TestController::class, 'daigakuFpCompliance2026c'])->name('daigaku.fp2026c');
 Route::get('daigaku/fp2025a', [TestController::class, 'daigakuFpCompliance2025a'])->name('daigaku.fp2025a');
 Route::get('daigaku/fp2025b', [TestController::class, 'daigakuFpCompliance2025b'])->name('daigaku.fp2025b');
 Route::get('daigaku/fp2025c', [TestController::class, 'daigakuFpCompliance2025c'])->name('daigaku.fp2025c');

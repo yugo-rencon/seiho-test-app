@@ -214,7 +214,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -222,13 +222,13 @@ const isDraft = false;
                     :relatedProblems="['2023a13', '2023b13', '2023c13']"
                     :contents="[
                         // rev: 2026-06-11 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
+                        '1回に支払われる金額のうち[[100万円以下の部分は10％、100万円を超える部分は20％]]が源泉徴収される。', //p15
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -236,13 +236,13 @@ const isDraft = false;
                     :relatedProblems="['2023a14', '2023b14']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '', //p
                         '正しい',
+                        '青色申告者が備え付けるべき帳簿書類は、年末に「貸借対照表」と「損益計算書」を作成することができるような正規の複式簿記に基づく帳簿でなければならない。ただし、[[簡易帳簿によって記録することもできる]]。', //p40
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -250,13 +250,13 @@ const isDraft = false;
                     :relatedProblems="['2023a15', '2023b15']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
-                        '', //p
                         '正しい',
+                        '70歳以上の親族を扶養の場合、扶養控除額は、同居の場合[[45万円]]、非同居の場合[[38万円]]である。', //p44
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -264,13 +264,13 @@ const isDraft = false;
                     :relatedProblems="['2023a16']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
+                        '7年 → 5年', //p61
                         '正しい',
-                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -278,13 +278,13 @@ const isDraft = false;
                     :relatedProblems="['2023a17', '2023c15']"
                     :contents="[
                         // rev: 2026-06-27 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
+                        '600万円 → 500万円', //p25
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -292,13 +292,13 @@ const isDraft = false;
                     :relatedProblems="['2023a18', '2023b18']"
                     :contents="[
                         // rev: 2026-06-27 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
+                        '香典返礼費用は、[[葬式費用に含めない]]。', //p123
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -306,13 +306,13 @@ const isDraft = false;
                     :relatedProblems="['2023a19', '2023b7']"
                     :contents="[
                         // rev: 2026-06-22 確認済み
-                        '', //p
                         '正しい',
+                        '著しく低い価額の対価で財産の譲渡を受けた場合には、[[その対価とその財産の譲渡のときにおける時価（相続税評価額）との差額に相当する金額を、その財産を譲渡した者から贈与されたものとみなされる]]。', //p144
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -320,13 +320,13 @@ const isDraft = false;
                     :relatedProblems="['2023a20', '2023b20', '2023c20']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
+                        '相続時精算課税制度の適用対象となる贈与財産の種類、金額、[[贈与回数に制限はない]]。', //p155
                         '正しい',
-                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -334,13 +334,13 @@ const isDraft = false;
                     :relatedProblems="['2023a21', '2023b21', '2023c21']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
+                        '一時所得 → 雑所得', //p166
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -348,13 +348,13 @@ const isDraft = false;
                     :relatedProblems="['2023a22']"
                     :contents="[
                         // rev: 2026-06-24 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
+                        '満期保険金受取人（妻）が実際に取得した額[[800万円（1,000万円－200万円）]]に対し、みなし贈与財産として贈与税が課税される。', //p181
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -362,13 +362,13 @@ const isDraft = false;
                     :relatedProblems="['2023a23', '2023c23']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
-                        '', //p
                         '正しい',
+                        '寄附金は、法人の事業に直接関係のない支出であり、[[損金算入には一定の制限が設けられている]]。', //p209
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
@@ -376,8 +376,8 @@ const isDraft = false;
                     :relatedProblems="['2023a24', '2023b24', '2023c24']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
-                        '', //p
                         '正しい',
+                        '加入者が役員または部課長、その他特定の使用人のみの場合、保険料が[[給与課税される]]。', //p236
                         '正しい',
                         '正しい',
                     ]"

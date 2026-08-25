@@ -214,7 +214,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -222,13 +222,13 @@ const isDraft = false;
                     :relatedProblems="['2023a13', '2023b13', '2023c13']"
                     :contents="[
                         // rev: 2026-06-11 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
+                        '1回に支払われる金額のうち[[100万円以下の部分は10％、100万円を超える部分は20％]]が源泉徴収される。', //p15
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -236,13 +236,13 @@ const isDraft = false;
                     :relatedProblems="['2023c14']"
                     :contents="[
                         // rev: 2026-06-22 確認済み
-                        '', //p
                         '正しい',
+                        '150万円 → 135万円', //p42
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -250,13 +250,13 @@ const isDraft = false;
                     :relatedProblems="['2023a17', '2023c15']"
                     :contents="[
                         // rev: 2026-06-27 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
+                        '600万円 → 500万円', //p25
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -264,13 +264,13 @@ const isDraft = false;
                     :relatedProblems="['2023a30', '2023b5', '2023c16']"
                     :contents="[
                         // rev: 2026-06-13 確認済み
-                        '', //p
                         '正しい',
+                        '公的年金等の受給者全員が[[源泉徴収の対象となるわけではない]]。', //p86
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -278,13 +278,13 @@ const isDraft = false;
                     :relatedProblems="['2023c17']"
                     :contents="[
                         // rev: 2026-06-25 確認済み
-                        '', //p
                         '正しい',
+                        '遺言の効力は、[[遺言者の死亡のときから生ずる]]。したがって、遺言書作成時に遺言は成立するが、遺言者が生存中は権利義務は生じない。', //p105
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -292,13 +292,13 @@ const isDraft = false;
                     :relatedProblems="['2023c18']"
                     :contents="[
                         // rev: 2026-06-22 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
+                        '最も高い価額 → 最も低い価額', //p114
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -306,13 +306,13 @@ const isDraft = false;
                     :relatedProblems="['2023c19']"
                     :contents="[
                         // rev: 2026-06-14 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
+                        '5年 → 2年', //p145
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -320,13 +320,13 @@ const isDraft = false;
                     :relatedProblems="['2023a20', '2023b20', '2023c20']"
                     :contents="[
                         // rev: 2026-06-20 確認済み
+                        '相続時精算課税制度の適用対象となる贈与財産の種類、金額、[[贈与回数に制限はない]]。', //p155
                         '正しい',
-                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -334,13 +334,13 @@ const isDraft = false;
                     :relatedProblems="['2023a21', '2023b21', '2023c21']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
-                        '', //p
                         '正しい',
                         '正しい',
                         '正しい',
+                        '一時所得 → 雑所得', //p166
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -348,13 +348,13 @@ const isDraft = false;
                     :relatedProblems="['2023b23', '2023c22']"
                     :contents="[
                         // rev: 2026-06-27 確認済み
+                        '3ヶ月 → 2ヶ月', //p222
                         '正しい',
-                        '', //p
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -362,13 +362,13 @@ const isDraft = false;
                     :relatedProblems="['2023a23', '2023c23']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
-                        '', //p
                         '正しい',
+                        '寄附金は、法人の事業に直接関係のない支出であり、[[損金算入には一定の制限が設けられている]]。', //p209
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
@@ -376,8 +376,8 @@ const isDraft = false;
                     :relatedProblems="['2023a24', '2023b24', '2023c24']"
                     :contents="[
                         // rev: 2026-06-18 確認済み
-                        '', //p
                         '正しい',
+                        '加入者が役員または部課長、その他特定の使用人のみの場合、保険料が[[給与課税される]]。', //p236
                         '正しい',
                         '正しい',
                     ]"

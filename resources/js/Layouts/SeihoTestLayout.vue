@@ -142,6 +142,7 @@ const daigakuSubjects = [
         key: "fp",
         name: "FP",
         tests: {
+            "2026年度": ["a", "b", "c"],
             "2025年度": ["a", "b", "c"],
             "2024年度": ["a", "b", "c"],
             "2023年度": ["a", "b", "c"],

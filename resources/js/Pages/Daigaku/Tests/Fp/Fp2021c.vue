@@ -24,7 +24,7 @@ const isDraft = false;
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="生命保険FPの役割"
+                    questionTitle="生命保険ＦＰの役割"
                     :relatedProblems="[]"
                     :contents="[
                         '弁護士、税理士、不動産の専門家などとは全く異なる視点で → 弁護士、税理士、不動産の専門家などの協力を得ながら', //p1

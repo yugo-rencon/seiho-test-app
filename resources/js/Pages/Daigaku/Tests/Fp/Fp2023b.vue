@@ -188,7 +188,7 @@ const subject = "2023年度 フォームB";
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
-                    questionTitle="生命保険FPの役割"
+                    questionTitle="生命保険ＦＰの役割"
                     :relatedProblems="['2023a13', '2023b13', '2023c13']"
                     :contents="[
                         // rev: 2026-05-31 確認済み
@@ -459,7 +459,7 @@ const subject = "2023年度 フォームB";
                         {
                             // rev: 2026-05-31 確認済み
                             questionTitle: '生命保険会社の経営破綻時の取引制限',
-                            content: '契約の継続を希望する場合、取扱いを制限されている期間中も[[保険料を払い込む必要がある]]。',//p125
+                            content: '契約の継続を希望する場合、取扱いを制限されている期間中も[[保険料を払い込む必要がある]]。', //p125
                             relatedProblems: ['2023b45'],
                         }, //45
                         {

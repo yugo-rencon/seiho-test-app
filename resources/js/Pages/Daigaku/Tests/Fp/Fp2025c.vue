@@ -20,7 +20,7 @@ const subject = "2025年度 フォームC";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="生命保険FPの役割"
+                    questionTitle="生命保険ＦＰの役割"
                     :relatedProblems="['2025a1', '2025b1', '2025c1']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
@@ -465,7 +465,7 @@ const subject = "2025年度 フォームC";
                         {
                             // rev: 2026-05-29 確認済み
                             questionTitle: '高齢者医療制度',
-                            content: '後期高齢者の場合、医療機関の窓口ではかかった費用の1割、[[所定水準以上の所得者の場合は2割（そのうち現役並み所得者は3割）]]を負担する。',//p77
+                            content: '後期高齢者の場合、医療機関の窓口ではかかった費用の1割、[[所定水準以上の所得者の場合は2割（そのうち現役並み所得者は3割）]]を負担する。', //p77
                             relatedProblems: ['2025a46', '2025b46', '2025c46'],
                         }, //46
                         {

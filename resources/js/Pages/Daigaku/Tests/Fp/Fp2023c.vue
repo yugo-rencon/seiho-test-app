@@ -188,7 +188,7 @@ const subject = "2023年度 フォームC";
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
-                    questionTitle="生命保険FPの役割"
+                    questionTitle="生命保険ＦＰの役割"
                     :relatedProblems="['2023a13', '2023b13', '2023c13']"
                     :contents="[
                         // rev: 2026-05-31 確認済み

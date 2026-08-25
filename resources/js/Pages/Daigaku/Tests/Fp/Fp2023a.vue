@@ -49,7 +49,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの種類"
-                    :relatedProblems="['2023a3','2023b15', '2023c3']"
+                    :relatedProblems="['2023a3', '2023b15', '2023c3']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '正しい',
@@ -188,7 +188,7 @@ const subject = "2023年度 フォームA";
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
-                    questionTitle="生命保険FPの役割"
+                    questionTitle="生命保険ＦＰの役割"
                     :relatedProblems="['2023a13', '2023b13', '2023c13']"
                     :contents="[
                         // rev: 2026-05-31 確認済み

@@ -20,7 +20,7 @@ const subject = "2025年度 フォームA";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="生命保険FPの役割"
+                    questionTitle="生命保険ＦＰの役割"
                     :relatedProblems="['2025a1', '2025b1', '2025c1']"
                     :contents="[
                         // rev: 2026-05-28 確認済み

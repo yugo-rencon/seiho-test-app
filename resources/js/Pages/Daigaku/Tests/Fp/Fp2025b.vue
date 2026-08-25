@@ -314,7 +314,7 @@ const subject = "2025年度 フォームB";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle="2016年（平成28年）5月施行の保険業法の主な改正内容"
+                    questionTitle="2016年（平成28年）５月施行の保険業法の主な改正内容"
                     :relatedProblems="['2025b22']"
                     :contents="[
                         // rev: 2026-05-29 確認済み

@@ -167,7 +167,7 @@ const isDraft = false;
                     :questionNumber="12"
                     :title="title"
                     :subject="subject"
-                    questionTitle="2016年（平成28年）5月施行の保険業法の主な改正内容"
+                    questionTitle="2016年（平成28年）５月施行の保険業法の主な改正内容"
                     :relatedProblems="[]"
                     :contents="[
                         '注意喚起情報 → 契約概要', //p116

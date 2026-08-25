@@ -46,8 +46,9 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     }
 
     if (isDaigakuPath()) {
-        // 大学課程: 2025年度フォームAのみ無料
-        return !(year === 2025 && formCode === "A");
+        // 大学課程: しくみは2026年度、その他は2025年度のフォームAのみ無料
+        const isShikumi = window.location.pathname.includes("/daigaku/shikumi-kojin");
+        return !(year === (isShikumi ? 2026 : 2025) && formCode === "A");
     }
 
     // 生保講座:

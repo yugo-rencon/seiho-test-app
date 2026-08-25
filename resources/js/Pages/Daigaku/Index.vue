@@ -6,7 +6,7 @@ import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
 const DAIGAKU_FORMS = ["a", "b", "c"];
 const DAIGAKU_VISIBLE_YEARS = [2025, 2024, 2023, 2022, 2021];
-const SHIKUMI_VISIBLE_YEARS = [2025, 2024, 2023, 2022, 2021];
+const SHIKUMI_VISIBLE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const DAIGAKU_SECTIONS = [
     {
         id: "shikumi-kojin",
@@ -61,7 +61,7 @@ const isPreparingYear = (section, year) =>
     !section?.published;
 
 const isFreeTrialYear = (section, year) =>
-    Number(year) === 2025 && section?.published;
+    Number(year) === (section?.id === "shikumi-kojin" ? 2026 : 2025) && section?.published;
 
 const getDaigakuRoute = (sectionId, year, form) => {
     const sectionRoutePrefix = {
@@ -77,6 +77,9 @@ const getDaigakuRoute = (sectionId, year, form) => {
     if (!routePrefix) return null;
 
     const publishedRouteNames = new Set([
+        "daigaku.shikumi-kojin2026a",
+        "daigaku.shikumi-kojin2026b",
+        "daigaku.shikumi-kojin2026c",
         "daigaku.shikumi-kojin2025a",
         "daigaku.shikumi-kojin2025b",
         "daigaku.shikumi-kojin2025c",

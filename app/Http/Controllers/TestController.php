@@ -141,7 +141,19 @@ class TestController extends Controller
         return Inertia::render('Ippan/Tests/Ippan2025h2e');
     }
 
-    // 大学課程: 生命保険のしくみと個人保険商品 2025年度 フォームA
+    // 大学課程: 生命保険のしくみと個人保険商品
+    public function daigakuShikumiKojin2026a()
+    {
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2026a');
+    }
+    public function daigakuShikumiKojin2026b()
+    {
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2026b');
+    }
+    public function daigakuShikumiKojin2026c()
+    {
+        return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2026c');
+    }
     public function daigakuShikumiKojin2025a()
     {
         return Inertia::render('Daigaku/Tests/Shikumi/Shikumi2025a');

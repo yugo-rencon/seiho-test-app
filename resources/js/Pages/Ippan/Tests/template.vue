@@ -405,21 +405,81 @@ const isDraft = true;
                     :applyChoicePrefix="false"
                     :items="[
                         // 問68〜82
-                        { questionTitle: '', label: '', content: '' }, //68
-                        { questionTitle: '', label: '', content: '' }, //69
-                        { questionTitle: '', label: '', content: '' }, //70
-                        { questionTitle: '', label: '', content: '' }, //71
-                        { questionTitle: '', label: '', content: '' }, //72
-                        { questionTitle: '', label: '', content: '' }, //73
-                        { questionTitle: '', label: '', content: '' }, //74
-                        { questionTitle: '', label: '', content: '' }, //75
-                        { questionTitle: '', label: '', content: '' }, //76
-                        { questionTitle: '', label: '', content: '' }, //77
-                        { questionTitle: '', label: '', content: '' }, //78
-                        { questionTitle: '', label: '', content: '' }, //79
-                        { questionTitle: '', label: '', content: '' }, //80
-                        { questionTitle: '', label: '', content: '' }, //81
-                        { questionTitle: '', label: '', content: '' }, //82
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //68
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //69
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //70
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //71
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //72
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //73
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //74
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //75
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //76
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //77
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //78
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //79
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //80
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //81
+                        {
+                            questionTitle: '',
+                            label: '',
+                            content: '',
+                        }, //82
                     ]"
                 />
             </div>

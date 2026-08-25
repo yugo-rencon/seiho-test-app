@@ -491,7 +491,7 @@ const subject = "2026年度 フォームA";
                 />
             </div>
 
-            <TestNavigationButtons next-route="daigaku.shikumi-kojin2025b" home-route="daigaku.index" />
+            <TestNavigationButtons next-route="daigaku.shikumi-kojin2026b" home-route="daigaku.index" />
         </section>
     </SeihoTestLayout>
 </template>

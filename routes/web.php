@@ -52,6 +52,9 @@ Route::get('ouyou/tokusho', [TestController::class, 'tokusho'])->name('ouyou.tok
 Route::get('ippan/policy', [TestController::class, 'policy'])->name('ippan.policy');
 Route::get('ippan/terms', [TestController::class, 'terms'])->name('ippan.terms');
 Route::get('ippan/tokusho', [TestController::class, 'tokusho'])->name('ippan.tokusho');
+Route::get('daigaku/shikumi-kojin2026a', [TestController::class, 'daigakuShikumiKojin2026a'])->name('daigaku.shikumi-kojin2026a');
+Route::get('daigaku/shikumi-kojin2026b', [TestController::class, 'daigakuShikumiKojin2026b'])->name('daigaku.shikumi-kojin2026b');
+Route::get('daigaku/shikumi-kojin2026c', [TestController::class, 'daigakuShikumiKojin2026c'])->name('daigaku.shikumi-kojin2026c');
 Route::get('daigaku/shikumi-kojin2025a', [TestController::class, 'daigakuShikumiKojin2025a'])->name('daigaku.shikumi-kojin2025a');
 Route::get('daigaku/shikumi-kojin2025b', [TestController::class, 'daigakuShikumiKojin2025b'])->name('daigaku.shikumi-kojin2025b');
 Route::get('daigaku/shikumi-kojin2025c', [TestController::class, 'daigakuShikumiKojin2025c'])->name('daigaku.shikumi-kojin2025c');

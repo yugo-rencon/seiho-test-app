@@ -108,23 +108,64 @@ const isDraft = false;
                     questionTitle="確定拠出年金制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '「個人型」に加入した個人は、[[拠出限度額の範囲内]]で掛金を拠出することができる。', //p94
+                        '給付には、老齢給付金、障害給付金、[[死亡一時金および脱退一時金]]がある。', //p98
+                        'スイッチング → ポータビリティ', //p95
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle="金融商品の税引き後利回り"
-                    :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '正しい',
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-08-26 確認済み
+                            answer: '2.64%',
+                            questionTitle: '金融商品の税引き後利回り',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '1年複利なので、2年後の元利合計を求めたうえで、利息部分に20%の税金をかけます。税引き後利息を元本と期間で割ることで、税引き後利回りを求めます。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['満期時の元利合計 ＝ 元本 ×（1＋年利率）<sup>年数</sup>', '税引き後利息 ＝ 税引き前利息 − 税金', '税引き後利回り ＝ 税引き後利息 ÷ 元本 ÷ 年数 × 100'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['1,000,000円 ×（1＋0.0325）<sup>2</sup>', '＝ 1,066,056.25円', '＝ 1,066,056円（円未満四捨五入）'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['税引き前利息：1,066,056円 − 1,000,000円 ＝ 66,056円', '税金：66,056円 × 20% ＝ 13,211.2円 → 13,211円（円未満切り捨て）', '税引き後利息：66,056円 − 13,211円 ＝ 52,845円'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['52,845円 ÷ 1,000,000円 ÷ 2年 × 100', '＝ 2.64225%'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '▶ 答え イ．2.64%（小数第3位を四捨五入）',
+                                },
+                            ],
+                        },
+                    ]"
+                    :labels="[
+                        'イ', //8
                     ]"
                 />
                 <QuestionTemp1

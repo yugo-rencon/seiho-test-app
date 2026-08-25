@@ -470,9 +470,10 @@ const subject = "2026年度 フォームC";
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-08-26 確認済み
                             questionTitle: '保険募集における禁止行為',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '保険業法で規定されている保険募集における禁止行為は、[[行政処分を受ける可能性が生じる]]。', //p138
                         }, //48
                         {
                             questionTitle: '生命保険相談所',

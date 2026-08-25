@@ -28,10 +28,11 @@ const isDraft = false;
                     questionTitle="所得税の所得控除"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '地震保険料控除も所得控除に[[該当する]]。', //p19
+                        '70歳以上の老人扶養親族がいるときの扶養控除額は、[[同居の場合1人につき58万円、非同居の場合1人につき48万円となる]]。', //p22
+                        '雇用保険の保険料も[[控除の対象となる]]。', //p27
                     ]"
                 />
                 <QuestionTemp1
@@ -177,7 +178,7 @@ const isDraft = false;
                         '', //p
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -190,7 +191,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -203,7 +204,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -216,7 +217,7 @@ const isDraft = false;
                         '', //p
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -229,7 +230,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -242,7 +243,7 @@ const isDraft = false;
                         '', //p
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -255,7 +256,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -268,7 +269,7 @@ const isDraft = false;
                         '', //p
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -281,7 +282,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -294,7 +295,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -307,7 +308,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -320,7 +321,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"

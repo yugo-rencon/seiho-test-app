@@ -193,9 +193,10 @@ const isDraft = false;
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        // rev: 2026-08-26 確認済み
+                        '100万円 → 200万円', //p157
+                        'お客さまと実際に手続きをする担当者（代理人）本人の[[双方の確認が必要である]]。', //p
+                        '本人特定事項を隠蔽する目的で虚偽の申告を行った場合には、[[刑事罰の対象となる]]。', //p158
                         '正しい',
                     ]"
                 />
@@ -332,9 +333,10 @@ const isDraft = false;
                     questionTitle="確定給付企業年金制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '給付には、老齢給付金、障害給付金、遺族給付金（および死亡一時金）、[[脱退一時金]]がある。', //p101
                         '正しい',
                     ]"
                 />
@@ -345,10 +347,11 @@ const isDraft = false;
                     questionTitle="確定給付企業年金の税務"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '加入者が障害給付金を一時金で受け取った場合、[[非課税扱いとなる]]。', //p102
                     ]"
                 />
                 <QuestionTemp1
@@ -386,7 +389,8 @@ const isDraft = false;
                     questionTitle="法令上の禁止行為"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-26 確認済み
+                        '根拠のない数字を示して業界ナンバーワンと表示する行為は、[[「誤解を招く表示・説明」には該当する]]。', //p161
                         '正しい',
                         '正しい',
                         '正しい',
@@ -447,11 +451,11 @@ const isDraft = false;
                     :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-23 確認済み
-                        '10,300万円',
-                        '7,200万円',
-                        '4,810万円',
-                        '1,202万円',
-                        '952万円', // 問35〜39
+                        '10,300',
+                        '7,200',
+                        '4,810',
+                        '1,202',
+                        '952', // 問35〜39
                     ]"
                     :labels="[
                         'コ', //35
@@ -479,9 +483,10 @@ const isDraft = false;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-08-26 確認済み
                             questionTitle: '同族会社',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '30% → 50%', //p79
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
@@ -490,9 +495,10 @@ const isDraft = false;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-08-26 確認済み
                             questionTitle: '複利型商品',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '利率・期間が同じ場合、1年複利よりも半年複利、半年複利よりも1ヶ月複利商品のほうが、[[元利合計は大きくなる]]。', //p131
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
@@ -507,9 +513,10 @@ const isDraft = false;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '保険法',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '保険法 → 商法', //p158-159
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み

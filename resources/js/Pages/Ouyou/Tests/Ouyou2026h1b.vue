@@ -301,7 +301,8 @@ const isDraft = false;
                     questionTitle="総合福祉団体定期保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-26 確認済み
+                        '企業が負担した保険料全額を[[損金算入（個人企業の場合は必要経費に算入）できる]]。', //p86
                         '正しい',
                         '正しい',
                         '正しい',
@@ -314,10 +315,11 @@ const isDraft = false;
                     questionTitle="経営者保険の税務"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一時所得 → 退職所得', //p112
                     ]"
                 />
                 <QuestionTemp1

@@ -56,10 +56,11 @@ const isDraft = false;
                     questionTitle="契約形態による課税関係"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-26 確認済み
+                        '一時所得として所得税の課税対象 → 贈与税の課税対象', //p59
                         '正しい',
-                        '', //p
-                        '', //p
+                        '贈与税 → 相続税', //p59
+                        '雑所得 → 一時所得', //p59
                     ]"
                 />
                 <QuestionTemp1
@@ -83,10 +84,11 @@ const isDraft = false;
                     questionTitle="法人の住民税・事業税"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '法人の住民税は、[[法人の所得に関係なく法人の規模に応じて決められる「均等割」]]と法人税額に応じて課せられる「法人税割」で構成されている。', //p79
+                        '市町村 → 都道府県', //p80
+                        '法人の事業税の納税義務者は、事業を行う法人であり、[[法人の規模や営む事業により税率が異なる]]。', //p80
                     ]"
                 />
                 <QuestionTemp1
@@ -243,8 +245,9 @@ const isDraft = false;
                     questionTitle="相続税の課税財産と非課税財産"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
-                        '', //p
+                        '相続財産に特許権、営業権も[[含まれる]]。', //p42
                         '正しい',
                         '正しい',
                     ]"
@@ -256,10 +259,11 @@ const isDraft = false;
                     questionTitle="相続対策"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '[[遺言は原則的に法定相続の規定に優先する]]効力をもっている', //p55
                     ]"
                 />
                 <QuestionTemp1

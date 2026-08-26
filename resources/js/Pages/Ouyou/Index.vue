@@ -4,7 +4,7 @@ import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
-const OUYOU_VISIBLE_YEARS = [2025, 2024, 2023, 2022, 2021];
+const OUYOU_VISIBLE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const OUYOU_PERIODS = [
     {
         id: "apr-aug",
@@ -23,6 +23,11 @@ const OUYOU_PERIODS = [
 const activePeriodId = ref(OUYOU_PERIODS[0].id);
 const activePeriod = computed(
     () => OUYOU_PERIODS.find((period) => period.id === activePeriodId.value) ?? OUYOU_PERIODS[0],
+);
+const visibleYears = computed(() =>
+    activePeriod.value.id === "apr-aug"
+        ? OUYOU_VISIBLE_YEARS
+        : OUYOU_VISIBLE_YEARS.filter((year) => Number(year) !== 2026),
 );
 const page = usePage();
 const hasPremium = computed(() => page.props.auth?.hasPremiumOuyou === true);
@@ -118,16 +123,16 @@ const getFormLabel = (year, periodId, form) => {
 
 
                     <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
-                        <div v-for="year in OUYOU_VISIBLE_YEARS" :key="year" class="p-4 md:p-6">
+                        <div v-for="year in visibleYears" :key="year" class="p-4 md:p-6">
                             <div class="flex items-center gap-2">
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
-                                    {{ Number(year) === 2025 ? `${year}年` : `${year}年度` }}
+                                    {{ `${year}年` }}
                                 </div>
                                 <span
-                                    v-if="Number(year) === 2025 && !hasPremium"
+                                    v-if="Number(year) === 2026 && !hasPremium"
                                     class="inline-flex items-center rounded-full border border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700"
                                 >
-                                    2025年4月〜7月 フォームA無料
+                                    2026年4月〜7月 フォームA無料
                                 </span>
                             </div>
                             <p

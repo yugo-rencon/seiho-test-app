@@ -82,7 +82,7 @@ body {
 
 .is-ouyou .answer-highlight {
     @apply text-amber-900;
-    background: linear-gradient(transparent 55%, #fde68a 55%);
+    background: linear-gradient(transparent 55%, #f6e5bc 55%);
 }
 
 .is-ippan .answer-highlight {

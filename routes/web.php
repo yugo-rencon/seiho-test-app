@@ -26,7 +26,7 @@ Route::get('senmon/{year}-{period}-{form}', [TestController::class, 'senmonTest'
 Route::get('ouyou', [TestController::class, 'ouyouIndex'])->name('ouyou.index');
 Route::get('ouyou/{year}-{period}-{form}', [TestController::class, 'ouyouTest'])
     ->where([
-        'year' => '202[1-5]',
+        'year' => '202[1-6]',
         'period' => 'h[12]',
         'form' => '[a-dA-D]',
     ])

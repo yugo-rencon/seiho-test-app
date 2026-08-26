@@ -31,7 +31,7 @@ const isBasicScopeFreeRoute = (): boolean => {
     return (
         path === "/ippan/2025-1-6-a" ||
         path === "/senmon/2025-h1-a" ||
-        path === "/ouyou/2025-h1-a"
+        path === "/ouyou/2026-h1-a"
     );
 };
 
@@ -41,7 +41,7 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     const scope = currentExamScope();
 
     if (scope === "ippan" || scope === "senmon" || scope === "ouyou") {
-        // 一般・専門・応用課程: 2025年の前半フォームAのみ無料
+        // 一般・専門課程は2025年、応用課程は2026年の前半フォームAのみ無料
         return !isBasicScopeFreeRoute();
     }
 

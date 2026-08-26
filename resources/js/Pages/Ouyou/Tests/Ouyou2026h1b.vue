@@ -467,9 +467,10 @@ const isDraft = false;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-26 確認済み
                             questionTitle: '国税と地方税',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '国税は、所得税、法人税などの[[直接税]]、消費税、酒税などの[[間接税]]とに分けられる。', //p14
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み

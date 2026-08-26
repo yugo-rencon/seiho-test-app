@@ -10,11 +10,11 @@ const props = defineProps({
 });
 
 const sites = [
-    { key: "seiho", label: "生命保険講座", mobileLabel: "講座", route: "tests.index", color: "hover:text-indigo-700 hover:border-indigo-200 hover:bg-indigo-50/70" },
-    { key: "daigaku", label: "生命保険大学課程", mobileLabel: "大学", route: "daigaku.index", color: "hover:text-blue-700 hover:border-blue-200 hover:bg-blue-50/70" },
-    { key: "ouyou", label: "生命保険応用課程", mobileLabel: "応用", route: "ouyou.index", color: "hover:text-amber-700 hover:border-amber-200 hover:bg-amber-50/70" },
-    { key: "senmon", label: "生命保険専門課程", mobileLabel: "専門", route: "senmon.index", color: "hover:text-emerald-700 hover:border-emerald-200 hover:bg-emerald-50/70" },
-    { key: "ippan", label: "生命保険一般課程", mobileLabel: "一般", route: "ippan.index", color: "hover:text-fuchsia-700 hover:border-pink-200 hover:bg-pink-50/70" },
+    { key: "seiho", label: "生命保険講座", mobileLabel: "生保講座", route: "tests.index", color: "hover:text-indigo-700 hover:border-indigo-200 hover:bg-indigo-50/70" },
+    { key: "daigaku", label: "生命保険大学課程", mobileLabel: "大学課程", route: "daigaku.index", color: "hover:text-blue-700 hover:border-blue-200 hover:bg-blue-50/70" },
+    { key: "ouyou", label: "生命保険応用課程", mobileLabel: "応用課程", route: "ouyou.index", color: "hover:text-amber-700 hover:border-amber-200 hover:bg-amber-50/70" },
+    { key: "senmon", label: "生命保険専門課程", mobileLabel: "専門課程", route: "senmon.index", color: "hover:text-emerald-700 hover:border-emerald-200 hover:bg-emerald-50/70" },
+    { key: "ippan", label: "生命保険一般課程", mobileLabel: "一般課程", route: "ippan.index", color: "hover:text-fuchsia-700 hover:border-pink-200 hover:bg-pink-50/70" },
 ];
 
 const sisterSites = computed(() => sites.filter((site) => site.key !== props.currentSite));

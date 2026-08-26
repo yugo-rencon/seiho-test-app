@@ -347,8 +347,9 @@ const isDraft = false;
                     questionTitle="勤労者財産形成制度（財形制度）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
-                        '', //p
+                        '一律30% → 一律20%', //p117
                         '正しい',
                         '正しい',
                     ]"
@@ -360,7 +361,8 @@ const isDraft = false;
                     questionTitle="金利"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-26 確認済み
+                        '借りたい人が多ければ金利は[[上昇]]し、貸したい人が多ければ金利は[[低下]]する。', //p127
                         '正しい',
                         '正しい',
                         '正しい',
@@ -373,9 +375,10 @@ const isDraft = false;
                     questionTitle="生命保険募集人が遵守すべき法令等（保険業法）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '媒介 → 代理', //p149
                         '正しい',
                     ]"
                 />
@@ -386,10 +389,11 @@ const isDraft = false;
                     questionTitle="保険金・給付金等の請求と支払い"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-08-26 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '金融庁 → 生命保険会社', //p172
                     ]"
                 />
                 <QuestionTemp3

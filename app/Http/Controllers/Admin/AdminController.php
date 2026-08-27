@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Carbon;
@@ -14,6 +16,41 @@ use Inertia\Response;
 class AdminController extends Controller
 {
     private const INTERNAL_USER_IDS = [1, 2, 3, 4, 5];
+
+    public function monthlyPageViews(Request $request): JsonResponse
+    {
+        if (!Schema::hasTable('page_views')) {
+            return response()->json(['rows' => []]);
+        }
+
+        $cacheKey = 'admin.monthly-page-views-by-scope.v1';
+        if ($request->boolean('refresh')) {
+            Cache::forget($cacheKey);
+        }
+
+        $rows = Cache::remember($cacheKey, now()->addMinutes(15), function () {
+            return DB::table('page_views')
+                ->where('path', 'not like', '/admin%')
+                ->where('path', 'not like', '/daigaku/admin%')
+                ->whereIn('scope', ['seiho', 'daigaku', 'ouyou', 'senmon', 'ippan'])
+                ->selectRaw("DATE_FORMAT(viewed_at, '%Y-%m') as month")
+                ->addSelect('scope')
+                ->selectRaw('COUNT(*) as views')
+                ->groupBy('month', 'scope')
+                ->orderByDesc('month')
+                ->get();
+        });
+
+        return response()->json([
+            'rows' => $rows->map(function ($row) {
+                return [
+                    'month' => (string) $row->month,
+                    'scope' => (string) $row->scope,
+                    'views' => (int) $row->views,
+                ];
+            })->values(),
+        ]);
+    }
 
     public function index(Request $request): Response
     {
@@ -373,10 +410,6 @@ class AdminController extends Controller
             ];
         }
 
-        $pageViewsSince = Carbon::now()->subDays(30)->startOfDay();
-        $topPageViews = collect();
-        $dailyPageViews = collect();
-        $monthlyPageViewsByScope = collect();
         $premiumUsageToday = [
             'summary' => [
                 'views' => 0,
@@ -389,80 +422,6 @@ class AdminController extends Controller
             'seihoSubjectSummary' => collect(),
             'users' => collect(),
         ];
-        $pageViewSummary = [
-            'today' => ['views' => 0, 'uniqueSessions' => 0],
-            'yesterday' => ['views' => 0, 'uniqueSessions' => 0],
-            'last7days' => ['views' => 0, 'uniqueSessions' => 0],
-            'last30days' => ['views' => 0, 'uniqueSessions' => 0],
-            'total' => ['views' => 0, 'uniqueSessions' => 0],
-        ];
-        $shouldLoadPageViewStats = true;
-
-        if ($shouldLoadPageViewStats && Schema::hasTable('page_views')) {
-            $pageViewsBaseQuery = function () {
-                return DB::table('page_views')
-                    ->where('path', 'not like', '/admin%')
-                    ->where('path', 'not like', '/daigaku/admin%');
-            };
-
-            $buildPageViewSummary = function ($from = null, $to = null) use ($pageViewsBaseQuery) {
-                $query = $pageViewsBaseQuery();
-                if ($from !== null && $to !== null) {
-                    $query->whereBetween('viewed_at', [$from, $to]);
-                } elseif ($from !== null) {
-                    $query->where('viewed_at', '>=', $from);
-                } elseif ($to !== null) {
-                    $query->where('viewed_at', '<=', $to);
-                }
-
-                $row = $query
-                    ->selectRaw('COUNT(*) as views')
-                    ->selectRaw('COUNT(DISTINCT session_id) as unique_sessions')
-                    ->first();
-
-                return [
-                    'views' => (int) ($row->views ?? 0),
-                    'uniqueSessions' => (int) ($row->unique_sessions ?? 0),
-                ];
-            };
-
-            $pageViewSummary = [
-                'today' => $buildPageViewSummary($todayStart, $todayEnd),
-                'yesterday' => $buildPageViewSummary($yesterdayStart, $yesterdayEnd),
-                'last30days' => $buildPageViewSummary($pageViewsSince, $todayEnd),
-                'total' => $buildPageViewSummary(),
-            ];
-
-            $topPageViews = $pageViewsBaseQuery()
-                ->where('viewed_at', '>=', $pageViewsSince)
-                ->select('path')
-                ->selectRaw('COUNT(*) as views')
-                ->selectRaw('COUNT(DISTINCT session_id) as unique_sessions')
-                ->groupBy('path')
-                ->orderByDesc('views')
-                ->limit(20)
-                ->get();
-
-            $dailyPageViews = $pageViewsBaseQuery()
-                ->where('viewed_at', '>=', $pageViewsSince)
-                ->selectRaw('DATE(viewed_at) as day')
-                ->selectRaw('COUNT(*) as views')
-                ->selectRaw('COUNT(DISTINCT session_id) as unique_sessions')
-                ->groupBy('day')
-                ->orderByDesc('day')
-                ->limit(30)
-                ->get();
-
-            $monthlyPageViewsByScope = $pageViewsBaseQuery()
-                ->whereIn('scope', ['seiho', 'daigaku', 'ouyou', 'senmon', 'ippan'])
-                ->selectRaw("DATE_FORMAT(viewed_at, '%Y-%m') as month")
-                ->addSelect('scope')
-                ->selectRaw('COUNT(*) as views')
-                ->groupBy('month', 'scope')
-                ->orderByDesc('month')
-                ->get();
-        }
-
         if (Schema::hasTable('premium_access_logs')) {
             $hasPremiumAccessLogPath = Schema::hasColumn('premium_access_logs', 'path');
             $premiumLogsBaseQuery = function () use ($hasPremiumAccessLogPath) {
@@ -743,29 +702,6 @@ class AdminController extends Controller
             })->values(),
             'recentSales' => $recentSales,
             'adsenseRevenue' => $adsenseRevenue,
-            'pageViewsSince' => $pageViewsSince->toDateString(),
-            'topPageViews' => $topPageViews->map(function ($row) {
-                return [
-                    'path' => (string) $row->path,
-                    'views' => (int) $row->views,
-                    'uniqueSessions' => (int) $row->unique_sessions,
-                ];
-            })->values(),
-            'pageViewSummary' => $pageViewSummary,
-            'dailyPageViews' => $dailyPageViews->map(function ($row) {
-                return [
-                    'day' => (string) $row->day,
-                    'views' => (int) $row->views,
-                    'uniqueSessions' => (int) $row->unique_sessions,
-                ];
-            })->values(),
-            'monthlyPageViewsByScope' => $monthlyPageViewsByScope->map(function ($row) {
-                return [
-                    'month' => (string) $row->month,
-                    'scope' => (string) $row->scope,
-                    'views' => (int) $row->views,
-                ];
-            })->values(),
             'premiumUsageToday' => [
                 'summary' => $premiumUsageToday['summary'],
                 'scopeSummary' => $premiumUsageToday['scopeSummary'],

@@ -214,6 +214,7 @@ Route::controller(ContactController::class)->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('page-views/monthly', [AdminController::class, 'monthlyPageViews'])->name('admin.pageViews.monthly');
     Route::get('personal', [PersonalAdminController::class, 'index'])->name('admin.personal.index');
     Route::get('english-books', [EnglishBookAdminController::class, 'index'])->name('admin.englishBooks.index');
     Route::get('english-books/catalog', [EnglishBookAdminController::class, 'catalog'])->name('admin.englishBooks.catalog');
@@ -245,6 +246,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('daigaku/admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('daigaku.admin.index');
+    Route::get('page-views/monthly', [AdminController::class, 'monthlyPageViews'])->name('daigaku.admin.pageViews.monthly');
     Route::post('admins/{userId}/purchase-scopes', [AdminController::class, 'updateAdminPurchaseScopes'])->name('daigaku.admin.admins.purchaseScopes.update');
     Route::post('adsense-revenues', [AdminController::class, 'storeAdsenseRevenue'])->name('daigaku.admin.adsenseRevenues.store');
     Route::delete('adsense-revenues/{adsenseRevenueId}', [AdminController::class, 'deleteAdsenseRevenue'])->name('daigaku.admin.adsenseRevenues.delete');

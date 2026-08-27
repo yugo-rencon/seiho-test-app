@@ -1,5 +1,6 @@
 <script setup>
 import { Link, router, usePage } from "@inertiajs/vue3";
+import axios from "axios";
 import { computed, ref } from "vue";
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 
@@ -595,9 +596,10 @@ const examResultSummary = computed(() => examResultStats.value?.summary ?? {});
 const examResultScopeSummary = computed(() => examResultStats.value?.scopeSummary ?? []);
 const examResultSubjectSummary = computed(() => examResultStats.value?.subjectSummary ?? []);
 const examResultRecentEntries = computed(() => examResultStats.value?.recentEntries ?? []);
-const pageViewSummary = computed(() => salesInsights.value?.pageViewSummary ?? {});
-const dailyPageViews = computed(() => salesInsights.value?.dailyPageViews ?? []);
-const monthlyPageViewsByScope = computed(() => salesInsights.value?.monthlyPageViewsByScope ?? []);
+const monthlyPageViewsByScope = ref([]);
+const monthlyPageViewsLoading = ref(false);
+const monthlyPageViewsLoaded = ref(false);
+const monthlyPageViewsError = ref("");
 const pageViewScopes = ["seiho", "daigaku", "ouyou", "senmon", "ippan"];
 const monthlyPageViewRows = computed(() => {
     const months = new Map();
@@ -616,6 +618,25 @@ const monthlyPageViewRows = computed(() => {
 
     return Array.from(months.values()).sort((a, b) => b.month.localeCompare(a.month));
 });
+const monthlyPageViewsRoute = computed(() =>
+    isDaigakuAdmin.value ? "daigaku.admin.pageViews.monthly" : "admin.pageViews.monthly",
+);
+const loadMonthlyPageViews = async (refresh = false) => {
+    monthlyPageViewsLoading.value = true;
+    monthlyPageViewsError.value = "";
+
+    try {
+        const response = await axios.get(route(monthlyPageViewsRoute.value), {
+            params: refresh ? { refresh: 1 } : {},
+        });
+        monthlyPageViewsByScope.value = response.data?.rows ?? [];
+        monthlyPageViewsLoaded.value = true;
+    } catch (error) {
+        monthlyPageViewsError.value = "PVの集計を取得できませんでした。";
+    } finally {
+        monthlyPageViewsLoading.value = false;
+    }
+};
 const premiumUsageToday = computed(() => salesInsights.value?.premiumUsageToday ?? {});
 const premiumUsageSummary = computed(() => premiumUsageToday.value?.summary ?? {});
 const premiumUsageScopeSummary = computed(() => premiumUsageToday.value?.scopeSummary ?? []);
@@ -1403,37 +1424,24 @@ const peakHour2h = computed(() => {
                 </div>
 
                 <div v-if="salesTab === 'pv'" class="space-y-3">
-                    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">今日のPV</p>
-                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatNumber(pageViewSummary?.today?.views) }}</p>
-                            <p class="mt-1 text-xs text-slate-500">セッション {{ formatNumber(pageViewSummary?.today?.uniqueSessions) }}</p>
-                        </div>
-                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">昨日のPV</p>
-                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatNumber(pageViewSummary?.yesterday?.views) }}</p>
-                            <p class="mt-1 text-xs text-slate-500">セッション {{ formatNumber(pageViewSummary?.yesterday?.uniqueSessions) }}</p>
-                        </div>
-                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">直近7日のPV</p>
-                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatNumber(pageViewSummary?.last7days?.views) }}</p>
-                            <p class="mt-1 text-xs text-slate-500">セッション {{ formatNumber(pageViewSummary?.last7days?.uniqueSessions) }}</p>
-                        </div>
-                        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                            <p class="text-[11px] font-semibold tracking-wide text-slate-500">累計PV</p>
-                            <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatNumber(pageViewSummary?.total?.views) }}</p>
-                            <p class="mt-1 text-xs text-slate-500">セッション {{ formatNumber(pageViewSummary?.total?.uniqueSessions) }}</p>
-                        </div>
-                    </div>
-
                     <div class="rounded-lg border border-gray-100">
                         <div class="flex items-center justify-between border-b border-gray-100 px-3 py-2">
                             <div>
                                 <p class="text-xs font-semibold text-gray-700">月別・課程別PV</p>
                                 <p class="text-[11px] text-gray-500">有料利用の有無にかかわらず、すべての閲覧PVを集計</p>
                             </div>
+                            <button
+                                type="button"
+                                class="rounded-md bg-slate-800 px-3 py-1.5 text-xs font-bold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-50"
+                                :disabled="monthlyPageViewsLoading"
+                                @click="loadMonthlyPageViews(monthlyPageViewsLoaded)"
+                            >
+                                {{ monthlyPageViewsLoading ? "集計中…" : monthlyPageViewsLoaded ? "再集計" : "集計する" }}
+                            </button>
                         </div>
-                        <div class="overflow-x-auto">
+                        <p v-if="monthlyPageViewsError" class="px-3 py-4 text-center text-xs text-rose-600">{{ monthlyPageViewsError }}</p>
+                        <p v-else-if="!monthlyPageViewsLoaded" class="px-3 py-6 text-center text-xs text-gray-500">「集計する」を押すと、月別PVを表示します。</p>
+                        <div v-else class="overflow-x-auto">
                             <table class="min-w-full text-xs">
                                 <thead class="bg-gray-50 text-right text-gray-500">
                                     <tr>
@@ -1456,61 +1464,6 @@ const peakHour2h = computed(() => {
                         </div>
                     </div>
 
-                    <div class="rounded-lg border border-gray-100">
-                        <div class="flex items-center justify-between border-b border-gray-100 px-3 py-2">
-                            <p class="text-xs font-semibold text-gray-700">人気ページ Top20</p>
-                            <p class="text-[11px] text-gray-500">対象: {{ stats.salesInsights?.pageViewsSince }} 以降</p>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="min-w-full text-xs">
-                                <thead class="bg-gray-50 text-left text-gray-500">
-                                    <tr>
-                                        <th class="px-3 py-2">ページ</th>
-                                        <th class="px-3 py-2">PV</th>
-                                        <th class="px-3 py-2">セッション数</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr v-for="row in stats.salesInsights?.topPageViews ?? []" :key="`top-page-${row.path}`" class="border-t border-gray-100">
-                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-700">{{ row.path }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ row.views }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ row.uniqueSessions }}</td>
-                                    </tr>
-                                    <tr v-if="(stats.salesInsights?.topPageViews ?? []).length === 0">
-                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません（migration後に集計されます）。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="rounded-lg border border-gray-100">
-                        <div class="flex items-center justify-between border-b border-gray-100 px-3 py-2">
-                            <p class="text-xs font-semibold text-gray-700">日別PV（直近30日）</p>
-                            <p class="text-[11px] text-gray-500">対象: {{ stats.salesInsights?.pageViewsSince }} 以降</p>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="min-w-full text-xs">
-                                <thead class="bg-gray-50 text-left text-gray-500">
-                                    <tr>
-                                        <th class="px-3 py-2">日付</th>
-                                        <th class="px-3 py-2">PV</th>
-                                        <th class="px-3 py-2">セッション数</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr v-for="row in dailyPageViews" :key="`daily-pv-${row.day}`" class="border-t border-gray-100">
-                                        <td class="px-3 py-2 font-mono text-[11px] text-gray-700">{{ row.day }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.views) }}</td>
-                                        <td class="px-3 py-2 text-gray-700">{{ formatNumber(row.uniqueSessions) }}</td>
-                                    </tr>
-                                    <tr v-if="dailyPageViews.length === 0">
-                                        <td colspan="3" class="px-3 py-5 text-center text-gray-500">データがありません（migration後に集計されます）。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
 
                 <div v-if="activeTab === 'users' && activeMemberTab === 'premium'" class="rounded-xl border border-emerald-100 bg-emerald-50/40 p-4">

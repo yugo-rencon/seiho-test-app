@@ -485,7 +485,7 @@ const isDraft = false;
                             // rev: 2026-08-25 確認済み
                             questionTitle: '契約の選択',
                             label: 'イ',
-                            content: '経済上',
+                            content: '環境上',
                         }, //73
                         {
                             // rev: 2026-08-25 確認済み

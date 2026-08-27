@@ -231,10 +231,11 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険会社の仕組み"
                     :contents="[
+                        // rev: 2026-08-28 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '株式会社 → 相互会社', //p32
+                        '「相互会社」は、[[保険事業だけ]]に認められている。', //p32
                     ]"
                 />
                 <QuestionTemp1

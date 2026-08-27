@@ -278,7 +278,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="社会保障制度"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-28 確認済み
+                        '雇用保険法 → 生活保護法', //p112
                         '正しい',
                         '正しい',
                     ]"

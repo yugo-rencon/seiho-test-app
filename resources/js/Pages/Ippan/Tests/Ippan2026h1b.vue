@@ -118,31 +118,31 @@ const isDraft = false;
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="16〜18"
+                    questionRange="16〜17"
                     questionTitle="正しい告知の取り扱い-①"
                     :contents="[
                         // rev: 2026-08-25 確認済み
                         '契約確認',
-                        '保険証券',
-                        '２年', // 問16〜18
+                        '保険証券', // 問16〜17
                     ]"
                     :labels="[
                         'ア', //16
                         'ウ', //17
-                        'イ', //18
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="19〜20"
+                    questionRange="18〜20"
                     questionTitle="正しい告知の取り扱い-②"
                     :contents="[
                         // rev: 2026-08-25 確認済み
+                        '２年',
                         '１カ月',
-                        '取消し', // 問19〜20
+                        '取消し', // 問18〜20
                     ]"
                     :labels="[
+                        'イ', //18
                         'ウ', //19
                         'オ', //20
                     ]"
@@ -150,31 +150,31 @@ const isDraft = false;
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="21〜23"
+                    questionRange="21〜22"
                     questionTitle="保全・アフターサービス手続きと留意点-①"
                     :contents="[
                         // rev: 2026-08-25 確認済み
                         '契約者貸付',
-                        '（自動）振替貸付',
-                        '消滅します', // 問21〜23
+                        '（自動）振替貸付', // 問21〜22
                     ]"
                     :labels="[
                         'イ', //21
                         'ウ', //22
-                        'ア', //23
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="24〜25"
+                    questionRange="23〜25"
                     questionTitle="保全・アフターサービス手続きと留意点-②"
                     :contents="[
                         // rev: 2026-08-25 確認済み
+                        '消滅します',
                         '短く',
-                        '減額', // 問24〜25
+                        '減額', // 問23〜25
                     ]"
                     :labels="[
+                        'ア', //23
                         'ウ', //24
                         'オ', //25
                     ]"
@@ -243,8 +243,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険の仕組み"
                     :contents="[
+                        // rev: 2026-08-27 確認済み
                         '正しい',
-                        '', //p
+                        '公平性の法則 → 大数の法則', //p14
                         '正しい',
                     ]"
                 />

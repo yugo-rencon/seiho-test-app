@@ -597,6 +597,25 @@ const examResultSubjectSummary = computed(() => examResultStats.value?.subjectSu
 const examResultRecentEntries = computed(() => examResultStats.value?.recentEntries ?? []);
 const pageViewSummary = computed(() => salesInsights.value?.pageViewSummary ?? {});
 const dailyPageViews = computed(() => salesInsights.value?.dailyPageViews ?? []);
+const monthlyPageViewsByScope = computed(() => salesInsights.value?.monthlyPageViewsByScope ?? []);
+const pageViewScopes = ["seiho", "daigaku", "ouyou", "senmon", "ippan"];
+const monthlyPageViewRows = computed(() => {
+    const months = new Map();
+
+    for (const row of monthlyPageViewsByScope.value) {
+        const month = String(row?.month ?? "");
+        const scope = String(row?.scope ?? "");
+        if (!month || !pageViewScopes.includes(scope)) continue;
+
+        const entry = months.get(month) ?? { month, total: 0, views: {} };
+        const views = Number(row?.views ?? 0);
+        entry.views[scope] = views;
+        entry.total += views;
+        months.set(month, entry);
+    }
+
+    return Array.from(months.values()).sort((a, b) => b.month.localeCompare(a.month));
+});
 const premiumUsageToday = computed(() => salesInsights.value?.premiumUsageToday ?? {});
 const premiumUsageSummary = computed(() => premiumUsageToday.value?.summary ?? {});
 const premiumUsageScopeSummary = computed(() => premiumUsageToday.value?.scopeSummary ?? []);
@@ -1262,6 +1281,7 @@ const peakHour2h = computed(() => {
                             { key: 'overview', label: '概要' },
                             { key: 'daily', label: '日次' },
                             { key: 'monthly', label: '月次' },
+                            { key: 'pv', label: 'PV' },
                             { key: 'adsense', label: '広告' },
                         ]"
                         :key="`sales-${tab.key}`"
@@ -1403,6 +1423,36 @@ const peakHour2h = computed(() => {
                             <p class="text-[11px] font-semibold tracking-wide text-slate-500">累計PV</p>
                             <p class="mt-2 text-2xl font-extrabold text-slate-900">{{ formatNumber(pageViewSummary?.total?.views) }}</p>
                             <p class="mt-1 text-xs text-slate-500">セッション {{ formatNumber(pageViewSummary?.total?.uniqueSessions) }}</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-lg border border-gray-100">
+                        <div class="flex items-center justify-between border-b border-gray-100 px-3 py-2">
+                            <div>
+                                <p class="text-xs font-semibold text-gray-700">月別・課程別PV</p>
+                                <p class="text-[11px] text-gray-500">有料利用の有無にかかわらず、すべての閲覧PVを集計</p>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-xs">
+                                <thead class="bg-gray-50 text-right text-gray-500">
+                                    <tr>
+                                        <th class="whitespace-nowrap px-3 py-2 text-left">月</th>
+                                        <th v-for="scope in pageViewScopes" :key="`monthly-pv-head-${scope}`" class="whitespace-nowrap px-3 py-2">{{ scopeLabel(scope) }}</th>
+                                        <th class="whitespace-nowrap px-3 py-2 font-bold">合計</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="row in monthlyPageViewRows" :key="`monthly-pv-${row.month}`" class="border-t border-gray-100 text-right text-gray-700">
+                                        <td class="whitespace-nowrap px-3 py-2 text-left font-mono text-[11px]">{{ row.month }}</td>
+                                        <td v-for="scope in pageViewScopes" :key="`monthly-pv-${row.month}-${scope}`" class="px-3 py-2">{{ formatNumber(row.views[scope] ?? 0) }}</td>
+                                        <td class="px-3 py-2 font-bold text-slate-900">{{ formatNumber(row.total) }}</td>
+                                    </tr>
+                                    <tr v-if="monthlyPageViewRows.length === 0">
+                                        <td :colspan="pageViewScopes.length + 2" class="px-3 py-5 text-center text-gray-500">データがありません（PV計測開始後に表示されます）。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 

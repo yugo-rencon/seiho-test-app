@@ -376,6 +376,7 @@ class AdminController extends Controller
         $pageViewsSince = Carbon::now()->subDays(30)->startOfDay();
         $topPageViews = collect();
         $dailyPageViews = collect();
+        $monthlyPageViewsByScope = collect();
         $premiumUsageToday = [
             'summary' => [
                 'views' => 0,
@@ -395,7 +396,7 @@ class AdminController extends Controller
             'last30days' => ['views' => 0, 'uniqueSessions' => 0],
             'total' => ['views' => 0, 'uniqueSessions' => 0],
         ];
-        $shouldLoadPageViewStats = false;
+        $shouldLoadPageViewStats = true;
 
         if ($shouldLoadPageViewStats && Schema::hasTable('page_views')) {
             $pageViewsBaseQuery = function () {
@@ -450,6 +451,15 @@ class AdminController extends Controller
                 ->groupBy('day')
                 ->orderByDesc('day')
                 ->limit(30)
+                ->get();
+
+            $monthlyPageViewsByScope = $pageViewsBaseQuery()
+                ->whereIn('scope', ['seiho', 'daigaku', 'ouyou', 'senmon', 'ippan'])
+                ->selectRaw("DATE_FORMAT(viewed_at, '%Y-%m') as month")
+                ->addSelect('scope')
+                ->selectRaw('COUNT(*) as views')
+                ->groupBy('month', 'scope')
+                ->orderByDesc('month')
                 ->get();
         }
 
@@ -747,6 +757,13 @@ class AdminController extends Controller
                     'day' => (string) $row->day,
                     'views' => (int) $row->views,
                     'uniqueSessions' => (int) $row->unique_sessions,
+                ];
+            })->values(),
+            'monthlyPageViewsByScope' => $monthlyPageViewsByScope->map(function ($row) {
+                return [
+                    'month' => (string) $row->month,
+                    'scope' => (string) $row->scope,
+                    'views' => (int) $row->views,
                 ];
             })->values(),
             'premiumUsageToday' => [

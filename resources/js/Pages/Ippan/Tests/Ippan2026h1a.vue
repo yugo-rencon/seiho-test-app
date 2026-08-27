@@ -219,10 +219,11 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="私たちの役割と心がまえ"
                     :contents="[
+                        // rev: 2026-08-27 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
-                        '', //p
+                        '預金保険法等 → 保険業法等', //p11
+                        '保険事故の発生による保障の提供時期は、[[契約締結時とは時間的にずれることがほとんどである]]。', //p12
                     ]"
                 />
                 <QuestionTemp1
@@ -231,10 +232,11 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険の募集等に関する法律"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-27 確認済み
+                        '厚生労働大臣 → 内閣総理大臣', //p63
                         '正しい',
                         '正しい',
-                        '', //p
+                        '告知する事項を契約者等が判断して告知する義務（[[自発的申告義務]]）から、保険会社が質問したことだけに答えればよいという義務（[[質問応答義務]]）に変更された。', //p76
                     ]"
                 />
                 <QuestionTemp1
@@ -243,8 +245,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険の仕組み"
                     :contents="[
+                        // rev: 2026-08-27 確認済み
                         '正しい',
-                        '', //p
+                        '公平性の法則 → 大数の法則', //p14
                         '正しい',
                     ]"
                 />
@@ -254,7 +257,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="契約取り扱いの手続き"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-27 確認済み
+                        '平均年齢 → 保険年齢', //p41
                         '正しい',
                         '正しい',
                     ]"
@@ -265,8 +269,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="契約申込み時の実務"
                     :contents="[
+                        // rev: 2026-08-27 確認済み
                         '正しい',
-                        '', //p
+                        '第1回保険料充当金払い込みのあった日 → 診査（告知）のあった日', //p46
                         '正しい',
                     ]"
                 />
@@ -276,9 +281,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="相続の法律"
                     :contents="[
+                        // rev: 2026-08-27 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '相続税の課税対象となる財産には、相続により取得した現金・土地などの本来の相続財産の他に、みなし相続財産として、[[死亡保険金や死亡退職金なども含まれる]]。', //p132
                     ]"
                 />
                 <QuestionTemp2

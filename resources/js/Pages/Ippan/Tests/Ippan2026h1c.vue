@@ -22,31 +22,31 @@ const isDraft = false;
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="1〜3"
+                    questionRange="1〜2"
                     questionTitle="募集時の正しい説明-①"
                     :contents="[
                         // rev: 2026-08-25 確認済み
                         '約款',
-                        '内閣総理大臣',
-                        '契約概要', // 問1〜3
+                        '内閣総理大臣', // 問1〜2
                     ]"
                     :labels="[
                         'ア', //1
                         'エ', //2
-                        'ア', //3
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="4〜5"
+                    questionRange="3〜5"
                     questionTitle="募集時の正しい説明-②"
                     :contents="[
                         // rev: 2026-08-25 確認済み
+                        '契約概要',
                         'いただく前に',
-                        '適合性の原則', // 問4〜5
+                        '適合性の原則', // 問3〜5
                     ]"
                     :labels="[
+                        'ア', //3
                         'エ', //4
                         'オ', //5
                     ]"
@@ -54,31 +54,31 @@ const isDraft = false;
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="6〜8"
+                    questionRange="6〜7"
                     questionTitle="生命保険会社の仕組み-①"
                     :contents="[
                         // rev: 2026-08-25 確認済み
                         '保険業法',
-                        '免許',
-                        '基礎利益', // 問6〜8
+                        '免許', // 問6〜7
                     ]"
                     :labels="[
                         'ア', //6
                         'エ', //7
-                        'イ', //8
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="9〜10"
+                    questionRange="8〜10"
                     questionTitle="生命保険会社の仕組み-②"
                     :contents="[
                         // rev: 2026-08-25 確認済み
+                        '基礎利益',
                         '生命保険契約者保護機構',
-                        '禁止', // 問9〜10
+                        '禁止', // 問8〜10
                     ]"
                     :labels="[
+                        'イ', //8
                         'エ', //9
                         'カ', //10
                     ]"
@@ -118,31 +118,31 @@ const isDraft = false;
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="16〜18"
+                    questionRange="16〜17"
                     questionTitle="契約の選択-①"
                     :contents="[
                         // rev: 2026-08-25 確認済み
-                        '経済',
-                        '契約内容登録制度',
-                        '面接', // 問16〜18
+                        '環境',
+                        '契約内容登録制度', // 問16〜17
                     ]"
                     :labels="[
-                        'ア', //16
+                        'イ', //16
                         'エ', //17
-                        'ア', //18
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="19〜20"
+                    questionRange="18〜20"
                     questionTitle="契約の選択-②"
                     :contents="[
                         // rev: 2026-08-25 確認済み
+                        '面接',
                         '割増保険料',
-                        '特別条件', // 問19〜20
+                        '特別条件', // 問18〜20
                     ]"
                     :labels="[
+                        'ア', //18
                         'ウ', //19
                         'カ', //20
                     ]"
@@ -243,8 +243,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険の仕組み"
                     :contents="[
+                        // rev: 2026-08-27 確認済み
                         '正しい',
-                        '', //p
+                        '公平性の法則 → 大数の法則', //p14
                         '正しい',
                     ]"
                 />
@@ -254,9 +255,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="契約申込み時の実務"
                     :contents="[
+                        // rev: 2026-08-27 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '生命保険会社の指定した医師の診査を受けたあとは、[[加入の意思が明確であるとみなされるため、契約申込みの撤回などの取り扱いはできない]]。', //p47
                     ]"
                 />
                 <QuestionTemp1

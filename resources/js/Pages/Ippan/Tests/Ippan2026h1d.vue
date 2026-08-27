@@ -22,31 +22,31 @@ const isDraft = false;
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="1〜3"
+                    questionRange="1〜2"
                     questionTitle="募集時の正しい説明-①"
                     :contents="[
                         // rev: 2026-08-25 確認済み
                         '約款',
-                        '内閣総理大臣',
-                        '契約概要', // 問1〜3
+                        '内閣総理大臣', // 問1〜2
                     ]"
                     :labels="[
                         'ア', //1
                         'エ', //2
-                        'ア', //3
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="4〜5"
+                    questionRange="3〜5"
                     questionTitle="募集時の正しい説明-②"
                     :contents="[
                         // rev: 2026-08-25 確認済み
+                        '契約概要',
                         'いただく前に',
-                        '適合性の原則', // 問4〜5
+                        '適合性の原則', // 問3〜5
                     ]"
                     :labels="[
+                        'ア', //3
                         'エ', //4
                         'オ', //5
                     ]"
@@ -86,31 +86,31 @@ const isDraft = false;
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="11〜13"
+                    questionRange="11〜12"
                     questionTitle="正しい告知の取り扱い-①"
                     :contents="[
                         // rev: 2026-08-25 確認済み
                         '契約確認',
-                        '保険証券',
-                        '解約返戻金があれば', // 問11〜13
+                        '保険証券', // 問11〜12
                     ]"
                     :labels="[
                         'イ', //11
                         'エ', //12
-                        'イ', //13
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="14〜15"
+                    questionRange="13〜15"
                     questionTitle="正しい告知の取り扱い-②"
                     :contents="[
                         // rev: 2026-08-25 確認済み
+                        '解約返戻金があれば',
                         '１カ月',
-                        '２年', // 問14〜15
+                        '２年', // 問13〜15
                     ]"
                     :labels="[
+                        'イ', //13
                         'ウ', //14
                         'カ', //15
                     ]"
@@ -118,31 +118,31 @@ const isDraft = false;
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="16〜18"
+                    questionRange="16〜17"
                     questionTitle="保険金・給付金の請求と支払い-①"
                     :contents="[
                         // rev: 2026-08-25 確認済み
                         '保険料',
-                        '約款',
-                        '故意に', // 問16〜18
+                        '約款', // 問16〜17
                     ]"
                     :labels="[
                         'イ', //16
                         'エ', //17
-                        'ウ', //18
                     ]"
                 />
                 <QuestionTemp3
                     :title="title"
                     :subject="subject"
-                    questionRange="19〜20"
+                    questionRange="18〜20"
                     questionTitle="保険金・給付金の請求と支払い-②"
                     :contents="[
                         // rev: 2026-08-25 確認済み
+                        '故意に',
                         '支払います',
-                        '戦争その他の変乱', // 問19〜20
+                        '戦争その他の変乱', // 問18〜20
                     ]"
                     :labels="[
+                        'ウ', //18
                         'ア', //19
                         'オ', //20
                     ]"
@@ -154,13 +154,13 @@ const isDraft = false;
                     questionTitle="相続の法律-①"
                     :contents="[
                         // rev: 2026-08-25 確認済み
-                        '１/２',
                         '２/３',
+                        '３/４',
                         '相続の放棄', // 問21〜23
                     ]"
                     :labels="[
-                        'ア', //21
-                        'イ', //22
+                        'イ', //21
+                        'エ', //22
                         'オ', //23
                     ]"
                 />
@@ -243,8 +243,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険の仕組み"
                     :contents="[
+                        // rev: 2026-08-27 確認済み
                         '正しい',
-                        '', //p
+                        '公平性の法則 → 大数の法則', //p14
                         '正しい',
                     ]"
                 />
@@ -254,9 +255,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="私たちの役割と心がまえ"
                     :contents="[
+                        // rev: 2026-08-27 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '預金保険法等 → 保険業法等', //p11
                     ]"
                 />
                 <QuestionTemp1

@@ -290,12 +290,14 @@ const isDraft = false;
                     :useAnswerLabelForAll="true"
                     :items="[
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: 'この場合、保険料は[[生命保険会社の定める利率で割り引かれる]]。', //p50
                         }, //38
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '保険金受取人 → 契約者', //p50
                         }, //39
                         {
                             // rev: 2026-08-25 確認済み
@@ -308,12 +310,14 @@ const isDraft = false;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '払込方法（回数・経路）については、それぞれ[[途中で変更することができる]]。', //p51
                         }, //42
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '５年更新 → １年更新', //p116
                         }, //43
                         {
                             // rev: 2026-08-25 確認済み
@@ -326,8 +330,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '財形制度にもとづく保険には、財形貯蓄積立保険・[[財形住宅貯蓄積立保険]]・[[財形年金積立保険]]などがある。', //p119
                         }, //46
                         {
                             // rev: 2026-08-25 確認済み
@@ -335,8 +340,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '生命保険の種類',
-                            content: '', //p
+                            content: '定期保険 → 終身保険', //p17
                         }, //48
                         {
                             // rev: 2026-08-25 確認済み
@@ -354,8 +360,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //51
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '生命保険の種類',
-                            content: '', //p
+                            content: '契約時に定めた保険金額（基本保険金額）は[[保証されている]]。', //p20
                         }, //52
                         {
                             // rev: 2026-08-25 確認済み
@@ -381,8 +388,9 @@ const isDraft = false;
                             content: '', //p
                         }, //57
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約確認は、[[契約の成立前に行われる場合と成立後に行われる場合]]がある。', //p85
                         }, //58
                         {
                             // rev: 2026-08-25 確認済み
@@ -395,8 +403,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //60
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'この場合、すでに払い込んだ保険料は[[返還されない]]。', //p87
                         }, //61
                         {
                             // rev: 2026-08-25 確認済み

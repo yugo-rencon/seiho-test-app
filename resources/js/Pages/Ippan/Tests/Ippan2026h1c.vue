@@ -290,12 +290,14 @@ const isDraft = false;
                     :useAnswerLabelForAll="true"
                     :items="[
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: 'この場合、保険料は[[生命保険会社の定める利率で割り引かれる]]。', //p50
                         }, //38
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '保険金受取人 → 契約者', //p50
                         }, //39
                         {
                             // rev: 2026-08-25 確認済み
@@ -308,12 +310,14 @@ const isDraft = false;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '保険料の払い込み',
-                            content: '', //p
+                            content: '払込方法（回数・経路）については、それぞれ[[途中で変更することができる]]。', //p51
                         }, //42
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '５年更新 → １年更新', //p116
                         }, //43
                         {
                             // rev: 2026-08-25 確認済み
@@ -326,8 +330,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-08-27 確認済み
                             questionTitle: '企業向け商品',
-                            content: '', //p
+                            content: '財形制度にもとづく保険には、財形貯蓄積立保険・[[財形住宅貯蓄積立保険]]・[[財形年金積立保険]]などがある。', //p119
                         }, //46
                         {
                             // rev: 2026-08-25 確認済み
@@ -364,11 +369,12 @@ const isDraft = false;
                         }, //53
                         {
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '契約確認は、[[契約の成立前に行われる場合と成立後に行われる場合]]がある。', //p85
                         }, //54
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: '１年 → ２年', //p86-87
                         }, //55
                         {
                             // rev: 2026-08-25 確認済み
@@ -376,8 +382,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //56
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '正しい告知の取り扱い',
-                            content: '', //p
+                            content: 'この場合、すでに払い込んだ保険料は[[返還されない]]。', //p87
                         }, //57
                         {
                             questionTitle: '保全・アフターサービス手続きと留意点',
@@ -403,7 +410,7 @@ const isDraft = false;
                         }, //62
                         {
                             // rev: 2026-08-25 確認済み
-                            questionTitle: '保全・アフターサービス手続きと留意点',
+                            questionTitle: 'お客さまニーズへの対応',
                             content: '正しい',
                         }, //63
                         {

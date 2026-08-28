@@ -327,15 +327,15 @@ const visibleSubjects = computed(() => {
                                     :key="yearLabel"
                                     class="flex items-center gap-2 rounded-lg px-2 py-1.5"
                                 >
-                                    <span class="w-[4.5rem] shrink-0 text-xs font-bold text-gray-600">{{ yearLabel }}</span>
-                                    <ul class="flex flex-wrap gap-1.5">
+                                    <span class="w-16 shrink-0 text-xs font-bold text-gray-600">{{ yearLabel }}</span>
+                                    <ul :class="isIppan ? 'grid flex-1 grid-cols-5 gap-1' : 'flex flex-wrap gap-1.5'">
                                         <li v-for="form in forms" :key="form">
                                             <Link
                                                 v-if="resolveFormHref(subject.key, yearLabel, form)"
                                                 :href="resolveFormHref(subject.key, yearLabel, form)"
-                                                class="flex min-w-14 items-center justify-center rounded-md px-3 py-2 text-sm font-semibold transition"
+                                                class="flex h-10 items-center justify-center rounded-md px-3 py-2 text-sm font-semibold transition"
                                                 :class="
-                                                    isCurrentFormHref(resolveFormHref(subject.key, yearLabel, form))
+                                                    [isIppan ? 'w-full px-0' : 'min-w-14', isCurrentFormHref(resolveFormHref(subject.key, yearLabel, form))
                                                         ? (isDaigaku
                                                             ? 'bg-blue-600 text-white'
                                                             : isSenmon
@@ -353,7 +353,7 @@ const visibleSubjects = computed(() => {
                                                                 ? 'bg-amber-50 text-amber-700 hover:bg-amber-100'
                                                               : isIppan
                                                                 ? 'bg-fuchsia-50 text-fuchsia-700 hover:bg-fuchsia-100'
-                                                                : 'bg-violet-50 text-violet-700 hover:bg-violet-100')
+                                                                : 'bg-violet-50 text-violet-700 hover:bg-violet-100')]
                                                 "
                                                 @click="closeMenu"
                                             >
@@ -361,7 +361,8 @@ const visibleSubjects = computed(() => {
                                             </Link>
                                             <span
                                                 v-else
-                                                class="flex min-w-14 items-center justify-center rounded-md bg-gray-100 px-3 py-2 text-sm font-semibold text-gray-400"
+                                                class="flex h-10 items-center justify-center rounded-md bg-gray-100 px-3 py-2 text-sm font-semibold text-gray-400"
+                                                :class="isIppan ? 'w-full px-0' : 'min-w-14'"
                                             >
                                                 {{ form.toUpperCase() }}
                                             </span>

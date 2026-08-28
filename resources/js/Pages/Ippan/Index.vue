@@ -135,7 +135,7 @@ const getFormHref = (year, period, form) => {
                                 </Link>
                             </div>
 
-                            <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
+                            <div class="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
                                 <template v-for="form in activePeriod.forms" :key="`${activePeriod.id}-${year}-${form}`">
                                     <Link
                                         :href="getFormHref(year, activePeriod, form)"

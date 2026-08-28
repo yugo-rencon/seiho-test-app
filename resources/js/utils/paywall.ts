@@ -29,7 +29,7 @@ const isBasicScopeFreeRoute = (): boolean => {
 
     const path = window.location.pathname.replace(/\/$/, "");
     return (
-        path === "/ippan/2025-1-6-a" ||
+        /^\/ippan\/2026-1-6-[a-e]$/i.test(path) ||
         path === "/senmon/2025-h1-a" ||
         path === "/ouyou/2026-h1-a"
     );
@@ -41,7 +41,7 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     const scope = currentExamScope();
 
     if (scope === "ippan" || scope === "senmon" || scope === "ouyou") {
-        // 一般・専門課程は2025年、応用課程は2026年の前半フォームAのみ無料
+        // 一般課程は2026年前半のフォームA〜E（ログイン後）、専門・応用課程は前半フォームAのみ無料
         return !isBasicScopeFreeRoute();
     }
 
@@ -91,4 +91,13 @@ export const getPaywallStartQuestion = (title: string): number => {
 
 export const hasPremiumAccess = (pageProps: any): boolean => {
     return pageProps?.auth?.hasPremium === true;
+};
+
+export const requiresIppanFreeLogin = (pageProps: any): boolean => {
+    if (pageProps?.auth?.user) return false;
+    if (typeof window === "undefined") return false;
+
+    return /^\/ippan\/2026-1-6-[a-e]$/i.test(
+        window.location.pathname.replace(/\/$/, ""),
+    );
 };

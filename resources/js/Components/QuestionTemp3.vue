@@ -68,7 +68,7 @@
     import { usePage } from "@inertiajs/vue3";
     import PaywallNotice from "./PaywallNotice.vue";
     import RelatedProblems from "./RelatedProblems.vue";
-    import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
+    import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear, requiresIppanFreeLogin } from "@/utils/paywall";
 
     const props = defineProps({
         questionNumber: {
@@ -180,11 +180,11 @@ const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.v
     });
 
     const shouldHideByPaywall = computed(() => {
+        const requiresLogin = requiresIppanFreeLogin(page.props);
         const isPaid = isPaidYear(props.subject, props.title);
         const isUnlocked = hasPremiumAccess(page.props);
         return (
-            isPaid &&
-            !isUnlocked &&
+            (requiresLogin || (isPaid && !isUnlocked)) &&
             blockStartQuestion.value >= paywallStartQuestion.value
         );
     });

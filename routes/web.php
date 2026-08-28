@@ -34,7 +34,7 @@ Route::get('ouyou/{year}-{period}-{form}', [TestController::class, 'ouyouTest'])
 Route::get('ippan', [TestController::class, 'ippanIndex'])->name('ippan.index');
 Route::get('ippan/{year}-{months}-{form}', [TestController::class, 'ippanTest'])
     ->where([
-        'year' => '202[1-5]',
+        'year' => '202[1-6]',
         'months' => '(1-6|7-12)',
         'form' => '[a-eA-E]',
     ])

@@ -276,6 +276,10 @@ const activeDaigakuSubject = computed(() => DAIGAKU_SUBJECTS.find((s) => s.key =
 // 未保存の変更を溜めるオブジェクト { testKey: newBooleanState }
 const pendingChanges = ref({});
 const hasPending = computed(() => Object.keys(pendingChanges.value).length > 0);
+const ippanPeriodsForYear = (year) =>
+    Number(year) === 2026
+        ? IPPAN_PERIODS.filter((period) => period.key === "h1")
+        : IPPAN_PERIODS;
 
 // 実効値：pending があればそちら優先
 const isReleased = (testKey) => {
@@ -331,7 +335,7 @@ const groupStats = computed(() => {
     });
 
     const seihoKeys = SEIHO_SUBJECTS.flatMap((s) => SEIHO_YEARS.flatMap((y) => SEIHO_FORMS.map((f) => `seiho-${s.key}-${y}-${f}`)));
-    const ippanKeys = IPPAN_YEARS.flatMap((y) => IPPAN_PERIODS.flatMap((p) => IPPAN_FORMS.map((f) => `ippan-${y}-${p.key}-${f}`)));
+    const ippanKeys = IPPAN_YEARS.flatMap((y) => ippanPeriodsForYear(y).flatMap((p) => IPPAN_FORMS.map((f) => `ippan-${y}-${p.key}-${f}`)));
     const senmonKeys = SENMON_YEARS.flatMap((y) => SENMON_PERIODS.flatMap((p) => p.forms.map((f) => `senmon-${y}-${p.key}-${f}`)));
     const ouyouKeys = OUYOU_YEARS.flatMap((y) => OUYOU_PERIODS.flatMap((p) => p.forms.map((f) => `ouyou-${y}-${p.key}-${f}`)));
     const daigakuKeys = DAIGAKU_SUBJECTS.flatMap((s) => DAIGAKU_YEARS.flatMap((y) => DAIGAKU_FORMS.map((f) => `daigaku-${s.key}-${y}-${f}`)));
@@ -2104,8 +2108,8 @@ const peakHour2h = computed(() => {
                                 </thead>
                                 <tbody>
                                     <template v-for="year in IPPAN_YEARS" :key="year">
-                                        <tr v-for="(period, pIdx) in IPPAN_PERIODS" :key="`${year}-${period.key}`" class="border-t border-slate-100 hover:bg-slate-50/70">
-                                            <td v-if="pIdx === 0" :rowspan="IPPAN_PERIODS.length" class="align-middle border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
+                                        <tr v-for="(period, pIdx) in ippanPeriodsForYear(year)" :key="`${year}-${period.key}`" class="border-t border-slate-100 hover:bg-slate-50/70">
+                                            <td v-if="pIdx === 0" :rowspan="ippanPeriodsForYear(year).length" class="align-middle border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
                                             <td class="whitespace-nowrap border-r border-slate-100 px-4 py-2.5 text-slate-500">{{ period.label }}</td>
                                             <td v-for="f in IPPAN_FORMS" :key="f" class="px-4 py-2.5 text-center">
                                                 <button type="button" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition" :class="btnClass(`ippan-${year}-${period.key}-${f}`)" @click="toggleRelease(`ippan-${year}-${period.key}-${f}`)">

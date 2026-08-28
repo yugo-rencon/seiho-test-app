@@ -4,7 +4,7 @@ import { computed, ref } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import SisterSiteLinks from "@/Components/SisterSiteLinks.vue";
 
-const IPPAN_YEARS = [2025, 2024, 2023, 2022, 2021];
+const IPPAN_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const IPPAN_PERIODS = [
     {
         id: "h1",
@@ -26,8 +26,15 @@ const activePeriodId = ref(IPPAN_PERIODS[0].id);
 const activePeriod = computed(
     () => IPPAN_PERIODS.find((period) => period.id === activePeriodId.value) ?? IPPAN_PERIODS[0],
 );
+const visibleYears = computed(() =>
+    IPPAN_YEARS.filter((year) => year !== 2026 || activePeriod.value.id === "h1"),
+);
 const page = usePage();
 const hasPremium = computed(() => page.props.auth?.hasPremiumIppan === true);
+const isLoggedIn = computed(() => Boolean(page.props.auth?.user));
+const loginHref = computed(() =>
+    route("login", { scope: "ippan", return_to: String(page.url ?? "/ippan") }),
+);
 const pricingHref = computed(() =>
     route("pricing", { scope: "ippan", return_to: String(page.url ?? "/ippan") }),
 );
@@ -113,34 +120,29 @@ const getFormHref = (year, period, form) => {
 
 
                     <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
-                        <div v-for="year in IPPAN_YEARS" :key="`${activePeriod.id}-${year}`" class="p-4 md:p-6">
+                        <div v-for="year in visibleYears" :key="`${activePeriod.id}-${year}`" class="p-4 md:p-6">
                             <div class="flex items-center gap-2">
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
                                     {{ year }}年
                                 </div>
-                                <span
-                                    v-if="Number(year) === 2025 && !hasPremium"
-                                    class="inline-flex items-center rounded-full border border-pink-300 bg-pink-50 px-2.5 py-1 text-xs font-semibold text-fuchsia-700"
+                                <Link
+                                    v-if="Number(year) === 2026 && activePeriod.id === 'h1' && !isLoggedIn"
+                                    :href="loginHref"
+                                    class="inline-flex items-center gap-2 rounded-full border-2 border-pink-200 bg-white px-3 py-1.5 text-xs font-bold text-fuchsia-700 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-300 hover:bg-pink-50 hover:shadow focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
                                 >
-                                    2025年1月〜6月 フォームA無料
-                                </span>
+                                    無料登録で最新年度の解説を見る
+                                    <span aria-hidden="true" class="text-[10px]">▶</span>
+                                </Link>
                             </div>
 
                             <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
                                 <template v-for="form in activePeriod.forms" :key="`${activePeriod.id}-${year}-${form}`">
                                     <Link
-                                        v-if="getFormHref(year, activePeriod, form)"
                                         :href="getFormHref(year, activePeriod, form)"
                                         class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-pink-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-fuchsia-700 transition hover:bg-pink-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                                     >
                                         {{ getFormLabel(year, activePeriod.id, form) }}
                                     </Link>
-                                    <span
-                                        v-else
-                                        class="inline-flex w-full cursor-not-allowed items-center justify-center whitespace-nowrap rounded-full border border-gray-200 bg-gray-50 px-2 py-1.5 text-[12px] font-semibold text-gray-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
-                                    >
-                                        {{ getFormLabel(year, activePeriod.id, form) }}
-                                    </span>
                                 </template>
                             </div>
                         </div>

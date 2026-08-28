@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Link, usePage } from "@inertiajs/vue3";
 import { computed } from "vue";
+import { requiresIppanFreeLogin } from "@/utils/paywall";
 
 const page = usePage();
 const scope = computed(() => {
@@ -22,6 +23,10 @@ const pricingHref = computed(() => {
     });
 });
 const sessionLimitExceeded = computed(() => page.props?.auth?.premiumSessionLimitExceeded === true);
+const loginRequired = computed(() => requiresIppanFreeLogin(page.props));
+const loginHref = computed(() =>
+    route("login", { scope: scope.value, return_to: page.url }),
+);
 const priceNumberText = computed(() =>
     ["ippan", "senmon", "ouyou"].includes(scope.value)
         ? "980"
@@ -30,12 +35,20 @@ const priceNumberText = computed(() =>
           : "1,980",
 );
 const unlockedCountText = computed(() => {
-    if (scope.value === "daigaku") return "全90解説";
-    if (scope.value === "ippan") return "全50解説";
-    if (scope.value === "senmon" || scope.value === "ouyou") return "全30解説";
+    if (scope.value === "daigaku") return "全96解説";
+    if (scope.value === "ippan") return "全55解説";
+    if (scope.value === "senmon") return "全30解説";
+    if (scope.value === "ouyou") return "全32解説";
     return "全144解説";
 });
 const paywallText = computed(() => {
+    if (loginRequired.value) {
+        return {
+            lead: "フォームA〜Eは、無料登録・ログイン後に閲覧できます。",
+            cta: "ログインして無料で見る",
+        };
+    }
+
     if (sessionLimitExceeded.value) {
         return {
             lead: "プレミアムの同時利用は2端末までです。別の端末でログアウトしてから、このページを再読み込みしてください。",
@@ -152,25 +165,25 @@ export default {
                 <span class="h-px flex-1 border-t border-dashed" :class="tone.dash"></span>
             </div>
             <p
-                v-if="!sessionLimitExceeded"
+                v-if="!sessionLimitExceeded && !loginRequired"
                 class="mx-auto mt-2 w-fit rounded-full border bg-white px-3 py-1 text-sm font-bold"
                 :class="[tone.dash, tone.countAccent]"
             >
                 買い切り
             </p>
-            <p v-if="!sessionLimitExceeded" class="mt-1 text-2xl font-semibold leading-none sm:text-3xl" :class="tone.title">
+            <p v-if="!sessionLimitExceeded && !loginRequired" class="mt-1 text-2xl font-semibold leading-none sm:text-3xl" :class="tone.title">
                 ￥{{ priceNumberText }}
             </p>
             <p class="mt-2 text-xs" :class="tone.text">
                 {{ paywallText.lead }}
             </p>
-            <p v-if="!sessionLimitExceeded" class="mt-0.5 text-xs" :class="tone.priceSub">
+            <p v-if="!sessionLimitExceeded && !loginRequired" class="mt-0.5 text-xs" :class="tone.priceSub">
                 <span class="font-semibold" :class="tone.countAccent">{{ unlockedCountText }}</span
                 >が閲覧可能（今後の追加コンテンツを含む）
             </p>
             <div v-if="!sessionLimitExceeded" class="mt-3 mb-1 flex justify-center">
                 <Link
-                    :href="pricingHref"
+                    :href="loginRequired ? loginHref : pricingHref"
                     class="inline-flex min-w-[220px] items-center justify-center rounded-xl px-7 py-3 text-base font-semibold text-white transition"
                     :class="tone.cta"
                 >

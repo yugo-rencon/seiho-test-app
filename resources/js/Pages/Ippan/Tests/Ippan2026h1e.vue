@@ -257,9 +257,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保全・アフターサービス手続きと留意点"
                     :contents="[
+                        // rev: 2026-08-29 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '減額部分は、解約されたものとして取り扱い、[[解約返戻金があれば払い戻す]]。', //p96
                     ]"
                 />
                 <QuestionTemp1
@@ -268,8 +269,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="隣接業界"
                     :contents="[
+                        // rev: 2026-08-29 確認済み
                         '正しい',
-                        '', //p
+                        '農林水産省 → 厚生労働省', //p108
                         '正しい',
                     ]"
                 />
@@ -279,9 +281,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :contents="[
+                        // rev: 2026-08-29 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '60万円 → 110万円', //p127
                     ]"
                 />
                 <QuestionTemp2
@@ -381,12 +384,14 @@ const isDraft = false;
                             content: '正しい',
                         }, //55
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '100万円超 → 200万円超', //p74
                         }, //56
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '生命保険の募集等に関する法律',
-                            content: '', //p
+                            content: '各種共済等は対象とならない → 対象となる', //p76
                         }, //57
                         {
                             // rev: 2026-08-28 確認済み
@@ -419,8 +424,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //63
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '保険金・給付金の請求と支払い（保険金・給付金を支払わない場合）',
-                            content: '', //p
+                            content: '他の受取人に対しても支払わない → 残額を支払う', //p104
                         }, //64
                         {
                             // rev: 2026-08-25 確認済み

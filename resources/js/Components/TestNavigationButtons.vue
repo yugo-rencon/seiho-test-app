@@ -54,18 +54,18 @@ const ippanAutoNavigation = computed(() => {
     }
 
     const path = (page.url || "").split("?")[0];
-    const matched = path.match(/^\/ippan\/(202[0-5])-(1-6|7-12)-([a-e])$/i);
+    const matched = path.match(/^\/ippan\/(202[0-6])-(1-6|7-12)-([a-e])$/i);
 
     if (!matched) {
         return { previous: null, next: null };
     }
 
     const currentId = `${matched[1]}|${matched[2]}|${matched[3].toLowerCase()}`;
-    const years = ["2025", "2024", "2023", "2022", "2021"];
-    const months = ["1-6", "7-12"];
+    const years = ["2026", "2025", "2024", "2023", "2022", "2021"];
+    const monthsForYear = (year) => (year === "2026" ? ["1-6"] : ["1-6", "7-12"]);
     const forms = ["a", "b", "c", "d", "e"];
 
-    const orderedIds = years.flatMap((year) => months.flatMap((month) => forms.map((form) => `${year}|${month}|${form}`)));
+    const orderedIds = years.flatMap((year) => monthsForYear(year).flatMap((month) => forms.map((form) => `${year}|${month}|${form}`)));
     const currentIndex = orderedIds.indexOf(currentId);
 
     if (currentIndex === -1) {

@@ -144,7 +144,7 @@ import { usePage } from "@inertiajs/vue3";
 import katex from "katex";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
-import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear } from "@/utils/paywall";
+import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear, requiresIppanFreeLogin } from "@/utils/paywall";
 import { formatInlineContentHtml } from "@/utils/formatContentHtml";
 
 type ExplanationType = "blockTitle" | "text" | "kv" | "formula" | "formulaBlock" | "result" | "note" | "tex";
@@ -217,7 +217,8 @@ const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.v
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 
 const isLockedContext = computed(() => {
-    return isPaidYear(props.subject, props.title) && !hasPremiumAccess(page.props);
+    return requiresIppanFreeLogin(page.props)
+        || (isPaidYear(props.subject, props.title) && !hasPremiumAccess(page.props));
 });
 
 const normalizedItems = computed(() => {

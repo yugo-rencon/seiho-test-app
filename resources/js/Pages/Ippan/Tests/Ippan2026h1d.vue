@@ -219,10 +219,11 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="剰余金と配当金"
                     :contents="[
+                        // rev: 2026-08-29 確認済み
                         '正しい',
-                        '', //p
+                        '2つ → 3つ（予定死亡率・予定利率・予定事業比率）', //p26
                         '正しい',
-                        '', //p
+                        '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                     ]"
                 />
                 <QuestionTemp1
@@ -268,9 +269,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保全・アフターサービス手続きと留意点"
                     :contents="[
+                        // rev: 2026-08-29 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '復活により契約を継続した場合には、[[保険料は契約時と変わない]]。', //p98
                     ]"
                 />
                 <QuestionTemp1
@@ -279,7 +281,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険金・給付金の税法上の取り扱い（一時金で受け取った場合）"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-29 確認済み
+                        '相続税 → 贈与税', //p126
                         '正しい',
                         '正しい',
                     ]"
@@ -341,12 +344,14 @@ const isDraft = false;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '通称名でもよい → 戸籍等の公的書類記載のものを記入', //p40
                         }, //48
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '契約者 → 被保険者', //p40
                         }, //49
                         {
                             // rev: 2026-08-25 確認済み
@@ -359,12 +364,14 @@ const isDraft = false;
                             content: '正しい',
                         }, //51
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '契約取り扱いの手続き',
-                            content: '', //p
+                            content: '保険料が30000円以上 → 50000円以上', //p43
                         }, //52
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '経済上の危険 → 環境上の危険', //p53
                         }, //53
                         {
                             // rev: 2026-08-25 確認済み
@@ -382,8 +389,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //56
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '契約の選択',
-                            content: '', //p
+                            content: '自由条件付契約 → 特別条件付契約', //p59
                         }, //57
                         {
                             // rev: 2026-08-25 確認済み
@@ -401,16 +409,19 @@ const isDraft = false;
                             content: '既払込保険料相当額 → 責任準備金', //p90
                         }, //60
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '保障の見直し',
                             content: '契約者に対し、転換前と転換後の契約に関する重要な事項を対比して記載した書面を[[交付する必要がある]]。', //p92
                         }, //61
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '保障の見直し',
                             content: '転換前契約の加入時 → 転換時', //p92
                         }, //62
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '雇用保険法 → 生活保護法', //p112
                         }, //63
                         {
                             // rev: 2026-08-25 確認済み
@@ -423,12 +434,14 @@ const isDraft = false;
                             content: '正しい',
                         }, //65
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '原則として[[75歳以上]]の高齢者（および[[65歳以上]]で一定の障害があり、広域連合の認定を受けた人）が、給付を受けることができる。', //p114
                         }, //66
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '社会保障制度',
-                            content: '', //p
+                            content: '公的介護保険の被保険者は、[[65歳以上の第１号被保険者]]と[[40歳以上65歳未満の公的医療保険加入者である第２号被保険者]]である。', //p115
                         }, //67
                     ]"
                 />

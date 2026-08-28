@@ -99,7 +99,7 @@ class TestController extends Controller
     // 一般課程 各試験ページ
     public function ippanTest(int $year, string $months, string $form)
     {
-        $allowedYears = [2025, 2024, 2023, 2022, 2021, 2020];
+        $allowedYears = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
         $allowedForms = ['a', 'b', 'c', 'd', 'e'];
         $periodByMonths = [
             '1-6' => 'h1',
@@ -112,6 +112,9 @@ class TestController extends Controller
             abort(404);
         }
         if (!array_key_exists($months, $periodByMonths)) {
+            abort(404);
+        }
+        if ($year === 2026 && $months !== '1-6') {
             abort(404);
         }
         if (!in_array($form, $allowedForms, true)) {

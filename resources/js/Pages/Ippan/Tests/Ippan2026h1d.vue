@@ -396,16 +396,17 @@ const isDraft = false;
                             content: '正しい',
                         }, //59
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '保障の見直し',
-                            content: '', //p
+                            content: '既払込保険料相当額 → 責任準備金', //p90
                         }, //60
                         {
                             questionTitle: '保障の見直し',
-                            content: '', //p
+                            content: '契約者に対し、転換前と転換後の契約に関する重要な事項を対比して記載した書面を[[交付する必要がある]]。', //p92
                         }, //61
                         {
                             questionTitle: '保障の見直し',
-                            content: '', //p
+                            content: '転換前契約の加入時 → 転換時', //p92
                         }, //62
                         {
                             questionTitle: '社会保障制度',

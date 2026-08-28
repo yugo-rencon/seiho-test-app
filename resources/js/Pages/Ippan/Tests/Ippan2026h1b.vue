@@ -269,9 +269,10 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険料の税法上の取り扱い"
                     :contents="[
+                        // rev: 2026-08-28 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '4月1日から翌年3月31日まで → 1月1日から12月31日まで', //p122
                     ]"
                 />
                 <QuestionTemp1
@@ -280,7 +281,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="お客さまニーズへの対応"
                     :contents="[
-                        '', //p
+                        // rev: 2026-08-28 確認済み
+                        'ライフプラン → ライフサイクル', //p133
                         '正しい',
                         '正しい',
                     ]"
@@ -362,12 +364,14 @@ const isDraft = false;
                             content: '正しい',
                         }, //51
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '剰余金と配当金',
-                            content: '', //p
+                            content: '保険業法の定める利率 → 生命保険会社の定める利率', //p29
                         }, //52
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '保障の見直し',
-                            content: '', //p
+                            content: '現在の契約の保障内容や保険期間は変えずに、死亡保障額などを[[増やすことができる]]。', //p91
                         }, //53
                         {
                             // rev: 2026-08-25 確認済み
@@ -380,12 +384,14 @@ const isDraft = false;
                             content: '正しい',
                         }, //55
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '保障の見直し',
-                            content: '', //p
+                            content: '契約者に対し、転換前と転換後の契約に関する重要な事項を対比して記載した書面を[[交付する必要がある]]。', //p92
                         }, //56
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '保障の見直し',
-                            content: '', //p
+                            content: '転換前契約の加入時 → 転換時', //p92
                         }, //57
                         {
                             // rev: 2026-08-25 確認済み
@@ -393,8 +399,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //58
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '保険金・給付金の請求と支払い',
-                            content: '', //p
+                            content: '他の受取人に対しても支払わない → 残額を支払う', //p104
                         }, //59
                         {
                             // rev: 2026-08-25 確認済み
@@ -412,8 +419,9 @@ const isDraft = false;
                             content: '正しい',
                         }, //62
                         {
+                            // rev: 2026-08-28 確認済み
                             questionTitle: '相続の法律',
-                            content: '', //p
+                            content: '配偶者が2/3、兄弟姉妹が1/3 → 配偶者が3/4、兄弟姉妹が1/4', //p130
                         }, //63
                         {
                             // rev: 2026-08-25 確認済み

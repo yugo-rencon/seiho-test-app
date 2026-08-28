@@ -138,7 +138,7 @@ const getFormHref = (year, period, form) => {
                                 <template v-for="form in activePeriod.forms" :key="`${activePeriod.id}-${year}-${form}`">
                                     <Link
                                         :href="getFormHref(year, activePeriod, form)"
-                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-pink-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-fuchsia-700 transition hover:bg-pink-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
+                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-lg border border-pink-100 bg-pink-50/40 px-2 py-1.5 text-[12px] font-semibold text-fuchsia-700 transition hover:border-pink-200 hover:bg-pink-100 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                                     >
                                         {{ getFormLabel(year, activePeriod.id, form) }}
                                     </Link>

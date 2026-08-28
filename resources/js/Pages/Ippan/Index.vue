@@ -128,7 +128,7 @@ const getFormHref = (year, period, form) => {
                                 <Link
                                     v-if="Number(year) === 2026 && activePeriod.id === 'h1' && !isLoggedIn"
                                     :href="loginHref"
-                                    class="inline-flex items-center gap-1.5 rounded-full border-2 border-pink-200 bg-white px-2.5 py-1 text-xs font-bold text-fuchsia-700 shadow-sm transition hover:-translate-y-0.5 hover:border-pink-300 hover:bg-pink-50 hover:shadow focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
+                                    class="inline-flex items-center gap-1 rounded-lg bg-pink-50 px-2.5 py-1.5 text-xs font-bold text-fuchsia-700 transition hover:bg-pink-100 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
                                 >
                                     無料登録で最新年度の解説を見る
                                     <span aria-hidden="true" class="text-[10px]">▶</span>

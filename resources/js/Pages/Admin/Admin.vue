@@ -1114,12 +1114,6 @@ const peakHour2h = computed(() => {
                     </p>
                 </div>
                 <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
-                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">一般課程 売上件数</p>
-                    <p class="mt-1 text-xl font-bold text-fuchsia-700 sm:text-2xl">
-                        {{ stats.ippanSalesCount }}
-                    </p>
-                </div>
-                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
                     <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">専門課程 売上件数</p>
                     <p class="mt-1 text-xl font-bold text-emerald-700 sm:text-2xl">
                         {{ stats.senmonSalesCount }}
@@ -1129,6 +1123,12 @@ const peakHour2h = computed(() => {
                     <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">応用課程 売上件数</p>
                     <p class="mt-1 text-xl font-bold text-amber-700 sm:text-2xl">
                         {{ stats.ouyouSalesCount }}
+                    </p>
+                </div>
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">一般課程 売上件数</p>
+                    <p class="mt-1 text-xl font-bold text-fuchsia-700 sm:text-2xl">
+                        {{ stats.ippanSalesCount }}
                     </p>
                 </div>
                 <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">

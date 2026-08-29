@@ -219,10 +219,12 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '簿記',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '株主資本等変動計算書',
                             content: '正しい',
                         }, //32
@@ -235,6 +237,7 @@ const subject = "2025年度 フォームA";
                             content: '',
                         }, //34
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '保険契約準備金の繰入',
                             content: '正しい',
                         }, //35
@@ -247,14 +250,17 @@ const subject = "2025年度 フォームA";
                             content: '',
                         }, //37
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '繰延税金負債',
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '利源分析に関する課題',
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '金融検査',
                             content: '正しい',
                         }, //40

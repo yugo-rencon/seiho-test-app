@@ -276,10 +276,7 @@ const activeDaigakuSubject = computed(() => DAIGAKU_SUBJECTS.find((s) => s.key =
 // 未保存の変更を溜めるオブジェクト { testKey: newBooleanState }
 const pendingChanges = ref({});
 const hasPending = computed(() => Object.keys(pendingChanges.value).length > 0);
-const ippanPeriodsForYear = (year) =>
-    Number(year) === 2026
-        ? IPPAN_PERIODS.filter((period) => period.key === "h1")
-        : IPPAN_PERIODS;
+const ippanPeriodsForYear = () => IPPAN_PERIODS;
 
 // 実効値：pending があればそちら優先
 const isReleased = (testKey) => {
@@ -1091,7 +1088,7 @@ const peakHour2h = computed(() => {
                 </button>
             </div>
 
-            <div v-if="activeTab === 'users' && activeMemberTab === 'summary'" class="mb-4 grid grid-cols-2 gap-2.5 sm:mb-6 sm:gap-3 lg:grid-cols-4">
+            <div v-if="activeTab === 'users' && activeMemberTab === 'summary'" class="mb-4 grid grid-cols-2 gap-2.5 sm:mb-6 sm:gap-3 lg:grid-cols-3">
                 <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
                     <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">総ユーザー数</p>
                     <p class="mt-1 text-xl font-bold text-gray-900 sm:text-2xl">
@@ -1142,6 +1139,13 @@ const peakHour2h = computed(() => {
                     <p class="mt-1 text-xl font-bold text-cyan-700 sm:text-2xl">
                         {{ stats.basicSalesCount }}
                     </p>
+                </div>
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">複数購入者数</p>
+                    <p class="mt-1 text-xl font-bold text-purple-700 sm:text-2xl">
+                        {{ stats.multiplePurchaseUsers }}
+                    </p>
+                    <p class="mt-0.5 text-[10px] text-gray-400">2件以上購入</p>
                 </div>
             </div>
             <div v-if="activeTab === 'users' && activeMemberTab === 'admins'" class="rounded-xl border border-gray-100 bg-white p-4">

@@ -219,10 +219,12 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '簿記',
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '決算',
                             content: '正しい',
                         }, //32
@@ -239,10 +241,12 @@ const subject = "2025年度 フォームB";
                             content: '',
                         }, //35
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '資産勘定の内容',
                             content: '正しい',
                         }, //36
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '期間帰属の差異',
                             content: '正しい',
                         }, //37
@@ -255,6 +259,7 @@ const subject = "2025年度 フォームB";
                             content: '',
                         }, //39
                         {
+                            // rev: 2026-08-29 確認済み
                             questionTitle: '金融検査',
                             content: '正しい',
                         }, //40

@@ -166,6 +166,17 @@ class AdminController extends Controller
                 ->whereNotIn('id', self::INTERNAL_USER_IDS)
                 ->whereBetween('created_at', [$startOfMonth, $endOfMonth])
                 ->count(),
+            'multiplePurchaseUsers' => DB::query()
+                ->fromSub(
+                    DB::table('purchases')
+                        ->select('user_id')
+                        ->where('status', 'paid')
+                        ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
+                        ->groupBy('user_id')
+                        ->havingRaw('COUNT(*) >= 2'),
+                    'multiple_purchase_users'
+                )
+                ->count(),
             'seihoSalesCount' => DB::table('purchases')
                 ->where('status', 'paid')
                 ->whereNotIn('user_id', self::INTERNAL_USER_IDS)

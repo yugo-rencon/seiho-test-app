@@ -25,7 +25,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="損益勘定①"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '認識',
                         '実現主義',
                         '発生主義',
@@ -46,7 +46,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="損益勘定②"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '売上高',
                         '付加保険料',
                         '現金主義',
@@ -67,7 +67,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="会計監査人による監査①"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '公認会計士',
                         '監査法人',
                         '株主総会（相互会社にあっては総代会）',
@@ -88,7 +88,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="会計監査人による監査②"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '決算',
                         '取引記録',
                         '財務諸表',
@@ -109,8 +109,9 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="会計公準"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-08-30 確認済み
+                        '企業実体の公準 → 継続企業の公準', //p6
+                        '継続企業の公準 → 企業実体の公準', //p6
                         '正しい',
                     ]"
                 />

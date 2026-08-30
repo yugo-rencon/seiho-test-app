@@ -25,7 +25,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="制度会計①"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '財務会計',
                         '株主配当',
                         '財務内容',
@@ -46,7 +46,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="制度会計②"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '投資家保護',
                         '課税の公平性',
                         '別段の定め',
@@ -67,7 +67,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="会計監査人による監査①"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '公認会計士',
                         '監査法人',
                         '株主総会（相互会社にあっては総代会）',
@@ -88,7 +88,7 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="会計監査人による監査②"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '決算',
                         '取引記録',
                         '財務諸表',

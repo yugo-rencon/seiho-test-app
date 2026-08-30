@@ -25,7 +25,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="企業会計原則①"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '客観性',
                         '会計慣習',
                         '注解',
@@ -46,7 +46,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="企業会計原則②"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '真実性',
                         '正規の簿記',
                         '保守主義',
@@ -67,7 +67,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="会計監査人による監査①"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '公認会計士',
                         '監査法人',
                         '株主総会（相互会社にあっては総代会）',
@@ -88,7 +88,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="会計監査人による監査②"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-08-30 確認済み
                         '決算',
                         '取引記録',
                         '財務諸表',

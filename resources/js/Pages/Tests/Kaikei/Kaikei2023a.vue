@@ -191,6 +191,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="一般勘定・特別勘定"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
                         '保険料及び責任準備金の算出方法書 → 事業方法書', //p44
                         '正しい',

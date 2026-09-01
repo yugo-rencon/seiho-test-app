@@ -217,6 +217,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="金融検査と税務調査"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '国税庁 → 金融庁', //p209
                         '正しい',
                         '正しい',

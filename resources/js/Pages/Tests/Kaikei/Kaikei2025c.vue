@@ -235,8 +235,9 @@ const subject = "2025年度 フォームC";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-09-01 確認済み
                             questionTitle: '企業会計原則（一般原則）',
-                            content: '',
+                            content: '明瞭性の原則 → 資本取引・損益取引区分の原則', //p25
                         }, //33
                         {
                             questionTitle: '社員配当準備金',

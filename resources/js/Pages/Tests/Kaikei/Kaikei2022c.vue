@@ -166,6 +166,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="企業会計原則（一般原則）"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
                         '正しい',
                         '単一性の原則 → 継続性の原則', //p26

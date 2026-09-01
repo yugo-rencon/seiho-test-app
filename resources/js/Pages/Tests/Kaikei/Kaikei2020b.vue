@@ -165,6 +165,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="企業会計原則（一般原則）"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
                         '継続性の原則 → 保守主義の原則', //p26
                         '正しい',

@@ -132,6 +132,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="剰余金（利益剰余金）"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '1000分の2以上 → 1000分の3以上', //p138
                         '3分の1 → 5分の1', //p138
                         '正しい',

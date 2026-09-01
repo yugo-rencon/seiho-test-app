@@ -143,6 +143,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="有価証券の評価方法"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '償却原価法 → 時価法', //p110
                         '正しい',
                         '時価法 → 償却原価法', //p110

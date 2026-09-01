@@ -145,9 +145,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="有価証券の評価方法"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
+                        '時価法 → 償却原価法', //p110
+                        '時価法 → 償却原価法', //p110
                     ]"
                 />
                 <QuestionTemp1

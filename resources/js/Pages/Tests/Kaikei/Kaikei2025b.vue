@@ -193,9 +193,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="関係法規等"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '日本公認会計士協会 → 生命保険協会経理委員会', //p95
                     ]"
                 />
                 <QuestionTemp1

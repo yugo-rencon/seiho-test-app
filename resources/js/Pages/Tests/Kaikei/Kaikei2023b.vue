@@ -164,9 +164,10 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="会計公準"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
                         '正しい',
-                        '円またはドルで評価 → 円で評価', //p7
+                        '会計行為はすべて[[円で評価]]される。', //p7
                     ]"
                 />
                 <QuestionTemp1

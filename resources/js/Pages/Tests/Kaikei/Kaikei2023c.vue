@@ -218,9 +218,10 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-09-01 確認済み
                             questionTitle: '会計公準',
-                            content: '株主実体の公準 → 企業実体の公準',
-                        }, //31 p6-7
+                            content: '株主実体の公準 → 企業実体の公準', //p6-7
+                        }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '帳簿の種類',

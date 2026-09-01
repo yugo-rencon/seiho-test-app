@@ -108,6 +108,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="会計公準"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '企業実体の公準 → 継続企業の公準', //p6
                         '継続企業の公準 → 企業実体の公準', //p6
                         '正しい',

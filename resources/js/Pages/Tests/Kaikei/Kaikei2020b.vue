@@ -259,9 +259,10 @@ const subject = "2020年度 フォームB";
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-09-01 確認済み
                             questionTitle: '事業費の分類',
-                            content: '減価償却費 → 集金費',
-                        }, //40 p170
+                            content: '減価償却費 → 集金費',//p173
+                        }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '会計公準',

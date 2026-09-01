@@ -155,6 +155,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="事業費の分類"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '維持費の人件費 → 新契約費の営業職員経費', //p170
                         '新契約費の人件費 → 維持費の人件費', //p172
                         '正しい',

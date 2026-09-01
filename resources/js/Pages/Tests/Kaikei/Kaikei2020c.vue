@@ -215,6 +215,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="費用に属する科目"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
                         '保険金据置支払金 → 支払利息', //p153
                         '正しい',

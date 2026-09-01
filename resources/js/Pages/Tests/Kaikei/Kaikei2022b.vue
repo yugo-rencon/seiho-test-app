@@ -200,6 +200,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="生命保険会社の決算整理手続"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '金融庁 → 各生命保険会社', //p51
                         '正しい',
                         '正しい',

@@ -205,9 +205,10 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="純資産勘定の内容"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '株式会社 → 相互会社', //p137
                     ]"
                 />
                 <QuestionTemp1

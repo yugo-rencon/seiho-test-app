@@ -186,6 +186,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="純資産勘定の内容"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
                         '正しい',
                         '株式会社 → 相互会社', //p137

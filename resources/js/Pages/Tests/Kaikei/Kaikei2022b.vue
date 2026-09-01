@@ -177,6 +177,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="純資産勘定の内容"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
                         '正しい',
                         '税効果相当額を加算 → 税効果相当額を控除', //p139

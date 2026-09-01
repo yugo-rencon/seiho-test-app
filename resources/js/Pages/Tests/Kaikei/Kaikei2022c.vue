@@ -156,6 +156,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="年度途中の資金移動の区分経理への反映"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '資産区分 → 商品区分', //p192
                         '商品区分 → 資産区分', //p193
                         '正しい',

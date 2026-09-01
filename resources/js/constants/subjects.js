@@ -4,6 +4,7 @@ const SOURON_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 const KEIRI_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 const KIKEN_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 const YAKKAN_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
+const KAIKEI_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 
 export const SUBJECT_CATALOG = [
     {
@@ -35,7 +36,6 @@ export const SUBJECT_CATALOG = [
         title: "生命保険会計",
         menuTitle: "生命保険会計",
         period: "12月〜1月実施の試験",
-        releaseNote: "2025年度は10月ごろリリース予定",
     },
     {
         key: "eigyo",
@@ -74,6 +74,8 @@ export const INDEX_SECTIONS = SUBJECT_CATALOG.map((subject) => ({
                 ? [...KIKEN_YEARS]
                 : subject.key === "yakkan"
                   ? [...YAKKAN_YEARS]
+                  : subject.key === "kaikei"
+                    ? [...KAIKEI_YEARS]
                   : [...COMMON_YEARS],
     routePrefix: subject.key,
     gridCols: "lg:grid-cols-2 md:grid-cols-2",
@@ -91,6 +93,8 @@ export const MOBILE_MENU_SUBJECTS = SUBJECT_CATALOG.map((subject) => ({
                 ? KIKEN_YEARS
                 : subject.key === "yakkan"
                   ? YAKKAN_YEARS
+                  : subject.key === "kaikei"
+                    ? KAIKEI_YEARS
                 : COMMON_YEARS
     ).reduce((acc, year) => {
         acc[`${year}年度`] = [...COMMON_FORMS];

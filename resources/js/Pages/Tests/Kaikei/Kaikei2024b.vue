@@ -120,6 +120,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="財務諸表"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '貸借対照表 → 損益計算書', //p18
                         '損益計算書 → 貸借対照表', //p19
                         '正しい',

@@ -180,8 +180,9 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="財務諸表"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
-                        '', //p
+                        '保険業法の改正 → 会社法の施行', //p20
                         '正しい',
                     ]"
                 />

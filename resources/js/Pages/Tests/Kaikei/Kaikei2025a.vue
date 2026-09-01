@@ -121,9 +121,10 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="決算"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
+                        '精算表 → 試算表', //p15
+                        '元帳の締切 → 決算整理', //p17
                     ]"
                 />
                 <QuestionTemp1

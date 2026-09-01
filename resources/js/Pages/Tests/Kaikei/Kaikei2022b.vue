@@ -186,6 +186,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="決算"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
                         '残高試算表 → 合計試算表', //p15
                         '正しい',

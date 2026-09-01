@@ -121,6 +121,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="決算"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '試算表 → 精算表', //p16
                         '正しい',
                         '仕訳帳の作成 → 決算整理', //p17

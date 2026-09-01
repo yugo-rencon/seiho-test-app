@@ -121,9 +121,10 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="決算"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
+                        '残高試算表 → 合計残高試算表', //p15-16
+                        '合計残高試算表 → 残高試算表', //p15-16
                     ]"
                 />
                 <QuestionTemp1

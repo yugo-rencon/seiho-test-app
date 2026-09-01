@@ -244,8 +244,9 @@ const subject = "2025年度 フォームC";
                             content: '明瞭性の原則 → 資本取引・損益取引区分の原則', //p25
                         }, //33
                         {
+                            // rev: 2026-09-02 確認済み
                             questionTitle: '社員配当準備金',
-                            content: '',
+                            content: '10%以上 → 20%以上', //p41
                         }, //34
                         {
                             questionTitle: '保険業法と会社法',

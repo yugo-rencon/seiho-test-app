@@ -204,6 +204,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="資産勘定の内容"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '有価証券の説明 ↔︎ 商品有価証券の説明', //p107
                         '正しい',
                         '正しい',

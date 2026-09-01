@@ -205,9 +205,10 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="費用に属する科目（解約返戻金）"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '２年 → ３年', //p151
                     ]"
                 />
                 <QuestionTemp1
@@ -216,7 +217,8 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険会社のディスクロージャー"
                     :contents="[
-                        '', //p
+                        // rev: 2026-09-01 確認済み
+                        '2000年度（平成12年度）決算からキャッシュ・フロー計算書が[[縦覧の対象資料に付け加えられている]]。', //p180
                         '正しい',
                         '正しい',
                     ]"

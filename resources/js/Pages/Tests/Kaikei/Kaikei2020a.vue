@@ -201,6 +201,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="資産勘定"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
                         'その他有価証券 → 責任準備金対応債権', //p110
                         '正しい',

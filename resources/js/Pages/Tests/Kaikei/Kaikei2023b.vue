@@ -145,6 +145,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="資産勘定"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '有価証券の説明 ↔︎ 商品有価証券の説明', //p107
                         '時価法 → 償却原価法', //p110
                         '正しい',
@@ -233,18 +234,20 @@ const subject = "2023年度 フォームB";
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-09-02 確認済み
                             questionTitle: '保険料の計上',
-                            content: '現金主義 ↔︎ 実現主義',
-                        }, //32 p42
+                            content: '現金主義 ↔︎ 実現主義', //p42
+                        }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-09-02 確認済み
                             questionTitle: '会計に関する事項の標準的な取扱い',
-                            content: '金融庁 → 生命保険協会経理委員会',
-                        }, //34 p95
+                            content: '金融庁 → 生命保険協会経理委員会', //p95
+                        }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '外貨預金の換算',

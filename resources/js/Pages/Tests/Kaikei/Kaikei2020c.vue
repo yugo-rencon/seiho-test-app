@@ -167,6 +167,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="勘定科目"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
                         '正しい',
                         '収益勘定 → 費用勘定', //p13

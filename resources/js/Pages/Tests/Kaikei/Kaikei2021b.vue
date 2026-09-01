@@ -163,9 +163,10 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="複式簿記の原理"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
                         '正しい',
-                        '精算帳 → 総勘定元帳。', //p12
+                        '精算帳 → 総勘定元帳', //p12
                     ]"
                 />
                 <QuestionTemp1

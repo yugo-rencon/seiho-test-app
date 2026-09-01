@@ -166,8 +166,9 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="複式簿記の原理"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
-                        '', //p
+                        '取引の８要素の原理 → 貸借平均の原理', //p11
                         '正しい',
                     ]"
                 />

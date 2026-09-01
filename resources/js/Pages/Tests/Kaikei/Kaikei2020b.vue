@@ -108,6 +108,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="複式簿記の原理"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '内部関係者 → 株主、債権者などの外部利害関係者', //p9
                         '正しい',
                         '精算表 → 総勘定元帳', //p12

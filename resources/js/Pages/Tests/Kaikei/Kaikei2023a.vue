@@ -167,6 +167,7 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="複式簿記の原理"
                     :contents="[
+                        // rev: 2026-09-01 確認済み
                         '正しい',
                         '正しい',
                         '精算帳 → 総勘定元帳', //p12

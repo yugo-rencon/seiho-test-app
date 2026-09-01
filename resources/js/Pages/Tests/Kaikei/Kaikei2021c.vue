@@ -165,8 +165,9 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="会計の意義"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
-                        '財務会計の説明 ↔︎ 管理会計の説明', //p4
+                        '財務会計 ↔︎ 管理会計', //p4
                         '正しい',
                     ]"
                 />

@@ -180,6 +180,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="制度会計"
                     :contents="[
+                        // rev: 2026-09-02 確認済み
                         '正しい',
                         '正しい',
                         '修正申告 → 申告調整', //p33

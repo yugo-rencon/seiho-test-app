@@ -207,9 +207,10 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="団体保険"
                     :contents="[
+                        // rev: 2026-09-03 確認済み
                         '正しい',
                         '正しい',
-                        '団体信用生命保険 → 消費者信用団体生命保険', //p86
+                        '団体信用生命保険 → 消費者信用団体生命保険', //p87
                     ]"
                 />
                 <QuestionTemp2

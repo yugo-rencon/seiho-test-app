@@ -218,8 +218,9 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-09-03 確認済み
                             questionTitle: 'マイナンバー法（行政手続における特定の個人を識別するための番号の利用等に関する法律）',
-                            content: '',
+                            content: '未成年者を除くすべての人 → 住民票を有するすべての人', //p41
                         }, //31
                         {
                             questionTitle: '福利厚生費',

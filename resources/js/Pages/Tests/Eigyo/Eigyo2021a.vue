@@ -164,6 +164,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="長い老後生活を見据えたライフ・プランニング"
                     :contents="[
+                        // rev: 2026-09-03 確認済み
                         '生産年齢層の死亡率 → 乳児死亡率', //p20
                         '正しい',
                         '正しい',

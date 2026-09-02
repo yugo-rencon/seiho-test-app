@@ -164,7 +164,8 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="長い老後生活を見据えたライフ・プランニング"
                     :contents="[
-                        '', //p
+                        // rev: 2026-09-03 確認済み
+                        '生活習慣病罹患率 → 乳児死亡率', //p20
                         '正しい',
                         '正しい',
                     ]"

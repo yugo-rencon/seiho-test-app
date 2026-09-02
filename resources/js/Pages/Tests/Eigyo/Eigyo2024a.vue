@@ -186,6 +186,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="財形貯蓄制度の種類"
                     :contents="[
+                        // rev: 2026-09-03 確認済み
                         '正しい',
                         '正しい',
                         '60歳未満 → 55歳未満', //p94

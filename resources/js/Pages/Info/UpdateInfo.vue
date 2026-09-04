@@ -6,6 +6,14 @@ import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
 // 更新履歴の全データ
 const allUpdates = [
     {
+        date: '2026.09.05',
+        title: '2025年度 生命保険商品と営業 解説追加',
+        description: '2025年度の「生命保険商品と営業」フォームA・B・Cの解説を公開しました。',
+        badge: 'NEW',
+        badgeColor: 'from-pink-500 to-red-500',
+        category: 'コンテンツ追加'
+    },
+    {
         date: '2026.09.02',
         title: '2025年度 生命保険会計 解説追加',
         description: '2025年度の「生命保険会計」フォームA・B・Cの解説を公開しました。',

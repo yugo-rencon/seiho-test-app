@@ -197,6 +197,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="個人保険商品の特約"
                     :contents="[
+                        // rev: 2026-09-04 確認済み
                         '正しい',
                         '正しい',
                         '個人年金保険や個人型確定拠出年金（iDeCo） → 個人年金保険（個人型確定拠出年金（iDeCo）は含まない）', //p49

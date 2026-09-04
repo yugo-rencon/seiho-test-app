@@ -216,8 +216,9 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="営業職員の成績計上"
                     :contents="[
+                        // rev: 2026-09-04 確認済み
                         '正しい',
-                        '', //p
+                        '定期保険 → 養老保険', //p133
                         '正しい',
                     ]"
                 />

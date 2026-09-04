@@ -108,6 +108,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="公的年金の給付"
                     :contents="[
+                        // rev: 2026-09-04 確認済み
                         '1年以上 → 1ヶ月以上', //p26
                         '障害基礎年金 ↔︎ 障害厚生年金', //p26
                         '正しい',

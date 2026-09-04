@@ -108,6 +108,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="公的年金の給付"
                     :contents="[
+                        // rev: 2026-09-04 確認済み
                         '正しい',
                         '障害基礎年金 ↔︎ 障害厚生年金', //p26
                         '老齢厚生年金相当額の3分の2 → 4分の3', //p26

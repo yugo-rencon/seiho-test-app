@@ -108,6 +108,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="公的年金の給付"
                     :contents="[
+                        // rev: 2026-09-04 確認済み
                         '25年以上 → 10年以上', //p26
                         '正しい',
                         '老齢厚生年金相当額の3分の2 → 4分の3', //p26

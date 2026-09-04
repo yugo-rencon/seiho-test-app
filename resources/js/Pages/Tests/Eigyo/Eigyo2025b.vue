@@ -108,9 +108,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="公的年金の給付"
                     :contents="[
+                        // rev: 2026-09-04 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
+                        '障害基礎年金 ↔︎ 障害厚生年金', //p26
+                        '遺族基礎年金 ↔︎ 遺族厚生年金', //p26
                     ]"
                 />
                 <QuestionTemp1

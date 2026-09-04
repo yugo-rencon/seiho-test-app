@@ -120,9 +120,10 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="保険料率に関する対応"
                     :contents="[
-                        '', //p
+                        // rev: 2026-09-05 確認済み
+                        '死差配当 → 利差配当', //p78
                         '正しい',
-                        '', //p
+                        '完全生命表 → 標準生命表', //p79
                     ]"
                 />
                 <QuestionTemp1

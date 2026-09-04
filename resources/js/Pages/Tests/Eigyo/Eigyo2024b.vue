@@ -143,6 +143,7 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="保険料率に関する対応"
                     :contents="[
+                        // rev: 2026-09-05 確認済み
                         '死差配当 → 利差配当', //p78
                         '正しい',
                         '完全生命表 → 標準生命表', //p79

@@ -186,6 +186,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="特化型営業職員制度・法人営業機構（直販）"
                     :contents="[
+                        // rev: 2026-09-04 確認済み
                         '正しい',
                         'ホールセラー → 法人営業第⚪︎部', //p145
                         '正しい',

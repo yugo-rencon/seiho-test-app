@@ -211,6 +211,7 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="法人営業機構（直販）、代理店営業機構"
                     :contents="[
+                        // rev: 2026-09-04 確認済み
                         '正しい',
                         '正しい',
                         '乗合型 → 兼業型', //p145

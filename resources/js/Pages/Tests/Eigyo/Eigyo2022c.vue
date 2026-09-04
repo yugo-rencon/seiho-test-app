@@ -209,6 +209,7 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="法人営業機構（直販）、代理店営業機構"
                     :contents="[
+                        // rev: 2026-09-04 確認済み
                         '正しい',
                         '正しい',
                         'スーパーバイザー → ホールセラー', //p146

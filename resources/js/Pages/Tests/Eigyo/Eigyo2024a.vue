@@ -168,6 +168,7 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     questionTitle="戦後の商品政策の変遷"
                     :contents="[
+                        // rev: 2026-09-05 確認済み
                         'マーケット・セグメント → デビット・システム', //p66
                         '正しい',
                         '正しい',

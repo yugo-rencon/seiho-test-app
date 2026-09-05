@@ -82,7 +82,7 @@ const subject = "2023年度 フォームB";
                     ]"
                 />
                 <QuestionTemp3
-                    :questionNumber="1"
+                    :questionNumber="4"
                     :title="title"
                     :subject="subject"
                     questionTitle="顧客サービスの向上と多様化-②"
@@ -131,6 +131,7 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="団体保険"
                     :contents="[
+                        // rev: 2026-09-05 確認済み
                         '正しい',
                         '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内', //p97
                         '健康保険組合連合会 → 地方公共団体', //p97

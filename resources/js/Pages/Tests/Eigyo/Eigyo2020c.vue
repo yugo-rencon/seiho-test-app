@@ -202,6 +202,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="変額保険"
                     :contents="[
+                        // rev: 2026-09-05 確認済み
                         '正しい',
                         '変動保険金（毎日変動） → 変動保険金（毎月変動）', //p64
                         '正しい',

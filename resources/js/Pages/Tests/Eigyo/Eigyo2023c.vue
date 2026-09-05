@@ -179,6 +179,7 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="公的年金の保険料"
                     :contents="[
+                        // rev: 2026-09-06 確認済み
                         '正しい',
                         '第3号被保険者 → 第1号被保険者', //p25
                         '正しい',

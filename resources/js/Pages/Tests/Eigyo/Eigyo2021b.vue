@@ -166,6 +166,7 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="公的年金の保険料"
                     :contents="[
+                        // rev: 2026-09-06 確認済み
                         '正しい',
                         '正しい',
                         '全額加入者個人が負担 → 労使折半により負担', //p25

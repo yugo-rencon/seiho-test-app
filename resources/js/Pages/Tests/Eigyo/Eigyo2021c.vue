@@ -204,6 +204,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="保険料払込負担の軽減"
                     :contents="[
+                        // rev: 2026-09-06 確認済み
                         '前納保険料 → 一時払保険料', //p71
                         '正しい',
                         '正しい',

@@ -53,5 +53,5 @@
 - Eigyo2024b: 完了
 - Eigyo2024c: 完了
 - Eigyo2025a: 完了
-- Eigyo2025b: 完了
+- Eigyo2025b: 完了 
 - Eigyo2025c: 完了

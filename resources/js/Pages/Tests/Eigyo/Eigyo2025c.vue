@@ -180,8 +180,9 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要"
                     :contents="[
+                        // rev: 2026-09-05 確認済み
                         '正しい',
-                        '', //p
+                        '年齢階級別 → 所得段階別', //p30
                         '正しい',
                     ]"
                 />

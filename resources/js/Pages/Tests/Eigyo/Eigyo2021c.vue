@@ -168,6 +168,7 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="公的年金制度の動向"
                     :contents="[
+                        // rev: 2026-09-06 確認済み
                         '退職した場合（退職給付） → 老齢になった場合（老齢給付）', //p25
                         '正しい',
                         '正しい',

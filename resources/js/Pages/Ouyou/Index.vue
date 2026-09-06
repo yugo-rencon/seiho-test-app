@@ -79,7 +79,7 @@ const getFormLabel = (year, periodId, form) => {
                         </p>
                         <div class="mt-1 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
                             <span class="min-w-0 text-center text-[10px] font-semibold text-amber-700/90 sm:text-xs">
-                                ユーザー登録者数1000名突破！
+                                シリーズ累計ユーザー数 1,500名突破！
                             </span>
                             <Link
                                 :href="pricingHref"

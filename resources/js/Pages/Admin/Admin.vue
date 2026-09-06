@@ -521,7 +521,7 @@ const purchaseProductOptions = [
     { key: "ippan", label: "一般課程", countKey: "ippan_paid_count", className: "bg-fuchsia-50 text-fuchsia-700" },
     { key: "senmon", label: "専門課程", countKey: "senmon_paid_count", className: "bg-emerald-50 text-emerald-700" },
     { key: "ouyou", label: "応用課程", countKey: "ouyou_paid_count", className: "bg-amber-50 text-amber-700" },
-    { key: "basic", label: "一般・専門・応用セット", countKey: "basic_paid_count", className: "bg-cyan-100 text-cyan-700" },
+    { key: "basic", label: "セット", countKey: "basic_paid_count", className: "bg-cyan-100 text-cyan-700" },
 ];
 
 const purchasedProducts = (user) => purchaseProductOptions.filter((product) => Number(user?.[product.countKey]) > 0);

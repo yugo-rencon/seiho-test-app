@@ -108,6 +108,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="価値観の変化の要因"
                     :contents="[
+                        // rev: 2026-09-06 確認済み
                         '正しい',
                         '世代要因 → 年齢要因', //p2-3
                         '年齢要因 → 世代要因', //p2-3

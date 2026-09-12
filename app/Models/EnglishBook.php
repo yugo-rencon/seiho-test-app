@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class EnglishBook extends Model
 {
     protected $fillable = [
-        'title', 'slug', 'author', 'genre', 'cover_url', 'amazon_url', 'cover_path', 'difficulty', 'word_count', 'page_count',
+        'title', 'slug', 'author', 'is_japanese_author', 'genre', 'cover_url', 'amazon_url', 'cover_path', 'difficulty', 'word_count', 'page_count',
         'reading_order', 'status', 'started_on', 'finished_on', 'interest_rating', 'recommendation_rating', 'book_overview', 'english_difficulty_note', 'memo',
     ];
 
     protected $casts = [
+        'is_japanese_author' => 'boolean',
         'difficulty' => 'decimal:1',
         'word_count' => 'integer',
         'page_count' => 'integer',

@@ -33,7 +33,10 @@ class EnglishBookAdminController extends Controller
         }
 
         $books = EnglishBook::query()
-            ->orderByRaw("case status when 'reading' then 0 when 'want' then 1 else 2 end")->orderByDesc('finished_on')->get();
+            ->orderByRaw('reading_order IS NULL')
+            ->orderBy('reading_order')
+            ->orderBy('id')
+            ->get();
 
         $readingMinutesByBookId = [];
         foreach (PersonalStudyLog::query()->where('category', '英語')->get() as $log) {

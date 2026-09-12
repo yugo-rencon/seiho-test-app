@@ -16,11 +16,14 @@ const remove = (book) => { if (window.confirm(`「${book.title}」を削除し�
 </script>
 
 <template>
-    <EnglishBooksLayout title="洋書データベース">
+    <EnglishBooksLayout title="洋書の本棚">
         <div class="mx-auto max-w-7xl px-4 py-8 pb-16 sm:px-8 sm:py-14 sm:pb-20">
-            <div class="mb-9 flex flex-wrap items-end justify-between gap-5">
-                <div class="max-w-2xl"><p class="text-xs font-bold tracking-[0.18em] text-[#b65b3d]">READING DATABASE</p><h1 class="mt-3 font-serif text-4xl font-bold tracking-tight text-[#25323a] sm:text-5xl">英語で読んだ本を、<br class="sm:hidden" />記録していく。</h1><p class="mt-4 text-sm leading-7 text-[#74665e]">本の情報、読書の評価、感想を一冊ずつ残す洋書データベースです。</p></div>
-                <Link :href="route('admin.englishBooks.catalog')" class="rounded-full bg-[#25323a] px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#c96b48]">洋書一覧を見る</Link>
+            <div class="mb-7 flex flex-wrap items-center justify-between gap-4 sm:mb-8">
+                <div>
+                    <h1 class="text-2xl font-semibold tracking-tight text-[#25323a] sm:text-3xl">洋書の本棚</h1>
+                    <p class="mt-2 text-sm leading-6 text-[#74665e]">読んだ本と、読書の記録。</p>
+                </div>
+                <Link :href="route('admin.englishBooks.catalog')" class="inline-flex items-center gap-2 rounded-lg border border-[#d6cec1] px-4 py-2.5 text-sm font-medium text-[#3d4b52] transition hover:border-[#b9aa9a] hover:bg-[#fbf9f4]">洋書一覧を見る <span aria-hidden="true">→</span></Link>
             </div>
 
             <div class="mb-10 grid grid-cols-2 overflow-hidden rounded-2xl border border-[#ded7ca] bg-[#fbf9f4] shadow-[0_8px_30px_rgba(72,55,40,0.06)] sm:mb-12 sm:grid-cols-4">

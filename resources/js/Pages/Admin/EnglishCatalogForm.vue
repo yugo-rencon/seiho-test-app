@@ -16,12 +16,12 @@ const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.u
 </script>
 
 <template>
-    <EnglishBooksLayout :title="editing ? '本の情報を編集' : '本をカタログへ登録'">
+    <EnglishBooksLayout :title="editing ? '本の情報を編集' : '本を追加'">
         <div class="mx-auto max-w-3xl px-4 py-8 pb-16 sm:px-8 sm:py-14 sm:pb-20">
-            <Link :href="route('admin.englishBooks.catalog')" class="text-sm font-bold text-[#74665e] hover:text-[#c96b48]">← 本を探すに戻る</Link>
+            <Link :href="route('admin.englishBooks.catalog')" class="text-sm font-bold text-[#74665e] hover:text-[#c96b48]">← 本の情報に戻る</Link>
             <section class="mt-8 rounded-2xl border border-[#ded7ca] bg-[#fbf9f4] p-5 shadow-[0_8px_30px_rgba(72,55,40,0.06)] sm:p-8">
-                <p class="text-xs font-bold tracking-[0.18em] text-[#c96b48]">洋書カタログ</p>
-                <h1 class="mt-2 font-serif text-3xl font-bold text-[#25323a]">{{ editing ? '本の情報を編集' : '本をカタログへ登録' }}</h1>
+                <p class="text-xs font-bold tracking-[0.18em] text-[#c96b48]">本の情報</p>
+                <h1 class="mt-2 font-serif text-3xl font-bold text-[#25323a]">{{ editing ? '本の情報を編集' : '本を追加' }}</h1>
                 <p class="mt-2 text-sm text-[#74665e]">タイトルや著者、表紙など本そのものの情報を登録します。</p>
                 <form class="mt-8 grid gap-5 sm:grid-cols-2" @submit.prevent="save">
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">タイトル *</span><input v-model="form.title" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" placeholder="The Great Gatsby" /><p v-if="form.errors.title" class="mt-1 text-xs text-rose-600">{{ form.errors.title }}</p></label>
@@ -33,7 +33,7 @@ const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.u
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">Amazonリンク（任意）</span><input v-model="form.amazon_url" type="url" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" placeholder="https://www.amazon.co.jp/..." /><p v-if="form.errors.amazon_url" class="mt-1 text-xs text-rose-600">{{ form.errors.amazon_url }}</p></label>
                     <label><span class="text-sm font-bold text-[#3d4b52]">語数</span><input v-model.number="form.word_count" type="number" min="0" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /></label>
                     <label><span class="text-sm font-bold text-[#3d4b52]">ページ数</span><input v-model.number="form.page_count" type="number" min="1" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /></label>
-                    <div class="sm:col-span-2"><button type="submit" :disabled="form.processing" class="w-full rounded-full bg-[#c96b48] px-7 py-3 text-sm font-bold text-white hover:bg-[#ad5637] disabled:opacity-50 sm:w-auto">{{ editing ? '本の情報を更新' : 'カタログに登録' }}</button></div>
+                    <div class="sm:col-span-2"><button type="submit" :disabled="form.processing" class="w-full rounded-full bg-[#c96b48] px-7 py-3 text-sm font-bold text-white hover:bg-[#ad5637] disabled:opacity-50 sm:w-auto">{{ editing ? '本の情報を更新' : '本を追加' }}</button></div>
                 </form>
             </section>
         </div>

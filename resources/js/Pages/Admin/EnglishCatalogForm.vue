@@ -4,7 +4,11 @@ import { computed, ref } from "vue";
 import EnglishBooksLayout from "@/Layouts/EnglishBooksLayout.vue";
 const props = defineProps({ book: { type: Object, default: null } });
 const editing = computed(() => !!props.book?.id);
-const genres = ["小説", "ミステリー", "ファンタジー", "SF", "ノンフィクション", "自己啓発", "ビジネス", "歴史", "エッセイ", "児童書"];
+const genreGroups = [
+    { label: "小説", genres: ["ファンタジー", "SF", "ミステリー", "恋愛", "文学・一般小説"] },
+    { label: "ノンフィクション", genres: ["ビジネス", "自己啓発", "心理", "科学", "歴史", "社会", "伝記"] },
+];
+const legacyGenre = computed(() => props.book?.genre && !genreGroups.some((group) => group.genres.includes(props.book.genre)) ? props.book.genre : null);
 const form = useForm({ title: props.book?.title || '', author: props.book?.author || '', genre: props.book?.genre || '', is_japanese_author: props.book?.is_japanese_author ?? false, cover_url: props.book?.cover_url || '', amazon_url: props.book?.amazon_url || '', cover_image: null, word_count: props.book?.word_count || null, page_count: props.book?.page_count || null });
 const preview = ref(props.book?.cover_image_url || '');
 const selectCover = (event) => { const [file] = event.target.files; form.cover_image = file || null; if (file) preview.value = URL.createObjectURL(file); };
@@ -22,7 +26,7 @@ const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.u
                 <form class="mt-8 grid gap-5 sm:grid-cols-2" @submit.prevent="save">
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">タイトル *</span><input v-model="form.title" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" placeholder="The Great Gatsby" /><p v-if="form.errors.title" class="mt-1 text-xs text-rose-600">{{ form.errors.title }}</p></label>
                     <label><span class="text-sm font-bold text-[#3d4b52]">著者</span><input v-model="form.author" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /></label>
-                    <label><span class="text-sm font-bold text-[#3d4b52]">ジャンル</span><select v-model="form.genre" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm"><option value="">未設定</option><option v-for="genre in genres" :key="genre" :value="genre">{{ genre }}</option></select></label>
+                    <label><span class="text-sm font-bold text-[#3d4b52]">ジャンル</span><select v-model="form.genre" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm"><option value="">未設定</option><option v-if="legacyGenre" :value="legacyGenre">{{ legacyGenre }}（現在の登録値）</option><optgroup v-for="group in genreGroups" :key="group.label" :label="group.label"><option v-for="genre in group.genres" :key="genre" :value="genre">{{ genre }}</option></optgroup></select></label>
                     <div class="sm:col-span-2"><label class="inline-flex items-center gap-2 text-sm font-bold text-[#3d4b52]"><input v-model="form.is_japanese_author" type="checkbox" class="rounded border-[#d6cec1] text-[#c96b48] focus:ring-[#c96b48]" />日本人作家</label><p class="mt-1 text-xs text-[#74665e]">ジャンルとは別に、日本人作家の本として登録できます。</p><p v-if="form.errors.is_japanese_author" class="mt-1 text-xs text-rose-600">{{ form.errors.is_japanese_author }}</p></div>
                     <div><span class="text-sm font-bold text-[#3d4b52]">表紙画像</span><div class="mt-1.5 flex items-center gap-3"><div class="flex h-20 w-14 shrink-0 items-center justify-center overflow-hidden rounded bg-[#eee7db] text-[10px] font-bold text-[#8b7568]"><img v-if="preview" :src="preview" class="h-full w-full object-cover" /><span v-else>BOOK</span></div><label class="cursor-pointer rounded-lg border border-dashed border-[#c96b48] bg-[#f9ede7] px-3 py-2 text-sm font-bold text-[#a94d2e]">画像を選択<input type="file" accept="image/jpeg,image/png,image/webp" class="sr-only" @change="selectCover" /></label></div></div>
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">表紙画像URL（任意）</span><input v-model="form.cover_url" type="url" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" placeholder="https://..." /></label>

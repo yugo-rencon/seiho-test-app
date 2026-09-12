@@ -7,9 +7,9 @@ const formatNumber = (value) => Number(value || 0).toLocaleString();
 </script>
 
 <template>
-  <EnglishBooksLayout :title="`${book.title} — わたしの読書記録`">
+  <EnglishBooksLayout :title="`${book.title} — 読書記録`">
     <div class="mx-auto max-w-4xl px-4 py-8 pb-16 sm:px-8 sm:py-14 sm:pb-20">
-      <Link :href="route('admin.englishBooks.index')" class="text-sm font-bold text-[#74665e] transition hover:text-[#c96b48]">← わたしの読書記録に戻る</Link>
+      <Link :href="route('admin.englishBooks.index')" class="text-sm font-bold text-[#74665e] transition hover:text-[#c96b48]">← 読書記録に戻る</Link>
       <article class="mt-8 rounded-2xl border border-[#ded7ca] bg-[#fbf9f4] p-5 shadow-[0_8px_30px_rgba(72,55,40,0.06)] sm:p-9">
         <Link v-if="book.has_guide" :href="route('admin.englishBooks.guide', book.id)" class="mb-6 inline-flex rounded-full border border-[#c96b48] px-4 py-2 text-sm font-bold text-[#b65b3d] transition hover:bg-[#f9ede7]">この本の読書記録を見る</Link>
         <div class="flex flex-col gap-7 sm:flex-row sm:gap-10">

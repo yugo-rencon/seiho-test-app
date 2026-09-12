@@ -16,11 +16,11 @@ const remove = (book) => { if (window.confirm(`「${book.title}」を削除し�
 </script>
 
 <template>
-    <EnglishBooksLayout title="わたしの読書記録">
+    <EnglishBooksLayout title="読書記録">
         <div class="mx-auto max-w-7xl px-4 py-8 pb-16 sm:px-8 sm:py-14 sm:pb-20">
             <div class="mb-7 flex flex-wrap items-center justify-between gap-4 sm:mb-8">
                 <div>
-                    <h1 class="text-2xl font-semibold tracking-tight text-[#25323a] sm:text-3xl">わたしの読書記録</h1>
+                    <h1 class="text-2xl font-semibold tracking-tight text-[#25323a] sm:text-3xl">読書記録</h1>
                     <p class="mt-2 text-sm leading-6 text-[#74665e]">読みたい本、読んでいる本、読み終えた本。</p>
                 </div>
                 <Link :href="route('admin.englishBooks.catalog.create')" class="inline-flex items-center gap-2 rounded-lg border border-[#d6cec1] px-4 py-2.5 text-sm font-medium text-[#3d4b52] transition hover:border-[#b9aa9a] hover:bg-[#fbf9f4]">本を追加する <span aria-hidden="true">→</span></Link>

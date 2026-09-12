@@ -19,11 +19,11 @@ const isCatalogPage = computed(() => String(page.url ?? "").startsWith("/admin/e
                     <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-[#b65b3d] text-xs font-black text-white shadow-sm transition group-hover:-rotate-3">洋書</span>
                     <span>
                         <span class="block font-serif text-lg font-bold leading-none tracking-tight text-[#25323a]">洋書の本棚</span>
-                        <span class="mt-1 hidden text-[10px] font-bold tracking-[0.14em] text-[#8b7568] sm:block">わたしの読書記録</span>
+                        <span class="mt-1 hidden text-[10px] font-bold tracking-[0.14em] text-[#8b7568] sm:block">読書記録</span>
                     </span>
                 </Link>
                 <nav class="order-3 flex w-full min-w-0 items-center gap-1 border-t border-[#e6dfd3] pt-3 text-xs font-bold sm:order-none sm:w-auto sm:border-0 sm:pt-0 sm:text-sm" aria-label="洋書管理">
-                    <Link :href="route('admin.englishBooks.index')" class="rounded-lg px-3 py-2 transition" :class="isShelfPage ? 'bg-[#25323a] text-white shadow-sm' : 'text-[#74665e] hover:bg-[#f3ede3] hover:text-[#c96b48]'">わたしの読書記録</Link>
+                    <Link :href="route('admin.englishBooks.index')" class="rounded-lg px-3 py-2 transition" :class="isShelfPage ? 'bg-[#25323a] text-white shadow-sm' : 'text-[#74665e] hover:bg-[#f3ede3] hover:text-[#c96b48]'">読書記録</Link>
                     <Link :href="route('admin.englishBooks.catalog')" class="rounded-lg px-3 py-2 transition" :class="isCatalogPage ? 'bg-[#25323a] text-white shadow-sm' : 'text-[#74665e] hover:bg-[#f3ede3] hover:text-[#c96b48]'">本の情報</Link>
                 </nav>
             </div>

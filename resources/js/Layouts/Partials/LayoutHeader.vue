@@ -47,6 +47,13 @@ const mypageRouteName = computed(() => {
     if (props.isOuyou) return "ouyou.mypage";
     return "mypage";
 });
+const mobileAuthColorClass = computed(() => {
+    if (props.isDaigaku) return "text-blue-700 hover:bg-blue-50";
+    if (props.isSenmon) return "text-emerald-700 hover:bg-emerald-50";
+    if (props.isOuyou) return "text-amber-700 hover:bg-amber-50";
+    if (props.isIppan) return "text-fuchsia-700 hover:bg-fuchsia-50";
+    return "text-purple-700 hover:bg-purple-50";
+});
 
 // 現在表示中のルート判定（アクティブ色に利用）
 const isActive = (name) => route().current(name);
@@ -160,25 +167,38 @@ const isActive = (name) => route().current(name);
                     </template>
                 </div>
 
-                <button
-                    class="rounded-xl p-2 transition-colors hover:bg-gray-100 md:hidden"
-                    @click="$emit('open-menu')"
-                >
-                    <svg
-                        class="h-6 w-6 text-gray-700"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                <!-- 未ログイン時は、メニューの代わりにログイン導線を明示する -->
+                <div class="flex shrink-0 items-center md:hidden">
+                    <Link
+                        v-if="!hideAuthUi && !isAuthenticated"
+                        :href="loginHref"
+                        class="rounded-lg px-2 py-2 text-sm font-semibold leading-none transition-colors"
+                        :class="mobileAuthColorClass"
                     >
-                        <path
-                            d="M4 6h16M4 12h16M4 18h16"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
-                </button>
+                        ログイン
+                    </Link>
+                    <button
+                        v-else
+                        class="rounded-xl p-2 transition-colors hover:bg-gray-100"
+                        aria-label="メニューを開く"
+                        @click="$emit('open-menu')"
+                    >
+                        <svg
+                            class="h-6 w-6 text-gray-700"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M4 6h16M4 12h16M4 18h16"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </button>
+                </div>
             </div>
 
         </div>

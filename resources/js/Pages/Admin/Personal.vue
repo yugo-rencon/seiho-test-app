@@ -132,11 +132,13 @@ const parseDateParts = (date) => {
 const today = formatLocalDate(new Date());
 const selectedCalendarMonth = ref(props.monthlySummaries[0]?.month || today.slice(0, 7));
 const selectedCalendarDay = ref(today);
+const readingEnglishBooks = computed(() => props.englishBooks.filter((book) => book.status === "reading"));
+const defaultEnglishBookId = computed(() => String(readingEnglishBooks.value[0]?.english_book_id ?? ""));
 const studyLogForm = useForm({
     studied_on: today,
     category: "英語",
     subcategory: "E資格",
-    english_book_id: "",
+    english_book_id: defaultEnglishBookId.value,
     set_count: 1,
 });
 const deleteStudyLogForm = useForm({});
@@ -691,6 +693,10 @@ const selectCalendarDay = (date) => {
 };
 
 const openStudyLogModal = (date = selectedCalendarDay.value) => {
+    if (activeTab.value === "english") {
+        const isReading = readingEnglishBooks.value.some((book) => String(book.english_book_id) === studyLogForm.english_book_id);
+        selectEnglishBook(isReading ? studyLogForm.english_book_id : defaultEnglishBookId.value);
+    }
     selectCalendarDay(date || today);
     studyLogModalOpen.value = true;
 };
@@ -937,7 +943,7 @@ const deleteStudyLog = () => {
                                                 class="w-full appearance-none rounded-xl border border-violet-100 bg-white px-4 py-3 pr-11 text-sm font-bold text-gray-800 shadow-sm outline-none transition focus:border-violet-300 focus:ring-4 focus:ring-violet-100"
                                             >
                                                 <option value="">通常の英語学習</option>
-                                                <option v-for="book in englishBooks" :key="book.english_book_id" :value="String(book.english_book_id)">
+                                                <option v-for="book in readingEnglishBooks" :key="book.english_book_id" :value="String(book.english_book_id)">
                                                     {{ book.title }}
                                                 </option>
                                             </select>
@@ -948,11 +954,11 @@ const deleteStudyLog = () => {
                                             </div>
                                         </div>
 
-                                        <div v-if="englishBooks.length === 0" class="mt-2 rounded-lg border border-dashed border-violet-100 bg-violet-50/40 p-3 text-xs text-gray-500">
-                                            洋書を本棚に追加すると、本ごとに読書時間を分けて記録できます。
-                                            <Link :href="route('admin.englishBooks.catalog')" class="ml-1 font-bold text-violet-700 hover:text-violet-900"> 本を追加する </Link>
+                                        <div v-if="readingEnglishBooks.length === 0" class="mt-2 rounded-lg border border-dashed border-violet-100 bg-violet-50/40 p-3 text-xs text-gray-500">
+                                            読書中の本はありません。本棚で読書状況を「読書中」にすると選択できます。
+                                            <Link :href="route('admin.englishBooks.index')" class="ml-1 font-bold text-violet-700 hover:text-violet-900"> 本棚を見る </Link>
                                         </div>
-                                        <p v-else class="mt-1 text-[11px] font-semibold text-gray-400">洋書を選ぶと、その本の読書時間として集計します。</p>
+                                        <p v-else class="mt-1 text-[11px] font-semibold text-gray-400">読書中の本を選ぶと、その本の読書時間として集計します。</p>
                                         <span v-if="studyLogForm.errors.english_book_id" class="mt-1 block text-xs text-rose-600">
                                             {{ studyLogForm.errors.english_book_id }}
                                         </span>
@@ -1057,7 +1063,7 @@ const deleteStudyLog = () => {
                 </section>
             </div>
 
-            <section v-if="activeTab === 'english' && activeStudyTab === 'books'" class="mb-6 rounded-xl border border-violet-100 bg-gradient-to-br from-violet-50/80 via-white to-gray-50 p-3 shadow-sm sm:p-5">
+            <section v-if="activeTab === 'english' && activeStudyTab === 'books'" class="mb-6 min-w-0 rounded-xl border border-violet-100 bg-gradient-to-br from-violet-50/80 via-white to-gray-50 p-3 shadow-sm sm:p-5">
                 <div class="flex flex-wrap items-center justify-between gap-3">
                     <div>
                         <h2 class="text-lg font-bold text-gray-900">洋書の読書時間</h2>
@@ -1068,18 +1074,18 @@ const deleteStudyLog = () => {
                     </div>
                 </div>
 
-                <div v-if="englishBooks.length > 0" class="mt-4 grid gap-3 md:grid-cols-2">
-                    <article v-for="book in englishBooks" :key="book.english_book_id" class="rounded-xl border border-gray-100 bg-white p-3 shadow-sm">
+                <div v-if="englishBooks.length > 0" class="mt-4 grid min-w-0 grid-cols-1 gap-3 md:grid-cols-2">
+                    <article v-for="book in englishBooks" :key="book.english_book_id" class="min-w-0 rounded-xl border border-gray-100 bg-white p-3 shadow-sm">
                         <div class="flex items-start justify-between gap-2">
-                            <div class="min-w-0">
-                                <p class="truncate text-sm font-bold text-gray-900">{{ book.title }}</p>
-                                <p v-if="book.author" class="mt-0.5 truncate text-xs text-gray-400">{{ book.author }}</p>
+                            <div class="min-w-0 flex-1">
+                                <p class="break-words text-sm font-bold text-gray-900 [overflow-wrap:anywhere]">{{ book.title }}</p>
+                                <p v-if="book.author" class="mt-0.5 break-words text-xs text-gray-400 [overflow-wrap:anywhere]">{{ book.author }}</p>
                             </div>
                             <span class="shrink-0 rounded-full px-2 py-1 text-[10px] font-bold ring-1" :class="englishBookStatusClass(book.status)">
                                 {{ book.status_label }}
                             </span>
                         </div>
-                        <div class="mt-3 flex items-end justify-between gap-3">
+                        <div class="mt-3 flex flex-wrap items-end justify-between gap-3">
                             <div>
                                 <p class="text-[11px] font-bold text-gray-400">読書時間</p>
                                 <p class="mt-1 text-lg font-black text-orange-950">{{ book.total_duration }}</p>
@@ -1087,7 +1093,7 @@ const deleteStudyLog = () => {
                             <p class="text-[11px] font-semibold text-gray-400">{{ book.log_count }}回記録</p>
                         </div>
                         <p class="mt-2 text-[11px] leading-5 text-gray-500">開始 {{ formatBookDateLabel(book.started_on) }} / 読了 {{ formatBookDateLabel(book.finished_on) }}</p>
-                        <button type="button" class="mt-3 inline-flex w-full items-center justify-center rounded-lg border border-violet-100 bg-violet-50 px-3 py-2 text-xs font-bold text-violet-700 transition hover:bg-violet-100" @click="recordWithEnglishBook(book.english_book_id)">
+                        <button v-if="book.status === 'reading'" type="button" class="mt-3 inline-flex w-full items-center justify-center rounded-lg border border-violet-100 bg-violet-50 px-3 py-2 text-xs font-bold text-violet-700 transition hover:bg-violet-100" @click="recordWithEnglishBook(book.english_book_id)">
                             この本で記録
                         </button>
                     </article>

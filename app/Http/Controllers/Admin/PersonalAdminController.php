@@ -200,6 +200,7 @@ class PersonalAdminController extends Controller
             'dailySummaries' => $dailySummaries,
             'studyLogsByDay' => $studyLogsByDay,
             'englishBooks' => $englishBooks,
+            'totalBookReadingDuration' => $this->formatDuration(array_sum($englishBookMinutesById)),
             'exerciseStats' => [
                 'walking_count' => $exerciseLogs->where('activity', 'ウォーキング')->where('completed', true)->count(),
                 'running_count' => $exerciseLogs->where('activity', 'ランニング')->where('completed', true)->count(),

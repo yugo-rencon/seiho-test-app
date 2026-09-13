@@ -21,6 +21,10 @@ const props = defineProps({
         type: Object,
         default: () => ({}),
     },
+    totalBookReadingDuration: {
+        type: String,
+        default: "0分",
+    },
     englishBooks: {
         type: Array,
         default: () => [],
@@ -1074,8 +1078,15 @@ const deleteStudyLog = () => {
                     </div>
                 </div>
 
-                <div v-if="englishBooks.length > 0" class="mt-4 grid min-w-0 grid-cols-1 gap-3 md:grid-cols-2">
-                    <article v-for="book in englishBooks" :key="book.english_book_id" class="min-w-0 rounded-xl border border-gray-100 bg-white p-3 shadow-sm">
+                <div class="mt-4 rounded-xl border border-violet-100 bg-white px-4 py-4">
+                    <p class="text-xs font-bold text-gray-500">洋書の累計読書時間</p>
+                    <p class="mt-1 break-words text-2xl font-bold tabular-nums text-violet-950">{{ totalBookReadingDuration }}</p>
+                    <p class="mt-1 text-[11px] text-gray-500">読了した本も含む、全期間の読書時間</p>
+                </div>
+                <h3 class="mt-5 text-sm font-bold text-gray-700">読書中の本</h3>
+
+                <div v-if="readingEnglishBooks.length > 0" class="mt-4 grid min-w-0 grid-cols-1 gap-3 md:grid-cols-2">
+                    <article v-for="book in readingEnglishBooks" :key="book.english_book_id" class="min-w-0 rounded-xl border border-gray-100 bg-white p-3 shadow-sm">
                         <div class="flex items-start justify-between gap-2">
                             <div class="min-w-0 flex-1">
                                 <p class="break-words text-sm font-bold text-gray-900 [overflow-wrap:anywhere]">{{ book.title }}</p>
@@ -1099,8 +1110,8 @@ const deleteStudyLog = () => {
                     </article>
                 </div>
                 <div v-else class="mt-4 rounded-lg border border-dashed border-violet-100 bg-white px-3 py-3 text-sm text-gray-500">
-                    洋書の本棚に登録すると、本ごとの読書時間を集計できます。
-                    <Link :href="route('admin.englishBooks.catalog')" class="ml-2 font-bold text-violet-700 hover:text-violet-900"> 本を追加する </Link>
+                    読書中の本はありません。本棚で読書状況を「読書中」にすると表示されます。
+                    <Link :href="route('admin.englishBooks.index')" class="ml-2 font-bold text-violet-700 hover:text-violet-900"> 本棚を見る </Link>
                 </div>
             </section>
 

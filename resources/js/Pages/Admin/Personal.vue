@@ -1262,7 +1262,7 @@ const deleteStudyLog = () => {
                                 <div v-if="exerciseLogForm.activity === '腕立て'" class="mt-4">
                                     <label for="exercise-repetitions" class="block text-sm font-bold text-gray-700">腕立ての回数</label>
                                     <div class="mt-2 flex items-center gap-2">
-                                        <input id="exercise-repetitions" v-model.number="exerciseLogForm.repetitions" type="number" min="1" max="99999" step="1" inputmode="numeric" required class="min-w-0 w-full rounded-lg border-gray-200 text-lg font-semibold focus:border-amber-400 focus:ring-amber-200" placeholder="20" />
+                                        <input id="exercise-repetitions" v-model.number="exerciseLogForm.repetitions" type="number" min="1" max="99999" step="1" inputmode="numeric" required class="min-w-0 w-full rounded-lg border-gray-200 text-lg font-semibold focus:border-amber-400 focus:ring-amber-200" placeholder="" />
                                         <span class="text-sm font-semibold text-gray-600">回</span>
                                     </div>
                                     <p class="mt-2 text-xs leading-5 text-gray-500">その日の合計回数を入力します。同じ日の保存は上書きになります。</p>

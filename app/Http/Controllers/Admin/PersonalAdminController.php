@@ -131,7 +131,7 @@ class PersonalAdminController extends Controller
             });
 
         $exerciseLogs = PersonalExerciseLog::query()
-            ->select(['id', 'exercised_on', 'activity', 'completed', 'memo'])
+            ->select(['id', 'exercised_on', 'activity', 'completed', 'memo', 'repetitions'])
             ->orderByDesc('exercised_on')
             ->get();
 
@@ -145,6 +145,7 @@ class PersonalAdminController extends Controller
                         'activity' => $log->activity,
                         'completed' => $log->completed,
                         'memo' => $log->memo,
+                        'repetitions' => $log->repetitions,
                     ])
                     ->values();
             });
@@ -156,6 +157,7 @@ class PersonalAdminController extends Controller
                 $walkingCount = $monthLogs->where('activity', 'ウォーキング')->where('completed', true)->count();
                 $runningCount = $monthLogs->where('activity', 'ランニング')->where('completed', true)->count();
                 $strengthTrainingCount = $monthLogs->where('activity', '筋トレ')->where('completed', true)->count();
+                $pushUpCount = $monthLogs->where('activity', '腕立て')->where('completed', true)->count();
 
                 return [
                     'month' => $month,
@@ -163,7 +165,8 @@ class PersonalAdminController extends Controller
                     'walking_count' => $walkingCount,
                     'running_count' => $runningCount,
                     'strength_training_count' => $strengthTrainingCount,
-                    'total_count' => $walkingCount + $runningCount + $strengthTrainingCount,
+                    'push_up_count' => $pushUpCount,
+                    'total_count' => $walkingCount + $runningCount + $strengthTrainingCount + $pushUpCount,
                 ];
             })
             ->values();
@@ -205,6 +208,8 @@ class PersonalAdminController extends Controller
                 'walking_count' => $exerciseLogs->where('activity', 'ウォーキング')->where('completed', true)->count(),
                 'running_count' => $exerciseLogs->where('activity', 'ランニング')->where('completed', true)->count(),
                 'strength_training_count' => $exerciseLogs->where('activity', '筋トレ')->where('completed', true)->count(),
+                'push_up_count' => $exerciseLogs->where('activity', '腕立て')->where('completed', true)->count(),
+                'push_up_repetitions' => (int) $exerciseLogs->where('activity', '腕立て')->where('completed', true)->sum('repetitions'),
                 'streak_count' => $exerciseStreak['count'],
                 'streak_until' => $exerciseStreak['until'],
             ],
@@ -341,7 +346,8 @@ class PersonalAdminController extends Controller
     {
         $validated = $request->validate([
             'exercised_on' => ['required', 'date_format:Y-m-d'],
-            'activity' => ['required', 'string', 'in:ウォーキング,ランニング,筋トレ'],
+            'activity' => ['required', 'string', 'in:ウォーキング,ランニング,筋トレ,腕立て'],
+            'repetitions' => ['exclude_unless:activity,腕立て', 'required', 'integer', 'min:1', 'max:99999'],
             'memo' => ['nullable', 'string', 'max:1000'],
         ]);
 
@@ -354,6 +360,7 @@ class PersonalAdminController extends Controller
             ],
             [
                 'completed' => true,
+                'repetitions' => $validated['repetitions'] ?? null,
                 'memo' => $validated['memo'] ?? null,
             ],
         );

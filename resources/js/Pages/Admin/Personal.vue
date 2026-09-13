@@ -35,6 +35,8 @@ const props = defineProps({
             walking_count: 0,
             running_count: 0,
             strength_training_count: 0,
+            push_up_count: 0,
+            push_up_repetitions: 0,
             streak_count: 0,
             streak_until: null,
         }),
@@ -109,6 +111,16 @@ const exerciseActivities = [
         badgeClass: "bg-rose-50 text-rose-800",
         cardClass: "border-rose-100 bg-rose-50/75 text-rose-950",
     },
+    {
+        value: "腕立て",
+        label: "腕立て",
+        shortLabel: "腕立て",
+        accent: "bg-amber-400",
+        activeClass: "bg-white text-amber-950 shadow-sm ring-1 ring-amber-100",
+        inactiveClass: "text-amber-700 hover:bg-white/70 hover:text-amber-900",
+        badgeClass: "bg-amber-50 text-amber-800",
+        cardClass: "border-amber-100 bg-amber-50/75 text-amber-950",
+    },
 ];
 const wakeTimePresets = ["05:30", "06:00", "06:30", "07:00", "07:30", "08:00"];
 const exerciseStartedOnLabel = "2026/07/21";
@@ -149,6 +161,7 @@ const deleteStudyLogForm = useForm({});
 const exerciseLogForm = useForm({
     exercised_on: today,
     activity: "ウォーキング",
+    repetitions: null,
     memo: "",
 });
 const deleteExerciseLogForm = useForm({});
@@ -716,8 +729,16 @@ const selectExerciseDay = (date) => {
     exerciseLogForm.exercised_on = date;
 };
 
+const loadExerciseRepetitions = () => {
+    const existing = selectedExerciseDayLogs.value.find((log) => log.activity === exerciseLogForm.activity);
+    exerciseLogForm.repetitions = existing?.repetitions ?? null;
+    exerciseLogForm.clearErrors("repetitions");
+};
+watch([() => exerciseLogForm.activity, () => exerciseLogForm.exercised_on], loadExerciseRepetitions);
+
 const openExerciseLogModal = (date = selectedExerciseDay.value) => {
     selectExerciseDay(date || today);
+    loadExerciseRepetitions();
     exerciseLogModalOpen.value = true;
 };
 
@@ -1143,7 +1164,7 @@ const deleteStudyLog = () => {
                             <p v-if="exerciseStats.streak_until" class="pb-1 text-[11px] font-semibold text-violet-500">{{ String(exerciseStats.streak_until).replaceAll("-", "/") }} まで</p>
                         </div>
                     </div>
-                    <div class="grid gap-2 sm:grid-cols-3">
+                    <div class="grid gap-2 sm:grid-cols-2">
                         <div class="flex items-center justify-between rounded-lg border px-3 py-2" :class="exerciseActivities[0].cardClass">
                             <p class="text-[11px] font-bold">ウォーキング</p>
                             <p class="text-sm font-bold">{{ exerciseStats.walking_count }}日</p>
@@ -1155,6 +1176,10 @@ const deleteStudyLog = () => {
                         <div class="flex items-center justify-between rounded-lg border px-3 py-2" :class="exerciseActivities[2].cardClass">
                             <p class="text-[11px] font-bold">筋トレ</p>
                             <p class="text-sm font-bold">{{ exerciseStats.strength_training_count }}日</p>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2" :class="exerciseActivities[3].cardClass">
+                            <p class="text-[11px] font-bold">腕立て</p>
+                            <p class="text-sm font-bold">{{ exerciseStats.push_up_count || 0 }}日・累計 {{ (exerciseStats.push_up_repetitions || 0).toLocaleString() }}回</p>
                         </div>
                     </div>
                 </section>
@@ -1193,7 +1218,7 @@ const deleteStudyLog = () => {
                                     <div class="w-full text-xs font-bold text-gray-800 sm:text-sm">{{ cell.day }}</div>
                                     <div v-if="cell.logs.length > 0" class="mt-0.5 w-full space-y-0.5">
                                         <div v-for="log in cell.logs" :key="`exercise-cell-${log.id}`" class="w-full truncate rounded px-0.5 py-0 text-left text-[7px] font-semibold leading-4 sm:px-1 sm:text-xs" :class="exerciseActivityByValue[log.activity]?.badgeClass || 'bg-gray-50 text-gray-700'">
-                                            {{ log.activity }}
+                                            {{ log.activity }}<span v-if="log.repetitions"> {{ log.repetitions }}回</span>
                                         </div>
                                     </div>
                                 </button>
@@ -1221,7 +1246,7 @@ const deleteStudyLog = () => {
                                         <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
                                     </button>
                                 </div>
-                                <div class="mt-2 grid grid-cols-3 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
+                                <div class="mt-2 grid grid-cols-2 gap-1 rounded-lg border border-gray-200 bg-gray-50 p-1 shadow-sm">
                                     <button
                                         v-for="activity in exerciseActivities"
                                         :key="activity.value"
@@ -1234,6 +1259,15 @@ const deleteStudyLog = () => {
                                         {{ activity.label }}
                                     </button>
                                 </div>
+                                <div v-if="exerciseLogForm.activity === '腕立て'" class="mt-4">
+                                    <label for="exercise-repetitions" class="block text-sm font-bold text-gray-700">腕立ての回数</label>
+                                    <div class="mt-2 flex items-center gap-2">
+                                        <input id="exercise-repetitions" v-model.number="exerciseLogForm.repetitions" type="number" min="1" max="99999" step="1" inputmode="numeric" required class="min-w-0 w-full rounded-lg border-gray-200 text-lg font-semibold focus:border-amber-400 focus:ring-amber-200" placeholder="20" />
+                                        <span class="text-sm font-semibold text-gray-600">回</span>
+                                    </div>
+                                    <p class="mt-2 text-xs leading-5 text-gray-500">その日の合計回数を入力します。同じ日の保存は上書きになります。</p>
+                                    <p v-if="exerciseLogForm.errors.repetitions" class="mt-1 text-xs text-rose-600">{{ exerciseLogForm.errors.repetitions }}</p>
+                                </div>
                                 <span v-if="exerciseLogForm.errors.activity" class="mt-1 block text-xs text-rose-600">
                                     {{ exerciseLogForm.errors.activity }}
                                 </span>
@@ -1245,14 +1279,14 @@ const deleteStudyLog = () => {
                                     class="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                                     :disabled="exerciseLogForm.processing"
                                 >
-                                    {{ exerciseLogForm.processing ? "保存中" : "実施で保存" }}
+                                    {{ exerciseLogForm.processing ? "保存中" : exerciseLogForm.activity === "腕立て" ? "回数を保存" : "実施で保存" }}
                                 </button>
                             </form>
                         </div>
 
                         <div v-if="selectedExerciseDayLogs.length > 0" class="mt-3 space-y-2">
                             <div v-for="log in selectedExerciseDayLogs" :key="`exercise-log-${log.id}`" class="flex items-center justify-between gap-3 rounded-lg border border-gray-100 bg-white px-3 py-2">
-                                <p class="text-sm font-bold text-gray-900">{{ log.activity }}</p>
+                                <p class="text-sm font-bold text-gray-900">{{ log.activity }}<span v-if="log.repetitions"> {{ log.repetitions }}回</span></p>
                                 <button
                                     type="button"
                                     class="rounded-md border border-rose-200 bg-white px-3 py-1.5 text-xs font-bold text-rose-600 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-60"

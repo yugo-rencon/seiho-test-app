@@ -11,10 +11,12 @@ class PersonalExerciseLog extends Model
         'activity',
         'completed',
         'memo',
+        'repetitions',
     ];
 
     protected $casts = [
         'exercised_on' => 'date:Y-m-d',
         'completed' => 'boolean',
+        'repetitions' => 'integer',
     ];
 }

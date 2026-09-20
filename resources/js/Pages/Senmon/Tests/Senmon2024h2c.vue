@@ -464,7 +464,7 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                         }, //45
                         {
                             // rev: 2026-06-08 確認済み
-                            questionTitle: 'JA共済',
+                            questionTitle: 'ＪＡ共済',
                             relatedProblems: [],
                             content: '正しい',
                         }, //46

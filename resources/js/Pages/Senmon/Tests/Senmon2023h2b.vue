@@ -118,7 +118,7 @@ const subject = "2023年度 9月〜3月実施 フォームB";
                     :questionNumber="8"
                     :title="title"
                     :subject="subject"
-                    questionTitle="JA共済"
+                    questionTitle="ＪＡ共済"
                     :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み

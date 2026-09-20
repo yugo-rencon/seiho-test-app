@@ -272,7 +272,7 @@ const subject = "2025年 4月〜8月実施 フォームA";
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
-                    questionTitle="JA共済"
+                    questionTitle="ＪＡ共済"
                     :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
@@ -491,7 +491,7 @@ const subject = "2025年 4月〜8月実施 フォームA";
                 />
             </div>
 
-            <TestNavigationButtons next-href="/senmon/2025-h1-b" home-route="senmon.index" />
+            <TestNavigationButtons previous-href="/senmon/2026-h1-b" next-href="/senmon/2025-h1-b" home-route="senmon.index" />
         </section>
     </SeihoTestLayout>
 </template>

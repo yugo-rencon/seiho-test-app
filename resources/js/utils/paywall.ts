@@ -30,7 +30,7 @@ const isBasicScopeFreeRoute = (): boolean => {
     const path = window.location.pathname.replace(/\/$/, "");
     return (
         /^\/ippan\/2026-1-6-[a-e]$/i.test(path) ||
-        path === "/senmon/2025-h1-a" ||
+        path === "/senmon/2026-h1-a" ||
         path === "/ouyou/2026-h1-a"
     );
 };

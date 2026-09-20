@@ -310,7 +310,7 @@ const subject = "2024年度 4月〜8月実施 フォームA";
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
-                    questionTitle="JA共済"
+                    questionTitle="ＪＡ共済"
                     :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み

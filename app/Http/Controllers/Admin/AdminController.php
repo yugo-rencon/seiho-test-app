@@ -216,24 +216,40 @@ class AdminController extends Controller
         $daigakuPriceSwitchAt = '2026-05-30 17:34:32';
         $basicExamPriceSwitchAt = '2026-06-18 00:00:00';
         $basicBundlePriceSwitchAt = '2026-06-18 00:00:00';
+        $premiumPriceSwitchAt = '2026-10-01 17:01:13';
 
         $scopePriceCaseSql = 'CASE COALESCE(purchases.scope, "seiho")
-            WHEN "seiho" THEN 1980
+            WHEN "seiho" THEN CASE
+                WHEN purchases.paid_at < "'.$premiumPriceSwitchAt.'" THEN 1980
+                ELSE 2980
+            END
             WHEN "daigaku" THEN CASE
-                WHEN purchases.paid_at < "'.$daigakuPriceSwitchAt.'" THEN 980
-                ELSE 1480
+                WHEN purchases.paid_at < "'.$premiumPriceSwitchAt.'" THEN CASE
+                    WHEN purchases.paid_at < "'.$daigakuPriceSwitchAt.'" THEN 980
+                    ELSE 1480
+                END
+                ELSE 1980
             END
             WHEN "ouyou" THEN CASE
-                WHEN purchases.paid_at < "'.$basicExamPriceSwitchAt.'" THEN 480
-                ELSE 980
+                WHEN purchases.paid_at < "'.$premiumPriceSwitchAt.'" THEN CASE
+                    WHEN purchases.paid_at < "'.$basicExamPriceSwitchAt.'" THEN 480
+                    ELSE 980
+                END
+                ELSE 1280
             END
             WHEN "senmon" THEN CASE
-                WHEN purchases.paid_at < "'.$basicExamPriceSwitchAt.'" THEN 480
-                ELSE 980
+                WHEN purchases.paid_at < "'.$premiumPriceSwitchAt.'" THEN CASE
+                    WHEN purchases.paid_at < "'.$basicExamPriceSwitchAt.'" THEN 480
+                    ELSE 980
+                END
+                ELSE 1280
             END
             WHEN "ippan" THEN CASE
-                WHEN purchases.paid_at < "'.$basicExamPriceSwitchAt.'" THEN 480
-                ELSE 980
+                WHEN purchases.paid_at < "'.$premiumPriceSwitchAt.'" THEN CASE
+                    WHEN purchases.paid_at < "'.$basicExamPriceSwitchAt.'" THEN 480
+                    ELSE 980
+                END
+                ELSE 1280
             END
             WHEN "basic" THEN CASE
                 WHEN purchases.paid_at < "'.$basicBundlePriceSwitchAt.'" THEN 980
@@ -942,11 +958,11 @@ class AdminController extends Controller
                 default => '生保講座 プレミアムプラン（買い切り）',
             },
             'price' => match ($scope) {
-                'daigaku' => 1480,
-                'ippan' => 980,
-                'senmon', 'ouyou' => 980,
+                'daigaku' => 1980,
+                'ippan' => 1280,
+                'senmon', 'ouyou' => 1280,
                 'basic' => 1980,
-                default => 1980,
+                default => 2980,
             },
             'currency' => 'jpy',
             'stripe_product_id' => null,

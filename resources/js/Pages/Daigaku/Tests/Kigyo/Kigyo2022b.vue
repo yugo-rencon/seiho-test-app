@@ -53,9 +53,10 @@ const isDraft = true;
                     questionTitle="株主の権利・義務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
+                        // rev: 2026-10-01 確認済み
+                        '共益権 ↔︎ 自益権', //p22
+                        '株主は、会社に対して出資義務を負うが、[[会社の債権者に対して直接の責任は負わない]]。', //p23
+                        '譲渡制限株式の譲渡の承認は、原則として、[[取締役会を設置しない株式会社では「株主総会」]]が、[[取締役会を設置する株式会社では「取締役会」]]が行う。', //p23
                         '正しい',
                     ]"
                 />
@@ -183,10 +184,10 @@ const isDraft = true;
                     questionTitle="持分会社"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -196,10 +197,10 @@ const isDraft = true;
                     questionTitle="支配関係による親会社・子会社の分類等"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -209,10 +210,10 @@ const isDraft = true;
                     questionTitle="法人設立時の公的金融機関と中小企業を対象とする金融機関"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -222,10 +223,10 @@ const isDraft = true;
                     questionTitle="大会社における新たな会社の機関"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -235,10 +236,10 @@ const isDraft = true;
                     questionTitle="企業の事業保障対策の基礎知識"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -248,10 +249,10 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険の税務"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -261,10 +262,10 @@ const isDraft = true;
                     questionTitle="自社株対策の重要性"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -274,10 +275,10 @@ const isDraft = true;
                     questionTitle="団体定期保険（任意加入制）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -287,10 +288,10 @@ const isDraft = true;
                     questionTitle="団体信用生命保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -300,10 +301,10 @@ const isDraft = true;
                     questionTitle="確定給付企業年金"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -313,10 +314,10 @@ const isDraft = true;
                     questionTitle="退職金・年金の基礎知識"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -326,10 +327,10 @@ const isDraft = true;
                     questionTitle="国民年金基金"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3

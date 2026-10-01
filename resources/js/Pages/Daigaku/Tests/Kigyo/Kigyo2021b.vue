@@ -183,10 +183,10 @@ const isDraft = true;
                     questionTitle="会社"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -196,10 +196,10 @@ const isDraft = true;
                     questionTitle="中小企業を対象とする金融機関"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -209,10 +209,10 @@ const isDraft = true;
                     questionTitle="経営者保険の提案"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -222,10 +222,10 @@ const isDraft = true;
                     questionTitle="養老保険を活用した福利厚生プランの内容と留意点"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -235,10 +235,10 @@ const isDraft = true;
                     questionTitle="団体定期保険（任意加入型）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -248,10 +248,10 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -261,10 +261,10 @@ const isDraft = true;
                     questionTitle="団体就業不能保障保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -274,10 +274,10 @@ const isDraft = true;
                     questionTitle="財形制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -287,10 +287,10 @@ const isDraft = true;
                     questionTitle="日本の年金制度と退職一時金・企業年金制度に対する企業ニーズ"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
                         '正しい',
+                        '正しい',
+                        '正しい',
+                        '', //p
                     ]"
                 />
                 <QuestionTemp1
@@ -300,10 +300,10 @@ const isDraft = true;
                     questionTitle="確定給付企業年金"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
                         '正しい',
                         '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -313,10 +313,10 @@ const isDraft = true;
                     questionTitle="確定拠出年金の運用対象商品"
                     :relatedProblems="[]"
                     :contents="[
+                        '', //p
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '正しい',
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp1
@@ -326,10 +326,10 @@ const isDraft = true;
                     questionTitle="中小企業退職金共済制度（中退共）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        '正しい',
                         '正しい',
                         '', //p
+                        '正しい',
                     ]"
                 />
                 <QuestionTemp3

@@ -17,7 +17,7 @@ const plans = [
     {
         key: "premium",
         name: "プレミアムプラン",
-        price: "¥1,480",
+        price: "¥1,980",
         note: "買い切り・追加料金なし",
         description: "生命保険大学課程の対象年度・対象フォームの解説一式を解放できます。",
         features: [

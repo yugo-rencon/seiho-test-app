@@ -29,10 +29,10 @@ const loginHref = computed(() =>
 );
 const priceNumberText = computed(() =>
     ["ippan", "senmon", "ouyou"].includes(scope.value)
-        ? "980"
+        ? "1,280"
         : scope.value === "daigaku"
-          ? "1,480"
-          : "1,980",
+          ? "1,980"
+          : "2,980",
 );
 const unlockedCountText = computed(() => {
     if (scope.value === "daigaku") return "全96解説";

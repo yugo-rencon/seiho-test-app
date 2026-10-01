@@ -99,7 +99,7 @@ const scopeTheme = computed(() => {
 const scopePlan = computed(() => {
     if (currentScope.value === "ippan") {
         return {
-            price: "¥980",
+            price: "¥1,280",
             description: "生命保険一般課程の全ての解説を解放できます。",
             features: [
                 "生命保険一般課程 全55解説を閲覧可能",
@@ -113,7 +113,7 @@ const scopePlan = computed(() => {
 
     if (currentScope.value === "senmon") {
         return {
-            price: "¥980",
+            price: "¥1,280",
             description: "生命保険専門課程の全ての解説を解放できます。",
             features: [
                 "生命保険専門課程 全32解説を閲覧可能",
@@ -127,7 +127,7 @@ const scopePlan = computed(() => {
 
     if (currentScope.value === "ouyou") {
         return {
-            price: "¥980",
+            price: "¥1,280",
             description: "生命保険応用課程の全ての解説を解放できます。",
             features: [
                 "生命保険応用課程 全32解説を閲覧可能",
@@ -140,7 +140,7 @@ const scopePlan = computed(() => {
     }
 
     return {
-        price: "¥1,980",
+        price: "¥2,980",
         description: "全科目・全年度・全フォームの解説を一括で解放",
         features: [
             "全科目・全年度・全フォームの解説を閲覧可能",
@@ -189,7 +189,7 @@ const plans = computed(() => [
                   "一般課程 全55解説を閲覧可能",
                   "専門課程 全30解説を閲覧可能",
                   "応用課程 全32解説を閲覧可能",
-                  "個別購入より960円お得",
+                  "個別購入より1,860円お得",
               ],
               cta: "一般・専門・応用セットで始める",
               href: "billing.checkout",

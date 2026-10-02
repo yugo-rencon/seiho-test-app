@@ -22,6 +22,7 @@ const formatNumber = (value) => Number(value || 0).toLocaleString();
             <div class="mt-6 flex flex-wrap items-center gap-3">
               <Link :href="route('admin.englishBooks.catalog.edit', book.id)" class="text-sm font-medium text-[#74665e] underline underline-offset-4 hover:text-[#b65b3d]">本の情報を編集</Link>
               <a v-if="book.amazon_url" :href="book.amazon_url" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex rounded-full border border-[#d6cec1] px-4 py-2.5 text-sm font-bold text-[#74665e] transition hover:border-[#c96b48] hover:text-[#b65b3d]">Amazonで見る ↗</a>
+              <a v-if="book.rakuten_url" :href="book.rakuten_url" target="_blank" rel="noopener noreferrer sponsored" class="inline-flex rounded-full border border-[#d6cec1] px-4 py-2.5 text-sm font-bold text-[#74665e] transition hover:border-[#c96b48] hover:text-[#b65b3d]">楽天ブックスで見る ↗</a>
               <Link :href="route('admin.englishBooks.edit', book.id)" class="inline-flex rounded-full bg-[#c96b48] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#ad5637]">読書記録を編集</Link>
             </div>
           </div>

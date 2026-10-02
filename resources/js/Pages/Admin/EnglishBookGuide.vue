@@ -7,6 +7,9 @@ const props = defineProps({ book: { type: Object, required: true }, guideHtml: {
 const amazonHost = computed(() => {
     try { return new URL(props.book.amazon_url).hostname.replace(/^www\./, ''); } catch { return 'Amazon'; }
 });
+const rakutenHost = computed(() => {
+    try { return new URL(props.book.rakuten_url).hostname.replace(/^www\./, ''); } catch { return '楽天ブックス'; }
+});
 </script>
 
 <template>
@@ -21,6 +24,10 @@ const amazonHost = computed(() => {
                     <div class="note-prose prose prose-slate mt-10 max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-[#333] prose-h2:mt-12 prose-h2:border-b prose-h2:border-[#e8e8e8] prose-h2:pb-3 prose-h3:mt-8 prose-p:leading-8 prose-p:text-[#444] prose-li:my-1 prose-li:text-[#444] prose-a:text-[#30a987] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#333] prose-code:rounded prose-code:bg-[#f3f3f3] prose-code:px-1 prose-code:py-0.5 prose-code:text-[#555] prose-code:before:content-none prose-code:after:content-none" v-html="guideHtml"></div>
                     <a v-if="book.amazon_url" :href="book.amazon_url" target="_blank" rel="noopener noreferrer sponsored" class="mt-12 flex overflow-hidden rounded-lg border border-[#dedede] bg-[#fafafa] text-left no-underline transition hover:border-[#bdbdbd] hover:bg-white">
                         <div class="min-w-0 flex-1 px-5 py-5 sm:px-6"><p class="text-xs font-medium text-[#888]">{{ amazonHost }}</p><p class="mt-2 line-clamp-2 text-base font-bold leading-6 text-[#333]">{{ book.title }}</p><p v-if="book.author" class="mt-1 line-clamp-1 text-sm text-[#777]">{{ book.author }}</p><span class="mt-5 inline-flex rounded-md bg-[#333] px-4 py-2 text-sm font-bold text-white">Amazonで見る ↗</span></div>
+                        <div class="flex w-28 shrink-0 items-center justify-center border-l border-[#dedede] bg-white p-3 sm:w-36"><img v-if="book.cover_image_url" :src="book.cover_image_url" :alt="`${book.title} の表紙`" class="max-h-40 w-auto max-w-full object-contain" /><span v-else class="text-xs font-bold text-[#aaa]">BOOK</span></div>
+                    </a>
+                    <a v-if="book.rakuten_url" :href="book.rakuten_url" target="_blank" rel="noopener noreferrer sponsored" class="mt-4 flex overflow-hidden rounded-lg border border-[#dedede] bg-[#fafafa] text-left no-underline transition hover:border-[#bdbdbd] hover:bg-white">
+                        <div class="min-w-0 flex-1 px-5 py-5 sm:px-6"><p class="text-xs font-medium text-[#888]">{{ rakutenHost }}</p><p class="mt-2 line-clamp-2 text-base font-bold leading-6 text-[#333]">{{ book.title }}</p><p v-if="book.author" class="mt-1 line-clamp-1 text-sm text-[#777]">{{ book.author }}</p><span class="mt-5 inline-flex rounded-md bg-[#333] px-4 py-2 text-sm font-bold text-white">楽天ブックスで見る ↗</span></div>
                         <div class="flex w-28 shrink-0 items-center justify-center border-l border-[#dedede] bg-white p-3 sm:w-36"><img v-if="book.cover_image_url" :src="book.cover_image_url" :alt="`${book.title} の表紙`" class="max-h-40 w-auto max-w-full object-contain" /><span v-else class="text-xs font-bold text-[#aaa]">BOOK</span></div>
                     </a>
                     <div class="mt-14 border-t border-[#eeeeee] pt-5 text-xs text-[#999]">この本の読書記録</div>

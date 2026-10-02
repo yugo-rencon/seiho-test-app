@@ -414,9 +414,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-10-01 確認済み
                             questionTitle: '株式会社の機関',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '営業グループ → 経営グループ', //p17
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み

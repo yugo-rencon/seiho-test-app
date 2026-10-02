@@ -210,8 +210,9 @@ const isDraft = true;
                     questionTitle="株式会社の機関"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-01 確認済み
                         '正しい',
-                        '', //p
+                        '会社法上の役員と呼ばれるのは、[[取締役、会計参与、監査役]]である。', //p26
                         '正しい',
                         '正しい',
                     ]"

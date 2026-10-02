@@ -408,9 +408,10 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-10-01 確認済み
                             questionTitle: '株式会社の機関',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '営業グループ → 経営グループ', //p17
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み

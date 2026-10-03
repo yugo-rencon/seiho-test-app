@@ -223,10 +223,11 @@ const isDraft = true;
                     questionTitle="財務諸表分析の基礎知識"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-03 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        'ディスクロージャー計算書 → キャッシュフロー計算書', //p62
                     ]"
                 />
                 <QuestionTemp1

@@ -264,7 +264,8 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険の税務"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-03 確認済み
+                        '企業が負担する保険料（[[特約保険料を含む]]）は全額損金算入できる。', //p131
                         '正しい',
                         '正しい',
                         '正しい',

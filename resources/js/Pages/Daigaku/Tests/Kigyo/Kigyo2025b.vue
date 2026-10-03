@@ -217,8 +217,9 @@ const isDraft = true;
                     questionTitle="民間金融機関"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
-                        '', //p
+                        '信用金庫と信用組合はともに[[非営利]]の協同組織の金融機関である。', //p43
                         '正しい',
                         '正しい',
                     ]"

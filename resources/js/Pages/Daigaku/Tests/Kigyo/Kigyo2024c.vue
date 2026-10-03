@@ -241,10 +241,11 @@ const isDraft = true;
                     questionTitle="民間金融機関"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '50％ → 20％', //p42
                     ]"
                 />
                 <QuestionTemp1

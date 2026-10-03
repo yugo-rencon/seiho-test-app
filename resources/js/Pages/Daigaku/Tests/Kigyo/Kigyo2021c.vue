@@ -184,10 +184,11 @@ const isDraft = true;
                     questionTitle="支配関係による親会社・子会社の分類"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-03 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '議決権の３分の１ → 議決権の過半数', //p36
                     ]"
                 />
                 <QuestionTemp1

@@ -211,7 +211,8 @@ const isDraft = true;
                     questionTitle="支配関係による親会社・子会社の分類等"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-03 確認済み
+                        '親会社 → 子会社', //p35
                         '正しい',
                         '正しい',
                         '正しい',

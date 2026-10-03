@@ -454,9 +454,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '確定拠出年金の給付',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '老齢給付金、[[遺族給付金（死亡一時金）]]および障害給付金の３つの形態に限られる。', //p191-192
                         }, //48
                         {
                             questionTitle: '医療保障保険（団体型）',

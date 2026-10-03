@@ -332,7 +332,8 @@ const isDraft = true;
                     questionTitle="国民年金基金"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-04 確認済み
+                        '60歳以上65歳未満の国民年金の任意加入被保険者も[[加入できる]]。', //p204
                         '正しい',
                         '正しい',
                         '正しい',

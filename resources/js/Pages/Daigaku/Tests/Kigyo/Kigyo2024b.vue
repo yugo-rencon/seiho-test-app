@@ -330,9 +330,10 @@ const isDraft = true;
                     questionTitle="国民年金基金"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '月額100,000円 → 月額68,000円', //p205
                         '正しい',
                     ]"
                 />

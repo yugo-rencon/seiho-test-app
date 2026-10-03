@@ -227,8 +227,9 @@ const isDraft = true;
                     questionTitle="法人設立時の公的資金融資と中小企業を対象とする金融機関"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
-                        '', //p
+                        '実際の融資は[[金融機関]]が行う。', //p39
                         '正しい',
                         '正しい',
                     ]"

@@ -438,9 +438,10 @@ const isDraft = true;
                             content: '', //p
                         }, //43
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '団体定期保険（任意加入制）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '概算保険料を用いる場合は、[[契約締結後速やかに（遅くとも３カ月以内）精算を行わなければならない]]。', //p140
                         }, //44
                         {
                             questionTitle: '財形年金積立保険',

@@ -244,10 +244,11 @@ const isDraft = true;
                     questionTitle="団体定期保険（任意加入制）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '加入年齢に「15歳以上70歳以下」と制限を設けている。', //p136
                     ]"
                 />
                 <QuestionTemp1
@@ -460,9 +461,10 @@ const isDraft = true;
                             content: '', //p
                         }, //47
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '団体定期保険（任意加入制）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '概算保険料を用いる場合は、[[契約締結後速やかに（遅くとも３カ月以内）精算を行わなければならない]]。', //p140
                         }, //48
                         {
                             questionTitle: '確定給付企業年金の積立金',

@@ -294,7 +294,8 @@ const isDraft = true;
                     questionTitle="財形制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-04 確認済み
+                        '使用人兼務役員は勤労者とみなされる。', //p156
                         '正しい',
                         '正しい',
                         '正しい',

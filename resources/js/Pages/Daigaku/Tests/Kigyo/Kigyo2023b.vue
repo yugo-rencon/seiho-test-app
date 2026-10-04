@@ -287,8 +287,9 @@ const isDraft = true;
                     questionTitle="財形制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
-                        '', //p
+                        '事業主に対して事務手数料は支払わない。', //p157
                         '正しい',
                         '正しい',
                     ]"

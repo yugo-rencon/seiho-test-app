@@ -474,9 +474,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '医療保障保険（団体型）の給付内容は、治療給付金、入院給付金と死亡保険金の[[３給付]]の組合せで、統合給付型となっている。', //p146
                         }, //49
                     ]"
                 />

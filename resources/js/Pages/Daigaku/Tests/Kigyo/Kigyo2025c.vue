@@ -456,9 +456,10 @@ const isDraft = true;
                             content: '', //p
                         }, //45
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '医療保障保険（団体型）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '家族特約を付加することにより被保険者の範囲に配偶者および子を含めることができる（直系尊属は不可）。', //p146
                         }, //46
                         {
                             questionTitle: '財形年金積立保険',

@@ -437,9 +437,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '株式の発行',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '日本で発行されている株式の大部分は、通常、[[普通株式]]であり、権利内容が限定されていない標準的な株式である。', //p20
                         }, //41
                         {
                             questionTitle: '資産規模による企業の分類',

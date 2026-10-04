@@ -270,8 +270,9 @@ const isDraft = true;
                     questionTitle="会社の整理"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
-                        '', //p
+                        '「[[株式の譲渡]]」とは、譲渡を受ける会社に、会社の所有権ごと譲渡する方法である。', //p91
                         '正しい',
                         '正しい',
                     ]"

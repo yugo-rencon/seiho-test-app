@@ -231,10 +231,11 @@ const isDraft = true;
                     questionTitle="会社の整理"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '債権者側が管財人を選任 → 裁判所が管財人を選任', //p92
                     ]"
                 />
                 <QuestionTemp1

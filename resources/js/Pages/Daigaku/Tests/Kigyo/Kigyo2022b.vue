@@ -453,9 +453,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-10-05 確認済み
                             questionTitle: '簿記の基礎知識',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '簿記では２つの要素かりかたかしかたを振り分けるにあたり、左側を[[借方]]、右側を[[貸方]]としている。', //p45
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み

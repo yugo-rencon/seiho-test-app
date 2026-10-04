@@ -312,8 +312,9 @@ const isDraft = true;
                     questionTitle="確定給付企業年金"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
-                        '', //p
+                        '金融庁長官 → 厚生労働大臣', //p179
                         '正しい',
                         '正しい',
                     ]"

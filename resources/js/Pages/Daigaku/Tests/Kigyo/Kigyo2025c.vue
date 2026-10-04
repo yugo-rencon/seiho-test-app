@@ -467,9 +467,10 @@ const isDraft = true;
                             content: '', //p
                         }, //47
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '確定給付企業年金の積立金',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '生命保険会社が取り扱う商品は、[[一般勘定で運用するものと特別勘定で運用するものに分けられる]]。', //p184
                         }, //48
                         {
                             questionTitle: '特定退職金共済制度（特退共）',

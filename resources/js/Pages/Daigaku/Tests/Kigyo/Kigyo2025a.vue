@@ -479,9 +479,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '確定給付企業年金の積立金',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '生命保険会社が取り扱う商品は、[[一般勘定で運用するものと特別勘定で運用するものに分けられる]]。', //p184
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み

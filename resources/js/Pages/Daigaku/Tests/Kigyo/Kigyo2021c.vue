@@ -232,9 +232,10 @@ const isDraft = true;
                     questionTitle="経営者保険の提案"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険期間は、一般には、[[勇退（予想）時点まで]]とされている。', //p70
                         '正しい',
                     ]"
                 />

@@ -447,9 +447,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '経営者保険の提案',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '保険期間は、一般には、[[勇退（予想）時点まで]]とされている。', //p70
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み

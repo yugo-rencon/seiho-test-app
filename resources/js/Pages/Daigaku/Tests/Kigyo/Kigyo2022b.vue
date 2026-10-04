@@ -458,9 +458,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '団体就業不能保障保険',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '保険期間内に被保険者が死亡したときに[[死亡保険金を支払う]]。', //p153
                         }, //47
                         {
                             questionTitle: '団体信用生命保険',

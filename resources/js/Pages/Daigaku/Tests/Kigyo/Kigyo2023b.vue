@@ -345,9 +345,10 @@ const isDraft = true;
                     questionTitle="確定拠出年金のポータビリティ"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-05 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '加入者の年金資産はそのままとなる。', //p198
                         '正しい',
                     ]"
                 />

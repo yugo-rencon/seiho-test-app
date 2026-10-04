@@ -232,7 +232,7 @@ const isDraft = true;
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
-                    questionTitle="法人設立時の公的資金調達と中小企業を対象とする金融機関"
+                    questionTitle="法人設立時の公的資金融資と中小企業を対象とする金融機関"
                     :relatedProblems="[]"
                     :contents="[
                         '正しい',

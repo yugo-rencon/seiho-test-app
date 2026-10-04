@@ -460,9 +460,10 @@ const isDraft = true;
                             content: '', //p
                         }, //45
                         {
+                            // rev: 2026-10-05 確認済み
                             questionTitle: 'キャッシュバランスプラン',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '従来の確定給付型の企業年金と[[確定拠出年金]]の両方の特徴をもつ制度である。', //p200
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み

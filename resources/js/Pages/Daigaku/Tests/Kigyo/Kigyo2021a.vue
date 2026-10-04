@@ -329,9 +329,10 @@ const isDraft = true;
                     questionTitle="キャッシュバランスプラン"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-05 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '指標（国債の利回り等）に応じて変動する。', //p200
                         '正しい',
                     ]"
                 />

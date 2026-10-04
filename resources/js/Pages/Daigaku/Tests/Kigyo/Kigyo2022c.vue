@@ -166,10 +166,11 @@ const isDraft = true;
                     questionTitle="キャッシュバランスプラン"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-05 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '掛金は加入者も拠出できる。', //p
+                        '指標利率分は企業が保証する。', //p
+                        '企業が従業員持分を個別に管理する。', //p200
                     ]"
                 />
                 <QuestionTemp1

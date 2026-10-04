@@ -426,9 +426,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //40
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '株式会社の設立',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '[[募集設立]]とは、発起人が一部の株式を引き受け、残りの株式を引き受ける者（株式引受人）を募集して会社を設立する方法である。', //p18
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み

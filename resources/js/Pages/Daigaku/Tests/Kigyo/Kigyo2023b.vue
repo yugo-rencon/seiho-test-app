@@ -206,7 +206,8 @@ const isDraft = true;
                     questionTitle="株式会社の設立"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-04 確認済み
+                        '発起設立 → 募集設立', //p18
                         '正しい',
                         '正しい',
                         '正しい',

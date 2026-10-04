@@ -335,7 +335,8 @@ const isDraft = true;
                     questionTitle="確定給付企業年金の課税関係"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-04 確認済み
+                        '一時所得 → 退職所得', //p185
                         '正しい',
                         '正しい',
                         '正しい',

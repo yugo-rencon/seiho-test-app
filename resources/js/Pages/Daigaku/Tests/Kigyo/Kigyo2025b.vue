@@ -327,10 +327,11 @@ const isDraft = true;
                     questionTitle="確定給付企業年金の課税関係"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '確定給付企業年金で、加入者個人が支払った掛金は、[[個人の所得控除の対象となる]]。', //不明（2025a23から作成）
                     ]"
                 />
                 <QuestionTemp1

@@ -435,9 +435,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '資産規模による企業の分類',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '２つの要件いずれにも該当 → ２つ要件[[いずれか]]に該当', //p33
                         }, //43
                         {
                             questionTitle: '中小企業を対象とする公的金融機関',

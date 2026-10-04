@@ -435,9 +435,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '資産規模による企業の分類',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '１億円以上 → ５億円以上<br>100億円以上 → 200億円以上', //p33
                         }, //42
                         {
                             questionTitle: '株主資本等変動計算書',

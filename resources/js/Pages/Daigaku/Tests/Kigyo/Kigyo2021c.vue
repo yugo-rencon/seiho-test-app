@@ -445,9 +445,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '資産規模による企業の分類',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '３億円以上 → ５億円以上<br>100億円以上 → 200億円以上', //p33
                         }, //44
                         {
                             questionTitle: '法人設立時の公的資金融資',

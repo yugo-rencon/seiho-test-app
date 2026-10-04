@@ -443,9 +443,10 @@ const isDraft = true;
                             content: '日本で発行されている株式の大部分は、通常、[[普通株式]]であり、権利内容が限定されていない標準的な株式である。', //p20
                         }, //41
                         {
+                            // rev: 2026-10-04 確認済み
                             questionTitle: '資産規模による企業の分類',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '１億円以上 → ５億円以上<br>100億円以上 → 200億円以上', //p33
                         }, //42
                         {
                             questionTitle: '株主資本等変動計算書',

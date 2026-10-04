@@ -349,7 +349,8 @@ const isDraft = true;
                     questionTitle="確定拠出年金の運用対象商品"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-04 確認済み
+                        '動産、不動産および商品先物は組入れることができない。', //p195
                         '正しい',
                         '正しい',
                         '正しい',

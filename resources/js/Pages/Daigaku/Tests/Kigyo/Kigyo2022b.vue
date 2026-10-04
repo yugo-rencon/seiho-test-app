@@ -470,9 +470,10 @@ const isDraft = true;
                             content: '保険期間内に被保険者が死亡したときに[[死亡保険金を支払う]]。', //p153
                         }, //47
                         {
+                            // rev: 2026-10-05 確認済み
                             questionTitle: '団体信用生命保険',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '債務者（被保険者）が負担する保険料は、[[生命保険料控除の対象とならない]]。', //p166
                         }, //48
                         {
                             questionTitle: '退職一時金・企業年金制度に対する企業ニーズとその背景',

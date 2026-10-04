@@ -324,10 +324,11 @@ const isDraft = true;
                     questionTitle="退職金・年金の基礎知識"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '確定拠出年金からは、厚生年金基金や確定給付企業年金（基金型企業年金・規約型企業年金）への[[移行はできない]]。', //p170
                     ]"
                 />
                 <QuestionTemp1

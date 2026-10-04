@@ -301,10 +301,11 @@ const isDraft = true;
                     questionTitle="退職金・年金の基礎知識"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '損益計算書 → 貸借対照表', //p169
                     ]"
                 />
                 <QuestionTemp1

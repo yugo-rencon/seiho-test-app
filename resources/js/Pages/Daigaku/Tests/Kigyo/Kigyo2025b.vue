@@ -485,9 +485,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-10-05 確認済み
                             questionTitle: '確定拠出年金の課税関係',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '個人の所属控除の対象となる。', //p198
                         }, //49
                     ]"
                 />

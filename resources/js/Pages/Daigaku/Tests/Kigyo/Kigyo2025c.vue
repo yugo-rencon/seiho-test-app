@@ -365,14 +365,14 @@ const isDraft = true;
                     :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-23 確認済み
-                        '災害総合保障',
+                        'ヒューマン・ヴァリュー',
                         '代表者',
                         '2,000',
                         '支払われない',
                         '1年',
                     ]"
                     :labels="[
-                        'ク', //25
+                        'ア', //25
                         'ケ', //26
                         'カ', //27
                         'エ', //28
@@ -443,9 +443,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '譲渡制限会社',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '公開会社 → 非公開会社', //p35
                         }, //42
                         {
                             // rev: 2026-10-04 確認済み
@@ -454,15 +455,15 @@ const isDraft = true;
                             content: '会社法では[[すべての株式会社]]について貸借対照表、損益計算書に加えて[[株主資本等変動計算書の作成を義務付けることになった]]。', //p60
                         }, //43
                         {
-                            // rev: 2026-08-23 確認済み
                             questionTitle: '経営者保険の提案',
                             relatedProblems: [],
-                            content: '正しい',
+                            content: '', //p
                         }, //44
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '総合福祉団体定期保険における被保険団体の要件',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '正しい',
                         }, //45
                         {
                             // rev: 2026-10-04 確認済み

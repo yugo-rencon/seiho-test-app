@@ -440,9 +440,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '譲渡制限会社',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '公開会社 → 非公開会社', //p35
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み

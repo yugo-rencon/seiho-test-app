@@ -437,9 +437,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '公開会社と譲渡制限会社',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '譲渡制限会社は、定款の定めにより、[[すべての株式]]の譲渡に制限がある会社で、一般には「非公開会社」ともよばれる。', //p35
                         }, //42
                         {
                             questionTitle: '中小企業を対象とする金融機関',

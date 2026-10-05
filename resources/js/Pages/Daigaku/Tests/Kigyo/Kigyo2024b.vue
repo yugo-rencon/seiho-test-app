@@ -458,9 +458,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //44
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '財形年金積立保険',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '年金支払開始日以後に受け取る年金は[[非課税扱いとなる]]。', //p160
                         }, //45
                          {
                             // rev: 2026-10-04 確認済み

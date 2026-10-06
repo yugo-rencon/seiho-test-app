@@ -17,8 +17,6 @@ const isDraft = true;
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
 
-            <DraftNotice v-if="isDraft" />
-
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1
                     :questionNumber="1"
@@ -80,13 +78,14 @@ const isDraft = true;
                     :questionNumber="5"
                     :title="title"
                     :subject="subject"
-                    questionTitle="会社の清算"
+                    questionTitle="会社の整理"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-10-06 確認済み
+                        '「[[営業権の譲渡]]」とは、譲渡を受ける会社に、当該会社がもつ商品・技術・サービスの看板を譲渡する方法である。', //p91
+                        '融資による資金調達の際に金融機関等に担保設定されている場合は、[[当該資産が優先的に担保債務に充当されるため、他の債権者に分配される資産や金額は少なくなる]]。', //p92
                         '正しい',
-                        '', //p
+                        '再生手続き開始後も、[[引き続き現経営者が経営にあたることができる]]。', //p92
                     ]"
                 />
                 <QuestionTemp1
@@ -247,13 +246,14 @@ const isDraft = true;
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
-                    questionTitle="団体定期保険（任意加入型）"
+                    questionTitle="団体定期保険（任意加入制）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '加入年齢に「15歳以上70歳以下」と制限を設けている。', //p136
                     ]"
                 />
                 <QuestionTemp1
@@ -305,10 +305,11 @@ const isDraft = true;
                     questionTitle="日本の年金制度と退職一時金・企業年金制度に対する企業ニーズ"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '損益計算書 → 貸借対照表', //p169
                     ]"
                 />
                 <QuestionTemp1
@@ -428,9 +429,10 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '学校法人',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '私立大学および私立高等専門学校を設置する学校法人については[[文部科学大臣]]、私立高等学校以下の学校のみを設置する学校法人については[[都道府県知事]]の認可が必要である。', //p13
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
@@ -457,9 +459,10 @@ const isDraft = true;
                             content: '多くの政府系金融機関が融資のみに特化した機能をもつ中で、[[預金の受入れ、国際為替、短期の資金供給等、「幅広い総合金融サービス」を行っている]]。', //p42
                         }, //44
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '経営者の勇退時退職慰労金',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '経営者・役員の退職金は、[[当然受け取るべき権利とはなっていない]]。', //p64
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
@@ -474,9 +477,10 @@ const isDraft = true;
                             content: '年に２回以上 → 年に１回以上', //p181
                         }, //47
                         {
-                            questionTitle: '団体定期保険（任意加入型）',
+                            // rev: 2026-10-04 確認済み
+                            questionTitle: '団体定期保険（任意加入制）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '概算保険料を用いる場合は、[[契約締結後速やかに（遅くとも３カ月以内）精算を行わなければならない]]。', //p140
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み

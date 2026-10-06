@@ -307,10 +307,11 @@ const isDraft = true;
                     questionTitle="日本の年金制度と退職一時金・企業年金制度に対する企業ニーズ"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '損益計算書 → 貸借対照表', //p169
                     ]"
                 />
                 <QuestionTemp1

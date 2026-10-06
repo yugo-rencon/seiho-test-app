@@ -17,8 +17,6 @@ const isDraft = true;
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
 
-            <DraftNotice v-if="isDraft" />
-
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1
                     :questionNumber="1"
@@ -307,10 +305,11 @@ const isDraft = true;
                     questionTitle="日本の年金制度と退職一時金・企業年金制度に対する企業ニーズ"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '損益計算書 → 貸借対照表', //p169
                     ]"
                 />
                 <QuestionTemp1
@@ -348,9 +347,10 @@ const isDraft = true;
                     questionTitle="特定退職金共済制度（特退共）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '中小企業退職金共済制度、確定給付企業年金制度、厚生年金基金との[[重複加入は可能である]]。', //p203
                         '正しい',
                     ]"
                 />
@@ -453,9 +453,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //43
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '金融商品取引法における「親会社」の定義',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '議決権の1/3 → 議決権の過半数', //p36
                         }, //44
                         {
                             // rev: 2026-10-06 確認済み

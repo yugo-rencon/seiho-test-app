@@ -318,11 +318,12 @@ const isDraft = true;
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
-                    questionTitle="財形貯蓄"
+                    questionTitle="財形制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-04 確認済み
                         '正しい',
-                        '', //p
+                        '事業主に対して事務手数料は支払わない。', //p157
                         '正しい',
                         '正しい',
                     ]"
@@ -484,9 +485,10 @@ const isDraft = true;
                             content: '年金支払開始日以後に受け取る年金は[[非課税扱いとなる]]。', //p160
                         }, //48
                         {
-                            questionTitle: '確定給付企業年金および確定拠出年金の税務関係',
+                            // rev: 2026-10-06 確認済み
+                            questionTitle: '確定給付企業年金および確定拠出年金の課税関係',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '個人の所属控除の対象となる。', //p185
                         }, //49
                     ]"
                 />

@@ -27,10 +27,11 @@ const isDraft = true;
                     questionTitle="会社"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '有限責任社員 → 無限責任社員', //p4
+                        '合同会社 → 合資会社', //p4
+                        '合資会社 → 合同会社<br>無限責任社員 → 有限責任社員', //p5
                     ]"
                 />
                 <QuestionTemp1

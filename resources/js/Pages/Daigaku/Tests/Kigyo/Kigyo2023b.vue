@@ -195,10 +195,11 @@ const isDraft = true;
                     questionTitle="会社"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '無限責任社員 → 有限責任社員', //p5
                     ]"
                 />
                 <QuestionTemp1

@@ -17,8 +17,6 @@ const isDraft = true;
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
 
-            <DraftNotice v-if="isDraft" />
-
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1
                     :questionNumber="1"
@@ -466,7 +464,7 @@ const isDraft = true;
                             relatedProblems: [],
                             content: '年金支払開始日以後に受け取る年金は[[非課税扱いとなる]]。', //p160
                         }, //45
-                         {
+                        {
                             // rev: 2026-10-04 確認済み
                             questionTitle: '団体定期保険（任意加入制）',
                             relatedProblems: [],

@@ -17,8 +17,6 @@ const isDraft = true;
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
 
-            <DraftNotice v-if="isDraft" />
-
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1
                     :questionNumber="1"
@@ -307,7 +305,8 @@ const isDraft = true;
                     questionTitle="財形保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-06 確認済み
+                        '財形貯蓄制度を利用できる「勤労者」とは、事業主に雇用されているすべての者をいい、[[事業主、法人の役員等は含まない]]が、いわゆる使用人兼務役員は勤労者とみなされる。', //p156
                         '正しい',
                         '正しい',
                         '正しい',
@@ -430,9 +429,10 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '会社',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '民法 → 会社法', //p4
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
@@ -447,14 +447,16 @@ const isDraft = true;
                             content: '譲渡制限会社は、定款の定めにより、[[すべての株式]]の譲渡に制限がある会社で、一般には「非公開会社」ともよばれる。', //p35
                         }, //42
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '中小企業を対象とする金融機関',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '銀行が株式会社の形態であるのに対し、信用金庫は、[[協同組織という非営利組織]]の形態をとっている。', //p42
                         }, //43
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '中小企業を対象とする金融機関',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '[[信用組合]]は、組合員以外の預金（員外預金）が総預金額の20％以内に制限されている点で[[信用金庫等]]と異なる。', //p42
                         }, //44
                         {
                             // rev: 2026-10-05 確認済み

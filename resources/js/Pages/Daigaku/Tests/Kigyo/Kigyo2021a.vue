@@ -456,9 +456,10 @@ const isDraft = true;
                             content: '', //p
                         }, //44
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '中小企業を対象とする金融機関',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '信用金庫と信用組合では、[[その根拠法や会員（組合員）資格、業務範囲等が異なっている]]。', //p43
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み

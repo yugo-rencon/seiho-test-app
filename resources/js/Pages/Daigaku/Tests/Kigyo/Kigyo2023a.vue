@@ -17,8 +17,6 @@ const isDraft = true;
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
 
-            <DraftNotice v-if="isDraft" />
-
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1
                     :questionNumber="1"
@@ -449,9 +447,10 @@ const isDraft = true;
                             content: '保険期間は、一般には、[[勇退（予想）時点まで]]とされている。', //p70
                         }, //42
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '総合福祉団体定期保険の共同取扱契約',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '各引受生命保険会社のもつ契約上の権利、義務はその引受けの範囲内において[[独立しており]]、引受生命保険会社間の[[連帯性はない]]。', //p128
                         }, //43
                         {
                             // rev: 2026-10-04 確認済み

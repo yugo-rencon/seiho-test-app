@@ -17,8 +17,6 @@ const isDraft = true;
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
 
-            <DraftNotice v-if="isDraft" />
-
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1
                     :questionNumber="1"
@@ -209,10 +207,11 @@ const isDraft = true;
                     questionTitle="株式の譲渡・株主名簿"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '株式会社は[[その本店（株主名簿管理人がある場合はその営業所）]]に株主名簿を備え置かなければならない。', //p24
                     ]"
                 />
                 <QuestionTemp1
@@ -250,10 +249,11 @@ const isDraft = true;
                     questionTitle="中小企業を対象とする金融機関"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '[[信用組合]]は、組合員以外の預金（員外預金）が総預金額の20％以内に制限されている点で[[信用金庫等]]と異なる。', //p42
                     ]"
                 />
                 <QuestionTemp1

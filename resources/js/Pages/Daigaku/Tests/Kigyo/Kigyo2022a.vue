@@ -447,14 +447,16 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '自治体の制度融資',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '融資を受けるためには、各地の信用保証協会の[[保証が必要となる]]。', //p39
                         }, //43
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '中小企業を対象とする公的金融機関',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '株式の全額を[[政府]]が保有し、公共性の高い政策金融を行う。', //p41
                         }, //44
                         {
                             // rev: 2026-10-05 確認済み

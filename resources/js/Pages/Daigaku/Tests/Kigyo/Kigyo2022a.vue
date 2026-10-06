@@ -194,9 +194,10 @@ const isDraft = true;
                     questionTitle="社団法人と財団法人"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        'それぞれを「[[一般社団法人]]」「[[一般財団法人]]」と称する。', //p7
                         '正しい',
                     ]"
                 />

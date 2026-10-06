@@ -17,8 +17,6 @@ const isDraft = true;
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
 
-            <DraftNotice v-if="isDraft" />
-
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1
                     :questionNumber="1"
@@ -55,7 +53,6 @@ const isDraft = true;
                     questionTitle="株式会社の役員とその権限"
                     :relatedProblems="[]"
                     :contents="[
-                        // rev: 2026-10-04 確認済み
                         // rev: 2026-10-04 確認済み
                         '代表取締役は、[[取締役会で選定・解職される]]。', //p27
                         '専務等も代表取締役になる場合がある。', //p27
@@ -266,7 +263,8 @@ const isDraft = true;
                     questionTitle="総合福祉団体定期保険"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-06 確認済み
+                        '保険契約の締結の際、[[保険契約者]]から保険契約の内容を被保険者の対象となる者全員に文書等で周知する。', //p125
                         '正しい',
                         '正しい',
                         '正しい',
@@ -461,9 +459,10 @@ const isDraft = true;
                             content: '３億円以上 → ５億円以上<br>100億円以上 → 200億円以上', //p33
                         }, //44
                         {
+                            // rev: 2026-10-07 確認済み
                             questionTitle: '法人設立時の公的資金融資',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '日本政策金融公庫の融資は、一定の条件を満たせば、[[個人事業でも法人でも受けられる]]。', //p38
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
@@ -472,9 +471,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-10-07 確認済み
                             questionTitle: '会社の清算',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '融資による資金調達の際に金融機関等に担保設定されている場合は、[[当該資産が優先的に担保債務に充当されるため、他の債権者に分配される資産や金額は少なくなる]]。', //p92
                         }, //47
                         {
                             // rev: 2026-10-04 確認済み

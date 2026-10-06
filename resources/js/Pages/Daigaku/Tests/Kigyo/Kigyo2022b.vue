@@ -217,13 +217,14 @@ const isDraft = true;
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
-                    questionTitle="法人設立時の公的金融機関と中小企業を対象とする金融機関"
+                    questionTitle="法人設立時の公的資金融資と中小企業を対象とする金融機関"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '自治体の制度融資の仕組みは、[[都道府県・信用保証協会・指定金融機関の三者協調]]で、実際の融資は金融機関が行うが、融資を受けるためには、[[各地の信用保証協会]]の保証が必要となる。', //p39
                     ]"
                 />
                 <QuestionTemp1

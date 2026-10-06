@@ -319,10 +319,11 @@ const isDraft = true;
                     questionTitle="団体信用生命保険"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '債務者（被保険者）が負担する保険料は、[[生命保険料控除の対象とならない]]。', //p166
                     ]"
                 />
                 <QuestionTemp1

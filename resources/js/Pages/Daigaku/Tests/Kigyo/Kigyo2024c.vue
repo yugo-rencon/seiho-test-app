@@ -319,10 +319,11 @@ const isDraft = true;
                     questionTitle="団体信用生命保険"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '死亡保険金は借入金の返済にあてられるので、被保険者の遺族にとっては[[「みなし相続財産」とならない]]。', //p166
                     ]"
                 />
                 <QuestionTemp1

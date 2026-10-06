@@ -463,9 +463,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //46
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '確定給付企業年金の掛金',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '年に２回以上 → 年に１回以上', //p181
                         }, //47
                         {
                             questionTitle: '団体定期保険（任意加入型）',

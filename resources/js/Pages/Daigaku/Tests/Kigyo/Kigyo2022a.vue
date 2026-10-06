@@ -234,10 +234,11 @@ const isDraft = true;
                     questionTitle="大会社における新たな会社の機関"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '監査委員会が業務執行等に関する監査を行うため、[[監査役は存在しない]]。', //p30
                     ]"
                 />
                 <QuestionTemp1

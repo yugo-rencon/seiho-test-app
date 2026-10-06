@@ -405,7 +405,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionRange="35〜39"
-                    questionTitle="中小企業退職金共済制度・特定退職金共済制度"
+                    questionTitle="中小企業退職金共済制度（中退共）・特定退職金共済制度（特退共）"
                     :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-23 確認済み

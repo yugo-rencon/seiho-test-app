@@ -17,8 +17,6 @@ const isDraft = true;
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
 
-            <DraftNotice v-if="isDraft" />
-
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1
                     :questionNumber="1"

@@ -38,7 +38,7 @@ const DAIGAKU_SECTIONS = [
         id: "houjin-consulting",
         title: "企業向け保険商品とコンサルティング",
         years: DAIGAKU_VISIBLE_YEARS,
-        published: false,
+        published: true,
     },
     {
         id: "social-security",

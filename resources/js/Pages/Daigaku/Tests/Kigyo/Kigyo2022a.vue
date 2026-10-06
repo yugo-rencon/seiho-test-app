@@ -483,9 +483,10 @@ const isDraft = true;
                             content: '債務者（被保険者）が負担する保険料は、[[生命保険料控除の対象とならない]]。', //p166
                         }, //48
                         {
+                            // rev: 2026-10-06 確認済み
                             questionTitle: '退職一時金・企業年金制度に対する企業ニーズとその背景',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '損益計算書 → 貸借対照表', //p169
                         }, //49
                     ]"
                 />

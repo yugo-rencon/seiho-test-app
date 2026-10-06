@@ -167,10 +167,11 @@ const isDraft = true;
                     questionTitle="キャッシュバランスプラン"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-05 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '掛金は加入者も拠出できる。', //p
+                        '指標利率分は企業が保証する。', //p
+                        '企業が従業員持分を個別に管理する。', //p200
                     ]"
                 />
                 <QuestionTemp1
@@ -194,10 +195,11 @@ const isDraft = true;
                     questionTitle="持分会社"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '合同会社は「[[有限責任社員]]」で構成された会社である。[[社員は経営に参加し]]、合同会社の債務については出資額を限度として責任を負うとされている。', //p5
                     ]"
                 />
                 <QuestionTemp1
@@ -249,9 +251,10 @@ const isDraft = true;
                     questionTitle="企業の事業保障対策の基礎知識"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-06 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '事業保障資金＝短期債務額＋[[従業員の年間給与総額]]', //p65
                         '正しい',
                     ]"
                 />

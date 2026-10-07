@@ -17,8 +17,6 @@ const isDraft = true;
         <section class="bg-gray-100 py-10 text-gray-800">
             <Pagetitle :title="title" :description="subject" />
 
-            <DraftNotice v-if="isDraft" />
-
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <QuestionTemp1
                     :questionNumber="1"
@@ -176,7 +174,7 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -189,7 +187,7 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -202,7 +200,7 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -215,7 +213,7 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -228,7 +226,7 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -241,7 +239,7 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -254,7 +252,7 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -267,7 +265,7 @@ const isDraft = true;
                         '', //p
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -280,7 +278,7 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -293,7 +291,7 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -306,7 +304,7 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -319,7 +317,7 @@ const isDraft = true;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
@@ -347,13 +345,7 @@ const isDraft = true;
                         '保険料免除期間',
                         '生涯',
                     ]"
-                    :labels="[
-                        'ク',
-                        'イ',
-                        'オ',
-                        'キ',
-                        'ウ',
-                    ]"
+                    :labels="['ク', 'イ', 'オ', 'キ', 'ウ']"
                 />
                 <QuestionTemp3
                     :questionNumber="6"
@@ -370,13 +362,7 @@ const isDraft = true;
                         '日本年金機構（年金事務所）',
                         '3割',
                     ]"
-                    :labels="[
-                        'コ',
-                        'ア',
-                        'イ',
-                        'エ',
-                        'ケ',
-                    ]"
+                    :labels="['コ', 'ア', 'イ', 'エ', 'ケ']"
                 />
                 <QuestionTemp3
                     :questionNumber="7"
@@ -393,13 +379,7 @@ const isDraft = true;
                         '第1号被保険者',
                         '要支援',
                     ]"
-                    :labels="[
-                        'イ',
-                        'オ',
-                        'カ',
-                        'エ',
-                        'ク',
-                    ]"
+                    :labels="['イ', 'オ', 'カ', 'エ', 'ク']"
                 />
                 <QuestionTemp2
                     :questionNumber="40"

@@ -25,10 +25,11 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-08 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '公的扶助制度 → 社会扶助制度', //p4
+                        '社会扶助制度 → 公的扶助制度', //p4
+                        '保健医療制度 → 社会福祉制度', //p4
                     ]"
                 />
                 <QuestionTemp1

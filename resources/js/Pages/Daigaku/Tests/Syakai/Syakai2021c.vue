@@ -181,10 +181,11 @@ const isDraft = true;
                     questionTitle="社会保障制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-08 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保健医療制度 → 社会福祉制度', //p4
                     ]"
                 />
                 <QuestionTemp1

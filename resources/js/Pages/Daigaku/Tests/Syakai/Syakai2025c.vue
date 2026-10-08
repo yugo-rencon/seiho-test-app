@@ -235,10 +235,11 @@ const isDraft = true;
                     questionTitle="公的年金等の課税関係"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-09 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '公的年金等の雑所得金額 ＝ [[公的年金等の額（税込み） − 公的年金等控除額]]', //p68
                     ]"
                 />
                 <QuestionTemp1

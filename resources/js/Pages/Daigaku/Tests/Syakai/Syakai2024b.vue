@@ -417,9 +417,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-10-09 確認済み
                             questionTitle: '標準報酬（月）額と厚生年金保険料',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '昇給等により、給与の３カ月平均額に、[[２等級以上]]の変動が生じた場合は随時改定が行われる。', //p21
                         }, //42
                         {
                             questionTitle: '遺族厚生年金の年金額',

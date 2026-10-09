@@ -225,8 +225,9 @@ const isDraft = true;
                     questionTitle="厚生年金保険の遺族給付"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
-                        '', //p
+                        '再婚したとき（事実婚も含む）、[[遺族厚生年金を受給できなくなる]]。', //p60
                         '正しい',
                         '正しい',
                     ]"

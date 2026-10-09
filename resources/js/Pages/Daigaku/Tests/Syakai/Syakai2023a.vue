@@ -304,7 +304,8 @@ const isDraft = true;
                     questionTitle="健康保険・厚生年金保険の被保険者資格喪失日"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-09 確認済み
+                        '適用事業所の業務に使用されなくなった日の[[翌日]]', //p138
                         '正しい',
                         '正しい',
                         '正しい',

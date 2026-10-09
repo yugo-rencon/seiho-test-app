@@ -207,10 +207,11 @@ const isDraft = true;
                     questionTitle="厚生年金保険の適用事業所"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '個人事業主自身は厚生年金保険には[[加入できない]]。', //p20
                     ]"
                 />
                 <QuestionTemp1

@@ -184,10 +184,11 @@ const isDraft = true;
                     questionTitle="社会保険制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '社会保険制度には、年金・医療・介護・[[労災]]・[[雇用]]の各制度がある。', //p5
                     ]"
                 />
                 <QuestionTemp1

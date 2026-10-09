@@ -185,10 +185,11 @@ const isDraft = true;
                     questionTitle="社会保険制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '実際に介護サービスや支援にあたるのは、[[介護サービスを提供できる事業者]]となっている。', //p9
                     ]"
                 />
                 <QuestionTemp1

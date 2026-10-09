@@ -261,10 +261,11 @@ const isDraft = true;
                     questionTitle="後期高齢者医療制度（長寿医療制度）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-09 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '雇用保険と同様 → 介護保険と同様', //p93
                     ]"
                 />
                 <QuestionTemp1

@@ -333,7 +333,8 @@ const isDraft = true;
                     questionTitle="受給する老齢年金の選択"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-10 確認済み
+                        '80歳 → 70歳', //p142
                         '正しい',
                         '正しい',
                         '正しい',

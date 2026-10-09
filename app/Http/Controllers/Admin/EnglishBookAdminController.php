@@ -8,7 +8,10 @@ use App\Models\EnglishBookShelf;
 use App\Models\PersonalStudyLog;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Arr;
+use Illuminate\Http\Client\ConnectionException;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -86,6 +89,35 @@ class EnglishBookAdminController extends Controller
         if ($path = $this->storeCover($request)) { if ($englishBook->cover_path) Storage::disk('public')->delete($englishBook->cover_path); $data['cover_path'] = $path; }
         $englishBook->update($data);
         return redirect()->route('admin.englishBooks.catalog');
+    }
+
+    public function lookupIsbn(Request $request): JsonResponse
+    {
+        $isbn = preg_replace('/[^0-9Xx]/', '', (string) $request->validate(['isbn' => ['required', 'string', 'max:32']])['isbn']);
+
+        if (! preg_match('/^(?:\d{9}[\dXx]|\d{13})$/', $isbn)) {
+            return response()->json(['message' => 'ISBNは10桁または13桁で入力してください。'], 422);
+        }
+
+        try {
+            $response = Http::acceptJson()->timeout(5)->get('https://openlibrary.org/api/books', [
+                'bibkeys' => "ISBN:{$isbn}", 'format' => 'json', 'jscmd' => 'data',
+            ]);
+        } catch (ConnectionException) {
+            return response()->json(['message' => '書籍情報サービスに接続できませんでした。しばらくしてから再度お試しください。'], 503);
+        }
+
+        $book = $response->successful() ? $response->json("ISBN:{$isbn}") : null;
+        if (! is_array($book)) {
+            return response()->json(['message' => 'このISBNの本は見つかりませんでした。手入力で登録できます。'], 404);
+        }
+
+        return response()->json(['book' => [
+            'title' => trim(implode(': ', array_filter([$book['title'] ?? null, $book['subtitle'] ?? null]))),
+            'author' => collect($book['authors'] ?? [])->pluck('name')->filter()->implode(', '),
+            'cover_url' => data_get($book, 'cover.large') ?? data_get($book, 'cover.medium'),
+            'page_count' => $book['number_of_pages'] ?? null,
+        ]]);
     }
 
     public function duplicateBook(EnglishBook $englishBook): RedirectResponse

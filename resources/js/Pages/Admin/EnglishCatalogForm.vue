@@ -1,6 +1,7 @@
 <script setup>
 import { Link, useForm } from "@inertiajs/vue3";
 import { computed, ref, watch } from "vue";
+import axios from "axios";
 import EnglishBooksLayout from "@/Layouts/EnglishBooksLayout.vue";
 const props = defineProps({ book: { type: Object, default: null } });
 const editing = computed(() => !!props.book?.id);
@@ -14,7 +15,27 @@ const updateEstimatedWordCount = () => { if (form.word_count_estimated) form.wor
 watch(() => form.page_count, updateEstimatedWordCount);
 watch(() => form.word_count_estimated, updateEstimatedWordCount);
 const preview = ref(props.book?.cover_image_url || '');
+const isbn = ref('');
+const lookupError = ref('');
+const lookupMessage = ref('');
+const lookingUp = ref(false);
 const selectCover = (event) => { const [file] = event.target.files; form.cover_image = file || null; if (file) preview.value = URL.createObjectURL(file); };
+const lookupIsbn = async () => {
+    lookupError.value = ''; lookupMessage.value = '';
+    if (!isbn.value.trim()) { lookupError.value = 'ISBNを入力してください。'; return; }
+    lookingUp.value = true;
+    try {
+        const { data } = await axios.post(route('admin.englishBooks.catalog.lookupIsbn'), { isbn: isbn.value });
+        const book = data.book;
+        if (book.title) form.title = book.title;
+        if (book.author) form.author = book.author;
+        if (book.cover_url) { form.cover_url = book.cover_url; form.cover_image = null; preview.value = book.cover_url; }
+        if (book.page_count) { form.page_count = book.page_count; form.word_count_estimated = true; }
+        lookupMessage.value = '取得できた情報をフォームに入力しました。内容を確認して保存してください。';
+    } catch (error) {
+        lookupError.value = error.response?.data?.message || '書籍情報を取得できませんでした。';
+    } finally { lookingUp.value = false; }
+};
 const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.update', props.book.id) : route('admin.englishBooks.catalog.store'), { forceFormData: true });
 </script>
 
@@ -26,6 +47,7 @@ const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.u
                 <p class="text-xs font-bold tracking-[0.18em] text-[#c96b48]">本の情報</p>
                 <h1 class="mt-2 font-serif text-3xl font-bold text-[#25323a]">{{ editing ? '本の情報を編集' : '本を追加' }}</h1>
                 <p class="mt-2 text-sm text-[#74665e]">タイトルや著者、表紙など本そのものの情報を登録します。</p>
+                <section v-if="!editing" class="mt-6 rounded-xl border border-[#e2d7c8] bg-[#f3ede3] p-4"><p class="text-sm font-bold text-[#3d4b52]">ISBNから自動入力</p><p class="mt-1 text-xs leading-5 text-[#74665e]">ISBN（10桁または13桁）を入力すると、タイトル・著者・表紙・ページ数を検索して入力します。</p><div class="mt-3 flex flex-col gap-2 sm:flex-row"><input v-model="isbn" inputmode="numeric" autocomplete="off" placeholder="例：9780140328721" class="block min-w-0 flex-1 rounded-lg border-[#d6cec1] bg-white text-sm" @keyup.enter.prevent="lookupIsbn" /><button type="button" :disabled="lookingUp" class="shrink-0 rounded-lg bg-[#25323a] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#3d4b52] disabled:opacity-50" @click="lookupIsbn">{{ lookingUp ? '検索中…' : 'ISBNで検索' }}</button></div><p v-if="lookupError" class="mt-2 text-xs font-semibold text-rose-600">{{ lookupError }}</p><p v-if="lookupMessage" class="mt-2 text-xs font-semibold text-emerald-700">{{ lookupMessage }}</p></section>
                 <form class="mt-8 grid gap-5 sm:grid-cols-2" @submit.prevent="save">
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">タイトル *</span><input v-model="form.title" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.title" class="mt-1 text-xs text-rose-600">{{ form.errors.title }}</p></label>
                     <label><span class="text-sm font-bold text-[#3d4b52]">著者</span><input v-model="form.author" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /></label>

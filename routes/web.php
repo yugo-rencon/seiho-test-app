@@ -220,6 +220,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('english-books/catalog', [EnglishBookAdminController::class, 'catalog'])->name('admin.englishBooks.catalog');
     Route::get('english-books/catalog/create', [EnglishBookAdminController::class, 'createBook'])->name('admin.englishBooks.catalog.create');
     Route::post('english-books/catalog', [EnglishBookAdminController::class, 'storeBook'])->name('admin.englishBooks.catalog.store');
+    Route::post('english-books/catalog/lookup-isbn', [EnglishBookAdminController::class, 'lookupIsbn'])->name('admin.englishBooks.catalog.lookupIsbn');
     Route::post('english-books/catalog/{englishBook}/duplicate', [EnglishBookAdminController::class, 'duplicateBook'])->name('admin.englishBooks.catalog.duplicate');
     Route::post('english-books/{englishBook}/shelf', [EnglishBookAdminController::class, 'addToShelf'])->name('admin.englishBooks.shelf.store');
     Route::get('english-books/{englishBook}/cover', [EnglishBookAdminController::class, 'cover'])->name('admin.englishBooks.cover');

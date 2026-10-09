@@ -137,10 +137,11 @@ const isDraft = true;
                     questionTitle="労災保険（労働者災害補償保険）制度"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-10-09 確認済み
+                        '健康保険組合 → 労働基準監督署', //p119
+                        '短時間労働者等 → 国家・地方公務員', //p119
                         '正しい',
-                        '', //p
+                        '増額率 → 減額率', //p121
                     ]"
                 />
                 <QuestionTemp1

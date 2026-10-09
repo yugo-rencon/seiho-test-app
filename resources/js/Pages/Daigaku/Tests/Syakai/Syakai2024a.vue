@@ -303,10 +303,11 @@ const isDraft = true;
                     questionTitle="労災保険（労働者災害補償保険）制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-09 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '療養補償等給付 → 傷病補償等年金', //p120
                     ]"
                 />
                 <QuestionTemp1

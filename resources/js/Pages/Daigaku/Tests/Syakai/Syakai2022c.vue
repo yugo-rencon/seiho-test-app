@@ -281,8 +281,9 @@ const isDraft = true;
                     questionTitle="公的医療保険制度の概要"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
-                        '', //p
+                        '厚生労働省 → 医療機関等', //p82
                         '正しい',
                         '正しい',
                     ]"

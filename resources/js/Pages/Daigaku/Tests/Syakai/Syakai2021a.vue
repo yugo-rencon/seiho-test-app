@@ -315,9 +315,10 @@ const isDraft = true;
                     questionTitle="介護保険の適用除外者"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '６カ月以下 → ３カ月以下', //p135
                         '正しい',
                     ]"
                 />

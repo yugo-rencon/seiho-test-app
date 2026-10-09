@@ -291,10 +291,11 @@ const isDraft = true;
                     questionTitle="介護保険で受けられるサービスの内容"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-09 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '地域密着型サービスは施設サービスではない。', //p107
                     ]"
                 />
                 <QuestionTemp1

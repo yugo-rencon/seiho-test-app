@@ -291,9 +291,10 @@ const isDraft = true;
                     questionTitle="介護保険制度の概要"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '10段階 → ７段階', //p104
                         '正しい',
                     ]"
                 />

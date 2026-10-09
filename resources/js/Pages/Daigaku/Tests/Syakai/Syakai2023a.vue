@@ -427,9 +427,10 @@ const isDraft = true;
                             content: '', //p
                         }, //43
                         {
+                            // rev: 2026-10-10 確認済み
                             questionTitle: '高額療養費',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '疾病･ケガのランク → 収入･所得のランク', //p94
                         }, //44
                         {
                             questionTitle: '要介護の身体状況',

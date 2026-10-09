@@ -256,8 +256,9 @@ const isDraft = true;
                     questionTitle="高額療養費"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
-                        '', //p
+                        '直近6カ月間 → 直近12カ月間', //p94
                         '正しい',
                         '正しい',
                     ]"

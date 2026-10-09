@@ -265,10 +265,11 @@ const isDraft = true;
                     questionTitle="高額療養費"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '自己負担限度額は[[被保険者の所得と年齢により異なる]]。', //p97
                     ]"
                 />
                 <QuestionTemp1

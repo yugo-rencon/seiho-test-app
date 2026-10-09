@@ -447,14 +447,16 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-10-10 確認済み
                             questionTitle: '傷病手当金',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '労災保険 → 健康保険', //p89
                         }, //43
                         {
+                            // rev: 2026-10-10 確認済み
                             questionTitle: '高額療養費',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '医療費の自己負担が高額になった場合に給付されるもので、[[自己負担限度額を超えた部分が全額給付される]]。', //p94
                         }, //44
                         {
                             questionTitle: '要介護の身体状況',

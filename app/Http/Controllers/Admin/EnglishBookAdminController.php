@@ -88,6 +88,23 @@ class EnglishBookAdminController extends Controller
         return redirect()->route('admin.englishBooks.catalog');
     }
 
+    public function duplicateBook(EnglishBook $englishBook): RedirectResponse
+    {
+        $copy = $englishBook->replicate();
+        $copy->title = Str::limit($englishBook->title, 240, '').'（コピー）';
+        $copy->slug = $this->uniqueSlug($copy->title, null);
+
+        if ($englishBook->cover_path && Storage::disk('public')->exists($englishBook->cover_path)) {
+            $extension = pathinfo($englishBook->cover_path, PATHINFO_EXTENSION);
+            $copy->cover_path = 'english-books/'.Str::uuid().($extension ? ".{$extension}" : '');
+            Storage::disk('public')->copy($englishBook->cover_path, $copy->cover_path);
+        }
+
+        $copy->save();
+
+        return redirect()->route('admin.englishBooks.catalog.edit', $copy);
+    }
+
     public function addToShelf(Request $request, EnglishBook $englishBook): RedirectResponse
     {
         EnglishBookShelf::firstOrCreate(['user_id' => $request->user()->id, 'english_book_id' => $englishBook->id], ['status' => 'want']);

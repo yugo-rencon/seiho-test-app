@@ -315,7 +315,8 @@ const isDraft = true;
                     questionTitle="公的年金の受給手続き"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-10 確認済み
+                        '64歳になったとき → 65歳に到達する３カ月前', //p149
                         '正しい',
                         '正しい',
                         '正しい',

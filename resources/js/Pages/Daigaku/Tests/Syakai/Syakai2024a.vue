@@ -465,9 +465,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-10-10 確認済み
                             questionTitle: 'マイナンバー',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '[[健康保険証利用の「初回登録」が必要ではあるが]]、最新の公的医療保険の資格状況等がオンラインで確認できるようになった', //p151
                         }, //49
                     ]"
                 />

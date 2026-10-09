@@ -227,8 +227,9 @@ const isDraft = true;
                     questionTitle="厚生年金保険の老齢給付"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
-                        '', //p
+                        '１ヵ月以上 → １年以上', //p30
                         '正しい',
                         '正しい',
                     ]"

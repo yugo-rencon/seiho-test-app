@@ -1,6 +1,6 @@
 <script setup>
 import { Link, useForm } from "@inertiajs/vue3";
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import EnglishBooksLayout from "@/Layouts/EnglishBooksLayout.vue";
 const props = defineProps({ book: { type: Object, default: null } });
 const editing = computed(() => !!props.book?.id);
@@ -9,7 +9,10 @@ const genreGroups = [
     { label: "ノンフィクション", genres: ["ビジネス", "自己啓発", "心理", "科学", "歴史", "社会", "伝記"] },
 ];
 const legacyGenre = computed(() => props.book?.genre && !genreGroups.some((group) => group.genres.includes(props.book.genre)) ? props.book.genre : null);
-const form = useForm({ title: props.book?.title || '', author: props.book?.author || '', genre: props.book?.genre || '', is_japanese_author: props.book?.is_japanese_author ?? false, cover_url: props.book?.cover_url || '', amazon_url: props.book?.amazon_url || '', rakuten_url: props.book?.rakuten_url || '', cover_image: null, word_count: props.book?.word_count || null, page_count: props.book?.page_count || null });
+const form = useForm({ title: props.book?.title || '', author: props.book?.author || '', genre: props.book?.genre || '', is_japanese_author: props.book?.is_japanese_author ?? false, cover_url: props.book?.cover_url || '', amazon_url: props.book?.amazon_url || '', rakuten_url: props.book?.rakuten_url || '', cover_image: null, word_count: props.book?.word_count || null, word_count_estimated: props.book?.word_count_estimated ?? false, page_count: props.book?.page_count || null });
+const updateEstimatedWordCount = () => { if (form.word_count_estimated) form.word_count = form.page_count ? Number(form.page_count) * 300 : null; };
+watch(() => form.page_count, updateEstimatedWordCount);
+watch(() => form.word_count_estimated, updateEstimatedWordCount);
 const preview = ref(props.book?.cover_image_url || '');
 const selectCover = (event) => { const [file] = event.target.files; form.cover_image = file || null; if (file) preview.value = URL.createObjectURL(file); };
 const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.update', props.book.id) : route('admin.englishBooks.catalog.store'), { forceFormData: true });
@@ -32,8 +35,9 @@ const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.u
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">表紙画像URL（任意）</span><input v-model="form.cover_url" type="url" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /></label>
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">Amazonリンク（任意）</span><input v-model="form.amazon_url" type="url" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.amazon_url" class="mt-1 text-xs text-rose-600">{{ form.errors.amazon_url }}</p></label>
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">楽天ブックスリンク（任意）</span><input v-model="form.rakuten_url" type="url" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.rakuten_url" class="mt-1 text-xs text-rose-600">{{ form.errors.rakuten_url }}</p></label>
-                    <label><span class="text-sm font-bold text-[#3d4b52]">語数</span><input v-model.number="form.word_count" type="number" min="0" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /></label>
-                    <label><span class="text-sm font-bold text-[#3d4b52]">ページ数</span><input v-model.number="form.page_count" type="number" min="1" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /></label>
+                    <label><span class="text-sm font-bold text-[#3d4b52]">語数</span><input v-model.number="form.word_count" :disabled="form.word_count_estimated" type="number" min="0" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm disabled:bg-[#eee7db]" /><p v-if="form.word_count_estimated" class="mt-1 text-xs text-[#74665e]">ページ数 × 300 の推定値です。</p></label>
+                    <label><span class="text-sm font-bold text-[#3d4b52]">ページ数</span><input v-model.number="form.page_count" type="number" min="1" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.page_count" class="mt-1 text-xs text-rose-600">{{ form.errors.page_count }}</p></label>
+                    <label class="sm:col-span-2 inline-flex items-center gap-2 text-sm font-bold text-[#3d4b52]"><input v-model="form.word_count_estimated" type="checkbox" class="rounded border-[#d6cec1] text-[#c96b48] focus:ring-[#c96b48]" />語数はページ数 × 300 で推定する</label>
                     <div class="sm:col-span-2"><button type="submit" :disabled="form.processing" class="w-full rounded-full bg-[#c96b48] px-7 py-3 text-sm font-bold text-white hover:bg-[#ad5637] disabled:opacity-50 sm:w-auto">{{ editing ? '本の情報を更新' : '本を追加' }}</button></div>
                 </form>
             </section>

@@ -337,10 +337,11 @@ const isDraft = true;
                     questionTitle="離婚時の厚生年金保険の分割制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '２：１に分割 → ２分の１（50％）に分割', //p153
                     ]"
                 />
                 <QuestionTemp3

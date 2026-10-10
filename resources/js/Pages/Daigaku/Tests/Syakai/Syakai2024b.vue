@@ -333,9 +333,10 @@ const isDraft = true;
                     questionTitle="離婚時の厚生年金保険の分割制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '受給資格要件にも分割を受けた部分は[[算入されない]]。', //p152
                         '正しい',
                     ]"
                 />

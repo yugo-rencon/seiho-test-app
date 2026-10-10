@@ -483,9 +483,10 @@ const isDraft = true;
                             content: '45歳 → 50歳', //p148
                         }, //48
                         {
+                            // rev: 2026-10-10 確認済み
                             questionTitle: '離婚時の厚生年金保険の分割制度',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '受給資格要件にも分割を受けた部分は[[算入されない]]。', //p152
                         }, //49
                     ]"
                 />

@@ -477,9 +477,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-10-10 確認済み
                             questionTitle: '受給年金の確認（ねんきん定期便）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '45歳 → 50歳', //p148
                         }, //48
                         {
                             questionTitle: '離婚時の厚生年金保険の分割制度',

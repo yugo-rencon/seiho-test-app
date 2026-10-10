@@ -442,9 +442,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //47
                         {
+                            // rev: 2026-10-10 確認済み
                             questionTitle: '受給年金の確認（ねんきん定期便）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '55歳 → 50歳', //p148
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み

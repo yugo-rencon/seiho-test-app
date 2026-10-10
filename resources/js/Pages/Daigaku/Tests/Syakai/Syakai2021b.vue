@@ -290,8 +290,9 @@ const isDraft = true;
                     questionTitle="介護保険制度の最近の主な改正項目"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
-                        '', //p
+                        '要介護４・５ → 要介護３以上', //p115
                         '正しい',
                         '正しい',
                     ]"

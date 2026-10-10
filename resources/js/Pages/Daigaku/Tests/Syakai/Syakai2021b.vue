@@ -231,10 +231,11 @@ const isDraft = true;
                     questionTitle="国民年金の遺族基礎年金"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '５年 → ３年', //p56
                     ]"
                 />
                 <QuestionTemp1

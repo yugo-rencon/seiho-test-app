@@ -447,9 +447,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //42
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '健康保険の給付',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '育児休業療養費、介護一時金は含まれない。', //p
                         }, //43
                         {
                             // rev: 2026-10-10 確認済み

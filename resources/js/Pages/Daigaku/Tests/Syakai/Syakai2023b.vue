@@ -459,9 +459,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '年金請求書の受付',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '公的年金の年金請求書の受付は[[支給開始年齢になってから]]となる。', //2024a48参照
                         }, //49
                     ]"
                 />

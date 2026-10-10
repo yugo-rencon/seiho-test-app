@@ -242,10 +242,11 @@ const isDraft = true;
                     questionTitle="保険診療の仕組み"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '保険者は、[[審査支払機関を通じて]]医療機関等に請求金額を支払う。', //p84
                     ]"
                 />
                 <QuestionTemp1

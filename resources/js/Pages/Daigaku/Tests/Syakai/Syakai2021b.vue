@@ -315,8 +315,9 @@ const isDraft = true;
                     questionTitle="雇用保険制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
-                        '', //p
+                        '10時間以上 → 20時間以上', //p128
                         '正しい',
                         '正しい',
                     ]"

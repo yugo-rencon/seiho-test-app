@@ -202,10 +202,11 @@ const isDraft = true;
                     questionTitle="国民年金の給付に要する費用等"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-10 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '月額200円 → 月額400円', //p
                     ]"
                 />
                 <QuestionTemp1

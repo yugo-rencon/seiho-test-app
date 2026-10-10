@@ -437,9 +437,10 @@ const isDraft = true;
                             content: '疾病･ケガのランク → 収入･所得のランク', //p94
                         }, //44
                         {
+                            // rev: 2026-10-10 確認済み
                             questionTitle: '要介護の身体状況',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '要介護１ → 要介護５', //p105
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み

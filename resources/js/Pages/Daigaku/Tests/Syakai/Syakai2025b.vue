@@ -446,9 +446,10 @@ const isDraft = true;
                             content: '医療費の自己負担が高額になった場合に給付されるもので、[[自己負担限度額を超えた部分が全額給付される]]。', //p94
                         }, //44
                         {
+                            // rev: 2026-10-10 確認済み
                             questionTitle: '要介護の身体状況',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '要介護１ → 要介護５', //p105
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み

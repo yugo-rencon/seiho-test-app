@@ -201,10 +201,11 @@ const isDraft = true;
                     questionTitle="国民年金（基礎年金）の付加保険料"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '付加年金額、付加保険料は物価や賃金等の変動の影響を受けず、[[定額となっている]]。', //p18
                     ]"
                 />
                 <QuestionTemp1

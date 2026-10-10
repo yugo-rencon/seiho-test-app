@@ -201,8 +201,9 @@ const isDraft = true;
                     questionTitle="国民年金（基礎年金）の付加保険料"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
-                        '', //p
+                        '400円 → 200円', //p18
                         '正しい',
                         '正しい',
                     ]"

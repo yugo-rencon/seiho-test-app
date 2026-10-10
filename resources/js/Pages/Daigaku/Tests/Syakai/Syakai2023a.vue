@@ -206,7 +206,8 @@ const isDraft = true;
                     questionTitle="国民年金（基礎年金）の付加保険料"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-11 確認済み
+                        '月額600円 → 月額400円', //p18
                         '正しい',
                         '正しい',
                         '正しい',

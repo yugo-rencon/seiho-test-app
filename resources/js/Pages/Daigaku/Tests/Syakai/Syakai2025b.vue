@@ -249,10 +249,11 @@ const isDraft = true;
                     questionTitle="年金受給者の確定申告"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '確定申告をすると[[住民税の申告は不要になる]]。', //p71
                     ]"
                 />
                 <QuestionTemp1

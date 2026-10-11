@@ -187,20 +187,12 @@ const startNewStudy = () => {
     <SeihoTestLayout v-else :title="title">
         <section class="bg-white px-4 py-6 text-gray-800 sm:px-6 sm:py-9">
             <header class="mx-auto max-w-4xl">
-                <h1 class="text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">{{ title }}</h1>
-                <p class="mt-1.5 text-sm text-gray-500">{{ subject }}</p>
-            </header>
-
-            <div v-if="studyEnabled" class="mx-auto mt-6 max-w-4xl border-b border-gray-200 pb-3 sm:mt-8">
-                <div class="flex items-end justify-between gap-6">
-                    <p v-if="displayMode === 'study' && !showResumeNotice" class="text-sm font-semibold text-gray-900">
-                        <span class="mr-1.5 text-xs font-normal text-gray-500">問題</span>{{ currentQuestion }} <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
-                    </p>
-                    <span v-else></span>
-                    <div class="flex items-center gap-5" role="group" aria-label="表示モードを選択">
+                <div class="flex items-end justify-between gap-4">
+                    <h1 class="min-w-0 text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">{{ title }}</h1>
+                    <div class="flex shrink-0 items-center gap-3 sm:gap-5" role="group" aria-label="表示モードを選択">
                         <button
                             type="button"
-                            class="border-b-2 px-0.5 pb-1.5 text-sm transition"
+                            class="border-b-2 px-0.5 pb-1 text-xs transition sm:text-sm"
                             :class="displayMode === 'browse' ? 'border-gray-900 font-semibold text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-800'"
                             :aria-pressed="displayMode === 'browse'"
                             @click="displayMode = 'browse'"
@@ -209,7 +201,7 @@ const startNewStudy = () => {
                         </button>
                         <button
                             type="button"
-                            class="border-b-2 px-0.5 pb-1.5 text-sm transition"
+                            class="border-b-2 px-0.5 pb-1 text-xs transition sm:text-sm"
                             :class="displayMode === 'study' ? 'border-violet-600 font-semibold text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-800'"
                             :aria-pressed="displayMode === 'study'"
                             @click="displayMode = 'study'"
@@ -218,7 +210,14 @@ const startNewStudy = () => {
                         </button>
                     </div>
                 </div>
-                <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mt-2.5 flex items-center" :class="isComplete && resultDismissed ? 'justify-between' : 'justify-end'">
+                <p class="mt-1.5 text-sm text-gray-500">{{ subject }}</p>
+            </header>
+
+            <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-4 max-w-4xl border-b border-gray-200 pb-3 sm:mt-5">
+                <p class="text-sm font-semibold text-gray-900">
+                    <span class="mr-1.5 text-xs font-normal text-gray-500">問題</span>{{ currentQuestion }} <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
+                </p>
+                <div class="mt-2 flex items-center" :class="isComplete && resultDismissed ? 'justify-between' : 'justify-end'">
                     <button v-if="isComplete && resultDismissed" type="button" class="inline-flex min-h-10 items-center text-sm font-medium text-gray-600 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果</button>
                     <details ref="questionMenu" class="relative z-20">
                         <summary class="flex cursor-pointer list-none items-center gap-1.5 py-1 text-sm text-gray-600 hover:text-gray-950 focus:outline-none focus-visible:underline">
@@ -230,31 +229,31 @@ const startNewStudy = () => {
                             </svg>
                             問題一覧 <span aria-hidden="true" class="text-xs">▼</span>
                         </summary>
-                        <div class="absolute right-0 mt-2 w-[calc(100vw-2rem)] max-w-96 rounded-sm border border-gray-300 bg-white p-4 shadow-md">
+                        <div class="absolute right-0 mt-2 w-[calc(100vw-2rem)] max-w-[22rem] rounded-sm border border-gray-300 bg-white p-3 shadow-md">
                             <div class="mb-3 flex items-center justify-between gap-3">
                                 <p class="text-base font-semibold text-gray-900">問題を選択</p>
                                 <p class="flex items-center gap-3 text-sm text-gray-500">
-                                    <span><span class="text-[#3f806d]">●</span> 正解</span>
-                                    <span><span class="text-[#b5535c]">●</span> 不正解</span>
+                                    <span><span class="text-[#34b894]">●</span> 正解</span>
+                                    <span><span class="text-[#e07a84]">●</span> 不正解</span>
                                 </p>
                             </div>
-                            <div class="grid max-h-[32rem] grid-cols-5 gap-2 overflow-y-auto pr-1">
+                            <div class="grid max-h-[29rem] grid-cols-5 gap-1.5 overflow-y-auto pr-1">
                                 <button
                                     v-for="(questionNumber, index) in questions"
                                     :key="questionNumber"
                                     type="button"
-                                    class="relative min-h-11 rounded-sm border text-base font-semibold transition"
+                                    class="relative min-h-10 rounded-sm border text-sm font-semibold transition"
                                     :class="[
-                                        currentIndex === index ? 'ring-2 ring-violet-400 ring-offset-1' : '',
+                                        currentIndex === index ? 'ring-2 ring-inset ring-violet-500' : '',
                                         correctQuestions.has(questionNumber)
-                                            ? 'border-[#bad8ce] bg-[#f3f8f6] text-[#286653] hover:bg-[#eaf3ef]'
+                                            ? 'border-[#a7e3d0] bg-[#f0fcf7] text-[#16856b] hover:bg-[#e5f8f0]'
                                             : answeredQuestions.has(questionNumber)
-                                              ? 'border-[#e4c9cc] bg-[#fbf5f5] text-[#9f3f49] hover:bg-[#f7ebec]'
+                                              ? 'border-[#f2c5c8] bg-[#fff5f5] text-[#c45d68] hover:bg-[#fdebed]'
                                               : 'border-gray-200 bg-white text-gray-700 hover:border-violet-300 hover:bg-violet-50',
                                     ]"
                                     @click="moveTo(index)"
                                 >
-                                    {{ questionNumber }}<span v-if="answeredQuestions.has(questionNumber)" class="absolute right-1.5 top-1.5 h-1 w-1 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-[#3f806d]' : 'bg-[#b5535c]'"></span>
+                                    {{ questionNumber }}<span v-if="answeredQuestions.has(questionNumber)" class="absolute right-1.5 top-1.5 h-1 w-1 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-[#34b894]' : 'bg-[#e07a84]'"></span>
                                 </button>
                             </div>
                         </div>
@@ -323,7 +322,7 @@ const startNewStudy = () => {
                                         :key="questionNumber"
                                         type="button"
                                         class="min-h-12 rounded-sm border bg-white px-2 py-2 text-base font-semibold transition hover:border-gray-400 hover:bg-gray-50"
-                                        :class="correctQuestions.has(questionNumber) ? 'border-[#bad8ce] text-[#286653]' : 'border-[#e4c9cc] text-[#9f3f49]'"
+                                        :class="correctQuestions.has(questionNumber) ? 'border-[#a7e3d0] bg-[#f0fcf7] text-[#16856b]' : 'border-[#f2c5c8] bg-[#fff5f5] text-[#c45d68]'"
                                         @click="moveTo(questionNumber - 1)"
                                     >
                                         {{ questionNumber }} <span aria-hidden="true">{{ correctQuestions.has(questionNumber) ? "○" : "×" }}</span>

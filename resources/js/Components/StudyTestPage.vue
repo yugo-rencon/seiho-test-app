@@ -138,6 +138,12 @@ const moveTo = async (index) => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 };
 
+const showStudyResult = async () => {
+    resultDismissed.value = false;
+    await nextTick();
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+};
+
 const closeMenuOnOutsideClick = (event) => {
     const menu = questionMenu.value;
     if (menu?.hasAttribute("open") && !menu.contains(event.target)) menu.removeAttribute("open");
@@ -250,7 +256,7 @@ const startNewStudy = () => {
 
             <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-4 flex max-w-4xl items-center justify-center gap-6 pt-2 sm:gap-14">
                 <button type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-950 disabled:cursor-not-allowed disabled:opacity-30" :disabled="currentIndex === 0" @click="moveTo(currentIndex - 1)">← 前の問題</button>
-                <p v-if="currentAnswered && currentIndex === questionCount - 1" class="text-sm font-medium text-gray-700">学習完了です</p>
+                <button v-if="currentAnswered && currentIndex === questionCount - 1" type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果を見る</button>
                 <button v-if="currentIndex < questionCount - 1" type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-950" @click="moveTo(currentIndex + 1)">次の問題へ →</button>
             </div>
 

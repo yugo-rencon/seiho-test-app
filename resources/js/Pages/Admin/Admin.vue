@@ -260,7 +260,7 @@ const RELEASE_SCHEDULE = [
     },
     {
         course: "生保応用課程",
-        subject: "前半",
+        subject: "4月〜7月実施",
         releaseGroup: "ouyou",
         period: "h1",
         explanationStart: 4,
@@ -268,7 +268,7 @@ const RELEASE_SCHEDULE = [
     },
     {
         course: "生保応用課程",
-        subject: "後半",
+        subject: "8月〜3月実施",
         releaseGroup: "ouyou",
         period: "h2",
         explanationStart: 4,
@@ -276,7 +276,7 @@ const RELEASE_SCHEDULE = [
     },
     {
         course: "生保専門課程",
-        subject: "前半",
+        subject: "4月〜8月実施",
         releaseGroup: "senmon",
         period: "h1",
         explanationStart: 5,
@@ -284,7 +284,7 @@ const RELEASE_SCHEDULE = [
     },
     {
         course: "生保専門課程",
-        subject: "後半",
+        subject: "9月〜3月実施",
         releaseGroup: "senmon",
         period: "h2",
         explanationStart: 5,
@@ -292,7 +292,7 @@ const RELEASE_SCHEDULE = [
     },
     {
         course: "生保一般課程",
-        subject: "前半",
+        subject: "1月〜6月実施",
         releaseGroup: "ippan",
         period: "h1",
         explanationStart: 3,
@@ -300,7 +300,7 @@ const RELEASE_SCHEDULE = [
     },
     {
         course: "生保一般課程",
-        subject: "後半",
+        subject: "7月〜12月実施",
         releaseGroup: "ippan",
         period: "h2",
         explanationStart: 3,

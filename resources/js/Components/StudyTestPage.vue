@@ -5,7 +5,7 @@ import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import { usePage } from "@inertiajs/vue3";
 import axios from "axios";
-import { computed, onBeforeUnmount, onMounted, provide, ref, watch } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, provide, ref, watch } from "vue";
 
 const props = defineProps({
     title: { type: String, required: true },
@@ -130,12 +130,14 @@ watch(currentIndex, (index) => {
         .catch((error) => console.error("学習位置の保存に失敗しました。", error));
 });
 
-const moveTo = (index) => {
+const moveTo = async (index) => {
     showResumeNotice.value = false;
     currentIndex.value = index;
     showResult.value = false;
     resultDismissed.value = true;
     questionMenu.value?.removeAttribute("open");
+    await nextTick();
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 };
 
 const closeMenuOnOutsideClick = (event) => {

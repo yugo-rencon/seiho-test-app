@@ -162,13 +162,14 @@ const isDraft = true;
                     :questionNumber="11"
                     :title="title"
                     :subject="subject"
-                    questionTitle="健康保険の任意継続被保険者と一般被保険者との違い・特色（協会けんぽ）"
+                    questionTitle="健康保険の任意継続被保険者と一般被保険者との違い・特色（協会けんぽの場合）"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-10-11 確認済み
+                        '１ヵ月以上 → 2ヵ月以上', //p140
+                        'いずれか高い方 → いずれか低い方', //p140
                         '正しい',
-                        '', //p
+                        '３年間分 → 半年または１年間分', //p141
                     ]"
                 />
                 <QuestionTemp1

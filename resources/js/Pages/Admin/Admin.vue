@@ -126,31 +126,53 @@ const SEIHO_SUBJECTS = [
 const SEIHO_YEARS = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
 const SEIHO_FORMS = ["a", "b", "c"];
 
-const RELEASE_GANTT_MONTHS = [
-    { year: "2026", month: "2" },
-    { year: "", month: "3" },
-    { year: "", month: "4" },
-    { year: "", month: "5" },
-    { year: "", month: "6" },
-    { year: "", month: "7" },
-    { year: "", month: "8" },
-    { year: "", month: "9" },
-    { year: "", month: "10" },
-    { year: "", month: "11" },
-    { year: "", month: "12" },
-    { year: "2027", month: "1" },
-    { year: "", month: "2" },
-    { year: "", month: "3" },
-    { year: "", month: "4" },
-    { year: "", month: "5" },
-];
+const RELEASE_GANTT_MONTHS = {
+    // 2025年度：最初の作業（2026年2月）から最後の作業（2026年11月）まで
+    2025: [
+        { year: "2026", month: "2" },
+        { year: "", month: "3" },
+        { year: "", month: "4" },
+        { year: "", month: "5" },
+        { year: "", month: "6" },
+        { year: "", month: "7" },
+        { year: "", month: "8" },
+        { year: "", month: "9" },
+        { year: "", month: "10" },
+        { year: "", month: "11" },
+    ],
+    // 2026年度：最初の作業（2026年7月）から最後の作業（2027年5月）まで
+    2026: [
+        { year: "2026", month: "7" },
+        { year: "", month: "8" },
+        { year: "", month: "9" },
+        { year: "", month: "10" },
+        { year: "", month: "11" },
+        { year: "", month: "12" },
+        { year: "2027", month: "1" },
+        { year: "", month: "2" },
+        { year: "", month: "3" },
+        { year: "", month: "4" },
+        { year: "", month: "5" },
+    ],
+};
+const scheduleMonths = computed(() => RELEASE_GANTT_MONTHS[scheduleYear.value]);
 const isCurrentScheduleMonth = (item) => {
-    const monthIndex = RELEASE_GANTT_MONTHS.indexOf(item);
-    const scheduleMonth = new Date(2026, 1 + monthIndex, 1);
+    const monthIndex = scheduleMonths.value.indexOf(item);
+    const startMonth = scheduleYear.value === 2025 ? 1 : 6;
+    const scheduleMonth = new Date(2026, startMonth + monthIndex, 1);
     const today = new Date();
 
     return scheduleMonth.getFullYear() === today.getFullYear() && scheduleMonth.getMonth() === today.getMonth();
 };
+const scheduleColumnStart = (year, start) => (year === 2026 ? start - 5 : start);
+const scheduleCourseMeta = (course) =>
+    ({
+        "生命保険講座": { label: "生命保険講座", headerClass: "border-violet-200 bg-violet-100/80 text-violet-800", badgeClass: "bg-violet-600", subjectClass: "bg-violet-50/40" },
+        "生保大学": { label: "生命保険大学", headerClass: "border-sky-200 bg-sky-100/80 text-sky-800", badgeClass: "bg-sky-600", subjectClass: "bg-sky-50/40" },
+        "生保応用課程": { label: "生保応用課程", headerClass: "border-amber-200 bg-amber-100/80 text-amber-800", badgeClass: "bg-amber-600", subjectClass: "bg-amber-50/40" },
+        "生保専門課程": { label: "生保専門課程", headerClass: "border-emerald-200 bg-emerald-100/80 text-emerald-800", badgeClass: "bg-emerald-600", subjectClass: "bg-emerald-50/40" },
+        "生保一般課程": { label: "生保一般課程", headerClass: "border-fuchsia-200 bg-fuchsia-100/80 text-fuchsia-800", badgeClass: "bg-fuchsia-600", subjectClass: "bg-fuchsia-50/40" },
+    })[course];
 const RELEASE_SCHEDULE = [
     {
         course: "生命保険講座",
@@ -236,6 +258,54 @@ const RELEASE_SCHEDULE = [
         explanationStart: 9,
         nextYearExplanationStart: 14,
     },
+    {
+        course: "生保応用課程",
+        subject: "前半",
+        releaseGroup: "ouyou",
+        period: "h1",
+        explanationStart: 4,
+        nextYearExplanationStart: 7,
+    },
+    {
+        course: "生保応用課程",
+        subject: "後半",
+        releaseGroup: "ouyou",
+        period: "h2",
+        explanationStart: 4,
+        nextYearExplanationStart: 15,
+    },
+    {
+        course: "生保専門課程",
+        subject: "前半",
+        releaseGroup: "senmon",
+        period: "h1",
+        explanationStart: 5,
+        nextYearExplanationStart: 8,
+    },
+    {
+        course: "生保専門課程",
+        subject: "後半",
+        releaseGroup: "senmon",
+        period: "h2",
+        explanationStart: 5,
+        nextYearExplanationStart: 15,
+    },
+    {
+        course: "生保一般課程",
+        subject: "前半",
+        releaseGroup: "ippan",
+        period: "h1",
+        explanationStart: 3,
+        nextYearExplanationStart: 6,
+    },
+    {
+        course: "生保一般課程",
+        subject: "後半",
+        releaseGroup: "ippan",
+        period: "h2",
+        explanationStart: 3,
+        nextYearExplanationStart: 12,
+    },
 ];
 
 // 一般課程
@@ -292,6 +362,16 @@ const isReleased = (testKey) => {
 };
 
 const scheduleReleaseKeys = (schedule, year) => {
+    if (schedule.releaseGroup) {
+        const forms = {
+            ippan: IPPAN_FORMS,
+            senmon: SENMON_PERIODS.find((period) => period.key === schedule.period)?.forms ?? [],
+            ouyou: OUYOU_PERIODS.find((period) => period.key === schedule.period)?.forms ?? [],
+        }[schedule.releaseGroup];
+
+        return forms.map((form) => `${schedule.releaseGroup}-${year}-${schedule.period}-${form}`);
+    }
+
     const isSeiho = schedule.course === "生命保険講座";
     const subject = (isSeiho ? SEIHO_SUBJECTS : DAIGAKU_SUBJECTS).find((item) => item.label === schedule.subject);
     const prefix = isSeiho ? "seiho" : "daigaku";
@@ -2000,26 +2080,35 @@ const peakHour2h = computed(() => {
                         </div>
                     </div>
                     <div class="overflow-x-auto p-5">
-                        <div class="min-w-[1200px]">
-                            <div class="grid border-b border-violet-200 text-center text-xs font-semibold text-slate-500" style="grid-template-columns: 320px repeat(16, minmax(0, 1fr))">
+                        <div class="min-w-[1000px]">
+                            <div class="grid border-b border-violet-200 text-center text-xs font-semibold text-slate-500" :style="{ gridTemplateColumns: `320px repeat(${scheduleMonths.length}, minmax(0, 1fr))` }">
                                 <div class="border-r border-violet-100 pb-2 text-left">科目</div>
-                                <div v-for="item in RELEASE_GANTT_MONTHS" :key="`${item.year}-${item.month}`" class="border-r border-violet-100 pb-2 last:border-r-0" :class="isCurrentScheduleMonth(item) ? 'bg-fuchsia-100 text-fuchsia-800' : ''">
+                                <div v-for="item in scheduleMonths" :key="`${item.year}-${item.month}`" class="border-r border-violet-100 pb-2 last:border-r-0" :class="isCurrentScheduleMonth(item) ? 'bg-fuchsia-100 text-fuchsia-800' : ''">
                                     <span v-if="item.year" class="mr-0.5" :class="isCurrentScheduleMonth(item) ? 'text-fuchsia-700' : 'text-violet-700'">{{ item.year }}</span
                                     >{{ item.month }}月
                                 </div>
                             </div>
-                            <div v-for="schedule in RELEASE_SCHEDULE" :key="`${schedule.course}-${schedule.subject}`" class="grid min-h-[52px] border-b border-violet-100 last:border-b-0" style="grid-template-columns: 320px repeat(16, minmax(0, 1fr))">
-                                <div class="flex flex-col justify-center border-r border-violet-100 pr-3 text-left">
-                                    <span class="whitespace-nowrap text-sm font-bold text-slate-800">{{ schedule.subject }}</span>
-                                    <span class="mt-0.5 text-[11px] text-slate-500">{{ schedule.course }}</span>
+                            <template v-for="(schedule, index) in RELEASE_SCHEDULE" :key="`${schedule.course}-${schedule.subject}`">
+                                <div v-if="index === 0 || schedule.course !== RELEASE_SCHEDULE[index - 1].course" class="grid" :style="{ gridTemplateColumns: `320px repeat(${scheduleMonths.length}, minmax(0, 1fr))` }">
+                                    <div
+                                        class="flex items-center gap-2 border-y px-3 py-2 text-sm font-bold"
+                                        :class="scheduleCourseMeta(schedule.course).headerClass"
+                                        :style="{ gridColumn: `1 / span ${scheduleMonths.length + 1}` }"
+                                    >
+                                        <span class="rounded-md px-2 py-0.5 text-xs text-white" :class="scheduleCourseMeta(schedule.course).badgeClass">{{ scheduleCourseMeta(schedule.course).label }}</span>
+                                    </div>
                                 </div>
-                                <div class="grid items-center bg-[linear-gradient(to_right,transparent_calc(100%-1px),rgb(237_233_254)_calc(100%-1px))]" style="grid-column: span 16 / span 16; grid-template-columns: repeat(16, minmax(0, 1fr)); background-size: 6.25% 100%">
-                                    <span v-for="(item, index) in RELEASE_GANTT_MONTHS" :key="`${schedule.course}-${schedule.subject}-${item.year}-${item.month}`" class="pointer-events-none self-stretch" :class="isCurrentScheduleMonth(item) ? 'bg-fuchsia-100/70' : ''" :style="{ gridColumn: `${index + 1}`, gridRow: '1' }" />
+                                <div class="grid min-h-[42px] border-b border-violet-100 last:border-b-0" :style="{ gridTemplateColumns: `320px repeat(${scheduleMonths.length}, minmax(0, 1fr))` }">
+                                <div class="flex flex-col justify-center border-r border-violet-100 pr-3 text-left" :class="scheduleCourseMeta(schedule.course).subjectClass">
+                                    <span class="whitespace-nowrap text-sm font-bold text-slate-800">{{ schedule.subject }}</span>
+                                </div>
+                                <div class="grid items-center bg-[linear-gradient(to_right,transparent_calc(100%-1px),rgb(237_233_254)_calc(100%-1px))]" :style="{ gridColumn: `span ${scheduleMonths.length} / span ${scheduleMonths.length}`, gridTemplateColumns: `repeat(${scheduleMonths.length}, minmax(0, 1fr))`, backgroundSize: `${100 / scheduleMonths.length}% 100%` }">
+                                    <span v-for="(item, index) in scheduleMonths" :key="`${schedule.course}-${schedule.subject}-${item.year}-${item.month}`" class="pointer-events-none self-stretch" :class="isCurrentScheduleMonth(item) ? 'bg-fuchsia-100/70' : ''" :style="{ gridColumn: `${index + 1}`, gridRow: '1' }" />
                                     <span
                                         v-if="scheduleYear === 2025 && schedule.explanationStart"
                                         class="relative z-10 mx-1 flex min-h-7 items-center justify-center rounded-md px-1 text-center text-[11px] font-bold shadow-sm"
                                         :class="scheduleStatusClass(scheduleStatus(schedule, 2025, schedule.explanationStart))"
-                                        :style="{ gridColumn: `${schedule.explanationStart} / span 1`, gridRow: '1' }"
+                                        :style="{ gridColumn: `${scheduleColumnStart(2025, schedule.explanationStart)} / span 1`, gridRow: '1' }"
                                         :title="`2025年度：${scheduleStatusLabel(scheduleStatus(schedule, 2025, schedule.explanationStart))}`"
                                         >{{ scheduleStatusLabel(scheduleStatus(schedule, 2025, schedule.explanationStart)) }}</span
                                     >
@@ -2027,12 +2116,13 @@ const peakHour2h = computed(() => {
                                         v-if="scheduleYear === 2026 && schedule.nextYearExplanationStart"
                                         class="relative z-10 mx-1 flex min-h-7 items-center justify-center rounded-md px-1 text-center text-[11px] font-bold shadow-sm"
                                         :class="scheduleStatusClass(scheduleStatus(schedule, 2026, schedule.nextYearExplanationStart))"
-                                        :style="{ gridColumn: `${schedule.nextYearExplanationStart} / span 1`, gridRow: '1' }"
+                                        :style="{ gridColumn: `${scheduleColumnStart(2026, schedule.nextYearExplanationStart)} / span 1`, gridRow: '1' }"
                                         :title="`2026年度：${scheduleStatusLabel(scheduleStatus(schedule, 2026, schedule.nextYearExplanationStart))}`"
                                         >{{ scheduleStatusLabel(scheduleStatus(schedule, 2026, schedule.nextYearExplanationStart)) }}</span
                                     >
                                 </div>
                             </div>
+                            </template>
                         </div>
                     </div>
                     <div class="flex flex-wrap gap-x-4 gap-y-1 border-t border-violet-100 bg-white/60 px-5 py-2 text-xs text-slate-600">

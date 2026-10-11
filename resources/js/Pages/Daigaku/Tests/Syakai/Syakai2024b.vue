@@ -173,13 +173,14 @@ const isDraft = true;
                     :questionNumber="12"
                     :title="title"
                     :subject="subject"
-                    questionTitle="健康保険の任意継続被保険者と一般被保険者との違い・特徴（協会けんぽ）"
+                    questionTitle="健康保険の任意継続被保険者と一般被保険者との違い・特色（協会けんぽの場合）"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        'いずれか高い方 → いずれか低い方', //p140
+                        '保険料は[[全額自己負担]]となる。', //p140
+                        '前納保険料は、[[前納期間に応じて割引がある]]。', //p141
                     ]"
                 />
                 <QuestionTemp1

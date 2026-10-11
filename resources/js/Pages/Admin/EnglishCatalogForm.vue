@@ -40,14 +40,14 @@ const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.u
 </script>
 
 <template>
-    <EnglishBooksLayout :title="editing ? '本の情報を編集' : '本を追加'">
-        <div class="mx-auto max-w-3xl px-4 py-8 pb-16 sm:px-8 sm:py-14 sm:pb-20">
-            <Link :href="route('admin.englishBooks.catalog')" class="text-sm font-bold text-[#74665e] hover:text-[#c96b48]">← 本の情報に戻る</Link>
-            <section class="mt-8 rounded-2xl border border-[#ded7ca] bg-[#fbf9f4] p-5 shadow-[0_8px_30px_rgba(72,55,40,0.06)] sm:p-8">
-                <p class="text-xs font-bold tracking-[0.18em] text-[#c96b48]">本の情報</p>
-                <h1 class="mt-2 font-serif text-3xl font-bold text-[#25323a]">{{ editing ? '本の情報を編集' : '本を追加' }}</h1>
-                <p class="mt-2 text-sm text-[#74665e]">タイトルや著者、表紙など本そのものの情報を登録します。</p>
-                <section v-if="!editing" class="mt-6 rounded-xl border border-[#e2d7c8] bg-[#f3ede3] p-4"><p class="text-sm font-bold text-[#3d4b52]">ISBNから自動入力</p><p class="mt-1 text-xs leading-5 text-[#74665e]">ISBN（10桁または13桁）を入力すると、タイトル・著者・表紙・ページ数を検索して入力します。</p><div class="mt-3 flex flex-col gap-2 sm:flex-row"><input v-model="isbn" inputmode="numeric" autocomplete="off" placeholder="例：9780140328721" class="block min-w-0 flex-1 rounded-lg border-[#d6cec1] bg-white text-sm" @keyup.enter.prevent="lookupIsbn" /><button type="button" :disabled="lookingUp" class="shrink-0 rounded-lg bg-[#25323a] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#3d4b52] disabled:opacity-50" @click="lookupIsbn">{{ lookingUp ? '検索中…' : 'ISBNで検索' }}</button></div><p v-if="lookupError" class="mt-2 text-xs font-semibold text-rose-600">{{ lookupError }}</p><p v-if="lookupMessage" class="mt-2 text-xs font-semibold text-emerald-700">{{ lookupMessage }}</p></section>
+    <EnglishBooksLayout :title="editing ? '本のデータベースを編集' : '本を追加'">
+        <div class="mx-auto max-w-3xl px-4 py-8 pb-16 sm:px-8 sm:py-12 sm:pb-20">
+            <Link :href="route('admin.englishBooks.catalog')" class="text-sm font-bold text-[#657069] hover:text-[#167a55]">← 本のデータベースに戻る</Link>
+            <section class="catalog-form mt-7 border border-[#dfe4e0] bg-white p-5 sm:p-8">
+                <p class="text-xs font-bold tracking-[0.14em] text-[#167a55]">BOOK CATALOG</p>
+                <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-[#202522]">{{ editing ? '本のデータベースを編集' : '本を追加' }}</h1>
+                <p class="mt-2 text-sm text-[#657069]">タイトルや著者、表紙など本そのものの情報を登録します。</p>
+                <section v-if="!editing" class="mt-6 border-l-4 border-[#167a55] bg-[#f4f7f5] p-4"><p class="text-sm font-bold text-[#202522]">ISBNから自動入力</p><p class="mt-1 text-xs leading-5 text-[#657069]">ISBN（10桁または13桁）を入力すると、タイトル・著者・表紙・ページ数を検索して入力します。</p><div class="mt-3 flex flex-col gap-2 sm:flex-row"><input v-model="isbn" inputmode="numeric" autocomplete="off" placeholder="例：9780140328721" class="block min-w-0 flex-1 rounded-md border-[#cbd5cf] bg-white text-sm" @keyup.enter.prevent="lookupIsbn" /><button type="button" :disabled="lookingUp" class="shrink-0 rounded-md bg-[#167a55] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#106443] disabled:opacity-50" @click="lookupIsbn">{{ lookingUp ? '検索中…' : 'ISBNで検索' }}</button></div><p v-if="lookupError" class="mt-2 text-xs font-semibold text-rose-600">{{ lookupError }}</p><p v-if="lookupMessage" class="mt-2 text-xs font-semibold text-emerald-700">{{ lookupMessage }}</p></section>
                 <form class="mt-8 grid gap-5 sm:grid-cols-2" @submit.prevent="save">
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">タイトル *</span><input v-model="form.title" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.title" class="mt-1 text-xs text-rose-600">{{ form.errors.title }}</p></label>
                     <label><span class="text-sm font-bold text-[#3d4b52]">著者</span><input v-model="form.author" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /></label>
@@ -60,9 +60,30 @@ const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.u
                     <label><span class="text-sm font-bold text-[#3d4b52]">ページ数</span><input v-model.number="form.page_count" type="number" min="1" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.page_count" class="mt-1 text-xs text-rose-600">{{ form.errors.page_count }}</p></label>
                     <label><span class="text-sm font-bold text-[#3d4b52]">語数</span><input v-model.number="form.word_count" :disabled="form.word_count_estimated" type="number" min="0" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm disabled:bg-[#eee7db]" /><p v-if="form.word_count_estimated" class="mt-1 text-xs text-[#74665e]">ページ数 × 300 の推定値です。</p></label>
                     <div class="sm:col-span-2"><label class="inline-flex cursor-pointer items-center gap-2 text-sm font-bold text-[#3d4b52]"><input v-model="form.word_count_estimated" type="checkbox" class="cursor-pointer rounded border-[#d6cec1] text-[#c96b48] focus:ring-[#c96b48]" />語数はページ数 × 300 で推定する</label></div>
-                    <div class="sm:col-span-2"><button type="submit" :disabled="form.processing" class="w-full rounded-full bg-[#c96b48] px-7 py-3 text-sm font-bold text-white hover:bg-[#ad5637] disabled:opacity-50 sm:w-auto">{{ editing ? '本の情報を更新' : '本を追加' }}</button></div>
+                    <div class="sm:col-span-2"><button type="submit" :disabled="form.processing" class="w-full rounded-md bg-[#167a55] px-7 py-3 text-sm font-bold text-white transition hover:bg-[#106443] disabled:opacity-50 sm:w-auto">{{ editing ? 'データベースを更新' : '本を追加' }}</button></div>
                 </form>
             </section>
         </div>
     </EnglishBooksLayout>
 </template>
+
+<style scoped>
+.catalog-form :deep(label > span) {
+    color: #313a35;
+}
+
+.catalog-form :deep(input:not([type="checkbox"])),
+.catalog-form :deep(select),
+.catalog-form :deep(textarea) {
+    border-color: #cbd5cf;
+    border-radius: 0.375rem;
+    box-shadow: none;
+}
+
+.catalog-form :deep(input:not([type="checkbox"]):focus),
+.catalog-form :deep(select:focus),
+.catalog-form :deep(textarea:focus) {
+    border-color: #167a55;
+    --tw-ring-color: #167a55;
+}
+</style>

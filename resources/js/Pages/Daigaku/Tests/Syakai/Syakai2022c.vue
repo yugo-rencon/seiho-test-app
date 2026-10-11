@@ -433,9 +433,10 @@ const isDraft = true;
                             content: '配偶者が再婚した場合（事実婚も含む）、遺族厚生年金を[[受給できなくなる]]。', //p60
                         }, //43
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '労災保険の傷病補償年金（傷病年金）',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '１年 → １年６カ月', //p120
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み

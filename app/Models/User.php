@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\UserExamResult;
+use App\Models\StudyAttempt;
+use App\Models\UserPreference;
 use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
@@ -37,6 +39,16 @@ class User extends Authenticatable
     public function examResults()
     {
         return $this->hasMany(UserExamResult::class);
+    }
+
+    public function preference()
+    {
+        return $this->hasOne(UserPreference::class);
+    }
+
+    public function studyAttempts()
+    {
+        return $this->hasMany(StudyAttempt::class);
     }
 
     public function hasPremiumAccess(string $scope = 'seiho'): bool

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\EnglishBookAdminController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\StripeWebhookController;
+use App\Http\Controllers\StudyProgressController;
 use App\Http\Controllers\TestController;
 
 Route::get('/', [TestController::class, 'index'])->name('tests.index');
@@ -186,6 +187,14 @@ Route::controller(TestController::class)->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::middleware('admin')->group(function () {
+        Route::get('study-progress/{examKey}', [StudyProgressController::class, 'show'])->where('examKey', '[A-Za-z0-9-]{1,80}')->name('studyProgress.show');
+        Route::patch('study-preferences', [StudyProgressController::class, 'updatePreference'])->name('studyPreferences.update');
+        Route::patch('study-progress/{examKey}', [StudyProgressController::class, 'updateAttempt'])->where('examKey', '[A-Za-z0-9-]{1,80}')->name('studyProgress.update');
+        Route::delete('study-progress/{examKey}', [StudyProgressController::class, 'resetAttempt'])->where('examKey', '[A-Za-z0-9-]{1,80}')->name('studyProgress.reset');
+        Route::put('study-progress/{examKey}/answers/{questionNo}', [StudyProgressController::class, 'storeAnswer'])->where(['examKey' => '[A-Za-z0-9-]{1,80}', 'questionNo' => '[0-9]+'])->name('studyProgress.answers.store');
+        Route::delete('study-progress/{examKey}/answers/{questionNo}', [StudyProgressController::class, 'deleteAnswer'])->where(['examKey' => '[A-Za-z0-9-]{1,80}', 'questionNo' => '[0-9]+'])->name('studyProgress.answers.delete');
+    });
     Route::get('results', [TestController::class, 'mypage'])->name('results');
     Route::get('mypage', [TestController::class, 'mypage'])->name('mypage');
     Route::get('daigaku/mypage', [TestController::class, 'mypage'])->name('daigaku.mypage');

@@ -48,13 +48,11 @@
           v-for="(content, index) in props.contents"
           v-show="Number(effectiveStudyQuestion) === blockStartQuestion + index"
           :key="`study-${index}`"
-          class="rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm md:shadow-md"
+          class="rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6"
         >
           <div class="flex items-start gap-2">
-            <div class="h-6 w-1.5 rounded-full bg-gradient-to-b from-violet-400 to-indigo-400"></div>
             <h2 class="text-base font-bold text-gray-700">
-              問題{{ blockStartQuestion + index }}
-              <span v-if="props.questionTitle" class="ml-2">{{ props.questionTitle }}</span>
+              <span v-if="props.questionTitle">{{ props.questionTitle }}</span>
             </h2>
           </div>
           <p class="mt-4 text-sm font-bold text-gray-800">語群から答えを1つ選んでください</p>
@@ -63,7 +61,7 @@
               v-for="choice in props.choiceOptions"
               :key="`${index}-${choice.label}`"
               type="button"
-              class="min-h-12 rounded-lg border-2 px-3 py-2 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
+              class="min-h-12 rounded-md border px-3 py-2 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
               :class="studyChoiceClass(index, choice.label)"
               :disabled="Boolean(selectedAnswers[index])"
               @click="answerQuestion(index, choice.label)"
@@ -72,16 +70,13 @@
               <span class="ml-1">{{ choice.text }}</span>
             </button>
           </div>
-          <div
-            v-if="selectedAnswers[index]"
-            class="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2.5"
-            :class="isAnswerCorrect(index) ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : 'border-rose-200 bg-rose-50 text-rose-800'"
-            role="status"
-          >
-            <p class="text-sm font-bold">
-              {{ isAnswerCorrect(index) ? '○ 正解です！' : `× 不正解です。正解は「${props.labels[index]}：${normalizeBiArrow(content)}」です。` }}
+          <div v-if="selectedAnswers[index]" class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-gray-200 pt-2.5 text-sm" role="status">
+            <p class="flex flex-wrap items-center gap-x-2 text-gray-800">
+              <span class="font-semibold" :class="isAnswerCorrect(index) ? 'text-emerald-700' : 'text-rose-700'">{{ isAnswerCorrect(index) ? '○' : '×' }}</span>
+              <span class="font-semibold">{{ isAnswerCorrect(index) ? '正解' : '不正解' }}</span>
+              <template v-if="!isAnswerCorrect(index)"><span class="text-gray-300">｜</span><span class="text-xs text-gray-500">正解</span><span>{{ props.labels[index] }}. {{ normalizeBiArrow(content) }}</span></template>
             </p>
-            <button type="button" class="text-xs font-bold underline underline-offset-2" @click="resetAnswer(index)">もう一度解く</button>
+            <button type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer(index)">選び直す</button>
           </div>
         </article>
       </div>
@@ -181,14 +176,14 @@
         selectedAnswers.value[index] = label;
         selectedAnswers.value = [...selectedAnswers.value];
         emit('answered', blockStartQuestion.value + index, true);
-        studySession?.markAnswered?.(blockStartQuestion.value + index, true);
+        studySession?.markAnswered?.(blockStartQuestion.value + index, true, isAnswerCorrect(index), label);
     }
 
     function studyChoiceClass(index, label) {
-        if (!selectedAnswers.value[index]) return 'border-violet-200 bg-white text-gray-700 hover:border-violet-400 hover:bg-violet-50';
-        if (label === props.labels[index]) return 'border-emerald-500 bg-emerald-50 text-emerald-700';
-        if (label === selectedAnswers.value[index]) return 'border-rose-500 bg-rose-50 text-rose-700';
-        return 'border-gray-200 bg-gray-50 text-gray-400 opacity-60';
+        if (!selectedAnswers.value[index]) return 'border-gray-300 bg-white text-gray-800 hover:border-violet-400 hover:bg-violet-50';
+        if (label === props.labels[index]) return 'border-emerald-500 bg-white text-emerald-700';
+        if (label === selectedAnswers.value[index]) return 'border-rose-500 bg-white text-rose-700';
+        return 'border-gray-200 bg-white text-gray-500';
     }
 
     function isAnswerCorrect(index) {
@@ -199,12 +194,8 @@
         selectedAnswers.value[index] = '';
         selectedAnswers.value = [...selectedAnswers.value];
         emit('answered', blockStartQuestion.value + index, false);
-        studySession?.markAnswered?.(blockStartQuestion.value + index, false);
+        studySession?.markAnswered?.(blockStartQuestion.value + index, false, false, '');
     }
-
-    watch(() => props.learningMode, () => {
-        selectedAnswers.value = Array(props.contents.length).fill('');
-    });
 
     const page = usePage();
 const isDaigaku = computed(() => /(?:^|\/)daigaku(?:\/|$)/.test(String(page.url ?? "")));
@@ -232,6 +223,17 @@ const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.v
 
         return (Number(props.questionNumber) - 1) * 5 + 1;
     });
+
+    watch(
+        [() => props.learningMode, () => studySession?.savedAnswers?.value],
+        ([learningMode, savedAnswers]) => {
+            selectedAnswers.value = props.contents.map((_, index) => {
+                if (!learningMode) return '';
+                return String(savedAnswers?.[blockStartQuestion.value + index]?.selected_answer ?? '');
+            });
+        },
+        { immediate: true, deep: true },
+    );
 
     const blockEndQuestion = computed(() => {
         const range = String(props.questionRange ?? "").trim();

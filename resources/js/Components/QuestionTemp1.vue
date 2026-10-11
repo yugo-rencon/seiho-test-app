@@ -2,11 +2,12 @@
     <div :id="`q${props.questionNumber}`" class="h-0 scroll-mt-24"></div>
     <div
         v-if="!shouldHideByPaywall && (!props.learningMode || Number(props.questionNumber) === Number(effectiveStudyQuestion))"
-        class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md"
+        class="rounded-lg border border-gray-200 bg-white px-4 py-3 sm:px-6"
         :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
     >
         <div class="flex items-start gap-2 my-4">
             <div
+                v-if="!props.learningMode"
                 class="w-1.5 h-6 rounded-full"
                 :class="
                     isDaigaku
@@ -23,7 +24,7 @@
                 "
             ></div>
             <h2 class="text-base font-bold leading-tight text-gray-700">
-                <span class="mr-2 inline-block whitespace-nowrap">問題{{ props.questionNumber }}</span>
+                <span v-if="!props.learningMode" class="mr-2 inline-block whitespace-nowrap">問題{{ props.questionNumber }}</span>
                 <span v-if="props.questionTitle">
                     {{ props.questionTitle }}
                 </span>
@@ -33,36 +34,33 @@
             {{ props.note }}
         </p>
 
-        <div v-if="props.learningMode" class="mb-4 rounded-xl border border-violet-200 bg-white p-4 shadow-sm">
-            <p class="text-sm font-bold text-gray-800">{{ props.answerPrompt }}</p>
-            <p class="mt-1 text-xs leading-5 text-gray-500">選択すると、正誤と解説が表示されます。</p>
-            <div class="mt-3 grid grid-cols-3 gap-2 sm:max-w-md">
+        <div
+            v-if="props.learningMode"
+            class="mb-4 border-t border-gray-100 pt-4"
+        >
+            <template v-if="!hasAnswered">
+                <p class="text-sm font-bold text-gray-800">{{ props.answerPrompt }}</p>
+            </template>
+            <div class="grid grid-cols-3 gap-2 sm:max-w-md" :class="hasAnswered ? '' : 'mt-3'">
                 <button
                     v-for="label in availableLabels"
                     :key="label"
                     type="button"
-                    class="min-h-12 rounded-lg border-2 bg-white px-4 py-2 text-base font-bold transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
-                    :class="answerButtonClass(label)"
+                    class="rounded-md border bg-white px-3 font-bold transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
+                    :class="[answerButtonClass(label), hasAnswered ? 'min-h-9 py-1 text-sm' : 'min-h-12 py-2 text-base']"
                     :disabled="hasAnswered"
                     @click="selectAnswer(label)"
                 >
                     {{ label }}
                 </button>
             </div>
-            <div
-                v-if="hasAnswered"
-                class="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-lg border px-4 py-3"
-                :class="isCorrect ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : 'border-rose-200 bg-rose-50 text-rose-800'"
-                role="status"
-                aria-live="polite"
-            >
-                <p class="text-base font-extrabold">
-                    <span class="mr-1" aria-hidden="true">{{ isCorrect ? '○' : '×' }}</span>
-                    {{ isCorrect ? '正解です！' : `不正解です。正解は「${props.correctAnswer}」です。` }}
+            <div v-if="hasAnswered" class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-gray-200 pt-2.5 text-sm" role="status" aria-live="polite">
+                <p class="flex flex-wrap items-center gap-x-2 text-gray-800">
+                    <span class="font-semibold" :class="isCorrect ? 'text-emerald-700' : 'text-rose-700'">{{ isCorrect ? '○' : '×' }}</span>
+                    <span class="font-semibold">{{ isCorrect ? '正解' : '不正解' }}</span>
+                    <template v-if="!isCorrect"><span class="text-gray-300">｜</span><span class="text-xs text-gray-500">正解</span><span>{{ props.correctAnswer }}</span></template>
                 </p>
-                <button type="button" class="text-xs font-bold underline underline-offset-2" @click="resetAnswer">
-                    もう一度解く
-                </button>
+                <button type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer">選び直す</button>
             </div>
         </div>
 
@@ -76,26 +74,19 @@
                 <div class="jp-kagi-tight min-w-0" v-html="formatContentHtml(content)"></div>
             </div>
         </div>
-        <section v-else-if="hasAnswered" class="my-5 overflow-hidden rounded-xl border border-violet-200 bg-white shadow-sm">
-            <div class="flex items-center gap-3 border-b border-violet-100 bg-violet-50 px-4 py-3">
-                <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-violet-600 text-sm font-extrabold text-white">解</span>
-                <div>
-                    <h3 class="text-base font-extrabold text-gray-800">解説</h3>
-                    <p class="text-xs text-gray-500">各選択肢のポイントを確認しましょう</p>
-                </div>
-            </div>
-            <div class="divide-y divide-gray-100 px-4">
+        <section v-else-if="hasAnswered" class="my-5 border-t border-gray-200 pt-4">
+            <h3 class="text-sm font-bold text-gray-900">解説</h3>
+            <div class="mt-2 divide-y divide-gray-100">
                 <div
                     v-for="(content, index) in props.contents"
                     :key="`explanation-${index}`"
-                    class="grid grid-cols-[2.5rem_minmax(0,1fr)] items-start gap-2 py-3 text-sm leading-7 text-gray-800 md:text-[15px]"
-                    :class="getLabel(index) === props.correctAnswer ? 'bg-emerald-50/60 -mx-4 px-4' : ''"
+                    class="grid grid-cols-[2rem_minmax(0,1fr)] items-start gap-2 py-2 text-sm leading-7 text-gray-800 md:text-[15px]"
                 >
                     <span
-                        class="inline-flex h-7 w-7 items-center justify-center rounded-full font-extrabold"
-                        :class="getLabel(index) === props.correctAnswer ? 'bg-emerald-600 text-white' : 'bg-gray-100 text-gray-700'"
+                        class="font-bold"
+                        :class="getLabel(index) === props.correctAnswer ? 'text-emerald-700' : 'text-gray-700'"
                     >
-                        {{ getLabel(index) }}
+                        {{ getLabel(index) }}：
                     </span>
                     <div class="jp-kagi-tight min-w-0" v-html="formatContentHtml(content)"></div>
                 </div>
@@ -183,24 +174,30 @@ const selectAnswer = (label: string): void => {
     if (!hasAnswered.value) {
         selectedAnswer.value = label;
         emit("answered", Number(props.questionNumber), true);
-        studySession?.markAnswered?.(Number(props.questionNumber), true);
+        studySession?.markAnswered?.(Number(props.questionNumber), true, isCorrect.value, label);
     }
 };
 
 const resetAnswer = (): void => {
     selectedAnswer.value = "";
     emit("answered", Number(props.questionNumber), false);
-    studySession?.markAnswered?.(Number(props.questionNumber), false);
+    studySession?.markAnswered?.(Number(props.questionNumber), false, false, "");
 };
 
 const answerButtonClass = (label: string): string => {
-    if (!hasAnswered.value) return "border-violet-200 text-violet-700 hover:border-violet-400 hover:bg-violet-50";
-    if (label === props.correctAnswer) return "border-emerald-500 bg-emerald-50 text-emerald-700";
-    if (label === selectedAnswer.value) return "border-rose-500 bg-rose-50 text-rose-700";
-    return "border-gray-200 text-gray-400 opacity-60";
+    if (!hasAnswered.value) return "border-gray-300 text-gray-800 hover:border-violet-400 hover:bg-violet-50";
+    if (label === props.correctAnswer) return "border-emerald-500 text-emerald-700";
+    if (label === selectedAnswer.value) return "border-rose-500 text-rose-700";
+    return "border-gray-200 text-gray-500";
 };
 
-watch(() => props.learningMode, resetAnswer);
+watch(
+    [() => props.learningMode, () => studySession?.savedAnswers?.value?.[Number(props.questionNumber)]?.selected_answer],
+    ([learningMode, savedAnswer]) => {
+        selectedAnswer.value = learningMode ? String(savedAnswer ?? "") : "";
+    },
+    { immediate: true },
+);
 
 const page = usePage();
 const isDaigaku = computed(() => /(?:^|\/)daigaku(?:\/|$)/.test(String(page.url ?? "")));

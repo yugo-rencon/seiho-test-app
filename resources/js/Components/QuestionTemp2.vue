@@ -5,7 +5,64 @@
         :id="`q${item.questionNo}`"
         class="h-0 scroll-mt-24"
     ></div>
-    <template v-if="visibleItems.length > 0">
+    <template v-if="props.learningMode && visibleItems.length > 0">
+        <article
+            v-for="item in visibleItems"
+            v-show="Number(effectiveStudyQuestion) === Number(item.questionNo)"
+            :key="`study-${item.questionNo}`"
+            :id="`q${item.questionNo}`"
+            class="scroll-mt-24 rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6"
+            :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
+        >
+            <div class="flex items-start gap-2">
+                <h2 class="text-base font-bold leading-tight text-gray-700">
+                    <span v-if="item.questionTitle">{{ item.questionTitle }}</span>
+                </h2>
+            </div>
+            <div
+                class="mt-4 border-t border-gray-100 pt-4"
+            >
+                <template v-if="!selectedAnswers[item.questionNo] || choicesFor(item).length">
+                    <p class="text-sm font-bold text-gray-800">{{ choicesFor(item).length ? '最も適切な組み合わせを1つ選んでください' : '文章の内容が正しいか、誤っているかを選んでください' }}</p>
+                </template>
+                <div v-if="choicesFor(item).length" class="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    <button
+                        v-for="choice in choicesFor(item)"
+                        :key="choice.label"
+                        type="button"
+                        class="rounded-md border bg-white px-3 text-left font-bold transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
+                        :class="[trueFalseButtonClass(item, choice.label), 'min-h-12 py-2 text-sm']"
+                        :disabled="Boolean(selectedAnswers[item.questionNo])"
+                        @click="answerTrueFalse(item, choice.label)"
+                    ><span class="font-extrabold">{{ choice.label }}.</span><span class="ml-1">{{ choice.text }}</span></button>
+                </div>
+                <div v-else class="grid grid-cols-2 gap-2 sm:max-w-sm" :class="selectedAnswers[item.questionNo] ? '' : 'mt-3'">
+                    <button
+                        v-for="choice in ['正', '誤']"
+                        :key="choice"
+                        type="button"
+                        class="rounded-md border bg-white px-4 font-extrabold transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
+                        :class="[trueFalseButtonClass(item, choice), selectedAnswers[item.questionNo] ? 'min-h-9 py-1 text-sm' : 'min-h-12 py-2 text-base']"
+                        :disabled="Boolean(selectedAnswers[item.questionNo])"
+                        @click="answerTrueFalse(item, choice)"
+                    >{{ choice }}</button>
+                </div>
+                <div v-if="selectedAnswers[item.questionNo]" class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-gray-200 pt-2.5 text-sm" role="status">
+                    <p class="flex flex-wrap items-center gap-x-2 text-gray-800">
+                        <span class="font-semibold" :class="isTrueFalseCorrect(item) ? 'text-emerald-700' : 'text-rose-700'">{{ isTrueFalseCorrect(item) ? '○' : '×' }}</span>
+                        <span class="font-semibold">{{ isTrueFalseCorrect(item) ? '正解' : '不正解' }}</span>
+                        <template v-if="!isTrueFalseCorrect(item)"><span class="text-gray-300">｜</span><span class="text-xs text-gray-500">正解</span><span>{{ correctAnswerFor(item) }}</span></template>
+                    </p>
+                    <button type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetTrueFalse(item)">選び直す</button>
+                </div>
+            </div>
+            <section v-if="selectedAnswers[item.questionNo] && !choicesFor(item).length" class="my-5 border-t border-gray-200 pt-4">
+                <h3 class="text-sm font-bold text-gray-900">解説</h3>
+                <div class="mt-2 text-sm leading-7 text-gray-800 md:text-[15px]" v-html="formatContent(item)"></div>
+            </section>
+        </article>
+    </template>
+    <template v-else-if="visibleItems.length > 0">
         <template v-for="(item, index) in visibleItems" :key="index">
             <div
                 :id="`q${item.questionNo}`"
@@ -67,7 +124,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, inject, ref, watch } from "vue";
 import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
@@ -127,7 +184,77 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    learningMode: {
+        type: Boolean,
+        default: false,
+    },
+    correctAnswers: {
+        type: Array,
+        default: () => [],
+    },
+    choiceOptionsByQuestion: {
+        type: Object,
+        default: () => ({}),
+    },
 });
+
+const emit = defineEmits(["answered"]);
+const studySession: any = inject("studySession", null);
+const effectiveStudyQuestion = computed(() => studySession?.currentQuestion?.value ?? 0);
+const selectedAnswers = ref({});
+
+const choicesFor = (item: any): any[] => {
+    const choices = props.choiceOptionsByQuestion?.[item.questionNo];
+    return Array.isArray(choices) ? choices : [];
+};
+
+const correctAnswerFor = (item: any): string => {
+    const index = Number(item.questionNo) - Number(props.questionNumber);
+    return String(props.correctAnswers[index] ?? "");
+};
+
+const isTrueFalseCorrect = (item: any): boolean => selectedAnswers.value[item.questionNo] === correctAnswerFor(item);
+
+const answerTrueFalse = (item: any, choice: string): void => {
+    if (selectedAnswers.value[item.questionNo]) return;
+    selectedAnswers.value = { ...selectedAnswers.value, [item.questionNo]: choice };
+    emit("answered", Number(item.questionNo), true);
+    studySession?.markAnswered?.(Number(item.questionNo), true, isTrueFalseCorrect(item), choice);
+};
+
+const resetTrueFalse = (item: any): void => {
+    const next = { ...selectedAnswers.value };
+    delete next[item.questionNo];
+    selectedAnswers.value = next;
+    emit("answered", Number(item.questionNo), false);
+    studySession?.markAnswered?.(Number(item.questionNo), false, false, "");
+};
+
+const trueFalseButtonClass = (item: any, choice: string): string => {
+    const selected = selectedAnswers.value[item.questionNo];
+    if (!selected) return "border-gray-300 text-gray-800 hover:border-violet-400 hover:bg-violet-50";
+    if (choice === correctAnswerFor(item)) return "border-emerald-500 text-emerald-700";
+    if (choice === selected) return "border-rose-500 text-rose-700";
+    return "border-gray-200 text-gray-500";
+};
+
+watch(
+    [() => props.learningMode, () => studySession?.savedAnswers?.value],
+    ([learningMode, savedAnswers]) => {
+        if (!learningMode) {
+            selectedAnswers.value = {};
+            return;
+        }
+
+        selectedAnswers.value = Object.fromEntries(
+            Object.entries(savedAnswers ?? {}).map(([questionNumber, answer]: [string, any]) => [
+                questionNumber,
+                String(answer?.selected_answer ?? ""),
+            ]),
+        );
+    },
+    { immediate: true, deep: true },
+);
 
 const page = usePage();
 const isDaigaku = computed(() => /(?:^|\/)daigaku(?:\/|$)/.test(String(page.url ?? "")));

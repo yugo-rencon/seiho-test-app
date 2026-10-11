@@ -203,14 +203,15 @@ const isDraft = true;
                 <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
-                    :subject="subject"
+                    :subject="subject"j
                     questionTitle="厚生年金保険の仕組み"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '育児休業等期間中の厚生年金保険料が免除（[[本人負担分に加え、事業主負担分も免除]]）される。', //p22
                     ]"
                 />
                 <QuestionTemp1

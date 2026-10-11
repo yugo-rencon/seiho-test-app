@@ -230,20 +230,20 @@ const startNewStudy = () => {
                             </svg>
                             問題一覧 <span aria-hidden="true" class="text-xs">▼</span>
                         </summary>
-                        <div class="absolute right-0 mt-2 w-72 rounded-sm border border-gray-300 bg-white p-3 shadow-md sm:w-80">
-                            <div class="mb-2 flex items-center justify-between gap-3">
-                                <p class="text-sm font-semibold text-gray-900">問題を選択</p>
-                                <p class="flex items-center gap-2.5 text-xs text-gray-500">
+                        <div class="absolute right-0 mt-2 w-[calc(100vw-2rem)] max-w-96 rounded-sm border border-gray-300 bg-white p-4 shadow-md">
+                            <div class="mb-3 flex items-center justify-between gap-3">
+                                <p class="text-base font-semibold text-gray-900">問題を選択</p>
+                                <p class="flex items-center gap-3 text-sm text-gray-500">
                                     <span><span class="text-[#3f806d]">●</span> 正解</span>
                                     <span><span class="text-[#b5535c]">●</span> 不正解</span>
                                 </p>
                             </div>
-                            <div class="grid max-h-72 grid-cols-5 gap-1.5 overflow-y-auto pr-1">
+                            <div class="grid max-h-[32rem] grid-cols-5 gap-2 overflow-y-auto pr-1">
                                 <button
                                     v-for="(questionNumber, index) in questions"
                                     :key="questionNumber"
                                     type="button"
-                                    class="relative min-h-9 rounded-sm border text-sm font-semibold transition"
+                                    class="relative min-h-11 rounded-sm border text-base font-semibold transition"
                                     :class="[
                                         currentIndex === index ? 'ring-2 ring-violet-400 ring-offset-1' : '',
                                         correctQuestions.has(questionNumber)

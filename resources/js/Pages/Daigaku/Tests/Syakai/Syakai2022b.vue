@@ -427,9 +427,10 @@ const isDraft = true;
                             content: '併用した場合、通常なら３割負担で済む保険適用部分も[[全額自己負担]]となってしまう。', //p82
                         }, //42
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '遺族厚生年金の受給',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '配偶者が再婚した場合（事実婚も含む）、遺族厚生年金を[[受給できなくなる]]。', //p60
                         }, //43
                         {
                             questionTitle: '国民健康保険料（税）の負担',

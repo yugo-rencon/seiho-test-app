@@ -418,9 +418,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //41
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '混合診療',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '併用した場合、通常なら３割負担で済む保険適用部分も[[全額自己負担]]となってしまう。', //p82
                         }, //42
                         {
                             questionTitle: '遺族厚生年金の受給',

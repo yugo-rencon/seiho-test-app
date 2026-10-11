@@ -51,9 +51,9 @@
           class="rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6"
         >
           <div class="flex items-start gap-2">
-            <h2 class="text-base font-bold text-gray-700">
-              <span class="mr-2 inline-block whitespace-nowrap text-xs font-normal text-gray-500">問{{ blockStartQuestion + index }}</span>
-              <span v-if="props.questionTitle">{{ props.questionTitle }}</span>
+            <h2 class="flex min-w-0 items-start gap-2 text-base font-bold text-gray-700">
+              <span class="shrink-0 whitespace-nowrap text-xs font-normal text-gray-500">問{{ blockStartQuestion + index }}</span>
+              <span v-if="props.questionTitle" class="min-w-0">{{ props.questionTitle }}</span>
             </h2>
           </div>
           <p class="mt-4 text-sm font-bold text-gray-800">語群から答えを1つ選んでください</p>

@@ -155,6 +155,7 @@ const resumeStudy = () => {
     hasPendingSavedProgress.value = false;
     const resumeIndex = questions.value.indexOf(initialResumeQuestion);
     currentIndex.value = resumeIndex >= 0 ? resumeIndex : 0;
+    resultDismissed.value = !initialAttemptCompleted;
     showResumeNotice.value = false;
 };
 
@@ -203,10 +204,7 @@ const startNewStudy = () => {
                         <button type="button" class="border-b-2 px-0.5 pb-1.5 text-sm transition" :class="displayMode === 'study' ? 'border-violet-600 font-semibold text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-800'" :aria-pressed="displayMode === 'study'" @click="displayMode = 'study'">学習モード</button>
                     </div>
                 </div>
-                <div v-if="displayMode === 'study' && !showResumeNotice" class="mt-2.5 h-0.5 w-32 overflow-hidden bg-gray-200 sm:w-48" aria-label="学習進捗">
-                    <div class="h-full bg-violet-600 transition-all duration-300" :style="{ width: `${((currentIndex + 1) / questionCount) * 100}%` }"></div>
-                </div>
-                <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mt-1.5 flex justify-end">
+                <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mt-2.5 flex justify-end">
                     <details ref="questionMenu" class="relative z-20">
                         <summary class="flex cursor-pointer list-none items-center gap-1.5 py-1 text-sm text-gray-600 hover:text-gray-950 focus:outline-none focus-visible:underline">
                             <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
@@ -234,7 +232,7 @@ const startNewStudy = () => {
                 <h2 class="text-lg font-semibold text-gray-900">前回の学習が残っています</h2>
                 <p class="mt-2 text-sm text-gray-500">{{ initialAttemptCompleted ? `全${questionCount}問回答済み・${initialAttemptScore}点` : `${initialAnsweredCount} / ${questionCount}問回答済み・問${initialResumeQuestion}から再開できます` }}</p>
                 <div class="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
-                    <button type="button" class="rounded-sm bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-violet-700" @click="resumeStudy">続きから始める</button>
+                    <button type="button" class="rounded-sm bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-violet-700" @click="resumeStudy">{{ initialAttemptCompleted ? '採点結果を見る' : '続きから始める' }}</button>
                     <button type="button" class="rounded-sm border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 hover:border-gray-500" @click="startNewStudy">新しく始める</button>
                 </div>
             </div>

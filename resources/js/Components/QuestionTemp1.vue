@@ -23,10 +23,10 @@
                                 : 'bg-gradient-to-b from-purple-400 to-blue-400'
                 "
             ></div>
-            <h2 class="text-base font-bold leading-tight text-gray-700">
-                <span v-if="props.learningMode" class="mr-2 inline-block whitespace-nowrap text-xs font-normal text-gray-500">問{{ props.questionNumber }}</span>
-                <span v-else class="mr-2 inline-block whitespace-nowrap">問題{{ props.questionNumber }}</span>
-                <span v-if="props.questionTitle">
+            <h2 class="flex min-w-0 items-start gap-2 text-base font-bold leading-tight text-gray-700">
+                <span v-if="props.learningMode" class="shrink-0 whitespace-nowrap text-xs font-normal text-gray-500">問{{ props.questionNumber }}</span>
+                <span v-else class="shrink-0 whitespace-nowrap">問題{{ props.questionNumber }}</span>
+                <span v-if="props.questionTitle" class="min-w-0">
                     {{ props.questionTitle }}
                 </span>
             </h2>
@@ -94,10 +94,10 @@
             </div>
         </section>
         <RelatedProblems :items="props.relatedProblems" :is-daigaku="isDaigaku" :context-title="props.title" :current-question-number="props.questionNumber" />
-        <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
+        <div v-if="!props.learningMode" class="flex justify-end text-gray-400 text-xxs lg:text-xs">
             {{ props.title }}
         </div>
-        <div class="flex justify-end text-gray-400 text-xxs lg:text-xs">
+        <div v-if="!props.learningMode" class="flex justify-end text-gray-400 text-xxs lg:text-xs">
             {{ props.subject }}
         </div>
     </div>

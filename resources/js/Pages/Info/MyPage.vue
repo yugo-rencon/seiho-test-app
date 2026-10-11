@@ -98,13 +98,6 @@ const mypageResultsRouteName = computed(() =>
 const mypagePassScoreRouteName = computed(() =>
   isDaigaku.value ? 'daigaku.mypage.passScore' : 'mypage.passScore',
 );
-const contactRouteName = computed(() => {
-  if (props.scope === 'daigaku') return 'daigaku.contact.index';
-  if (props.scope === 'ippan') return 'ippan.contact.index';
-  if (props.scope === 'senmon') return 'senmon.contact.index';
-  if (props.scope === 'ouyou') return 'ouyou.contact.index';
-  return 'contact.index';
-});
 const pricingHref = computed(() =>
   isDaigaku.value
     ? route('daigaku.pricing')
@@ -494,8 +487,8 @@ const excellent = computed(
         <h1 class="text-2xl font-bold tracking-normal text-gray-900">
           {{ props.scoreOnly ? '試験結果を記録' : 'マイページ' }}
         </h1>
-        <p class="mt-2 text-sm text-gray-500">
-          {{ props.scoreOnly ? '本番試験の点数を科目ごとに管理できます。' : 'アカウントと購入済みプランを確認できます。' }}
+        <p v-if="props.scoreOnly" class="mt-2 text-sm text-gray-500">
+          本番試験の点数を科目ごとに管理できます。
         </p>
       </div>
 
@@ -513,10 +506,10 @@ const excellent = computed(
             </div>
             <button
               type="button"
-              class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2"
+              class="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2"
               @click="logout"
             >
-              <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 5H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4M14 8l4 4-4 4M8 12h10" />
               </svg>
               ログアウト
@@ -524,61 +517,17 @@ const excellent = computed(
           </div>
         </div>
 
-        <div
-          class="rounded-xl border border-slate-200 border-l-4 border-l-slate-700 bg-slate-50 p-5 sm:p-6"
-        >
-          <div class="flex flex-wrap items-start justify-between gap-3">
+        <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
+          <Link
+            :href="route('results')"
+            class="group flex min-h-[88px] items-center justify-between gap-4 px-5 py-4 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-500 sm:px-6"
+          >
             <div>
-              <p class="text-xs font-semibold tracking-wide text-slate-500">ご利用中のプラン</p>
-              <h2 class="mt-1 text-xl font-bold text-gray-900">
-                {{ props.hasPremium ? 'プレミアムプラン利用中' : '無料プラン' }}
-              </h2>
-              <p class="mt-2 text-sm leading-relaxed text-gray-600">
-                {{ props.hasPremium ? '購入済みの試験の解説を、利用期限なしで閲覧できます。' : '無料公開中の解説を閲覧できます。' }}
-              </p>
+              <h2 class="text-sm font-semibold text-slate-900">本番試験の結果</h2>
+              <p class="mt-1 text-xs text-slate-500">点数・受験日・合格状況を記録できます。</p>
             </div>
-            <span
-              class="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold"
-              :class="props.hasPremium ? 'bg-emerald-50 text-emerald-700 ring-1 ring-inset ring-emerald-200' : 'bg-white text-slate-600 ring-1 ring-inset ring-slate-200'"
-            >
-              {{ props.hasPremium ? '有効' : '無料' }}
-            </span>
-          </div>
-        </div>
-
-        <div class="rounded-xl border border-slate-200 bg-white p-5 sm:p-6">
-          <h2 class="text-sm font-semibold text-slate-800">よく使うメニュー</h2>
-          <div class="mt-4 grid gap-3 sm:grid-cols-2">
-            <Link
-              :href="route('tests.index')"
-              class="group rounded-lg border border-slate-200 bg-white px-4 py-4 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2"
-            >
-              <div class="flex items-center justify-between gap-3 text-sm font-semibold text-slate-800"><span>解説一覧を見る</span><svg aria-hidden="true" class="h-4 w-4 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></div>
-              <div class="mt-2 text-xs leading-5 text-slate-500">科目・年度・フォームから解説を探せます。</div>
-            </Link>
-            <Link
-              :href="route('results')"
-              class="group rounded-lg border border-slate-200 bg-white px-4 py-4 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2"
-            >
-              <div class="flex items-center justify-between gap-3 text-sm font-semibold text-slate-800"><span>試験結果を記録</span><svg aria-hidden="true" class="h-4 w-4 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></div>
-              <div class="mt-2 text-xs leading-5 text-slate-500">点数・受験日を記録して合格状況を確認できます。</div>
-            </Link>
-            <Link
-              :href="route(contactRouteName)"
-              class="group rounded-lg border border-slate-200 bg-white px-4 py-4 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2"
-            >
-              <div class="flex items-center justify-between gap-3 text-sm font-semibold text-slate-800"><span>お問い合わせ</span><svg aria-hidden="true" class="h-4 w-4 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></div>
-              <div class="mt-2 text-xs leading-5 text-slate-500">誤記や不明点があればご連絡ください。</div>
-            </Link>
-            <Link
-              :href="pricingHref"
-              class="group rounded-lg border border-slate-200 bg-white px-4 py-4 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2"
-            >
-              <div class="flex items-center justify-between gap-3 text-sm font-semibold text-slate-800"><span>料金プラン</span><svg aria-hidden="true" class="h-4 w-4 shrink-0 text-slate-400 transition group-hover:translate-x-0.5 group-hover:text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></div>
-              <div class="mt-2 text-xs leading-5 text-slate-500">購入済みプランや閲覧範囲を確認できます。</div>
-            </Link>
-          </div>
-
+            <span class="shrink-0 text-sm font-medium text-slate-600 group-hover:text-slate-950">記録を見る</span>
+          </Link>
         </div>
 
         <div class="rounded-xl border border-slate-200 bg-white p-5 sm:p-6">

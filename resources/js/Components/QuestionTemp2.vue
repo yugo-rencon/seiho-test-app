@@ -15,9 +15,9 @@
             :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
         >
             <div class="flex items-start gap-2">
-                <h2 class="text-base font-bold leading-tight text-gray-700">
-                    <span class="mr-2 inline-block whitespace-nowrap text-xs font-normal text-gray-500">問{{ item.questionNo }}</span>
-                    <span v-if="item.questionTitle">{{ item.questionTitle }}</span>
+                <h2 class="flex min-w-0 items-start gap-2 text-base font-bold leading-tight text-gray-700">
+                    <span class="shrink-0 whitespace-nowrap text-xs font-normal text-gray-500">問{{ item.questionNo }}</span>
+                    <span v-if="item.questionTitle" class="min-w-0">{{ item.questionTitle }}</span>
                 </h2>
             </div>
             <div

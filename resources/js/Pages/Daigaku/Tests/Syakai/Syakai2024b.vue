@@ -436,7 +436,7 @@ const isDraft = true;
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
-                            questionTitle: '厚生年金保険の任意加入',
+                            questionTitle: '労働保険料',
                             relatedProblems: [],
                             content: '正しい',
                         }, //41
@@ -471,9 +471,10 @@ const isDraft = true;
                             content: '医療費の患者負担分を除いた保険給付総額について、１割を被保険者の保険料として課し、[[４割]]を現役世代の各医療制度、[[５割]]を公費（国・都道府県・市区町村）で負担している。', //p93
                         }, //46
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: 'ケアマネジャー',
                             relatedProblems: [],
-                            content: '', //p
+                            content: 'ケアプラン作成におけるケアマネジャーに対する報酬は[[介護保険から全額支払われ、利用者の負担はない]]。', //p106
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
@@ -482,9 +483,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //48
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '公的年金の支給',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '奇数月 → 偶数月', //p150
                         }, //49
                     ]"
                 />

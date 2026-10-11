@@ -459,9 +459,10 @@ const isDraft = true;
                             content: '55歳 → 50歳', //p148
                         }, //48
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '公的年金の支給',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '支給月の20日 → 支給月の15日', //p150
                         }, //49
                     ]"
                 />

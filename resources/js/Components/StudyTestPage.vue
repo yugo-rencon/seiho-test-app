@@ -203,7 +203,7 @@ const startNewStudy = () => {
                         <button type="button" class="border-b-2 px-0.5 pb-1.5 text-sm transition" :class="displayMode === 'study' ? 'border-violet-600 font-semibold text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-800'" :aria-pressed="displayMode === 'study'" @click="displayMode = 'study'">学習モード</button>
                     </div>
                 </div>
-                <div v-if="displayMode === 'study' && !showResumeNotice" class="mt-2.5 h-0.5 overflow-hidden bg-gray-200" aria-label="学習進捗">
+                <div v-if="displayMode === 'study' && !showResumeNotice" class="mt-2.5 h-0.5 w-32 overflow-hidden bg-gray-200 sm:w-48" aria-label="学習進捗">
                     <div class="h-full bg-violet-600 transition-all duration-300" :style="{ width: `${((currentIndex + 1) / questionCount) * 100}%` }"></div>
                 </div>
                 <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mt-1.5 flex justify-end">

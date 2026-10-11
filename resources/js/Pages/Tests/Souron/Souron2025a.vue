@@ -7,10 +7,39 @@ import Pagetitle from "../../../Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+import { computed, provide, ref } from "vue";
 
 const title = "生命保険総論";
 const subject = "2025年度 フォームA";
 const isDraft = false;
+const displayMode = ref("browse");
+const studyQuestions = [1, 2, 3, 4, 5, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+const currentStudyIndex = ref(0);
+const answeredStudyQuestions = ref(new Set());
+const currentStudyQuestion = computed(() => studyQuestions[currentStudyIndex.value]);
+const currentStudyAnswered = computed(() => answeredStudyQuestions.value.has(currentStudyQuestion.value));
+
+const markStudyQuestionAnswered = (questionNumber, answered) => {
+    const next = new Set(answeredStudyQuestions.value);
+    if (answered) next.add(Number(questionNumber));
+    else next.delete(Number(questionNumber));
+    answeredStudyQuestions.value = next;
+};
+
+provide("studySession", {
+    currentQuestion: currentStudyQuestion,
+    markAnswered: markStudyQuestionAnswered,
+});
+
+const previousStudyQuestion = () => {
+    if (currentStudyIndex.value > 0) currentStudyIndex.value -= 1;
+};
+
+const nextStudyQuestion = () => {
+    if (currentStudyIndex.value < studyQuestions.length - 1 && currentStudyAnswered.value) {
+        currentStudyIndex.value += 1;
+    }
+};
 </script>
 
 <template>
@@ -18,6 +47,46 @@ const isDraft = false;
         <section class="bg-[#fdfbff] text-gray-800 py-10">
             <!-- ページタイトル -->
             <Pagetitle :title="title" :description="subject" />
+
+            <div class="mx-auto mt-4 max-w-4xl rounded-xl border border-violet-200 bg-white p-3 shadow-sm">
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                        <p class="text-sm font-bold text-gray-800">表示モード</p>
+                        <p class="mt-0.5 text-xs leading-5 text-gray-500">
+                            学習モードは、現在問題1〜5・21〜30でお試しいただけます。
+                        </p>
+                        <p v-if="displayMode === 'study'" class="mt-1 text-sm font-extrabold text-violet-700">
+                            問題 {{ currentStudyIndex + 1 }} / {{ studyQuestions.length }}（問{{ currentStudyQuestion }}）
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 rounded-lg bg-violet-50 p-1" role="group" aria-label="表示モードを選択">
+                        <button
+                            type="button"
+                            class="rounded-md px-4 py-2 text-sm font-bold transition"
+                            :class="displayMode === 'browse' ? 'bg-white text-violet-700 shadow-sm' : 'text-gray-500 hover:text-gray-700'"
+                            :aria-pressed="displayMode === 'browse'"
+                            @click="displayMode = 'browse'"
+                        >
+                            閲覧モード
+                        </button>
+                        <button
+                            type="button"
+                            class="rounded-md px-4 py-2 text-sm font-bold transition"
+                            :class="displayMode === 'study' ? 'bg-violet-600 text-white shadow-sm' : 'text-gray-500 hover:text-gray-700'"
+                            :aria-pressed="displayMode === 'study'"
+                            @click="displayMode = 'study'"
+                        >
+                            学習モード
+                        </button>
+                    </div>
+                </div>
+                <div v-if="displayMode === 'study'" class="mt-3 h-2 overflow-hidden rounded-full bg-violet-100" aria-label="学習進捗">
+                    <div
+                        class="h-full rounded-full bg-violet-600 transition-all duration-300"
+                        :style="{ width: `${((currentStudyIndex + 1) / studyQuestions.length) * 100}%` }"
+                    ></div>
+                </div>
+            </div>
 
             <DraftNotice v-if="isDraft" />
 
@@ -29,6 +98,19 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険契約の特殊性-①"
                     :relatedProblems="['2025a1']"
+                    :learningMode="displayMode === 'study'"
+                    :choiceOptions="[
+                        { label: 'ア', text: '損害保険' },
+                        { label: 'イ', text: '保険法' },
+                        { label: 'ウ', text: '共済' },
+                        { label: 'エ', text: '経済的' },
+                        { label: 'オ', text: '権利失効' },
+                        { label: 'カ', text: '保険業法' },
+                        { label: 'キ', text: '商法' },
+                        { label: 'ク', text: '歴史的' },
+                        { label: 'ケ', text: '契約自由' },
+                        { label: 'コ', text: '刑法' },
+                    ]"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '契約自由',
@@ -46,6 +128,7 @@ const isDraft = false;
                     ]"
                 />
                 <QuestionTemp3
+                    v-if="displayMode === 'browse'"
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
@@ -68,6 +151,7 @@ const isDraft = false;
                     ]"
                 />
                 <QuestionTemp3
+                    v-if="displayMode === 'browse'"
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
@@ -90,6 +174,7 @@ const isDraft = false;
                     ]"
                 />
                 <QuestionTemp3
+                    v-if="displayMode === 'browse'"
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
@@ -117,6 +202,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険の対象となる危険の種類"
                     :relatedProblems="['2025a21', '2025b21', '2025c21']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="ア"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -130,6 +217,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="早期是正措置の導入と保険業法の一部改正"
                     :relatedProblems="['2025a22', '2025c27']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="イ"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '責任準備金の積立度合 → 保険金の支払い余力', //p99
@@ -143,6 +232,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="狭義の社会保障制度"
                     :relatedProblems="['2025a23', '2025c28']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="ア"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -156,6 +247,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険業監督の方法"
                     :relatedProblems="['2025a24']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="ウ"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '自由主義経済を[[基調とする]]立場であり、日本では[[実体的監督主義]]が採用されている。', //p148
@@ -169,6 +262,8 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="銀行による保険販売"
                     :relatedProblems="['2025a25', '2025c49']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="ウ"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '2001年（平成13年）に、[[住宅ローン関連の信用生命保険と長期火災保険等の販売からスタート]]。', //p175-176
@@ -182,6 +277,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生命保険商品の基本型"
                     :relatedProblems="['2025a26', '2025b43']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -195,6 +293,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="消費者へのPR活動等"
                     :relatedProblems="['2025a27']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -208,6 +309,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要"
                     :relatedProblems="['2025a28']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -221,6 +325,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="保険業法の概要"
                     :relatedProblems="['2025a29', '2025b29', '2025c29']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -234,6 +341,9 @@ const isDraft = false;
                     :subject="subject"
                     questionTitle="生保業界におけるシステム動向"
                     :relatedProblems="['2025a30', '2025b30', '2025c30']"
+                    :learningMode="displayMode === 'study'"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '最初に機械化されたのは最も事務量の多い[[個人保険分野]]である。', //p198
@@ -242,6 +352,7 @@ const isDraft = false;
                     ]"
                 />
                 <QuestionTemp2
+                    v-if="displayMode === 'browse'"
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
@@ -380,8 +491,34 @@ const isDraft = false;
                 />
             </div>
 
+            <div v-if="displayMode === 'study'" class="mx-auto mt-4 flex max-w-4xl items-center justify-between gap-3 rounded-xl border border-violet-200 bg-white p-3 shadow-sm">
+                <button
+                    type="button"
+                    class="rounded-lg border border-violet-200 px-4 py-2.5 text-sm font-bold text-violet-700 transition hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-40"
+                    :disabled="currentStudyIndex === 0"
+                    @click="previousStudyQuestion"
+                >
+                    ← 前の問題
+                </button>
+                <p v-if="!currentStudyAnswered" class="text-center text-xs font-medium text-gray-500">
+                    回答すると次へ進めます
+                </p>
+                <p v-else-if="currentStudyIndex === studyQuestions.length - 1" class="text-center text-sm font-bold text-emerald-700">
+                    学習完了です
+                </p>
+                <button
+                    v-if="currentStudyIndex < studyQuestions.length - 1"
+                    type="button"
+                    class="rounded-lg bg-violet-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-40"
+                    :disabled="!currentStudyAnswered"
+                    @click="nextStudyQuestion"
+                >
+                    次の問題へ →
+                </button>
+            </div>
+
             <!-- ボタングループ -->
-            <TestNavigationButtons next-route="souron2025b" />
+            <TestNavigationButtons v-if="displayMode === 'browse'" next-route="souron2025b" />
         </section>
     </SeihoTestLayout>
 </template>

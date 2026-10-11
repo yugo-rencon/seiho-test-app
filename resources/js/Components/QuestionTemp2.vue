@@ -16,6 +16,7 @@
         >
             <div class="flex items-start gap-2">
                 <h2 class="text-base font-bold leading-tight text-gray-700">
+                    <span class="mr-2 inline-block whitespace-nowrap text-xs font-normal text-gray-500">問{{ item.questionNo }}</span>
                     <span v-if="item.questionTitle">{{ item.questionTitle }}</span>
                 </h2>
             </div>

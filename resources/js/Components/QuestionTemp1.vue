@@ -24,7 +24,8 @@
                 "
             ></div>
             <h2 class="text-base font-bold leading-tight text-gray-700">
-                <span v-if="!props.learningMode" class="mr-2 inline-block whitespace-nowrap">問題{{ props.questionNumber }}</span>
+                <span v-if="props.learningMode" class="mr-2 inline-block whitespace-nowrap text-xs font-normal text-gray-500">問{{ props.questionNumber }}</span>
+                <span v-else class="mr-2 inline-block whitespace-nowrap">問題{{ props.questionNumber }}</span>
                 <span v-if="props.questionTitle">
                     {{ props.questionTitle }}
                 </span>

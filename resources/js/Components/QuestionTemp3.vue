@@ -52,6 +52,7 @@
         >
           <div class="flex items-start gap-2">
             <h2 class="text-base font-bold text-gray-700">
+              <span class="mr-2 inline-block whitespace-nowrap text-xs font-normal text-gray-500">問{{ blockStartQuestion + index }}</span>
               <span v-if="props.questionTitle">{{ props.questionTitle }}</span>
             </h2>
           </div>

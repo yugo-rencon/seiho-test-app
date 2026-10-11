@@ -196,7 +196,7 @@ const startNewStudy = () => {
             <div v-if="studyEnabled" class="mx-auto mt-6 max-w-4xl border-b border-gray-200 pb-3 sm:mt-8">
                 <div class="flex items-end justify-between gap-6">
                     <p v-if="displayMode === 'study' && !showResumeNotice" class="text-sm font-semibold text-gray-900">
-                        {{ currentQuestion }} <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
+                        <span class="mr-1.5 text-xs font-normal text-gray-500">問題</span>{{ currentQuestion }} <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
                     </p>
                     <span v-else></span>
                     <div class="flex items-center gap-5" role="group" aria-label="表示モードを選択">
@@ -245,7 +245,7 @@ const startNewStudy = () => {
                 </div>
             </div>
 
-            <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-4 flex max-w-4xl items-center justify-between gap-3 pt-2">
+            <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-4 flex max-w-4xl items-center justify-center gap-12 pt-2 sm:gap-20">
                 <button type="button" class="py-2 text-sm font-medium text-gray-600 hover:text-gray-950 disabled:cursor-not-allowed disabled:opacity-30" :disabled="currentIndex === 0" @click="moveTo(currentIndex - 1)">← 前の問題</button>
                 <p v-if="currentAnswered && currentIndex === questionCount - 1" class="text-sm font-medium text-gray-700">学習完了です</p>
                 <button v-if="currentIndex < questionCount - 1" type="button" class="py-2 text-sm font-medium text-gray-600 hover:text-gray-950" @click="moveTo(currentIndex + 1)">次の問題へ →</button>
@@ -255,25 +255,38 @@ const startNewStudy = () => {
                 <button type="button" class="px-2 py-2 text-sm text-gray-500 underline decoration-gray-300 underline-offset-4 hover:text-gray-950 disabled:cursor-not-allowed disabled:opacity-40" :disabled="answeredQuestions.size === 0" @click="showResult = true; resultDismissed = false">途中結果を見る（{{ answeredQuestions.size }} / {{ questionCount }}問回答）</button>
             </div>
 
-            <section v-if="displayMode === 'study' && shouldShowResult" class="mx-auto mt-7 max-w-2xl border-y border-gray-200 py-6" aria-live="polite">
-                <div class="flex items-end justify-between gap-6 border-b border-gray-200 pb-4">
-                    <div>
-                        <h2 class="text-lg font-semibold text-gray-900">{{ isComplete ? '学習結果' : '途中結果' }}</h2>
-                        <p class="mt-1 text-sm text-gray-500">{{ answeredQuestions.size }} / {{ questionCount }}問回答</p>
+            <section v-if="displayMode === 'study' && shouldShowResult" class="mx-auto mt-7 max-w-2xl border border-gray-200 bg-white" aria-live="polite">
+                <div class="border-t-4 border-violet-600 px-5 pb-5 pt-4 sm:px-7">
+                    <div class="flex items-start justify-between gap-6">
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-950">{{ isComplete ? '学習結果' : '途中結果' }}</h2>
+                            <p class="mt-1.5 text-sm text-gray-500">{{ answeredQuestions.size }}問回答・{{ correctQuestions.size }}問正解</p>
+                        </div>
+                        <p class="whitespace-nowrap text-4xl font-semibold tracking-tight text-gray-950">{{ score }}<span class="ml-1 text-sm font-normal text-gray-500">/ {{ maxScore }}点</span></p>
                     </div>
-                    <p class="whitespace-nowrap text-3xl font-semibold tracking-tight text-gray-950">{{ score }}<span class="ml-1 text-sm font-normal text-gray-500">/ {{ maxScore }}点</span></p>
+                    <div class="mt-4 h-1.5 overflow-hidden bg-gray-200" aria-label="得点率">
+                        <div class="h-full bg-violet-600 transition-all" :style="{ width: `${Math.min(100, (score / maxScore) * 100)}%` }"></div>
+                    </div>
                 </div>
 
-                <dl class="divide-y divide-gray-100 border-b border-gray-200 py-1">
-                    <div v-for="section in sectionScores" :key="section.label" class="flex items-center justify-between py-2.5 text-sm">
-                        <dt class="text-gray-600">{{ section.label }}</dt>
-                        <dd class="font-medium text-gray-900">{{ section.score }}<span class="ml-1 font-normal text-gray-400">/ {{ section.max }}点</span></dd>
-                    </div>
-                </dl>
+                <div class="border-t border-gray-200 px-5 py-4 sm:px-7">
+                    <h3 class="text-xs font-medium text-gray-500">配点別の結果</h3>
+                    <dl class="mt-2 space-y-3.5">
+                        <div v-for="section in sectionScores" :key="section.label">
+                            <div class="flex items-center justify-between text-sm">
+                                <dt class="text-gray-700">{{ section.label }}</dt>
+                                <dd class="font-medium text-gray-900">{{ section.score }}<span class="ml-1 font-normal text-gray-400">/ {{ section.max }}点</span></dd>
+                            </div>
+                            <div class="mt-1.5 h-1 bg-gray-100">
+                                <div class="h-full bg-gray-500" :style="{ width: `${Math.min(100, (section.score / section.max) * 100)}%` }"></div>
+                            </div>
+                        </div>
+                    </dl>
+                </div>
 
-                <p v-if="!isComplete" class="mt-3 text-xs text-gray-500">未回答は0点として計算しています。</p>
-                <div class="mt-5">
-                    <button type="button" class="text-sm font-medium text-gray-700 hover:text-gray-950" @click="showResult = false; resultDismissed = true">← {{ isComplete ? '問題を見直す' : '問題に戻る' }}</button>
+                <div class="flex flex-wrap items-center justify-between gap-3 border-t border-gray-200 bg-gray-50 px-5 py-4 sm:px-7">
+                    <p v-if="!isComplete" class="text-xs text-gray-500">未回答は0点として計算</p><span v-else></span>
+                    <button type="button" class="border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:border-gray-500 hover:text-gray-950" @click="showResult = false; resultDismissed = true">{{ isComplete ? '問題を見直す' : '問題に戻る' }}</button>
                 </div>
             </section>
 

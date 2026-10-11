@@ -44,7 +44,7 @@ const DAIGAKU_SECTIONS = [
         id: "social-security",
         title: "社会保障制度",
         years: DAIGAKU_VISIBLE_YEARS,
-        published: false,
+        published: true,
     },
 ];
 

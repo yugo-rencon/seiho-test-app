@@ -411,9 +411,10 @@ const isDraft = true;
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '公的年金制度の特徴',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '社会保険方式 → 賦課方式', //p7
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み

@@ -39,13 +39,12 @@ const answeredQuestions = ref(new Set());
 const correctQuestions = ref(new Set());
 const savedAnswers = ref({});
 const hasPendingSavedProgress = ref(initialAnsweredCount > 0);
-const showResult = ref(false);
 const resultDismissed = ref(Boolean(props.initialStudyState?.attempt));
 const showResumeNotice = ref(initialAnsweredCount > 0);
 const currentQuestion = computed(() => questions.value[currentIndex.value]);
 const currentAnswered = computed(() => answeredQuestions.value.has(currentQuestion.value));
 const isComplete = computed(() => answeredQuestions.value.size === props.questionCount);
-const shouldShowResult = computed(() => showResult.value || (isComplete.value && !resultDismissed.value));
+const shouldShowResult = computed(() => isComplete.value && !resultDismissed.value);
 
 const questionPoint = (questionNumber) => {
     const section = props.scoreSections.find(({ start, end }) => questionNumber >= start && questionNumber <= end);
@@ -133,7 +132,6 @@ watch(currentIndex, (index) => {
 const moveTo = async (index) => {
     showResumeNotice.value = false;
     currentIndex.value = index;
-    showResult.value = false;
     resultDismissed.value = true;
     questionMenu.value?.removeAttribute("open");
     await nextTick();
@@ -166,7 +164,6 @@ const startNewStudy = () => {
     answeredQuestions.value = new Set();
     correctQuestions.value = new Set();
     currentIndex.value = 0;
-    showResult.value = false;
     resultDismissed.value = true;
     showResumeNotice.value = false;
     if (isLoggedIn.value) {
@@ -209,7 +206,7 @@ const startNewStudy = () => {
                 <div v-if="displayMode === 'study' && !showResumeNotice" class="mt-2.5 h-0.5 overflow-hidden bg-gray-200" aria-label="学習進捗">
                     <div class="h-full bg-violet-600 transition-all duration-300" :style="{ width: `${((currentIndex + 1) / questionCount) * 100}%` }"></div>
                 </div>
-                <div v-if="displayMode === 'study' && !showResumeNotice" class="mt-1.5 flex justify-end">
+                <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mt-1.5 flex justify-end">
                     <details ref="questionMenu" class="relative z-20">
                         <summary class="flex cursor-pointer list-none items-center gap-1.5 py-1 text-sm text-gray-600 hover:text-gray-950 focus:outline-none focus-visible:underline">
                             <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
@@ -259,13 +256,9 @@ const startNewStudy = () => {
                 <button v-if="currentIndex < questionCount - 1" type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-950" @click="moveTo(currentIndex + 1)">次の問題へ →</button>
             </div>
 
-            <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-1 flex max-w-4xl justify-center py-2">
-                <button type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm text-gray-500 underline decoration-gray-300 underline-offset-4 hover:text-gray-950 disabled:cursor-not-allowed disabled:opacity-40" :disabled="answeredQuestions.size === 0" @click="showResult = true; resultDismissed = false">採点する（{{ answeredQuestions.size }} / {{ questionCount }}問回答）</button>
-            </div>
-
             <section v-if="displayMode === 'study' && shouldShowResult" class="mx-auto mt-8 max-w-2xl" aria-live="polite">
                 <div>
-                    <h2 class="text-2xl font-bold tracking-tight text-gray-950">{{ isComplete ? '学習結果' : '採点結果' }}</h2>
+                    <h2 class="text-2xl font-bold tracking-tight text-gray-950">学習結果</h2>
                     <p class="mt-1 text-sm text-gray-500">{{ answeredQuestions.size }}問回答・{{ correctQuestions.size }}問正解</p>
                 </div>
 
@@ -292,11 +285,8 @@ const startNewStudy = () => {
                     </dl>
                 </div>
 
-                <div class="mt-5">
-                    <p v-if="!isComplete" class="text-center text-xs text-gray-500">未回答は0点として計算しています</p>
-                    <div class="mt-2 flex justify-center">
-                        <button type="button" class="inline-flex min-h-11 items-center px-3 text-sm font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showResult = false; resultDismissed = true">{{ isComplete ? '問題を見直す' : '問題に戻る' }}</button>
-                    </div>
+                <div class="mt-5 flex justify-center">
+                    <button type="button" class="inline-flex min-h-11 items-center px-3 text-sm font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="resultDismissed = true">問題を見直す</button>
                 </div>
             </section>
 

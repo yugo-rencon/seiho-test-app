@@ -313,12 +313,7 @@ const scheduleStatus = (schedule, year, start) => {
 
 const scheduleStatusLabel = (status) => ({ completed: "作成済", inProgress: "作成中", upcoming: "未到来" })[status];
 
-const scheduleStatusClass = (status) =>
-    ({
-        completed: "bg-emerald-500",
-        inProgress: "bg-amber-500",
-        upcoming: "bg-slate-300 text-slate-600 shadow-none",
-    })[status];
+const scheduleYearClass = (year) => (year === 2025 ? "bg-violet-600 text-white" : "bg-amber-500 text-white");
 
 // pending 中かどうか
 const isPending = (testKey) => testKey in pendingChanges.value;
@@ -2011,7 +2006,7 @@ const peakHour2h = computed(() => {
                                     <span
                                         v-if="schedule.explanationStart"
                                         class="relative z-10 mx-1 flex min-h-7 items-center justify-center rounded-md px-1 text-center text-[11px] font-bold shadow-sm"
-                                        :class="scheduleStatusClass(scheduleStatus(schedule, 2025, schedule.explanationStart))"
+                                        :class="scheduleYearClass(2025)"
                                         :style="{ gridColumn: `${schedule.explanationStart} / span 1`, gridRow: '1' }"
                                         :title="`2025年度：${scheduleStatusLabel(scheduleStatus(schedule, 2025, schedule.explanationStart))}`"
                                         >{{ scheduleStatusLabel(scheduleStatus(schedule, 2025, schedule.explanationStart)) }}</span
@@ -2019,7 +2014,7 @@ const peakHour2h = computed(() => {
                                     <span
                                         v-if="schedule.nextYearExplanationStart"
                                         class="relative z-10 mx-1 flex min-h-7 items-center justify-center rounded-md px-1 text-center text-[11px] font-bold shadow-sm"
-                                        :class="scheduleStatusClass(scheduleStatus(schedule, 2026, schedule.nextYearExplanationStart))"
+                                        :class="scheduleYearClass(2026)"
                                         :style="{ gridColumn: `${schedule.nextYearExplanationStart} / span 1`, gridRow: '1' }"
                                         :title="`2026年度：${scheduleStatusLabel(scheduleStatus(schedule, 2026, schedule.nextYearExplanationStart))}`"
                                         >{{ scheduleStatusLabel(scheduleStatus(schedule, 2026, schedule.nextYearExplanationStart)) }}</span
@@ -2029,9 +2024,8 @@ const peakHour2h = computed(() => {
                         </div>
                     </div>
                     <div class="flex flex-wrap gap-x-4 gap-y-1 border-t border-violet-100 bg-white/60 px-5 py-2 text-xs text-slate-600">
-                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-emerald-500" />作成済</span>
-                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-amber-500" />作成中</span>
-                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-slate-300" />未到来</span>
+                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-violet-600" />2025年度</span>
+                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-amber-500" />2026年度</span>
                     </div>
                 </section>
             </template>

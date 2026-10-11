@@ -217,13 +217,13 @@ const startNewStudy = () => {
                             <div class="mb-2 flex items-center justify-between gap-3">
                                 <p class="text-sm font-semibold text-gray-900">問題を選択</p>
                                 <p class="flex items-center gap-2.5 text-xs text-gray-500">
-                                    <span><span class="text-emerald-500">●</span> 正解</span>
-                                    <span><span class="text-rose-500">●</span> 不正解</span>
+                                    <span><span class="text-[#3f806d]">●</span> 正解</span>
+                                    <span><span class="text-[#b5535c]">●</span> 不正解</span>
                                 </p>
                             </div>
                             <div class="grid max-h-72 grid-cols-5 gap-1.5 overflow-y-auto pr-1">
-                                <button v-for="(questionNumber, index) in questions" :key="questionNumber" type="button" class="relative min-h-9 rounded-sm border text-sm font-semibold transition" :class="[currentIndex === index ? 'ring-2 ring-violet-500 ring-offset-1' : '', correctQuestions.has(questionNumber) ? 'border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100' : answeredQuestions.has(questionNumber) ? 'border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100' : 'border-gray-200 bg-white text-gray-700 hover:border-violet-300 hover:bg-violet-50']" @click="moveTo(index)">
-                                    {{ questionNumber }}<span v-if="answeredQuestions.has(questionNumber)" class="absolute right-1 top-1 h-1.5 w-1.5 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-emerald-500' : 'bg-rose-500'"></span>
+                                <button v-for="(questionNumber, index) in questions" :key="questionNumber" type="button" class="relative min-h-9 rounded-sm border text-sm font-semibold transition" :class="[currentIndex === index ? 'ring-2 ring-violet-400 ring-offset-1' : '', correctQuestions.has(questionNumber) ? 'border-[#bad8ce] bg-[#f3f8f6] text-[#286653] hover:bg-[#eaf3ef]' : answeredQuestions.has(questionNumber) ? 'border-[#e4c9cc] bg-[#fbf5f5] text-[#9f3f49] hover:bg-[#f7ebec]' : 'border-gray-200 bg-white text-gray-700 hover:border-violet-300 hover:bg-violet-50']" @click="moveTo(index)">
+                                    {{ questionNumber }}<span v-if="answeredQuestions.has(questionNumber)" class="absolute right-1.5 top-1.5 h-1 w-1 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-[#3f806d]' : 'bg-[#b5535c]'"></span>
                                 </button>
                             </div>
                         </div>

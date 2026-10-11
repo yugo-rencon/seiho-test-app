@@ -40,6 +40,7 @@ const purchaseDateCalendarMonth = ref((props.filters?.purchase_date || currentYm
 const activeTab = ref("users");
 const activeMemberTab = ref("summary");
 const operationsTab = ref("exam-results");
+const scheduleYear = ref(2025);
 const salesTab = ref("overview");
 const salesScopeFilter = ref("all");
 const overviewPeriodFilter = ref(String(new Date().getFullYear()));
@@ -313,7 +314,12 @@ const scheduleStatus = (schedule, year, start) => {
 
 const scheduleStatusLabel = (status) => ({ completed: "作成済", inProgress: "作成中", upcoming: "未到来" })[status];
 
-const scheduleYearClass = (year) => (year === 2025 ? "bg-violet-600 text-white" : "bg-amber-500 text-white");
+const scheduleStatusClass = (status) =>
+    ({
+        completed: "bg-emerald-500 text-white",
+        inProgress: "bg-amber-400 text-slate-900",
+        upcoming: "bg-slate-300 text-slate-600 shadow-none",
+    })[status];
 
 // pending 中かどうか
 const isPending = (testKey) => testKey in pendingChanges.value;
@@ -1980,11 +1986,17 @@ const peakHour2h = computed(() => {
             <template v-if="activeTab === 'operations' && operationsTab === 'schedule'">
                 <!-- 作業スケジュール -->
                 <section class="mb-4 overflow-hidden rounded-2xl border border-violet-200 bg-violet-50/60 shadow-sm">
-                    <div class="flex items-center gap-2 border-b border-violet-100 bg-white/70 px-5 py-3">
-                        <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-600 text-sm text-white">◷</span>
-                        <div>
-                            <h2 class="text-sm font-bold text-slate-800">作業スケジュール</h2>
-                            <p class="text-xs text-slate-500">解説作成・過去問公開を基準にした作業予定</p>
+                    <div class="flex items-center justify-between gap-3 border-b border-violet-100 bg-white/70 px-5 py-3">
+                        <div class="flex items-center gap-2">
+                            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-600 text-sm text-white">◷</span>
+                            <div>
+                                <h2 class="text-sm font-bold text-slate-800">作業スケジュール</h2>
+                                <p class="text-xs text-slate-500">解説作成・過去問公開を基準にした作業予定</p>
+                            </div>
+                        </div>
+                        <div class="flex shrink-0 rounded-lg bg-violet-50 p-1 text-xs font-semibold">
+                            <button type="button" class="rounded-md px-3 py-1.5 transition" :class="scheduleYear === 2025 ? 'bg-violet-600 text-white shadow-sm' : 'text-violet-700 hover:bg-violet-100'" @click="scheduleYear = 2025">2025年度</button>
+                            <button type="button" class="rounded-md px-3 py-1.5 transition" :class="scheduleYear === 2026 ? 'bg-amber-500 text-white shadow-sm' : 'text-violet-700 hover:bg-violet-100'" @click="scheduleYear = 2026">2026年度</button>
                         </div>
                     </div>
                     <div class="overflow-x-auto p-5">
@@ -2004,17 +2016,17 @@ const peakHour2h = computed(() => {
                                 <div class="grid items-center bg-[linear-gradient(to_right,transparent_calc(100%-1px),rgb(237_233_254)_calc(100%-1px))]" style="grid-column: span 16 / span 16; grid-template-columns: repeat(16, minmax(0, 1fr)); background-size: 6.25% 100%">
                                     <span v-for="(item, index) in RELEASE_GANTT_MONTHS" :key="`${schedule.course}-${schedule.subject}-${item.year}-${item.month}`" class="pointer-events-none self-stretch" :class="isCurrentScheduleMonth(item) ? 'bg-fuchsia-100/70' : ''" :style="{ gridColumn: `${index + 1}`, gridRow: '1' }" />
                                     <span
-                                        v-if="schedule.explanationStart"
+                                        v-if="scheduleYear === 2025 && schedule.explanationStart"
                                         class="relative z-10 mx-1 flex min-h-7 items-center justify-center rounded-md px-1 text-center text-[11px] font-bold shadow-sm"
-                                        :class="scheduleYearClass(2025)"
+                                        :class="scheduleStatusClass(scheduleStatus(schedule, 2025, schedule.explanationStart))"
                                         :style="{ gridColumn: `${schedule.explanationStart} / span 1`, gridRow: '1' }"
                                         :title="`2025年度：${scheduleStatusLabel(scheduleStatus(schedule, 2025, schedule.explanationStart))}`"
                                         >{{ scheduleStatusLabel(scheduleStatus(schedule, 2025, schedule.explanationStart)) }}</span
                                     >
                                     <span
-                                        v-if="schedule.nextYearExplanationStart"
+                                        v-if="scheduleYear === 2026 && schedule.nextYearExplanationStart"
                                         class="relative z-10 mx-1 flex min-h-7 items-center justify-center rounded-md px-1 text-center text-[11px] font-bold shadow-sm"
-                                        :class="scheduleYearClass(2026)"
+                                        :class="scheduleStatusClass(scheduleStatus(schedule, 2026, schedule.nextYearExplanationStart))"
                                         :style="{ gridColumn: `${schedule.nextYearExplanationStart} / span 1`, gridRow: '1' }"
                                         :title="`2026年度：${scheduleStatusLabel(scheduleStatus(schedule, 2026, schedule.nextYearExplanationStart))}`"
                                         >{{ scheduleStatusLabel(scheduleStatus(schedule, 2026, schedule.nextYearExplanationStart)) }}</span
@@ -2024,8 +2036,9 @@ const peakHour2h = computed(() => {
                         </div>
                     </div>
                     <div class="flex flex-wrap gap-x-4 gap-y-1 border-t border-violet-100 bg-white/60 px-5 py-2 text-xs text-slate-600">
-                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-violet-600" />2025年度</span>
-                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-amber-500" />2026年度</span>
+                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-emerald-500" />作成済</span>
+                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-amber-400" />作成中</span>
+                        <span><i class="mr-1 inline-block h-2 w-2 rounded-sm bg-slate-300" />未到来</span>
                     </div>
                 </section>
             </template>

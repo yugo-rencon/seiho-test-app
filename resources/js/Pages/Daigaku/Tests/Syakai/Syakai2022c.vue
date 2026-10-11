@@ -444,9 +444,10 @@ const isDraft = true;
                             content: '正しい',
                         }, //45
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '労災給付と公的年金との調整',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '増額 → 減額', //p121
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み

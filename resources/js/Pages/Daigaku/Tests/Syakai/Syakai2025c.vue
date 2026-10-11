@@ -203,7 +203,7 @@ const isDraft = true;
                 <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
-                    :subject="subject"j
+                    :subject="subject"
                     questionTitle="厚生年金保険の仕組み"
                     :relatedProblems="[]"
                     :contents="[
@@ -277,9 +277,10 @@ const isDraft = true;
                     questionTitle="介護保険制度"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '介護保険制度においては、給付に必要な費用の[[半分を保険料]]、[[残り半分を公費]]で賄うこととしている。', //p102
                         '正しい',
                     ]"
                 />

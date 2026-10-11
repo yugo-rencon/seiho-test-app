@@ -48,11 +48,11 @@
                         @click="answerTrueFalse(item, choice)"
                     >{{ choice }}</button>
                 </div>
-                <div v-if="selectedAnswers[item.questionNo]" class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-gray-200 pt-2.5 text-sm" role="status">
+                <div v-if="selectedAnswers[item.questionNo]" class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-gray-200 pt-3 text-base" role="status">
                     <p class="flex flex-wrap items-center gap-x-2 text-gray-800">
                         <span class="font-semibold" :class="isTrueFalseCorrect(item) ? 'text-emerald-700' : 'text-rose-700'">{{ isTrueFalseCorrect(item) ? '○' : '×' }}</span>
                         <span class="font-semibold">{{ isTrueFalseCorrect(item) ? '正解' : '不正解' }}</span>
-                        <template v-if="!isTrueFalseCorrect(item)"><span class="text-gray-300">｜</span><span class="text-xs text-gray-500">正解</span><span>{{ correctAnswerFor(item) }}</span></template>
+                        <template v-if="!isTrueFalseCorrect(item)"><span class="text-gray-300">｜</span><span class="text-sm text-gray-500">正解</span><span>{{ correctAnswerFor(item) }}</span></template>
                     </p>
                     <button type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetTrueFalse(item)">選び直す</button>
                 </div>

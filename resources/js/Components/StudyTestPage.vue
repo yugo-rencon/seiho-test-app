@@ -210,7 +210,8 @@ const startNewStudy = () => {
                         <button type="button" class="border-b-2 px-0.5 pb-1.5 text-sm transition" :class="displayMode === 'study' ? 'border-violet-600 font-semibold text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-800'" :aria-pressed="displayMode === 'study'" @click="displayMode = 'study'">学習モード</button>
                     </div>
                 </div>
-                <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mt-2.5 flex justify-end">
+                <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mt-2.5 flex items-center" :class="isComplete && resultDismissed ? 'justify-between' : 'justify-end'">
+                    <button v-if="isComplete && resultDismissed" type="button" class="inline-flex min-h-10 items-center text-sm font-medium text-gray-600 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果</button>
                     <details ref="questionMenu" class="relative z-20">
                         <summary class="flex cursor-pointer list-none items-center gap-1.5 py-1 text-sm text-gray-600 hover:text-gray-950 focus:outline-none focus-visible:underline">
                             <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
@@ -256,7 +257,6 @@ const startNewStudy = () => {
 
             <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-4 flex max-w-4xl items-center justify-center gap-6 pt-2 sm:gap-14">
                 <button type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-950 disabled:cursor-not-allowed disabled:opacity-30" :disabled="currentIndex === 0" @click="moveTo(currentIndex - 1)">← 前の問題</button>
-                <button v-if="currentAnswered && currentIndex === questionCount - 1" type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果を見る</button>
                 <button v-if="currentIndex < questionCount - 1" type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-950" @click="moveTo(currentIndex + 1)">次の問題へ →</button>
             </div>
 
@@ -278,15 +278,35 @@ const startNewStudy = () => {
 
                 <div class="mt-7">
                     <h3 class="text-sm font-semibold text-gray-900">配点別の結果</h3>
-                    <dl class="mt-3 border-y border-gray-200">
-                        <div class="grid grid-cols-[1fr_auto] bg-gray-50 px-3 py-2 text-xs text-gray-500" aria-hidden="true">
-                            <span>問題</span><span>得点</span>
+                    <div class="mt-3 border-y border-gray-200">
+                        <div class="grid grid-cols-[1fr_auto_auto] gap-4 bg-gray-50 px-3 py-2 text-xs text-gray-500" aria-hidden="true">
+                            <span>問題</span><span>得点</span><span class="w-4"></span>
                         </div>
-                        <div v-for="section in sectionScores" :key="section.label" class="flex items-center justify-between border-t border-gray-100 px-3 py-3 text-sm">
-                            <dt class="text-gray-700">{{ section.label }}</dt>
-                            <dd class="font-medium text-gray-900">{{ section.score }}<span class="ml-1 font-normal text-gray-400">/ {{ section.max }}点</span></dd>
-                        </div>
-                    </dl>
+                        <details v-for="section in sectionScores" :key="section.label" class="group border-t border-gray-100">
+                            <summary class="grid min-h-12 cursor-pointer list-none grid-cols-[1fr_auto_auto] items-center gap-4 px-3 py-3 text-sm hover:bg-gray-50">
+                                <span class="text-gray-700">{{ section.label }}</span>
+                                <span class="font-medium text-gray-900">{{ section.score }}<span class="ml-1 font-normal text-gray-400">/ {{ section.max }}点</span></span>
+                                <svg aria-hidden="true" class="h-4 w-4 text-gray-400 transition-transform duration-200 group-open:rotate-180 group-open:text-gray-700" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m5 7.5 5 5 5-5" />
+                                </svg>
+                            </summary>
+                            <div class="border-t border-gray-100 bg-gray-50 px-3 py-3">
+                                <p class="mb-2 text-xs text-gray-500">問題番号を選ぶと見直せます</p>
+                                <div class="grid grid-cols-5 gap-1.5 sm:grid-cols-10">
+                                    <button
+                                        v-for="questionNumber in questions.slice(section.start - 1, section.end)"
+                                        :key="questionNumber"
+                                        type="button"
+                                        class="min-h-9 border bg-white text-xs font-medium hover:border-gray-400"
+                                        :class="correctQuestions.has(questionNumber) ? 'border-[#bad8ce] text-[#286653]' : 'border-[#e4c9cc] text-[#9f3f49]'"
+                                        @click="moveTo(questionNumber - 1)"
+                                    >
+                                        {{ questionNumber }} <span aria-hidden="true">{{ correctQuestions.has(questionNumber) ? '○' : '×' }}</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
                 </div>
 
                 <div class="mt-5 flex justify-center">

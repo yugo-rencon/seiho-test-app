@@ -287,9 +287,10 @@ const isDraft = true;
                     questionTitle="介護保険制度の要介護（要支援）の認定"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '60日以内 → 30日以内', //p104
                         '正しい',
                     ]"
                 />

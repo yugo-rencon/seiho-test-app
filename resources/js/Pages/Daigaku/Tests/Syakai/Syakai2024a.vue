@@ -303,7 +303,8 @@ const isDraft = true;
                     questionTitle="介護保険制度の要介護（要支援）の認定"
                     :relatedProblems="[]"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-11 確認済み
+                        '必ず被保険者本人 → 被保険者本人や家族', //p104
                         '正しい',
                         '正しい',
                         '正しい',

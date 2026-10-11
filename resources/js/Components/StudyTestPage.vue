@@ -214,10 +214,16 @@ const startNewStudy = () => {
                             問題一覧 <span aria-hidden="true" class="text-xs">▼</span>
                         </summary>
                         <div class="absolute right-0 mt-2 w-72 rounded-sm border border-gray-300 bg-white p-3 shadow-md sm:w-80">
-                            <div class="mb-2 flex items-center justify-between"><p class="text-sm font-semibold text-gray-900">問題を選択</p><p class="text-xs text-gray-500">● 回答済み</p></div>
+                            <div class="mb-2 flex items-center justify-between gap-3">
+                                <p class="text-sm font-semibold text-gray-900">問題を選択</p>
+                                <p class="flex items-center gap-2.5 text-xs text-gray-500">
+                                    <span><span class="text-emerald-500">●</span> 正解</span>
+                                    <span><span class="text-rose-500">●</span> 不正解</span>
+                                </p>
+                            </div>
                             <div class="grid max-h-72 grid-cols-5 gap-1.5 overflow-y-auto pr-1">
-                                <button v-for="(questionNumber, index) in questions" :key="questionNumber" type="button" class="relative min-h-9 rounded-sm border text-sm font-semibold transition" :class="currentIndex === index ? 'border-violet-600 bg-violet-600 text-white' : answeredQuestions.has(questionNumber) ? 'border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100' : 'border-gray-200 bg-white text-gray-700 hover:border-violet-300 hover:bg-violet-50'" @click="moveTo(index)">
-                                    {{ questionNumber }}<span v-if="answeredQuestions.has(questionNumber)" class="absolute right-1 top-1 h-1.5 w-1.5 rounded-full" :class="currentIndex === index ? 'bg-white' : 'bg-emerald-500'"></span>
+                                <button v-for="(questionNumber, index) in questions" :key="questionNumber" type="button" class="relative min-h-9 rounded-sm border text-sm font-semibold transition" :class="[currentIndex === index ? 'ring-2 ring-violet-500 ring-offset-1' : '', correctQuestions.has(questionNumber) ? 'border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100' : answeredQuestions.has(questionNumber) ? 'border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100' : 'border-gray-200 bg-white text-gray-700 hover:border-violet-300 hover:bg-violet-50']" @click="moveTo(index)">
+                                    {{ questionNumber }}<span v-if="answeredQuestions.has(questionNumber)" class="absolute right-1 top-1 h-1.5 w-1.5 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-emerald-500' : 'bg-rose-500'"></span>
                                 </button>
                             </div>
                         </div>
@@ -284,9 +290,11 @@ const startNewStudy = () => {
                     </dl>
                 </div>
 
-                <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
-                    <p v-if="!isComplete" class="text-xs text-gray-500">未回答は0点として計算しています</p><span v-else></span>
-                    <button type="button" class="inline-flex min-h-11 items-center px-2 text-sm font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showResult = false; resultDismissed = true">← {{ isComplete ? '問題を見直す' : '問題に戻る' }}</button>
+                <div class="mt-5">
+                    <p v-if="!isComplete" class="text-center text-xs text-gray-500">未回答は0点として計算しています</p>
+                    <div class="mt-2 flex justify-center">
+                        <button type="button" class="inline-flex min-h-11 items-center px-3 text-sm font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showResult = false; resultDismissed = true">{{ isComplete ? '問題を見直す' : '問題に戻る' }}</button>
+                    </div>
                 </div>
             </section>
 

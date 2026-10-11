@@ -23,6 +23,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則-①"
+                    :relatedProblems="['2023a1', '2023b1', '2023c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '客観性',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則-②"
+                    :relatedProblems="['2023a6', '2023b6', '2023c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '真実性',
@@ -65,6 +67,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業費管理-①"
+                    :relatedProblems="['2023c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '付加保険料',
@@ -86,6 +89,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業費管理-②"
+                    :relatedProblems="['2023c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '死亡率',
@@ -107,6 +111,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="複式簿記の原理"
+                    :relatedProblems="['2023a26', '2023b21', '2023c21']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '内部関係者 → 株主、債権者などの外部利害関係者', //p9
@@ -119,6 +124,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="財務諸表"
+                    :relatedProblems="['2023c22']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '貸借対照表 → 損益計算書', //p18-19
@@ -131,6 +137,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任準備金"
+                    :relatedProblems="['2023a23', '2023b23', '2023c23']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -143,6 +150,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="連結財務諸表の作成手続"
+                    :relatedProblems="['2023c24']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '従来連結子会社及び子法人等の範囲は議決権の所有割合（50％超で子会社及び子法人等）で形式的に判定していたが、現在は会社が他の会社の意思決定機関を支配しているか否かによって実質的に判定する。', //p81
@@ -155,6 +163,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="減損損失"
+                    :relatedProblems="['2023c25']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -167,6 +176,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="決算"
+                    :relatedProblems="['2023a22', '2023b43', '2023c26']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -179,6 +189,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="税務会計"
+                    :relatedProblems="['2023a27', '2023b27', '2023c27']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '会計情報の開示という機能はその中に[[含まれていない]]という点で、会社法・金融商品取引法に基づく会計とは[[異なっている]]。', //p32
@@ -191,6 +202,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="一般勘定・特別勘定"
+                    :relatedProblems="['2023a28', '2023b28', '2023c28']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="費用に属する科目"
+                    :relatedProblems="['2023c29', '2023c37']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '解約返戻金に含まれる → その他返戻金に含まれる（契約の無効・取消し・解除による返戻金や前納保険料等の返金）', //p151
@@ -215,6 +228,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="年度途中の資金移動の区分経理への反映"
+                    :relatedProblems="['2023c30']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -230,111 +244,131 @@ const subject = "2023年度 フォームC";
                         {
                             // rev: 2026-09-01 確認済み
                             questionTitle: '会計公準',
+                            relatedProblems: ['2023a21', '2023b26', '2023c31'],
                             content: '株主実体の公準 → 企業実体の公準', //p6-7
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '帳簿の種類',
+                            relatedProblems: ['2023a42', '2023c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
+                            relatedProblems: ['2023a33', '2023b33', '2023c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '連結決算',
+                            relatedProblems: ['2023c34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '外貨預金の換算',
+                            relatedProblems: ['2023a35', '2023b35', '2023c35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '貸倒引当金',
+                            relatedProblems: ['2023b46', '2023c36'],
                             content: '貸借対照表及び損益計算書には自己査定に基づく貸倒引当金の額を計上するため、法人税法上の貸倒引当金として認められる額を超える額は、[[損金に算入されない]]。', //p125
                         }, //36
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '費用に属する科目',
+                            relatedProblems: ['2023c29', '2023c37'],
                             content: 'その他返戻金 → 給付金', //p150
                         }, //37
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '計算書類の公告',
+                            relatedProblems: ['2023c38'],
                             content: '会社法施行規則 → 保険業法施行規則', //p181
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理',
+                            relatedProblems: ['2023a39', '2023b39', '2023c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '会計監査人による監査',
+                            relatedProblems: ['2023c40'],
                             content: '会計監査人は、[[株主総会（相互会社にあっては総代会）]]により選任され、その職務は会社の行う一切の会計行為が、会社法、保険業法等の法令に準拠して適正に行われているか否かについて監査を行い、その結果を[[取締役および監査役]]に報告することにある。', //p208
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '企業会計の領域',
+                            relatedProblems: ['2023a41', '2023b41', '2023c41'],
                             content: '財務会計',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '開示書類',
+                            relatedProblems: ['2023c42'],
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '保険会社向けの総合的な監督指針',
+                            relatedProblems: ['2023c43'],
                             content: '事務ガイドライン',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '有価証券の評価方法',
+                            relatedProblems: ['2023c44'],
                             content: '売買目的有価証券',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '無形固定資産',
+                            relatedProblems: ['2023a45', '2023b45', '2023c45'],
                             content: '定額法',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '生命保険会計における負債勘定',
+                            relatedProblems: ['2023c46'],
                             content: '借受金',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '勘定体系',
+                            relatedProblems: ['2023c47'],
                             content: '',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '損益の認識',
+                            relatedProblems: ['2023c48'],
                             content: '実現主義',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '利息及び配当金等収入',
+                            relatedProblems: ['2023c49'],
                             content: '不動産賃貸料',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '金融検査',
+                            relatedProblems: ['2023a50', '2023b50', '2023c50'],
                             content: '自己査定',
                         }, //50
                     ]"

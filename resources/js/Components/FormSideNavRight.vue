@@ -7,7 +7,10 @@ type Group = { heading: string; links: LinkItem[] };
 
 const page = usePage();
 const path = computed(() => {
-    const raw = String(page.url ?? "");
+    // サブディレクトリ配下でも、実際のブラウザURLを基準に科目を判定する。
+    // page.url も読み込んでおくことで Inertia 遷移時に再評価される。
+    const pageUrl = String(page.url ?? "");
+    const raw = typeof window !== "undefined" ? window.location.pathname : pageUrl;
     return raw.split("?")[0].split("#")[0].replace(/\/+$/, "") || "/";
 });
 const hideOnFooter = ref(false);
@@ -20,7 +23,36 @@ let resizeHandler: (() => void) | null = null;
 const block = computed<{ title: string; groups: Group[] } | null>(() => {
     const p = path.value;
 
-    const seiho = p.match(/^\/([a-z]+)(\d{4})([a-c])$/i);
+    // 大学課程は末尾の "kigyo2025a" 部分だけでも講座用パターンに一致するため、
+    // 必ず先に判定する。
+    const daigaku = p.match(/(?:^|\/)daigaku\/([a-z-]+)(\d{4})([a-c])$/i);
+    if (daigaku) {
+        const subject = daigaku[1].toLowerCase();
+        const current = `${subject}${daigaku[2]}${daigaku[3].toLowerCase()}`;
+        const years = ["2025", "2024", "2023", "2022", "2021"];
+        const groups = years.map((year) => ({
+            heading: year,
+            links: ["a", "b", "c"].map((form) => {
+                const key = `${subject}${year}${form}`;
+                return {
+                    label: `フォーム${form.toUpperCase()}`,
+                    href: `/daigaku/${key}`,
+                    active: key === current,
+                };
+            }),
+        }));
+        const labelMap: Record<string, string> = {
+            "shikumi-kojin": "生命保険商品のしくみ",
+            fp: "FP",
+            zei: "生命保険と税・相続",
+            sisan: "資産運用知識",
+            kigyo: "企業向け保険商品",
+            syakai: "社会保障制度",
+        };
+        return { title: labelMap[subject] ?? subject, groups };
+    }
+
+    const seiho = p.match(/(?:^|\/)\/?([a-z]+)(\d{4})([a-c])$/i);
     if (seiho) {
         const subject = seiho[1].toLowerCase();
         const current = `${subject}${seiho[2]}${seiho[3].toLowerCase()}`;
@@ -49,33 +81,6 @@ const block = computed<{ title: string; groups: Group[] } | null>(() => {
         return { title: labelMap[subject] ?? subject, groups };
     }
 
-    const daigaku = p.match(/^\/daigaku\/([a-z-]+)(\d{4})([a-c])$/i);
-    if (daigaku) {
-        const subject = daigaku[1].toLowerCase();
-        const current = `${subject}${daigaku[2]}${daigaku[3].toLowerCase()}`;
-        const years = ["2025", "2024", "2023", "2022", "2021"];
-        const groups = years.map((year) => ({
-            heading: year,
-            links: ["a", "b", "c"].map((form) => {
-                const key = `${subject}${year}${form}`;
-                return {
-                    label: `フォーム${form.toUpperCase()}`,
-                    href: `/daigaku/${key}`,
-                    active: key === current,
-                };
-            }),
-        }));
-        const labelMap: Record<string, string> = {
-            "shikumi-kojin": "生命保険商品のしくみ",
-            fp: "FP",
-            zei: "生命保険と税・相続",
-            sisan: "資産運用知識",
-            kigyo: "企業向け保険商品",
-            syakai: "社会保障制度",
-        };
-        return { title: labelMap[subject] ?? subject, groups };
-    }
-
     return null;
 });
 
@@ -90,10 +95,10 @@ const compactLabel = (label: string): string => {
 
 const activeButtonClass = computed(() => {
     const p = path.value;
-    if (p.startsWith("/daigaku")) return "bg-blue-600 text-white";
-    if (p.startsWith("/ippan")) return "bg-fuchsia-600 text-white";
-    if (p.startsWith("/senmon")) return "bg-emerald-600 text-white";
-    if (p.startsWith("/ouyou")) return "bg-amber-500 text-white";
+    if (/(?:^|\/)daigaku(?:\/|$)/.test(p)) return "bg-blue-600 text-white";
+    if (/(?:^|\/)ippan(?:\/|$)/.test(p)) return "bg-fuchsia-600 text-white";
+    if (/(?:^|\/)senmon(?:\/|$)/.test(p)) return "bg-emerald-600 text-white";
+    if (/(?:^|\/)ouyou(?:\/|$)/.test(p)) return "bg-amber-500 text-white";
     return "bg-violet-600 text-white";
 });
 

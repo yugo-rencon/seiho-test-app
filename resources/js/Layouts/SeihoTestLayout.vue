@@ -36,10 +36,12 @@ const resolvedSiteScope = computed(() => {
     }
 
     const url = String(page.url ?? "");
-    if (url.startsWith("/daigaku")) return "daigaku";
-    if (url.startsWith("/senmon")) return "senmon";
-    if (url.startsWith("/ouyou")) return "ouyou";
-    if (url.startsWith("/ippan")) return "ippan";
+    // MAMP などのサブディレクトリ配下では URL にアプリのベースパスが付くため、
+    // 先頭一致ではなくパス要素として判定する。
+    if (/(?:^|\/)daigaku(?:\/|$)/.test(url)) return "daigaku";
+    if (/(?:^|\/)senmon(?:\/|$)/.test(url)) return "senmon";
+    if (/(?:^|\/)ouyou(?:\/|$)/.test(url)) return "ouyou";
+    if (/(?:^|\/)ippan(?:\/|$)/.test(url)) return "ippan";
     return "seiho";
 });
 const isDaigakuPage = computed(() => resolvedSiteScope.value === "daigaku");

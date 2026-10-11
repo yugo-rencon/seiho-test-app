@@ -30,10 +30,10 @@ const props = defineProps({
 });
 
 const page = usePage();
-const isDaigaku = computed(() => String(page.url ?? "").startsWith("/daigaku"));
-const isSenmon = computed(() => String(page.url ?? "").startsWith("/senmon"));
-const isOuyou = computed(() => String(page.url ?? "").startsWith("/ouyou"));
-const isIppan = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const isDaigaku = computed(() => /(?:^|\/)daigaku(?:\/|$)/.test(String(page.url ?? "")));
+const isSenmon = computed(() => /(?:^|\/)senmon(?:\/|$)/.test(String(page.url ?? "")));
+const isOuyou = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "")));
+const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
 
 const buttonClass = computed(() =>
     isDaigaku.value

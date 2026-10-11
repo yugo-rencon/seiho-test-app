@@ -23,7 +23,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="社会保障制度"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a1', '2022b1', '2022c1']"
                     :contents="[
                         // rev: 2026-10-08 確認済み
                         '正しい',
@@ -37,7 +37,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="国民年金の被保険者"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a13', '2022b2']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '第１号被保険者 → 第２号被保険者', //p14
@@ -51,7 +51,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="厚生年金保険の標準報酬（月）額と保険料"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b3']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '標準報酬月額は、毎年[[４・５・６月]]の間に実際に支給された給与をもとに決定され、[[９月から翌年８月まで]]の被保険者の保険料計算の基礎として使用する。', //p21
@@ -65,7 +65,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="厚生年金保険の在職老齢年金"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b4']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '厚生年金保険に加入しない嘱託やパートタイマーのような働き方をする場合は[[在職老齢年金の制限による年金額調整の対象とはならない]]。', //p40
@@ -79,7 +79,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="国民年金の遺族基礎年金"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a5', '2022b5', '2022c5']"
                     :contents="[
                         // rev: 2026-10-10 確認済み
                         '正しい',
@@ -93,7 +93,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金制度の障害給付"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a17', '2022b6', '2022c17']"
                     :contents="[
                         // rev: 2026-10-09 確認済み
                         'ケガや[[病気]]で所定の障害状態に該当した場合は、公的年金制度から障害給付を受けることができる。', //p45
@@ -107,7 +107,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保険制度の概要"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b7']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '正しい',
@@ -121,7 +121,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="介護保険のサービスの利用・ケアマネジメント"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a8', '2022b8', '2022c8']"
                     :contents="[
                         // rev: 2026-10-10 確認済み
                         '３割から５割 → １割から３割', //p103
@@ -135,7 +135,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="労災保険（労働者災害補償保険）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a9', '2022b9', '2022c9']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '正しい',
@@ -149,7 +149,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="雇用保険制度"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a21', '2022b10', '2022c21']"
                     :contents="[
                         // rev: 2026-10-10 確認済み
                         '雇用保険の保険者は国（政府）であり、[[労働者を雇用するすべての事業所が適用事業所となる]]。', //p122
@@ -163,7 +163,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="健康保険・厚生年金保険の被保険者資格喪失日"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b11']"
                     :contents="[
                         // rev: 2026-10-09 確認済み
                         '適用事業所の業務に使用されなくなった日の[[翌日]]', //p138
@@ -177,7 +177,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="健康保険の任意継続被保険者と一般被保険者との違い・特徴（協会けんぽの場合）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b12']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '５年間 → ２年間', //p140
@@ -191,7 +191,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="社会保険制度"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b13', '2022c13']"
                     :contents="[
                         // rev: 2026-10-10 確認済み
                         '正しい',
@@ -205,7 +205,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="国民年金（基礎年金）の付加保険料"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a14', '2022b14', '2022c14']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '正しい',
@@ -219,7 +219,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="育児休業期間中の厚生年金保険料"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b15']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '正しい',
@@ -233,7 +233,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="障害給付の種類と年金（給付）額"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b16']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '障害基礎年金額は[[障害の程度に応じて定額である]]。', //p48
@@ -247,7 +247,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金等の課税関係"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b17']"
                     :contents="[
                         // rev: 2026-10-09 確認済み
                         '正しい',
@@ -261,7 +261,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="高額療養費"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a7', '2022b18']"
                     :contents="[
                         // rev: 2026-10-10 確認済み
                         '直近12カ月間に[[３カ月（３回）以上]]この給付の対象となった場合、[[４カ月目（４回目）]]から「多数回該当」とされる。', //p94
@@ -275,7 +275,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="後期高齢者医療制度（長寿医療制度）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a19', '2022b19', '2022c19']"
                     :contents="[
                         // rev: 2026-10-09 確認済み
                         '正しい',
@@ -289,7 +289,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="介護保険制度の要介護（要支援）の認定"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b20']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '正しい',
@@ -303,7 +303,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="年金手帳と基礎年金番号"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a24', '2022b21']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '正しい',
@@ -317,7 +317,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="介護保険の適用除外者"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a22', '2022b22', '2022c22']"
                     :contents="[
                         // rev: 2026-10-10 確認済み
                         '正しい',
@@ -331,7 +331,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="雇用保険や在職老齢年金の併給調整等"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a23', '2022b23', '2022c23']"
                     :contents="[
                         // rev: 2026-10-11 確認済み
                         '正しい',
@@ -345,7 +345,7 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="離婚時の厚生年金保険の分割制度"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b24']"
                     :contents="[
                         // rev: 2026-10-10 確認済み
                         '正しい',
@@ -360,7 +360,7 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="厚生年金保険の適用事業所および加入者（被保険者）"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b25']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         'すべて',
@@ -377,7 +377,7 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="健康保険"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022a30', '2022b30', '2022c30']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '通勤災害',
@@ -394,7 +394,7 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="公的年金の支給日と源泉徴収"
-                    :relatedProblems="[]"
+                    :relatedProblems="['2022b35']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '翌月',
@@ -413,61 +413,61 @@ const isDraft = true;
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '労働保険料',
-                            relatedProblems: [],
+                            relatedProblems: ['2022b40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '遺族厚生年金の年金額',
-                            relatedProblems: [],
+                            relatedProblems: ['2022b41'],
                             content: '正しい',
                         }, //41
                         {
                             // rev: 2026-10-11 確認済み
                             questionTitle: '混合診療',
-                            relatedProblems: [],
+                            relatedProblems: ['2022b42'],
                             content: '併用した場合、通常なら３割負担で済む保険適用部分も[[全額自己負担]]となってしまう。', //p82
                         }, //42
                         {
                             // rev: 2026-10-11 確認済み
                             questionTitle: '遺族厚生年金の受給',
-                            relatedProblems: [],
+                            relatedProblems: ['2022a43', '2022b43', '2022c43'],
                             content: '配偶者が再婚した場合（事実婚も含む）、遺族厚生年金を[[受給できなくなる]]。', //p60
                         }, //43
                         {
                             // rev: 2026-10-11 確認済み
                             questionTitle: '国民健康保険料（税）の負担',
-                            relatedProblems: [],
+                            relatedProblems: ['2022b44'],
                             content: '国民健康保険料（税）は、[[被保険者の属する世帯の世帯主が負担することとなっている]]。', //p86
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '国民年金の被保険者種別変更',
-                            relatedProblems: [],
+                            relatedProblems: ['2022b45', '2022c45'],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-10-11 確認済み
                             questionTitle: '労災給付と公的年金との調整',
-                            relatedProblems: [],
+                            relatedProblems: ['2022a46', '2022b46', '2022c46'],
                             content: '増額 → 減額', //p121
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '健康保険組合の特例退職被保険者',
-                            relatedProblems: [],
+                            relatedProblems: ['2022a47', '2022b47', '2022c47'],
                             content: '正しい',
                         }, //47
                         {
                             // rev: 2026-10-10 確認済み
                             questionTitle: '受給年金の確認（ねんきん定期便）',
-                            relatedProblems: [],
+                            relatedProblems: ['2022a48', '2022b48', '2022c48'],
                             content: '55歳 → 50歳', //p148
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: 'マイナンバー制度',
-                            relatedProblems: [],
+                            relatedProblems: ['2022a12', '2022b49', '2022c24'],
                             content: '正しい',
                         }, //49
                     ]"

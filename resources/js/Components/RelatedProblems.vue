@@ -78,10 +78,13 @@ const props = defineProps({
 const page = usePage();
 const isExpanded = ref(false);
 const isMobile = ref(false);
-const isDaigakuPage = computed(() => String(page.url ?? "").startsWith("/daigaku"));
-const isSenmonPage = computed(() => String(page.url ?? "").startsWith("/senmon"));
-const isOuyouPage = computed(() => String(page.url ?? "").startsWith("/ouyou"));
-const isIppanPage = computed(() => String(page.url ?? "").startsWith("/ippan"));
+const isDaigakuPage = computed(() => /(?:^|\/)daigaku(?:\/|$)/.test(String(page.url ?? "")));
+const isSenmonPage = computed(() => /(?:^|\/)senmon(?:\/|$)/.test(String(page.url ?? "")));
+const isOuyouPage = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "")));
+const isIppanPage = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
+const isSeihoPage = computed(() =>
+  !isDaigakuPage.value && !isSenmonPage.value && !isOuyouPage.value && !isIppanPage.value,
+);
 const displayTitle = computed(() => {
   const givenTitle = String(props.title ?? "").trim();
   if (givenTitle.includes("年度")) return givenTitle;
@@ -131,6 +134,21 @@ const currentPath = computed(() => {
   if (!raw.startsWith("/")) raw = `/${raw}`;
 
   return raw.length > 1 ? raw.replace(/\/+$/, "") : raw;
+});
+
+const daigakuSubjectPrefix = computed(() => {
+  // 通常はURLから科目を特定する。アプリをサブディレクトリ配下で運用する場合も
+  // 想定し、先頭固定にはしない。
+  const fromPath = currentPath.value.match(/\/daigaku\/([a-z-]+)\d{4}[abc]\/?$/i);
+  if (fromPath?.[1]) return fromPath[1];
+
+  // 関連問題IDは年度・フォーム・設問番号だけで科目を含まない。企業向け保険の
+  // 場合はURLの補完に失敗しても、生保講座の同名IDへ遷移しないように明示する。
+  if (String(props.contextTitle ?? "").trim() === "企業向け保険商品とコンサルティング") {
+    return "kigyo";
+  }
+
+  return "";
 });
 
 const currentPageCode = computed(() => {
@@ -193,10 +211,8 @@ const buildHrefFromCode = (code: string) => {
     ? "#paywall"
     : `#q${parsed.question}`;
 
-  const daigakuMatched = currentPath.value.match(/^\/daigaku\/([a-z-]+)\d{4}[abc]\/?$/i);
-  if (daigakuMatched) {
-    const subjectPrefix = daigakuMatched[1];
-    return `/daigaku/${subjectPrefix}${parsed.year}${parsed.form.toLowerCase()}${targetHash}`;
+  if (daigakuSubjectPrefix.value) {
+    return `/daigaku/${daigakuSubjectPrefix.value}${parsed.year}${parsed.form.toLowerCase()}${targetHash}`;
   }
 
   const seihoMatched = currentPath.value.match(/^\/([a-z]+)\d{4}[abc]\/?$/i);
@@ -385,7 +401,11 @@ const displayItems = computed(() => {
   return normalizedItems.value;
 });
 
-const shouldRender = computed(() => (props.items ?? []).length > 0);
+// 大学課程・生保講座では関連問題データを保持するが、画面上には表示しない。
+// 将来再表示したい場合も、各問題ファイルの設定を復元する必要はない。
+const shouldRender = computed(() =>
+  !isDaigakuPage.value && !isSeihoPage.value && (props.items ?? []).length > 0,
+);
 
 const hiddenCount = computed(() =>
   Math.max(0, displayItems.value.length - maxVisibleCount.value),

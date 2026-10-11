@@ -444,9 +444,10 @@ const isDraft = true;
                             content: '昇給等により、給与の３カ月平均額に、[[２等級以上]]の変動が生じた場合は随時改定が行われる。', //p21
                         }, //42
                         {
+                            // rev: 2026-10-11 確認済み
                             questionTitle: '遺族厚生年金の年金額',
                             relatedProblems: [],
-                            content: '', //p
+                            content: '長期・短期の両方に該当するときは、[[有利な方]]を選択することができる。', //p61
                         }, //43
                         {
                             questionTitle: '障害厚生年金',

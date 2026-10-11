@@ -66,10 +66,11 @@ const isDraft = true;
                     questionTitle="老齢厚生年金の加給年金"
                     :relatedProblems="[]"
                     :contents="[
+                        // rev: 2026-10-11 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        '10年以上 → 20年以上', //p35
+                        '特別加算 → 振替加算', //p35
+                        '年収700万円以上 → 年収850万円以上', //p36
                     ]"
                 />
                 <QuestionTemp1

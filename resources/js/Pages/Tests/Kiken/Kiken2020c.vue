@@ -24,7 +24,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="報状扱契約における選択手段-①"
-                    :relatedProblems="['2020c1']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '医師による診査',
@@ -46,7 +45,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="報状扱契約における選択手段-②"
-                    :relatedProblems="['2020c6']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '定期健康診断',
@@ -68,7 +66,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院・手術保障における「選択」-①"
-                    :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '心理',
@@ -90,7 +87,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院・手術保障における「選択」-②"
-                    :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '生活習慣病',
@@ -112,7 +108,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率と死亡指数"
-                    :relatedProblems="['2020a21', '2020b21', '2020c21']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '生命表には国民全体を対象とした[[国民生命表]]と，それよりは小さな特定集団（たとえば生命保険の被保険者集団）を対象とする[[経験生命表]]とがある。', //p5
@@ -125,7 +120,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知"
-                    :relatedProblems="['2020b27', '2020c22']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -138,7 +132,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="職業危険"
-                    :relatedProblems="['2020c23']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」さらには[[「アルコール中毒や不摂生生活のような職業に随伴する危険」]]がある。', //p69
@@ -151,7 +144,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択"
-                    :relatedProblems="['2020a24', '2020b24', '2020c24']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '一般的には個人の申込みを兼ねている[[団体定期保険の場合は各被保険者の告知を求める]]が、[[総合福祉団体定期保険の場合には、各被保険者の告知に代えて、健康および正常勤務の一括告知にとどめることが多い]]。', //p171
@@ -164,7 +156,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="プライバシーと個人情報"
-                    :relatedProblems="['2020c25']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '電子計算機等から記録媒体へダウンロードされたもの及び[[紙面に出力されたもの（又はそのコピー）も含まれる]]。', //p127
@@ -177,7 +168,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険保険料と危険保険金"
-                    :relatedProblems="['2020a26', '2020b26', '2020c26']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -190,7 +180,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="医学的選択上の課題"
-                    :relatedProblems="['2020b22', '2020c27']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         'わが国の死因の４位を占める脳血管疾患について考えてみると、脳内出血の[[低下傾向]]が著しい。これは有効な血圧降下剤が出現したことも一因であるが、それ以外に[[生活環境、特に食生活における塩分過剰摂取の是正や西洋化が大きな要因であるとみられている]]。', //p43-44
@@ -203,7 +192,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="逆選択の傾向と態様"
-                    :relatedProblems="['2020c28']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '最近の保険金・災害疾病入院給付金支払事故において、道徳的危険（モラルリスク）は[[潜在的傾向から、顕在化への傾向にある]]。', //p76
@@ -216,7 +204,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金確認・給付金確認の意義と目的"
-                    :relatedProblems="['2020c29']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '正しい',
@@ -229,7 +216,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態"
-                    :relatedProblems="['2020c30']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -245,130 +231,110 @@ const subject = "2020年度 フォームC";
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '危険選択',
-                            relatedProblems: ['2020c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '高血圧',
-                            relatedProblems: ['2020c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '体格',
-                            relatedProblems: ['2020a33', '2020b33', '2020c33'],
                             content: 'BMIは[[体重（kg） ÷ 〔身長（m）〕<sup>2</sup>]]で表される指数で標準値を22前後としている。', //p63
                         }, //33
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '条件体契約',
-                            relatedProblems: ['2020c34'],
                             content: '大部分の保険会社は条件体契約に対して、[[年齢別]]に金額上の区分を設けて制限を加えている。', //p72
                         }, //34
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '数字査定法',
-                            relatedProblems: ['2020c35'],
                             content: '50%の超過死亡 → 50%の改善', //p112
                         }, //35
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認制度の運用',
-                            relatedProblems: ['2020c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '契約内容の相互照会',
-                            relatedProblems: ['2020a37', '2020b37', '2020c37'],
                             content: '生命保険協会は、[[全国共済農業協同組合連合会]]との間において、「契約内容登録制度の登録内容」と「[[全国共済農業協同組合連合会（JA 共済連）の契約内容]]」を相互に照会する「契約内容照会制度」を実施している。', //p140
                         }, //37
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '入院保障における料率',
-                            relatedProblems: ['2020c38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険金額と限度額',
-                            relatedProblems: ['2020c39'],
                             content: '超過限度額 → 保有限度額', //p181-182
                         }, //39
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '金額別死亡率',
-                            relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者の危険',
-                            relatedProblems: ['2020a41', '2020b41', '2020c41'],
                             label: 'イ',
                             content: '実体的危険',
                         }, //41
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '解除権の消滅',
-                            relatedProblems: ['2020c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者集団の具備すべき条件',
-                            relatedProblems: ['2020c43'],
                             label: 'イ',
                             content: '倫理',
                         }, //43
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '習慣による選択',
-                            relatedProblems: ['2020c44'],
                             label: 'ウ',
                             content: '死亡率',
                         }, //44
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: 'エイズ',
-                            relatedProblems: ['2020a45', '2020b45', '2020c45'],
                             label: 'ウ',
                             content: 'リンパ球',
                         }, //45
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約の制限',
-                            relatedProblems: ['2020c46'],
                             label: 'エ',
                             content: '加入保険金額',
                         }, //46
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択',
-                            relatedProblems: ['2020c47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
-                            relatedProblems: ['2020a36', '2020c48'],
                             label: 'ア',
                             content: '恒常性危険',
                         }, //48
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '復活',
-                            relatedProblems: ['2020a49', '2020b49', '2020c49'],
                             label: 'ウ',
                             content: '長い',
                         }, //49
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
-                            relatedProblems: ['2020c50'],
                             label: 'エ',
                             content: '不実の告知',
                         }, //50

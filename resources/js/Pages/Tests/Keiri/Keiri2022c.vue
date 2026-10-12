@@ -30,7 +30,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '0.96114',
                             questionTitle: '生存率',
-                            relatedProblems: ['2022a1', '2022b1', '2022c1'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -67,7 +66,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '98,233',
                             questionTitle: '生存数',
-                            relatedProblems: ['2022a2', '2022b2', '2022c2'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -108,7 +106,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '1.26',
                             questionTitle: '平均余命',
-                            relatedProblems: ['2022a3', '2022b3', '2022c3'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -173,7 +170,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '1,194,044',
                             questionTitle: '保険金総額の現価',
-                            relatedProblems: ['2022a4', '2022b4', '2022c4'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -226,7 +222,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '12,610',
                             questionTitle: '純保険料',
-                            relatedProblems: ['2022a5', '2022b5', '2022c5'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -277,7 +272,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '24,120',
                             questionTitle: '複利計算',
-                            relatedProblems: ['2022a6', '2022b6', '2022c6'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -330,7 +324,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '2,123,292',
                             questionTitle: '複利計算（半年複利）',
-                            relatedProblems: ['2022a7', '2022b7', '2022c7'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -371,7 +364,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '1.51',
                             questionTitle: '実利率',
-                            relatedProblems: ['2022a8', '2022b8', '2022c8'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -424,7 +416,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '1.33',
                             questionTitle: '年平均利回り',
-                            relatedProblems: ['2022a9', '2022b9', '2022c9'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -477,7 +468,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '1,902,931',
                             questionTitle: '現在必要資金の計算',
-                            relatedProblems: ['2022a10', '2022b10', '2022c10'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -525,7 +515,6 @@ const subject = "2022年度 フォームC";
                 <QuestionTemp3
                     :questionNumber="3"
                     questionTitle="純保険料式保険料積立金"
-                    :relatedProblems="['2022b27', '2022c11']"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -547,7 +536,6 @@ const subject = "2022年度 フォームC";
                 <QuestionTemp3
                     :questionNumber="4"
                     questionTitle="チルメル式保険料積立金"
-                    :relatedProblems="['2022a43', '2022c16']"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -576,7 +564,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '3,002,390千円',
                             questionTitle: '死亡保険金の現価',
-                            relatedProblems: ['2022a21', '2022b21', '2022c21'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -629,7 +616,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '416,881,974千円',
                             questionTitle: '満期保険金の現価',
-                            relatedProblems: ['2022a22', '2022b22', '2022c22'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -670,7 +656,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '11,030,850千円',
                             questionTitle: '予定事業費の現価',
-                            relatedProblems: ['2022a23', '2022b23', '2022c23'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -723,7 +708,6 @@ const subject = "2022年度 フォームC";
                             // rev: 2026-07-11 確認済み
                             answer: '898,820円',
                             questionTitle: '養老保険の年払営業保険料',
-                            relatedProblems: ['2022a24', '2022b24', '2022c24'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -804,7 +788,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当金の分配・支払方法"
-                    :relatedProblems="['2022a25', '2022b25', '2022c25']"
                     :contents="[
                         // rev: 2026-08-05 確認済み
                         '年払保険料 → 一時払保険料', //p135
@@ -817,7 +800,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="計算基礎の変化と純保険料の変化"
-                    :relatedProblems="['2022a34', '2022c26']"
                     :contents="[
                         // rev: 2026-07-25 確認済み
                         '予定死亡率を低く、予定利率を高くすると、定期保険と養老保険の純保険料は[[低くなる]]。', //p53
@@ -830,7 +812,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当の割当対象契約"
-                    :relatedProblems="['2022c27']"
                     :contents="[
                         // rev: 2026-08-08 確認済み
                         '半年 → 1年', //p133
@@ -843,7 +824,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約変更"
-                    :relatedProblems="['2022a28', '2022b28', '2022c28']"
                     :contents="[
                         // rev: 2026-07-19 確認済み
                         '正しい',
@@ -856,7 +836,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当の意義と割当"
-                    :relatedProblems="['2022a29', '2022b29', '2022c29']"
                     :contents="[
                         // rev: 2026-07-16 確認済み
                         '正しい',
@@ -869,7 +848,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体定期保険の数理"
-                    :relatedProblems="['2022c30']"
                     :contents="[
                         // rev: 2026-07-25 確認済み
                         '正しい',
@@ -884,130 +862,110 @@ const subject = "2022年度 フォームC";
                     :items="[
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022a41', '2022b42', '2022c31'],
                             questionTitle: '資産の平均利回り',
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022a32', '2022b32', '2022c32'],
                             questionTitle: '生命保険契約と年齢',
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022a33', '2022b33', '2022c33'],
                             questionTitle: '予定利率',
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-07-16 確認済み
-                            relatedProblems: ['2022c34'],
                             questionTitle: '保険料の計算原理',
                             content: '保険料が自然保険料方式で計算されている場合には、毎保険年度末に将来の保険金支払いに備えて[[責任準備金を積み立てる必要はない]]。', //p68
                         }, //34
                         {
                             // rev: 2026-07-16 確認済み
-                            relatedProblems: ['2022c35'],
                             questionTitle: '1年定期保険の純保険料',
                             content: '各年齢ごとに１年定期保険の純保険料を計算すると、[[予定死亡率の動きを反映したものとなる]]。', //p40
                         }, //35
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022c36'],
                             questionTitle: '契約転換制度',
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022c37'],
                             questionTitle: '剰余金処分',
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-08-08 確認済み
-                            relatedProblems: ['2022c38'],
                             questionTitle: '変額保険金額の計算',
                             content: '月始 → 月末', //p145
                         }, //38
                         {
                             // rev: 2026-08-08 確認済み
-                            relatedProblems: ['2022a39', '2022b39', '2022c39'],
                             questionTitle: '変額保険の運用リスク',
                             content: '生命保険会社 → 契約者', //p151
                         }, //39
                         {
                             // rev: 2026-08-05 確認済み
-                            relatedProblems: ['2022c40'],
                             questionTitle: '団体年金保険の数理',
                             content: '団体年金の場合、大数の法則に加えて[[企業等の財政負担力に依存している]]。、', //p156
                         }, //40
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022a26', '2022b41', '2022c41'],
                             questionTitle: '死亡表の種類',
                             label: 'イ',
                             content: '国民生命表',
                         }, //41
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022c42'],
                             questionTitle: '保険料の計算基礎',
                             label: 'ウ',
                             content: '保険金に比例させる',
                         }, //42
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022a37', '2022c43'],
                             questionTitle: '準備金の積立根拠',
                             label: 'エ',
                             content: '責任準備金',
                         }, //43
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022c44'],
                             questionTitle: '危険保険料の計算',
                             label: 'イ',
                             content: '年始生存者数',
                         }, //44
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022a45', '2022b45', '2022c45'],
                             questionTitle: '解約返戻金',
                             label: 'エ',
                             content: '契約者貸付',
                         }, //45
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022a46', '2022b46', '2022c46'],
                             questionTitle: '加入年齢方式による転換',
                             label: 'オ',
                             content: '',
                         }, //46
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022a27', '2022c47'],
                             questionTitle: '積立に関する法的規制',
                             label: 'ア',
                             content: '第三分野保険',
                         }, //47
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022c48'],
                             questionTitle: '利源の分類',
                             label: 'ア',
                             content: '危険保険金額',
                         }, //48
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022b40', '2022c49'],
                             questionTitle: '特別勘定の位置付け',
                             label: 'ア',
                             content: '運用実績連動型',
                         }, //49
                         {
                             // rev: 2026-07-11 確認済み
-                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             questionTitle: '団体年金の保険料計算',
                             label: 'ウ',
                             content: '通常保険料',

@@ -1,11 +1,13 @@
 <script setup>
 import DraftNotice from "@/Components/DraftNotice.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
+import StudyPaywallNotice from "@/Components/StudyPaywallNotice.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 import { usePage } from "@inertiajs/vue3";
 import axios from "axios";
 import { computed, nextTick, onBeforeUnmount, onMounted, provide, ref, watch } from "vue";
+import { hasPremiumAccess } from "@/utils/paywall";
 
 const props = defineProps({
     title: { type: String, required: true },
@@ -16,12 +18,15 @@ const props = defineProps({
     questionCount: { type: Number, default: 50 },
     maxScore: { type: Number, default: 100 },
     scoreSections: { type: Array, required: true },
+    previewQuestionLimit: { type: Number, default: 0 },
+    previousRoute: { type: String, default: "" },
     nextRoute: { type: String, default: "" },
     isDraft: { type: Boolean, default: false },
 });
 
 const page = usePage();
 const isLoggedIn = computed(() => Boolean(page.props.auth?.user));
+const hasFullStudyAccess = computed(() => props.previewQuestionLimit <= 0 || hasPremiumAccess(page.props));
 const questionMenu = ref(null);
 const questions = computed(() => Array.from({ length: props.questionCount }, (_, index) => index + 1));
 const initialAnswers = Object.fromEntries((props.initialStudyState?.attempt?.answers ?? []).map((answer) => [Number(answer.question_no), answer]));
@@ -42,7 +47,9 @@ const showResumeNotice = ref(initialAnsweredCount > 0);
 const currentQuestion = computed(() => questions.value[currentIndex.value]);
 const currentAnswered = computed(() => answeredQuestions.value.has(currentQuestion.value));
 const isComplete = computed(() => answeredQuestions.value.size === props.questionCount);
-const shouldShowResult = computed(() => isComplete.value && !resultDismissed.value);
+const shouldShowResult = computed(() => isComplete.value && !resultDismissed.value && hasFullStudyAccess.value);
+const isStudyQuestionLocked = (questionNumber) => !hasFullStudyAccess.value && Number(questionNumber) > props.previewQuestionLimit;
+const isCurrentStudyLocked = computed(() => isStudyQuestionLocked(currentQuestion.value));
 
 const questionPoint = (questionNumber) => {
     const section = props.scoreSections.find(({ start, end }) => questionNumber >= start && questionNumber <= end);
@@ -122,7 +129,8 @@ watch(currentIndex, (index) => {
 
 const moveTo = async (index) => {
     showResumeNotice.value = false;
-    currentIndex.value = index;
+    const requestedQuestion = questions.value[index];
+    currentIndex.value = isStudyQuestionLocked(requestedQuestion) ? props.previewQuestionLimit : index;
     resultDismissed.value = true;
     questionMenu.value?.removeAttribute("open");
     await nextTick();
@@ -130,6 +138,7 @@ const moveTo = async (index) => {
 };
 
 const showStudyResult = async () => {
+    if (!hasFullStudyAccess.value) return;
     resultDismissed.value = false;
     await nextTick();
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -180,7 +189,7 @@ const startNewStudy = () => {
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <slot :learning-mode="false" />
             </div>
-            <TestNavigationButtons v-if="nextRoute" :next-route="nextRoute" />
+            <TestNavigationButtons v-if="previousRoute || nextRoute" :previous-route="previousRoute" :next-route="nextRoute" />
         </section>
     </SeihoTestLayout>
 
@@ -217,8 +226,8 @@ const startNewStudy = () => {
                 <p class="text-sm font-semibold text-gray-900">
                     <span class="mr-1.5 text-xs font-normal text-gray-500">問題</span>{{ currentQuestion }} <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
                 </p>
-                <div class="mt-2 flex items-center" :class="isComplete && resultDismissed ? 'justify-between' : 'justify-end'">
-                    <button v-if="isComplete && resultDismissed" type="button" class="inline-flex min-h-10 items-center text-sm font-medium text-gray-600 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果</button>
+                <div class="mt-2 flex items-center" :class="isComplete && resultDismissed && hasFullStudyAccess ? 'justify-between' : 'justify-end'">
+                    <button v-if="isComplete && resultDismissed && hasFullStudyAccess" type="button" class="inline-flex min-h-10 items-center text-sm font-medium text-gray-600 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果</button>
                     <details ref="questionMenu" class="relative z-20">
                         <summary class="flex cursor-pointer list-none items-center gap-1.5 py-1 text-sm text-gray-600 hover:text-gray-950 focus:outline-none focus-visible:underline">
                             <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -235,6 +244,7 @@ const startNewStudy = () => {
                                 <p class="flex items-center gap-3 text-sm text-gray-500">
                                     <span><span class="text-[#34b894]">●</span> 正解</span>
                                     <span><span class="text-[#e07a84]">●</span> 不正解</span>
+                                    <span v-if="!hasFullStudyAccess" class="text-gray-400">▣ 要購入</span>
                                 </p>
                             </div>
                             <div class="grid max-h-[29rem] grid-cols-5 gap-1.5 overflow-y-auto pr-1">
@@ -245,7 +255,9 @@ const startNewStudy = () => {
                                     class="relative min-h-10 rounded-sm border text-sm font-semibold transition"
                                     :class="[
                                         currentIndex === index ? 'ring-2 ring-inset ring-violet-500' : '',
-                                        correctQuestions.has(questionNumber)
+                                        isStudyQuestionLocked(questionNumber)
+                                            ? 'border-gray-200 bg-gray-50 text-gray-400 hover:bg-gray-100'
+                                            : correctQuestions.has(questionNumber)
                                             ? 'border-[#a7e3d0] bg-[#f0fcf7] text-[#16856b] hover:bg-[#e5f8f0]'
                                             : answeredQuestions.has(questionNumber)
                                               ? 'border-[#f2c5c8] bg-[#fff5f5] text-[#c45d68] hover:bg-[#fdebed]'
@@ -253,7 +265,9 @@ const startNewStudy = () => {
                                     ]"
                                     @click="moveTo(index)"
                                 >
-                                    {{ questionNumber }}<span v-if="answeredQuestions.has(questionNumber)" class="absolute right-1.5 top-1.5 h-1 w-1 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-[#34b894]' : 'bg-[#e07a84]'"></span>
+                                    {{ questionNumber }}
+                                    <svg v-if="isStudyQuestionLocked(questionNumber)" aria-label="要購入" class="absolute right-1 top-1 h-3 w-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 17 9.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8H5Zm2 0h6V6a3 3 0 1 0-6 0v2Z" clip-rule="evenodd" /></svg>
+                                    <span v-else-if="answeredQuestions.has(questionNumber)" class="absolute right-1.5 top-1.5 h-1 w-1 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-[#34b894]' : 'bg-[#e07a84]'"></span>
                                 </button>
                             </div>
                         </div>
@@ -271,13 +285,17 @@ const startNewStudy = () => {
             </div>
 
             <DraftNotice v-if="isDraft" />
-            <div v-if="displayMode !== 'study' || (!showResumeNotice && !shouldShowResult)" class="mx-auto max-w-4xl" :class="studyEnabled ? 'mt-4' : 'mt-6'">
+            <div v-if="displayMode !== 'study' || (!showResumeNotice && !shouldShowResult && !isCurrentStudyLocked)" class="mx-auto max-w-4xl" :class="studyEnabled ? 'mt-4' : 'mt-6'">
                 <div :class="displayMode === 'browse' ? 'space-y-2' : ''">
                     <slot :learning-mode="studyEnabled && displayMode === 'study'" />
                 </div>
             </div>
 
-            <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-4 flex max-w-4xl items-center justify-center gap-6 pt-2 sm:gap-14">
+            <div v-if="displayMode === 'study' && !showResumeNotice && isCurrentStudyLocked" class="mx-auto mt-4 max-w-4xl">
+                <StudyPaywallNotice @back="moveTo(previewQuestionLimit - 1)" />
+            </div>
+
+            <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult && !isCurrentStudyLocked" class="mx-auto mt-4 flex max-w-4xl items-center justify-center gap-6 pt-2 sm:gap-14">
                 <button type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-950 disabled:cursor-not-allowed disabled:opacity-30" :disabled="currentIndex === 0" @click="moveTo(currentIndex - 1)">← 前の問題</button>
                 <button v-if="currentIndex < questionCount - 1" type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-950" @click="moveTo(currentIndex + 1)">次の問題へ →</button>
             </div>
@@ -321,7 +339,7 @@ const startNewStudy = () => {
                                         v-for="questionNumber in questions.slice(section.start - 1, section.end)"
                                         :key="questionNumber"
                                         type="button"
-                                        class="min-h-12 rounded-sm border bg-white px-2 py-2 text-base font-semibold transition hover:border-gray-400 hover:bg-gray-50"
+                                        class="inline-flex min-h-12 items-center justify-center gap-1 whitespace-nowrap rounded-sm border bg-white px-2 py-2 text-base font-semibold transition hover:border-gray-400 hover:bg-gray-50"
                                         :class="correctQuestions.has(questionNumber) ? 'border-[#a7e3d0] bg-[#f0fcf7] text-[#16856b]' : 'border-[#f2c5c8] bg-[#fff5f5] text-[#c45d68]'"
                                         @click="moveTo(questionNumber - 1)"
                                     >
@@ -338,7 +356,7 @@ const startNewStudy = () => {
                 </div>
             </section>
 
-            <TestNavigationButtons v-if="nextRoute" :next-route="nextRoute" />
+            <TestNavigationButtons v-if="previousRoute || nextRoute" :previous-route="previousRoute" :next-route="nextRoute" />
         </section>
     </SeihoTestLayout>
 </template>

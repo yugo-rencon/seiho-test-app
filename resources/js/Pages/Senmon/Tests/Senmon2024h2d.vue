@@ -21,7 +21,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人を対象とした主な保険種類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '死亡または高度障害時には、[[養老保険と定期保険特約を合わせた保険金]]が支払われ、満期のときには、[[満期保険金]]が支払われる（[[死亡保険金と満期保険金は同額ではない]]）。', //p31
@@ -35,7 +34,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -49,7 +47,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金と配当金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '予定利率による運用収入見込額より、実際の運用収入が[[多い]]場合に生じる利益のこと。', //p43
@@ -63,7 +60,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="約款とご契約のしおり"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '保険契約者ごと → 保険種類ごと', //p45
@@ -77,7 +73,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         'その内容は診査医が記録するので、告知義務者に告知内容を確認いただいたうえで、[[署名（自署）をしていただく]]。', //p
@@ -91,7 +86,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="「死亡保険金」を支払わない場合"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '被保険者が[[契約日または復活日から所定期間以内]]に自殺したとき、「死亡保険金」は支払われない。', //p54
@@ -105,7 +99,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込み等"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '払込期月の翌月初日から[[翌々月の月単位の契約応当日（契約応当日がない場合は、その月の末日）]]まで。', //p57
@@ -119,7 +112,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者貸付"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '既払込保険料総額 → 解約返戻金', //p61
@@ -133,7 +125,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込みと契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '3月末日 → 4月末日', //p57
@@ -147,7 +138,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '初回の配当金受取時 → 契約時', //p63
@@ -161,7 +151,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '契約の失効や解約は、一般に危険度の[[低い]]契約に多いと考えられ、失効や解約が多くなると残った被保険者集団の危険が[[増大]]する。', //p67
@@ -175,7 +164,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '法務大臣 → 内閣総理大臣', //p72
@@ -189,7 +177,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="「犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）」による取引時確認"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '100万円 → 200万円', //p81
@@ -203,7 +190,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法上の禁止行為（保険業法第300条）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -217,7 +203,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="「適切な保険金・給付金等の支払い」に関するお客さま対応と留意"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="解約手続きの留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '手続き者が家族の場合でも、契約者の意思確認のもと、[[委任状による代理人としての正当な手続き書類がなければ受け付けることができない]]。', //p97-98
@@ -245,7 +229,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="ＪＡ共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="少額短期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行預金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '普通預金との間で、自動的に資金を振り替える[[スイングサービス]]があるが、公共料金などの自動支払、給料や年金などの自動受け取りは[[できない]]。', //p107
@@ -301,7 +281,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人向け融資（ローン）の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="信託銀行の業務・商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '信託銀行は、企業の設備投資を中心に、[[長期資金]]の需要に応える中で発展してきたが、その機能は、大きく「金融」と「[[財務管理]]」に分けられる。', //p109
@@ -329,7 +307,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="証券業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -343,7 +320,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="金利の種類と金融商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -358,7 +334,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="生命保険料控除の手続き"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '12',
@@ -381,7 +356,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="保険金と税金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '満期',
@@ -404,7 +378,6 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '6,048',
@@ -430,61 +403,51 @@ const subject = "2024年度 9月〜3月実施 フォームD";
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '特約',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '契約転換制度',
-                            relatedProblems: [],
                             content: '「契約転換制度」を利用する際の保険料は、[[転換時]]の契約年齢、保険料率により計算されるため、[[保険種類によっては、転換前契約よりも保険料が高くなる場合がある]]。', //p65
                         }, //41
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '契約内容登録制度',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '金融商品取引法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '個人情報保護法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '各都道府県民共済',
-                            relatedProblems: [],
                             content: '掛金は、[[選択する型や特約コースの付加により異なる]]が、それぞれの商品、特約コースごとに[[年齢・性別にかかわらず一律]]となっている。', //p103
                         }, //46
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '債券',
-                            relatedProblems: [],
                             content: '債券には、買い入れるときに利子を前取りする「[[割引債]]」と、一定の利子が一定の期日に支払われる「[[利付債]]」がある。', //p110
                         }, //47
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '社会福祉制度',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '総合福祉団体定期保険',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //49
                     ]"

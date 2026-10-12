@@ -26,7 +26,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の形態"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '自己のため → 他人のため', //p2
@@ -39,7 +38,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="前納・一括払と一時払"
-                    :relatedProblems="[]"
                     :contents="[
                         'いずれも月払契約の場合 → 一括払の月払契約の場合', //p21
                         '保険金受取人 → 保険契約者', //p21
@@ -52,7 +50,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社の免責事由"
-                    :relatedProblems="[]"
                     :contents="[
                         '商法 → 保険法', //p25
                         '自殺に該当する → 自殺に該当しない', //p27
@@ -65,7 +62,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解除・解約・取消し・無効"
-                    :relatedProblems="[]"
                     :contents="[
                         '解約させる → 消滅させる', //p39
                         '既払込保険料を返還する → 返還されない', //p42
@@ -78,7 +74,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の手段"
-                    :relatedProblems="[]"
                     :contents="[
                         '告知義務者本人の署名は必要ない → 本人の署名が必要', //p 61
                         '個別方式は行われていない → 一括方式と個別方式が行われている', //p62
@@ -91,7 +86,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務制度"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         'どちらの場合も告知受領権はない → 代理の場合は告知受領権があり、媒介の場合はない', //p72
@@ -107,7 +101,6 @@ const isDraft = false;
                         {
                             answer: '862,589円',
                             questionTitle: '保険料の現価',
-                            relatedProblems: [],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -153,7 +146,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="（自動）振替貸付および契約者貸付"
-                    :relatedProblems="[]"
                     :contents="[
                         '保険約款に規定がない契約であっても → 保険約款に規定がある契約のみ', //p112
                         '経過期間に関わらず取り消しできない → 猶予期間満了後一定期間内の場合に可能', //p112
@@ -166,7 +158,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="契約転換制度"
-                    :relatedProblems="[]"
                     :contents="[
                         '他社の既契約 → 自社の既契約', //p119
                         '保険料率は引上げになることはない → 引上げになることもある', //p120
@@ -179,7 +170,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障を目的とした主契約"
-                    :relatedProblems="[]"
                     :contents="[
                         '終身タイプの商品はない → 定期タイプと終身タイプがある', //p140
                         '満期保険金を支払う商品が一般的 → 一般に満期保険金はない', //p140
@@ -192,7 +182,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="資産形成を目的とした主契約"
-                    :relatedProblems="[]"
                     :contents="[
                         '被保険者が生存している限り → 生死に関係なく<br>残りの保証期間に対する年金や一時金は支払わない → 遺族に支払う', //p145
                         '正しい',
@@ -205,7 +194,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
-                    :relatedProblems="[]"
                     :contents="[
                         '定額法式のタイプのものはない → 定額方式のタイプがある', //p202
                         '正しい',
@@ -218,7 +206,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の当事者"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '資本金1億円以上で年間収受保険料100億円以下 → 資本金1000万円以上で年間収受保険料50億円以下', //p3
@@ -231,7 +218,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払込み"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -244,7 +230,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金等の請求手続き"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -257,7 +242,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -270,7 +254,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択上、被保険者集団が具備すべき4つの条件"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -283,7 +266,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果の検証"
-                    :relatedProblems="[]"
                     :contents="[
                         '活かす目的に適している → 適さない', //p69
                         '正しい',
@@ -296,7 +278,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="配当の割当て"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '割当てを行われない → 行われる', //p105
@@ -309,7 +290,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金（毎年配当型）の支払いと計算方法"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -322,7 +302,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法（毎年配当型）"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -335,7 +314,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保障を厚くする特約"
-                    :relatedProblems="[]"
                     :contents="[
                         '逓増定期保険型特約はない → 逓増定期保険型特約もある', //p156
                         '正しい',
@@ -348,7 +326,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="入院、手術、通院など疾病・ケガの治療全般に備える特約"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '災害入院特約 → 家族型入院特約', //p157
@@ -361,7 +338,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="共済事業"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -375,7 +351,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="保険金の支払い"
-                    :relatedProblems="[]"
                     :contents="[
                         '高度障害保険金',
                         '法定相続人',
@@ -397,7 +372,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="危険の要素"
-                    :relatedProblems="[]"
                     :contents="[
                         '体格',
                         '過重体',
@@ -419,7 +393,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="責任準備金"
-                    :relatedProblems="[]"
                     :contents="[
                         '純保険料',
                         '平準化',
@@ -443,52 +416,42 @@ const isDraft = false;
                         // 問40〜49
                         {
                             questionTitle: '承諾前保険事故',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //40
                         {
                             questionTitle: '年払・半年払保険料の返還（保険料不可分の原則）',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //41
                         {
                             questionTitle: 'BMI',
-                            relatedProblems: [],
                             content: '身長の2乗 ÷ 体重 → 体重 ÷ 身長の2乗', //p49
                         }, //42
                         {
                             questionTitle: '契約確認',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             questionTitle: '生命保険の診査',
-                            relatedProblems: [],
                             content: '一般臨床と同様 → 一般臨床と異なる', //p63
                         }, //44
                         {
                             questionTitle: '解約返戻金',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             questionTitle: '保険金額の減額',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
                             questionTitle: '市場価格調整を利用した生命保険',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
                             questionTitle: '特定疾病（三大疾病）保障特約',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             questionTitle: 'CO・OP共済',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //49
                     ]"

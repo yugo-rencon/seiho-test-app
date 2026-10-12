@@ -24,7 +24,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-①"
-                    :relatedProblems="['2024a1', '2024b1', '2024c1']"
                     :contents="[
                         // rev: 2026-08-14 確認済み
                         '承諾',
@@ -46,7 +45,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="クーリング・オフ制度-②"
-                    :relatedProblems="['2024a6', '2024b6', '2024c6']"
                     :contents="[
                         // rev: 2026-08-14 確認済み
                         '1年',
@@ -68,7 +66,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保険金の免責事由-①"
-                    :relatedProblems="['2024a11']"
                     :contents="[
                         // rev: 2026-08-14 確認済み
                         '射倖',
@@ -90,7 +87,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保険金の免責事由-②"
-                    :relatedProblems="['2024a16']"
                     :contents="[
                         // rev: 2026-08-14 確認済み
                         '緩和',
@@ -112,7 +108,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約等に対する法の適用"
-                    :relatedProblems="['2024a21', '2024b21', '2024c21', '2024c31']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '典型契約 → 無名契約', //p4
@@ -125,7 +120,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約等の性質"
-                    :relatedProblems="['2024a22', '2024c41']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '保険契約は保険契約者と保険者との合意によってのみ成立し、第1回保険料相当額の払込などは保険者の責任開始の要件であるにすぎず、[[要物契約ではない]]と解される。', //p35
@@ -138,7 +132,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払"
-                    :relatedProblems="['2024a23']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -151,7 +144,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="外国保険業者等"
-                    :relatedProblems="['2024a24']"
                     :contents="[
                         // rev: 2026-08-21 確認済み
                         '外国保険業者の場合は、[[株式会社や相互会社でなくてもよく]]、個人でもよい。', //p257
@@ -164,7 +156,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の締結または保険募集に関する禁止行為"
-                    :relatedProblems="['2024a25', '2024b25', '2024c25']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '将来における配当に関して断定的判断を示すこと等についても[[禁止の対象となる]]。', //p269
@@ -177,7 +168,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険約款の拘束力の根拠"
-                    :relatedProblems="['2024a26', '2024b26', '2024c26']"
                     :contents="[
                         // rev: 2026-08-21 確認済み
                         '意思推定説 → 法規範説', //p7
@@ -190,7 +180,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払込"
-                    :relatedProblems="['2024a27']"
                     :contents="[
                         // rev: 2026-08-21 確認済み
                         '正しい',
@@ -203,7 +192,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="災害入院給付金の支払"
-                    :relatedProblems="['2024a28', '2024b28', '2024c28']"
                     :contents="[
                         // rev: 2026-08-21 確認済み
                         '正しい',
@@ -216,7 +204,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="基礎書類"
-                    :relatedProblems="['2024a29', '2024c48']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -229,7 +216,6 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任準備金"
-                    :relatedProblems="['2024a30']"
                     :contents="[
                         // rev: 2026-08-21 確認済み
                         '正しい',
@@ -245,130 +231,110 @@ const subject = "2024年度 フォームA";
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '生命保険契約等の定義',
-                            relatedProblems: ['2024a31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '保険料の返還',
-                            relatedProblems: ['2024a32', '2024b32', '2024c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-08-21 確認済み
                             questionTitle: '保険契約者の保険料支払',
-                            relatedProblems: ['2024a33'],
                             content: '保険法の片面的強行規定 → 商法または民法の一般原則', //p54
                         }, //33
                         {
                             // rev: 2026-08-21 確認済み
                             questionTitle: '保険給付請求権の譲渡等',
-                            relatedProblems: ['2024a34', '2024b34', '2024c34'],
                             content: '保険契約者の同意 → 被保険者の同意', //p58
                         }, //34
                         {
                             // rev: 2026-08-21 確認済み
                             questionTitle: '給付事由発生の通知等',
-                            relatedProblems: ['2024a35'],
                             content: '通知を怠ったことによって当然に[[保険者が保険給付の責任を免れるものではない]]。 ', //p60
                         }, //35
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '保険契約者の住所変更',
-                            relatedProblems: ['2024a36'],
                             content: '住所変更通知義務は、保険契約者がこの義務を履行しなかったときに、民法上の債務不履行に関する一般原則を適用する性質を[[有するものではなく]]、単に、保険契約者が不利益を被る結果になるのにすぎないものである。', //p109
                         }, //36
                         {
                             // rev: 2026-08-20 確認済み
                             questionTitle: '災害入院特約と疾病入院特約',
-                            relatedProblems: ['2024a37', '2024b37', '2024c37'],
                             content: '４日不担保等の免責規定が[[適用されない]]。', //p179
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '株式会社と相互会社の比較',
-                            relatedProblems: ['2024a38'],
                             content: '一般社団法人 → 中間法人', //p226
                         }, //38
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '保険計理人',
-                            relatedProblems: ['2024a39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '乗合の禁止',
-                            relatedProblems: ['2024a40', '2024c30'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '金融サービスの提供及び利用環境の整備等に関する法律',
-                            relatedProblems: ['2024a41'],
                             label: 'ア',
                             content: '重要事項',
                         }, //41
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '保険法に規定する同意',
-                            relatedProblems: ['2024a42'],
                             label: 'ウ',
                             content: '成立要件',
                         }, //42
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '生命保険契約等の解除の効力等',
-                            relatedProblems: ['2024a43', '2024b43', '2024c43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '保険料の未払込による保険契約の失効',
-                            relatedProblems: ['2024a44'],
                             label: 'イ',
                             content: '猶予期間',
                         }, //44
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '告知義務違反に対する解除権の行使',
-                            relatedProblems: ['2024a45'],
                             label: 'イ',
                             content: '5年',
                         }, //45
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '延長保険',
-                            relatedProblems: ['2024a46'],
                             label: 'ウ',
                             content: '定期保険',
                         }, //46
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '年齢の計算、誤りの処理',
-                            relatedProblems: ['2024a47', '2024b47', '2024c47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '保険業法の目的',
-                            relatedProblems: ['2024a48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '保険会社の業務の範囲',
-                            relatedProblems: ['2024a49'],
                             label: 'イ',
                             content: '法定他業',
                         }, //49
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '保険募集の制限',
-                            relatedProblems: ['2024a50', '2024b50', '2024c50'],
                             label: 'ウ',
                             content: '媒介',
                         }, //50

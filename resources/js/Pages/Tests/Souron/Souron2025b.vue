@@ -2,32 +2,46 @@
 import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
 import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
 import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
+import StudyTestPage from "@/Components/StudyTestPage.vue";
+import { SOURON_STUDY_CONFIG as studyConfig } from "@/constants/studyTests";
 
-import Pagetitle from "../../../Components/Pagetitle.vue";
-import DraftNotice from "@/Components/DraftNotice.vue";
-import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+const props = defineProps({
+    studyEnabled: {
+        type: Boolean,
+        default: false,
+    },
+    initialStudyState: {
+        type: Object,
+        default: null,
+    },
+});
 
 const title = "生命保険総論";
 const subject = "2025年度 フォームB";
+const examKey = "souron-2025-b";
 const isDraft = false;
 </script>
 
 <template>
-    <SeihoTestLayout :title="title">
-        <section class="bg-[#fdfbff] text-gray-800 py-10">
-            <!-- ページタイトル -->
-            <Pagetitle :title="title" :description="subject" />
-            <DraftNotice v-if="isDraft" />
-
-            <!-- 問題リスト -->
-            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+    <StudyTestPage :title="title" :subject="subject" :exam-key="examKey" :initial-study-state="props.initialStudyState" :study-enabled="props.studyEnabled" :question-count="studyConfig.questionCount" :max-score="studyConfig.maxScore" :score-sections="studyConfig.scoreSections" :preview-question-limit="22" :is-draft="isDraft" previous-route="souron2025a" next-route="souron2025c" #default="{ learningMode }">
                 <QuestionTemp3
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
                     questionTitle="狭義の社会保障制度-①"
-                    :relatedProblems="['2025b1']"
+                    :choiceOptions="[
+                        { label: 'ア', text: '政府管掌保険' },
+                        { label: 'イ', text: '保険料の拠出' },
+                        { label: 'ウ', text: '国会・地方議員' },
+                        { label: 'エ', text: '後期高齢者' },
+                        { label: 'オ', text: '全国健康保険協会管掌保険' },
+                        { label: 'カ', text: '納税' },
+                        { label: 'キ', text: '国民健康保険' },
+                        { label: 'ク', text: '老人福祉' },
+                        { label: 'ケ', text: '国家公務員' },
+                        { label: 'コ', text: '国民医療保険' },
+                    ]"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '保険料の拠出',
@@ -48,8 +62,20 @@ const isDraft = false;
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
                     questionTitle="狭義の社会保障制度-②"
-                    :relatedProblems="['2025b6']"
+                    :choiceOptions="[
+                        { label: 'ア', text: '確定年金' },
+                        { label: 'イ', text: '国民年金' },
+                        { label: 'ウ', text: '団体災害補償保険' },
+                        { label: 'エ', text: '資力調査（ミーンズ・テスト）' },
+                        { label: 'オ', text: '生活保護' },
+                        { label: 'カ', text: '労働者災害補償保険' },
+                        { label: 'キ', text: '生活福祉' },
+                        { label: 'ク', text: '事業主年金' },
+                        { label: 'ケ', text: '共済年金' },
+                        { label: 'コ', text: '家族調査' },
+                    ]"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '共済年金',
@@ -70,8 +96,20 @@ const isDraft = false;
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
                     questionTitle="社会構造の変化-①"
-                    :relatedProblems="['2025a11', '2025b11', '2025c11']"
+                    :choiceOptions="[
+                        { label: 'ア', text: '遅い' },
+                        { label: 'イ', text: '健康寿命' },
+                        { label: 'ウ', text: '7' },
+                        { label: 'エ', text: '10' },
+                        { label: 'オ', text: '雇用' },
+                        { label: 'カ', text: '扶養' },
+                        { label: 'キ', text: '速い' },
+                        { label: 'ク', text: '平均寿命' },
+                        { label: 'ケ', text: '20〜64' },
+                        { label: 'コ', text: '15〜64' },
+                    ]"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '平均寿命',
@@ -92,8 +130,20 @@ const isDraft = false;
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
                     questionTitle="社会構造の変化-②"
-                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
+                    :choiceOptions="[
+                        { label: 'ア', text: '離婚件数' },
+                        { label: 'イ', text: '合計特殊出生率' },
+                        { label: 'ウ', text: '婚姻率' },
+                        { label: 'エ', text: '年金' },
+                        { label: 'オ', text: '出生数' },
+                        { label: 'カ', text: '合計特定育成率' },
+                        { label: 'キ', text: '失業' },
+                        { label: 'ク', text: '80' },
+                        { label: 'ケ', text: '70' },
+                        { label: 'コ', text: '労働力率' },
+                    ]"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '年金',
@@ -114,8 +164,9 @@ const isDraft = false;
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="保険の対象となる危険の種類"
-                    :relatedProblems="['2025a21', '2025b21', '2025c21']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -127,8 +178,9 @@ const isDraft = false;
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="アメリカにおける生命保険事業の発展"
-                    :relatedProblems="['2025b22']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '解約価格法 → 不没収法', //p62
@@ -140,8 +192,9 @@ const isDraft = false;
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="介護保険制度"
-                    :relatedProblems="['2025b23']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '介護保険制度の被保険者は、[[65歳以上]]を第1号被保険者とし、[[40歳〜65歳未満]]の医療保険加入者を第2号被保険者とする。', //p141
@@ -153,8 +206,9 @@ const isDraft = false;
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="少額短期保険業"
-                    :relatedProblems="['2025a38', '2025b24']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '「少額短期保険業」は、短期（生保・医療保険で1年以内、損害保険で2年以内）かつ少額保険金額（疾病による死亡保険金[[300万円]]以内、疾病・傷害による入院給付金等[[80万円]]以内、損害保険金1,000万円以内等）の保険のみを引き受ける保険業である。', //p177
@@ -166,8 +220,9 @@ const isDraft = false;
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="消費構造の変化"
-                    :relatedProblems="['2025b25']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -179,8 +234,10 @@ const isDraft = false;
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="保険約款"
-                    :relatedProblems="['2025b26']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '保険契約の申込者の理解や納得のない場合でも、一般的に[[保険約款には拘束力がある]]とされている。', //p8
@@ -192,8 +249,10 @@ const isDraft = false;
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="日本における生命保険の発展"
-                    :relatedProblems="['2025b27']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -205,8 +264,10 @@ const isDraft = false;
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="公的年金制度"
-                    :relatedProblems="['2025b28', '2025c23']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -218,8 +279,10 @@ const isDraft = false;
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="保険業法の概要"
-                    :relatedProblems="['2025a29', '2025b29', '2025c29']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '正しい',
@@ -231,8 +294,10 @@ const isDraft = false;
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生保業界におけるシステム動向"
-                    :relatedProblems="['2025a30', '2025b30', '2025c30']"
                     :contents="[
                         // rev: 2026-05-26 確認済み
                         '最初に機械化されたのは最も事務量の多い[[個人保険分野]]である。', //p198
@@ -244,143 +309,120 @@ const isDraft = false;
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :correctAnswers="['正', '誤', '正', '正', '誤', '誤', '誤', '誤', '誤', '正', 'ア', 'オ', 'イ', 'エ', 'オ', 'ウ', 'エ', 'イ', 'ア', 'ウ']"
                     :items="[
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生命保険契約の法的性質',
-                            relatedProblems: ['2025b31', '2025c41'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '危険選択の意義',
-                            relatedProblems: ['2025a32', '2025b32', '2025c32'],
                             content: '収支相等の原則 → 危険均一性の原則', //p16
                         }, //32
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '確定拠出年金保険',
-                            relatedProblems: ['2025b33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: 'イギリスにおける生命保険の発展',
-                            relatedProblems: ['2025b34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '生命保険会社の資金の性格',
-                            relatedProblems: ['2025b35'],
                             content: '純資産の大部分 → 負債の大部分', //p108
                         }, //35
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '組織変更',
-                            relatedProblems: ['2025a36', '2025b36', '2025c36'],
                             content: '100株未満 → 1株未満', //p163
                         }, //36
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '共済と保険',
-                            relatedProblems: ['2025a37', '2025b37', '2025c37'],
                             content: '適合性の原則 → 給付・反対給付均等の原則', //p165
                         }, //37
                         {
                             // rev: 2026-05-26 確認済み
                             questionTitle: '日本の金融制度',
-                            relatedProblems: ['2025b38'],
                             content: '今日の日本の金融制度 → 戦後の日本の金融制度', //p174
                         }, //38
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '生命保険会社の資産運用の今後のあり方',
-                            relatedProblems: ['2025b39'],
                             content: '特別勘定の導入 → 区分経理の導入', //p200
                         }, //39
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '医療・介護ニーズへの対応',
-                            relatedProblems: ['2025b40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '保険契約の当事者',
-                            relatedProblems: ['2025b41'],
                             label: 'ア',
                             content: '保険契約者',
                         }, //41
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '死亡表',
-                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生命保険商品の基本型',
-                            relatedProblems: ['2025a26', '2025b43'],
                             label: 'イ',
                             content: '生存保険',
                         }, //43
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '賦課式保険',
-                            relatedProblems: ['2025b44'],
                             label: 'エ',
                             content: '同額の分担金で',
                         }, //44
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: 'ユニバーサル保険',
-                            relatedProblems: ['2025b45'],
                             label: 'オ',
                             content: '',
                         }, //45
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生保資産運用の基本原則',
-                            relatedProblems: ['2025a46', '2025b46', '2025c46'],
                             label: 'ウ',
                             content: '公共性',
                         }, //46
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '生命保険業の監督の方法',
-                            relatedProblems: ['2025b47'],
                             label: 'エ',
                             content: '財務大臣',
                         }, //47
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '労働者共済',
-                            relatedProblems: ['2025b48'],
                             label: 'イ',
                             content: 'こくみん共済coop <全労災>',
                         }, //48
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '損害保険',
-                            relatedProblems: ['2025b49'],
                             label: 'ア',
                             content: '保険者',
                         }, //49
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: '年金型商品の開発',
-                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                             label: 'ウ',
                             content: '変額年金',
                         }, //50
                     ]"
                 />
-            </div>
-
-            <!-- ボタングループ -->
-            <TestNavigationButtons previous-route="souron2025a" next-route="souron2025c" />
-        </section>
-    </SeihoTestLayout>
+    </StudyTestPage>
 </template>

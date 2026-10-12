@@ -23,7 +23,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="決算整理手続-①"
-                    :relatedProblems="['2020a1', '2020b1', '2020c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '総勘定元帳',
@@ -45,7 +44,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="決算整理手続-②"
-                    :relatedProblems="['2020a6', '2020b6', '2020c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '前払費用',
@@ -67,7 +65,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業費管理-①"
-                    :relatedProblems="['2020c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '付加保険料',
@@ -89,7 +86,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業費管理-②"
-                    :relatedProblems="['2020c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '死亡率',
@@ -111,7 +107,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="会計公準"
-                    :relatedProblems="['2020b41', '2020c21']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '企業実体の公準 → 継続企業の公準', //p6
@@ -124,7 +119,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任準備金"
-                    :relatedProblems="['2020a22', '2020b22', '2020c22']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -137,7 +131,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則"
-                    :relatedProblems="['2020c23']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -150,7 +143,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="有価証券の評価方法"
-                    :relatedProblems="['2020c24']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '償却原価法 → 時価法', //p110
@@ -163,7 +155,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="会計監査人による監査"
-                    :relatedProblems="['2020a25', '2020b25', '2020c25']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '会計監査人は、会社と直接利害関係のない公認会計士または[[公認会計士によって設立された監査法人]]でなければならないとされ、高度の専門的知識を有する職業監査人の監査を義務付けている。', //p208
@@ -176,7 +167,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="勘定科目"
-                    :relatedProblems="['2020c26']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -189,7 +179,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="税務会計"
-                    :relatedProblems="['2020a27', '2020b27', '2020c27']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '会計情報の開示という機能はその中に[[含まれていない]]という点で、会社法・金融商品取引法に基づく会計とは[[異なっている]]。', //p32
@@ -202,7 +191,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="連結財務諸表"
-                    :relatedProblems="['2020c28']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -215,7 +203,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="負債勘定の内容"
-                    :relatedProblems="['2020b23', '2020c29']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '生命保険会社においては、[[不動産・動産等の買入代金の未支払金額]]、団体保険・企業年金等の共同引受に伴う未支払金額等が[[含まれる]]。', //p127
@@ -228,7 +215,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="費用に属する科目"
-                    :relatedProblems="['2020a23', '2020b30', '2020c30']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -244,130 +230,110 @@ const subject = "2020年度 フォームC";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '取引の認識',
-                            relatedProblems: ['2020c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-09-03 確認済み
                             questionTitle: '開示書類',
-                            relatedProblems: ['2020a32', '2020b32', '2020c32'],
                             content: '四半期報告書は開示が求められていない → 開示が求められている', //p30
                         }, //32
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '保険金等支払金の計上',
-                            relatedProblems: ['2020a33', '2020b33', '2020c33'],
                             content: '当期において支払事由が発生し未支払となっているもの、また前年度において支払事由が発生し未支払の処理を行ったものについては、[[各勘定の期間修正を行うべきであるが、生命保険会計では行わず、支払備金・責任準備金で、期間修正を行い発生主義に修正することとしている]]。', //p42-43
                         }, //33
                         {
                             // rev: 2026-09-01 確認済み
                             questionTitle: '企業会計原則（一般原則）',
-                            relatedProblems: ['2020b26', '2020c34'],
                             content: '明瞭性の原則 → 資本取引・損益取引区分の原則', //p25
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
-                            relatedProblems: ['2020b46', '2020c35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '計算書類',
-                            relatedProblems: ['2020c36'],
                             content: '計算書類については、株式会社、相互会社は、貸借対照表、損益計算書、[[株主資本等変動計算書（相互会社は基金等変動計算書）]]、[[相互会社]]は剰余金処分に関する議案の作成が求められることとなる。', //p94
                         }, //36
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '外貨預金の換算',
-                            relatedProblems: ['2020c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険金',
-                            relatedProblems: ['2020a38', '2020b38', '2020c38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '負債勘定',
-                            relatedProblems: ['2020c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '計算書類の公告',
-                            relatedProblems: ['2020c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '企業会計の領域',
-                            relatedProblems: ['2020c41'],
                             label: 'イ',
                             content: '財務会計',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '財務諸表',
-                            relatedProblems: ['2020c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '株主配当',
-                            relatedProblems: ['2020c43'],
                             label: 'エ',
                             content: 'いつでも',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '勘定間取引',
-                            relatedProblems: ['2020a43', '2020c44'],
                             label: 'ウ',
                             content: '平準保険料',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: 'ソフトウェア',
-                            relatedProblems: ['2020a45', '2020b45', '2020c45'],
                             label: 'ウ',
                             content: '定額法',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '決算スケジュール',
-                            relatedProblems: ['2020c46'],
                             label: 'イ',
                             content: '2週間',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '利益準備金',
-                            relatedProblems: ['2020c47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険料',
-                            relatedProblems: ['2020a48', '2020b48', '2020c48'],
                             label: 'イ',
                             content: '未収保険料',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理',
-                            relatedProblems: ['2020b49', '2020c49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '企業が受ける検査',
-                            relatedProblems: ['2020a50', '2020b50', '2020c50'],
                             label: 'ア',
                             content: '税務調査',
                         }, //50

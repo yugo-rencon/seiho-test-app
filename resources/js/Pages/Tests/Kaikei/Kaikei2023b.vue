@@ -24,7 +24,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則-①"
-                    :relatedProblems="['2023a1', '2023b1', '2023c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '客観性',
@@ -46,7 +45,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則-②"
-                    :relatedProblems="['2023a6', '2023b6', '2023c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '真実性',
@@ -68,7 +66,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="連結財務諸表の作成手続-①"
-                    :relatedProblems="['2023b11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '50%',
@@ -90,7 +87,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="連結財務諸表の作成手続-②"
-                    :relatedProblems="['2023b16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '外貨建取引等会計処理基準',
@@ -112,7 +108,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="複式簿記の原理"
-                    :relatedProblems="['2023a26', '2023b21', '2023c21']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         'たとえば、電力会社と電力供給の契約を締結した場合、契約締結の時点では、それぞれに「電力を供給する義務」と「電力の供給を受ける権利」が発生するが、[[会計上の取引とはならない]]。', //p9-10
@@ -125,7 +120,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="会社法会計"
-                    :relatedProblems="['2023b22']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '会社の設備投資限度額の算定 → 株主配当の限度額の算定', //p27
@@ -138,7 +132,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任準備金"
-                    :relatedProblems="['2023a23', '2023b23', '2023c23']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -151,7 +144,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産勘定"
-                    :relatedProblems="['2023b24']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '有価証券の説明 ↔︎ 商品有価証券の説明', //p107
@@ -164,7 +156,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業費"
-                    :relatedProblems="['2023a48', '2023b25']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '減価償却費や税金等は、生命保険会社の損益計算書上では、[[事業費には含まれない]]。', //p173
@@ -177,7 +168,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="会計公準"
-                    :relatedProblems="['2023a21', '2023b26', '2023c31']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -190,7 +180,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="税務会計"
-                    :relatedProblems="['2023a27', '2023b27', '2023c27']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '会計情報の開示という機能はその中に[[含まれていない]]という点で、会社法・金融商品取引法に基づく会計とは[[異なっている]]。', //p32
@@ -203,7 +192,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="一般勘定・特別勘定"
-                    :relatedProblems="['2023a28', '2023b28', '2023c28']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -216,7 +204,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="純資産勘定の内容"
-                    :relatedProblems="['2023b29']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -229,7 +216,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社のディスクロージャー"
-                    :relatedProblems="['2023b30']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '2000年度（平成12年度）決算からキャッシュ・フロー計算書が[[縦覧の対象資料に付け加えられている]]。', //p180
@@ -245,131 +231,111 @@ const subject = "2023年度 フォームB";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '貸借対照表',
-                            relatedProblems: ['2023b31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '保険料の計上',
-                            relatedProblems: ['2023b32'],
                             content: '現金主義 ↔︎ 実現主義', //p42
                         }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
-                            relatedProblems: ['2023a33', '2023b33', '2023c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '会計に関する事項の標準的な取扱い',
-                            relatedProblems: ['2023b34'],
                             content: '金融庁 → 生命保険協会経理委員会', //p95
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '外貨預金の換算',
-                            relatedProblems: ['2023a35', '2023b35', '2023c35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '負債勘定',
-                            relatedProblems: ['2023b36'],
                             content: '一般の企業では、流動（短期）負債に属する負債、固定（長期）負債に属する負債に区分することになっているが、生命保険会社は、契約者に対する保険契約準備金が大部分を占めるため、[[一般の企業とは違った区分をしている]]。', //p125
                         }, //36
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '損益の算定',
-                            relatedProblems: ['2023b37'],
                             content: '収支相等の原則 → 費用収益対応の原則', //p143
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '利源分析に関する課題',
-                            relatedProblems: ['2023b38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理',
-                            relatedProblems: ['2023a39', '2023b39', '2023c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '監査役による監査',
-                            relatedProblems: ['2023b40'],
                             content: '社内監査役 → 社外監査役', //p206
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '企業会計の領域',
-                            relatedProblems: ['2023a41', '2023b41', '2023c41'],
                             content: '財務会計',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '試算表の作成',
-                            relatedProblems: ['2023b42'],
                             content: '仕訳帳',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '決算',
-                            relatedProblems: ['2023a22', '2023b43', '2023c26'],
                             content: '財政状態',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '決算スケジュール',
-                            relatedProblems: ['2023b44'],
                             content: '2週間',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '無形固定資産',
-                            relatedProblems: ['2023a45', '2023b45', '2023c45'],
                             content: '定額法',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '貸倒引当金',
-                            relatedProblems: ['2023b46', '2023c36'],
                             content: '',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '年金',
-                            relatedProblems: ['2023b47'],
                             content: '',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '法人税及び住民税',
-                            relatedProblems: ['2023a38', '2023b48'],
                             content: '税引前当期剰余',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '運用資産の管理',
-                            relatedProblems: ['2023b49'],
                             content: '資産区分',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '金融検査',
-                            relatedProblems: ['2023a50', '2023b50', '2023c50'],
                             content: '自己査定',
                         }, //50
                     ]"

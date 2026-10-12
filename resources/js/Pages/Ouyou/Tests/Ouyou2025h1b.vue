@@ -26,7 +26,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の所得控除"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '地震保険料控除も所得控除に[[該当する]]。', //p19
@@ -39,7 +38,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の申告"
-                    :relatedProblems="[]"
                     :contents="[
                         '1月16日から2月25日まで → 2月16日から3月15日まで', //p34
                         '1500万円 → 2000万円', //p34
@@ -52,7 +50,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の申告手続と納付方法"
-                    :relatedProblems="[]"
                     :contents="[
                         '課税価格の合計額が基礎控除額以下である場合でも相続税の申告が必要 → 相続税の申告は不要', //p52
                         '正しい',
@@ -65,7 +62,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="契約形態による課税関係"
-                    :relatedProblems="[]"
                     :contents="[
                         '一時所得として所得税の課税対象 → 贈与税の課税対象', //p59
                         '雑所得として所得税の課税対象 → 一時所得として所得税の課税対象', //p59
@@ -78,7 +74,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="法人の住民税・事業税"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '事業所の所在地に応じて課せられる「地域割」 → 法人税額に応じて課せられる「法人税割」', //p79
@@ -91,7 +86,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '特約保険料は損金算入できない → 特約保険料も含めて全額を損金算入できる', //p86
@@ -104,7 +98,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金制度"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '掛金の拠出限度額はない → 拠出限度額の範囲内で掛金を拠出することができる', //p94
@@ -117,7 +110,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         '所得控除の対象とはならない → 全額所得控除（小規模企業共済等掛金控除）の対象', //p98
                         '正しい',
@@ -130,7 +122,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         '資産計上 → 損金算入', //p106
                         '損金算入 → 資産計上', //p106
@@ -195,7 +186,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険募集人が遵守すべき法令等（保険業法）"
-                    :relatedProblems="[]"
                     :contents="[
                         '厚生労働大臣 → 内閣総理大臣', //p148
                         '正しい',
@@ -208,7 +198,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="解約手続きの留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         '解約請求できるのは契約者と被保険者 → 契約者のみ<br>契約者・被保険者の意思確認 → 契約者の意思確認', //p174
                         '解約理由によっては、解約せずに別の方法で対処できる場合があることを案内することが大切', //p175
@@ -221,7 +210,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="所得の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -234,7 +222,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続財産の評価"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -247,7 +234,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '基礎控除額以下の場合には贈与税の申告をする必要はない', //p57
@@ -260,7 +246,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="個人の住民税・事業税"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '個人の住所地に応じて課せられる「地域割」 → 所得額に一律の税率で課せられる「所得割」', //p62
@@ -273,7 +258,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="企業市場"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -286,7 +270,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '5年 → 1年', //p83
@@ -299,7 +282,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         '加入者個人の拠出がある場合は生命保険料控除（一般生命保険料控除）の対象となる', //p102
                         '正しい',
@@ -312,7 +294,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="金利"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -325,7 +306,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="国民年金（基礎年金）"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -338,7 +318,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金制度の障害給付と遺族給付の内容"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -351,7 +330,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="法令上の禁止行為"
-                    :relatedProblems="[]"
                     :contents="[
                         '「誤解を招く表示・説明」に[[該当する]]', //p161
                         '正しい',
@@ -364,7 +342,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -378,7 +355,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="法人税の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         '協同組合',
                         '申告納税',
@@ -400,7 +376,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="公的年金制度の老齢給付の内容"
-                    :relatedProblems="[]"
                     :contents="[
                         '保険料納付済',
                         '裁定請求',
@@ -422,7 +397,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="相続税額の計算"
-                    :relatedProblems="[]"
                     :contents="[
                         '9000',
                         '7600',
@@ -446,52 +420,42 @@ const isDraft = false;
                         // 問40〜49
                         {
                             questionTitle: '相続税の課税財産と非課税財産',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //40
                         {
                             questionTitle: '遺言',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //41
                         {
                             questionTitle: '個人の住民税',
-                            relatedProblems: [],
                             content: '所得税の確定申告書を税務署長に提出した人は、[[住民税の申告書を提出したものとみなされる]]', //p62
                         }, //42
                         {
                             questionTitle: '同族会社',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             questionTitle: '勤労者財産形成制度（財形制度）',
-                            relatedProblems: [],
                             content: '多くの個人保険商品と同様、積立金等の計算の基礎（予定利率）は固定しており、変更されることはない → 多くの個人保険商品と異なり、積立金等の計算の基礎（予定利率）は変更される場合がある', //p117
                         }, //44
                         {
                             questionTitle: '固定金利商品と変動金利商品',
-                            relatedProblems: [],
                             content: '金利が今後上昇しそうな場合には[[変動金利商品]]が有利となり、逆に金利が今後下降しそうな場合には、[[固定金利商品]]が有利となる', //p130
                         }, //45
                         {
                             questionTitle: '医療保障保険（団体型）',
-                            relatedProblems: [],
                             content: '5年更新 → 1年更新', //p120
                         }, //46
                         {
                             questionTitle: '厚生年金保険の保険料負担',
-                            relatedProblems: [],
                             content: '厚生年金保険の保険料は事業主と従業員（被保険者本人）で[[1/2ずつ負担する]]', //p137
                         }, //47
                         {
                             questionTitle: '消費者契約法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             questionTitle: '失効（復活）手続きの留意点',
-                            relatedProblems: [],
                             content: '契約を復活しても失効期間中の支払事由に相当する事故は[[保障の対象にならない]]', //p173
                         }, //49
                     ]"

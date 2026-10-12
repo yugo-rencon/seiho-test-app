@@ -24,7 +24,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="逆選択の傾向と態様-①"
-                    :relatedProblems="['2023c1']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '死亡率',
@@ -46,7 +45,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="逆選択の傾向と態様-②"
-                    :relatedProblems="['2023c6']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '取消し',
@@ -68,7 +66,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択-①"
-                    :relatedProblems="['2023a11', '2023b11', '2023c11']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '被用者団体',
@@ -90,7 +87,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択-②"
-                    :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '総合福祉団体定期保険',
@@ -112,7 +108,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険で対象としている危険"
-                    :relatedProblems="['2023a26', '2023c21']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '「実体的危険」は、「[[身体的危険]]」と「環境的危険」の２つに分類することができる。', //p4
@@ -125,7 +120,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="疾病入院保険（特約）"
-                    :relatedProblems="['2023a22', '2023b22', '2023c22']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '国民の平均入院日数よりも短期 → 国民の平均入院日数よりも長期', //p51
@@ -138,7 +132,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約制限"
-                    :relatedProblems="['2023c23']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -151,7 +144,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約確認の時期と方法"
-                    :relatedProblems="['2023c24']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '契約確認は[[一部]]の契約について契約成立前に行い，[[大部分]]は契約成立後に行うのが実情である。', //p113-114
@@ -164,7 +156,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険"
-                    :relatedProblems="['2023a25', '2023b25', '2023c25']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -177,7 +168,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡指数"
-                    :relatedProblems="['2023c26']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -190,7 +180,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="現病歴・既往歴"
-                    :relatedProblems="['2023a23', '2023c27']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -203,7 +192,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="職業危険"
-                    :relatedProblems="['2023a45', '2023b23', '2023c28']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」さらには[[「アルコール中毒や不摂生生活のような職業に随伴する危険」]]がある。', //p69
@@ -216,7 +204,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="報状扱契約における選択手段"
-                    :relatedProblems="['2023a29', '2023b29', '2023c29']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -229,7 +216,6 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="疾病保険の特別条件付決定"
-                    :relatedProblems="['2023c30']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '正しい',
@@ -245,130 +231,110 @@ const subject = "2023年度 フォームC";
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務',
-                            relatedProblems: ['2023c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
-                            relatedProblems: ['2023a32', '2023b32', '2023c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '体格',
-                            relatedProblems: ['2023a33', '2023b33', '2023c33'],
                             content: 'BMIは[[体重（kg） ÷ 〔身長（m）〕<sup>2</sup>]]で表される指数で標準値を22前後としている。', //p63
                         }, //33
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険金額の制限',
-                            relatedProblems: ['2023c34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '査定・決定の種類',
-                            relatedProblems: ['2023a47', '2023c35'],
                             content: '無条件の範囲は非喫煙者保険などのリスク細分化保険では[[狭く]]なり、標準下体保険では広くなる。',//p107
                         }, //35
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '個人情報の定義',
-                            relatedProblems: ['2023c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '入院・手術保障における料率',
-                            relatedProblems: ['2023a49', '2023c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '復活',
-                            relatedProblems: ['2023a38', '2023b38', '2023c38'],
                             content: '失効後の期間の長いものほど逆選択混入の危険が[[多く]]、また診査による場合に比べ告知のみによる場合のほうが経験死亡率が[[高い]]とされている。', //p173-174
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '元受保有額と出再額',
-                            relatedProblems: ['2023c39'],
                             content: '群団再保険 → 個別再保険', //p180
                         }, //39
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
-                            relatedProblems: ['2023c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
-                            relatedProblems: ['2023a31', '2023c41'],
                             label: 'ア',
                             content: '選択表',
                         }, //41
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '解除権の消滅',
-                            relatedProblems: ['2023a42', '2023b42', '2023c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '死差益の計算方法',
-                            relatedProblems: ['2023c43'],
                             label: 'エ',
                             content: '危険保険料',
                         }, //43
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '選択の有効期間',
-                            relatedProblems: ['2023c44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '危険選択の段階',
-                            relatedProblems: ['2023b24', '2023c45'],
                             label: 'ア',
                             content: '生命保険協会',
                         }, //45
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '人間ドック扱',
-                            relatedProblems: ['2023a46', '2023b46', '2023c46'],
                             label: 'イ',
                             content: '告知書',
                         }, //46
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
-                            relatedProblems: ['2023a34', '2023c47'],
                             label: 'エ',
                             content: '特別保険料領収法',
                         }, //47
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
-                            relatedProblems: ['2023a48', '2023b48', '2023c48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '個人データの安全管理措置',
-                            relatedProblems: ['2023c49'],
                             label: 'イ',
                             content: 'き損',
                         }, //49
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '高度障害状態',
-                            relatedProblems: ['2023c50'],
                             label: 'ウ',
                             content: '両眼の視力',
                         }, //50

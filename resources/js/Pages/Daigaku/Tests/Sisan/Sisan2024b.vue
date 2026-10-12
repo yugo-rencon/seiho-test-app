@@ -26,7 +26,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="現価と終価（6つの係数）（終価係数）"
-                    :relatedProblems="[['2024a1', '2024b1', '2024c1']]"
                     :labels="['エ']"
                     :contents="[
                         {
@@ -74,7 +73,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="現価と終価（6つの係数）（現価係数）"
-                    :relatedProblems="[['2024a2', '2024b2', '2024c2']]"
                     :labels="['ア']"
                     :contents="[
                         {
@@ -122,7 +120,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="現価と終価（6つの係数）（減債基金係数）"
-                    :relatedProblems="[['2024a3', '2024b3', '2024c3']]"
                     :labels="['エ']"
                     :contents="[
                         {
@@ -170,7 +167,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="現価と終価（6つの係数）（年金終価係数）"
-                    :relatedProblems="[['2024a4', '2024b4', '2024c4']]"
                     :labels="['イ']"
                     :contents="[
                         {
@@ -218,7 +214,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="債券の課税関係"
-                    :relatedProblems="['2024a18', '2024b5']"
                     :contents="[
                         // rev: 2026-06-28 確認済み
                         '利付債の利息に対する課税は、特定公社債等の利息等については20％[[申告分離課税]]の対象となるが、源泉徴収されたものは申告不要も選択できる。また、一般公社債等の利息等については20％[[源泉分離課税]]の対象であるが、同族会社が発行した社債の利息でその同族会社の株主等が支払いを受けるものは、総合課税の対象となる。', //p44
@@ -232,7 +227,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="株式の評価（投資指標）"
-                    :relatedProblems="['2024a8', '2024b6', '2024c21']"
                     :contents="[
                         // rev: 2026-06-28 確認済み
                         '配当利回り → 配当性向', //p58
@@ -246,7 +240,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="財形制度"
-                    :relatedProblems="['2024a15', '2024b7']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '原則として[[1,000円以上1,000円単位]]の積立制度であある。', //p27
@@ -260,7 +253,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="投資信託"
-                    :relatedProblems="['2024a22', '2024b8', '2024c7']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '投資信託は、１人の個人投資家の「[[小口購入]]」した資金を集めることによって、機関投資家（生命保険会社等）と同じ「[[分散投資]]」の効果を得ることができる。', //p73
@@ -274,7 +266,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="その他の金融商品"
-                    :relatedProblems="['2024b9', '2024c9']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '正しい',
@@ -288,7 +279,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="外貨建て金融商品の注意事項"
-                    :relatedProblems="['2024a46', '2024b10']"
                     :contents="[
                         // rev: 2026-06-28 確認済み
                         '預けたお金を外貨のまま現金（キャッシュ）で引き出すことは可能だが、[[手数料がかかる]]（手数料は金融機関により異なる）。', //p111
@@ -302,7 +292,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="外国債券"
-                    :relatedProblems="['2024a11', '2024b11', '2024c11']"
                     :contents="[
                         // rev: 2026-06-28 確認済み
                         'ショーグン債 → サムライ債', //p122
@@ -316,7 +305,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険・証券等の保護"
-                    :relatedProblems="['2024b12']"
                     :contents="[
                         // rev: 2026-06-30 確認済み
                         '生命保険契約者保護機構が[[救済する側の生命保険会社]]に資金援助を行い、破綻保険会社の保険契約を健全な生命保険会社へ円滑に移転する。', //p129
@@ -330,7 +318,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品の利払型商品と満期一括受取型商品"
-                    :relatedProblems="['2024b13']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '正しい',
@@ -344,7 +331,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品の中途換金の取り扱い"
-                    :relatedProblems="['2024a14', '2024b14', '2024c14']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '正しい',
@@ -358,7 +344,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="景気・経済の動向"
-                    :relatedProblems="['2024b15', '2024c15']"
                     :contents="[
                         // rev: 2026-06-30 確認済み
                         '正しい',
@@ -372,7 +357,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="債券の種類"
-                    :relatedProblems="['2024a16', '2024b16', '2024c16']"
                     :contents="[
                         // rev: 2026-06-28 確認済み
                         '正しい',
@@ -386,7 +370,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="債券の発行条件"
-                    :relatedProblems="['2024a17', '2024b17', '2024c17']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '1,000円 → 100円', //p38
@@ -400,7 +383,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="債券の格付け"
-                    :relatedProblems="['2024b18']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '正しい',
@@ -414,7 +396,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="株式の基礎"
-                    :relatedProblems="['2024a43', '2024b19', '2024c6']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '正しい',
@@ -428,7 +409,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="国債"
-                    :relatedProblems="['2024a20', '2024b20', '2024c20']"
                     :contents="[
                         // rev: 2026-06-28 確認済み
                         '正しい',
@@ -442,7 +422,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相場指標"
-                    :relatedProblems="['2024a7', '2024b21']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '単純平均株価には、株式分割や権利落ちなどによる株価への影響が[[修正されていない]]など株価の連続性が[[保たれていない]]という欠点がある。', //p56
@@ -456,7 +435,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金の運用選択としての投資信託"
-                    :relatedProblems="['2024b22', '2024c8']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '正しい',
@@ -470,7 +448,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="転換社債型新株予約権付社債（転換社債）"
-                    :relatedProblems="['2024b23']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '正しい',
@@ -484,7 +461,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="金融機関の選択"
-                    :relatedProblems="['2024a24', '2024b24', '2024c24']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '正しい',
@@ -499,7 +475,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="債券の特徴"
-                    :relatedProblems="['2024b25']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '借りたい',
@@ -522,7 +497,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="ドルコスト平均法"
-                    :relatedProblems="['2024a30', '2024b30', '2024c30']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         '時間分散',
@@ -545,7 +519,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="居住用財産の譲渡所得の特別控除"
-                    :relatedProblems="['2024b35']"
                     :contents="[
                         // rev: 2026-06-29 確認済み
                         'を問わず',
@@ -570,61 +543,51 @@ const isDraft = false;
                         {
                             // rev: 2026-06-28 確認済み
                             questionTitle: '日本の金融市場',
-                            relatedProblems: ['2024b40', '2024c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-06-29 確認済み
                             questionTitle: '金融商品の三分類',
-                            relatedProblems: ['2024a41', '2024b41', '2024c41'],
                             content: '流動性商品 → 利殖性商品', //p26
                         }, //41
                         {
                             // rev: 2026-06-29 確認済み
                             questionTitle: '債券の店頭市場',
-                            relatedProblems: ['2024a42', '2024b42', '2024c42'],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-30 確認済み
                             questionTitle: '配当金に対する課税',
-                            relatedProblems: ['2024b43', '2024c43'],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-06-29 確認済み
                             questionTitle: '投資信託の信託報酬',
-                            relatedProblems: ['2024b44'],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-06-29 確認済み
                             questionTitle: '円高・円安',
-                            relatedProblems: ['2024a45', '2024b45', '2024c45'],
                             content: '円安（ドル高） ↔︎ 円高（ドル安）', //p108
                         }, //45
                         {
                             // rev: 2026-06-29 確認済み
                             questionTitle: '不動産投資信託（J-REIT「リート」）',
-                            relatedProblems: ['2024b46'],
                             content: '投資先が倒産するなどの「信用リスク」と「価格変動リスク」が[[ある]]。', //p91
                         }, //46
                         {
                             // rev: 2026-06-28 確認済み
                             questionTitle: '預金保険制度',
-                            relatedProblems: ['2024b47', '2024c12'],
                             content: '正しい',
                         }, //47
                         {
                             // rev: 2026-06-29 確認済み
                             questionTitle: '外貨預金',
-                            relatedProblems: ['2024a47', '2024b48', '2024c23'],
                             content: '種類は、普通預金、当座預金、通知預金、定期預金などがあり、[[円で行う預金と基本的な仕組みは変わらない]]。', //p112
                         }, //48
                         {
                             // rev: 2026-06-29 確認済み
                             questionTitle: '不動産活用・土地信託方式',
-                            relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             content: '正しい',
                         }, //49
                     ]"

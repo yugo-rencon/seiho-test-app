@@ -25,7 +25,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険者"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '登録 → 免許', //p3
@@ -38,7 +37,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="責任開始の時期"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '必ず一致する → 必ずしも一致しないことがある', //p10
@@ -51,7 +49,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払込み"
-                    :relatedProblems="[]"
                     :contents="[
                         '立替入金も禁止されていない → 保険業法で禁じられている', //p13
                         '同一とは評価されない → 同一と評価される', //p14
@@ -64,7 +61,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金の支払い"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '消息を絶った時点に遡って → 7年の期間が満了したとき', //p23
@@ -77,7 +73,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         '保険料払込期月の契約応当日に遡って → 猶予期間の満了日の翌日から', //p34
                         '解約返戻金の請求権は消滅する → 請求権は存続する', //p35
@@ -90,7 +85,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="被保険者集団"
-                    :relatedProblems="[]"
                     :contents="[
                         '収支相等の原則が有効に機能していること → 大数の法則が作用し得る程度に十分大量の被保険者が存在すること', //p67
                         '厚生労働省 → 金融庁長官', //p67
@@ -103,7 +97,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務制度"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         'どちらの場合も告知受領権はない → 代理の場合は告知受領権があり、媒介の場合はない', //p72
@@ -116,7 +109,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="営業保険料の構成と計算基礎"
-                    :relatedProblems="[]"
                     :contents="[
                         '純保険料 → 付加保険料', //p89
                         '正しい',
@@ -129,7 +121,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="契約内容の変更"
-                    :relatedProblems="[]"
                     :contents="[
                         '元利金を差し引く前の金額 → 元利金を差し引いた残額<br>一時払終身保険 → 一時払養老保険', //p114
                         '変更時点の計算基礎率 → 元契約と同じ計算基礎率', //p114
@@ -142,7 +133,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障を目的とした主契約"
-                    :relatedProblems="[]"
                     :contents="[
                         '終身タイプの商品はない → 定期タイプと終身タイプがある', //p140
                         '満期保険金を支払う商品が一般的 → 一般に満期保険金はない', //p140
@@ -155,7 +145,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="特約の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '特約は継続する → 特約は消滅する', //p156
@@ -168,7 +157,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="共済事業とその商品"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '農業協同組合が単独 → 農業協同組合と全国共済農業協同組合連合会の2組織', //p166
@@ -181,7 +169,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反による保険契約の解除"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '相手方に発信した時点 → 相手方に到達した時点', //p40
@@ -194,7 +181,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解約・取消し・無効等"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         'いずれの場合も既払込保険料は返還 → 後者の場合は返還されない', //p42
@@ -207,7 +193,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金等の請求手続き"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -220,7 +205,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="身体的危険"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -233,7 +217,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の原理"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -246,7 +229,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果の検証"
-                    :relatedProblems="[]"
                     :contents="[
                         '活かす目的に適している → 適さない', //p69
                         '正しい',
@@ -259,7 +241,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金（毎年配当型）の支払いと計算方法"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -272,7 +253,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法（毎年配当型）"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -285,7 +265,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="契約転換制度"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '転換後契約の加入年齢 → 転換前契約の加入年齢', //p120
@@ -298,7 +277,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保障を厚くする特約"
-                    :relatedProblems="[]"
                     :contents="[
                         '逓増定期保険特約はない → 逓増定期保険特約もある', //p156
                         '正しい',
@@ -311,7 +289,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="特定の疾病や損傷の治療に備える特約"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -324,7 +301,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="共済制度の特徴"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -338,7 +314,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="危険選択の手段"
-                    :relatedProblems="[]"
                     :contents="[
                         '事業方法書',
                         '社医',
@@ -360,7 +335,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="条件体保険の特別条件"
-                    :relatedProblems="[]"
                     :contents="[
                         '逓増性',
                         '逓減性',
@@ -382,7 +356,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="チルメル式保険料積立金"
-                    :relatedProblems="[]"
                     :contents="[
                         '付加保険料',
                         '純保険料',
@@ -406,52 +379,42 @@ const isDraft = false;
                         // 問40〜49
                         {
                             questionTitle: '保険法における生命保険契約',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //40
                         {
                             questionTitle: '年払・半年払保険料の返還',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //41
                         {
                             questionTitle: 'BMI',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             questionTitle: '契約内容登録制度等',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             questionTitle: '契約確認',
-                            relatedProblems: [],
                             content: '契約成立後に行われることはない → 契約成立前や契約成立後に行われる', //p60
                         }, //44
                         {
                             questionTitle: '生命保険会社で使用している経験表',
-                            relatedProblems: [],
                             content: '生保標準生命表2021 → 2018', //p78
                         }, //45
                         {
                             questionTitle: '平均寿命・平均余命',
-                            relatedProblems: [],
                             content: '平均寿命 ↔︎ 平均余命', //p79
                         }, //46
                         {
                             questionTitle: '個人年金保険の年金種類の変更',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
                             questionTitle: '変額保険・変額個人年金保険',
-                            relatedProblems: [],
                             content: 'いずれの保険も解約返戻金には[[最低保証はない]]のが一般的である。', //p146
                         }, //48
                         {
                             questionTitle: 'CO・OP共済',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //49
                     ]"

@@ -26,7 +26,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の申告"
-                    :relatedProblems="[]"
                     :contents="[
                         '1月16日から2月25日まで → 2月16日から3月15日まで', //p34
                         '正しい',
@@ -39,7 +38,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の課税財産と非課税財産"
-                    :relatedProblems="[]"
                     :contents="[
                         '相続財産に特許権、営業権も含まれる', //p42
                         '正しい',
@@ -52,7 +50,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="契約形態による課税関係"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '贈与税の課税対象 → 相続税（保険金非課税の取り扱い無し）の課税対象', //p59
@@ -65,7 +62,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税"
-                    :relatedProblems="[]"
                     :contents="[
                         '贈与税（暦年課税）に配偶者控除もある', //p55
                         '一度適用すると、選択した親や祖父母からの贈与については、暦年課税に変更できない', //p57
@@ -78,7 +74,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税、法人の住民税・事業税"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '株主等が5人以下およびその同族関係者で発行株式総数または出資金額あるいは議決権等の30%超を有する会社 → 株主等が3人以下およびその同族関係者で発行株式総数または出資金額あるいは議決権等の50%超を有する会社', //p79
@@ -91,7 +86,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         '3つに区分 → 4つに区分（第Ⅰ種から第Ⅳ種）', //p82
                         '5年 → 1年', //p83
@@ -104,7 +98,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         '特約保険料は損金算入できない → 特約保険料も含めて全額を損金算入できる', //p86
                         '従業員に対する給与とみなされ所得税が課税される → 従業員に対する給与とみなされることはなく所得税は課税されない', //p86
@@ -169,7 +162,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         '加入者個人の拠出がある場合は生命保険料控除（一般生命保険料控除）の対象となる', //p102
                         '正しい',
@@ -182,7 +174,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金制度の老齢給付の内容"
-                    :relatedProblems="[]"
                     :contents="[
                         '30年（360月） → 40年（480月）', //p138
                         '正しい',
@@ -195,7 +186,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険募集人が遵守すべき法令等（保険業法）"
-                    :relatedProblems="[]"
                     :contents="[
                         '厚生労働大臣 → 内閣総理大臣', //p148
                         '媒介 → 代理', //p149
@@ -208,7 +198,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金・給付金等の請求と支払い"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '金融庁 → 生命保険会社', //p172
@@ -221,7 +210,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="所得の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '総収入金額から、その収入を得るために支出した金額（必要経費）を差し引くことができない → 総収入金額から、その収入を得るために支出した金額（必要経費）を差し引いた金額が事業所得', //p16
@@ -234,7 +222,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の申告手続と納付方法"
-                    :relatedProblems="[]"
                     :contents="[
                         '課税価格の合計額が基礎控除額以下である場合でも相続税の申告が必要 → 相続税の申告は不要', //p52
                         '正しい',
@@ -247,7 +234,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続対策"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -260,7 +246,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="企業市場"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '普通法人企業に合同会社・合名会社・合資会社も含まれる', //p71
@@ -273,7 +258,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -286,7 +270,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金制度"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -299,7 +282,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -312,7 +294,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="勤労者財産形成制度（財形制度）"
-                    :relatedProblems="[]"
                     :contents="[
                         '500万円 → 550万円<br>300万円 → 385万円<br>800万円 → 550万円', //p117
                         '正しい',
@@ -325,7 +306,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金制度の障害給付と遺族給付の内容"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -338,7 +318,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="厚生年金保険（被用者年金）"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -351,7 +330,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="募集時の正しい説明"
-                    :relatedProblems="[]"
                     :contents="[
                         '保険契約締結後 → 保険契約締結前', //p168
                         '正しい',
@@ -364,7 +342,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険と保全・アフターサービス"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -378,7 +355,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="金利の決まり方"
-                    :relatedProblems="[]"
                     :contents="[
                         '利息（価格）',
                         '設備投資',
@@ -400,7 +376,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="確定拠出年金制度"
-                    :relatedProblems="[]"
                     :contents="[
                         'ポータビリティ',
                         '加入者自ら',
@@ -422,7 +397,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="相続税額の計算"
-                    :relatedProblems="[]"
                     :contents="[
                         '14800',
                         '6700',
@@ -446,52 +420,42 @@ const isDraft = false;
                         // 問40〜49
                         {
                             questionTitle: '税金',
-                            relatedProblems: [],
                             content: '普通税と目的税 → 国税と地方税', //p14
                         }, //40
                         {
                             questionTitle: '住宅借入金等特別控除',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //41
                         {
                             questionTitle: '相続時精算課税制度',
-                            relatedProblems: [],
                             content: '受贈者である子または孫は、この制度の適用を贈与者である親や祖父母ごとに[[選択することができる]]', //p57
                         }, //42
                         {
                             questionTitle: '個人の住民税の申告',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             questionTitle: '複利型商品',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //44
                         {
                             questionTitle: '総合福祉団体定期保険の販売手順',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             questionTitle: '保険法',
-                            relatedProblems: [],
                             content: '[[商法]]では、告知する事項を契約者等が判断して告知する義務（自発的申告義務）と規定されていたのに対し、[[保険法では、保険会社が質問したことだけを答えれば良いという義務（質問応答義務）に変更された]]', //p158-159
                         }, //46
                         {
                             questionTitle: '金利の基礎知識',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
                             questionTitle: '個人情報保護法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             questionTitle: '解約手続きの留意点',
-                            relatedProblems: [],
                             content: '解約請求できるのは契約者と被保険者 → 契約者のみ<br>契約者・被保険者の意思確認 → 契約者の意思確認', //p174
                         }, //49
                     ]"

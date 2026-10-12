@@ -21,7 +21,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険ＦＰの役割"
-                    :relatedProblems="['2024a1', '2024b1', '2024c1']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -35,7 +34,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="リスクマネジメント"
-                    :relatedProblems="['2024a2', '2024b2', '2024c2']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -49,7 +47,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="ローン金利の種類"
-                    :relatedProblems="['2024a30', '2024b3', '2024c15']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '住宅ローンではフラット35（証券化住宅ローン）など、教育ローンでは国の教育ローンなど、[[カードローンやキャッシングなど]]が、[[固定金利型ローンになる]]。', //p36
@@ -63,7 +60,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="住宅取得資金計画"
-                    :relatedProblems="['2024b4', '2024c16']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '購入金額の1割 → 購入金額の2割', //p49
@@ -77,7 +73,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="資金運用の３要素による金融商品の分類"
-                    :relatedProblems="['2024a5', '2024b5', '2024c5']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -91,7 +86,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品のリスク"
-                    :relatedProblems="['2024a6', '2024a17', '2024b6', '2024c6']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '集中投資 → 分散投資', //p68
@@ -105,7 +99,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="ポートフォリオ運用（分散投資）"
-                    :relatedProblems="['2024b7']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '「種類別分散」とは、株式や債券、または投資信託といった資産種類を分散して運用する方法や、[[同じ資産の中で商品・銘柄を分散する方法]]、あるいは異なった種類・期間の金融商品を複合する方法もある。', //p68
@@ -119,7 +112,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の基礎知識"
-                    :relatedProblems="['2024a7', '2024b8', '2024c7']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '減少 → 増加', //p74
@@ -133,7 +125,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の保障"
-                    :relatedProblems="['2024a9', '2024b9', '2024c9']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '高齢者の医療費自己負担が増える傾向にあるので、生命保険会社の[[医療保険などによる医療保障の充実]]が必要になる。', //p80
@@ -147,7 +138,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の計算手順"
-                    :relatedProblems="['2024a10', '2024b10', '2024c10']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '相続財産評価額の合計額から、非課税財産・葬式費用・債務を差し引き、相続開始前[[7年]]以内の贈与財産を加算して課税価格合計額を算出する。', //p94
@@ -161,7 +151,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="['2024a11', '2024b11', '2024c11']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '保険業務や保険契約に関する法律は「保険監督法」と「保険取引法」に大別できるが、保険監督法に[[保険業法]]が含まれ、保険取引法に[[民法と保険法]]が関係する。', //p114
@@ -175,7 +164,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険募集と禁止行為"
-                    :relatedProblems="['2024a12', '2024b12', '2024c12']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '「事実と異なる説明による募集」に[[該当する]]。', //p129
@@ -189,7 +177,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融ビッグバンによる金融システムの規制緩和後の資産運用"
-                    :relatedProblems="['2024a13', '2024b13', '2024c13']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '金融システムの規制緩和により、「外為の規制[[緩和]]」「金融機関の垣根の[[撤廃]]」「外国資本の[[参入]]」、そして「金融新商品の登場」など、金融業界は大変革を遂げた。', //p4
@@ -203,7 +190,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフステージ別のプランニング"
-                    :relatedProblems="['2024a14', '2024b14', '2024c14']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '正しい',
@@ -217,7 +203,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="独立行政法人住宅金融支援機構（「機構」）"
-                    :relatedProblems="['2024a16', '2024b15', '2024c4']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="教育資金設計"
-                    :relatedProblems="['2024a4', '2024b16', '2024c17']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -245,7 +229,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の資金運用"
-                    :relatedProblems="['2024a8', '2024b17', '2024c18']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続時精算課税制度"
-                    :relatedProblems="['2024b18', '2024c46']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を活用した相続対策"
-                    :relatedProblems="['2024a19', '2024b19', '2024c19']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法に定める不適切な説明と不適切な行為"
-                    :relatedProblems="['2024a20', '2024b20', '2024c20']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融サービス提供法"
-                    :relatedProblems="['2024a21', '2024b21', '2024b48', '2024c21']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法以外の保険販売等に関する法律"
-                    :relatedProblems="['2024b22']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '正しい',
@@ -329,7 +307,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人情報の保護に関する法律（個人情報保護法）"
-                    :relatedProblems="['2024b23', '2024c24']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '該当しない → 該当する', //p164
@@ -343,7 +320,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険相談所・裁定審査会"
-                    :relatedProblems="['2024a24', '2024b24', '2024c35']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '正しい',
@@ -358,7 +334,6 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="キャッシュフロー表の作成"
-                    :relatedProblems="['2024a25', '2024b25', '2024c25']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '可処分所得',
@@ -381,7 +356,6 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="ポートフォリオの作成"
-                    :relatedProblems="['2024b30']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '不動産',
@@ -404,7 +378,6 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="老後生活設計の医療費等"
-                    :relatedProblems="['2024a18', '2024b35', '2024c8']"
                     :contents="[
                         // rev: 2026-05-30 確認済み
                         '14',
@@ -431,61 +404,51 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-05-30 確認済み
                             questionTitle: 'リボルビング（回転信用）方式',
                             content: '正しい',
-                            relatedProblems: ['2024a40', '2024b40', '2024c40'],
                         }, //40
                         {
                             // rev: 2026-05-30 確認済み
                             questionTitle: '有担保ローンと無担保ローン',
                             content: '無担保ローンに比べれば、有担保ローンの方が融資限度額は大幅に大きく、金利も[[有担保ローンの方が無担保ローンより]]低くなっている。', //p34
-                            relatedProblems: ['2024b41'],
                         }, //41
                         {
                             // rev: 2026-05-30 確認済み
                             questionTitle: '住宅ローンの借換え',
                             content: '正しい',
-                            relatedProblems: ['2024a42', '2024b42', '2024c42'],
                         }, //42
                         {
                             // rev: 2026-05-30 確認済み
                             questionTitle: 'キャッシュフロー表の変動要素',
                             content: '正しい',
-                            relatedProblems: ['2024a43', '2024b43', '2024c43'],
                         }, //43
                         {
                             // rev: 2026-05-30 確認済み
                             questionTitle: 'ゆとりある老後生活費',
                             content: '正しい',
-                            relatedProblems: ['2024a44', '2024b44', '2024c44'],
                         }, //44
                         {
                             // rev: 2026-05-30 確認済み
                             questionTitle: '死亡保険金の活用方法等',
                             content: '遺族基礎年金の受給者である被保険者の妻に該当する場合、資産運用に[[障害者等のマル優・特別マル優の非課税の枠が利用できる]]。', //p86
-                            relatedProblems: ['2024b45', '2024c45'],
                         }, //45 p86
                         {
                             // rev: 2026-05-30 確認済み
                             questionTitle: '2016年（平成28年）５月施行の保険業法の主な改正内容',
                             content: '[[契約締結前の段階]]においては、お客さまの最終的な意向と契約の申込みを行おうとする保険契約の内容が合致しているかどうかについて、「意向確認書面」を用いてお客さまに確認（＝意向確認）する必要がある。', //p117
-                            relatedProblems: ['2024a47', '2024b46', '2024c47'],
                         }, //46
                         {
                             // rev: 2026-05-30 確認済み
                             questionTitle: '生命保険会社の経営破綻時の取引制限',
                             content: '正しい',
-                            relatedProblems: ['2024b47'],
                         }, //47
                         {
                             // rev: 2026-05-30 確認済み
                             questionTitle: '金融サービス提供法',
                             content: '正しい',
-                            relatedProblems: ['2024a21', '2024b21', '2024b48', '2024c21'],
                         }, //48
                         {
                             // rev: 2026-05-30 確認済み
                             questionTitle: '犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）',
                             content: '生命保険会社等の金融機関は、お客さまが取引時確認に応じない場合には応じるまでの間、取引に係る義務の履行を[[拒むことができる]]こととし、免責規定を設けている。', //p162
-                            relatedProblems: ['2024a23', '2024b49', '2024c23'],
                         }, //49
                     ]"
                 />

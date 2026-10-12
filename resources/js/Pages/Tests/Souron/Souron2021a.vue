@@ -24,7 +24,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当-①"
-                    :relatedProblems="['2021a1', '2021b1', '2021c1']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '負債',
@@ -46,7 +45,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当-②"
-                    :relatedProblems="['2021a6', '2021b6', '2021c6']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '利源分析',
@@ -68,7 +66,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="共済と保険-①"
-                    :relatedProblems="['2021a11']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '損害共済',
@@ -90,7 +87,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="共済と保険-②"
-                    :relatedProblems="['2021a16']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '軽い',
@@ -112,7 +108,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の対象となる危険とその特色"
-                    :relatedProblems="['2021a21']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
@@ -125,7 +120,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険の選択"
-                    :relatedProblems="['2021a22']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '選択医 → 診査医', //p17
@@ -138,7 +132,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="早期是正措置の導入と保険業法の一部改正"
-                    :relatedProblems="['2021a23', '2021b23', '2021c23']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '責任準備金の積立度合 → 保険金の支払い余力', //p99
@@ -151,7 +144,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="社会保険の特質"
-                    :relatedProblems="['2021a24', '2021b24', '2021c24']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '社会保険の場合は、保険事故の発生率よりも[[保険料負担者の負担能力に応じて保険料が決められる]]ことが多いという特色がある。', //p125
@@ -164,7 +156,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
-                    :relatedProblems="['2021a25']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '正しい',
@@ -177,7 +168,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の要素"
-                    :relatedProblems="['2021a26', '2021b26', '2021b32', '2021c26']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '正しい',
@@ -190,7 +180,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者へのPR活動等"
-                    :relatedProblems="['2021a27']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
@@ -203,7 +192,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産運用の現状"
-                    :relatedProblems="['2021a28']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '貸付金 ↔︎ 有価証券', //p111-113
@@ -216,7 +204,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険監督の方法"
-                    :relatedProblems="['2021a29']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '正しい',
@@ -229,7 +216,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="社会構造の変化"
-                    :relatedProblems="['2021a30', '2021c38']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '正しい',
@@ -245,130 +231,110 @@ const subject = "2021年度 フォームA";
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '危険対策と保険',
-                            relatedProblems: ['2021a31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: '責任準備金',
-                            relatedProblems: ['2021a32'],
                             content: '自然保険料方式 ↔︎ 平準保険料方式', //p24
                         }, //32
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険の生成・発展',
-                            relatedProblems: ['2021a33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: 'アームストロング調査',
-                            relatedProblems: ['2021a34', '2021b34', '2021c34'],
                             content: '合衆国統一の取締法 → ニューヨーク州の取締法', //p63
                         }, //34
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保有契約高と国民所得',
-                            relatedProblems: ['2021a35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '生命保険会社の資金の性格',
-                            relatedProblems: ['2021a36', '2021b36', '2021c36'],
                             content: '純資産の大部分 → 負債の大部分', //p108
                         }, //36
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '公的介護保険性の被保険者',
-                            relatedProblems: ['2021a37'],
                             content: '介護保険制度の被保険者は、[[65歳以上を第１号被保険者]]とし、[[40歳〜65歳未満の医療保険加入者を第２号被保険者]]とする。', //p141
                         }, //37
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: 'ソルベンシー・マージン比率',
-                            relatedProblems: ['2021a38'],
                             content: 'ソルベンシー・マージン比率は、[[保険会社が直面している通常の予測を超える諸リスク（保険リスク、資産運用リスク等）相当額の1／2を分母]]とし、[[保険会社の自己資本性と考えられる資本勘定、諸準備金などの合計額を分子]]として計算される。', //p155（旧教科書）
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '簡易保険の歴史',
-                            relatedProblems: ['2021a39', '2021b39', '2021c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険業界の国際化',
-                            relatedProblems: ['2021a40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '契約の法的性質',
-                            relatedProblems: ['2021a41'],
                             label: 'ウ',
                             content: '諾成契約',
                         }, //41
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険事故の発生',
-                            relatedProblems: ['2021a42'],
                             label: 'ア',
                             content: '保険金',
                         }, //42
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '養老保険',
-                            relatedProblems: ['2021a43'],
                             label: 'エ',
                             content: '逓減定期保険',
                         }, //43
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '賦課式保険',
-                            relatedProblems: ['2021a44', '2021b44', '2021c44'],
                             label: 'エ',
                             content: '同額の分担金で',
                         }, //44
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '近代的生命保険の導入',
-                            relatedProblems: ['2021a45'],
                             label: 'オ',
                             content: '',
                         }, //45
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '国民経済における生命保険',
-                            relatedProblems: ['2021a46', '2021b46', '2021c46'],
                             label: 'オ',
                             content: '',
                         }, //46
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '公的医療保険',
-                            relatedProblems: ['2021a47'],
                             label: 'イ',
                             content: '国民皆保険',
                         }, //47
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険に関する法律',
-                            relatedProblems: ['2021a48'],
                             label: 'ア',
                             content: '金融商品取引法',
                         }, //48
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '銀行・証券業界',
-                            relatedProblems: ['2021a49'],
                             label: 'ウ',
                             content: '個人年金',
                         }, //49
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '共同ネットワークシステム',
-                            relatedProblems: ['2021a50', '2021b50', '2021c50'],
                             label: 'イ',
                             content: 'LINC（Life Insurance Network Center）',
                         }, //50

@@ -21,7 +21,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の形態"
-                    :relatedProblems="['2024b1']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '正しい',
@@ -35,7 +34,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任開始の時期"
-                    :relatedProblems="['2024a2', '2024b2', '2024c2']"
                     :contents="[
                         // rev: 2026-05-31 確認済み
                         '正しい',
@@ -49,7 +47,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効・復活"
-                    :relatedProblems="['2024a16', '2024b3']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '大半の生命保険会社が「猶予期間の満了日の[[翌日]]から効力を失う」と規定している。', //p34
@@ -63,7 +60,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金の支払い"
-                    :relatedProblems="['2024a5', '2024b4']"
                     :contents="[
                         // rev: 2026-05-31 確認済み
                         '正しい',
@@ -77,7 +73,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解除・解約・取消し・無効"
-                    :relatedProblems="['2024a14', '2024b5']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '解約させる → 消滅させる', //p39
@@ -91,7 +86,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="被保険者集団"
-                    :relatedProblems="['2024a6', '2024b6', '2024c6']"
                     :contents="[
                         // rev: 2026-05-31 確認済み
                         '④[[大数の法則が作用し得る程度に十分大量の被保険者が存在すること]]', //p67
@@ -105,7 +99,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="身体的危険"
-                    :relatedProblems="['2024b7', '2024c16']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '生命保険においては、身長と体重との関係によって、体格を[[過重体・平均体・過軽体]]に分類している。', //p49
@@ -119,7 +112,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="営業保険料の構成と計算基礎"
-                    :relatedProblems="['2024b8']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '純保険料 → 付加保険料', //p89
@@ -133,7 +125,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約内容の変更"
-                    :relatedProblems="['2024a9', '2024b9', '2024c9']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '払済保険は、変更時の解約返戻金（契約上の貸付金がある場合には、その元利金を[[差し引いた残額]]）をもとに保険期間を変えずに、[[一時払養老保険]]もしくは元契約の主契約と同じ種類の保険に変更し、保険契約の存続を図るものである。', //p114
@@ -147,7 +138,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障を目的とした主契約"
-                    :relatedProblems="['2024a10', '2024b10', '2024c10']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '保険期間が一定期間の定期タイプと、[[一生涯保障が継続する終身タイプがある]]。', //p140
@@ -161,7 +151,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院、手術、通院など病気・ケガの治療全般に備える特約"
-                    :relatedProblems="['2024b11']"
                     :contents="[
                         // rev: 2026-06-02 確認済み
                         '病気や[[不慮の事故（ケガ）]]で所定の手術をしたときに、手術給付金を支払う。', //p157
@@ -175,7 +164,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
-                    :relatedProblems="['2024a24', '2024b12', '2024c24']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '正しい',
@@ -189,7 +177,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の当事者"
-                    :relatedProblems="['2024b13', '2024c3']"
                     :contents="[
                         // rev: 2026-06-02 確認済み
                         '正しい',
@@ -203,7 +190,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払込み"
-                    :relatedProblems="['2024a3', '2024b14', '2024c14']"
                     :contents="[
                         // rev: 2026-05-31 確認済み
                         '正しい',
@@ -217,7 +203,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金等の請求手続き"
-                    :relatedProblems="['2024a15', '2024b15', '2024c15']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の手段"
-                    :relatedProblems="['2024a7', '2024b16', '2024c25']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '正しい',
@@ -245,7 +229,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の原理"
-                    :relatedProblems="['2024a17', '2024b17', '2024c17']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果の検証"
-                    :relatedProblems="['2024a18', '2024b18', '2024b43', '2024c30']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '保険料算定の基礎表の死亡率（予定死亡率）と実際死亡率との差が死差益の源泉となるが、これは徴収した保険料に対する支払保険金の実績の評価にとどまり、[[将来の危険選択に活かすという目的には適さない]]。', //p69
@@ -273,7 +255,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金（毎年配当型）の支払いと計算方法"
-                    :relatedProblems="['2024a19', '2024b19', '2024c19']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当の割当て"
-                    :relatedProblems="['2024b20', '2024c18']"
                     :contents="[
                         // rev: 2026-06-02 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保障見直しに関する諸制度"
-                    :relatedProblems="['2024b21']"
                     :contents="[
                         // rev: 2026-06-02 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保障を厚くする特約"
-                    :relatedProblems="['2024a22', '2024b22', '2024c22']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '保険料が一定で、契約後一定期間ごとに保険金額が減っていく逓減定期保険特約や保険金額が増えていく逓増定期保険特約も[[ある]]。', //p156
@@ -329,7 +307,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="特定の疾病や損傷の治療に備える特約"
-                    :relatedProblems="['2024b23']"
                     :contents="[
                         // rev: 2026-06-02 確認済み
                         '正しい',
@@ -343,7 +320,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="共済制度の特徴"
-                    :relatedProblems="['2024a12', '2024b24']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '正しい',
@@ -358,7 +334,6 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="生命保険会社の免責事由"
-                    :relatedProblems="['2024b25']"
                     :contents="[
                         // rev: 2026-06-02 確認済み
                         '保険法',
@@ -381,7 +356,6 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="条件体保険の特別条件"
-                    :relatedProblems="['2024b30']"
                     :contents="[
                         // rev: 2026-06-02 確認済み
                         '逓増性',
@@ -404,7 +378,6 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="チルメル式保険料積立金"
-                    :relatedProblems="['2024a35', '2024b35', '2024c35']"
                     :contents="[
                         // rev: 2026-06-01 確認済み
                         '付加保険料',
@@ -430,61 +403,51 @@ const subject = "2024年度 フォームB";
                         {
                             // rev: 2026-06-01 確認済み
                             questionTitle: '生命保険契約の定義',
-                            relatedProblems: ['2024a40', '2024b40', '2024c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-06-02 確認済み
                             questionTitle: '承諾前の保険事故',
-                            relatedProblems: ['2024b41'],
                             content: '正しい',
                         }, //41
                         {
                             // rev: 2026-06-01 確認済み
                             questionTitle: 'BMI',
-                            relatedProblems: ['2024a42', '2024b42', '2024c42'],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-01 確認済み
                             questionTitle: '選択効果の検証',
-                            relatedProblems: ['2024a18', '2024b18', '2024b43', '2024c30'],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-06-01 確認済み
                             questionTitle: '契約確認',
-                            relatedProblems: ['2024a43', '2024b44'],
                             content: '契約確認とは、不実な告知などによる不正な加入を防止するために、[[契約成立前または契約成立後]]に告知内容の確認や職業・生活環境の実情把握などを行う制度である。', //p60
                         }, //44
                         {
                             // rev: 2026-06-02 確認済み
                             questionTitle: '転換契約の募集に際しての法令上の規制',
-                            relatedProblems: ['2024b45'],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-06-01 確認済み
                             questionTitle: '平均寿命・平均余命',
-                            relatedProblems: ['2024a46', '2024b46', '2024c46'],
                             content: '平均寿命 ↔︎ 平均余命', //p79
                         }, //46
                         {
                             // rev: 2026-06-01 確認済み
                             questionTitle: '個人年金保険の年金種類の変更',
-                            relatedProblems: ['2024a47', '2024b47', '2024c47'],
                             content: '正しい',
                         }, //47
                         {
                             // rev: 2026-06-01 確認済み
                             questionTitle: '特定疾病保障保険（三大疾病保障保険）',
-                            relatedProblems: ['2024a48', '2024b48'],
                             content: '特定疾病保険金を支払った時点で、[[契約は消滅する]]。', //p127
                         }, //48
                         {
                             // rev: 2026-06-02 確認済み
                             questionTitle: 'CO・OP共済',
-                            relatedProblems: ['2024b49'],
                             content: '正しい',
                         }, //49
                     ]"

@@ -21,7 +21,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険ＦＰの役割"
-                    :relatedProblems="['2025a1', '2025b1', '2025c1']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         'ファイナンシャル・プランナーとは、ファイナンシャル・プランニングを行うエキスパートであり、プランを立てる際に必要に応じて、[[弁護士、税理士、不動産の専門家などの協力を得ながら]]、お客さまの総合的な資産設計を行い、その実行の手助けをすることを主たる職務とする。', //p1
@@ -35,7 +34,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフプランニングの基礎"
-                    :relatedProblems="['2025a2', '2025b2', '2025c2']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         '生保ＦＰがライフイベントを決めるのではなく、一般的なライフイベントを示すことによって、[[お客さまの希望を聞き出すような姿勢]]が重要である。', //p6
@@ -49,7 +47,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="リスクマネジメント"
-                    :relatedProblems="['2025a3', '2025a42', '2025b3', '2025b42', '2025c3', '2025c41']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         '正しい',
@@ -63,7 +60,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフステージ別のプランニング（20歳代〜40歳代）"
-                    :relatedProblems="['2025a4', '2025a14', '2025b4', '2025c14']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         '提案する必要はない → 提案する必要がある', //p21
@@ -77,7 +73,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="住宅取得資金計画"
-                    :relatedProblems="['2025a5', '2025b5', '2025c5']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         '購入金額の1割 → 購入金額の2割', //p49
@@ -91,7 +86,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品のリスク"
-                    :relatedProblems="['2025a6', '2025a18', '2025b7', '2025b18', '2025c6', '2025c18']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         '集中投資 → 分散投資', //p68
@@ -105,7 +99,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の基礎知識"
-                    :relatedProblems="['2025a7', '2025b19', '2025c7']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         '近所付き合いの費用・趣味や「生きがい」のための費用など「定年によって発生する支出」もあるので、生活費（消費部分）は[[極端に少なくなることはない]]。', //p73
@@ -119,7 +112,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の保障"
-                    :relatedProblems="['2025a8', '2025b8', '2025c8']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '生命保険会社の[[医療保険などによる医療保障の充実]]が必要になる。', //p80
@@ -133,7 +125,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の計算手順"
-                    :relatedProblems="['2025a9', '2025c9']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '相続財産評価額の合計額から、非課税財産・葬式費用・債務を差し引き、相続開始前[[7年]]以内の贈与財産を加算して課税価格合計額を算出する。ただし、相続開始前[[3年超7年以内]]の贈与は、総額100万円まで加算しない。', //p94
@@ -147,7 +138,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="['2025a10', '2025b11', '2025c10']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '保険業務や保険契約に関する法律は「保険監督法」と「保険取引法」に大別できるが、保険監督法に[[保険業法]]が含まれ、保険取引法に[[民法と保険法]]が関係する。', //p114
@@ -161,7 +151,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）"
-                    :relatedProblems="['2025a11', '2025c11']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '取引時確認において、お客さまが法人の場合、[[法人と実際の取引担当者双方の本人特定事項の確認が必要]]。', //p161
@@ -175,7 +164,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険販売等に関する法律"
-                    :relatedProblems="['2025a12', '2025b12', '2025c12']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '消費者が誤認に気がついたときや、困惑の状況から解放されたときから原則[[1年]]以内で、契約締結時から原則[[5年]]以内となる', //p143
@@ -189,7 +177,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="キャッシュフロー表の作成"
-                    :relatedProblems="['2025a13', '2025b13', '2025c13']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -203,7 +190,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフステージ別のプランニング（50歳代既婚者）"
-                    :relatedProblems="['2025a4', '2025a14', '2025b4', '2025c14']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         '厚生年金保険のモデル年金額（含む妻の国民年金受給額）は、「ゆとりある老後生活費」の額を[[下回っている]]。', //p31
@@ -217,7 +203,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの種類"
-                    :relatedProblems="['2025a15', '2025b14', '2025c15']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="独立行政法人住宅金融支援機構（「機構」）"
-                    :relatedProblems="['2025a16', '2025b15', '2025c16']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -245,7 +229,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="確実性資金の商品選択"
-                    :relatedProblems="['2025a17', '2025b17']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品のリスクの種類"
-                    :relatedProblems="['2025a6', '2025a18', '2025b7', '2025b18', '2025c6', '2025c18']"
                     :contents="[
                         // rev: 2026-05-28 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の考え方"
-                    :relatedProblems="['2025a19']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の資金運用"
-                    :relatedProblems="['2025a20', '2025b20', '2025c20']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続時精算課税制度"
-                    :relatedProblems="['2025a21', '2025b47']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を活用した相続対策"
-                    :relatedProblems="['2025a22', '2025b21', '2025c21']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -329,7 +307,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険募集と禁止行為"
-                    :relatedProblems="['2025a23', '2025a48', '2025b48', '2025c22']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         'お客さまの要望に沿った提案であっても、お客さまに現在の職業について事実と異なる告知を勧めることは禁止行為に[[該当する]]。', //p132
@@ -343,7 +320,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法"
-                    :relatedProblems="['2025a24', '2025b24', '2025c24']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '正しい',
@@ -358,7 +334,6 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="ローン金利の種類"
-                    :relatedProblems="['2025a25', '2025b25', '2025c25']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '2',
@@ -381,7 +356,6 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="相続対策"
-                    :relatedProblems="['2025a30', '2025b10']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '財産の種類',
@@ -404,7 +378,6 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="保険募集のコンプライアンスと禁止行為"
-                    :relatedProblems="['2025a7']"
                     :contents="[
                         // rev: 2026-05-29 確認済み
                         '潜在的',
@@ -430,61 +403,51 @@ const subject = "2025年度 フォームA";
                             // rev: 2026-05-29 確認済み
                             questionTitle: '外貨建金融商品の利用',
                             content: 'ライフプラン（生活設計）の実現を目指して、金融資産の運用効率を上げるためには、外貨建ての金融商品を利用することは通貨的分散の効果があるが、為替リスク等も考慮に入れる[[必要がある]]。', //p5
-                            relatedProblems: ['2025a40', '2025b40', '2025c40'],
                         }, //40
                         {
                             // rev: 2026-05-29 確認済み
                             questionTitle: 'キャッシュフロー表の変動要素',
                             content: '正しい',
-                            relatedProblems: ['2025a41', '2025b41'],
                         }, //41
                         {
                             // rev: 2026-05-28 確認済み
                             questionTitle: 'リスクマネジメント',
                             content: 'ライフプランニングとリスクマネジメントは[[表裏一体の関係]]にあり、お客さまがライフプランを実現しようとするとき、リスクマネジメントは不可欠なものとなる。', //p14
-                            relatedProblems: ['2025a3', '2025a42', '2025b3', '2025b42', '2025c3', '2025c41'],
                         }, //42
                         {
                             // rev: 2026-05-29 確認済み
                             questionTitle: '住宅に対する考え方',
                             content: '正しい',
-                            relatedProblems: ['2025a43', '2025b43', '2025c43'],
                         }, //43
                         {
                             // rev: 2026-05-29 確認済み
                             questionTitle: '住宅ローンの借換え',
                             content: '正しい',
-                            relatedProblems: ['2025a44', '2025b44', '2025c42'],
                         }, //44
                         {
                             // rev: 2026-05-29 確認済み
                             questionTitle: 'ゆとりある老後生活費',
                             content: '正しい',
-                            relatedProblems: ['2025a45'],
                         }, //45
                         {
                             // rev: 2026-05-29 確認済み
                             questionTitle: '高齢者医療制度',
                             content: '後期高齢者の場合、医療機関の窓口ではかかった費用の1割、[[所定水準以上の所得者の場合は2割（そのうち現役並み所得者は3割）]]を負担する。', //p77
-                            relatedProblems: ['2025a46', '2025b46', '2025c46'],
                         }, //46
                         {
                             // rev: 2026-05-29 確認済み
                             questionTitle: '生命保険会社の経営破綻時の取引制限',
                             content: '正しい',
-                            relatedProblems: ['2025a47', '2025c47'],
                         }, //47
                         {
                             // rev: 2026-05-29 確認済み
                             questionTitle: '保険募集と禁止行為',
                             content: '正しい',
-                            relatedProblems: ['2025a23', '2025a48', '2025b48', '2025c22'],
                         }, //48
                         {
                             // rev: 2026-05-29 確認済み
                             questionTitle: '保険募集における違法行為',
                             content: '保険業法で規定されている保険募集における禁止行為は、[[行政処分を受ける可能性が生じる]]。', //p138
-                            relatedProblems: ['2025a49', '2025b49', '2025c49'],
                         }, //49
                     ]"
                 />

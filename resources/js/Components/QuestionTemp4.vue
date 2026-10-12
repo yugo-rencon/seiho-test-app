@@ -135,7 +135,7 @@
             </div>
         </div>
     </template>
-    <PaywallNotice v-if="shouldShowPaywallNotice" />
+    <PaywallNotice v-if="!props.learningMode && shouldShowPaywallNotice" />
 </template>
 
 <script setup lang="ts">

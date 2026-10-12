@@ -23,7 +23,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則-①"
-                    :relatedProblems="['2021a1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '客観性',
@@ -45,7 +44,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則-②"
-                    :relatedProblems="['2021a6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '真実性',
@@ -67,7 +65,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="損益勘定-①"
-                    :relatedProblems="['2021a11', '2021b11', '2021c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '認識',
@@ -89,7 +86,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="損益勘定-②"
-                    :relatedProblems="['2021a16', '2021b16', '2021c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '売上高',
@@ -111,7 +107,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="通常発生する取引の8要素の組合せ"
-                    :relatedProblems="['2021a21', '2021b21', '2021c21']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '資産の増加／負債の増加（例：借入）などが通常であり、資産の減少／負債の増加は通常発生しない。', //p12
@@ -124,7 +119,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="制度会計"
-                    :relatedProblems="['2021a22', '2021c27']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '管理会計 → 財務会計', //p27
@@ -137,7 +131,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="積立てを要する準備金"
-                    :relatedProblems="['2021a23']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '責任準備金 → 支払備金', //p38
@@ -150,7 +143,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産勘定"
-                    :relatedProblems="['2021a24']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '一般の企業の資産勘定の区分は、流動資産に属する資産、固定資産に属する資産及び繰延資産に属する資産に区分することになっているが、生命保険会社の資産区分は、契約者への将来の保険金等支払に備えた積立金の裏付けとなる資産の内訳を表わすものとして、[[一般の企業とは違った区分となっている]]。', //p106
@@ -163,7 +155,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="減損損失"
-                    :relatedProblems="['2021a25', '2021b25', '2021c25']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -176,7 +167,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="決算"
-                    :relatedProblems="['2021a26']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -189,7 +179,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社で計上する引当金・準備金"
-                    :relatedProblems="['2021a27']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -202,7 +191,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="純資産勘定の内容"
-                    :relatedProblems="['2021a28']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -215,7 +203,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社のディスクロージャー"
-                    :relatedProblems="['2021a29', '2021b29', '2021c29']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '2000年度（平成12年度）決算からキャッシュ・フロー計算書が[[縦覧の対象資料に付け加えられている]]。', //p180
@@ -228,7 +215,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融検査と税務調査"
-                    :relatedProblems="['2021a30']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '国税庁 → 金融庁', //p209
@@ -244,131 +230,111 @@ const subject = "2021年度 フォームA";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '会計公準',
-                            relatedProblems: ['2021a31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '帳簿の種類',
-                            relatedProblems: ['2021a32', '2021c41'],
                             content: '補助元帳 ↔︎ 補助記入帳', //p14
                         }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定の決算',
-                            relatedProblems: ['2021a33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '保険業法と会社法',
-                            relatedProblems: ['2021a34'],
                             content: '会計に関する会社法との関連性においては、計算規定を中心に株式会社については[[会社法]]を準用し、相互会社については[[保険業法]]を中心に定めている。', //p94
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '代理店貸',
-                            relatedProblems: ['2021a35', '2021b35', '2021c35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険業法第113条繰延資産',
-                            relatedProblems: ['2021a36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '自己株式',
-                            relatedProblems: ['2021a37', '2021b37', '2021c37'],
                             content: '純資産の部に加算 → 純資産の部から控除', //p141
                         }, //37
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '利息及び配当金等収入',
-                            relatedProblems: ['2021a38'],
                             content: '売買目的有価証券及び商品有価証券に係るものを[[除く]]。',//p145
                         }, //38
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '保険金据置支払金',
-                            relatedProblems: ['2021a39', '2021b39', '2021c39'],
                             content: '支払利息に計上 → 保険金据置支払金に計上', //p158
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理',
-                            relatedProblems: ['2021a40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '会計上の取引',
-                            relatedProblems: ['2021a41', '2021c31'],
                             content: '仕訳',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '開示書類',
-                            relatedProblems: ['2021a42'],
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '勘定間取引',
-                            relatedProblems: ['2021a43'],
                             content: '事業方法書',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '連結財務諸表の作成',
-                            relatedProblems: ['2021a44'],
                             content: '持分法',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '商品有価証券の評価方法',
-                            relatedProblems: ['2021a45'],
                             content: '経理処理要領',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: 'その他負債',
-                            relatedProblems: ['2021a46', '2021b46', '2021c46'],
                             content: '資産除去',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '勘定体系',
-                            relatedProblems: ['2021a47'],
                             content: '保険契約準備金',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '解約返戻金',
-                            relatedProblems: ['2021a48', '2021b48', '2021c48'],
                             content: '支払備金',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '事業費効率指標',
-                            relatedProblems: ['2021a49'],
                             content: '',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '監査役による監査',
-                            relatedProblems: ['2021a50', '2021b50', '2021c50'],
                             content: '社外',
                         }, //50
                     ]"

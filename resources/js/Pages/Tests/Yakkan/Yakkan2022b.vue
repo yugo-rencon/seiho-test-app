@@ -24,7 +24,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="株式会社と相互会社-①"
-                    :relatedProblems="['2022b1']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '基金',
@@ -46,7 +45,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="株式会社と相互会社-②"
-                    :relatedProblems="['2022b6']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '会社法',
@@ -68,7 +66,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="第三分野の保険-①"
-                    :relatedProblems="['2022a11', '2022b11', '2022c11']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '一定額',
@@ -90,7 +87,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="第三分野の保険-②"
-                    :relatedProblems="['2022a16', '2022b16', '2022c16']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '不妊治療',
@@ -112,7 +108,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険の区分"
-                    :relatedProblems="['2022b21']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '正しい',
@@ -125,7 +120,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="クーリング・オフ制度"
-                    :relatedProblems="['2022a43', '2022b22', '2022c33']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '告知日 → 申込日', //p45
@@ -138,7 +132,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業の監督体制"
-                    :relatedProblems="['2022b23']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '正しい',
@@ -151,7 +144,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険会社の合併"
-                    :relatedProblems="['2022b24']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -164,7 +156,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険仲立人"
-                    :relatedProblems="['2022a25', '2022b25', '2022c25']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '当該契約の保険金の[[額に応じて]]供託をしないことができる。', //p272
@@ -177,7 +168,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約等の性質"
-                    :relatedProblems="['2022a42', '2022b26', '2022b42', '2022c32', '2022c42']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -190,7 +180,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険募集人"
-                    :relatedProblems="['2022b27']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '正しい',
@@ -203,7 +192,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="疾病入院特約の手術給付金の支払"
-                    :relatedProblems="['2022a28', '2022b28', '2022c28']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -216,7 +204,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務"
-                    :relatedProblems="['2022b29']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '保険者は保険契約者に対してこの告知義務の履行を請求し強制し得る権利を[[有するものではなく]]、また保険契約者がまったく告知をしない場合でも、別に保険者に対して[[損害を賠償する責任を負うものではない]]。', //p48-49
@@ -229,7 +216,6 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="基礎書類"
-                    :relatedProblems="['2022a30', '2022a48', '2022b30', '2022c30']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -245,130 +231,110 @@ const subject = "2022年度 フォームB";
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '生命保険契約等の要素',
-                            relatedProblems: ['2022b31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '団体（集団）扱特約',
-                            relatedProblems: ['2022b32'],
                             content: '保険料が[[団体（集団）から生命保険会社の本社等に払い込まれる]]ことをもって保険料支払債務が履行されたことになる。', //p92
                         }, //32
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '死亡保険金の免責',
-                            relatedProblems: ['2022b33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '書面交付義務',
-                            relatedProblems: ['2022a34', '2022b34', '2022c34'],
                             content: '保険証券は、生命保険契約等の成立およびその内容に関する証拠材料となる証拠証券にすぎず、その[[作成交付は契約成立の要件ではない]]。', //p54
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '復活の法的性格',
-                            relatedProblems: ['2022a35', '2022b35', '2022c35'],
                             content: '新契約説 → 特別契約説', //p105
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険契約者の変更',
-                            relatedProblems: ['2022b36', '2022c45'],
                             content: '保険受取人の同意 → 被保険者の同意', //p149
                         }, //36
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '監督の方法',
-                            relatedProblems: ['2022b37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '組織変更',
-                            relatedProblems: ['2022b38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: 'ソルベンシー・マージン比率',
-                            relatedProblems: ['2022b39'],
                             content: '土地の含み益も計算の要素としている', //p248（旧教科書）
                         }, //39
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '外国保険業者',
-                            relatedProblems: ['2022a40', '2022b40', '2022c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '金融サービスの提供に関する法律',
-                            relatedProblems: ['2022a41', '2022b41', '2022c41'],
                             label: 'ウ',
                             content: '元本欠損',
                         }, //41
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の性質',
-                            relatedProblems: ['2022a42', '2022b26', '2022b42', '2022c32', '2022c42'],
                             label: 'エ',
                             content: '善意',
                         }, //42
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '消費者契約法',
-                            relatedProblems: ['2022b43', '2022c21'],
                             label: 'ア',
                             content: '困惑',
                         }, //43
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の効力',
-                            relatedProblems: ['2022b44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '生死不明の場合の取扱',
-                            relatedProblems: ['2022b45'],
                             label: 'イ',
                             content: '生命保険会社',
                         }, //45
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '解除権',
-                            relatedProblems: ['2022b46'],
                             label: 'ア',
                             content: '1カ月',
                         }, //46
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '給付金の免責事由',
-                            relatedProblems: ['2022b47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約準備金',
-                            relatedProblems: ['2022b48'],
                             label: 'エ',
                             content: '責任準備金',
                         }, //48
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険計理人',
-                            relatedProblems: ['2022b49'],
                             label: 'ウ',
                             content: '7年',
                         }, //49
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険募集の制限',
-                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'オ',
                             content: '',
                         }, //50

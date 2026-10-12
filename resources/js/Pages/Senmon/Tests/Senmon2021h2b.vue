@@ -21,7 +21,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を取り巻く生活環境の変化"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '地域共同体意識 → 自己責任意識', //p22
@@ -35,7 +34,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -49,7 +47,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込みと契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '3月末日 → 4月末日', //p57
@@ -63,7 +60,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者貸付"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -77,7 +73,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -91,7 +86,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '厚生労働大臣 → 内閣総理大臣', //p72
@@ -105,7 +99,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）による取引時確認"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '100万円 → 200万円', //p81
@@ -119,7 +112,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="法令上の禁止行為"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '断定的な予想配当等の表示・説明 → 虚偽の説明', //p84
@@ -133,7 +125,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="解約手続きの留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '手続き者が家族の場合でも、契約者の意思確認のもと、[[委任状による代理人としての正当な手続き書類がなければ受け付けることができない]]。', //p97-98
@@ -147,7 +138,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="労働者共済、各都道府県民共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '2年 → 1年', //p102
@@ -161,7 +151,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '加入者自身が掛金の運用方法を選択し、[[運用実績次第で受け取る年金額が変動する]]。', //p132
@@ -175,7 +164,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '12ヶ月 → 10ヶ月', //p154
@@ -189,7 +177,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人を対象とした主な保険種類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '死亡または高度障害時には、[[養老保険と定期保険特約を合わせた保険金]]が支払われ、満期のときには、[[満期保険金]]が支払われる（[[死亡保険金と満期保険金は同額ではない]]）。', //p31
@@ -203,7 +190,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="保障の見直しに関する諸制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -217,7 +203,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="コンプライアンスと基本的姿勢"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -245,7 +229,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="募集時の情報提供と正しい説明"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="適切な保険金・給付金等の支払い"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="JA共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="投資信託"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -329,7 +307,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -343,7 +320,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険料控除を受けるための手続き"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -358,7 +334,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="後期高齢者医療制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '65歳',
@@ -381,7 +356,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="財形制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '年金',
@@ -404,7 +378,6 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '6,426',
@@ -429,61 +402,51 @@ const subject = "2021年度 9月〜3月実施 フォーム②";
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '保険料の払い込みが困難になった場合',
-                            relatedProblems: [],
                             content: '既払込保険料総額 → 解約返戻金', //p60
                         }, //40
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '死亡保険金を支払わない場合',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //41
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '特約',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
-                            relatedProblems: [],
                             content: '2年 → 1年', //p77
                         }, //43
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '銀行窓販',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '生命保険募集人としての具体的対応と留意点',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '預金の種類',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '債券',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
                             // rev: 2026-06-05 確認済み
                             questionTitle: '投資信託',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '寄与分制度',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //49
                     ]"

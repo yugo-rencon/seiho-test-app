@@ -21,7 +21,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を取り巻く生活環境の変化"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '地域共同体意識 → 自己責任意識', //p22
@@ -35,7 +34,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -49,7 +47,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法令上の禁止行為"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '断定的な予想配当等の表示・説明 → 虚偽の説明', //p84
@@ -63,7 +60,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="特約"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -77,7 +73,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -91,7 +86,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="失効・復活手続きの留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '復活しても失効期間中の支払事由に相当する事故は[[保障の対象にならない]]。', //p97
@@ -105,7 +99,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="ＪＡ共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '厚生労働省 → 農林水産省', //p101
@@ -119,7 +112,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '損害保険には、火災保険や[[地震保険]]のように物に関する保険の他、[[所得補償保険]]や傷害保険、介護保険のように人に関する保険や、個人賠償責任保険のように賠償責任に関する保険もある。', //p105
@@ -133,7 +125,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '初回の配当金受取時 → 契約時', //p63
@@ -147,7 +138,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険、医療保障保険（団体型）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -161,7 +151,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="「死亡保険金」を支払わない場合"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '被保険者が[[契約日または復活日から所定期間以内]]に自殺したとき、「死亡保険金」は支払われない。', //p54
@@ -175,7 +164,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人を対象とした主な保険種類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '死亡または高度障害時には、[[養老保険と定期保険特約を合わせた保険金]]が支払われ、満期のときには、[[満期保険金]]が支払われる（[[死亡保険金と満期保険金は同額ではない]]）。', //p31
@@ -189,7 +177,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保障の見直しに関する諸制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -203,7 +190,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約を有効に続けるための方法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -217,7 +203,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="少額短期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）による取引時確認"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '100万円 → 200万円', //p81
@@ -245,7 +229,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="適切な保険金・給付金等の支払いと留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="株式"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="コンプライアンスと基本的姿勢"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="財形制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険料控除を受けるための手続き"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -329,7 +307,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金・年金・給付金と税金（個人契約の場合）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -343,7 +320,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -358,7 +334,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="労働者共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '厚生労働省',
@@ -381,7 +356,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="社会保障制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '経済準備',
@@ -404,7 +378,6 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '3,528',
@@ -429,61 +402,51 @@ const subject = "2023年度 4月〜8月実施 フォームB";
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '保険料の払込猶予期間',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '重要事項の説明',
-                            relatedProblems: [],
                             content: '保険料・保険金等が外貨建てであるため、通常、支払いや受け取りの際に円と外貨の換算手数料が必要となることなどを[[説明する必要がある]]。', //p89
                         }, //41
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '個人情報保護法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
-                            relatedProblems: [],
                             content: '2年 → 1年', //p77
                         }, //43
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '確定拠出年金制度',
-                            relatedProblems: [],
                             content: '[[加入者自身]]が掛金の運用方法を選択し、運用実績次第で受け取る年金額が変動する。', //p132
                         }, //44
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '複利と期間',
-                            relatedProblems: [],
                             content: '同じ利率の複利商品であれば[[１年複利より半年複利、半年複利より１カ月複利]]のほうがお金の増え方は大きくなる。', //p114
                         }, //45
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '規約型企業年金',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '復活',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '各都道府県民共済',
-                            relatedProblems: [],
                             content: '掛金は、[[選択する型や特約コースの付加により異なる]]が、それぞれの商品、特約コースごとに[[年齢・性別にかかわらず一律]]となっている。', //p103
                         }, //48
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '保全・アフターサービスの重要性',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //49
                     ]"

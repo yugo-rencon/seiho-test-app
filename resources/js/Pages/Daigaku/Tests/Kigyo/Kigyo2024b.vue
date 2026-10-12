@@ -23,7 +23,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="株式会社の設立"
-                    :relatedProblems="['2024a1', '2024b1', '2024c1']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '募集設立とは、発起人が[[一部の株式を引き受け]]、残りの株式を引き受ける者（株式引受人）を募集して会社を設立する方法である。', //p18
@@ -37,7 +36,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="株式会社の役員とその権限"
-                    :relatedProblems="['2024a14', '2024b2', '2024c2']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '代表取締役は、[[取締役会で選定・解職される]]。', //p27
@@ -51,7 +49,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="支配関係による親会社・子会社の分類"
-                    :relatedProblems="['2024a2', '2024b3']"
                     :contents="[
                         // rev: 2026-10-03 確認済み
                         '親会社 → 子会社', //p35
@@ -65,7 +62,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="簿記の基礎知識"
-                    :relatedProblems="['2024a4', '2024b4', '2024c4']"
                     :contents="[
                         // rev: 2026-10-05 確認済み
                         '正しい',
@@ -79,7 +75,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険の提案"
-                    :relatedProblems="['2024a5', '2024b5', '2024c44']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '相続対策として自己株式買取資金の準備についても該当する。', //p70
@@ -93,7 +88,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="養老保険を活用した福利厚生プランの内容と留意点"
-                    :relatedProblems="['2024a6', '2024b6', '2024c6']"
                     :contents="[
                         // rev: 2026-10-03 確認済み
                         '企業が支払う保険料について、[[支払保険料の1/2が福利厚生費として損金算入]]、[[1/2が保険料積立金として資産計上]]の経理処理が認められる。', //p82
@@ -107,7 +101,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="会社の整理"
-                    :relatedProblems="['2024a7', '2024b7', '2024c5']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '「[[営業権の譲渡]]」とは、譲渡を受ける会社に、当該会社がもつ商品・技術・サービスの看板を譲渡する方法である。', //p91
@@ -121,7 +114,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険の税務"
-                    :relatedProblems="['2024a19', '2024b8', '2024c19']"
                     :contents="[
                         // rev: 2026-10-03 確認済み
                         '企業が負担する保険料（[[特約保険料を含む]]）は全額損金算入できる。', //p131
@@ -135,7 +127,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障保険（団体型）の税法上の取扱い"
-                    :relatedProblems="['2024b9']"
                     :contents="[
                         // rev: 2026-10-05 確認済み
                         '被保険者（従業員）が保険料を負担する場合、被保険者本人および配偶者・子の保険料は、[[全額が生命保険料控除の対象となる]]。', //p151
@@ -149,7 +140,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="退職金・年金の基礎知識"
-                    :relatedProblems="['2024a10', '2024b10', '2024c10']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '公的年金には、原則として日本国内に住んでいる[[20歳以上60歳未満]]の全国民が加入対象となる国民年金と、民間企業の従業員や公務員等が対象の厚生年金保険がある。', //p168
@@ -163,7 +153,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金および確定拠出年金の課税関係"
-                    :relatedProblems="['2024a49', '2024b11', '2024c48']"
                     :contents="[
                         // rev: 2026-10-05 確認済み
                         '正しい',
@@ -177,7 +166,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="中小企業退職金共済制度（中退共）・特定退職金共済制度（特退共）"
-                    :relatedProblems="['2024b12']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '中退共の加入対象となる従業員は、中小企業の事業主に雇用されている従業員であり、[[法人企業の役員は加入できない]]。', //p201
@@ -191,7 +179,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="一般社団法人と一般財団法人"
-                    :relatedProblems="['2024a13', '2024b13', '2024c13']"
                     :contents="[
                         // rev: 2026-10-06 確認済み
                         '正しい',
@@ -205,7 +192,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="法人設立時の公的資金融資と中小企業を対象とする金融機関"
-                    :relatedProblems="['2024a3', '2024b14', '2024c16']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '正しい',
@@ -219,7 +205,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="民間金融機関"
-                    :relatedProblems="['2024a15', '2024b15', '2024c17']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '正しい',
@@ -233,7 +218,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="財務諸表分析の基礎知識"
-                    :relatedProblems="['2024a16', '2024b16', '2024c25']"
                     :contents="[
                         // rev: 2026-10-03 確認済み
                         '正しい',
@@ -247,7 +231,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="['2024a18', '2024b17', '2024c7']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '契約は[[１年]]更新なので、[[毎年]]、福利厚生規程の改定等に伴う保障額の見直しが可能である。', //p121
@@ -261,7 +244,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="集団扱定期保険"
-                    :relatedProblems="['2024b18']"
                     :contents="[
                         // rev: 2026-10-05 確認済み
                         '正しい',
@@ -275,7 +257,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="団体就業不能保障保険"
-                    :relatedProblems="['2024a8', '2024b19', '2024c21']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '正しい',
@@ -289,7 +270,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="団体定期保険（任意加入制）"
-                    :relatedProblems="['2024a20', '2024a46', '2024b20', '2024b46', '2024c20', '2024c46']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '正しい',
@@ -303,7 +283,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="財形制度"
-                    :relatedProblems="['2024a22', '2024b21']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '正しい',
@@ -317,7 +296,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="団体信用生命保険"
-                    :relatedProblems="['2024a9', '2024b22', '2024c22', '2024c47']"
                     :contents="[
                         // rev: 2026-10-06 確認済み
                         '正しい',
@@ -331,7 +309,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金"
-                    :relatedProblems="['2024b23', '2024c35']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '正しい',
@@ -345,7 +322,6 @@ const isDraft = true;
                     :title="title"
                     :subject="subject"
                     questionTitle="国民年金基金"
-                    :relatedProblems="['2024a24', '2024b24', '2024c24']"
                     :contents="[
                         // rev: 2026-10-04 確認済み
                         '正しい',
@@ -360,7 +336,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="大会社の機関"
-                    :relatedProblems="['2024b25']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '3',
@@ -383,7 +358,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="経営者を取り巻くリスクと対策"
-                    :relatedProblems="['2024a30', '2024b30', '2024c30']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '取引先',
@@ -406,7 +380,6 @@ const isDraft = true;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="確定拠出年金"
-                    :relatedProblems="['2024b35']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '資産管理機関',
@@ -431,61 +404,51 @@ const isDraft = true;
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '株主の権利・義務',
-                            relatedProblems: ['2024a40', '2024b40', '2024c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '株式会社の機関',
-                            relatedProblems: ['2024a41', '2024b41', '2024c41'],
                             content: '正しい',
                         }, //41
                         {
                             // rev: 2026-10-06 確認済み
                             questionTitle: '譲渡制限会社',
-                            relatedProblems: ['2024a44', '2024b42', '2024c42'],
                             content: '公開会社 → 非公開会社', //p35
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '資産規模による企業の分類',
-                            relatedProblems: ['2024a43', '2024b43', '2024c43'],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '自社株対策の重要性',
-                            relatedProblems: ['2024a17', '2024b44', '2024c18'],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-10-06 確認済み
                             questionTitle: '財形年金積立保険',
-                            relatedProblems: ['2024a48', '2024b45'],
                             content: '年金支払開始日以後に受け取る年金は[[非課税扱いとなる]]。', //p160
                         }, //45
                         {
                             // rev: 2026-10-04 確認済み
                             questionTitle: '団体定期保険（任意加入制）',
-                            relatedProblems: ['2024a20', '2024a46', '2024b20', '2024b46', '2024c20', '2024c46'],
                             content: '概算保険料を用いる場合は、[[契約締結後速やかに（遅くとも３カ月以内）精算を行わなければならない]]。', //p140
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '厚生年金基金',
-                            relatedProblems: ['2024b47'],
                             content: '正しい',
                         }, //47
                         {
                             // rev: 2026-10-04 確認済み
                             questionTitle: '確定給付企業年金の積立金',
-                            relatedProblems: ['2024b48'],
                             content: '生命保険会社が取り扱う商品は、[[一般勘定で運用するものと特別勘定で運用するものに分けられる]]。', //p184
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: 'キャッシュバランスプラン',
-                            relatedProblems: ['2024a12', '2024b49', '2024c12'],
                             content: '正しい',
                         }, //49
                     ]"

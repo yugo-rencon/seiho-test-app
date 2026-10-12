@@ -21,7 +21,6 @@ const subject = "2021年度 4月〜8月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の現状"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -35,7 +34,6 @@ const subject = "2021年度 4月〜8月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込みと契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '3月末日 → 4月末日', //p57
@@ -49,7 +47,6 @@ const subject = "2021年度 4月〜8月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="特約"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -63,7 +60,6 @@ const subject = "2021年度 4月〜8月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -77,7 +73,6 @@ const subject = "2021年度 4月〜8月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="法令上の禁止行為（虚偽の説明となる事例）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '断定的な予想配当等の表示・説明 → 虚偽の説明', //p84
@@ -91,7 +86,6 @@ const subject = "2021年度 4月〜8月実施 フォーム②";
                     :title="title"
                     :subject="subject"
                     questionTitle="解約手続きの留意点"
-                    :relatedProblems="[]"
 x                    :contents="[
                         // rev: 2026-06-08 確認済み
                         '手続き者が家族の場合でも、契約者の意思確認のもと、[[委任状による代理人としての正当な手続き書類がなければ受け付けることができない]]。', //p97-98
@@ -105,7 +99,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="JA共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '厚生労働省 → 農林水産省', //p101
@@ -119,7 +112,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '損害保険には、火災保険や[[地震保険]]のように物に関する保険の他、[[所得補償保険]]や傷害保険、介護保険のように人に関する保険や、個人賠償責任保険のように賠償責任に関する保険もある。', //p105
@@ -133,7 +125,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="証券業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '株式投資による利殖としては、株主としての権利にもとづく「[[利益配当]]」と株価の値上がりにもとづく「[[売却益]]」の確保がある。', //p112
@@ -147,7 +138,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -161,7 +151,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '12ヶ月 → 10ヶ月', //p154
@@ -175,7 +164,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="お客さまニーズへの対応"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -189,7 +177,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金と配当金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -203,7 +190,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -217,7 +203,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品の販売等に関する法律（金融商品販売法）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）による取引時確認"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '100万円 → 200万円', //p81
@@ -245,7 +229,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="募集時の情報提供と正しい説明"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="適切な保険金・給付金等の支払いと留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="少額短期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行預金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="介護保険制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険、医療保障保険（団体型）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -329,7 +307,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険料控除を受けるための手続き"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -343,7 +320,6 @@ x                    :contents="[
                     :title="title"
                     :subject="subject"
                     questionTitle="相続の法律"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -358,7 +334,6 @@ x                    :contents="[
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="信託銀行の業務・商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '合同運用',
@@ -381,7 +356,6 @@ x                    :contents="[
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="債券（公社債など）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '安全性',
@@ -404,7 +378,6 @@ x                    :contents="[
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '6,384',
@@ -430,61 +403,51 @@ x                    :contents="[
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '保険料の構成',
-                            relatedProblems: [],
                             content: '契約者が生命保険会社へ払い込む保険料は、①保険金を支払うための財源となる[[純保険料]]、②生命保険会社が保険事業を維持・管理していくために必要な費用としての[[付加保険料]]の２つの部分から成り立っている。', //p41
                         }, //40
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '死亡保険金を支払わない場合',
-                            relatedProblems: [],
                             content: '生命保険会社は、保険料積立金を契約者に払い戻す必要があるが、[[契約者が死亡保険契約の被保険者を故意に死亡させたときを除く]]。', //p54
                         }, //41
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '減額',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '契約内容照会制度',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '個人向け融資（ローン）の種類',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '固定金利と変動金利',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '医療保障保険（団体型）',
-                            relatedProblems: [],
                             content: '給付内容には、治療給付金、入院給付金および[[死亡保険金]]がある。', //p131
                         }, //47
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '財形制度にもとづく保険',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '寄与分制度',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //49
                     ]"

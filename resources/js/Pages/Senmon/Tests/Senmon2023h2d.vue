@@ -21,7 +21,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を取り巻く生活環境の変化"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '地域共同体意識 → 自己責任意識', //p22
@@ -35,7 +34,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金と配当金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '予定利率による運用収入見込額より、実際の運用収入が[[多い]]場合に生じる利益のこと。', //p43
@@ -49,7 +47,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込みと契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '3月末日 → 4月末日', //p57
@@ -63,7 +60,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者貸付"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -77,7 +73,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '初回の配当金受取時 → 契約時', //p63
@@ -91,7 +86,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '保険業法 → 保険法', //p82
@@ -105,7 +99,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）による取引時確認"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '100万円 → 200万円', //p81
@@ -119,7 +112,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="ＪＡ共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '厚生労働省 → 農林水産省', //p101
@@ -133,7 +125,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="株式"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '株式投資による利殖としては、株主としての権利にもとづく「[[利益配当]]」と株価の値上がりにもとづく「[[売却益]]」の確保がある。', //p112
@@ -147,7 +138,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="社会保障制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -161,7 +151,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="財形制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '700万円 → 550万円', //p134
@@ -175,7 +164,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="お客さまニーズへの対応"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -189,7 +177,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -203,7 +190,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="コンプライアンスと基本的姿勢"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         'コンプライアンスとは、一般に「法令等の遵守」と訳されており、多くの企業では、法令や社内ルールだけでなく、[[社会的規範や企業倫理を守るということも含めて]]用いられている。', //p71
@@ -217,7 +203,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -245,7 +229,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険料控除を受けるための手続き"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="募集時の情報提供と正しい説明"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="少額短期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人向け融資（ローン）の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '生命保険募集人がお客さまから口頭で告知を受けても、[[生命保険会社が告知を受けたことにはならない]]ため、告知書に告知義務者自身で記入いただくことが重要。', //p47
@@ -329,7 +307,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="信託銀行の業務・商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -343,7 +320,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続の法律"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -358,7 +334,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '告知扱',
@@ -381,7 +356,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="国民年金と厚生年金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '国民皆年金',
@@ -404,7 +378,6 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '5,712',
@@ -429,61 +402,51 @@ const subject = "2023年度 9月〜3月実施 フォームD";
                         {
                             // rev: 2026-06-03 確認済み
                             questionTitle: '生命保険の現状',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '特約',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //41
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '個人情報保護法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '保全・アフターサービスの重要性',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '金融商品取引法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '募集人としての具体的対応と留意点',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '契約内容登録制度',
-                            relatedProblems: [],
                             content: '金融庁 → 生命保険協会', //p69-70
                         }, //46
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '後期高齢者医療制度',
-                            relatedProblems: [],
                             content: '医療費の負担額は、[[その費用の原則1割、所定水準以上の所得者の場合は2割（そのうち現役並み所得者は3割）]]となっている。', //p119
                         }, //47
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '死亡保険金の非課税限度額',
-                            relatedProblems: [],
                             content: '死亡保険金の非課税限度額 = [[500万円 × 法定相続人の数]]', //p143
                         }, //48
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '複利と期間',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //49
                     ]"

@@ -24,7 +24,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険診査と臨床診察の相違点-①"
-                    :relatedProblems="['2021c1']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '告知聴取',
@@ -46,7 +45,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険診査と臨床診察の相違点-②"
-                    :relatedProblems="['2021c6']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '再発',
@@ -68,7 +66,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択-①"
-                    :relatedProblems="['2021a11', '2021b11', '2021c11']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '被用者団体',
@@ -90,7 +87,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択-②"
-                    :relatedProblems="['2021a16', '2021b16', '2021c16']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '総合福祉団体定期保険',
@@ -112,7 +108,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率と死亡指数"
-                    :relatedProblems="['2021a21', '2021b21', '2021c21']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '正しい',
@@ -125,7 +120,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="医学的選択上の制約条件"
-                    :relatedProblems="['2021b44', '2021c22']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '純保険料の範囲内 → 付加保険料の範囲内', //p40
@@ -138,7 +132,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="逆選択の傾向と態様"
-                    :relatedProblems="['2021a23', '2021b23', '2021c23']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '最近の保険金・災害疾病入院給付金支払事故において、道徳的危険（モラルリスク）は[[潜在的傾向から、顕在化への傾向にある]]。', //p76
@@ -151,7 +144,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約制限"
-                    :relatedProblems="['2021b27', '2021c24']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -164,7 +156,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金確認・給付金確認"
-                    :relatedProblems="['2021c25']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '被保険者の死亡後に、重要事実についての告知義務違反の事実が判明して契約解除を行うためには、既往歴など告知義務違反の事実と死因との間に[[因果関係がなければならない]]。 ', //p120
@@ -177,7 +168,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険で対象としている危険"
-                    :relatedProblems="['2021c26']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '「実体的危険」は、「[[身体的危険]]」と「環境的危険」の２つに分類することができる。', //p4
@@ -190,7 +180,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="体格"
-                    :relatedProblems="['2021c27']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -203,7 +192,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険業における個人情報"
-                    :relatedProblems="['2021a28', '2021b28', '2021c28']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -216,7 +204,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="数字査定法"
-                    :relatedProblems="['2021c29']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -229,7 +216,6 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態"
-                    :relatedProblems="['2021c30']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -245,130 +231,110 @@ const subject = "2021年度 フォームC";
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '件数死亡率、金額死亡率',
-                            relatedProblems: ['2021c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '環境選択',
-                            relatedProblems: ['2021a32', '2021b32', '2021c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '告知義務者',
-                            relatedProblems: ['2021c33'],
                             content: '契約者が複数いる場合には全員に告知義務があり、[[そのうちの１人に違反の事実があればその責任は全員で負うこととなる]]。', //p13
                         }, //33
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '選択効果',
-                            relatedProblems: ['2021a27', '2021c34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '血圧',
-                            relatedProblems: ['2021b35', '2021c35'],
                             content: '血圧は心臓の動きにつれて規則的に変化し、心臓が収縮するときに最も高く、拡張するときに最も低くなる。収縮期に相当する血圧を[[最大血圧]]、拡張期のそれを[[最小血圧]]と呼ぶ。', //p64
                         }, //35
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険金額の制限',
-                            relatedProblems: ['2021c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の保険金額の決定による選択',
-                            relatedProblems: ['2021c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '個人情報の定義',
-                            relatedProblems: ['2021a38', '2021b38', '2021c38'],
                             content: '個人情報保護法に定める「個人情報」とは、[[生存する個人に関する情報（死亡は対象外）]]である。', //p125
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '最高保険金額と保有限度額',
-                            relatedProblems: ['2021c39'],
                             content: '１保険金受取人 → １被保険者', //p181-182
                         }, //39
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '死亡状況の分析',
-                            relatedProblems: ['2021a40', '2021b40', '2021c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
-                            relatedProblems: ['2021a41', '2021b41', '2021c41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '死差益',
-                            relatedProblems: ['2021c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
-                            relatedProblems: ['2021a43', '2021b43', '2021c43'],
                             label: 'ウ',
                             content: '収支相等の原則',
                         }, //43
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '糖尿病と胃炎',
-                            relatedProblems: ['2021c44'],
                             label: 'ア',
                             content: 'インシュリン',
                         }, //44
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '健康管理証明書扱（個人）',
-                            relatedProblems: ['2021c45'],
                             label: 'ア',
                             content: '20名〜30名',
                         }, //45
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '疾病保険の特別条件付決定',
-                            relatedProblems: ['2021b29', '2021c46'],
                             label: 'イ',
                             content: '特別保険料領収法',
                         }, //46
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の契約内容の変更',
-                            relatedProblems: ['2021c47'],
                             label: 'エ',
                             content: '契約者',
                         }, //47
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
-                            relatedProblems: ['2021a48', '2021b48', '2021c48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '復活',
-                            relatedProblems: ['2021a39', '2021c49'],
                             label: 'ア',
                             content: '契約金額',
                         }, //49
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '元受保有額と出再額',
-                            relatedProblems: ['2021c50'],
                             label: 'エ',
                             content: 'サープラス',
                         }, //50

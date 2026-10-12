@@ -30,7 +30,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '0.98925',
                             questionTitle: '生存率',
-                            relatedProblems: ['2024a1', '2024b1', '2024c1'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -67,7 +66,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '93,714',
                             questionTitle: '生存数',
-                            relatedProblems: ['2024a2', '2024b2', '2024c2'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -108,7 +106,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '1.16',
                             questionTitle: '平均余命',
-                            relatedProblems: ['2024a3', '2024b3', '2024c3'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -173,7 +170,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '1,368,176',
                             questionTitle: '保険金総額の現価',
-                            relatedProblems: ['2024a4', '2024b4', '2024c4'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -226,7 +222,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '14,200',
                             questionTitle: '純保険料',
-                            relatedProblems: ['2024a5', '2024b5', '2024c5'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -277,7 +272,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '4,517',
                             questionTitle: '複利計算',
-                            relatedProblems: ['2024a6', '2024b6', '2024c6'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -330,7 +324,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '528,696',
                             questionTitle: '複利計算（半年複利）',
-                            relatedProblems: ['2024a7', '2024b7', '2024c7'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -371,7 +364,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '1.21',
                             questionTitle: '実利率',
-                            relatedProblems: ['2024a8', '2024b8', '2024c8'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -424,7 +416,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '1.83',
                             questionTitle: '年平均利回り',
-                            relatedProblems: ['2024a9', '2024b9', '2024c9'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -477,7 +468,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '4,618,507',
                             questionTitle: '現在必要資金の計算',
-                            relatedProblems: ['2024a10', '2024b10', '2024c10'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -527,7 +517,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の構成と計算基礎"
-                    :relatedProblems="['2024b11']"
                     :contents="[
                         // rev: 2026-07-10 確認済み
                         '付加保険料',
@@ -549,7 +538,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任準備金の積立に関する法的規制"
-                    :relatedProblems="['2024a45', '2024b16']"
                     :contents="[
                         // rev: 2026-07-10 確認済み
                         '平準純保険料式',
@@ -576,7 +564,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '4,722,311千円',
                             questionTitle: '死亡保険金の現価',
-                            relatedProblems: ['2024a21', '2024b21', '2024c21'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -629,7 +616,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '270,322,908千円',
                             questionTitle: '満期保険金の現価',
-                            relatedProblems: ['2024a22', '2024b22', '2024c22'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -670,7 +656,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '7,223,925千円',
                             questionTitle: '予定事業費の現価',
-                            relatedProblems: ['2024a23', '2024b23', '2024c23'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -723,7 +708,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '601,530円',
                             questionTitle: '養老保険の年払営業保険料',
-                            relatedProblems: ['2024a24', '2024b24', '2024c24'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -796,7 +780,6 @@ const subject = "2024年度 フォームB";
                             // rev: 2026-07-10 確認済み
                             answer: '1,097,000円',
                             questionTitle: '払済保険金額',
-                            relatedProblems: ['2024a25', '2024b25', '2024c25'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -846,7 +829,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="純保険料式保険料積立金"
-                    :relatedProblems="['2024b26']"
                     :contents="[
                         // rev: 2026-07-19 確認済み
                         '正しい',
@@ -859,7 +841,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金の処分"
-                    :relatedProblems="['2024b27']"
                     :contents="[
                         // rev: 2026-07-14 確認済み
                         '正しい',
@@ -872,7 +853,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業年度末責任準備金"
-                    :relatedProblems="['2024a28', '2024b28', '2024c28']"
                     :contents="[
                         // rev: 2026-07-19 確認済み
                         '保険業法では、事業年度末までに経過した期間に見合う保険料部分に対応する積立金（保険料積立金）、翌事業年度以降に対応する保険料部分（未経過保険料）、[[第三分野における積立傷害保険等の積立型商品において、将来の満期返戻金支払いに対応する保険料部分（払戻積立金）]]および危険準備金に分けて計算することとされている。', //p96
@@ -885,7 +865,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約転換制度"
-                    :relatedProblems="['2024a29', '2024b29', '2024c29']"
                     :contents="[
                         // rev: 2026-07-12 確認済み
                         '正しい',
@@ -898,7 +877,6 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体定期保険と団体年金保険の数理"
-                    :relatedProblems="['2024b30']"
                     :contents="[
                         // rev: 2026-07-26 確認済み
                         '正しい',
@@ -913,130 +891,110 @@ const subject = "2024年度 フォームB";
                     :items="[
                         {
                             // rev: 2026-07-26 確認済み
-                            relatedProblems: ['2024b31'],
                             questionTitle: '平均余命・平均寿命',
                             content: 'ある年齢の人の[[平均余命]]とは、その基礎となっている死亡表の死亡率どおり、その年齢到達者について将来死亡が生ずるものとして計算した平均生存年数のことで、[[０歳の平均余命は平均寿命と呼ばれる]]。', //p9
                         }, //31
                         {
                             // rev: 2026-07-25 確認済み
-                            relatedProblems: ['2024a32', '2024b32', '2024c32'],
                             questionTitle: '現価',
                             content: '通常、単に現価という場合には[[期末払現価]]を指す。', //p27
                         }, //32
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024b33', '2024c33'],
                             questionTitle: '予定利率',
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-07-16 確認済み
-                            relatedProblems: ['2024a34', '2024b34', '2024c34'],
                             questionTitle: '分割払営業保険料',
                             content: '１年分を何回かに分けて払い込む[[分割払営業保険料の年間払込額は年払の営業保険料額を上回る]]。', //p62
                         }, //34
                         {
                             // rev: 2026-07-16 確認済み
-                            relatedProblems: ['2024a42', '2024b35', '2024b42', '2024c42'],
                             questionTitle: '保険料の計算原理',
                             content: '保険料が自然保険料方式で計算されている場合には、毎保険年度末に将来の保険金支払いに備えて[[責任準備金を積み立てる必要はない]]。', //p68
                         }, //35
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024b36', '2024c36'],
                             questionTitle: '高額割引',
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-26 確認済み
-                            relatedProblems: ['2024b37'],
                             questionTitle: '責任準備金',
                             content: 'すべての契約について累積額が増加するわけではなく、定期保険などのように、[[保険期間の後半]]にその年度の残額がマイナスになる場合もあることに注意が必要である。', //p65
                         }, //37
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024b38'],
                             questionTitle: '決算による剰余金算定',
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024a39', '2024b39', '2024c39'],
                             questionTitle: 'リスクヘッジ',
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024b40'],
                             questionTitle: '契約者配当の意義と性格',
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024a11', '2024b41', '2024c26'],
                             questionTitle: '死亡表の種類',
                             label: 'ア',
                             content: '経験生命表',
                         }, //41
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024a42', '2024b35', '2024b42', '2024c42'],
                             questionTitle: '保険料の計算原理',
                             label: 'ア',
                             content: '現価',
                         }, //42
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024b43'],
                             questionTitle: '純保険料の変化',
                             label: 'ウ',
                             content: '高くなる',
                         }, //43
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024b44'],
                             questionTitle: '養老保険の積立金',
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024b45', '2024c37'],
                             questionTitle: '解約返戻金の算式',
                             label: 'イ',
                             content: '純保険料式保険料積立金',
                         }, //45
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024a36', '2024b46'],
                             questionTitle: '延長保険',
                             label: 'ア',
                             content: '定期保険',
                         }, //46
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024b47'],
                             questionTitle: 'アセット・シェア方式',
                             label: 'ア',
                             content: '保険種類別',
                         }, //47
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024a48', '2024b48', '2024c48'],
                             questionTitle: '配当金の計算方法',
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             questionTitle: '特別勘定の位置付け',
                             label: 'エ',
                             content: 'を禁止されている',
                         }, //49
                         {
                             // rev: 2026-07-10 確認済み
-                            relatedProblems: ['2024b50'],
                             questionTitle: '団体年金保険の保険料計算',
                             label: 'ウ',
                             content: '特別保険料',

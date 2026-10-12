@@ -39,16 +39,14 @@
             v-if="props.learningMode"
             class="mb-4 border-t border-gray-100 pt-4"
         >
-            <template v-if="!hasAnswered">
-                <p class="text-sm font-bold text-gray-800">{{ props.answerPrompt }}</p>
-            </template>
-            <div class="grid grid-cols-3 gap-2 sm:max-w-md" :class="hasAnswered ? '' : 'mt-3'">
+            <p class="text-sm font-bold text-gray-800">{{ props.answerPrompt }}</p>
+            <div class="mt-3 grid grid-cols-3 gap-2 sm:max-w-md">
                 <button
                     v-for="label in availableLabels"
                     :key="label"
                     type="button"
-                    class="rounded-md border bg-white px-3 font-bold transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
-                    :class="[answerButtonClass(label), hasAnswered ? 'min-h-9 py-1 text-sm' : 'min-h-12 py-2 text-base']"
+                    class="min-h-12 rounded-md border bg-white px-3 py-2 text-base font-bold transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
+                    :class="answerButtonClass(label)"
                     :disabled="hasAnswered"
                     @click="selectAnswer(label)"
                 >
@@ -101,7 +99,7 @@
             {{ props.subject }}
         </div>
     </div>
-    <PaywallNotice v-else-if="shouldShowPaywallNotice" />
+    <PaywallNotice v-else-if="!props.learningMode && shouldShowPaywallNotice" />
 </template>
 
 <script setup lang="ts">

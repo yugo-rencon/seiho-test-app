@@ -26,7 +26,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="所得の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '収入金額は必ずしも金銭で支給されたものに限らず、[[一般に現物給与といわれている物品やその他の経済的利益も含まれる]]。', //p15
@@ -40,7 +39,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の申告"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '1月16日から2月25日まで → 2月16日から3月15日まで', //p34
@@ -54,7 +52,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="契約形態による課税関係"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '一時所得として所得税の課税対象 → 贈与税の課税対象', //p59
@@ -68,7 +65,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税の基礎知識"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -82,7 +78,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="法人の住民税・事業税"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -96,7 +91,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="勤労者財産形成制度（財形制度）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '600万円 → 550万円', //p117
@@ -110,7 +104,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -177,7 +170,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険募集人が遵守すべき法令等（保険業法）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '厚生労働大臣 → 内閣総理大臣', //p148
@@ -191,7 +183,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '100万円 → 200万円', //p157
@@ -205,7 +196,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金・給付金等の請求と支払い"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         'お客さまの理解・認識不足による請求もれが発生しないよう、日常活動の中の[[「契約募集時」「契約期間中」「請求受付・案内時」]]の各段階において、生命保険会社のルールにもとづく適時・適切な保険金・給付金等の支払いに関する情報提供を行っていく必要がある。', //p172
@@ -219,7 +209,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="解約手続きの留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '解約請求ができるのは[[契約者]]のみである。', //p174
@@ -233,7 +222,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の所得控除"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -247,7 +235,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の課税財産と非課税財産"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -261,7 +248,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続対策"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -275,7 +261,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="個人の住民税・事業税"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -289,7 +274,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="企業市場"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -303,7 +287,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '企業が負担した保険料全額を[[損金算入（個人企業の場合は必要経費に算入）できる]]。', //p86
@@ -317,7 +300,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -331,7 +313,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -345,7 +326,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金の税務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -359,7 +339,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="厚生年金保険（被用者年金）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -373,7 +352,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金制度の障害給付と遺族給付の内容"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '正しい',
@@ -387,7 +365,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="法令上の禁止行為"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-26 確認済み
                         '根拠のない数字を示して業界ナンバーワンと表示する行為は、[[「誤解を招く表示・説明」には該当する]]。', //p161
@@ -402,7 +379,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="国民年金（基礎年金）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '20歳',
@@ -425,7 +401,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="金利の決まり方"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '利息（価格）',
@@ -448,7 +423,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="相続税額の計算"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '10,300',
@@ -473,61 +447,51 @@ const isDraft = false;
                         {
                             // rev: 2026-08-26 確認済み
                             questionTitle: '国税と地方税',
-                            relatedProblems: [],
                             content: '国税は、所得税、法人税などの[[直接税]]、消費税、酒税などの[[間接税]]とに分けられる。', //p14
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の税額控除',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //41
                         {
                             // rev: 2026-08-26 確認済み
                             questionTitle: '同族会社',
-                            relatedProblems: [],
                             content: '30% → 50%', //p79
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-08-26 確認済み
                             questionTitle: '複利型商品',
-                            relatedProblems: [],
                             content: '利率・期間が同じ場合、1年複利よりも半年複利、半年複利よりも1ヶ月複利商品のほうが、[[元利合計は大きくなる]]。', //p131
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: 'コンプライアンス',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '消費者契約法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
                             // rev: 2026-08-27 確認済み
                             questionTitle: '保険法',
-                            relatedProblems: [],
                             content: '保険法 → 商法', //p158-159
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '銀行窓販の弊害防止措置',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '失効（復活）手続きの留意点',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //49
                     ]"

@@ -21,7 +21,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を取り巻く生活環境の変化"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '地域共同体意識 → 自己責任意識', //p22
@@ -35,7 +34,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -49,7 +47,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -63,7 +60,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="約款とご契約のしおり"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '保険契約者ごと → 保険種類ごと', //p45
@@ -77,7 +73,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込みと契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -91,7 +86,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="「死亡保険金」を支払わない場合"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '被保険者が[[契約日または復活日から所定期間以内]]に自殺したとき、「死亡保険金」は支払われない。', //p54
@@ -105,7 +99,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者貸付"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '既払込保険料総額 → 解約返戻金', //p61
@@ -119,7 +112,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '契約の選択とは、[[生命保険会社が契約希望者を選別]]し、契約の諾否、保険料率、保険金額、保険種類などの契約条件を決めること。', //p67
@@ -133,7 +125,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '法務大臣 → 内閣総理大臣', //p72
@@ -147,7 +138,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '初回の配当金受取時 → 契約時', //p63
@@ -161,7 +151,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融サービスの提供及び利用環境の整備等に関する法律（金融サービス提供法）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '金融商品販売業者には、生命保険会社はもちろん[[保険代理店等も含まれる]]。', //p77
@@ -175,7 +164,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="募集時の情報提供と正しい説明"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '契約概要 → 注意喚起情報', //p88
@@ -189,7 +177,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="「犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）」による取引時確認"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '100万円 → 200万円', //p81
@@ -203,7 +190,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法上の禁止行為（保険業法第300条）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -217,7 +203,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="「適切な保険金・給付金等の支払い」に関するお客さま対応と留意"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約失効・復活手続きの留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -245,7 +229,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="労働者共済・各都道府県民共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="少額短期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人向け融資（ローン）の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="信託銀行の業務・商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="債券"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -329,7 +307,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="株式"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -343,7 +320,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険料控除の対象となる保険料"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '生命保険料控除は、民間の生命保険契約の他、[[ＪＡ共済の生命共済・年金共済、また、こくみん共済 coopの「こくみん共済」や各都道府県民共済の掛金などにも適用される]]。', //p136
@@ -358,7 +334,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '同意が必要',
@@ -381,7 +356,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="生命保険と相続"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '遺贈',
@@ -404,7 +378,6 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '6,048',
@@ -429,61 +402,51 @@ const subject = "2024年度 9月〜3月実施 フォームC";
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '解約',
-                            relatedProblems: [],
                             content: '通常の場合、その金額は払い込んだ保険料合計額より[[少なく]]なる。', //p62
                         }, //40
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '契約転換制度',
-                            relatedProblems: [],
                             content: '「契約転換制度」を利用する際の保険料は、[[転換時]]の契約年齢、保険料率により計算されるため、[[保険種類によっては、転換前契約よりも保険料が高くなる場合がある]]。', //p65
                         }, //41
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: 'コンプライアンスの重要性',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '契約内容登録制度',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '保全・アフターサービスの重要性',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '個人情報保護法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: 'ＪＡ共済',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '債券',
-                            relatedProblems: [],
                             content: '債券には、買い入れるときに利子を前取りする「[[割引債]]」と、一定の利子が一定の期日に支払われる「[[利付債]]」がある。', //p110
                         }, //47
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '経営者保険',
-                            relatedProblems: [],
                             content: '受取人 = [[企業（団体）]]', //p131
                         }, //48
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '医療保障保険（団体型）',
-                            relatedProblems: [],
                             content: '給付内容には、[[治療給付金]]、入院給付金および死亡保険金がある。', //p131
                         }, //49
                     ]"

@@ -22,7 +22,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険者"
-                    :relatedProblems="['2025a1']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '保険業法 → 保険法', //p3
@@ -36,7 +35,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="前納・一括払と一時払"
-                    :relatedProblems="['2025a2', '2025b2', '2025c2']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '[[「前納」]]は、年払または半年払の契約の場合に、将来払い込むべき保険料の一部または全部をまとめて生命保会社に払い込む方法であり、[[「一括払」]]は、月払契約の場合に1年分または数ヶ月分の保険料をまとめて生命保険会社に払い込む方法である。', //p21
@@ -50,7 +48,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金の支払い"
-                    :relatedProblems="['2025a3', '2025b14']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '再指定されるまでの間に保険事故が発生した場合、[[死亡した保険金受取人の法定相続人が保険金受取人となる]]。', //p22
@@ -64,7 +61,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解除・解約・取消し・無効"
-                    :relatedProblems="['2025a4', '2025b4', '2025c4', '2025a42', '2025b42', '2025c42']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '解約させる → 消滅させる', //p39
@@ -78,7 +74,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の手段"
-                    :relatedProblems="['2025a5', '2025b30']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '一般臨床と同様の → 一般臨床と異なる', //p63
@@ -92,7 +87,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="超過危険の種類"
-                    :relatedProblems="['2025a6', '2025b6', '2025c6', '2025a45', '2025b45', '2025c45']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '申込被保険体のもつ超過危険の大きさは契約後の経過に従って、[[必ずしも平坦な曲線を描くものではなく、さまざまな形の曲線を描くものである]]。', //p73
@@ -110,7 +104,6 @@ const subject = "2025年度 フォームA";
                         {
                             answer: '892,538円',
                             questionTitle: '保険料の現価',
-                            relatedProblems: [],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -156,7 +149,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保障見直しに関する諸制度"
-                    :relatedProblems="['2025a8', '2025b8', '2025c8']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '保険料は通常、[[転換時]]の契約年齢、保険料率により計算されることから、保険種類によっては、[[保険料率の引き上げとなる場合ある]]。', //p121
@@ -170,7 +162,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="（自動）振替貸付および契約者貸付"
-                    :relatedProblems="['2025a9', '2025b9', '2025c9']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         'この制度は、[[保険約款に規定がある]]契約についてのみ適用される。', //p112
@@ -184,7 +175,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産形成を目的とした主契約"
-                    :relatedProblems="['2025a10', '2025b10', '2025c10']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '被保険者の[[生死に関係なく]]年金を支払う商品で、保証期間中に被保険者が死亡した場合、[[遺族に残りの保証期間に対応する年金、または一時金を支払う]]。', //p145
@@ -198,7 +188,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="共済制度の特徴"
-                    :relatedProblems="['2025a11', '2025b23']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '原則として非組合員の加入を認めていないが、[[一定の条件を満たした場合には、組合員以外の加入を認める]]団体がある。', //p164
@@ -212,7 +201,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="共済事業とその商品"
-                    :relatedProblems="['2025a12', '2025b12', '2025c12']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -226,7 +214,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法に基づく被保険者の同意"
-                    :relatedProblems="['2025a13', '2025c1']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '傷害疾病定額保険契約で保険金受取人が被保険者（または相続人）である場合は、[[同意を必要としない]]。', //p5
@@ -240,7 +227,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="クーリング・オフ（契約撤回請求権）"
-                    :relatedProblems="['2025a14', '2025b1']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -254,7 +240,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の失効・復活"
-                    :relatedProblems="['2025a15', '2025b3', '2025b15', '2025c3', '2025c15']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -268,7 +253,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反による保険契約の解除"
-                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -282,7 +266,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の実際"
-                    :relatedProblems="['2025a17', '2025b17', '2025c17']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '募集人確認 → 第一次選択', //p59
@@ -296,7 +279,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果の検証等"
-                    :relatedProblems="['2025a18', '2025b20', '2025b44', '2025c44']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -310,7 +292,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金発生の仕組みと配当金との関係"
-                    :relatedProblems="['2025a19', '2025b19', '2025c19']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -324,7 +305,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当の種類"
-                    :relatedProblems="['2025a20', '2025c30']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -338,7 +318,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法（毎年配当型）"
-                    :relatedProblems="['2025a21', '2025c47']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -352,7 +331,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="特定疾病保障保険（三大疾病保障保険）"
-                    :relatedProblems="['2025a22', '2025b22', '2025c22']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -366,7 +344,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院、手術、通院など病気・ケガの治療全般に備える特約"
-                    :relatedProblems="['2025a23', '2025c23']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -380,7 +357,6 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
-                    :relatedProblems="['2025a24', '2025b24', '2025c11', '2025c24']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '正しい',
@@ -395,7 +371,6 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="保険法と生命保険契約の形態"
-                    :relatedProblems="['2025a25', '2025a40', '2025c40']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '傷害疾病定額保険契約',
@@ -418,7 +393,6 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="生命保険会社の免責事由"
-                    :relatedProblems="['2025a30', '2025b13', '2025c14']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '保険法',
@@ -441,7 +415,6 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="解約返戻金の仕組み"
-                    :relatedProblems="['2025a35', '2025b35', '2025c35']"
                     :contents="[
                         // rev: 2026-05-27 確認済み
                         '毎決算期',
@@ -467,61 +440,51 @@ const subject = "2025年度 フォームA";
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '生命保険契約の形態',
-                            relatedProblems: ['2025a25', '2025a40', '2025c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '保険契約の解除請求',
-                            relatedProblems: ['2025a41', '2025c41'],
                             content: '保険者 → 保険契約者', //p43
                         }, //41
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '保険契約の解除・解約・取消し・無効',
-                            relatedProblems: ['2025a4', '2025b4', '2025c4', '2025a42', '2025b42', '2025c42'],
                             content: '保険法では保険料不可分の原則が[[採用されていない]]ため、（中略）保険料の残額を保険契約者に[[支払う]]旨が保険約款に規定されている。', //p44
                         }, //42
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '危険選択の意義',
-                            relatedProblems: ['2025a43'],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '重複加入の有無',
-                            relatedProblems: ['2025a44'],
                             content: '死亡保障、入院保障のある契約については「契約内容登録制度」および「[[契約内容照会制度]]」により、情報交換を行っている。また、保険金等の請求に際し、「[[支払査定時照会制度]]」により契約内容等の[[照会]]を行っている。', //p57
                         }, //44
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '超過危険の種類',
-                            relatedProblems: ['2025a6', '2025b6', '2025c6', '2025a45', '2025b45', '2025c45'],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '死亡率と生存率の関係',
-                            relatedProblems: ['2025a46'],
                             content: '正しい',
                         }, //46
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '平均寿命・平均余命',
-                            relatedProblems: ['2025a47'],
                             content: '平均寿命 ↔︎ 平均余命', //p79
                         }, //47
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '利率変動型積立終身保険（アカウント型保険）',
-                            relatedProblems: ['2025a48', '2025b48', '2025c48'],
                             content: '保障の範囲を広げたり保障額を増やしたりする場合は、[[告知（または診査）が必要]]である。', //p136-137
                         }, //48
                         {
                             // rev: 2026-05-27 確認済み
                             questionTitle: '特定の疾病や損傷の治療に備える特約',
-                            relatedProblems: ['2025a49', '2025c49'],
                             content: '正しい',
                         }, //49
                     ]"

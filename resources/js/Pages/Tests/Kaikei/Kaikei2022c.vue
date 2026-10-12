@@ -23,7 +23,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約準備金-①"
-                    :relatedProblems="['2022a1', '2022b1', '2022c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '洗替方式',
@@ -45,7 +44,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約準備金-②"
-                    :relatedProblems="['2022a6', '2022b6', '2022c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '未経過',
@@ -67,7 +65,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会計における費用に属する科目-①"
-                    :relatedProblems="['2022c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '給付金',
@@ -89,7 +86,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会計における費用に属する科目-②"
-                    :relatedProblems="['2022c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '支払遅延利息',
@@ -111,7 +107,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="会社法会計"
-                    :relatedProblems="['2022c21']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '会社の設備投資限度額の算定 → 株主配当の限度額の算定', //p27
@@ -124,7 +119,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="複式簿記の原理"
-                    :relatedProblems="['2022a22', '2022b22', '2022c22']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         'たとえば、電力会社と電力供給の契約を締結した場合、契約締結の時点では、それぞれに「電力を供給する義務」と「電力の供給を受ける権利」が発生するが、[[会計上の取引とはならない]]。', //p9-10
@@ -137,7 +131,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="連結財務諸表の作成手続"
-                    :relatedProblems="['2022a23', '2022b23', '2022c23']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '従来連結子会社及び子法人等の範囲は議決権の所有割合（50％超で子会社及び子法人等）で形式的に判定していたが、現在は会社が他の会社の意思決定機関を支配しているか否かによって実質的に判定する。', //p81
@@ -150,7 +143,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産勘定の内容"
-                    :relatedProblems="['2022c24']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -163,7 +155,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="年度途中の資金移動の区分経理への反映"
-                    :relatedProblems="['2022c25']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '資産区分 → 商品区分', //p192
@@ -176,7 +167,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則（一般原則）"
-                    :relatedProblems="['2022c26']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -189,7 +179,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="純資産勘定の内容"
-                    :relatedProblems="['2022a27', '2022b27', '2022c27']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -202,7 +191,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="一般勘定・特別勘定"
-                    :relatedProblems="['2022c28']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -215,7 +203,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="関係法規等"
-                    :relatedProblems="['2022c29']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -228,7 +215,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業費管理"
-                    :relatedProblems="['2022c30']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '[[純保険料]]は、予定死亡率・予定利率から計算し、将来の保険金・年金・給付金の支払に充当する。また、[[付加保険料]]は、予定事業費率から計算し、事業費と事業費に準ずる経費に充当する。', //p169
@@ -244,131 +230,111 @@ const subject = "2022年度 フォームC";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '簿記',
-                            relatedProblems: ['2022c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '株主資本等変動計算書',
-                            relatedProblems: ['2022a32', '2022b32', '2022c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-09-01 確認済み
                             questionTitle: '税務会計',
-                            relatedProblems: ['2022a26', '2022c33'],
                             content: '会計情報の開示という機能はその中に含まれていないという点で、会社法・金融商品取引法に基づく会計とは[[異なっている]]。', //p32
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '期間帰属の差異',
-                            relatedProblems: ['2022c34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: 'デリバティブ',
-                            relatedProblems: ['2022a35', '2022b35', '2022c35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '未払金',
-                            relatedProblems: ['2022c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '価格変動準備金',
-                            relatedProblems: ['2022a46', '2022c37'],
                             content: '積立基準や積立限度額は定められていない → 定められている', //p134
                         }, //37
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '損益の認識基準',
-                            relatedProblems: ['2022c38'],
                             content: '現金主義の説明 → 実現主義の説明',//p142
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理における運用資産の管理',
-                            relatedProblems: ['2022a39', '2022b39', '2022c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '監査役による監査',
-                            relatedProblems: ['2022c40'],
                             content: '社内監査役 → 社外監査役', //p206
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '取引の仕訳',
-                            relatedProblems: ['2022a41', '2022b41', '2022c41'],
                             content: '',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '企業会計の領域',
-                            relatedProblems: ['2022c42'],
                             content: '管理会計',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '決算スケジュール',
-                            relatedProblems: ['2022c43'],
                             content: '',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '消費税',
-                            relatedProblems: ['2022a44', '2022b44', '2022c44'],
                             content: '負債',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '利益準備金',
-                            relatedProblems: ['2022c45'],
                             content: '5分の1',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '利息及び配当金等収入',
-                            relatedProblems: ['2022c46'],
                             content: '売買目的有価証券',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '保険業法第112条評価益',
-                            relatedProblems: ['2022c47'],
                             content: '評価換え',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '退職給付引当金',
-                            relatedProblems: ['2022a48', '2022b48', '2022c48'],
                             content: '期末',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '公告',
-                            relatedProblems: ['2022c49'],
                             content: '定款',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '金融検査',
-                            relatedProblems: ['2022c50'],
                             content: '自己査定',
                         }, //50
                     ]"

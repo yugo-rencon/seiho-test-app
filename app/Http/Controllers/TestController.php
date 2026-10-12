@@ -819,7 +819,46 @@ class TestController extends Controller
             'initialStudyState' => $initialStudyState,
         ]);
     }
-    public function souron2025b(){return Inertia::render('Tests/Souron/Souron2025b');}
+    public function souron2025b(Request $request)
+    {
+        $user = $request->user();
+        $initialStudyState = null;
+
+        $studyEnabled = (bool) ($user?->is_admin);
+
+        if ($studyEnabled) {
+            $attempt = StudyAttempt::query()
+                ->where('user_id', $user->id)
+                ->where('exam_key', 'souron-2025-b')
+                ->latest('attempt_no')
+                ->with('answers')
+                ->first();
+
+            $initialStudyState = [
+                'preferred_test_mode' => UserPreference::query()
+                    ->where('user_id', $user->id)
+                    ->value('preferred_test_mode') ?? 'browse',
+                'attempt' => $attempt ? [
+                    'status' => $attempt->status,
+                    'current_question_no' => $attempt->current_question_no,
+                    'answered_count' => $attempt->answered_count,
+                    'score' => $attempt->score,
+                    'max_score' => $attempt->max_score,
+                    'answers' => $attempt->answers->map(fn ($answer) => [
+                        'question_no' => $answer->question_no,
+                        'selected_answer' => $answer->selected_answer,
+                        'is_correct' => $answer->is_correct,
+                        'points_awarded' => $answer->points_awarded,
+                    ])->values(),
+                ] : null,
+            ];
+        }
+
+        return Inertia::render('Tests/Souron/Souron2025b', [
+            'studyEnabled' => $studyEnabled,
+            'initialStudyState' => $initialStudyState,
+        ]);
+    }
     public function souron2025c(){return Inertia::render('Tests/Souron/Souron2025c');}
     public function souron2024a(){return Inertia::render('Tests/Souron/Souron2024a');}
     public function souron2024b(){return Inertia::render('Tests/Souron/Souron2024b');}

@@ -24,7 +24,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死差益と危険選択-①"
-                    :relatedProblems="['2021a1']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '経営効率',
@@ -46,7 +45,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死差益と危険選択-②"
-                    :relatedProblems="['2021a6']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '低い',
@@ -68,7 +66,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択-①"
-                    :relatedProblems="['2021a11', '2021b11', '2021c11']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '被用者団体',
@@ -90,7 +87,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択-②"
-                    :relatedProblems="['2021a16', '2021b16', '2021c16']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '総合福祉団体定期保険',
@@ -112,7 +108,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率と死亡指数"
-                    :relatedProblems="['2021a21', '2021b21', '2021c21']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '正しい',
@@ -125,7 +120,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="職業危険"
-                    :relatedProblems="['2021a22', '2021b46']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」さらには[[「アルコール中毒や不摂生生活のような職業に随伴する危険」]]がある。', //p69
@@ -138,7 +132,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="逆選択の傾向と態様"
-                    :relatedProblems="['2021a23', '2021b23', '2021c23']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '最近の保険金・災害疾病入院給付金支払事故において、道徳的危険（モラルリスク）は[[潜在的傾向から、顕在化への傾向にある]]。', //p76
@@ -151,7 +144,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="医学的査定の対象となる危険"
-                    :relatedProblems="['2021a24']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '保険金削減法 → 特別保険料領収法', //p105
@@ -164,7 +156,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険"
-                    :relatedProblems="['2021a25']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -177,7 +168,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知"
-                    :relatedProblems="['2021a26', '2021b22']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -190,7 +180,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果"
-                    :relatedProblems="['2021a27', '2021c34']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '正しい',
@@ -203,7 +192,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険業における個人情報"
-                    :relatedProblems="['2021a28', '2021b28', '2021c28']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -216,7 +204,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院・手術保障における危険選択"
-                    :relatedProblems="['2021a29']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -229,7 +216,6 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率比較"
-                    :relatedProblems="['2021a30']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '保険料算定の予定死亡率との比較は、経営効率への寄与率をみる目的に適しているが、過去の選択の成績の反省から将来の選択に対処するという目的からみれば[[適当でない]]。', //p184
@@ -245,130 +231,110 @@ const subject = "2021年度 フォームA";
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '被保険者の危険',
-                            relatedProblems: ['2021a31'],
                             content: '経済的危険 → 実体的危険', //p3-4
                         }, //31
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '環境選択',
-                            relatedProblems: ['2021a32', '2021b32', '2021c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '胃・十二指腸潰瘍',
-                            relatedProblems: ['2021a33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '道徳的危険排除のためのポイント',
-                            relatedProblems: ['2021a34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '健康管理証明書扱（団体）',
-                            relatedProblems: ['2021a35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '査定標準（基準）',
-                            relatedProblems: ['2021a36'],
                             content: '危険選択においては、年齢・性別・職業・体格・家族歴・現病歴・既往歴・[[生活習慣]]・[[嗜好]]等が死亡率に影響を与えると考えられ、査定標準ではこれらの各因子をどの様に危険選択上評価すべきかが示されている。', //p111
                         }, //36
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険金確認',
-                            relatedProblems: ['2021a37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '個人情報の定義',
-                            relatedProblems: ['2021a38', '2021b38', '2021c38'],
                             content: '個人情報保護法に定める「個人情報」とは、[[生存する個人に関する情報（死亡は対象外）]]である。', //p125
                         }, //38
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '復活',
-                            relatedProblems: ['2021a39', '2021c49'],
                             content: '失効後の期間の長いものほど逆選択混入の危険が[[多く]]、また診査による場合に比べ告知のみによる場合のほうが経験死亡率が[[高い]]とされている。', //p173-174
                         }, //39
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '死亡状況の分析',
-                            relatedProblems: ['2021a40', '2021b40', '2021c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
-                            relatedProblems: ['2021a41', '2021b41', '2021c41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '解除権の消滅',
-                            relatedProblems: ['2021a42'],
                             label: 'エ',
                             content: '5年',
                         }, //42
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
-                            relatedProblems: ['2021a43', '2021b43', '2021c43'],
                             label: 'ウ',
                             content: '収支相等の原則',
                         }, //43
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '医学的選択上の課題',
-                            relatedProblems: ['2021a44', '2021b26'],
                             label: 'イ',
                             content: '入院給付率',
                         }, //44
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '死亡・入院率の高い重要欠陥',
-                            relatedProblems: ['2021a45'],
                             label: 'エ',
                             content: '二次性',
                         }, //45
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約の制限',
-                            relatedProblems: ['2021a46'],
                             label: 'イ',
                             content: '他人',
                         }, //46
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '診査医が行う診査',
-                            relatedProblems: ['2021a47'],
                             label: 'ア',
                             content: '問診',
                         }, //47
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
-                            relatedProblems: ['2021a48', '2021b48', '2021c48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '災害割増特約',
-                            relatedProblems: ['2021a49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '最高保険金額',
-                            relatedProblems: ['2021a50'],
                             label: 'ア',
                             content: '被保険者',
                         }, //50

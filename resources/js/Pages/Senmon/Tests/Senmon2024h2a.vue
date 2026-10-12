@@ -21,7 +21,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の基本型とその他の分類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '死亡保険は、被保険者が[[死亡または高度障害になったとき]]にだけ保険金が支払われる。', //p27
@@ -35,7 +34,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -49,7 +47,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金と配当金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '定款・約款では、相互会社の場合、[[剰余金の一定割合]]を社員配当準備金に繰り入れ、これを財源として契約者に対し配当金を支払うことを定めている。', //p44
@@ -63,7 +60,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="約款とご契約のしおり"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '保険契約者ごと → 保険種類ごと', //p45
@@ -77,7 +73,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '生命保険募集人がお客さまから口頭で告知を受けても、[[生命保険会社が告知を受けたことにはならない]]ため、告知書に告知義務者自身で記入いただくことが重要。', //p47
@@ -91,7 +86,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="「死亡保険金」を支払わない場合"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '被保険者が[[契約日または復活日から所定期間以内]]に自殺したとき、「死亡保険金」は支払われない。', //p54
@@ -105,7 +99,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込みと契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '7月末日 → 8月末日', //p57
@@ -119,7 +112,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約を有効に続けるための方法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '責任準備金 → 解約返戻金', //p59
@@ -133,7 +125,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者貸付"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '既払込保険料総額 → 解約返戻金', //p61
@@ -147,7 +138,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '初回の配当金受取時 → 契約時', //p63
@@ -161,7 +151,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '契約の選択とは、[[生命保険会社が契約希望者を選別]]し、契約の諾否、保険料率、保険金額、保険種類などの契約条件を決めること。', //p67
@@ -175,7 +164,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '法務大臣 → 内閣総理大臣', //p72
@@ -189,7 +177,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）による取引時確認"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '100万円 → 200万円', //p81
@@ -203,7 +190,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -217,7 +203,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="「適切な保険金・給付金等の支払い」に関するお客さま対応と留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ＪＡ共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -245,7 +229,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="労働者共済、各都道府県民共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '金融庁 → 厚生労働省', //p103
@@ -259,7 +242,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="少額短期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行預金の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人向け融資（ローン）の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="信託銀行の業務・商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -329,7 +307,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="投資信託"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -343,7 +320,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '加入者自身が掛金の運用方法を選択し、[[運用実績次第で受け取る年金額が変動する]]。', //p132
@@ -358,7 +334,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="社会保障制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '経済準備',
@@ -381,7 +356,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '告知扱',
@@ -404,7 +378,6 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '6,048',
@@ -429,61 +402,51 @@ const subject = "2024年度 9月〜3月実施 フォームA";
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '解約',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '契約転換制度',
-                            relatedProblems: [],
                             content: '「契約転換制度」を利用する際の保険料は、[[転換時]]の契約年齢、保険料率により計算されるため、[[保険種類によっては、転換前契約よりも保険料が高くなる場合がある]]。', //p65
                         }, //41
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '特約',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '契約内容登録制度',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '個人情報保護法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '解約手続きの留意点',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '債券',
-                            relatedProblems: [],
                             content: '債券には、買い入れるときに利子を前取りする「[[割引債]]」と、一定の利子が一定の期日に支払われる「[[利付債]]」がある。', //p110
                         }, //47
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '株式投資',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '経営者保険',
-                            relatedProblems: [],
                             content: '受取人 = [[企業（団体）]]', //p131
                         }, //49
                     ]"

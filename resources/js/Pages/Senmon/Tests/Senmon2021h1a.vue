@@ -22,7 +22,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の現状"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -36,7 +35,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '生命表には、国民生命表と経験生命表があり、現在、生命保険会社では、[[経験生命表]]である「生保標準生命表2018」等を保険料算定の基礎として使用している。', //p38-39
@@ -50,7 +48,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者貸付"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '既払込保険料総額 → 解約返戻金', //p61
@@ -64,7 +61,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="保障の見直しに関する諸制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '解約返戻金 → 責任準備金', //p64
@@ -78,7 +74,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="法令上の禁止行為（虚偽の説明となる事例）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '断定的な予想配当等の表示・説明 → 虚偽の説明', //p84
@@ -92,7 +87,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="失効（復活）手続きの留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '復活しても失効期間中の支払事由に相当する事故は[[保障の対象にならない]]。', //p97
@@ -106,7 +100,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="JA共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '厚生労働省 → 農林水産省', //p101
@@ -120,7 +113,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="労働者共済、各都道府県民共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         'せいめい共済 → こくみん共済', //p102
@@ -134,7 +126,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="信託銀行業界"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '預貯金 → 財務管理', //p109
@@ -148,7 +139,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="社会保障制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -199,7 +189,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="お客さまニーズへの対応"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -213,7 +202,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金と配当金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -227,7 +215,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -241,7 +228,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="コンプライアンスと基本的姿勢"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -255,7 +241,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）による取引時確認"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '100万円 → 200万円', //p81
@@ -269,7 +254,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -283,7 +267,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="債券"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -297,7 +280,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="投資信託"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -311,7 +293,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="金利の種類と金融商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -325,7 +306,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="介護保険制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-08 確認済み
                         '正しい',
@@ -339,7 +319,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険、医療保障保険（団体型）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -353,7 +332,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="財形制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -367,7 +345,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -382,7 +359,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="株式"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '利益配当',
@@ -405,7 +381,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '告知扱',
@@ -428,7 +403,6 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '6,384',
@@ -453,61 +427,51 @@ const subject = "2021年度 4月〜8月実施 フォーム①";
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '保険料の構成',
-                            relatedProblems: [],
                             content: '契約者が生命保険会社へ払い込む保険料は、①保険金を支払うための財源となる[[純保険料]]、②生命保険会社が保険事業を維持・管理していくために必要な費用としての[[付加保険料]]の２つの部分から成り立っている。', //p41
                         }, //40
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '保険料の払込猶予期間',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //41
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '特約',
-                            relatedProblems: [],
                             content: '特約は、もとになる契約（主契約）なしで[[単独で契約することはできず]]、また、特約の種類によっては、他の特約とあわせて契約しなければならないものもある。', //p66
                         }, //42
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '契約内容照会制度',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '重要事項の説明',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '個人向け融資（ローン）の種類',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '預金の種類',
-                            relatedProblems: [],
                             content: '通知預金 → 当座預金', //p108
                         }, //46
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '医療保障保険（団体型）',
-                            relatedProblems: [],
                             content: '給付内容には、治療給付金、入院給付金および[[死亡保険金]]がある。', //p131
                         }, //47
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '確定拠出年金制度',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             // rev: 2026-06-08 確認済み
                             questionTitle: '生命保険料控除の対象となる契約',
-                            relatedProblems: [],
                             content: '被保険者 → 保険金などの受取人', //p136
                         }, //49
                     ]"

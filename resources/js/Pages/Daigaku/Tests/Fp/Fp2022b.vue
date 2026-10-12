@@ -25,7 +25,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生保FPの必要性と役割"
-                    :relatedProblems="[]"
                     :contents="[
                         '弁護士、税理士、不動産の専門家などとは全く別の視点で → 弁護士、税理士、不動産の専門家などの協力を得ながら', //p1
                         '①法人の金融資産の増大 → 個人の金融資産の増大<br>②規制金利市場の拡大 → 金融の自由化', //p2
@@ -38,7 +37,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフプランニングの基礎"
-                    :relatedProblems="[]"
                     :contents="[
                         '生保FPが決めていく姿勢 → 生保FPがお客さまの希望を聞き出す姿勢', //p6
                         '正しい',
@@ -51,7 +49,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="キャッシュフロー表の作成"
-                    :relatedProblems="[]"
                     :contents="[
                         '額面給与から税金や社会保険料を差し引く前の額 → 差し引いた後の額<br>給与天引きの社内積立や生命保険料を等を差し引いた後の額 → 差し引く前の手取額', //p8
                         '住宅ローンの返済額は含めない → 住宅ローンの返済額を含む', //p8
@@ -64,7 +61,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの種類"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '金利が高くなっている → 低くなっている', //p34
@@ -77,7 +73,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="住宅取得資金計画"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '各金融機関でほとんど差がない → ライフプランの多様化に伴い、そのニーズに対応した特徴ある独自のローンが開発されている', //p42
@@ -90,7 +85,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="資金運用の３要素による金融商品の分類"
-                    :relatedProblems="[]"
                     :contents="[
                         '国債は、安全性の高い商品の据置型', //p63
                         '一時払養老保険は、安全性の高い商品の据置型', //p63
@@ -103,7 +97,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品のリスク"
-                    :relatedProblems="[]"
                     :contents="[
                         '資産運用における集中投資 → 資産運用における分散投資', //p68
                         '一部ではあるが存在している → 存在しない', //p67
@@ -116,7 +109,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の資金運用"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '生活資金 → 予備資金', //p79
@@ -129,7 +121,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の保障"
-                    :relatedProblems="[]"
                     :contents="[
                         '保険料の自己負担額を減らすことが必要 → 医療保障の充実が必要', //p80
                         '家族特約で確保するしかない → 単体で準備するのが望ましい（夫死亡時に保障が消失）', //p80
@@ -142,7 +133,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保険金の活用方法等"
-                    :relatedProblems="[]"
                     :contents="[
                         'アドバイスすることまでは求められていない → アドバイスをするのが重要な役割', //p84
                         '子どもの病気やケガに備えることが第一に必要 → 妻が家計の大黒柱となるため妻の保障も必要', //p84
@@ -155,7 +145,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         '保険監督法：民法と保険法 → 保険業法<br>保険取引法：保険業法 → 民法と保険法', //p114
                         '正しい',
@@ -168,7 +157,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法に定める不適切な説明と不適切な行為"
-                    :relatedProblems="[]"
                     :contents="[
                         '故意に不実のことを告げることが必要要件であり、誤った説明をしたとしても不実告知に該当しない → 故意に不実のことを告げることは必要要件ではなく、誤った説明をしていれば不実告知に該当する', //p141
                         '正しい',
@@ -181,7 +169,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="金融ビッグバンによる金融システムの規制緩和後の資産運用"
-                    :relatedProblems="[]"
                     :contents="[
                         '外為の規制強化 → 規制緩和<br>金融機関の垣根の拡大 → 垣根の撤廃<br>外国資本の参入制限 → 参入', //p4
                         '正しい',
@@ -194,7 +181,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="リスクマネジメント"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '生命保険だけ → 生命保険と損害保険', //p16
@@ -207,7 +193,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの返済方法"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -220,7 +205,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ローン金利の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         'カードローンやキャッシングは変動金利型ローン → 固定金利型ローン', //p36
@@ -233,7 +217,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="教育資金設計"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -246,7 +229,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="分散投資"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -259,7 +241,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="老後生活設計の考え方"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '雇用確保措置で定められた60歳定年を前提としたコンサルティング → 雇用確保措置で60歳定年という概念がなくなり、個々の老後生活設計に応じたコンサルティング', //p70
@@ -272,7 +253,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を活用した相続対策"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -285,7 +265,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="2016年（平成28年）５月施行の保険業法の主な改正内容"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -298,7 +277,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険募集と禁止行為"
-                    :relatedProblems="[]"
                     :contents="[
                         '禁止行為に該当しない → 該当する', //p132
                         '正しい',
@@ -311,7 +289,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法における保険募集に関連する規定"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '遅滞の責任を負わない → 遅滞に責任を負う（遅延利息の支払いなど）', //p160
@@ -324,7 +301,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="個人情報の保護に関する法律（個人情報保護法）"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         'アフターサビスのために利用することが認められている → 法令で限定的に定められている利用範囲を超えたマイナンバーの収集・利用はしてはいけない', //p169
@@ -338,7 +314,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="住宅借入金等特別控除（住宅ローン控除）"
-                    :relatedProblems="[]"
                     :contents="[
                         '税額控除',
                         '確定申告',
@@ -360,7 +335,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="保険業法の主要内容"
-                    :relatedProblems="[]"
                     :contents="[
                         '損害保険業',
                         '公正',
@@ -382,7 +356,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="生命保険相談所・裁定審査会"
-                    :relatedProblems="[]"
                     :contents="[
                         '生命保険協会',
                         '連絡所',
@@ -406,52 +379,42 @@ const isDraft = false;
                         // 問40〜49
                         {
                             questionTitle: 'FP（ファイナンシャル・プランナー）',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //40
                         {
                             questionTitle: 'ローンの種類',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //41
                         {
                             questionTitle: '財形住宅融資',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             questionTitle: '住宅ローンの繰上げ返済',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             questionTitle: '健康保険の任意継続被保険者',
-                            relatedProblems: [],
                             content: '全被保険者の平均のいずれか高い方の額 → 全被保険者の平均のいずれか低い方の額', //p76
                         }, //44
                         {
                             questionTitle: '相続対策のポイント',
-                            relatedProblems: [],
                             content: '相続人の年齢 → 相続人の数', //p89
                         }, //45
                         {
                             questionTitle: '経営破綻した場合の契約条件の変更',
-                            relatedProblems: [],
                             content: '原則70% → 原則90%', //p123
                         }, //46
                         {
                             questionTitle: 'コンプライアンスの重要性',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
                             questionTitle: '保険募集における違法行為',
-                            relatedProblems: [],
                             content: '行政処分の対象とならない → 行政処分の対象となることがある', //p138
                         }, //48
                         {
                             questionTitle: '犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）',
-                            relatedProblems: [],
                             content: '拒むことはできない → 拒むことができる免責規定を設けている', //p162
                         }, //49
                     ]"

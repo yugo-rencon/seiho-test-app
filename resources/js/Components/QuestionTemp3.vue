@@ -62,13 +62,13 @@
               v-for="choice in props.choiceOptions"
               :key="`${index}-${choice.label}`"
               type="button"
-              class="min-h-12 rounded-md border px-3 py-2 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
+              class="grid min-h-12 grid-cols-[auto_minmax(0,1fr)] content-center items-start gap-1 rounded-md border px-3 py-2 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
               :class="studyChoiceClass(index, choice.label)"
               :disabled="Boolean(selectedAnswers[index])"
               @click="answerQuestion(index, choice.label)"
             >
               <span class="font-bold">{{ choice.label }}.</span>
-              <span class="ml-1">{{ choice.text }}</span>
+              <span>{{ choice.text }}</span>
             </button>
           </div>
           <div v-if="selectedAnswers[index]" class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-gray-200 pt-3 text-base" role="status">
@@ -102,7 +102,7 @@
         {{ props.subject }}
       </div>
     </div>
-    <PaywallNotice v-else-if="shouldShowPaywallNotice" />
+    <PaywallNotice v-else-if="!props.learningMode && shouldShowPaywallNotice" />
 </template>
 
 <script setup lang="ts">

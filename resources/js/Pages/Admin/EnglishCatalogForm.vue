@@ -10,10 +10,10 @@ const genreGroups = [
     { label: "ノンフィクション", genres: ["ビジネス", "自己啓発", "心理", "科学", "歴史", "社会", "伝記"] },
 ];
 const legacyGenre = computed(() => props.book?.genre && !genreGroups.some((group) => group.genres.includes(props.book.genre)) ? props.book.genre : null);
-const form = useForm({ title: props.book?.title || '', author: props.book?.author || '', genre: props.book?.genre || '', is_japanese_author: props.book?.is_japanese_author ?? false, cover_url: props.book?.cover_url || '', amazon_url: props.book?.amazon_url || '', rakuten_url: props.book?.rakuten_url || '', cover_image: null, word_count: props.book?.word_count || null, word_count_estimated: props.book?.word_count_estimated ?? false, page_count: props.book?.page_count || null });
-const updateEstimatedWordCount = () => { if (form.word_count_estimated) form.word_count = form.page_count ? Number(form.page_count) * 300 : null; };
-watch(() => form.page_count, updateEstimatedWordCount);
-watch(() => form.word_count_estimated, updateEstimatedWordCount);
+const form = useForm({ title: props.book?.title || '', author: props.book?.author || '', genre: props.book?.genre || '', is_japanese_author: props.book?.is_japanese_author ?? false, cover_url: props.book?.cover_url || '', amazon_url: props.book?.amazon_url || '', rakuten_url: props.book?.rakuten_url || '', cover_image: null, word_count: props.book?.word_count || null, page_count: props.book?.page_count || null, words_per_page: props.book?.words_per_page ?? null });
+const updateWordCount = () => { form.word_count = form.page_count && form.words_per_page !== null && form.words_per_page !== '' ? Math.round(Number(form.page_count) * Number(form.words_per_page)) : null; };
+watch(() => form.page_count, updateWordCount);
+watch(() => form.words_per_page, updateWordCount);
 const preview = ref(props.book?.cover_image_url || '');
 const isbn = ref('');
 const lookupError = ref('');
@@ -30,7 +30,7 @@ const lookupIsbn = async () => {
         if (book.title) form.title = book.title;
         if (book.author) form.author = book.author;
         if (book.cover_url) { form.cover_url = book.cover_url; form.cover_image = null; preview.value = book.cover_url; }
-        if (book.page_count) { form.page_count = book.page_count; form.word_count_estimated = true; }
+        if (book.page_count) form.page_count = book.page_count;
         lookupMessage.value = '取得できた情報をフォームに入力しました。内容を確認して保存してください。';
     } catch (error) {
         lookupError.value = error.response?.data?.message || '書籍情報を取得できませんでした。';
@@ -58,8 +58,8 @@ const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.u
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">Amazonリンク（任意）</span><input v-model="form.amazon_url" type="url" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.amazon_url" class="mt-1 text-xs text-rose-600">{{ form.errors.amazon_url }}</p></label>
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">楽天ブックスリンク（任意）</span><input v-model="form.rakuten_url" type="url" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.rakuten_url" class="mt-1 text-xs text-rose-600">{{ form.errors.rakuten_url }}</p></label>
                     <label><span class="text-sm font-bold text-[#3d4b52]">ページ数</span><input v-model.number="form.page_count" type="number" min="1" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.page_count" class="mt-1 text-xs text-rose-600">{{ form.errors.page_count }}</p></label>
-                    <label><span class="text-sm font-bold text-[#3d4b52]">語数</span><input v-model.number="form.word_count" :disabled="form.word_count_estimated" type="number" min="0" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm disabled:bg-[#eee7db]" /><p v-if="form.word_count_estimated" class="mt-1 text-xs text-[#74665e]">ページ数 × 300 の推定値です。</p></label>
-                    <div class="sm:col-span-2"><label class="inline-flex cursor-pointer items-center gap-2 text-sm font-bold text-[#3d4b52]"><input v-model="form.word_count_estimated" type="checkbox" class="cursor-pointer rounded border-[#d6cec1] text-[#c96b48] focus:ring-[#c96b48]" />語数はページ数 × 300 で推定する</label></div>
+                    <label><span class="text-sm font-bold text-[#3d4b52]">1ページあたりの平均語数</span><input v-model.number="form.words_per_page" type="number" min="0" max="10000" step="0.01" inputmode="decimal" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p class="mt-1 text-xs text-[#74665e]">ページの写真から数えた平均語数を入力します。</p></label>
+                    <div class="sm:col-span-2 border-l-4 border-[#167a55] bg-[#f4f7f5] px-4 py-3"><p class="text-xs font-bold tracking-wider text-[#657069]">総語数（自動計算）</p><p class="mt-1 text-2xl font-extrabold text-[#202522]">{{ form.word_count ? Number(form.word_count).toLocaleString() : '—' }}<span v-if="form.word_count" class="ml-1 text-sm">語</span></p><p class="mt-1 text-xs text-[#657069]">ページ数 × 1ページあたりの平均語数</p></div>
                     <div class="sm:col-span-2"><button type="submit" :disabled="form.processing" class="w-full rounded-md bg-[#167a55] px-7 py-3 text-sm font-bold text-white transition hover:bg-[#106443] disabled:opacity-50 sm:w-auto">{{ editing ? 'データベースを更新' : '本を追加' }}</button></div>
                 </form>
             </section>

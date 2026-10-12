@@ -24,7 +24,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当-①"
-                    :relatedProblems="['2021a1', '2021b1', '2021c1']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '負債',
@@ -46,7 +45,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当-②"
-                    :relatedProblems="['2021a6', '2021b6', '2021c6']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '利源分析',
@@ -68,7 +66,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行・信託・証券業界-①"
-                    :relatedProblems="['2021b11']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '長短分離',
@@ -90,7 +87,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行・信託・証券業界-②"
-                    :relatedProblems="['2021b16']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '販売チャネル',
@@ -112,7 +108,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険の対象となる危険の種類"
-                    :relatedProblems="['2021b21']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '保険の対象となる危険の種類は二つある。一つはその発生を防止しようとしても、ある程度以上は不可能であるという意味で経済主体による制御を[[超えているもの]]、もう一つは個体としての危険発生頻度の変動幅が大きいため、合理的、経済的な予測が不可能であるという意味で経済主体の制御を[[超えているもの]]である。', //p4
@@ -125,7 +120,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険"
-                    :relatedProblems="['2021b22']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '保険料のうち団体が負担した部分については会社経理上[[損金]]とすることができる等の取扱いがある。', //p47
@@ -138,7 +132,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="早期是正措置の導入と保険業法の一部改正"
-                    :relatedProblems="['2021a23', '2021b23', '2021c23']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '責任準備金の積立度合 → 保険金の支払い余力', //p99
@@ -151,7 +144,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="社会保険の特質"
-                    :relatedProblems="['2021a24', '2021b24', '2021c24']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '社会保険の場合は、保険事故の発生率よりも[[保険料負担者の負担能力に応じて保険料が決められる]]ことが多いという特色がある。', //p125
@@ -164,7 +156,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相互会社と株式会社"
-                    :relatedProblems="['2021b25']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
@@ -177,7 +168,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の要素"
-                    :relatedProblems="['2021a26', '2021b26', '2021b32', '2021c26']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '正しい',
@@ -190,7 +180,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任準備金の一般概念"
-                    :relatedProblems="['2021b27']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '責任準備金の現実的定義は、「[[将来保険給付支払現価−将来保険料収入現価]]」である。', //p25-26
@@ -203,7 +192,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="都市経済と相互扶助組織"
-                    :relatedProblems="['2021b28']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
@@ -216,7 +204,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産運用の原則"
-                    :relatedProblems="['2021b29', '2021c45']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         'この特別勘定資産については、一般勘定資産と比べて[[運用規制が緩くなっている]]。', //p110
@@ -229,7 +216,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="['2021b30']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
@@ -245,130 +231,110 @@ const subject = "2021年度 フォームB";
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険契約の法的性質',
-                            relatedProblems: ['2021b31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険契約の要素',
-                            relatedProblems: ['2021a26', '2021b26', '2021b32', '2021c26'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: '危険選択の意義',
-                            relatedProblems: ['2021b33'],
                             content: '危険同一性の原則 → 危険均一性の原則',
                         }, //33
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: 'アームストロング調査',
-                            relatedProblems: ['2021a34', '2021b34', '2021c34'],
                             content: '合衆国統一の取締法 → ニューヨーク州の取締法', //p63
                         }, //34
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: '保険の有用性',
-                            relatedProblems: ['2021b35'],
                             content: 'ペストの大流行とスペインかぜ → 関東大震災とスペインかぜ', //p76
                         }, //35
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '生命保険会社の資金の性格',
-                            relatedProblems: ['2021a36', '2021b36', '2021c36'],
                             content: '純資産の大部分 → 負債の大部分', //p108
                         }, //36
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '日本の公的年金制度',
-                            relatedProblems: ['2021b37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: 'こくみん共済coop（全労災）',
-                            relatedProblems: ['2021b38'],
                             content: '各都道府県民共済 → こくみん共済',
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '簡易保険の歴史',
-                            relatedProblems: ['2021a39', '2021b39', '2021c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '医療・介護ニーズへの対応',
-                            relatedProblems: ['2021b40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '死亡表',
-                            relatedProblems: ['2021b41', '2021c32'],
                             label: 'ア',
                             content: '国民生命表',
                         }, //41
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険商品の基本型',
-                            relatedProblems: ['2021b42'],
                             label: 'イ',
                             content: '生存保険',
                         }, //42
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'ユニバーサル保険',
-                            relatedProblems: ['2021b43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '賦課式保険',
-                            relatedProblems: ['2021a44', '2021b44', '2021c44'],
                             label: 'エ',
                             content: '同額の分担金で',
                         }, //44
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '昭和50年保険審議会答申に沿う措置',
-                            relatedProblems: ['2021b45'],
                             label: 'オ',
                             content: '',
                         }, //45
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '国民経済における生命保険',
-                            relatedProblems: ['2021a46', '2021b46', '2021c46'],
                             label: 'オ',
                             content: '',
                         }, //46
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生活保障としての生命保険',
-                            relatedProblems: ['2021b47'],
                             label: 'ア',
                             content: '緊急出費保障',
                         }, //47
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
-                            relatedProblems: ['2021b48'],
                             label: 'ウ',
                             content: '財務大臣',
                         }, //48
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'JA共済（全国共済農業協同組合連合会）',
-                            relatedProblems: ['2021b49'],
                             label: 'エ',
                             content: 'こども共済',
                         }, //49
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '共同ネットワークシステム',
-                            relatedProblems: ['2021a50', '2021b50', '2021c50'],
                             label: 'イ',
                             content: 'LINC（Life Insurance Network Center）',
                         }, //50

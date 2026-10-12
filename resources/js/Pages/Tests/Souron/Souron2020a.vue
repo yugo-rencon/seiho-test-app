@@ -22,7 +22,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の対象となる危険とその特色-①"
-                    :relatedProblems="['2020a1']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '経済的', //1
@@ -45,7 +44,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の対象となる危険とその特色-②"
-                    :relatedProblems="['2020a6']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '傷害疾病定額保険契約', //6
@@ -68,7 +66,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産運用-①"
-                    :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '予定利率', //11
@@ -91,7 +88,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産運用-②"
-                    :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '法定他業', //16
@@ -114,7 +110,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当"
-                    :relatedProblems="['2020a21', '2020c26']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '80%以上 → 20%以上', //p27
@@ -127,7 +122,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="ギルド"
-                    :relatedProblems="['2020a22', '2020b22', '2020c22']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '都市経済では商人とその家族は１つの経済単位であり、彼らが被った経済的損失は、[[貴族も領主も救済してくれず、自らが補塡していかねばならない]]。', //p53
@@ -141,7 +135,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社の資産運用の原則"
-                    :relatedProblems="['2020a23']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '[[安全性]]の確保は資産運用の第一の基本目的である。', //p109
@@ -155,7 +148,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相互会社と株式会社"
-                    :relatedProblems="['2020a24', '2020b24', '2020c24']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '財団法人 → 社団法人', //p161
@@ -169,7 +161,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費構造の変化"
-                    :relatedProblems="['2020a25']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '正しい',
@@ -183,7 +174,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の要素"
-                    :relatedProblems="['2020a26', '2020c23']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '保険金受取人の資格については何らの制限はなく、個人であると法人であると、また[[行為能力者であると否とを問わない]]。', //p14
@@ -197,7 +187,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="アメリカにおけるニューウェーブ商品の開発"
-                    :relatedProblems="['2020a27']"
                     :contents="[
                         // rev: 2026-07-09 確認済み
                         '正しい',
@@ -211,7 +200,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="狭義の社会保障制度"
-                    :relatedProblems="['2020a28', '2020b28', '2020c28']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '正しい',
@@ -225,7 +213,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険"
-                    :relatedProblems="['2020a29', '2020c50']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '損害保険 → 生命保険', //p173
@@ -239,7 +226,6 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生保業界におけるシステム動向"
-                    :relatedProblems="['2020a30']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '[[個人保険分野]]が、最初に機械化された分野である。', //p198-199
@@ -256,131 +242,111 @@ const subject = "2020年度 フォームA";
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険契約の特殊性',
-                            relatedProblems: ['2020a31', '2020b31', '2020c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '死亡表',
-                            relatedProblems: ['2020a32', '2020b32', '2020c32'],
                             content: '国民生命表 → 経験生命表', //p15
                         }, //32
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '保険料',
-                            relatedProblems: ['2020a33'],
                             content: '純保険料 → 営業保険料', //p23
                         }, //33
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '死亡保険',
-                            relatedProblems: ['2020a34'],
                             content: '死亡保険には、定期保険、[[終身保険]]、およびその両者を組み合わせた[[定期付終身保険]]がある。', //p31
                         }, //34
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '日本の保険',
-                            relatedProblems: ['2020a35'],
                             content: '日本の保険は[[これらの類似制度から発展したものではない]]。', //p72,
                         }, //35
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '戦後混乱期から再建への足どり',
-                            relatedProblems: ['2020a36', '2020b36', '2020c36'],
                             content: '第二会社設立に際し、多くの会社が[[株式会社から相互会社]]へと組織変更した。', //p78
                         }, //36
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険料支出性向',
-                            relatedProblems: ['2020a37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '介護保険の保険料',
-                            relatedProblems: ['2020a38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '形式的監督主義',
-                            relatedProblems: ['2020a39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '少額短期保険業',
-                            relatedProblems: ['2020a40', '2020c29'],
                             content:
                                 '少額短期保険業は、短期（生保・医療保険で1年以内、損害保険で2年以内）かつ少額保険金額（疾病による死亡保険金[[300万円]]以内、疾病・傷害による入院給付金等80万円以内、損害保険金[[1,000万円]]以内等で、かつ総額1,000万円以下（複数契約合算））の保険のみを引き受ける保険業である。', //p177
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '危険の種類',
-                            relatedProblems: ['2020a41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険者',
-                            relatedProblems: ['2020a42', '2020b42', '2020c42'],
                             label: 'ア',
                             content: '10',
                         }, //42
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険の始期',
-                            relatedProblems: ['2020a43'],
                             label: 'エ',
                             content: 'いずれかの遅い日',
                         }, //43
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '団体年金保険',
-                            relatedProblems: ['2020a44'],
                             label: 'イ',
                             content: '確定拠出年金保険',
                         }, //44
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険組合の誕生',
-                            relatedProblems: ['2020a45', '2020b45', '2020c45'],
                             label: 'エ',
                             content: '賦課式',
                         }, //45
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険業法の一部改正',
-                            relatedProblems: ['2020a46'],
                             label: 'ウ',
                             content: '会社更生法',
                         }, //46
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '社会保険の保険料',
-                            relatedProblems: ['2020a47'],
                             label: 'ア',
                             content: '保険料の負担能力',
                         }, //47
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '消費者保護',
-                            relatedProblems: ['2020a48', '2020b48', '2020c48'],
                             label: 'イ',
                             content: '消費者契約法',
                         }, //48
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'JA共済',
-                            relatedProblems: ['2020a49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '社会構造の変化',
-                            relatedProblems: ['2020a50', '2020b25', '2020c40'],
                             label: 'イ',
                             content: '平均寿命',
                         }, //50

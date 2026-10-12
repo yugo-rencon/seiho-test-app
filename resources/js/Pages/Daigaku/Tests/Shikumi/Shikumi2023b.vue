@@ -21,7 +21,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任開始の時期"
-                    :relatedProblems="['2023b1', '2023c12']"
                     :contents="[
                         '正しい',
                         '必ず一致する → 必ずしも一致しないことがある', //p10
@@ -34,7 +33,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="前納・一括払と一時払"
-                    :relatedProblems="['2023a2', '2023a41', '2023b2', '2023c2']"
                     :contents="[
                         'いずれも月払契約の場合 → 一括払の月払契約の場合', //p21
                         '保険金受取人 → 保険契約者', //p21
@@ -47,7 +45,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社の免責事由"
-                    :relatedProblems="['2023b3', '2023c3']"
                     :contents="[
                         '商法 → 保険法', //p25
                         '自殺に該当する → 自殺に該当しない', //p27
@@ -60,7 +57,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解除・解約・取消し・無効"
-                    :relatedProblems="['2023b4']"
                     :contents="[
                         '解約させる → 消滅させる', //p39
                         '既払込保険料を返還する → 返還されない', //p42
@@ -73,7 +69,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の手段"
-                    :relatedProblems="['2023a15', '2023b5', '2023b30']"
                     :contents="[
                         '得られない情報はない → 得られない情報がある', //p61
                         '個別方式は行われていない → 一括方式と個別方式が行われている', //p62
@@ -86,7 +81,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="被保険者集団"
-                    :relatedProblems="['2023a6', '2023b6', '2023c6']"
                     :contents="[
                         '収支相等の原則が有効に機能していること → 大数の法則が作用し得る程度に十分大量の被保険者が存在すること', //p67
                         '厚生労働省 → 金融庁長官', //p67
@@ -99,7 +93,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産形成を目的とした主契約"
-                    :relatedProblems="['2023a11', '2023b7']"
                     :contents="[
                         '被保険者が生存している限り → 生死に関係なく<br>残りの保証期間に対する年金や一時金は支払わない → 遺族に支払う', //p145
                         '正しい',
@@ -112,7 +105,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="（自動）振替貸付および契約者貸付"
-                    :relatedProblems="['2023b8']"
                     :contents="[
                         '保険約款に規定がない契約であっても → 保険約款に規定がある契約のみ', //p112
                         '経過期間に関わらず取り消しできない → 猶予期間満了後一定期間内の場合に可能', //p112
@@ -125,7 +117,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保障見直しに関する諸制度"
-                    :relatedProblems="['2023a9', '2023b9', '2023c9']"
                     :contents="[
                         '診査は不要 → 診査は必要<br>契約時年齢で計算 → 手続時の年齢で計算', //p120
                         '転換前契約加入時 → 転換時<br>保険料率は引上げになることはない → 引き上げとなる場合がある', //p121
@@ -138,7 +129,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障を目的とした主契約"
-                    :relatedProblems="['2023a10', '2023b10', '2023c10']"
                     :contents="[
                         '終身タイプの商品はない → 定期タイプと終身タイプがある', //p140
                         '満期保険金を支払う商品が一般的 → 一般に満期保険金はない', //p140
@@ -151,7 +141,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保障を厚くする特約"
-                    :relatedProblems="['2023a23', '2023b11']"
                     :contents="[
                         '逓増定期保険特約はない → 逓増定期保険特約もある', //p156
                         '正しい',
@@ -164,7 +153,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="利率変動型積立終身保険（アカウント型保険）"
-                    :relatedProblems="['2023b12', '2023c15']"
                     :contents="[
                         '正しい',
                         '最低保証利率を下回る場合がある → 最低保証利率が設定されている', //p136
@@ -177,7 +165,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の当事者"
-                    :relatedProblems="['2023a25', '2023b13', '2023c11']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -190,7 +177,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払込み"
-                    :relatedProblems="['2023a14', '2023b14']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -203,7 +189,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金等の請求手続き"
-                    :relatedProblems="['2023a4', '2023b15']"
                     :contents="[
                         '保険約款 ↔︎ 保険法', //p
                         '正しい',
@@ -216,7 +201,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="身体的危険"
-                    :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -229,7 +213,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="道徳的危険（モラルリスク）"
-                    :relatedProblems="['2023a17', '2023b17', '2023c17', '2023c41']"
                     :contents="[
                         '契約後の経過期間ごとの解約発生率に影響 → 医学的な法則に従った死亡率に影響', //p56
                         '正しい',
@@ -242,7 +225,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約内容の変更"
-                    :relatedProblems="['2023b18', '2023c7']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -255,7 +237,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当の割当て"
-                    :relatedProblems="['2023a19', '2023b19', '2023c19']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -268,7 +249,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金（毎年配当型）の支払いと計算方法"
-                    :relatedProblems="['2023b20']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -281,7 +261,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院、手術、通院など病気・ケガの治療全般に備える特約"
-                    :relatedProblems="['2023a13', '2023b21', '2023c18']"
                     :contents="[
                         '正しい',
                         '災害入院特約 → 家族型入院特約', //p157
@@ -294,7 +273,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="共済制度の特徴"
-                    :relatedProblems="['2023a22', '2023b22', '2023c22']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -307,7 +285,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="特定の疾病や損傷の治療に備える特約"
-                    :relatedProblems="['2023b23']"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -320,7 +297,6 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金発生の仕組みと配当金との関係"
-                    :relatedProblems="['2023b24']"
                     :contents="[
                         '正しい',
                         '株式（契約者）配当 → 社員（契約者）配当', //p103
@@ -334,7 +310,6 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="保険金の支払い"
-                    :relatedProblems="['2023a3', '2023b25']"
                     :contents="[
                         '片面的強行規定',
                         '傷害疾病定額保険契約',
@@ -356,7 +331,6 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="危険選択の手段"
-                    :relatedProblems="['2023a15', '2023b5', '2023b30']"
                     :contents="[
                         '内部留保',
                         '所属団体',
@@ -378,7 +352,6 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="保険料積立金"
-                    :relatedProblems="['2023a35', '2023b35', '2023c35']"
                     :contents="[
                         '将来法',
                         '過去法',
@@ -402,52 +375,42 @@ const subject = "2023年度 フォームB";
                         // 問40〜49
                         {
                             questionTitle: '生命保険契約に関する法律',
-                            relatedProblems: ['2023a40', '2023b40', '2023c40'],
                             content: '正しい',
                         }, //40
                         {
                             questionTitle: '承諾前の保険事故',
-                            relatedProblems: ['2023b41'],
                             content: '正しい',
                         }, //41
                         {
                             questionTitle: 'BMI',
-                            relatedProblems: ['2023a42', '2023b42', '2023c42'],
                             content: '正しい',
                         }, //42
                         {
                             questionTitle: '年払・半年払保険料の取扱い',
-                            relatedProblems: ['2023b43', '2023c44'],
                             content: '正しい',
                         }, //43
                         {
                             questionTitle: '逆選択',
-                            relatedProblems: ['2023b44'],
                             content: '必要性を感じていない → 必要性を強く感じている<br>保険非加入の傾向 → 保険加入の傾向',
                         }, //44 p46
                         {
                             questionTitle: '死亡率と生存率の関係',
-                            relatedProblems: ['2023b45'],
                             content: '生存率：1 - （1 / 死亡率） → 1 - 死亡率<br>死亡率：1 - （1 / 生存率） → 1 - 生存率', //p79
                         }, //45
                         {
                             questionTitle: '平均寿命・平均余命',
-                            relatedProblems: ['2023a46', '2023b46', '2023c46'],
                             content: '平均寿命 ↔︎ 平均余命', //p79
                         }, //46
                         {
                             questionTitle: '現価計算',
-                            relatedProblems: ['2023b47'],
                             content: '受取金額 × 1 / （1 + 利率） → 受取金額 × 1 / （1 + 利率）<sup>期間 - 1</sup>',
                         }, //47
                         {
                             questionTitle: '解約返戻金',
-                            relatedProblems: ['2023a45', '2023b48'],
                             content: '正しい',
                         }, //48
                         {
                             questionTitle: '転換契約の募集に際しての法令上の規制',
-                            relatedProblems: ['2023b49'],
                             content: '正しい',
                         }, //49
                     ]"

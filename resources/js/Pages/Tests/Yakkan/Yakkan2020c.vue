@@ -24,7 +24,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="株式会社と相互会社-①"
-                    :relatedProblems="['2020c1']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '10億円',
@@ -46,7 +45,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="株式会社と相互会社-②"
-                    :relatedProblems="['2020c6']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '3カ月',
@@ -68,7 +66,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法の目的と監督の必要性・方法-①"
-                    :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '保険監督法',
@@ -90,7 +87,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法の目的と監督の必要性・方法-②"
-                    :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '保険約款',
@@ -112,7 +108,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約等の要素"
-                    :relatedProblems="['2020c21']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '正しい',
@@ -125,7 +120,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="自動振替貸付（保険料の立替）"
-                    :relatedProblems="['2020c22']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '保険契約者からあらかじめ貸付を受けない旨の申出があった場合には、自動振替貸付は行わない。', //p101
@@ -138,7 +132,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の取消しまたは無効"
-                    :relatedProblems="['2020a23', '2020b23', '2020c23']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -151,7 +144,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業免許の定義"
-                    :relatedProblems="['2020a24', '2020b24', '2020c24']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '1996年（平成8年）の保険業法改正により、生命保険業免許と損害保険業免許とが定義された（少額短期保険業免許は含まれない）。', //p204
@@ -164,7 +156,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="乗合の禁止"
-                    :relatedProblems="['2020a40', '2020c25']"
                     :contents="[
                         // rev: 2026-08-18 確認済み
                         '生命保険募集人は1人で何社もの生命保険募集人となることができるわけではなく、いわゆる乗合の禁止という制限が設けられ、[[損害保険にはみられない]]厳しい制限になっている。', //p262
@@ -177,7 +168,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約等に対する法の適用"
-                    :relatedProblems="['2020b31', '2020c26']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -190,7 +180,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任開始期"
-                    :relatedProblems="['2020c27']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -203,7 +192,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解約"
-                    :relatedProblems="['2020a28', '2020b28', '2020c28']"
                     :contents="[
                         // rev: 2026-08-21 確認済み
                         '正しい',
@@ -216,7 +204,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険持株会社"
-                    :relatedProblems="['2020a48', '2020c29']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -229,7 +216,6 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="基礎書類"
-                    :relatedProblems="['2020b48', '2020c30']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '保険者としての義務の範囲を定める方法および履行の時期は、[[普通保険約款]]に規定されている。', //p220
@@ -245,130 +231,110 @@ const subject = "2020年度 フォームC";
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '約款と特約',
-                            relatedProblems: ['2020c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: '遺言による保険金受取人の変更',
-                            relatedProblems: ['2020c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-08-21 確認済み
                             questionTitle: '保険料不可分の原則',
-                            relatedProblems: ['2020a33', '2020b33', '2020c33'],
                             content: '保険法は、保険料不可分の原則を前提とした規定が[[設けられていない]]ことから、未経過期間に対応した保険料を[[返還する必要がある]]。', //p44
                         }, //33
                         {
                             // rev: 2026-08-20 確認済み
                             questionTitle: '被保険者の同意',
-                            relatedProblems: ['2020a34', '2020b34', '2020c34'],
                             content: '被保険者の同意は、[[被保険者は契約当事者ではない]]ので生命保険契約等の[[成立要件ではなく、効力発生のための要件]]であり、保険金受取人の変更等においても同様である。', //p51
                         }, //34
                         {
                             // rev: 2026-08-20 確認済み
                             questionTitle: '解約返戻金額',
-                            relatedProblems: ['2020c35'],
                             content: '生命保険契約等の保険証券記載事項として「解約返戻金額」は[[掲げられていない]]。', //p154
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '特約の消滅',
-                            relatedProblems: ['2020c36'],
                             content: '主契約が払済保険または延長保険に変更されて特約が消滅した場合は、[[特約の解約返戻金と主契約の解約返戻金を合算して払済保険金額や保険期間等を計算する]]。', //p176
                         }, //36
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '株式会社',
-                            relatedProblems: ['2020c37'],
                             content: '筆頭株主 → 少数株主', //p227
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '事業年度',
-                            relatedProblems: ['2020c38'],
                             content: '1月1日から12月31日 → 4月1日から翌年3月31日', //p239
                         }, //38
                         {
                             // rev: 2026-08-14 確認済み
                             questionTitle: 'ソルベンシー・マージン比率',
-                            relatedProblems: ['2020a39', '2020b39', '2020c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-21 確認済み
                             questionTitle: '外国保険業者の廃止',
-                            relatedProblems: ['2020c40'],
                             content: '本国において解散、保険業の廃止をしたときは、[[その旨を金融庁長官に届け出るだけでよい]]。', //p259
                         }, //40
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '契約者保護',
-                            relatedProblems: ['2020c41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の性質',
-                            relatedProblems: ['2020a42', '2020b21', '2020b42', '2020c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: 'クーリング・オフ制度',
-                            relatedProblems: ['2020c43'],
                             label: 'ウ',
                             content: '8日',
                         }, //43
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険料払込免除',
-                            relatedProblems: ['2020c44'],
                             label: 'ウ',
                             content: '1眼の視力',
                         }, //44
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の解除',
-                            relatedProblems: ['2020a45', '2020b45', '2020c45'],
                             label: 'イ',
                             content: '保険法',
                         }, //45
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険金の支払',
-                            relatedProblems: ['2020c46'],
                             label: 'エ',
                             content: '時効',
                         }, //46
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '疾病入院特約の給付',
-                            relatedProblems: ['2020c47'],
                             label: 'イ',
                             content: '責任開始の日',
                         }, //47
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '委員会等設置会社',
-                            relatedProblems: ['2020c48'],
                             label: 'エ',
                             content: '会計監査人',
                         }, //48
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険会社に特有な準備金',
-                            relatedProblems: ['2020a49', '2020b49', '2020c49'],
                             label: 'ア',
                             content: '毎決算期',
                         }, //49
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '供託',
-                            relatedProblems: ['2020c50'],
                             label: 'オ',
                             content: '',
                         }, //50

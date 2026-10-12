@@ -24,7 +24,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="狭義の社会保障制度-①"
-                    :relatedProblems="['2022c1']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '保険料の拠出',
@@ -46,7 +45,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="狭義の社会保障制度-②"
-                    :relatedProblems="['2022c6']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '共済年金',
@@ -68,7 +66,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="社会構造の変化-①"
-                    :relatedProblems="['2022a11', '2022b11', '2022c11']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '平均寿命',
@@ -90,7 +87,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="社会構造の変化-②"
-                    :relatedProblems="['2022a16', '2022b16', '2022c16']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '年金',
@@ -112,7 +108,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険契約の要素"
-                    :relatedProblems="['2022a21', '2022b21', '2022c21']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '保険契約者の資格については別段の制限はなく、個人であると法人であるとを問わず、また[[行為能力者であると否とを問わない]]。', //p13
@@ -125,7 +120,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険と保険"
-                    :relatedProblems="['2022c22']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '正しい',
@@ -138,7 +132,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="介護保険制度"
-                    :relatedProblems="['2022a23', '2022b23', '2022c23']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '介護保険制度の被保険者は、[[65歳]]以上を第１号被保険者とし、[[40歳〜65歳]]未満の医療保険加入者を第２号被保険者とする。', //p140
@@ -151,7 +144,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="1970〜80年代のアメリカのニューウェーブ商品の開発"
-                    :relatedProblems="['2022a34', '2022c24']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '長期 → 短期', //p69
@@ -164,7 +156,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費構造の変化"
-                    :relatedProblems="['2022c25']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '正しい',
@@ -177,7 +168,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="都市経済と相互扶助組織"
-                    :relatedProblems="['2022c26']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
@@ -190,7 +180,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="変額保険（変額個人年金保険を含む）の特別勘定資産運用における留意点"
-                    :relatedProblems="['2022c27']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '[[特別勘定資産]]の運用実績が直接保険金額や年金額に反映されるため留意が必要がある。', //p110
@@ -203,7 +192,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="賦課式保険"
-                    :relatedProblems="['2022a28', '2022b28', '2022c28']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '正しい',
@@ -216,7 +204,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="共済と保険"
-                    :relatedProblems="['2022c29']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
@@ -229,7 +216,6 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険商品の充実等"
-                    :relatedProblems="['2022c30']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '5000万円 → 1000万円', //p191
@@ -245,131 +231,111 @@ const subject = "2022年度 フォームC";
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '責任準備金',
-                            relatedProblems: ['2022a31', '2022b31', '2022c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '生命保険契約の特殊性',
-                            relatedProblems: ['2022b22', '2022c32'],
                             content: '任意規定 → 強行規定',
                         }, //32
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: '科学的な生命保険会社',
-                            relatedProblems: ['2022a33', '2022b33', '2022c33'],
                             content: 'ロイヤル・エクスチェンジ → エクイタブル', //p57
                         }, //33
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険の始期',
-                            relatedProblems: ['2022c34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '日本における生命保険の発展',
-                            relatedProblems: ['2022a29', '2022c35'],
                             content: '日本の保険は[[これらの類似制度から発展したものではない]]。', //p72
                         }, //35
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生活設計',
-                            relatedProblems: ['2022c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '組織変更',
-                            relatedProblems: ['2022a37', '2022b37', '2022c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: '消費者契約法',
-                            relatedProblems: ['2022c38'],
                             content:
                                 '2001年（平成13年）から施行された「[[金融商品の販売等に関する法律（金融サービス提供法に改称）]]」によって、顧客への重要事項の説明と勧誘方針の策定・公表が義務付けられている。また同じく2001年（平成13年）から施行された「消費者契約法」では、不当な契約条項の無効等を定めることにより消費者保護を図っている。', //p159
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '各都道府県民共済',
-                            relatedProblems: ['2022c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '簡易保険の歴史',
-                            relatedProblems: ['2022c40'],
                             content: '簡易保険の既契約に対しては[[政府による保証が継続された]]。', //p173
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '契約の法的性質',
-                            relatedProblems: ['2022c41'],
                             label: 'ウ',
                             content: '不要式契約',
                         }, //41
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '死亡表',
-                            relatedProblems: ['2022a42', '2022b42', '2022c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険者',
-                            relatedProblems: ['2022c43'],
                             label: 'ア',
                             content: '10',
                         }, //43
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '財形保険',
-                            relatedProblems: ['2022c44'],
                             label: 'イ',
                             content: '財形住宅貯蓄積立保険',
                         }, //44
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'エリザ・ライト',
-                            relatedProblems: ['2022c45'],
                             label: 'オ',
                             content: '',
                         }, //45
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険契約者保護機構',
-                            relatedProblems: ['2022c46'],
                             label: 'エ',
                             content: '生命保険会社各社の拠出',
                         }, //46
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '早期是正措置制度',
-                            relatedProblems: ['2022c47'],
                             label: 'イ',
                             content: '200%',
                         }, //47
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
-                            relatedProblems: ['2022a48', '2022b48', '2022c48'],
                             label: 'エ',
                             content: '財務大臣',
                         }, //48
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '損害保険',
-                            relatedProblems: ['2022a39', '2022b25', '2022c49'],
                             label: 'ウ',
                             content: '保険金額',
                         }, //49
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生保業界共通のシステム',
-                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'ア',
                             content: '団体定期保険',
                         }, //50

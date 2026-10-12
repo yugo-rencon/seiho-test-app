@@ -131,7 +131,7 @@ const homeLink = computed(() => props.homeHref || (props.homeRoute ? route(props
 </script>
 
 <template>
-    <div class="flex flex-col items-center mt-10 gap-6">
+    <div class="mx-auto mt-8 flex w-full max-w-4xl flex-col items-center gap-6 border-t border-gray-200 pt-8">
         <!-- 前の試験・次の試験ボタン -->
         <div v-if="previousLink || nextLink" class="flex flex-wrap justify-center gap-3">
             <Link v-if="previousLink" :href="previousLink" :class="buttonClass"> 前の試験へ </Link>

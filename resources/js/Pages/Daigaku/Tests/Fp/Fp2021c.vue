@@ -25,7 +25,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険ＦＰの役割"
-                    :relatedProblems="[]"
                     :contents="[
                         '弁護士、税理士、不動産の専門家などとは全く異なる視点で → 弁護士、税理士、不動産の専門家などの協力を得ながら', //p1
                         '②規制金利市場の拡大 → ②金融の自由化', //p2
@@ -38,7 +37,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="キャッシュフロー表の収支項目の定義"
-                    :relatedProblems="[]"
                     :contents="[
                         '可処分所得 - (所得税 + 住民税 + 社会保険料) → 可処分所得 + (所得税 + 住民税 + 社会保険料)', //p8
                         '正しい',
@@ -51,7 +49,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ローン金利の種類"
-                    :relatedProblems="[]"
                     :contents="[
                         'カードローンやキャッシングは変動金利型ローン → 固定金利型ローン', //p36
                         '固定金利期間の長いもの → 短いもの', //p
@@ -64,7 +61,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="資金運用の３要素による金融商品の分類"
-                    :relatedProblems="[]"
                     :contents="[
                         'スーパー定期預金は、安全性の高い商品の据置型', //p63
                         '国債は、安全性の高い商品の据置型', //p63
@@ -77,7 +73,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="住宅ローンの知識"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '5年以上継続して加入 → 1年以上継続して加入<br>残高が30万円以上 → 残高が50万円以上', //p41
@@ -90,7 +85,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="金融商品のリスク"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '常にひとつの商品の長所と短所で考えることが重要 → ポートフォリオの視点で考えることが重要', //p67
@@ -103,7 +97,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の保障"
-                    :relatedProblems="[]"
                     :contents="[
                         'リスクに備えた死亡保障を必ず確保する必要がある → リスクに備えて死亡保障を確保する必要性は薄い', //p79
                         '保険料の自己負担額を減らすことが必要 → 医療保障の充実が必要', //p80
@@ -116,7 +109,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続対策"
-                    :relatedProblems="[]"
                     :contents="[
                         '財産を（遺産）を被相続人が取得した時の価額で評価を行う → 死亡時の時価で評価を行う', //p89
                         '8割 → 3割', //p89
@@ -129,7 +121,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="相続時精算課税制度"
-                    :relatedProblems="[]"
                     :contents="[
                         '55歳以上の父母または祖父母 → 60歳以上の父母または祖父母', //p90
                         '正しい',
@@ -142,7 +133,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生前贈与を利用して生命保険を活用する場合の留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         '契約初年度のみ → 毎年', //p103
                         '正しい',
@@ -155,7 +145,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険募集におけるコンプライアンス"
-                    :relatedProblems="[]"
                     :contents="[
                         '社会的規範や社内ルール（規程）なども含まれる', //p126
                         '民法や必要性の原則 → 消費者契約法や適合性の原則', //p127
@@ -168,7 +157,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="個人情報の保護に関する法律（個人情報保護法）"
-                    :relatedProblems="[]"
                     :contents="[
                         '生存する個人に関する情報とはならない → 生存する個人に関する情報となる', //p164
                         'お客さまの管理のために利用することが認められている → 法令で限定的に定められている利用範囲を超えたマイナンバーの収集・利用はしてはいけない', //p169
@@ -181,7 +169,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフプランニングの基礎"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -194,7 +181,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ライフステージ別の必要資金"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         'すべてがマネーポートフォリオの中心となる → 教育資金と住宅資金が中心となる', //p23
@@ -207,7 +193,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ローンの種類"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -220,7 +205,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="必要資金の性格と運用の整合性"
-                    :relatedProblems="[]"
                     :contents="[
                         '4つに大別 → 3つに大別（相続資金は含まれない）', //p63
                         '正しい',
@@ -233,7 +217,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ポートフォリオ運用（分散投資）"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -246,7 +229,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ポートフォリオ"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -259,7 +241,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保険金の活用方法等"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '子どもの病気やケガに備えることが第一に必要 → 妻が家計の大黒柱となるため妻の保障も必要', //p84
@@ -272,7 +253,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="老後の資金運用"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -285,7 +265,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険を活用した相続対策"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -298,7 +277,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="健全性の基準（ソルベンシー・マージン比率）"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '正しい',
@@ -311,7 +289,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険募集と禁止行為（保険業法300条）"
-                    :relatedProblems="[]"
                     :contents="[
                         '禁止行為に該当しない → 該当する', //p135
                         '正しい',
@@ -324,7 +301,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法における保険募集に関連する規定"
-                    :relatedProblems="[]"
                     :contents="[
                         '正しい',
                         '告知義務違反を理由に契約を解除することができない', //p160
@@ -338,7 +314,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="教育資金設計"
-                    :relatedProblems="[]"
                     :contents="[
                         '元利均等',
                         '育英年金',
@@ -360,7 +335,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="老後生活設計の医療費等"
-                    :relatedProblems="[]"
                     :contents="[
                         '14',
                         '20',
@@ -382,7 +356,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         '民法',
                         '公正',
@@ -406,52 +379,42 @@ const isDraft = false;
                         // 問40〜49
                         {
                             questionTitle: '外貨建金融商品の利用',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //40
                         {
                             questionTitle: 'リスクマネジメント',
-                            relatedProblems: [],
                             content: 'リスクマネジメントと切り離す → ライフプランニングとリスクマネジメントは表裏一体', //p14
                         }, //41
                         {
                             questionTitle: '団体信用生命保険',
-                            relatedProblems: [],
                             content: '団信は「当初融資額 = 保険金額」なので、保険料は融資時から一定 → 団信は「借入残高 = 保険金額」なので、保険料は融資時から年数が経つごとに下がっていく', //p55
                         }, //42
                         {
                             questionTitle: '金融商品のリスク',
-                            relatedProblems: [],
                             content: '正しい', //p
                         }, //43
                         {
                             questionTitle: '有担保ローンと無担保ローン',
-                            relatedProblems: [],
                             content: '金利については無担保ローンの方が有担保ローンより低くなっている → 有担保ローンの方が無担保ローンより低くなっている', //p34
                         }, //44
                         {
                             questionTitle: '住宅ローンの借換え',
-                            relatedProblems: [],
                             content: '正しい', //p
                         }, //45
                         {
                             questionTitle: '後期高齢者医療制度',
-                            relatedProblems: [],
                             content: '全額公費負担 → 費用の1割、所定水準以上の所得者の場合2割（現役並の所得者は3割）', //p77
                         }, //46
                         {
                             questionTitle: '経営破綻時の取引制限',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
                             questionTitle: '犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）',
-                            relatedProblems: [],
                             content: '正しい', //p
                         }, //48
                         {
                             questionTitle: '生命保険相談所',
-                            relatedProblems: [],
                             content: '消費生活センター → 生命保険協会', //p170
                         }, //49
                     ]"

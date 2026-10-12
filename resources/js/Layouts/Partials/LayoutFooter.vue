@@ -150,16 +150,6 @@ const tokushoRouteName = computed(() => {
                                 </Link>
                             </li>
                             <li>
-                                <a
-                                    href="https://buymeacoffee.com/rencon"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
-                                >
-                                    応援する（寄付）
-                                </a>
-                            </li>
-                            <li>
                                 <Link
                                     v-if="!hidePricingUi"
                                     :href="pricingHref"
@@ -362,25 +352,6 @@ const tokushoRouteName = computed(() => {
                             >
                                 よくある質問
                             </Link>
-                        </li>
-                        <li>
-                            <a
-                                href="https://buymeacoffee.com/rencon"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-gray-600 transition-colors duration-200"
-                                :class="
-                                    isSenmon
-                                        ? 'hover:text-emerald-600'
-                                        : isOuyou
-                                          ? 'hover:text-amber-600'
-                                          : isIppan
-                                            ? 'hover:text-fuchsia-600'
-                                          : 'hover:text-indigo-600'
-                                "
-                            >
-                                応援する（寄付）
-                            </a>
                         </li>
                         <li>
                             <Link

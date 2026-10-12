@@ -25,7 +25,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の現状"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-19 確認済み
                         '保有契約の保険金額（個人保険・個人年金保険・団体保険の合計）は､2024年度末で[[約1,304兆円]]になっている｡', //p18
@@ -39,7 +38,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保険金を支払わない場合"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '被保険者が契約日または復活日から所定期間以内に自殺したとき、[[「死亡保険金」は支払われない]]。', //p54
@@ -53,7 +51,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -67,7 +64,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込みと契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '口座振替 → 振替送金', //p56
@@ -81,7 +77,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="特約"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -95,7 +90,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '厚生労働省が国勢調査などをもとにして作成したものを[[国民生命表]]といい、生命保険会社や共済組合などがそれぞれの被保険者集団の経験をもとにして作成したものを[[経験生命表]]という。', //p38
@@ -109,7 +103,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="「適切な保険金・給付金等の支払い」に関するお客さま対応と留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         'お客さまには保険金・給付金等が支払われない場合があること（重要事項）を、[[勧誘時から]]「ご契約のしおり─定款・約款」などで説明のうえ、理解いただくことが必要。', //p95
@@ -123,7 +116,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -137,7 +129,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="証券業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '個人向け国債は、[[半年ごとに利率が見直される変動金利の10年満期と、固定金利の５年満期・３年満期の３つがある]]。', //p111
@@ -151,7 +142,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="社会保障制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '社会保障制度は、病気、老齢、死亡、[[出産]]、けが、失業、介護、貧困などの場合に、国や地方公共団体などが一定水準の保障を行うものである。', //p115
@@ -165,7 +155,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '加入者自身が掛金の運用方法を選択し、[[運用実績次第で受け取る年金額が変動する]]。', //p132
@@ -216,7 +205,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険業法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -230,7 +218,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込み等"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -244,7 +231,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -258,7 +244,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="個人情報の保護に関する法律（個人情報保護法）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -272,7 +257,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="外貨建保険・外貨建年金保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -286,7 +270,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="法令上の禁止行為（虚偽の説明となる事例）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -300,7 +283,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="失効・復活手続きの留意点"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '復活しても失効期間中の支払事由に相当する事故は[[保障の対象にならない]]。', //p97
@@ -314,7 +296,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="ＪＡ共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -328,7 +309,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行預金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -342,7 +322,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="金利の種類と金融商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -356,7 +335,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -370,7 +348,6 @@ const isDraft = false;
                     :title="title"
                     :subject="subject"
                     questionTitle="財形制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-20 確認済み
                         '正しい',
@@ -385,7 +362,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="少額短期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-17 確認済み
                         '１年以内',
@@ -408,7 +384,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="公的年金制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-17 確認済み
                         '国民皆年金',
@@ -431,7 +406,6 @@ const isDraft = false;
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-09-17 確認済み
                         '5,040',
@@ -456,61 +430,51 @@ const isDraft = false;
                         {
                             // rev: 2026-09-20 確認済み
                             questionTitle: '剰余金と配当金',
-                            relatedProblems: [],
                             content: '個々の契約に還元する配当金の額は、[[保険種類]]、性別、契約年齢、[[払込方法（回数）]]、経過年数、保険期間、保険金額などによってそれぞれ違いがある。', //p44
                         }, //40
                         {
                             // rev: 2026-09-20 確認済み
                             questionTitle: '契約転換制度',
-                            relatedProblems: [],
                             content: '「契約転換制度」を利用する際の保険料は、[[転換時]]の契約年齢、保険料率により計算されるため、[[保険種類によっては、転換前契約よりも保険料が高くなる場合がある]]。', //p65
                         }, //41
                         {
                             // rev: 2026-09-20 確認済み
                             questionTitle: '契約内容登録制度',
-                            relatedProblems: [],
                             content: '金融庁 → 生命保険協会', //p69-70
                         }, //42
                         {
                             // rev: 2026-09-20 確認済み
                             questionTitle: 'コンプライアンスと基本的姿勢',
-                            relatedProblems: [],
                             content: '保険法 ↔︎ 保険業法', //p71
                         }, //43
                         {
                             // rev: 2026-09-17 確認済み
                             questionTitle: '保全・アフターサービスの重要性',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //44
                         {
                             // rev: 2026-09-17 確認済み
                             questionTitle: '「犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）」による取引時確認',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //45
                         {
                             // rev: 2026-09-20 確認済み
                             questionTitle: '各都道府県民共済',
-                            relatedProblems: [],
                             content: '掛金は、[[選択する型や特約コースの付加により異なる]]が、それぞれの商品、特約コースごとに[[年齢・性別にかかわらず一律]]となっている。', //p103
                         }, //46
                         {
                             // rev: 2026-09-17 確認済み
                             questionTitle: '経営者保険',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
                             // rev: 2026-09-17 確認済み
                             questionTitle: '生命保険料控除の対象',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //48
                         {
                             // rev: 2026-09-20 確認済み
                             questionTitle: '遺産の分割',
-                            relatedProblems: [],
                             content: '被相続人の財産の維持・増加に特に貢献した相続人については[[寄与分]]として遺産のうちから貢献に応じた額を優先的に取得できる[[寄与分制度]]がある。', //p153-154
                         }, //49
                     ]"

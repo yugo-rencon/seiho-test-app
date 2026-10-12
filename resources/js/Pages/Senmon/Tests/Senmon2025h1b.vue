@@ -21,7 +21,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険の現状"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -35,7 +34,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険種類と利用目的"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '被保険者が死亡または[[高度障害になったとき]]にだけ保険金が支払われる。', //p27
@@ -49,7 +47,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金と配当金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '予定利率による運用収入見込額より、実際の運用収入が[[多い]]場合に生じる利益のこと。', //p43
@@ -63,7 +60,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '生命保険募集人がお客さまから口頭で告知を受けても、[[生命保険会社が告知を受けたことにはならない]]ため、告知書に告知義務者自身で記入いただくことが重要。', //p47
@@ -77,7 +73,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡保険金を支払わない場合"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '被保険者が[[契約日または復活日から所定期間以内]]に自殺したとき、「死亡保険金」は支払われない。', //p54
@@ -91,7 +86,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者貸付"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '既払込保険料総額 → 解約返戻金', //p61
@@ -105,7 +99,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の払い込みと契約の失効・復活"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -119,7 +112,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約の選択"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '保険事故の発生については、[[ほぼ安定した状態を保つことができる]]。', //p67
@@ -133,7 +125,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="募集時の情報提供と正しい説明"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '契約概要 → 注意喚起情報', //p88
@@ -147,7 +138,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="少額短期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '少額短期保険業者は、[[生命保険も損害保険も取り扱える]]。', //p104
@@ -161,7 +151,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="損害保険業界とその主な商品"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '損害保険は通常、[[事故による現実の損害額だけが、契約金額の範囲内で支払われるのが特徴]]である。', //p105
@@ -175,7 +164,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行預金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '公共料金などの自動支払、給料や年金などの自動受け取りは[[できない]]。', //p107
@@ -189,7 +177,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の仕組み"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-03 確認済み
                         '正しい',
@@ -203,7 +190,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="コンプライアンスと基本的姿勢"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -217,7 +203,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -231,7 +216,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="犯罪による収益の移転防止に関する法律（犯罪収益移転防止法）による取引時確認"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '100万円 → 200万円', //p81
@@ -245,7 +229,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当金の支払方法"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -259,7 +242,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="各都道府県民共済（全国生協連）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '正しい',
@@ -273,7 +255,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="ＪＡ共済"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -287,7 +268,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="投資信託"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '正しい',
@@ -301,7 +281,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -315,7 +294,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険、医療保障保険（団体型）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -329,7 +307,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金・年金・給付金と税金（個人契約の場合）"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '相続人 → 相続人以外', //p143
@@ -343,7 +320,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険料控除の対象となる保険料"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '正しい',
@@ -358,7 +334,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :subject="subject"
                     questionRange="25〜29"
                     questionTitle="保障の見直しに関する諸制度"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-04 確認済み
                         '契約転換',
@@ -381,7 +356,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :subject="subject"
                     questionRange="30〜34"
                     questionTitle="相続の法律"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-05 確認済み
                         '遺贈',
@@ -404,7 +378,6 @@ const subject = "2025年 4月〜8月実施 フォームB";
                     :subject="subject"
                     questionRange="35〜39"
                     questionTitle="遺族生活資金と老後生活資金"
-                    :relatedProblems="[]"
                     :contents="[
                         // rev: 2026-06-07 確認済み
                         '6,384',
@@ -429,61 +402,51 @@ const subject = "2025年 4月〜8月実施 フォームB";
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '契約者貸付',
-                            relatedProblems: [],
                             content: '1回 → 2回', //p61
                         }, //40
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '権限の明示',
-                            relatedProblems: [],
                             content: '媒介 → 代理', //p73
                         }, //41
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '消費者契約法',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //42
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '個人情報の保護に関する法律（個人情報保護法）',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //43
                         {
                             // rev: 2026-06-04 確認済み
                             questionTitle: '適切な保険金・給付金等の支払いに関するお客さま対応と留意点',
-                            relatedProblems: [],
                             content: '金融庁 → 生命保険会社', //p96
                         }, //44
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '個人向け融資（ローン）の種類',
-                            relatedProblems: [],
                             content: '目的別ローンとフリーローンを比較すると、一般に[[目的別ローン]]の方が融資限度額は大きく、金利は低くなる。', //p108
                         }, //45
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '金銭信託',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //46
                         {
                             // rev: 2026-06-05 確認済み
                             questionTitle: '株式',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //47
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '雇用保険',
-                            relatedProblems: [],
                             content: '[[就職促進給付]]は、失業者が再就職するのを援助・促進することを目的として支給され、「就業促進手当」等がある。', //p126
                         }, //48
                         {
                             // rev: 2026-06-07 確認済み
                             questionTitle: '女性市場',
-                            relatedProblems: [],
                             content: '正しい',
                         }, //49
                     ]"

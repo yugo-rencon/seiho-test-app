@@ -23,7 +23,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="制度会計-①"
-                    :relatedProblems="['2021b1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '財務会計',
@@ -45,7 +44,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="制度会計-②"
-                    :relatedProblems="['2021b6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '価格形成',
@@ -67,7 +65,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="損益勘定-①"
-                    :relatedProblems="['2021a11', '2021b11', '2021c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '認識',
@@ -89,7 +86,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="損益勘定-②"
-                    :relatedProblems="['2021a16', '2021b16', '2021c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '売上高',
@@ -111,7 +107,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="通常発生する取引の8要素の組合せ"
-                    :relatedProblems="['2021a21', '2021b21', '2021c21']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '資産の増加／負債の増加（例：借入）などが通常であり、資産の減少／負債の増加は通常発生しない。', //p12
@@ -124,7 +119,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会計における負債勘定"
-                    :relatedProblems="['2021b22']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '負債は、買掛金、借入金などの債務を表し、一般の企業では、流動（短期）負債に属する負債、固定（長期）負債に属する負債に区分することになっているが、生命保険会社は、契約者に対する保険契約準備金が大部分を占めるため、[[一般の企業とは違った区分をしている]]。', //p125
@@ -137,7 +131,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="費用に属する科目"
-                    :relatedProblems="['2021b23', '2021c30']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '保険金は原則として契約の消滅に伴う保険給付を指すのであるが、こども保険等の生存保険金および個人年金における死亡返戻金等は[[給付金として処理される]]。', //p150
@@ -150,7 +143,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="区分経理における運用資産の管理"
-                    :relatedProblems="['2021b24']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -163,7 +155,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="減損損失"
-                    :relatedProblems="['2021a25', '2021b25', '2021c25']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -176,7 +167,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="複式簿記の原理"
-                    :relatedProblems="['2021b26']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -189,7 +179,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則（一般原則）"
-                    :relatedProblems="['2021b27']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -202,7 +191,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="連結財務諸表の作成手続"
-                    :relatedProblems="['2021b28']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '従来連結子会社及び子法人等の範囲は議決権の所有割合（50％超で子会社及び子法人等）で形式的に判定していたが、現在は会社が他の会社の意思決定機関を支配しているか否かによって実質的に判定する。', //p81
@@ -215,7 +203,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社のディスクロージャー"
-                    :relatedProblems="['2021a29', '2021b29', '2021c29']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '2000年度（平成12年度）決算からキャッシュ・フロー計算書が[[縦覧の対象資料に付け加えられている]]。', //p180
@@ -228,7 +215,6 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産勘定の内容"
-                    :relatedProblems="['2021b30']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -244,131 +230,111 @@ const subject = "2021年度 フォームB";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '勘定の閉鎖',
-                            relatedProblems: ['2021b31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険契約準備金の繰入',
-                            relatedProblems: ['2021b32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '預貯金',
-                            relatedProblems: ['2021b33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '退職給付引当金',
-                            relatedProblems: ['2021b34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '代理店貸',
-                            relatedProblems: ['2021a35', '2021b35', '2021c35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '法人税及び住民税',
-                            relatedProblems: ['2021b36'],
                             content: '損益計算書上、[[他の税金と区別して税引前当期剰余から控除する]]形式で表示される。',//p164
                         }, //36
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '自己株式',
-                            relatedProblems: ['2021a37', '2021b37', '2021c37'],
                             content: '純資産の部に加算 → 純資産の部から控除', //p141
                         }, //37
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '利源分析',
-                            relatedProblems: ['2021b38'],
                             content: '損益分類は「死差損益」「利差損益」「費差損益」の三損益（三大利源）を中心として、これに「[[責任準備金関係損益]]」「[[価格変動損益]]」「その他の損益」を加え、全体を６個の損益としている。', //p178
                         }, //38
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '保険金据置支払金',
-                            relatedProblems: ['2021a39', '2021b39', '2021c39'],
                             content: '支払利息に計上 → 保険金据置支払金に計上', //p158
                         }, //39
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '会計監査人による監査',
-                            relatedProblems: ['2021b40'],
                             content: '[[期中監査]]は日常業務の取引記録が正確に会計数値として反映されているかといった日々の記帳内容に主眼が置かれるのに対して、[[決算監査]]は財務諸表の適法性や決算整理事項の内容監査が中心となる。', //p208
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '株主資本等変動計算書',
-                            relatedProblems: ['2021b41'],
                             content: '',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '危険準備金',
-                            relatedProblems: ['2021b42'],
                             content: '利益性',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '決算スケジュール',
-                            relatedProblems: ['2021b43'],
                             content: '4ヵ月',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '会計に関する法律',
-                            relatedProblems: ['2021b44'],
                             content: '保険業法',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '貸倒引当金',
-                            relatedProblems: ['2021b45'],
                             content: '',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: 'その他負債',
-                            relatedProblems: ['2021a46', '2021b46', '2021c46'],
                             content: '資産除去',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '損失填補準備金',
-                            relatedProblems: ['2021b47'],
                             content: '1000分の3',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '解約返戻金',
-                            relatedProblems: ['2021a48', '2021b48', '2021c48'],
                             content: '支払備金',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '事業費',
-                            relatedProblems: ['2021b49'],
                             content: '物件費',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '監査役による監査',
-                            relatedProblems: ['2021a50', '2021b50', '2021c50'],
                             content: '社外',
                         }, //50
                     ]"

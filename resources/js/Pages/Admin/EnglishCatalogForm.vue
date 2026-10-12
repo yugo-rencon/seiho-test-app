@@ -11,7 +11,7 @@ const genreGroups = [
 ];
 const legacyGenre = computed(() => props.book?.genre && !genreGroups.some((group) => group.genres.includes(props.book.genre)) ? props.book.genre : null);
 const form = useForm({ title: props.book?.title || '', author: props.book?.author || '', genre: props.book?.genre || '', is_japanese_author: props.book?.is_japanese_author ?? false, cover_url: props.book?.cover_url || '', amazon_url: props.book?.amazon_url || '', rakuten_url: props.book?.rakuten_url || '', cover_image: null, word_count: props.book?.word_count || null, page_count: props.book?.page_count || null, words_per_page: props.book?.words_per_page ?? null });
-const updateWordCount = () => { form.word_count = form.page_count && form.words_per_page !== null && form.words_per_page !== '' ? Math.round(Number(form.page_count) * Number(form.words_per_page)) : null; };
+const updateWordCount = () => { form.word_count = form.page_count && form.words_per_page !== null && form.words_per_page !== '' ? Math.round(Number(form.page_count) * Number(form.words_per_page) * 0.95) : null; };
 watch(() => form.page_count, updateWordCount);
 watch(() => form.words_per_page, updateWordCount);
 const preview = ref(props.book?.cover_image_url || '');
@@ -59,7 +59,7 @@ const save = () => form.post(editing.value ? route('admin.englishBooks.catalog.u
                     <label class="sm:col-span-2"><span class="text-sm font-bold text-[#3d4b52]">楽天ブックスリンク（任意）</span><input v-model="form.rakuten_url" type="url" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.rakuten_url" class="mt-1 text-xs text-rose-600">{{ form.errors.rakuten_url }}</p></label>
                     <label><span class="text-sm font-bold text-[#3d4b52]">ページ数</span><input v-model.number="form.page_count" type="number" min="1" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p v-if="form.errors.page_count" class="mt-1 text-xs text-rose-600">{{ form.errors.page_count }}</p></label>
                     <label><span class="text-sm font-bold text-[#3d4b52]">1ページあたりの平均語数</span><input v-model.number="form.words_per_page" type="number" min="0" max="10000" step="1" inputmode="numeric" class="mt-1.5 block w-full rounded-lg border-[#d6cec1] bg-white text-sm" /><p class="mt-1 text-xs text-[#74665e]">ページの写真から数えた平均語数を、整数で入力します。</p></label>
-                    <div class="sm:col-span-2 border-l-4 border-[#167a55] bg-[#f4f7f5] px-4 py-3"><p class="text-xs font-bold tracking-wider text-[#657069]">総語数（自動計算）</p><p class="mt-1 text-2xl font-extrabold text-[#202522]">{{ form.word_count ? Number(form.word_count).toLocaleString() : '—' }}<span v-if="form.word_count" class="ml-1 text-sm">語</span></p><p class="mt-1 text-xs text-[#657069]">ページ数 × 1ページあたりの平均語数</p></div>
+                    <div class="sm:col-span-2 border-l-4 border-[#167a55] bg-[#f4f7f5] px-4 py-3"><p class="text-xs font-bold tracking-wider text-[#657069]">総語数（自動計算）</p><p class="mt-1 text-2xl font-extrabold text-[#202522]">{{ form.word_count ? Number(form.word_count).toLocaleString() : '—' }}<span v-if="form.word_count" class="ml-1 text-sm">語</span></p><p class="mt-1 text-xs text-[#657069]">ページ数 × 1ページあたりの平均語数 × 0.95（四捨五入）</p></div>
                     <div class="sm:col-span-2"><button type="submit" :disabled="form.processing" class="w-full rounded-md bg-[#167a55] px-7 py-3 text-sm font-bold text-white transition hover:bg-[#106443] disabled:opacity-50 sm:w-auto">{{ editing ? 'データベースを更新' : '本を追加' }}</button></div>
                 </form>
             </section>

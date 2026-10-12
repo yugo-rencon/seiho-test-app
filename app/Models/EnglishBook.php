@@ -15,6 +15,6 @@ class EnglishBook extends Model
         'word_count' => 'integer',
         'word_count_estimated' => 'boolean',
         'page_count' => 'integer',
-        'words_per_page' => 'decimal:2',
+        'words_per_page' => 'integer',
     ];
 }

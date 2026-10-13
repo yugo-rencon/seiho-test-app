@@ -143,7 +143,7 @@ class EnglishBookAdminController extends Controller
         return redirect()->route('admin.englishBooks.index');
     }
 
-    public function show(Request $request, EnglishBook $englishBook): Response { $shelf = $this->shelfFor($request, $englishBook); $logs = PersonalStudyLog::query()->where('category', '英語')->get()->filter(fn (PersonalStudyLog $log) => (int) data_get($log->raw_payload, 'english_book_id') === $englishBook->id); return Inertia::render('Admin/EnglishBookDetail', ['book' => array_merge($this->bookPayload($englishBook, $shelf), ['reading_duration' => $this->formatDuration((int) $logs->sum('minutes')), 'reading_log_count' => $logs->count()])]); }
+    public function show(Request $request, EnglishBook $englishBook): Response { $shelf = $this->shelfFor($request, $englishBook); $logs = PersonalStudyLog::query()->where('category', '英語')->get()->filter(fn (PersonalStudyLog $log) => (int) data_get($log->raw_payload, 'english_book_id') === $englishBook->id); return Inertia::render('Admin/EnglishBookDetail', ['book' => array_merge($this->bookPayload($englishBook, $shelf), ['reading_duration' => $this->formatDuration((int) $logs->sum('minutes'))])]); }
     public function guide(EnglishBook $englishBook): Response
     {
         $path = base_path("content/books/{$englishBook->slug}.md");

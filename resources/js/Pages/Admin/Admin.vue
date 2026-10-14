@@ -709,6 +709,7 @@ const scopeClass = (scope) => {
 };
 
 const salesInsights = computed(() => props.stats?.salesInsights ?? {});
+const priceHistory = computed(() => salesInsights.value?.priceHistory ?? []);
 const examResultStats = computed(() => salesInsights.value?.examResultStats ?? {});
 const examResultSummary = computed(() => examResultStats.value?.summary ?? {});
 const examResultScopeSummary = computed(() => examResultStats.value?.scopeSummary ?? []);
@@ -1482,6 +1483,28 @@ const peakHour2h = computed(() => {
                                 <p class="text-lg font-bold text-slate-900">{{ formatYen(filteredRecentSales?.yesterday?.totalAmount) }}</p>
                                 <p class="text-xs font-semibold text-slate-500">{{ filteredRecentSales?.yesterday?.salesCount ?? 0 }}件</p>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-200 bg-white shadow-sm">
+                        <div class="border-b border-slate-100 px-4 py-3">
+                            <p class="text-sm font-bold text-slate-900">価格改定履歴</p>
+                            <p class="mt-0.5 text-[11px] text-slate-500">売上集計に使用している、試験ごとの適用価格</p>
+                        </div>
+                        <div class="divide-y divide-slate-100">
+                            <div v-for="item in priceHistory" :key="`price-history-${item.scope}`" class="grid gap-2 px-4 py-3 sm:grid-cols-[8rem_1fr] sm:items-center">
+                                <span class="w-fit rounded-full px-2 py-1 text-xs font-bold" :class="scopeClass(item.scope)">{{ scopeLabel(item.scope) }}</span>
+                                <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-600">
+                                    <template v-for="(change, index) in item.changes" :key="`price-history-${item.scope}-${index}`">
+                                        <span v-if="index > 0" class="text-slate-300">→</span>
+                                        <span class="whitespace-nowrap">
+                                            <span class="font-bold text-slate-900">{{ formatYen(change.price) }}</span>
+                                            <span class="ml-1 text-[11px] text-slate-500">{{ change.effectiveAt ? `${change.effectiveAt}〜` : "当初" }}</span>
+                                        </span>
+                                    </template>
+                                </div>
+                            </div>
+                            <p v-if="priceHistory.length === 0" class="px-4 py-5 text-center text-xs text-slate-500">価格履歴がありません。</p>
                         </div>
                     </div>
                 </div>

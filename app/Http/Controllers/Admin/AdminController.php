@@ -217,11 +217,63 @@ class AdminController extends Controller
         $basicExamPriceSwitchAt = '2026-06-18 00:00:00';
         $basicBundlePriceSwitchAt = '2026-06-18 00:00:00';
         $premiumPriceSwitchAt = '2026-10-01 17:01:13';
+        $seihoPriceSwitchAt = '2026-10-15 00:00:00';
+
+        $priceHistory = [
+            [
+                'scope' => 'seiho',
+                'changes' => [
+                    ['effectiveAt' => null, 'price' => 1980],
+                    ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 2980],
+                    ['effectiveAt' => $seihoPriceSwitchAt, 'price' => 2480],
+                ],
+            ],
+            [
+                'scope' => 'daigaku',
+                'changes' => [
+                    ['effectiveAt' => null, 'price' => 980],
+                    ['effectiveAt' => $daigakuPriceSwitchAt, 'price' => 1480],
+                    ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 1980],
+                ],
+            ],
+            [
+                'scope' => 'ippan',
+                'changes' => [
+                    ['effectiveAt' => null, 'price' => 480],
+                    ['effectiveAt' => $basicExamPriceSwitchAt, 'price' => 980],
+                    ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 1280],
+                ],
+            ],
+            [
+                'scope' => 'senmon',
+                'changes' => [
+                    ['effectiveAt' => null, 'price' => 480],
+                    ['effectiveAt' => $basicExamPriceSwitchAt, 'price' => 980],
+                    ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 1280],
+                ],
+            ],
+            [
+                'scope' => 'ouyou',
+                'changes' => [
+                    ['effectiveAt' => null, 'price' => 480],
+                    ['effectiveAt' => $basicExamPriceSwitchAt, 'price' => 980],
+                    ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 1280],
+                ],
+            ],
+            [
+                'scope' => 'basic',
+                'changes' => [
+                    ['effectiveAt' => null, 'price' => 980],
+                    ['effectiveAt' => $basicBundlePriceSwitchAt, 'price' => 1980],
+                ],
+            ],
+        ];
 
         $scopePriceCaseSql = 'CASE COALESCE(purchases.scope, "seiho")
             WHEN "seiho" THEN CASE
                 WHEN purchases.paid_at < "'.$premiumPriceSwitchAt.'" THEN 1980
-                ELSE 2980
+                WHEN purchases.paid_at < "'.$seihoPriceSwitchAt.'" THEN 2980
+                ELSE 2480
             END
             WHEN "daigaku" THEN CASE
                 WHEN purchases.paid_at < "'.$premiumPriceSwitchAt.'" THEN CASE
@@ -727,6 +779,7 @@ class AdminController extends Controller
                     'totalAmount' => (int) $row->total_amount,
                 ];
             })->values(),
+            'priceHistory' => $priceHistory,
             'recentSales' => $recentSales,
             'adsenseRevenue' => $adsenseRevenue,
             'premiumUsageToday' => [

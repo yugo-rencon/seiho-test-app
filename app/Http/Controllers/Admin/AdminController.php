@@ -218,12 +218,13 @@ class AdminController extends Controller
         $basicBundlePriceSwitchAt = '2026-06-18 00:00:00';
         $premiumPriceSwitchAt = '2026-10-01 17:01:13';
         $seihoPriceSwitchAt = '2026-10-15 00:00:00';
+        $initialPriceEffectiveAt = '2026-04-01 00:00:00';
 
         $priceHistory = [
             [
                 'scope' => 'seiho',
                 'changes' => [
-                    ['effectiveAt' => null, 'price' => 1980],
+                    ['effectiveAt' => $initialPriceEffectiveAt, 'price' => 1980],
                     ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 2980],
                     ['effectiveAt' => $seihoPriceSwitchAt, 'price' => 2480],
                 ],
@@ -231,7 +232,7 @@ class AdminController extends Controller
             [
                 'scope' => 'daigaku',
                 'changes' => [
-                    ['effectiveAt' => null, 'price' => 980],
+                    ['effectiveAt' => $initialPriceEffectiveAt, 'price' => 980],
                     ['effectiveAt' => $daigakuPriceSwitchAt, 'price' => 1480],
                     ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 1980],
                 ],
@@ -239,7 +240,7 @@ class AdminController extends Controller
             [
                 'scope' => 'ippan',
                 'changes' => [
-                    ['effectiveAt' => null, 'price' => 480],
+                    ['effectiveAt' => $initialPriceEffectiveAt, 'price' => 480],
                     ['effectiveAt' => $basicExamPriceSwitchAt, 'price' => 980],
                     ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 1280],
                 ],
@@ -247,7 +248,7 @@ class AdminController extends Controller
             [
                 'scope' => 'senmon',
                 'changes' => [
-                    ['effectiveAt' => null, 'price' => 480],
+                    ['effectiveAt' => $initialPriceEffectiveAt, 'price' => 480],
                     ['effectiveAt' => $basicExamPriceSwitchAt, 'price' => 980],
                     ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 1280],
                 ],
@@ -255,7 +256,7 @@ class AdminController extends Controller
             [
                 'scope' => 'ouyou',
                 'changes' => [
-                    ['effectiveAt' => null, 'price' => 480],
+                    ['effectiveAt' => $initialPriceEffectiveAt, 'price' => 480],
                     ['effectiveAt' => $basicExamPriceSwitchAt, 'price' => 980],
                     ['effectiveAt' => $premiumPriceSwitchAt, 'price' => 1280],
                 ],
@@ -263,7 +264,7 @@ class AdminController extends Controller
             [
                 'scope' => 'basic',
                 'changes' => [
-                    ['effectiveAt' => null, 'price' => 980],
+                    ['effectiveAt' => $initialPriceEffectiveAt, 'price' => 980],
                     ['effectiveAt' => $basicBundlePriceSwitchAt, 'price' => 1980],
                 ],
             ],

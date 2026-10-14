@@ -44,6 +44,8 @@ const savedAnswers = ref({});
 const hasPendingSavedProgress = ref(initialAnsweredCount > 0);
 const resultDismissed = ref(Boolean(props.initialStudyState?.attempt));
 const showResumeNotice = ref(initialAnsweredCount > 0);
+const navigationFeedback = ref(false);
+let navigationFeedbackTimer = null;
 const currentQuestion = computed(() => questions.value[currentIndex.value]);
 const currentAnswered = computed(() => answeredQuestions.value.has(currentQuestion.value));
 const isComplete = computed(() => answeredQuestions.value.size === props.questionCount);
@@ -129,11 +131,18 @@ watch(currentIndex, (index) => {
 
 const moveTo = async (index) => {
     showResumeNotice.value = false;
+    navigationFeedback.value = false;
     const requestedQuestion = questions.value[index];
     currentIndex.value = isStudyQuestionLocked(requestedQuestion) ? props.previewQuestionLimit : index;
     resultDismissed.value = true;
     questionMenu.value?.removeAttribute("open");
     await nextTick();
+    navigationFeedback.value = true;
+    if (navigationFeedbackTimer) clearTimeout(navigationFeedbackTimer);
+    navigationFeedbackTimer = setTimeout(() => {
+        navigationFeedback.value = false;
+        navigationFeedbackTimer = null;
+    }, 500);
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 };
 
@@ -150,7 +159,10 @@ const closeMenuOnOutsideClick = (event) => {
 };
 
 onMounted(() => document.addEventListener("pointerdown", closeMenuOnOutsideClick));
-onBeforeUnmount(() => document.removeEventListener("pointerdown", closeMenuOnOutsideClick));
+onBeforeUnmount(() => {
+    document.removeEventListener("pointerdown", closeMenuOnOutsideClick);
+    if (navigationFeedbackTimer) clearTimeout(navigationFeedbackTimer);
+});
 
 const resumeStudy = () => {
     savedAnswers.value = initialAnswers;
@@ -223,7 +235,7 @@ const startNewStudy = () => {
             </header>
 
             <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-4 max-w-4xl border-b border-gray-200 pb-3 sm:mt-5">
-                <p class="text-sm font-semibold text-gray-900">
+                <p class="text-sm font-semibold transition-colors duration-300" :class="navigationFeedback ? 'text-violet-700' : 'text-gray-900'" aria-live="polite">
                     <span class="mr-1.5 text-xs font-normal text-gray-500">問題</span>{{ currentQuestion }} <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
                 </p>
                 <div class="mt-2 flex items-center" :class="isComplete && resultDismissed && hasFullStudyAccess ? 'justify-between' : 'justify-end'">
@@ -286,7 +298,7 @@ const startNewStudy = () => {
 
             <DraftNotice v-if="isDraft" />
             <div v-if="displayMode !== 'study' || (!showResumeNotice && !shouldShowResult && !isCurrentStudyLocked)" class="mx-auto max-w-4xl" :class="studyEnabled ? 'mt-4' : 'mt-6'">
-                <div :class="displayMode === 'browse' ? 'space-y-2' : ''">
+                <div :class="[displayMode === 'browse' ? 'space-y-2' : '', displayMode === 'study' && navigationFeedback ? 'study-question-transition' : '']">
                     <slot :learning-mode="studyEnabled && displayMode === 'study'" />
                 </div>
             </div>
@@ -360,3 +372,26 @@ const startNewStudy = () => {
         </section>
     </SeihoTestLayout>
 </template>
+
+<style scoped>
+@keyframes study-question-enter {
+    from {
+        opacity: 0.45;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.study-question-transition {
+    animation: study-question-enter 280ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .study-question-transition {
+        animation: none;
+    }
+}
+</style>

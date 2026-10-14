@@ -95,7 +95,7 @@ const contactHref = computed(() => {
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
                         <dt class="font-medium text-gray-800">販売価格</dt>
                         <dd class="text-gray-700">
-                            生保講座 プレミアムプラン：2,980円（税込）<br />
+                            生保講座 プレミアムプラン：2,480円（税込）<br />
                             生命保険大学課程 プレミアムプラン：1,980円（税込）<br />
                             生命保険一般課程 プレミアムプラン：1,280円（税込）<br />
                             生命保険専門課程 プレミアムプラン：1,280円（税込）<br />

@@ -20,7 +20,7 @@ const pricingHref = computed(() => route("pricing", { return_to: page.url }));
 
         <div class="mx-auto mt-5 max-w-sm border-y border-gray-100 py-4">
             <p class="text-xs font-medium text-gray-500">買い切り</p>
-            <p class="mt-1 text-2xl font-semibold tracking-tight text-gray-950">¥2,980</p>
+            <p class="mt-1 text-2xl font-semibold tracking-tight text-gray-950">¥2,480</p>
             <p class="mt-3 text-sm text-gray-600">一度の購入で、全科目・全年度の解説が見放題</p>
             <p class="mt-1 text-xs text-gray-500"><span class="font-semibold text-violet-700">全144解説</span>が閲覧可能（今後の追加コンテンツを含む）</p>
         </div>

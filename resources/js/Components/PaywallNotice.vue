@@ -32,7 +32,7 @@ const priceNumberText = computed(() =>
         ? "1,280"
         : scope.value === "daigaku"
           ? "1,980"
-          : "2,980",
+          : "2,480",
 );
 const unlockedCountText = computed(() => {
     if (scope.value === "daigaku") return "全96解説";

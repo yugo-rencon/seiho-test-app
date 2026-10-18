@@ -186,8 +186,9 @@ const subject = "2026年度 フォームC";
                     :subject="subject"
                     questionTitle="公的年金制度"
                     :contents="[
+                        // rev: 2026-10-18 確認済み
                         '正しい',
-                        '', //p
+                        '付加年金制度 → 確定拠出年金（企業型）', //p127
                         '正しい',
                     ]"
                 />

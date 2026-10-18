@@ -32,7 +32,7 @@ const isDraft = false;
         :is-draft="isDraft"
         next-route="keiri2026b"
         #default="{ learningMode }"
-    >
+    > 
         <QuestionTemp4
             :questionNumber="1"
             :title="title"

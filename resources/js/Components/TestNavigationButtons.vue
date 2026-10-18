@@ -93,7 +93,7 @@ const seihoAutoNavigation = computed(() => {
     }
 
     const path = (page.url || "").split("?")[0];
-    const matched = path.match(/^\/(souron|keiri|kiken|yakkan|kaikei|eigyo|zeihou|sisan)(202[0-5])([a-c])$/i);
+    const matched = path.match(/^\/(souron|keiri|kiken|yakkan|kaikei|eigyo|zeihou|sisan)(202[0-6])([a-c])$/i);
 
     if (!matched) {
         return { previous: null, next: null };
@@ -101,7 +101,9 @@ const seihoAutoNavigation = computed(() => {
 
     const subject = matched[1].toLowerCase();
     const currentId = `${matched[2]}|${matched[3].toLowerCase()}`;
-    const years = ["2025", "2024", "2023", "2022", "2021", "2020"];
+    const years = subject === "souron"
+        ? ["2026", "2025", "2024", "2023", "2022", "2021", "2020"]
+        : ["2025", "2024", "2023", "2022", "2021", "2020"];
     const forms = ["a", "b", "c"];
     const orderedIds = years.flatMap((year) => forms.map((form) => `${year}|${form}`));
     const currentIndex = orderedIds.indexOf(currentId);

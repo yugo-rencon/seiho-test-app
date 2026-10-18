@@ -59,7 +59,7 @@
                     <span class="font-semibold">{{ isCorrect ? '正解' : '不正解' }}</span>
                     <template v-if="!isCorrect"><span class="text-gray-300">｜</span><span class="text-sm text-gray-500">正解</span><span>{{ props.correctAnswer }}</span></template>
                 </p>
-                <button type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer">選び直す</button>
+                <button v-if="!studySession?.attemptCompleted?.value" type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer">選び直す</button>
             </div>
         </div>
 
@@ -173,7 +173,7 @@ const selectAnswer = (label: string): void => {
     if (!hasAnswered.value) {
         selectedAnswer.value = label;
         emit("answered", Number(props.questionNumber), true);
-        studySession?.markAnswered?.(Number(props.questionNumber), true, isCorrect.value, label);
+        studySession?.markAnswered?.(Number(props.questionNumber), true, isCorrect.value, label, props.correctAnswer);
     }
 };
 

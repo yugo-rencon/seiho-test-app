@@ -3,26 +3,48 @@ import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
 import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
 import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
 
-import Pagetitle from "../../../Components/Pagetitle.vue";
-import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+import StudyTestPage from "@/Components/StudyTestPage.vue";
+import { SOURON_DIVIDEND_CHOICES_1, SOURON_DIVIDEND_CHOICES_2, SOURON_STUDY_CONFIG as studyConfig } from "@/constants/studyTests";
+
+const props = defineProps({
+    studyEnabled: { type: Boolean, default: false },
+    initialStudyState: { type: Object, default: null },
+});
 
 const title = "生命保険総論";
 const subject = "2021年度 フォームA";
+const examKey = "souron-2021-a";
+const isDraft = false;
+const wordChoices3 = [
+    ['ア', '信託業'], ['イ', '給付・反対給付均等'], ['ウ', '自助努力'], ['エ', '多種多様'], ['オ', '社会保険庁'], ['カ', '保険料収入現価'], ['キ', '損害共済'], ['ク', '金融庁'], ['ケ', '相互扶助'], ['コ', '全国共済法'],
+].map(([label, text]) => ({ label, text }));
+const wordChoices4 = [
+    ['ア', '重い'], ['イ', '健康保険組合'], ['ウ', '軽い'], ['エ', '無認可共済'], ['オ', '任意保険業者'], ['カ', 'JA共済'], ['キ', '少額短期保険業者'], ['ク', '構成員外'], ['ケ', '銀行業'], ['コ', '特別保険者'],
+].map(([label, text]) => ({ label, text }));
 </script>
 
 <template>
-    <SeihoTestLayout :title="title">
-        <section class="bg-gray-100 text-gray-800 py-10">
-            <!-- ページタイトル -->
-            <Pagetitle :title="title" :description="subject" />
-
-            <!-- 問題リスト -->
-            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+    <StudyTestPage
+        :title="title"
+        :subject="subject"
+        :exam-key="examKey"
+        :initial-study-state="props.initialStudyState"
+        :study-enabled="props.studyEnabled"
+        :question-count="studyConfig.questionCount"
+        :max-score="studyConfig.maxScore"
+        :score-sections="studyConfig.scoreSections"
+        :preview-question-limit="22"
+        :is-draft="isDraft"
+        previous-route="souron2022c"
+        next-route="souron2021b"
+        #default="{ learningMode }"
+    >
                 <QuestionTemp3
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_DIVIDEND_CHOICES_1"
                     questionTitle="契約者配当-①"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -44,6 +66,8 @@ const subject = "2021年度 フォームA";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_DIVIDEND_CHOICES_2"
                     questionTitle="契約者配当-②"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -65,6 +89,8 @@ const subject = "2021年度 フォームA";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices3"
                     questionTitle="共済と保険-①"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -86,6 +112,8 @@ const subject = "2021年度 フォームA";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices4"
                     questionTitle="共済と保険-②"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -107,11 +135,13 @@ const subject = "2021年度 フォームA";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="生命保険の対象となる危険とその特色"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
-                        '生命保険の対象となる危険には、[[死亡危険]]と[[生存危険]]がある。このうち、[[その発生に中間がなく、いわば0か1の事象であり、事象の発生により保険契約が終了する]]という特徴は[[死亡危険]]についての説明である。', //p5
+                        '生命保険の対象となる危険には、[[死亡危険]]と[[生存危険]]がある。死亡危険は、その発生に中間がなく、いわば0か1の事象であり、被保険者の死亡によって保険金が支払われ、契約が終了する。一方、生存保険では、一定期日までの生存を条件に保険金が支払われるため、生存しているだけで[[直ちに契約が終了するわけではない]]。', //p5
                         '保険業法 → 保険法', //p5
                     ]"
                 />
@@ -119,6 +149,8 @@ const subject = "2021年度 フォームA";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="危険の選択"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -131,6 +163,8 @@ const subject = "2021年度 フォームA";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="早期是正措置の導入と保険業法の一部改正"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -143,6 +177,8 @@ const subject = "2021年度 フォームA";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="社会保険の特質"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -155,6 +191,8 @@ const subject = "2021年度 フォームA";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="損害保険"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -167,6 +205,9 @@ const subject = "2021年度 フォームA";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険契約の要素"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -179,6 +220,9 @@ const subject = "2021年度 フォームA";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="消費者へのPR活動等"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -191,6 +235,9 @@ const subject = "2021年度 フォームA";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="資産運用の現状"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -203,6 +250,9 @@ const subject = "2021年度 フォームA";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="保険監督の方法"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -215,6 +265,9 @@ const subject = "2021年度 フォームA";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="社会構造の変化"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -227,6 +280,8 @@ const subject = "2021年度 フォームA";
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :correctAnswers="['正', '誤', '正', '誤', '正', '誤', '誤', '誤', '正', '正', 'ウ', 'ア', 'エ', 'エ', 'オ', 'オ', 'イ', 'ア', 'ウ', 'イ']"
                     :items="[
                         {
                             // rev: 2026-07-05 確認済み
@@ -340,9 +395,5 @@ const subject = "2021年度 フォームA";
                         }, //50
                     ]"
                 />
-            </div>
-
-            <TestNavigationButtons previous-route="souron2022c" next-route="souron2021b" />
-        </section>
-    </SeihoTestLayout>
+    </StudyTestPage>
 </template>

@@ -3,26 +3,48 @@ import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
 import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
 import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
 
-import Pagetitle from "../../../Components/Pagetitle.vue";
-import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+import StudyTestPage from "@/Components/StudyTestPage.vue";
+import { SOURON_SOCIAL_CHOICES_1, SOURON_SOCIAL_CHOICES_2, SOURON_STUDY_CONFIG as studyConfig } from "@/constants/studyTests";
+
+const props = defineProps({
+    studyEnabled: { type: Boolean, default: false },
+    initialStudyState: { type: Object, default: null },
+});
 
 const title = "生命保険総論";
 const subject = "2022年度 フォームA";
+const examKey = "souron-2022-a";
+const isDraft = false;
+const wordChoices1 = [
+    ['ア', '過失責任'], ['イ', '保険法'], ['ウ', '債権債務'], ['エ', '経済的'], ['オ', '私的自治'], ['カ', '保険業法'], ['キ', '商法'], ['ク', '歴史的'], ['ケ', '契約自由'], ['コ', '民法'],
+].map(([label, text]) => ({ label, text }));
+const wordChoices2 = [
+    ['ア', '法規範説'], ['イ', '強行'], ['ウ', '拘束'], ['エ', '定区'], ['オ', '特定'], ['カ', '保険約款'], ['キ', '定型的取引'], ['ク', '類型的取引'], ['ケ', '道徳規範説'], ['コ', '任意'],
+].map(([label, text]) => ({ label, text }));
 </script>
 
 <template>
-    <SeihoTestLayout :title="title">
-        <section class="bg-gray-100 text-gray-800 py-10">
-            <!-- ページタイトル -->
-            <Pagetitle :title="title" :description="subject" />
-
-            <!-- 問題リスト -->
-            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+    <StudyTestPage
+        :title="title"
+        :subject="subject"
+        :exam-key="examKey"
+        :initial-study-state="props.initialStudyState"
+        :study-enabled="props.studyEnabled"
+        :question-count="studyConfig.questionCount"
+        :max-score="studyConfig.maxScore"
+        :score-sections="studyConfig.scoreSections"
+        :preview-question-limit="22"
+        :is-draft="isDraft"
+        previous-route="souron2023c"
+        next-route="souron2022b"
+        #default="{ learningMode }"
+    >
                 <QuestionTemp3
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices1"
                     questionTitle="生命保険契約の特殊性-①"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -44,6 +66,8 @@ const subject = "2022年度 フォームA";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices2"
                     questionTitle="生命保険契約の特殊性-②"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -65,6 +89,8 @@ const subject = "2022年度 フォームA";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_SOCIAL_CHOICES_1"
                     questionTitle="社会構造の変化-①"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -86,6 +112,8 @@ const subject = "2022年度 フォームA";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_SOCIAL_CHOICES_2"
                     questionTitle="社会構造の変化-②"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -107,6 +135,8 @@ const subject = "2022年度 フォームA";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="生命保険契約の要素"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -119,6 +149,8 @@ const subject = "2022年度 フォームA";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="アメリカにおけるアームストロング調査"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -131,6 +163,8 @@ const subject = "2022年度 フォームA";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="介護保険制度"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -143,6 +177,8 @@ const subject = "2022年度 フォームA";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="保険業法の概要"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -155,6 +191,8 @@ const subject = "2022年度 フォームA";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="少額短期保険業"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -167,6 +205,9 @@ const subject = "2022年度 フォームA";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="保険の対象となる危険の種類"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -179,6 +220,9 @@ const subject = "2022年度 フォームA";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="危険選択の必要性と意義"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -191,6 +235,9 @@ const subject = "2022年度 フォームA";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="賦課式保険"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -203,6 +250,9 @@ const subject = "2022年度 フォームA";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="日本における生命保険の発展"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -215,6 +265,9 @@ const subject = "2022年度 フォームA";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="資産運用の原則"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -227,6 +280,8 @@ const subject = "2022年度 フォームA";
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :correctAnswers="['正', '正', '誤', '誤', '正', '正', '正', '正', '誤', '誤', 'ウ', 'オ', 'イ', 'イ', 'エ', 'ア', 'ア', 'エ', 'オ', 'ア']"
                     :items="[
                         {
                             // rev: 2026-07-05 確認済み
@@ -340,9 +395,5 @@ const subject = "2022年度 フォームA";
                         }, //50
                     ]"
                 />
-            </div>
-
-            <TestNavigationButtons previous-route="souron2023c" next-route="souron2022b" />
-        </section>
-    </SeihoTestLayout>
+    </StudyTestPage>
 </template>

@@ -39,7 +39,7 @@ const unlockedCountText = computed(() => {
     if (scope.value === "ippan") return "全55解説";
     if (scope.value === "senmon") return "全32解説";
     if (scope.value === "ouyou") return "全32解説";
-    return "全144解説";
+    return "全147解説";
 });
 const paywallText = computed(() => {
     if (loginRequired.value) {

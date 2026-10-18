@@ -77,7 +77,7 @@
               <span class="font-semibold">{{ isAnswerCorrect(index) ? '正解' : '不正解' }}</span>
               <template v-if="!isAnswerCorrect(index)"><span class="text-gray-300">｜</span><span class="text-sm text-gray-500">正解</span><span>{{ props.labels[index] }}. {{ normalizeBiArrow(content) }}</span></template>
             </p>
-            <button type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer(index)">選び直す</button>
+            <button v-if="!studySession?.attemptCompleted?.value" type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer(index)">選び直す</button>
           </div>
         </article>
       </div>
@@ -177,7 +177,7 @@
         selectedAnswers.value[index] = label;
         selectedAnswers.value = [...selectedAnswers.value];
         emit('answered', blockStartQuestion.value + index, true);
-        studySession?.markAnswered?.(blockStartQuestion.value + index, true, isAnswerCorrect(index), label);
+        studySession?.markAnswered?.(blockStartQuestion.value + index, true, isAnswerCorrect(index), label, props.labels[index]);
     }
 
     function studyChoiceClass(index, label) {

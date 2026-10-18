@@ -3,26 +3,48 @@ import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
 import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
 import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
 
-import Pagetitle from "../../../Components/Pagetitle.vue";
-import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+import StudyTestPage from "@/Components/StudyTestPage.vue";
+import { SOURON_DIVIDEND_CHOICES_1, SOURON_DIVIDEND_CHOICES_2, SOURON_STUDY_CONFIG as studyConfig } from "@/constants/studyTests";
+
+const props = defineProps({
+    studyEnabled: { type: Boolean, default: false },
+    initialStudyState: { type: Object, default: null },
+});
 
 const title = "生命保険総論";
 const subject = "2021年度 フォームB";
+const examKey = "souron-2021-b";
+const isDraft = false;
+const wordChoices3 = [
+    ['ア', '専門金融機関'], ['イ', '金融の国際化'], ['ウ', '同族会社'], ['エ', '長短分離'], ['オ', '間接金融'], ['カ', '都銀と地銀の分離'], ['キ', '直接金融'], ['ク', '金融の寡占化'], ['ケ', 'ユニバーサル・バンキング'], ['コ', '持株会社'],
+].map(([label, text]) => ({ label, text }));
+const wordChoices4 = [
+    ['ア', '元受会社'], ['イ', '信用生命保険'], ['ウ', '企業年金'], ['エ', '一時払終身保険'], ['オ', '協定遵守'], ['カ', '第三分野の保険'], ['キ', '個人年金'], ['ク', '逓増定期保険'], ['ケ', '法令等遵守'], ['コ', '販売チャネル'],
+].map(([label, text]) => ({ label, text }));
 </script>
 
 <template>
-    <SeihoTestLayout :title="title">
-        <section class="bg-gray-100 text-gray-800 py-10">
-            <!-- ページタイトル -->
-            <Pagetitle :title="title" :description="subject" />
-
-            <!-- 問題リスト -->
-            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+    <StudyTestPage
+        :title="title"
+        :subject="subject"
+        :exam-key="examKey"
+        :initial-study-state="props.initialStudyState"
+        :study-enabled="props.studyEnabled"
+        :question-count="studyConfig.questionCount"
+        :max-score="studyConfig.maxScore"
+        :score-sections="studyConfig.scoreSections"
+        :preview-question-limit="22"
+        :is-draft="isDraft"
+        previous-route="souron2021a"
+        next-route="souron2021c"
+        #default="{ learningMode }"
+    >
                 <QuestionTemp3
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_DIVIDEND_CHOICES_1"
                     questionTitle="契約者配当-①"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -44,6 +66,8 @@ const subject = "2021年度 フォームB";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_DIVIDEND_CHOICES_2"
                     questionTitle="契約者配当-②"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -65,6 +89,8 @@ const subject = "2021年度 フォームB";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices3"
                     questionTitle="銀行・信託・証券業界-①"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -86,6 +112,8 @@ const subject = "2021年度 フォームB";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices4"
                     questionTitle="銀行・信託・証券業界-②"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -107,6 +135,8 @@ const subject = "2021年度 フォームB";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="保険の対象となる危険の種類"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -119,6 +149,8 @@ const subject = "2021年度 フォームB";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="団体保険"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -131,6 +163,8 @@ const subject = "2021年度 フォームB";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="早期是正措置の導入と保険業法の一部改正"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -143,6 +177,8 @@ const subject = "2021年度 フォームB";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="社会保険の特質"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -155,6 +191,8 @@ const subject = "2021年度 フォームB";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="相互会社と株式会社"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -167,6 +205,9 @@ const subject = "2021年度 フォームB";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険契約の要素"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -179,6 +220,9 @@ const subject = "2021年度 フォームB";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="責任準備金の一般概念"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -191,6 +235,9 @@ const subject = "2021年度 フォームB";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="都市経済と相互扶助組織"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -203,6 +250,9 @@ const subject = "2021年度 フォームB";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="資産運用の原則"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -215,6 +265,9 @@ const subject = "2021年度 フォームB";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="保険業法"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -227,6 +280,8 @@ const subject = "2021年度 フォームB";
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :correctAnswers="['正', '正', '誤', '誤', '誤', '誤', '正', '誤', '正', '正', 'ア', 'イ', 'オ', 'エ', 'オ', 'オ', 'ア', 'ウ', 'エ', 'イ']"
                     :items="[
                         {
                             // rev: 2026-07-05 確認済み
@@ -340,9 +395,5 @@ const subject = "2021年度 フォームB";
                         }, //50
                     ]"
                 />
-            </div>
-
-            <TestNavigationButtons previous-route="souron2021a" next-route="souron2021c" />
-        </section>
-    </SeihoTestLayout>
+    </StudyTestPage>
 </template>

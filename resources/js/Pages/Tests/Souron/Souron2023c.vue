@@ -3,26 +3,48 @@ import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
 import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
 import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
 
-import Pagetitle from "../../../Components/Pagetitle.vue";
-import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+import StudyTestPage from "@/Components/StudyTestPage.vue";
+import { SOURON_HISTORY_CHOICES_1, SOURON_HISTORY_CHOICES_2, SOURON_STUDY_CONFIG as studyConfig } from "@/constants/studyTests";
+
+const props = defineProps({
+    studyEnabled: { type: Boolean, default: false },
+    initialStudyState: { type: Object, default: null },
+});
 
 const title = "生命保険総論";
 const subject = "2023年度 フォームC";
+const examKey = "souron-2023-c";
+const isDraft = false;
+const wordChoices1 = [
+    ['ア', '販売チャネル'], ['イ', '募集行為'], ['ウ', '保険ブローカー（保険仲立人）'], ['エ', '委託'], ['オ', '財務大臣'], ['カ', 'オウン・エージェント'], ['キ', '内閣総理大臣'], ['ク', '比較情報'], ['ケ', '受託'], ['コ', '禁止行為'],
+].map(([label, text]) => ({ label, text }));
+const wordChoices2 = [
+    ['ア', '勧誘方針'], ['イ', '商品提供義務'], ['ウ', '金融商品取引法'], ['エ', '保険法'], ['オ', '包括契約'], ['カ', '苦情対応方針'], ['キ', '割賦販売法'], ['ク', '消費者契約法'], ['ケ', '意向把握義務'], ['コ', '特定保険契約'],
+].map(([label, text]) => ({ label, text }));
 </script>
 
 <template>
-    <SeihoTestLayout :title="title">
-        <section class="bg-gray-100 text-gray-800 py-10">
-            <!-- ページタイトル -->
-            <Pagetitle :title="title" :description="subject" />
-
-            <!-- 問題リスト -->
-            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+    <StudyTestPage
+        :title="title"
+        :subject="subject"
+        :exam-key="examKey"
+        :initial-study-state="props.initialStudyState"
+        :study-enabled="props.studyEnabled"
+        :question-count="studyConfig.questionCount"
+        :max-score="studyConfig.maxScore"
+        :score-sections="studyConfig.scoreSections"
+        :preview-question-limit="22"
+        :is-draft="isDraft"
+        previous-route="souron2023b"
+        next-route="souron2022a"
+        #default="{ learningMode }"
+    >
                 <QuestionTemp3
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices1"
                     questionTitle="保険募集と監督法-①"
                     :contents="[
                         // rev: 2026-07-05 確認済み
@@ -44,6 +66,8 @@ const subject = "2023年度 フォームC";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices2"
                     questionTitle="保険募集と監督法-②"
                     :contents="[
                         // rev: 2026-07-05 確認済み
@@ -65,6 +89,8 @@ const subject = "2023年度 フォームC";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_HISTORY_CHOICES_1"
                     questionTitle="保険の歴史的発展-①"
                     :contents="[
                         // rev: 2026-07-05 確認済み
@@ -86,6 +112,8 @@ const subject = "2023年度 フォームC";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_HISTORY_CHOICES_2"
                     questionTitle="保険の歴史的発展-②"
                     :contents="[
                         // rev: 2026-07-05 確認済み
@@ -107,6 +135,8 @@ const subject = "2023年度 フォームC";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="保険の対象となる危険の種類"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -119,6 +149,8 @@ const subject = "2023年度 フォームC";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="契約者配当"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -131,6 +163,8 @@ const subject = "2023年度 フォームC";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="アメリカにおける金融革命の進展と生命保険事業"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -143,6 +177,8 @@ const subject = "2023年度 フォームC";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="公的年金制度"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -155,6 +191,8 @@ const subject = "2023年度 フォームC";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="銀行による保険販売"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -167,6 +205,9 @@ const subject = "2023年度 フォームC";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険契約の要素"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -179,6 +220,9 @@ const subject = "2023年度 フォームC";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="アメリカにおけるアームストロング調査"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -191,6 +235,9 @@ const subject = "2023年度 フォームC";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="社会保険の特質"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -203,6 +250,9 @@ const subject = "2023年度 フォームC";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="共済と保険"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -215,6 +265,9 @@ const subject = "2023年度 フォームC";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生保業界におけるシステム動向"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -227,6 +280,8 @@ const subject = "2023年度 フォームC";
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :correctAnswers="['誤', '正', '正', '正', '正', '正', '誤', '誤', '正', '誤', 'エ', 'ア', 'エ', 'オ', 'イ', 'ア', 'オ', 'イ', 'ウ', 'ウ']"
                     :items="[
                         {
                             // rev: 2026-07-07 確認済み
@@ -340,9 +395,5 @@ const subject = "2023年度 フォームC";
                         }, //50
                     ]"
                 />
-            </div>
-
-            <TestNavigationButtons previous-route="souron2023b" next-route="souron2022a" />
-        </section>
-    </SeihoTestLayout>
+    </StudyTestPage>
 </template>

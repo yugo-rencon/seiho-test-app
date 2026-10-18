@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EnglishBookShelf extends Model
 {
-    protected $fillable = ['user_id', 'english_book_id', 'status', 'reading_order', 'started_on', 'finished_on', 'difficulty', 'interest_rating', 'recommendation_rating', 'book_overview', 'english_difficulty_note', 'memo'];
+    protected $fillable = ['user_id', 'english_book_id', 'status', 'reading_order', 'started_on', 'finished_on', 'difficulty', 'interest_rating', 'recommendation_rating', 'book_overview', 'memo'];
 
     protected $casts = [
         'difficulty' => 'decimal:1', 'reading_order' => 'integer', 'started_on' => 'date:Y-m-d', 'finished_on' => 'date:Y-m-d',

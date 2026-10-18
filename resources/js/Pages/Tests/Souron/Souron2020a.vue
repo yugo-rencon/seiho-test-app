@@ -3,24 +3,48 @@ import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
 import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
 import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
 
-import Pagetitle from "../../../Components/Pagetitle.vue";
-import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+import StudyTestPage from "@/Components/StudyTestPage.vue";
+import { SOURON_ASSET_CHOICES_1, SOURON_ASSET_CHOICES_2, SOURON_STUDY_CONFIG as studyConfig } from "@/constants/studyTests";
+
+const props = defineProps({
+    studyEnabled: { type: Boolean, default: false },
+    initialStudyState: { type: Object, default: null },
+});
 
 const title = "生命保険総論";
 const subject = "2020年度 フォームA";
+const examKey = "souron-2020-a";
+const isDraft = false;
+const wordChoices1 = [
+    ['ア', '社会的'], ['イ', '損害額'], ['ウ', '客観的'], ['エ', '一定額'], ['オ', '年金給付'], ['カ', '賠償額'], ['キ', '主観的'], ['ク', '填補額'], ['ケ', '高年齢雇用継続給付'], ['コ', '経済的'],
+].map(([label, text]) => ({ label, text }));
+const wordChoices2 = [
+    ['ア', '格付機関'], ['イ', '傷害疾病定額保険契約'], ['ウ', 'ユニバーサル保険'], ['エ', '自然保険料'], ['オ', '潜在的'], ['カ', '傷害疾病損害保険契約'], ['キ', '平準保険料'], ['ク', '顕在的'], ['ケ', '養老保険'], ['コ', '金融機関'],
+].map(([label, text]) => ({ label, text }));
 </script>
 
 <template>
-    <SeihoTestLayout :title="title">
-        <section class="bg-gray-100 text-gray-800 py-10">
-            <Pagetitle :title="title" :description="subject" />
-
-            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+    <StudyTestPage
+        :title="title"
+        :subject="subject"
+        :exam-key="examKey"
+        :initial-study-state="props.initialStudyState"
+        :study-enabled="props.studyEnabled"
+        :question-count="studyConfig.questionCount"
+        :max-score="studyConfig.maxScore"
+        :score-sections="studyConfig.scoreSections"
+        :preview-question-limit="22"
+        :is-draft="isDraft"
+        previous-route="souron2021c"
+        next-route="souron2020b"
+        #default="{ learningMode }"
+    >
                 <QuestionTemp3
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices1"
                     questionTitle="生命保険の対象となる危険とその特色-①"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -43,6 +67,8 @@ const subject = "2020年度 フォームA";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices2"
                     questionTitle="生命保険の対象となる危険とその特色-②"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -65,6 +91,8 @@ const subject = "2020年度 フォームA";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_ASSET_CHOICES_1"
                     questionTitle="資産運用-①"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -87,6 +115,8 @@ const subject = "2020年度 フォームA";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="SOURON_ASSET_CHOICES_2"
                     questionTitle="資産運用-②"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -109,6 +139,8 @@ const subject = "2020年度 フォームA";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="契約者配当"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -121,6 +153,8 @@ const subject = "2020年度 フォームA";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="ギルド"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -134,6 +168,8 @@ const subject = "2020年度 フォームA";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="生命保険会社の資産運用の原則"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -147,6 +183,8 @@ const subject = "2020年度 フォームA";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="相互会社と株式会社"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -160,6 +198,8 @@ const subject = "2020年度 フォームA";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="消費構造の変化"
                     :contents="[
                         // rev: 2026-07-07 確認済み
@@ -173,6 +213,9 @@ const subject = "2020年度 フォームA";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険契約の要素"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -186,6 +229,9 @@ const subject = "2020年度 フォームA";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="アメリカにおけるニューウェーブ商品の開発"
                     :contents="[
                         // rev: 2026-07-09 確認済み
@@ -199,6 +245,9 @@ const subject = "2020年度 フォームA";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="狭義の社会保障制度"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -212,6 +261,9 @@ const subject = "2020年度 フォームA";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="損害保険"
                     :contents="[
                         // rev: 2026-07-06 確認済み
@@ -225,6 +277,9 @@ const subject = "2020年度 フォームA";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生保業界におけるシステム動向"
                     :contents="[
                         // rev: 2026-07-08 確認済み
@@ -238,6 +293,8 @@ const subject = "2020年度 フォームA";
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :correctAnswers="['正', '誤', '誤', '誤', '誤', '誤', '正', '正', '正', '誤', 'オ', 'ア', 'エ', 'イ', 'エ', 'ウ', 'ア', 'イ', 'オ', 'イ']"
                     :items="[
                         {
                             // rev: 2026-07-05 確認済み
@@ -352,9 +409,5 @@ const subject = "2020年度 フォームA";
                         }, //50
                     ]"
                 />
-            </div>
-
-            <TestNavigationButtons previous-route="souron2021c" next-route="souron2020b" />
-        </section>
-    </SeihoTestLayout>
+    </StudyTestPage>
 </template>

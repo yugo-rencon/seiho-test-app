@@ -23,7 +23,20 @@ const isDraft = false;
 </script>
 
 <template>
-    <StudyTestPage :title="title" :subject="subject" :exam-key="examKey" :initial-study-state="props.initialStudyState" :study-enabled="props.studyEnabled" :question-count="studyConfig.questionCount" :max-score="studyConfig.maxScore" :score-sections="studyConfig.scoreSections" :is-draft="isDraft" next-route="souron2025b" #default="{ learningMode }">
+    <StudyTestPage
+        :title="title"
+        :subject="subject"
+        :exam-key="examKey"
+        :initial-study-state="props.initialStudyState"
+        :study-enabled="props.studyEnabled"
+        :question-count="studyConfig.questionCount"
+        :max-score="studyConfig.maxScore"
+        :score-sections="studyConfig.scoreSections"
+        :is-draft="isDraft"
+        previous-route="souron2026c"
+        next-route="souron2025b"
+        #default="{ learningMode }"
+    >
         <QuestionTemp3
             :questionNumber="1"
             :title="title"

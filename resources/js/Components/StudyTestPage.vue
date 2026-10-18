@@ -44,9 +44,10 @@ const savedAnswers = ref({});
 const hasPendingSavedProgress = ref(initialAnsweredCount > 0);
 const resultDismissed = ref(Boolean(props.initialStudyState?.attempt));
 const showResumeNotice = ref(initialAnsweredCount > 0);
-const navigationFeedback = ref(false);
-let navigationFeedbackTimer = null;
+const attemptCompleted = ref(initialAttemptCompleted);
+let pendingAttemptReset = null;
 const currentQuestion = computed(() => questions.value[currentIndex.value]);
+const studyProgress = computed(() => Math.min(100, (currentQuestion.value / props.questionCount) * 100));
 const currentAnswered = computed(() => answeredQuestions.value.has(currentQuestion.value));
 const isComplete = computed(() => answeredQuestions.value.size === props.questionCount);
 const shouldShowResult = computed(() => isComplete.value && !resultDismissed.value && hasFullStudyAccess.value);
@@ -68,7 +69,7 @@ const sectionScores = computed(() =>
     })),
 );
 
-const markAnswered = (questionNumber, answered, correct = false, selectedAnswer = "") => {
+const markAnswered = (questionNumber, answered, correct = false, selectedAnswer = "", correctAnswer = "") => {
     const normalizedQuestionNumber = Number(questionNumber);
     const startsNewAttempt = hasPendingSavedProgress.value;
     if (startsNewAttempt) {
@@ -90,12 +91,16 @@ const markAnswered = (questionNumber, answered, correct = false, selectedAnswer 
     answeredQuestions.value = nextAnswered;
     correctQuestions.value = nextCorrect;
     showResumeNotice.value = false;
-    if (nextAnswered.size === props.questionCount) resultDismissed.value = false;
+    if (nextAnswered.size === props.questionCount) {
+        resultDismissed.value = false;
+        attemptCompleted.value = true;
+    }
 
     const nextSavedAnswers = { ...savedAnswers.value };
     if (answered) {
         nextSavedAnswers[normalizedQuestionNumber] = {
             selected_answer: selectedAnswer,
+            correct_answer: correctAnswer,
             is_correct: Boolean(correct),
             points_awarded: correct ? questionPoint(normalizedQuestionNumber) : 0,
         };
@@ -108,16 +113,22 @@ const markAnswered = (questionNumber, answered, correct = false, selectedAnswer 
     const storeAnswer = () =>
         axios.put(route("studyProgress.answers.store", [props.examKey, normalizedQuestionNumber]), {
             selected_answer: selectedAnswer,
+            correct_answer: correctAnswer,
             is_correct: Boolean(correct),
             points_awarded: correct ? questionPoint(normalizedQuestionNumber) : 0,
             question_count: props.questionCount,
             max_score: props.maxScore,
         });
-    const request = answered ? (startsNewAttempt ? axios.delete(route("studyProgress.reset", props.examKey)).then(storeAnswer) : storeAnswer()) : axios.delete(route("studyProgress.answers.delete", [props.examKey, normalizedQuestionNumber]));
+    if (startsNewAttempt) {
+        pendingAttemptReset = axios.delete(route("studyProgress.reset", props.examKey));
+    }
+    const request = answered
+        ? (pendingAttemptReset ? pendingAttemptReset.then(storeAnswer) : storeAnswer())
+        : axios.delete(route("studyProgress.answers.delete", [props.examKey, normalizedQuestionNumber]));
     request.catch((error) => console.error("学習回答の保存に失敗しました。", error));
 };
 
-provide("studySession", { currentQuestion, markAnswered, savedAnswers });
+provide("studySession", { currentQuestion, markAnswered, savedAnswers, attemptCompleted });
 
 watch(displayMode, (mode) => {
     if (!props.studyEnabled || !isLoggedIn.value) return;
@@ -131,18 +142,12 @@ watch(currentIndex, (index) => {
 
 const moveTo = async (index) => {
     showResumeNotice.value = false;
-    navigationFeedback.value = false;
     const requestedQuestion = questions.value[index];
-    currentIndex.value = isStudyQuestionLocked(requestedQuestion) ? props.previewQuestionLimit : index;
+    const nextIndex = isStudyQuestionLocked(requestedQuestion) ? props.previewQuestionLimit : index;
+    currentIndex.value = nextIndex;
     resultDismissed.value = true;
     questionMenu.value?.removeAttribute("open");
     await nextTick();
-    navigationFeedback.value = true;
-    if (navigationFeedbackTimer) clearTimeout(navigationFeedbackTimer);
-    navigationFeedbackTimer = setTimeout(() => {
-        navigationFeedback.value = false;
-        navigationFeedbackTimer = null;
-    }, 500);
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 };
 
@@ -159,10 +164,7 @@ const closeMenuOnOutsideClick = (event) => {
 };
 
 onMounted(() => document.addEventListener("pointerdown", closeMenuOnOutsideClick));
-onBeforeUnmount(() => {
-    document.removeEventListener("pointerdown", closeMenuOnOutsideClick);
-    if (navigationFeedbackTimer) clearTimeout(navigationFeedbackTimer);
-});
+onBeforeUnmount(() => document.removeEventListener("pointerdown", closeMenuOnOutsideClick));
 
 const resumeStudy = () => {
     savedAnswers.value = initialAnswers;
@@ -173,6 +175,7 @@ const resumeStudy = () => {
             .map(([questionNumber]) => Number(questionNumber)),
     );
     hasPendingSavedProgress.value = false;
+    attemptCompleted.value = initialAttemptCompleted;
     const resumeIndex = questions.value.indexOf(initialResumeQuestion);
     currentIndex.value = resumeIndex >= 0 ? resumeIndex : 0;
     resultDismissed.value = !initialAttemptCompleted;
@@ -184,11 +187,13 @@ const startNewStudy = () => {
     savedAnswers.value = {};
     answeredQuestions.value = new Set();
     correctQuestions.value = new Set();
+    attemptCompleted.value = false;
     currentIndex.value = 0;
     resultDismissed.value = true;
     showResumeNotice.value = false;
     if (isLoggedIn.value) {
-        axios.delete(route("studyProgress.reset", props.examKey)).catch((error) => console.error("学習データのリセットに失敗しました。", error));
+        pendingAttemptReset = axios.delete(route("studyProgress.reset", props.examKey));
+        pendingAttemptReset.catch((error) => console.error("学習データのリセットに失敗しました。", error));
     }
 };
 </script>
@@ -235,9 +240,14 @@ const startNewStudy = () => {
             </header>
 
             <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-4 max-w-4xl border-b border-gray-200 pb-3 sm:mt-5">
-                <p class="text-sm font-semibold transition-colors duration-300" :class="navigationFeedback ? 'text-violet-700' : 'text-gray-900'" aria-live="polite">
-                    <span class="mr-1.5 text-xs font-normal text-gray-500">問題</span>{{ currentQuestion }} <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
+                <p class="flex items-center text-sm font-semibold text-gray-900" aria-live="polite">
+                    <span class="mr-2 text-xs font-normal text-gray-500">問題</span>
+                    <span class="inline-flex min-w-7 items-center justify-center px-1.5 py-0.5">{{ currentQuestion }}</span>
+                    <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
                 </p>
+                <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-gray-100" role="progressbar" aria-label="学習の進捗" :aria-valuenow="currentQuestion" aria-valuemin="1" :aria-valuemax="questionCount">
+                    <div class="h-full rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 transition-[width] duration-300 ease-out" :style="{ width: `${studyProgress}%` }"></div>
+                </div>
                 <div class="mt-2 flex items-center" :class="isComplete && resultDismissed && hasFullStudyAccess ? 'justify-between' : 'justify-end'">
                     <button v-if="isComplete && resultDismissed && hasFullStudyAccess" type="button" class="inline-flex min-h-10 items-center text-sm font-medium text-gray-600 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果</button>
                     <details ref="questionMenu" class="relative z-20">
@@ -256,7 +266,10 @@ const startNewStudy = () => {
                                 <p class="flex items-center gap-3 text-sm text-gray-500">
                                     <span><span class="text-[#34b894]">●</span> 正解</span>
                                     <span><span class="text-[#e07a84]">●</span> 不正解</span>
-                                    <span v-if="!hasFullStudyAccess" class="text-gray-400">▣ 要購入</span>
+                                    <span v-if="!hasFullStudyAccess" class="inline-flex items-center gap-1 text-gray-400">
+                                        <svg aria-hidden="true" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 17 9.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8H5Zm2 0h6V6a3 3 0 1 0-6 0v2Z" clip-rule="evenodd" /></svg>
+                                        有料
+                                    </span>
                                 </p>
                             </div>
                             <div class="grid max-h-[29rem] grid-cols-5 gap-1.5 overflow-y-auto pr-1">
@@ -298,7 +311,7 @@ const startNewStudy = () => {
 
             <DraftNotice v-if="isDraft" />
             <div v-if="displayMode !== 'study' || (!showResumeNotice && !shouldShowResult && !isCurrentStudyLocked)" class="mx-auto max-w-4xl" :class="studyEnabled ? 'mt-4' : 'mt-6'">
-                <div :class="[displayMode === 'browse' ? 'space-y-2' : '', displayMode === 'study' && navigationFeedback ? 'study-question-transition' : '']">
+                <div :class="displayMode === 'browse' ? 'space-y-2' : ''">
                     <slot :learning-mode="studyEnabled && displayMode === 'study'" />
                 </div>
             </div>
@@ -372,26 +385,3 @@ const startNewStudy = () => {
         </section>
     </SeihoTestLayout>
 </template>
-
-<style scoped>
-@keyframes study-question-enter {
-    from {
-        opacity: 0.45;
-        transform: translateY(6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.study-question-transition {
-    animation: study-question-enter 280ms ease-out;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .study-question-transition {
-        animation: none;
-    }
-}
-</style>

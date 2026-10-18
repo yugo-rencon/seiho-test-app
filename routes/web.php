@@ -153,7 +153,7 @@ Route::get('daigaku/syakai2021c', [TestController::class, 'daigakuSyakai2021c'])
 Route::controller(TestController::class)->group(function () {
     // 試験科目の定義
     $subjects = [
-        'souron' => [2025, 2024, 2023, 2022, 2021, 2020],   // 生命保険総論
+        'souron' => [2026, 2025, 2024, 2023, 2022, 2021, 2020],   // 生命保険総論
         'keiri'  => [2025, 2024, 2023, 2022, 2021, 2020],   // 生命保険計理
         'kiken'  => [2025, 2024, 2023, 2022, 2021, 2020],   // 危険選択
         'yakkan' => [2025, 2024, 2023, 2022, 2021, 2020],   // 約款と法律
@@ -188,6 +188,8 @@ Route::controller(TestController::class)->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::middleware('admin')->group(function () {
+        Route::get('mypage/study-records', [TestController::class, 'studyRecords'])->name('mypage.studyRecords');
+        Route::get('mypage/study-records/{attempt}', [TestController::class, 'studyRecordDetails'])->name('mypage.studyRecords.show');
         Route::get('study-progress/{examKey}', [StudyProgressController::class, 'show'])->where('examKey', '[A-Za-z0-9-]{1,80}')->name('studyProgress.show');
         Route::patch('study-preferences', [StudyProgressController::class, 'updatePreference'])->name('studyPreferences.update');
         Route::patch('study-progress/{examKey}', [StudyProgressController::class, 'updateAttempt'])->where('examKey', '[A-Za-z0-9-]{1,80}')->name('studyProgress.update');

@@ -13,6 +13,7 @@ class StudyAttemptAnswer extends Model
         'study_attempt_id',
         'question_no',
         'selected_answer',
+        'correct_answer',
         'is_correct',
         'points_awarded',
         'answered_at',

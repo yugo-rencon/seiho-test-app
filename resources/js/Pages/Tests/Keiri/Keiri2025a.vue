@@ -4,26 +4,47 @@ import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
 import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
 import QuestionTemp4 from "../../../Components/QuestionTemp4.vue";
 
-import Pagetitle from "../../../Components/Pagetitle.vue";
-import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+import StudyTestPage from "@/Components/StudyTestPage.vue";
+import { KEIRI_STUDY_CONFIG as studyConfig } from "@/constants/studyTests";
+
+const props = defineProps({
+    studyEnabled: { type: Boolean, default: false },
+    initialStudyState: { type: Object, default: null },
+});
 
 const title = "生命保険計理";
 const subject = "2025年度 フォームA";
+const examKey = "keiri-2025-a";
+const isDraft = false;
 </script>
 
 <template>
-    <SeihoTestLayout :title="title">
-        <section class="bg-[#fdfbff] text-gray-800 py-10">
-            <!-- ページタイトル -->
-            <Pagetitle :title="title" :description="subject" />
-
-            <!-- 問題リスト -->
-            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+    <StudyTestPage
+        :title="title"
+        :subject="subject"
+        :exam-key="examKey"
+        :initial-study-state="props.initialStudyState"
+        :study-enabled="props.studyEnabled"
+        :question-count="studyConfig.questionCount"
+        :max-score="studyConfig.maxScore"
+        :score-sections="studyConfig.scoreSections"
+        :preview-question-limit="3"
+        :is-draft="isDraft"
+        next-route="keiri2025b"
+        #default="{ learningMode }"
+    >
                 <QuestionTemp4
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="[
+                        { label: 'ア', text: '1.21' }, { label: 'イ', text: '1.51' },
+                        { label: 'ウ', text: '1.73' }, { label: 'エ', text: '1.88' },
+                        { label: 'オ', text: '4,517' }, { label: 'カ', text: '5,274' },
+                        { label: 'キ', text: '519,755' }, { label: 'ク', text: '526,600' },
+                        { label: 'ケ', text: '1,451,743' }, { label: 'コ', text: '1,467,712' },
+                    ]"
                     :contents="[
                         // 問１
                         {
@@ -298,6 +319,14 @@ const subject = "2025年度 フォームA";
                     :questionNumber="6"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="[
+                        { label: 'ア', text: '0.99052' }, { label: 'イ', text: '0.99247' },
+                        { label: 'ウ', text: '1.02' }, { label: 'エ', text: '1.49' },
+                        { label: 'オ', text: '18,070' }, { label: 'カ', text: '19,270' },
+                        { label: 'キ', text: '96,488' }, { label: 'ク', text: '96,932' },
+                        { label: 'ケ', text: '1,716,439' }, { label: 'コ', text: '1,830,868' },
+                    ]"
                     :contents="[
                         // 問６
                         {
@@ -540,6 +569,14 @@ const subject = "2025年度 フォームA";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="[
+                        { label: 'ア', text: '完全生命表' }, { label: 'イ', text: '基礎生命表' },
+                        { label: 'ウ', text: '経験生命表' }, { label: 'エ', text: '告知効果' },
+                        { label: 'オ', text: '全体生命表' }, { label: 'カ', text: '選択効果' },
+                        { label: 'キ', text: '総合表' }, { label: 'ク', text: '地域別' },
+                        { label: 'ケ', text: '統一表' }, { label: 'コ', text: '年齢別' },
+                    ]"
                     questionTitle="死亡表の種類"
                     :contents="[
                         // rev: 2026-07-09 確認済み
@@ -561,6 +598,14 @@ const subject = "2025年度 フォームA";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="[
+                        { label: 'ア', text: '最低保証がある' }, { label: 'イ', text: '生命保険会社' },
+                        { label: 'ウ', text: '毎月1回' }, { label: 'エ', text: '基本保険金額' },
+                        { label: 'オ', text: '証券会社' }, { label: 'カ', text: '変動保険金額' },
+                        { label: 'キ', text: '毎日' }, { label: 'ク', text: '保険金受取人' },
+                        { label: 'ケ', text: '契約者' }, { label: 'コ', text: '保証はない' },
+                    ]"
                     questionTitle="変額保険の仕組み・運用（定額保険との比較）"
                     :contents="[
                         // rev: 2026-07-09 確認済み
@@ -582,6 +627,13 @@ const subject = "2025年度 フォームA";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptionsByQuestion="{
+                        21: [{ label: 'ア', text: '714,734千円' }, { label: 'イ', text: '718,300千円' }, { label: 'ウ', text: '733,500千円' }],
+                        22: [{ label: 'ア', text: '140,093,854千円' }, { label: 'イ', text: '140,263,691千円' }, { label: 'ウ', text: '140,422,110千円' }],
+                        23: [{ label: 'ア', text: '3,685,418千円' }, { label: 'イ', text: '3,700,538千円' }, { label: 'ウ', text: '3,703,800千円' }],
+                        24: [{ label: 'ア', text: '299,030円' }, { label: 'イ', text: '299,380円' }, { label: 'ウ', text: '299,680円' }],
+                    }"
                     :contents="[
                         // 問21
                         {
@@ -825,6 +877,8 @@ const subject = "2025年度 フォームA";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="団体年金の財政方式"
                     :contents="[
                         // rev: 2026-07-11 確認済み
@@ -837,6 +891,9 @@ const subject = "2025年度 フォームA";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="営業保険料の計算上配慮する点"
                     :contents="[
                         // rev: 2026-07-12 確認済み
@@ -849,6 +906,9 @@ const subject = "2025年度 フォームA";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="保険料積立金"
                     :contents="[
                         // rev: 2026-07-12 確認済み
@@ -861,6 +921,9 @@ const subject = "2025年度 フォームA";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="責任準備金の積立に関する法的規制"
                     :contents="[
                         // rev: 2026-07-12 確認済み
@@ -873,6 +936,9 @@ const subject = "2025年度 フォームA";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="契約転換制度"
                     :contents="[
                         // rev: 2026-07-12 確認済み
@@ -885,6 +951,9 @@ const subject = "2025年度 フォームA";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="剰余金の処分"
                     :contents="[
                         // rev: 2026-07-14 確認済み
@@ -897,6 +966,20 @@ const subject = "2025年度 フォームA";
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :correctAnswers="['誤', '誤', '誤', '誤', '誤', '正', '誤', '正', '正', '正', 'オ', 'イ', 'ア', 'オ', 'エ', 'ア', 'ア', 'オ', 'エ', 'オ']"
+                    :choiceOptionsByQuestion="{
+                        41: [{ label: 'ア', text: 'A―単純' }, { label: 'イ', text: 'A―素' }, { label: 'ウ', text: 'B―平均' }, { label: 'エ', text: 'B―分類整理' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                        42: [{ label: 'ア', text: 'A―集合' }, { label: 'イ', text: 'A―大数' }, { label: 'ウ', text: 'B―平衡性' }, { label: 'エ', text: 'B―信義誠実' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                        43: [{ label: 'ア', text: 'A―定期保険と養老保険' }, { label: 'イ', text: 'A―定期保険と生存保険' }, { label: 'ウ', text: 'B―高くなる' }, { label: 'エ', text: 'B―変わらない' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                        44: [{ label: 'ア', text: 'A―死亡保険金' }, { label: 'イ', text: 'A―生存保険金' }, { label: 'ウ', text: 'B―死亡保険料' }, { label: 'エ', text: 'B―定期保険料' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                        45: [{ label: 'ア', text: 'A―払戻積立金' }, { label: 'イ', text: 'A―未経過保険料' }, { label: 'ウ', text: 'B―解約返戻金' }, { label: 'エ', text: 'B―予定利率' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                        46: [{ label: 'ア', text: 'A―契約者貸付' }, { label: 'イ', text: 'A―保険期間' }, { label: 'ウ', text: 'B―会社が現実に決算で積み立てる方式の' }, { label: 'エ', text: 'B―営業保険料式' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                        47: [{ label: 'ア', text: 'A―差し引いた後' }, { label: 'イ', text: 'A―加算後' }, { label: 'ウ', text: 'B―前納保険料' }, { label: 'エ', text: 'B―差額保険料' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                        48: [{ label: 'ア', text: 'A―国際' }, { label: 'イ', text: 'A―投機' }, { label: 'ウ', text: 'B―営業' }, { label: 'エ', text: 'B―収益' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                        49: [{ label: 'ア', text: 'A―危険準備金' }, { label: 'イ', text: 'A―繰越利益剰余金' }, { label: 'ウ', text: 'B―消滅時保険料積立金' }, { label: 'エ', text: 'B―保険金' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                        50: [{ label: 'ア', text: 'A―通算勤務' }, { label: 'イ', text: 'A―過去勤務' }, { label: 'ウ', text: 'B―特別保険料' }, { label: 'エ', text: 'B―未経過保険料' }, { label: 'オ', text: 'C（A・Bともに正しい）' }],
+                    }"
                     :items="[
                         {
                             // rev: 2026-07-14 確認済み
@@ -1010,9 +1093,5 @@ const subject = "2025年度 フォームA";
                         }, //50
                     ]"
                 />
-            </div>
-
-            <TestNavigationButtons next-route="keiri2025b" />
-        </section>
-    </SeihoTestLayout>
+    </StudyTestPage>
 </template>

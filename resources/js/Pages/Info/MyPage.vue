@@ -81,6 +81,10 @@ const props = defineProps({
     type: Object,
     default: () => ({}),
   },
+  showStudyRecords: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const isDaigaku = computed(() => props.scope === 'daigaku');
@@ -515,6 +519,22 @@ const excellent = computed(
               ログアウト
             </button>
           </div>
+        </div>
+
+        <div v-if="props.showStudyRecords" class="overflow-hidden rounded-xl border border-slate-200 bg-white">
+          <Link
+            :href="route('mypage.studyRecords')"
+            class="group flex min-h-[88px] items-center justify-between gap-4 px-5 py-4 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-violet-500 sm:px-6"
+          >
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="text-sm font-semibold text-slate-900">学習記録</h2>
+                <span class="rounded-full bg-violet-50 px-2 py-0.5 text-[10px] font-semibold text-violet-700">管理者のみ</span>
+              </div>
+              <p class="mt-1 text-xs text-slate-500">学習モードの進捗と採点結果を確認できます。</p>
+            </div>
+            <span class="shrink-0 text-sm font-medium text-slate-600 group-hover:text-slate-950">記録を見る</span>
+          </Link>
         </div>
 
         <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">

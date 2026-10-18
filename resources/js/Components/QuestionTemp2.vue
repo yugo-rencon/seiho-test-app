@@ -54,7 +54,7 @@
                         <span class="font-semibold">{{ isTrueFalseCorrect(item) ? '正解' : '不正解' }}</span>
                         <template v-if="!isTrueFalseCorrect(item)"><span class="text-gray-300">｜</span><span class="text-sm text-gray-500">正解</span><span>{{ correctAnswerFor(item) }}</span></template>
                     </p>
-                    <button type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetTrueFalse(item)">選び直す</button>
+                    <button v-if="!studySession?.attemptCompleted?.value" type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetTrueFalse(item)">選び直す</button>
                 </div>
             </div>
             <section v-if="selectedAnswers[item.questionNo] && !choicesFor(item).length" class="my-5 border-t border-gray-200 pt-4">
@@ -206,7 +206,11 @@ const selectedAnswers = ref({});
 
 const choicesFor = (item: any): any[] => {
     const choices = props.choiceOptionsByQuestion?.[item.questionNo];
-    return Array.isArray(choices) ? choices : [];
+    if (Array.isArray(choices) && choices.length) return choices;
+    if (['ア', 'イ', 'ウ', 'エ', 'オ'].includes(String(item.label ?? ''))) {
+        return ['ア', 'イ', 'ウ', 'エ', 'オ'].map((label) => ({ label, text: '' }));
+    }
+    return [];
 };
 
 const correctAnswerFor = (item: any): string => {
@@ -220,7 +224,7 @@ const answerTrueFalse = (item: any, choice: string): void => {
     if (selectedAnswers.value[item.questionNo]) return;
     selectedAnswers.value = { ...selectedAnswers.value, [item.questionNo]: choice };
     emit("answered", Number(item.questionNo), true);
-    studySession?.markAnswered?.(Number(item.questionNo), true, isTrueFalseCorrect(item), choice);
+    studySession?.markAnswered?.(Number(item.questionNo), true, isTrueFalseCorrect(item), choice, correctAnswerFor(item));
 };
 
 const resetTrueFalse = (item: any): void => {

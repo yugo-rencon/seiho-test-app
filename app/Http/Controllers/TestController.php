@@ -634,6 +634,7 @@ class TestController extends Controller
         $hasPurchasedSenmon = in_array('senmon', $paidBasicScopes, true);
         $hasPurchasedOuyou = in_array('ouyou', $paidBasicScopes, true);
         $hasPurchasedBasic = in_array('basic', $paidBasicScopes, true);
+        $showStudyRecords = (bool) $user->is_admin;
 
         return Inertia::render('Info/MyPage', [
             'scope' => $scope,
@@ -654,7 +655,111 @@ class TestController extends Controller
             'hasPurchasedOuyou' => $hasPurchasedOuyou,
             'hasPurchasedBasic' => $hasPurchasedBasic,
             'purchaseDates' => $purchaseDates,
+            'showStudyRecords' => $showStudyRecords,
         ]);
+    }
+
+    public function studyRecords(Request $request)
+    {
+        return Inertia::render('Info/StudyRecords', [
+            'studyRecords' => $this->studyRecordsFor($request->user()),
+        ]);
+    }
+
+    public function studyRecordDetails(Request $request, StudyAttempt $attempt)
+    {
+        abort_unless($attempt->user_id === $request->user()->id, 404);
+        $exam = config("study_exams.{$attempt->exam_key}");
+        abort_unless(is_array($exam), 404);
+
+        $attempt->load(['answers' => fn ($query) => $query->orderBy('question_no')]);
+        $latestAttemptId = StudyAttempt::query()
+            ->where('user_id', $attempt->user_id)
+            ->where('exam_key', $attempt->exam_key)
+            ->latest('attempt_no')
+            ->value('id');
+
+        return Inertia::render('Info/StudyRecordDetails', [
+            'record' => [
+                'id' => $attempt->id,
+                'attempt_no' => $attempt->attempt_no,
+                'subject_label' => $exam['subject_label'],
+                'year' => $exam['year'],
+                'form' => $exam['form'],
+                'exam_href' => route($exam['route']),
+                'status' => $attempt->status,
+                'answered_count' => $attempt->answered_count,
+                'question_count' => $exam['question_count'],
+                'score' => $attempt->score,
+                'max_score' => $attempt->max_score,
+                'started_at' => $attempt->started_at?->toISOString(),
+                'completed_at' => $attempt->completed_at?->toISOString(),
+                'is_latest' => $attempt->id === $latestAttemptId,
+                'answers' => $attempt->answers->map(fn ($answer) => [
+                    'question_no' => $answer->question_no,
+                    'selected_answer' => $answer->selected_answer,
+                    'correct_answer' => $answer->correct_answer,
+                    'is_correct' => $answer->is_correct,
+                    'points_awarded' => $answer->points_awarded,
+                    'answered_at' => $answer->answered_at?->toISOString(),
+                ])->values(),
+            ],
+        ]);
+    }
+
+    private function studyRecordsFor(User $user): array
+    {
+        $studyExamCatalog = collect(config('study_exams', []));
+        $studyAttempts = StudyAttempt::query()
+            ->where('user_id', $user->id)
+            ->whereIn('exam_key', $studyExamCatalog->keys())
+            ->whereHas('answers')
+            ->withCount([
+                'answers as correct_count' => fn ($query) => $query->where('is_correct', true),
+            ])
+            ->orderByDesc('attempt_no')
+            ->get()
+            ->groupBy('exam_key');
+
+        return $studyExamCatalog
+            ->map(function (array $exam, string $examKey) use ($studyAttempts) {
+                $attempts = $studyAttempts->get($examKey, collect());
+                $recent = $attempts->sortByDesc('attempt_no')->take(3);
+                $best = $attempts
+                    ->where('status', 'completed')
+                    ->sort(fn ($a, $b) => $b->score <=> $a->score ?: $b->attempt_no <=> $a->attempt_no)
+                    ->first();
+                $visible = $recent
+                    ->when($best, fn ($items) => $items->push($best))
+                    ->unique('id')
+                    ->sortByDesc('attempt_no');
+
+                return [
+                    'exam_key' => $examKey,
+                    'subject_key' => $exam['subject_key'],
+                    'subject_label' => $exam['subject_label'],
+                    'year' => $exam['year'],
+                    'form' => $exam['form'],
+                    'exam_href' => route($exam['route']),
+                    'question_count' => $exam['question_count'],
+                    'study_enabled' => $exam['study_enabled'] ?? false,
+                    'attempts' => $visible->map(fn (StudyAttempt $attempt) => [
+                        'id' => $attempt->id,
+                        'attempt_no' => $attempt->attempt_no,
+                        'href' => route('mypage.studyRecords.show', $attempt),
+                        'status' => $attempt->status,
+                        'current_question_no' => $attempt->current_question_no,
+                        'answered_count' => $attempt->answered_count,
+                        'correct_count' => $attempt->correct_count,
+                        'score' => $attempt->score,
+                        'max_score' => $attempt->max_score,
+                        'is_best' => $best?->id === $attempt->id,
+                        'updated_at' => $attempt->updated_at?->toISOString(),
+                    ])->values(),
+                ];
+            })
+            ->values()
+            ->all();
     }
 
     public function updatePassScore(Request $request)
@@ -779,6 +884,21 @@ class TestController extends Controller
     }
 
     // 生命保険総論
+    public function souron2026a()
+    {
+        return Inertia::render('Tests/Souron/Souron2026a');
+    }
+
+    public function souron2026b()
+    {
+        return Inertia::render('Tests/Souron/Souron2026b');
+    }
+
+    public function souron2026c()
+    {
+        return Inertia::render('Tests/Souron/Souron2026c');
+    }
+
     public function souron2025a(Request $request)
     {
         $user = $request->user();
@@ -790,6 +910,7 @@ class TestController extends Controller
             $attempt = StudyAttempt::query()
                 ->where('user_id', $user->id)
                 ->where('exam_key', 'souron-2025-a')
+                ->whereHas('answers')
                 ->latest('attempt_no')
                 ->with('answers')
                 ->first();
@@ -830,6 +951,7 @@ class TestController extends Controller
             $attempt = StudyAttempt::query()
                 ->where('user_id', $user->id)
                 ->where('exam_key', 'souron-2025-b')
+                ->whereHas('answers')
                 ->latest('attempt_no')
                 ->with('answers')
                 ->first();
@@ -859,25 +981,122 @@ class TestController extends Controller
             'initialStudyState' => $initialStudyState,
         ]);
     }
-    public function souron2025c(){return Inertia::render('Tests/Souron/Souron2025c');}
-    public function souron2024a(){return Inertia::render('Tests/Souron/Souron2024a');}
-    public function souron2024b(){return Inertia::render('Tests/Souron/Souron2024b');}
-    public function souron2024c(){return Inertia::render('Tests/Souron/Souron2024c');}
-    public function souron2023a(){return Inertia::render('Tests/Souron/Souron2023a');}
-    public function souron2023b(){return Inertia::render('Tests/Souron/Souron2023b');}
-    public function souron2023c(){return Inertia::render('Tests/Souron/Souron2023c');}
-    public function souron2022a(){return Inertia::render('Tests/Souron/Souron2022a');}
-    public function souron2022b(){return Inertia::render('Tests/Souron/Souron2022b');}
-    public function souron2022c(){return Inertia::render('Tests/Souron/Souron2022c');}
-    public function souron2021a(){return Inertia::render('Tests/Souron/Souron2021a');}
-    public function souron2021b(){return Inertia::render('Tests/Souron/Souron2021b');}
-    public function souron2021c(){return Inertia::render('Tests/Souron/Souron2021c');}
-    public function souron2020a(){return Inertia::render('Tests/Souron/Souron2020a');}
-    public function souron2020b(){return Inertia::render('Tests/Souron/Souron2020b');}
-    public function souron2020c(){return Inertia::render('Tests/Souron/Souron2020c');}
+    public function souron2025c(Request $request)
+    {
+        $user = $request->user();
+        $initialStudyState = null;
+        $studyEnabled = (bool) ($user?->is_admin);
+
+        if ($studyEnabled) {
+            $attempt = StudyAttempt::query()
+                ->where('user_id', $user->id)
+                ->where('exam_key', 'souron-2025-c')
+                ->whereHas('answers')
+                ->latest('attempt_no')
+                ->with('answers')
+                ->first();
+
+            $initialStudyState = [
+                'preferred_test_mode' => UserPreference::query()
+                    ->where('user_id', $user->id)
+                    ->value('preferred_test_mode') ?? 'browse',
+                'attempt' => $attempt ? [
+                    'status' => $attempt->status,
+                    'current_question_no' => $attempt->current_question_no,
+                    'answered_count' => $attempt->answered_count,
+                    'score' => $attempt->score,
+                    'max_score' => $attempt->max_score,
+                    'answers' => $attempt->answers->map(fn ($answer) => [
+                        'question_no' => $answer->question_no,
+                        'selected_answer' => $answer->selected_answer,
+                        'is_correct' => $answer->is_correct,
+                        'points_awarded' => $answer->points_awarded,
+                    ])->values(),
+                ] : null,
+            ];
+        }
+
+        return Inertia::render('Tests/Souron/Souron2025c', [
+            'studyEnabled' => $studyEnabled,
+            'initialStudyState' => $initialStudyState,
+        ]);
+    }
+    public function souron2024a(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2024a', 'souron-2024-a');
+    }
+
+    public function souron2024b(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2024b', 'souron-2024-b');
+    }
+
+    public function souron2024c(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2024c', 'souron-2024-c');
+    }
+    public function souron2023a(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2023a', 'souron-2023-a');
+    }
+
+    public function souron2023b(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2023b', 'souron-2023-b');
+    }
+
+    public function souron2023c(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2023c', 'souron-2023-c');
+    }
+    public function souron2022a(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2022a', 'souron-2022-a');
+    }
+
+    public function souron2022b(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2022b', 'souron-2022-b');
+    }
+
+    public function souron2022c(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2022c', 'souron-2022-c');
+    }
+    public function souron2021a(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2021a', 'souron-2021-a');
+    }
+
+    public function souron2021b(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2021b', 'souron-2021-b');
+    }
+
+    public function souron2021c(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2021c', 'souron-2021-c');
+    }
+    public function souron2020a(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2020a', 'souron-2020-a');
+    }
+
+    public function souron2020b(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2020b', 'souron-2020-b');
+    }
+
+    public function souron2020c(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2020c', 'souron-2020-c');
+    }
 
     // 生命保険計理
-    public function keiri2025a(){return Inertia::render('Tests/Keiri/Keiri2025a');}
+    public function keiri2025a(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Keiri/Keiri2025a', 'keiri-2025-a');
+    }
     public function keiri2025b(){return Inertia::render('Tests/Keiri/Keiri2025b');}
     public function keiri2025c(){return Inertia::render('Tests/Keiri/Keiri2025c');}
     public function keiri2024a(){return Inertia::render('Tests/Keiri/Keiri2024a');}
@@ -1015,5 +1234,46 @@ class TestController extends Controller
     public function sisan2020a(){return Inertia::render('Tests/Sisan/Sisan2020a');}
     public function sisan2020b(){return Inertia::render('Tests/Sisan/Sisan2020b');}
     public function sisan2020c(){return Inertia::render('Tests/Sisan/Sisan2020c');}
+
+    private function renderStudyExam(Request $request, string $component, string $examKey)
+    {
+        $user = $request->user();
+        $studyEnabled = (bool) ($user?->is_admin);
+        $initialStudyState = null;
+
+        if ($studyEnabled) {
+            $attempt = StudyAttempt::query()
+                ->where('user_id', $user->id)
+                ->where('exam_key', $examKey)
+                ->whereHas('answers')
+                ->latest('attempt_no')
+                ->with('answers')
+                ->first();
+
+            $initialStudyState = [
+                'preferred_test_mode' => UserPreference::query()
+                    ->where('user_id', $user->id)
+                    ->value('preferred_test_mode') ?? 'browse',
+                'attempt' => $attempt ? [
+                    'status' => $attempt->status,
+                    'current_question_no' => $attempt->current_question_no,
+                    'answered_count' => $attempt->answered_count,
+                    'score' => $attempt->score,
+                    'max_score' => $attempt->max_score,
+                    'answers' => $attempt->answers->map(fn ($answer) => [
+                        'question_no' => $answer->question_no,
+                        'selected_answer' => $answer->selected_answer,
+                        'is_correct' => $answer->is_correct,
+                        'points_awarded' => $answer->points_awarded,
+                    ])->values(),
+                ] : null,
+            ];
+        }
+
+        return Inertia::render($component, [
+            'studyEnabled' => $studyEnabled,
+            'initialStudyState' => $initialStudyState,
+        ]);
+    }
 
 }

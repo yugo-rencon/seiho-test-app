@@ -26,7 +26,8 @@ const props = defineProps({
 
 const latestFreeYear = computed(() => {
     if (props.currentSubjectId === "keiri") return null;
-    return ["souron", "kiken", "yakkan", "kaikei", "eigyo"].includes(props.currentSubjectId) ? 2025 : 2024;
+    if (props.currentSubjectId === "souron") return 2026;
+    return ["kiken", "yakkan", "kaikei", "eigyo"].includes(props.currentSubjectId) ? 2025 : 2024;
 });
 </script>
 

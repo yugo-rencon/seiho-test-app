@@ -211,8 +211,9 @@ const subject = "2026年度 フォームC";
                     :subject="subject"
                     questionTitle="生命保険会社の資産運用の今後のあり方"
                     :contents="[
+                        // rev: 2026-10-18 確認済み
                         '正しい',
-                        '', //p
+                        '特別勘定 → 区分経理', //p201
                         '正しい',
                     ]"
                 />
@@ -262,8 +263,9 @@ const subject = "2026年度 フォームC";
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-10-18 確認済み
                             questionTitle: '医療保障商品',
-                            content: '',
+                            content: '死亡保険金の倍額 → 死亡保険金の同額', //p192
                         }, //40
                         {
                             // rev: 2026-10-17 確認済み

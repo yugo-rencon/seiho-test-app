@@ -331,7 +331,7 @@ const wordChoices2 = [
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: '医療保障商品',
-                            content: '倍額 → 同額', //p192
+                            content: '死亡保険金の倍額 → 死亡保険金の同額', //p192
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み

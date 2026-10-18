@@ -198,7 +198,8 @@ const subject = "2026年度 フォームB";
                     :subject="subject"
                     questionTitle="相互会社と株式会社"
                     :contents="[
-                        '', //p
+                        // rev: 2026-10-18 確認済み
+                        '保険法 → 保険業法', //p160
                         '正しい',
                         '正しい',
                     ]"

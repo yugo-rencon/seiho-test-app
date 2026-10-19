@@ -3,26 +3,59 @@ import QuestionTemp1 from "../../../Components/QuestionTemp1.vue";
 import QuestionTemp2 from "../../../Components/QuestionTemp2.vue";
 import QuestionTemp3 from "../../../Components/QuestionTemp3.vue";
 
-import Pagetitle from "../../../Components/Pagetitle.vue";
-import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
-import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
+import StudyTestPage from "@/Components/StudyTestPage.vue";
+import { SOURON_STUDY_CONFIG as studyConfig } from "@/constants/studyTests";
+
+const props = defineProps({
+    studyEnabled: { type: Boolean, default: false },
+    initialStudyState: { type: Object, default: null },
+});
 
 const title = "生命保険総論";
 const subject = "2026年度 フォームB";
+const examKey = "souron-2026-b";
+const isDraft = false;
+
+const wordChoices1 = [
+    ['ア', '社会的'], ['イ', '損害額'], ['ウ', '客観的'], ['エ', '一定額'], ['オ', '商法'],
+    ['カ', '賠償額'], ['キ', '主観的'], ['ク', '填補額'], ['ケ', '民法'], ['コ', '経済的'],
+].map(([label, text]) => ({ label, text }));
+const wordChoices2 = [
+    ['ア', '算出'], ['イ', '傷害・疾病'], ['ウ', 'ユニバーサル保険'], ['エ', '自然保険料'], ['オ', '潜在的'],
+    ['カ', '損害'], ['キ', '平準保険料'], ['ク', '顕在的'], ['ケ', '養老保険'], ['コ', '運用'],
+].map(([label, text]) => ({ label, text }));
+const wordChoices3 = [
+    ['ア', '専門金融機関'], ['イ', '金融の国際化'], ['ウ', '同族会社'], ['エ', '長短分離'], ['オ', '間接金融'],
+    ['カ', '遠近分離'], ['キ', '直接金融'], ['ク', '金融の寡占化'], ['ケ', 'ユニバーサル・バンキング'], ['コ', '持株会社'],
+].map(([label, text]) => ({ label, text }));
+const wordChoices4 = [
+    ['ア', '元受会社'], ['イ', '信用生命保険'], ['ウ', '企業年金'], ['エ', '一時払終身保険'], ['オ', '協定遵守'],
+    ['カ', '第三分野の保険'], ['キ', '個人年金'], ['ク', '逓増定期保険'], ['ケ', '法令等遵守'], ['コ', '販売チャネル'],
+].map(([label, text]) => ({ label, text }));
 </script>
 
 <template>
-    <SeihoTestLayout :title="title">
-        <section class="bg-gray-100 text-gray-800 py-10">
-            <!-- ページタイトル -->
-            <Pagetitle :title="title" :description="subject" />
-
-            <!-- 問題リスト -->
-            <div class="max-w-4xl mx-auto mt-4 space-y-2">
+    <StudyTestPage
+        :title="title"
+        :subject="subject"
+        :exam-key="examKey"
+        :initial-study-state="props.initialStudyState"
+        :study-enabled="props.studyEnabled"
+        :question-count="studyConfig.questionCount"
+        :max-score="studyConfig.maxScore"
+        :score-sections="studyConfig.scoreSections"
+        :preview-question-limit="22"
+        :is-draft="isDraft"
+        previous-route="souron2026a"
+        next-route="souron2026c"
+        #default="{ learningMode }"
+    >
                 <QuestionTemp3
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices1"
                     questionTitle="生命保険の対象となる危険とその特色－①"
                     :contents="[
                         // rev: 2026-10-17 確認済み
@@ -44,6 +77,8 @@ const subject = "2026年度 フォームB";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices2"
                     questionTitle="生命保険の対象となる危険とその特色－②"
                     :contents="[
                         // rev: 2026-10-17 確認済み
@@ -65,6 +100,8 @@ const subject = "2026年度 フォームB";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices3"
                     questionTitle="銀行・信託・証券業界－①"
                     :contents="[
                         // rev: 2026-10-17 確認済み
@@ -86,6 +123,8 @@ const subject = "2026年度 フォームB";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :choiceOptions="wordChoices4"
                     questionTitle="銀行・信託・証券業界－②"
                     :contents="[
                         // rev: 2026-10-17 確認済み
@@ -107,6 +146,8 @@ const subject = "2026年度 フォームB";
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="団体保険"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -119,6 +160,8 @@ const subject = "2026年度 フォームB";
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
                     questionTitle="1970～80年代のアメリカのニューウェーブ商品の開発"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -131,6 +174,8 @@ const subject = "2026年度 フォームB";
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="狭義の社会保障制度"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -143,6 +188,8 @@ const subject = "2026年度 フォームB";
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
                     questionTitle="保険業法の概要"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -155,6 +202,8 @@ const subject = "2026年度 フォームB";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
                     questionTitle="損害保険"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -167,6 +216,9 @@ const subject = "2026年度 フォームB";
                     :questionNumber="26"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="責任準備金の一般概念"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -179,6 +231,9 @@ const subject = "2026年度 フォームB";
                     :questionNumber="27"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ウ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険事業の革新"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -191,6 +246,9 @@ const subject = "2026年度 フォームB";
                     :questionNumber="28"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="変額保険（変額個人年金保険を含む）の資産運用における留意点"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -203,6 +261,9 @@ const subject = "2026年度 フォームB";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="ア"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="相互会社と株式会社"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -215,6 +276,9 @@ const subject = "2026年度 フォームB";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    correctAnswer="イ"
+                    answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険会社の資産運用の今後のあり方"
                     :contents="[
                         // rev: 2026-10-18 確認済み
@@ -227,6 +291,8 @@ const subject = "2026年度 フォームB";
                     :questionNumber="31"
                     :title="title"
                     :subject="subject"
+                    :learningMode="learningMode"
+                    :correctAnswers="['正', '誤', '誤', '正', '正', '誤', '誤', '誤', '正', '誤', 'ア', 'ウ', 'ウ', 'オ', 'イ', 'ア', 'エ', 'イ', 'オ', 'エ']"
                     :items="[
                         {
                             // rev: 2026-10-17 確認済み
@@ -340,9 +406,5 @@ const subject = "2026年度 フォームB";
                         }, //50
                     ]"
                 />
-            </div>
-
-            <TestNavigationButtons previous-route="souron2026a" next-route="souron2026c" />
-        </section>
-    </SeihoTestLayout>
+    </StudyTestPage>
 </template>

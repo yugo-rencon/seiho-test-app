@@ -43,6 +43,7 @@ const correctQuestions = ref(new Set());
 const savedAnswers = ref({});
 const hasPendingSavedProgress = ref(initialAnsweredCount > 0);
 const resultDismissed = ref(Boolean(props.initialStudyState?.attempt));
+const showStartNotice = ref(initialAnsweredCount === 0);
 const showResumeNotice = ref(initialAnsweredCount > 0);
 const attemptCompleted = ref(initialAttemptCompleted);
 let pendingAttemptReset = null;
@@ -51,6 +52,7 @@ const studyProgress = computed(() => Math.min(100, (currentQuestion.value / prop
 const currentAnswered = computed(() => answeredQuestions.value.has(currentQuestion.value));
 const isComplete = computed(() => answeredQuestions.value.size === props.questionCount);
 const shouldShowResult = computed(() => isComplete.value && !resultDismissed.value && hasFullStudyAccess.value);
+const showStudyIntro = computed(() => showStartNotice.value || showResumeNotice.value);
 const isStudyQuestionLocked = (questionNumber) => !hasFullStudyAccess.value && Number(questionNumber) > props.previewQuestionLimit;
 const isCurrentStudyLocked = computed(() => isStudyQuestionLocked(currentQuestion.value));
 
@@ -108,6 +110,7 @@ const markAnswered = (questionNumber, answered, correct = false, selectedAnswer 
         delete nextSavedAnswers[normalizedQuestionNumber];
     }
     savedAnswers.value = nextSavedAnswers;
+    showStartNotice.value = false;
 
     if (!isLoggedIn.value) return;
     const storeAnswer = () =>
@@ -141,6 +144,7 @@ watch(currentIndex, (index) => {
 });
 
 const moveTo = async (index) => {
+    showStartNotice.value = false;
     showResumeNotice.value = false;
     const requestedQuestion = questions.value[index];
     const nextIndex = isStudyQuestionLocked(requestedQuestion) ? props.previewQuestionLimit : index;
@@ -179,6 +183,7 @@ const resumeStudy = () => {
     const resumeIndex = questions.value.indexOf(initialResumeQuestion);
     currentIndex.value = resumeIndex >= 0 ? resumeIndex : 0;
     resultDismissed.value = !initialAttemptCompleted;
+    showStartNotice.value = false;
     showResumeNotice.value = false;
 };
 
@@ -190,8 +195,9 @@ const startNewStudy = () => {
     attemptCompleted.value = false;
     currentIndex.value = 0;
     resultDismissed.value = true;
+    showStartNotice.value = false;
     showResumeNotice.value = false;
-    if (isLoggedIn.value) {
+    if (isLoggedIn.value && initialAnsweredCount > 0) {
         pendingAttemptReset = axios.delete(route("studyProgress.reset", props.examKey));
         pendingAttemptReset.catch((error) => console.error("学習データのリセットに失敗しました。", error));
     }
@@ -239,7 +245,7 @@ const startNewStudy = () => {
                 <p class="mt-1.5 text-sm text-gray-500">{{ subject }}</p>
             </header>
 
-            <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult" class="mx-auto mt-4 max-w-4xl border-b border-gray-200 pb-3 sm:mt-5">
+            <div v-if="displayMode === 'study' && !showStudyIntro && !shouldShowResult" class="mx-auto mt-4 max-w-4xl border-b border-gray-200 pb-3 sm:mt-5">
                 <p class="flex items-center text-sm font-semibold text-gray-900" aria-live="polite">
                     <span class="mr-2 text-xs font-normal text-gray-500">問題</span>
                     <span class="inline-flex min-w-7 items-center justify-center px-1.5 py-0.5">{{ currentQuestion }}</span>
@@ -300,6 +306,19 @@ const startNewStudy = () => {
                 </div>
             </div>
 
+            <div v-if="displayMode === 'study' && showStartNotice" class="mx-auto mt-8 max-w-4xl border-y border-gray-200 py-8 text-center sm:py-10">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-violet-50 text-violet-600" aria-hidden="true">
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 4.75h8.25A1.75 1.75 0 0 1 17 6.5v12.75H8.75A1.75 1.75 0 0 1 7 17.5V4.75Z" />
+                        <path d="M7 17.5A1.75 1.75 0 0 0 8.75 19.25H18V7.5" />
+                        <path d="M10 9h4M10 12h4" />
+                    </svg>
+                </div>
+                <h2 class="mt-4 text-xl font-semibold tracking-tight text-gray-950">学習を始めましょう</h2>
+                <p class="mx-auto mt-2 max-w-lg text-sm leading-6 text-gray-500">全{{ questionCount }}問を1問ずつ解答します。解答後に正誤と解説を確認でき、最後に得点を採点します。</p>
+                <button type="button" class="mt-6 inline-flex min-h-11 items-center justify-center rounded-sm bg-violet-600 px-8 py-2.5 text-sm font-semibold text-white hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2" @click="startNewStudy">学習を開始する</button>
+            </div>
+
             <div v-if="displayMode === 'study' && showResumeNotice && !shouldShowResult" class="mx-auto mt-8 max-w-4xl border-y border-gray-200 py-7 text-center">
                 <h2 class="text-lg font-semibold text-gray-900">前回の学習が残っています</h2>
                 <p class="mt-2 text-sm text-gray-500">{{ initialAttemptCompleted ? `全${questionCount}問回答済み・${initialAttemptScore}点` : `${initialAnsweredCount} / ${questionCount}問回答済み・問${initialResumeQuestion}から再開できます` }}</p>
@@ -310,17 +329,17 @@ const startNewStudy = () => {
             </div>
 
             <DraftNotice v-if="isDraft" />
-            <div v-if="displayMode !== 'study' || (!showResumeNotice && !shouldShowResult && !isCurrentStudyLocked)" class="mx-auto max-w-4xl" :class="studyEnabled ? 'mt-4' : 'mt-6'">
+            <div v-if="displayMode !== 'study' || (!showStudyIntro && !shouldShowResult && !isCurrentStudyLocked)" class="mx-auto max-w-4xl" :class="studyEnabled ? 'mt-4' : 'mt-6'">
                 <div :class="displayMode === 'browse' ? 'space-y-2' : ''">
                     <slot :learning-mode="studyEnabled && displayMode === 'study'" />
                 </div>
             </div>
 
-            <div v-if="displayMode === 'study' && !showResumeNotice && isCurrentStudyLocked" class="mx-auto mt-4 max-w-4xl">
+            <div v-if="displayMode === 'study' && !showStudyIntro && isCurrentStudyLocked" class="mx-auto mt-4 max-w-4xl">
                 <StudyPaywallNotice @back="moveTo(previewQuestionLimit - 1)" />
             </div>
 
-            <div v-if="displayMode === 'study' && !showResumeNotice && !shouldShowResult && !isCurrentStudyLocked" class="mx-auto mt-4 flex max-w-4xl items-center justify-center gap-6 pt-2 sm:gap-14">
+            <div v-if="displayMode === 'study' && !showStudyIntro && !shouldShowResult && !isCurrentStudyLocked" class="mx-auto mt-4 flex max-w-4xl items-center justify-center gap-6 pt-2 sm:gap-14">
                 <button type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-950 disabled:cursor-not-allowed disabled:opacity-30" :disabled="currentIndex === 0" @click="moveTo(currentIndex - 1)">← 前の問題</button>
                 <button v-if="currentIndex < questionCount - 1" type="button" class="inline-flex min-h-11 items-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-950" @click="moveTo(currentIndex + 1)">次の問題へ →</button>
             </div>

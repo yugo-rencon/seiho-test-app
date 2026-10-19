@@ -232,14 +232,14 @@ const visibleSubjects = computed(() => {
                             マイページ
                         </Link>
                         <Link
-                            v-if="isAuthenticated && hasPremium && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
-                            :href="route('results')"
-                            class="flex items-center justify-between rounded-xl border border-purple-200 bg-purple-50 px-3 py-2.5 text-sm font-bold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
-                            :class="isActive('results') ? 'pointer-events-none ring-1 ring-purple-300' : ''"
-                            :aria-current="isActive('results') ? 'page' : null"
+                            v-if="isAdmin && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
+                            :href="route('mypage.studyRecords')"
+                            class="flex items-center justify-between rounded-xl border border-violet-200 bg-violet-50 px-3 py-2.5 text-sm font-bold text-violet-700 transition hover:border-violet-300 hover:bg-violet-100"
+                            :class="isActive('mypage.studyRecords*') ? 'pointer-events-none ring-1 ring-violet-300' : ''"
+                            :aria-current="isActive('mypage.studyRecords*') ? 'page' : null"
                             @click="closeMenu"
                         >
-                            <span>試験結果を記録</span>
+                            <span>問題演習の履歴</span>
                             <span aria-hidden="true">→</span>
                         </Link>
                         <Link

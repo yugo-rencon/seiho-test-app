@@ -75,17 +75,17 @@ const isActive = (name) => route().current(name);
                     </Link>
                     <template v-if="isAuthenticated">
                         <Link
-                            v-if="hasPremium && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
-                            :href="route('results')"
+                            v-if="isAdmin && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
+                            :href="route('mypage.studyRecords')"
                             class="py-1 transition-colors"
                             :class="
-                                isActive('results')
+                                isActive('mypage.studyRecords*')
                                     ? 'pointer-events-none text-purple-700'
                                     : 'text-gray-700 hover:text-purple-700'
                             "
-                            :aria-current="isActive('results') ? 'page' : null"
+                            :aria-current="isActive('mypage.studyRecords*') ? 'page' : null"
                         >
-                            点数記録
+                            演習履歴
                         </Link>
                         <Link
                             :href="route(mypageRouteName)"

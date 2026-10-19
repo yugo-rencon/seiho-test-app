@@ -889,14 +889,14 @@ class TestController extends Controller
         return $this->renderStudyExam($request, 'Tests/Souron/Souron2026a', 'souron-2026-a');
     }
 
-    public function souron2026b()
+    public function souron2026b(Request $request)
     {
-        return Inertia::render('Tests/Souron/Souron2026b');
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2026b', 'souron-2026-b');
     }
 
-    public function souron2026c()
+    public function souron2026c(Request $request)
     {
-        return Inertia::render('Tests/Souron/Souron2026c');
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2026c', 'souron-2026-c');
     }
 
     public function souron2025a(Request $request)

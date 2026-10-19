@@ -24,12 +24,12 @@ const formatDate = (value) => {
 </script>
 
 <template>
-  <SeihoTestLayout title="学習記録の詳細">
-    <Head title="学習記録の詳細" />
+  <SeihoTestLayout title="問題演習の詳細">
+    <Head title="問題演習の詳細" />
 
     <main class="mx-auto w-full max-w-3xl px-5 py-7 sm:px-6">
       <Link :href="route('mypage.studyRecords')" class="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-900">
-        ← 学習記録に戻る
+        ← 問題演習の履歴に戻る
       </Link>
 
       <div class="mt-4 flex flex-wrap items-start justify-between gap-3 border-b border-slate-200 pb-4">

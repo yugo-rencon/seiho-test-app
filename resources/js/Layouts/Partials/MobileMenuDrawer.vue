@@ -43,7 +43,6 @@ const loginHref = computed(() => {
         return_to: returnTo,
     });
 });
-
 const mypageRouteName = () => {
     if (props.isDaigaku) return "daigaku.mypage";
     if (props.isIppan) return "ippan.mypage";
@@ -202,11 +201,11 @@ const visibleSubjects = computed(() => {
                 <div class="space-y-5 px-5 py-4">
                     <!-- ログイン状態で出し分ける上部リンク -->
                     <div v-if="!hideAuthUi" class="space-y-2">
-                        <template v-if="isAuthenticated">
-                            <Link
-                                :href="route(mypageRouteName())"
-                                class="block rounded-lg px-3 py-2 text-sm font-semibold transition"
-                                :class="
+                        <Link
+                            v-if="isAuthenticated"
+                            :href="route(mypageRouteName())"
+                            class="block rounded-lg px-3 py-2 text-sm font-semibold transition"
+                            :class="
                                     isActive(mypageRouteName())
                                         ? isDaigaku
                                             ? 'pointer-events-none bg-blue-50 text-blue-700'
@@ -226,44 +225,31 @@ const visibleSubjects = computed(() => {
                                             : isIppan
                                               ? 'text-fuchsia-700 hover:bg-pink-50'
                                           : 'text-purple-700 hover:bg-purple-50'
-                                "
-                                :aria-current="isActive(mypageRouteName()) ? 'page' : null"
-                                @click="closeMenu"
-                            >
-                                マイページ
-                            </Link>
-                            <Link
-                                v-if="hasPremium && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
-                                :href="route('results')"
-                                class="flex items-center justify-between rounded-xl border border-purple-200 bg-purple-50 px-3 py-2.5 text-sm font-bold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
-                                :class="isActive('results') ? 'pointer-events-none ring-1 ring-purple-300' : ''"
-                                :aria-current="isActive('results') ? 'page' : null"
-                                @click="closeMenu"
-                            >
-                                <span>試験結果を記録</span>
-                                <span aria-hidden="true">→</span>
-                            </Link>
-                        </template>
-                        <template v-else>
-                            <Link
-                                :href="loginHref"
-                                class="block rounded-lg px-3 py-2 text-sm font-semibold transition"
-                                :class="
-                                    isDaigaku
-                                        ? 'text-blue-700 hover:bg-blue-50'
-                                        : isSenmon
-                                          ? 'text-emerald-700 hover:bg-emerald-50'
-                                          : isOuyou
-                                            ? 'text-amber-700 hover:bg-amber-50'
-                                          : isIppan
-                                            ? 'text-red-700 hover:bg-red-50'
-                                            : 'text-purple-700 hover:bg-purple-50'
-                                "
-                                @click="closeMenu"
-                            >
-                                ログイン
-                            </Link>
-                        </template>
+                            "
+                            :aria-current="isActive(mypageRouteName()) ? 'page' : null"
+                            @click="closeMenu"
+                        >
+                            マイページ
+                        </Link>
+                        <Link
+                            v-if="isAuthenticated && hasPremium && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
+                            :href="route('results')"
+                            class="flex items-center justify-between rounded-xl border border-purple-200 bg-purple-50 px-3 py-2.5 text-sm font-bold text-purple-700 transition hover:border-purple-300 hover:bg-purple-100"
+                            :class="isActive('results') ? 'pointer-events-none ring-1 ring-purple-300' : ''"
+                            :aria-current="isActive('results') ? 'page' : null"
+                            @click="closeMenu"
+                        >
+                            <span>試験結果を記録</span>
+                            <span aria-hidden="true">→</span>
+                        </Link>
+                        <Link
+                            v-if="!isAuthenticated"
+                            :href="loginHref"
+                            class="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 hover:text-gray-950"
+                            @click="closeMenu"
+                        >
+                            ログイン
+                        </Link>
                     </div>
 
                     <!-- 科目ナビ -->

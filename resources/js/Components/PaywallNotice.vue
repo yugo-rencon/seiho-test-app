@@ -23,6 +23,7 @@ const pricingHref = computed(() => {
     });
 });
 const sessionLimitExceeded = computed(() => page.props?.auth?.premiumSessionLimitExceeded === true);
+const isAuthenticated = computed(() => Boolean(page.props?.auth?.user));
 const loginRequired = computed(() => requiresIppanFreeLogin(page.props));
 const loginHref = computed(() =>
     route("login", { scope: scope.value, return_to: page.url }),
@@ -190,6 +191,12 @@ export default {
                     {{ paywallText.cta }}
                 </Link>
             </div>
+            <p v-if="!isAuthenticated && !loginRequired && !sessionLimitExceeded" class="mt-2 text-xs text-slate-500">
+                購入済みの方は
+                <Link :href="loginHref" class="font-semibold underline underline-offset-2 transition hover:text-slate-800">
+                    ログインしてください
+                </Link>
+            </p>
             <div class="mx-auto mt-5 flex max-w-3xl items-center gap-3">
                 <span class="h-px flex-1 border-t border-dashed" :class="tone.dash"></span>
             </div>

@@ -1,5 +1,5 @@
 <script setup>
-import { Link, usePage } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 import { computed } from "vue";
 
 const props = defineProps({
@@ -18,28 +18,6 @@ const props = defineProps({
 });
 
 defineEmits(["open-menu"]);
-const page = usePage();
-const currentScope = computed(() => {
-    if (props.isDaigaku) return "daigaku";
-    if (props.isIppan) return "ippan";
-    if (props.isSenmon) return "senmon";
-    if (props.isOuyou) return "ouyou";
-
-    const returnTo = String(page.url ?? "");
-    if (returnTo.startsWith("/daigaku")) return "daigaku";
-    if (returnTo.startsWith("/ippan")) return "ippan";
-    if (returnTo.startsWith("/senmon")) return "senmon";
-    if (returnTo.startsWith("/ouyou")) return "ouyou";
-    return "seiho";
-});
-const loginHref = computed(() => {
-    if (!route().has("login")) return "#";
-    const returnTo = String(page.url ?? "");
-    return route("login", {
-        ...(currentScope.value !== "seiho" ? { scope: currentScope.value } : {}),
-        return_to: returnTo || "/",
-    });
-});
 const mypageRouteName = computed(() => {
     if (props.isDaigaku) return "daigaku.mypage";
     if (props.isIppan) return "ippan.mypage";
@@ -47,14 +25,6 @@ const mypageRouteName = computed(() => {
     if (props.isOuyou) return "ouyou.mypage";
     return "mypage";
 });
-const mobileAuthColorClass = computed(() => {
-    if (props.isDaigaku) return "text-blue-700 hover:bg-blue-50";
-    if (props.isSenmon) return "text-emerald-700 hover:bg-emerald-50";
-    if (props.isOuyou) return "text-amber-700 hover:bg-amber-50";
-    if (props.isIppan) return "text-fuchsia-700 hover:bg-fuchsia-50";
-    return "text-purple-700 hover:bg-purple-50";
-});
-
 // 現在表示中のルート判定（アクティブ色に利用）
 const isActive = (name) => route().current(name);
 </script>
@@ -93,7 +63,7 @@ const isActive = (name) => route().current(name);
 
                 <!-- PCヘッダー右側（ログイン/マイページ/管理） -->
                 <div
-                    v-if="!hideAuthUi"
+                    v-if="!hideAuthUi && (isAdmin || isAuthenticated)"
                     class="hidden items-center gap-4 text-[13px] font-medium tracking-[0.01em] md:flex"
                 >
                     <Link
@@ -146,39 +116,11 @@ const isActive = (name) => route().current(name);
                             マイページ
                         </Link>
                     </template>
-                    <template v-else>
-                        <Link
-                            :href="loginHref"
-                            class="py-1 text-gray-700 transition-colors"
-                            :class="
-                                isDaigaku
-                                    ? 'hover:text-blue-700'
-                                    : isSenmon
-                                      ? 'hover:text-emerald-700'
-                                      : isOuyou
-                                        ? 'hover:text-amber-700'
-                                      : isIppan
-                                        ? 'hover:text-fuchsia-700'
-                                      : 'hover:text-purple-700'
-                            "
-                        >
-                            ログイン
-                        </Link>
-                    </template>
                 </div>
 
-                <!-- 未ログイン時は、メニューの代わりにログイン導線を明示する -->
+                <!-- モバイルではログイン状態にかかわらずメニューを表示する -->
                 <div class="flex shrink-0 items-center md:hidden">
-                    <Link
-                        v-if="!hideAuthUi && !isAuthenticated"
-                        :href="loginHref"
-                        class="rounded-lg px-2 py-2 text-sm font-semibold leading-none transition-colors"
-                        :class="mobileAuthColorClass"
-                    >
-                        ログイン
-                    </Link>
                     <button
-                        v-else
                         class="rounded-xl p-2 transition-colors hover:bg-gray-100"
                         aria-label="メニューを開く"
                         @click="$emit('open-menu')"

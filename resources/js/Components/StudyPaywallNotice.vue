@@ -6,6 +6,8 @@ defineEmits(["back"]);
 
 const page = usePage();
 const pricingHref = computed(() => route("pricing", { return_to: page.url }));
+const isAuthenticated = computed(() => Boolean(page.props?.auth?.user));
+const loginHref = computed(() => route("login", { return_to: page.url }));
 </script>
 
 <template>
@@ -29,6 +31,12 @@ const pricingHref = computed(() => route("pricing", { return_to: page.url }));
             <Link :href="pricingHref" class="inline-flex min-h-12 w-full max-w-sm items-center justify-center rounded-lg bg-violet-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-violet-700">
                 全ての解説を解放
             </Link>
+            <p v-if="!isAuthenticated" class="text-xs text-gray-500">
+                購入済みの方は
+                <Link :href="loginHref" class="font-semibold underline underline-offset-2 transition hover:text-gray-900">
+                    ログインしてください
+                </Link>
+            </p>
             <button type="button" class="inline-flex min-h-10 items-center px-3 text-sm text-gray-500 hover:text-gray-900" @click="$emit('back')">
                 前の問題に戻る
             </button>

@@ -233,12 +233,13 @@ const startNewStudy = () => {
                         </button>
                         <button
                             type="button"
-                            class="border-b-2 px-0.5 pb-1 text-xs transition sm:text-sm"
+                            class="relative whitespace-nowrap border-b-2 px-0.5 pb-1 text-xs transition sm:text-sm"
                             :class="displayMode === 'study' ? 'border-violet-600 font-semibold text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-800'"
                             :aria-pressed="displayMode === 'study'"
                             @click="displayMode = 'study'"
                         >
-                            学習モード
+                            <span>学習モード</span>
+                            <span class="absolute -top-3 right-0 rounded-full bg-violet-100 px-1.5 py-0.5 text-[8px] font-bold leading-none tracking-wide text-violet-700 sm:text-[9px]">NEW</span>
                         </button>
                     </div>
                 </div>

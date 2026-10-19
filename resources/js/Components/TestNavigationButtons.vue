@@ -37,14 +37,14 @@ const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "
 
 const buttonClass = computed(() =>
     isDaigaku.value
-        ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-sky-200 text-sky-700 bg-white shadow-sm hover:bg-sky-50 transition"
+        ? "inline-flex min-w-0 justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-sky-200 text-sky-700 bg-white shadow-sm hover:bg-sky-50 transition"
         : isSenmon.value
-          ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-emerald-200 text-emerald-700 bg-white shadow-sm hover:bg-emerald-50 transition"
+          ? "inline-flex min-w-0 justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-emerald-200 text-emerald-700 bg-white shadow-sm hover:bg-emerald-50 transition"
           : isOuyou.value
-            ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-amber-200 text-amber-700 bg-white shadow-sm hover:bg-amber-50 transition"
+            ? "inline-flex min-w-0 justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-amber-200 text-amber-700 bg-white shadow-sm hover:bg-amber-50 transition"
             : isIppan.value
-              ? "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-pink-200 text-pink-700 bg-white shadow-sm hover:bg-pink-50 transition"
-              : "inline-flex min-w-[180px] justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition",
+              ? "inline-flex min-w-0 justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-pink-200 text-pink-700 bg-white shadow-sm hover:bg-pink-50 transition"
+              : "inline-flex min-w-0 justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-purple-200 text-purple-700 bg-white shadow-sm hover:bg-purple-50 transition",
 );
 
 
@@ -135,13 +135,13 @@ const homeLink = computed(() => props.homeHref || (props.homeRoute ? route(props
 <template>
     <div class="mx-auto mt-8 flex w-full max-w-4xl flex-col items-center gap-6 border-t border-gray-200 pt-8">
         <!-- 前の試験・次の試験ボタン -->
-        <div v-if="previousLink || nextLink" class="flex flex-wrap justify-center gap-3">
-            <Link v-if="previousLink" :href="previousLink" :class="buttonClass"> 前の試験へ </Link>
+        <div v-if="previousLink || nextLink" class="flex w-full max-w-md flex-nowrap justify-center gap-3 px-4 sm:w-auto sm:px-0">
+            <Link v-if="previousLink" :href="previousLink" :class="[buttonClass, 'flex-1 whitespace-nowrap px-2 sm:min-w-[180px] sm:flex-none sm:px-4']"> 前の試験へ </Link>
 
-            <Link v-if="nextLink" :href="nextLink" :class="buttonClass"> 次の試験へ </Link>
+            <Link v-if="nextLink" :href="nextLink" :class="[buttonClass, 'flex-1 whitespace-nowrap px-2 sm:min-w-[180px] sm:flex-none sm:px-4']"> 次の試験へ </Link>
         </div>
 
         <!-- 一覧画面に戻るボタン -->
-        <Link :href="homeLink" :class="buttonClass"> 一覧画面に戻る </Link>
+        <Link :href="homeLink" :class="[buttonClass, 'min-w-[180px]']"> 一覧画面に戻る </Link>
     </div>
 </template>

@@ -136,14 +136,12 @@ const homeLink = computed(() => props.homeHref || (props.homeRoute ? route(props
     <div class="mx-auto mt-8 flex w-full max-w-4xl flex-col items-center gap-6 border-t border-gray-200 pt-8">
         <!-- 前の試験・次の試験ボタン -->
         <div v-if="previousLink || nextLink" class="flex w-full max-w-md flex-nowrap justify-center gap-3 px-4 sm:w-auto sm:px-0">
-            <Link v-if="previousLink" :href="previousLink" :class="[buttonClass, 'flex-1 whitespace-nowrap px-2 sm:min-w-[180px] sm:flex-none sm:px-4']"> 前の試験へ </Link>
+            <Link v-if="previousLink" :href="previousLink" :class="[buttonClass, 'max-w-[180px] flex-1 whitespace-nowrap px-2 sm:min-w-[180px] sm:flex-none sm:px-4']"> 前の試験へ </Link>
 
-            <Link v-if="nextLink" :href="nextLink" :class="[buttonClass, 'flex-1 whitespace-nowrap px-2 sm:min-w-[180px] sm:flex-none sm:px-4']"> 次の試験へ </Link>
+            <Link v-if="nextLink" :href="nextLink" :class="[buttonClass, 'max-w-[180px] flex-1 whitespace-nowrap px-2 sm:min-w-[180px] sm:flex-none sm:px-4']"> 次の試験へ </Link>
         </div>
 
         <!-- 一覧画面に戻るボタン -->
-        <div class="w-full max-w-md px-4 sm:w-auto sm:px-0">
-            <Link :href="homeLink" :class="[buttonClass, 'w-full sm:min-w-[180px]']"> 一覧画面に戻る </Link>
-        </div>
+        <Link :href="homeLink" :class="[buttonClass, 'min-w-[180px]']"> 一覧画面に戻る </Link>
     </div>
 </template>

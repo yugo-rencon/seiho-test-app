@@ -84,7 +84,7 @@ const activeYears = computed(() => {
                   <details v-if="record.attempts.length" class="group overflow-hidden rounded-lg border border-slate-200 bg-white open:border-violet-200">
                     <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 px-2.5 py-1.5 transition hover:bg-violet-50/40">
                       <div class="flex items-center gap-2">
-                        <span class="text-sm font-semibold text-slate-900">{{ record.form }}</span>
+                        <span class="text-sm font-semibold text-slate-900">フォーム{{ record.form }}</span>
                       </div>
                       <div class="flex items-center gap-2">
                         <span class="text-[11px] font-semibold" :class="record.attempts[0].status === 'completed' ? 'text-slate-800' : 'text-amber-700'">
@@ -104,7 +104,7 @@ const activeYears = computed(() => {
                   </details>
 
                   <div v-else class="flex min-h-11 items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5">
-                    <span class="text-sm font-semibold text-slate-900">{{ record.form }}</span>
+                    <span class="text-sm font-semibold text-slate-900">フォーム{{ record.form }}</span>
                     <Link v-if="record.study_enabled" :href="record.exam_href" class="rounded-md bg-violet-600 px-2.5 py-1.5 text-[10px] font-semibold text-white hover:bg-violet-700">学習を始める</Link>
                     <span v-else class="text-[11px] font-medium text-slate-400">準備中</span>
                   </div>

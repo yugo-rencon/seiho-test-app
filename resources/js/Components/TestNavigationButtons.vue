@@ -142,6 +142,8 @@ const homeLink = computed(() => props.homeHref || (props.homeRoute ? route(props
         </div>
 
         <!-- 一覧画面に戻るボタン -->
-        <Link :href="homeLink" :class="[buttonClass, 'min-w-[180px]']"> 一覧画面に戻る </Link>
+        <div class="w-full max-w-md px-4 sm:w-auto sm:px-0">
+            <Link :href="homeLink" :class="[buttonClass, 'w-full sm:min-w-[180px]']"> 一覧画面に戻る </Link>
+        </div>
     </div>
 </template>

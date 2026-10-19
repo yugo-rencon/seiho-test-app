@@ -12,6 +12,7 @@ $subjects = [
 ];
 
 $studyEnabledExams = [
+    'souron-2026-a',
     'souron-2025-a',
     'souron-2025-b',
     'souron-2025-c',
@@ -34,6 +35,17 @@ $studyEnabledExams = [
 ];
 
 $exams = [];
+$exams['souron-2026-a'] = [
+    'scope' => 'seiho',
+    'subject_key' => 'souron',
+    'subject_label' => $subjects['souron'],
+    'year' => 2026,
+    'form' => 'A',
+    'route' => 'souron2026a',
+    'question_count' => 50,
+    'study_enabled' => true,
+];
+
 foreach ($subjects as $subjectKey => $subjectLabel) {
     foreach (range(2025, 2020) as $year) {
         foreach (['a', 'b', 'c'] as $form) {

@@ -884,9 +884,9 @@ class TestController extends Controller
     }
 
     // 生命保険総論
-    public function souron2026a()
+    public function souron2026a(Request $request)
     {
-        return Inertia::render('Tests/Souron/Souron2026a');
+        return $this->renderStudyExam($request, 'Tests/Souron/Souron2026a', 'souron-2026-a');
     }
 
     public function souron2026b()

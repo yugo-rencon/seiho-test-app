@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import DraftNotice from "@/Components/DraftNotice.vue";
@@ -443,8 +444,8 @@ const isDraft = false;
                             content: '金融庁 → 生命保険協会', //p69-70
                         }, //42
                         {
-                            // rev: 2026-09-20 確認済み
                             questionTitle: 'コンプライアンスと基本的姿勢',
+                            // rev: 2026-09-20 確認済み
                             content: '保険法 ↔︎ 保険業法', //p71
                         }, //43
                         {

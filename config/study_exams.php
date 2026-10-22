@@ -33,6 +33,9 @@ $studyEnabledExams = [
     'souron-2020-a',
     'souron-2020-b',
     'souron-2020-c',
+    'keiri-2026-a',
+    'keiri-2026-b',
+    'keiri-2026-c',
     'keiri-2025-a',
 ];
 
@@ -46,6 +49,20 @@ foreach (['a', 'b', 'c'] as $form) {
         'year' => 2026,
         'form' => strtoupper($form),
         'route' => "souron2026{$form}",
+        'question_count' => 50,
+        'study_enabled' => in_array($examKey, $studyEnabledExams, true),
+    ];
+}
+
+foreach (['a', 'b', 'c'] as $form) {
+    $examKey = "keiri-2026-{$form}";
+    $exams[$examKey] = [
+        'scope' => 'seiho',
+        'subject_key' => 'keiri',
+        'subject_label' => $subjects['keiri'],
+        'year' => 2026,
+        'form' => strtoupper($form),
+        'route' => "keiri2026{$form}",
         'question_count' => 50,
         'study_enabled' => in_array($examKey, $studyEnabledExams, true),
     ];

@@ -1,7 +1,7 @@
 const COMMON_YEARS = [2024, 2023, 2022, 2021, 2020];
 const COMMON_FORMS = ["a", "b", "c"];
 const SOURON_YEARS = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
-const KEIRI_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
+const KEIRI_YEARS = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
 const KIKEN_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 const YAKKAN_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 const KAIKEI_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
@@ -19,6 +19,7 @@ export const SUBJECT_CATALOG = [
         title: "生命保険計理",
         menuTitle: "生命保険計理",
         period: "8月〜9月実施の試験",
+        preparingYears: [2026],
     },
     {
         key: "kiken",
@@ -65,6 +66,7 @@ export const INDEX_SECTIONS = SUBJECT_CATALOG.map((subject) => ({
     title: subject.title,
     period: subject.period,
     releaseNote: subject.releaseNote,
+    preparingYears: subject.preparingYears ?? [],
     years:
         subject.key === "souron"
             ? [...SOURON_YEARS]
@@ -100,7 +102,7 @@ export const MOBILE_MENU_SUBJECTS = SUBJECT_CATALOG.map((subject) => ({
                     : subject.key === "eigyo"
                       ? EIGYO_YEARS
                       : COMMON_YEARS
-    ).reduce((acc, year) => {
+    ).filter((year) => !(subject.preparingYears ?? []).includes(year)).reduce((acc, year) => {
         acc[`${year}年度`] = [...COMMON_FORMS];
         return acc;
     }, {}),

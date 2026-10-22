@@ -6,6 +6,7 @@ import QuestionTemp4 from "../../../Components/QuestionTemp4.vue";
 
 import StudyTestPage from "@/Components/StudyTestPage.vue";
 import { KEIRI_STUDY_CONFIG as studyConfig } from "@/constants/studyTests";
+import { applyKeiriCalculationExplanations } from "@/utils/keiriCalculationExplanations";
 
 const props = defineProps({
     studyEnabled: { type: Boolean, default: false },
@@ -50,7 +51,7 @@ const isDraft = false;
                 { label: 'ケ', text: '1,914,368' },
                 { label: 'コ', text: '1,935,426' },
             ]"
-            :contents="[
+            :contents="applyKeiriCalculationExplanations('b', 1, [
                 // 問１
                 {
                     answer: '12,060',
@@ -306,7 +307,7 @@ const isDraft = false;
                         },
                     ],
                 },
-            ]"
+            ])"
             :labels="[
                 'カ', //1
                 'ク', //2
@@ -332,7 +333,7 @@ const isDraft = false;
                 { label: 'ケ', text: '1,330,693' },
                 { label: 'コ', text: '1,337,330' },
             ]"
-            :contents="[
+            :contents="applyKeiriCalculationExplanations('b', 6, [
                 // 問６
                 {
                     answer: '0.98130',
@@ -556,7 +557,7 @@ const isDraft = false;
                         },
                     ],
                 },
-            ]"
+            ])"
             :labels="[
                 'イ', //6
                 'ク', //7
@@ -583,14 +584,14 @@ const isDraft = false;
                 { label: 'コ', text: '保険リスク' },
             ]"
             questionTitle="事業年度末責任準備金"
-            :contents="[
+            :contents="applyKeiriCalculationExplanations('b', 21, [
                 // rev: 2026-10-18 確認済み
                 '未経過保険料',
                 '危険準備金',
                 '4月1日から翌年3月31日',
                 '契約月',
                 '保険リスク', //問11〜15
-            ]"
+            ])"
             :labels="[
                 'キ', //11
                 'イ', //12

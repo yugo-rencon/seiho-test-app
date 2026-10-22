@@ -84,7 +84,7 @@ const pricingHref = computed(() => route("pricing", { scope: "seiho", return_to:
 
                         <div class="mt-6 divide-y divide-gray-100 border border-gray-100 rounded-2xl bg-white">
                             <!-- 年度ブロック（2024/2023/2022/2021） -->
-                            <YearBlock v-for="year in activeSection.years" :key="year" :year="year" :route-prefix="activeSection.routePrefix" :current-subject-id="activeSection.id" :forms="forms" :has-premium="hasPremium" />
+                            <YearBlock v-for="year in activeSection.years" :key="year" :year="year" :route-prefix="activeSection.routePrefix" :current-subject-id="activeSection.id" :forms="forms" :has-premium="hasPremium" :is-preparing="activeSection.preparingYears.includes(year)" />
                         </div>
                     </div>
                 </div>

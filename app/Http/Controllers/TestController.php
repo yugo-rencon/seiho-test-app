@@ -1093,6 +1093,21 @@ class TestController extends Controller
     }
 
     // 生命保険計理
+    public function keiri2026a(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Keiri/Keiri2026a', 'keiri-2026-a');
+    }
+
+    public function keiri2026b(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Keiri/Keiri2026b', 'keiri-2026-b');
+    }
+
+    public function keiri2026c(Request $request)
+    {
+        return $this->renderStudyExam($request, 'Tests/Keiri/Keiri2026c', 'keiri-2026-c');
+    }
+
     public function keiri2025a(Request $request)
     {
         return $this->renderStudyExam($request, 'Tests/Keiri/Keiri2025a', 'keiri-2025-a');

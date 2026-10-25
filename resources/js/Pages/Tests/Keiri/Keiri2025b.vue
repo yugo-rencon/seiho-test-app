@@ -81,7 +81,7 @@ const subject = "2025年度 フォームB";
                                 },
                                 {
                                     type: 'formula',
-                                    value: 'N年後の生存者数 = 基準年齢の人数 × 生存率（問１参照）',
+                                    value: 'N年後の生存者数 = 基準年齢の人数 × 生存率',
                                 },
                                 {
                                     type: 'blockTitle',
@@ -562,7 +562,7 @@ const subject = "2025年度 フォームB";
                         // 問21
                         {
                             // rev: 2026-07-09 確認済み
-                            answer: '2,164,347 千円',
+                            answer: '2,164,347千円',
                             questionTitle: '死亡保険金の現価',
                             explanation: [
                                 {

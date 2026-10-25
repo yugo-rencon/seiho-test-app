@@ -81,7 +81,7 @@ const subject = "2023年度 フォームB";
                                 },
                                 {
                                     type: 'formula',
-                                    value: 'N年後の生存者数 = 基準年齢の人数 × 生存率（問１参照）',
+                                    value: 'N年後の生存者数 = 基準年齢の人数 × 生存率',
                                 },
                                 {
                                     type: 'blockTitle',

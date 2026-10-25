@@ -24,6 +24,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約準備金-①"
+                    :relatedProblems="['2024b1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '洗替方式',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約準備金-②"
+                    :relatedProblems="['2024b6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '未経過',
@@ -66,6 +68,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業費管理-①"
+                    :relatedProblems="['2024a11', '2024b11', '2024c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '付加保険料',
@@ -87,6 +90,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業費管理-②"
+                    :relatedProblems="['2024a16', '2024b16', '2024c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '死亡率',
@@ -108,6 +112,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="勘定科目"
+                    :relatedProblems="['2024a26', '2024b21']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '仕訳帳 → 総勘定元帳', //p12
@@ -120,6 +125,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="財務諸表"
+                    :relatedProblems="['2024a42', '2024b22']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '貸借対照表 → 損益計算書', //p18
@@ -132,6 +138,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="企業会計原則"
+                    :relatedProblems="['2024a23', '2024b23', '2024c23']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -144,6 +151,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="一般勘定・特別勘定"
+                    :relatedProblems="['2024b24']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '2勘定 → 4勘定（資産勘定、負債勘定、費用勘定、収益勘定）', //p43-44
@@ -156,6 +164,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="資産勘定の内容"
+                    :relatedProblems="['2024b25']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -168,6 +177,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="決算"
+                    :relatedProblems="['2024b26', '2024b44']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -180,6 +190,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="税務会計"
+                    :relatedProblems="['2024b27']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '会計情報の開示という機能はその中に[[含まれていない]]という点で、会社法・金融商品取引法に基づく会計とは[[異なっている]]。', //p32
@@ -192,6 +203,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="連結財務諸表"
+                    :relatedProblems="['2024a28', '2024b28', '2024c28']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -204,6 +216,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会計における費用に属する科目"
+                    :relatedProblems="['2024a29', '2024b29', '2024c29']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -216,6 +229,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社のディスクロージャー"
+                    :relatedProblems="['2024b30', '2024c30']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -231,111 +245,131 @@ const subject = "2024年度 フォームB";
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '会計の意義',
+                            relatedProblems: ['2024a31', '2024b31', '2024c31'],
                             content: '[[財務会計]]が現在または過去の企業の情報提供を主目的としているのに対して、[[管理会計]]は未来の予測効果を重要視している点に特色がある。', //p4
                         }, //31
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '簿記',
+                            relatedProblems: ['2024b32'],
                             content: '経営者、従業員などの内部利害関係者 → 株主、債権者などの外部利害関係者', //p9
                         }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '単一性の原則',
+                            relatedProblems: ['2024b33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険金等支払金の計上',
+                            relatedProblems: ['2024b34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '決算書類',
+                            relatedProblems: ['2024b35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '減価償却',
+                            relatedProblems: ['2024b36'],
                             content: '有形固定資産の種類にかかわらず方法を選定できる → 種類ごとに選定できる償却の方法が定められている', //p116
                         }, //36
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '損益の算定',
+                            relatedProblems: ['2024b37'],
                             content: '収支相等の原則 → 費用収益対応の原則', //p143
                         }, //37
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '法人税及び住民税',
+                            relatedProblems: ['2024a38', '2024b38', '2024c38'],
                             content: '損益計算書上、[[他の税金と区別して税引前当期剰余から控除する]]形式で表示される。', //p164
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '区分経理における運用資産の管理',
+                            relatedProblems: ['2024a39', '2024b39', '2024c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '税務調査',
+                            relatedProblems: ['2024b40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '帳簿の種類',
+                            relatedProblems: ['2024a41', '2024b41', '2024c41'],
                             content: '買掛金元帳',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ア',
                             questionTitle: '企業会計原則（一般原則）',
+                            relatedProblems: ['2024a33', '2024b42', '2024c27'],
                             content: '明瞭性',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '株主配当',
+                            relatedProblems: ['2024b43'],
                             content: 'いつでも',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '決算',
+                            relatedProblems: ['2024b26', '2024b44'],
                             content: '財政状態',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'エ',
                             questionTitle: '連結決算',
+                            relatedProblems: ['2024a45', '2024b45'],
                             content: 'のれん（連結調整勘定）',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '利益準備金',
+                            relatedProblems: ['2024b46'],
                             content: '',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '利息及び配当金等収入',
+                            relatedProblems: ['2024b47'],
                             content: '売買目的有価証券',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'イ',
                             questionTitle: '公告',
+                            relatedProblems: ['2024a48', '2024b48', '2024c48'],
                             content: '損益計算書',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'オ',
                             questionTitle: '区分経理',
+                            relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             content: '',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             label: 'ウ',
                             questionTitle: '金融検査',
+                            relatedProblems: ['2024b50'],
                             content: '金融庁',
                         }, //50
                     ]"

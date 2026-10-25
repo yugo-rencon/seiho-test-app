@@ -401,10 +401,9 @@ const displayItems = computed(() => {
   return normalizedItems.value;
 });
 
-// 大学課程・生保講座では関連問題データを保持するが、画面上には表示しない。
-// 将来再表示したい場合も、各問題ファイルの設定を復元する必要はない。
+// 大学課程では関連問題データを保持するが、画面上には表示しない。
 const shouldRender = computed(() =>
-  !isDaigakuPage.value && !isSeihoPage.value && (props.items ?? []).length > 0,
+  !isDaigakuPage.value && (props.items ?? []).length > 0,
 );
 
 const hiddenCount = computed(() =>

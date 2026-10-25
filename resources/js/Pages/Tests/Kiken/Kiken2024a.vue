@@ -24,6 +24,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反と契約解除-①"
+                    :relatedProblems="['2024a1', '2024b1', '2024c1']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '故意',
@@ -45,6 +46,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知義務違反と契約解除-②"
+                    :relatedProblems="['2024a6', '2024b6', '2024c6']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         'しない',
@@ -66,6 +68,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-①"
+                    :relatedProblems="['2024a11']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '出再会社',
@@ -87,6 +90,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-②"
+                    :relatedProblems="['2024a16']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '個別',
@@ -108,6 +112,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険で対象としている危険"
+                    :relatedProblems="['2024a21', '2024b21', '2024c21']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '「実体的危険」は、「[[身体的危険]]」と「環境的危険」の２つに分類することができる。', //p4
@@ -120,6 +125,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険保険料と危険保険金"
+                    :relatedProblems="['2024a22', '2024c26']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '付加保険料 → 貯蓄保険料', //p23
@@ -132,6 +138,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約制限"
+                    :relatedProblems="['2024a23', '2024b28', '2024c23']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '一般に短期[[養老]]または短期払込[[養老]]保険の経験死亡率は長期のものより良好である。ただし、[[定期]]保険ではこの関係は逆転し、保険期間が短期のものに逆選択が集中する傾向がある。', //p73
@@ -144,6 +151,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="条件体特別条件付決定"
+                    :relatedProblems="['2024a24']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -156,6 +164,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院・手術保障における「選択」"
+                    :relatedProblems="['2024a25']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -168,6 +177,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡指数"
+                    :relatedProblems="['2024a26']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -180,6 +190,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="医学的選択上の課題"
+                    :relatedProblems="['2024a27', '2024b27', '2024c27']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '死亡率や[[入院給付率]]は、保険年度が進み選択効果が薄れるにつれ上昇するが、[[手術給付率]]はむしろ加入早期のほうが高値である。', //p52
@@ -192,6 +203,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="体格"
+                    :relatedProblems="['2024a28', '2024b35', '2024c45']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -204,6 +216,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険における団体の選択"
+                    :relatedProblems="['2024a29', '2024b29', '2024c29']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '保険加入のみを目的として設立された団体[[でない]]ことが契約の要件の１つである。', //p169
@@ -216,6 +229,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率比較"
+                    :relatedProblems="['2024a30']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '正しい',
@@ -231,110 +245,130 @@ const subject = "2024年度 フォームA";
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
+                            relatedProblems: ['2024a31', '2024c41'],
                             content: '生命表には国民全体を対象とした[[国民生命表]]と、それよりは小さな特定集団（たとえば生命保険の被保険者集団）を対象とする[[経験生命表]]とがある。', //p5
                         }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命保険会社における経験死亡率',
+                            relatedProblems: ['2024a32', '2024b32', '2024c32'],
                             content: '[[金額死亡率]]のほうが[[件数死亡率]]よりも事業経営上に与える影響を反映しやすいので、生命保険経営上は、通常、[[件数死亡率]]よりも[[金額死亡率]]が多く用いられる。', //p9
                         }, //32
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '選択効果',
+                            relatedProblems: ['2024a33', '2024c22'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-07-02 確認済み
                             questionTitle: '職業危険',
+                            relatedProblems: ['2024a34', '2024b44', '2024c34'],
                             content: '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」さらには[[「アルコール中毒や不摂生生活のような職業に随伴する危険」]]がある。', //p69
                         }, //34
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '道徳的危険の発見と排除',
+                            relatedProblems: ['2024a35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '社医と嘱託医',
+                            relatedProblems: ['2024a36'],
                             content: '嘱託医については、診査を可能とする被保険者の年齢や保険金額に限度（診査限度）が設けられており、[[社医と区別している]]。', //p99
                         }, //36
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '機微（センシティブ）情報',
+                            relatedProblems: ['2024a37', '2024c35'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '復活',
+                            relatedProblems: ['2024a38', '2024b25', '2024c30'],
                             content: '失効後の期間の[[長い]]ものほど逆選択混入の危険が多く、また診査による場合に比べ告知のみによる場合のほうが経験死亡率が高いとされている。', //p173-174
                         }, //38
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '最高保険金額',
+                            relatedProblems: ['2024a39', '2024b39', '2024c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '実際死亡状況の分析',
+                            relatedProblems: ['2024a40', '2024b40', '2024c40', '2024c50'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '告知義務者',
+                            relatedProblems: ['2024a41', '2024b41'],
                             label: 'ウ',
                             content: '告知を受領する権限のある者',
                         }, //41
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
+                            relatedProblems: ['2024a42', '2024b42', '2024c42'],
                             label: 'イ',
                             content: '純保険料',
                         }, //42
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者集団の具備すべき条件',
+                            relatedProblems: ['2024a43', '2024b43', '2024c43'],
                             label: 'イ',
                             content: '倫理',
                         }, //43
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '高血圧',
+                            relatedProblems: ['2024a44'],
                             label: 'エ',
                             content: '本態性高血圧',
                         }, //44
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '重大事由による解除',
+                            relatedProblems: ['2024a45'],
                             label: 'ア',
                             content: '信頼関係',
                         }, //45
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択',
+                            relatedProblems: ['2024a46'],
                             label: 'オ',
                             content: '',
                         }, //46
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
+                            relatedProblems: ['2024a47'],
                             label: 'ウ',
                             content: '尿異常',
                         }, //47
                         {
                             // rev: 2026-07-02 確認済み
                             questionTitle: '保険金確認・給付金確認',
+                            relatedProblems: ['2024a48', '2024b37'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '高度障害状態',
+                            relatedProblems: ['2024a49', '2024b49', '2024c49'],
                             label: 'エ',
                             content: '両眼の視力',
                         }, //49
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の契約内容の変更',
+                            relatedProblems: ['2024a50'],
                             label: 'ア',
                             content: '1年間',
                         }, //50

@@ -24,6 +24,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="制度会計①"
+                    :relatedProblems="['2025c1']"
                     :contents="[
                         // rev: 2026-08-30 確認済み
                         '財務会計',
@@ -45,6 +46,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="制度会計②"
+                    :relatedProblems="['2025c6']"
                     :contents="[
                         // rev: 2026-08-30 確認済み
                         '投資家保護',
@@ -66,6 +68,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="会計監査人による監査①"
+                    :relatedProblems="['2025a11', '2025b11', '2025c11']"
                     :contents="[
                         // rev: 2026-08-30 確認済み
                         '公認会計士',
@@ -87,6 +90,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="会計監査人による監査②"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-08-30 確認済み
                         '決算',
@@ -108,6 +112,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="会計公準"
+                    :relatedProblems="['2025a21', '2025b21', '2025c21']"
                     :contents="[
                         // rev: 2026-08-30 確認済み
                         '企業実体の公準 → 継続企業の公準', //p6
@@ -120,6 +125,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="決算"
+                    :relatedProblems="['2025a22', '2025b32', '2025c22']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -132,6 +138,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="一般勘定・特別勘定"
+                    :relatedProblems="['2025a28', '2025c23']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '2勘定 → 4勘定（資産勘定、負債勘定、費用勘定、収益勘定）', //p43-44
@@ -144,6 +151,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="連結財務諸表の作成手続"
+                    :relatedProblems="['2025a24', '2025c24']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '従来連結子会社及び子法人等の範囲は議決権の所有割合（50％超で子会社及び子法人等）で形式的に判定していたが、現在は会社が他の会社の意思決定機関を支配しているか否かによって実質的に判定する。', //p81
@@ -156,6 +164,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業費"
+                    :relatedProblems="['2025a49', '2025b49', '2025c25', '2025c49']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '減価償却費や税金等は、生命保険会社の損益計算書上では、[[事業費には含まれない]]。', //p173
@@ -168,6 +177,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="複式簿記の原理"
+                    :relatedProblems="['2025a26', '2025b26', '2025c26']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -180,6 +190,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="財務諸表"
+                    :relatedProblems="['2025a42', '2025b22', '2025c27']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '正しい',
@@ -192,6 +203,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社の決算整理手続"
+                    :relatedProblems="['2025c28']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '生命保険協会 → 各生命保険会社', //p51
@@ -204,6 +216,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="純資産勘定の内容"
+                    :relatedProblems="['2025c29']"
                     :contents="[
                         // rev: 2026-09-02 確認済み
                         '正しい',
@@ -216,6 +229,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社のディスクロージャー"
+                    :relatedProblems="['2025a30', '2025b30', '2025c30']"
                     :contents="[
                         // rev: 2026-09-01 確認済み
                         '2000年度（平成12年度）決算からキャッシュ・フロー計算書が[[縦覧の対象資料に付け加えられている]]。', //p180
@@ -231,110 +245,130 @@ const subject = "2025年度 フォームC";
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '簿記',
+                            relatedProblems: ['2025a31', '2025b31', '2025c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '損益計算書',
+                            relatedProblems: ['2025c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-09-01 確認済み
                             questionTitle: '企業会計原則（一般原則）',
+                            relatedProblems: ['2025a33', '2025b33', '2025c33'],
                             content: '明瞭性の原則 → 資本取引・損益取引区分の原則', //p25
                         }, //33
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '社員配当準備金',
+                            relatedProblems: ['2025c34'],
                             content: '10%以上 → 20%以上', //p41
                         }, //34
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '保険業法と会社法',
+                            relatedProblems: ['2025c35'],
                             content: '会計に関する会社法との関連性においては、計算規定を中心に株式会社については[[会社法]]を準用し、相互会社については[[保険業法]]を中心に定めている。', //p94
                         }, //35
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '減価償却',
+                            relatedProblems: ['2025c36'],
                             content: '有形固定資産の種類にかかわらず方法を選定できる → 種類ごとに選定できる償却の方法が定められている', //p116
                         }, //36
                         {
                             // rev: 2026-09-02 確認済み
                             questionTitle: '負債勘定',
+                            relatedProblems: ['2025c37'],
                             content: '一般の企業では、流動（短期）負債に属する負債、固定（長期）負債に属する負債に区分することになっているが、生命保険会社は、契約者に対する保険契約準備金が大部分を占めるため、[[一般の企業とは違った区分をしている]]。', //p125
                         }, //37
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '保険金',
+                            relatedProblems: ['2025c38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '区分経理',
+                            relatedProblems: ['2025c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '金融検査',
+                            relatedProblems: ['2025a40', '2025b40', '2025c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '企業会計の領域',
+                            relatedProblems: ['2025a41', '2025b41', '2025c41'],
                             label: 'エ',
                             content: '管理会計',
                         }, //41
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '帳簿の種類',
+                            relatedProblems: ['2025c42'],
                             label: 'エ',
                             content: '売掛金元帳',
                         }, //42
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '決算スケジュール',
+                            relatedProblems: ['2025b44', '2025c43'],
                             label: 'ア',
                             content: '2週間',
                         }, //43
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '連結決算日',
+                            relatedProblems: ['2025c44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '外貨預金の為替換算',
+                            relatedProblems: ['2025c45'],
                             label: 'ウ',
                             content: '決算時',
                         }, //45
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '有価証券の評価方法',
+                            relatedProblems: ['2025a46', '2025b24', '2025c46'],
                             label: 'ア',
                             content: '売買目的有価証券',
                         }, //46
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '損益の認識',
+                            relatedProblems: ['2025c47'],
                             label: 'イ',
                             content: '実現主義',
                         }, //47
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '保険業法第112条評価益',
+                            relatedProblems: ['2025a48', '2025c48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '事業費',
+                            relatedProblems: ['2025a49', '2025b49', '2025c25', '2025c49'],
                             label: 'ウ',
                             content: '物件費',
                         }, //49
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '運用資産の管理',
+                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                             label: 'イ',
                             content: '資産区分',
                         }, //50

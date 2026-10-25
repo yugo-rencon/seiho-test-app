@@ -30,6 +30,7 @@ const subject = "2020年度 フォームB";
                             // rev: 2026-07-11 確認済み
                             answer: '1.12',
                             questionTitle: '平均余命',
+                            relatedProblems: ['2020a3', '2020a31', '2020b1', '2020c8'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -94,6 +95,7 @@ const subject = "2020年度 フォームB";
                             // rev: 2026-07-11 確認済み
                             answer: '203,011',
                             questionTitle: '複利計算（半年複利）',
+                            relatedProblems: ['2020a7', '2020b2', '2020c2'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -134,6 +136,7 @@ const subject = "2020年度 フォームB";
                             // rev: 2026-07-11 確認済み
                             answer: '2.52',
                             questionTitle: '実利率',
+                            relatedProblems: ['2020a8', '2020b3', '2020c3'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -186,6 +189,7 @@ const subject = "2020年度 フォームB";
                             // rev: 2026-07-11 確認済み
                             answer: '1.21',
                             questionTitle: '年平均利回り',
+                            relatedProblems: ['2020a9', '2020b4', '2020c4'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -238,6 +242,7 @@ const subject = "2020年度 フォームB";
                             // rev: 2026-07-11 確認済み
                             answer: '1,459,148円',
                             questionTitle: '必要資金（現在価値）',
+                            relatedProblems: ['2020a10', '2020b5', '2020c5'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -303,6 +308,7 @@ const subject = "2020年度 フォームB";
                 <QuestionTemp3
                     :questionNumber="2"
                     questionTitle="チルメル式保険料積立金"
+                    :relatedProblems="['2020a45', '2020b6']"
                     :title="title"
                     :subject="subject"
                     :contents="[
@@ -326,6 +332,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料の構成と計算基礎"
+                    :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
                         // rev: 2026-07-11 確認済み
                         '付加保険料',
@@ -347,6 +354,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任準備金の積立に関する法的規制"
+                    :relatedProblems="['2020a16', '2020b16', '2020c16', '2020c45']"
                     :contents="[
                         // rev: 2026-07-11 確認済み
                         '平準純保険料式',
@@ -373,6 +381,7 @@ const subject = "2020年度 フォームB";
                             // rev: 2026-07-11 確認済み
                             answer: '1,292,902千円',
                             questionTitle: '死亡保険金の現価',
+                            relatedProblems: ['2020a21', '2020b21', '2020c21'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -425,6 +434,7 @@ const subject = "2020年度 フォームB";
                             // rev: 2026-07-11 確認済み
                             answer: '138,639,538千円',
                             questionTitle: '満期保険金の現価',
+                            relatedProblems: ['2020a22', '2020b22', '2020c22'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -465,6 +475,7 @@ const subject = "2020年度 フォームB";
                             // rev: 2026-07-11 確認済み
                             answer: '3,676,013千円',
                             questionTitle: '予定事業費の現価',
+                            relatedProblems: ['2020a23', '2020b23', '2020c23'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -517,6 +528,8 @@ const subject = "2020年度 フォームB";
                             // rev: 2026-07-11 確認済み
                             answer: '299,840円',
                             questionTitle: '養老保険の年払営業保険料',
+                            relatedProblems: ['2020a24', '2020b24', '2020c24'],
+                            relatedProblems: ['2020b31'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -597,6 +610,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体定期保険"
+                    :relatedProblems="['2020b25']"
                     :contents="[
                         // rev: 2026-08-09 確認済み
                         '配当は、[[被保険者ごとの配当を算出してそれを積み上げるのではなく、団体単位で計算されている]]。', //p155
@@ -609,6 +623,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="純保険料式保険料積立金"
+                    :relatedProblems="['2020a26', '2020b26', '2020c26']"
                     :contents="[
                         // rev: 2026-07-19 確認済み
                         '3つの方法 → 2つの方法（現在法はない）', //p72
@@ -621,6 +636,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約変更"
+                    :relatedProblems="['2020a27', '2020b27', '2020c27']"
                     :contents="[
                         // rev: 2026-07-19 確認済み
                         '正しい',
@@ -633,6 +649,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当金の分配・支払方法"
+                    :relatedProblems="['2020a28', '2020b28', '2020c28']"
                     :contents="[
                         // rev: 2026-08-05 確認済み
                         '年払保険料 → 一時払保険料', //p135
@@ -645,6 +662,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業年度末責任準備金"
+                    :relatedProblems="['2020a25', '2020b29']"
                     :contents="[
                         // rev: 2026-07-19 確認済み
                         '保険業法では、事業年度末までに経過した期間に見合う保険料部分に対応する積立金（保険料積立金）、翌事業年度以降に対応する保険料部分（未経過保険料）、[[第三分野における積立傷害保険等の積立型商品において、将来の満期返戻金支払いに対応する保険料部分（払戻積立金）]]および危険準備金に分けて計算することとされている。', //p96
@@ -657,6 +675,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金の発生源"
+                    :relatedProblems="['2020b30', '2020c37']"
                     :contents="[
                         // rev: 2026-08-05 確認済み
                         '経過年数が短い契約については、通常、危険選択の効果があり、実際死亡率が予定死亡率をかなり下回るので[[死差益は多い]]が、経過年数が増すにつれて選択効果が薄れ、[[死差益は少なく]]なる。', //p127
@@ -672,41 +691,49 @@ const subject = "2020年度 フォームB";
                         {
                             // rev: 2026-08-09 確認済み
                             questionTitle: '死亡表',
+                            relatedProblems: ['2020b32'],
                             content: '実際の人口統計に基づく死亡率を[[粗死亡率]]と呼ぶのに対し、数学的な技術を使って滑らかな傾向曲線にして求められた死亡率を[[補整後死亡率]]と呼んで区別している。', //p7
                         }, //31
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '単利',
+                            relatedProblems: ['2020b33'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '予定利率',
+                            relatedProblems: ['2020a34', '2020b34', '2020c34'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-07-16 確認済み
                             questionTitle: '保険料の計算原理',
+                            relatedProblems: ['2020a35', '2020b35', '2020c35'],
                             content: '自然保険料 → 平準保険料', //p35-36
                         }, //34
                         {
                             // rev: 2026-07-16 確認済み
                             questionTitle: '分割払営業保険料',
+                            relatedProblems: ['2020b36'],
                             content: '１年分を何回かに分けて払い込む[[分割払営業保険料の年間払込額は年払の営業保険料額を上回る]]。', //p62
                         }, //35
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '責任準備金',
+                            relatedProblems: ['2020a37', '2020b37'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '決算による剰余金算定',
+                            relatedProblems: ['2020a38', '2020b38', '2020c38'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '契約者配当の意義と割当',
+                            relatedProblems: ['2020a49', '2020b39'],
                             content: '正しい',
                         }, //38
                         {
@@ -722,48 +749,58 @@ const subject = "2020年度 フォームB";
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '死亡表の種類',
+                            relatedProblems: ['2020a41', '2020b41', '2020c41'],
+                            relatedProblems: ['2020b42'],
                             label: 'ウ',
                             content: '完全生命表',
                         }, //41
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '資産の平均利回り',
+                            relatedProblems: ['2020a43', '2020b43', '2020c43'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '純保険料の変化',
+                            relatedProblems: ['2020b44'],
                             label: 'エ',
                             content: '高くなる',
                         }, //43
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '危険保険料の計算',
+                            relatedProblems: ['2020b45', '2020c25'],
                             label: 'イ',
                             content: '年始生存者数',
                         }, //44
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '解約返戻金',
+                            relatedProblems: ['2020b46'],
                             label: 'イ',
                             content: '失効',
                         }, //45
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: 'アセット・シェア方式',
+                            relatedProblems: ['2020a47', '2020b47', '2020c47'],
                             label: 'ウ',
                             content: '利源別配当',
                         }, //46
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '加入年齢方式による転換',
+                            relatedProblems: ['2020b48'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '配当金の計算方法',
+                            relatedProblems: ['2020a29', '2020b40', '2020b49'],
+                            relatedProblems: ['2020a29', '2020b40', '2020b49'],
                             label: 'オ',
                             content: '',
                         }, //48
@@ -776,6 +813,7 @@ const subject = "2020年度 フォームB";
                         {
                             // rev: 2026-07-11 確認済み
                             questionTitle: '団体年金の財政方式',
+                            relatedProblems: ['2020b50'],
                             label: 'ウ',
                             content: '総合保険料',
                         }, //50

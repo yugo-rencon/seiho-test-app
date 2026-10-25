@@ -30,6 +30,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '0.97791',
                             questionTitle: '生存率',
+                            relatedProblems: ['2025a6', '2025b1', '2025c1'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -66,6 +67,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '96,488',
                             questionTitle: '生存数',
+                            relatedProblems: ['2025a7', '2025b2', '2025c2'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -106,6 +108,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '0.93',
                             questionTitle: '平均余命',
+                            relatedProblems: ['2025a8', '2025b3', '2025c3'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -170,6 +173,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '835,831',
                             questionTitle: '保険金総額の現価',
+                            relatedProblems: ['2025a9', '2025b4', '2025c4'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -222,6 +226,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '8,500',
                             questionTitle: '純保険料',
+                            relatedProblems: ['2025a10', '2025b5', '2025c5'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -272,6 +277,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '6,015',
                             questionTitle: '複利計算',
+                            relatedProblems: ['2025a1', '2025b6', '2025c6'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -324,6 +330,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '1,061,646',
                             questionTitle: '複利計算（半年複利）',
+                            relatedProblems: ['2025a2', '2025b7', '2025c7'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -364,6 +371,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '1.51',
                             questionTitle: '実利率',
+                            relatedProblems: ['2025a3', '2025b8', '2025c8'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -416,6 +424,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '1.33',
                             questionTitle: '年平均利回り',
+                            relatedProblems: ['2025a4', '2025b9', '2025c9'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -468,6 +477,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '1,941,035',
                             questionTitle: '現在必要資金の計算',
+                            relatedProblems: ['2025a5', '2025b10', '2025c10'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -517,6 +527,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡表の種類"
+                    :relatedProblems="['2025a11', '2025b11', '2025c11']"
                     :contents="[
                         // rev: 2026-07-09 確認済み
                         '経験生命表',
@@ -538,6 +549,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="変額保険の仕組み・運用（定額保険との比較）"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-07-09 確認済み
                         '毎月1回',
@@ -564,6 +576,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '1,331,821千円',
                             questionTitle: '死亡保険金の現価',
+                            relatedProblems: ['2025a21', '2025b21', '2025c21'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -622,6 +635,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '187,097,040千円',
                             questionTitle: '満期保険金の現価',
+                            relatedProblems: ['2025a22', '2025b22', '2025c22'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -662,6 +676,7 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '4,901,350千円',
                             questionTitle: '予定事業費の現価',
+                            relatedProblems: ['2025a23', '2025b23', '2025c23'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -714,6 +729,8 @@ const subject = "2025年度 フォームC";
                             // rev: 2026-07-09 確認済み
                             answer: '501,640円',
                             questionTitle: '養老保険の年払営業保険料',
+                            relatedProblems: ['2025a24', '2025b24', '2025c24'],
+                            relatedProblems: ['2025a31', '2025b31', '2025c31'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -800,6 +817,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体年金の財政方式"
+                    :relatedProblems="['2025a25', '2025b25', '2025c25']"
                     :contents="[
                         // rev: 2026-07-11 確認済み
                         'ワンタイム・ファンディング → ターミナル・ファンディング', //p156
@@ -812,6 +830,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="営業保険料の計算上配慮する点"
+                    :relatedProblems="['2025a26', '2025b26', '2025c26']"
                     :contents="[
                         // rev: 2026-07-12 確認済み
                         '正しい',
@@ -824,6 +843,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="純保険料式保険料積立金"
+                    :relatedProblems="['2025b35', '2025c27']"
                     :contents="[
                         // rev: 2026-07-19 確認済み
                         '正しい',
@@ -836,6 +856,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業年度末責任準備金"
+                    :relatedProblems="['2025c28']"
                     :contents="[
                         // rev: 2026-07-19 確認済み
                         '正しい',
@@ -848,6 +869,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約者配当の意義と割当"
+                    :relatedProblems="['2025b29', '2025c29']"
                     :contents="[
                         // rev: 2026-07-16 確認済み
                         '正しい',
@@ -860,6 +882,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="剰余金の処分"
+                    :relatedProblems="['2025a30', '2025b30', '2025c30']"
                     :contents="[
                         // rev: 2026-07-14 確認済み
                         '正しい',
@@ -875,104 +898,123 @@ const subject = "2025年度 フォームC";
                         {
                             // rev: 2026-07-14 確認済み
                             questionTitle: '生命保険契約と年齢',
+                            relatedProblems: ['2025c32'],
                             content: '満x歳を中心に前後６カ月の被保険者に対してx歳の保険料率を適用している「保険年齢方式」を採用している会社と、[[通常の年齢の数え方と同じである「満年齢方式」を採用している会社がある]]。', //p15
                         }, //31
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '単利',
+                            relatedProblems: ['2025a33', '2025b33', '2025c33'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-16 確認済み
                             questionTitle: '保険料の計算原理',
+                            relatedProblems: ['2025c34'],
                             content: '自然保険料 → 平準保険料', //p35-36
                         }, //33
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '現価',
+                            relatedProblems: ['2025c35'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '高額割引制度',
+                            relatedProblems: ['2025a45', '2025c36'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '責任準備金',
+                            relatedProblems: ['2025a28', '2025b46', '2025c37'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-19 確認済み
                             questionTitle: '積立に関する法的規制',
+                            relatedProblems: ['2025b49', '2025c38'],
                             content: '資産十分性テスト → 負債十分性テスト', //p101
                         }, //37
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '剰余金の発生源',
+                            relatedProblems: ['2025c39'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '変額保険の仕組み',
+                            relatedProblems: ['2025a40', '2025b40', '2025c40'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '特別勘定の位置付け',
+                            relatedProblems: ['2025a32', '2025b41', '2025c41'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '資産の平均利回り',
+                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '保険計理の基礎',
+                            relatedProblems: ['2025a43', '2025b43', '2025c43'],
                             label: 'イ',
                             content: '大数',
                         }, //42
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '純保険料の変化',
+                            relatedProblems: ['2025c44'],
                             label: 'ア',
                             content: '定期保険と養老保険',
                         }, //43
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: 'チルメル式保険料積立金',
+                            relatedProblems: ['2025c45'],
                             label: 'イ',
                             content: '純保険料（貯蓄保険料）',
                         }, //44
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '危険保険料の計算',
+                            relatedProblems: ['2025a46', '2025b27', '2025c46'],
                             label: 'ア',
                             content: '危険保険金',
                         }, //45
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '解約返戻金',
+                            relatedProblems: ['2025a47', '2025b47', '2025c47'],
                             label: 'エ',
                             content: '契約者貸付',
                         }, //46
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '払済保険',
+                            relatedProblems: ['2025c48'],
                             label: 'ア',
                             content: '差し引いた後',
                         }, //47
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: '加入年齢方式による転換',
+                            relatedProblems: ['2025c49'],
                             label: 'ウ',
                             content: '一時払か分割払（割賦払）',
                         }, //48
                         {
                             // rev: 2026-07-09 確認済み
                             questionTitle: 'アセット・シェア方式',
+                            relatedProblems: ['2025c50'],
                             label: 'オ',
                             content: '',
                         }, //49

@@ -24,6 +24,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-①"
+                    :relatedProblems="['2022c1']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '事業方法書',
@@ -45,6 +46,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融庁長官等による監督など-②"
+                    :relatedProblems="['2022c6']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '基金',
@@ -66,6 +68,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="第三分野の保険-①"
+                    :relatedProblems="['2022a11', '2022b11', '2022c11']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '一定額',
@@ -87,6 +90,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="第三分野の保険-②"
+                    :relatedProblems="['2022a16', '2022b16', '2022c16']"
                     :contents="[
                         // rev: 2026-08-16 確認済み
                         '不妊治療',
@@ -108,6 +112,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法"
+                    :relatedProblems="['2022b43', '2022c21']"
                     :contents="[
                         // rev: 2026-08-21 確認済み
                         '権利等の契約の目的となるものに関し、将来における変動が不確実な事項につき断定的判断を提供した場合も、[[事業者の一定の行為に該当する]]。', //p20
@@ -120,6 +125,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任開始期"
+                    :relatedProblems="['2022c22']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -132,6 +138,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="自動振替貸付"
+                    :relatedProblems="['2022a27', '2022c23']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '正しい',
@@ -144,6 +151,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知受領と告知義務違反"
+                    :relatedProblems="['2022c24']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '告知義務違反の要件としては、[[客観的要件および主観的要件が備わることを要する]]。', //p128
@@ -156,6 +164,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険仲立人"
+                    :relatedProblems="['2022a25', '2022b25', '2022c25']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '当該契約の保険金の[[額に応じて]]供託をしないことができる。', //p272
@@ -168,6 +177,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険契約の解約"
+                    :relatedProblems="['2022c26']"
                     :contents="[
                         // rev: 2026-08-21 確認済み
                         '正しい',
@@ -180,6 +190,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="責任準備金"
+                    :relatedProblems="['2022c27']"
                     :contents="[
                         // rev: 2026-08-21 確認済み
                         '保険料積立金とは、保険契約にもとづく将来の債務の履行に備えるため、保険数理にもとづき計算した金額（払戻積立金として積み立てる金額を[[除く]]）のことである。', //p243
@@ -192,6 +203,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="疾病入院特約の手術給付金の支払"
+                    :relatedProblems="['2022a28', '2022b28', '2022c28']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -204,6 +216,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="乗合の禁止"
+                    :relatedProblems="['2022c29']"
                     :contents="[
                         // rev: 2026-08-18 確認済み
                         '正しい',
@@ -216,6 +229,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="基礎書類"
+                    :relatedProblems="['2022a30', '2022a48', '2022b30', '2022c30']"
                     :contents="[
                         // rev: 2026-08-20 確認済み
                         '正しい',
@@ -231,110 +245,130 @@ const subject = "2022年度 フォームC";
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '拘束力',
+                            relatedProblems: ['2022c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-08-20 確認済み
                             questionTitle: '生命保険契約等の性質',
+                            relatedProblems: ['2022a42', '2022b26', '2022b42', '2022c32', '2022c42'],
                             content: '生命保険契約等は、保険者が保険事故または給付事由が発生した場合に保険給付を行う債務を負担し、保険契約者が保険料を支払う債務を負担する契約であり、しかも両者の債務は互いに対価関係にあるため[[双務契約]]である。',//p34
                         }, //32
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: 'クーリング・オフ制度',
+                            relatedProblems: ['2022a43', '2022b22', '2022c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '書面交付義務',
+                            relatedProblems: ['2022a34', '2022b34', '2022c34'],
                             content: '保険証券は、生命保険契約等の成立およびその内容に関する証拠材料となる証拠証券にすぎず、その[[作成交付は契約成立の要件ではない]]。',//p54
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '復活の法的性格',
+                            relatedProblems: ['2022a35', '2022b35', '2022c35'],
                             content: '新契約説 → 特別契約説', //p105
                         }, //35
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '特約の消滅',
+                            relatedProblems: ['2022c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '保険業の兼営',
+                            relatedProblems: ['2022c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-08-20 確認済み
                             questionTitle: '定款の変更',
+                            relatedProblems: ['2022c38'],
                             content: '認可は必要ない → 認可は必要', //p222
                         }, //38
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '合併',
+                            relatedProblems: ['2022c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-13 確認済み
                             questionTitle: '外国保険業者',
+                            relatedProblems: ['2022a40', '2022b40', '2022c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '金融サービスの提供に関する法律',
+                            relatedProblems: ['2022a41', '2022b41', '2022c41'],
                             label: 'ウ',
                             content: '元本欠損',
                         }, //41
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '生命保険契約等の性質',
+                            relatedProblems: ['2022a42', '2022b26', '2022b42', '2022c32', '2022c42'],
                             label: 'エ',
                             content: '善意',
                         }, //42
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '遅延利息',
+                            relatedProblems: ['2022c43'],
                             label: 'ア',
                             content: '保険約款',
                         }, //43
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約の解除',
+                            relatedProblems: ['2022c44'],
                             label: 'ウ',
                             content: '重大事由',
                         }, //44
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険契約者の変更',
+                            relatedProblems: ['2022b36', '2022c45'],
                             label: 'イ',
                             content: '承継人',
                         }, //45
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '主務大臣への協議',
+                            relatedProblems: ['2022c46'],
                             label: 'ア',
                             content: '保険契約者保護機構',
                         }, //46
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険会社の業務の範囲',
+                            relatedProblems: ['2022c47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '相互会社の社員',
+                            relatedProblems: ['2022c48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '外国保険業者の規制',
+                            relatedProblems: ['2022c49'],
                             label: 'ウ',
                             content: '財産目録',
                         }, //49
                         {
                             // rev: 2026-08-16 確認済み
                             questionTitle: '保険募集の制限',
+                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'オ',
                             content: '',
                         }, //50

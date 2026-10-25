@@ -24,6 +24,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の必要性-①"
+                    :relatedProblems="['2025a1', '2025b1', '2025c1']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '安定性',
@@ -45,6 +46,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="危険選択の必要性-②"
+                    :relatedProblems="['2025a6', '2025b6', '2025c6']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '実際死亡率',
@@ -66,6 +68,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-①"
+                    :relatedProblems="['2025a11']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '出再会社',
@@ -87,6 +90,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-②"
+                    :relatedProblems="['2025a16']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '個別',
@@ -108,6 +112,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率と死亡指数"
+                    :relatedProblems="['2025a21', '2025b21', '2025c21']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '正しい',
@@ -120,6 +125,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="医学的選択上の制約条件"
+                    :relatedProblems="['2025a22', '2025b27']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '純保険料の範囲内 → 付加保険料の範囲内', //p40
@@ -132,6 +138,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="職業危険"
+                    :relatedProblems="['2025a23', '2025b45', '2025c34']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '職業危険には、「職業に伴う災害危険」「いわゆる職業病のような疾病危険」さらには[[「アルコール中毒や不摂生生活のような職業に随伴する危険」]]がある。', //p69
@@ -144,6 +151,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険金確認・給付金確認"
+                    :relatedProblems="['2025a24', '2025b48']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '被保険者の死亡後に、重要事実についての告知義務違反の事実が判明して契約解除を行うためには、既往歴など告知義務違反の事実と死因との間に[[因果関係がなければならない]]。 ', //p120
@@ -156,6 +164,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険における元受会社の最高保険金額と保有限度額"
+                    :relatedProblems="['2025a25']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '１保険金受取人 → １被保険者', //p181
@@ -168,6 +177,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険で対象としている危険"
+                    :relatedProblems="['2025a26']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '「実体的危険」は、「[[身体的危険]]」と「環境的危険」の２つに分類することができる。', //p4
@@ -180,6 +190,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="選択効果"
+                    :relatedProblems="['2025a27', '2025b22']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '経験生命表 → 国民生命表', //p32
@@ -192,6 +203,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="疾病保険の特別条件付決定"
+                    :relatedProblems="['2025a28']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '正しい',
@@ -204,6 +216,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="復活"
+                    :relatedProblems="['2025a29', '2025b29', '2025c29']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '正しい',
@@ -216,6 +229,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率比較"
+                    :relatedProblems="['2025a30', '2025b30', '2025c30']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '正しい',
@@ -231,110 +245,130 @@ const subject = "2025年度 フォームA";
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '生命表',
+                            relatedProblems: ['2025a31', '2025b31', '2025c31'],
                             content: '生命表には国民全体を対象とした[[国民生命表]]と、それよりは小さな特定集団（たとえば生命保険の被保険者集団）を対象とする[[経験生命表]]とがある。', //p5
                         }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '危険選択の厳格度',
+                            relatedProblems: ['2025a32', '2025b32', '2025c32'],
                             content: '期待死亡率についての目標値（実際死亡率） → 実際死亡率についての目標値（期待死亡率）', //p35
                         }, //32
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '高血圧',
+                            relatedProblems: ['2025a33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '危険の区分',
+                            relatedProblems: ['2025a34'],
                             content: '平均的危険 → 恒常性危険', //p105
                         }, //34
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '契約確認',
+                            relatedProblems: ['2025a35'],
                             content: '契約確認は[[一部]]の契約について契約成立前に行い，[[大部分]]は契約成立後に行うのが実情である。', //p113-114
                         }, //35
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '個人情報の定義',
+                            relatedProblems: ['2025a36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約内容登録制度',
+                            relatedProblems: ['2025a37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '傷害特約',
+                            relatedProblems: ['2025a38'],
                             content: '障害給付金 → 災害保険金', //p158
                         }, //38
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の保険金額の決定による選択',
+                            relatedProblems: ['2025a39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
+                            relatedProblems: ['2025a40', '2025b40', '2025c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '死亡率',
+                            relatedProblems: ['2025a41'],
                             label: 'ウ',
                             content: '標準化',
                         }, //41
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '解除',
+                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'ウ',
                             content: '解約返戻金',
                         }, //42
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険料の仕組みと危険選択',
+                            relatedProblems: ['2025a43', '2025b43', '2025c43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '資産・収入状態による選択',
+                            relatedProblems: ['2025a44'],
                             label: 'エ',
                             content: '災害疾病入院特約',
                         }, //44
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '人間ドック扱',
+                            relatedProblems: ['2025a45', '2025b46'],
                             label: 'イ',
                             content: '告知書',
                         }, //45
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約の制限',
+                            relatedProblems: ['2025a46'],
                             label: 'イ',
                             content: '他人',
                         }, //46
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '第1次選択',
+                            relatedProblems: ['2025a47', '2025c48'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '契約確認後の処理',
+                            relatedProblems: ['2025a48'],
                             label: 'ウ',
                             content: '不実の告知',
                         }, //48
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '個人データの安全管理措置',
+                            relatedProblems: ['2025a49', '2025b49', '2025c49'],
                             label: 'イ',
                             content: 'き損',
                         }, //49
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の個別選択',
+                            relatedProblems: ['2025a50'],
                             label: 'ア',
                             content: '保険契約者',
                         }, //50

@@ -46,6 +46,7 @@ const wordChoices2 = [
                     :learningMode="learningMode"
                     :choiceOptions="wordChoices1"
                     questionTitle="金融機関としての生命保険会社-①"
+                    :relatedProblems="['2022b1']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '保険契約準備金',
@@ -69,6 +70,7 @@ const wordChoices2 = [
                     :learningMode="learningMode"
                     :choiceOptions="wordChoices2"
                     questionTitle="金融機関としての生命保険会社-②"
+                    :relatedProblems="['2022b6']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '長期',
@@ -92,6 +94,7 @@ const wordChoices2 = [
                     :learningMode="learningMode"
                     :choiceOptions="SOURON_SOCIAL_CHOICES_1"
                     questionTitle="社会構造の変化-①"
+                    :relatedProblems="['2022a11', '2022b11', '2022c11']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '平均寿命',
@@ -115,6 +118,7 @@ const wordChoices2 = [
                     :learningMode="learningMode"
                     :choiceOptions="SOURON_SOCIAL_CHOICES_2"
                     questionTitle="社会構造の変化-②"
+                    :relatedProblems="['2022a16', '2022b16', '2022c16']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '年金',
@@ -138,6 +142,7 @@ const wordChoices2 = [
                     :learningMode="learningMode"
                     correctAnswer="イ"
                     questionTitle="生命保険契約の要素"
+                    :relatedProblems="['2022a21', '2022b21', '2022c21']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '保険契約者の資格については別段の制限はなく、個人であると法人であるとを問わず、また[[行為能力者であると否とを問わない]]。', //p13
@@ -152,6 +157,7 @@ const wordChoices2 = [
                     :learningMode="learningMode"
                     correctAnswer="イ"
                     questionTitle="生命保険契約の特殊性"
+                    :relatedProblems="['2022b22', '2022c32']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '保険業法 → 保険法', //p7
@@ -166,6 +172,7 @@ const wordChoices2 = [
                     :learningMode="learningMode"
                     correctAnswer="イ"
                     questionTitle="介護保険制度"
+                    :relatedProblems="['2022a23', '2022b23', '2022c23']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '介護保険制度の被保険者は、[[65歳]]以上を第１号被保険者とし、[[40歳〜65歳]]未満の医療保険加入者を第２号被保険者とする。', //p140
@@ -180,6 +187,7 @@ const wordChoices2 = [
                     :learningMode="learningMode"
                     correctAnswer="ウ"
                     questionTitle="アメリカにおける生命保険事業の発展"
+                    :relatedProblems="['2022b24']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '解約価格法 → 不没収法', //p62
@@ -194,6 +202,7 @@ const wordChoices2 = [
                     :learningMode="learningMode"
                     correctAnswer="ア"
                     questionTitle="損害保険"
+                    :relatedProblems="['2022a39', '2022b25', '2022c49']"
                     :contents="[
                         // rev: 2026-07-06 確認済み
                         '正しい',
@@ -209,6 +218,7 @@ const wordChoices2 = [
                     correctAnswer="ウ"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="現在の主な生命保険商品"
+                    :relatedProblems="['2022b26']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
@@ -224,6 +234,7 @@ const wordChoices2 = [
                     correctAnswer="ア"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険事業の現状"
+                    :relatedProblems="['2022b27']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '同措置は、保険金の支払い余力を示す[[ソルベンシー・マージン比率が200％]]未満の会社が対象となる。', //p99-100
@@ -239,6 +250,7 @@ const wordChoices2 = [
                     correctAnswer="イ"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="賦課式保険"
+                    :relatedProblems="['2022a28', '2022b28', '2022c28']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '正しい',
@@ -254,6 +266,7 @@ const wordChoices2 = [
                     correctAnswer="イ"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="公的年金制度"
+                    :relatedProblems="['2022b29']"
                     :contents="[
                         // rev: 2026-07-07 確認済み
                         '正しい',
@@ -269,6 +282,7 @@ const wordChoices2 = [
                     correctAnswer="ウ"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険会社の資産運用の今後のあり方"
+                    :relatedProblems="['2022b30']"
                     :contents="[
                         // rev: 2026-07-08 確認済み
                         '正しい',
@@ -286,110 +300,130 @@ const wordChoices2 = [
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '責任準備金',
+                            relatedProblems: ['2022a31', '2022b31', '2022c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険料',
+                            relatedProblems: ['2022b32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: '科学的な生命保険会社',
+                            relatedProblems: ['2022a33', '2022b33', '2022c33'],
                             content: 'ロイヤル・エクスチェンジ → エクイタブル', //p57
                         }, //33
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: '生命保険に関する情報提供',
+                            relatedProblems: ['2022b34'],
                             content: '契約するにあたり、約款中の重要な事項・諸手続きなどを説明した「ご契約のしおり」とともに保険約款を[[契約申込時に交付したり]]、インターネットによる幅広い情報提供を行っている。', //p83
                         }, //34
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '保険金・給付金の支払い',
+                            relatedProblems: ['2022b35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '社会保障制度',
+                            relatedProblems: ['2022a47', '2022b36'],
                             content: '社会扶助制度 → 公的扶助制度', //p123
                         }, //36
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '組織変更',
+                            relatedProblems: ['2022a37', '2022b37', '2022c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-08 確認済み
                             questionTitle: 'ソルベンシー・マージン比率',
+                            relatedProblems: ['2022b38'],
                             content: 'ソルベンシー・マージン比率は、[[保険会社が直面している通常の予測を超える諸リスク（保険リスク、資産運用リスク等）相当額の1／2を分母]]とし、[[保険会社の自己資本性と考えられる資本勘定、諸準備金などの合計額を分子]]として計算される。',//p155（旧教科書）
                         }, //38
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: 'こくみん共済coop（全労災）',
+                            relatedProblems: ['2022b39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-07 確認済み
                             questionTitle: '医療・介護ニーズへの対応',
+                            relatedProblems: ['2022b40'],
                             content: '生命保険会社は早くから医療や健康問題に関心を持ち、[[人間ドック紹介、健康相談サービス、介護事業者の紹介等を行っている]]。', //p194
                         }, //40
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '危険評価軸',
+                            relatedProblems: ['2022b41'],
                             label: 'オ',
                             content: '',
                         }, //41
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '死亡表',
+                            relatedProblems: ['2022a42', '2022b42', '2022c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '保険金額',
+                            relatedProblems: ['2022b43'],
                             label: 'エ',
                             content: 'あらかじめ定められた',
                         }, //43
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '自主的な団結と相互扶助',
+                            relatedProblems: ['2022b44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: 'ユニバーサル保険',
+                            relatedProblems: ['2022b45'],
                             label: 'イ',
                             content: '自由',
                         }, //45
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '国民経済における生命保険',
+                            relatedProblems: ['2022b46'],
                             label: 'イ',
                             content: '経済的保障',
                         }, //46
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命共済事業',
+                            relatedProblems: ['2022b47'],
                             label: 'ウ',
                             content: '損害共済',
                         }, //47
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生命保険業の監督の方法',
+                            relatedProblems: ['2022a48', '2022b48', '2022c48'],
                             label: 'エ',
                             content: '財務大臣',
                         }, //48
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '銀行による保険販売',
+                            relatedProblems: ['2022b49'],
                             label: 'ウ',
                             content: '個人年金',
                         }, //49
                         {
                             // rev: 2026-07-06 確認済み
                             questionTitle: '生保業界共通のシステム',
+                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'ア',
                             content: '団体定期保険',
                         }, //50

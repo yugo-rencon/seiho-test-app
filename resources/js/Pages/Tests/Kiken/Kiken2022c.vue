@@ -24,6 +24,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="現病歴・既往歴-①"
+                    :relatedProblems="['2022c1']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '収縮期',
@@ -45,6 +46,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="現病歴・既往歴-②"
+                    :relatedProblems="['2022c6']"
                     :contents="[
                         // rev: 2026-07-04 確認済み
                         '赤血球',
@@ -66,6 +68,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-①"
+                    :relatedProblems="['2022a11', '2022b11', '2022c11']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '出再会社',
@@ -87,6 +90,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="再保険の契約形態と方式-②"
+                    :relatedProblems="['2022a16', '2022b16', '2022c16']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '個別',
@@ -108,6 +112,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="環境選択"
+                    :relatedProblems="['2022c21']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '現在の健康状態が非常に良好で医学的選択上は何らの欠陥がなく、標準体と判定されるものでも、[[環境が良好でなければ標準体と判定されない場合がある]]。', //p58
@@ -120,6 +125,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="告知"
+                    :relatedProblems="['2022a22', '2022b22', '2022c22']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -132,6 +138,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約制限"
+                    :relatedProblems="['2022c23']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '一般に短期[[養老]]または短期払込[[養老]]保険の経験死亡率は長期のものより良好である。ただし、[[定期]]保険ではこの関係は逆転し、保険期間が短期のものに逆選択が集中する傾向がある。', //p73
@@ -144,6 +151,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="査定・決定"
+                    :relatedProblems="['2022c24']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '金融庁 → 生命保険協会', //p86
@@ -156,6 +164,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="入院・手術保障における「選択」"
+                    :relatedProblems="['2022a25', '2022b25', '2022c25']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -168,6 +177,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="死亡率と死亡指数"
+                    :relatedProblems="['2022c26']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '正しい',
@@ -180,6 +190,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="医学的選択上の制約条件"
+                    :relatedProblems="['2022c27']"
                     :contents="[
                         // rev: 2026-07-02 確認済み
                         '純保険料の範囲内 → 付加保険料の範囲内', //p40
@@ -192,6 +203,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険業における個人情報保護のための取扱指針"
+                    :relatedProblems="['2022a28', '2022b28', '2022c28']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -204,6 +216,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="契約確認の時期と方法"
+                    :relatedProblems="['2022c29']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '契約確認は[[一部]]の契約について契約成立前に行い，[[大部分]]は契約成立後に行うのが実情である。', //p113-114
@@ -216,6 +229,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険の危険選択"
+                    :relatedProblems="['2022c30']"
                     :contents="[
                         // rev: 2026-07-05 確認済み
                         '正しい',
@@ -231,110 +245,130 @@ const subject = "2022年度 フォームC";
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '生命表',
+                            relatedProblems: ['2022c31'],
                             content: '生命表には国民全体を対象とした[[国民生命表]]と，それよりは小さな特定集団（たとえば生命保険の被保険者集団）を対象とする[[経験生命表]]とがある。', //p5
                         }, //31
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '死差益の計算方法',
+                            relatedProblems: ['2022a32', '2022b32', '2022c32'],
                             content: '[[統計的方式]]で表せば、基本的には死差益は年間の危険保険料収入額と危険保険金支払額との差として表される。', //p27
                         }, //32
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険体の範囲の拡大',
+                            relatedProblems: ['2022a33', '2022b33', '2022c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '社医と嘱託医',
+                            relatedProblems: ['2022a36', '2022c34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '診査実施上の制限',
+                            relatedProblems: ['2022c35'],
                             content: '診査１件あたりの保険金額の限度や被保険者年齢上の[[区分を設けている生命保険会社が多い]]。', //p74
                         }, //35
                         {
                             // rev: 2026-07-05 確認済み
                             questionTitle: '公序良俗に反する行為',
+                            relatedProblems: ['2022c36'],
                             content: '重大事由による免責権 → 重大事由による解除権', //p79-80
                         }, //36
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険診査',
+                            relatedProblems: ['2022c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '個人情報の取得',
+                            relatedProblems: ['2022c38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '最高保険金額',
+                            relatedProblems: ['2022c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '死因別死亡率',
+                            relatedProblems: ['2022a40', '2022b40', '2022c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '被保険者の危険',
+                            relatedProblems: ['2022c41'],
                             label: 'ウ',
                             content: '環境的危険',
                         }, //41
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '解除権の消滅',
+                            relatedProblems: ['2022c42'],
                             label: 'ア',
                             content: '1ヶ月',
                         }, //42
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '職業危険',
+                            relatedProblems: ['2022a34', '2022b23', '2022c43'],
                             label: 'ア',
                             content: '入院率',
                         }, //43
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '生命保険面接士',
+                            relatedProblems: ['2022c44'],
                             label: 'エ',
                             content: '診査報状',
                         }, //44
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '体格',
+                            relatedProblems: ['2022a45', '2022b45', '2022c45'],
                             label: 'ウ',
                             content: '22',
                         }, //45
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '医学的査定',
+                            relatedProblems: ['2022c46'],
                             label: 'エ',
                             content: '特別保険料領収法',
                         }, //46
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '保険金確認・給付金確認',
+                            relatedProblems: ['2022a24', '2022c47'],
                             label: 'イ',
                             content: '発生後',
                         }, //47
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '期待死亡率との比較',
+                            relatedProblems: ['2022c48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '災害関係特約',
+                            relatedProblems: ['2022a49', '2022b49', '2022c49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
                             // rev: 2026-07-04 確認済み
                             questionTitle: '団体保険の個別選択',
+                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'エ',
                             content: '正常勤務',
                         }, //50

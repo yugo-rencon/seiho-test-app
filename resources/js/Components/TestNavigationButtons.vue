@@ -101,7 +101,7 @@ const seihoAutoNavigation = computed(() => {
 
     const subject = matched[1].toLowerCase();
     const currentId = `${matched[2]}|${matched[3].toLowerCase()}`;
-    const years = subject === "souron"
+    const years = ["souron", "keiri"].includes(subject)
         ? ["2026", "2025", "2024", "2023", "2022", "2021", "2020"]
         : ["2025", "2024", "2023", "2022", "2021", "2020"];
     const forms = ["a", "b", "c"];

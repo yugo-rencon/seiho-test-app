@@ -19,7 +19,6 @@ export const SUBJECT_CATALOG = [
         title: "生命保険計理",
         menuTitle: "生命保険計理",
         period: "8月〜9月実施の試験",
-        preparingYears: [2026],
     },
     {
         key: "kiken",

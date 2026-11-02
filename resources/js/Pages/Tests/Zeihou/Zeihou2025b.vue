@@ -24,10 +24,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="相続税の申告と納税"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-11-02 確認済み
                         '遺贈',
-                        '被相続人',
                         '10カ月',
+                        '被相続人',
                         '担保',
                         '10万円', // 問１〜５
                     ]"
@@ -45,7 +45,7 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="法人税の申告と納付"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-11-02 確認済み
                         '6カ月',
                         '2カ月',
                         '損益計算書',
@@ -64,9 +64,9 @@ const subject = "2025年度 フォームB";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）①"
+                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）－①"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-11-02 確認済み
                         '3親等',
                         '保険金受取人',
                         '5年',
@@ -85,9 +85,9 @@ const subject = "2025年度 フォームB";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）②"
+                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）－②"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-11-02 確認済み
                         '10年',
                         '一時払',
                         '60歳',
@@ -150,7 +150,7 @@ const subject = "2025年度 フォームB";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
-                    questionTitle="法人税通達による事業保険の取扱い"
+                    questionTitle="法人税通達による事業保険の取扱"
                     :contents="[
                         '', //p
                         '正しい',
@@ -226,12 +226,12 @@ const subject = "2025年度 フォームB";
                             content: '',
                         }, //32
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '雑所得',
                             content: '正しい',
                         }, //33
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '医療費控除',
                             content: '正しい',
                         }, //34
@@ -244,7 +244,7 @@ const subject = "2025年度 フォームB";
                             content: '',
                         }, //36
                         {
-                            questionTitle: '外貨建て生命保険の取扱い',
+                            questionTitle: '外貨建て生命保険の取扱',
                             content: '',
                         }, //37
                         {
@@ -260,61 +260,61 @@ const subject = "2025年度 フォームB";
                             content: '',
                         }, //40
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '所得税の税額控除額',
                             label: 'イ',
                             content: '二重課税',
                         }, //41
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '退職所得控除額',
                             label: 'ウ',
                             content: '40万円',
                         }, //42
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '所得税の課税標準',
                             label: 'オ',
                             content: '',
                         }, //43
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '源泉徴収制度',
                             label: 'ア',
                             content: '翌月10日',
                         }, //44
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '法人の種類と課税の範囲',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '定期金に関する権利',
                             label: 'エ',
                             content: '解約返戻金額',
                         }, //46
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '資産の評価益の益金不算入',
                             label: 'オ',
                             content: '',
                         }, //47
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '固定資産税の課税標準',
                             label: 'ウ',
                             content: '3年',
                         }, //48
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '不動産取得税',
                             label: 'イ',
                             content: '道府県税',
                         }, //49
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '生命保険代理店の事業免許等に係る税',
                             label: 'オ',
                             content: '',

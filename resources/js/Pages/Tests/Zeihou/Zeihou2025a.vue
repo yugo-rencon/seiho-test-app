@@ -22,9 +22,9 @@ const subject = "2025年度 フォームA";
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="所得税課税における所得控除①"
+                    questionTitle="所得税課税における所得控除-①"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-11-02 確認済み
                         '横領',
                         '1/10',
                         '200万円',
@@ -43,9 +43,9 @@ const subject = "2025年度 フォームA";
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle="所得税課税における所得控除②"
+                    questionTitle="所得税課税における所得控除-②"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-11-02 確認済み
                         '2,000円',
                         '27万円',
                         '75万円',
@@ -64,9 +64,9 @@ const subject = "2025年度 フォームA";
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）①"
+                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）－①"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-11-02 確認済み
                         '3親等',
                         '保険金受取人',
                         '5年',
@@ -85,9 +85,9 @@ const subject = "2025年度 フォームA";
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）②"
+                    questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）－②"
                     :contents="[
-                        // rev: 2026-08-22 確認済み
+                        // rev: 2026-11-02 確認済み
                         '10年',
                         '一時払',
                         '60歳',
@@ -108,9 +108,10 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="所得税法における所得"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-02 確認済み
+                        '一時所得の金額を総所得金額に含めるときはその[[２分の１]]の金額を算入する。', //p27
                         '正しい',
-                        '', //p
+                        '10年以内 → ５年以内', //p31
                     ]"
                 />
                 <QuestionTemp1
@@ -150,7 +151,7 @@ const subject = "2025年度 フォームA";
                     :questionNumber="25"
                     :title="title"
                     :subject="subject"
-                    questionTitle="法人税通達による事業保険の取扱い"
+                    questionTitle="法人税通達による事業保険の取扱"
                     :contents="[
                         '', //p
                         '正しい',
@@ -194,7 +195,7 @@ const subject = "2025年度 フォームA";
                     :questionNumber="29"
                     :title="title"
                     :subject="subject"
-                    questionTitle="個人保険における保険金等の取扱い"
+                    questionTitle="個人保険における保険金等の取扱"
                     :contents="[
                         '正しい',
                         '', //p
@@ -205,7 +206,7 @@ const subject = "2025年度 フォームA";
                     :questionNumber="30"
                     :title="title"
                     :subject="subject"
-                    questionTitle="確定拠出年金制度の税制上の取扱い"
+                    questionTitle="確定拠出年金制度の税制上の取扱"
                     :contents="[
                         '', //p
                         '正しい',
@@ -238,16 +239,16 @@ const subject = "2025年度 フォームA";
                             content: '',
                         }, //35
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '有価証券の評価',
                             content: '正しい',
                         }, //36
                         {
-                            questionTitle: '外貨建て生命保険の取扱い',
+                            questionTitle: '外貨建て生命保険の取扱',
                             content: '',
                         }, //37
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '総合福祉団体定期保険の保険料',
                             content: '正しい',
                         }, //38
@@ -256,66 +257,66 @@ const subject = "2025年度 フォームA";
                             content: '',
                         }, //39
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '最低課税方式',
                             content: '正しい',
                         }, //40
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '租税の種類',
                             label: 'オ',
                             content: '',
                         }, //41
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '給与所得',
                             label: 'ウ',
                             content: '特定支出',
                         }, //42
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '税額の計算',
                             label: 'エ',
                             content: '税額控除',
                         }, //43
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '法定相続分',
                             label: 'エ',
                             content: '民法',
                         }, //44
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '法人の種類と課税の範囲',
                             label: 'オ',
                             content: '',
                         }, //45
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '法人の確定申告',
                             label: 'ア',
                             content: '2カ月',
                         }, //46
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '法人の住民税',
                             label: 'イ',
                             content: '均等割額と法人税割額',
                         }, //47
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '固定資産税の課税標準',
                             label: 'ウ',
                             content: '3年',
                         }, //48
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '確定給付企業年金',
                             label: 'イ',
                             content: '厚生労働大臣',
                         }, //49
                         {
-                            // rev: 2026-08-22 確認済み
+                            // rev: 2026-11-02 確認済み
                             questionTitle: '生命保険代理店の事業免許等に係る税',
                             label: 'オ',
                             content: '',

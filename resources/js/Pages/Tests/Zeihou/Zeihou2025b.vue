@@ -141,9 +141,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="事業税"
                     :contents="[
+                        // rev: 2026-11-02 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
+                        '各事業年度末時点の資本金または基金の総額 → 各事業年度の収入金額', //p154
+                        '資本金１億円以下 → 資本金１億円超', //p155
                     ]"
                 />
                 <QuestionTemp1

@@ -33,10 +33,13 @@ const page = usePage();
 const isDaigaku = computed(() => /(?:^|\/)daigaku(?:\/|$)/.test(String(page.url ?? "")));
 const isSenmon = computed(() => /(?:^|\/)senmon(?:\/|$)/.test(String(page.url ?? "")));
 const isOuyou = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "")));
+const isHengaku = computed(() => /(?:^|\/)hengaku(?:\/|$)/.test(String(page.url ?? "")));
 const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
 
 const buttonClass = computed(() =>
-    isDaigaku.value
+    isHengaku.value
+        ? "inline-flex min-w-0 justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-teal-200 text-teal-700 bg-white shadow-sm hover:bg-teal-50 transition"
+        : isDaigaku.value
         ? "inline-flex min-w-0 justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-sky-200 text-sky-700 bg-white shadow-sm hover:bg-sky-50 transition"
         : isSenmon.value
           ? "inline-flex min-w-0 justify-center px-4 py-2 text-xs font-semibold rounded-lg border border-emerald-200 text-emerald-700 bg-white shadow-sm hover:bg-emerald-50 transition"

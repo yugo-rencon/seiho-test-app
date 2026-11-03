@@ -156,7 +156,7 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="法人税通達による事業保険の取扱"
                     :contents="[
-                        '', //p
+                        '福利厚生費', //p
                         '正しい',
                         '', //p
                     ]"

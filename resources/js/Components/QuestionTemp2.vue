@@ -12,7 +12,7 @@
             :key="`study-${item.questionNo}`"
             :id="`q${item.questionNo}`"
             class="scroll-mt-24 rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6"
-            :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
+            :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-hengaku': isHengaku, 'is-seiho': isSeiho }"
         >
             <div class="flex items-start gap-2">
                 <h2 class="flex min-w-0 items-start gap-2 text-base font-bold leading-tight text-gray-700">
@@ -68,7 +68,7 @@
             <div
                 :id="`q${item.questionNo}`"
                 class="bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md scroll-mt-24"
-                :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho }"
+                :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-hengaku': isHengaku, 'is-seiho': isSeiho }"
             >
                 <div class="flex items-start gap-2 my-4">
                 <div
@@ -82,6 +82,8 @@
                                     ? 'bg-gradient-to-b from-amber-400 to-orange-400'
                             : isIppan
                                 ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
+                                : isHengaku
+                                    ? 'bg-gradient-to-b from-teal-400 to-cyan-400'
                                 : isSeiho
                                     ? 'bg-gradient-to-b from-violet-400 to-indigo-400'
                                     : 'bg-gradient-to-b from-purple-400 to-blue-400'
@@ -265,8 +267,9 @@ const page = usePage();
 const isDaigaku = computed(() => /(?:^|\/)daigaku(?:\/|$)/.test(String(page.url ?? "")));
 const isSenmon = computed(() => /(?:^|\/)senmon(?:\/|$)/.test(String(page.url ?? "")));
 const isOuyou = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "")));
+const isHengaku = computed(() => /(?:^|\/)hengaku(?:\/|$)/.test(String(page.url ?? "")));
 const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
-const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value);
+const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value && !isHengaku.value);
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 

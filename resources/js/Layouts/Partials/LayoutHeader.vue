@@ -9,6 +9,7 @@ const props = defineProps({
     brandName: { type: String, default: "生保講座過去問解説" },
     homeRouteName: { type: String, default: "tests.index" },
     logoSrc: { type: String, default: "/images/rencon-favicon.svg" },
+    isHengaku: { type: Boolean, default: false },
     isDaigaku: { type: Boolean, default: false },
     isSenmon: { type: Boolean, default: false },
     isOuyou: { type: Boolean, default: false },
@@ -54,7 +55,9 @@ const isActive = (name) => route().current(name);
                                     ? 'bg-gradient-to-r from-amber-600 to-orange-500'
                                   : isIppan
                                     ? 'bg-gradient-to-r from-pink-500 to-fuchsia-500'
-                                  : 'bg-gradient-to-r from-indigo-600 to-purple-600'
+                                  : isHengaku
+                                      ? 'bg-gradient-to-r from-teal-600 to-cyan-600'
+                                      : 'bg-gradient-to-r from-indigo-600 to-purple-600'
                         "
                     >
                         {{ brandName }}

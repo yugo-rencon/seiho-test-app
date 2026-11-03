@@ -341,7 +341,7 @@ const subject = "2023年度 フォームC";
                             label: 'ア',
                             questionTitle: '生命保険会計における負債勘定',
                             relatedProblems: ['2023c46'],
-                            content: '借受金',
+                            content: '仮受金',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み

@@ -36,6 +36,9 @@ const isBasicScopeFreeRoute = (): boolean => {
 };
 
 export const isPaidYear = (subject: string, _title: string = ""): boolean => {
+    // 変額保険は購入機能の対象外。既存の生保講座の購入案内を表示しない。
+    if (typeof window !== "undefined" && /(?:^|\/)hengaku(?:\/|$)/.test(window.location.pathname)) return false;
+
     const year = Number(String(subject ?? "").slice(0, 4));
     const formCode = parseFormCode(subject);
     const scope = currentExamScope();

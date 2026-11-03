@@ -11,6 +11,7 @@ const page = usePage();
 const isDaigaku = computed(() => /(?:^|\/)daigaku(?:\/|$)/.test(String(page.url ?? "")));
 const isSenmon = computed(() => /(?:^|\/)senmon(?:\/|$)/.test(String(page.url ?? "")));
 const isOuyou = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "")));
+const isHengaku = computed(() => /(?:^|\/)hengaku(?:\/|$)/.test(String(page.url ?? "")));
 const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
 </script>
 
@@ -29,7 +30,9 @@ const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "
                   ? 'bg-gradient-to-b from-amber-500 to-orange-500'
               : isIppan
                 ? 'bg-gradient-to-b from-pink-500 to-fuchsia-500'
-                : 'bg-gradient-to-b from-blue-500 to-purple-500'
+                : isHengaku
+                  ? 'bg-gradient-to-b from-teal-500 to-cyan-500'
+                  : 'bg-gradient-to-b from-blue-500 to-purple-500'
           "
         ></div>
         <h1 class="text-xl font-extrabold text-gray-800 leading-tight">{{ props.title }}</h1>

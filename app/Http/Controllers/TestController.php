@@ -21,6 +21,42 @@ class TestController extends Controller
         return Inertia::render('Index');
     }
 
+    // 変額保険トップ
+    public function hengakuIndex()
+    {
+        return Inertia::render('Hengaku/Index');
+    }
+
+    public function hengaku2026h1a()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2026h1a');
+    }
+
+    public function hengaku2026h1b()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2026h1b');
+    }
+
+    public function hengaku2025h2a()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2025h2a');
+    }
+
+    public function hengaku2025h2b()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2025h2b');
+    }
+
+    public function hengaku2025h2c()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2025h2c');
+    }
+
+    public function hengaku2025h2d()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2025h2d');
+    }
+
     // 大学課程トップ
     public function daigakuIndex()
     {

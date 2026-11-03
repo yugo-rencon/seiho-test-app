@@ -291,3 +291,17 @@ body {
     pointer-events: none;
     cursor: default;
 }
+
+/* 変額保険の解説テーマ */
+.is-hengaku .answer-highlight {
+    @apply text-teal-900;
+    background: linear-gradient(transparent 55%, #ccfbf1 55%);
+}
+
+.is-hengaku .answer-quote {
+    @apply border-teal-300 bg-teal-50/60;
+}
+
+.is-hengaku .answer-arrow {
+    @apply text-teal-700;
+}

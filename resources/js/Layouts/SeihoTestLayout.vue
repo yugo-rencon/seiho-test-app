@@ -5,6 +5,7 @@ import LayoutFooter from "@/Layouts/Partials/LayoutFooter.vue";
 import LayoutHeader from "@/Layouts/Partials/LayoutHeader.vue";
 import LayoutToast from "@/Layouts/Partials/LayoutToast.vue";
 import MobileMenuDrawer from "@/Layouts/Partials/MobileMenuDrawer.vue";
+import { HENGAKU_MENU_SUBJECTS } from "@/constants/hengaku";
 import { MOBILE_MENU_SUBJECTS } from "@/constants/subjects";
 
 const props = defineProps({
@@ -30,25 +31,28 @@ const props = defineProps({
 
 const page = usePage();
 const resolvedSiteScope = computed(() => {
-    if (["daigaku", "ippan", "senmon", "ouyou", "seiho"].includes(props.siteScope)) {
+    if (["daigaku", "ippan", "senmon", "ouyou", "hengaku", "seiho"].includes(props.siteScope)) {
         return props.siteScope;
     }
 
     const url = String(page.url ?? "");
     // MAMP などのサブディレクトリ配下では URL にアプリのベースパスが付くため、
     // 先頭一致ではなくパス要素として判定する。
+    if (/(?:^|\/)hengaku(?:\/|$)/.test(url)) return "hengaku";
     if (/(?:^|\/)daigaku(?:\/|$)/.test(url)) return "daigaku";
     if (/(?:^|\/)senmon(?:\/|$)/.test(url)) return "senmon";
     if (/(?:^|\/)ouyou(?:\/|$)/.test(url)) return "ouyou";
     if (/(?:^|\/)ippan(?:\/|$)/.test(url)) return "ippan";
     return "seiho";
 });
+const isHengakuPage = computed(() => resolvedSiteScope.value === "hengaku");
 const isDaigakuPage = computed(() => resolvedSiteScope.value === "daigaku");
 const isSenmonPage = computed(() => resolvedSiteScope.value === "senmon");
 const isOuyouPage = computed(() => resolvedSiteScope.value === "ouyou");
 const isIppanPage = computed(() => resolvedSiteScope.value === "ippan");
 const currentBrandName = computed(() => {
     if (props.brandName) return props.brandName;
+    if (isHengakuPage.value) return "変額保険 過去問解説";
     if (isDaigakuPage.value) return "生命保険大学課程 過去問解説";
     if (isSenmonPage.value) return "生命保険専門課程 過去問解説";
     if (isOuyouPage.value) return "生命保険応用課程 過去問解説";
@@ -56,6 +60,7 @@ const currentBrandName = computed(() => {
     return "生保講座過去問解説";
 });
 const currentHomeRouteName = computed(() => {
+    if (isHengakuPage.value) return "hengaku.index";
     if (isDaigakuPage.value) return "daigaku.index";
     if (isSenmonPage.value) return "senmon.index";
     if (isOuyouPage.value) return "ouyou.index";
@@ -70,7 +75,9 @@ const currentContactPath = computed(() => {
     return "/contact";
 });
 const currentLogoSrc = computed(() =>
-    isDaigakuPage.value
+    isHengakuPage.value
+        ? "/images/rencon-favicon-hengaku.svg?v=hengaku"
+        : isDaigakuPage.value
         ? "/images/rencon-favicon-daigaku.svg?v=daigaku"
         : isSenmonPage.value
           ? "/images/rencon-favicon-senmon.svg?v=senmon"
@@ -275,7 +282,8 @@ const senmonSubjects = [
 ];
 
 const menuSubjects = computed(() =>
-    isDaigakuPage.value ? daigakuSubjects
+    isHengakuPage.value ? HENGAKU_MENU_SUBJECTS
+    : isDaigakuPage.value ? daigakuSubjects
     : isIppanPage.value ? ippanSubjects
     : isOuyouPage.value ? ouyouSubjects
     : isSenmonPage.value ? senmonSubjects
@@ -411,6 +419,8 @@ onBeforeUnmount(() => {
 
         <!-- ヘッダー本体 -->
         <LayoutHeader
+            :is-hengaku="isHengakuPage"
+            :hide-auth-ui="isHengakuPage"
             :is-authenticated="isAuthenticated"
             :is-admin="isAdmin"
             :brand-name="currentBrandName"
@@ -430,6 +440,8 @@ onBeforeUnmount(() => {
 
         <!-- ハンバーガーメニュー本体 -->
         <MobileMenuDrawer
+            :hide-auth-ui="isHengakuPage"
+            :hide-pricing-ui="isHengakuPage"
             :open="isMenuOpen"
             :is-authenticated="isAuthenticated"
             :is-admin="isAdmin"
@@ -444,6 +456,8 @@ onBeforeUnmount(() => {
 
         <!-- フッター全体 -->
         <LayoutFooter
+            :is-hengaku="isHengakuPage"
+            :hide-pricing-ui="isHengakuPage"
             :brand-name="currentBrandName"
             :home-route-name="currentHomeRouteName"
             :logo-src="currentLogoSrc"

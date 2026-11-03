@@ -1,5 +1,6 @@
 <script setup>
 import { Link, usePage } from "@inertiajs/vue3";
+import { hengakuTestRoute } from "@/constants/hengaku";
 import { computed, ref, watch } from "vue";
 
 const props = defineProps({
@@ -54,6 +55,11 @@ const adminRouteName = () => (props.isDaigaku ? "daigaku.admin.index" : "admin.i
 const resolveFormHref = (subjectKey, yearLabel, form) => {
     const year = Number(String(yearLabel).replace("年度", ""));
     const f = String(form).toLowerCase();
+
+    if (subjectKey.startsWith("hengaku-")) {
+        const name = hengakuTestRoute(year, subjectKey.replace("hengaku-", ""), f);
+        return name ? route(name) : null;
+    }
 
     try {
         if (props.isIppan) {

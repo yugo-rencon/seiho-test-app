@@ -4,11 +4,16 @@
         @php
             $path = request()->path();
             $normalizedPath = '/'.ltrim($path, '/');
-            $siteKey = str_starts_with($path, 'daigaku') ? 'daigaku'
+            $siteKey = str_starts_with($path, 'hengaku') ? 'hengaku' : (str_starts_with($path, 'daigaku') ? 'daigaku'
                 : (str_starts_with($path, 'senmon') ? 'senmon'
                     : (str_starts_with($path, 'ouyou') ? 'ouyou'
-                        : (str_starts_with($path, 'ippan') ? 'ippan' : 'seiho')));
+                        : (str_starts_with($path, 'ippan') ? 'ippan' : 'seiho'))));
             $siteAssets = [
+                'hengaku' => [
+                    'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
+                    'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
+                    'theme' => '#0d9488',
+                ],
                 'seiho' => [
                     'icon48' => '/images/favicons/rencon-common-48.png?v=20260620',
                     'icon192' => '/images/favicons/rencon-common-192.png?v=20260620',
@@ -38,6 +43,10 @@
             $currentSiteAssets = $siteAssets[$siteKey];
             $canonicalUrl = rtrim(config('app.url', url('/')), '/').($normalizedPath === '/' ? '' : $normalizedPath);
             $defaultSeo = [
+                'hengaku' => [
+                    'title' => '変額保険 過去問解説',
+                    'description' => '変額保険試験の過去問解説。実施期間別・フォーム別の試験一覧です。',
+                ],
                 'seiho' => [
                     'title' => '生保講座過去問解説',
                     'description' => '生保講座（生命保険講座）の過去問解説サイト。全科目の年度別・フォーム別解説を掲載。',

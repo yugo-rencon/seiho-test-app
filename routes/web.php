@@ -15,6 +15,13 @@ Route::get('/', [TestController::class, 'index'])->name('tests.index');
 Route::get('tests', function () {
     return response()->view('errors.410', [], 410);
 });
+Route::get('hengaku', [TestController::class, 'hengakuIndex'])->name('hengaku.index');
+Route::get('hengaku/2026-h1-a', [TestController::class, 'hengaku2026h1a'])->name('hengaku2026h1a');
+Route::get('hengaku/2026-h1-b', [TestController::class, 'hengaku2026h1b'])->name('hengaku2026h1b');
+Route::get('hengaku/2025-h2-a', [TestController::class, 'hengaku2025h2a'])->name('hengaku2025h2a');
+Route::get('hengaku/2025-h2-b', [TestController::class, 'hengaku2025h2b'])->name('hengaku2025h2b');
+Route::get('hengaku/2025-h2-c', [TestController::class, 'hengaku2025h2c'])->name('hengaku2025h2c');
+Route::get('hengaku/2025-h2-d', [TestController::class, 'hengaku2025h2d'])->name('hengaku2025h2d');
 Route::get('daigaku', [TestController::class, 'daigakuIndex'])->name('daigaku.index');
 Route::get('senmon', [TestController::class, 'senmonIndex'])->name('senmon.index');
 Route::get('senmon/{year}-{period}-{form}', [TestController::class, 'senmonTest'])

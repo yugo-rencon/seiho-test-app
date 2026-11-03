@@ -328,7 +328,7 @@ const subject = "2025年度 フォームA";
                             questionTitle: '危険準備金',
                             relatedProblems: ['2025a44'],
                             label: 'ア',
-                            content: '収益性',
+                            content: '利益性',
                         }, //44
                         {
                             // rev: 2026-08-22 確認済み

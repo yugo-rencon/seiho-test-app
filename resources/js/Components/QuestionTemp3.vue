@@ -10,7 +10,7 @@
         class="scroll-mt-24"
         :class="[
           props.learningMode ? 'space-y-2' : 'bg-white px-6 py-3 border border-gray-300 rounded-lg shadow-sm md:shadow-md',
-          { 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-seiho': isSeiho },
+          { 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-hengaku': isHengaku, 'is-seiho': isSeiho },
         ]"
     >
 
@@ -27,6 +27,8 @@
                                 ? 'bg-gradient-to-b from-amber-400 to-orange-400'
                             : isIppan
                                 ? 'bg-gradient-to-b from-pink-400 to-fuchsia-400'
+                                : isHengaku
+                                    ? 'bg-gradient-to-b from-teal-400 to-cyan-400'
                                 : isSeiho
                                     ? 'bg-gradient-to-b from-violet-400 to-indigo-400'
                                     : 'bg-gradient-to-b from-purple-400 to-blue-400'
@@ -202,8 +204,9 @@
 const isDaigaku = computed(() => /(?:^|\/)daigaku(?:\/|$)/.test(String(page.url ?? "")));
 const isSenmon = computed(() => /(?:^|\/)senmon(?:\/|$)/.test(String(page.url ?? "")));
 const isOuyou = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "")));
+const isHengaku = computed(() => /(?:^|\/)hengaku(?:\/|$)/.test(String(page.url ?? "")));
 const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
-const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value);
+const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value && !isHengaku.value);
 
     const rangeStartQuestion = computed(() => {
         const range = String(props.questionRange ?? "").trim();

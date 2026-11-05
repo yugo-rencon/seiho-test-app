@@ -18,6 +18,20 @@ export const HENGAKU_MENU_SUBJECTS = HENGAKU_PERIODS.map((period) => ({
 // 公開開始までは、作成済みの試験も一覧・メニューで準備中として扱う。
 export const HENGAKU_TESTS_PUBLISHED = false;
 export const HENGAKU_TEST_ROUTES = {
+    "2024-h1-a": "hengaku2024h1a",
+    "2024-h1-b": "hengaku2024h1b",
+    "2024-h2-a": "hengaku2024h2a",
+    "2024-h2-b": "hengaku2024h2b",
+    "2024-h2-c": "hengaku2024h2c",
+    "2024-h2-d": "hengaku2024h2d",
+    "2023-h1-a": "hengaku2023h1a",
+    "2023-h1-b": "hengaku2023h1b",
+    "2023-h2-a": "hengaku2023h2a",
+    "2023-h2-b": "hengaku2023h2b",
+    "2023-h2-c": "hengaku2023h2c",
+    "2023-h2-d": "hengaku2023h2d",
+    "2025-h1-a": "hengaku2025h1a",
+    "2025-h1-b": "hengaku2025h1b",
     "2026-h1-a": "hengaku2026h1a",
     "2026-h1-b": "hengaku2026h1b",
     "2025-h2-a": "hengaku2025h2a",

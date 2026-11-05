@@ -57,6 +57,76 @@ class TestController extends Controller
         return Inertia::render('Hengaku/Tests/Hengaku2025h2d');
     }
 
+    public function hengaku2025h1a()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2025h1a');
+    }
+
+    public function hengaku2025h1b()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2025h1b');
+    }
+
+    public function hengaku2024h1a()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2024h1a');
+    }
+
+    public function hengaku2024h1b()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2024h1b');
+    }
+
+    public function hengaku2024h2a()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2024h2a');
+    }
+
+    public function hengaku2024h2b()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2024h2b');
+    }
+
+    public function hengaku2024h2c()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2024h2c');
+    }
+
+    public function hengaku2024h2d()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2024h2d');
+    }
+
+    public function hengaku2023h1a()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2023h1a');
+    }
+
+    public function hengaku2023h1b()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2023h1b');
+    }
+
+    public function hengaku2023h2a()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2023h2a');
+    }
+
+    public function hengaku2023h2b()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2023h2b');
+    }
+
+    public function hengaku2023h2c()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2023h2c');
+    }
+
+    public function hengaku2023h2d()
+    {
+        return Inertia::render('Hengaku/Tests/Hengaku2023h2d');
+    }
+
     // 大学課程トップ
     public function daigakuIndex()
     {

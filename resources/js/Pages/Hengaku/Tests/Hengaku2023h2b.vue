@@ -136,8 +136,9 @@ const subject = "2023年9月〜2024年3月実施 フォームB";
                     :subject="subject"
                     questionTitle="特別条件付契約の取り扱い"
                     :contents="[
+                        // rev: 2026-11-06 確認済み
                         '正しい',
-                        '', //p
+                        '特別勘定 → 一般勘定', //p16
                         '正しい',
                     ]"
                 />

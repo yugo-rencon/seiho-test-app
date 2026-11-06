@@ -137,9 +137,10 @@ const subject = "2025年4月〜8月実施 フォームA";
                     :subject="subject"
                     questionTitle="特別条件付契約の取り扱い"
                     :contents="[
+                        // rev: 2026-11-06 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '変動保険金額の[[削減は行わない]]。', //p16
                     ]"
                 />
                 <QuestionTemp1

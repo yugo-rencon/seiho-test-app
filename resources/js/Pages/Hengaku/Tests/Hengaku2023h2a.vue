@@ -57,9 +57,10 @@ const subject = "2023年9月〜2024年3月実施 フォームA";
                     :subject="subject"
                     questionTitle="特別条件付契約の取り扱い"
                     :contents="[
+                        // rev: 2026-11-06 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
+                        '特別勘定 → 一般勘定', //p16
+                        '変動保険金額 → 基本保険金額', //p16
                     ]"
                 />
                 <QuestionTemp1

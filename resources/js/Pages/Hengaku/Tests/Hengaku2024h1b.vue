@@ -140,7 +140,8 @@ const subject = "2024年4月〜8月実施 フォームB";
                     :subject="subject"
                     questionTitle="保険料の仕組みと保険金の変動の仕組み"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-07 確認済み
+                        '特別勘定 → 一般勘定', //p11
                         '正しい',
                         '正しい',
                     ]"

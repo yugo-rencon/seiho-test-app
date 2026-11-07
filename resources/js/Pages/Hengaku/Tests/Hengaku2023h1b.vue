@@ -149,9 +149,10 @@ const subject = "2023年4月〜8月実施 フォームB";
                     :subject="subject"
                     questionTitle="保険料の仕組み"
                     :contents="[
+                        // rev: 2026-11-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '特別勘定 → 一般勘定', //p11
                     ]"
                 />
                 <QuestionTemp1

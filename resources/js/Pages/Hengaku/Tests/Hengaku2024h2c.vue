@@ -127,8 +127,9 @@ const subject = "2024年9月〜2025年3月実施 フォームC";
                     :subject="subject"
                     questionTitle="保険料の仕組み"
                     :contents="[
+                        // rev: 2026-11-07 確認済み
                         '正しい',
-                        '', //p
+                        '特別勘定 → 一般勘定', //p11
                         '正しい',
                     ]"
                 />

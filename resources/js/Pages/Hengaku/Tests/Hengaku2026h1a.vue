@@ -180,9 +180,10 @@ const subject = "2026年4月〜8月実施 フォームA";
                     :subject="subject"
                     questionTitle="解約"
                     :contents="[
+                        // rev: 2026-11-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '一般に最低保証はないので、[[払い込まれた保険料に比べ少額となることがある]]。', //p19
                     ]"
                 />
                 <QuestionTemp1

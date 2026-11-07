@@ -175,9 +175,10 @@ const subject = "2023年9月〜2024年3月実施 フォームD";
                     :subject="subject"
                     questionTitle="解約"
                     :contents="[
+                        // rev: 2026-11-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '解約請求日は本社（本店）または支社で解約請求書類を受け付けた日。 ', //p19
                     ]"
                 />
                 <QuestionTemp1

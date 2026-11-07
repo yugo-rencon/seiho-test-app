@@ -177,8 +177,9 @@ const subject = "2024年9月〜2025年3月実施 フォームB";
                     :subject="subject"
                     questionTitle="解約"
                     :contents="[
+                        // rev: 2026-11-07 確認済み
                         '正しい',
-                        '', //p
+                        '変動保険金額分 → 基本保険金額分', //p19
                         '正しい',
                     ]"
                 />

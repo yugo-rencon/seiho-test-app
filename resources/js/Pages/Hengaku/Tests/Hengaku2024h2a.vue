@@ -176,7 +176,8 @@ const subject = "2024年9月〜2025年3月実施 フォームA";
                     :subject="subject"
                     questionTitle="変額保険と税"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-07 確認済み
+                        '所得税 → 贈与税', //p21
                         '正しい',
                         '正しい',
                     ]"

@@ -95,9 +95,10 @@ const subject = "2026年4月〜8月実施 フォームB";
                     :subject="subject"
                     questionTitle="変額保険と税"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-07 確認済み
+                        '個人年金保険料控除 → 一般生命保険料控除', //p21
                         '正しい',
-                        '', //p
+                        '贈与税 → 相続税', //p21
                     ]"
                 />
                 <QuestionTemp1

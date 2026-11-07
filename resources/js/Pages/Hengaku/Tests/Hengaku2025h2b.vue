@@ -172,9 +172,10 @@ const subject = "2025年9月〜2026年3月実施 フォームB";
                     :subject="subject"
                     questionTitle="募集上の禁止・留意事項"
                     :contents="[
+                        // rev: 2026-11-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '「特別の利益の提供」に[[該当する]]。', //p30
                     ]"
                 />
                 <QuestionTemp1

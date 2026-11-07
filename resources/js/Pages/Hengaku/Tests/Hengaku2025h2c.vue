@@ -184,9 +184,10 @@ const subject = "2025年9月〜2026年3月実施 フォームC";
                     :subject="subject"
                     questionTitle="募集上の禁止・留意事項"
                     :contents="[
+                        // rev: 2026-11-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '「不適正な乗換募集」として[[法律で禁止されている]]。', //p31
                     ]"
                 />
                 <QuestionTemp1

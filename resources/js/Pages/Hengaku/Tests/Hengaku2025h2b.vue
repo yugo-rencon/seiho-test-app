@@ -160,7 +160,8 @@ const subject = "2025年9月〜2026年3月実施 フォームB";
                     :subject="subject"
                     questionTitle="変額保険の保険金と税"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-07 確認済み
+                        '相続税 → 所得税', //p21
                         '正しい',
                         '正しい',
                     ]"

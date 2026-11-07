@@ -183,8 +183,9 @@ const subject = "2023年4月〜8月実施 フォームA";
                     :subject="subject"
                     questionTitle="変額保険の保険金と税"
                     :contents="[
+                        // rev: 2026-11-07 確認済み
                         '正しい',
-                        '', //p
+                        '相続税 → 所得税', //p21
                         '正しい',
                     ]"
                 />

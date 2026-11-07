@@ -165,7 +165,8 @@ const subject = "2025年4月〜8月実施 フォームA";
                     :subject="subject"
                     questionTitle="契約者貸付"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-07 確認済み
+                        '既払込保険料総額 → 解約返戻金', //p18
                         '正しい',
                         '正しい',
                     ]"

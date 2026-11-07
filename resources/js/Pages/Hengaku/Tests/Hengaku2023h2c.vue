@@ -129,9 +129,10 @@ const subject = "2023年9月〜2024年3月実施 フォームC";
                     :subject="subject"
                     questionTitle="剰余金と配当金"
                     :contents="[
+                        // rev: 2026-11-07 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '変額保険には長期継続契約に割り当てられる特別配当はない。', //p12
                     ]"
                 />
                 <QuestionTemp1

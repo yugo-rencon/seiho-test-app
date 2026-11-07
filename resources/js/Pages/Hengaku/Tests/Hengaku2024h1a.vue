@@ -161,7 +161,8 @@ const subject = "2024年4月〜8月実施 フォームA";
                     :subject="subject"
                     questionTitle="失効・復活"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-07 確認済み
+                        '１年 → 3カ月', //p18
                         '正しい',
                         '正しい',
                     ]"

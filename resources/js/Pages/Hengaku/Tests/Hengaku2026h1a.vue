@@ -297,9 +297,10 @@ const subject = "2026年4月〜8月実施 フォームA";
                     :useAnswerLabelForAll="true"
                     :items="[
                         {
+                            // rev: 2026-11-07 確認済み
                             questionTitle: '変額保険と変額個人年金保険の発売時期',
-                            content: '',
-                        }, //31 //p
+                            content: '1986年（昭和61年）に「変額保険」が、[[1999年（平成11年）には「変額個人年金保険」]]が発売されている。', //p1
+                        }, //31
                         {
                             questionTitle: '変額保険の特約による給付金',
                             content: '',

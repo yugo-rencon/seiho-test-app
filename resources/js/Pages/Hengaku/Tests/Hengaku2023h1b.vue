@@ -192,8 +192,9 @@ const subject = "2023年4月〜8月実施 フォームB";
                     :subject="subject"
                     questionTitle="変額保険の販売資格"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
-                        '', //p
+                        '法務省 → 生命保険協会', //p27
                         '正しい',
                     ]"
                 />

@@ -297,9 +297,10 @@ const subject = "2023年4月〜8月実施 フォームA";
                     :useAnswerLabelForAll="true"
                     :items="[
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '変額保険の特約による保険金',
-                            content: '',
-                        }, //31 //p
+                            content: '定期保険特約などにもとづいて支払われる保険金の金額は[[一定であり、変動しない]]。', //p11
+                        }, //31
                         {
                             // rev: 2026-11-05 確認済み
                             questionTitle: '変額個人年金保険の特徴',

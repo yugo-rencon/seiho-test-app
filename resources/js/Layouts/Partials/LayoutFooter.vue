@@ -4,6 +4,7 @@ import { computed } from "vue";
 
 const props = defineProps({
     brandName: { type: String, default: "生保講座過去問解説" },
+    mobileBrandName: { type: String, default: "" },
     homeRouteName: { type: String, default: "tests.index" },
     logoSrc: { type: String, default: "/images/rencon-favicon.svg" },
     isHengaku: { type: Boolean, default: false },
@@ -61,13 +62,16 @@ const tokushoRouteName = computed(() => {
                         <span
                             class="bg-clip-text text-base font-bold text-transparent bg-gradient-to-r from-blue-600 to-cyan-500"
                         >
-                            {{ brandName }}
+                            <span class="md:hidden">{{ mobileBrandName || brandName }}</span>
+                            <span class="hidden md:inline">{{ brandName }}</span>
                         </span>
                         <span class="mt-1 text-xs text-gray-500">
                             ※本サイトは非公式です
                         </span>
                         <span class="mt-3 text-xs text-gray-400">
-                            © 2026 {{ brandName }}
+                            © 2026
+                            <span class="md:hidden">{{ mobileBrandName || brandName }}</span>
+                            <span class="hidden md:inline">{{ brandName }}</span>
                         </span>
                     </div>
                 </div>
@@ -244,13 +248,16 @@ const tokushoRouteName = computed(() => {
                                       : 'bg-gradient-to-r from-indigo-600 to-purple-600'
                             "
                         >
-                            {{ brandName }}
+                            <span class="md:hidden">{{ mobileBrandName || brandName }}</span>
+                            <span class="hidden md:inline">{{ brandName }}</span>
                         </span>
                         <span class="mt-1 text-xs text-gray-500">
                             ※本サイトは非公式です
                         </span>
                         <span class="mt-3 text-xs text-gray-400">
-                            © 2026 {{ brandName }}
+                            © 2026
+                            <span class="md:hidden">{{ mobileBrandName || brandName }}</span>
+                            <span class="hidden md:inline">{{ brandName }}</span>
                         </span>
                     </div>
                 </div>

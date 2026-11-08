@@ -12,14 +12,17 @@ const visibleYears = computed(() => hengakuYearsForPeriod(activePeriod.value.id)
 </script>
 
 <template>
-    <SeihoTestLayout title="変額保険 過去問解説" site-scope="hengaku">
+    <SeihoTestLayout title="変額保険販売資格 過去問解説" site-scope="hengaku">
         <div class="container mx-auto my-10 max-w-6xl px-5 sm:px-6">
             <div class="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:rounded-3xl sm:p-8">
                 <div class="pointer-events-none absolute -right-24 -top-24 hidden h-56 w-56 rounded-full bg-gradient-to-br from-teal-100 to-cyan-100 opacity-40 blur-3xl md:block" />
                 <div class="relative">
-                    <h1 class="sr-only">変額保険 過去問解説</h1>
+                    <h1 class="sr-only">変額保険販売資格 過去問解説</h1>
                     <div class="mb-4 rounded-xl border border-teal-200 bg-teal-50/80 px-3 py-2 text-center text-teal-800 sm:mb-5 sm:px-4 sm:py-3">
-                        <p class="text-[13px] font-bold tracking-wide sm:text-sm">変額保険の過去問解説サイト</p>
+                        <p class="text-[13px] font-bold tracking-wide sm:text-sm">
+                            <span class="sm:hidden">変額保険の過去問解説サイト</span>
+                            <span class="hidden sm:inline">変額保険販売資格の過去問解説サイト</span>
+                        </p>
                         <p class="mt-1 text-[10px] font-semibold text-teal-700/90 sm:text-xs">2023年〜2026年の試験を掲載しています。</p>
                     </div>
                     <SisterSiteLinks current-site="hengaku" class="mb-4" />

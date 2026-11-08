@@ -296,9 +296,10 @@ const subject = "2023年9月〜2024年3月実施 フォームC";
                     :useAnswerLabelForAll="true"
                     :items="[
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '付加保険料',
-                            content: '',
-                        }, //31 //p
+                            content: '特別勘定 → 一般勘定', //p10
+                        }, //31
                         {
                             // rev: 2026-11-08 確認済み
                             questionTitle: '特約による保険金・給付金',

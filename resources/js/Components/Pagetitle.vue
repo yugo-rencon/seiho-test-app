@@ -35,7 +35,13 @@ const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "
                   : 'bg-gradient-to-b from-blue-500 to-purple-500'
           "
         ></div>
-        <h1 class="text-xl font-extrabold text-gray-800 leading-tight">{{ props.title }}</h1>
+        <h1 class="text-xl font-extrabold text-gray-800 leading-tight">
+          <template v-if="isHengaku">
+            <span class="md:hidden">{{ props.title }}</span>
+            <span class="hidden md:inline">変額保険販売資格</span>
+          </template>
+          <template v-else>{{ props.title }}</template>
+        </h1>
       </div>
       <p class="text-gray-600 font-extrabold text-base mt-2">{{ props.description }}</p>
     </div>

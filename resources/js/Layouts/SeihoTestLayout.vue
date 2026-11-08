@@ -52,13 +52,16 @@ const isOuyouPage = computed(() => resolvedSiteScope.value === "ouyou");
 const isIppanPage = computed(() => resolvedSiteScope.value === "ippan");
 const currentBrandName = computed(() => {
     if (props.brandName) return props.brandName;
-    if (isHengakuPage.value) return "変額保険 過去問解説";
+    if (isHengakuPage.value) return "変額保険販売資格 過去問解説";
     if (isDaigakuPage.value) return "生命保険大学課程 過去問解説";
     if (isSenmonPage.value) return "生命保険専門課程 過去問解説";
     if (isOuyouPage.value) return "生命保険応用課程 過去問解説";
     if (isIppanPage.value) return "生命保険一般課程 過去問解説";
     return "生保講座過去問解説";
 });
+const currentMobileBrandName = computed(() =>
+    isHengakuPage.value ? "変額保険 過去問解説" : currentBrandName.value,
+);
 const currentHomeRouteName = computed(() => {
     if (isHengakuPage.value) return "hengaku.index";
     if (isDaigakuPage.value) return "daigaku.index";
@@ -424,6 +427,7 @@ onBeforeUnmount(() => {
             :is-authenticated="isAuthenticated"
             :is-admin="isAdmin"
             :brand-name="currentBrandName"
+            :mobile-brand-name="currentMobileBrandName"
             :home-route-name="currentHomeRouteName"
             :logo-src="currentLogoSrc"
             :is-daigaku="isDaigakuPage"
@@ -459,6 +463,7 @@ onBeforeUnmount(() => {
             :is-hengaku="isHengakuPage"
             :hide-pricing-ui="isHengakuPage"
             :brand-name="currentBrandName"
+            :mobile-brand-name="currentMobileBrandName"
             :home-route-name="currentHomeRouteName"
             :logo-src="currentLogoSrc"
             :is-daigaku="isDaigakuPage"

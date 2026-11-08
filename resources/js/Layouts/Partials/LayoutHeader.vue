@@ -7,6 +7,7 @@ const props = defineProps({
     isAuthenticated: { type: Boolean, default: false },
     isAdmin: { type: Boolean, default: false },
     brandName: { type: String, default: "生保講座過去問解説" },
+    mobileBrandName: { type: String, default: "" },
     homeRouteName: { type: String, default: "tests.index" },
     logoSrc: { type: String, default: "/images/rencon-favicon.svg" },
     isHengaku: { type: Boolean, default: false },
@@ -60,7 +61,8 @@ const isActive = (name) => route().current(name);
                                       : 'bg-gradient-to-r from-indigo-600 to-purple-600'
                         "
                     >
-                        {{ brandName }}
+                        <span class="sm:hidden">{{ mobileBrandName || brandName }}</span>
+                        <span class="hidden sm:inline">{{ brandName }}</span>
                     </span>
                 </Link>
 

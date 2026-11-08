@@ -297,9 +297,10 @@ const subject = "2023年9月〜2024年3月実施 フォームA";
                     :useAnswerLabelForAll="true"
                     :items="[
                         {
+                            // rev: 2026-11-08 確認済み
                             questionTitle: '特約保険料',
-                            content: '',
-                        }, //31 //p
+                            content: '特別勘定 → 一般勘定', //p11
+                        }, //31
                         {
                             questionTitle: '変額個人年金保険の年金額',
                             content: '',

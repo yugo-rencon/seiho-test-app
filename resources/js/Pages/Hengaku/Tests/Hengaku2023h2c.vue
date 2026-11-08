@@ -312,9 +312,10 @@ const subject = "2023年9月〜2024年3月実施 フォームC";
                             content: '',
                         }, //35 //p
                         {
+                            // rev: 2026-11-08 確認済み
                             questionTitle: '前納',
-                            content: '',
-                        }, //36 //p
+                            content: '前納による保険料の払い込みも取り扱っている。', //p16
+                        }, //36
                         {
                             questionTitle: '減額',
                             content: '',

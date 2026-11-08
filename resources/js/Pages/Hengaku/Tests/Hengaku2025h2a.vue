@@ -307,9 +307,10 @@ const subject = "2025年9月〜2026年3月実施 フォームA";
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-11-08 確認済み
                             questionTitle: '前納',
-                            content: '',
-                        }, //34 //p
+                            content: '前納による保険料の払い込みも取り扱っている。', //p16
+                        }, //34
                         {
                             questionTitle: '復活',
                             content: '',

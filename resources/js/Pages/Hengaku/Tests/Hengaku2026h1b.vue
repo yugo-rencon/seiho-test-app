@@ -317,9 +317,10 @@ const subject = "2026年4月〜8月実施 フォームB";
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-11-08 確認済み
                             questionTitle: '前納',
-                            content: '',
-                        }, //35 //p
+                            content: '前納による保険料の払い込みも取り扱っている。', //p16
+                        }, //35
                         {
                             // rev: 2026-11-04 確認済み
                             questionTitle: '減額',

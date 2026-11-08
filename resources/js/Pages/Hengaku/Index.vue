@@ -23,7 +23,17 @@ const visibleYears = computed(() => hengakuYearsForPeriod(activePeriod.value.id)
                             <span class="sm:hidden">変額保険の過去問解説サイト</span>
                             <span class="hidden sm:inline">変額保険販売資格の過去問解説サイト</span>
                         </p>
-                        <p class="mt-1 text-[10px] font-semibold text-teal-700/90 sm:text-xs">2023年〜2026年の試験を掲載しています。</p>
+                        <div class="mt-1 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
+                            <span class="min-w-0 text-center text-[10px] font-semibold text-teal-700/90 sm:text-xs">
+                                シリーズ累計ユーザー数 2,000名突破！
+                            </span>
+                            <a
+                                href="#hengaku-period-label"
+                                class="inline-flex shrink-0 items-center gap-1 rounded-full border border-teal-200 bg-white px-2.5 py-1 text-[11px] font-bold text-teal-700 shadow-sm transition hover:border-teal-300 hover:bg-teal-100 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-1 sm:px-3 sm:text-xs"
+                            >
+                                すべての解説を見る <span aria-hidden="true">▶</span>
+                            </a>
+                        </div>
                     </div>
                     <SisterSiteLinks current-site="hengaku" class="mb-4" />
 

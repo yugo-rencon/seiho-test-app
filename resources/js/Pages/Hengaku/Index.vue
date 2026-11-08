@@ -20,7 +20,7 @@ const visibleYears = computed(() => hengakuYearsForPeriod(activePeriod.value.id)
                     <h1 class="sr-only">変額保険 過去問解説</h1>
                     <div class="mb-4 rounded-xl border border-teal-200 bg-teal-50/80 px-3 py-2 text-center text-teal-800 sm:mb-5 sm:px-4 sm:py-3">
                         <p class="text-[13px] font-bold tracking-wide sm:text-sm">変額保険の過去問解説サイト</p>
-                        <p class="mt-1 text-[10px] font-semibold text-teal-700/90 sm:text-xs">2023年〜2026年の試験を順次掲載します。解説は現在作成中です。</p>
+                        <p class="mt-1 text-[10px] font-semibold text-teal-700/90 sm:text-xs">2023年〜2026年の試験を掲載しています。</p>
                     </div>
                     <SisterSiteLinks current-site="hengaku" class="mb-4" />
 
@@ -40,16 +40,11 @@ const visibleYears = computed(() => hengakuYearsForPeriod(activePeriod.value.id)
                             <h2 class="text-base font-bold text-gray-900 sm:text-lg">{{ year >= 2025 ? `${year}年` : `${year}年度` }}</h2>
                             <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
                                 <template v-for="form in activePeriod.forms" :key="form">
-                                <Link v-if="hengakuTestRoute(year, activePeriod.id, form)"
-                                    :href="route(hengakuTestRoute(year, activePeriod.id, form))"
-                                    class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-teal-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-teal-700 transition hover:bg-teal-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm">
-                                    フォーム{{ form.toUpperCase() }}
-                                </Link>
-                                <button v-else type="button" disabled
-                                    class="inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border border-teal-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-teal-700 disabled:cursor-default sm:w-auto sm:px-4 sm:py-2 sm:text-sm">
-                                    <span>フォーム{{ form.toUpperCase() }}</span>
-                                    <span class="rounded-full bg-teal-50 px-2 py-0.5 text-[10px]">準備中</span>
-                                </button>
+                                    <Link
+                                        :href="route(hengakuTestRoute(year, activePeriod.id, form))"
+                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-teal-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-teal-700 transition hover:bg-teal-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm">
+                                        フォーム{{ form.toUpperCase() }}
+                                    </Link>
                                 </template>
                             </div>
                         </section>

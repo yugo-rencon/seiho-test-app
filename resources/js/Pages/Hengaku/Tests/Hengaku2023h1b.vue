@@ -164,9 +164,10 @@ const subject = "2023年4月〜8月実施 フォームB";
                     :subject="subject"
                     questionTitle="変額個人年金保険の仕組み"
                     :contents="[
+                        // rev: 2026-11-08 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '年金支払開始日前の解約は可能だが、[[年金支払開始日以降の解約はできない]]。', //p13
                     ]"
                 />
                 <QuestionTemp1

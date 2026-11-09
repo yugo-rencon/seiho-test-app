@@ -228,8 +228,9 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '流通税',
-                            content: '',
+                            content: '流通税は、財産移転の事実に基づいて課税されるもので、印紙税、[[不動産取得税]]等が該当する。', //p4
                         }, //31
                         {
                             // rev: 2026-11-09 確認済み

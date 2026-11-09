@@ -110,6 +110,7 @@ const subject = "2023年度 フォームC";
                     :contents="[
                         // 問21
                         {
+                            // rev: 2026-11-09 確認済み
                             answer: '800万円',
                             questionTitle: '退職所得の金額',
                             explanation: [
@@ -213,8 +214,9 @@ const subject = "2023年度 フォームC";
                     :subject="subject"
                     questionTitle="所得税"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
-                        '12種類 → 15種類', //p11
+                        '12種類 → 16種類（2026年時点）', //p11
                         '正しい',
                     ]"
                 />

@@ -110,6 +110,7 @@ const subject = "2022年度 フォームC";
                     :contents="[
                         // 問21
                         {
+                            // rev: 2026-11-09 確認済み
                             answer: '425万円',
                             questionTitle: '退職所得の金額',
                             explanation: [

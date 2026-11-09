@@ -110,6 +110,7 @@ const subject = "2024年度 フォームC";
                     :contents="[
                         // 問21
                         {
+                            // rev: 2026-11-09 確認済み
                             answer: '800万円',
                             questionTitle: '退職所得の金額',
                             explanation: [
@@ -214,7 +215,8 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     questionTitle="所得税"
                     :contents="[
-                        '租税特別措置法によるもの → その他の法律によるもの。', //p8-9
+                        // rev: 2026-11-09 確認済み
+                        '租税特別措置法によるもの → その他の法律によるもの。', //p9
                         '正しい',
                         '正しい',
                     ]"

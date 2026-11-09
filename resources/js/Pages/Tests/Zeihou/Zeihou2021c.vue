@@ -119,9 +119,10 @@ const subject = "2021年度 フォームC";
                     :subject="subject"
                     questionTitle="遺産分割の方法"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
-                        '満18歳以上 → 満15歳以上', //p72
-                        '法定相続分 → 遺留分', //p73
+                        '満18歳以上 → 満15歳以上', //p73
+                        '法定相続分 → 遺留分', //p74
                     ]"
                 />
                 <QuestionTemp1

@@ -234,9 +234,10 @@ const subject = "2023年度 フォームB";
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '遺産分割の方法',
-                            content: '満20歳以上 → 満15歳以上',
-                        }, //34 p72
+                            content: '満20歳以上 → 満15歳以上', //p73
+                        }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '税額控除',

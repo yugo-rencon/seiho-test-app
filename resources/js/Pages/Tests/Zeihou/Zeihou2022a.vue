@@ -231,9 +231,10 @@ const subject = "2022年度 フォームA";
                             content: '所得税基本通達 → 租税特別措置法',
                         }, //33 p36
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '遺産分割の方法',
-                            content: '相続税法 → 民法',
-                        }, //34 p72
+                            content: '相続税法 → 民法', //p73
+                        }, //34
                         {
                             questionTitle: '教育資金一括贈与の非課税措置',
                             content: '3000万円 → 1500万円',

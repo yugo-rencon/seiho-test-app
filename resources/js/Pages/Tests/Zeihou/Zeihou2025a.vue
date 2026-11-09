@@ -180,9 +180,10 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="遺産分割の方法"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '寄与分 → 遺留分', //p74
                     ]"
                 />
                 <QuestionTemp1

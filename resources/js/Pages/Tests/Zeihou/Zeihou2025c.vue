@@ -130,9 +130,10 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="法人税の性格"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
+                        '法人擬制説 → 法人実在説', //p117
+                        '法人実在説 → 法人擬制説', //p117
                     ]"
                 />
                 <QuestionTemp1

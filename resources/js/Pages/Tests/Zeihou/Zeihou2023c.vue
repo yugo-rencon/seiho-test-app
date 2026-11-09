@@ -269,9 +269,10 @@ const subject = "2023年度 フォームC";
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '法人税の性格',
-                            content: '法人実在説 → 法人擬制説',
-                        }, //34 p118
+                            content: '法人実在説 → 法人擬制説', //p117
+                        }, //34
                         {
                             questionTitle: '法人の確定申告',
                             content: ' 3ヶ月以内 → 2ヶ月以内',

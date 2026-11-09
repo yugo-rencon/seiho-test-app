@@ -108,9 +108,10 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="所得税の配偶者控除と配偶者特別控除"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-09 確認済み
+                        '103万円 → 62万円', //p47
                         '正しい',
-                        '', //p
+                        '800万円 → 1000万円', //p48
                     ]"
                 />
                 <QuestionTemp1

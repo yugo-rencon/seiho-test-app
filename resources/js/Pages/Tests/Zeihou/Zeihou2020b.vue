@@ -188,9 +188,10 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="固定資産税"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '正しい',
-                        '10年度間 → 5年度間', //p159
+                        '10年度間 → 5年度間', //p159（新教科書に記載なし？）
                     ]"
                 />
                 <QuestionTemp1

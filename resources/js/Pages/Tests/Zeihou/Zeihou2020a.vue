@@ -242,9 +242,10 @@ const subject = "2020年度 フォームA";
                             content: '正しい',
                         }, //34
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '相続税の申告と納税',
-                            content: '6ヶ月以内 → 10ヶ月以内',
-                        }, //35 p94
+                            content: '6ヶ月以内 → 10ヶ月以内', //p95
+                        }, //35
                         {
                             questionTitle: '贈与税の配偶者控除',
                             content: '10年以上 → 20年以上<br>2回まで → 一生に1回',

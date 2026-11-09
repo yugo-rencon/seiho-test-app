@@ -177,7 +177,8 @@ const subject = "2021年度 フォームB";
                     :subject="subject"
                     questionTitle="相続税の申告と納税"
                     :contents="[
-                        '6ヶ月以内 → 10ヶ月以内', //p94
+                        // rev: 2026-11-09 確認済み
+                        '6ヶ月以内 → 10ヶ月以内', //p95
                         '正しい',
                         '正しい',
                     ]"

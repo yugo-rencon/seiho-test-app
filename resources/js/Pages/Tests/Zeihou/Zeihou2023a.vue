@@ -212,8 +212,9 @@ const subject = "2023年度 フォームA";
                     :subject="subject"
                     questionTitle="生命保険会社と税"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
-                        '雑所得 → 事業所得', //p227
+                        '雑所得 → 事業所得', //p225
                         '正しい',
                     ]"
                 />

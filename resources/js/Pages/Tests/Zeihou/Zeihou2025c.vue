@@ -216,8 +216,9 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="生命保険会社と税"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
-                        '', //p
+                        '雑所得 → 事業所得', //p225
                         '正しい',
                     ]"
                 />

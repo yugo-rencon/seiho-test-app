@@ -210,8 +210,9 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="生命保険会社と税"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
-                        '10% → 7%', //p225
+                        '10% → ７%', //p223
                         '正しい',
                     ]"
                 />

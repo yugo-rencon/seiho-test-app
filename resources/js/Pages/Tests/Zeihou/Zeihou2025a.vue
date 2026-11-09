@@ -168,7 +168,8 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="税率"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-09 確認済み
+                        '比例税率 → 累進税率', //p5
                         '正しい',
                         '正しい',
                     ]"

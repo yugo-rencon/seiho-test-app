@@ -164,7 +164,8 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="税率"
                     :contents="[
-                        '比例税率 → 累進税率 ', //p5
+                        // rev: 2026-11-09 確認済み
+                        '比例税率 → 累進税率', //p5
                         '正しい',
                         '正しい',
                     ]"

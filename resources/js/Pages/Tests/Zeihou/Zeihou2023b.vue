@@ -260,9 +260,10 @@ const subject = "2023年度 フォームB";
                             content: '正しい',
                         }, //37
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '最低課税方式',
-                            content: '13% → 7%',
-                        }, //38 p225
+                            content: '13% → 7%', //p223
+                        }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員報酬の必要経費',

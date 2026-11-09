@@ -303,9 +303,10 @@ const subject = "2024年度 フォームC";
                             content: '正しい',
                         }, //39
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '最低課税方式',
-                            content: '14% → 7%',
-                        }, //40 p225
+                            content: '14% → 7%', //p223
+                        }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '給与所得',

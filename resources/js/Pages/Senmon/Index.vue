@@ -132,7 +132,7 @@ const getFormLabel = (year, periodId, form) => {
                         <div v-for="year in visibleYears" :key="year" class="p-4 md:p-6">
                             <div class="flex items-center gap-2">
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
-                                    {{ Number(year) >= 2025 ? `${year}年` : `${year}年度` }}
+                                    {{ `${year}年` }}
                                 </div>
                                 <span
                                     v-if="Number(year) === 2026 && activePeriod.id === 'apr-aug' && !hasPremium"
@@ -145,7 +145,7 @@ const getFormLabel = (year, periodId, form) => {
                                 v-if="Number(year) === 2021 && activePeriod.id === 'apr-aug'"
                                 class="mt-1 text-[11px] text-gray-500"
                             >
-                                ※2021年度は5月〜8月実施です。
+                                ※2021年は5月〜8月実施です。
                             </p>
 
                             <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">

@@ -50,7 +50,7 @@ const visibleYears = computed(() => hengakuYearsForPeriod(activePeriod.value.id)
 
                     <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
                         <section v-for="year in visibleYears" :key="`${activePeriod.id}-${year}`" class="p-4 md:p-6">
-                            <h2 class="text-base font-bold text-gray-900 sm:text-lg">{{ year >= 2025 ? `${year}年` : `${year}年度` }}</h2>
+                            <h2 class="text-base font-bold text-gray-900 sm:text-lg">{{ `${year}年` }}</h2>
                             <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
                                 <template v-for="form in activePeriod.forms" :key="form">
                                     <Link

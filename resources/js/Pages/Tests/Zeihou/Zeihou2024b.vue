@@ -120,9 +120,10 @@ const subject = "2024年度 フォームB";
                     :subject="subject"
                     questionTitle="所得税額の計算"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
-                        '4 → 5',
-                        '事業用 → 居住用', //p55
+                        '4 → 5', //p53
+                        '事業用 → 居住用', //p56
                     ]"
                 />
                 <QuestionTemp1

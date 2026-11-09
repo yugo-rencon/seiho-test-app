@@ -225,9 +225,10 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '所得税額の計算',
-                            content: '順次低い税率 → 順次高い税率',
-                        }, //31 p51
+                            content: '順次低い税率 → 順次高い税率', //p52
+                        }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '空き家に係る譲渡所得の特別控除の特例',

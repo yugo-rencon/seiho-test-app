@@ -120,9 +120,10 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="所得税額の計算"
                     :contents="[
-                        '4 → 5',
+                        // rev: 2026-11-09 確認済み
+                        '4 → 5', //p53
                         '正しい',
-                        '所得控除 → 税額控除', //p55
+                        '所得控除 → 税額控除', //p56
                     ]"
                 />
                 <QuestionTemp1

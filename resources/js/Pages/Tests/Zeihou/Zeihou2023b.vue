@@ -180,7 +180,8 @@ const subject = "2023年度 フォームB";
                     :subject="subject"
                     questionTitle="所得税額の計算"
                     :contents="[
-                        '逓増税率 → 超過累進税率', //p51
+                        // rev: 2026-11-09 確認済み
+                        '逓増税率 → 超過累進税率', //p52
                         '正しい',
                         '正しい',
                     ]"

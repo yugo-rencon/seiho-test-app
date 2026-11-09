@@ -192,9 +192,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="相続時精算課税制度"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '相続時点での評価額 → 贈与時点での評価額', //p104
                     ]"
                 />
                 <QuestionTemp1

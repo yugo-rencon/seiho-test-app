@@ -244,9 +244,10 @@ const subject = "2022年度 フォームC";
                     :subject="subject"
                     questionTitle="確定拠出年金制度の税制上の取扱い"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '正しい',
-                        '雑所得で課税対象 → 非課税', //p221
+                        '障害給付金は[[非課税]]。', //p219
                     ]"
                 />
                 <QuestionTemp2

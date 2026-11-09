@@ -180,9 +180,10 @@ const subject = "2021年度 フォームA";
                     :subject="subject"
                     questionTitle="相続税の課税財産"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '正しい',
-                        '1,000万円 → 500万円', //p79
+                        '1000万円 → 500万円', //p78
                     ]"
                 />
                 <QuestionTemp1

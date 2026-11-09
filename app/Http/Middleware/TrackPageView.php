@@ -118,6 +118,7 @@ class TrackPageView
             str_starts_with($path, '/ippan') => 'ippan',
             str_starts_with($path, '/senmon') => 'senmon',
             str_starts_with($path, '/ouyou') => 'ouyou',
+            str_starts_with($path, '/hengaku') => 'hengaku',
             default => 'seiho',
         };
     }

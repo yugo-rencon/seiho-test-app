@@ -23,7 +23,7 @@ class AdminController extends Controller
             return response()->json(['rows' => []]);
         }
 
-        $cacheKey = 'admin.monthly-page-views-by-scope.v1';
+        $cacheKey = 'admin.monthly-page-views-by-scope.v2';
         if ($request->boolean('refresh')) {
             Cache::forget($cacheKey);
         }
@@ -32,11 +32,11 @@ class AdminController extends Controller
             return DB::table('page_views')
                 ->where('path', 'not like', '/admin%')
                 ->where('path', 'not like', '/daigaku/admin%')
-                ->whereIn('scope', ['seiho', 'daigaku', 'ouyou', 'senmon', 'ippan'])
+                ->whereIn('scope', ['seiho', 'daigaku', 'ouyou', 'senmon', 'ippan', 'hengaku'])
                 ->selectRaw("DATE_FORMAT(viewed_at, '%Y-%m') as month")
-                ->addSelect('scope')
+                ->selectRaw("CASE WHEN path LIKE '/hengaku%' THEN 'hengaku' ELSE scope END as scope")
                 ->selectRaw('COUNT(*) as views')
-                ->groupBy('month', 'scope')
+                ->groupByRaw("month, CASE WHEN path LIKE '/hengaku%' THEN 'hengaku' ELSE scope END")
                 ->orderByDesc('month')
                 ->get();
         });

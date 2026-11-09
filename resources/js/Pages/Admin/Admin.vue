@@ -330,6 +330,14 @@ const OUYOU_PERIODS = [
 ];
 const OUYOU_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 
+// 変額保険販売資格
+const HENGAKU_PERIODS = [
+    { key: "h1", label: "4-8月", forms: ["a", "b"] },
+    { key: "h2", label: "9-3月", forms: ["a", "b", "c", "d"] },
+];
+const HENGAKU_YEARS = [2026, 2025, 2024, 2023];
+const hengakuPeriodsForYear = (year) => HENGAKU_PERIODS.filter((period) => year !== 2026 || period.key === "h1");
+
 // 生保大学
 const DAIGAKU_SUBJECTS = [
     { key: "shikumi", label: "生命保険のしくみと個人保険商品" },
@@ -343,7 +351,7 @@ const DAIGAKU_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const DAIGAKU_FORMS = ["a", "b", "c"];
 
 // タブ状態
-const releaseGroup = ref("seiho"); // "seiho" | "ippan" | "senmon" | "ouyou" | "daigaku"
+const releaseGroup = ref("seiho"); // "seiho" | "ippan" | "senmon" | "ouyou" | "hengaku" | "daigaku"
 const releaseSeihoTab = ref("souron");
 const releaseDaigakuTab = ref("shikumi");
 
@@ -452,6 +460,7 @@ const groupStats = computed(() => {
     const ippanKeys = IPPAN_YEARS.flatMap((y) => ippanPeriodsForYear(y).flatMap((p) => IPPAN_FORMS.map((f) => `ippan-${y}-${p.key}-${f}`)));
     const senmonKeys = SENMON_YEARS.flatMap((y) => SENMON_PERIODS.flatMap((p) => p.forms.map((f) => `senmon-${y}-${p.key}-${f}`)));
     const ouyouKeys = OUYOU_YEARS.flatMap((y) => OUYOU_PERIODS.flatMap((p) => p.forms.map((f) => `ouyou-${y}-${p.key}-${f}`)));
+    const hengakuKeys = HENGAKU_YEARS.flatMap((y) => hengakuPeriodsForYear(y).flatMap((p) => p.forms.map((f) => `hengaku-${y}-${p.key}-${f}`)));
     const daigakuKeys = DAIGAKU_SUBJECTS.flatMap((s) => DAIGAKU_YEARS.flatMap((y) => DAIGAKU_FORMS.map((f) => `daigaku-${s.key}-${y}-${f}`)));
 
     return {
@@ -459,6 +468,7 @@ const groupStats = computed(() => {
         ippan: count(ippanKeys),
         senmon: count(senmonKeys),
         ouyou: count(ouyouKeys),
+        hengaku: count(hengakuKeys),
         daigaku: count(daigakuKeys),
     };
 });
@@ -482,6 +492,7 @@ const btnClass = (testKey) => {
         ouyou: "border border-amber-500 bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(245,158,11,0.35)]",
         senmon: "border border-emerald-500 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(16,185,129,0.35)]",
         ippan: "border border-fuchsia-500 bg-gradient-to-br from-fuchsia-400 to-fuchsia-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(217,70,239,0.35)]",
+        hengaku: "border border-teal-500 bg-gradient-to-br from-teal-400 to-cyan-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_2px_6px_rgba(20,184,166,0.35)]",
     };
     const pendingReleasedByGroup = {
         seiho: "border border-violet-400 bg-violet-400 text-white shadow-sm",
@@ -489,6 +500,7 @@ const btnClass = (testKey) => {
         ouyou: "border border-amber-400 bg-amber-400 text-white shadow-sm",
         senmon: "border border-emerald-400 bg-emerald-400 text-white shadow-sm",
         ippan: "border border-fuchsia-400 bg-fuchsia-400 text-white shadow-sm",
+        hengaku: "border border-teal-400 bg-teal-400 text-white shadow-sm",
     };
 
     if (pending && released) return pendingReleasedByGroup[releaseGroup.value] ?? pendingReleasedByGroup.seiho;
@@ -684,6 +696,7 @@ const scopeLabel = (scope) => {
     if (scope === "ippan") return "一般課程";
     if (scope === "senmon") return "専門課程";
     if (scope === "ouyou") return "応用課程";
+    if (scope === "hengaku") return "変額保険";
     if (scope === "basic") return "一般・専門・応用セット";
     return scope || "-";
 };
@@ -694,6 +707,7 @@ const scopeShortLabel = (scope) => {
     if (scope === "ippan") return "一般";
     if (scope === "senmon") return "専門";
     if (scope === "ouyou") return "応用";
+    if (scope === "hengaku") return "変額";
     if (scope === "basic") return "セット";
     return scope || "-";
 };
@@ -704,6 +718,7 @@ const scopeClass = (scope) => {
     if (scope === "ouyou") return "bg-amber-50 text-amber-700";
     if (scope === "senmon") return "bg-emerald-50 text-emerald-700";
     if (scope === "ippan") return "bg-fuchsia-50 text-fuchsia-700";
+    if (scope === "hengaku") return "bg-teal-50 text-teal-700";
     if (scope === "basic") return "bg-cyan-100 text-cyan-700";
     return "bg-gray-100 text-gray-600";
 };
@@ -719,7 +734,7 @@ const monthlyPageViewsByScope = ref([]);
 const monthlyPageViewsLoading = ref(false);
 const monthlyPageViewsLoaded = ref(false);
 const monthlyPageViewsError = ref("");
-const pageViewScopes = ["seiho", "daigaku", "ouyou", "senmon", "ippan"];
+const pageViewScopes = ["seiho", "daigaku", "ouyou", "senmon", "ippan", "hengaku"];
 const monthlyPageViewRows = computed(() => {
     const months = new Map();
 
@@ -1095,6 +1110,11 @@ const releaseTheme = {
         activeButton: "border-fuchsia-500 bg-gradient-to-br from-fuchsia-500 to-pink-500 text-white shadow-md ring-1 ring-fuchsia-300/60",
         activeTab: "border-fuchsia-200 bg-fuchsia-50 text-fuchsia-700",
         progressBar: "bg-gradient-to-r from-fuchsia-500 to-pink-500",
+    },
+    hengaku: {
+        activeButton: "border-teal-500 bg-gradient-to-br from-teal-500 to-cyan-500 text-white shadow-md ring-1 ring-teal-300/60",
+        activeTab: "border-teal-200 bg-teal-50 text-teal-700",
+        progressBar: "bg-gradient-to-r from-teal-500 to-cyan-500",
     },
 };
 
@@ -2190,6 +2210,7 @@ const peakHour2h = computed(() => {
                             { key: 'ouyou', label: '応用課程' },
                             { key: 'senmon', label: '専門課程' },
                             { key: 'ippan', label: '一般課程' },
+                            { key: 'hengaku', label: '変額保険' },
                         ]"
                         :key="key"
                         type="button"
@@ -2346,6 +2367,37 @@ const peakHour2h = computed(() => {
                                             <td v-for="f in period.forms" :key="f" class="px-4 py-2.5 text-center">
                                                 <button type="button" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition" :class="btnClass(`ouyou-${year}-${period.key}-${f}`)" @click="toggleRelease(`ouyou-${year}-${period.key}-${f}`)">
                                                     {{ isReleased(`ouyou-${year}-${period.key}-${f}`) ? "✓" : "–" }}
+                                                </button>
+                                            </td>
+                                            <td v-for="_ in 4 - period.forms.length" :key="_" class="px-4 py-2.5" />
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- 変額保険販売資格：年度×期×フォーム -->
+                <template v-if="releaseGroup === 'hengaku'">
+                    <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-sm">
+                                <thead class="bg-slate-50 text-left text-slate-600">
+                                    <tr>
+                                        <th class="px-4 py-2.5 font-semibold">年度</th>
+                                        <th class="px-4 py-2.5 font-semibold">月</th>
+                                        <th v-for="f in ['a', 'b', 'c', 'd']" :key="f" class="px-4 py-2.5 text-center font-semibold uppercase">{{ f }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template v-for="year in HENGAKU_YEARS" :key="year">
+                                        <tr v-for="(period, pIdx) in hengakuPeriodsForYear(year)" :key="`${year}-${period.key}`" class="border-t border-slate-100 hover:bg-slate-50/70">
+                                            <td v-if="pIdx === 0" :rowspan="hengakuPeriodsForYear(year).length" class="align-middle border-r border-slate-100 px-4 py-2.5 font-bold text-slate-800">{{ year }}</td>
+                                            <td class="whitespace-nowrap border-r border-slate-100 px-4 py-2.5 text-slate-500">{{ period.label }}</td>
+                                            <td v-for="f in period.forms" :key="f" class="px-4 py-2.5 text-center">
+                                                <button type="button" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition" :class="btnClass(`hengaku-${year}-${period.key}-${f}`)" @click="toggleRelease(`hengaku-${year}-${period.key}-${f}`)">
+                                                    {{ isReleased(`hengaku-${year}-${period.key}-${f}`) ? "✓" : "–" }}
                                                 </button>
                                             </td>
                                             <td v-for="_ in 4 - period.forms.length" :key="_" class="px-4 py-2.5" />

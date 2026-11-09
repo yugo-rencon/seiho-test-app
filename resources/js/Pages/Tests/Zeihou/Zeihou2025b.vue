@@ -153,9 +153,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="法人税通達による事業保険の取扱"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-09 確認済み
+                        '福利厚生費 → 給与', //p181
                         '正しい',
-                        '', //p
+                        '資産計上 → 損金', //p183
                     ]"
                 />
                 <QuestionTemp1

@@ -177,9 +177,10 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="贈与税"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '贈与税には、[[物納の制度はない]]が、一定の要件のもとに延納の制度が認められている。', //p101
                     ]"
                 />
                 <QuestionTemp1

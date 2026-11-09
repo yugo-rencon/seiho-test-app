@@ -192,7 +192,8 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="個人の住民税"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-09 確認済み
+                        '道府県民税、市町村民税ともに均等割と所得割が課される。', //p146
                         '正しい',
                         '正しい',
                     ]"

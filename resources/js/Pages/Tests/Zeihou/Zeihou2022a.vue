@@ -207,7 +207,8 @@ const subject = "2022年度 フォームA";
                     :subject="subject"
                     questionTitle="個人保険における保険金の取扱い"
                     :contents="[
-                        '雑所得 → 一時所得', //p174
+                        // rev: 2026-11-09 確認済み
+                        '雑所得 → 一時所得', //p173
                         '正しい',
                         '正しい',
                     ]"

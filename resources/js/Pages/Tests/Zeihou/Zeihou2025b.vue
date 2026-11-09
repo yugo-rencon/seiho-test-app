@@ -180,9 +180,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="配当所得"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '上場株式等の配当所得については、総合課税に代えて申告分離課税（大口株主等を[[除く]]）を選択できる。', //p16
                     ]"
                 />
                 <QuestionTemp1

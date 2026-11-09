@@ -197,9 +197,10 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="確定給付企業年金"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '正しい',
-                        '社会保険料控除 → 生命保険料控除', //p211
+                        '社会保険料控除 → 生命保険料控除', //p210
                     ]"
                 />
                 <QuestionTemp1

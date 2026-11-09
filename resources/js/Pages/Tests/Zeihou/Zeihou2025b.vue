@@ -204,8 +204,9 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="法人税"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
-                        '', //p
+                        '法人が支払を受ける利子等、配当等、給付補てん金、賞金などに係る所得税の額の全額は、原則として[[所得税額控除の対象となる]]。', //p135
                         '正しい',
                     ]"
                 />
@@ -215,9 +216,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="確定給付企業年金"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '社会保険料控除 → 生命保険料控除', //p210
                     ]"
                 />
                 <QuestionTemp2

@@ -228,8 +228,9 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '租税の種類',
-                            content: '',
+                            content: '納税義務者と担税者が同一であるものを直接税、両者が異なるものを間接税という。', //p3
                         }, //31
                         {
                             questionTitle: '非課税所得',

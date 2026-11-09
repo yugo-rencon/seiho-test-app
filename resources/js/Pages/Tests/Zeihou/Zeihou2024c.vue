@@ -256,9 +256,10 @@ const subject = "2024年度 フォームC";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '租税の種類',
-                            content: '外国税 → 内国税',
-                        }, //31 p3
+                            content: '外国税 → 内国税', //p3
+                        }, //31
                         {
                             questionTitle: '源泉徴収制度',
                             content: '支払った日の属する年の翌年1月10日 → 支払った日の属する月の翌月10日',

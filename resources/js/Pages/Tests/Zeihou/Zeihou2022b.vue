@@ -165,6 +165,7 @@ const subject = "2022年度 フォームB";
                     :subject="subject"
                     questionTitle="租税の種類"
                     :contents="[
+                        // rev: 2026-11-09 確認済み
                         '正しい',
                         '財産税 → 流通税', //p4
                         '正しい',

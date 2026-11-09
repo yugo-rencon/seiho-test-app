@@ -221,9 +221,10 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-11-09 確認済み
                             questionTitle: '租税の種類',
-                            content: '財産税 → 流通税',
-                        }, //31 p4
+                            content: '財産税 → 流通税', //p4
+                        }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '空き家に係る譲渡所得の特別控除の特例',

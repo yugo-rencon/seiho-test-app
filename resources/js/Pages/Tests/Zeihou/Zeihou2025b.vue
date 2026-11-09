@@ -132,8 +132,9 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="営業職員報酬"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-11-09 確認済み
+                        '雑所得 → 事業所得', //p225
+                        '40万円 → 50万円', //p226
                         '正しい',
                     ]"
                 />

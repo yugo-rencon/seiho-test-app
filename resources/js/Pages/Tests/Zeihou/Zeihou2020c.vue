@@ -142,9 +142,10 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="営業職員報酬"
                     :contents="[
-                        '給与所得 → 事業所得', //p227
+                        // rev: 2026-11-09 確認済み
+                        '給与所得 → 事業所得', //p225
                         '正しい',
-                        '40万円 → 50万円', //p228
+                        '40万円 → 50万円', //p226
                     ]"
                 />
                 <QuestionTemp1

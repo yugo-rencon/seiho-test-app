@@ -16,13 +16,13 @@ const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <template>
-    <div class="subject-tabs-scroll -mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-4 sm:overflow-visible sm:px-0 sm:pb-0">
+    <div class="subject-tabs-scroll -mx-6 flex snap-x snap-proximity gap-2 overflow-x-auto scroll-smooth pb-2 pl-6 pr-2 sm:mx-0 sm:grid sm:grid-cols-4 sm:overflow-visible sm:pb-0 sm:pl-0 sm:pr-0">
         <button
             v-for="section in sections"
             :key="section.id"
             type="button"
             @click="emit('update:modelValue', section.id)"
-            class="flex min-h-20 w-44 shrink-0 snap-start flex-col rounded-xl border px-4 py-3 text-left transition sm:w-auto"
+            class="flex min-h-20 w-auto shrink-0 snap-start flex-col whitespace-nowrap rounded-xl border px-4 py-3 text-left transition"
             :class="[
                 modelValue === section.id
                     ? 'border-transparent bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-sm'
@@ -42,7 +42,9 @@ const emit = defineEmits(["update:modelValue"]);
 
 <style scoped>
 .subject-tabs-scroll {
+    scroll-behavior: smooth;
     scrollbar-width: none;
+    overscroll-behavior-inline: contain;
     -webkit-overflow-scrolling: touch;
 }
 

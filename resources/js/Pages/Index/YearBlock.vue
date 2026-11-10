@@ -40,16 +40,6 @@ const latestFreeYear = computed(() => {
         <div class="flex flex-wrap items-center gap-2 sm:gap-3">
             <div class="whitespace-nowrap text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
             <span
-                v-if="
-                    !isPreparing &&
-                    !hasPremium &&
-                    Number(year) === latestFreeYear
-                "
-                class="inline-flex items-center rounded-full border border-purple-300 bg-purple-50 px-2.5 py-1 text-xs font-semibold text-purple-700"
-            >
-                最新年度フォームA・無料
-            </span>
-            <span
                 v-if="isPreparing"
                 class="inline-flex items-center rounded-full border border-gray-300 bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-gray-600"
             >
@@ -64,10 +54,16 @@ const latestFreeYear = computed(() => {
                 :key="form"
                 :is="isPreparing ? 'span' : 'a'"
                 :href="isPreparing ? undefined : route(`${routePrefix}${year}${form}`)"
-                class="inline-flex w-full items-center justify-center gap-1 rounded-full border px-2 py-1.5 text-[12px] font-semibold sm:w-auto sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
+                class="relative inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border px-2 py-1.5 text-[12px] font-semibold sm:w-32 sm:px-4 sm:py-2 sm:text-sm"
                 :class="isPreparing ? 'cursor-not-allowed border-gray-200 bg-gray-50 text-gray-400' : 'border-purple-200 text-purple-700 transition hover:bg-purple-50'"
             >
                 フォーム{{ form.toUpperCase() }}
+                <span
+                    v-if="!isPreparing && !hasPremium && Number(year) === latestFreeYear && form.toLowerCase() === 'a'"
+                    class="absolute -right-1 -top-1 rounded-full bg-purple-100 px-1.5 py-0.5 text-[8px] font-bold leading-none text-purple-700 shadow-sm ring-1 ring-white sm:text-[9px]"
+                >
+                    無料
+                </span>
             </component>
         </div>
     </div>

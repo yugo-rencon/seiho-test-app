@@ -1,9 +1,9 @@
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { computed, getCurrentInstance, onBeforeUnmount, onMounted, ref } from "vue";
 const props = defineProps({ modelValue: { type: String, default: "" }, min: { type: String, default: "" }, max: { type: String, default: "" } });
 const emit = defineEmits(["update:modelValue"]);
 const open = ref(false);
-const pickerId = `date-picker-${Math.random().toString(36).slice(2)}`;
+const pickerId = `date-picker-${getCurrentInstance()?.uid ?? "field"}`;
 const normalizedValue = computed(() => String(props.modelValue || "").slice(0, 10));
 const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 const calendarMonth = ref((normalizedValue.value || today()).slice(0, 7));

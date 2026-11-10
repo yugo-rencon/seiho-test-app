@@ -16,21 +16,37 @@ const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <template>
-    <div class="grid grid-cols-6 gap-2 sm:flex sm:flex-wrap">
+    <div class="subject-tabs-scroll -mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-4 sm:overflow-visible sm:px-0 sm:pb-0">
         <button
             v-for="section in sections"
             :key="section.id"
             type="button"
             @click="emit('update:modelValue', section.id)"
-            class="col-span-2 min-h-12 min-w-0 whitespace-nowrap rounded-full border px-1 py-2 text-[11px] font-semibold leading-tight transition-colors sm:col-span-1 sm:min-h-0 sm:px-4 sm:text-sm sm:leading-normal"
+            class="flex min-h-20 w-44 shrink-0 snap-start flex-col rounded-xl border px-4 py-3 text-left transition sm:w-auto"
             :class="[
                 modelValue === section.id
-                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-transparent shadow'
-                    : 'bg-white text-gray-700 border-gray-200 hover:border-purple-300',
+                    ? 'border-transparent bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-sm'
+                    : 'border-gray-200 bg-white text-gray-700 hover:border-purple-300 hover:bg-purple-50/40',
             ]"
         >
-            <span class="sm:hidden">{{ section.id === "eigyo" ? "商品と営業" : section.title }}</span>
-            <span class="hidden sm:inline">{{ section.title }}</span>
+            <span class="text-sm font-bold leading-snug">{{ section.title }}</span>
+            <span
+                class="mt-2 text-[10px] font-medium"
+                :class="modelValue === section.id ? 'text-purple-100' : 'text-gray-400'"
+            >
+                {{ section.period }}
+            </span>
         </button>
     </div>
 </template>
+
+<style scoped>
+.subject-tabs-scroll {
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.subject-tabs-scroll::-webkit-scrollbar {
+    display: none;
+}
+</style>

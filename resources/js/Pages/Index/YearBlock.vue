@@ -36,7 +36,7 @@ const latestFreeYear = computed(() => {
 </script>
 
 <template>
-    <div class="py-5 md:py-6">
+    <div class="py-3 md:py-4">
         <div class="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
             <div class="whitespace-nowrap text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
             <span

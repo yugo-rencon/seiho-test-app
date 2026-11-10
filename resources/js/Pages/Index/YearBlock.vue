@@ -36,7 +36,7 @@ const latestFreeYear = computed(() => {
 </script>
 
 <template>
-    <div class="py-3 md:py-4">
+    <div class="py-4 md:py-5">
         <div class="flex flex-wrap items-center gap-2 sm:gap-3">
             <div class="whitespace-nowrap text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
             <span
@@ -47,7 +47,7 @@ const latestFreeYear = computed(() => {
             </span>
         </div>
 
-        <div class="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
+        <div class="mt-4 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-3">
             <!-- フォームA/B/Cボタン -->
             <component
                 v-for="form in forms"

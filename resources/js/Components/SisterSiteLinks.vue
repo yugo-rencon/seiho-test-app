@@ -26,13 +26,13 @@ const sisterSites = computed(() => sites.filter((site) => site.key !== props.cur
     <div class="mb-4">
         <p class="mb-2 text-[11px] font-semibold tracking-wide text-gray-500">試験一覧</p>
 
-        <!-- スマホ：全リンクを折り返して表示 -->
-        <div class="grid grid-cols-3 gap-1.5 sm:hidden">
+        <!-- スマホ：5つの試験を1行で表示 -->
+        <div class="grid grid-cols-5 gap-1 sm:hidden">
             <Link
                 v-for="site in sisterSites"
                 :key="site.key"
                 :href="route(site.route)"
-                class="inline-flex min-w-0 items-center justify-center whitespace-nowrap rounded-full border border-gray-200 bg-white px-2 py-2 text-[11px] font-semibold text-gray-700 transition active:scale-[0.98]"
+                class="inline-flex min-w-0 items-center justify-center whitespace-nowrap rounded-full border border-gray-200 bg-white px-1 py-2 text-[10px] font-semibold text-gray-700 transition active:scale-[0.98]"
                 :class="site.color"
             >
                 {{ site.mobileLabel }}

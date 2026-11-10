@@ -19,11 +19,6 @@ const activeSection = computed(() => sections.find((section) => section.id === a
 const page = usePage();
 const hasPremium = computed(() => page.props.auth?.hasPremium === true);
 
-// 「本番の点数を記録」リンク先:
-// 該当セクション（#score-input）へ遷移
-const mypageInputHref = computed(() => {
-    return route("results");
-});
 const pricingHref = computed(() => route("pricing", { scope: "seiho", return_to: String(page.url ?? "/") }));
 </script>
 
@@ -57,20 +52,6 @@ const pricingHref = computed(() => route("pricing", { scope: "seiho", return_to:
                             <span class="rounded-full bg-purple-200/70 px-2 py-0.5 text-[10px] font-bold text-purple-900 max-sm:px-1.5 max-sm:text-[9px]"> ALL ACCESS </span>
                         </div>
 
-                        <div class="mt-3 rounded-xl border border-purple-100/80 bg-gradient-to-br from-white via-purple-50/30 to-indigo-50/50 p-3 shadow-sm">
-                            <div class="flex items-center gap-2.5">
-                                <div class="min-w-0 flex-1">
-                                    <p class="text-[13px] font-bold text-gray-900">試験を受けた方へ</p>
-                                    <p class="mt-0.5 text-xs leading-relaxed text-gray-500">本番の点数を記録できます。</p>
-                                </div>
-                                <Link
-                                    :href="mypageInputHref"
-                                    class="inline-flex shrink-0 items-center justify-center gap-1 rounded-full border border-purple-200 bg-white px-3 py-1.5 text-xs font-bold text-purple-700 shadow-sm transition hover:border-purple-300 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2"
-                                >
-                                    記録する <span aria-hidden="true">→</span>
-                                </Link>
-                            </div>
-                        </div>
                     </div>
 
                     <SisterSiteLinks current-site="seiho" class="mb-4" />

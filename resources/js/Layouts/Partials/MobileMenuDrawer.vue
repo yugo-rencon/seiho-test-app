@@ -241,6 +241,17 @@ const visibleSubjects = computed(() => {
                             マイページ
                         </Link>
                         <Link
+                            v-if="isAuthenticated && currentScope === 'seiho'"
+                            :href="route('results')"
+                            class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-semibold text-purple-700 transition hover:bg-purple-50"
+                            :class="isActive('results') ? 'pointer-events-none bg-purple-50' : ''"
+                            :aria-current="isActive('results') ? 'page' : null"
+                            @click="closeMenu"
+                        >
+                            <span>試験結果を記録</span>
+                            <span aria-hidden="true">→</span>
+                        </Link>
+                        <Link
                             v-if="isAdmin && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
                             :href="route('mypage.studyRecords')"
                             class="flex items-center justify-between rounded-xl border border-violet-200 bg-violet-50 px-3 py-2.5 text-sm font-bold text-violet-700 transition hover:border-violet-300 hover:bg-violet-100"

@@ -16,7 +16,7 @@ const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <template>
-    <div class="subject-tabs-scroll -mx-6 flex gap-2 overflow-x-auto pb-2 pl-6 pr-2 sm:mx-0 sm:grid sm:grid-cols-4 sm:overflow-visible sm:pb-0 sm:pl-0 sm:pr-0">
+    <div class="subject-tabs-scroll -mx-6 flex gap-2 overflow-x-auto pb-2 pl-6 pr-2 sm:hidden">
         <button
             v-for="section in sections"
             :key="section.id"
@@ -36,6 +36,23 @@ const emit = defineEmits(["update:modelValue"]);
             >
                 {{ section.period }}
             </span>
+        </button>
+    </div>
+
+    <div class="hidden flex-wrap gap-2 sm:flex">
+        <button
+            v-for="section in sections"
+            :key="section.id"
+            type="button"
+            @click="emit('update:modelValue', section.id)"
+            class="rounded-full border px-4 py-2 text-sm font-semibold transition-colors"
+            :class="[
+                modelValue === section.id
+                    ? 'border-transparent bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow'
+                    : 'border-gray-200 bg-white text-gray-700 hover:border-purple-300',
+            ]"
+        >
+            {{ section.title }}
         </button>
     </div>
 </template>

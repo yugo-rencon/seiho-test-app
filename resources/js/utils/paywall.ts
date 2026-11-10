@@ -8,6 +8,7 @@ const currentExamScope = (): string => {
     if (path.startsWith("/ippan")) return "ippan";
     if (path.startsWith("/senmon")) return "senmon";
     if (path.startsWith("/ouyou")) return "ouyou";
+    if (path.startsWith("/hengaku")) return "hengaku";
     return "seiho";
 };
 
@@ -35,10 +36,12 @@ const isBasicScopeFreeRoute = (): boolean => {
     );
 };
 
-export const isPaidYear = (subject: string, _title: string = ""): boolean => {
-    // 変額保険は購入機能の対象外。既存の生保講座の購入案内を表示しない。
-    if (typeof window !== "undefined" && /(?:^|\/)hengaku(?:\/|$)/.test(window.location.pathname)) return false;
+const isHengakuFreeRoute = (): boolean => {
+    if (typeof window === "undefined") return false;
+    return window.location.pathname.replace(/\/$/, "") === "/hengaku/2026-h1-a";
+};
 
+export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     const year = Number(String(subject ?? "").slice(0, 4));
     const formCode = parseFormCode(subject);
     const scope = currentExamScope();
@@ -46,6 +49,11 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     if (scope === "ippan" || scope === "senmon" || scope === "ouyou") {
         // 一般課程は2026年前半のフォームA〜E（ログイン後）、専門・応用課程は前半フォームAのみ無料
         return !isBasicScopeFreeRoute();
+    }
+
+    if (scope === "hengaku") {
+        // 変額保険は2026年前半フォームAのみ無料
+        return !isHengakuFreeRoute();
     }
 
     if (isDaigakuPath()) {
@@ -56,9 +64,9 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
 
     // 生保講座:
     // - 総論は2026年度フォームAを無料
-    // - 危険選択・約款と法律・会計・営業は2025年度フォームAを無料
+    // - 危険選択・約款と法律・会計・営業・税法は2025年度フォームAを無料
     // - 計理は最新年度フォームAも途中から有料
-    // - それ以外の4科目は2024年度フォームAを無料
+    // - 資産運用は2024年度フォームAを無料
     const seihoSubjectKey = parseSeihoSubjectKeyFromPath();
     if (seihoSubjectKey === "keiri") {
         return true;
@@ -67,7 +75,7 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     const latestFreeYear =
         seihoSubjectKey === "souron"
             ? 2026
-            : seihoSubjectKey === "kiken" || seihoSubjectKey === "yakkan" || seihoSubjectKey === "kaikei" || seihoSubjectKey === "eigyo"
+            : ["kiken", "yakkan", "kaikei", "eigyo", "zeihou"].includes(seihoSubjectKey)
               ? 2025
               : 2024;
 
@@ -81,8 +89,8 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
 export const getPaywallStartQuestion = (title: string): number => {
     const scope = currentExamScope();
 
-    if (scope === "daigaku" || scope === "senmon" || scope === "ouyou") {
-        // 大学・専門・応用課程: 有料部分は4問目から
+    if (scope === "daigaku" || scope === "senmon" || scope === "ouyou" || scope === "hengaku") {
+        // 大学・専門・応用課程・変額保険: 有料部分は4問目から
         return 4;
     }
 

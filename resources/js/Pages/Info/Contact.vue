@@ -11,6 +11,7 @@ const scope = computed(() => {
     if (currentPath.value.startsWith("/senmon")) return "senmon";
     if (currentPath.value.startsWith("/ouyou")) return "ouyou";
     if (currentPath.value.startsWith("/ippan")) return "ippan";
+    if (currentPath.value.startsWith("/hengaku")) return "hengaku";
     return "seiho";
 });
 const contactStoreRouteName = computed(() => {
@@ -18,6 +19,7 @@ const contactStoreRouteName = computed(() => {
     if (scope.value === "senmon") return "senmon.contact.store";
     if (scope.value === "ouyou") return "ouyou.contact.store";
     if (scope.value === "ippan") return "ippan.contact.store";
+    if (scope.value === "hengaku") return "hengaku.contact.store";
     return "contact.store";
 });
 const focusClass = computed(() => {
@@ -25,6 +27,7 @@ const focusClass = computed(() => {
     if (scope.value === "senmon") return "focus:border-emerald-400 focus:ring-emerald-400";
     if (scope.value === "ouyou") return "focus:border-amber-400 focus:ring-amber-400";
     if (scope.value === "ippan") return "focus:border-pink-400 focus:ring-pink-400";
+    if (scope.value === "hengaku") return "focus:border-teal-400 focus:ring-teal-400";
     return "focus:border-purple-400 focus:ring-purple-400";
 });
 const checkboxClass = computed(() => {
@@ -32,6 +35,7 @@ const checkboxClass = computed(() => {
     if (scope.value === "senmon") return "text-emerald-600 focus:ring-emerald-400";
     if (scope.value === "ouyou") return "text-amber-600 focus:ring-amber-400";
     if (scope.value === "ippan") return "text-fuchsia-600 focus:ring-pink-400";
+    if (scope.value === "hengaku") return "text-teal-600 focus:ring-teal-400";
     return "text-purple-600 focus:ring-purple-400";
 });
 const submitClass = computed(() => {
@@ -39,6 +43,7 @@ const submitClass = computed(() => {
     if (scope.value === "senmon") return "from-emerald-500 to-lime-500";
     if (scope.value === "ouyou") return "from-amber-500 to-orange-500";
     if (scope.value === "ippan") return "from-pink-500 to-fuchsia-500";
+    if (scope.value === "hengaku") return "from-teal-500 to-cyan-500";
     return "from-indigo-500 to-purple-500";
 });
 

@@ -10,6 +10,7 @@ const scope = computed(() => {
     if (url.startsWith("/ippan")) return "ippan";
     if (url.startsWith("/senmon")) return "senmon";
     if (url.startsWith("/ouyou")) return "ouyou";
+    if (url.startsWith("/hengaku")) return "hengaku";
     return "seiho";
 });
 const pricingHref = computed(() => {
@@ -29,7 +30,7 @@ const loginHref = computed(() =>
     route("login", { scope: scope.value, return_to: page.url }),
 );
 const priceNumberText = computed(() =>
-    ["ippan", "senmon", "ouyou"].includes(scope.value)
+    ["ippan", "senmon", "ouyou", "hengaku"].includes(scope.value)
         ? "1,280"
         : scope.value === "daigaku"
           ? "1,980"
@@ -40,6 +41,7 @@ const unlockedCountText = computed(() => {
     if (scope.value === "ippan") return "全55解説";
     if (scope.value === "senmon") return "全32解説";
     if (scope.value === "ouyou") return "全32解説";
+    if (scope.value === "hengaku") return "全20解説";
     return "全150解説";
 });
 const paywallText = computed(() => {
@@ -82,6 +84,13 @@ const paywallText = computed(() => {
         return {
             lead: "一度の購入で、生命保険応用課程の解説が見放題",
             cta: "応用課程の解説を解放",
+        };
+    }
+
+    if (scope.value === "hengaku") {
+        return {
+            lead: "一度の購入で、変額保険販売資格の解説が見放題",
+            cta: "変額保険の解説を解放",
         };
     }
 
@@ -136,6 +145,18 @@ const tone = computed(() => {
             priceSub: "text-slate-500",
             countAccent: "text-amber-700",
             cta: "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400",
+        };
+    }
+
+    if (scope.value === "hengaku") {
+        return {
+            card: "border-teal-100",
+            dash: "border-teal-200",
+            title: "text-slate-900",
+            text: "text-slate-600",
+            priceSub: "text-slate-500",
+            countAccent: "text-teal-700",
+            cta: "bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400",
         };
     }
 

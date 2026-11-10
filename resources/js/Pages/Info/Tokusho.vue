@@ -11,6 +11,7 @@ const scope = computed(() => {
     if (url.startsWith("/ippan")) return "ippan";
     if (url.startsWith("/senmon")) return "senmon";
     if (url.startsWith("/ouyou")) return "ouyou";
+    if (url.startsWith("/hengaku")) return "hengaku";
     return "seiho";
 });
 
@@ -19,6 +20,7 @@ const legalTextClass = computed(() => {
     if (scope.value === "ippan") return "text-fuchsia-700";
     if (scope.value === "senmon") return "text-emerald-700";
     if (scope.value === "ouyou") return "text-amber-700";
+    if (scope.value === "hengaku") return "text-teal-700";
     return "text-purple-700";
 });
 
@@ -27,6 +29,7 @@ const contactHref = computed(() => {
     if (scope.value === "ippan") return route("ippan.contact.index");
     if (scope.value === "senmon") return route("senmon.contact.index");
     if (scope.value === "ouyou") return route("ouyou.contact.index");
+    if (scope.value === "hengaku") return route("hengaku.contact.index");
     return route("contact.index");
 });
 </script>
@@ -53,7 +56,7 @@ const contactHref = computed(() => {
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
                         <dt class="font-medium text-gray-800">サービス名</dt>
                         <dd class="text-gray-700">
-                            生保講座過去問解説 / 生命保険大学課程 過去問解説 / 生命保険一般課程 過去問解説 / 生命保険専門課程 過去問解説 / 生命保険応用課程 過去問解説
+                            生保講座過去問解説 / 生命保険大学課程 過去問解説 / 生命保険一般課程 過去問解説 / 生命保険専門課程 過去問解説 / 生命保険応用課程 過去問解説 / 変額保険販売資格 過去問解説
                         </dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
@@ -65,6 +68,7 @@ const contactHref = computed(() => {
                             生命保険一般課程：全55解説<br />
                             生命保険専門課程：全32解説<br />
                             生命保険応用課程：全32解説<br />
+                            変額保険販売資格：全20解説<br />
                             一般・専門・応用セット：一般課程・専門課程・応用課程の対象コンテンツ一式
                         </dd>
                     </div>
@@ -74,7 +78,8 @@ const contactHref = computed(() => {
                             生保講座：最新年度フォームAなど一部コンテンツ<br />
                             生命保険大学課程：最新年度フォームAなど一部コンテンツ<br />
                             生命保険一般課程・応用課程：2025年前半実施フォームA<br />
-                            生命保険専門課程：2026年4月〜8月実施フォームA
+                            生命保険専門課程：2026年4月〜8月実施フォームA<br />
+                            変額保険販売資格：2026年4月〜8月実施フォームA
                         </dd>
                     </div>
                     <div class="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-4 sm:p-4">
@@ -100,6 +105,7 @@ const contactHref = computed(() => {
                             生命保険一般課程 プレミアムプラン：1,280円（税込）<br />
                             生命保険専門課程 プレミアムプラン：1,280円（税込）<br />
                             生命保険応用課程 プレミアムプラン：1,280円（税込）<br />
+                            変額保険販売資格 プレミアムプラン：1,280円（税込）<br />
                             一般・専門・応用セット：1,980円（税込）
                         </dd>
                     </div>
@@ -133,7 +139,7 @@ const contactHref = computed(() => {
             </section>
 
             <div class="mt-6 text-xs text-gray-500 border-t border-gray-100 pt-4">
-                最終更新日：2026年7月9日
+                最終更新日：2026年11月10日
             </div>
         </div>
     </SeihoTestLayout>

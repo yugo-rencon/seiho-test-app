@@ -23,6 +23,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税・贈与税の財産評価-①"
+                    :relatedProblems="['2020a1', '2020b1', '2020c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '時価',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税・贈与税の財産評価-②"
+                    :relatedProblems="['2020a6', '2020b6', '2020c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '路線価',
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="各事業年度の所得に対する法人税-①"
+                    :relatedProblems="['2020a11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '公正妥当な会計処理の基準',
@@ -86,6 +89,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="各事業年度の所得に対する法人税-②"
+                    :relatedProblems="['2020a16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '取得原価',
@@ -107,6 +111,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の配偶者控除と配偶者特別控除"
+                    :relatedProblems="['2020a21']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '合計所得金額が1000万円以下の納税者が控除対象配偶者を有する場合、[[納税者の合計所得金額に応じて、38万円・26万円・13万円を控除することができる]]。', //p47
@@ -119,6 +124,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続と相続税"
+                    :relatedProblems="['2020a22', '2020b22', '2020c22']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -131,6 +137,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="住民税"
+                    :relatedProblems="['2020a23']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -143,6 +150,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="地方税"
+                    :relatedProblems="['2020a24']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '固定資産税は原則として[[市町村税]]だが、大規模な償却資産については一部[[道府県]]が課税する。', //p156
@@ -155,6 +163,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険料控除"
+                    :relatedProblems="['2020a25', '2020b25', '2020c25', '2020c44']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '生命保険料控除の対象となる → 対象とならない', //p164
@@ -167,6 +176,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税における所得控除"
+                    :relatedProblems="['2020a26']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '扶養控除 → 社会保険料控除', //p41
@@ -179,6 +189,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人の住民税"
+                    :relatedProblems="['2020a27', '2020b49']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険における保険金の取扱"
+                    :relatedProblems="['2020a28']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金"
+                    :relatedProblems="['2020a29', '2020b50']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社と税"
+                    :relatedProblems="['2020a30', '2020b30', '2020c30']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2020年度 フォームA";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '租税の種類',
+                            relatedProblems: ['2020a31', '2020a41', '2020b31', '2020b41', '2020c41'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '空き家に係る譲渡所得の特別控除の特例',
+                            relatedProblems: ['2020a32', '2020b32', '2020c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '租税特別措置法の課税標準',
+                            relatedProblems: ['2020a33'],
                             content: '所得税法の規定による課税標準は、[[総所得金額、退職所得金額、山林所得金額の3つ]]である。', //p36
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '復興特別所得税',
+                            relatedProblems: ['2020a34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '相続税の申告と納税',
+                            relatedProblems: ['2020a35', '2020b27'],
                             content: '6ヶ月以内 → 10ヶ月以内', //p95
                         }, //35
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '贈与税の配偶者控除',
+                            relatedProblems: ['2020a36'],
                             content: '婚姻期間[[20年以上]]の配偶者から、居住用不動産またはその取得のための金銭を贈与された場合には、その年分の贈与税の課税価格から2000万円を限度として控除される。なお、この措置は、同一の配偶者からの贈与について[[一生に一回]]適用することができる。', //p100
                         }, //36
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '法人の確定申告',
+                            relatedProblems: ['2020a37', '2020c47'],
                             content: ' 3ヶ月以内 → 2ヶ月以内', //p140
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '居住用超高層建築物の不動産取得税',
+                            relatedProblems: ['2020a38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '定期付養老保険の保険料',
+                            relatedProblems: ['2020a39', '2020b39', '2020c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
+                            relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '要件に違反して解約した場合等は、差益に対して[[20％の源泉分離課税を行う]]。', //p212
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '租税の種類',
+                            relatedProblems: ['2020a31', '2020a41', '2020b31', '2020b41', '2020c41'],
                             label: 'エ',
                             content: '目的税',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '給与所得',
+                            relatedProblems: ['2020a42'],
                             label: 'ウ',
                             content: '特定支出',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '退職所得控除額',
+                            relatedProblems: ['2020a43'],
                             label: 'イ',
                             content: '20年',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の税率',
+                            relatedProblems: ['2020a44'],
                             label: 'ウ',
                             content: '山林所得',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '第2次相続',
+                            relatedProblems: ['2020a45', '2020b45', '2020c45'],
                             label: 'ア',
                             content: '10年',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '法人の種類と課税の範囲',
+                            relatedProblems: ['2020a46'],
                             label: 'オ',
                             content: '',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '同族会社',
+                            relatedProblems: ['2020a47'],
                             label: 'ウ',
                             content: '50%',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '連結納税制度',
+                            relatedProblems: ['2020a48', '2020b48', '2020c48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '個人の事業税',
+                            relatedProblems: ['2020a49'],
                             label: 'ア',
                             content: '第3種事業',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '固定資産税の課税標準',
+                            relatedProblems: ['2020a50'],
                             label: 'ウ',
                             content: '200㎡',
                         }, //50

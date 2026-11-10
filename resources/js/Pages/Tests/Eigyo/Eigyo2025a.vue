@@ -23,6 +23,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要①"
+                    :relatedProblems="['2025a1']"
                     :contents="[
                         // rev: 2026-08-22 確認済み
                         '40歳以上',
@@ -44,6 +45,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要②"
+                    :relatedProblems="['2025a6']"
                     :contents="[
                         // rev: 2026-08-22 確認済み
                         '厚生労働省',
@@ -65,6 +67,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法・金融サービス提供法①"
+                    :relatedProblems="['2025a11', '2025b11', '2025c11']"
                     :contents="[
                         // rev: 2026-08-22 確認済み
                         '事業者',
@@ -86,6 +89,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法・金融サービス提供法②"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-08-22 確認済み
                         '金融商品販売業者等',
@@ -107,6 +111,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="女性の社会進出"
+                    :relatedProblems="['2025a21']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '日本の女性の労働力率をみると、[[30〜39歳の年齢層において一旦低下している]]。これは、この年齢層においては、結婚して退職し、子育てに専念している女性が多いことに起因するものと考えられる。', //p12
@@ -119,6 +124,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="マイナンバー法（行政手続における特定の個人を識別するための番号の利用等に関する法律）"
+                    :relatedProblems="['2025a22', '2025b31']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '未成年者を除くすべての人 → 住民票を有するすべての人', //p41
@@ -131,6 +137,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障等を主たる目的とした保険（特約）"
+                    :relatedProblems="['2025a23']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '正しい',
@@ -143,6 +150,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体信用生命保険"
+                    :relatedProblems="['2025a24', '2025b24', '2025c24']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '団体信用生命保険 → 消費者信用団体生命保険', //p87
@@ -155,6 +163,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="営業職員の募集人登録"
+                    :relatedProblems="['2025a25', '2025c39']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '生命保険協会 → 内閣総理大臣（金融庁長官に委任）', //p118
@@ -167,6 +176,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="長い老後生活を見据えたライフ・プランニング"
+                    :relatedProblems="['2025a26', '2025b26', '2025c26']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '生活習慣病罹患率 → 乳児死亡率', //p20
@@ -179,6 +189,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料率"
+                    :relatedProblems="['2025a27']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="財形貯蓄制度"
+                    :relatedProblems="['2025a28', '2025b28', '2025c28']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行窓販"
+                    :relatedProblems="['2025a29']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2025年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="営業職員の成績計上"
+                    :relatedProblems="['2025a30']"
                     :contents="[
                         // rev: 2026-09-04 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2025年度 フォームA";
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '公的年金のしくみ',
+                            relatedProblems: ['2025a31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '福利厚生費',
+                            relatedProblems: ['2025a32', '2025b32', '2025c32'],
                             content: '福利厚生費は、[[厚生年金保険・健康保険・雇用保険等の社会保険料からなる法定福利費]]と、[[企業が任意に実施する制度の費用である法定外福利費]]に分けられる。このうち[[法定福利費]]については、高齢化に伴い、賃金を上回る増加を示している。', //p33
                         }, //32
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '継続教育制度',
+                            relatedProblems: ['2025a33', '2025b33', '2025c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '個人年金保険',
+                            relatedProblems: ['2025a34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '外貨建保険',
+                            relatedProblems: ['2025a35', '2025c44'],
                             content: '商品のメリットとしては[[海外の比較的高い金利]]を反映することで、[[予定利率を高く]]設定していることが挙げられる。', //p65
                         }, //35
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: 'ユニバーサル保険',
+                            relatedProblems: ['2025a36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '特別勘定特約',
+                            relatedProblems: ['2025a37', '2025b37', '2025c37'],
                             content: '現在のところ、[[新企業年金保険]]、確定給付企業年金保険、国民年金基金保険、[[団体生存保険]]に付加する特別勘定特約が販売されている。', //p91-92
                         }, //37
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '団体就業不能保障保険',
+                            relatedProblems: ['2025a38'],
                             content: '被保険者が傷害または疾病を直接の原因として、[[入院または医師の指示による自宅療養をし、業務に全く従事できない状態（就業不能状態）が所定の期間を超えて継続した場合に就業不能保険金を支払う保険]]である。', //p97
                         }, //38
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '生命保険マーケティング',
+                            relatedProblems: ['2025a39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '生命保険大学課程',
+                            relatedProblems: ['2025a40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '公的年金の保険料',
+                            relatedProblems: ['2025a41'],
                             label: 'エ',
                             content: '労使折半により',
                         }, //41
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '年金改革',
+                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'イ',
                             content: '第3号',
                         }, //42
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '代理・代行',
+                            relatedProblems: ['2025a43', '2025c34'],
                             label: 'ア',
                             content: '保険業法',
                         }, //43
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '保険料の払込に関する特約',
+                            relatedProblems: ['2025a44'],
                             label: 'ウ',
                             content: '団体扱特約',
                         }, //44
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '危険選択の方法',
+                            relatedProblems: ['2025a45', '2025b45', '2025c45'],
                             label: 'イ',
                             content: '生命保険協会',
                         }, //45
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '保険料率の改定',
+                            relatedProblems: ['2025a46'],
                             label: 'ウ',
                             content: '引き下げ',
                         }, //46
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '近年の商品対応（保険料率）',
+                            relatedProblems: ['2025a47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '顧客サービスの向上',
+                            relatedProblems: ['2025a48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '営業職員の教育',
+                            relatedProblems: ['2025a49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '代理店',
+                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                             label: 'ア',
                             content: '募集代理店',
                         }, //50

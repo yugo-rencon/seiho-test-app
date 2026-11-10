@@ -23,6 +23,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税法上の所得-①"
+                    :relatedProblems="['2024a1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '公社債投資信託',
@@ -44,6 +45,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税法上の所得-②"
+                    :relatedProblems="['2024a6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '5',
@@ -65,6 +67,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税-①"
+                    :relatedProblems="['2024a11', '2024b11', '2024c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '所得税',
@@ -86,6 +89,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税-②"
+                    :relatedProblems="['2024a16', '2024b16', '2024c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '20',
@@ -107,6 +111,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="租税の種類"
+                    :relatedProblems="['2024a21', '2024c31']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -119,6 +124,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="医療費控除"
+                    :relatedProblems="['2024a22']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '対象となるのはその年に実際に支払った金額であり、[[未払いのものについては、現実に支払いがなされるまで控除の対象とはならない]]。', //p39
@@ -131,6 +137,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="遺言"
+                    :relatedProblems="['2024a23']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '特別方式 ↔︎ 普通方式', //p72
@@ -143,6 +150,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続財産の評価"
+                    :relatedProblems="['2024a24']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '生命保険契約で保険事故が発生していないものに関する権利の評価は、[[相続開始の時において当該契約を解約するとした場合に支払われることとなる解約返戻金の額]]によって評価する。', //p110
@@ -155,6 +163,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金"
+                    :relatedProblems="['2024a25', '2024b25', '2024c25']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -167,6 +176,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の申告と納税"
+                    :relatedProblems="['2024a26', '2024b26', '2024c26']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '1200万円 → 2000万円', //p58
@@ -179,6 +189,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="同族会社の留保金課税"
+                    :relatedProblems="['2024a27']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="固定資産税"
+                    :relatedProblems="['2024a28', '2024b28', '2024c28']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険における保険金の取扱"
+                    :relatedProblems="['2024a29']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社と税"
+                    :relatedProblems="['2024a30', '2024c24']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2024年度 フォームA";
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '所得税の算出税額',
+                            relatedProblems: ['2024a31'],
                             content: '比例税率 → 超過累進税率', //p11
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '雑所得',
+                            relatedProblems: ['2024a32', '2024b43'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '年末調整',
+                            relatedProblems: ['2024a33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険と相続対策',
+                            relatedProblems: ['2024a34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '所得税額控除',
+                            relatedProblems: ['2024a35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '法人税の中間申告',
+                            relatedProblems: ['2024a36', '2024b36', '2024c36'],
                             content: '事業年度が6カ月を超える普通法人は、事業年度開始の日以後6カ月を経過した日から2カ月以内に、税務署長に対し、[[前年度実績による中間申告（予定申告）]]または[[仮決算による中間申告]]による中間報告書を提出しなければならない。', //p140
                         }, //36
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '地方税',
+                            relatedProblems: ['2024a37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '不動産取得税',
+                            relatedProblems: ['2024a38', '2024b38', '2024c38'],
                             content: '相続による取得や法人の合併による取得など形式的な所有権の移転については[[課税されない]]。', //p159
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
+                            relatedProblems: ['2024a39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '最低課税方式',
+                            relatedProblems: ['2024a40', '2024b40', '2024c40'],
                             content: '14% → 7%', //p223
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '所得税額の計算',
+                            relatedProblems: ['2024a41', '2024b22'],
                             label: 'ウ',
                             content: '課税所得金額',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の課税標準',
+                            relatedProblems: ['2024a42', '2024b42', '2024c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の税額控除',
+                            relatedProblems: ['2024a43', '2024c43'],
                             label: 'ウ',
                             content: '住宅借入金（取得）等特別控除',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '相続税の未成年者控除・障害者控除',
+                            relatedProblems: ['2024a44'],
                             label: 'イ',
                             content: '10万円',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '会社利益と所得金額の調整',
+                            relatedProblems: ['2024a45', '2024b45', '2024c45'],
                             label: 'ア',
                             content: '申告調整',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '有価証券の評価',
+                            relatedProblems: ['2024a46'],
                             label: 'ア',
                             content: '時価',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '法人の住民税',
+                            relatedProblems: ['2024a47'],
                             label: 'ウ',
                             content: '均等割',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '弔慰金の非課税限度額',
+                            relatedProblems: ['2024a48'],
                             label: 'ウ',
                             content: '半年',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '団体定期保険の保険料',
+                            relatedProblems: ['2024a49'],
                             label: 'ウ',
                             content: '生命保険料控除',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
+                            relatedProblems: ['2024a50', '2024b50', '2024c50'],
                             label: 'オ',
                             content: '',
                         }, //50
@@ -342,7 +376,7 @@ const subject = "2024年度 フォームA";
             </div>
 
             <!-- ボタングループ -->
-            <TestNavigationButtons next-route="zeihou2024b" />
+            <TestNavigationButtons previous-route="zeihou2025c" next-route="zeihou2024b" />
         </section>
     </SeihoTestLayout>
 </template>

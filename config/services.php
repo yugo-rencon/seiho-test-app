@@ -40,6 +40,7 @@ return [
         'price_ippan_premium' => env('STRIPE_PRICE_IPPAN_PREMIUM'),
         'price_senmon_premium' => env('STRIPE_PRICE_SENMON_PREMIUM'),
         'price_ouyou_premium' => env('STRIPE_PRICE_OUYOU_PREMIUM'),
+        'price_hengaku_premium' => env('STRIPE_PRICE_HENGAKU_PREMIUM'),
         'price_basic_premium' => env('STRIPE_PRICE_BASIC_PREMIUM'),
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
         'purchase_enabled' => env('STRIPE_PURCHASE_ENABLED', false),

@@ -182,12 +182,12 @@ class RegisteredUserController extends Controller
 
     private function resolveRegistrationScope(?string $scope, ?string $returnTo): string
     {
-        $allowedScopes = ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou'];
+        $allowedScopes = ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'];
         if (in_array($scope, $allowedScopes, true)) {
             return $scope;
         }
 
-        foreach (['daigaku', 'ippan', 'senmon', 'ouyou'] as $pathScope) {
+        foreach (['daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'] as $pathScope) {
             if ($returnTo && str_starts_with($returnTo, "/{$pathScope}")) {
                 return $pathScope;
             }

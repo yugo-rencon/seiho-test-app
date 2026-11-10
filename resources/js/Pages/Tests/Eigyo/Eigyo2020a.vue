@@ -23,6 +23,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="第三分野市場-①"
+                    :relatedProblems="['2020a1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '災害補償特約',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="第三分野市場-②"
+                    :relatedProblems="['2020a6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '業務提携',
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体年金保険-①"
+                    :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '規約型',
@@ -86,6 +89,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体年金保険-②"
+                    :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '団体生存保険',
@@ -107,6 +111,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="価値観の変化の要因"
+                    :relatedProblems="['2020a21']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -119,6 +124,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的介護保険の給付"
+                    :relatedProblems="['2020a22']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '環境省 → 厚生労働省', //p30
@@ -131,6 +137,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="マイナンバー法"
+                    :relatedProblems="['2020a23', '2020b23', '2020c23']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '未成年者を除くすべての人 → 住民票を有するすべての人', //p41
@@ -143,6 +150,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="外貨建保険"
+                    :relatedProblems="['2020a24', '2020b24', '2020c24']"
                     :contents="[
                         // rev: 2026-09-04 確認済み
                         '商品のメリットとしては[[海外の比較的高い金利]]を反映することで、[[予定利率を高く]]設定していることが挙げられる。', //p65
@@ -155,6 +163,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="販売チャネルの多様化"
+                    :relatedProblems="['2020a25']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -167,6 +176,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金の保険料"
+                    :relatedProblems="['2020a26']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -179,6 +189,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料払込負担の軽減"
+                    :relatedProblems="['2020a27']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '終身保険等の[[主契約に充当する方法]]に加え、定期保険特約部分に充当する方法も開発され、[[主契約と定期保険特約の両方に充当することも可能]]とした。', //p71-72
@@ -191,6 +202,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体定期保険および団体信用生命保険"
+                    :relatedProblems="['2020a28', '2020b28', '2020c28']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険"
+                    :relatedProblems="['2020a29', '2020b45']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '給付内容は入院時の公的医療保険制度における自己負担の一部を補填する治療給付金、定額の入院給付金、[[死亡時の死亡保険金]]から構成される。', //p96
@@ -215,6 +228,7 @@ const subject = "2020年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人営業機構（直販）"
+                    :relatedProblems="['2020a30']"
                     :contents="[
                         // rev: 2026-09-04 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2020年度 フォームA";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生活の仕方の変化',
+                            relatedProblems: ['2020a31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '国民年金のしくみ',
+                            relatedProblems: ['2020a32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '福利厚生費',
+                            relatedProblems: ['2020a33', '2020b33', '2020c33'],
                             content: '福利厚生費は、[[厚生年金保険・健康保険・雇用保険等の社会保険料からなる法定福利費]]と、[[企業が任意に実施する制度の費用である法定外福利費]]に分けられる。このうち[[法定福利費]]については、高齢化に伴い、賃金を上回る増加を示している。', //p33
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '代理・代行',
+                            relatedProblems: ['2020a34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '金融商品取引法',
+                            relatedProblems: ['2020a35', '2020b35', '2020c35'],
                             content: '保険契約の契約条項のうち重要な事項について、[[契約締結の前]]に、その情報を書面の交付または電磁的方法により提供することが規定された。', //p42
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生存保険',
+                            relatedProblems: ['2020a36', '2020b36', '2020c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '終身年金',
+                            relatedProblems: ['2020a37'],
                             content: '被保険者が年金開始日以後、毎年の年金支払日に生存している限り[[一生涯にわたり]]年金を支払うものをいう。', //p57
                         }, //37
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '財形保険',
+                            relatedProblems: ['2020a38'],
                             content: '財経保険は、個人保険と[[異なり]]、積立期間中や据置期間中でも[[予定利率が変更されることがある]]。', //p96
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '適格性要素',
+                            relatedProblems: ['2020a39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '代理店営業組織',
+                            relatedProblems: ['2020a40'],
                             content: 'スーパーバイザー → ホールセラー', //p146
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: 'シルバー市場',
+                            relatedProblems: ['2020a41'],
                             label: 'ア',
                             content: '65歳',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険の保険料',
+                            relatedProblems: ['2020a42', '2020b42', '2020c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険法',
+                            relatedProblems: ['2020a43'],
                             label: 'ウ',
                             content: '遺言',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '危険選択の方法',
+                            relatedProblems: ['2020a44', '2020b44', '2020c44'],
                             label: 'エ',
                             content: '面接',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定拠出年金制度',
+                            relatedProblems: ['2020a45', '2020b34'],
                             label: 'ウ',
                             content: '国民年金基金連合会',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生保財形の特徴',
+                            relatedProblems: ['2020a46'],
                             label: 'イ',
                             content: '払込保険料累計額',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険仲立人',
+                            relatedProblems: ['2020a47'],
                             label: 'ウ',
                             content: '媒介',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '変額保険販売資格要件',
+                            relatedProblems: ['2020a48'],
                             label: 'ア',
                             content: '専門課程',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
+                            relatedProblems: ['2020a49'],
                             label: 'イ',
                             content: '地域',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
+                            relatedProblems: ['2020a50', '2020b50', '2020c50'],
                             label: 'オ',
                             content: '',
                         }, //50

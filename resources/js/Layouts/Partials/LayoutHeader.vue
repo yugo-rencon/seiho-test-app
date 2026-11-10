@@ -21,6 +21,7 @@ const props = defineProps({
 
 defineEmits(["open-menu"]);
 const mypageRouteName = computed(() => {
+    if (props.isHengaku) return "hengaku.mypage";
     if (props.isDaigaku) return "daigaku.mypage";
     if (props.isIppan) return "ippan.mypage";
     if (props.isSenmon) return "senmon.mypage";

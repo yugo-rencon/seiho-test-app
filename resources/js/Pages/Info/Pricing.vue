@@ -15,7 +15,7 @@ const props = defineProps({
 });
 
 const page = usePage();
-const validScopes = ["seiho", "daigaku", "ippan", "senmon", "ouyou"];
+const validScopes = ["seiho", "daigaku", "ippan", "senmon", "ouyou", "hengaku"];
 const currentScope = computed(() =>
     validScopes.includes(props.scope) ? props.scope : "seiho",
 );
@@ -31,6 +31,8 @@ const hasPremium = computed(() =>
             ? page.props.auth?.hasPremiumSenmon === true
             : currentScope.value === "ouyou"
               ? page.props.auth?.hasPremiumOuyou === true
+              : currentScope.value === "hengaku"
+                ? page.props.auth?.hasPremiumHengaku === true
               : page.props.auth?.hasPremiumSeiho === true,
 );
 const hasBasicPremium = computed(() =>
@@ -80,6 +82,20 @@ const scopeTheme = computed(() => {
             primaryButton: "bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 shadow-sm",
             secondaryButton: "border border-amber-200 bg-white text-amber-700 hover:bg-amber-50",
             disabledButton: "border border-amber-200 bg-amber-50 text-amber-700",
+        };
+    }
+
+    if (currentScope.value === "hengaku") {
+        return {
+            brandName: "変額保険販売資格 過去問解説",
+            pricingText: "text-teal-700",
+            cardActive: "border-teal-200 ring-1 ring-teal-100",
+            badge: "border-teal-200 bg-teal-50 text-teal-700",
+            accentText: "text-teal-700",
+            dot: "bg-teal-400",
+            primaryButton: "bg-gradient-to-r from-teal-500 to-cyan-500 text-white hover:from-teal-400 hover:to-cyan-400 shadow-sm",
+            secondaryButton: "border border-teal-200 bg-white text-teal-700 hover:bg-teal-50",
+            disabledButton: "border border-teal-200 bg-teal-50 text-teal-700",
         };
     }
 
@@ -139,6 +155,20 @@ const scopePlan = computed(() => {
         };
     }
 
+    if (currentScope.value === "hengaku") {
+        return {
+            price: "¥1,280",
+            description: "変額保険販売資格の全ての解説を解放できます。",
+            features: [
+                "変額保険販売資格 全20解説を閲覧可能",
+                "購入後すぐ、利用期限なしで見放題",
+                "今後追加される解説も追加料金なしで閲覧可能",
+            ],
+            freeDescription: "変額保険販売資格の2026年4月〜8月実施フォームAを無料公開しています。",
+            freeFeatures: ["変額保険販売資格 2026年4月〜8月 フォームA"],
+        };
+    }
+
     return {
         price: "¥2,480",
         description: "全科目・全年度・全フォームの解説を一括で解放",
@@ -155,14 +185,22 @@ const freeRouteName = computed(() => {
     if (currentScope.value === "ippan") return "ippan.index";
     if (currentScope.value === "senmon") return "senmon.index";
     if (currentScope.value === "ouyou") return "ouyou.index";
+    if (currentScope.value === "hengaku") return "hengaku.index";
     return "tests.index";
 });
 const tokushoRouteName = computed(() => {
     if (currentScope.value === "ippan") return "ippan.tokusho";
     if (currentScope.value === "senmon") return "senmon.tokusho";
     if (currentScope.value === "ouyou") return "ouyou.tokusho";
+    if (currentScope.value === "hengaku") return "hengaku.tokusho";
     return "tokusho";
 });
+const faqRouteName = computed(() =>
+    currentScope.value === "hengaku" ? "hengaku.faq" : "faq",
+);
+const contactRouteName = computed(() =>
+    currentScope.value === "hengaku" ? "hengaku.contact.index" : "contact.index",
+);
 
 const plans = computed(() => [
     {
@@ -367,7 +405,7 @@ const plans = computed(() => [
             </section>
 
             <div class="mx-auto mt-5 max-w-3xl text-center text-sm text-gray-600">
-                <Link :href="route('faq')" class="font-semibold underline underline-offset-4 hover:text-gray-900">
+                <Link :href="route(faqRouteName)" class="font-semibold underline underline-offset-4 hover:text-gray-900">
                     料金・利用に関するよくある質問
                 </Link>
             </div>
@@ -395,7 +433,7 @@ const plans = computed(() => [
                     <Link :href="route(tokushoRouteName)" class="text-gray-700 underline underline-offset-4 hover:text-gray-900">
                         特商法に基づく表記
                     </Link>
-                    <Link :href="route('contact.index')" class="text-gray-700 underline underline-offset-4 hover:text-gray-900">
+                    <Link :href="route(contactRouteName)" class="text-gray-700 underline underline-offset-4 hover:text-gray-900">
                         お問い合わせ
                     </Link>
                 </div>

@@ -23,6 +23,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険マーケティング①"
+                    :relatedProblems="['2025c1']"
                     :contents="[
                         // rev: 2026-08-22 確認済み
                         'エージェント',
@@ -44,6 +45,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険マーケティング②"
+                    :relatedProblems="['2025c6']"
                     :contents="[
                         // rev: 2026-08-22 確認済み
                         'CS（Customer Satisfaction）',
@@ -65,6 +67,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法・金融サービス提供法①"
+                    :relatedProblems="['2025a11', '2025b11', '2025c11']"
                     :contents="[
                         // rev: 2026-08-22 確認済み
                         '事業者',
@@ -86,6 +89,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法・金融サービス提供法②"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-08-22 確認済み
                         '金融商品販売業者等',
@@ -107,6 +111,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="第三分野市場"
+                    :relatedProblems="['2025c21']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '保険の第三分野とは、[[生命保険（第一分野）]]・[[損害保険（第二分野）]]のいずれにも属さないとされる疾病・傷害分野の保険であり、医療保険・介護保険・傷害保険などがこれに該当する。', //p34
@@ -119,6 +124,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料率に関する対応"
+                    :relatedProblems="['2025c22']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '死差配当 → 利差配当', //p78
@@ -131,6 +137,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="販売チャネルの多様化"
+                    :relatedProblems="['2025c23']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -143,6 +150,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体信用生命保険"
+                    :relatedProblems="['2025a24', '2025b24', '2025c24']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '団体信用生命保険 → 消費者信用団体生命保険', //p87
@@ -155,6 +163,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="業界共通教育制度"
+                    :relatedProblems="['2025c25']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -167,6 +176,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="長い老後生活を見据えたライフ・プランニング"
+                    :relatedProblems="['2025a26', '2025b26', '2025c26']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '生活習慣病罹患率 → 乳児死亡率', //p20
@@ -179,6 +189,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要"
+                    :relatedProblems="['2025c27']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="財形貯蓄制度"
+                    :relatedProblems="['2025a28', '2025b28', '2025c28']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="変額保険"
+                    :relatedProblems="['2025b44', '2025c29']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="通信販売とインターネット通販"
+                    :relatedProblems="['2025c30']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '通信販売は営業職員・募集代理店による対面販売との比較において顧客との接点が非常に限られているため、[[告知義務や契約始期、モラルリスク等が問題となりやすく]]、取扱保険商品、加入保険金額を制限しているケースが多い。', //p104
@@ -230,110 +244,130 @@ const subject = "2025年度 フォームC";
                         {
                             // rev: 2026-09-05 確認済み
                             questionTitle: '公的介護保険制度の運営主体',
+                            relatedProblems: ['2025c31'],
                             content: '公的介護保険制度の運営主体（保険者）は、[[各市区町村]]となっているが、介護保険事業が健全かつ円滑に行われるよう、[[国、都道府県、被保険者]]が重層的に支えあう制度となっている。', //p30
                         }, //31
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '福利厚生費',
+                            relatedProblems: ['2025a32', '2025b32', '2025c32'],
                             content: '福利厚生費は、[[厚生年金保険・健康保険・雇用保険等の社会保険料からなる法定福利費]]と、[[企業が任意に実施する制度の費用である法定外福利費]]に分けられる。このうち[[法定福利費]]については、高齢化に伴い、賃金を上回る増加を示している。', //p33
                         }, //32
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '継続教育制度',
+                            relatedProblems: ['2025a33', '2025b33', '2025c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-09-05 確認済み
                             questionTitle: '代理・代行',
+                            relatedProblems: ['2025a43', '2025c34'],
                             content: '「業務の代理」に「保険募集の代理」が[[含まれる]]ことを明確化したことから、保険会社が他保険会社と業務の代理・事務の代行に関する契約を結んで、他保険会社商品を販売することが[[可能となった]]。', //p35
                         }, //34
                         {
                             // rev: 2026-09-05 確認済み
                             questionTitle: '生存保険',
+                            relatedProblems: ['2025c35'],
                             content: '被保険者が、一定期間生存の場合にのみ保険金が支払われ、保険期間中に死亡した場合には一部の個人年金保険等を除いて[[保険料の払戻もなく、責任準備金は生存した他の被保険者の保険金の支払に充当する]]。', //p46-47
                         }, //35
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '医療保障保険（団体型）',
+                            relatedProblems: ['2025b47', '2025c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '特別勘定特約',
+                            relatedProblems: ['2025a37', '2025b37', '2025c37'],
                             content: '現在のところ、[[新企業年金保険]]、確定給付企業年金保険、国民年金基金保険、[[団体生存保険]]に付加する特別勘定特約が販売されている。', //p91-92
                         }, //37
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '窓販の弊害防止措置',
+                            relatedProblems: ['2025c38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-09-05 確認済み
                             questionTitle: '募集人登録',
+                            relatedProblems: ['2025a25', '2025c39'],
                             content: '生命保険協会 → 内閣総理大臣（金融庁長官に委任）', //p118
                         }, //39
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '企業保険の営業',
+                            relatedProblems: ['2025c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: 'シルバー市場',
+                            relatedProblems: ['2025c41'],
                             label: 'ウ',
                             content: '約3人に1人',
                         }, //41
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '年金改革',
+                            relatedProblems: ['2025a42', '2025b42', '2025c42'],
                             label: 'イ',
                             content: '第3号',
                         }, //42
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '保険法',
+                            relatedProblems: ['2025c43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '外貨建保険',
+                            relatedProblems: ['2025a35', '2025c44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '危険選択の方法',
+                            relatedProblems: ['2025a45', '2025b45', '2025c45'],
                             label: 'イ',
                             content: '生命保険協会',
                         }, //45
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '総合福祉団体定期保険',
+                            relatedProblems: ['2025c46'],
                             label: 'イ',
                             content: '企業等',
                         }, //46
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '単独運用特別勘定',
+                            relatedProblems: ['2025c47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '保険仲立人',
+                            relatedProblems: ['2025c48'],
                             label: 'エ',
                             content: '媒介',
                         }, //48
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '営業職員の給与体系',
+                            relatedProblems: ['2025b39', '2025c49'],
                             label: 'エ',
                             content: '保障額',
                         }, //49
                         {
                             // rev: 2026-08-22 確認済み
                             questionTitle: '代理店',
+                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                             label: 'ア',
                             content: '募集代理店',
                         }, //50

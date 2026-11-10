@@ -665,13 +665,14 @@ class TestController extends Controller
     // 料金
     public function pricing(Request $request){
         $scope = $request->query('scope');
-        if (!in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou'], true)) {
+        if (!in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'], true)) {
             $returnTo = (string) $request->query('return_to', '');
             $scope = match (true) {
                 str_starts_with($returnTo, '/daigaku') => 'daigaku',
                 str_starts_with($returnTo, '/ippan') => 'ippan',
                 str_starts_with($returnTo, '/senmon') => 'senmon',
                 str_starts_with($returnTo, '/ouyou') => 'ouyou',
+                str_starts_with($returnTo, '/hengaku') => 'hengaku',
                 default => 'seiho',
             };
         }
@@ -699,6 +700,7 @@ class TestController extends Controller
             $request->routeIs('ippan.*') => 'ippan',
             $request->routeIs('senmon.*') => 'senmon',
             $request->routeIs('ouyou.*') => 'ouyou',
+            $request->routeIs('hengaku.*') => 'hengaku',
             default => 'seiho',
         };
         $subjects = $this->subjectsByScope($scope);
@@ -717,7 +719,7 @@ class TestController extends Controller
         $paidBasicScopes = DB::table('purchases')
             ->where('user_id', $user->id)
             ->where('status', 'paid')
-            ->whereIn('scope', ['ippan', 'senmon', 'ouyou', 'basic'])
+            ->whereIn('scope', ['ippan', 'senmon', 'ouyou', 'hengaku', 'basic'])
             ->pluck('scope')
             ->all();
         $purchaseDates = DB::table('purchases')
@@ -739,6 +741,7 @@ class TestController extends Controller
         $hasPurchasedIppan = in_array('ippan', $paidBasicScopes, true);
         $hasPurchasedSenmon = in_array('senmon', $paidBasicScopes, true);
         $hasPurchasedOuyou = in_array('ouyou', $paidBasicScopes, true);
+        $hasPurchasedHengaku = in_array('hengaku', $paidBasicScopes, true);
         $hasPurchasedBasic = in_array('basic', $paidBasicScopes, true);
         $showStudyRecords = (bool) $user->is_admin;
 
@@ -754,11 +757,13 @@ class TestController extends Controller
             'hasPremiumIppan' => $premiumSessionAllowed && $user->hasPremiumAccess('ippan'),
             'hasPremiumSenmon' => $premiumSessionAllowed && $user->hasPremiumAccess('senmon'),
             'hasPremiumOuyou' => $premiumSessionAllowed && $user->hasPremiumAccess('ouyou'),
+            'hasPremiumHengaku' => $premiumSessionAllowed && $user->hasPremiumAccess('hengaku'),
             'hasPremiumBasic' => $premiumSessionAllowed && $user->hasPremiumAccess('basic'),
             'premiumSessionLimitExceeded' => $user->hasAnyPremiumAccess() && !$premiumSessionAllowed,
             'hasPurchasedIppan' => $hasPurchasedIppan,
             'hasPurchasedSenmon' => $hasPurchasedSenmon,
             'hasPurchasedOuyou' => $hasPurchasedOuyou,
+            'hasPurchasedHengaku' => $hasPurchasedHengaku,
             'hasPurchasedBasic' => $hasPurchasedBasic,
             'purchaseDates' => $purchaseDates,
             'showStudyRecords' => $showStudyRecords,
@@ -956,7 +961,7 @@ class TestController extends Controller
             return $this->daigakuSubjects();
         }
 
-        if (in_array($scope, ['ippan', 'senmon', 'ouyou'], true)) {
+        if (in_array($scope, ['ippan', 'senmon', 'ouyou', 'hengaku'], true)) {
             return [];
         }
 

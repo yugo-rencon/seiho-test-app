@@ -1,5 +1,6 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
+import { computed } from "vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
 const faqs = [
@@ -8,12 +9,20 @@ const faqs = [
     { question: "問題文も掲載されていますか？", answer: "問題文そのものは掲載せず、独自に作成した解説コンテンツを提供しています。" },
     { question: "解説内容に誤りを見つけた場合は？", answer: "お問い合わせフォームからご連絡ください。確認のうえ、必要に応じて修正します。制度や試験運用については、必ず公式情報もご確認ください。" },
 ];
+const page = usePage();
+const isHengaku = computed(() => String(page.url ?? "").startsWith("/hengaku"));
+const pricingHref = computed(() =>
+    isHengaku.value ? route("pricing", { scope: "hengaku", return_to: page.url }) : route("pricing", { scope: "seiho" }),
+);
+const contactHref = computed(() =>
+    route(isHengaku.value ? "hengaku.contact.index" : "contact.index"),
+);
 </script>
 
 <template>
     <SeihoTestLayout title="よくある質問">
         <section class="container mx-auto max-w-4xl px-5 py-12 sm:px-6 sm:py-16">
-            <p class="text-xs font-bold uppercase tracking-widest text-purple-600">FAQ</p>
+            <p class="text-xs font-bold uppercase tracking-widest" :class="isHengaku ? 'text-teal-600' : 'text-purple-600'">FAQ</p>
             <h1 class="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">よくある質問</h1>
             <p class="mt-4 text-sm leading-7 text-gray-600 sm:text-base">ご利用方法や解説の更新方針について、よくいただく質問をまとめました。</p>
             <div class="mt-9 space-y-4">
@@ -23,8 +32,8 @@ const faqs = [
                 </section>
             </div>
             <div class="mt-9 flex flex-wrap gap-3">
-                <Link :href="route('pricing', { scope: 'seiho' })" class="inline-flex items-center rounded-full bg-purple-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-purple-700">料金ページを見る</Link>
-                <Link :href="route('contact.index')" class="inline-flex items-center rounded-full border border-purple-200 px-5 py-3 text-sm font-semibold text-purple-700 transition hover:bg-purple-50">お問い合わせ</Link>
+                <Link :href="pricingHref" class="inline-flex items-center rounded-full px-5 py-3 text-sm font-semibold text-white transition" :class="isHengaku ? 'bg-teal-600 hover:bg-teal-700' : 'bg-purple-600 hover:bg-purple-700'">料金ページを見る</Link>
+                <Link :href="contactHref" class="inline-flex items-center rounded-full border px-5 py-3 text-sm font-semibold transition" :class="isHengaku ? 'border-teal-200 text-teal-700 hover:bg-teal-50' : 'border-purple-200 text-purple-700 hover:bg-purple-50'">お問い合わせ</Link>
             </div>
         </section>
     </SeihoTestLayout>

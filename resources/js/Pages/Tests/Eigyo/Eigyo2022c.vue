@@ -23,6 +23,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金制度の動向-①"
+                    :relatedProblems="['2022a1', '2022b1', '2022c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '60歳',
@@ -44,6 +45,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金制度の動向-②"
+                    :relatedProblems="['2022a6', '2022b6', '2022c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '10年',
@@ -65,6 +67,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者契約法"
+                    :relatedProblems="['2022a26', '2022b32', '2022c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '事業者',
@@ -86,6 +89,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="金融サービス提供法"
+                    :relatedProblems="['2022a43', '2022b28', '2022c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '金融商品販売業者',
@@ -107,6 +111,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="マイナンバー法"
+                    :relatedProblems="['2022a21', '2022b21', '2022c21']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '未成年者を除くすべての人 → 住民票を有するすべての人', //p41
@@ -119,6 +124,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="年金改革"
+                    :relatedProblems="['2022c22']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -131,6 +137,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料率に関する対応"
+                    :relatedProblems="['2022a23', '2022b23', '2022c23']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '死差配当 → 利差配当。', //p78
@@ -143,6 +150,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的介護保険の給付"
+                    :relatedProblems="['2022b26', '2022c24']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -155,6 +163,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険仲立人"
+                    :relatedProblems="['2022a48', '2022b39', '2022c25']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '保険仲立人は契約者と保険会社との間に立って[[中立の立場]]で保険契約の締結の[[媒介]]を行う者であり、特定の保険会社に属し、その保険会社のために媒介を行う保険募集人とその点において異なる。', //p103
@@ -167,6 +176,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障等を主たる目的とした保険（特約）"
+                    :relatedProblems="['2022c26']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '2000年に初めて開発・販売 → 1985年には発売されている', //p60
@@ -179,6 +189,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険商品の基本型"
+                    :relatedProblems="['2022a27', '2022b27', '2022c27']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '責任準備金は[[生存した他の被保険者の保険金の支払に充当する]]。', //p47
@@ -191,6 +202,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者信用団体生命保険"
+                    :relatedProblems="['2022c28']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="販売チャネルの多様化"
+                    :relatedProblems="['2022c29']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '子会社・兄弟会社限定が[[解除]]され、生保商品の銀行窓販が実質的に解禁されることとなった。', //p102
@@ -215,6 +228,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人営業機構（直販）、代理店営業機構"
+                    :relatedProblems="['2022c30']"
                     :contents="[
                         // rev: 2026-09-04 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2022年度 フォームC";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '企業の福利厚生費',
+                            relatedProblems: ['2022c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '個人情報保護法',
+                            relatedProblems: ['2022c32'],
                             content: '既契約者の親族からの開示請求 → 既契約者本人からの開示請求', //p40
                         }, //32
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '転換制度',
+                            relatedProblems: ['2022c33'],
                             content: '解約控除をとらないことはもとより、[[特別配当の権利を転換後契約に引き継ぐこと]]等、解約のデメリットを解消している。', //p73
                         }, //33
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '外貨建保険',
+                            relatedProblems: ['2022a34', '2022b34', '2022c34'],
                             content: '商品のメリットとしては[[海外の比較的高い金利]]を反映することで、[[予定利率を高く]]設定していることが挙げられる。', //p65
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定',
+                            relatedProblems: ['2022a35', '2022b35', '2022c35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '団体就業不能保障保険',
+                            relatedProblems: ['2022c36'],
                             content: '被保険者が傷害または疾病を直接の原因として、[[入院または医師の指示による自宅療養をし、業務に全く従事できない状態（就業不能状態）が所定の期間を超えて継続した場合に就業不能保険金を支払う保険]]である。', //p97
                         }, //36
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '心身障害者扶養者生命保険',
+                            relatedProblems: ['2022a37', '2022b37', '2022c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '営業職員チャネル',
+                            relatedProblems: ['2022c38'],
                             content: '生命保険商品に特化した → 生命保険商品の枠を超えた', //p101
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '個人顧客システム',
+                            relatedProblems: ['2022c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '生命保険大学課程',
+                            relatedProblems: ['2022c40'],
                             content: 'ファイナンシャル・ライフ・コンサルタント（FLC） → トータル・ライフ・コンサルタント（TLC）', //p125
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: 'シルバー市場',
+                            relatedProblems: ['2022c41'],
                             label: 'ア',
                             content: '65歳',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険制度の概要',
+                            relatedProblems: ['2022c42'],
                             label: 'ウ',
                             content: '所得段階別',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険料の払込に関する特約',
+                            relatedProblems: ['2022c43'],
                             label: 'ウ',
                             content: '団体扱特約',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '危険選択の方法',
+                            relatedProblems: ['2022a44', '2022b44', '2022c44'],
                             label: 'エ',
                             content: '面接',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '加入後の自在性',
+                            relatedProblems: ['2022c45'],
                             label: 'オ',
                             content: '',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '国民年金基金制度',
+                            relatedProblems: ['2022a46', '2022b46', '2022c46'],
                             label: 'ア',
                             content: '第1号被保険者',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の退職金',
+                            relatedProblems: ['2022c47'],
                             label: 'イ',
                             content: '傷病',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '支社の配置',
+                            relatedProblems: ['2022c48'],
                             label: 'ウ',
                             content: '分割',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
+                            relatedProblems: ['2022a40', '2022c49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
+                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'イ',
                             content: '地域',
                         }, //50

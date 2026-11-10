@@ -23,6 +23,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者保護とコンプライアンス-①"
+                    :relatedProblems="['2021b1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '規制緩和',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者保護とコンプライアンス-②"
+                    :relatedProblems="['2021b6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '7年間',
@@ -65,6 +67,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行窓販-①"
+                    :relatedProblems="['2021a11', '2021b11', '2021c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '信用生命保険',
@@ -86,6 +89,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行窓販-②"
+                    :relatedProblems="['2021a16', '2021b16', '2021c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '個人年金保険（定額・変額）',
@@ -107,6 +111,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="貯蓄の動向"
+                    :relatedProblems="['2021b21']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '年間収入を下回っており → 年間収入を上回り', //p15
@@ -119,6 +124,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険商品の構造"
+                    :relatedProblems="['2021a22', '2021b22', '2021b33', '2021c22']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -131,6 +137,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体年金保険"
+                    :relatedProblems="['2021a23', '2021b23', '2021c23']"
                     :contents="[
                         // rev: 2026-09-04 確認済み
                         '国民年金基金制度は、自営業者等の国民年金の[[第１号被保険者]]が、国民年金に上乗せすることにより、老後の所得保障の充実を図ることを目的とした制度である。', //p90
@@ -143,6 +150,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障等を主たる目的とした保険（特約）"
+                    :relatedProblems="['2021b24']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '正しい',
@@ -155,6 +163,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
+                    :relatedProblems="['2021a46', '2021b25']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '対象規程上、死亡退職金等が支払われないときは、[[保険金は支払われない]]。', //p85
@@ -167,6 +176,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金の保険料"
+                    :relatedProblems="['2021b26']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -179,6 +189,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的介護保険制度の概要"
+                    :relatedProblems="['2021a27', '2021b27', '2021c27']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="戦後の商品政策の変遷"
+                    :relatedProblems="['2021b28']"
                     :contents="[
                         // rev: 2026-09-05 確認済み]
                         'デビット・システム（[[一定の地域に一名の営業職員を配置し、その地域内での保険販売・保全活動にあたらせる制度]]）', //p66
@@ -203,6 +215,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険仲立人"
+                    :relatedProblems="['2021b29']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '保険契約の締結の代理または媒介 → 保険契約の締結の媒介', //p103
@@ -215,6 +228,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="営業職員マネジメント"
+                    :relatedProblems="['2021b30']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2021年度 フォームB";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '介護保険の保険料',
+                            relatedProblems: ['2021a42', '2021b31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-09-05 確認済み
                             questionTitle: '第三分野市場',
+                            relatedProblems: ['2021a32', '2021b32', '2021c32'],
                             content: '保険の第三分野とは、[[生命保険（第一分野）]]・[[損害保険（第二分野）]]のいずれにも属さないとされる疾病・傷害分野の保険であり、医療保険・介護保険・傷害保険などがこれに該当する。', //p34
                         }, //32
                         {
                             // rev: 2026-09-05 確認済み
                             questionTitle: '個人保険商品の構造',
+                            relatedProblems: ['2021a22', '2021b22', '2021b33', '2021c22'],
                             content: '被保険者の死亡後は、[[年金の支払は行われない]]。', //p47
                         }, //33
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '危険選択の方法',
+                            relatedProblems: ['2021a34', '2021b34', '2021c34'],
                             content: '認定生命保険士 → 生命保険面接士', //p52
                         }, //34
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '契約者単位の通算割引',
+                            relatedProblems: ['2021b35'],
                             content: '保険料総額 → 保険金額', //p78
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '財形制度',
+                            relatedProblems: ['2021b36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '変額保険販売資格制度',
+                            relatedProblems: ['2021b37'],
                             content: '応用課程 → 専門課程', //p126
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '一時払退職後終身保険',
+                            relatedProblems: ['2021a38', '2021b38', '2021c38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '機関長のタイプ',
+                            relatedProblems: ['2021b39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '企業保険の営業',
+                            relatedProblems: ['2021b40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '代理・代行',
+                            relatedProblems: ['2021b41'],
                             label: 'ア',
                             content: '保険業法',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険料率の改定',
+                            relatedProblems: ['2021b42'],
                             label: 'エ',
                             content: '引き下げ',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '個人保険商品',
+                            relatedProblems: ['2021a43', '2021b43', '2021c43'],
                             label: 'ウ',
                             content: '利差配当',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '単独運用特別勘定',
+                            relatedProblems: ['2021b44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生命表',
+                            relatedProblems: ['2021a45', '2021b45', '2021c45'],
                             label: 'ア',
                             content: '経験死亡率',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生保財形の特徴',
+                            relatedProblems: ['2021a37', '2021b46'],
                             label: 'オ',
                             content: '',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '顧客サービスの向上',
+                            relatedProblems: ['2021b47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
+                            relatedProblems: ['2021a48', '2021b48', '2021c48'],
                             label: 'エ',
                             content: '自己負担の一部を補填する',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
+                            relatedProblems: ['2021a40', '2021b49'],
                             label: 'イ',
                             content: '地域',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の教育',
+                            relatedProblems: ['2021b50'],
                             label: 'オ',
                             content: '',
                         }, //50

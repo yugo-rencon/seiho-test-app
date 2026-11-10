@@ -423,7 +423,6 @@ onBeforeUnmount(() => {
         <!-- ヘッダー本体 -->
         <LayoutHeader
             :is-hengaku="isHengakuPage"
-            :hide-auth-ui="isHengakuPage"
             :is-authenticated="isAuthenticated"
             :is-admin="isAdmin"
             :brand-name="currentBrandName"
@@ -444,8 +443,7 @@ onBeforeUnmount(() => {
 
         <!-- ハンバーガーメニュー本体 -->
         <MobileMenuDrawer
-            :hide-auth-ui="isHengakuPage"
-            :hide-pricing-ui="isHengakuPage"
+            :is-hengaku="isHengakuPage"
             :open="isMenuOpen"
             :is-authenticated="isAuthenticated"
             :is-admin="isAdmin"
@@ -461,7 +459,6 @@ onBeforeUnmount(() => {
         <!-- フッター全体 -->
         <LayoutFooter
             :is-hengaku="isHengakuPage"
-            :hide-pricing-ui="isHengakuPage"
             :brand-name="currentBrandName"
             :mobile-brand-name="currentMobileBrandName"
             :home-route-name="currentHomeRouteName"

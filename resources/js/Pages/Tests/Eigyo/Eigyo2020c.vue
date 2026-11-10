@@ -23,6 +23,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="近年の商品対応と今後の方向性-①"
+                    :relatedProblems="['2020c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '5年ごと配当',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="近年の商品対応と今後の方向性-②"
+                    :relatedProblems="['2020c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '受領確認',
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体年金保険-①"
+                    :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '規約型',
@@ -86,6 +89,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体年金保険-②"
+                    :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '団体生存保険',
@@ -107,6 +111,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金の給付"
+                    :relatedProblems="['2020c21']"
                     :contents="[
                         // rev: 2026-09-04 確認済み
                         '正しい',
@@ -119,6 +124,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障等を主たる目的とした保険（特約）"
+                    :relatedProblems="['2020c22']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '1985年（昭和60年）に認知症による要介護状態に対する保障を行う保険が、同年９月には寝たきり状態に対する保障を行う保険が発売された。', //p60
@@ -131,6 +137,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="マイナンバー法"
+                    :relatedProblems="['2020a23', '2020b23', '2020c23']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '未成年者を除くすべての人 → 住民票を有するすべての人', //p41
@@ -143,6 +150,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="外貨建保険"
+                    :relatedProblems="['2020a24', '2020b24', '2020c24']"
                     :contents="[
                         // rev: 2026-09-04 確認済み
                         '商品のメリットとしては[[海外の比較的高い金利]]を反映することで、[[予定利率を高く]]設定していることが挙げられる。', //p65
@@ -155,6 +163,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="総合福祉団体定期保険"
+                    :relatedProblems="['2020c25']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '保険金は支払われる →保険金は支払われない', //p85
@@ -167,6 +176,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="貯蓄の動向"
+                    :relatedProblems="['2020c26']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -179,6 +189,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険商品の特約"
+                    :relatedProblems="['2020c27']"
                     :contents="[
                         // rev: 2026-09-04 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体定期保険および団体信用生命保険"
+                    :relatedProblems="['2020a28', '2020b28', '2020c28']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="変額保険"
+                    :relatedProblems="['2020c29']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2020年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="通信販売とインターネット通販"
+                    :relatedProblems="['2020c30']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '通信販売は営業職員・募集代理店による対面販売との比較において顧客との接点が非常に限られているため、[[告知義務や契約始期、モラルリスク等が問題となりやすく]]、取扱保険商品、加入保険金額を制限しているケースが多い。', //p104
@@ -230,110 +244,130 @@ const subject = "2020年度 フォームC";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: 'ライフ・プランニング',
+                            relatedProblems: ['2020c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-09-05 確認済み
                             questionTitle: '公的介護保険制度の運営主体',
+                            relatedProblems: ['2020c32'],
                             content: '公的介護保険制度の運営主体（保険者）は、[[各市区町村]]となっているが、介護保険事業が健全かつ円滑に行われるよう、[[国、都道府県、被保険者]]が重層的に支えあう制度となっている。', //p30
                         }, //32
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '福利厚生費',
+                            relatedProblems: ['2020a33', '2020b33', '2020c33'],
                             content: '福利厚生費は、[[厚生年金保険・健康保険・雇用保険等の社会保険料からなる法定福利費]]と、[[企業が任意に実施する制度の費用である法定外福利費]]に分けられる。このうち[[法定福利費]]については、高齢化に伴い、賃金を上回る増加を示している。', //p33
                         }, //33
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '保険料払込方法',
+                            relatedProblems: ['2020c34'],
                             content: '一時払 → 前納', //p50
                         }, //34
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '金融商品取引法',
+                            relatedProblems: ['2020a35', '2020b35', '2020c35'],
                             content: '保険契約の契約条項のうち重要な事項について、[[契約締結の前]]に、その情報を書面の交付または電磁的方法により提供することが規定された。', //p42
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生存保険',
+                            relatedProblems: ['2020a36', '2020b36', '2020c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-09-03 確認済み
                             questionTitle: '財形貯蓄制度',
+                            relatedProblems: ['2020c37'],
                             content: '「勤労者財産形成年金貯蓄契約」とは、[[55歳未満]]の勤労者が金融機関等と契約を締結し、[[５年以上]]の期間にわたって定期に積立てを行い、60歳以降所定の時期より５年以上の期間にわたって年金の支払いを受けることを目的とした貯蓄である。', //p94
                         }, //37
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '一時払退職後終身保険',
+                            relatedProblems: ['2020c38'],
                             content: '1年以上 → 2年以上<br>前後6か月以内 → 前後1年以内', //p97
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '法人顧客システム',
+                            relatedProblems: ['2020c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '機関組織構成',
+                            relatedProblems: ['2020c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '年金改革',
+                            relatedProblems: ['2020b41', '2020c41'],
                             label: 'イ',
                             content: '第3号',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険の保険料',
+                            relatedProblems: ['2020a42', '2020b42', '2020c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険料率の改定',
+                            relatedProblems: ['2020c43'],
                             label: 'イ',
                             content: '平均寿命',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '危険選択の方法',
+                            relatedProblems: ['2020a44', '2020b44', '2020c44'],
                             label: 'エ',
                             content: '面接',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '消費者信用団体生命保険',
+                            relatedProblems: ['2020c45'],
                             label: 'ウ',
                             content: '1年',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '特化型営業職員制度',
+                            relatedProblems: ['2020c46'],
                             label: 'ア',
                             content: '職域や法人',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '募集人登録',
+                            relatedProblems: ['2020c47'],
                             label: 'ア',
                             content: '保険業法',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の退職金',
+                            relatedProblems: ['2020c48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '企業保険の販売チャネル',
+                            relatedProblems: ['2020c49'],
                             label: 'ウ',
                             content: '本社直轄',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
+                            relatedProblems: ['2020a50', '2020b50', '2020c50'],
                             label: 'オ',
                             content: '',
                         }, //50

@@ -32,6 +32,7 @@ const currentScope = computed(() => {
     if (query.value.scope === "ippan" || query.value.returnTo.startsWith("/ippan")) return "ippan";
     if (query.value.scope === "senmon" || query.value.returnTo.startsWith("/senmon")) return "senmon";
     if (query.value.scope === "ouyou" || query.value.returnTo.startsWith("/ouyou")) return "ouyou";
+    if (query.value.scope === "hengaku" || query.value.returnTo.startsWith("/hengaku")) return "hengaku";
     return "seiho";
 });
 const authQuery = computed(() => ({
@@ -69,6 +70,12 @@ const siteUi = computed(() => {
             iconButtonClass: "hover:text-amber-600 focus:ring-amber-400",
             primaryButtonClass: "bg-amber-600 hover:bg-amber-700 focus:ring-amber-500",
             secondaryLinkClass: "border-amber-100 text-amber-500 hover:bg-amber-50",
+        },
+        hengaku: {
+            inputClass: "focus:border-teal-500 focus:ring-teal-500",
+            iconButtonClass: "hover:text-teal-600 focus:ring-teal-400",
+            primaryButtonClass: "bg-teal-600 hover:bg-teal-700 focus:ring-teal-500",
+            secondaryLinkClass: "border-teal-100 text-teal-600 hover:bg-teal-50",
         },
     };
 

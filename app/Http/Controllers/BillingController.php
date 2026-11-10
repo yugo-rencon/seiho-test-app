@@ -16,11 +16,21 @@ class BillingController extends Controller
         $priceId = $this->resolvePriceId($scope);
         $user = $request->user();
         $returnTo = $this->sanitizeReturnTo($request->query('return_to'));
+        $defaultMypageRoute = match ($scope) {
+            'daigaku' => 'daigaku.mypage',
+            'ippan' => 'ippan.mypage',
+            'senmon' => 'senmon.mypage',
+            'ouyou' => 'ouyou.mypage',
+            'hengaku' => 'hengaku.mypage',
+            default => 'mypage',
+        };
+        $defaultPricingUrl = $scope === 'daigaku'
+            ? route('daigaku.pricing')
+            : route('pricing', $scope === 'seiho' ? [] : ['scope' => $scope]);
 
         // 既購入ユーザーはStripeへ遷移させない
         if ($user && $user->hasPremiumAccess($scope)) {
-            $mypageRoute = $scope === 'daigaku' ? 'daigaku.mypage' : 'mypage';
-            return redirect($returnTo ?: route($mypageRoute))
+            return redirect($returnTo ?: route($defaultMypageRoute))
                 ->with('status', 'プレミアムプランを購入済みです。');
         }
 
@@ -50,11 +60,11 @@ class BillingController extends Controller
                     'scope' => $scope,
                 ],
                 'success_url' => $this->appendQueryToUrl(
-                    $returnTo ? url($returnTo) : route($scope === 'daigaku' ? 'daigaku.mypage' : 'mypage'),
+                    $returnTo ? url($returnTo) : route($defaultMypageRoute),
                     ['checkout' => 'success', 'session_id' => '{CHECKOUT_SESSION_ID}'],
                 ),
                 'cancel_url' => $this->appendQueryToUrl(
-                    $returnTo ? url($returnTo) : route($scope === 'daigaku' ? 'daigaku.pricing' : 'pricing'),
+                    $returnTo ? url($returnTo) : $defaultPricingUrl,
                     ['checkout' => 'cancel'],
                 ),
             ]);
@@ -105,7 +115,7 @@ class BillingController extends Controller
 
     private function sanitizeScope(?string $scope): string
     {
-        return in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'basic'], true) ? $scope : 'seiho';
+        return in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku', 'basic'], true) ? $scope : 'seiho';
     }
 
     private function resolvePriceId(string $scope): ?string
@@ -116,6 +126,7 @@ class BillingController extends Controller
             'ippan' => config('services.stripe.price_ippan_premium'),
             'senmon' => config('services.stripe.price_senmon_premium'),
             'ouyou' => config('services.stripe.price_ouyou_premium'),
+            'hengaku' => config('services.stripe.price_hengaku_premium'),
             'basic' => config('services.stripe.price_basic_premium'),
             default => config('services.stripe.price_seiho_premium')
                 ?: config('services.stripe.price_premium'),

@@ -59,7 +59,7 @@ class AdminController extends Controller
         $userSearch = trim((string) $request->query('user_search', ''));
         $purchaseDate = $this->parseDateFilter(trim((string) $request->query('purchase_date', '')));
 
-        $allowedScopes = ['all', 'seiho', 'daigaku', 'ouyou', 'senmon', 'ippan'];
+        $allowedScopes = ['all', 'seiho', 'daigaku', 'ouyou', 'senmon', 'ippan', 'hengaku'];
         if (!in_array($registrationScope, $allowedScopes, true)) {
             $registrationScope = 'all';
         }
@@ -79,6 +79,7 @@ class AdminController extends Controller
                 DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "ippan" THEN 1 ELSE 0 END) AS ippan_paid_count'),
                 DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "senmon" THEN 1 ELSE 0 END) AS senmon_paid_count'),
                 DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "ouyou" THEN 1 ELSE 0 END) AS ouyou_paid_count'),
+                DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "hengaku" THEN 1 ELSE 0 END) AS hengaku_paid_count'),
                 DB::raw('SUM(CASE WHEN status = "paid" AND COALESCE(scope, "seiho") = "basic" THEN 1 ELSE 0 END) AS basic_paid_count')
             )
             ->groupBy('user_id');
@@ -104,6 +105,7 @@ class AdminController extends Controller
                 DB::raw('COALESCE(purchase_summary.ippan_paid_count, 0) as ippan_paid_count'),
                 DB::raw('COALESCE(purchase_summary.senmon_paid_count, 0) as senmon_paid_count'),
                 DB::raw('COALESCE(purchase_summary.ouyou_paid_count, 0) as ouyou_paid_count'),
+                DB::raw('COALESCE(purchase_summary.hengaku_paid_count, 0) as hengaku_paid_count'),
                 DB::raw('COALESCE(purchase_summary.basic_paid_count, 0) as basic_paid_count')
             )
             ->where('users.is_admin', 0)
@@ -144,6 +146,7 @@ class AdminController extends Controller
                 DB::raw('COALESCE(purchase_summary.ippan_paid_count, 0) as ippan_paid_count'),
                 DB::raw('COALESCE(purchase_summary.senmon_paid_count, 0) as senmon_paid_count'),
                 DB::raw('COALESCE(purchase_summary.ouyou_paid_count, 0) as ouyou_paid_count'),
+                DB::raw('COALESCE(purchase_summary.hengaku_paid_count, 0) as hengaku_paid_count'),
                 DB::raw('COALESCE(purchase_summary.basic_paid_count, 0) as basic_paid_count'),
                 DB::raw('COALESCE(purchase_summary.last_paid_at, NULL) as last_paid_at')
             )
@@ -203,6 +206,11 @@ class AdminController extends Controller
                 ->where('status', 'paid')
                 ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
                 ->where('scope', 'ouyou')
+                ->count(),
+            'hengakuSalesCount' => DB::table('purchases')
+                ->where('status', 'paid')
+                ->whereNotIn('user_id', self::INTERNAL_USER_IDS)
+                ->where('scope', 'hengaku')
                 ->count(),
             'basicSalesCount' => DB::table('purchases')
                 ->where('status', 'paid')
@@ -268,6 +276,12 @@ class AdminController extends Controller
                     ['effectiveAt' => $basicBundlePriceSwitchAt, 'price' => 1980],
                 ],
             ],
+            [
+                'scope' => 'hengaku',
+                'changes' => [
+                    ['effectiveAt' => '2026-11-10 00:00:00', 'price' => 1280],
+                ],
+            ],
         ];
 
         $scopePriceCaseSql = 'CASE COALESCE(purchases.scope, "seiho")
@@ -308,10 +322,11 @@ class AdminController extends Controller
                 WHEN purchases.paid_at < "'.$basicBundlePriceSwitchAt.'" THEN 980
                 ELSE 1980
             END
+            WHEN "hengaku" THEN 1280
             ELSE 1980
         END';
 
-        $scopeOrder = ['seiho', 'daigaku', 'ouyou', 'senmon', 'ippan', 'basic'];
+        $scopeOrder = ['seiho', 'daigaku', 'ouyou', 'senmon', 'ippan', 'hengaku', 'basic'];
 
         $salesBaseQuery = DB::table('purchases')
             ->where('purchases.status', 'paid')
@@ -889,7 +904,7 @@ class AdminController extends Controller
     public function updateAdminPurchaseScopes(Request $request, int $userId): RedirectResponse
     {
         $scopeInputs = $request->input('scopes', []);
-        $allowedScopes = ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'basic'];
+        $allowedScopes = ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku', 'basic'];
 
         if (!is_array($scopeInputs)) {
             return back()->with('status', '更新データが不正です。');
@@ -919,7 +934,7 @@ class AdminController extends Controller
                     'updated_at' => now(),
                 ]);
 
-            foreach (['ippan', 'senmon', 'ouyou', 'basic'] as $scope) {
+            foreach (['ippan', 'senmon', 'ouyou', 'hengaku', 'basic'] as $scope) {
                 if ($normalized[$scope]) {
                     $existsPaid = DB::table('purchases')
                         ->where('user_id', $userId)
@@ -1008,13 +1023,14 @@ class AdminController extends Controller
                 'ippan' => '生命保険一般課程 プレミアムプラン（買い切り）',
                 'senmon' => '生命保険専門課程 プレミアムプラン（買い切り）',
                 'ouyou' => '生命保険応用課程 プレミアムプラン（買い切り）',
+                'hengaku' => '変額保険販売資格 プレミアムプラン（買い切り）',
                 'basic' => '一般・専門・応用セット（買い切り）',
                 default => '生保講座 プレミアムプラン（買い切り）',
             },
             'price' => match ($scope) {
                 'daigaku' => 1980,
                 'ippan' => 1280,
-                'senmon', 'ouyou' => 1280,
+                'senmon', 'ouyou', 'hengaku' => 1280,
                 'basic' => 1980,
                 default => 2980,
             },

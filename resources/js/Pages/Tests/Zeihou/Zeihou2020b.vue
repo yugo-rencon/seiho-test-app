@@ -23,6 +23,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税・贈与税の財産評価-①"
+                    :relatedProblems="['2020a1', '2020b1', '2020c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '時価',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税・贈与税の財産評価-②"
+                    :relatedProblems="['2020a6', '2020b6', '2020c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '路線価',
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の計算-①"
+                    :relatedProblems="['2020b11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '1月1日〜12月31日',
@@ -86,6 +89,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の計算-②"
+                    :relatedProblems="['2020b16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '10',
@@ -107,6 +111,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税法における所得"
+                    :relatedProblems="['2020b21']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         'アパート、貸間等のように食事を供さない場合の所得は[[不動産所得]]となるが、下宿等のように食事を供する場合には[[事業所得または雑所得]]となる。', //p18
@@ -119,6 +124,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続と相続税"
+                    :relatedProblems="['2020a22', '2020b22', '2020c22']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -131,6 +137,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人の種類と課税の範囲、事業年度"
+                    :relatedProblems="['2020b23']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '内国法人とは、日本国内に本店または主たる事務所を有する法人をいい、[[外国法人とはそれ以外の法人をいう]]。', //p118
@@ -143,6 +150,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税額の計算"
+                    :relatedProblems="['2020b24']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '3株主グループ → 1株主グループ', //p134
@@ -155,6 +163,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険料控除"
+                    :relatedProblems="['2020a25', '2020b25', '2020c25', '2020c44']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '生命保険料控除の対象となる → 対象とならない', //p164
@@ -167,6 +176,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の申告と納税"
+                    :relatedProblems="['2020b26']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '1500万円 → 2000万円', //p58
@@ -179,6 +189,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の申告と納税"
+                    :relatedProblems="['2020a35', '2020b27']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="固定資産税"
+                    :relatedProblems="['2020b28']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="確定拠出年金の税制上の取扱い"
+                    :relatedProblems="['2020b29']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社と税"
+                    :relatedProblems="['2020a30', '2020b30', '2020c30']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2020年度 フォームB";
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '租税の種類',
+                            relatedProblems: ['2020a31', '2020a41', '2020b31', '2020b41', '2020c41'],
                             content: '財産税 → 流通税', //p4
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '空き家に係る譲渡所得の特別控除の特例',
+                            relatedProblems: ['2020a32', '2020b32', '2020c32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '担税者',
+                            relatedProblems: ['2020b33'],
                             content: '消費税のような間接税では、担税者は[[消費者]]、納税義務者は[[業者]]となり、両者は一致しない。', //p4
                         }, //33
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '贈与税の課税価格',
+                            relatedProblems: ['2020b34'],
                             content: '個人が法人から贈与を受けた財産は、[[贈与税の課税価格に算入しない]]（所得税の対象となる）。', //p97
                         }, //34
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '相続時精算課税制度',
+                            relatedProblems: ['2020b35'],
                             content: '当該制度を選択した場合、その選択した年分以後は、選択した贈与者からの贈与は、すべて当該制度の対象となり、[[当該制度を選択した贈与者からの贈与は、暦年課税への変更はできない]]。', //p103
                         }, //35
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '法人税の中間申告',
+                            relatedProblems: ['2020b36'],
                             content: '事業年度が6カ月を超える普通法人は、事業年度開始の日以後6カ月を経過した日から2カ月以内に、税務署長に対し、[[前年度実績による中間申告（予定申告）]]または[[仮決算による中間申告]]による中間報告書を提出しなければならない。', //p140
                         }, //36
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '不動産取得税',
+                            relatedProblems: ['2020b37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '総合福祉団体定期保険の保険料',
+                            relatedProblems: ['2020b38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '定期付養老保険の保険料',
+                            relatedProblems: ['2020a39', '2020b39', '2020c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
+                            relatedProblems: ['2020a40', '2020b40', '2020c40'],
                             content: '要件に違反して解約した場合等は、差益に対して[[20％の源泉分離課税を行う]]。', //p212
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '租税の種類',
+                            relatedProblems: ['2020a31', '2020a41', '2020b31', '2020b41', '2020c41'],
                             label: 'エ',
                             content: '目的税',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '所得税額の計算',
+                            relatedProblems: ['2020b42', '2020c31'],
                             label: 'イ',
                             content: '二重課税',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '寄付金控除',
+                            relatedProblems: ['2020b43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '法定相続分',
+                            relatedProblems: ['2020b44'],
                             label: 'エ',
                             content: '民法',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '第2次相続',
+                            relatedProblems: ['2020a45', '2020b45', '2020c45'],
                             label: 'ア',
                             content: '10年',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '相続税の加算',
+                            relatedProblems: ['2020b46'],
                             label: 'ウ',
                             content: '20%',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '個人の住民税',
+                            relatedProblems: ['2020b47'],
                             label: 'ウ',
                             content: '6%',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '連結納税制度',
+                            relatedProblems: ['2020a48', '2020b48', '2020c48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '法人の住民税',
+                            relatedProblems: ['2020a27', '2020b49'],
                             label: 'ウ',
                             content: '従業者数',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
+                            relatedProblems: ['2020a29', '2020b50'],
                             label: 'オ',
                             content: '',
                         }, //50

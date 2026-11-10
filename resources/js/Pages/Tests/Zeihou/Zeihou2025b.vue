@@ -23,6 +23,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の申告と納税"
+                    :relatedProblems="['2025b1']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '遺贈',
@@ -44,6 +45,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税の申告と納付"
+                    :relatedProblems="['2025b6']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '6カ月',
@@ -65,6 +67,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）－①"
+                    :relatedProblems="['2025a11', '2025b11', '2025c11']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '3親等',
@@ -86,6 +89,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）－②"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '10年',
@@ -107,6 +111,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="租税の種類"
+                    :relatedProblems="['2025a31', '2025a41', '2025b21']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -119,6 +124,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税"
+                    :relatedProblems="['2025b22', '2025c27']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '個人が法人から贈与を受けた財産は、[[贈与税の課税価格に算入しない]]。', //p97
@@ -131,6 +137,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="営業職員報酬"
+                    :relatedProblems="['2025b23']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '雑所得 → 事業所得', //p225
@@ -143,6 +150,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業税"
+                    :relatedProblems="['2025a24', '2025b24', '2025c24']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '正しい',
@@ -155,6 +163,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税通達による事業保険の取扱"
+                    :relatedProblems="['2025a25', '2025b25', '2025c25']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '福利厚生費 → 給与', //p181
@@ -167,6 +176,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="税率"
+                    :relatedProblems="['2025a26', '2025b26', '2025c26']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '比例税率 → 累進税率', //p5
@@ -179,6 +189,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当所得"
+                    :relatedProblems="['2025b27']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続時精算課税制度"
+                    :relatedProblems="['2025b28', '2025c44']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税"
+                    :relatedProblems="['2025b29']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2025年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="確定給付企業年金"
+                    :relatedProblems="['2025a49', '2025b30']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2025年度 フォームB";
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '税の基本用語',
+                            relatedProblems: ['2025b31'],
                             content: '租税を納付する義務を負う者を[[納税義務者]]といい、実際に負担する義務を負う者を[[担税者]]という。消費税のような間接税の場合、担税者は[[消費者]]、納税義務者は[[業者]]である。', //p4
                         }, //31
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '非課税所得',
+                            relatedProblems: ['2025a32', '2025b32', '2025c32'],
                             content: '租税特別措置法によるもの → その他の法律によるもの', //p9
                         }, //32
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '雑所得',
+                            relatedProblems: ['2025b33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '医療費控除',
+                            relatedProblems: ['2025b34', '2025c42'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '確定申告',
+                            relatedProblems: ['2025b35'],
                             content: '1500万円 → 2000万円', //p58
                         }, //35
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '障害者の相続税額軽減',
+                            relatedProblems: ['2025b36'],
                             content: '65歳 → 85歳', //p92
                         }, //36
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '外貨建て生命保険の取扱',
+                            relatedProblems: ['2025a37', '2025b37', '2025c37'],
                             content: '保険料等の支払いについては[[その支払時点]]の「価格」、保険金等の受取については[[その受取の権利が確定した時点]]の「価格」で邦貨に換算して計算する（生命保険加入時ではない）。', //p178
                         }, //37
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '法人税の性格',
+                            relatedProblems: ['2025b38', '2025c23'],
                             content: '現行法人税は、基本的に[[法人擬制説]]によっている。', //p117
                         }, //38
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
+                            relatedProblems: ['2025a39', '2025b39', '2025c39'],
                             content: '要件に違反して解約した場合等は、差益に対して[[20％の源泉分離課税を行う]]。', //p212
                         }, //39
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '中途給付金',
+                            relatedProblems: ['2025b40'],
                             content: '雑所得 → 一時所得', //p175
                         }, //40
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '所得税の税額控除額',
+                            relatedProblems: ['2025b41'],
                             label: 'イ',
                             content: '二重課税',
                         }, //41
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '退職所得控除額',
+                            relatedProblems: ['2025b42'],
                             label: 'ウ',
                             content: '40万円',
                         }, //42
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '所得税の課税標準',
+                            relatedProblems: ['2025b43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '源泉徴収制度',
+                            relatedProblems: ['2025b44'],
                             label: 'ア',
                             content: '翌月10日',
                         }, //44
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '法人の種類と課税の範囲',
+                            relatedProblems: ['2025a45', '2025b45', '2025c45'],
                             label: 'オ',
                             content: '',
                         }, //45
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '定期金に関する権利',
+                            relatedProblems: ['2025b46'],
                             label: 'エ',
                             content: '解約返戻金額',
                         }, //46
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '資産の評価益の益金不算入',
+                            relatedProblems: ['2025b47'],
                             label: 'オ',
                             content: '',
                         }, //47
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '固定資産税の課税標準',
+                            relatedProblems: ['2025a48', '2025b48', '2025c48'],
                             label: 'ウ',
                             content: '3年',
                         }, //48
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '不動産取得税',
+                            relatedProblems: ['2025b49', '2025c28'],
                             label: 'イ',
                             content: '道府県税',
                         }, //49
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '生命保険代理店の事業免許等に係る税',
+                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                             label: 'オ',
                             content: '',
                         }, //50

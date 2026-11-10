@@ -24,6 +24,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="住民税-①"
+                    :relatedProblems="['2023c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '均等割額のみ',
@@ -45,6 +46,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="住民税-②"
+                    :relatedProblems="['2023c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '普通徴収',
@@ -66,6 +68,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="グループ通算制度-①"
+                    :relatedProblems="['2023a11', '2023b11', '2023c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '経済のグローバル化',
@@ -87,6 +90,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="グループ通算制度-②"
+                    :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '完全支配関係',
@@ -113,6 +117,7 @@ const subject = "2023年度 フォームC";
                             // rev: 2026-11-09 確認済み
                             answer: '800万円',
                             questionTitle: '退職所得の金額',
+                            relatedProblems: ['2023c21'],
                             explanation: [
                                 {
                                     type: 'blockTitle',
@@ -154,6 +159,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の課税財産"
+                    :relatedProblems="['2023a22', '2023b22', '2023c22']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '公益事業用財産は[[非課税財産に該当する]]。', //p82
@@ -166,6 +172,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="遺言"
+                    :relatedProblems="['2023c23']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -178,6 +185,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税通達による事業保険の取扱"
+                    :relatedProblems="['2023a24', '2023b24', '2023c24']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -190,6 +198,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税・贈与税の財産評価"
+                    :relatedProblems="['2023c25']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '年金の種類に問わず、[[解約返戻金や一時金相当額、予定利率等を基に算出した金額のいずれか高い金額で評価]]する。', //p110
@@ -202,6 +211,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当所得"
+                    :relatedProblems="['2023a26', '2023b26', '2023c26']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -214,6 +224,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税"
+                    :relatedProblems="['2023c27']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -226,6 +237,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続"
+                    :relatedProblems="['2023c28']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '相続税と贈与税は密接な関係にあるため、これら2つの税は、[[いずれも相続税法という一つの法律の中で規定されている]]。', //p65
@@ -238,6 +250,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="同族会社の留保金課税"
+                    :relatedProblems="['2023c29']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -250,6 +263,7 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険を払済保険へ変更した場合の税務上の取扱"
+                    :relatedProblems="['2023c30']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '責任準備金相当額 → 解約返戻金相当額', //p199
@@ -265,110 +279,130 @@ const subject = "2023年度 フォームC";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '租税の種類',
+                            relatedProblems: ['2023a41', '2023c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '相続人',
+                            relatedProblems: ['2023c32'],
                             content: '代理相続 → 代襲相続', //p68
                         }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定申告',
+                            relatedProblems: ['2023a33', '2023b33', '2023c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '法人税の性格',
+                            relatedProblems: ['2023b25', '2023c34'],
                             content: '法人実在説 → 法人擬制説', //p117
                         }, //34
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '法人の確定申告',
+                            relatedProblems: ['2023c35'],
                             content: ' 3ヶ月以内 → 2ヶ月以内', //p140
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '地方税',
+                            relatedProblems: ['2023c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '不動産取得税',
+                            relatedProblems: ['2023a37', '2023b37', '2023c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '転換時の税務上の取扱',
+                            relatedProblems: ['2023c38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '確定拠出年金の老齢給付金',
+                            relatedProblems: ['2023c39'],
                             content: '一時所得 → 雑所得', //p219
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
+                            relatedProblems: ['2023a40', '2023b40', '2023c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '一時所得',
+                            relatedProblems: ['2023c41'],
                             label: 'イ',
                             content: '営利',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の課税標準',
+                            relatedProblems: ['2023c42'],
                             label: 'ウ',
                             content: '租税特別措置法',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '配偶者控除',
+                            relatedProblems: ['2023c43'],
                             label: 'オ',
                             content: '',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '相続時精算課税制度',
+                            relatedProblems: ['2023a44', '2023b44', '2023c44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '未成年者控除・障害者控除',
+                            relatedProblems: ['2023c45'],
                             label: 'イ',
                             content: '10万円',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '法人の種類と課税の範囲',
+                            relatedProblems: ['2023c46'],
                             label: 'イ',
                             content: '公共法人',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '有価証券の評価',
+                            relatedProblems: ['2023c47'],
                             label: 'エ',
                             content: '償却原価',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '固定資産税の課税標準',
+                            relatedProblems: ['2023c48'],
                             label: 'ウ',
                             content: '3年',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
+                            relatedProblems: ['2023a49', '2023b49', '2023c49'],
                             label: 'エ',
                             content: '事業主',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険代理店の事業免許等に係る税',
+                            relatedProblems: ['2023a50', '2023b50', '2023c50'],
                             label: 'ア',
                             content: '登録免許税',
                         }, //50

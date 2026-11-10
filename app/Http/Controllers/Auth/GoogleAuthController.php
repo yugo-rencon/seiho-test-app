@@ -102,17 +102,17 @@ class GoogleAuthController extends Controller
 
     private function sanitizeScope(?string $scope): string
     {
-        return in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou'], true) ? $scope : 'seiho';
+        return in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'], true) ? $scope : 'seiho';
     }
 
     private function resolveRegistrationScope(?string $scope, ?string $returnTo): string
     {
-        $allowedScopes = ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou'];
+        $allowedScopes = ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'];
         if (in_array($scope, $allowedScopes, true)) {
             return $scope;
         }
 
-        foreach (['daigaku', 'ippan', 'senmon', 'ouyou'] as $pathScope) {
+        foreach (['daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'] as $pathScope) {
             if ($returnTo && str_starts_with($returnTo, "/{$pathScope}")) {
                 return $pathScope;
             }

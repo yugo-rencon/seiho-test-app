@@ -90,8 +90,47 @@ const ippanAutoNavigation = computed(() => {
     };
 });
 
+const hengakuAutoNavigation = computed(() => {
+    if (!isHengaku.value) {
+        return { previous: null, next: null };
+    }
+
+    const path = (page.url || "").split("?")[0];
+    const matched = path.match(/^\/hengaku\/(202[3-6])-(h1|h2)-([a-d])$/i);
+
+    if (!matched) {
+        return { previous: null, next: null };
+    }
+
+    const currentId = `${matched[1]}|${matched[2].toLowerCase()}|${matched[3].toLowerCase()}`;
+    const years = ["2026", "2025", "2024", "2023"];
+    const periodsForYear = (year) => (year === "2026" ? ["h1"] : ["h2", "h1"]);
+    const formsForPeriod = (period) => (period === "h1" ? ["a", "b"] : ["a", "b", "c", "d"]);
+    const orderedIds = years.flatMap((year) =>
+        periodsForYear(year).flatMap((period) =>
+            formsForPeriod(period).map((form) => `${year}|${period}|${form}`),
+        ),
+    );
+    const currentIndex = orderedIds.indexOf(currentId);
+
+    if (currentIndex === -1) {
+        return { previous: null, next: null };
+    }
+
+    const toHref = (id) => {
+        if (!id) return null;
+        const [year, period, form] = id.split("|");
+        return `/hengaku/${year}-${period}-${form}`;
+    };
+
+    return {
+        previous: toHref(orderedIds[currentIndex - 1] ?? null),
+        next: toHref(orderedIds[currentIndex + 1] ?? null),
+    };
+});
+
 const seihoAutoNavigation = computed(() => {
-    if (isDaigaku.value || isSenmon.value || isOuyou.value || isIppan.value) {
+    if (isDaigaku.value || isSenmon.value || isOuyou.value || isIppan.value || isHengaku.value) {
         return { previous: null, next: null };
     }
 
@@ -130,8 +169,8 @@ const seihoAutoNavigation = computed(() => {
     };
 });
 
-const previousLink = computed(() => props.previousHref || (props.previousRoute ? route(props.previousRoute) : null) || ippanAutoNavigation.value.previous || seihoAutoNavigation.value.previous);
-const nextLink = computed(() => props.nextHref || (props.nextRoute ? route(props.nextRoute) : null) || ippanAutoNavigation.value.next || seihoAutoNavigation.value.next);
+const previousLink = computed(() => props.previousHref || (props.previousRoute ? route(props.previousRoute) : null) || ippanAutoNavigation.value.previous || hengakuAutoNavigation.value.previous || seihoAutoNavigation.value.previous);
+const nextLink = computed(() => props.nextHref || (props.nextRoute ? route(props.nextRoute) : null) || ippanAutoNavigation.value.next || hengakuAutoNavigation.value.next || seihoAutoNavigation.value.next);
 const homeLink = computed(() => props.homeHref || (props.homeRoute ? route(props.homeRoute) : null));
 </script>
 

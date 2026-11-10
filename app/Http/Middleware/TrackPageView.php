@@ -98,7 +98,7 @@ class TrackPageView
         $path = '/'.ltrim($request->path(), '/');
         $scope = (string) $request->query('scope', '');
 
-        if ($path === '/pricing' && in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou'], true)) {
+        if ($path === '/pricing' && in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'], true)) {
             return $scope;
         }
 
@@ -109,6 +109,7 @@ class TrackPageView
                 str_starts_with($returnTo, '/ippan') => 'ippan',
                 str_starts_with($returnTo, '/senmon') => 'senmon',
                 str_starts_with($returnTo, '/ouyou') => 'ouyou',
+                str_starts_with($returnTo, '/hengaku') => 'hengaku',
                 default => 'seiho',
             };
         }

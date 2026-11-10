@@ -23,6 +23,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="グループ通算制度－①"
+                    :relatedProblems="['2025c1']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '経済のグローバル化',
@@ -44,6 +45,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="グループ通算制度－②"
+                    :relatedProblems="['2025c6']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '完全支配関係',
@@ -65,6 +67,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）－①"
+                    :relatedProblems="['2025a11', '2025b11', '2025c11']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '3親等',
@@ -86,6 +89,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の生命保険料控除（2012年（平成24年）1月1日以後の締結契約）－②"
+                    :relatedProblems="['2025a16', '2025b16', '2025c16']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '10年',
@@ -107,6 +111,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の配偶者控除と配偶者特別控除"
+                    :relatedProblems="['2025c21']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '103万円 → 62万円', //p47
@@ -119,6 +124,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の課税財産"
+                    :relatedProblems="['2025c22']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -131,6 +137,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税の性格"
+                    :relatedProblems="['2025b38', '2025c23']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -143,6 +150,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業税"
+                    :relatedProblems="['2025a24', '2025b24', '2025c24']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '正しい',
@@ -155,6 +163,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税通達による事業保険の取扱"
+                    :relatedProblems="['2025a25', '2025b25', '2025c25']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '福利厚生費 → 給与', //p181
@@ -167,6 +176,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="税率"
+                    :relatedProblems="['2025a26', '2025b26', '2025c26']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '比例税率 → 累進税率', //p5
@@ -179,6 +189,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税"
+                    :relatedProblems="['2025b22', '2025c27']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="不動産取得税"
+                    :relatedProblems="['2025b49', '2025c28']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '[[相続]]による取得や法人の合併による取得など形式的な所有権の移転については課税されない。', //p159
@@ -203,6 +215,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="経営者保険、退職金保険"
+                    :relatedProblems="['2025c29']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2025年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社と税"
+                    :relatedProblems="['2025c30']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2025年度 フォームC";
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '流通税',
+                            relatedProblems: ['2025c31'],
                             content: '流通税は、財産移転の事実に基づいて課税されるもので、印紙税、[[不動産取得税]]等が該当する。', //p4
                         }, //31
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '非課税所得',
+                            relatedProblems: ['2025a32', '2025b32', '2025c32'],
                             content: '租税特別措置法によるもの → その他の法律によるもの', //p9
                         }, //32
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '退職所得',
+                            relatedProblems: ['2025c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '青色申告制度',
+                            relatedProblems: ['2025c34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '遺産分割の方法',
+                            relatedProblems: ['2025a27', '2025c35'],
                             content: '遺贈は[[受遺者の承諾の有無にかかわりなく]]財産処分としての効力が生じる。', //p73
                         }, //35
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '申告調整',
+                            relatedProblems: ['2025c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '外貨建て生命保険の取扱',
+                            relatedProblems: ['2025a37', '2025b37', '2025c37'],
                             content: '保険料等の支払いについては[[その支払時点]]の「価格」、保険金等の受取については[[その受取の権利が確定した時点]]の「価格」で邦貨に換算して計算する（生命保険加入時ではない）。', //p178
                         }, //37
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '固定資産税の納税義務者',
+                            relatedProblems: ['2025c38'],
                             content: '償却資産の場合、[[償却資産課税台帳に所有者として登録されている者]]をいう。', //p157
                         }, //38
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
+                            relatedProblems: ['2025a39', '2025b39', '2025c39'],
                             content: '要件に違反して解約した場合等は、差益に対して[[20％の源泉分離課税を行う]]。', //p212
                         }, //39
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '確定拠出年金の拠出限度額',
+                            relatedProblems: ['2025c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '譲渡所得',
+                            relatedProblems: ['2025c41'],
                             label: 'エ',
                             content: '全額',
                         }, //41
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '医療費控除',
+                            relatedProblems: ['2025b34', '2025c42'],
                             label: 'ア',
                             content: '10万円',
                         }, //42
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '法定相続分',
+                            relatedProblems: ['2025a44', '2025c43'],
                             label: 'エ',
                             content: '民法',
                         }, //43
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '相続時精算課税制度',
+                            relatedProblems: ['2025b28', '2025c44'],
                             label: 'ア',
                             content: '1月1日',
                         }, //44
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '法人の種類と課税の範囲',
+                            relatedProblems: ['2025a45', '2025b45', '2025c45'],
                             label: 'オ',
                             content: '',
                         }, //45
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '法人税法の特別規定',
+                            relatedProblems: ['2025c46'],
                             label: 'イ',
                             content: '特定同族会社',
                         }, //46
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '個人の住民税',
+                            relatedProblems: ['2025a28', '2025c47'],
                             label: 'エ',
                             content: '3,000円',
                         }, //47
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '固定資産税の課税標準',
+                            relatedProblems: ['2025a48', '2025b48', '2025c48'],
                             label: 'ウ',
                             content: '3年',
                         }, //48
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '保険金等受取時の税務',
+                            relatedProblems: ['2025c49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
                             // rev: 2026-11-02 確認済み
                             questionTitle: '生命保険代理店の事業免許等に係る税',
+                            relatedProblems: ['2025a50', '2025b50', '2025c50'],
                             label: 'オ',
                             content: '',
                         }, //50

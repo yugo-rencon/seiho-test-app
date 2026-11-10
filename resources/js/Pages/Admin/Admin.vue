@@ -520,7 +520,7 @@ const adsenseStoreRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.
 
 const adsenseDeleteRoute = computed(() => (isDaigakuAdmin.value ? "daigaku.admin.adsenseRevenues.delete" : "admin.adsenseRevenues.delete"));
 
-const adminScopeKeys = ["seiho", "daigaku", "ouyou", "senmon", "ippan", "basic"];
+const adminScopeKeys = ["seiho", "daigaku", "ouyou", "senmon", "ippan", "hengaku", "basic"];
 
 const adminScopeOptions = [
     { key: "seiho", label: "生保講座", badgeClass: "bg-violet-50 text-violet-700" },
@@ -528,6 +528,7 @@ const adminScopeOptions = [
     { key: "ouyou", label: "応用課程", badgeClass: "bg-amber-50 text-amber-700" },
     { key: "senmon", label: "専門課程", badgeClass: "bg-emerald-50 text-emerald-700" },
     { key: "ippan", label: "一般課程", badgeClass: "bg-fuchsia-50 text-fuchsia-700" },
+    { key: "hengaku", label: "変額保険", badgeClass: "bg-teal-50 text-teal-700" },
     { key: "basic", label: "セット", badgeClass: "bg-cyan-100 text-cyan-700" },
 ];
 
@@ -537,6 +538,7 @@ const adminInitialScopes = (admin) => ({
     ouyou: Number(admin.ouyou_paid_count ?? 0) > 0,
     senmon: Number(admin.senmon_paid_count ?? 0) > 0,
     ippan: Number(admin.ippan_paid_count ?? 0) > 0,
+    hengaku: Number(admin.hengaku_paid_count ?? 0) > 0,
     basic: Number(admin.basic_paid_count ?? 0) > 0,
 });
 
@@ -631,6 +633,7 @@ const registrationSourceLabel = (user) => {
     if (user.registered_scope === "ippan") return "一般課程";
     if (user.registered_scope === "senmon") return "専門課程";
     if (user.registered_scope === "ouyou") return "応用課程";
+    if (user.registered_scope === "hengaku") return "変額保険";
     if (user.registered_scope === "seiho") return "生保講座";
     return "-";
 };
@@ -640,6 +643,7 @@ const registrationSourceClass = (user) => {
     if (user.registered_scope === "ippan") return "bg-fuchsia-50 text-fuchsia-700";
     if (user.registered_scope === "senmon") return "bg-emerald-50 text-emerald-700";
     if (user.registered_scope === "ouyou") return "bg-amber-50 text-amber-700";
+    if (user.registered_scope === "hengaku") return "bg-teal-50 text-teal-700";
     if (user.registered_scope === "seiho") return "bg-violet-50 text-violet-700";
     return "bg-gray-100 text-gray-600";
 };
@@ -650,6 +654,7 @@ const purchaseProductOptions = [
     { key: "ippan", label: "一般課程", countKey: "ippan_paid_count", className: "bg-fuchsia-50 text-fuchsia-700" },
     { key: "senmon", label: "専門課程", countKey: "senmon_paid_count", className: "bg-emerald-50 text-emerald-700" },
     { key: "ouyou", label: "応用課程", countKey: "ouyou_paid_count", className: "bg-amber-50 text-amber-700" },
+    { key: "hengaku", label: "変額保険", countKey: "hengaku_paid_count", className: "bg-teal-50 text-teal-700" },
     { key: "basic", label: "セット", countKey: "basic_paid_count", className: "bg-cyan-100 text-cyan-700" },
 ];
 
@@ -1267,6 +1272,12 @@ const peakHour2h = computed(() => {
                     <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">一般課程 売上件数</p>
                     <p class="mt-1 text-xl font-bold text-fuchsia-700 sm:text-2xl">
                         {{ stats.ippanSalesCount }}
+                    </p>
+                </div>
+                <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">
+                    <p class="text-[11px] leading-tight text-gray-500 sm:text-xs">変額保険 売上件数</p>
+                    <p class="mt-1 text-xl font-bold text-teal-700 sm:text-2xl">
+                        {{ stats.hengakuSalesCount }}
                     </p>
                 </div>
                 <div class="rounded-xl border border-gray-100 bg-white p-3 sm:p-4">

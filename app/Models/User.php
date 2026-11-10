@@ -57,7 +57,7 @@ class User extends Authenticatable
             return (bool) $this->is_daigaku_premium;
         }
 
-        if (in_array($scope, ['ippan', 'senmon', 'ouyou'], true)) {
+        if (in_array($scope, ['ippan', 'senmon', 'ouyou', 'hengaku'], true)) {
             return DB::table('purchases')
                 ->where('user_id', $this->id)
                 ->where('status', 'paid')
@@ -97,7 +97,7 @@ class User extends Authenticatable
         return DB::table('purchases')
             ->where('user_id', $this->id)
             ->where('status', 'paid')
-            ->whereIn('scope', ['ippan', 'senmon', 'ouyou', 'basic'])
+            ->whereIn('scope', ['ippan', 'senmon', 'ouyou', 'hengaku', 'basic'])
             ->exists();
     }
 

@@ -23,6 +23,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の計算-①"
+                    :relatedProblems="['2022b1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '10種類',
@@ -44,6 +45,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の計算-②"
+                    :relatedProblems="['2022b6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '算出税額',
@@ -65,6 +67,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税-①"
+                    :relatedProblems="['2022a11', '2022b11', '2022c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '直接税',
@@ -86,6 +89,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税-②"
+                    :relatedProblems="['2022a16', '2022b16', '2022c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '内国法人',
@@ -107,6 +111,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税法における所得"
+                    :relatedProblems="['2022b21']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         'アパート、貸間等のように食事を供さない場合の所得は[[不動産所得]]となるが、下宿等のように食事を供する場合には[[事業所得または雑所得]]となる。', //p18
@@ -119,6 +124,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税額の計算"
+                    :relatedProblems="['2022b22']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '4 → 5', //p53
@@ -131,6 +137,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の申告と納税"
+                    :relatedProblems="['2022a23', '2022b23', '2022c23']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -143,6 +150,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税法における別段の定め"
+                    :relatedProblems="['2022a24', '2022b24', '2022c24']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '50% → 95%', //p126
@@ -155,6 +163,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="事業税"
+                    :relatedProblems="['2022b25']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '市町村が課税 → 道府県が課税', //p152
@@ -167,6 +176,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="租税の種類"
+                    :relatedProblems="['2022a21', '2022b26']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -179,6 +189,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="扶養控除"
+                    :relatedProblems="['2022a27', '2022b27', '2022c27']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税額"
+                    :relatedProblems="['2022b28']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険料控除"
+                    :relatedProblems="['2022b29']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '10年に満たず → 5年に満たず', //p163
@@ -215,6 +228,7 @@ const subject = "2022年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="生命保険会社と税"
+                    :relatedProblems="['2022b30', '2022c25']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2022年度 フォームB";
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '雑所得',
+                            relatedProblems: ['2022b31'],
                             content: '著述家や作家が受ける原稿料や印税 → 著述家や作家[[以外]]が受ける原稿料や印税', //p28
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定申告',
+                            relatedProblems: ['2022b32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '相続税と贈与税',
+                            relatedProblems: ['2022b33'],
                             content: '財産の評価についても相続財産の評価と贈与財産の評価は[[同じ基準]]にしたがって行われる。', //p65
                         }, //33
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険と相続対策',
+                            relatedProblems: ['2022b34'],
                             content: '正しい',
                         }, //34
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '教育資金一括贈与の非課税措置',
+                            relatedProblems: ['2022a35', '2022b35', '2022c35'],
                             content: '3000万円 → 1000万円', //p98
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '法人税の種類',
+                            relatedProblems: ['2022a36', '2022b36', '2022c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '有価証券の評価',
+                            relatedProblems: ['2022b37'],
                             content: '売買目的有価証券 → 売買目的[[外]]有価証券', //p130
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '居住用超高層建築物の不動産取得税',
+                            relatedProblems: ['2022b38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定拠出年金のポータビリティ',
+                            relatedProblems: ['2022a39', '2022b39', '2022c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '財形給付金制度',
+                            relatedProblems: ['2022b40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '医療費控除',
+                            relatedProblems: ['2022b41'],
                             label: 'イ',
                             content: '10万円',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '死亡保険金の相続税課税',
+                            relatedProblems: ['2022b42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '相続税の税額軽減',
+                            relatedProblems: ['2022b43'],
                             label: 'エ',
                             content: '1億6,000万円',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '贈与税の配偶者控除',
+                            relatedProblems: ['2022b44'],
                             label: 'イ',
                             content: '20年',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '相続時精算課税制度',
+                            relatedProblems: ['2022a45', '2022b45', '2022c45'],
                             label: 'ウ',
                             content: '18歳',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '法人の確定申告',
+                            relatedProblems: ['2022a46', '2022b46', '2022c46'],
                             label: 'ア',
                             content: '2ヶ月',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '同族会社',
+                            relatedProblems: ['2022b47'],
                             label: 'ア',
                             content: '株主',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '固定資産税の課税標準',
+                            relatedProblems: ['2022b48', '2022c38'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
+                            relatedProblems: ['2022b49'],
                             label: 'エ',
                             content: '退職所得',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '最低課税方式',
+                            relatedProblems: ['2022a50', '2022b50', '2022c50'],
                             label: 'エ',
                             content: '契約者配当準備金損金算入額',
                         }, //50

@@ -10,6 +10,7 @@ const props = defineProps({
     isSenmon: { type: Boolean, default: false },
     isOuyou: { type: Boolean, default: false },
     isIppan: { type: Boolean, default: false },
+    isHengaku: { type: Boolean, default: false },
     isAuthenticated: { type: Boolean, default: false },
     hasPremium: { type: Boolean, default: false },
     isAdmin: { type: Boolean, default: false },
@@ -31,6 +32,7 @@ const toggleSubject = (subjectKey) => {
     expandedSubjectKey.value = expandedSubjectKey.value === subjectKey ? "" : subjectKey;
 };
 const currentScope = computed(() => {
+    if (props.isHengaku) return "hengaku";
     if (props.isDaigaku) return "daigaku";
     if (props.isIppan) return "ippan";
     if (props.isSenmon) return "senmon";
@@ -45,6 +47,7 @@ const loginHref = computed(() => {
     });
 });
 const mypageRouteName = () => {
+    if (props.isHengaku) return "hengaku.mypage";
     if (props.isDaigaku) return "daigaku.mypage";
     if (props.isIppan) return "ippan.mypage";
     if (props.isSenmon) return "senmon.mypage";

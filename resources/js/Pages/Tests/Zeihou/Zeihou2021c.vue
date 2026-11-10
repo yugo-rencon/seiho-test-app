@@ -23,6 +23,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険の保険金の税務上の取扱-①"
+                    :relatedProblems="['2021c1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '50万円',
@@ -44,6 +45,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険の保険金の税務上の取扱-②"
+                    :relatedProblems="['2021c6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '1年',
@@ -65,6 +67,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税-①"
+                    :relatedProblems="['2021a11', '2021b11', '2021c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '法人',
@@ -86,6 +89,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税-②"
+                    :relatedProblems="['2021a16', '2021b16', '2021c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '2月1日',
@@ -107,6 +111,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税法の各種所得"
+                    :relatedProblems="['2021c21']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '20% → 15%', //p14
@@ -119,6 +124,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="遺産分割の方法"
+                    :relatedProblems="['2021a22', '2021b22', '2021c22']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -131,6 +137,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の申告と納税"
+                    :relatedProblems="['2021b27', '2021c23']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '12ヶ月以内 → 10ヶ月以内', //p95
@@ -143,6 +150,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税法における別段の定め"
+                    :relatedProblems="['2021c24']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -155,6 +163,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人の住民税"
+                    :relatedProblems="['2021c25']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '課税所得金額は所得税と[[同額にはならない]]。', //p148
@@ -167,6 +176,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税額の計算"
+                    :relatedProblems="['2021c26']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '逓増税率 → 超過累進税率', //p52
@@ -179,6 +189,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続時精算課税制度"
+                    :relatedProblems="['2021a23', '2021c27']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="連結納税制度"
+                    :relatedProblems="['2021a28', '2021b28', '2021c28']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '外国法人を含む → 外国法人を除く', //p138（新教科書では記載なし）
@@ -203,6 +215,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="固定資産税"
+                    :relatedProblems="['2021a29', '2021b29', '2021c29']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税通達による事業保険の保険料の取扱"
+                    :relatedProblems="['2021c30']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2021年度 フォームC";
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '一時所得',
+                            relatedProblems: ['2021c31'],
                             content: '80万円程度 → 50万円程度', //p27
                         }, //31
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '住宅借入金（取得）等特別控除',
+                            relatedProblems: ['2021c32'],
                             content: '所得控除 → 税額控除', //p56
                         }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定申告',
+                            relatedProblems: ['2021a33', '2021b33', '2021c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '宅地の評価方法',
+                            relatedProblems: ['2021c34'],
                             content: '倍率方式 ↔︎ 路線価方式', //p110-111
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '事業年度',
+                            relatedProblems: ['2021c35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '企業保険の種類',
+                            relatedProblems: ['2021c36'],
                             content: '特定退職金共済 → 団体信用生命保険', //p205
                         }, //36
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '居住用超高層建築物の不動産取得税',
+                            relatedProblems: ['2021a37', '2021b37', '2021c37'],
                             content: '階層別専有床面積補正率は、[[１階を100として、階が１つ増すごとに10／39を加算して求める]]。', //p161
                         }, //37
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
+                            relatedProblems: ['2021a38', '2021b38', '2021c38'],
                             content: '財形貯蓄積立保険 → 財形年金積立金', //p211-212
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定拠出年金の税務',
+                            relatedProblems: ['2021c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '受取配当益金不算入',
+                            relatedProblems: ['2021c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '所得税の所得控除',
+                            relatedProblems: ['2021a41', '2021b41', '2021c41'],
                             label: 'イ',
                             content: '15種類',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '医療費控除（セルフメディケーション）',
+                            relatedProblems: ['2021a42', '2021b42', '2021c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '譲渡所得',
+                            relatedProblems: ['2021b31', '2021c43'],
                             label: 'エ',
                             content: '2分の1',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '雑損控除',
+                            relatedProblems: ['2021c44'],
                             label: 'ウ',
                             content: '災害',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '源泉徴収制度',
+                            relatedProblems: ['2021c45'],
                             label: 'ア',
                             content: '翌月10日',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '非課税財産',
+                            relatedProblems: ['2021c46'],
                             label: 'エ',
                             content: '心身障害者扶養共済制度',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '会社利益と所得金額の調整',
+                            relatedProblems: ['2021c47'],
                             label: 'ウ',
                             content: '公平な税負担',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険料控除の手続き',
+                            relatedProblems: ['2021c48'],
                             label: 'ア',
                             content: '9,000円',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金制度の開始',
+                            relatedProblems: ['2021a49', '2021b49', '2021c49'],
                             label: 'ア',
                             content: '年金規約',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員報酬',
+                            relatedProblems: ['2021b40', '2021c50'],
                             label: 'オ',
                             content: '',
                         }, //50

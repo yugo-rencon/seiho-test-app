@@ -23,6 +23,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者保護とコンプライアンス-①"
+                    :relatedProblems="['2023a1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '規制緩和',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="消費者保護とコンプライアンス-②"
+                    :relatedProblems="['2023a6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '商法',
@@ -65,6 +67,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="顧客サービスの向上と多様化-①"
+                    :relatedProblems="['2023a11', '2023b11', '2023c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '継続的',
@@ -86,6 +89,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="顧客サービスの向上と多様化-②"
+                    :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         'face to face',
@@ -107,6 +111,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="医療保障等を主たる目的とした保険（特約）"
+                    :relatedProblems="['2023a21']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '2000年に初めて開発・販売 → 1985年には発売されている', //p60
@@ -119,6 +124,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="変額保険"
+                    :relatedProblems="['2023a22', '2023b22', '2023c22']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -131,6 +137,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体保険"
+                    :relatedProblems="['2023a23', '2023b23', '2023c23']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -143,6 +150,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険代理店"
+                    :relatedProblems="['2023a24']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '一定の条件を満たす保険代理店においては、[[一社専属制の例外が認められ、複数の生命保険会社の商品を取り扱うことができる]]。', //p101
@@ -155,6 +163,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="業界共通教育制度"
+                    :relatedProblems="['2023a25']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '専門課程 → 応用課程', //p125
@@ -167,6 +176,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="長い老後生活を見据えたライフ・プランニング"
+                    :relatedProblems="['2023a26']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '生活習慣病罹患率 → 乳児死亡率', //p20
@@ -179,6 +189,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="公的年金の保険料"
+                    :relatedProblems="['2023a27', '2023b27', '2023c27']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -191,6 +202,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険商品の構造"
+                    :relatedProblems="['2023a28', '2023c21']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料払込負担の軽減"
+                    :relatedProblems="['2023a29']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '終身保険等の[[主契約に充当する方法]]に加え、定期保険特約部分に充当する方法も開発され、[[主契約と定期保険特約の両方に充当することも可能]]とした。', //p71-72
@@ -215,6 +228,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険仲立人"
+                    :relatedProblems="['2023a30', '2023b25', '2023c49']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2023年度 フォームA";
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '人の一生',
+                            relatedProblems: ['2023a31', '2023b41'],
                             content: '節目ごとに区切られた[[ライフステージ]]がつながって形成されているのが、[[ライフサイクル]]である。', //p20
                         }, //31
                         {
                             // rev: 2026-09-05 確認済み
                             questionTitle: '第三分野市場',
+                            relatedProblems: ['2023a32', '2023c32'],
                             content: '2000年（平成12年）の[[日米保険協議]]の決着により2001年（平成13年）１月には、[[子会社による参入]]が、続いて７月には、[[本体による参入]]が解禁となった。', //p35
                         }, //32
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '生命年金',
+                            relatedProblems: ['2023a33', '2023b33', '2023c33'],
                             content: '生命年金とは、確定年金とは異なり、[[被保険者の生存中にかぎり]]、周期的に一定の金額の支払をするものをいう。', //p47
                         }, //33
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '危険選択の方法',
+                            relatedProblems: ['2023a34', '2023b34', '2023c34'],
                             content: '生命保険支払専門士 → 生命保険面接士', //p52
                         }, //34
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '契約者単位の通算割引',
+                            relatedProblems: ['2023a35'],
                             content: '契約者単位で契約を通算し、その合計の保険金額で高額割引を行う仕組みで、割引の仕方としては、払込保険料を割り引く方式と[[給付金として割り戻す方式]]がある。', //p78
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定',
+                            relatedProblems: ['2023a36', '2023b36', '2023c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-09-03 確認済み
                             questionTitle: '財形貯蓄制度',
+                            relatedProblems: ['2023a37'],
                             content: '財形貯蓄制度には、勤労者財産形成貯蓄契約（一般財形）、勤労者財産形成年金貯蓄契約（財形年金）、[[勤労者財産形成住宅貯蓄契約（財形住宅）]]の３種類がある。', //p94
                         }, //37
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: 'インターネット通販',
+                            relatedProblems: ['2023a38'],
                             content: '中にはパソコンやスマートフォンで資料請求や申込ができるだけではなく、[[契約の成立までも完了できる生保会社もある]]。',//p104
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の育成体系',
+                            relatedProblems: ['2023a39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '企業保険の営業',
+                            relatedProblems: ['2023a40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '種類別貯蓄高',
+                            relatedProblems: ['2023a41'],
                             label: 'ウ',
                             content: '通貨性預貯金',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '遺族年金',
+                            relatedProblems: ['2023a42', '2023b42', '2023c42'],
                             label: 'ア',
                             content: '３分の１',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険制度の概要',
+                            relatedProblems: ['2023a43', '2023b28'],
                             label: 'ウ',
                             content: '介護認定審査会',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '個人保険商品の配当',
+                            relatedProblems: ['2023a44'],
                             label: 'ア',
                             content: '資産運用成果',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '月払保険の普及',
+                            relatedProblems: ['2023a45', '2023b45', '2023c45'],
                             label: 'オ',
                             content: '',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '総合福祉団体定期保険',
+                            relatedProblems: ['2023a46', '2023b46', '2023c46'],
                             label: 'イ',
                             content: '企業等',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '国民年金基金制度',
+                            relatedProblems: ['2023a47'],
                             label: 'イ',
                             content: '厚生労働大臣',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の登録',
+                            relatedProblems: ['2023a48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員の給与体系',
+                            relatedProblems: ['2023a49', '2023c39'],
                             label: 'エ',
                             content: '保障額',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '支社の配置',
+                            relatedProblems: ['2023a50', '2023b39'],
                             label: 'オ',
                             content: '',
                         }, //50

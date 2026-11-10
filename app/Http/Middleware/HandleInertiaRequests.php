@@ -43,6 +43,7 @@ class HandleInertiaRequests extends Middleware
             str_starts_with((string) $request->path(), 'ippan') => 'ippan',
             str_starts_with((string) $request->path(), 'senmon') => 'senmon',
             str_starts_with((string) $request->path(), 'ouyou') => 'ouyou',
+            str_starts_with((string) $request->path(), 'hengaku') => 'hengaku',
             default => 'seiho',
         };
         $premiumSessionAllowed = $premiumSessionLimiter->allows($request);
@@ -70,6 +71,7 @@ class HandleInertiaRequests extends Middleware
                 'hasPremiumIppan' => fn () => $hasPremiumAccess('ippan'),
                 'hasPremiumSenmon' => fn () => $hasPremiumAccess('senmon'),
                 'hasPremiumOuyou' => fn () => $hasPremiumAccess('ouyou'),
+                'hasPremiumHengaku' => fn () => $hasPremiumAccess('hengaku'),
                 'hasPremiumBasic' => fn () => $hasPremiumAccess('basic'),
                 'premiumSessionLimitExceeded' => fn () => $hasAnyPremium && !$premiumSessionAllowed,
                 'isAdmin' => fn () => $user?->is_admin ?? false,

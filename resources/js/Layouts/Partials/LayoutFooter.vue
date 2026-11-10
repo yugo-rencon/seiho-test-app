@@ -17,6 +17,7 @@ const props = defineProps({
 
 const page = usePage();
 const currentScope = computed(() => {
+    if (props.isHengaku) return "hengaku";
     if (props.isDaigaku) return "daigaku";
     if (props.isIppan) return "ippan";
     if (props.isSenmon) return "senmon";
@@ -34,6 +35,7 @@ const pricingHref = computed(() => {
     });
 });
 const tokushoRouteName = computed(() => {
+    if (props.isHengaku) return "hengaku.tokusho";
     if (props.isDaigaku) return "daigaku.tokusho";
     if (props.isIppan) return "ippan.tokusho";
     if (props.isSenmon) return "senmon.tokusho";
@@ -130,8 +132,10 @@ const tokushoRouteName = computed(() => {
                                 <Link
                                     :href="
                                         route(
-                                            isDaigaku
-                                                ? 'daigaku.contact.index'
+                                            isHengaku
+                                                ? 'hengaku.contact.index'
+                                                : isDaigaku
+                                                  ? 'daigaku.contact.index'
                                                 : isSenmon
                                                   ? 'senmon.contact.index'
                                                   : isOuyou
@@ -148,7 +152,7 @@ const tokushoRouteName = computed(() => {
                             </li>
                             <li>
                                 <Link
-                                    :href="route('faq')"
+                                    :href="route(isHengaku ? 'hengaku.faq' : 'faq')"
                                     class="text-gray-600 transition-colors duration-200 hover:text-blue-600"
                                 >
                                     よくある質問
@@ -173,8 +177,10 @@ const tokushoRouteName = computed(() => {
                                 <Link
                                     :href="
                                         route(
-                                            isDaigaku
-                                                ? 'daigaku.policy'
+                                            isHengaku
+                                                ? 'hengaku.policy'
+                                                : isDaigaku
+                                                  ? 'daigaku.policy'
                                                 : isSenmon
                                                   ? 'senmon.policy'
                                                   : isOuyou
@@ -193,8 +199,10 @@ const tokushoRouteName = computed(() => {
                                 <Link
                                     :href="
                                         route(
-                                            isDaigaku
-                                                ? 'daigaku.terms'
+                                            isHengaku
+                                                ? 'hengaku.terms'
+                                                : isDaigaku
+                                                  ? 'daigaku.terms'
                                                 : isSenmon
                                                   ? 'senmon.terms'
                                                   : isOuyou
@@ -321,8 +329,10 @@ const tokushoRouteName = computed(() => {
                             <Link
                                 :href="
                                     route(
-                                        isDaigaku
-                                            ? 'daigaku.contact.index'
+                                        isHengaku
+                                            ? 'hengaku.contact.index'
+                                            : isDaigaku
+                                              ? 'daigaku.contact.index'
                                             : isSenmon
                                               ? 'senmon.contact.index'
                                               : isOuyou
@@ -348,7 +358,7 @@ const tokushoRouteName = computed(() => {
                         </li>
                         <li>
                             <Link
-                                :href="route('faq')"
+                                :href="route(isHengaku ? 'hengaku.faq' : 'faq')"
                                 class="text-gray-600 transition-colors duration-200"
                                 :class="
                                     isSenmon
@@ -395,8 +405,10 @@ const tokushoRouteName = computed(() => {
                             <Link
                                 :href="
                                     route(
-                                        isDaigaku
-                                            ? 'daigaku.policy'
+                                        isHengaku
+                                            ? 'hengaku.policy'
+                                            : isDaigaku
+                                              ? 'daigaku.policy'
                                             : isSenmon
                                               ? 'senmon.policy'
                                               : isOuyou
@@ -424,8 +436,10 @@ const tokushoRouteName = computed(() => {
                             <Link
                                 :href="
                                     route(
-                                        isDaigaku
-                                            ? 'daigaku.terms'
+                                        isHengaku
+                                            ? 'hengaku.terms'
+                                            : isDaigaku
+                                              ? 'daigaku.terms'
                                             : isSenmon
                                               ? 'senmon.terms'
                                               : isOuyou

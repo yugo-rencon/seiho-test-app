@@ -74,6 +74,10 @@ Route::get('ouyou/tokusho', [TestController::class, 'tokusho'])->name('ouyou.tok
 Route::get('ippan/policy', [TestController::class, 'policy'])->name('ippan.policy');
 Route::get('ippan/terms', [TestController::class, 'terms'])->name('ippan.terms');
 Route::get('ippan/tokusho', [TestController::class, 'tokusho'])->name('ippan.tokusho');
+Route::get('hengaku/policy', [TestController::class, 'policy'])->name('hengaku.policy');
+Route::get('hengaku/terms', [TestController::class, 'terms'])->name('hengaku.terms');
+Route::get('hengaku/tokusho', [TestController::class, 'tokusho'])->name('hengaku.tokusho');
+Route::get('hengaku/faq', [TestController::class, 'faq'])->name('hengaku.faq');
 Route::get('daigaku/shikumi-kojin2026a', [TestController::class, 'daigakuShikumiKojin2026a'])->name('daigaku.shikumi-kojin2026a');
 Route::get('daigaku/shikumi-kojin2026b', [TestController::class, 'daigakuShikumiKojin2026b'])->name('daigaku.shikumi-kojin2026b');
 Route::get('daigaku/shikumi-kojin2026c', [TestController::class, 'daigakuShikumiKojin2026c'])->name('daigaku.shikumi-kojin2026c');
@@ -224,6 +228,7 @@ Route::middleware('auth')->group(function () {
     Route::get('ippan/mypage', [TestController::class, 'mypage'])->name('ippan.mypage');
     Route::get('senmon/mypage', [TestController::class, 'mypage'])->name('senmon.mypage');
     Route::get('ouyou/mypage', [TestController::class, 'mypage'])->name('ouyou.mypage');
+    Route::get('hengaku/mypage', [TestController::class, 'mypage'])->name('hengaku.mypage');
     Route::post('mypage/pass-score', [TestController::class, 'updatePassScore'])->name('mypage.passScore');
     Route::post('daigaku/mypage/pass-score', [TestController::class, 'updatePassScore'])->name('daigaku.mypage.passScore');
     Route::post('mypage/results', [TestController::class, 'updateExamResult'])->name('mypage.results');
@@ -242,6 +247,8 @@ Route::controller(ContactController::class)->group(function () {
     Route::post('ouyou/contact', 'store')->middleware('throttle:10,1')->name('ouyou.contact.store');
     Route::get('ippan/contact', 'index')->name('ippan.contact.index');
     Route::post('ippan/contact', 'store')->middleware('throttle:10,1')->name('ippan.contact.store');
+    Route::get('hengaku/contact', 'index')->name('hengaku.contact.index');
+    Route::post('hengaku/contact', 'store')->middleware('throttle:10,1')->name('hengaku.contact.store');
 });
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {

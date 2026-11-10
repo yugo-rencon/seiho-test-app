@@ -57,6 +57,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hasPremiumHengaku: {
+    type: Boolean,
+    default: false,
+  },
   hasPremiumBasic: {
     type: Boolean,
     default: false,
@@ -70,6 +74,10 @@ const props = defineProps({
     default: false,
   },
   hasPurchasedOuyou: {
+    type: Boolean,
+    default: false,
+  },
+  hasPurchasedHengaku: {
     type: Boolean,
     default: false,
   },
@@ -94,6 +102,7 @@ const currentSiteName = computed(() => {
   if (props.scope === 'ippan') return '生命保険一般課程';
   if (props.scope === 'senmon') return '生命保険専門課程';
   if (props.scope === 'ouyou') return '生命保険応用課程';
+  if (props.scope === 'hengaku') return '変額保険販売資格';
   return '生保講座';
 });
 const mypageResultsRouteName = computed(() =>
@@ -171,6 +180,16 @@ const purchaseStatuses = computed(() => [
     badgeText: '有効',
     purchaseDate: props.purchaseDates?.basic ?? null,
   },
+  {
+    key: 'hengaku',
+    label: '変額保険販売資格',
+    active: props.hasPurchasedHengaku,
+    activeClass: 'text-teal-700',
+    badgeClass: 'bg-teal-100 text-teal-700',
+    statusText: 'プレミアム購入済み',
+    badgeText: '有効',
+    purchaseDate: props.purchaseDates?.hengaku ?? null,
+  },
 ]);
 const activePurchaseStatuses = computed(() =>
   purchaseStatuses.value.filter((status) => status.active),
@@ -180,6 +199,7 @@ const pricingButtonClass = computed(() => {
   if (props.scope === 'ippan') return 'bg-fuchsia-600 hover:bg-fuchsia-700';
   if (props.scope === 'senmon') return 'bg-emerald-600 hover:bg-emerald-700';
   if (props.scope === 'ouyou') return 'bg-amber-600 hover:bg-amber-700';
+  if (props.scope === 'hengaku') return 'bg-teal-600 hover:bg-teal-700';
   return 'bg-purple-600 hover:bg-purple-700';
 });
 const formatDateLabel = (value) => {

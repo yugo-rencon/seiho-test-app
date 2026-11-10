@@ -23,6 +23,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税-①"
+                    :relatedProblems="['2023b1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '所属税',
@@ -44,6 +45,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="贈与税-②"
+                    :relatedProblems="['2023b6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '20',
@@ -65,6 +67,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="グループ通算制度-①"
+                    :relatedProblems="['2023a11', '2023b11', '2023c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '経済のグローバル化',
@@ -86,6 +89,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="グループ通算制度-②"
+                    :relatedProblems="['2023a16', '2023b16', '2023c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '完全支配関係',
@@ -107,6 +111,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税法における各種所得の金額の計算"
+                    :relatedProblems="['2023b21']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '不動産所得 → 事業所得', //p18
@@ -119,6 +124,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の課税財産"
+                    :relatedProblems="['2023a22', '2023b22', '2023c22']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '公益事業用財産は[[非課税財産に該当する]]。', //p82
@@ -131,6 +137,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税の申告と納税"
+                    :relatedProblems="['2023a27', '2023b23']"
                     :contents="[
                         // rev: 2026-11-02 確認済み
                         '1500万円 → 2000万円', //p58
@@ -143,6 +150,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税通達による事業保険の取扱"
+                    :relatedProblems="['2023a24', '2023b24', '2023c24']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -155,6 +163,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="法人税の性格"
+                    :relatedProblems="['2023b25', '2023c34']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -167,6 +176,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="配当所得"
+                    :relatedProblems="['2023a26', '2023b26', '2023c26']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -179,6 +189,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="所得税額の計算"
+                    :relatedProblems="['2023a21', '2023b27']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '逓増税率 → 超過累進税率', //p52
@@ -191,6 +202,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="相続税の申告と納税"
+                    :relatedProblems="['2023a1', '2023b28']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人の住民税"
+                    :relatedProblems="['2023a46', '2023b29']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -215,6 +228,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険における保険金等の取扱"
+                    :relatedProblems="['2023b30']"
                     :contents="[
                         // rev: 2026-11-09 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2023年度 フォームB";
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '流通税',
+                            relatedProblems: ['2023b31'],
                             content: '流通税は、財産移転の事実に基づいて課税されるもので、印紙税、[[不動産取得税]]等が該当する。', //p4
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険と相続対策',
+                            relatedProblems: ['2023b32'],
                             content: '正しい',
                         }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定申告',
+                            relatedProblems: ['2023a33', '2023b33', '2023c33'],
                             content: '正しい',
                         }, //33
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '遺産分割の方法',
+                            relatedProblems: ['2023b34'],
                             content: '満20歳以上 → 満15歳以上', //p73
                         }, //34
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '税額控除',
+                            relatedProblems: ['2023b35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '総合福祉団体定期保険の保険料',
+                            relatedProblems: ['2023b36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '不動産取得税',
+                            relatedProblems: ['2023a37', '2023b37', '2023c37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-11-09 確認済み
                             questionTitle: '最低課税方式',
+                            relatedProblems: ['2023b38'],
                             content: '13% → 7%', //p223
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '営業職員報酬の必要経費',
+                            relatedProblems: ['2023b39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '財形住宅貯蓄積立保険',
+                            relatedProblems: ['2023a40', '2023b40', '2023c40'],
                             content: '正しい',
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '退職所得控除額',
+                            relatedProblems: ['2023b41'],
                             label: 'ウ',
                             content: '40万円',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '医療費控除（セルフメディケーション）',
+                            relatedProblems: ['2023b42'],
                             label: 'ア',
                             content: 'との選択により',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '相続税の非課税財産',
+                            relatedProblems: ['2023b43'],
                             label: 'エ',
                             content: '心身障害者扶養共済制度',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '相続時精算課税制度',
+                            relatedProblems: ['2023a44', '2023b44', '2023c44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '資産評価益の益金不算入',
+                            relatedProblems: ['2023b45'],
                             label: 'オ',
                             content: '',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '同族会社',
+                            relatedProblems: ['2023b46'],
                             label: 'オ',
                             content: '',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '法人の住民税',
+                            relatedProblems: ['2023b47'],
                             label: 'イ',
                             content: '均等割額と法人税割額',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険料控除の手続き',
+                            relatedProblems: ['2023b48'],
                             label: 'ウ',
                             content: '第1回保険料充当金領収証',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '確定給付企業年金',
+                            relatedProblems: ['2023a49', '2023b49', '2023c49'],
                             label: 'エ',
                             content: '事業主',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生命保険代理店の事業免許等に係る税',
+                            relatedProblems: ['2023a50', '2023b50', '2023c50'],
                             label: 'ア',
                             content: '登録免許税',
                         }, //50

@@ -23,6 +23,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険商品の種類-①"
+                    :relatedProblems="['2020b1']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '老後の生活資金',
@@ -44,6 +45,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険商品の種類-②"
+                    :relatedProblems="['2020b6']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '災害',
@@ -65,6 +67,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体年金保険-①"
+                    :relatedProblems="['2020a11', '2020b11', '2020c11']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '規約型',
@@ -86,6 +89,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体年金保険-②"
+                    :relatedProblems="['2020a16', '2020b16', '2020c16']"
                     :contents="[
                         // rev: 2026-08-23 確認済み
                         '団体生存保険',
@@ -107,6 +111,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="女性の社会進出"
+                    :relatedProblems="['2020b21']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '年齢別に見てみると、[[20歳代の女性]]の加入率が最も低く、市場として開拓の余地を残しているといえる。', //p12
@@ -119,6 +124,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="個人保険商品の構造"
+                    :relatedProblems="['2020b22']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '生命保険契約は、保険法に「保険契約のうち、[[保険者が人の生存又は死亡に関し一定の保険給付を行うこと]]を約するもの（傷害疾病定額保険契約に該当するものを除く。）をいう。」と定義されている。', //p46
@@ -131,6 +137,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="マイナンバー法"
+                    :relatedProblems="['2020a23', '2020b23', '2020c23']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '未成年者を除くすべての人 → 住民票を有するすべての人', //p41
@@ -143,6 +150,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="外貨建保険"
+                    :relatedProblems="['2020a24', '2020b24', '2020c24']"
                     :contents="[
                         // rev: 2026-09-04 確認済み
                         '商品のメリットとしては[[海外の比較的高い金利]]を反映することで、[[予定利率を高く]]設定していることが挙げられる。', //p65
@@ -155,6 +163,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="業界共通教育制度"
+                    :relatedProblems="['2020b25']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -167,6 +176,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="戦後の商品政策の変遷"
+                    :relatedProblems="['2020b26']"
                     :contents="[
                         // rev: 2026-09-05 確認済み
                         '正しい',
@@ -179,6 +189,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="保険料率に関する近年の商品対応"
+                    :relatedProblems="['2020b27']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '保険金受取人 → 契約者', //p78
@@ -191,6 +202,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="団体定期保険および団体信用生命保険"
+                    :relatedProblems="['2020a28', '2020b28', '2020c28']"
                     :contents="[
                         // rev: 2026-09-03 確認済み
                         '正しい',
@@ -203,6 +215,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="銀行窓販の弊害防止措置"
+                    :relatedProblems="['2020b29']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '保険募集に関する取引が銀行業務に[[影響を及ぼさないこと]]の事前説明義務', //p103
@@ -215,6 +228,7 @@ const subject = "2020年度 フォームB";
                     :title="title"
                     :subject="subject"
                     questionTitle="情報活用型マーケティング"
+                    :relatedProblems="['2020b30']"
                     :contents="[
                         // rev: 2026-09-06 確認済み
                         '正しい',
@@ -230,110 +244,130 @@ const subject = "2020年度 フォームB";
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '公的年金の老齢給付',
+                            relatedProblems: ['2020b31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '加入後の自在性',
+                            relatedProblems: ['2020b32'],
                             content: '移行制度 → 転換制度', //p72-73
                         }, //32
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '福利厚生費',
+                            relatedProblems: ['2020a33', '2020b33', '2020c33'],
                             content: '福利厚生費は、[[厚生年金保険・健康保険・雇用保険等の社会保険料からなる法定福利費]]と、[[企業が任意に実施する制度の費用である法定外福利費]]に分けられる。このうち[[法定福利費]]については、高齢化に伴い、賃金を上回る増加を示している。', //p33
                         }, //33
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '確定拠出年金制度',
+                            relatedProblems: ['2020a45', '2020b34'],
                             content: '運用実績にかかわらず[[企業が追加拠出をする必要がない]]。', //p89
                         }, //34
                         {
                             // rev: 2026-09-06 確認済み
                             questionTitle: '金融商品取引法',
+                            relatedProblems: ['2020a35', '2020b35', '2020c35'],
                             content: '保険契約の契約条項のうち重要な事項について、[[契約締結の前]]に、その情報を書面の交付または電磁的方法により提供することが規定された。', //p42
                         }, //35
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '生存保険',
+                            relatedProblems: ['2020a36', '2020b36', '2020c36'],
                             content: '正しい',
                         }, //36
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '特別勘定',
+                            relatedProblems: ['2020b37'],
                             content: '正しい',
                         }, //37
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '団体就業不能保障保険',
+                            relatedProblems: ['2020b38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '心身障害者扶養者生命保険',
+                            relatedProblems: ['2020b39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-09-04 確認済み
                             questionTitle: '支社の配置',
+                            relatedProblems: ['2020b40'],
                             content: 'これまで支社の配置は管理スパン上の問題や地域社会における店舗サービス機能の発揮ならびにPR効果の観点から、組織がある一定規模までに達すれば支社を分割するのが一般的であった。しかし、近年ではコスト、効率化のため事務面の集約化や規模の大型化に向かう傾向も見られる。', //p140
                         }, //40
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '年金改革',
+                            relatedProblems: ['2020b41', '2020c41'],
                             label: 'イ',
                             content: 'マクロ経済スライド',
                         }, //41
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '公的介護保険の保険料',
+                            relatedProblems: ['2020a42', '2020b42', '2020c42'],
                             label: 'オ',
                             content: '',
                         }, //42
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '保険料の払込に関する特約',
+                            relatedProblems: ['2020b43'],
                             label: 'ウ',
                             content: '団体扱特約',
                         }, //43
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '危険選択の方法',
+                            relatedProblems: ['2020a44', '2020b44', '2020c44'],
                             label: 'エ',
                             content: '面接',
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '団体保険',
+                            relatedProblems: ['2020a29', '2020b45'],
                             label: 'ウ',
                             content: 'ヒューマン・ヴァリュー特約',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '医療保障保険（団体型）',
+                            relatedProblems: ['2020b46'],
                             label: 'ア',
                             content: '公的医療保険',
                         }, //46
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '通信販売',
+                            relatedProblems: ['2020b47'],
                             label: 'エ',
                             content: '加入保険金額',
                         }, //47
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '販売成績',
+                            relatedProblems: ['2020b48'],
                             label: 'オ',
                             content: '',
                         }, //48
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '機関長',
+                            relatedProblems: ['2020b49'],
                             label: 'イ',
                             content: '個別',
                         }, //49
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '代理店',
+                            relatedProblems: ['2020a50', '2020b50', '2020c50'],
                             label: 'オ',
                             content: '',
                         }, //50

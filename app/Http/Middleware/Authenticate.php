@@ -31,25 +31,25 @@ class Authenticate extends Middleware
     private function resolveScope($request): string
     {
         $scope = (string) $request->query('scope', '');
-        if (in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou'], true)) {
+        if (in_array($scope, ['seiho', 'daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'], true)) {
             return $scope;
         }
 
         $returnTo = (string) $request->query('return_to', '');
-        foreach (['daigaku', 'ippan', 'senmon', 'ouyou'] as $pathScope) {
+        foreach (['daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'] as $pathScope) {
             if (str_starts_with($returnTo, "/{$pathScope}")) {
                 return $pathScope;
             }
         }
 
-        foreach (['daigaku', 'ippan', 'senmon', 'ouyou'] as $pathScope) {
+        foreach (['daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'] as $pathScope) {
             if (str_starts_with((string) $request->path(), $pathScope)) {
                 return $pathScope;
             }
         }
 
         $refererPath = (string) parse_url((string) $request->headers->get('referer'), PHP_URL_PATH);
-        foreach (['daigaku', 'ippan', 'senmon', 'ouyou'] as $pathScope) {
+        foreach (['daigaku', 'ippan', 'senmon', 'ouyou', 'hengaku'] as $pathScope) {
             if (str_starts_with($refererPath, "/{$pathScope}")) {
                 return $pathScope;
             }

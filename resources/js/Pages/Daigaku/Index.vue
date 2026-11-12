@@ -64,6 +64,18 @@ const isPreparingYear = (section, year) =>
 const isFreeTrialYear = (section, year) =>
     Number(year) === (["shikumi-kojin", "fp"].includes(section?.id) ? 2026 : 2025) && section?.published;
 
+const getExamPeriod = (section, year) => {
+    if (["shikumi-kojin", "fp"].includes(section?.id)) {
+        return `${Number(year)}年5月〜6月実施`;
+    }
+
+    if (["tax-sozoku", "sisan-unyou"].includes(section?.id)) {
+        return `${Number(year)}年9月〜10月実施`;
+    }
+
+    return `${Number(year) + 1}年1月〜2月実施`;
+};
+
 const getDaigakuRoute = (sectionId, year, form) => {
     const sectionRoutePrefix = {
         "shikumi-kojin": "shikumi-kojin",
@@ -223,8 +235,13 @@ const getDaigakuRoute = (sectionId, year, form) => {
                                 :key="year"
                                 class="p-4 md:p-6"
                             >
-                                <div class="flex items-center gap-2">
+                                <div class="flex flex-wrap items-center gap-2">
                                     <div class="text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
+                                    <span
+                                        class="text-[10px] font-medium text-gray-500 sm:text-xs"
+                                    >
+                                        （{{ getExamPeriod(activeSection, year) }}）
+                                    </span>
                                     <span
                                         v-if="!hasPremium && isFreeTrialYear(activeSection, year)"
                                         class="inline-flex items-center rounded-full border border-blue-300 bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700"

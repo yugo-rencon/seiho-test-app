@@ -13,6 +13,26 @@ const isSenmon = computed(() => /(?:^|\/)senmon(?:\/|$)/.test(String(page.url ??
 const isOuyou = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "")));
 const isHengaku = computed(() => /(?:^|\/)hengaku(?:\/|$)/.test(String(page.url ?? "")));
 const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
+
+const daigakuExamPeriod = computed(() => {
+  if (!isDaigaku.value) return "";
+
+  const year = Number(props.description.match(/(\d{4})年度/)?.[1]);
+  if (!year) return "";
+
+  const url = String(page.url ?? "");
+  if (/\/daigaku\/(?:shikumi-kojin|fp)\d{4}[abc](?:[/?#]|$)/.test(url)) {
+    return `${year}年5月〜6月実施`;
+  }
+  if (/\/daigaku\/(?:zei|sisan)\d{4}[abc](?:[/?#]|$)/.test(url)) {
+    return `${year}年9月〜10月実施`;
+  }
+  if (/\/daigaku\/(?:kigyo|syakai)\d{4}[abc](?:[/?#]|$)/.test(url)) {
+    return `${year + 1}年1月〜2月実施`;
+  }
+
+  return "";
+});
 </script>
 
 <template>
@@ -43,7 +63,12 @@ const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "
           <template v-else>{{ props.title }}</template>
         </h1>
       </div>
-      <p class="text-gray-600 font-extrabold text-base mt-2">{{ props.description }}</p>
+      <p class="mt-2 flex flex-wrap items-baseline gap-2 text-gray-600">
+        <span class="text-base font-extrabold">{{ props.description }}</span>
+        <span v-if="daigakuExamPeriod" class="text-[10px] font-medium text-gray-500 sm:text-xs">
+          （{{ daigakuExamPeriod }}）
+        </span>
+      </p>
     </div>
   </div>
 </template>

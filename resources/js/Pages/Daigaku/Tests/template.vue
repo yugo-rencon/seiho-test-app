@@ -2,12 +2,13 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
 
-const title = "生命保険のしくみと個人保険商品";
-const subject = "2025年度 フォームA";
+const title = "XXXXXXXXXXXXXXXXXXXX";
+const subject = "202X年度 フォームX";
 </script>
 
 <template>
@@ -416,7 +417,7 @@ const subject = "2025年度 フォームA";
                 />
             </div>
 
-            <TestNavigationButtons previous-route="daigaku.shikumi-kojin2024c" next-route="daigaku.shikumi-kojin2023b" home-route="daigaku.index" />
+            <TestNavigationButtons previous-route="xxxxx" next-route="xxxx" home-route="daigaku.index" />
         </section>
     </SeihoTestLayout>
 </template>

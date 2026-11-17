@@ -199,7 +199,8 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="戦前の生保資産運用"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-18 確認済み
+                        '不動産 → 銀行預金', //p123-124
                         '正しい',
                         '正しい',
                     ]"

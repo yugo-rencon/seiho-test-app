@@ -168,9 +168,10 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="運用原則"
                     :contents="[
+                        // rev: 2026-11-18 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '公平性 → 公共性', //p13
                     ]"
                 />
                 <QuestionTemp1

@@ -163,9 +163,10 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-18 確認済み
                         '正しい',
                         '正しい',
-                        '公平性 → 公共性', //p18
+                        '公平性 → 公共性', //p13
                     ]"
                 />
                 <QuestionTemp1

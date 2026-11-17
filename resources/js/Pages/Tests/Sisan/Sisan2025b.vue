@@ -221,8 +221,9 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-11-18 確認済み
                             questionTitle: '生保資金の構成',
-                            content: '',
+                            content: '自己資本 → 他人資本', //p11
                         }, //31
                         {
                             // rev: 2026-08-23 確認済み

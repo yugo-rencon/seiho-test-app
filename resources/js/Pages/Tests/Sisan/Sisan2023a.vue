@@ -226,9 +226,10 @@ const subject = "2023年度 フォームA";
                             content: '正しい',
                         }, //31
                         {
+                            // rev: 2026-11-18 確認済み
                             questionTitle: '生保資金の構成',
-                            content: '自己資本 → 他人資本',
-                        }, //32 p11
+                            content: '自己資本 → 他人資本', //p11
+                        }, //32
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '融資審査',

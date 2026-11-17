@@ -57,6 +57,7 @@ const wordChoices4 = [
                     :learningMode="learningMode"
                     :choiceOptions="wordChoices1"
                     questionTitle="団体保険および団体年金保険の主な保険種類－①"
+                    :relatedProblems="['2026c1']"
                     :contents="[
                         // rev: 2026-10-17 確認済み
                         '１年',
@@ -80,6 +81,7 @@ const wordChoices4 = [
                     :learningMode="learningMode"
                     :choiceOptions="wordChoices2"
                     questionTitle="団体保険および団体年金保険の主な保険種類－②"
+                    :relatedProblems="['2026c6']"
                     :contents="[
                         // rev: 2026-10-17 確認済み
                         '受給権',
@@ -103,6 +105,7 @@ const wordChoices4 = [
                     :learningMode="learningMode"
                     :choiceOptions="wordChoices3"
                     questionTitle="銀行・信託・証券業界－①"
+                    :relatedProblems="['2026a11', '2026b11', '2026c11']"
                     :contents="[
                         // rev: 2026-10-17 確認済み
                         '長短分離',
@@ -126,6 +129,7 @@ const wordChoices4 = [
                     :learningMode="learningMode"
                     :choiceOptions="wordChoices4"
                     questionTitle="銀行・信託・証券業界－②"
+                    :relatedProblems="['2026a16', '2026b16', '2026c16']"
                     :contents="[
                         // rev: 2026-10-17 確認済み
                         '販売チャネル',
@@ -149,6 +153,7 @@ const wordChoices4 = [
                     :learningMode="learningMode"
                     correctAnswer="ウ"
                     questionTitle="危険の選択"
+                    :relatedProblems="['2026a26', '2026c21']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         '公平性の原則 → 危険均一性の原則', //p16
@@ -163,6 +168,7 @@ const wordChoices4 = [
                     :learningMode="learningMode"
                     correctAnswer="ア"
                     questionTitle="アメリカにおける不没収法の制定"
+                    :relatedProblems="['2026c22']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         '正しい',
@@ -177,6 +183,7 @@ const wordChoices4 = [
                     :learningMode="learningMode"
                     correctAnswer="ウ"
                     questionTitle="公的介護保険制度の概要"
+                    :relatedProblems="['2026b47', '2026c23']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         '介護保険制度の被保険者は、[[65歳]]以上を第１号被保険者とし、[[40歳〜65歳]]未満の医療保険加入者を第２号被保険者とする。', //p140
@@ -191,6 +198,7 @@ const wordChoices4 = [
                     :learningMode="learningMode"
                     correctAnswer="ウ"
                     questionTitle="共済と保険"
+                    :relatedProblems="['2026c24']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         '基本的には組合員を対象としているが、[[特例として、構成員以外との契約が認められるケースもある]]。', //p165
@@ -205,6 +213,7 @@ const wordChoices4 = [
                     :learningMode="learningMode"
                     correctAnswer="イ"
                     questionTitle="損害保険"
+                    :relatedProblems="['2026a25', '2026b25', '2026c25']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         '損害保険とは、保険者の支払うべき保険金額が[[保険事故の発生によって生じた実際の損害額に応じて定まる保険]]をいい、生命保険は保険事故（人の生存又は死亡）に関し、一定の保険給付を行うもの、すなわち、あらかじめ約定された保険金額が支払われる保険をいうこととされている。', //p174
@@ -220,6 +229,7 @@ const wordChoices4 = [
                     correctAnswer="ア"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険契約の特殊性"
+                    :relatedProblems="['2026b32', '2026c26']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         '現代生活における生命保険は、[[他の商取引と同じく]]近代経済社会の原則に従い、保険契約者と保険者との間の自由な判断と意思に基づく経済取引として実現される。', //p7
@@ -235,6 +245,7 @@ const wordChoices4 = [
                     correctAnswer="ア"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="アメリカにおける金融革命の進展と生命保険事業"
+                    :relatedProblems="['2026b22', '2026c27']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         'デリバティブ商品 → ニューウェーブ商品', //p69
@@ -250,6 +261,7 @@ const wordChoices4 = [
                     correctAnswer="イ"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="公的年金制度"
+                    :relatedProblems="['2026a23', '2026c28']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         '正しい',
@@ -265,6 +277,7 @@ const wordChoices4 = [
                     correctAnswer="ア"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="相互会社と株式会社"
+                    :relatedProblems="['2026a29', '2026b29', '2026c29']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         '保険法 → 保険業法', //p160
@@ -280,6 +293,7 @@ const wordChoices4 = [
                     correctAnswer="イ"
                     answerPrompt="誤っている選択肢を1つ選んでください"
                     questionTitle="生命保険会社の資産運用の今後のあり方"
+                    :relatedProblems="['2026a30', '2026b30', '2026c30']"
                     :contents="[
                         // rev: 2026-10-18 確認済み
                         '正しい',
@@ -297,111 +311,131 @@ const wordChoices4 = [
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '危険対策と保険',
+                            relatedProblems: ['2026a31', '2026b31', '2026c31'],
                             content: '正しい',
                         }, //31
                         {
                             // rev: 2026-10-18 確認済み
                             questionTitle: '傷害・疾病危険',
+                            relatedProblems: ['2026c32'],
                             content: '保険業法 → 保険法', //p5
                         }, //32
                         {
                             // rev: 2026-10-18 確認済み
                             questionTitle: '保険金受取人',
+                            relatedProblems: ['2026c33'],
                             content: '保険金受取人の資格については[[何らの制限はなく、個人であると法人であると、また行為能力者であると否とを問わない]]。', //p14
                         }, //33
                         {
                             // rev: 2026-10-18 確認済み
                             questionTitle: 'イギリスにおける生命保険の発展',
+                            relatedProblems: ['2026a44', '2026c34'],
                             content: '友愛組合は、最初は[[賦課式]]であったが、後に科学的な制度を導入することによって広く普及、発展し、現在でも存続している。', //p59
                         }, //34
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '世帯加入状況',
+                            relatedProblems: ['2026c35'],
                             content: '正しい',
                         }, //35
                         {
                             // rev: 2026-10-18 確認済み
                             questionTitle: '社会保障制度',
+                            relatedProblems: ['2026c36'],
                             content: '社会扶助制度 → 公的扶助制度', //p123
                         }, //36
                         {
                             // rev: 2026-10-18 確認済み
                             questionTitle: '消費者契約法',
+                            relatedProblems: ['2026c37'],
                             content:
                                 '2001年（平成13年）から施行された「[[金融商品の販売等に関する法律（金融サービス提供法に改称）]]」によって、顧客への重要事項の説明と勧誘方針の策定・公表が義務付けられている。また同じく2001年（平成13年）から施行された「[[消費者契約法]]」では、不当な契約条項の無効等を定めることにより消費者保護を図っている。', //p159
                         }, //37
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: 'ＪＡ共済（全国共済農業協同組合連合会）',
+                            relatedProblems: ['2026b37', '2026c38'],
                             content: '正しい',
                         }, //38
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '生保業界のネットワークシステム',
+                            relatedProblems: ['2026a39', '2026b39', '2026c39'],
                             content: '正しい',
                         }, //39
                         {
                             // rev: 2026-10-18 確認済み
                             questionTitle: '医療保障商品',
+                            relatedProblems: ['2026a40', '2026b40', '2026c40'],
                             content: '死亡保険金の倍額 → 死亡保険金の同額', //p192
                         }, //40
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '保険者',
+                            relatedProblems: ['2026a41', '2026b41', '2026c41'],
                             label: 'ア',
                             content: '10',
                         }, //41
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '死亡表',
+                            relatedProblems: ['2026b33', '2026c42'],
                             label: 'ウ',
                             content: '終局表',
                         }, //42
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '利差配当',
+                            relatedProblems: ['2026c43'],
                             label: 'イ',
                             content: '経過年数',
                         }, //43
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '近代的生命保険の導入',
+                            relatedProblems: ['2026c44'],
                             label: 'オ',
                             content: '',
                         }, //44
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '消費者へのＰＲ活動等',
+                            relatedProblems: ['2026c45'],
                             label: 'ア',
                             content: '生命保険相談所',
                         }, //45
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '生命保険会社の資金の性格',
+                            relatedProblems: ['2026c46'],
                             label: 'エ',
                             content: '責任準備金',
                         }, //46
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '生保資産運用の基本原則',
+                            relatedProblems: ['2026c47'],
                             label: 'ウ',
                             content: '公共性',
                         }, //47
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '生命保険業の監督の方法',
+                            relatedProblems: ['2026a24', '2026b36', '2026c48'],
                             label: 'イ',
                             content: '実体的監督主義',
                         }, //48
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '社会構造の変化',
+                            relatedProblems: ['2026a49', '2026b49', '2026c49'],
                             label: 'オ',
                             content: '',
                         }, //49
                         {
                             // rev: 2026-10-17 確認済み
                             questionTitle: '民間生命保険会社のサービス',
+                            relatedProblems: ['2026a50', '2026b50', '2026c50'],
                             label: 'エ',
                             content: '生命保険契約照会制度',
                         }, //50

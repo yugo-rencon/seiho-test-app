@@ -268,8 +268,9 @@ const subject = "2025年度 フォームA";
                             content: '正しい',
                         }, //38
                         {
+                            // rev: 2026-11-18 確認済み
                             questionTitle: '金融システム改革',
-                            content: '',
+                            content: 'フリー・クリア・ワイド → フリー・フェアー・グローバル', //p166
                         }, //39
                         {
                             questionTitle: '投資環境の動向',

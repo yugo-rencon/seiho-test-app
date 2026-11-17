@@ -174,6 +174,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-18 確認済み
                         '正しい',
                         '住宅ローンや教育ローン → フリー・ローン', //p58
                         '正しい',

@@ -187,9 +187,10 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="消費者ローン"
                     :contents="[
+                        // rev: 2026-11-18 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '年率30％ → 年率20％', //p58
                     ]"
                 />
                 <QuestionTemp1

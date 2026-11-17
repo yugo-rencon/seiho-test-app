@@ -164,9 +164,10 @@ const subject = "2021年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-18 確認済み
                         '正しい',
                         '正しい',
-                        '30% → 20%', //p58
+                        '年率30％ → 年率20％', //p58
                     ]"
                 />
                 <QuestionTemp1

@@ -120,9 +120,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="消費者ローン"
                     :contents="[
+                        // rev: 2026-11-18 確認済み
                         '正しい',
-                        '', //p
-                        '', //p
+                        '住宅ローンや教育ローン → フリー・ローン', //p58
+                        '年率30％ → 年率20％', //p58
                     ]"
                 />
                 <QuestionTemp1

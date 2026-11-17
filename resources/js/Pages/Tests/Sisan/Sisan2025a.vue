@@ -192,9 +192,10 @@ const subject = "2025年度 フォームA";
                     :subject="subject"
                     questionTitle="不動産投資"
                     :contents="[
+                        // rev: 2026-11-18 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '2026年（令和8年）2月末現在で[[銘柄数は58]]、時価総額は約17.3兆円の規模になっている。', //p99
                     ]"
                 />
                 <QuestionTemp1

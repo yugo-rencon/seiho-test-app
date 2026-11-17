@@ -119,6 +119,7 @@ const subject = "2024年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-18 確認済み
                         '正しい',
                         '借地方式 → 新借地方式', //p99-100
                         '新借地方式 → 定期借地方式', //p100

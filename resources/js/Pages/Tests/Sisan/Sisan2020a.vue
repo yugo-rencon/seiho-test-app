@@ -108,6 +108,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="資産運用の専門化の進展"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         'ファンド・マネージャー → エコノミスト', //p48
                         '正しい',
                         '証券アナリスト → 不動産鑑定士', //p49

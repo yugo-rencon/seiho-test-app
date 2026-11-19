@@ -176,7 +176,8 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        'トレーダー → アナリスト', //p48
+                        // rev: 2026-11-19 確認済み
+                        'トレーダー → アナリスト', //p48-49
                         '正しい',
                         '正しい',
                     ]"

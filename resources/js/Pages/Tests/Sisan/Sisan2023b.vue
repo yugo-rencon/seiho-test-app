@@ -119,6 +119,7 @@ const subject = "2023年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         'ファンド・マネージャー → エコノミスト', //p48
                         '正しい',
                         'エコノミスト → ストラテジスト', //p49

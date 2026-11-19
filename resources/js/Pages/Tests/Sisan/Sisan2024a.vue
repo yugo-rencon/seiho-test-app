@@ -243,9 +243,10 @@ const subject = "2024年度 フォームA";
                             content: '正しい',
                         }, //33
                         {
+                            // rev: 2026-11-19 確認済み
                             questionTitle: '公社債',
-                            content: '変動利付 → 確定利付',
-                        }, //34 p69
+                            content: '変動利付 → 確定利付', //p69
+                        }, //34
                         {
                             questionTitle: 'スワップ取引',
                             content: '金利スワップ → 通貨スワップ',

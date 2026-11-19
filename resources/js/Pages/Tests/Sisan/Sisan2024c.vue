@@ -108,6 +108,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
                         '間接金融的 → 直接金融的', //p10-11
                         '信用創造機能 → 貯蓄機能', //p11

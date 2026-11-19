@@ -176,6 +176,7 @@ const subject = "2020年度 フォームA";
                     :subject="subject"
                     questionTitle="企業貸付"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
                         '金額に上乗せして貸付 → 金額から差し引いて貸付', //p54
                         '正しい',

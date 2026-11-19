@@ -178,6 +178,7 @@ const subject = "2021年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
                         '委員会制 → 単独制', //p47
                         '正しい',

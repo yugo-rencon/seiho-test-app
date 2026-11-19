@@ -119,6 +119,7 @@ const subject = "2023年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '単独制 → 委員会制', //p46
                         '委員会制 → 単独制', //p47
                         '正しい',

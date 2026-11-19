@@ -120,8 +120,9 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="運用機構"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-11-19 確認済み
+                        '単独制 → 委員会制', //p46
+                        '委員会制 → 単独制', //p47
                         '正しい',
                     ]"
                 />

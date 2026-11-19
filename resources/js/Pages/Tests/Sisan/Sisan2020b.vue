@@ -108,6 +108,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="運用機構"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '単独制 → 委員会制', //p46
                         '委員会制 → 単独制', //p47
                         '正しい',

@@ -235,9 +235,10 @@ const subject = "2022年度 フォームC";
                             content: '正しい',
                         }, //32
                         {
+                            // rev: 2026-11-19 確認済み
                             questionTitle: '運用の実務',
-                            content: '融資審査部門 → マクロ調査部門',
-                        }, //33 p51
+                            content: '融資審査部門 → マクロ調査部門', //p51
+                        }, //33
                         {
                             questionTitle: '海外現地法人',
                             content: '直接行うことはない → 直接行うこともある',

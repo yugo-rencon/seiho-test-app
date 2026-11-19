@@ -198,7 +198,8 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
-                        '金利の面 → 業務面', //p201
+                        // rev: 2026-11-19 確認済み
+                        '金利の面 → 業務面', //p160
                         '正しい',
                         '正しい',
                     ]"

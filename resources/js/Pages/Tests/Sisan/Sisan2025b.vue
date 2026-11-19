@@ -204,7 +204,8 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="金融の自由化と生保資産運用の多様化"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-19 確認済み
+                        '金利の面 → 業務面', //p160
                         '正しい',
                         '正しい',
                     ]"

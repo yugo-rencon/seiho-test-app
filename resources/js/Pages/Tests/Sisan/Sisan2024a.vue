@@ -268,9 +268,10 @@ const subject = "2024年度 フォームA";
                             content: '正しい',
                         }, //38
                         {
-                            questionTitle: 'バブル崩壊後の外国証券投資',
+                            // rev: 2026-11-19 確認済み
+                            questionTitle: 'バブル崩壊後の外国証券投資', //p157-158
                             content: '減少 ↔︎ 増加',
-                        }, //39 p199
+                        }, //39
                         {
                             // rev: 2026-08-23 確認済み
                             questionTitle: '国際会計基準導入の動向',

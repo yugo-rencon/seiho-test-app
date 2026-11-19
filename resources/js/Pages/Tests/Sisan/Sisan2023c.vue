@@ -210,8 +210,9 @@ const subject = "2023年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
-                        '固有業務 → 付随業務', //p210
+                        '固有業務 → 付随業務', //p169
                         '正しい',
                     ]"
                 />

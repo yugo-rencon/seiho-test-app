@@ -166,6 +166,7 @@ const subject = "2020年度 フォームB";
                     :subject="subject"
                     questionTitle="生保資金の特徴と構成"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
                         '保険契約準備金 → 保険料積立金', //p11
                         '正しい',

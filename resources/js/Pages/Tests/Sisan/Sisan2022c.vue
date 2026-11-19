@@ -189,6 +189,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
                         'オープン市場 → インターバンク市場', //p111
                         '正しい',

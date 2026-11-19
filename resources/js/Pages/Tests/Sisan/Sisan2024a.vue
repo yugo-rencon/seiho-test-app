@@ -187,6 +187,7 @@ const subject = "2024年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
                         'オープン市場 → インターバンク市場', //p111
                         '正しい',

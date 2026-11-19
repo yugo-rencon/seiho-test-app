@@ -228,9 +228,10 @@ const subject = "2024年度 フォームA";
                     :subject="subject"
                     :items="[
                         {
+                            // rev: 2026-11-19 確認済み
                             questionTitle: 'ヘッジ取引',
-                            content: '買いヘッジ → 売りヘッジ',
-                        }, //31 見つからない・・・
+                            content: '買いヘッジ → 売りヘッジ', //p17
+                        }, //31
                         {
                             questionTitle: '保険会社向けの総合的な監督指針',
                             content: '法令遵守やリスク管理等に関する項目は含まれていない → 含まれている',

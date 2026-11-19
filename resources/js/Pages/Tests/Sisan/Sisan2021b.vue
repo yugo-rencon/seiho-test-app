@@ -200,6 +200,7 @@ const subject = "2021年度 フォームB";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
                         '正しい',
                         '裁定取引 → ヘッジ取引', //p89

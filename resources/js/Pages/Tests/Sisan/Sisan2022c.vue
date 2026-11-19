@@ -142,6 +142,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         'アウトライト取引 → ヘッジ取引', //p89
                         'ヘッジ取引 → アウトライト取引', //p89
                         '正しい',

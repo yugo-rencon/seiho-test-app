@@ -192,9 +192,10 @@ const subject = "2025年度 フォームB";
                     :subject="subject"
                     questionTitle="先物取引"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '裁定取引 → ヘッジ取引', //p89
                     ]"
                 />
                 <QuestionTemp1

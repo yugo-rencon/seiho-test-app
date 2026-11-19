@@ -186,6 +186,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '正しい',
                         '裁定取引 → アウトライト取引', //p89
                         '正しい',

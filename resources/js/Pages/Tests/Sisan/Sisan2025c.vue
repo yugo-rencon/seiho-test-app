@@ -132,9 +132,10 @@ const subject = "2025年度 フォームC";
                     :subject="subject"
                     questionTitle="融資審査"
                     :contents="[
-                        '', //p
+                        // rev: 2026-11-19 確認済み
+                        '損益計算書 → 貸借対照表', //p59
                         '正しい',
-                        '', //p
+                        '連続する数期間や他社との比較を行ううえで[[比率法]]が用いられる場合が多い。', //p60
                     ]"
                 />
                 <QuestionTemp1

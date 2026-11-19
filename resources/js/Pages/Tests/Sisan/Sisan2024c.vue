@@ -120,6 +120,7 @@ const subject = "2024年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-19 確認済み
                         '金利スワップ → 通貨スワップ', //p94
                         '通貨スワップ → 金利スワップ', //p94
                         '正しい',

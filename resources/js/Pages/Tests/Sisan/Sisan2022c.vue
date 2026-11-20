@@ -168,6 +168,7 @@ const subject = "2022年度 フォームC";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-21 確認済み
                         '正しい',
                         '正しい',
                         '信用創造機能 → 貯蓄機能', //p11

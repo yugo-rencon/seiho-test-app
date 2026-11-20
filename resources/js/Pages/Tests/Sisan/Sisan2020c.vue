@@ -108,6 +108,7 @@ const subject = "2020年度 フォームC";
                     :subject="subject"
                     questionTitle="生命保険会社と金融仲介機能"
                     :contents="[
+                        // rev: 2026-11-21 確認済み
                         '正しい',
                         '間接金融的 → 直接金融的', //p10-11
                         '信用創造機能 → 貯蓄機能', //p11

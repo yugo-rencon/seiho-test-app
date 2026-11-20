@@ -167,6 +167,7 @@ const subject = "2022年度 フォームA";
                     :title="title"
                     :subject="subject"
                     :contents="[
+                        // rev: 2026-11-20 確認済み
                         '正しい',
                         '保険検査マニュアル → 保険業法施行規則等', //p28
                         '正しい',

@@ -177,7 +177,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -190,7 +190,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -203,7 +203,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -216,7 +216,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -229,7 +229,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -242,7 +242,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -255,7 +255,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -268,7 +268,7 @@ const isDraft = false;
                         '既払込保険料総額 → 解約返戻金相当額', //p118
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -281,7 +281,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -294,7 +294,7 @@ const isDraft = false;
                         '基礎控除適用後の贈与財産の価額の累計額から、複数年にわたり利用できる非課税枠[[2,500万円]]（特別控除額）を控除した後の金額に、一律[[20％]]の税率を乗じて算出する。', //p156
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -307,7 +307,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -320,7 +320,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"

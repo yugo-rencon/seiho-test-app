@@ -240,10 +240,11 @@ const subject = "2026年度 フォームC";
                     :subject="subject"
                     questionTitle="みなし相続財産"
                     :contents="[
+                        // rev: 2026-11-21 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '既払込保険料総額 → 解約返戻金相当額', //p118
                     ]"
                 />
                 <QuestionTemp1

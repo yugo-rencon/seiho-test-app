@@ -64,9 +64,8 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
 
     // 生保講座:
     // - 総論は2026年度フォームAを無料
-    // - 危険選択・約款と法律・会計・営業・税法は2025年度フォームAを無料
+    // - 危険選択・約款と法律・会計・営業・税法・資産運用は2025年度フォームAを無料
     // - 計理は最新年度フォームAも途中から有料
-    // - 資産運用は2024年度フォームAを無料
     const seihoSubjectKey = parseSeihoSubjectKeyFromPath();
     if (seihoSubjectKey === "keiri") {
         return true;
@@ -75,7 +74,7 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     const latestFreeYear =
         seihoSubjectKey === "souron"
             ? 2026
-            : ["kiken", "yakkan", "kaikei", "eigyo", "zeihou"].includes(seihoSubjectKey)
+            : ["kiken", "yakkan", "kaikei", "eigyo", "zeihou", "sisan"].includes(seihoSubjectKey)
               ? 2025
               : 2024;
 

@@ -7,6 +7,7 @@ const YAKKAN_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 const KAIKEI_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 const EIGYO_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 const ZEIHOU_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
+const SISAN_YEARS = [2025, 2024, 2023, 2022, 2021, 2020];
 
 export const SUBJECT_CATALOG = [
     {
@@ -56,7 +57,6 @@ export const SUBJECT_CATALOG = [
         title: "資産の運用",
         menuTitle: "資産運用",
         period: "2月〜3月実施の試験",
-        releaseNote: "2025年度は12月ごろリリース予定",
     },
 ];
 
@@ -81,7 +81,9 @@ export const INDEX_SECTIONS = SUBJECT_CATALOG.map((subject) => ({
                       ? [...EIGYO_YEARS]
                       : subject.key === "zeihou"
                         ? [...ZEIHOU_YEARS]
-                      : [...COMMON_YEARS],
+                        : subject.key === "sisan"
+                          ? [...SISAN_YEARS]
+                          : [...COMMON_YEARS],
     routePrefix: subject.key,
     gridCols: "lg:grid-cols-2 md:grid-cols-2",
 }));
@@ -104,7 +106,9 @@ export const MOBILE_MENU_SUBJECTS = SUBJECT_CATALOG.map((subject) => ({
                       ? EIGYO_YEARS
                       : subject.key === "zeihou"
                         ? ZEIHOU_YEARS
-                      : COMMON_YEARS
+                        : subject.key === "sisan"
+                          ? SISAN_YEARS
+                          : COMMON_YEARS
     ).filter((year) => !(subject.preparingYears ?? []).includes(year)).reduce((acc, year) => {
         acc[`${year}年度`] = [...COMMON_FORMS];
         return acc;

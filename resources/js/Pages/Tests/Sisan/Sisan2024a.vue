@@ -342,7 +342,7 @@ const subject = "2024年度 フォームA";
             </div>
 
             <!-- ボタングループ -->
-            <TestNavigationButtons next-route="sisan2024b" />
+            <TestNavigationButtons previous-route="sisan2025c" next-route="sisan2024b" />
         </section>
     </SeihoTestLayout>
 </template>

@@ -60,7 +60,7 @@
                         v-if="hasAnswered && (normalizedCorrectAnswers.includes(label) || selectedAnswer.split(',').includes(label))"
                         class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm"
                         :class="normalizedCorrectAnswers.includes(label) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'"
-                    >{{ selectedAnswer.split(',').includes(label) && normalizedCorrectAnswers.includes(label) ? '回答・正解' : selectedAnswer.split(',').includes(label) ? 'あなたの回答' : '正解' }}</span>
+                    >{{ selectedAnswer.split(',').includes(label) && normalizedCorrectAnswers.includes(label) ? 'あなたの回答・正解' : selectedAnswer.split(',').includes(label) ? 'あなたの回答' : '正解' }}</span>
                 </button>
             </div>
             <button

@@ -1,6 +1,6 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
-import { computed } from "vue";
+import { Link, usePage } from "@inertiajs/vue3";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
 const props = defineProps({
     // 右上リンクの出し分けに使用
@@ -20,6 +20,16 @@ const props = defineProps({
 });
 
 defineEmits(["open-menu"]);
+const page = usePage();
+const studyMenu = ref(null);
+const userName = computed(() => page.props?.auth?.user?.name ?? "管理者");
+const closeStudyMenuOnOutsideClick = (event) => {
+    if (studyMenu.value?.hasAttribute("open") && !studyMenu.value.contains(event.target)) {
+        studyMenu.value.removeAttribute("open");
+    }
+};
+onMounted(() => document.addEventListener("pointerdown", closeStudyMenuOnOutsideClick));
+onBeforeUnmount(() => document.removeEventListener("pointerdown", closeStudyMenuOnOutsideClick));
 const mypageRouteName = computed(() => {
     if (props.isHengaku) return "hengaku.mypage";
     if (props.isDaigaku) return "daigaku.mypage";
@@ -81,7 +91,7 @@ const isActive = (name) => route().current(name);
                     </Link>
                     <template v-if="isAuthenticated">
                         <Link
-                            v-if="isAdmin && !isDaigaku && !isSenmon && !isOuyou"
+                            v-if="isAdmin && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
                             :href="route('mypage.studyRecords')"
                             class="py-1 transition-colors"
                             :class="
@@ -94,6 +104,7 @@ const isActive = (name) => route().current(name);
                             演習履歴
                         </Link>
                         <Link
+                            v-if="!(isAdmin && isIppan)"
                             :href="route(mypageRouteName)"
                             class="py-1 transition-colors"
                             :class="
@@ -121,6 +132,28 @@ const isActive = (name) => route().current(name);
                         >
                             マイページ
                         </Link>
+                        <details v-if="isAdmin && isIppan" ref="studyMenu" class="group relative">
+                            <summary class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-full border border-pink-100 bg-pink-50 text-fuchsia-600 transition hover:border-pink-200 hover:bg-pink-100" aria-label="学習メニューを開く" title="学習メニュー">
+                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19a7 7 0 0 1 14 0"/><circle cx="12" cy="8" r="4"/></svg>
+                            </summary>
+
+                            <div class="absolute right-0 top-full z-40 mt-2 w-72 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xl">
+                                <div class="border-b border-gray-100 px-5 py-4">
+                                    <p class="text-xs text-gray-500">学習履歴管理</p>
+                                    <p class="mt-0.5 truncate text-sm font-semibold text-gray-900">{{ userName }}</p>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 p-3">
+                                    <Link :href="route('mypage.studyRecords')" class="flex min-h-20 flex-col items-center justify-center gap-2 rounded-lg px-3 py-3 text-center text-xs font-semibold text-gray-700 transition hover:bg-pink-50 hover:text-fuchsia-700">
+                                        <svg class="h-7 w-7 text-fuchsia-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+                                        演習履歴
+                                    </Link>
+                                    <Link :href="route(mypageRouteName)" class="flex min-h-20 flex-col items-center justify-center gap-2 rounded-lg px-3 py-3 text-center text-xs font-semibold text-gray-700 transition hover:bg-pink-50 hover:text-fuchsia-700">
+                                        <svg class="h-7 w-7 text-fuchsia-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+                                        マイページ
+                                    </Link>
+                                </div>
+                            </div>
+                        </details>
                     </template>
                 </div>
 

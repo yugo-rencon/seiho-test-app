@@ -69,7 +69,7 @@
               v-for="choice in props.choiceOptions"
               :key="`${index}-${choice.label}`"
               type="button"
-              class="grid min-h-12 grid-cols-[auto_minmax(0,1fr)] content-center items-start gap-2 border bg-white px-4 py-3 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-offset-2"
+              class="relative grid min-h-12 grid-cols-[auto_minmax(0,1fr)] content-center items-start gap-2 border bg-white px-4 py-3 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-offset-2"
               :class="[studyChoiceClass(index, choice.label), isIppan ? 'rounded-md focus:ring-pink-400 sm:text-base' : 'rounded-md focus:ring-violet-400']"
               :disabled="Boolean(selectedAnswers[index])"
               @click="answerQuestion(index, choice.label)"
@@ -78,7 +78,7 @@
               <span>{{ choice.text }}</span>
               <span
                 v-if="selectedAnswers[index] && (choice.label === props.labels[index] || choice.label === selectedAnswers[index])"
-                class="col-span-2 mt-1 w-fit rounded-full px-2 py-0.5 text-[10px] font-bold"
+                class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm"
                 :class="choice.label === props.labels[index] ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'"
               >{{ choice.label === selectedAnswers[index] && choice.label === props.labels[index] ? '回答・正解' : choice.label === selectedAnswers[index] ? 'あなたの回答' : '正解' }}</span>
             </button>

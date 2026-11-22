@@ -35,13 +35,13 @@
                         v-for="choice in choicesFor(item)"
                         :key="choice.label"
                         type="button"
-                        class="border bg-white px-4 text-left font-bold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
+                        class="relative border bg-white px-4 text-left font-bold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
                         :class="[trueFalseButtonClass(item, choice.label), isIppan ? 'min-h-14 rounded-md py-3 text-base focus:ring-pink-400' : 'min-h-12 rounded-md py-2 text-sm focus:ring-violet-400']"
                         :disabled="Boolean(selectedAnswers[item.questionNo])"
                         @click="answerTrueFalse(item, choice.label)"
                     >
                         <span class="font-extrabold">{{ choice.label }}.</span><span class="ml-1">{{ choice.text }}</span>
-                        <span v-if="selectedAnswers[item.questionNo] && (choice.label === correctAnswerFor(item) || choice.label === selectedAnswers[item.questionNo])" class="ml-2 inline-flex rounded-full px-2 py-0.5 text-[10px] font-bold" :class="choice.label === correctAnswerFor(item) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'">{{ choice.label === selectedAnswers[item.questionNo] && choice.label === correctAnswerFor(item) ? '回答・正解' : choice.label === selectedAnswers[item.questionNo] ? 'あなたの回答' : '正解' }}</span>
+                        <span v-if="selectedAnswers[item.questionNo] && (choice.label === correctAnswerFor(item) || choice.label === selectedAnswers[item.questionNo])" class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm" :class="choice.label === correctAnswerFor(item) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'">{{ choice.label === selectedAnswers[item.questionNo] && choice.label === correctAnswerFor(item) ? '回答・正解' : choice.label === selectedAnswers[item.questionNo] ? 'あなたの回答' : '正解' }}</span>
                     </button>
                 </div>
                 <div v-else class="grid grid-cols-2 gap-3 sm:max-w-md" :class="selectedAnswers[item.questionNo] ? '' : 'mt-4'">
@@ -49,13 +49,13 @@
                         v-for="choice in ['正', '誤']"
                         :key="choice"
                         type="button"
-                        class="border bg-white px-4 font-extrabold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
+                        class="relative border bg-white px-4 font-extrabold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
                         :class="[trueFalseButtonClass(item, choice), isIppan ? 'min-h-14 rounded-md py-3 text-xl focus:ring-pink-400' : 'rounded-md focus:ring-violet-400', selectedAnswers[item.questionNo] && !isIppan ? 'min-h-9 py-1 text-sm' : !isIppan ? 'min-h-12 py-2 text-base' : '']"
                         :disabled="Boolean(selectedAnswers[item.questionNo])"
                         @click="answerTrueFalse(item, choice)"
                     >
                         {{ choice }}
-                        <span v-if="selectedAnswers[item.questionNo] && (choice === correctAnswerFor(item) || choice === selectedAnswers[item.questionNo])" class="ml-3 inline-flex rounded-full px-2 py-0.5 align-middle text-[10px] font-bold" :class="choice === correctAnswerFor(item) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'">{{ choice === selectedAnswers[item.questionNo] && choice === correctAnswerFor(item) ? '回答・正解' : choice === selectedAnswers[item.questionNo] ? 'あなたの回答' : '正解' }}</span>
+                        <span v-if="selectedAnswers[item.questionNo] && (choice === correctAnswerFor(item) || choice === selectedAnswers[item.questionNo])" class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm" :class="choice === correctAnswerFor(item) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'">{{ choice === selectedAnswers[item.questionNo] && choice === correctAnswerFor(item) ? '回答・正解' : choice === selectedAnswers[item.questionNo] ? 'あなたの回答' : '正解' }}</span>
                     </button>
                 </div>
                 <div v-if="selectedAnswers[item.questionNo]" class="mt-3 flex justify-end border-t border-pink-100 pt-3">

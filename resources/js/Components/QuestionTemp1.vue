@@ -50,7 +50,7 @@
                     v-for="label in availableLabels"
                     :key="label"
                     type="button"
-                    class="min-h-12 border bg-white px-3 py-2 text-base font-bold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    class="relative min-h-12 border bg-white px-3 py-2 text-base font-bold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
                     :class="[answerButtonClass(label), isIppan ? 'rounded-md focus:ring-pink-400 sm:min-h-14 sm:text-xl' : 'rounded-md focus:ring-violet-400']"
                     :disabled="hasAnswered"
                     @click="selectAnswer(label)"
@@ -58,7 +58,7 @@
                     {{ label }}
                     <span
                         v-if="hasAnswered && (normalizedCorrectAnswers.includes(label) || selectedAnswer.split(',').includes(label))"
-                        class="ml-2 inline-flex rounded-full px-1.5 py-0.5 align-middle text-[8px] font-bold sm:px-2 sm:text-[10px]"
+                        class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm"
                         :class="normalizedCorrectAnswers.includes(label) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'"
                     >{{ selectedAnswer.split(',').includes(label) && normalizedCorrectAnswers.includes(label) ? '回答・正解' : selectedAnswer.split(',').includes(label) ? 'あなたの回答' : '正解' }}</span>
                 </button>

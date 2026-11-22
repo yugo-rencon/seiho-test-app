@@ -256,7 +256,7 @@ const startNewStudy = () => {
                 <h1 v-if="isIppanStudyTheme" class="sr-only">{{ title }}</h1>
                 <div class="flex justify-between" :class="isIppanStudyTheme ? 'flex-col items-stretch gap-2 sm:flex-row sm:items-end sm:gap-4' : 'items-end gap-4'">
                     <h1 v-if="!isIppanStudyTheme" class="min-w-0 text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">{{ title }}</h1>
-                    <p v-else class="min-w-0 whitespace-nowrap text-sm font-medium text-gray-500 sm:text-base" :class="displayMode === 'study' ? 'hidden sm:block' : ''">{{ subject }}</p>
+                    <p v-else class="hidden min-w-0 whitespace-nowrap text-base font-medium text-gray-500 sm:block">{{ subject }}</p>
                     <div class="flex shrink-0 items-center" :class="isIppanStudyTheme ? 'self-end gap-3 sm:gap-5' : 'gap-3 sm:gap-5'" role="group" aria-label="表示モードを選択">
                         <button
                             type="button"

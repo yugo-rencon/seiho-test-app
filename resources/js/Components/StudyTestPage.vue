@@ -251,7 +251,7 @@ const startNewStudy = () => {
     </SeihoTestLayout>
 
     <SeihoTestLayout v-else :title="title">
-        <section class="min-h-screen py-6 text-gray-800" :class="isIppanStudyTheme ? 'bg-gray-100 px-2 py-3 sm:bg-white sm:px-6 sm:py-5' : 'bg-white px-4 sm:px-6 sm:py-9'">
+        <section class="text-gray-800" :class="isIppanStudyTheme ? 'bg-gray-100 px-2 pb-10 pt-3 sm:bg-white sm:px-6 sm:pb-24 sm:pt-5' : 'bg-white px-4 pb-10 pt-6 sm:px-6 sm:pb-24 sm:pt-9'">
             <header :class="isIppanStudyTheme ? 'mx-auto max-w-4xl border-b border-gray-200 pb-4' : 'mx-auto max-w-4xl'">
                 <h1 v-if="isIppanStudyTheme" class="sr-only">{{ title }}</h1>
                 <div class="flex justify-between gap-4" :class="isIppanStudyTheme ? 'flex-col items-stretch sm:flex-row sm:items-end' : 'items-end'">
@@ -536,7 +536,7 @@ const startNewStudy = () => {
                 </div>
             </Teleport>
 
-            <TestNavigationButtons v-if="previousRoute || nextRoute" :previous-route="previousRoute" :next-route="nextRoute" />
+            <TestNavigationButtons v-if="displayMode === 'browse' && (previousRoute || nextRoute)" :previous-route="previousRoute" :next-route="nextRoute" />
         </section>
     </SeihoTestLayout>
 </template>

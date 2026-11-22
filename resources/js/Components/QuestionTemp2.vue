@@ -18,9 +18,10 @@
                 { 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-hengaku': isHengaku, 'is-seiho': isSeiho },
             ]"
         >
+            <p v-if="isIppan" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
             <div class="flex items-start gap-2" :class="isIppan ? 'mb-4 sm:mb-10' : ''">
                 <h2 class="flex min-w-0 items-start gap-2 font-bold leading-tight" :class="isIppan ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
-                    <span :class="isIppan ? 'text-xl font-bold sm:text-3xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${item.questionNo}問` : `問${item.questionNo}` }}</span>
+                    <span :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${item.questionNo}問` : `問${item.questionNo}` }}</span>
                     <span v-if="item.questionTitle" class="min-w-0" :class="isIppan ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">{{ item.questionTitle }}</span>
                 </h2>
             </div>

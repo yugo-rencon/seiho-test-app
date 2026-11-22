@@ -252,12 +252,12 @@ const startNewStudy = () => {
 
     <SeihoTestLayout v-else :title="title">
         <section class="text-gray-800" :class="isIppanStudyTheme ? 'bg-gray-100 px-2 pb-10 pt-3 sm:bg-white sm:px-6 sm:pb-24 sm:pt-5' : 'bg-white px-4 pb-10 pt-6 sm:px-6 sm:pb-24 sm:pt-9'">
-            <header :class="isIppanStudyTheme ? 'mx-auto max-w-4xl border-b border-gray-200 pb-4' : 'mx-auto max-w-4xl'">
+            <header :class="isIppanStudyTheme ? 'mx-auto max-w-4xl border-b border-gray-200 pb-3 sm:pb-4' : 'mx-auto max-w-4xl'">
                 <h1 v-if="isIppanStudyTheme" class="sr-only">{{ title }}</h1>
-                <div class="flex justify-between gap-4" :class="isIppanStudyTheme ? 'flex-col items-stretch sm:flex-row sm:items-end' : 'items-end'">
+                <div class="flex justify-between" :class="isIppanStudyTheme ? 'flex-col items-stretch gap-2 sm:flex-row sm:items-end sm:gap-4' : 'items-end gap-4'">
                     <h1 v-if="!isIppanStudyTheme" class="min-w-0 text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">{{ title }}</h1>
-                    <p v-else class="text-sm font-medium text-gray-500 sm:text-base">{{ subject }}</p>
-                    <div class="flex shrink-0 items-center gap-3 sm:gap-5" :class="isIppanStudyTheme ? 'self-end' : ''" role="group" aria-label="表示モードを選択">
+                    <p v-else class="min-w-0 whitespace-nowrap text-sm font-medium text-gray-500 sm:text-base" :class="displayMode === 'study' ? 'hidden sm:block' : ''">{{ subject }}</p>
+                    <div class="flex shrink-0 items-center" :class="isIppanStudyTheme ? 'self-end gap-3 sm:gap-5' : 'gap-3 sm:gap-5'" role="group" aria-label="表示モードを選択">
                         <button
                             type="button"
                             class="border-b-2 px-0.5 pb-1 text-xs transition sm:text-sm"

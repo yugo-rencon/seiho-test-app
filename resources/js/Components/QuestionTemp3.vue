@@ -56,9 +56,10 @@
             { 'is-ippan': isIppan },
           ]"
         >
+          <p v-if="isIppan" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
           <div class="flex items-start gap-2" :class="isIppan ? 'mb-4 sm:mb-10' : ''">
             <h2 class="flex min-w-0 items-start gap-2 font-bold" :class="isIppan ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
-              <span :class="isIppan ? 'text-xl font-bold sm:text-3xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${blockStartQuestion + index}問` : `問${blockStartQuestion + index}` }}</span>
+              <span :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${blockStartQuestion + index}問` : `問${blockStartQuestion + index}` }}</span>
               <span v-if="props.questionTitle" class="min-w-0" :class="isIppan ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">{{ props.questionTitle }}</span>
             </h2>
           </div>

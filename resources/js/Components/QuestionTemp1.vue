@@ -8,6 +8,7 @@
             { 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-hengaku': isHengaku, 'is-seiho': isSeiho },
         ]"
     >
+        <p v-if="isIppan && props.learningMode" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
         <div class="flex items-start gap-2" :class="isIppan && props.learningMode ? 'mb-4 sm:mb-10' : 'my-4'">
             <div
                 v-if="!props.learningMode"
@@ -29,7 +30,7 @@
                 "
             ></div>
             <h2 class="flex min-w-0 items-start gap-2 font-bold leading-tight" :class="isIppan && props.learningMode ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
-                <span v-if="props.learningMode" :class="isIppan ? 'text-xl font-bold sm:text-3xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${props.questionNumber}問` : `問${props.questionNumber}` }}</span>
+                <span v-if="props.learningMode" :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${props.questionNumber}問` : `問${props.questionNumber}` }}</span>
                 <span v-else class="shrink-0 whitespace-nowrap">問題{{ props.questionNumber }}</span>
                 <span v-if="props.questionTitle" class="min-w-0" :class="isIppan && props.learningMode ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">
                     {{ props.questionTitle }}

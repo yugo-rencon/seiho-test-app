@@ -399,7 +399,7 @@ const startNewStudy = () => {
             </div>
 
             <div v-if="displayMode === 'study' && !showStudyIntro && !shouldShowResult && !isCurrentStudyLocked && currentIndex < questionCount - 1" class="mx-auto mt-5 flex w-full max-w-4xl justify-center px-2 pt-2">
-                <button type="button" class="inline-flex min-h-11 w-64 max-w-full items-center justify-center rounded-lg border px-5 py-2.5 text-sm font-semibold transition sm:w-80 md:w-96" :class="isIppanStudyTheme ? 'border-pink-200 bg-pink-50 text-fuchsia-700 hover:border-pink-300 hover:bg-pink-100' : 'border-violet-200 bg-violet-50 text-violet-700 hover:border-violet-300 hover:bg-violet-100'" @click="moveTo(currentIndex + 1)">次の問題</button>
+                <button type="button" class="inline-flex min-h-11 w-64 max-w-full items-center justify-center rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 hover:text-gray-950 sm:w-80 md:w-96" @click="moveTo(currentIndex + 1)">次の問題</button>
             </div>
 
             <section v-if="displayMode === 'study' && shouldShowResult" class="mx-auto mt-8 max-w-2xl" aria-live="polite">

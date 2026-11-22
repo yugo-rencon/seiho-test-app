@@ -42,7 +42,7 @@
 
         <div
             v-if="props.learningMode"
-            :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-pink-100 sm:bg-pink-50/70 sm:p-7' : 'mb-4 border-t border-gray-100 pt-4'"
+            :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : 'mb-4 border-t border-gray-100 pt-4'"
         >
             <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'text-sm font-bold text-gray-800'">{{ props.answerPrompt }}</p>
             <div class="mt-4 grid gap-3" :class="isIppan ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-3 sm:max-w-md'">
@@ -73,7 +73,7 @@
             >
                 回答する
             </button>
-            <div v-if="hasAnswered" class="mt-3 flex justify-end border-t border-pink-100 pt-3">
+            <div v-if="hasAnswered" class="mt-3 flex justify-end border-t border-gray-100 pt-3">
                 <button v-if="!studySession?.attemptCompleted?.value" type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer">選び直す</button>
             </div>
         </div>

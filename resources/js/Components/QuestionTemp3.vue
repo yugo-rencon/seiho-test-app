@@ -62,7 +62,7 @@
               <span v-if="props.questionTitle" class="min-w-0" :class="isIppan ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">{{ props.questionTitle }}</span>
             </h2>
           </div>
-          <div :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-pink-100 sm:bg-pink-50/70 sm:p-7' : ''">
+          <div :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : ''">
           <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'mt-4 text-sm font-bold text-gray-800'">語群から答えを1つ選んでください</p>
           <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
             <button
@@ -84,7 +84,7 @@
             </button>
           </div>
           </div>
-          <div v-if="selectedAnswers[index]" class="mt-3 flex justify-end border-t border-pink-100 pt-3">
+          <div v-if="selectedAnswers[index]" class="mt-3 flex justify-end border-t border-gray-100 pt-3">
             <button v-if="!studySession?.attemptCompleted?.value" type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer(index)">選び直す</button>
           </div>
         </article>

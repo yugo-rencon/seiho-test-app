@@ -25,7 +25,7 @@
                 </h2>
             </div>
             <div
-                :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-pink-100 sm:bg-pink-50/70 sm:p-7' : 'mt-4 border-t border-gray-100 pt-4'"
+                :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : 'mt-4 border-t border-gray-100 pt-4'"
             >
                 <template v-if="!selectedAnswers[item.questionNo] || choicesFor(item).length">
                     <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'text-sm font-bold text-gray-800'">{{ choicesFor(item).length ? '最も適切なものを1つ選んでください' : '文章の内容が正しいか、誤っているかを選んでください' }}</p>
@@ -58,7 +58,7 @@
                         <span v-if="selectedAnswers[item.questionNo] && (choice === correctAnswerFor(item) || choice === selectedAnswers[item.questionNo])" class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm" :class="choice === correctAnswerFor(item) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'">{{ choice === selectedAnswers[item.questionNo] && choice === correctAnswerFor(item) ? 'あなたの回答・正解' : choice === selectedAnswers[item.questionNo] ? 'あなたの回答' : '正解' }}</span>
                     </button>
                 </div>
-                <div v-if="selectedAnswers[item.questionNo]" class="mt-3 flex justify-end border-t border-pink-100 pt-3">
+                <div v-if="selectedAnswers[item.questionNo]" class="mt-3 flex justify-end border-t border-gray-100 pt-3">
                     <button v-if="!studySession?.attemptCompleted?.value" type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetTrueFalse(item)">選び直す</button>
                 </div>
             </div>

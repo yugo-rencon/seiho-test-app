@@ -1,6 +1,7 @@
 <?php
 
 $subjects = [
+    'ippan' => '生命保険一般課程',
     'souron' => '生命保険総論',
     'keiri' => '生命保険計理',
     'kiken' => '危険選択',
@@ -12,6 +13,7 @@ $subjects = [
 ];
 
 $studyEnabledExams = [
+    'ippan-2026-h1-a',
     'souron-2026-a',
     'souron-2026-b',
     'souron-2026-c',
@@ -40,6 +42,22 @@ $studyEnabledExams = [
 ];
 
 $exams = [];
+$exams['ippan-2026-h1-a'] = [
+    'scope' => 'ippan',
+    'subject_key' => 'ippan',
+    'subject_label' => $subjects['ippan'],
+    'year' => 2026,
+    'form' => 'A',
+    'route' => 'ippan.test',
+    'route_parameters' => [
+        'year' => 2026,
+        'months' => '1-6',
+        'form' => 'a',
+    ],
+    'question_count' => 82,
+    'study_enabled' => true,
+];
+
 foreach (['a', 'b', 'c'] as $form) {
     $examKey = "souron-2026-{$form}";
     $exams[$examKey] = [

@@ -252,7 +252,7 @@ const visibleSubjects = computed(() => {
                             <span aria-hidden="true">→</span>
                         </Link>
                         <Link
-                            v-if="isAdmin && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
+                            v-if="isAdmin && !isDaigaku && !isSenmon && !isOuyou"
                             :href="route('mypage.studyRecords')"
                             class="flex items-center justify-between rounded-xl border border-violet-200 bg-violet-50 px-3 py-2.5 text-sm font-bold text-violet-700 transition hover:border-violet-300 hover:bg-violet-100"
                             :class="isActive('mypage.studyRecords*') ? 'pointer-events-none ring-1 ring-violet-300' : ''"

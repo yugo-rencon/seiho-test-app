@@ -81,7 +81,7 @@ const isActive = (name) => route().current(name);
                     </Link>
                     <template v-if="isAuthenticated">
                         <Link
-                            v-if="isAdmin && !isDaigaku && !isIppan && !isSenmon && !isOuyou"
+                            v-if="isAdmin && !isDaigaku && !isSenmon && !isOuyou"
                             :href="route('mypage.studyRecords')"
                             class="py-1 transition-colors"
                             :class="

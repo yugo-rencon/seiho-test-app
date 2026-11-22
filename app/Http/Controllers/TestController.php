@@ -801,7 +801,7 @@ class TestController extends Controller
                 'subject_label' => $exam['subject_label'],
                 'year' => $exam['year'],
                 'form' => $exam['form'],
-                'exam_href' => route($exam['route']),
+                'exam_href' => route($exam['route'], $exam['route_parameters'] ?? []),
                 'status' => $attempt->status,
                 'answered_count' => $attempt->answered_count,
                 'question_count' => $exam['question_count'],
@@ -855,7 +855,7 @@ class TestController extends Controller
                     'subject_label' => $exam['subject_label'],
                     'year' => $exam['year'],
                     'form' => $exam['form'],
-                    'exam_href' => route($exam['route']),
+                    'exam_href' => route($exam['route'], $exam['route_parameters'] ?? []),
                     'question_count' => $exam['question_count'],
                     'study_enabled' => $exam['study_enabled'] ?? false,
                     'attempts' => $visible->map(fn (StudyAttempt $attempt) => [

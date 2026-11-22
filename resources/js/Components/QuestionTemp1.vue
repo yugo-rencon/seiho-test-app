@@ -245,7 +245,7 @@ const answerButtonClass = (label: string): string => {
         if (isIppan.value) {
             return draftAnswers.value.includes(label)
                 ? "border-fuchsia-500 bg-pink-50 text-fuchsia-700"
-                : "border-pink-200 text-gray-800 hover:border-fuchsia-400 hover:bg-pink-50";
+                : "border-pink-200 text-gray-800 [@media(hover:hover)]:hover:border-fuchsia-400 [@media(hover:hover)]:hover:bg-pink-50";
         }
         return draftAnswers.value.includes(label)
             ? "border-violet-500 bg-violet-50 text-violet-700"

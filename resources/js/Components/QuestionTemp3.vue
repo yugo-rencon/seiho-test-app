@@ -196,7 +196,7 @@
     function studyChoiceClass(index, label) {
         if (!selectedAnswers.value[index]) {
             return isIppan.value
-                ? 'border-pink-200 bg-white text-gray-800 hover:border-fuchsia-400 hover:bg-pink-50'
+                ? 'border-pink-200 bg-white text-gray-800 [@media(hover:hover)]:hover:border-fuchsia-400 [@media(hover:hover)]:hover:bg-pink-50'
                 : 'border-gray-300 bg-white text-gray-800 hover:border-violet-400 hover:bg-violet-50';
         }
         if (label === props.labels[index]) return 'border-emerald-500 bg-white text-emerald-700';

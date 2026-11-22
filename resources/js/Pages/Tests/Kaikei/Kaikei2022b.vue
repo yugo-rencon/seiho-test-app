@@ -331,10 +331,10 @@ const subject = "2022年度 フォームB";
                         }, //44
                         {
                             // rev: 2026-08-23 確認済み
-                            label: 'ウ',
+                            label: 'エ',
                             questionTitle: '外貨預金の為替換算',
                             relatedProblems: ['2022b45'],
-                            content: '固定',
+                            content: '決算時',
                         }, //45
                         {
                             // rev: 2026-08-23 確認済み

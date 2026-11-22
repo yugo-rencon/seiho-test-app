@@ -29,6 +29,8 @@ const isIppanStudyTheme = computed(() => props.examKey.startsWith("ippan-"));
 const isLoggedIn = computed(() => Boolean(page.props.auth?.user));
 const hasFullStudyAccess = computed(() => props.previewQuestionLimit <= 0 || hasPremiumAccess(page.props));
 const questionMenu = ref(null);
+const questionMenuButton = ref(null);
+const isQuestionMenuOpen = ref(false);
 const questions = computed(() => Array.from({ length: props.questionCount }, (_, index) => index + 1));
 const initialAnswers = Object.fromEntries((props.initialStudyState?.attempt?.answers ?? []).map((answer) => [Number(answer.question_no), answer]));
 const initialAnsweredCount = Object.keys(initialAnswers).length;
@@ -147,6 +149,7 @@ const markAnswered = (questionNumber, answered, correct = false, selectedAnswer 
 provide("studySession", { currentQuestion, markAnswered, savedAnswers, attemptCompleted });
 
 watch(displayMode, (mode) => {
+    isQuestionMenuOpen.value = false;
     if (!props.studyEnabled || !isLoggedIn.value) return;
     axios.patch(route("studyPreferences.update"), { preferred_test_mode: mode }).catch((error) => console.error("表示モードの保存に失敗しました。", error));
 });
@@ -163,7 +166,7 @@ const moveTo = async (index) => {
     const nextIndex = isStudyQuestionLocked(requestedQuestion) ? props.previewQuestionLimit : index;
     currentIndex.value = nextIndex;
     resultDismissed.value = true;
-    questionMenu.value?.removeAttribute("open");
+    isQuestionMenuOpen.value = false;
     await nextTick();
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 };
@@ -180,13 +183,29 @@ const reviewQuestionFromScore = async (questionNumber) => {
     await moveTo(Number(questionNumber) - 1);
 };
 
+const toggleQuestionMenu = async () => {
+    isQuestionMenuOpen.value = !isQuestionMenuOpen.value;
+    if (!isQuestionMenuOpen.value) return;
+    await nextTick();
+    questionMenu.value
+        ?.querySelector(`[data-question-number="${currentQuestion.value}"]`)
+        ?.scrollIntoView({ block: "nearest" });
+};
+
+const closeQuestionMenu = (restoreFocus = false) => {
+    if (!isQuestionMenuOpen.value) return;
+    isQuestionMenuOpen.value = false;
+    if (restoreFocus) nextTick(() => questionMenuButton.value?.focus());
+};
+
 const closeMenuOnOutsideClick = (event) => {
-    const menu = questionMenu.value;
-    if (menu?.hasAttribute("open") && !menu.contains(event.target)) menu.removeAttribute("open");
+    if (isQuestionMenuOpen.value && !questionMenu.value?.contains(event.target)) closeQuestionMenu();
 };
 
 const closeScoreDetailsOnEscape = (event) => {
-    if (event.key === "Escape") showScoreDetails.value = false;
+    if (event.key !== "Escape") return;
+    if (isQuestionMenuOpen.value) closeQuestionMenu(true);
+    else showScoreDetails.value = false;
 };
 
 watch(showScoreDetails, (visible) => {

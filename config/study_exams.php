@@ -1,7 +1,6 @@
 <?php
 
 $subjects = [
-    'ippan' => '生命保険一般課程',
     'souron' => '生命保険総論',
     'keiri' => '生命保険計理',
     'kiken' => '危険選択',
@@ -45,7 +44,7 @@ $exams = [];
 $exams['ippan-2026-h1-a'] = [
     'scope' => 'ippan',
     'subject_key' => 'ippan',
-    'subject_label' => $subjects['ippan'],
+    'subject_label' => '生命保険一般課程',
     'year' => 2026,
     'form' => 'A',
     'route' => 'ippan.test',

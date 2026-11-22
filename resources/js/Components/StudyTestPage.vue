@@ -198,26 +198,20 @@ const closeQuestionMenu = (restoreFocus = false) => {
     if (restoreFocus) nextTick(() => questionMenuButton.value?.focus());
 };
 
-const closeMenuOnOutsideClick = (event) => {
-    if (isQuestionMenuOpen.value && !questionMenu.value?.contains(event.target)) closeQuestionMenu();
-};
-
 const closeScoreDetailsOnEscape = (event) => {
     if (event.key !== "Escape") return;
     if (isQuestionMenuOpen.value) closeQuestionMenu(true);
     else showScoreDetails.value = false;
 };
 
-watch(showScoreDetails, (visible) => {
-    document.body.style.overflow = visible ? "hidden" : "";
+watch([showScoreDetails, isQuestionMenuOpen], ([scoreDetailsVisible, questionMenuVisible]) => {
+    document.body.style.overflow = scoreDetailsVisible || questionMenuVisible ? "hidden" : "";
 });
 
 onMounted(() => {
-    document.addEventListener("pointerdown", closeMenuOnOutsideClick);
     document.addEventListener("keydown", closeScoreDetailsOnEscape);
 });
 onBeforeUnmount(() => {
-    document.removeEventListener("pointerdown", closeMenuOnOutsideClick);
     document.removeEventListener("keydown", closeScoreDetailsOnEscape);
     document.body.style.overflow = "";
 });
@@ -325,55 +319,22 @@ const startNewStudy = () => {
                     >
                         成績詳細
                     </button>
-                    <details ref="questionMenu" class="relative z-20">
-                        <summary class="flex cursor-pointer list-none items-center gap-1.5 py-1 text-sm text-gray-600 hover:text-gray-950 focus:outline-none focus-visible:underline">
+                    <button
+                        ref="questionMenuButton"
+                        type="button"
+                        class="flex min-h-9 items-center gap-1.5 py-1 text-sm text-gray-600 transition hover:text-gray-950 focus:outline-none focus-visible:underline"
+                        :aria-expanded="isQuestionMenuOpen"
+                        aria-controls="study-question-menu"
+                        @click="toggleQuestionMenu"
+                    >
                             <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="4" y="4" width="6" height="6" rx="1" />
                                 <rect x="14" y="4" width="6" height="6" rx="1" />
                                 <rect x="4" y="14" width="6" height="6" rx="1" />
                                 <rect x="14" y="14" width="6" height="6" rx="1" />
                             </svg>
-                            問題一覧 <span aria-hidden="true" class="text-xs">▼</span>
-                        </summary>
-                        <div class="absolute right-0 mt-2 w-[calc(100vw-2rem)] max-w-[22rem] rounded-sm border border-gray-300 bg-white p-3 shadow-md">
-                            <div class="mb-3 flex items-center justify-between gap-3">
-                                <p class="text-base font-semibold text-gray-900">問題を選択</p>
-                                <p class="flex items-center gap-3 text-sm text-gray-500">
-                                    <span><span class="text-[#34b894]">●</span> 正解</span>
-                                    <span><span class="text-[#e07a84]">●</span> 不正解</span>
-                                    <span v-if="!hasFullStudyAccess" class="inline-flex items-center gap-1 text-gray-400">
-                                        <svg aria-hidden="true" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 17 9.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8H5Zm2 0h6V6a3 3 0 1 0-6 0v2Z" clip-rule="evenodd" /></svg>
-                                        有料
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="grid max-h-[29rem] grid-cols-5 gap-1.5 overflow-y-auto pr-1">
-                                <button
-                                    v-for="(questionNumber, index) in questions"
-                                    :key="questionNumber"
-                                    type="button"
-                                    class="relative min-h-10 rounded-sm border text-sm font-semibold transition"
-                                    :class="[
-                                        currentIndex === index ? (isIppanStudyTheme ? 'ring-2 ring-inset ring-fuchsia-500' : 'ring-2 ring-inset ring-violet-500') : '',
-                                        isStudyQuestionLocked(questionNumber)
-                                            ? 'border-gray-200 bg-gray-50 text-gray-400 hover:bg-gray-100'
-                                            : correctQuestions.has(questionNumber)
-                                            ? 'border-[#a7e3d0] bg-[#f0fcf7] text-[#16856b] hover:bg-[#e5f8f0]'
-                                            : answeredQuestions.has(questionNumber)
-                                              ? 'border-[#f2c5c8] bg-[#fff5f5] text-[#c45d68] hover:bg-[#fdebed]'
-                                              : isIppanStudyTheme
-                                                ? 'border-gray-200 bg-white text-gray-700 hover:border-pink-300 hover:bg-pink-50'
-                                                : 'border-gray-200 bg-white text-gray-700 hover:border-violet-300 hover:bg-violet-50',
-                                    ]"
-                                    @click="moveTo(index)"
-                                >
-                                    {{ questionNumber }}
-                                    <svg v-if="isStudyQuestionLocked(questionNumber)" aria-label="要購入" class="absolute right-1 top-1 h-3 w-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 17 9.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8H5Zm2 0h6V6a3 3 0 1 0-6 0v2Z" clip-rule="evenodd" /></svg>
-                                    <span v-else-if="answeredQuestions.has(questionNumber)" class="absolute right-1.5 top-1.5 h-1 w-1 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-[#34b894]' : 'bg-[#e07a84]'"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </details>
+                            問題一覧
+                    </button>
                 </div>
             </div>
 
@@ -478,6 +439,72 @@ const startNewStudy = () => {
                     <button type="button" class="inline-flex min-h-11 items-center px-3 text-sm font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="resultDismissed = true">問題を見直す</button>
                 </div>
             </section>
+
+            <Teleport to="body">
+                <div
+                    v-if="isQuestionMenuOpen"
+                    id="study-question-menu"
+                    ref="questionMenu"
+                    class="fixed inset-0 z-[90] overflow-y-auto bg-gray-100 text-gray-800"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="question-menu-title"
+                >
+                    <header class="sticky top-0 z-10 border-b border-gray-200 bg-white/95 backdrop-blur">
+                        <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-8 sm:py-5">
+                            <div class="min-w-0">
+                                <h2 id="question-menu-title" class="text-lg font-bold tracking-tight text-gray-950 sm:text-2xl">問題一覧</h2>
+                                <p class="mt-0.5 truncate text-xs text-gray-500 sm:text-sm">{{ subject }}</p>
+                            </div>
+                            <button type="button" class="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 text-sm font-semibold text-gray-600 shadow-sm transition hover:border-gray-400 hover:bg-gray-50 hover:text-gray-950" aria-label="問題一覧を閉じる" @click="closeQuestionMenu(true)">
+                                <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
+                                <span class="hidden sm:inline">閉じる</span>
+                            </button>
+                        </div>
+                    </header>
+
+                    <main class="mx-auto max-w-5xl px-3 py-4 sm:px-6 sm:py-8">
+                        <section class="rounded-xl border border-gray-200 bg-white p-3 shadow-sm sm:p-6">
+                            <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+                                <p class="text-sm font-semibold text-gray-900">移動する問題を選択</p>
+                                <p class="flex items-center gap-3 text-xs text-gray-500 sm:text-sm">
+                                    <span><span class="text-[#34b894]">●</span> 正解</span>
+                                    <span><span class="text-[#e07a84]">●</span> 不正解</span>
+                                    <span v-if="!hasFullStudyAccess" class="inline-flex items-center gap-1 text-gray-400">
+                                        <svg aria-hidden="true" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 17 9.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8H5Zm2 0h6V6a3 3 0 1 0-6 0v2Z" clip-rule="evenodd" /></svg>
+                                        有料
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-5 gap-2 sm:grid-cols-8 sm:gap-3 md:grid-cols-10">
+                                <button
+                                    v-for="(questionNumber, index) in questions"
+                                    :key="questionNumber"
+                                    :data-question-number="questionNumber"
+                                    type="button"
+                                    class="relative min-h-11 rounded-lg border text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    :class="[
+                                        currentIndex === index ? (isIppanStudyTheme ? 'ring-2 ring-fuchsia-500 ring-offset-2' : 'ring-2 ring-violet-500 ring-offset-2') : '',
+                                        isStudyQuestionLocked(questionNumber)
+                                            ? 'border-gray-200 bg-gray-50 text-gray-400'
+                                            : correctQuestions.has(questionNumber)
+                                              ? 'border-[#a7e3d0] bg-[#f0fcf7] text-[#16856b]'
+                                              : answeredQuestions.has(questionNumber)
+                                                ? 'border-[#f2c5c8] bg-[#fff5f5] text-[#c45d68]'
+                                                : 'border-gray-200 bg-white text-gray-700 hover:border-gray-400 hover:bg-gray-50',
+                                    ]"
+                                    :aria-label="`第${questionNumber}問${currentIndex === index ? '、現在表示中' : ''}`"
+                                    @click="moveTo(index)"
+                                >
+                                    {{ questionNumber }}
+                                    <svg v-if="isStudyQuestionLocked(questionNumber)" aria-label="要購入" class="absolute right-1 top-1 h-3 w-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 17 9.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8H5Zm2 0h6V6a3 3 0 1 0-6 0v2Z" clip-rule="evenodd" /></svg>
+                                    <span v-else-if="answeredQuestions.has(questionNumber)" class="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-[#34b894]' : 'bg-[#e07a84]'"></span>
+                                </button>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </Teleport>
 
             <Teleport to="body">
                 <div

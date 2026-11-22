@@ -252,11 +252,12 @@ const startNewStudy = () => {
 
     <SeihoTestLayout v-else :title="title">
         <section class="text-gray-800" :class="isIppanStudyTheme ? 'bg-gray-100 px-2 pb-10 pt-3 sm:bg-white sm:px-6 sm:pb-24 sm:pt-5' : 'bg-white px-4 pb-10 pt-6 sm:px-6 sm:pb-24 sm:pt-9'">
-            <header class="mx-auto max-w-4xl">
-                <div class="flex items-end justify-between gap-4">
-                    <h1 class="min-w-0 text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl" :class="isIppanStudyTheme ? 'hidden sm:block' : ''">{{ title }}</h1>
-                    <p v-if="isIppanStudyTheme" class="text-sm font-medium text-gray-500 sm:hidden">{{ subject }}</p>
-                    <div class="flex shrink-0 items-center gap-3 sm:gap-5" role="group" aria-label="表示モードを選択">
+            <header :class="isIppanStudyTheme ? 'mx-auto max-w-4xl border-b border-gray-200 pb-4' : 'mx-auto max-w-4xl'">
+                <h1 v-if="isIppanStudyTheme" class="sr-only">{{ title }}</h1>
+                <div class="flex justify-between gap-4" :class="isIppanStudyTheme ? 'flex-col items-stretch sm:flex-row sm:items-end' : 'items-end'">
+                    <h1 v-if="!isIppanStudyTheme" class="min-w-0 text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">{{ title }}</h1>
+                    <p v-else class="text-sm font-medium text-gray-500 sm:text-base">{{ subject }}</p>
+                    <div class="flex shrink-0 items-center gap-3 sm:gap-5" :class="isIppanStudyTheme ? 'self-end' : ''" role="group" aria-label="表示モードを選択">
                         <button
                             type="button"
                             class="border-b-2 px-0.5 pb-1 text-xs transition sm:text-sm"
@@ -278,22 +279,23 @@ const startNewStudy = () => {
                         </button>
                     </div>
                 </div>
-                <p class="mt-1.5 text-sm text-gray-500" :class="isIppanStudyTheme ? 'hidden sm:block' : ''">{{ subject }}</p>
+                <p v-if="!isIppanStudyTheme" class="mt-1.5 text-sm text-gray-500">{{ subject }}</p>
             </header>
 
             <div
                 v-if="displayMode === 'study' && !showStudyIntro && !shouldShowResult"
-                class="mx-auto mt-4 max-w-4xl border-b border-gray-200 pb-3 sm:mt-5"
+                class="mx-auto border-b border-gray-200 pb-3"
+                :class="isIppanStudyTheme ? 'mt-3 flex max-w-4xl items-center justify-between gap-4 rounded-lg border-0 bg-white px-4 py-3 shadow-sm sm:mt-4 sm:rounded-none sm:border-b sm:px-0 sm:shadow-none' : 'mt-4 max-w-4xl sm:mt-5'"
             >
                 <p class="flex items-center text-sm font-semibold text-gray-900" aria-live="polite">
                     <span class="mr-2 text-xs font-normal text-gray-500">問題</span>
                     <span class="inline-flex min-w-7 items-center justify-center px-1.5 py-0.5">{{ currentQuestion }}</span>
                     <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
                 </p>
-                <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-gray-100" role="progressbar" aria-label="学習の進捗" :aria-valuenow="currentQuestion" aria-valuemin="1" :aria-valuemax="questionCount">
+                <div v-if="!isIppanStudyTheme" class="mt-2 h-1.5 overflow-hidden rounded-full bg-gray-100" role="progressbar" aria-label="学習の進捗" :aria-valuenow="currentQuestion" aria-valuemin="1" :aria-valuemax="questionCount">
                     <div class="h-full rounded-full transition-[width] duration-300 ease-out" :class="isIppanStudyTheme ? 'bg-gradient-to-r from-pink-400 to-fuchsia-500' : 'bg-gradient-to-r from-violet-500 to-indigo-500'" :style="{ width: `${studyProgress}%` }"></div>
                 </div>
-                <div class="mt-2 flex items-center gap-3" :class="isComplete && resultDismissed && hasFullStudyAccess ? 'justify-between' : 'justify-end'">
+                <div class="flex items-center gap-3" :class="[isIppanStudyTheme ? '' : 'mt-2', isComplete && resultDismissed && hasFullStudyAccess ? 'justify-between' : 'justify-end']">
                     <button v-if="isComplete && resultDismissed && hasFullStudyAccess" type="button" class="inline-flex min-h-10 items-center text-sm font-medium text-gray-600 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果</button>
                     <button
                         v-if="answeredQuestions.size"

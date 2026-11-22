@@ -360,6 +360,7 @@ const startNewStudy = () => {
 
             <div v-if="displayMode === 'study' && showStartNotice" class="mx-auto mt-6 max-w-xl rounded-xl border border-gray-200 bg-white px-5 py-7 text-center shadow-sm sm:mt-10 sm:px-8 sm:py-9">
                 <p class="text-xs font-semibold tracking-wide" :class="isIppanStudyTheme ? 'text-fuchsia-600' : 'text-violet-600'">学習モード</p>
+                <p v-if="isIppanStudyTheme" class="mt-2 text-sm font-semibold text-gray-600 sm:hidden">{{ subject }}</p>
                 <h2 class="mt-2 text-2xl font-bold tracking-tight text-gray-950">問題演習を始める</h2>
                 <div class="mt-5 flex items-center justify-center divide-x divide-gray-200 rounded-lg bg-gray-50 py-3 text-sm">
                     <p class="px-5"><span class="text-xl font-bold text-gray-950">{{ questionCount }}</span><span class="ml-1 text-gray-500">問</span></p>
@@ -370,6 +371,7 @@ const startNewStudy = () => {
 
             <div v-if="displayMode === 'study' && showResumeNotice && !shouldShowResult" class="mx-auto mt-6 max-w-xl rounded-xl border border-gray-200 bg-white px-5 py-7 text-center shadow-sm sm:mt-10 sm:px-8 sm:py-9">
                 <p class="text-xs font-semibold tracking-wide" :class="isIppanStudyTheme ? 'text-fuchsia-600' : 'text-violet-600'">前回の学習</p>
+                <p v-if="isIppanStudyTheme" class="mt-2 text-sm font-semibold text-gray-600 sm:hidden">{{ subject }}</p>
                 <template v-if="initialAttemptCompleted">
                     <h2 class="mt-2 text-2xl font-bold tracking-tight text-gray-950">{{ initialAttemptScore }}<span class="ml-1 text-base font-medium text-gray-500">/ {{ maxScore }}点</span></h2>
                     <p class="mt-2 text-sm text-gray-500">全{{ questionCount }}問 回答済み</p>

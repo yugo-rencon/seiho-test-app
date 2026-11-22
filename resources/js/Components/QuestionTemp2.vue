@@ -133,7 +133,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject, nextTick, ref, watch } from "vue";
+import { computed, inject, ref, watch } from "vue";
 import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
@@ -214,8 +214,6 @@ const effectiveStudyQuestion = computed(() => studySession?.currentQuestion?.val
 const selectedAnswers = ref({});
 const feedbackVisible = ref(false);
 const feedbackCorrect = ref(false);
-const feedbackQuestion = ref(0);
-const feedbackHasExplanation = ref(false);
 
 const choicesFor = (item: any): any[] => {
     const choices = props.choiceOptionsByQuestion?.[item.questionNo];
@@ -242,15 +240,7 @@ const answerTrueFalse = (item: any, choice: string): void => {
     emit("answered", Number(item.questionNo), true);
     studySession?.markAnswered?.(Number(item.questionNo), true, isTrueFalseCorrect(item), choice, correctAnswerFor(item));
     feedbackCorrect.value = isTrueFalseCorrect(item);
-    feedbackQuestion.value = Number(item.questionNo);
-    feedbackHasExplanation.value = choicesFor(item).length === 0;
     feedbackVisible.value = true;
-    if (feedbackHasExplanation.value) scrollToExplanation();
-};
-
-const scrollToExplanation = async (): Promise<void> => {
-    await nextTick();
-    document.getElementById(`explanation-q${feedbackQuestion.value}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
 const dismissFeedback = (): void => {

@@ -4,7 +4,7 @@ import { onBeforeUnmount, watch } from "vue";
 const props = defineProps({
     visible: { type: Boolean, default: false },
     correct: { type: Boolean, default: false },
-    duration: { type: Number, default: 650 },
+    duration: { type: Number, default: 900 },
 });
 
 const emit = defineEmits(["dismissed"]);

@@ -119,7 +119,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject, nextTick, ref, watch } from "vue";
+import { computed, inject, ref, watch } from "vue";
 import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
@@ -212,7 +212,6 @@ const selectAnswer = (label: string): void => {
     emit("answered", Number(props.questionNumber), true);
     studySession?.markAnswered?.(Number(props.questionNumber), true, isCorrect.value, label, correctAnswerLabel.value);
     feedbackVisible.value = true;
-    scrollToExplanation();
 };
 
 const submitMultipleAnswer = (): void => {
@@ -221,12 +220,6 @@ const submitMultipleAnswer = (): void => {
     emit("answered", Number(props.questionNumber), true);
     studySession?.markAnswered?.(Number(props.questionNumber), true, isCorrect.value, selectedAnswer.value, correctAnswerLabel.value);
     feedbackVisible.value = true;
-    scrollToExplanation();
-};
-
-const scrollToExplanation = async (): Promise<void> => {
-    await nextTick();
-    document.getElementById(`explanation-q${props.questionNumber}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
 const dismissFeedback = (): void => {

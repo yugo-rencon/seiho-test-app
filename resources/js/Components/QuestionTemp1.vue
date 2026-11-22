@@ -249,7 +249,7 @@ const answerButtonClass = (label: string): string => {
         }
         return draftAnswers.value.includes(label)
             ? "border-violet-500 bg-violet-50 text-violet-700"
-            : "border-gray-300 text-gray-800 hover:border-violet-400 hover:bg-violet-50";
+            : "border-gray-300 text-gray-800 [@media(hover:hover)]:hover:border-violet-400 [@media(hover:hover)]:hover:bg-violet-50";
     }
     if (normalizedCorrectAnswers.value.includes(label)) return "border-emerald-500 text-emerald-700";
     if (selectedAnswer.value.split(",").includes(label)) return "border-rose-500 text-rose-700";

@@ -270,7 +270,7 @@ const trueFalseButtonClass = (item: any, choice: string): string => {
     if (!selected) {
         return isIppan.value
             ? "border-pink-200 text-gray-800 [@media(hover:hover)]:hover:border-fuchsia-400 [@media(hover:hover)]:hover:bg-pink-50"
-            : "border-gray-300 text-gray-800 hover:border-violet-400 hover:bg-violet-50";
+            : "border-gray-300 text-gray-800 [@media(hover:hover)]:hover:border-violet-400 [@media(hover:hover)]:hover:bg-violet-50";
     }
     if (choice === correctAnswerFor(item)) return "border-emerald-500 text-emerald-700";
     if (choice === selected) return "border-rose-500 text-rose-700";

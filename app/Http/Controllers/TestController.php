@@ -838,16 +838,9 @@ class TestController extends Controller
 
         return $studyExamCatalog
             ->map(function (array $exam, string $examKey) use ($studyAttempts) {
-                $attempts = $studyAttempts->get($examKey, collect());
-                $recent = $attempts->sortByDesc('attempt_no')->take(3);
-                $best = $attempts
-                    ->where('status', 'completed')
-                    ->sort(fn ($a, $b) => $b->score <=> $a->score ?: $b->attempt_no <=> $a->attempt_no)
-                    ->first();
-                $visible = $recent
-                    ->when($best, fn ($items) => $items->push($best))
-                    ->unique('id')
-                    ->sortByDesc('attempt_no');
+                $visible = $studyAttempts->get($examKey, collect())
+                    ->sortByDesc('attempt_no')
+                    ->take(1);
 
                 return [
                     'exam_key' => $examKey,
@@ -868,7 +861,6 @@ class TestController extends Controller
                         'correct_count' => $attempt->correct_count,
                         'score' => $attempt->score,
                         'max_score' => $attempt->max_score,
-                        'is_best' => $best?->id === $attempt->id,
                         'updated_at' => $attempt->updated_at?->toISOString(),
                     ])->values(),
                 ];

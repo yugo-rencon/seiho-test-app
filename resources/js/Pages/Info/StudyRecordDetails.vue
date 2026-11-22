@@ -35,7 +35,7 @@ const formatDate = (value) => {
       <div class="mt-4 flex flex-wrap items-start justify-between gap-3 border-b border-slate-200 pb-4">
         <div>
           <p class="text-xs font-semibold text-violet-700">{{ record.subject_label }}</p>
-          <h1 class="mt-1 text-xl font-bold tracking-tight text-slate-950">{{ record.year }}年度 フォーム{{ record.form }}・第{{ record.attempt_no }}回</h1>
+          <h1 class="mt-1 text-xl font-bold tracking-tight text-slate-950">{{ record.year }}年度 フォーム{{ record.form }}</h1>
           <p class="mt-1.5 text-[11px] text-slate-500">
             {{ record.status === 'completed' ? `完了日時 ${formatDate(record.completed_at)}` : `開始日時 ${formatDate(record.started_at)}` }}
           </p>

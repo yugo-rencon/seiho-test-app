@@ -54,7 +54,7 @@ const activeYears = computed(() => {
           <h1 class="text-xl font-bold tracking-tight text-slate-950">問題演習の履歴</h1>
           <span class="rounded-full bg-violet-50 px-2 py-0.5 text-[10px] font-semibold text-violet-700">管理者のみ</span>
         </div>
-        <p class="mt-1 text-xs leading-5 text-slate-500">フォームごとに直近3回と最高得点を確認できます。</p>
+        <p class="mt-1 text-xs leading-5 text-slate-500">フォームごとに最新の回答状況と採点結果を確認できます。</p>
       </div>
 
       <div v-if="groupedStudyRecords.length" class="mt-4">
@@ -95,8 +95,7 @@ const activeYears = computed(() => {
                     </summary>
                     <div class="divide-y divide-slate-100 border-t border-slate-100">
                       <Link v-for="attempt in record.attempts" :key="attempt.id" :href="attempt.href" class="flex items-center justify-between gap-2 px-2.5 py-2 text-xs transition hover:bg-violet-50/50">
-                        <span class="font-semibold text-slate-700">第{{ attempt.attempt_no }}回</span>
-                        <span v-if="attempt.is_best" class="rounded-full bg-violet-50 px-2 py-0.5 text-[10px] font-semibold text-violet-700">最高</span>
+                        <span class="font-semibold text-slate-700">最新の回答</span>
                         <span class="ml-auto text-slate-500">{{ attempt.status === 'completed' ? `${attempt.score}点` : `${attempt.answered_count}/${record.question_count}問` }}</span>
                         <span class="text-violet-700">詳細 →</span>
                       </Link>

@@ -129,7 +129,7 @@ class StudyProgressController extends Controller
                         ->where('exam_key', $examKey)
                         ->max('attempt_no') + 1;
 
-                    return StudyAttempt::create([
+                    $newAttempt = StudyAttempt::create([
                         'user_id' => $request->user()->id,
                         'exam_key' => $examKey,
                         'attempt_no' => $nextAttemptNo,
@@ -140,6 +140,10 @@ class StudyProgressController extends Controller
                         'max_score' => $attempt->max_score,
                         'started_at' => now(),
                     ]);
+
+                    $this->deleteOtherAttempts($newAttempt);
+
+                    return $newAttempt;
                 }
 
                 $attempt->update([
@@ -197,30 +201,17 @@ class StudyProgressController extends Controller
             'completed_at' => $answeredCount >= $questionCount ? ($attempt->completed_at ?? now()) : null,
         ]);
 
-        if ($answeredCount >= $questionCount) {
-            $this->pruneAttemptHistory($attempt);
-        }
+        $this->deleteOtherAttempts($attempt);
 
         return $attempt->fresh('answers');
     }
 
-    private function pruneAttemptHistory(StudyAttempt $attempt): void
+    private function deleteOtherAttempts(StudyAttempt $attempt): void
     {
-        $attempts = StudyAttempt::query()
-            ->where('user_id', $attempt->user_id)
-            ->where('exam_key', $attempt->exam_key)
-            ->get(['id', 'attempt_no', 'status', 'score']);
-        $recentIds = $attempts->sortByDesc('attempt_no')->take(3)->pluck('id');
-        $bestId = $attempts
-            ->where('status', 'completed')
-            ->sort(fn ($a, $b) => $b->score <=> $a->score ?: $b->attempt_no <=> $a->attempt_no)
-            ->first()?->id;
-        $keepIds = $recentIds->when($bestId, fn ($ids) => $ids->push($bestId))->unique();
-
         StudyAttempt::query()
             ->where('user_id', $attempt->user_id)
             ->where('exam_key', $attempt->exam_key)
-            ->whereNotIn('id', $keepIds)
+            ->where('id', '!=', $attempt->id)
             ->delete();
     }
 

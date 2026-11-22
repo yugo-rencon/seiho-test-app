@@ -97,12 +97,20 @@ class StudyProgressController extends Controller
 
     public function deleteAnswer(Request $request, string $examKey, int $questionNo): JsonResponse
     {
+        $data = $request->validate([
+            'max_score' => ['sometimes', 'integer', 'min:1', 'max:10000'],
+            'question_count' => ['sometimes', 'integer', 'min:1', 'max:500'],
+        ]);
         $attempt = $this->findCurrentAttempt($request, $examKey);
 
         if ($attempt) {
-            DB::transaction(function () use ($attempt, $questionNo) {
+            DB::transaction(function () use ($attempt, $questionNo, $data) {
                 $attempt->answers()->where('question_no', $questionNo)->delete();
-                $this->refreshAttemptTotals($attempt, 50, 100);
+                $this->refreshAttemptTotals(
+                    $attempt,
+                    $data['question_count'] ?? 50,
+                    $data['max_score'] ?? 100,
+                );
             });
         }
 

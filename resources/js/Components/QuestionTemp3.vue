@@ -1,4 +1,5 @@
 <template>
+    <StudyAnswerFeedback :visible="feedbackVisible" :correct="feedbackCorrect" @dismissed="feedbackVisible = false" />
     <div
         v-for="questionNo in questionNumbersInBlock"
         :key="`anchor-${questionNo}`"
@@ -50,35 +51,40 @@
           v-for="(content, index) in props.contents"
           v-show="Number(effectiveStudyQuestion) === blockStartQuestion + index"
           :key="`study-${index}`"
-          class="rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6"
+          :class="[
+            isIppan ? 'rounded-lg bg-white px-4 py-4 shadow-sm sm:px-0 sm:py-2 sm:shadow-none' : 'rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6',
+            { 'is-ippan': isIppan },
+          ]"
         >
-          <div class="flex items-start gap-2">
-            <h2 class="flex min-w-0 items-start gap-2 text-base font-bold text-gray-700">
-              <span class="shrink-0 whitespace-nowrap text-xs font-normal text-gray-500">問{{ blockStartQuestion + index }}</span>
-              <span v-if="props.questionTitle" class="min-w-0">{{ props.questionTitle }}</span>
+          <div class="flex items-start gap-2" :class="isIppan ? 'mb-4 sm:mb-10' : ''">
+            <h2 class="flex min-w-0 items-start gap-2 font-bold" :class="isIppan ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
+              <span :class="isIppan ? 'text-xl font-bold sm:text-3xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${blockStartQuestion + index}問` : `問${blockStartQuestion + index}` }}</span>
+              <span v-if="props.questionTitle" class="min-w-0" :class="isIppan ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">{{ props.questionTitle }}</span>
             </h2>
           </div>
-          <p class="mt-4 text-sm font-bold text-gray-800">語群から答えを1つ選んでください</p>
-          <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5">
+          <div :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-pink-100 sm:bg-pink-50/70 sm:p-7' : ''">
+          <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'mt-4 text-sm font-bold text-gray-800'">語群から答えを1つ選んでください</p>
+          <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
             <button
               v-for="choice in props.choiceOptions"
               :key="`${index}-${choice.label}`"
               type="button"
-              class="grid min-h-12 grid-cols-[auto_minmax(0,1fr)] content-center items-start gap-1 rounded-md border px-3 py-2 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
-              :class="studyChoiceClass(index, choice.label)"
+              class="grid min-h-12 grid-cols-[auto_minmax(0,1fr)] content-center items-start gap-2 border bg-white px-4 py-3 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-offset-2"
+              :class="[studyChoiceClass(index, choice.label), isIppan ? 'rounded-md focus:ring-pink-400 sm:text-base' : 'rounded-md focus:ring-violet-400']"
               :disabled="Boolean(selectedAnswers[index])"
               @click="answerQuestion(index, choice.label)"
             >
               <span class="font-bold">{{ choice.label }}.</span>
               <span>{{ choice.text }}</span>
+              <span
+                v-if="selectedAnswers[index] && (choice.label === props.labels[index] || choice.label === selectedAnswers[index])"
+                class="col-span-2 mt-1 w-fit rounded-full px-2 py-0.5 text-[10px] font-bold"
+                :class="choice.label === props.labels[index] ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'"
+              >{{ choice.label === selectedAnswers[index] && choice.label === props.labels[index] ? '回答・正解' : choice.label === selectedAnswers[index] ? 'あなたの回答' : '正解' }}</span>
             </button>
           </div>
-          <div v-if="selectedAnswers[index]" class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-gray-200 pt-3 text-base" role="status">
-            <p class="flex flex-wrap items-center gap-x-2 text-gray-800">
-              <span class="font-semibold" :class="isAnswerCorrect(index) ? 'text-emerald-700' : 'text-rose-700'">{{ isAnswerCorrect(index) ? '○' : '×' }}</span>
-              <span class="font-semibold">{{ isAnswerCorrect(index) ? '正解' : '不正解' }}</span>
-              <template v-if="!isAnswerCorrect(index)"><span class="text-gray-300">｜</span><span class="text-sm text-gray-500">正解</span><span>{{ props.labels[index] }}. {{ normalizeBiArrow(content) }}</span></template>
-            </p>
+          </div>
+          <div v-if="selectedAnswers[index]" class="mt-3 flex justify-end border-t border-pink-100 pt-3">
             <button v-if="!studySession?.attemptCompleted?.value" type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer(index)">選び直す</button>
           </div>
         </article>
@@ -112,6 +118,7 @@
     import { usePage } from "@inertiajs/vue3";
     import PaywallNotice from "./PaywallNotice.vue";
     import RelatedProblems from "./RelatedProblems.vue";
+    import StudyAnswerFeedback from "./StudyAnswerFeedback.vue";
     import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear, requiresIppanFreeLogin } from "@/utils/paywall";
 
     const props = defineProps({
@@ -173,6 +180,8 @@
     const effectiveStudyQuestion = computed(() => studySession?.currentQuestion?.value ?? props.studyQuestion);
 
     const selectedAnswers = ref(Array(props.contents.length).fill(''));
+    const feedbackVisible = ref(false);
+    const feedbackCorrect = ref(false);
 
     function answerQuestion(index, label) {
         if (selectedAnswers.value[index]) return;
@@ -180,10 +189,16 @@
         selectedAnswers.value = [...selectedAnswers.value];
         emit('answered', blockStartQuestion.value + index, true);
         studySession?.markAnswered?.(blockStartQuestion.value + index, true, isAnswerCorrect(index), label, props.labels[index]);
+        feedbackCorrect.value = isAnswerCorrect(index);
+        feedbackVisible.value = true;
     }
 
     function studyChoiceClass(index, label) {
-        if (!selectedAnswers.value[index]) return 'border-gray-300 bg-white text-gray-800 hover:border-violet-400 hover:bg-violet-50';
+        if (!selectedAnswers.value[index]) {
+            return isIppan.value
+                ? 'border-pink-200 bg-white text-gray-800 hover:border-fuchsia-400 hover:bg-pink-50'
+                : 'border-gray-300 bg-white text-gray-800 hover:border-violet-400 hover:bg-violet-50';
+        }
         if (label === props.labels[index]) return 'border-emerald-500 bg-white text-emerald-700';
         if (label === selectedAnswers.value[index]) return 'border-rose-500 bg-white text-rose-700';
         return 'border-gray-200 bg-white text-gray-500';
@@ -196,6 +211,7 @@
     function resetAnswer(index) {
         selectedAnswers.value[index] = '';
         selectedAnswers.value = [...selectedAnswers.value];
+        feedbackVisible.value = false;
         emit('answered', blockStartQuestion.value + index, false);
         studySession?.markAnswered?.(blockStartQuestion.value + index, false, false, '');
     }

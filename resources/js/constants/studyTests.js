@@ -20,6 +20,18 @@ export const KEIRI_STUDY_CONFIG = Object.freeze({
     ]),
 });
 
+export const IPPAN_STUDY_CONFIG = Object.freeze({
+    questionCount: 82,
+    maxScore: 100,
+    scoreSections: Object.freeze([
+        Object.freeze({ label: "問1〜25", start: 1, end: 25, points: 1 }),
+        Object.freeze({ label: "問26〜30", start: 26, end: 30, points: 2 }),
+        Object.freeze({ label: "問31〜33", start: 31, end: 33, points: 4 }),
+        Object.freeze({ label: "問34〜37", start: 34, end: 37, points: 2 }),
+        Object.freeze({ label: "問38〜82", start: 38, end: 82, points: 1 }),
+    ]),
+});
+
 const makeChoices = (entries) => entries.map(([label, text]) => ({ label, text }));
 
 export const SOURON_ASSET_CHOICES_1 = makeChoices([

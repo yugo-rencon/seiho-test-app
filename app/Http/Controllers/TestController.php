@@ -205,7 +205,7 @@ class TestController extends Controller
     }
 
     // 一般課程 各試験ページ
-    public function ippanTest(int $year, string $months, string $form)
+    public function ippanTest(Request $request, int $year, string $months, string $form)
     {
         $allowedYears = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
         $allowedForms = ['a', 'b', 'c', 'd', 'e'];
@@ -230,6 +230,10 @@ class TestController extends Controller
         }
 
         $period = $periodByMonths[$months];
+
+        if ($year === 2026 && $period === 'h1' && $form === 'a') {
+            return $this->renderStudyExam($request, 'Ippan/Tests/Ippan2026h1a', 'ippan-2026-h1-a');
+        }
 
         return Inertia::render("Ippan/Tests/Ippan{$year}{$period}{$form}");
     }

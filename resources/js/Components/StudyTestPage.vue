@@ -25,6 +25,7 @@ const props = defineProps({
 });
 
 const page = usePage();
+const isIppanStudyTheme = computed(() => props.examKey.startsWith("ippan-"));
 const isLoggedIn = computed(() => Boolean(page.props.auth?.user));
 const hasFullStudyAccess = computed(() => props.previewQuestionLimit <= 0 || hasPremiumAccess(page.props));
 const questionMenu = ref(null);
@@ -127,7 +128,12 @@ const markAnswered = (questionNumber, answered, correct = false, selectedAnswer 
     }
     const request = answered
         ? (pendingAttemptReset ? pendingAttemptReset.then(storeAnswer) : storeAnswer())
-        : axios.delete(route("studyProgress.answers.delete", [props.examKey, normalizedQuestionNumber]));
+        : axios.delete(route("studyProgress.answers.delete", [props.examKey, normalizedQuestionNumber]), {
+            data: {
+                question_count: props.questionCount,
+                max_score: props.maxScore,
+            },
+        });
     request.catch((error) => console.error("学習回答の保存に失敗しました。", error));
 };
 
@@ -217,11 +223,13 @@ const startNewStudy = () => {
     </SeihoTestLayout>
 
     <SeihoTestLayout v-else :title="title">
-        <section class="bg-white px-4 py-6 text-gray-800 sm:px-6 sm:py-9">
-            <header class="mx-auto max-w-4xl">
-                <div class="flex items-end justify-between gap-4">
-                    <h1 class="min-w-0 text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">{{ title }}</h1>
-                    <div class="flex shrink-0 items-center gap-3 sm:gap-5" role="group" aria-label="表示モードを選択">
+        <section class="min-h-screen py-6 text-gray-800" :class="isIppanStudyTheme ? 'bg-gray-100 px-2 py-3 sm:bg-white sm:px-6 sm:py-5' : 'bg-white px-4 sm:px-6 sm:py-9'">
+            <header :class="isIppanStudyTheme ? 'mx-auto max-w-4xl border-b border-gray-200 pb-4' : 'mx-auto max-w-4xl'">
+                <h1 v-if="isIppanStudyTheme" class="sr-only">{{ title }}</h1>
+                <div class="flex justify-between gap-4" :class="isIppanStudyTheme ? 'flex-col items-stretch sm:flex-row sm:items-end' : 'items-end'">
+                    <h1 v-if="!isIppanStudyTheme" class="min-w-0 text-2xl font-bold tracking-tight text-gray-950 sm:text-3xl">{{ title }}</h1>
+                    <p v-else class="text-sm font-medium text-gray-500 sm:text-base">{{ subject }}</p>
+                    <div class="flex shrink-0 items-center gap-3 sm:gap-5" :class="isIppanStudyTheme ? 'self-end' : ''" role="group" aria-label="表示モードを選択">
                         <button
                             type="button"
                             class="border-b-2 px-0.5 pb-1 text-xs transition sm:text-sm"
@@ -234,28 +242,32 @@ const startNewStudy = () => {
                         <button
                             type="button"
                             class="relative whitespace-nowrap border-b-2 px-0.5 pb-1 text-xs transition sm:text-sm"
-                            :class="displayMode === 'study' ? 'border-violet-600 font-semibold text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-800'"
+                            :class="displayMode === 'study' ? (isIppanStudyTheme ? 'border-fuchsia-500 font-semibold text-gray-900' : 'border-violet-600 font-semibold text-gray-900') : 'border-transparent text-gray-500 hover:text-gray-800'"
                             :aria-pressed="displayMode === 'study'"
                             @click="displayMode = 'study'"
                         >
                             <span>学習モード</span>
-                            <span class="absolute -top-3 right-0 rounded-full bg-violet-100 px-1.5 py-0.5 text-[8px] font-bold leading-none tracking-wide text-violet-700 sm:text-[9px]">NEW</span>
+                            <span class="absolute -top-3 right-0 rounded-full px-1.5 py-0.5 text-[8px] font-bold leading-none tracking-wide sm:text-[9px]" :class="isIppanStudyTheme ? 'bg-pink-100 text-fuchsia-700' : 'bg-violet-100 text-violet-700'">NEW</span>
                         </button>
                     </div>
                 </div>
-                <p class="mt-1.5 text-sm text-gray-500">{{ subject }}</p>
+                <p v-if="!isIppanStudyTheme" class="mt-1.5 text-sm text-gray-500">{{ subject }}</p>
             </header>
 
-            <div v-if="displayMode === 'study' && !showStudyIntro && !shouldShowResult" class="mx-auto mt-4 max-w-4xl border-b border-gray-200 pb-3 sm:mt-5">
+            <div
+                v-if="displayMode === 'study' && !showStudyIntro && !shouldShowResult"
+                class="mx-auto border-b border-gray-200 pb-3"
+                :class="isIppanStudyTheme ? 'mt-3 flex max-w-4xl items-center justify-between gap-4 rounded-lg border-0 bg-white px-4 py-3 shadow-sm sm:mt-4 sm:rounded-none sm:border-b sm:px-0 sm:shadow-none' : 'mt-4 max-w-4xl sm:mt-5'"
+            >
                 <p class="flex items-center text-sm font-semibold text-gray-900" aria-live="polite">
                     <span class="mr-2 text-xs font-normal text-gray-500">問題</span>
                     <span class="inline-flex min-w-7 items-center justify-center px-1.5 py-0.5">{{ currentQuestion }}</span>
                     <span class="ml-1 font-normal text-gray-400">/ {{ questionCount }}</span>
                 </p>
-                <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-gray-100" role="progressbar" aria-label="学習の進捗" :aria-valuenow="currentQuestion" aria-valuemin="1" :aria-valuemax="questionCount">
-                    <div class="h-full rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 transition-[width] duration-300 ease-out" :style="{ width: `${studyProgress}%` }"></div>
+                <div v-if="!isIppanStudyTheme" class="mt-2 h-1.5 overflow-hidden rounded-full bg-gray-100" role="progressbar" aria-label="学習の進捗" :aria-valuenow="currentQuestion" aria-valuemin="1" :aria-valuemax="questionCount">
+                    <div class="h-full rounded-full transition-[width] duration-300 ease-out" :class="isIppanStudyTheme ? 'bg-gradient-to-r from-pink-400 to-fuchsia-500' : 'bg-gradient-to-r from-violet-500 to-indigo-500'" :style="{ width: `${studyProgress}%` }"></div>
                 </div>
-                <div class="mt-2 flex items-center" :class="isComplete && resultDismissed && hasFullStudyAccess ? 'justify-between' : 'justify-end'">
+                <div class="flex items-center" :class="[isIppanStudyTheme ? '' : 'mt-2', isComplete && resultDismissed && hasFullStudyAccess ? 'justify-between' : 'justify-end']">
                     <button v-if="isComplete && resultDismissed && hasFullStudyAccess" type="button" class="inline-flex min-h-10 items-center text-sm font-medium text-gray-600 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果</button>
                     <details ref="questionMenu" class="relative z-20">
                         <summary class="flex cursor-pointer list-none items-center gap-1.5 py-1 text-sm text-gray-600 hover:text-gray-950 focus:outline-none focus-visible:underline">
@@ -286,14 +298,16 @@ const startNewStudy = () => {
                                     type="button"
                                     class="relative min-h-10 rounded-sm border text-sm font-semibold transition"
                                     :class="[
-                                        currentIndex === index ? 'ring-2 ring-inset ring-violet-500' : '',
+                                        currentIndex === index ? (isIppanStudyTheme ? 'ring-2 ring-inset ring-fuchsia-500' : 'ring-2 ring-inset ring-violet-500') : '',
                                         isStudyQuestionLocked(questionNumber)
                                             ? 'border-gray-200 bg-gray-50 text-gray-400 hover:bg-gray-100'
                                             : correctQuestions.has(questionNumber)
                                             ? 'border-[#a7e3d0] bg-[#f0fcf7] text-[#16856b] hover:bg-[#e5f8f0]'
                                             : answeredQuestions.has(questionNumber)
                                               ? 'border-[#f2c5c8] bg-[#fff5f5] text-[#c45d68] hover:bg-[#fdebed]'
-                                              : 'border-gray-200 bg-white text-gray-700 hover:border-violet-300 hover:bg-violet-50',
+                                              : isIppanStudyTheme
+                                                ? 'border-gray-200 bg-white text-gray-700 hover:border-pink-300 hover:bg-pink-50'
+                                                : 'border-gray-200 bg-white text-gray-700 hover:border-violet-300 hover:bg-violet-50',
                                     ]"
                                     @click="moveTo(index)"
                                 >
@@ -308,7 +322,7 @@ const startNewStudy = () => {
             </div>
 
             <div v-if="displayMode === 'study' && showStartNotice" class="mx-auto mt-8 max-w-4xl border-y border-gray-200 py-8 text-center sm:py-10">
-                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-violet-50 text-violet-600" aria-hidden="true">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full" :class="isIppanStudyTheme ? 'bg-pink-50 text-fuchsia-600' : 'bg-violet-50 text-violet-600'" aria-hidden="true">
                     <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M7 4.75h8.25A1.75 1.75 0 0 1 17 6.5v12.75H8.75A1.75 1.75 0 0 1 7 17.5V4.75Z" />
                         <path d="M7 17.5A1.75 1.75 0 0 0 8.75 19.25H18V7.5" />
@@ -317,20 +331,20 @@ const startNewStudy = () => {
                 </div>
                 <h2 class="mt-4 text-xl font-semibold tracking-tight text-gray-950">学習を始めましょう</h2>
                 <p class="mx-auto mt-2 max-w-lg text-sm leading-6 text-gray-500">全{{ questionCount }}問を1問ずつ解答します。解答後に正誤と解説を確認でき、最後に得点を採点します。</p>
-                <button type="button" class="mt-6 inline-flex min-h-11 items-center justify-center rounded-sm bg-violet-600 px-8 py-2.5 text-sm font-semibold text-white hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2" @click="startNewStudy">学習を開始する</button>
+                <button type="button" class="mt-6 inline-flex min-h-11 items-center justify-center rounded-md px-8 py-2.5 text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-offset-2" :class="isIppanStudyTheme ? 'bg-fuchsia-600 hover:bg-fuchsia-700 focus:ring-pink-400' : 'bg-violet-600 hover:bg-violet-700 focus:ring-violet-400'" @click="startNewStudy">学習を開始する</button>
             </div>
 
             <div v-if="displayMode === 'study' && showResumeNotice && !shouldShowResult" class="mx-auto mt-8 max-w-4xl border-y border-gray-200 py-7 text-center">
                 <h2 class="text-lg font-semibold text-gray-900">前回の学習が残っています</h2>
                 <p class="mt-2 text-sm text-gray-500">{{ initialAttemptCompleted ? `全${questionCount}問回答済み・${initialAttemptScore}点` : `${initialAnsweredCount} / ${questionCount}問回答済み・問${initialResumeQuestion}から再開できます` }}</p>
                 <div class="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
-                    <button type="button" class="rounded-sm bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-violet-700" @click="resumeStudy">{{ initialAttemptCompleted ? "採点結果を見る" : "続きから始める" }}</button>
+                    <button type="button" class="rounded-md px-5 py-2.5 text-sm font-semibold text-white" :class="isIppanStudyTheme ? 'bg-fuchsia-600 hover:bg-fuchsia-700' : 'bg-violet-600 hover:bg-violet-700'" @click="resumeStudy">{{ initialAttemptCompleted ? "採点結果を見る" : "続きから始める" }}</button>
                     <button type="button" class="rounded-sm border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 hover:border-gray-500" @click="startNewStudy">新しく始める</button>
                 </div>
             </div>
 
             <DraftNotice v-if="isDraft" />
-            <div v-if="displayMode !== 'study' || (!showStudyIntro && !shouldShowResult && !isCurrentStudyLocked)" class="mx-auto max-w-4xl" :class="studyEnabled ? 'mt-4' : 'mt-6'">
+            <div v-if="displayMode !== 'study' || (!showStudyIntro && !shouldShowResult && !isCurrentStudyLocked)" class="mx-auto max-w-4xl" :class="studyEnabled ? (isIppanStudyTheme ? 'mt-3 sm:mt-7' : 'mt-4') : 'mt-6'">
                 <div :class="displayMode === 'browse' ? 'space-y-2' : ''">
                     <slot :learning-mode="studyEnabled && displayMode === 'study'" />
                 </div>
@@ -359,7 +373,7 @@ const startNewStudy = () => {
                         </p>
                     </div>
                     <div class="mt-4 h-1 bg-gray-300" aria-label="得点率">
-                        <div class="h-full bg-violet-600 transition-all" :style="{ width: `${Math.min(100, (score / maxScore) * 100)}%` }"></div>
+                        <div class="h-full transition-all" :class="isIppanStudyTheme ? 'bg-fuchsia-500' : 'bg-violet-600'" :style="{ width: `${Math.min(100, (score / maxScore) * 100)}%` }"></div>
                     </div>
                 </div>
 

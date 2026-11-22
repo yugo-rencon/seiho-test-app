@@ -1,11 +1,14 @@
 <template>
+    <StudyAnswerFeedback :visible="feedbackVisible" :correct="isCorrect" @dismissed="dismissFeedback" />
     <div :id="`q${props.questionNumber}`" class="h-0 scroll-mt-24"></div>
     <div
         v-if="!shouldHideByPaywall && (!props.learningMode || Number(props.questionNumber) === Number(effectiveStudyQuestion))"
-        class="rounded-lg border border-gray-200 bg-white px-4 py-3 sm:px-6"
-        :class="{ 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-hengaku': isHengaku, 'is-seiho': isSeiho }"
+        :class="[
+            isIppan && props.learningMode ? 'rounded-lg bg-white px-4 py-4 shadow-sm sm:px-0 sm:py-2 sm:shadow-none' : 'rounded-lg border border-gray-200 bg-white px-4 py-3 sm:px-6',
+            { 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-hengaku': isHengaku, 'is-seiho': isSeiho },
+        ]"
     >
-        <div class="flex items-start gap-2 my-4">
+        <div class="flex items-start gap-2" :class="isIppan && props.learningMode ? 'mb-4 sm:mb-10' : 'my-4'">
             <div
                 v-if="!props.learningMode"
                 class="w-1.5 h-6 rounded-full"
@@ -25,10 +28,10 @@
                                 : 'bg-gradient-to-b from-purple-400 to-blue-400'
                 "
             ></div>
-            <h2 class="flex min-w-0 items-start gap-2 text-base font-bold leading-tight text-gray-700">
-                <span v-if="props.learningMode" class="shrink-0 whitespace-nowrap text-xs font-normal text-gray-500">問{{ props.questionNumber }}</span>
+            <h2 class="flex min-w-0 items-start gap-2 font-bold leading-tight" :class="isIppan && props.learningMode ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
+                <span v-if="props.learningMode" :class="isIppan ? 'text-xl font-bold sm:text-3xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${props.questionNumber}問` : `問${props.questionNumber}` }}</span>
                 <span v-else class="shrink-0 whitespace-nowrap">問題{{ props.questionNumber }}</span>
-                <span v-if="props.questionTitle" class="min-w-0">
+                <span v-if="props.questionTitle" class="min-w-0" :class="isIppan && props.learningMode ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">
                     {{ props.questionTitle }}
                 </span>
             </h2>
@@ -39,28 +42,38 @@
 
         <div
             v-if="props.learningMode"
-            class="mb-4 border-t border-gray-100 pt-4"
+            :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-pink-100 sm:bg-pink-50/70 sm:p-7' : 'mb-4 border-t border-gray-100 pt-4'"
         >
-            <p class="text-sm font-bold text-gray-800">{{ props.answerPrompt }}</p>
-            <div class="mt-3 grid grid-cols-3 gap-2 sm:max-w-md">
+            <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'text-sm font-bold text-gray-800'">{{ props.answerPrompt }}</p>
+            <div class="mt-4 grid gap-3" :class="isIppan ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-3 sm:max-w-md'">
                 <button
                     v-for="label in availableLabels"
                     :key="label"
                     type="button"
-                    class="min-h-12 rounded-md border bg-white px-3 py-2 text-base font-bold transition focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2"
-                    :class="answerButtonClass(label)"
+                    class="min-h-12 border bg-white px-3 py-2 text-base font-bold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    :class="[answerButtonClass(label), isIppan ? 'rounded-md focus:ring-pink-400 sm:min-h-14 sm:text-xl' : 'rounded-md focus:ring-violet-400']"
                     :disabled="hasAnswered"
                     @click="selectAnswer(label)"
                 >
                     {{ label }}
+                    <span
+                        v-if="hasAnswered && (normalizedCorrectAnswers.includes(label) || selectedAnswer.split(',').includes(label))"
+                        class="ml-2 inline-flex rounded-full px-1.5 py-0.5 align-middle text-[8px] font-bold sm:px-2 sm:text-[10px]"
+                        :class="normalizedCorrectAnswers.includes(label) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'"
+                    >{{ selectedAnswer.split(',').includes(label) && normalizedCorrectAnswers.includes(label) ? '回答・正解' : selectedAnswer.split(',').includes(label) ? 'あなたの回答' : '正解' }}</span>
                 </button>
             </div>
-            <div v-if="hasAnswered" class="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-gray-200 pt-3 text-base" role="status" aria-live="polite">
-                <p class="flex flex-wrap items-center gap-x-2 text-gray-800">
-                    <span class="font-semibold" :class="isCorrect ? 'text-emerald-700' : 'text-rose-700'">{{ isCorrect ? '○' : '×' }}</span>
-                    <span class="font-semibold">{{ isCorrect ? '正解' : '不正解' }}</span>
-                    <template v-if="!isCorrect"><span class="text-gray-300">｜</span><span class="text-sm text-gray-500">正解</span><span>{{ props.correctAnswer }}</span></template>
-                </p>
+            <button
+                v-if="isMultipleAnswer && !hasAnswered"
+                type="button"
+                class="mt-3 inline-flex min-h-10 items-center justify-center rounded-md px-5 py-2 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:bg-gray-300"
+                :class="isIppan ? 'bg-fuchsia-600 hover:bg-fuchsia-700' : 'bg-violet-600 hover:bg-violet-700'"
+                :disabled="draftAnswers.length !== normalizedCorrectAnswers.length"
+                @click="submitMultipleAnswer"
+            >
+                回答する
+            </button>
+            <div v-if="hasAnswered" class="mt-3 flex justify-end border-t border-pink-100 pt-3">
                 <button v-if="!studySession?.attemptCompleted?.value" type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetAnswer">選び直す</button>
             </div>
         </div>
@@ -75,7 +88,7 @@
                 <div class="jp-kagi-tight min-w-0" v-html="formatContentHtml(content)"></div>
             </div>
         </div>
-        <section v-else-if="hasAnswered" class="my-5 border-t border-gray-200 pt-4">
+        <section v-else-if="hasAnswered" :id="`explanation-q${props.questionNumber}`" class="my-5 scroll-mt-24 border-t border-gray-200 pt-4">
             <h3 class="text-sm font-bold text-gray-900">解説</h3>
             <div class="mt-2 divide-y divide-gray-100">
                 <div
@@ -85,7 +98,7 @@
                 >
                     <span
                         class="font-bold"
-                        :class="getLabel(index) === props.correctAnswer ? 'text-emerald-700' : 'text-gray-700'"
+                        :class="normalizedCorrectAnswers.includes(getLabel(index)) ? 'text-emerald-700' : 'text-gray-700'"
                     >
                         {{ getLabel(index) }}：
                     </span>
@@ -105,10 +118,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject, ref, watch } from "vue";
+import { computed, inject, nextTick, ref, watch } from "vue";
 import { usePage } from "@inertiajs/vue3";
 import PaywallNotice from "./PaywallNotice.vue";
 import RelatedProblems from "./RelatedProblems.vue";
+import StudyAnswerFeedback from "./StudyAnswerFeedback.vue";
 import { getPaywallStartQuestion, hasPremiumAccess, isPaidYear, requiresIppanFreeLogin } from "@/utils/paywall";
 import { formatInlineContentHtml } from "@/utils/formatContentHtml";
 
@@ -153,6 +167,10 @@ const props = defineProps({
         type: String,
         default: "",
     },
+    correctAnswers: {
+        type: Array,
+        default: () => [],
+    },
     studyQuestion: {
         type: Number,
         default: 0,
@@ -167,28 +185,74 @@ const studySession: any = inject("studySession", null);
 const effectiveStudyQuestion = computed(() => studySession?.currentQuestion?.value ?? props.studyQuestion);
 const labels = ref(["ア", "イ", "ウ", "エ"]);
 const selectedAnswer = ref("");
+const draftAnswers = ref<string[]>([]);
+const feedbackVisible = ref(false);
+const normalizedCorrectAnswers = computed(() =>
+    (props.correctAnswers.length ? props.correctAnswers : [props.correctAnswer])
+        .map((answer) => String(answer))
+        .filter(Boolean)
+        .sort(),
+);
+const isMultipleAnswer = computed(() => normalizedCorrectAnswers.value.length > 1);
+const correctAnswerLabel = computed(() => normalizedCorrectAnswers.value.join("・"));
 const availableLabels = computed(() => labels.value.slice(0, props.contents.length));
 const hasAnswered = computed(() => selectedAnswer.value !== "");
-const isCorrect = computed(() => selectedAnswer.value === props.correctAnswer);
+const isCorrect = computed(() => selectedAnswer.value.split(",").filter(Boolean).sort().join(",") === normalizedCorrectAnswers.value.join(","));
 
 const selectAnswer = (label: string): void => {
-    if (!hasAnswered.value) {
-        selectedAnswer.value = label;
-        emit("answered", Number(props.questionNumber), true);
-        studySession?.markAnswered?.(Number(props.questionNumber), true, isCorrect.value, label, props.correctAnswer);
+    if (hasAnswered.value) return;
+    if (isMultipleAnswer.value) {
+        draftAnswers.value = draftAnswers.value.includes(label)
+            ? draftAnswers.value.filter((answer) => answer !== label)
+            : [...draftAnswers.value, label].slice(-normalizedCorrectAnswers.value.length);
+        return;
     }
+    selectedAnswer.value = label;
+    emit("answered", Number(props.questionNumber), true);
+    studySession?.markAnswered?.(Number(props.questionNumber), true, isCorrect.value, label, correctAnswerLabel.value);
+    feedbackVisible.value = true;
+    scrollToExplanation();
+};
+
+const submitMultipleAnswer = (): void => {
+    if (hasAnswered.value || draftAnswers.value.length !== normalizedCorrectAnswers.value.length) return;
+    selectedAnswer.value = [...draftAnswers.value].sort().join(",");
+    emit("answered", Number(props.questionNumber), true);
+    studySession?.markAnswered?.(Number(props.questionNumber), true, isCorrect.value, selectedAnswer.value, correctAnswerLabel.value);
+    feedbackVisible.value = true;
+    scrollToExplanation();
+};
+
+const scrollToExplanation = async (): Promise<void> => {
+    await nextTick();
+    document.getElementById(`explanation-q${props.questionNumber}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
+const dismissFeedback = (): void => {
+    feedbackVisible.value = false;
 };
 
 const resetAnswer = (): void => {
     selectedAnswer.value = "";
+    draftAnswers.value = [];
+    feedbackVisible.value = false;
     emit("answered", Number(props.questionNumber), false);
     studySession?.markAnswered?.(Number(props.questionNumber), false, false, "");
 };
 
 const answerButtonClass = (label: string): string => {
-    if (!hasAnswered.value) return "border-gray-300 text-gray-800 hover:border-violet-400 hover:bg-violet-50";
-    if (label === props.correctAnswer) return "border-emerald-500 text-emerald-700";
-    if (label === selectedAnswer.value) return "border-rose-500 text-rose-700";
+    if (!hasAnswered.value) {
+        if (isIppan.value) {
+            return draftAnswers.value.includes(label)
+                ? "border-fuchsia-500 bg-pink-50 text-fuchsia-700"
+                : "border-pink-200 text-gray-800 hover:border-fuchsia-400 hover:bg-pink-50";
+        }
+        return draftAnswers.value.includes(label)
+            ? "border-violet-500 bg-violet-50 text-violet-700"
+            : "border-gray-300 text-gray-800 hover:border-violet-400 hover:bg-violet-50";
+    }
+    if (normalizedCorrectAnswers.value.includes(label)) return "border-emerald-500 text-emerald-700";
+    if (selectedAnswer.value.split(",").includes(label)) return "border-rose-500 text-rose-700";
     return "border-gray-200 text-gray-500";
 };
 
@@ -196,6 +260,7 @@ watch(
     [() => props.learningMode, () => studySession?.savedAnswers?.value?.[Number(props.questionNumber)]?.selected_answer],
     ([learningMode, savedAnswer]) => {
         selectedAnswer.value = learningMode ? String(savedAnswer ?? "") : "";
+        draftAnswers.value = selectedAnswer.value.split(",").filter(Boolean);
     },
     { immediate: true },
 );

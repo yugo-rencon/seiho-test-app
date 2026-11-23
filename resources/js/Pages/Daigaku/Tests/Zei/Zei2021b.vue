@@ -219,7 +219,7 @@ const isDraft = false;
                         '地方税 → 国税', //p221
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -232,7 +232,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -245,7 +245,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -258,7 +258,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -271,7 +271,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -279,12 +279,12 @@ const isDraft = false;
                     :contents="[
                         // rev: 2026-06-14 確認済み
                         '正しい',
-                        '[[他へ養子に行った子]]、嫁に行った娘も[[相続人となる]]（特別養子を除く）。', //p93
+                        '他へ養子に行った子、嫁に行った娘も相続人となる（特別養子を除く）。', //p93
                         '正しい',
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -297,7 +297,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -310,7 +310,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -323,7 +323,7 @@ const isDraft = false;
                         '3年 → 5年', //p150
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -336,7 +336,7 @@ const isDraft = false;
                         '一時所得 → 雑所得', //p166
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -349,7 +349,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -362,7 +362,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"
@@ -484,7 +484,7 @@ const isDraft = false;
                         {
                             // rev: 2026-06-27 確認済み
                             questionTitle: 'リビング・ニーズ特約',
-                            content: 'リビング･ニーズ特約の生前給付金も、[[入院給付金や高度障害保険金と同様に取り扱われ、非課税となる]]。',//p177
+                            content: 'リビング･ニーズ特約の生前給付金も、[[入院給付金や高度障害保険金と同様に取り扱われ、非課税となる]]。', //p177
                         }, //47
                         {
                             // rev: 2026-06-22 確認済み

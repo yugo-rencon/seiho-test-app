@@ -14,6 +14,8 @@ const hasPremium = computed(() => page.props.auth?.hasPremiumHengaku === true);
 const pricingHref = computed(() =>
     route("pricing", { scope: "hengaku", return_to: String(page.url ?? "/hengaku") }),
 );
+const isFreeForm = (year, periodId, form) =>
+    Number(year) === 2026 && periodId === "h1" && String(form).toLowerCase() === "a";
 </script>
 
 <template>
@@ -61,23 +63,23 @@ const pricingHref = computed(() =>
                         >{{ period.label }}</button>
                     </div>
 
-                    <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
-                        <section v-for="year in visibleYears" :key="`${activePeriod.id}-${year}`" class="p-4 md:p-6">
+                    <div class="mt-3 divide-y divide-gray-100">
+                        <section v-for="year in visibleYears" :key="`${activePeriod.id}-${year}`" class="py-4 md:py-5">
                             <div class="flex items-center gap-2">
                                 <h2 class="text-base font-bold text-gray-900 sm:text-lg">{{ `${year}年` }}</h2>
-                                <span
-                                    v-if="Number(year) === 2026 && activePeriod.id === 'h1' && !hasPremium"
-                                    class="inline-flex items-center rounded-full border border-teal-300 bg-teal-50 px-2.5 py-1 text-xs font-semibold text-teal-700"
-                                >
-                                    2026年4月〜8月 フォームA無料
-                                </span>
                             </div>
-                            <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
+                            <div class="mt-4 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
                                 <template v-for="form in activePeriod.forms" :key="form">
                                     <Link
                                         :href="route(hengakuTestRoute(year, activePeriod.id, form))"
-                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-teal-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-teal-700 transition hover:bg-teal-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm">
+                                        class="relative inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-teal-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-teal-700 transition hover:bg-teal-50 sm:w-32 sm:px-4 sm:py-2 sm:text-sm">
                                         フォーム{{ form.toUpperCase() }}
+                                        <span
+                                            v-if="!hasPremium && isFreeForm(year, activePeriod.id, form)"
+                                            class="absolute -right-1 -top-1 rounded-full bg-teal-100 px-1.5 py-0.5 text-[8px] font-bold leading-none text-teal-700 shadow-sm ring-1 ring-white sm:text-[9px]"
+                                        >
+                                            無料
+                                        </span>
                                     </Link>
                                 </template>
                             </div>

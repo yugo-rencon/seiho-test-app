@@ -36,14 +36,7 @@ const priceNumberText = computed(() =>
           ? "1,980"
           : "2,480",
 );
-const unlockedCountText = computed(() => {
-    if (scope.value === "daigaku") return "全96解説";
-    if (scope.value === "ippan") return "全55解説";
-    if (scope.value === "senmon") return "全32解説";
-    if (scope.value === "ouyou") return "全32解説";
-    if (scope.value === "hengaku") return "全20解説";
-    return "全150解説";
-});
+const unlockedCountText = computed(() => "公開中のすべての解説");
 const paywallText = computed(() => {
     if (loginRequired.value) {
         return {

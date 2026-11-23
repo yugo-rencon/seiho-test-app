@@ -9,6 +9,7 @@ const DAIGAKU_VISIBLE_YEARS = [2025, 2024, 2023, 2022, 2021];
 const SHIKUMI_VISIBLE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const FP_VISIBLE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const ZEI_VISIBLE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
+const SISAN_VISIBLE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const DAIGAKU_SECTIONS = [
     {
         id: "shikumi-kojin",
@@ -32,7 +33,7 @@ const DAIGAKU_SECTIONS = [
     {
         id: "sisan-unyou",
         title: "資産運用知識",
-        years: DAIGAKU_VISIBLE_YEARS,
+        years: SISAN_VISIBLE_YEARS,
         published: true,
     },
     {
@@ -63,7 +64,7 @@ const isPreparingYear = (section, year) =>
     !section?.published;
 
 const isFreeTrialYear = (section, year) =>
-    Number(year) === (["shikumi-kojin", "fp", "tax-sozoku"].includes(section?.id) ? 2026 : 2025) && section?.published;
+    Number(year) === (["shikumi-kojin", "fp", "tax-sozoku", "sisan-unyou"].includes(section?.id) ? 2026 : 2025) && section?.published;
 
 const getExamPeriod = (section, year) => {
     if (["shikumi-kojin", "fp"].includes(section?.id)) {
@@ -133,6 +134,7 @@ const getDaigakuRoute = (sectionId, year, form) => {
         "daigaku.zei2023a", "daigaku.zei2023b", "daigaku.zei2023c",
         "daigaku.zei2022a", "daigaku.zei2022b", "daigaku.zei2022c",
         "daigaku.zei2021a", "daigaku.zei2021b", "daigaku.zei2021c",
+        "daigaku.sisan2026a", "daigaku.sisan2026b", "daigaku.sisan2026c",
         "daigaku.sisan2025a", "daigaku.sisan2025b", "daigaku.sisan2025c",
         "daigaku.sisan2024a", "daigaku.sisan2024b", "daigaku.sisan2024c",
         "daigaku.sisan2023a", "daigaku.sisan2023b", "daigaku.sisan2023c",
@@ -231,24 +233,18 @@ const getDaigakuRoute = (sectionId, year, form) => {
                         </div>
                         <p class="mt-3 text-sm text-gray-600">{{ activeSection.description }}</p>
 
-                        <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
+                        <div class="mt-3 divide-y divide-gray-100">
                             <div
                                 v-for="year in activeSection.years"
                                 :key="year"
-                                class="p-4 md:p-6"
+                                class="py-4 md:py-5"
                             >
                                 <div class="flex flex-wrap items-center gap-2">
-                                    <div class="text-base font-bold text-gray-900 sm:text-lg">{{ year }}年度</div>
-                                    <span
-                                        class="text-[10px] font-medium text-gray-500 sm:text-xs"
-                                    >
+                                    <div class="whitespace-nowrap text-base font-bold text-gray-900 sm:text-lg">
+                                        {{ year }}年度
+                                    </div>
+                                    <span class="text-[10px] font-medium text-gray-500 sm:text-xs">
                                         （{{ getExamPeriod(activeSection, year) }}）
-                                    </span>
-                                    <span
-                                        v-if="!hasPremium && isFreeTrialYear(activeSection, year)"
-                                        class="inline-flex items-center rounded-full border border-blue-300 bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700"
-                                    >
-                                        最新年度フォームA・無料
                                     </span>
                                     <span
                                         v-if="isPreparingYear(activeSection, year)"
@@ -258,12 +254,12 @@ const getDaigakuRoute = (sectionId, year, form) => {
                                     </span>
                                 </div>
 
-                                <div class="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
+                                <div class="mt-4 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-3">
                                     <a
                                         v-for="form in DAIGAKU_FORMS"
                                         :key="`${year}-${form}`"
                                         :href="getDaigakuRoute(activeSection.id, year, form) ?? undefined"
-                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border px-2 py-1.5 text-[12px] font-semibold sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
+                                        class="relative inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border px-2 py-1.5 text-[12px] font-semibold sm:w-32 sm:px-4 sm:py-2 sm:text-sm"
                                         :class="
                                             getDaigakuRoute(activeSection.id, year, form)
                                                 ? 'border-blue-200 bg-white text-blue-700 transition hover:bg-blue-50'
@@ -271,6 +267,12 @@ const getDaigakuRoute = (sectionId, year, form) => {
                                         "
                                     >
                                         フォーム{{ form.toUpperCase() }}
+                                        <span
+                                            v-if="!hasPremium && isFreeTrialYear(activeSection, year) && form === 'a'"
+                                            class="absolute -right-1 -top-1 rounded-full bg-blue-100 px-1.5 py-0.5 text-[8px] font-bold leading-none text-blue-700 shadow-sm ring-1 ring-white sm:text-[9px]"
+                                        >
+                                            無料
+                                        </span>
                                     </a>
                                 </div>
                             </div>

@@ -57,8 +57,8 @@ export const isPaidYear = (subject: string, _title: string = ""): boolean => {
     }
 
     if (isDaigakuPath()) {
-        // 大学課程: しくみ・FP・税相続は2026年度、その他は2025年度のフォームAのみ無料
-        const isLatestReleasedSubject = ["/daigaku/shikumi-kojin", "/daigaku/fp", "/daigaku/zei"].some((path) => window.location.pathname.includes(path));
+        // 大学課程: しくみ・FP・税相続・資産運用は2026年度、その他は2025年度のフォームAのみ無料
+        const isLatestReleasedSubject = ["/daigaku/shikumi-kojin", "/daigaku/fp", "/daigaku/zei", "/daigaku/sisan"].some((path) => window.location.pathname.includes(path));
         return !(year === (isLatestReleasedSubject ? 2026 : 2025) && formCode === "A");
     }
 

@@ -476,6 +476,18 @@ class TestController extends Controller
     {
         return Inertia::render('Daigaku/Tests/Zei/Zei2021c');
     }
+    public function daigakuSisan2026a()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2026a');
+    }
+    public function daigakuSisan2026b()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2026b');
+    }
+    public function daigakuSisan2026c()
+    {
+        return Inertia::render('Daigaku/Tests/Sisan/Sisan2026c');
+    }
     public function daigakuSisan2025a()
     {
         return Inertia::render('Daigaku/Tests/Sisan/Sisan2025a');

@@ -64,6 +64,9 @@ const getFormLabel = (year, periodId, form) => {
 
     return `フォーム${formKey.toUpperCase()}`;
 };
+
+const isFreeForm = (year, periodId, form) =>
+    Number(year) === 2026 && periodId === "apr-aug" && String(form).toLowerCase() === "a";
 </script>
 
 <template>
@@ -128,18 +131,12 @@ const getFormLabel = (year, periodId, form) => {
                     </div>
 
 
-                    <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
-                        <div v-for="year in visibleYears" :key="year" class="p-4 md:p-6">
+                    <div class="mt-3 divide-y divide-gray-100">
+                        <div v-for="year in visibleYears" :key="year" class="py-4 md:py-5">
                             <div class="flex items-center gap-2">
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
                                     {{ `${year}年` }}
                                 </div>
-                                <span
-                                    v-if="Number(year) === 2026 && activePeriod.id === 'apr-aug' && !hasPremium"
-                                    class="inline-flex items-center rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700"
-                                >
-                                    2026年4月〜8月 フォームA無料
-                                </span>
                             </div>
                             <p
                                 v-if="Number(year) === 2021 && activePeriod.id === 'apr-aug'"
@@ -148,14 +145,20 @@ const getFormLabel = (year, periodId, form) => {
                                 ※2021年は5月〜8月実施です。
                             </p>
 
-                            <div class="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
+                            <div class="mt-4 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
                                 <a
                                     v-for="form in activePeriod.forms"
                                     :key="`${year}-${form}`"
                                     :href="getSenmonRoute(year, activePeriod.id, form)"
-                                    class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-emerald-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-emerald-700 transition hover:bg-emerald-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
+                                    class="relative inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-emerald-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-emerald-700 transition hover:bg-emerald-50 sm:w-32 sm:px-4 sm:py-2 sm:text-sm"
                                 >
                                     {{ getFormLabel(year, activePeriod.id, form) }}
+                                    <span
+                                        v-if="!hasPremium && isFreeForm(year, activePeriod.id, form)"
+                                        class="absolute -right-1 -top-1 rounded-full bg-emerald-100 px-1.5 py-0.5 text-[8px] font-bold leading-none text-emerald-700 shadow-sm ring-1 ring-white sm:text-[9px]"
+                                    >
+                                        無料
+                                    </span>
                                 </a>
                             </div>
                         </div>

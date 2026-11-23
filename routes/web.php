@@ -120,6 +120,9 @@ Route::get('daigaku/zei2024c', [TestController::class, 'daigakuZei2024c'])->name
 Route::get('daigaku/zei2023a', [TestController::class, 'daigakuZei2023a'])->name('daigaku.zei2023a');
 Route::get('daigaku/zei2023b', [TestController::class, 'daigakuZei2023b'])->name('daigaku.zei2023b');
 Route::get('daigaku/zei2023c', [TestController::class, 'daigakuZei2023c'])->name('daigaku.zei2023c');
+Route::get('daigaku/sisan2026a', [TestController::class, 'daigakuSisan2026a'])->name('daigaku.sisan2026a');
+Route::get('daigaku/sisan2026b', [TestController::class, 'daigakuSisan2026b'])->name('daigaku.sisan2026b');
+Route::get('daigaku/sisan2026c', [TestController::class, 'daigakuSisan2026c'])->name('daigaku.sisan2026c');
 Route::get('daigaku/sisan2025a', [TestController::class, 'daigakuSisan2025a'])->name('daigaku.sisan2025a');
 Route::get('daigaku/sisan2025b', [TestController::class, 'daigakuSisan2025b'])->name('daigaku.sisan2025b');
 Route::get('daigaku/sisan2025c', [TestController::class, 'daigakuSisan2025c'])->name('daigaku.sisan2025c');

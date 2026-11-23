@@ -119,8 +119,8 @@ const getFormHref = (year, period, form) => {
                     </div>
 
 
-                    <div class="mt-6 divide-y divide-gray-100 rounded-2xl border border-gray-100 bg-white">
-                        <div v-for="year in visibleYears" :key="`${activePeriod.id}-${year}`" class="p-4 md:p-6">
+                    <div class="mt-3 divide-y divide-gray-100">
+                        <div v-for="year in visibleYears" :key="`${activePeriod.id}-${year}`" class="py-4 md:py-5">
                             <div class="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
                                 <div class="text-base font-bold text-gray-900 sm:text-lg">
                                     {{ year }}年
@@ -134,11 +134,11 @@ const getFormHref = (year, period, form) => {
                                 </Link>
                             </div>
 
-                            <div class="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:flex sm:flex-wrap sm:gap-3">
+                            <div class="mt-4 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-3">
                                 <template v-for="form in activePeriod.forms" :key="`${activePeriod.id}-${year}-${form}`">
                                     <Link
                                         :href="getFormHref(year, activePeriod, form)"
-                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-pink-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-fuchsia-700 transition hover:bg-pink-50 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
+                                        class="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full border border-pink-200 bg-white px-2 py-1.5 text-[12px] font-semibold text-fuchsia-700 transition hover:bg-pink-50 sm:w-32 sm:px-4 sm:py-2 sm:text-sm"
                                     >
                                         {{ getFormLabel(year, activePeriod.id, form) }}
                                     </Link>

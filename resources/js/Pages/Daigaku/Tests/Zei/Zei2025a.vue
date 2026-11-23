@@ -458,7 +458,7 @@ const isDraft = false;
                 />
             </div>
 
-            <TestNavigationButtons next-route="daigaku.zei2025b" home-route="daigaku.index" />
+            <TestNavigationButtons previous-route="daigaku.zei2026c" next-route="daigaku.zei2025b" home-route="daigaku.index" />
         </section>
     </SeihoTestLayout>
 </template>

@@ -2,6 +2,7 @@
 import QuestionTemp1 from "@/Components/QuestionTemp1.vue";
 import QuestionTemp2 from "@/Components/QuestionTemp2.vue";
 import QuestionTemp3 from "@/Components/QuestionTemp3.vue";
+import QuestionTemp4 from "@/Components/QuestionTemp4.vue";
 import TestNavigationButtons from "@/Components/TestNavigationButtons.vue";
 import Pagetitle from "@/Components/Pagetitle.vue";
 import SeihoTestLayout from "@/Layouts/SeihoTestLayout.vue";
@@ -16,52 +17,192 @@ const subject = "2026年度 フォームA";
             <Pagetitle :title="title" :description="subject" />
 
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="1"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（６つの係数）"
+                    questionTitle="現価と終価（6つの係数）（終価係数）"
+                    :labels="['エ']"
                     :contents="[
-                        '', //p
-                        '', //p
-                        '', //p
-                        '正しい',
+                        {
+                            // rev: 2026-06-28 作成
+                            answer: '1,219,000円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '現在の金額を一定期間複利運用したときの将来の元利合計金額は、終価係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計金額 ＝ 現在の金額 × 終価係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現在の金額：100万円', '年利率：2％', '運用期間：10年', '終価係数：1.219'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計金額', '＝ 100万円 × 1.219', '＝ 1,219,000円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：1,219,000円',
+                                },
+                            ],
+                        },
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="2"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（６つの係数）"
+                    questionTitle="現価と終価（6つの係数）（現価係数）"
+                    :labels="['ア']"
                     :contents="[
-                        '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-06-27 作成
+                            answer: '1,486,000円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '将来の金額から現在必要な元本金額を求める場合は、現価係数を用いる。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現在必要な元本金額 ＝ 将来受け取る金額 × 現価係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['将来受け取る金額：200万円', '年利率：2％', '運用期間：15年', '現価係数：0.7430'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['現在必要な元本金額', '＝ 200万円 × 0.7430', '＝ 1,486,000円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：1,486,000円',
+                                },
+                            ],
+                        },
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="3"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（６つの係数）"
+                    questionTitle="現価と終価（6つの係数）（年金終価係数）"
+                    :labels="['イ']"
                     :contents="[
-                        '', //p
-                        '正しい',
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-06-27 作成
+                            answer: '8,746,920円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '毎年一定額を積み立てた場合の将来の元利合計金額は、年金終価係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計金額 ＝ 毎年の積立額 × 年金終価係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の積立額：36万円', '年利率：2％', '積立期間：20年', '年金終価係数：24.297'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['元利合計金額', '＝ 36万円 × 24.297', '＝ 8,746,920円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：8,746,920円',
+                                },
+                            ],
+                        },
                     ]"
                 />
-                <QuestionTemp1
+                <QuestionTemp4
                     :questionNumber="4"
                     :title="title"
                     :subject="subject"
-                    questionTitle="現価と終価（６つの係数）"
+                    questionTitle="現価と終価（6つの係数）（資本回収係数）"
+                    :labels="['ア']"
                     :contents="[
-                        '正しい',
-                        '', //p
-                        '', //p
-                        '', //p
+                        {
+                            // rev: 2026-06-27 作成
+                            answer: '778,300円',
+                            explanation: [
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 解答のポイント',
+                                },
+                                {
+                                    type: 'text',
+                                    value: '借入金を毎年一定額で返済する場合の年間返済額は、資本回収係数を用いて求める。',
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 使用する公式',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の返済額 ＝ 借入金額 × 資本回収係数'],
+                                },
+                                {
+                                    type: 'blockTitle',
+                                    value: '■ 計算方法',
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['借入金額：1,000万円', '年利率：2％', '返済期間：15年', '資本回収係数：0.07783'],
+                                },
+                                {
+                                    type: 'formulaBlock',
+                                    value: ['毎年の返済額', '＝ 1,000万円 × 0.07783', '＝ 778,300円'],
+                                },
+                                {
+                                    type: 'result',
+                                    value: '答え：778,300円',
+                                },
+                            ],
+                        },
                     ]"
                 />
                 <QuestionTemp1
@@ -70,10 +211,11 @@ const subject = "2026年度 フォームA";
                     :subject="subject"
                     questionTitle="金利"
                     :contents="[
-                        '', //p
-                        '', //p
+                        // rev: 2026-07-01 確認済み
+                        '景気が良くなってお金の借り手が多くなりすぎると、金利が[[高く]]なり、[借りにくく]]なる。逆に、景気が低迷していると金利は[[下がり]]、[[借りやすく]]なる。', //p18
+                        '景気が過熱しすぎると物の値段が高くなって[[インフレ]]となり、景気が低迷し底割れすると[[デフレ]]になる。', //p18
                         '正しい',
-                        '', //p
+                        '新長期プライム・レートは、新短期プライム･レートに一定の利率を[[上乗せした]]水準に設定される。', //p19
                     ]"
                 />
                 <QuestionTemp1
@@ -428,4 +570,3 @@ const subject = "2026年度 フォームA";
         </section>
     </SeihoTestLayout>
 </template>
-

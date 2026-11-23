@@ -8,6 +8,7 @@ const DAIGAKU_FORMS = ["a", "b", "c"];
 const DAIGAKU_VISIBLE_YEARS = [2025, 2024, 2023, 2022, 2021];
 const SHIKUMI_VISIBLE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const FP_VISIBLE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
+const ZEI_VISIBLE_YEARS = [2026, 2025, 2024, 2023, 2022, 2021];
 const DAIGAKU_SECTIONS = [
     {
         id: "shikumi-kojin",
@@ -25,7 +26,7 @@ const DAIGAKU_SECTIONS = [
     {
         id: "tax-sozoku",
         title: "生命保険と税・相続",
-        years: DAIGAKU_VISIBLE_YEARS,
+        years: ZEI_VISIBLE_YEARS,
         published: true,
     },
     {
@@ -62,7 +63,7 @@ const isPreparingYear = (section, year) =>
     !section?.published;
 
 const isFreeTrialYear = (section, year) =>
-    Number(year) === (["shikumi-kojin", "fp"].includes(section?.id) ? 2026 : 2025) && section?.published;
+    Number(year) === (["shikumi-kojin", "fp", "tax-sozoku"].includes(section?.id) ? 2026 : 2025) && section?.published;
 
 const getExamPeriod = (section, year) => {
     if (["shikumi-kojin", "fp"].includes(section?.id)) {
@@ -126,6 +127,7 @@ const getDaigakuRoute = (sectionId, year, form) => {
         "daigaku.fp2021a",
         "daigaku.fp2021b",
         "daigaku.fp2021c",
+        "daigaku.zei2026a", "daigaku.zei2026b", "daigaku.zei2026c",
         "daigaku.zei2025a", "daigaku.zei2025b", "daigaku.zei2025c",
         "daigaku.zei2024a", "daigaku.zei2024b", "daigaku.zei2024c",
         "daigaku.zei2023a", "daigaku.zei2023b", "daigaku.zei2023c",

@@ -76,10 +76,16 @@ class GenerateSitemap extends Command
             }
         }
 
-        $daigakuSubjects = ['shikumi-kojin', 'fp', 'zei', 'sisan', 'kigyo', 'syakai'];
-        $daigakuYears = ['2025', '2024', '2023', '2022', '2021'];
-        foreach ($daigakuSubjects as $subject) {
-            foreach ($daigakuYears as $year) {
+        $daigakuSubjects = [
+            'shikumi-kojin' => ['2026', '2025', '2024', '2023', '2022', '2021'],
+            'fp' => ['2026', '2025', '2024', '2023', '2022', '2021'],
+            'zei' => ['2026', '2025', '2024', '2023', '2022', '2021'],
+            'sisan' => ['2025', '2024', '2023', '2022', '2021'],
+            'kigyo' => ['2025', '2024', '2023', '2022', '2021'],
+            'syakai' => ['2025', '2024', '2023', '2022', '2021'],
+        ];
+        foreach ($daigakuSubjects as $subject => $years) {
+            foreach ($years as $year) {
                 foreach ($forms as $form) {
                     $sitemap->add(Url::create("{$baseUrl}/daigaku/{$subject}{$year}{$form}"));
                 }

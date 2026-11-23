@@ -108,6 +108,9 @@ Route::get('daigaku/fp2024c', [TestController::class, 'daigakuFpCompliance2024c'
 Route::get('daigaku/fp2023a', [TestController::class, 'daigakuFpCompliance2023a'])->name('daigaku.fp2023a');
 Route::get('daigaku/fp2023b', [TestController::class, 'daigakuFpCompliance2023b'])->name('daigaku.fp2023b');
 Route::get('daigaku/fp2023c', [TestController::class, 'daigakuFpCompliance2023c'])->name('daigaku.fp2023c');
+Route::get('daigaku/zei2026a', [TestController::class, 'daigakuZei2026a'])->name('daigaku.zei2026a');
+Route::get('daigaku/zei2026b', [TestController::class, 'daigakuZei2026b'])->name('daigaku.zei2026b');
+Route::get('daigaku/zei2026c', [TestController::class, 'daigakuZei2026c'])->name('daigaku.zei2026c');
 Route::get('daigaku/zei2025a', [TestController::class, 'daigakuZei2025a'])->name('daigaku.zei2025a');
 Route::get('daigaku/zei2025b', [TestController::class, 'daigakuZei2025b'])->name('daigaku.zei2025b');
 Route::get('daigaku/zei2025c', [TestController::class, 'daigakuZei2025c'])->name('daigaku.zei2025c');

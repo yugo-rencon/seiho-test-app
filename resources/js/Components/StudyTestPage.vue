@@ -154,11 +154,6 @@ watch(displayMode, (mode) => {
     axios.patch(route("studyPreferences.update"), { preferred_test_mode: mode }).catch((error) => console.error("表示モードの保存に失敗しました。", error));
 });
 
-watch(currentIndex, (index) => {
-    if (!isLoggedIn.value) return;
-    axios.patch(route("studyProgress.update", props.examKey), { current_question_no: questions.value[index] }).catch((error) => console.error("学習位置の保存に失敗しました。", error));
-});
-
 const moveTo = async (index) => {
     showStartNotice.value = false;
     showResumeNotice.value = false;

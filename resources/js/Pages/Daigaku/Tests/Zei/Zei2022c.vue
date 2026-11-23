@@ -202,7 +202,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -215,7 +215,7 @@ const isDraft = false;
                         '1回に支払われる金額のうち[[100万円以下の部分は10％、100万円を超える部分は20％]]が源泉徴収される。', //p15
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -228,7 +228,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -241,7 +241,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -254,7 +254,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -267,7 +267,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -280,7 +280,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -293,7 +293,7 @@ const isDraft = false;
                         '既払込保険料総額 → 解約返戻金相当額', //p118
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -306,7 +306,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -319,7 +319,7 @@ const isDraft = false;
                         '一時所得 → 雑所得', //p166
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -332,7 +332,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -345,7 +345,7 @@ const isDraft = false;
                         '50% → 95%', //p202
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"

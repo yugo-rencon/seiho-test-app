@@ -230,10 +230,11 @@ const subject = "2026年度 フォームA";
                     :subject="subject"
                     questionTitle="相続分"
                     :contents="[
+                        // rev: 2026-11-23 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '特例分 → 寄与分', //p102
                     ]"
                 />
                 <QuestionTemp1
@@ -242,10 +243,11 @@ const subject = "2026年度 フォームA";
                     :subject="subject"
                     questionTitle="相続財産の評価"
                     :contents="[
+                        // rev: 2026-11-23 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '預貯金は、元金と中途解約利率による経過利子（源泉税相当額控除後）の合計額で評価する。', //p115
                     ]"
                 />
                 <QuestionTemp1
@@ -254,10 +256,11 @@ const subject = "2026年度 フォームA";
                     :subject="subject"
                     questionTitle="贈与税"
                     :contents="[
+                        // rev: 2026-11-23 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '5年 → 2年', //p145
                     ]"
                 />
                 <QuestionTemp1

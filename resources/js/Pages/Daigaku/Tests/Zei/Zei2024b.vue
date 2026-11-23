@@ -177,7 +177,7 @@ const isDraft = false;
                         '受取人である従業員等の側に保険金・給付金が直接支払われるので、[[法人には課税関係は生じない]]。', //p242
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="13"
                     :title="title"
                     :subject="subject"
@@ -190,7 +190,7 @@ const isDraft = false;
                         '[[総合課税の対象となる譲渡所得と分離課税の対象となる譲渡所得があり]]、また、資産の譲渡でも譲渡所得に該当しない所得がある。', //p20
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="14"
                     :title="title"
                     :subject="subject"
@@ -203,7 +203,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="15"
                     :title="title"
                     :subject="subject"
@@ -216,7 +216,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="16"
                     :title="title"
                     :subject="subject"
@@ -229,7 +229,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="17"
                     :title="title"
                     :subject="subject"
@@ -242,7 +242,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="18"
                     :title="title"
                     :subject="subject"
@@ -255,7 +255,7 @@ const isDraft = false;
                         '5年 → 2年', //p145
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="19"
                     :title="title"
                     :subject="subject"
@@ -268,7 +268,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="20"
                     :title="title"
                     :subject="subject"
@@ -281,7 +281,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="21"
                     :title="title"
                     :subject="subject"
@@ -294,7 +294,7 @@ const isDraft = false;
                         '医療費控除の確定申告により還付申告をする際には、交通事故等により、医療費控除の対象となる被害者（生計を一にする家族を含む）が受け取った治療費の金額（損害賠償金）も、支払った医療費から[[差し引いて申告しなければならない]]。', //p177
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="22"
                     :title="title"
                     :subject="subject"
@@ -307,7 +307,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="23"
                     :title="title"
                     :subject="subject"
@@ -320,7 +320,7 @@ const isDraft = false;
                         '正しい',
                     ]"
                 />
-<QuestionTemp1
+                <QuestionTemp1
                     :questionNumber="24"
                     :title="title"
                     :subject="subject"

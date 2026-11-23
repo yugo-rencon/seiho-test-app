@@ -429,10 +429,11 @@ const subject = "2026年度 フォームB";
                     :subject="subject"
                     questionTitle="保険・証券等の保護"
                     :contents="[
+                        // rev: 2026-11-23 確認済み
                         '正しい',
                         '正しい',
                         '正しい',
-                        '', //p
+                        '2,000万円 → 1,000万円', //p129
                     ]"
                 />
                 <QuestionTemp1

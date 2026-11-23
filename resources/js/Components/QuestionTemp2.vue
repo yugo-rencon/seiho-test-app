@@ -327,6 +327,12 @@ const normalizedItems = computed(() => {
     }));
 });
 
+watch(
+    normalizedItems,
+    (items) => items.forEach((item: any) => studySession?.registerCorrectAnswer?.(Number(item.questionNo), correctAnswerFor(item))),
+    { immediate: true },
+);
+
 const visibleItems = computed(() => {
     if (!isLockedContext.value) return normalizedItems.value;
     return normalizedItems.value.filter((item: any) => Number(item.questionNo) < paywallStartQuestion.value);

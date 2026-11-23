@@ -44,6 +44,7 @@ const currentIndex = ref(0);
 const answeredQuestions = ref(new Set());
 const correctQuestions = ref(new Set());
 const savedAnswers = ref({});
+const correctAnswerKey = new Map();
 const hasPendingSavedProgress = ref(initialAnsweredCount > 0);
 const resultDismissed = ref(Boolean(props.initialStudyState?.attempt));
 const showStartNotice = ref(initialAnsweredCount === 0);
@@ -80,6 +81,33 @@ const sectionScores = computed(() =>
         max: (section.end - section.start + 1) * Number(section.points),
     })),
 );
+
+const registerCorrectAnswer = (questionNumber, answer) => {
+    if (!questionNumber || !answer) return;
+    correctAnswerKey.set(Number(questionNumber), String(answer));
+};
+
+const completeAllForTesting = () => {
+    const answers = Object.fromEntries(questions.value.map((questionNumber) => {
+        const correctAnswer = correctAnswerKey.get(questionNumber) ?? "テスト回答";
+        return [questionNumber, {
+            selected_answer: correctAnswer.replace(/・/g, ","),
+            correct_answer: correctAnswer,
+            is_correct: true,
+            points_awarded: questionPoint(questionNumber),
+        }];
+    }));
+
+    savedAnswers.value = answers;
+    answeredQuestions.value = new Set(questions.value);
+    correctQuestions.value = new Set(questions.value);
+    hasPendingSavedProgress.value = false;
+    attemptCompleted.value = true;
+    resultDismissed.value = false;
+    showStartNotice.value = false;
+    showResumeNotice.value = false;
+    isQuestionMenuOpen.value = false;
+};
 
 const markAnswered = (questionNumber, answered, correct = false, selectedAnswer = "", correctAnswer = "") => {
     const normalizedQuestionNumber = Number(questionNumber);
@@ -146,7 +174,7 @@ const markAnswered = (questionNumber, answered, correct = false, selectedAnswer 
     request.catch((error) => console.error("学習回答の保存に失敗しました。", error));
 };
 
-provide("studySession", { currentQuestion, markAnswered, savedAnswers, attemptCompleted });
+provide("studySession", { currentQuestion, markAnswered, registerCorrectAnswer, savedAnswers, attemptCompleted });
 
 watch(displayMode, (mode) => {
     isQuestionMenuOpen.value = false;
@@ -471,6 +499,14 @@ const startNewStudy = () => {
                                     </span>
                                 </p>
                             </div>
+                            <button
+                                v-if="studyEnabled"
+                                type="button"
+                                class="mb-4 inline-flex min-h-9 items-center rounded-lg border border-dashed border-gray-300 bg-gray-50 px-3 py-1.5 text-xs font-semibold text-gray-600 transition hover:border-gray-400 hover:bg-gray-100 hover:text-gray-900"
+                                @click="completeAllForTesting"
+                            >
+                                テスト用：全問正解にする
+                            </button>
                             <div class="grid grid-cols-5 gap-2 sm:grid-cols-8 sm:gap-3 md:grid-cols-10">
                                 <button
                                     v-for="(questionNumber, index) in questions"

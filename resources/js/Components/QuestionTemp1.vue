@@ -200,6 +200,12 @@ const availableLabels = computed(() => labels.value.slice(0, props.contents.leng
 const hasAnswered = computed(() => selectedAnswer.value !== "");
 const isCorrect = computed(() => selectedAnswer.value.split(",").filter(Boolean).sort().join(",") === normalizedCorrectAnswers.value.join(","));
 
+watch(
+    [() => props.questionNumber, correctAnswerLabel],
+    ([questionNumber, answer]) => studySession?.registerCorrectAnswer?.(Number(questionNumber), answer),
+    { immediate: true },
+);
+
 const selectAnswer = (label: string): void => {
     if (hasAnswered.value) return;
     if (isMultipleAnswer.value) {

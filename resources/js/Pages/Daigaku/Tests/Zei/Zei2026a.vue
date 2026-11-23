@@ -269,9 +269,10 @@ const subject = "2026年度 フォームA";
                     :subject="subject"
                     questionTitle="個人年金保険に関する税務"
                     :contents="[
+                        // rev: 2026-11-23 確認済み
                         '正しい',
                         '正しい',
-                        '', //p
+                        '贈与税の対象 → 相続税の対象', //p168
                         '正しい',
                     ]"
                 />

@@ -246,12 +246,6 @@ const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.v
     });
 
     watch(
-        [blockStartQuestion, () => props.labels],
-        ([startQuestion, labels]) => labels.forEach((label, index) => studySession?.registerCorrectAnswer?.(Number(startQuestion) + index, label)),
-        { immediate: true, deep: true },
-    );
-
-    watch(
         [() => props.learningMode, () => studySession?.savedAnswers?.value],
         ([learningMode, savedAnswers]) => {
             selectedAnswers.value = props.contents.map((_, index) => {

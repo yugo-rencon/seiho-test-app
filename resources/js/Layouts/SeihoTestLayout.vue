@@ -5,6 +5,7 @@ import LayoutFooter from "@/Layouts/Partials/LayoutFooter.vue";
 import LayoutHeader from "@/Layouts/Partials/LayoutHeader.vue";
 import LayoutToast from "@/Layouts/Partials/LayoutToast.vue";
 import MobileMenuDrawer from "@/Layouts/Partials/MobileMenuDrawer.vue";
+import IncidentBanner from "@/Components/IncidentBanner.vue";
 import { HENGAKU_MENU_SUBJECTS } from "@/constants/hengaku";
 import { MOBILE_MENU_SUBJECTS } from "@/constants/subjects";
 
@@ -436,6 +437,8 @@ onBeforeUnmount(() => {
             :has-premium="hasPremium"
             @open-menu="isMenuOpen = true"
         />
+
+        <IncidentBanner />
 
         <main class="overflow-x-hidden">
             <slot />

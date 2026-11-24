@@ -29,9 +29,9 @@ const dismiss = () => {
         class="border-b border-amber-200 bg-amber-50 text-amber-950"
         aria-label="復旧のお知らせ"
     >
-        <div class="mx-auto flex max-w-7xl items-start gap-2 px-3 py-2.5 sm:items-center sm:px-6 lg:px-8">
+        <div class="mx-auto flex max-w-7xl items-start gap-2 px-4 py-2.5 sm:items-center sm:px-6 lg:px-8">
             <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-amber-600 sm:mt-0"
+                class="hidden h-5 w-5 shrink-0 text-amber-600 sm:block"
                 aria-hidden="true"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -41,9 +41,10 @@ const dismiss = () => {
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.3 3.8 2.2 18a2 2 0 0 0 1.7 3h16.2a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0Z" />
             </svg>
 
-            <p class="min-w-0 flex-1 text-xs leading-relaxed sm:text-sm">
-                <strong class="mr-1 font-bold">【復旧済み】</strong>
-                一部の解説を閲覧できない不具合が発生していました。現在は復旧しています。ご迷惑をおかけし、申し訳ございません。
+            <p class="min-w-0 flex-1 text-[13px] leading-6 sm:text-sm sm:leading-relaxed">
+                <strong class="mr-1 whitespace-nowrap font-bold">【復旧済み】</strong>
+                <span class="sm:hidden">一部の解説を閲覧できない不具合は復旧しました。ご迷惑をおかけし、申し訳ございません。</span>
+                <span class="hidden sm:inline">一部の解説を閲覧できない不具合が発生していました。現在は復旧しています。ご迷惑をおかけし、申し訳ございません。</span>
             </p>
 
             <button

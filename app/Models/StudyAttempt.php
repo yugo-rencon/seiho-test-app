@@ -18,6 +18,8 @@ class StudyAttempt extends Model
         'answered_count',
         'score',
         'max_score',
+        'previous_incorrect_questions',
+        'previous_correct_questions',
         'started_at',
         'completed_at',
     ];
@@ -25,6 +27,8 @@ class StudyAttempt extends Model
     protected $casts = [
         'started_at' => 'datetime',
         'completed_at' => 'datetime',
+        'previous_incorrect_questions' => 'array',
+        'previous_correct_questions' => 'array',
     ];
 
     public function user()

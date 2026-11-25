@@ -16,7 +16,6 @@ class StudyProgressController extends Controller
         $attempt = StudyAttempt::query()
             ->where('user_id', $request->user()->id)
             ->where('exam_key', $examKey)
-            ->whereHas('answers')
             ->latest('attempt_no')
             ->with('answers')
             ->first();
@@ -43,22 +42,6 @@ class StudyProgressController extends Controller
         );
 
         return response()->json($data);
-    }
-
-    public function updateAttempt(Request $request, string $examKey): JsonResponse
-    {
-        $data = $request->validate([
-            'current_question_no' => ['required', 'integer', 'min:1', 'max:500'],
-        ]);
-
-        $attempt = $this->findCurrentAttempt($request, $examKey);
-        if (!$attempt || !$attempt->answers()->exists()) {
-            return response()->json(['attempt' => null]);
-        }
-
-        $attempt->update(['current_question_no' => $data['current_question_no']]);
-
-        return response()->json(['attempt' => $this->attemptPayload($attempt->fresh('answers'))]);
     }
 
     public function storeAnswer(Request $request, string $examKey, int $questionNo): JsonResponse
@@ -92,7 +75,7 @@ class StudyProgressController extends Controller
             );
         });
 
-        return response()->json(['attempt' => $this->attemptPayload($attempt)]);
+        return response()->json(['saved' => true]);
     }
 
     public function deleteAnswer(Request $request, string $examKey, int $questionNo): JsonResponse
@@ -114,7 +97,7 @@ class StudyProgressController extends Controller
             });
         }
 
-        return response()->json(['attempt' => $attempt ? $this->attemptPayload($attempt->fresh('answers')) : null]);
+        return response()->json(['saved' => true]);
     }
 
     public function resetAttempt(Request $request, string $examKey): JsonResponse
@@ -124,6 +107,20 @@ class StudyProgressController extends Controller
         if ($attempt) {
             $attempt = DB::transaction(function () use ($attempt, $request, $examKey) {
                 if ($attempt->answers()->exists()) {
+                    $previousIncorrectQuestions = $attempt->answers()
+                        ->where('is_correct', false)
+                        ->orderBy('question_no')
+                        ->pluck('question_no')
+                        ->map(fn ($questionNo) => (int) $questionNo)
+                        ->values()
+                        ->all();
+                    $previousCorrectQuestions = $attempt->answers()
+                        ->where('is_correct', true)
+                        ->orderBy('question_no')
+                        ->pluck('question_no')
+                        ->map(fn ($questionNo) => (int) $questionNo)
+                        ->values()
+                        ->all();
                     $nextAttemptNo = StudyAttempt::query()
                         ->where('user_id', $request->user()->id)
                         ->where('exam_key', $examKey)
@@ -138,10 +135,10 @@ class StudyProgressController extends Controller
                         'answered_count' => 0,
                         'score' => 0,
                         'max_score' => $attempt->max_score,
+                        'previous_incorrect_questions' => $previousIncorrectQuestions,
+                        'previous_correct_questions' => $previousCorrectQuestions,
                         'started_at' => now(),
                     ]);
-
-                    $this->deleteOtherAttempts($newAttempt);
 
                     return $newAttempt;
                 }
@@ -155,11 +152,11 @@ class StudyProgressController extends Controller
                     'started_at' => now(),
                 ]);
 
-                return $attempt->fresh();
+                return $attempt;
             });
         }
 
-        return response()->json(['attempt' => $attempt ? $this->attemptPayload($attempt->fresh('answers')) : null]);
+        return response()->json(['reset' => true]);
     }
 
     private function currentAttempt(Request $request, string $examKey): StudyAttempt
@@ -192,18 +189,24 @@ class StudyProgressController extends Controller
 
     private function refreshAttemptTotals(StudyAttempt $attempt, int $questionCount, int $maxScore): StudyAttempt
     {
-        $answeredCount = $attempt->answers()->count();
+        $totals = $attempt->answers()
+            ->selectRaw('COUNT(*) as answered_count, COALESCE(SUM(points_awarded), 0) as score')
+            ->first();
+        $answeredCount = (int) $totals->answered_count;
         $attempt->update([
             'answered_count' => $answeredCount,
-            'score' => (int) $attempt->answers()->sum('points_awarded'),
+            'score' => (int) $totals->score,
             'max_score' => $maxScore,
             'status' => $answeredCount >= $questionCount ? 'completed' : 'in_progress',
             'completed_at' => $answeredCount >= $questionCount ? ($attempt->completed_at ?? now()) : null,
         ]);
 
-        $this->deleteOtherAttempts($attempt);
+        // 進行中は前回分を残し、完了した時点で今回の結果に置き換える。
+        if ($answeredCount >= $questionCount) {
+            $this->deleteOtherAttempts($attempt);
+        }
 
-        return $attempt->fresh('answers');
+        return $attempt;
     }
 
     private function deleteOtherAttempts(StudyAttempt $attempt): void
@@ -218,14 +221,7 @@ class StudyProgressController extends Controller
     private function attemptPayload(StudyAttempt $attempt): array
     {
         return [
-            'id' => $attempt->id,
-            'attempt_no' => $attempt->attempt_no,
-            'status' => $attempt->status,
-            'current_question_no' => $attempt->current_question_no,
-            'answered_count' => $attempt->answered_count,
-            'score' => $attempt->score,
-            'max_score' => $attempt->max_score,
-            'completed_at' => $attempt->completed_at?->toISOString(),
+            ...$this->attemptSummaryPayload($attempt),
             'answers' => $attempt->answers->map(fn ($answer) => [
                 'question_no' => $answer->question_no,
                 'selected_answer' => $answer->selected_answer,
@@ -233,6 +229,22 @@ class StudyProgressController extends Controller
                 'is_correct' => $answer->is_correct,
                 'points_awarded' => $answer->points_awarded,
             ])->values(),
+        ];
+    }
+
+    private function attemptSummaryPayload(StudyAttempt $attempt): array
+    {
+        return [
+            'id' => $attempt->id,
+            'attempt_no' => $attempt->attempt_no,
+            'status' => $attempt->status,
+            'current_question_no' => $attempt->current_question_no,
+            'answered_count' => $attempt->answered_count,
+            'score' => $attempt->score,
+            'max_score' => $attempt->max_score,
+            'previous_incorrect_questions' => $attempt->previous_incorrect_questions ?? [],
+            'previous_correct_questions' => $attempt->previous_correct_questions ?? [],
+            'completed_at' => $attempt->completed_at?->toISOString(),
         ];
     }
 }

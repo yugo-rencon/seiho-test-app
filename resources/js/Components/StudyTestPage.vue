@@ -21,6 +21,7 @@ const props = defineProps({
     previewQuestionLimit: { type: Number, default: 0 },
     previousRoute: { type: String, default: "" },
     nextRoute: { type: String, default: "" },
+    homeRoute: { type: String, default: "" },
     isDraft: { type: Boolean, default: false },
 });
 
@@ -32,7 +33,22 @@ const questionMenu = ref(null);
 const questionMenuButton = ref(null);
 const isQuestionMenuOpen = ref(false);
 const questions = computed(() => Array.from({ length: props.questionCount }, (_, index) => index + 1));
+const questionGroups = computed(() => {
+    const groupSize = 10;
+
+    return Array.from({ length: Math.ceil(questions.value.length / groupSize) }, (_, index) => {
+        const groupedQuestions = questions.value.slice(index * groupSize, (index + 1) * groupSize);
+
+        return {
+            start: groupedQuestions[0],
+            end: groupedQuestions[groupedQuestions.length - 1],
+            questions: groupedQuestions,
+        };
+    });
+});
 const initialAnswers = Object.fromEntries((props.initialStudyState?.attempt?.answers ?? []).map((answer) => [Number(answer.question_no), answer]));
+const initialPreviousIncorrectQuestions = (props.initialStudyState?.attempt?.previous_incorrect_questions ?? []).map(Number);
+const initialPreviousCorrectQuestions = (props.initialStudyState?.attempt?.previous_correct_questions ?? []).map(Number);
 const initialAnsweredCount = Object.keys(initialAnswers).length;
 const initialAttemptCompleted = props.initialStudyState?.attempt?.status === "completed";
 const initialAttemptScore = Number(props.initialStudyState?.attempt?.score ?? 0);
@@ -44,6 +60,8 @@ const currentIndex = ref(0);
 const answeredQuestions = ref(new Set());
 const correctQuestions = ref(new Set());
 const savedAnswers = ref({});
+const previousIncorrectQuestions = ref(new Set(initialPreviousIncorrectQuestions));
+const previousCorrectQuestions = ref(new Set(initialPreviousCorrectQuestions));
 const hasPendingSavedProgress = ref(initialAnsweredCount > 0);
 const resultDismissed = ref(Boolean(props.initialStudyState?.attempt));
 const showStartNotice = ref(initialAnsweredCount === 0);
@@ -146,7 +164,7 @@ const markAnswered = (questionNumber, answered, correct = false, selectedAnswer 
     request.catch((error) => console.error("学習回答の保存に失敗しました。", error));
 };
 
-provide("studySession", { currentQuestion, markAnswered, savedAnswers, attemptCompleted });
+provide("studySession", { currentQuestion, markAnswered, savedAnswers, attemptCompleted, previousIncorrectQuestions, previousCorrectQuestions });
 
 watch(displayMode, (mode) => {
     isQuestionMenuOpen.value = false;
@@ -229,6 +247,18 @@ const resumeStudy = () => {
 };
 
 const startNewStudy = () => {
+    const answersToArchive = Object.keys(savedAnswers.value).length ? savedAnswers.value : initialAnswers;
+    const shouldResetAttempt = Object.keys(answersToArchive).length > 0;
+    previousIncorrectQuestions.value = new Set(
+        Object.entries(answersToArchive)
+            .filter(([, answer]) => !answer.is_correct)
+            .map(([questionNumber]) => Number(questionNumber)),
+    );
+    previousCorrectQuestions.value = new Set(
+        Object.entries(answersToArchive)
+            .filter(([, answer]) => answer.is_correct)
+            .map(([questionNumber]) => Number(questionNumber)),
+    );
     hasPendingSavedProgress.value = false;
     savedAnswers.value = {};
     answeredQuestions.value = new Set();
@@ -238,7 +268,7 @@ const startNewStudy = () => {
     resultDismissed.value = true;
     showStartNotice.value = false;
     showResumeNotice.value = false;
-    if (isLoggedIn.value && initialAnsweredCount > 0) {
+    if (isLoggedIn.value && shouldResetAttempt) {
         pendingAttemptReset = axios.delete(route("studyProgress.reset", props.examKey));
         pendingAttemptReset.catch((error) => console.error("学習データのリセットに失敗しました。", error));
     }
@@ -248,17 +278,17 @@ const startNewStudy = () => {
 
 <template>
     <SeihoTestLayout v-if="!studyEnabled" :title="title">
-        <section class="bg-[#fdfbff] py-10 text-gray-800">
+        <section class="py-10 text-gray-800" :class="homeRoute === 'ippan.index' ? 'bg-gray-100' : 'bg-[#fdfbff]'">
             <Pagetitle :title="title" :description="subject" />
             <DraftNotice v-if="isDraft" />
             <div class="mx-auto mt-4 max-w-4xl space-y-2">
                 <slot :learning-mode="false" />
             </div>
-            <TestNavigationButtons v-if="previousRoute || nextRoute" :previous-route="previousRoute" :next-route="nextRoute" />
+            <TestNavigationButtons v-if="previousRoute || nextRoute || homeRoute" :previous-route="previousRoute" :next-route="nextRoute" v-bind="homeRoute ? { homeRoute } : {}" />
         </section>
     </SeihoTestLayout>
 
-    <SeihoTestLayout v-else :title="title">
+    <SeihoTestLayout v-else :title="title" :hide-footer="displayMode === 'study'">
         <section class="text-gray-800" :class="isIppanStudyTheme ? 'bg-gray-100 px-2 pb-10 pt-3 sm:bg-white sm:px-6 sm:pb-24 sm:pt-5' : 'bg-white px-4 pb-10 pt-6 sm:px-6 sm:pb-24 sm:pt-9'">
             <header :class="isIppanStudyTheme ? 'mx-auto max-w-4xl pb-2 pt-3 sm:border-b sm:border-gray-200 sm:pb-4 sm:pt-0' : 'mx-auto max-w-4xl'">
                 <h1 v-if="isIppanStudyTheme" class="sr-only">{{ title }}</h1>
@@ -303,8 +333,7 @@ const startNewStudy = () => {
                 <div v-if="!isIppanStudyTheme" class="mt-2 h-1.5 overflow-hidden rounded-full bg-gray-100" role="progressbar" aria-label="学習の進捗" :aria-valuenow="currentQuestion" aria-valuemin="1" :aria-valuemax="questionCount">
                     <div class="h-full rounded-full transition-[width] duration-300 ease-out" :class="isIppanStudyTheme ? 'bg-gradient-to-r from-pink-400 to-fuchsia-500' : 'bg-gradient-to-r from-violet-500 to-indigo-500'" :style="{ width: `${studyProgress}%` }"></div>
                 </div>
-                <div class="flex items-center gap-3" :class="[isIppanStudyTheme ? '' : 'mt-2', isComplete && resultDismissed && hasFullStudyAccess ? 'justify-between' : 'justify-end']">
-                    <button v-if="isComplete && resultDismissed && hasFullStudyAccess" type="button" class="inline-flex min-h-10 items-center text-sm font-medium text-gray-600 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="showStudyResult">採点結果</button>
+                <div class="flex items-center justify-end gap-3" :class="isIppanStudyTheme ? '' : 'mt-2'">
                     <button
                         v-if="answeredQuestions.size"
                         type="button"
@@ -375,8 +404,12 @@ const startNewStudy = () => {
                 <StudyPaywallNotice @back="moveTo(previewQuestionLimit - 1)" />
             </div>
 
-            <div v-if="displayMode === 'study' && !showStudyIntro && !shouldShowResult && !isCurrentStudyLocked && currentIndex < questionCount - 1" class="mx-auto mt-5 flex w-full max-w-4xl justify-center px-2 pt-2">
+            <div v-if="displayMode === 'study' && !showStudyIntro && !shouldShowResult && !isCurrentStudyLocked && currentAnswered && currentIndex < questionCount - 1" class="mx-auto mt-5 flex w-full max-w-4xl justify-center px-2 pt-2">
                 <button type="button" class="inline-flex min-h-11 w-64 max-w-full items-center justify-center rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 hover:text-gray-950 sm:w-80 md:w-96" @click="moveTo(currentIndex + 1)">次の問題</button>
+            </div>
+
+            <div v-if="displayMode === 'study' && isComplete && resultDismissed && hasFullStudyAccess" class="mx-auto mt-4 flex w-full max-w-4xl justify-center px-2">
+                <button type="button" class="inline-flex min-h-11 w-64 max-w-full items-center justify-center rounded-lg border bg-white px-5 py-2.5 text-sm font-semibold transition sm:w-80 md:w-96" :class="isIppanStudyTheme ? 'border-fuchsia-300 text-fuchsia-700 hover:bg-pink-50' : 'border-violet-300 text-violet-700 hover:bg-violet-50'" @click="showStudyResult">採点結果を見る</button>
             </div>
 
             <section v-if="displayMode === 'study' && shouldShowResult" class="mx-auto mt-8 max-w-2xl" aria-live="polite">
@@ -430,9 +463,6 @@ const startNewStudy = () => {
                     </div>
                 </div>
 
-                <div class="mt-5 flex justify-center">
-                    <button type="button" class="inline-flex min-h-11 items-center px-3 text-sm font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-950" @click="resultDismissed = true">問題を見直す</button>
-                </div>
             </section>
 
             <Teleport to="body">
@@ -460,41 +490,72 @@ const startNewStudy = () => {
 
                     <main class="mx-auto max-w-5xl px-3 py-4 sm:px-6 sm:py-8">
                         <section class="rounded-xl border border-gray-200 bg-white p-3 shadow-sm sm:p-6">
-                            <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+                            <div class="mb-4 flex flex-wrap items-start justify-between gap-3">
                                 <p class="text-sm font-semibold text-gray-900">移動する問題を選択</p>
-                                <p class="flex items-center gap-3 text-xs text-gray-500 sm:text-sm">
-                                    <span><span class="text-[#34b894]">●</span> 正解</span>
-                                    <span><span class="text-[#e07a84]">●</span> 不正解</span>
+                                <div class="flex flex-wrap items-stretch justify-end gap-2 text-xs text-gray-500 sm:text-sm">
+                                    <div class="rounded-lg bg-gray-50 px-3 py-2">
+                                        <p class="mb-1 text-[10px] font-semibold tracking-wide text-gray-400">今回の結果</p>
+                                        <div class="flex items-center gap-3">
+                                            <span class="inline-flex items-center gap-1.5"><span class="h-3.5 w-5 rounded border border-[#a7e3d0] bg-[#f0fcf7]"></span>正解</span>
+                                            <span class="inline-flex items-center gap-1.5"><span class="h-3.5 w-5 rounded border border-[#f2c5c8] bg-[#fff5f5]"></span>不正解</span>
+                                        </div>
+                                    </div>
+                                    <div v-if="previousIncorrectQuestions.size || previousCorrectQuestions.size" class="rounded-lg border border-dashed border-gray-200 px-3 py-2">
+                                        <p class="mb-1 text-[10px] font-semibold tracking-wide text-gray-400">前回の結果</p>
+                                        <div class="flex items-center gap-3">
+                                            <span v-if="previousCorrectQuestions.size" class="inline-flex items-center gap-1.5"><span class="h-3.5 w-5 rounded border border-dashed border-emerald-300 bg-white"></span>正解</span>
+                                            <span v-if="previousIncorrectQuestions.size" class="inline-flex items-center gap-1.5"><span class="h-3.5 w-5 rounded border border-dashed border-rose-300 bg-white"></span>不正解</span>
+                                        </div>
+                                    </div>
                                     <span v-if="!hasFullStudyAccess" class="inline-flex items-center gap-1 text-gray-400">
                                         <svg aria-hidden="true" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 17 9.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8H5Zm2 0h6V6a3 3 0 1 0-6 0v2Z" clip-rule="evenodd" /></svg>
                                         有料
                                     </span>
-                                </p>
+                                </div>
                             </div>
-                            <div class="grid grid-cols-5 gap-2 sm:grid-cols-8 sm:gap-3 md:grid-cols-10">
-                                <button
-                                    v-for="(questionNumber, index) in questions"
-                                    :key="questionNumber"
-                                    :data-question-number="questionNumber"
-                                    type="button"
-                                    class="relative min-h-11 rounded-lg border text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
-                                    :class="[
-                                        currentIndex === index ? (isIppanStudyTheme ? 'ring-2 ring-fuchsia-500 ring-offset-2' : 'ring-2 ring-violet-500 ring-offset-2') : '',
-                                        isStudyQuestionLocked(questionNumber)
-                                            ? 'border-gray-200 bg-gray-50 text-gray-400'
-                                            : correctQuestions.has(questionNumber)
-                                              ? 'border-[#a7e3d0] bg-[#f0fcf7] text-[#16856b]'
-                                              : answeredQuestions.has(questionNumber)
-                                                ? 'border-[#f2c5c8] bg-[#fff5f5] text-[#c45d68]'
-                                                : 'border-gray-200 bg-white text-gray-700 hover:border-gray-400 hover:bg-gray-50',
-                                    ]"
-                                    :aria-label="`第${questionNumber}問${currentIndex === index ? '、現在表示中' : ''}`"
-                                    @click="moveTo(index)"
+                            <div class="space-y-2">
+                                <details
+                                    v-for="group in questionGroups"
+                                    :key="group.start"
+                                    class="group overflow-hidden rounded-lg border border-gray-200 bg-white"
+                                    :open="group.questions.includes(currentQuestion)"
                                 >
-                                    {{ questionNumber }}
-                                    <svg v-if="isStudyQuestionLocked(questionNumber)" aria-label="要購入" class="absolute right-1 top-1 h-3 w-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 17 9.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8H5Zm2 0h6V6a3 3 0 1 0-6 0v2Z" clip-rule="evenodd" /></svg>
-                                    <span v-else-if="answeredQuestions.has(questionNumber)" class="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full" :class="correctQuestions.has(questionNumber) ? 'bg-[#34b894]' : 'bg-[#e07a84]'"></span>
-                                </button>
+                                    <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-3 py-2 text-sm transition hover:bg-gray-50 [&::-webkit-details-marker]:hidden">
+                                        <span class="font-semibold text-gray-800">問題 {{ group.start }}〜{{ group.end }}</span>
+                                        <span class="flex items-center gap-2 text-xs text-gray-500">
+                                            {{ group.questions.filter((questionNumber) => answeredQuestions.has(questionNumber)).length }} / {{ group.questions.length }}問
+                                            <svg aria-hidden="true" class="h-4 w-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5" /></svg>
+                                        </span>
+                                    </summary>
+                                    <div class="grid grid-cols-5 gap-2 border-t border-gray-100 bg-gray-50 p-3 sm:grid-cols-10">
+                                        <button
+                                            v-for="questionNumber in group.questions"
+                                            :key="questionNumber"
+                                            :data-question-number="questionNumber"
+                                            type="button"
+                                            class="relative min-h-10 rounded-md border text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                            :class="[
+                                                currentQuestion === questionNumber ? (isIppanStudyTheme ? 'ring-2 ring-fuchsia-500 ring-offset-1' : 'ring-2 ring-violet-500 ring-offset-1') : '',
+                                                isStudyQuestionLocked(questionNumber)
+                                                    ? 'border-gray-200 bg-gray-50 text-gray-400'
+                                                    : correctQuestions.has(questionNumber)
+                                                      ? 'border-[#a7e3d0] bg-[#f0fcf7] text-[#16856b]'
+                                                      : answeredQuestions.has(questionNumber)
+                                                        ? 'border-[#f2c5c8] bg-[#fff5f5] text-[#c45d68]'
+                                                        : previousIncorrectQuestions.has(questionNumber)
+                                                          ? 'border-dashed border-rose-300 bg-white text-rose-600'
+                                                          : previousCorrectQuestions.has(questionNumber)
+                                                            ? 'border-dashed border-emerald-300 bg-white text-emerald-700'
+                                                        : 'border-gray-200 bg-white text-gray-700 hover:border-gray-400 hover:bg-white',
+                                            ]"
+                                            :aria-label="`第${questionNumber}問、${isStudyQuestionLocked(questionNumber) ? '要購入' : correctQuestions.has(questionNumber) ? '正解' : answeredQuestions.has(questionNumber) ? '不正解' : previousIncorrectQuestions.has(questionNumber) ? '前回不正解、今回は未回答' : previousCorrectQuestions.has(questionNumber) ? '前回正解、今回は未回答' : '未回答'}${currentQuestion === questionNumber ? '、現在表示中' : ''}`"
+                                            @click="moveTo(questionNumber - 1)"
+                                        >
+                                            {{ questionNumber }}
+                                            <svg v-if="isStudyQuestionLocked(questionNumber)" aria-label="要購入" class="absolute right-1 top-1 h-3 w-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 8V6a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 17 9.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-7A1.5 1.5 0 0 1 4.5 8H5Zm2 0h6V6a3 3 0 1 0-6 0v2Z" clip-rule="evenodd" /></svg>
+                                        </button>
+                                    </div>
+                                </details>
                             </div>
                         </section>
                     </main>
@@ -510,10 +571,10 @@ const startNewStudy = () => {
                     aria-labelledby="score-details-title"
                 >
                     <header class="sticky top-0 z-10 border-b border-gray-200 bg-white/95 backdrop-blur">
-                        <div class="mx-auto flex max-w-5xl items-center justify-between gap-5 px-5 py-4 sm:px-8 sm:py-5">
+                        <div class="mx-auto flex max-w-5xl items-center justify-between gap-5 px-4 py-3 sm:px-6 sm:py-3.5">
                             <div class="min-w-0">
-                                <h2 id="score-details-title" class="text-xl font-bold tracking-tight text-gray-950 sm:text-2xl">成績詳細</h2>
-                                <p class="mt-1 truncate text-xs text-gray-500 sm:text-sm">{{ subject }}</p>
+                                <h2 id="score-details-title" class="text-lg font-bold tracking-tight text-gray-950 sm:text-xl">成績詳細</h2>
+                                <p class="mt-0.5 truncate text-xs text-gray-500">{{ subject }}</p>
                             </div>
                             <button type="button" class="inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 text-sm font-semibold text-gray-600 shadow-sm transition hover:border-gray-400 hover:bg-gray-50 hover:text-gray-950" aria-label="成績詳細を閉じる" @click="showScoreDetails = false">
                                 <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
@@ -522,32 +583,32 @@ const startNewStudy = () => {
                         </div>
                     </header>
 
-                    <main class="mx-auto max-w-5xl px-3 py-3 sm:px-6 sm:py-8">
-                        <section class="rounded-xl bg-white p-4 shadow-sm sm:p-7">
+                    <main class="mx-auto max-w-5xl px-3 py-3 sm:px-6 sm:py-5">
+                        <section class="rounded-xl bg-white p-4 shadow-sm sm:p-5">
                             <div class="flex items-end justify-between gap-3 sm:gap-4">
                                 <div>
-                                    <p class="text-xs text-gray-500 sm:text-sm">現在の成績</p>
-                                    <p class="mt-1 text-xl font-bold text-gray-950 sm:text-2xl">{{ answeredQuestions.size }}問中 {{ correctQuestions.size }}問正解</p>
+                                    <p class="text-xs text-gray-500">現在の成績</p>
+                                    <p class="mt-0.5 text-xl font-bold text-gray-950">{{ answeredQuestions.size }}問中 {{ correctQuestions.size }}問正解</p>
                                 </div>
-                                <p class="text-3xl font-bold sm:text-4xl" :class="scoreRate >= 60 ? 'text-emerald-600' : 'text-rose-500'">{{ scoreRate }}<span class="ml-0.5 text-base sm:text-lg">%</span></p>
+                                <p class="text-3xl font-bold" :class="scoreRate >= 60 ? 'text-emerald-600' : 'text-rose-500'">{{ scoreRate }}<span class="ml-0.5 text-base">%</span></p>
                             </div>
-                            <div class="relative mt-4 h-2 rounded-full bg-gray-100 sm:mt-5 sm:h-3" aria-label="正答率">
+                            <div class="relative mt-3 h-2 rounded-full bg-gray-100" aria-label="正答率">
                                 <div class="h-full rounded-full transition-all" :class="isIppanStudyTheme ? 'bg-gradient-to-r from-pink-400 to-fuchsia-500' : 'bg-violet-600'" :style="{ width: `${scoreRate}%` }"></div>
                                 <span class="absolute left-[60%] top-[-5px] h-6 w-px bg-gray-400" aria-hidden="true"></span>
                                 <span class="absolute left-[60%] top-5 -translate-x-1/2 text-[10px] text-gray-500">60%</span>
                             </div>
-                            <p class="mt-7 text-xs text-gray-500 sm:mt-8 sm:text-sm">得点 <span class="font-semibold text-gray-900">{{ score }} / {{ maxScore }}点</span></p>
+                            <p class="mt-6 text-xs text-gray-500">得点 <span class="font-semibold text-gray-900">{{ score }} / {{ maxScore }}点</span></p>
                         </section>
 
-                        <section class="mt-3 grid grid-cols-2 gap-2 sm:mt-5 sm:gap-3 lg:grid-cols-3">
-                            <div v-for="section in sectionScores" :key="section.label" class="rounded-xl border border-gray-200 bg-white px-3 py-3 sm:px-4 sm:py-4">
-                                <p class="text-[10px] font-medium text-gray-500 sm:text-xs">{{ section.label }}</p>
-                                <p class="mt-1 text-lg font-bold leading-none text-gray-950 sm:text-xl">{{ section.score }}<span class="ml-1 text-[10px] font-normal text-gray-400 sm:text-xs">/ {{ section.max }}点</span></p>
+                        <section class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
+                            <div v-for="section in sectionScores" :key="section.label" class="rounded-lg border border-gray-200 bg-white px-3 py-2.5">
+                                <p class="truncate text-[10px] font-medium text-gray-500 sm:text-xs">{{ section.label }}</p>
+                                <p class="mt-1 text-lg font-bold leading-none text-gray-950">{{ section.score }}<span class="ml-1 text-[10px] font-normal text-gray-400">/ {{ section.max }}点</span></p>
                             </div>
                         </section>
 
-                        <section class="mt-4 overflow-hidden rounded-xl border border-gray-200 bg-white sm:mt-6">
-                            <div class="flex items-center justify-between gap-3 border-b border-gray-200 px-4 py-3">
+                        <section class="mt-3 overflow-hidden rounded-xl border border-gray-200 bg-white sm:mt-4">
+                            <div class="flex items-center justify-between gap-3 border-b border-gray-200 px-4 py-2.5">
                                 <h3 class="text-sm font-bold text-gray-900">問題別の結果</h3>
                                 <p class="text-xs text-gray-500">{{ answeredQuestions.size }} / {{ questionCount }}問</p>
                             </div>
@@ -556,7 +617,7 @@ const startNewStudy = () => {
                                     v-for="answer in answeredRows"
                                     :key="answer.questionNumber"
                                     type="button"
-                                    class="grid w-full grid-cols-[3.5rem_1fr_auto] items-center gap-3 px-4 py-3 text-left transition hover:bg-gray-50 sm:grid-cols-[4rem_1fr_auto] sm:px-5"
+                                    class="grid w-full grid-cols-[3.5rem_1fr_auto] items-center gap-3 px-4 py-2.5 text-left transition hover:bg-gray-50 sm:grid-cols-[4rem_1fr_auto] sm:px-5 sm:py-2"
                                     @click="reviewQuestionFromScore(answer.questionNumber)"
                                 >
                                     <span class="font-bold text-gray-900">問{{ answer.questionNumber }}</span>
@@ -579,7 +640,7 @@ const startNewStudy = () => {
                 </div>
             </Teleport>
 
-            <TestNavigationButtons v-if="displayMode === 'browse' && (previousRoute || nextRoute)" :previous-route="previousRoute" :next-route="nextRoute" />
+            <TestNavigationButtons v-if="displayMode === 'browse' && (previousRoute || nextRoute || homeRoute)" :previous-route="previousRoute" :next-route="nextRoute" v-bind="homeRoute ? { homeRoute } : {}" />
         </section>
     </SeihoTestLayout>
 </template>

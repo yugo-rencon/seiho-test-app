@@ -13,6 +13,7 @@ $subjects = [
 
 $studyEnabledExams = [
     'ippan-2026-h1-a',
+    'ippan-2026-h1-b',
     'souron-2026-a',
     'souron-2026-b',
     'souron-2026-c',
@@ -41,21 +42,25 @@ $studyEnabledExams = [
 ];
 
 $exams = [];
-$exams['ippan-2026-h1-a'] = [
-    'scope' => 'ippan',
-    'subject_key' => 'ippan',
-    'subject_label' => '生命保険一般課程',
-    'year' => 2026,
-    'form' => 'A',
-    'route' => 'ippan.test',
-    'route_parameters' => [
-        'year' => 2026,
-        'months' => '1-6',
-        'form' => 'a',
-    ],
-    'question_count' => 82,
-    'study_enabled' => true,
-];
+foreach (range(2026, 2021) as $year) {
+    $periods = $year === 2026 ? ['h1' => '1-6'] : ['h2' => '7-12', 'h1' => '1-6'];
+    foreach ($periods as $period => $months) {
+        foreach (['a', 'b', 'c', 'd', 'e'] as $form) {
+            $examKey = "ippan-{$year}-{$period}-{$form}";
+            $exams[$examKey] = [
+                'scope' => 'ippan',
+                'subject_key' => 'ippan',
+                'subject_label' => '生命保険一般課程',
+                'year' => $year,
+                'form' => strtoupper($form),
+                'route' => 'ippan.test',
+                'route_parameters' => ['year' => $year, 'months' => $months, 'form' => $form],
+                'question_count' => 82,
+                'study_enabled' => in_array($examKey, $studyEnabledExams, true),
+            ];
+        }
+    }
+}
 
 foreach (['a', 'b', 'c'] as $form) {
     $examKey = "souron-2026-{$form}";

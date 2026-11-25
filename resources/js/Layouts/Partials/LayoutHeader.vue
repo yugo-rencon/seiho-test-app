@@ -38,6 +38,7 @@ const mypageRouteName = computed(() => {
     if (props.isOuyou) return "ouyou.mypage";
     return "mypage";
 });
+const studyRecordsRouteName = computed(() => props.isIppan ? "ippan.mypage.studyRecords" : "mypage.studyRecords");
 // 現在表示中のルート判定（アクティブ色に利用）
 const isActive = (name) => route().current(name);
 </script>
@@ -143,7 +144,7 @@ const isActive = (name) => route().current(name);
                                     <p class="mt-0.5 truncate text-sm font-semibold text-gray-900">{{ userName }}</p>
                                 </div>
                                 <div class="grid grid-cols-2 gap-2 p-3">
-                                    <Link :href="route('mypage.studyRecords')" class="flex min-h-20 flex-col items-center justify-center gap-2 rounded-lg px-3 py-3 text-center text-xs font-semibold text-gray-700 transition hover:bg-pink-50 hover:text-fuchsia-700">
+                                    <Link :href="route(studyRecordsRouteName)" class="flex min-h-20 flex-col items-center justify-center gap-2 rounded-lg px-3 py-3 text-center text-xs font-semibold text-gray-700 transition hover:bg-pink-50 hover:text-fuchsia-700">
                                         <svg class="h-7 w-7 text-fuchsia-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
                                         演習履歴
                                     </Link>

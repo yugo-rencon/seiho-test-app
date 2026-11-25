@@ -55,6 +55,7 @@ const mypageRouteName = () => {
     return "mypage";
 };
 const adminRouteName = () => (props.isDaigaku ? "daigaku.admin.index" : "admin.index");
+const studyRecordsRouteName = computed(() => props.isIppan ? "ippan.mypage.studyRecords" : "mypage.studyRecords");
 const resolveFormHref = (subjectKey, yearLabel, form) => {
     const year = Number(String(yearLabel).replace("年度", ""));
     const f = String(form).toLowerCase();
@@ -241,7 +242,7 @@ const visibleSubjects = computed(() => {
                             マイページ
                         </Link>
                         <Link
-                            v-if="isAuthenticated && currentScope === 'seiho'"
+                            v-if="isAuthenticated && currentScope === 'seiho' && page.props.auth?.hasPremiumSeiho"
                             :href="route('results')"
                             class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-semibold text-purple-700 transition hover:bg-purple-50"
                             :class="isActive('results') ? 'pointer-events-none bg-purple-50' : ''"
@@ -253,13 +254,13 @@ const visibleSubjects = computed(() => {
                         </Link>
                         <Link
                             v-if="isAdmin && !isDaigaku && !isSenmon && !isOuyou"
-                            :href="route('mypage.studyRecords')"
+                            :href="route(studyRecordsRouteName)"
                             class="flex items-center justify-between rounded-xl border border-violet-200 bg-violet-50 px-3 py-2.5 text-sm font-bold text-violet-700 transition hover:border-violet-300 hover:bg-violet-100"
-                            :class="isActive('mypage.studyRecords*') ? 'pointer-events-none ring-1 ring-violet-300' : ''"
-                            :aria-current="isActive('mypage.studyRecords*') ? 'page' : null"
+                            :class="isActive(`${studyRecordsRouteName}*`) ? 'pointer-events-none ring-1 ring-violet-300' : ''"
+                            :aria-current="isActive(`${studyRecordsRouteName}*`) ? 'page' : null"
                             @click="closeMenu"
                         >
-                            <span>問題演習の履歴</span>
+                            <span>演習履歴</span>
                             <span aria-hidden="true">→</span>
                         </Link>
                         <Link

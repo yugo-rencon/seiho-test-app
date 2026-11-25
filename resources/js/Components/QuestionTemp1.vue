@@ -30,7 +30,13 @@
                 "
             ></div>
             <h2 class="flex min-w-0 items-start gap-2 font-bold leading-tight" :class="isIppan && props.learningMode ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
-                <span v-if="props.learningMode" :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${props.questionNumber}問` : `問${props.questionNumber}` }}</span>
+                <span v-if="props.learningMode" class="flex flex-wrap items-center gap-2" :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 text-xs font-normal text-gray-500'">
+                    <span class="whitespace-nowrap">{{ isIppan ? `第${props.questionNumber}問` : `問${props.questionNumber}` }}</span>
+                    <span v-if="!hasAnswered && (previousIncorrectQuestions.has(Number(props.questionNumber)) || previousCorrectQuestions.has(Number(props.questionNumber)))" class="inline-flex items-center whitespace-nowrap text-[10px] font-medium sm:text-xs">
+                        <span class="text-gray-400">前回：</span>
+                        <span :class="previousIncorrectQuestions.has(Number(props.questionNumber)) ? 'text-rose-600' : 'text-emerald-700'">{{ previousIncorrectQuestions.has(Number(props.questionNumber)) ? '不正解' : '正解' }}</span>
+                    </span>
+                </span>
                 <span v-else class="shrink-0 whitespace-nowrap">問題{{ props.questionNumber }}</span>
                 <span v-if="props.questionTitle" class="min-w-0" :class="isIppan && props.learningMode ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">
                     {{ props.questionTitle }}
@@ -61,7 +67,7 @@
                         v-if="hasAnswered && (normalizedCorrectAnswers.includes(label) || selectedAnswer.split(',').includes(label))"
                         class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm"
                         :class="normalizedCorrectAnswers.includes(label) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'"
-                    >{{ selectedAnswer.split(',').includes(label) && normalizedCorrectAnswers.includes(label) ? 'あなたの回答・正解' : selectedAnswer.split(',').includes(label) ? 'あなたの回答' : '正解' }}</span>
+                    >{{ selectedAnswer.split(',').includes(label) && normalizedCorrectAnswers.includes(label) ? 'あなたの回答 ○' : selectedAnswer.split(',').includes(label) ? 'あなたの回答 ×' : '○' }}</span>
                 </button>
             </div>
             <button
@@ -89,8 +95,11 @@
                 <div class="jp-kagi-tight min-w-0" v-html="formatContentHtml(content)"></div>
             </div>
         </div>
-        <section v-else-if="hasAnswered" :id="`explanation-q${props.questionNumber}`" class="my-5 scroll-mt-24 border-t border-gray-200 pt-4">
-            <h3 class="text-sm font-bold text-gray-900">解説</h3>
+        <section v-else-if="hasAnswered" :id="`explanation-q${props.questionNumber}`" class="my-5 scroll-mt-24 rounded-lg border border-gray-200 bg-gray-50 px-4 py-4 sm:px-5">
+            <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900">
+                <span class="h-4 w-1 rounded-full bg-gray-400" aria-hidden="true"></span>
+                解説
+            </h3>
             <div class="mt-2 divide-y divide-gray-100">
                 <div
                     v-for="(content, index) in props.contents"
@@ -198,6 +207,8 @@ const isMultipleAnswer = computed(() => normalizedCorrectAnswers.value.length > 
 const correctAnswerLabel = computed(() => normalizedCorrectAnswers.value.join("・"));
 const availableLabels = computed(() => labels.value.slice(0, props.contents.length));
 const hasAnswered = computed(() => selectedAnswer.value !== "");
+const previousIncorrectQuestions = computed(() => studySession?.previousIncorrectQuestions?.value ?? new Set());
+const previousCorrectQuestions = computed(() => studySession?.previousCorrectQuestions?.value ?? new Set());
 const isCorrect = computed(() => selectedAnswer.value.split(",").filter(Boolean).sort().join(",") === normalizedCorrectAnswers.value.join(","));
 
 const selectAnswer = (label: string): void => {

@@ -28,6 +28,10 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    hideFooter: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const page = usePage();
@@ -461,6 +465,7 @@ onBeforeUnmount(() => {
 
         <!-- フッター全体 -->
         <LayoutFooter
+            v-if="!props.hideFooter"
             :is-hengaku="isHengakuPage"
             :brand-name="currentBrandName"
             :mobile-brand-name="currentMobileBrandName"

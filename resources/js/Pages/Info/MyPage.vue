@@ -11,6 +11,7 @@ const logout = () => {
   router.post(route('logout'));
 };
 const props = defineProps({
+  canTrackSeihoResults: { type: Boolean, default: false },
   scope: {
     type: String,
     required: false,
@@ -96,6 +97,7 @@ const props = defineProps({
 });
 
 const isDaigaku = computed(() => props.scope === 'daigaku');
+const isIppan = computed(() => props.scope === 'ippan');
 const supportsScoreTracking = computed(() => ['seiho', 'daigaku'].includes(props.scope));
 const currentSiteName = computed(() => {
   if (props.scope === 'daigaku') return '生保大学';
@@ -499,7 +501,7 @@ const excellent = computed(
   <SeihoTestLayout :title="props.scoreOnly ? '試験結果を記録' : 'マイページ'">
     <Head :title="props.scoreOnly ? '試験結果を記録' : 'マイページ'" />
 
-    <div class="mx-auto w-full max-w-3xl px-6 py-10">
+    <div class="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6 sm:py-8">
       <div
         v-if="flashStatus"
         class="mb-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-700"
@@ -507,7 +509,8 @@ const excellent = computed(
         {{ flashStatus }}
       </div>
 
-      <div class="mb-6 border-b border-gray-200 pb-5">
+      <div class="mb-5">
+        <p v-if="isIppan && !props.scoreOnly" class="mb-1 text-xs font-semibold text-fuchsia-700">生命保険一般課程</p>
         <h1 class="text-2xl font-bold tracking-normal text-gray-900">
           {{ props.scoreOnly ? '試験結果を記録' : 'マイページ' }}
         </h1>
@@ -516,15 +519,15 @@ const excellent = computed(
         </p>
       </div>
 
-      <div v-if="!props.scoreOnly" class="space-y-5">
-        <div class="rounded-xl border border-slate-200 bg-white p-5 sm:p-6">
+      <div v-if="!props.scoreOnly" class="space-y-4">
+        <div class="rounded-xl border border-slate-200 bg-white p-4 sm:px-5">
           <div class="flex flex-wrap items-center justify-between gap-4">
             <div>
               <div class="flex items-center gap-2">
                 <div class="text-sm font-semibold text-gray-500">アカウント</div>
                 <span class="inline-flex items-center rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-medium text-slate-600">全試験共通</span>
               </div>
-              <div class="no-data-detectors mt-1 break-all text-lg font-semibold text-gray-900">
+              <div class="no-data-detectors mt-1 break-all text-sm font-semibold text-gray-900">
                 {{ user?.email || '未ログイン' }}
               </div>
             </div>
@@ -541,36 +544,38 @@ const excellent = computed(
           </div>
         </div>
 
-        <div v-if="props.showStudyRecords" class="overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <div class="divide-y divide-slate-100 overflow-hidden rounded-xl border border-slate-200 bg-white">
           <Link
-            :href="route('mypage.studyRecords')"
-            class="group flex min-h-[88px] items-center justify-between gap-4 px-5 py-4 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-violet-500 sm:px-6"
+            v-if="props.showStudyRecords"
+            :href="route(isIppan ? 'ippan.mypage.studyRecords' : 'mypage.studyRecords')"
+            class="flex items-center justify-between gap-3 px-4 py-3 transition hover:bg-slate-50 sm:px-5"
           >
             <div>
               <div class="flex items-center gap-2">
-                <h2 class="text-sm font-semibold text-slate-900">問題演習の履歴</h2>
-                <span class="rounded-full bg-violet-50 px-2 py-0.5 text-[10px] font-semibold text-violet-700">管理者のみ</span>
+                <h2 class="text-sm font-semibold text-slate-900">演習履歴</h2>
               </div>
               <p class="mt-1 text-xs text-slate-500">学習モードで解いた問題の進捗と採点結果を確認できます。</p>
             </div>
-            <span class="shrink-0 text-sm font-medium text-slate-600 group-hover:text-slate-950">記録を見る</span>
+            <span aria-hidden="true" class="text-lg" :class="isIppan ? 'text-fuchsia-700' : 'text-slate-500'">›</span>
           </Link>
-        </div>
-
-        <div class="overflow-hidden rounded-xl border border-slate-200 bg-white">
           <Link
+            v-if="props.canTrackSeihoResults"
             :href="route('results')"
-            class="group flex min-h-[88px] items-center justify-between gap-4 px-5 py-4 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-500 sm:px-6"
+            class="flex items-center justify-between gap-3 px-4 py-3 transition hover:bg-slate-50 sm:px-5"
           >
             <div>
-              <h2 class="text-sm font-semibold text-slate-900">本番試験の結果</h2>
+              <h2 class="text-sm font-semibold text-slate-900">生保講座の試験結果</h2>
               <p class="mt-1 text-xs text-slate-500">点数・受験日・合格状況を記録できます。</p>
             </div>
-            <span class="shrink-0 text-sm font-medium text-slate-600 group-hover:text-slate-950">記録を見る</span>
+            <span aria-hidden="true" class="text-lg text-slate-500">›</span>
           </Link>
+          <div v-else class="flex flex-wrap items-center justify-between gap-2 px-4 py-3 sm:px-5">
+            <h2 class="text-sm font-semibold text-slate-900">生保講座の試験結果</h2>
+            <span class="text-xs text-slate-500">購入者限定</span>
+          </div>
         </div>
 
-        <div class="rounded-xl border border-slate-200 bg-white p-5 sm:p-6">
+        <div class="rounded-xl border border-slate-200 bg-white p-4 sm:px-5">
           <div class="mb-3 text-sm font-semibold text-slate-800">購入状況</div>
           <div v-if="activePurchaseStatuses.length" class="grid gap-2 sm:grid-cols-2">
             <div
@@ -600,7 +605,7 @@ const excellent = computed(
               </div>
             </div>
           </div>
-          <div v-else class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-gray-500">
+          <div v-else class="text-sm text-slate-500">
             購入済みの商品はありません。
           </div>
           <div v-if="!props.hasPremium" class="mt-3">

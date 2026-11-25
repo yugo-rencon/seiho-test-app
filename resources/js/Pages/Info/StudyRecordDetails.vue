@@ -1,16 +1,21 @@
 <script setup>
-import SeihoTestLayout from '@/Layouts/SeihoTestLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, router } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
 const props = defineProps({
   record: {
     type: Object,
-    required: true,
+    default: null,
   },
+  scope: { type: String, default: 'seiho' },
+  exams: { type: Array, default: null },
+  selectedExam: { type: Object, default: null },
 });
 
-const correctCount = computed(() => props.record.answers.filter((answer) => answer.is_correct).length);
+const correctCount = computed(() => props.record?.answers.filter((answer) => answer.is_correct).length ?? 0);
+const isIppan = computed(() => props.scope === 'ippan');
+const studyRecordsRouteName = computed(() => isIppan.value ? 'ippan.mypage.studyRecords' : 'mypage.studyRecords');
+const selectExam = (key) => router.get(route(studyRecordsRouteName.value), { exam: key }, { preserveState: true });
 const formatDate = (value) => {
   if (!value) return '';
   return new Intl.DateTimeFormat('ja-JP', {
@@ -24,18 +29,30 @@ const formatDate = (value) => {
 </script>
 
 <template>
-  <SeihoTestLayout title="問題演習の詳細">
-    <Head title="問題演習の詳細" />
+    <Head title="演習履歴" />
 
     <main class="mx-auto w-full max-w-3xl px-5 py-7 sm:px-6">
-      <Link :href="route('mypage.studyRecords')" class="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-900">
-        ← 問題演習の履歴に戻る
+      <Link :href="route(exams ? (isIppan ? 'ippan.mypage' : 'mypage') : studyRecordsRouteName)" class="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-900">
+        ← {{ exams ? 'マイページに戻る' : '演習履歴に戻る' }}
       </Link>
 
+      <template v-if="exams">
+        <h1 class="mt-4 text-xl font-bold text-slate-950">演習履歴</h1>
+        <label v-if="selectedExam" class="mt-3 block text-xs font-semibold text-slate-600">
+          試験
+          <select :value="selectedExam.exam_key" class="mt-1 block min-h-11 w-full rounded-lg bg-white text-sm text-slate-900" :class="isIppan ? 'border-pink-200 focus:border-fuchsia-500 focus:ring-fuchsia-500' : 'border-slate-300'" @change="selectExam($event.target.value)">
+            <option v-for="exam in exams" :key="exam.exam_key" :value="exam.exam_key">
+              {{ isIppan ? '' : exam.subject_label + ' ' }}{{ exam.period_label }} フォーム{{ exam.form }}
+            </option>
+          </select>
+        </label>
+      </template>
+
+      <template v-if="record">
       <div class="mt-4 flex flex-wrap items-start justify-between gap-3 border-b border-slate-200 pb-4">
         <div>
-          <p class="text-xs font-semibold text-violet-700">{{ record.subject_label }}</p>
-          <h1 class="mt-1 text-xl font-bold tracking-tight text-slate-950">{{ record.year }}年度 フォーム{{ record.form }}</h1>
+          <p class="text-xs font-semibold" :class="isIppan ? 'text-fuchsia-700' : 'text-violet-700'">{{ record.subject_label }}</p>
+          <h2 class="mt-1 text-xl font-bold tracking-tight text-slate-950">{{ record.period_label }} フォーム{{ record.form }}</h2>
           <p class="mt-1.5 text-[11px] text-slate-500">
             {{ record.status === 'completed' ? `完了日時 ${formatDate(record.completed_at)}` : `開始日時 ${formatDate(record.started_at)}` }}
           </p>
@@ -43,7 +60,8 @@ const formatDate = (value) => {
         <Link
           v-if="record.is_latest"
           :href="record.exam_href"
-          class="inline-flex min-h-9 items-center justify-center rounded-md bg-violet-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-violet-700"
+          class="inline-flex min-h-9 items-center justify-center rounded-md px-3 py-1.5 text-xs font-semibold text-white transition"
+          :class="isIppan ? 'bg-fuchsia-700 hover:bg-fuchsia-800' : 'bg-violet-600 hover:bg-violet-700'"
         >
           {{ record.status === 'completed' ? '問題を見直す' : '続きを学習' }}
         </Link>
@@ -93,6 +111,10 @@ const formatDate = (value) => {
           まだ回答はありません。
         </div>
       </section>
+      </template>
+      <div v-else class="mt-4 rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-600">
+        <p>{{ selectedExam ? 'この試験の成績はまだありません。' : '保存された成績はまだありません。' }}</p>
+        <Link v-if="selectedExam?.study_enabled" :href="selectedExam.exam_href" class="mt-3 inline-block font-semibold underline">学習を始める</Link>
+      </div>
     </main>
-  </SeihoTestLayout>
 </template>

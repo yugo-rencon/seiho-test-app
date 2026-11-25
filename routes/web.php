@@ -220,10 +220,11 @@ Route::controller(TestController::class)->group(function () {
 Route::middleware('auth')->group(function () {
     Route::middleware('admin')->group(function () {
         Route::get('mypage/study-records', [TestController::class, 'studyRecords'])->name('mypage.studyRecords');
+        Route::get('ippan/mypage/study-records', [TestController::class, 'studyRecords'])->name('ippan.mypage.studyRecords');
+        Route::get('ippan/mypage/study-records/{attempt}', [TestController::class, 'studyRecordDetails'])->name('ippan.mypage.studyRecords.show');
         Route::get('mypage/study-records/{attempt}', [TestController::class, 'studyRecordDetails'])->name('mypage.studyRecords.show');
         Route::get('study-progress/{examKey}', [StudyProgressController::class, 'show'])->where('examKey', '[A-Za-z0-9-]{1,80}')->name('studyProgress.show');
         Route::patch('study-preferences', [StudyProgressController::class, 'updatePreference'])->name('studyPreferences.update');
-        Route::patch('study-progress/{examKey}', [StudyProgressController::class, 'updateAttempt'])->where('examKey', '[A-Za-z0-9-]{1,80}')->name('studyProgress.update');
         Route::delete('study-progress/{examKey}', [StudyProgressController::class, 'resetAttempt'])->where('examKey', '[A-Za-z0-9-]{1,80}')->name('studyProgress.reset');
         Route::put('study-progress/{examKey}/answers/{questionNo}', [StudyProgressController::class, 'storeAnswer'])->where(['examKey' => '[A-Za-z0-9-]{1,80}', 'questionNo' => '[0-9]+'])->name('studyProgress.answers.store');
         Route::delete('study-progress/{examKey}/answers/{questionNo}', [StudyProgressController::class, 'deleteAnswer'])->where(['examKey' => '[A-Za-z0-9-]{1,80}', 'questionNo' => '[0-9]+'])->name('studyProgress.answers.delete');

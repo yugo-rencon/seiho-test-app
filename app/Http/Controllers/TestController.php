@@ -231,8 +231,8 @@ class TestController extends Controller
 
         $period = $periodByMonths[$months];
 
-        if ($year === 2026 && $period === 'h1' && $form === 'a') {
-            return $this->renderStudyExam($request, 'Ippan/Tests/Ippan2026h1a', 'ippan-2026-h1-a');
+        if ($year === 2026 && $period === 'h1' && in_array($form, ['a', 'b'], true)) {
+            return $this->renderStudyExam($request, "Ippan/Tests/Ippan2026h1{$form}", "ippan-2026-h1-{$form}");
         }
 
         return Inertia::render("Ippan/Tests/Ippan{$year}{$period}{$form}");
@@ -723,6 +723,10 @@ class TestController extends Controller
         /** @var User $user */
         $user = auth()->user();
         $premiumSessionAllowed = app(PremiumSessionLimiter::class)->allows($request);
+        $canTrackSeihoResults = $user->hasPremiumAccess('seiho');
+        if ($request->routeIs('results')) {
+            abort_unless($canTrackSeihoResults, 403);
+        }
         $scope = match (true) {
             $request->routeIs('daigaku.*') => 'daigaku',
             $request->routeIs('ippan.*') => 'ippan',
@@ -734,7 +738,7 @@ class TestController extends Controller
         $subjects = $this->subjectsByScope($scope);
         $examDateColumnExists = Schema::hasColumn('user_exam_results', 'exam_date');
 
-        $results = $user->examResults()
+        $results = $scope === 'seiho' && !$canTrackSeihoResults ? collect() : $user->examResults()
             ->where('scope', $scope)
             ->get($examDateColumnExists ? ['subject_key', 'score', 'exam_date'] : ['subject_key', 'score'])
             ->keyBy('subject_key')
@@ -776,6 +780,7 @@ class TestController extends Controller
         return Inertia::render('Info/MyPage', [
             'scope' => $scope,
             'scoreOnly' => $request->routeIs('results'),
+            'canTrackSeihoResults' => $canTrackSeihoResults,
             'passScore' => $scope === 'daigaku' ? 60 : $user->pass_score,
             'subjects' => $subjects,
             'results' => $results,
@@ -800,8 +805,24 @@ class TestController extends Controller
 
     public function studyRecords(Request $request)
     {
-        return Inertia::render('Info/StudyRecords', [
-            'studyRecords' => $this->studyRecordsFor($request->user()),
+        $scope = $request->routeIs('ippan.*') ? 'ippan' : 'seiho';
+
+        $exams = collect($this->studyRecordsFor($request->user(), $scope))
+            ->filter(fn (array $exam) => $exam['attempts']->isNotEmpty())
+            ->values();
+        $selectedKey = $request->query('exam');
+        $selected = (is_string($selectedKey) ? $exams->firstWhere('exam_key', $selectedKey) : null)
+            ?? $exams->first();
+        $attemptId = ($selected['attempts'] ?? null)?->first()['id'] ?? null;
+        $attempt = $attemptId === null ? null : StudyAttempt::query()
+            ->where('user_id', $request->user()->id)
+            ->find($attemptId);
+
+        return Inertia::render('Info/StudyRecordDetails', [
+            'scope' => $scope,
+            'exams' => $exams,
+            'selectedExam' => $selected,
+            'record' => $attempt ? $this->studyRecordPayload($attempt, config("study_exams.{$attempt->exam_key}")) : null,
         ]);
     }
 
@@ -810,7 +831,17 @@ class TestController extends Controller
         abort_unless($attempt->user_id === $request->user()->id, 404);
         $exam = config("study_exams.{$attempt->exam_key}");
         abort_unless(is_array($exam), 404);
+        $scope = $exam['scope'] ?? 'seiho';
+        abort_unless($request->routeIs('ippan.*') ? $scope === 'ippan' : $scope === 'seiho', 404);
 
+        return Inertia::render('Info/StudyRecordDetails', [
+            'scope' => $scope,
+            'record' => $this->studyRecordPayload($attempt, $exam),
+        ]);
+    }
+
+    private function studyRecordPayload(StudyAttempt $attempt, array $exam): array
+    {
         $attempt->load(['answers' => fn ($query) => $query->orderBy('question_no')]);
         $latestAttemptId = StudyAttempt::query()
             ->where('user_id', $attempt->user_id)
@@ -818,11 +849,12 @@ class TestController extends Controller
             ->latest('attempt_no')
             ->value('id');
 
-        return Inertia::render('Info/StudyRecordDetails', [
-            'record' => [
+        return [
                 'id' => $attempt->id,
                 'attempt_no' => $attempt->attempt_no,
                 'subject_label' => $exam['subject_label'],
+                'period_label' => $this->studyRecordPeriodLabel($exam),
+                'scope' => $exam['scope'] ?? 'seiho',
                 'year' => $exam['year'],
                 'form' => $exam['form'],
                 'exam_href' => route($exam['route'], $exam['route_parameters'] ?? []),
@@ -842,13 +874,17 @@ class TestController extends Controller
                     'points_awarded' => $answer->points_awarded,
                     'answered_at' => $answer->answered_at?->toISOString(),
                 ])->values(),
-            ],
-        ]);
+        ];
     }
 
-    private function studyRecordsFor(User $user): array
+    private function studyRecordsFor(User $user, ?string $scope = null): array
     {
         $studyExamCatalog = collect(config('study_exams', []));
+        if ($scope !== null) {
+            $studyExamCatalog = $studyExamCatalog->filter(
+                fn (array $exam) => ($exam['scope'] ?? 'seiho') === $scope
+            );
+        }
         $studyAttempts = StudyAttempt::query()
             ->where('user_id', $user->id)
             ->whereIn('exam_key', $studyExamCatalog->keys())
@@ -862,14 +898,23 @@ class TestController extends Controller
 
         return $studyExamCatalog
             ->map(function (array $exam, string $examKey) use ($studyAttempts) {
-                $visible = $studyAttempts->get($examKey, collect())
+                $attempts = $studyAttempts->get($examKey, collect())
                     ->sortByDesc('attempt_no')
+                    ->values();
+                $latestAttempt = $attempts->first();
+                $visible = $attempts
+                    // 現在進行中の回は試験画面の成績詳細で確認する。
+                    ->when(
+                        $latestAttempt?->status === 'in_progress',
+                        fn ($items) => $items->where('id', '!=', $latestAttempt->id)
+                    )
                     ->take(1);
 
                 return [
                     'exam_key' => $examKey,
                     'subject_key' => $exam['subject_key'],
                     'subject_label' => $exam['subject_label'],
+                    'period_label' => $this->studyRecordPeriodLabel($exam),
                     'year' => $exam['year'],
                     'form' => $exam['form'],
                     'exam_href' => route($exam['route'], $exam['route_parameters'] ?? []),
@@ -878,7 +923,12 @@ class TestController extends Controller
                     'attempts' => $visible->map(fn (StudyAttempt $attempt) => [
                         'id' => $attempt->id,
                         'attempt_no' => $attempt->attempt_no,
-                        'href' => route('mypage.studyRecords.show', $attempt),
+                        'href' => route(
+                            ($exam['scope'] ?? 'seiho') === 'ippan'
+                                ? 'ippan.mypage.studyRecords.show'
+                                : 'mypage.studyRecords.show',
+                            $attempt
+                        ),
                         'status' => $attempt->status,
                         'current_question_no' => $attempt->current_question_no,
                         'answered_count' => $attempt->answered_count,
@@ -893,11 +943,25 @@ class TestController extends Controller
             ->all();
     }
 
+    private function studyRecordPeriodLabel(array $exam): string
+    {
+        $year = $exam['year'];
+        $months = $exam['route_parameters']['months'] ?? null;
+
+        return match ($months) {
+            '1-6' => "{$year}年1月〜6月実施",
+            '7-12' => "{$year}年7月〜12月実施",
+            default => "{$year}年度",
+        };
+    }
+
     public function updatePassScore(Request $request)
     {
         if ($request->routeIs('daigaku.*')) {
             return back()->with('status', '大学課程試験の合格基準は60点で固定です。');
         }
+
+        abort_unless($request->user()->hasPremiumAccess('seiho'), 403);
 
         $data = $request->validate([
             'pass_score' => ['required', 'integer', 'min:0', 'max:100'],
@@ -920,6 +984,9 @@ class TestController extends Controller
     public function updateExamResult(Request $request)
     {
         $scope = $request->routeIs('daigaku.*') ? 'daigaku' : 'seiho';
+        if ($scope === 'seiho') {
+            abort_unless($request->user()->hasPremiumAccess('seiho'), 403);
+        }
         $subjectKeys = array_column($this->subjectsByScope($scope), 'key');
 
         $data = $request->validate([
@@ -1041,7 +1108,6 @@ class TestController extends Controller
             $attempt = StudyAttempt::query()
                 ->where('user_id', $user->id)
                 ->where('exam_key', 'souron-2025-a')
-                ->whereHas('answers')
                 ->latest('attempt_no')
                 ->with('answers')
                 ->first();
@@ -1056,6 +1122,8 @@ class TestController extends Controller
                     'answered_count' => $attempt->answered_count,
                     'score' => $attempt->score,
                     'max_score' => $attempt->max_score,
+                    'previous_incorrect_questions' => $attempt->previous_incorrect_questions ?? [],
+                    'previous_correct_questions' => $attempt->previous_correct_questions ?? [],
                     'answers' => $attempt->answers->map(fn ($answer) => [
                         'question_no' => $answer->question_no,
                         'selected_answer' => $answer->selected_answer,
@@ -1082,7 +1150,6 @@ class TestController extends Controller
             $attempt = StudyAttempt::query()
                 ->where('user_id', $user->id)
                 ->where('exam_key', 'souron-2025-b')
-                ->whereHas('answers')
                 ->latest('attempt_no')
                 ->with('answers')
                 ->first();
@@ -1097,6 +1164,8 @@ class TestController extends Controller
                     'answered_count' => $attempt->answered_count,
                     'score' => $attempt->score,
                     'max_score' => $attempt->max_score,
+                    'previous_incorrect_questions' => $attempt->previous_incorrect_questions ?? [],
+                    'previous_correct_questions' => $attempt->previous_correct_questions ?? [],
                     'answers' => $attempt->answers->map(fn ($answer) => [
                         'question_no' => $answer->question_no,
                         'selected_answer' => $answer->selected_answer,
@@ -1122,7 +1191,6 @@ class TestController extends Controller
             $attempt = StudyAttempt::query()
                 ->where('user_id', $user->id)
                 ->where('exam_key', 'souron-2025-c')
-                ->whereHas('answers')
                 ->latest('attempt_no')
                 ->with('answers')
                 ->first();
@@ -1137,6 +1205,8 @@ class TestController extends Controller
                     'answered_count' => $attempt->answered_count,
                     'score' => $attempt->score,
                     'max_score' => $attempt->max_score,
+                    'previous_incorrect_questions' => $attempt->previous_incorrect_questions ?? [],
+                    'previous_correct_questions' => $attempt->previous_correct_questions ?? [],
                     'answers' => $attempt->answers->map(fn ($answer) => [
                         'question_no' => $answer->question_no,
                         'selected_answer' => $answer->selected_answer,
@@ -1391,7 +1461,6 @@ class TestController extends Controller
             $attempt = StudyAttempt::query()
                 ->where('user_id', $user->id)
                 ->where('exam_key', $examKey)
-                ->whereHas('answers')
                 ->latest('attempt_no')
                 ->with('answers')
                 ->first();
@@ -1406,6 +1475,8 @@ class TestController extends Controller
                     'answered_count' => $attempt->answered_count,
                     'score' => $attempt->score,
                     'max_score' => $attempt->max_score,
+                    'previous_incorrect_questions' => $attempt->previous_incorrect_questions ?? [],
+                    'previous_correct_questions' => $attempt->previous_correct_questions ?? [],
                     'answers' => $attempt->answers->map(fn ($answer) => [
                         'question_no' => $answer->question_no,
                         'selected_answer' => $answer->selected_answer,

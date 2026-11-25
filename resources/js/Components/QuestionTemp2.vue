@@ -21,16 +21,20 @@
             <p v-if="isIppan" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
             <div class="flex items-start gap-2" :class="isIppan ? 'mb-4 sm:mb-10' : ''">
                 <h2 class="flex min-w-0 items-start gap-2 font-bold leading-tight" :class="isIppan ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
-                    <span :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 whitespace-nowrap text-xs font-normal text-gray-500'">{{ isIppan ? `第${item.questionNo}問` : `問${item.questionNo}` }}</span>
+                    <span class="flex flex-wrap items-center gap-2" :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 text-xs font-normal text-gray-500'">
+                        <span class="whitespace-nowrap">{{ isIppan ? `第${item.questionNo}問` : `問${item.questionNo}` }}</span>
+                        <span v-if="!selectedAnswers[item.questionNo] && (previousIncorrectQuestions.has(Number(item.questionNo)) || previousCorrectQuestions.has(Number(item.questionNo)))" class="inline-flex items-center whitespace-nowrap text-[10px] font-medium sm:text-xs">
+                            <span class="text-gray-400">前回：</span>
+                            <span :class="previousIncorrectQuestions.has(Number(item.questionNo)) ? 'text-rose-600' : 'text-emerald-700'">{{ previousIncorrectQuestions.has(Number(item.questionNo)) ? '不正解' : '正解' }}</span>
+                        </span>
+                    </span>
                     <span v-if="item.questionTitle" class="min-w-0" :class="isIppan ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">{{ item.questionTitle }}</span>
                 </h2>
             </div>
             <div
                 :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : 'mt-4 border-t border-gray-100 pt-4'"
             >
-                <template v-if="!selectedAnswers[item.questionNo] || choicesFor(item).length">
-                    <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'text-sm font-bold text-gray-800'">{{ choicesFor(item).length ? '最も適切なものを1つ選んでください' : '文章の内容が正しいか、誤っているかを選んでください' }}</p>
-                </template>
+                <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'text-sm font-bold text-gray-800'">{{ choicesFor(item).length ? '最も適切なものを1つ選んでください' : '文章の内容が正しいか、誤っているかを選んでください' }}</p>
                 <div v-if="choicesFor(item).length" class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <button
                         v-for="choice in choicesFor(item)"
@@ -42,10 +46,10 @@
                         @click="answerTrueFalse(item, choice.label)"
                     >
                         <span class="font-extrabold">{{ choice.label }}.</span><span class="ml-1">{{ choice.text }}</span>
-                        <span v-if="selectedAnswers[item.questionNo] && (choice.label === correctAnswerFor(item) || choice.label === selectedAnswers[item.questionNo])" class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm" :class="choice.label === correctAnswerFor(item) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'">{{ choice.label === selectedAnswers[item.questionNo] && choice.label === correctAnswerFor(item) ? 'あなたの回答・正解' : choice.label === selectedAnswers[item.questionNo] ? 'あなたの回答' : '正解' }}</span>
+                        <span v-if="selectedAnswers[item.questionNo] && (choice.label === correctAnswerFor(item) || choice.label === selectedAnswers[item.questionNo])" class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm" :class="choice.label === correctAnswerFor(item) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'">{{ choice.label === selectedAnswers[item.questionNo] && choice.label === correctAnswerFor(item) ? 'あなたの回答 ○' : choice.label === selectedAnswers[item.questionNo] ? 'あなたの回答 ×' : '○' }}</span>
                     </button>
                 </div>
-                <div v-else class="grid grid-cols-2 gap-3 sm:max-w-md" :class="selectedAnswers[item.questionNo] ? '' : 'mt-4'">
+                <div v-else class="mt-4 grid grid-cols-2 gap-3 sm:max-w-md">
                     <button
                         v-for="choice in ['正', '誤']"
                         :key="choice"
@@ -56,15 +60,18 @@
                         @click="answerTrueFalse(item, choice)"
                     >
                         {{ choice }}
-                        <span v-if="selectedAnswers[item.questionNo] && (choice === correctAnswerFor(item) || choice === selectedAnswers[item.questionNo])" class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm" :class="choice === correctAnswerFor(item) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'">{{ choice === selectedAnswers[item.questionNo] && choice === correctAnswerFor(item) ? 'あなたの回答・正解' : choice === selectedAnswers[item.questionNo] ? 'あなたの回答' : '正解' }}</span>
+                        <span v-if="selectedAnswers[item.questionNo] && (choice === correctAnswerFor(item) || choice === selectedAnswers[item.questionNo])" class="absolute -top-2 right-2 z-10 inline-flex items-center rounded-full px-1.5 py-0 text-[9px] font-bold leading-4 shadow-sm" :class="choice === correctAnswerFor(item) ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'">{{ choice === selectedAnswers[item.questionNo] && choice === correctAnswerFor(item) ? 'あなたの回答 ○' : choice === selectedAnswers[item.questionNo] ? 'あなたの回答 ×' : '○' }}</span>
                     </button>
                 </div>
                 <div v-if="selectedAnswers[item.questionNo]" class="mt-3 flex justify-end border-t border-gray-100 pt-3">
                     <button v-if="!studySession?.attemptCompleted?.value" type="button" class="shrink-0 text-xs text-gray-400 hover:text-gray-800" @click="resetTrueFalse(item)">選び直す</button>
                 </div>
             </div>
-            <section v-if="selectedAnswers[item.questionNo] && !choicesFor(item).length" :id="`explanation-q${item.questionNo}`" class="my-5 scroll-mt-24 border-t border-gray-200 pt-4">
-                <h3 class="text-sm font-bold text-gray-900">解説</h3>
+            <section v-if="selectedAnswers[item.questionNo] && !choicesFor(item).length" :id="`explanation-q${item.questionNo}`" class="my-5 scroll-mt-24 rounded-lg border border-gray-200 bg-gray-50 px-4 py-4 sm:px-5">
+                <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900">
+                    <span class="h-4 w-1 rounded-full bg-gray-400" aria-hidden="true"></span>
+                    解説
+                </h3>
                 <div class="mt-2 text-sm leading-7 text-gray-800 md:text-[15px]" v-html="formatContent(item)"></div>
             </section>
         </article>
@@ -214,6 +221,8 @@ const effectiveStudyQuestion = computed(() => studySession?.currentQuestion?.val
 const selectedAnswers = ref({});
 const feedbackVisible = ref(false);
 const feedbackCorrect = ref(false);
+const previousIncorrectQuestions = computed(() => studySession?.previousIncorrectQuestions?.value ?? new Set());
+const previousCorrectQuestions = computed(() => studySession?.previousCorrectQuestions?.value ?? new Set());
 
 const choicesFor = (item: any): any[] => {
     const choices = props.choiceOptionsByQuestion?.[item.questionNo];

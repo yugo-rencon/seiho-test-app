@@ -1,10 +1,14 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
+const BANNER_ENABLED = false;
+// 新しいお知らせを表示するときは、過去の非表示設定と区別するためキーも更新する。
 const STORAGE_KEY = "incident-banner:question-31-access:2026-11";
 const isVisible = ref(false);
 
 onMounted(() => {
+    if (!BANNER_ENABLED) return;
+
     try {
         isVisible.value = window.localStorage.getItem(STORAGE_KEY) !== "dismissed";
     } catch {

@@ -4,12 +4,12 @@
     <div
         v-if="!shouldHideByPaywall && (!props.learningMode || Number(props.questionNumber) === Number(effectiveStudyQuestion))"
         :class="[
-            isIppan && props.learningMode ? 'rounded-lg bg-white px-4 py-4 shadow-sm sm:px-0 sm:py-2 sm:shadow-none' : 'rounded-lg border border-gray-200 bg-white px-4 py-3 sm:px-6',
+            usesCompactStudyLayout && props.learningMode ? 'rounded-lg bg-white px-4 py-4 shadow-sm sm:px-0 sm:py-2 sm:shadow-none' : 'rounded-lg border border-gray-200 bg-white px-4 py-3 sm:px-6',
             { 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-hengaku': isHengaku, 'is-seiho': isSeiho },
         ]"
     >
-        <p v-if="isIppan && props.learningMode" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
-        <div class="flex items-start gap-2" :class="isIppan && props.learningMode ? 'mb-4 sm:mb-10' : 'my-4'">
+        <p v-if="usesCompactStudyLayout && props.learningMode" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
+        <div class="flex items-start gap-2" :class="usesCompactStudyLayout && props.learningMode ? 'mb-4 sm:mb-10' : 'my-4'">
             <div
                 v-if="!props.learningMode"
                 class="w-1.5 h-6 rounded-full"
@@ -29,16 +29,16 @@
                                 : 'bg-gradient-to-b from-purple-400 to-blue-400'
                 "
             ></div>
-            <h2 class="flex min-w-0 items-start gap-2 font-bold leading-tight" :class="isIppan && props.learningMode ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
-                <span v-if="props.learningMode" class="flex flex-wrap items-center gap-2" :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 text-xs font-normal text-gray-500'">
-                    <span class="whitespace-nowrap">{{ isIppan ? `第${props.questionNumber}問` : `問${props.questionNumber}` }}</span>
+            <h2 class="flex min-w-0 items-start gap-2 font-bold leading-tight" :class="usesCompactStudyLayout && props.learningMode ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
+                <span v-if="props.learningMode" class="flex flex-wrap items-center gap-2" :class="usesCompactStudyLayout ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 text-xs font-normal text-gray-500'">
+                    <span class="whitespace-nowrap">{{ usesCompactStudyLayout ? `第${props.questionNumber}問` : `問${props.questionNumber}` }}</span>
                     <span v-if="!hasAnswered && (previousIncorrectQuestions.has(Number(props.questionNumber)) || previousCorrectQuestions.has(Number(props.questionNumber)))" class="inline-flex items-center whitespace-nowrap text-[10px] font-medium sm:text-xs">
                         <span class="text-gray-400">前回：</span>
                         <span :class="previousIncorrectQuestions.has(Number(props.questionNumber)) ? 'text-rose-600' : 'text-emerald-700'">{{ previousIncorrectQuestions.has(Number(props.questionNumber)) ? '不正解' : '正解' }}</span>
                     </span>
                 </span>
                 <span v-else class="shrink-0 whitespace-nowrap">問題{{ props.questionNumber }}</span>
-                <span v-if="props.questionTitle" class="min-w-0" :class="isIppan && props.learningMode ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">
+                <span v-if="props.questionTitle" class="min-w-0" :class="usesCompactStudyLayout && props.learningMode ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">
                     {{ props.questionTitle }}
                 </span>
             </h2>
@@ -49,16 +49,23 @@
 
         <div
             v-if="props.learningMode"
-            :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : 'mb-4 border-t border-gray-100 pt-4'"
+            :class="usesCompactStudyLayout ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : 'mb-4 border-t border-gray-100 pt-4'"
         >
-            <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'text-sm font-bold text-gray-800'">{{ props.answerPrompt }}</p>
-            <div class="mt-4 grid gap-3" :class="isIppan ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-3 sm:max-w-md'">
+            <p :class="usesCompactStudyLayout ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'text-sm font-bold text-gray-800'">{{ props.answerPrompt }}</p>
+            <div
+                class="mt-4 grid gap-3"
+                :class="isIppan
+                    ? 'grid-cols-2 lg:grid-cols-4'
+                    : isSenmon && availableLabels.length === 4
+                      ? 'grid-cols-2 sm:grid-cols-4 sm:max-w-xl'
+                      : 'grid-cols-3 sm:max-w-md'"
+            >
                 <button
                     v-for="label in availableLabels"
                     :key="label"
                     type="button"
                     class="relative min-h-12 border bg-white px-3 py-2 text-base font-bold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
-                    :class="[answerButtonClass(label), isIppan ? 'rounded-md focus:ring-pink-400 sm:min-h-14 sm:text-xl' : 'rounded-md focus:ring-violet-400']"
+                    :class="[answerButtonClass(label), isIppan ? 'rounded-md focus:ring-pink-400 sm:min-h-14 sm:text-xl' : isSenmon ? 'rounded-md focus:ring-emerald-400' : 'rounded-md focus:ring-violet-400']"
                     :disabled="hasAnswered"
                     @click="selectAnswer(label)"
                 >
@@ -74,7 +81,7 @@
                 v-if="isMultipleAnswer && !hasAnswered"
                 type="button"
                 class="mt-3 inline-flex min-h-10 items-center justify-center rounded-md px-5 py-2 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:bg-gray-300"
-                :class="isIppan ? 'bg-fuchsia-600 hover:bg-fuchsia-700' : 'bg-violet-600 hover:bg-violet-700'"
+                :class="isIppan ? 'bg-fuchsia-600 hover:bg-fuchsia-700' : isSenmon ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-violet-600 hover:bg-violet-700'"
                 :disabled="draftAnswers.length !== normalizedCorrectAnswers.length"
                 @click="submitMultipleAnswer"
             >
@@ -253,8 +260,8 @@ const answerButtonClass = (label: string): string => {
                 : "border-pink-200 text-gray-800 [@media(hover:hover)]:hover:border-fuchsia-400 [@media(hover:hover)]:hover:bg-pink-50";
         }
         return draftAnswers.value.includes(label)
-            ? "border-violet-500 bg-violet-50 text-violet-700"
-            : "border-gray-300 text-gray-800 [@media(hover:hover)]:hover:border-violet-400 [@media(hover:hover)]:hover:bg-violet-50";
+            ? (isSenmon.value ? "border-emerald-500 bg-emerald-50 text-emerald-700" : "border-violet-500 bg-violet-50 text-violet-700")
+            : (isSenmon.value ? "border-gray-300 text-gray-800 [@media(hover:hover)]:hover:border-emerald-400 [@media(hover:hover)]:hover:bg-emerald-50" : "border-gray-300 text-gray-800 [@media(hover:hover)]:hover:border-violet-400 [@media(hover:hover)]:hover:bg-violet-50");
     }
     if (normalizedCorrectAnswers.value.includes(label)) return "border-emerald-500 text-emerald-700";
     if (selectedAnswer.value.split(",").includes(label)) return "border-rose-500 text-rose-700";
@@ -277,6 +284,7 @@ const isOuyou = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "
 const isHengaku = computed(() => /(?:^|\/)hengaku(?:\/|$)/.test(String(page.url ?? "")));
 const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
 const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value && !isHengaku.value);
+const usesCompactStudyLayout = computed(() => isIppan.value || isSenmon.value);
 
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));

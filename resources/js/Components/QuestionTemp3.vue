@@ -52,32 +52,32 @@
           v-show="Number(effectiveStudyQuestion) === blockStartQuestion + index"
           :key="`study-${index}`"
           :class="[
-            isIppan ? 'rounded-lg bg-white px-4 py-4 shadow-sm sm:px-0 sm:py-2 sm:shadow-none' : 'rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6',
+            usesCompactStudyLayout ? 'rounded-lg bg-white px-4 py-4 shadow-sm sm:px-0 sm:py-2 sm:shadow-none' : 'rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6',
             { 'is-ippan': isIppan },
           ]"
         >
-          <p v-if="isIppan" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
-          <div class="flex items-start gap-2" :class="isIppan ? 'mb-4 sm:mb-10' : ''">
-            <h2 class="flex min-w-0 items-start gap-2 font-bold" :class="isIppan ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
-              <span class="flex flex-wrap items-center gap-2" :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 text-xs font-normal text-gray-500'">
-                <span class="whitespace-nowrap">{{ isIppan ? `第${blockStartQuestion + index}問` : `問${blockStartQuestion + index}` }}</span>
+          <p v-if="usesCompactStudyLayout" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
+          <div class="flex items-start gap-2" :class="usesCompactStudyLayout ? 'mb-4 sm:mb-10' : ''">
+            <h2 class="flex min-w-0 items-start gap-2 font-bold" :class="usesCompactStudyLayout ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
+              <span class="flex flex-wrap items-center gap-2" :class="usesCompactStudyLayout ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 text-xs font-normal text-gray-500'">
+                <span class="whitespace-nowrap">{{ usesCompactStudyLayout ? `第${blockStartQuestion + index}問` : `問${blockStartQuestion + index}` }}</span>
                 <span v-if="!selectedAnswers[index] && (previousIncorrectQuestions.has(blockStartQuestion + index) || previousCorrectQuestions.has(blockStartQuestion + index))" class="inline-flex items-center whitespace-nowrap text-[10px] font-medium sm:text-xs">
                   <span class="text-gray-400">前回：</span>
                   <span :class="previousIncorrectQuestions.has(blockStartQuestion + index) ? 'text-rose-600' : 'text-emerald-700'">{{ previousIncorrectQuestions.has(blockStartQuestion + index) ? '不正解' : '正解' }}</span>
                 </span>
               </span>
-              <span v-if="props.questionTitle" class="min-w-0" :class="isIppan ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">{{ props.questionTitle }}</span>
+              <span v-if="props.questionTitle" class="min-w-0" :class="usesCompactStudyLayout ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">{{ props.questionTitle }}</span>
             </h2>
           </div>
-          <div :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : ''">
-          <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'mt-4 text-sm font-bold text-gray-800'">語群から答えを1つ選んでください</p>
+          <div :class="usesCompactStudyLayout ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : ''">
+          <p :class="usesCompactStudyLayout ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'mt-4 text-sm font-bold text-gray-800'">語群から答えを1つ選んでください</p>
           <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
             <button
               v-for="choice in props.choiceOptions"
               :key="`${index}-${choice.label}`"
               type="button"
               class="relative grid min-h-12 grid-cols-[auto_minmax(0,1fr)] content-center items-start gap-2 border bg-white px-4 py-3 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-offset-2"
-              :class="[studyChoiceClass(index, choice.label), isIppan ? 'rounded-md focus:ring-pink-400 sm:text-base' : 'rounded-md focus:ring-violet-400']"
+              :class="[studyChoiceClass(index, choice.label), isIppan ? 'rounded-md focus:ring-pink-400 sm:text-base' : isSenmon ? 'rounded-md focus:ring-emerald-400' : 'rounded-md focus:ring-violet-400']"
               :disabled="Boolean(selectedAnswers[index])"
               @click="answerQuestion(index, choice.label)"
             >
@@ -206,7 +206,7 @@
         if (!selectedAnswers.value[index]) {
             return isIppan.value
                 ? 'border-pink-200 bg-white text-gray-800 [@media(hover:hover)]:hover:border-fuchsia-400 [@media(hover:hover)]:hover:bg-pink-50'
-                : 'border-gray-300 bg-white text-gray-800 [@media(hover:hover)]:hover:border-violet-400 [@media(hover:hover)]:hover:bg-violet-50';
+                : (isSenmon.value ? 'border-gray-300 bg-white text-gray-800 [@media(hover:hover)]:hover:border-emerald-400 [@media(hover:hover)]:hover:bg-emerald-50' : 'border-gray-300 bg-white text-gray-800 [@media(hover:hover)]:hover:border-violet-400 [@media(hover:hover)]:hover:bg-violet-50');
         }
         if (label === props.labels[index]) return 'border-emerald-500 bg-white text-emerald-700';
         if (label === selectedAnswers.value[index]) return 'border-rose-500 bg-white text-rose-700';
@@ -232,6 +232,7 @@ const isOuyou = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "
 const isHengaku = computed(() => /(?:^|\/)hengaku(?:\/|$)/.test(String(page.url ?? "")));
 const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
 const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value && !isHengaku.value);
+const usesCompactStudyLayout = computed(() => isIppan.value || isSenmon.value);
 
     const rangeStartQuestion = computed(() => {
         const range = String(props.questionRange ?? "").trim();

@@ -220,6 +220,8 @@ Route::controller(TestController::class)->group(function () {
 Route::middleware('auth')->group(function () {
     Route::middleware('admin')->group(function () {
         Route::get('mypage/study-records', [TestController::class, 'studyRecords'])->name('mypage.studyRecords');
+        Route::get('senmon/mypage/study-records', [TestController::class, 'studyRecords'])->name('senmon.mypage.studyRecords');
+        Route::get('senmon/mypage/study-records/{attempt}', [TestController::class, 'studyRecordDetails'])->name('senmon.mypage.studyRecords.show');
         Route::get('ippan/mypage/study-records', [TestController::class, 'studyRecords'])->name('ippan.mypage.studyRecords');
         Route::get('ippan/mypage/study-records/{attempt}', [TestController::class, 'studyRecordDetails'])->name('ippan.mypage.studyRecords.show');
         Route::get('mypage/study-records/{attempt}', [TestController::class, 'studyRecordDetails'])->name('mypage.studyRecords.show');

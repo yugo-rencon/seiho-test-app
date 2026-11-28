@@ -140,7 +140,7 @@ class TestController extends Controller
     }
 
     // 専門課程 各試験ページ
-    public function senmonTest(int $year, string $period, string $form)
+    public function senmonTest(Request $request, int $year, string $period, string $form)
     {
         $allowedYears = [2026, 2025, 2024, 2023, 2022, 2021, 2020];
         $allowedFormsByPeriod = [
@@ -159,6 +159,10 @@ class TestController extends Controller
         }
         if (!in_array($form, $allowedFormsByPeriod[$period], true)) {
             abort(404);
+        }
+
+        if ($year === 2026 && $period === 'h1' && $form === 'a') {
+            return $this->renderStudyExam($request, 'Senmon/Tests/Senmon2026h1a', 'senmon-2026-h1-a');
         }
 
         return Inertia::render("Senmon/Tests/Senmon{$year}{$period}{$form}");
@@ -805,7 +809,7 @@ class TestController extends Controller
 
     public function studyRecords(Request $request)
     {
-        $scope = $request->routeIs('ippan.*') ? 'ippan' : 'seiho';
+        $scope = $this->studyRecordsScope($request);
 
         $exams = collect($this->studyRecordsFor($request->user(), $scope))
             ->filter(fn (array $exam) => $exam['attempts']->isNotEmpty())
@@ -832,7 +836,7 @@ class TestController extends Controller
         $exam = config("study_exams.{$attempt->exam_key}");
         abort_unless(is_array($exam), 404);
         $scope = $exam['scope'] ?? 'seiho';
-        abort_unless($request->routeIs('ippan.*') ? $scope === 'ippan' : $scope === 'seiho', 404);
+        abort_unless($scope === $this->studyRecordsScope($request), 404);
 
         return Inertia::render('Info/StudyRecordDetails', [
             'scope' => $scope,
@@ -924,9 +928,11 @@ class TestController extends Controller
                         'id' => $attempt->id,
                         'attempt_no' => $attempt->attempt_no,
                         'href' => route(
-                            ($exam['scope'] ?? 'seiho') === 'ippan'
-                                ? 'ippan.mypage.studyRecords.show'
-                                : 'mypage.studyRecords.show',
+                            match ($exam['scope'] ?? 'seiho') {
+                                'ippan' => 'ippan.mypage.studyRecords.show',
+                                'senmon' => 'senmon.mypage.studyRecords.show',
+                                default => 'mypage.studyRecords.show',
+                            },
                             $attempt
                         ),
                         'status' => $attempt->status,
@@ -943,9 +949,21 @@ class TestController extends Controller
             ->all();
     }
 
+    private function studyRecordsScope(Request $request): string
+    {
+        return match (true) {
+            $request->routeIs('ippan.*') => 'ippan',
+            $request->routeIs('senmon.*') => 'senmon',
+            default => 'seiho',
+        };
+    }
+
     private function studyRecordPeriodLabel(array $exam): string
     {
         $year = $exam['year'];
+        if (($exam['scope'] ?? null) === 'senmon' && ($exam['route_parameters']['period'] ?? null) === 'h1') {
+            return "{$year}年4月〜8月実施";
+        }
         $months = $exam['route_parameters']['months'] ?? null;
 
         return match ($months) {

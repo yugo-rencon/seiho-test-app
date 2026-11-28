@@ -42,6 +42,17 @@ $studyEnabledExams = [
 ];
 
 $exams = [];
+$exams['senmon-2026-h1-a'] = [
+    'scope' => 'senmon',
+    'subject_key' => 'senmon',
+    'subject_label' => '生命保険専門課程',
+    'year' => 2026,
+    'form' => 'A',
+    'route' => 'senmon.test',
+    'route_parameters' => ['year' => 2026, 'period' => 'h1', 'form' => 'a'],
+    'question_count' => 49,
+    'study_enabled' => true,
+];
 foreach (range(2026, 2021) as $year) {
     $periods = $year === 2026 ? ['h1' => '1-6'] : ['h2' => '7-12', 'h1' => '1-6'];
     foreach ($periods as $period => $months) {

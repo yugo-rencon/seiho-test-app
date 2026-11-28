@@ -547,7 +547,7 @@ const excellent = computed(
         <div class="divide-y divide-slate-100 overflow-hidden rounded-xl border border-slate-200 bg-white">
           <Link
             v-if="props.showStudyRecords"
-            :href="route(isIppan ? 'ippan.mypage.studyRecords' : 'mypage.studyRecords')"
+            :href="route(['ippan', 'senmon'].includes(props.scope) ? `${props.scope}.mypage.studyRecords` : 'mypage.studyRecords')"
             class="flex items-center justify-between gap-3 px-4 py-3 transition hover:bg-slate-50 sm:px-5"
           >
             <div>

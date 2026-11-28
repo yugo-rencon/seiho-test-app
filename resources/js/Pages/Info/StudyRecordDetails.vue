@@ -14,7 +14,8 @@ const props = defineProps({
 
 const correctCount = computed(() => props.record?.answers.filter((answer) => answer.is_correct).length ?? 0);
 const isIppan = computed(() => props.scope === 'ippan');
-const studyRecordsRouteName = computed(() => isIppan.value ? 'ippan.mypage.studyRecords' : 'mypage.studyRecords');
+const mypageRouteName = computed(() => ['ippan', 'senmon'].includes(props.scope) ? `${props.scope}.mypage` : 'mypage');
+const studyRecordsRouteName = computed(() => `${mypageRouteName.value}.studyRecords`);
 const selectExam = (key) => router.get(route(studyRecordsRouteName.value), { exam: key }, { preserveState: true });
 const formatDate = (value) => {
   if (!value) return '';
@@ -32,7 +33,7 @@ const formatDate = (value) => {
     <Head title="演習履歴" />
 
     <main class="mx-auto w-full max-w-3xl px-5 py-7 sm:px-6">
-      <Link :href="route(exams ? (isIppan ? 'ippan.mypage' : 'mypage') : studyRecordsRouteName)" class="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-900">
+      <Link :href="route(exams ? mypageRouteName : studyRecordsRouteName)" class="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-900">
         ← {{ exams ? 'マイページに戻る' : '演習履歴に戻る' }}
       </Link>
 

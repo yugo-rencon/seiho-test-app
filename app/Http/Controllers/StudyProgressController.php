@@ -50,7 +50,7 @@ class StudyProgressController extends Controller
             'selected_answer' => ['required', 'string', 'max:100'],
             'correct_answer' => ['nullable', 'string', 'max:100'],
             'is_correct' => ['required', 'boolean'],
-            'points_awarded' => ['required', 'integer', 'min:0', 'max:100'],
+            'points_awarded' => ['required', 'numeric', 'multiple_of:0.5', 'min:0', 'max:100'],
             'max_score' => ['sometimes', 'integer', 'min:1', 'max:10000'],
             'question_count' => ['sometimes', 'integer', 'min:1', 'max:500'],
         ]);
@@ -195,7 +195,7 @@ class StudyProgressController extends Controller
         $answeredCount = (int) $totals->answered_count;
         $attempt->update([
             'answered_count' => $answeredCount,
-            'score' => (int) $totals->score,
+            'score' => (float) $totals->score,
             'max_score' => $maxScore,
             'status' => $answeredCount >= $questionCount ? 'completed' : 'in_progress',
             'completed_at' => $answeredCount >= $questionCount ? ($attempt->completed_at ?? now()) : null,

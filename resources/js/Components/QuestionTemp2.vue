@@ -14,34 +14,34 @@
             :id="`q${item.questionNo}`"
             class="scroll-mt-24"
             :class="[
-                isIppan ? 'rounded-lg bg-white px-4 py-4 shadow-sm sm:px-0 sm:py-2 sm:shadow-none' : 'rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6',
+                usesCompactStudyLayout ? 'rounded-lg bg-white px-4 py-4 shadow-sm sm:px-0 sm:py-2 sm:shadow-none' : 'rounded-lg border border-gray-200 bg-white px-4 py-5 sm:px-6',
                 { 'is-daigaku': isDaigaku, 'is-senmon': isSenmon, 'is-ouyou': isOuyou, 'is-ippan': isIppan, 'is-hengaku': isHengaku, 'is-seiho': isSeiho },
             ]"
         >
-            <p v-if="isIppan" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
-            <div class="flex items-start gap-2" :class="isIppan ? 'mb-4 sm:mb-10' : ''">
-                <h2 class="flex min-w-0 items-start gap-2 font-bold leading-tight" :class="isIppan ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
-                    <span class="flex flex-wrap items-center gap-2" :class="isIppan ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 text-xs font-normal text-gray-500'">
-                        <span class="whitespace-nowrap">{{ isIppan ? `第${item.questionNo}問` : `問${item.questionNo}` }}</span>
+            <p v-if="usesCompactStudyLayout" class="mb-3 text-xs font-semibold text-gray-500 sm:hidden">{{ props.subject }}</p>
+            <div class="flex items-start gap-2" :class="usesCompactStudyLayout ? 'mb-4 sm:mb-10' : ''">
+                <h2 class="flex min-w-0 items-start gap-2 font-bold leading-tight" :class="usesCompactStudyLayout ? 'flex-col text-gray-950' : 'text-base text-gray-700'">
+                    <span class="flex flex-wrap items-center gap-2" :class="usesCompactStudyLayout ? 'text-lg font-bold sm:text-2xl' : 'shrink-0 text-xs font-normal text-gray-500'">
+                        <span class="whitespace-nowrap">{{ usesCompactStudyLayout ? `第${item.questionNo}問` : `問${item.questionNo}` }}</span>
                         <span v-if="!selectedAnswers[item.questionNo] && (previousIncorrectQuestions.has(Number(item.questionNo)) || previousCorrectQuestions.has(Number(item.questionNo)))" class="inline-flex items-center whitespace-nowrap text-[10px] font-medium sm:text-xs">
                             <span class="text-gray-400">前回：</span>
                             <span :class="previousIncorrectQuestions.has(Number(item.questionNo)) ? 'text-rose-600' : 'text-emerald-700'">{{ previousIncorrectQuestions.has(Number(item.questionNo)) ? '不正解' : '正解' }}</span>
                         </span>
                     </span>
-                    <span v-if="item.questionTitle" class="min-w-0" :class="isIppan ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">{{ item.questionTitle }}</span>
+                    <span v-if="item.questionTitle" class="min-w-0" :class="usesCompactStudyLayout ? 'mt-2 text-sm font-medium text-gray-500 sm:text-base' : ''">{{ item.questionTitle }}</span>
                 </h2>
             </div>
             <div
-                :class="isIppan ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : 'mt-4 border-t border-gray-100 pt-4'"
+                :class="usesCompactStudyLayout ? 'rounded-lg border-0 bg-white p-0 sm:border sm:border-gray-200 sm:p-7' : 'mt-4 border-t border-gray-100 pt-4'"
             >
-                <p :class="isIppan ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'text-sm font-bold text-gray-800'">{{ choicesFor(item).length ? '最も適切なものを1つ選んでください' : '文章の内容が正しいか、誤っているかを選んでください' }}</p>
+                <p :class="usesCompactStudyLayout ? 'text-sm font-semibold text-gray-600 sm:text-base' : 'text-sm font-bold text-gray-800'">{{ choicesFor(item).length ? '最も適切なものを1つ選んでください' : '文章の内容が正しいか、誤っているかを選んでください' }}</p>
                 <div v-if="choicesFor(item).length" class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <button
                         v-for="choice in choicesFor(item)"
                         :key="choice.label"
                         type="button"
                         class="relative border bg-white px-4 text-left font-bold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
-                        :class="[trueFalseButtonClass(item, choice.label), isIppan ? 'min-h-14 rounded-md py-3 text-base focus:ring-pink-400' : 'min-h-12 rounded-md py-2 text-sm focus:ring-violet-400']"
+                        :class="[trueFalseButtonClass(item, choice.label), isIppan ? 'min-h-14 rounded-md py-3 text-base focus:ring-pink-400' : isSenmon ? 'min-h-12 rounded-md py-2 text-sm focus:ring-emerald-400' : 'min-h-12 rounded-md py-2 text-sm focus:ring-violet-400']"
                         :disabled="Boolean(selectedAnswers[item.questionNo])"
                         @click="answerTrueFalse(item, choice.label)"
                     >
@@ -55,7 +55,7 @@
                         :key="choice"
                         type="button"
                         class="relative border bg-white px-4 font-extrabold transition focus:outline-none focus:ring-2 focus:ring-offset-2"
-                        :class="[trueFalseButtonClass(item, choice), isIppan ? 'min-h-14 rounded-md py-3 text-xl focus:ring-pink-400' : 'rounded-md focus:ring-violet-400', selectedAnswers[item.questionNo] && !isIppan ? 'min-h-9 py-1 text-sm' : !isIppan ? 'min-h-12 py-2 text-base' : '']"
+                        :class="[trueFalseButtonClass(item, choice), isIppan ? 'min-h-14 rounded-md py-3 text-xl focus:ring-pink-400' : isSenmon ? 'rounded-md focus:ring-emerald-400' : 'rounded-md focus:ring-violet-400', selectedAnswers[item.questionNo] && !isIppan ? 'min-h-9 py-1 text-sm' : !isIppan ? 'min-h-12 py-2 text-base' : '']"
                         :disabled="Boolean(selectedAnswers[item.questionNo])"
                         @click="answerTrueFalse(item, choice)"
                     >
@@ -270,7 +270,7 @@ const trueFalseButtonClass = (item: any, choice: string): string => {
     if (!selected) {
         return isIppan.value
             ? "border-pink-200 text-gray-800 [@media(hover:hover)]:hover:border-fuchsia-400 [@media(hover:hover)]:hover:bg-pink-50"
-            : "border-gray-300 text-gray-800 [@media(hover:hover)]:hover:border-violet-400 [@media(hover:hover)]:hover:bg-violet-50";
+            : (isSenmon.value ? "border-gray-300 text-gray-800 [@media(hover:hover)]:hover:border-emerald-400 [@media(hover:hover)]:hover:bg-emerald-50" : "border-gray-300 text-gray-800 [@media(hover:hover)]:hover:border-violet-400 [@media(hover:hover)]:hover:bg-violet-50");
     }
     if (choice === correctAnswerFor(item)) return "border-emerald-500 text-emerald-700";
     if (choice === selected) return "border-rose-500 text-rose-700";
@@ -302,6 +302,7 @@ const isOuyou = computed(() => /(?:^|\/)ouyou(?:\/|$)/.test(String(page.url ?? "
 const isHengaku = computed(() => /(?:^|\/)hengaku(?:\/|$)/.test(String(page.url ?? "")));
 const isIppan = computed(() => /(?:^|\/)ippan(?:\/|$)/.test(String(page.url ?? "")));
 const isSeiho = computed(() => !isDaigaku.value && !isSenmon.value && !isOuyou.value && !isIppan.value && !isHengaku.value);
+const usesCompactStudyLayout = computed(() => isIppan.value || isSenmon.value);
 
 const paywallStartQuestion = computed(() => getPaywallStartQuestion(props.title));
 
